@@ -4,31 +4,105 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Accueil"
-  description="Média civique — premier tour, faits sourcés, démocratie avant le spectacle."
+  description="Le premier tour : le miroir le plus fidèle de la France politique. Média civique, faits sourcés, Democracy Over Elimination."
 >
-  <section>
-    <h2>Democracy Over Elimination</h2>
-    <p>
-      Couvrir le premier tour avec des <strong>faits sourcés</strong> (open data), sans éliminer ni caricaturer.
-      La démocratie avant le spectacle.
+  <section class="hero">
+    <p class="eyebrow">Democracy Over Elimination</p>
+    <h2>Le premier tour, miroir de la pluralité</h2>
+    <p class="lead">
+      Documenter exhaustivement les résultats du <strong>premier tour</strong> — là où s'exprime
+      le plus fidèlement la diversité des préférences — et rendre visible la distorsion induite
+      par les désistements et le vote stratégique au second tour.
+    </p>
+    <p class="cta-row">
+      <a class="btn" href="/atlas">Explorer l'Atlas</a>
+      <a class="btn btn-secondary" href="/a-propos">Notre mission</a>
     </p>
   </section>
 
   <section class="card">
-    <h3>Données du jour</h3>
-    <p class="meta">Module en construction — agrégat open data à venir (Phase 2).</p>
+    <h3>Pourquoi ce média ?</h3>
     <p>
-      En attendant, consultez la page <a href="/sources">Sources</a> : chaque jeu listé pointe vers
-      <code>data.gouv.fr</code> avec horodatage de récupération.
+      Au premier tour, un citoyen peut voter pour un programme proche de ses convictions.
+      Au second tour, il vote souvent <em>contre</em> — pour barrer un camp plutôt que pour adhérer.
+      Cet « esprit éliminer » fausse la représentation nationale que le premier tour capture le mieux.
     </p>
+    <p class="meta">
+      Nous ne moralisons pas le vote tactique : nous le <strong>documentons</strong>, avec des données
+      officielles, pour que chacun choisisse en connaissance de cause.
+    </p>
+  </section>
+
+  <section>
+    <h3>Dossier à la une</h3>
+    <article class="card">
+      <h4><a href="/atlas/2022-presidentielle">Présidentielle 2022 — 1er tour</a></h4>
+      <p>
+        Macron 27,85 % · Le Pen 23,15 % · Mélenchon 21,95 % — et neuf autres candidats encore visibles
+        dans les urnes. Comparez avec le duel binaire du second tour.
+      </p>
+    </article>
   </section>
 
   <section>
     <h3>Notre ligne</h3>
     <ul>
-      <li>Comparer factuellement, sans classement éliminatoire</li>
-      <li>Citer la source et la date de chaque donnée</li>
+      <li>Sources officielles traçables (<a href="/sources">data.gouv.fr</a>)</li>
+      <li>Comparaisons factuelles, sans classement éliminatoire</li>
       <li>Revue éditoriale humaine avant publication automatique</li>
     </ul>
   </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    margin-bottom: 2rem;
+  }
+  .eyebrow {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .hero h2 {
+    font-size: 1.75rem;
+    margin: 0 0 1rem;
+    line-height: 1.25;
+  }
+  .lead {
+    font-size: 1.05rem;
+    margin: 0 0 1.25rem;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+  }
+  .btn {
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .hero .btn-secondary {
+    color: var(--accent);
+  }
+  @media (prefers-color-scheme: dark) {
+    .btn {
+      color: #121416;
+    }
+  }
+</style>

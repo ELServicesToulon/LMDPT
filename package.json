@@ -14,6 +14,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "sync:data": "tsx scripts/sync-data.ts",
+    "import:dept-2022": "tsx scripts/import-presidentielle-2022-departements.ts",
     "dns:iarbre": "node scripts/setup-dns-iarbre.mjs"
   },
   "dependencies": {

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="À propos"
+  description="Mission, charte éditoriale et méthodologie — Le Média du Premier Tour."
+>
+  <section>
+    <h2>Le premier tour, miroir de la pluralité</h2>
+    <p class="tagline-block">
+      Le premier tour : le miroir le plus fidèle de la France politique.<br />
+      Pour une démocratie où l'on vote <em>pour</em>, et non contre.
+    </p>
+    <p>
+      <strong>Le Média du Premier Tour</strong> documente de manière exhaustive et transparente
+      les résultats du premier tour des scrutins nationaux. Le premier tour capture la pluralité
+      des préférences ; le second tour, lui, est structurellement distordu par les désistements
+      et le vote stratégique (« éliminer » plutôt que « voter pour »).
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Charte éditoriale (Democracy Over Elimination)</h3>
+    <ul>
+      <li><strong>100 % data-driven</strong> — sources officielles uniquement (Ministère de l'Intérieur, data.gouv.fr).</li>
+      <li><strong>Neutralité méthodologique</strong> — aucun parti ni candidat mis en avant.</li>
+      <li><strong>Pas de tier list</strong> — comparaisons factuelles, jamais de classement éliminatoire.</li>
+      <li><strong>Transparence</strong> — chaque chiffre est traçable (source, date, licence).</li>
+      <li><strong>Pédagogie</strong> — expliquer la distorsion 1er/2nd tour sans moraliser le vote tactique.</li>
+    </ul>
+    <p class="meta">
+      Document complet : <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md">docs/EDITORIAL.md</a>
+    </p>
+  </section>
+
+  <section>
+    <h3>Ce que nous ne faisons pas</h3>
+    <ul>
+      <li>Sondages présentés comme prédictions</li>
+      <li>Propagande partisane ou prise de position déguisée en fait</li>
+      <li>Publication automatique sans revue humaine (Phase 3)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Contact & statut</h3>
+    <p>
+      Projet indépendant en construction. Code open source sur{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT" rel="noopener noreferrer">GitHub</a>.
+      Mentions légales — Phase 3, avant audience large.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .tagline-block {
+    font-size: 1.1rem;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+</style>

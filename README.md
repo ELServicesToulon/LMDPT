@@ -22,6 +22,7 @@ npm install
 npm run dev          # http://localhost:4321
 npm test
 npm run sync:data    # rafraîchir le cache open data
+npm run import:dept-2022  # régénérer JSON départements 2022 (data.gouv.fr)
 npm run build        # sync + build statique → dist/
 ```
 

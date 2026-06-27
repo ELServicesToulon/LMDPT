@@ -2,9 +2,13 @@
 
 > **Democracy Over Elimination** — la démocratie avant le spectacle.
 
+**Tagline** : Le premier tour : le miroir le plus fidèle de la France politique. Pour une démocratie où l'on vote pour, et non contre.
+
 ## Vision
 
 Couvrir le **premier tour** avec des faits sourcés (open data), sans éliminer ni caricaturer les candidats et forces politiques.
+
+Le premier tour capture la pluralité des préférences ; le second tour la distord via désistements et vote stratégique. Nous documentons cette distorsion sans la moraliser.
 
 ## Périmètre (Phase 1–2)
 

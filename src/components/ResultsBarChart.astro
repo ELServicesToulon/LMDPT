@@ -1,0 +1,84 @@
+---
+import type { ElectionCandidate } from '../lib/election-types';
+import { formatPct, formatVoix } from '../lib/elections';
+
+interface Props {
+  candidats: ElectionCandidate[];
+  title?: string;
+}
+
+const { candidats, title = 'Résultats nationaux (suffrages exprimés)' } = Astro.props;
+const maxPct = Math.max(...candidats.map((c) => c.pourcentage_exprimes));
+---
+
+<section class="chart-block" aria-labelledby="chart-title">
+  <h3 id="chart-title">{title}</h3>
+  <ol class="bar-chart">
+    {
+      candidats.map((c) => (
+        <li>
+          <div class="bar-row">
+            <span class="bar-label">
+              <strong>{c.nom}</strong>
+              {c.nuance && <span class="nuance"> ({c.nuance})</span>}
+            </span>
+            <span class="bar-value">{formatPct(c.pourcentage_exprimes)}</span>
+          </div>
+          <div class="bar-track" role="presentation">
+            <div
+              class="bar-fill"
+              style={`width: ${(c.pourcentage_exprimes / maxPct) * 100}%`}
+            />
+          </div>
+          <p class="meta bar-meta">{formatVoix(c.voix)} voix · {formatPct(c.pourcentage_inscrits)} des inscrits</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .chart-block {
+    margin: 1.5rem 0;
+  }
+  .bar-chart {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .bar-chart li {
+    margin-bottom: 1rem;
+  }
+  .bar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  .nuance {
+    color: var(--muted);
+    font-weight: normal;
+  }
+  .bar-value {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .bar-track {
+    height: 0.55rem;
+    background: var(--border);
+    border-radius: 3px;
+    margin: 0.35rem 0 0.2rem;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    min-width: 2px;
+  }
+  .bar-meta {
+    margin: 0;
+  }
+</style>

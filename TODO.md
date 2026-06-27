@@ -41,7 +41,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Atlas premiers tours (sélecteur + dossier 2022) → `/atlas`, `/atlas/2022-presidentielle`
 - [x] Page À propos + charte → `/a-propos`
 - [x] Données nationales 2022 (JSON statique + graphique barres)
-- [ ] Carte départements 2022
+- [x] Carte départements 2022 (grille interactive + import CSV officiel) → `npm run import:dept-2022`
 - [ ] Dossier analyse longue (distorsion 1er/2nd tour)
 - [ ] Législatives 2024 (désistements)
 - [ ] Accessibilité + mobile-first (base OK, audit à faire)

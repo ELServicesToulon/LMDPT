@@ -1,0 +1,1613 @@
+{
+  "election": "Présidentielle 2022 — 1er tour (départements)",
+  "date": "2022-04-10",
+  "source": "https://static.data.gouv.fr/resources/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-1er-tour/20220414-152356/resultats-par-niveau-dpt-t1-france-entiere.txt",
+  "source_label": "Ministère de l'Intérieur — resultats-par-niveau-dpt-t1-france-entiere.txt (data.gouv.fr)",
+  "departements": [
+    {
+      "code": "01",
+      "nom": "Ain",
+      "inscrits": 438109,
+      "exprimes": 333024,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1658,
+          "pourcentage_exprimes": 0.5
+        }
+      ]
+    },
+    {
+      "code": "02",
+      "nom": "Aisne",
+      "inscrits": 373544,
+      "exprimes": 265860,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2038,
+          "pourcentage_exprimes": 0.77
+        }
+      ]
+    },
+    {
+      "code": "03",
+      "nom": "Allier",
+      "inscrits": 249991,
+      "exprimes": 185955,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1359,
+          "pourcentage_exprimes": 0.73
+        }
+      ]
+    },
+    {
+      "code": "04",
+      "nom": "Alpes-de-Haute-Provence",
+      "inscrits": 128075,
+      "exprimes": 96683,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 505,
+          "pourcentage_exprimes": 0.52
+        }
+      ]
+    },
+    {
+      "code": "05",
+      "nom": "Hautes-Alpes",
+      "inscrits": 113519,
+      "exprimes": 86235,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 428,
+          "pourcentage_exprimes": 0.5
+        }
+      ]
+    },
+    {
+      "code": "06",
+      "nom": "Alpes-Maritimes",
+      "inscrits": 778582,
+      "exprimes": 558775,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1627,
+          "pourcentage_exprimes": 0.29
+        }
+      ]
+    },
+    {
+      "code": "07",
+      "nom": "Ardèche",
+      "inscrits": 255859,
+      "exprimes": 196975,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1219,
+          "pourcentage_exprimes": 0.62
+        }
+      ]
+    },
+    {
+      "code": "08",
+      "nom": "Ardennes",
+      "inscrits": 186197,
+      "exprimes": 133936,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1081,
+          "pourcentage_exprimes": 0.81
+        }
+      ]
+    },
+    {
+      "code": "09",
+      "nom": "Ariège",
+      "inscrits": 119039,
+      "exprimes": 91704,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 417,
+          "pourcentage_exprimes": 0.45
+        }
+      ]
+    },
+    {
+      "code": "10",
+      "nom": "Aube",
+      "inscrits": 205551,
+      "exprimes": 149670,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1005,
+          "pourcentage_exprimes": 0.67
+        }
+      ]
+    },
+    {
+      "code": "11",
+      "nom": "Aude",
+      "inscrits": 279927,
+      "exprimes": 212426,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1026,
+          "pourcentage_exprimes": 0.48
+        }
+      ]
+    },
+    {
+      "code": "12",
+      "nom": "Aveyron",
+      "inscrits": 219468,
+      "exprimes": 170902,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 894,
+          "pourcentage_exprimes": 0.52
+        }
+      ]
+    },
+    {
+      "code": "13",
+      "nom": "Bouches-du-Rhône",
+      "inscrits": 1411184,
+      "exprimes": 1008620,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3578,
+          "pourcentage_exprimes": 0.35
+        }
+      ]
+    },
+    {
+      "code": "14",
+      "nom": "Calvados",
+      "inscrits": 512148,
+      "exprimes": 386231,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2757,
+          "pourcentage_exprimes": 0.71
+        }
+      ]
+    },
+    {
+      "code": "15",
+      "nom": "Cantal",
+      "inscrits": 115745,
+      "exprimes": 88102,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 555,
+          "pourcentage_exprimes": 0.63
+        }
+      ]
+    },
+    {
+      "code": "16",
+      "nom": "Charente",
+      "inscrits": 257608,
+      "exprimes": 192666,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1319,
+          "pourcentage_exprimes": 0.68
+        }
+      ]
+    },
+    {
+      "code": "17",
+      "nom": "Charente-Maritime",
+      "inscrits": 519202,
+      "exprimes": 394067,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2330,
+          "pourcentage_exprimes": 0.59
+        }
+      ]
+    },
+    {
+      "code": "18",
+      "nom": "Cher",
+      "inscrits": 224570,
+      "exprimes": 160533,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1304,
+          "pourcentage_exprimes": 0.81
+        }
+      ]
+    },
+    {
+      "code": "19",
+      "nom": "Corrèze",
+      "inscrits": 185032,
+      "exprimes": 142600,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 885,
+          "pourcentage_exprimes": 0.62
+        }
+      ]
+    },
+    {
+      "code": "21",
+      "nom": "Côte-d'Or",
+      "inscrits": 366859,
+      "exprimes": 282745,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1775,
+          "pourcentage_exprimes": 0.63
+        }
+      ]
+    },
+    {
+      "code": "22",
+      "nom": "Côtes-d'Armor",
+      "inscrits": 471752,
+      "exprimes": 366393,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2603,
+          "pourcentage_exprimes": 0.71
+        }
+      ]
+    },
+    {
+      "code": "23",
+      "nom": "Creuse",
+      "inscrits": 90946,
+      "exprimes": 66848,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 490,
+          "pourcentage_exprimes": 0.73
+        }
+      ]
+    },
+    {
+      "code": "24",
+      "nom": "Dordogne",
+      "inscrits": 318168,
+      "exprimes": 246556,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1294,
+          "pourcentage_exprimes": 0.52
+        }
+      ]
+    },
+    {
+      "code": "25",
+      "nom": "Doubs",
+      "inscrits": 368379,
+      "exprimes": 277097,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2069,
+          "pourcentage_exprimes": 0.75
+        }
+      ]
+    },
+    {
+      "code": "26",
+      "nom": "Drôme",
+      "inscrits": 382188,
+      "exprimes": 291424,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2041,
+          "pourcentage_exprimes": 0.7
+        }
+      ]
+    },
+    {
+      "code": "27",
+      "nom": "Eure",
+      "inscrits": 432198,
+      "exprimes": 318861,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2197,
+          "pourcentage_exprimes": 0.69
+        }
+      ]
+    },
+    {
+      "code": "28",
+      "nom": "Eure-et-Loir",
+      "inscrits": 303888,
+      "exprimes": 220021,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1419,
+          "pourcentage_exprimes": 0.64
+        }
+      ]
+    },
+    {
+      "code": "29",
+      "nom": "Finistère",
+      "inscrits": 709701,
+      "exprimes": 542919,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3627,
+          "pourcentage_exprimes": 0.67
+        }
+      ]
+    },
+    {
+      "code": "2A",
+      "nom": "Corse-du-Sud",
+      "inscrits": 113918,
+      "exprimes": 68861,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 197,
+          "pourcentage_exprimes": 0.29
+        }
+      ]
+    },
+    {
+      "code": "2B",
+      "nom": "Haute-Corse",
+      "inscrits": 129114,
+      "exprimes": 78511,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 257,
+          "pourcentage_exprimes": 0.33
+        }
+      ]
+    },
+    {
+      "code": "30",
+      "nom": "Gard",
+      "inscrits": 555038,
+      "exprimes": 413979,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1768,
+          "pourcentage_exprimes": 0.43
+        }
+      ]
+    },
+    {
+      "code": "31",
+      "nom": "Haute-Garonne",
+      "inscrits": 930321,
+      "exprimes": 730979,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3006,
+          "pourcentage_exprimes": 0.41
+        }
+      ]
+    },
+    {
+      "code": "32",
+      "nom": "Gers",
+      "inscrits": 147278,
+      "exprimes": 116399,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 529,
+          "pourcentage_exprimes": 0.45
+        }
+      ]
+    },
+    {
+      "code": "33",
+      "nom": "Gironde",
+      "inscrits": 1158548,
+      "exprimes": 892020,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3679,
+          "pourcentage_exprimes": 0.41
+        }
+      ]
+    },
+    {
+      "code": "34",
+      "nom": "Hérault",
+      "inscrits": 847365,
+      "exprimes": 638728,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2580,
+          "pourcentage_exprimes": 0.4
+        }
+      ]
+    },
+    {
+      "code": "35",
+      "nom": "Ille-et-Vilaine",
+      "inscrits": 771636,
+      "exprimes": 596832,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3783,
+          "pourcentage_exprimes": 0.63
+        }
+      ]
+    },
+    {
+      "code": "36",
+      "nom": "Indre",
+      "inscrits": 166100,
+      "exprimes": 120997,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1085,
+          "pourcentage_exprimes": 0.9
+        }
+      ]
+    },
+    {
+      "code": "37",
+      "nom": "Indre-et-Loire",
+      "inscrits": 440502,
+      "exprimes": 327490,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2243,
+          "pourcentage_exprimes": 0.68
+        }
+      ]
+    },
+    {
+      "code": "38",
+      "nom": "Isère",
+      "inscrits": 885440,
+      "exprimes": 672296,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3479,
+          "pourcentage_exprimes": 0.52
+        }
+      ]
+    },
+    {
+      "code": "39",
+      "nom": "Jura",
+      "inscrits": 190597,
+      "exprimes": 145227,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1053,
+          "pourcentage_exprimes": 0.73
+        }
+      ]
+    },
+    {
+      "code": "40",
+      "nom": "Landes",
+      "inscrits": 329337,
+      "exprimes": 258050,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1115,
+          "pourcentage_exprimes": 0.43
+        }
+      ]
+    },
+    {
+      "code": "41",
+      "nom": "Loir-et-Cher",
+      "inscrits": 244718,
+      "exprimes": 180810,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1246,
+          "pourcentage_exprimes": 0.69
+        }
+      ]
+    },
+    {
+      "code": "42",
+      "nom": "Loire",
+      "inscrits": 513794,
+      "exprimes": 385938,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2390,
+          "pourcentage_exprimes": 0.62
+        }
+      ]
+    },
+    {
+      "code": "43",
+      "nom": "Haute-Loire",
+      "inscrits": 180706,
+      "exprimes": 139655,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1020,
+          "pourcentage_exprimes": 0.73
+        }
+      ]
+    },
+    {
+      "code": "44",
+      "nom": "Loire-Atlantique",
+      "inscrits": 1056693,
+      "exprimes": 802422,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 4712,
+          "pourcentage_exprimes": 0.59
+        }
+      ]
+    },
+    {
+      "code": "45",
+      "nom": "Loiret",
+      "inscrits": 457550,
+      "exprimes": 335422,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1959,
+          "pourcentage_exprimes": 0.58
+        }
+      ]
+    },
+    {
+      "code": "46",
+      "nom": "Lot",
+      "inscrits": 139278,
+      "exprimes": 109390,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 618,
+          "pourcentage_exprimes": 0.56
+        }
+      ]
+    },
+    {
+      "code": "47",
+      "nom": "Lot-et-Garonne",
+      "inscrits": 241304,
+      "exprimes": 184102,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 889,
+          "pourcentage_exprimes": 0.48
+        }
+      ]
+    },
+    {
+      "code": "48",
+      "nom": "Lozère",
+      "inscrits": 59812,
+      "exprimes": 46996,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 235,
+          "pourcentage_exprimes": 0.5
+        }
+      ]
+    },
+    {
+      "code": "49",
+      "nom": "Maine-et-Loire",
+      "inscrits": 589263,
+      "exprimes": 441342,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3071,
+          "pourcentage_exprimes": 0.7
+        }
+      ]
+    },
+    {
+      "code": "50",
+      "nom": "Manche",
+      "inscrits": 384613,
+      "exprimes": 284458,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2249,
+          "pourcentage_exprimes": 0.79
+        }
+      ]
+    },
+    {
+      "code": "51",
+      "nom": "Marne",
+      "inscrits": 380644,
+      "exprimes": 274106,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1778,
+          "pourcentage_exprimes": 0.65
+        }
+      ]
+    },
+    {
+      "code": "52",
+      "nom": "Haute-Marne",
+      "inscrits": 129389,
+      "exprimes": 93808,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 696,
+          "pourcentage_exprimes": 0.74
+        }
+      ]
+    },
+    {
+      "code": "53",
+      "nom": "Mayenne",
+      "inscrits": 224722,
+      "exprimes": 166908,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1273,
+          "pourcentage_exprimes": 0.76
+        }
+      ]
+    },
+    {
+      "code": "54",
+      "nom": "Meurthe-et-Moselle",
+      "inscrits": 492057,
+      "exprimes": 353800,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2373,
+          "pourcentage_exprimes": 0.67
+        }
+      ]
+    },
+    {
+      "code": "55",
+      "nom": "Meuse",
+      "inscrits": 134805,
+      "exprimes": 98513,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 702,
+          "pourcentage_exprimes": 0.71
+        }
+      ]
+    },
+    {
+      "code": "56",
+      "nom": "Morbihan",
+      "inscrits": 608972,
+      "exprimes": 467374,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2952,
+          "pourcentage_exprimes": 0.63
+        }
+      ]
+    },
+    {
+      "code": "57",
+      "nom": "Moselle",
+      "inscrits": 745914,
+      "exprimes": 524319,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3499,
+          "pourcentage_exprimes": 0.67
+        }
+      ]
+    },
+    {
+      "code": "58",
+      "nom": "Nièvre",
+      "inscrits": 154186,
+      "exprimes": 112441,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 833,
+          "pourcentage_exprimes": 0.74
+        }
+      ]
+    },
+    {
+      "code": "59",
+      "nom": "Nord",
+      "inscrits": 1813906,
+      "exprimes": 1274781,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 7673,
+          "pourcentage_exprimes": 0.6
+        }
+      ]
+    },
+    {
+      "code": "60",
+      "nom": "Oise",
+      "inscrits": 564121,
+      "exprimes": 411714,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2859,
+          "pourcentage_exprimes": 0.69
+        }
+      ]
+    },
+    {
+      "code": "61",
+      "nom": "Orne",
+      "inscrits": 205538,
+      "exprimes": 150950,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1203,
+          "pourcentage_exprimes": 0.8
+        }
+      ]
+    },
+    {
+      "code": "62",
+      "nom": "Pas-de-Calais",
+      "inscrits": 1093723,
+      "exprimes": 790653,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 5887,
+          "pourcentage_exprimes": 0.74
+        }
+      ]
+    },
+    {
+      "code": "63",
+      "nom": "Puy-de-Dôme",
+      "inscrits": 468103,
+      "exprimes": 357587,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2556,
+          "pourcentage_exprimes": 0.71
+        }
+      ]
+    },
+    {
+      "code": "64",
+      "nom": "Pyrénées-Atlantiques",
+      "inscrits": 519929,
+      "exprimes": 401490,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1677,
+          "pourcentage_exprimes": 0.42
+        }
+      ]
+    },
+    {
+      "code": "65",
+      "nom": "Hautes-Pyrénées",
+      "inscrits": 177443,
+      "exprimes": 134888,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 636,
+          "pourcentage_exprimes": 0.47
+        }
+      ]
+    },
+    {
+      "code": "66",
+      "nom": "Pyrénées-Orientales",
+      "inscrits": 362076,
+      "exprimes": 268568,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1312,
+          "pourcentage_exprimes": 0.49
+        }
+      ]
+    },
+    {
+      "code": "67",
+      "nom": "Bas-Rhin",
+      "inscrits": 778712,
+      "exprimes": 576719,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3687,
+          "pourcentage_exprimes": 0.64
+        }
+      ]
+    },
+    {
+      "code": "68",
+      "nom": "Haut-Rhin",
+      "inscrits": 531738,
+      "exprimes": 385109,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2265,
+          "pourcentage_exprimes": 0.59
+        }
+      ]
+    },
+    {
+      "code": "69",
+      "nom": "Rhône",
+      "inscrits": 1181226,
+      "exprimes": 909013,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3774,
+          "pourcentage_exprimes": 0.42
+        }
+      ]
+    },
+    {
+      "code": "70",
+      "nom": "Haute-Saône",
+      "inscrits": 177715,
+      "exprimes": 134739,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1171,
+          "pourcentage_exprimes": 0.87
+        }
+      ]
+    },
+    {
+      "code": "71",
+      "nom": "Saône-et-Loire",
+      "inscrits": 402992,
+      "exprimes": 299300,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1979,
+          "pourcentage_exprimes": 0.66
+        }
+      ]
+    },
+    {
+      "code": "72",
+      "nom": "Sarthe",
+      "inscrits": 411308,
+      "exprimes": 297062,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2150,
+          "pourcentage_exprimes": 0.72
+        }
+      ]
+    },
+    {
+      "code": "73",
+      "nom": "Savoie",
+      "inscrits": 320709,
+      "exprimes": 246358,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1205,
+          "pourcentage_exprimes": 0.49
+        }
+      ]
+    },
+    {
+      "code": "74",
+      "nom": "Haute-Savoie",
+      "inscrits": 565665,
+      "exprimes": 427139,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1880,
+          "pourcentage_exprimes": 0.44
+        }
+      ]
+    },
+    {
+      "code": "75",
+      "nom": "Paris",
+      "inscrits": 1368025,
+      "exprimes": 1055062,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2891,
+          "pourcentage_exprimes": 0.27
+        }
+      ]
+    },
+    {
+      "code": "76",
+      "nom": "Seine-Maritime",
+      "inscrits": 879252,
+      "exprimes": 642965,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 4433,
+          "pourcentage_exprimes": 0.69
+        }
+      ]
+    },
+    {
+      "code": "77",
+      "nom": "Seine-et-Marne",
+      "inscrits": 899303,
+      "exprimes": 660929,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3440,
+          "pourcentage_exprimes": 0.52
+        }
+      ]
+    },
+    {
+      "code": "78",
+      "nom": "Yvelines",
+      "inscrits": 961245,
+      "exprimes": 736506,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2774,
+          "pourcentage_exprimes": 0.38
+        }
+      ]
+    },
+    {
+      "code": "79",
+      "nom": "Deux-Sèvres",
+      "inscrits": 273214,
+      "exprimes": 207804,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1644,
+          "pourcentage_exprimes": 0.79
+        }
+      ]
+    },
+    {
+      "code": "80",
+      "nom": "Somme",
+      "inscrits": 410056,
+      "exprimes": 298918,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2486,
+          "pourcentage_exprimes": 0.83
+        }
+      ]
+    },
+    {
+      "code": "81",
+      "nom": "Tarn",
+      "inscrits": 298178,
+      "exprimes": 229842,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1175,
+          "pourcentage_exprimes": 0.51
+        }
+      ]
+    },
+    {
+      "code": "82",
+      "nom": "Tarn-et-Garonne",
+      "inscrits": 188706,
+      "exprimes": 145820,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 679,
+          "pourcentage_exprimes": 0.47
+        }
+      ]
+    },
+    {
+      "code": "83",
+      "nom": "Var",
+      "inscrits": 820904,
+      "exprimes": 598730,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2098,
+          "pourcentage_exprimes": 0.35
+        }
+      ]
+    },
+    {
+      "code": "84",
+      "nom": "Vaucluse",
+      "inscrits": 411607,
+      "exprimes": 303865,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1221,
+          "pourcentage_exprimes": 0.4
+        }
+      ]
+    },
+    {
+      "code": "85",
+      "nom": "Vendée",
+      "inscrits": 550963,
+      "exprimes": 419709,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2647,
+          "pourcentage_exprimes": 0.63
+        }
+      ]
+    },
+    {
+      "code": "86",
+      "nom": "Vienne",
+      "inscrits": 306011,
+      "exprimes": 231652,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1715,
+          "pourcentage_exprimes": 0.74
+        }
+      ]
+    },
+    {
+      "code": "87",
+      "nom": "Haute-Vienne",
+      "inscrits": 263742,
+      "exprimes": 202118,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1457,
+          "pourcentage_exprimes": 0.72
+        }
+      ]
+    },
+    {
+      "code": "88",
+      "nom": "Vosges",
+      "inscrits": 277913,
+      "exprimes": 203694,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1569,
+          "pourcentage_exprimes": 0.77
+        }
+      ]
+    },
+    {
+      "code": "89",
+      "nom": "Yonne",
+      "inscrits": 237957,
+      "exprimes": 176511,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1203,
+          "pourcentage_exprimes": 0.68
+        }
+      ]
+    },
+    {
+      "code": "90",
+      "nom": "Territoire de Belfort",
+      "inscrits": 93724,
+      "exprimes": 69654,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 560,
+          "pourcentage_exprimes": 0.8
+        }
+      ]
+    },
+    {
+      "code": "91",
+      "nom": "Essonne",
+      "inscrits": 799500,
+      "exprimes": 594941,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2831,
+          "pourcentage_exprimes": 0.48
+        }
+      ]
+    },
+    {
+      "code": "92",
+      "nom": "Hauts-de-Seine",
+      "inscrits": 997667,
+      "exprimes": 774742,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2306,
+          "pourcentage_exprimes": 0.3
+        }
+      ]
+    },
+    {
+      "code": "93",
+      "nom": "Seine-Saint-Denis",
+      "inscrits": 793929,
+      "exprimes": 543151,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2756,
+          "pourcentage_exprimes": 0.51
+        }
+      ]
+    },
+    {
+      "code": "94",
+      "nom": "Val-de-Marne",
+      "inscrits": 796086,
+      "exprimes": 589058,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2504,
+          "pourcentage_exprimes": 0.43
+        }
+      ]
+    },
+    {
+      "code": "95",
+      "nom": "Val-d'Oise",
+      "inscrits": 733529,
+      "exprimes": 529585,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 2392,
+          "pourcentage_exprimes": 0.45
+        }
+      ]
+    },
+    {
+      "code": "ZA",
+      "nom": "Guadeloupe",
+      "inscrits": 316023,
+      "exprimes": 135085,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1084,
+          "pourcentage_exprimes": 0.8
+        }
+      ]
+    },
+    {
+      "code": "ZB",
+      "nom": "Martinique",
+      "inscrits": 304594,
+      "exprimes": 122949,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1447,
+          "pourcentage_exprimes": 1.18
+        }
+      ]
+    },
+    {
+      "code": "ZC",
+      "nom": "Guyane",
+      "inscrits": 102993,
+      "exprimes": 35861,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 297,
+          "pourcentage_exprimes": 0.83
+        }
+      ]
+    },
+    {
+      "code": "ZD",
+      "nom": "La Réunion",
+      "inscrits": 675539,
+      "exprimes": 346766,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 3538,
+          "pourcentage_exprimes": 1.02
+        }
+      ]
+    },
+    {
+      "code": "ZM",
+      "nom": "Mayotte",
+      "inscrits": 92187,
+      "exprimes": 35050,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 430,
+          "pourcentage_exprimes": 1.23
+        }
+      ]
+    },
+    {
+      "code": "ZN",
+      "nom": "Nouvelle-Calédonie",
+      "inscrits": 218773,
+      "exprimes": 70500,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 565,
+          "pourcentage_exprimes": 0.8
+        }
+      ]
+    },
+    {
+      "code": "ZP",
+      "nom": "Polynésie française",
+      "inscrits": 205576,
+      "exprimes": 60030,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 808,
+          "pourcentage_exprimes": 1.35
+        }
+      ]
+    },
+    {
+      "code": "ZS",
+      "nom": "Saint-Pierre-et-Miquelon",
+      "inscrits": 5045,
+      "exprimes": 2701,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 22,
+          "pourcentage_exprimes": 0.81
+        }
+      ]
+    },
+    {
+      "code": "ZW",
+      "nom": "Wallis et Futuna",
+      "inscrits": 9528,
+      "exprimes": 5359,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 98,
+          "pourcentage_exprimes": 1.83
+        }
+      ]
+    },
+    {
+      "code": "ZX",
+      "nom": "Saint-Martin/Saint-Barthélemy",
+      "inscrits": 24414,
+      "exprimes": 8368,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 41,
+          "pourcentage_exprimes": 0.49
+        }
+      ]
+    },
+    {
+      "code": "ZZ",
+      "nom": "Français établis hors de France",
+      "inscrits": 1435746,
+      "exprimes": 498951,
+      "leader_slug": "arthaud",
+      "candidats": [
+        {
+          "slug": "arthaud",
+          "nom": "Nathalie ARTHAUD",
+          "voix": 1300,
+          "pourcentage_exprimes": 0.26
+        }
+      ]
+    }
+  ]
+}

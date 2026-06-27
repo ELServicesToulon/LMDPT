@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ELECTION_CATALOG } from '../../lib/elections';
+---
+
+<BaseLayout
+  title="Atlas"
+  description="Atlas des premiers tours — résultats officiels, pluralité et distorsions documentées."
+>
+  <section>
+    <h2>Atlas des premiers tours</h2>
+    <p>
+      Le premier tour est la photographie la plus proche de la pluralité des préférences nationales.
+      Cet atlas présente les résultats officiels, candidat par candidat, sans classement éliminatoire.
+    </p>
+  </section>
+
+  <section>
+    <h3>Élections disponibles</h3>
+    <ul class="election-list">
+      {
+        ELECTION_CATALOG.map((e) => (
+          <li class="card">
+            <h4>
+              <a href={`/atlas/${e.slug}`}>{e.title}</a>
+            </h4>
+            <p class="meta">
+              <time datetime={e.date}>
+                {new Date(e.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+              </time>
+              {' '}· tour {e.tour}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta">
+      Prochaines élections (2017, législatives 2024…) — pipeline de données en cours.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .election-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .election-list h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+</style>

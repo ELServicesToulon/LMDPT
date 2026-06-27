@@ -1,0 +1,29 @@
+{
+  "election": "Présidentielle 2022 — 1er tour",
+  "date": "2022-04-10",
+  "tour": 1,
+  "source": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/presidentielle-2022/FE.php",
+  "source_label": "Conseil constitutionnel — résultats proclamés du 1er tour (archives Ministère de l'Intérieur)",
+  "national": {
+    "inscrits": 48747876,
+    "abstention_pct": 26.31,
+    "votants": 35923707,
+    "blancs": 543609,
+    "nuls": 247151,
+    "exprimes": 35132947,
+    "candidats": [
+      { "nom": "Emmanuel MACRON", "nuance": "LREM", "voix": 9783058, "pourcentage_exprimes": 27.85, "pourcentage_inscrits": 20.07 },
+      { "nom": "Marine LE PEN", "nuance": "RN", "voix": 8133828, "pourcentage_exprimes": 23.15, "pourcentage_inscrits": 16.69 },
+      { "nom": "Jean-Luc MÉLENCHON", "nuance": "LFI", "voix": 7712520, "pourcentage_exprimes": 21.95, "pourcentage_inscrits": 15.82 },
+      { "nom": "Éric ZEMMOUR", "nuance": "REC", "voix": 2485226, "pourcentage_exprimes": 7.07, "pourcentage_inscrits": 5.10 },
+      { "nom": "Valérie PÉCRESSE", "nuance": "LR", "voix": 1679001, "pourcentage_exprimes": 4.78, "pourcentage_inscrits": 3.44 },
+      { "nom": "Yannick JADOT", "nuance": "EELV", "voix": 1627853, "pourcentage_exprimes": 4.63, "pourcentage_inscrits": 3.34 },
+      { "nom": "Jean LASSALLE", "nuance": "RES", "voix": 1101387, "pourcentage_exprimes": 3.13, "pourcentage_inscrits": 2.26 },
+      { "nom": "Fabien ROUSSEL", "nuance": "PCF", "voix": 802422, "pourcentage_exprimes": 2.28, "pourcentage_inscrits": 1.65 },
+      { "nom": "Nicolas DUPONT-AIGNAN", "nuance": "DLF", "voix": 725176, "pourcentage_exprimes": 2.06, "pourcentage_inscrits": 1.49 },
+      { "nom": "Anne HIDALGO", "nuance": "PS", "voix": 616478, "pourcentage_exprimes": 1.75, "pourcentage_inscrits": 1.26 },
+      { "nom": "Philippe POUTOU", "nuance": "NPA", "voix": 268904, "pourcentage_exprimes": 0.77, "pourcentage_inscrits": 0.55 },
+      { "nom": "Nathalie ARTHAUD", "nuance": "LO", "voix": 197094, "pourcentage_exprimes": 0.56, "pourcentage_inscrits": 0.40 }
+    ]
+  }
+}
