@@ -1,0 +1,40 @@
+# Ligne éditoriale — Le Média du Premier Tour
+
+> **Democracy Over Elimination** — la démocratie avant le spectacle.
+
+## Vision
+
+Couvrir le **premier tour** avec des faits sourcés (open data), sans éliminer ni caricaturer les candidats et forces politiques.
+
+## Périmètre (Phase 1–2)
+
+| Inclus | Exclu |
+|--------|-------|
+| Données publiques officielles (élections, candidatures, résultats, géographie électorale) | Sondages présentés comme prédictions |
+| Comparaisons factuelles (programmes, parcours documentés, chiffres vérifiables) | Classements éliminatoires type « top / flop » |
+| Traçabilité : source + date pour chaque donnée | Caricatures, memes politiques, buzz sans fondement |
+| Contexte et nuances sur les jeux de données | Avis éditorial non signalé comme tel |
+
+## Ton
+
+- **Sobre, civique, accessible** — français professionnel, phrases courtes.
+- **Neutre factuel** sur les données ; prise de position explicite uniquement dans la rubrique « ligne » (manifeste), jamais déguisée en fait.
+- Vouvoiement ou tutoiement : **vouvoiement** sur le site public (public large).
+
+## Principes Democracy Over Elimination
+
+1. **Aucun candidat n’est « éliminé »** par le média avant le scrutin — tous les candidats officiellement déclarés ont une fiche équivalente si les données existent.
+2. **Pas de « tier list »** ni de notation subjective présentée comme objective.
+3. **Les absences de données** sont affichées clairement (pas de silence qui suggère un désaveu).
+4. **Revue humaine** avant toute publication automatique (Phase 3).
+
+## Conformité
+
+- Licences open data respectées par ressource (ODbL, Licence Ouverte / Etalab, etc.) — page Sources.
+- Mentions légales et politique de confidentialité avant mise en ligne publique.
+- Pas de données personnelles traitées sans base légale documentée.
+
+## Validation
+
+- [x] Ligne DOE posée (2026-06-27)
+- [ ] Validation humaine Président / rédaction

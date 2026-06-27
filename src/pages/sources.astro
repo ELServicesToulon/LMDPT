@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadSourcesManifest } from '../lib/sources';
+
+const manifest = await loadSourcesManifest();
+const fetchedAt = new Date(manifest.fetchedAt);
+const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+  timeZone: 'Europe/Paris',
+});
+---
+
+<BaseLayout
+  title="Sources"
+  description="Traçabilité éditoriale — jeux de données data.gouv.fr utilisés pour le premier tour."
+>
+  <section>
+    <h2>Sources open data</h2>
+    <p class="meta">
+      Dernière synchronisation : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
+      (fuseau Europe/Paris). Régénérer : <code>npm run sync:data</code>.
+    </p>
+  </section>
+
+  {
+    manifest.catalogSearches.map((search) => (
+      <section class="card">
+        <h3>Catalogue : « {search.query} »</h3>
+        <p class="meta">
+          {search.hits.length} résultat{search.hits.length > 1 ? 's' : ''} —
+          requête API <code>GET /api/1/site/catalog</code>
+        </p>
+        {search.hits.length === 0 ? (
+          <p>Aucun jeu trouvé pour cette requête.</p>
+        ) : (
+          <ul>
+            {search.hits.map((hit) => (
+              <li>
+                <a href={hit.page} rel="noopener noreferrer">
+                  {hit.title}
+                </a>
+                {hit.organization && <span class="meta"> — {hit.organization}</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))
+  }
+
+  {
+    manifest.datasets.length > 0 && (
+      <section>
+        <h2>Jeux détaillés</h2>
+        <p class="meta">
+          Métadonnées et ressources via <code>GET /api/1/datasets/&#123;id&#125;/</code>
+        </p>
+        {manifest.datasets.map((dataset) => (
+          <article class="card">
+            <h3>
+              <a href={dataset.page} rel="noopener noreferrer">{dataset.title}</a>
+            </h3>
+            {dataset.organization && <p class="meta">Producteur : {dataset.organization}</p>}
+            {dataset.license && <p class="meta">Licence : {dataset.license}</p>}
+            {dataset.last_update && (
+              <p class="meta">
+                Dernière mise à jour (métadonnées) :{' '}
+                <time datetime={dataset.last_update}>{dataset.last_update}</time>
+              </p>
+            )}
+            {dataset.description && <p>{dataset.description.slice(0, 280)}{dataset.description.length > 280 ? '…' : ''}</p>}
+            {dataset.resources.length > 0 && (
+              <>
+                <p><strong>Ressources</strong></p>
+                <ul class="resources">
+                  {dataset.resources.map((resource) => (
+                    <li>
+                      <a href={resource.url} rel="noopener noreferrer">
+                        {resource.title}
+                      </a>
+                      {resource.format && <span class="meta"> ({resource.format})</span>}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </article>
+        ))}
+      </section>
+    )
+  }
+</BaseLayout>

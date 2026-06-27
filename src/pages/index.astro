@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Accueil"
+  description="Média civique — premier tour, faits sourcés, démocratie avant le spectacle."
+>
+  <section>
+    <h2>Democracy Over Elimination</h2>
+    <p>
+      Couvrir le premier tour avec des <strong>faits sourcés</strong> (open data), sans éliminer ni caricaturer.
+      La démocratie avant le spectacle.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Données du jour</h3>
+    <p class="meta">Module en construction — agrégat open data à venir (Phase 2).</p>
+    <p>
+      En attendant, consultez la page <a href="/sources">Sources</a> : chaque jeu listé pointe vers
+      <code>data.gouv.fr</code> avec horodatage de récupération.
+    </p>
+  </section>
+
+  <section>
+    <h3>Notre ligne</h3>
+    <ul>
+      <li>Comparer factuellement, sans classement éliminatoire</li>
+      <li>Citer la source et la date de chaque donnée</li>
+      <li>Revue éditoriale humaine avant publication automatique</li>
+    </ul>
+  </section>
+</BaseLayout>

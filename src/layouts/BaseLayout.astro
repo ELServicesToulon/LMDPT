@@ -1,0 +1,119 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} — Le Média du Premier Tour</title>
+    {description && <meta name="description" content={description} />}
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f5f0;
+        --fg: #1a1a1a;
+        --muted: #5c5c5c;
+        --accent: #1e4d6b;
+        --border: #d8d2c8;
+        --card: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121416;
+          --fg: #f2f0eb;
+          --muted: #a8a49c;
+          --accent: #7eb8d8;
+          --border: #2e3338;
+          --card: #1a1d21;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        line-height: 1.6;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      a { color: var(--accent); }
+      .wrap {
+        max-width: 48rem;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 3rem;
+      }
+      header {
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+      }
+      header nav {
+        font-family: system-ui, sans-serif;
+        font-size: 0.9rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        font-size: 1.35rem;
+        margin: 0 0 0.5rem;
+        font-weight: 600;
+      }
+      .tagline {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin: 0;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1rem 1.15rem;
+        margin-bottom: 1rem;
+      }
+      .meta {
+        font-family: system-ui, sans-serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      ul.resources {
+        padding-left: 1.2rem;
+        margin: 0.5rem 0 0;
+      }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Le Média du Premier Tour</h1>
+        <p class="tagline">Democracy Over Elimination</p>
+        <nav aria-label="Navigation principale">
+          <a href="/">Accueil</a>
+          <a href="/sources">Sources</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+      </footer>
+    </div>
+  </body>
+</html>

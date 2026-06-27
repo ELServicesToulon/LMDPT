@@ -1,0 +1,80 @@
+# TODO — Le Média du Premier Tour
+
+> **Democracy Over Elimination** — média civique, données publiques, premier tour.  
+> Créé le **2026-06-27**. Source de cadrage : [conversation Grok](https://grok.com/share/c2hhcmQtNA_5c541291-4ab3-4a52-84ab-4306f008bf9a).
+
+---
+
+## Vision (1 phrase)
+
+Couvrir le premier tour avec des faits sourcés (open data), sans éliminer ni caricaturer — la démocratie avant le spectacle.
+
+---
+
+## Phase 0 — Fondations (maintenant)
+
+- [x] Valider le périmètre éditorial (sujets, ton, ligne « Democracy Over Elimination ») → `docs/EDITORIAL.md`
+- [x] Choisir la stack → **Astro 7 + TypeScript**
+- [x] Initialiser le dépôt Git + `.gitignore`
+- [x] Définir la structure du repo (`src/`, `docs/`, `data/cache/`…)
+- [x] Rédiger le prompt Cursor projet → `docs/CURSOR.md` (transcript Grok complet toujours optionnel)
+
+---
+
+## Phase 1 — Intégration data.gouv.fr (priorité Grok)
+
+Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.fr/prise-en-main.md) — lecture seule, **sans clé API**.
+
+- [x] Client HTTP `data.gouv.fr` v1 (catalogue JSON-LD + datasets + ressources) → `src/lib/datagouv.ts`
+- [x] Recherche catalogue : `GET /api/1/site/catalog?q=…` (+ fallback `GET /datasets/?q=`)
+- [x] Détail dataset : `GET /api/1/datasets/{id}/` + extraction URLs ressources
+- [x] Mapper les jeux utiles au premier tour → `src/lib/datasets-map.ts`
+- [x] Cache local + horodatage → `data/cache/sources-manifest.json` · `npm run sync:data`
+- [x] Tests sur datasets réels + gestion erreurs/rate-limit → `npm test` (4 tests) + retry 503
+- [x] Page « sources » listant chaque donnée + lien data.gouv.fr → `/sources`
+
+---
+
+## Phase 2 — Produit minimal
+
+- [x] Page d'accueil + manifeste court → `/`
+- [ ] Module « données du jour » (agrégat open data)
+- [ ] Fiche candidat / force politique (si données disponibles)
+- [ ] Comparaison factuelle sans classement éliminatoire
+- [ ] Accessibilité + mobile-first (base CSS OK, audit à faire)
+
+---
+
+## Phase 3 — Qualité & conformité
+
+- [ ] Mentions légales + politique de confidentialité
+- [ ] Licences open data par ressource (ODbL, Etalab…)
+- [ ] Journal des mises à jour données
+- [ ] Revue éditoriale humaine avant publication auto
+
+---
+
+## Phase 4 — Écosystème Manusk (optionnel)
+
+- [ ] Lier au Director bridge `mediconvoi` si missions partagées
+- [ ] Capability Manusk `local_files_read` sur ce workspace
+- [ ] Ingest second-brain / Graphiti si veille long terme
+
+---
+
+## Décisions ouvertes
+
+| Sujet | Options | Décision |
+|-------|---------|----------|
+| Stack | Next.js / Astro / Python FastAPI + static | **Astro 7 + TS** |
+| Repo GitHub | Nouveau repo privé / public | **Public** (recommandé) — _à créer_ |
+| Nom dossier slug | `le-media-du-premier-tour` | **OK** |
+| Domaine | `.fr` à réserver ? | _à trancher (L1+)_ |
+
+---
+
+## Prochaine action recommandée
+
+1. `npm run dev` — prévisualiser `/` et `/sources`
+2. Créer le repo GitHub public et pousser (sur ordre Président)
+3. Phase 2 : module « données du jour » + fiches candidats

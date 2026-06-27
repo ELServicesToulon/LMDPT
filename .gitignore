@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+.astro/
+
+# cache (données data.gouv.fr — régénérable via npm run sync:data)
+data/cache/*.json
+
+# env
+.env
+.env.*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+*.log
