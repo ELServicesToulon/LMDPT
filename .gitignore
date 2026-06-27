@@ -9,7 +9,7 @@ dist/
 data/cache/*.json
 
 # env / secrets — ne jamais commiter (voir mediconvoi/docs/WORKSPACE-ENV-DB-HOMOGENEITE.md)
-# ⚠ Ce projet n'utilise PAS la DB mediconvoi/iarbre — .env minimal uniquement (Astro + DNS).
+# Base minimale : ../mediconvoi/backend/.env — ce .env = overlay LMDPT (ne pas supprimer).
 .env
 .env.*
 !.env.example

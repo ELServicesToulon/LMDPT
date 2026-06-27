@@ -7,9 +7,10 @@
  * Dry-run : npm run dns:iarbre -- --dry-run
  */
 import { spawnSync } from "node:child_process";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadWorkspaceEnv } from "../../mediconvoi/scripts/load-workspace-env.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
@@ -19,29 +20,8 @@ const SUBDOMAIN = "lmdpt";
 const FQDN = `${SUBDOMAIN}.iarbre.org`;
 const GITHUB_PAGES_TARGET = "elservicestoulon.github.io";
 
-function loadEnvFile(filePath) {
-  if (!existsSync(filePath)) return;
-  const text = readFileSync(filePath, "utf8");
-  for (const line of text.split(/\r?\n/)) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("#")) continue;
-    const eq = trimmed.indexOf("=");
-    if (eq <= 0) continue;
-    const key = trimmed.slice(0, eq).trim();
-    let value = trimmed.slice(eq + 1).trim();
-    if (
-      (value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-    if (!(key in process.env)) process.env[key] = value;
-  }
-}
-
 function loadEnvFiles() {
-  loadEnvFile(path.join(REPO_ROOT, ".env"));
-  loadEnvFile(path.resolve(REPO_ROOT, "..", "mediconvoi", "backend", ".env"));
+  loadWorkspaceEnv({ cwd: REPO_ROOT, projectEnvPath: path.join(REPO_ROOT, ".env") });
 }
 
 async function resolveCloudflareToken() {
