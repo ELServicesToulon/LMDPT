@@ -67,14 +67,21 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 | Sujet | Options | Décision |
 |-------|---------|----------|
 | Stack | Next.js / Astro / Python FastAPI + static | **Astro 7 + TS** |
-| Repo GitHub | Nouveau repo privé / public | **Public** (recommandé) — _à créer_ |
+| Repo GitHub | Nouveau repo privé / public | **Public** → [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT) |
 | Nom dossier slug | `le-media-du-premier-tour` | **OK** |
 | Domaine | `.fr` à réserver ? | _à trancher (L1+)_ |
 
 ---
 
+## Déploiement
+
+- [x] Repo GitHub public [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
+- [x] Workflow GitHub Pages (`.github/workflows/deploy.yml`) — push `Main` → build + deploy
+- [ ] Activer Pages (Settings → Source : GitHub Actions) si première publication
+- [ ] Domaine `.fr` — décision L1+
+
 ## Prochaine action recommandée
 
-1. `npm run dev` — prévisualiser `/` et `/sources`
-2. Créer le repo GitHub public et pousser (sur ordre Président)
-3. Phase 2 : module « données du jour » + fiches candidats
+1. Vérifier le site : [elservicestoulon.github.io/LMDPT](https://elservicestoulon.github.io/LMDPT/)
+2. Phase 2 : module « données du jour » + fiches candidats
+3. Phase 3 : mentions légales avant audience large
