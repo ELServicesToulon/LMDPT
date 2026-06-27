@@ -80,7 +80,8 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 - [x] Repo GitHub public [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
 - [x] Workflow GitHub Pages (`.github/workflows/deploy.yml`) — push `Main` → build + deploy
-- [x] Domaine custom `lmdpt.iarbre.org` (CNAME Cloudflare → GitHub Pages)
+- [x] Domaine custom configuré côté GitHub (`lmdpt.iarbre.org` + `public/CNAME`)
+- [ ] DNS Cloudflare : `CNAME lmdpt → elservicestoulon.github.io` (`npm run dns:iarbre` avec jeton iarbre)
 - [ ] Domaine `.fr` dédié — décision L1+ (optionnel)
 
 ## Prochaine action recommandée
