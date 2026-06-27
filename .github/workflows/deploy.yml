@@ -29,8 +29,8 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          ASTRO_SITE: https://elservicestoulon.github.io
-          ASTRO_BASE: /LMDPT/
+          ASTRO_SITE: https://lmdpt.iarbre.org
+          ASTRO_BASE: /
 
       - uses: actions/upload-pages-artifact@v3
         with:

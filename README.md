@@ -5,7 +5,7 @@
 Couvrir le premier tour avec des données publiques officielles (`data.gouv.fr`), sans éliminer ni caricaturer — la démocratie avant le spectacle.
 
 - **Dépôt** : [github.com/ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
-- **Site** : [elservicestoulon.github.io/LMDPT](https://elservicestoulon.github.io/LMDPT/) (GitHub Pages, après activation du workflow)
+- **Site** : [lmdpt.iarbre.org](https://lmdpt.iarbre.org) (sous-domaine iarbre.org, GitHub Pages)
 - **Ligne éditoriale** : [`docs/EDITORIAL.md`](docs/EDITORIAL.md)
 
 ## Stack
@@ -31,28 +31,37 @@ Node **≥ 22.12**.
 
 | Route | Description |
 |-------|-------------|
-| `/` | Accueil + manifeste |
-| `/sources` | Jeux de données mappés, liens `data.gouv.fr`, horodatage |
+| `/` | Accueil + hero + mission |
+| `/atlas` | Sélecteur d'élections |
+| `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour |
+| `/a-propos` | Charte éditoriale + méthodologie |
+| `/sources` | Jeux data.gouv.fr, horodatage |
 
 ## Structure
 
 ```text
 src/
-  lib/          # client data.gouv, cache, mapping datasets
-  pages/        # routes Astro
+  components/   # visualisations (bar chart, résumé national)
+  data/elections/  # JSON résultats officiels
+  lib/          # client data.gouv, elections, cache, mapping
+  pages/        # routes Astro (atlas, à propos…)
   layouts/
 scripts/        # sync-data.ts
-data/cache/     # manifeste régénérable (gitignored)
-docs/           # éditorial, prompt Cursor
+data/cache/     # manifeste catalogue (gitignored)
+docs/           # éditorial, prompt Cursor, agent Grok
 ```
 
 ## Déploiement
 
 Push sur `Main` → workflow GitHub Actions (`.github/workflows/deploy.yml`) : tests, `sync:data`, build, publication GitHub Pages.
 
-Première fois : **Settings → Pages → Source : GitHub Actions** (si le workflow ne s’active pas seul).
+**Domaine** : `lmdpt.iarbre.org` — CNAME → `elservicestoulon.github.io` (zone Cloudflare `iarbre.org`, DNS only).
 
-Variables build CI : `ASTRO_SITE` + `ASTRO_BASE=/LMDPT/` pour le sous-chemin Pages.
+```bash
+npm run dns:iarbre    # crée/met à jour le CNAME (jeton IARBE_CLOUDFLARE_API_TOKEN)
+```
+
+Variables build CI : `ASTRO_SITE=https://lmdpt.iarbre.org`, `ASTRO_BASE=/`.
 
 ## Principes éditoriaux (résumé)
 

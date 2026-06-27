@@ -37,11 +37,14 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 ## Phase 2 — Produit minimal
 
-- [x] Page d'accueil + manifeste court → `/`
-- [ ] Module « données du jour » (agrégat open data)
-- [ ] Fiche candidat / force politique (si données disponibles)
-- [ ] Comparaison factuelle sans classement éliminatoire
-- [ ] Accessibilité + mobile-first (base CSS OK, audit à faire)
+- [x] Page d'accueil + manifeste + hero → `/`
+- [x] Atlas premiers tours (sélecteur + dossier 2022) → `/atlas`, `/atlas/2022-presidentielle`
+- [x] Page À propos + charte → `/a-propos`
+- [x] Données nationales 2022 (JSON statique + graphique barres)
+- [ ] Carte départements 2022
+- [ ] Dossier analyse longue (distorsion 1er/2nd tour)
+- [ ] Législatives 2024 (désistements)
+- [ ] Accessibilité + mobile-first (base OK, audit à faire)
 
 ---
 
@@ -69,7 +72,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 | Stack | Next.js / Astro / Python FastAPI + static | **Astro 7 + TS** |
 | Repo GitHub | Nouveau repo privé / public | **Public** → [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT) |
 | Nom dossier slug | `le-media-du-premier-tour` | **OK** |
-| Domaine | `.fr` à réserver ? | _à trancher (L1+)_ |
+| Domaine | `.fr` à réserver ? / sous-domaine iarbre | **`lmdpt.iarbre.org`** (GitHub Pages) |
 
 ---
 
@@ -77,11 +80,12 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 - [x] Repo GitHub public [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
 - [x] Workflow GitHub Pages (`.github/workflows/deploy.yml`) — push `Main` → build + deploy
-- [ ] Activer Pages (Settings → Source : GitHub Actions) si première publication
-- [ ] Domaine `.fr` — décision L1+
+- [x] Domaine custom `lmdpt.iarbre.org` (CNAME Cloudflare → GitHub Pages)
+- [ ] Domaine `.fr` dédié — décision L1+ (optionnel)
 
 ## Prochaine action recommandée
 
-1. Vérifier le site : [elservicestoulon.github.io/LMDPT](https://elservicestoulon.github.io/LMDPT/)
-2. Phase 2 : module « données du jour » + fiches candidats
-3. Phase 3 : mentions légales avant audience large
+1. Vérifier le site : [lmdpt.iarbre.org](https://lmdpt.iarbre.org)
+2. Import CSV départements 2022 + carte interactive
+3. Dossier analyse législatives 2024 (désistements)
+4. Phase 3 : mentions légales avant audience large

@@ -13,7 +13,8 @@
     "astro": "astro",
     "test": "vitest run",
     "test:watch": "vitest",
-    "sync:data": "tsx scripts/sync-data.ts"
+    "sync:data": "tsx scripts/sync-data.ts",
+    "dns:iarbre": "node scripts/setup-dns-iarbre.mjs"
   },
   "dependencies": {
     "astro": "^7.0.3"
