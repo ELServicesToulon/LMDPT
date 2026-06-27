@@ -8,7 +8,8 @@ dist/
 # cache (données data.gouv.fr — régénérable via npm run sync:data)
 data/cache/*.json
 
-# env / secrets (copie locale possible depuis mediconvoi/backend/.env — ne jamais commiter)
+# env / secrets — ne jamais commiter (voir mediconvoi/docs/WORKSPACE-ENV-DB-HOMOGENEITE.md)
+# ⚠ Ce projet n'utilise PAS la DB mediconvoi/iarbre — .env minimal uniquement (Astro + DNS).
 .env
 .env.*
 !.env.example
