@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import dataJournal from '../data/data-journal.json';
 import { loadSourcesManifest } from '../lib/sources';
 
 const manifest = await loadSourcesManifest();
@@ -21,6 +22,29 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
       Dernière synchronisation : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
       (fuseau Europe/Paris). Régénérer : <code>npm run sync:data</code>.
     </p>
+  </section>
+
+  <section class="card" id="mises-a-jour">
+    <h3>Journal des jeux intégrés au site</h3>
+    <p class="meta">JSON statiques versionnés dans le dépôt — indépendant du cache catalogue ci-dessous.</p>
+    <ul class="resources">
+      {
+        dataJournal.map((entry) => (
+          <li>
+            <time datetime={entry.date}>
+              {new Date(entry.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+            </time>
+            {' '}— {entry.label}
+            <span class="meta"> ({entry.source})</span>
+            {entry.script && (
+              <>
+                {' '}· <code>{entry.script}</code>
+              </>
+            )}
+          </li>
+        ))
+      }
+    </ul>
   </section>
 
   {

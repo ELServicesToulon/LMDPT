@@ -106,7 +106,7 @@ const { title, description } = Astro.props;
         <nav aria-label="Navigation principale">
           <a href="/">Accueil</a>
           <a href="/atlas">Atlas</a>
-          <a href="/analyses/legislatives-2024-desistements">Analyses</a>
+          <a href="/analyses">Analyses</a>
           <a href="/a-propos">À propos</a>
           <a href="/sources">Sources</a>
         </nav>
@@ -115,7 +115,14 @@ const { title, description } = Astro.props;
         <slot />
       </main>
       <footer>
-        Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+        <p>
+          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+        </p>
+        <p>
+          <a href="/mentions-legales">Mentions légales</a>
+          {' '}·{' '}
+          <a href="/confidentialite">Confidentialité</a>
+        </p>
       </footer>
     </div>
   </body>

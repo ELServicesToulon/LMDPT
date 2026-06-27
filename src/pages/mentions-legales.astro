@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = 'https://lmdpt.iarbre.org';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Éditeur, hébergeur et responsabilité éditoriale — Le Média du Premier Tour."
+>
+  <section>
+    <h2>Mentions légales</h2>
+    <p class="meta">Dernière mise à jour : 27 juin 2026</p>
+  </section>
+
+  <section class="card">
+    <h3>Éditeur du site</h3>
+    <p>
+      <strong>Le Média du Premier Tour</strong> (LMDPT) — projet média civique indépendant porté par
+      ELServices Toulon.
+    </p>
+    <p>
+      Contact :{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
+        issues GitHub du projet
+      </a>
+    </p>
+    <p class="meta">
+      Directeur de la publication : à compléter avant campagne électorale couverte en direct.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Hébergement</h3>
+    <p>
+      GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
+    </p>
+    <p class="meta">URL publique : <a href={siteUrl}>{siteUrl}</a></p>
+  </section>
+
+  <section class="card">
+    <h3>Propriété intellectuelle</h3>
+    <p>
+      Textes et code du site : voir licence du dépôt{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT" rel="noopener noreferrer">GitHub</a>.
+      Données électorales : licences open data des producteurs (Ministère de l'Intérieur, etc.) —
+      détail sur la page <a href="/sources">Sources</a>.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Responsabilité</h3>
+    <p>
+      Les chiffres publiés proviennent de sources officielles identifiées. En cas d'écart constaté
+      avec une proclamation ultérieure, la page Sources et le dépôt GitHub font foi pour la
+      traçabilité des jeux importés.
+    </p>
+    <p>
+      L'éditeur ne collecte pas de données personnelles via ce site (voir{' '}
+      <a href="/confidentialite">politique de confidentialité</a>).
+    </p>
+  </section>
+</BaseLayout>

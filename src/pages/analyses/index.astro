@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ANALYSIS_CATALOG } from '../../lib/analyses';
+---
+
+<BaseLayout
+  title="Analyses"
+  description="Dossiers pédagogiques sur la pluralité du premier tour et la distorsion du second — faits sourcés."
+>
+  <section>
+    <h2>Analyses</h2>
+    <p>
+      Dossiers documentés : mécanismes électoraux, désistements, distorsion entre premier et second tour.
+      Comparaisons factuelles — pas de classement éliminatoire.
+    </p>
+  </section>
+
+  <section>
+    <ul class="analysis-list">
+      {
+        ANALYSIS_CATALOG.map((a) => (
+          <li class="card">
+            <h3>
+              <a href={a.href}>{a.title}</a>
+            </h3>
+            <p>{a.description}</p>
+            <p class="meta">
+              <time datetime={a.date}>
+                {new Date(a.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+              </time>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .analysis-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .analysis-list h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+</style>

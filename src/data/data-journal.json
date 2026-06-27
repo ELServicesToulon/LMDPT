@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-06-27",
+    "label": "Présidentielle 2017 — départements (107)",
+    "source": "Presidentielle_2017_Resultats_Tour_1_c.xls (data.gouv.fr)",
+    "script": "npm run import:dept-2017"
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Carte SVG départements (96 métropole + Corse)",
+    "source": "gregoiredavid/france-geojson",
+    "script": "npm run build:geo"
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Présidentielle 2022 — départements (101)",
+    "source": "resultats-par-niveau-dpt-t1-france-entiere.txt",
+    "script": "npm run import:dept-2022"
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Présidentielles 2017 et 2022 — résultats nationaux",
+    "source": "Conseil constitutionnel / Ministère de l'Intérieur",
+    "script": null
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Législatives 2024 — dossier désistements",
+    "source": "Ministère de l'Intérieur, Franceinfo (correctif 215)",
+    "script": null
+  }
+]

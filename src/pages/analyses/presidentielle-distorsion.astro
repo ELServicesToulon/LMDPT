@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ELECTION_CATALOG, formatPct, getElection, top3PctExprimes } from '../../lib/elections';
+
+const elections = ELECTION_CATALOG.map((summary) => {
+  const dataset = getElection(summary.slug);
+  if (!dataset) return null;
+  return {
+    summary,
+    top3: top3PctExprimes(dataset),
+    candidats: dataset.national.candidats.length,
+  };
+}).filter(Boolean);
+---
+
+<BaseLayout
+  title="Présidentielle — distorsion 1er / 2nd tour"
+  description="Pluralité au premier tour, reconfiguration binaire au second — présidentielles 2017 et 2022, données officielles."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Présidentielle — distorsion
+  </nav>
+
+  <section>
+    <h2>Présidentielle : pluralité puis duel</h2>
+    <p>
+      Au premier tour présidentiel, chaque citoyen peut exprimer une préférence sur l'ensemble du
+      spectre des candidats qualifiés. Au second tour, seuls deux noms restent — tous les autres
+      suffrages « disparaissent » de l'urne, même si leurs électeurs se reportent tactiquement sur
+      l'un des deux finalistes.
+    </p>
+    <p>
+      Ce média ne juge pas ce report : il le <strong>documente</strong>. Le premier tour reste la
+      photographie la plus fidèle de la diversité politique nationale.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Mécanisme</h3>
+    <ol>
+      <li>
+        <strong>Pluralité</strong> — N candidats, chaque voix compte dans la répartition nationale
+        et territoriale.
+      </li>
+      <li>
+        <strong>Seuil</strong> — Seuls les deux premiers au suffrage exprimé accèdent au second
+        tour (sauf cas de triple égalité, rare).
+      </li>
+      <li>
+        <strong>Distorsion</strong> — Les voix des éliminés ne sont plus exprimables ; le second
+        tour mesure surtout un choix binaire, souvent perçu comme « barrage » plutôt qu'adhésion.
+      </li>
+    </ol>
+  </section>
+
+  {
+    elections.map((entry) =>
+      entry ? (
+        <section class="card">
+          <h3>
+            <a href={`/atlas/${entry.summary.slug}`}>{entry.summary.title}</a>
+          </h3>
+          <p class="meta">
+            <time datetime={entry.summary.date}>
+              {new Date(entry.summary.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+            </time>
+            {' '}· {entry.candidats} candidats · top 3 = {formatPct(entry.top3)} des exprimés
+          </p>
+          {entry.summary.distorsion_note && <p>{entry.summary.distorsion_note}</p>}
+          <p>
+            <a href={`/atlas/${entry.summary.slug}`}>Atlas complet + carte départements →</a>
+          </p>
+        </section>
+      ) : null,
+    )
+  }
+
+  <section class="card">
+    <h3>Prolongement législatives</h3>
+    <p>
+      Aux législatives, la distorsion s'ajoute via les <strong>désistements</strong> entre les
+      deux tours : des candidats qualifiés se retirent pour favoriser un camp face au RN. Voir le
+      dossier{' '}
+      <a href="/analyses/legislatives-2024-desistements">Législatives 2024 — désistements</a>.
+    </p>
+  </section>
+
+  <section>
+    <h3>Sources</h3>
+    <ul>
+      <li>
+        Résultats officiels :{' '}
+        <a href="/atlas">Atlas présidentielles 2017 et 2022</a>
+      </li>
+      <li>
+        Jeux bruts et licences : <a href="/sources">page Sources</a>
+      </li>
+      <li>Conseil constitutionnel / Ministère de l'Intérieur via data.gouv.fr</li>
+    </ul>
+    <p class="meta">
+      Dossier rédigé le 27 juin 2026 — revue éditoriale humaine. Chiffres national issus des
+      proclamations officielles intégrées au site.
+    </p>
+  </section>
+</BaseLayout>

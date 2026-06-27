@@ -39,7 +39,11 @@ Node **≥ 22.12**.
 | `/atlas` | Sélecteur d'élections |
 | `/atlas/2017-presidentielle` | Résultats 1er tour 2017 + carte départements |
 | `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour + carte |
+| `/analyses` | Index des dossiers thématiques |
+| `/analyses/presidentielle-distorsion` | Distorsion 1er / 2nd tour (2017, 2022) |
 | `/analyses/legislatives-2024-desistements` | Dossier désistements législatives 2024 |
+| `/mentions-legales` | Mentions légales |
+| `/confidentialite` | Politique de confidentialité |
 | `/a-propos` | Charte éditoriale + méthodologie |
 | `/sources` | Jeux data.gouv.fr, horodatage |
 
