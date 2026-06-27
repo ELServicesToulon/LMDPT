@@ -9,15 +9,27 @@ describe('elections', () => {
     expect(data?.national.candidats[0]?.nom).toContain('MACRON');
   });
 
-  it('candidate votes sum to exprimes total', () => {
+  it('loads 2017 presidential dataset', () => {
+    const data = getElection('2017-presidentielle');
+    expect(data?.national.candidats).toHaveLength(11);
+    expect(data?.national.candidats[0]?.pourcentage_exprimes).toBe(24.01);
+  });
+
+  it('candidate votes sum to exprimes total (2022)', () => {
     const data = getElection('2022-presidentielle');
     const sum = data!.national.candidats.reduce((acc, c) => acc + c.voix, 0);
     expect(sum).toBe(data!.national.exprimes);
   });
 
-  it('catalog lists available elections', () => {
-    expect(ELECTION_CATALOG.length).toBeGreaterThan(0);
-    expect(ELECTION_CATALOG[0]?.slug).toBe('2022-presidentielle');
+  it('candidate votes sum to exprimes total (2017)', () => {
+    const data = getElection('2017-presidentielle');
+    const sum = data!.national.candidats.reduce((acc, c) => acc + c.voix, 0);
+    expect(sum).toBe(data!.national.exprimes);
+  });
+
+  it('catalog lists 2017 and 2022', () => {
+    expect(ELECTION_CATALOG.length).toBe(2);
+    expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2017-presidentielle');
   });
 
   it('formats numbers in fr-FR', () => {

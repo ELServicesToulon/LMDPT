@@ -1,0 +1,274 @@
+---
+import type { DepartmentResults } from '../lib/election-types';
+import deptPaths from '../data/geo/departments-paths.json';
+import { candidateColor, candidateLabel, legendForSlugs } from '../lib/departments';
+
+interface Props {
+  departements: DepartmentResults[];
+  electionSlug: string;
+}
+
+const { departements, electionSlug } = Astro.props;
+
+const byCode = new Map(departements.map((d) => [d.code, d]));
+
+const payload = departements.map((d) => ({
+  code: d.code,
+  nom: d.nom,
+  leader: d.leader_slug,
+  leaderPct: d.candidats[0]?.pourcentage_exprimes ?? 0,
+  top3: d.candidats.slice(0, 3).map((c) => ({
+    slug: c.slug,
+    nom: c.nom,
+    pct: c.pourcentage_exprimes,
+  })),
+}));
+
+const leaderSlugs = [...new Set(departements.map((d) => d.leader_slug))];
+const legend = legendForSlugs(leaderSlugs);
+
+const labelMap = Object.fromEntries(
+  payload.flatMap((d) => d.top3.map((c) => [c.slug, candidateLabel(c.slug, c.nom)] as const)),
+);
+
+const svgPaths = deptPaths.departements
+  .map((p) => {
+    const result = byCode.get(p.code);
+    const leader = result?.leader_slug ?? 'unknown';
+    const color = result ? candidateColor(leader) : '#cccccc';
+    const pct = result?.candidats[0]?.pourcentage_exprimes ?? 0;
+    return {
+      code: p.code,
+      nom: p.nom,
+      d: p.d,
+      leader,
+      color,
+      pct,
+      hasData: Boolean(result),
+    };
+  })
+  .filter((p) => p.hasData);
+
+const overseas = departements.filter(
+  (d) => !deptPaths.departements.some((p) => p.code === d.code),
+);
+---
+
+<section class="dept-map" aria-labelledby="dept-map-title">
+  <h3 id="dept-map-title">Carte géographique — tête par département</h3>
+  <p class="meta">
+    Couleur = candidat en tête (% des suffrages exprimés). Survolez ou cliquez un département.
+    Traçabilité cartographique : {deptPaths.source_label}.
+  </p>
+
+  <div class="legend" aria-label="Légende candidats">
+    {
+      legend.map((item) => (
+        <span class="legend-item">
+          <span class="swatch" style={`background:${item.color}`} />
+          {item.label}
+        </span>
+      ))
+    }
+  </div>
+
+  <label class="search-label">
+    Rechercher
+    <input
+      type="search"
+      id={`dept-search-${electionSlug}`}
+      placeholder="Nom ou code (ex. 13, Bouches-du-Rhône)"
+      autocomplete="off"
+    />
+  </label>
+
+  <div class="map-wrap">
+    <svg
+      viewBox={deptPaths.viewBox}
+      role="img"
+      aria-label="Carte de France par département, colorée selon le candidat en tête au premier tour"
+      class="france-map"
+      id={`france-map-${electionSlug}`}
+    >
+      {
+        svgPaths.map((p) => (
+          <path
+            id={`dept-path-${electionSlug}-${p.code}`}
+            data-code={p.code}
+            data-nom={p.nom.toLowerCase()}
+            data-leader={p.leader}
+            d={p.d}
+            fill={p.color}
+            fill-opacity="0.72"
+            stroke="var(--border)"
+            stroke-width="0.4"
+            tabindex="0"
+          >
+            <title>{p.nom} ({p.code}) — {candidateLabel(p.leader)} {p.pct.toFixed(1)} %</title>
+          </path>
+        ))
+      }
+    </svg>
+  </div>
+
+  {
+    overseas.length > 0 && (
+      <section class="overseas">
+        <h4>Outre-mer et circonscriptions spéciales</h4>
+        <p class="meta">Non représentées sur la carte métropolitaine — résultats officiels identiques.</p>
+        <ul class="overseas-list">
+          {overseas.map((d) => (
+            <li>
+              <span class="swatch" style={`background:${candidateColor(d.leader_slug)}`} />
+              <strong>{d.nom}</strong> ({d.code}) — {candidateLabel(d.leader_slug)}{' '}
+              {d.candidats[0]?.pourcentage_exprimes?.toFixed(1) ?? '—'} %
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <aside class="card dept-detail" id={`dept-detail-${electionSlug}`} hidden>
+    <h4 id={`dept-detail-title-${electionSlug}`}>Détail</h4>
+    <ol id={`dept-detail-list-${electionSlug}`}></ol>
+  </aside>
+</section>
+
+<script define:vars={{ payload, electionSlug, labelMap }}>
+  const search = document.getElementById(`dept-search-${electionSlug}`);
+  const svg = document.getElementById(`france-map-${electionSlug}`);
+  const detail = document.getElementById(`dept-detail-${electionSlug}`);
+  const detailTitle = document.getElementById(`dept-detail-title-${electionSlug}`);
+  const detailList = document.getElementById(`dept-detail-list-${electionSlug}`);
+  const byCode = new Map(payload.map((d) => [d.code, d]));
+
+  function showDetail(code) {
+    const data = byCode.get(code);
+    if (!data || !detail || !detailTitle || !detailList) return;
+    detail.hidden = false;
+    detailTitle.textContent = `${data.nom} (${data.code})`;
+    detailList.replaceChildren();
+    for (const c of data.top3) {
+      const li = document.createElement('li');
+      li.textContent = `${labelMap[c.slug] ?? c.nom} — ${c.pct.toFixed(2)} %`;
+      detailList.appendChild(li);
+    }
+  }
+
+  search?.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    svg?.querySelectorAll('path[data-code]').forEach((path) => {
+      const el = path;
+      const nom = el.getAttribute('data-nom') ?? '';
+      const code = el.getAttribute('data-code') ?? '';
+      const match = !q || nom.includes(q) || code.includes(q);
+      el.style.opacity = match ? '1' : '0.15';
+    });
+  });
+
+  function bindPath(path) {
+    path.addEventListener('click', () => {
+      const code = path.getAttribute('data-code');
+      if (code) showDetail(code);
+    });
+    path.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const code = path.getAttribute('data-code');
+        if (code) showDetail(code);
+      }
+    });
+  }
+
+  svg?.querySelectorAll('path[data-code]').forEach((path) => bindPath(path));
+</script>
+
+<style>
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .search-label {
+    display: block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .search-label input {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    margin-top: 0.25rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--fg);
+  }
+  .map-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+  .france-map {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .france-map path {
+    cursor: pointer;
+    transition: fill-opacity 0.15s ease;
+  }
+  .france-map path:hover,
+  .france-map path:focus-visible {
+    fill-opacity: 1;
+    outline: 2px solid var(--accent);
+    outline-offset: 0;
+  }
+  .dept-detail ol {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
+  }
+  .overseas {
+    margin-bottom: 1rem;
+  }
+  .overseas h4 {
+    font-size: 0.95rem;
+    margin: 0 0 0.35rem;
+  }
+  .overseas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .overseas-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+</style>

@@ -22,7 +22,10 @@ npm install
 npm run dev          # http://localhost:4321
 npm test
 npm run sync:data    # rafraîchir le cache open data
-npm run import:dept-2022  # régénérer JSON départements 2022 (data.gouv.fr)
+npm run import:elections  # départements 2017+2022 + geo SVG
+npm run import:dept-2022  # régénérer JSON départements 2022 (TXT data.gouv.fr)
+npm run import:dept-2017    # régénérer JSON départements 2017 (XLS data.gouv.fr)
+npm run build:geo           # paths SVG départements (carte)
 npm run build        # sync + build statique → dist/
 ```
 
@@ -34,7 +37,9 @@ Node **≥ 22.12**.
 |-------|-------------|
 | `/` | Accueil + hero + mission |
 | `/atlas` | Sélecteur d'élections |
-| `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour |
+| `/atlas/2017-presidentielle` | Résultats 1er tour 2017 + carte départements |
+| `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour + carte |
+| `/analyses/legislatives-2024-desistements` | Dossier désistements législatives 2024 |
 | `/a-propos` | Charte éditoriale + méthodologie |
 | `/sources` | Jeux data.gouv.fr, horodatage |
 
@@ -42,12 +47,14 @@ Node **≥ 22.12**.
 
 ```text
 src/
-  components/   # visualisations (bar chart, résumé national)
-  data/elections/  # JSON résultats officiels
+  components/   # visualisations (bar chart, carte SVG départements)
+  data/elections/  # JSON résultats officiels (2017, 2022)
+  data/geo/     # paths SVG départements (build:geo)
+  data/analyses/  # dossiers thématiques (ex. législatives 2024)
   lib/          # client data.gouv, elections, cache, mapping
   pages/        # routes Astro (atlas, à propos…)
   layouts/
-scripts/        # sync-data.ts
+scripts/        # sync-data, import départements, build-dept-svg
 data/cache/     # manifeste catalogue (gitignored)
 docs/           # éditorial, prompt Cursor, agent Grok
 ```

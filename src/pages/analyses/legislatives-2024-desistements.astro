@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import analysis from '../../data/analyses/legislatives-2024-desistements.json';
+
+const t1 = new Date(analysis.date_premier_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const t2 = new Date(analysis.date_second_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<BaseLayout
+  title="Législatives 2024 — désistements"
+  description="Impact des désistements sur la distorsion entre premier et second tour — législatives 2024."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/atlas">Atlas</a> → Analyses → Législatives 2024
+  </nav>
+
+  <section>
+    <h2>{analysis.title}</h2>
+    <p>
+      Les législatives anticipées de 2024 illustrent à grande échelle le mécanisme que ce média
+      documente : une pluralité massive au premier tour, puis une reconfiguration du second tour par
+      les désistements et le vote « barrage ».
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Premier tour (<time datetime={analysis.date_premier_tour}>{t1}</time>)</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>Participation</dt>
+        <dd>{analysis.premier_tour.participation_pct} %</dd>
+      </div>
+      <div>
+        <dt>RN (% exprimés)</dt>
+        <dd>{analysis.premier_tour.rn_pct_exprimes} %</dd>
+      </div>
+      <div>
+        <dt>Circonscriptions avec RN qualifié</dt>
+        <dd>{analysis.premier_tour.rn_circonscriptions_qualifiees}</dd>
+      </div>
+      <div>
+        <dt>Triangulaires potentielles</dt>
+        <dd>{analysis.premier_tour.triangulaires_potentielles}</dd>
+      </div>
+      <div>
+        <dt>Quadrangulaires potentielles</dt>
+        <dd>{analysis.premier_tour.quadrangulaires_potentielles}</dd>
+      </div>
+      <div>
+        <dt>Candidats au 1er tour</dt>
+        <dd>{analysis.premier_tour.candidats_premier_tour.toLocaleString('fr-FR')}</dd>
+      </div>
+    </dl>
+    <p>
+      Configuration inédite : le RN arrive en tête d'un premier tour législatif. Plus de 300
+      circonscriptions pouvaient accueillir une triangulaire — record historique.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Désistements (entre-deux-tours)</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>Candidats désistés (officiel)</dt>
+        <dd>{analysis.desistements.total_candidats}</dd>
+      </div>
+      <div>
+        <dt>Circonscriptions concernées</dt>
+        <dd>{analysis.desistements.circonscriptions_concernees}</dd>
+      </div>
+      <div>
+        <dt>Triangulaires restantes</dt>
+        <dd>{analysis.desistements.triangulaires_apres}</dd>
+      </div>
+      <div>
+        <dt>Quadrangulaires restantes</dt>
+        <dd>{analysis.desistements.quadrangulaires_apres}</dd>
+      </div>
+    </dl>
+    <p>{analysis.desistements.commentaire}</p>
+    <p class="meta">
+      Estimations NFP ~{analysis.desistements.par_bloc_estime.nfp} · Ensemble ~{analysis.desistements.par_bloc_estime.ensemble} désistements.
+      {analysis.desistements.par_bloc_estime.lr_maintiens_majoritaires}.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Distorsion au second tour (<time datetime={analysis.date_second_tour}>{t2}</time>)</h3>
+    <p>{analysis.distorsion.resume}</p>
+    <dl class="fact-grid">
+      <div>
+        <dt>Sièges RN</dt>
+        <dd>{analysis.distorsion.second_tour_rn_sieges}</dd>
+      </div>
+      <div>
+        <dt>RN (% exprimés 2nd tour)</dt>
+        <dd>{analysis.distorsion.second_tour_rn_pct_exprimes} %</dd>
+      </div>
+    </dl>
+    <p class="meta">
+      Le média ne moralise pas le vote tactique : il rend visible la différence entre la photographie
+      pluraliste du premier tour et le duel reconfiguré du second.
+    </p>
+  </section>
+
+  <section>
+    <h3>Sources</h3>
+    <ul>
+      {
+        analysis.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">{s.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+  }
+  .fact-grid dt {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .fact-grid dd {
+    margin: 0.15rem 0 0;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

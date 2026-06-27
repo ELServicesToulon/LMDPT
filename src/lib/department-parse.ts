@@ -3,71 +3,14 @@
 export const PRESIDENTIELLE_2022_DEPT_SOURCE_URL =
   'https://static.data.gouv.fr/resources/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-1er-tour/20220414-152356/resultats-par-niveau-dpt-t1-france-entiere.txt';
 
-export const CANDIDATE_SLUGS = [
-  'macron',
-  'le-pen',
-  'melenchon',
-  'zemmour',
-  'pecresse',
-  'jadot',
-  'lassalle',
-  'roussel',
-  'dupont-aignan',
-  'hidalgo',
-  'poutou',
-  'arthaud',
-] as const;
+export const PRESIDENTIELLE_2017_DEPT_SOURCE_URL =
+  'https://static.data.gouv.fr/resources/election-presidentielle-des-23-avril-et-7-mai-2017-resultats-definitifs-du-1er-tour-1/20170427-100131/Presidentielle_2017_Resultats_Tour_1_c.xls';
 
-export type CandidateSlug = (typeof CANDIDATE_SLUGS)[number];
+export { candidateSlug } from './candidate-style';
 
-export const CANDIDATE_COLORS: Record<CandidateSlug, string> = {
-  macron: '#1e4d6b',
-  'le-pen': '#5c4a72',
-  melenchon: '#c0392b',
-  zemmour: '#8b6914',
-  pecresse: '#0066cc',
-  jadot: '#2d8a4e',
-  lassalle: '#6b8e23',
-  roussel: '#cc3333',
-  'dupont-aignan': '#336699',
-  hidalgo: '#e91e8c',
-  poutou: '#555555',
-  arthaud: '#990000',
-};
-
-export const CANDIDATE_LABELS: Record<CandidateSlug, string> = {
-  macron: 'Macron',
-  'le-pen': 'Le Pen',
-  melenchon: 'Mélenchon',
-  zemmour: 'Zemmour',
-  pecresse: 'Pécresse',
-  jadot: 'Jadot',
-  lassalle: 'Lassalle',
-  roussel: 'Roussel',
-  'dupont-aignan': 'Dupont-Aignan',
-  hidalgo: 'Hidalgo',
-  poutou: 'Poutou',
-  arthaud: 'Arthaud',
-};
-
-export function candidateSlug(nom: string, prenom: string): CandidateSlug {
-  const key = `${prenom} ${nom}`.normalize('NFD').replace(/\p{M}/gu, '').toUpperCase();
-  if (key.includes('MACRON')) return 'macron';
-  if (key.includes('LE PEN')) return 'le-pen';
-  if (key.includes('MELENCHON')) return 'melenchon';
-  if (key.includes('ZEMMOUR')) return 'zemmour';
-  if (key.includes('PECRESSE')) return 'pecresse';
-  if (key.includes('JADOT')) return 'jadot';
-  if (key.includes('LASSALLE')) return 'lassalle';
-  if (key.includes('ROUSSEL')) return 'roussel';
-  if (key.includes('DUPONT')) return 'dupont-aignan';
-  if (key.includes('HIDALGO')) return 'hidalgo';
-  if (key.includes('POUTOU')) return 'poutou';
-  return 'arthaud';
-}
-
-export function parseFrenchNumber(value: string): number {
-  return Number(value.replace(/\s/g, '').replace(',', '.'));
+export function parseFrenchNumber(value: string | number): number {
+  if (typeof value === 'number') return value;
+  return Number(String(value).replace(/\s/g, '').replace(',', '.'));
 }
 
 export interface RawDeptRow {

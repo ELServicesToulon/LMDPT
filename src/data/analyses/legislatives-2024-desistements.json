@@ -1,0 +1,45 @@
+{
+  "title": "Législatives 2024 — désistements et distorsion du second tour",
+  "date_premier_tour": "2024-06-30",
+  "date_second_tour": "2024-07-07",
+  "sources": [
+    {
+      "label": "Ministère de l'Intérieur (désistements officiels)",
+      "url": "https://www.interieur.gouv.fr/"
+    },
+    {
+      "label": "Archives résultats législatives 2024",
+      "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/legislatives-2024/"
+    },
+    {
+      "label": "Franceinfo — décompte désistements (correctif 215)",
+      "url": "https://www.franceinfo.fr/elections/legislatives/infographies-legislatives-2024-211-candidats-se-sont-desistes-pour-faire-barrage-au-rn-au-second-tour-selon-notre-decompte_6640605.html"
+    }
+  ],
+  "premier_tour": {
+    "participation_pct": 66.71,
+    "rn_pct_exprimes": 33.2,
+    "rn_circonscriptions_qualifiees": 446,
+    "elus_premier_tour": 76,
+    "triangulaires_potentielles": 306,
+    "quadrangulaires_potentielles": 5,
+    "candidats_premier_tour": 4011
+  },
+  "desistements": {
+    "total_candidats": 215,
+    "circonscriptions_concernees": 214,
+    "triangulaires_apres": 89,
+    "quadrangulaires_apres": 2,
+    "par_bloc_estime": {
+      "nfp": 127,
+      "ensemble": 81,
+      "lr_maintiens_majoritaires": "majorité des candidats LR maintenus"
+    },
+    "commentaire": "Chiffres désistements : total officiel Ministère de l'Intérieur (215). Répartition par bloc : estimations médias (LCP, Franceinfo) — à croiser avec open data circonscription par circonscription en Phase 3."
+  },
+  "distorsion": {
+    "resume": "Au premier tour, le RN arrive en tête avec 33,2 % des suffrages exprimés — une configuration inédite. Le second tour est reconfiguré par 215 désistements qui ramènent les triangulaires de 306 à 89 : le duel binaire redevient la norme, mais sur des bases différentes de la pluralité du premier tour.",
+    "second_tour_rn_sieges": 143,
+    "second_tour_rn_pct_exprimes": 37.0
+  }
+}

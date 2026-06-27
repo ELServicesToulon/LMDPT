@@ -15,6 +15,9 @@
     "test:watch": "vitest",
     "sync:data": "tsx scripts/sync-data.ts",
     "import:dept-2022": "tsx scripts/import-presidentielle-2022-departements.ts",
+    "import:dept-2017": "tsx scripts/import-presidentielle-2017-departements.ts",
+    "build:geo": "tsx scripts/build-dept-svg.ts",
+    "import:elections": "npm run import:dept-2022 && npm run import:dept-2017 && npm run build:geo",
     "dns:iarbre": "node scripts/setup-dns-iarbre.mjs"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "tsx": "^4.19.4",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "xlsx": "^0.18.5"
   }
 }

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DepartmentSvgMap from '../../components/DepartmentSvgMap.astro';
+import NationalSummary from '../../components/NationalSummary.astro';
+import ResultsBarChart from '../../components/ResultsBarChart.astro';
+import { getDepartmentResults } from '../../lib/departments';
+import { formatPct, getElection, getElectionSummary, top3PctExprimes } from '../../lib/elections';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: '2022-presidentielle' } },
+    { params: { slug: '2017-presidentielle' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const summary = slug ? getElectionSummary(slug) : undefined;
+const dataset = slug ? getElection(slug) : undefined;
+const deptData = slug ? getDepartmentResults(slug) : undefined;
+
+if (!slug || !summary || !dataset) {
+  throw new Error(`Élection inconnue : ${slug ?? '(vide)'}`);
+}
+
+const dateLabel = new Date(dataset.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const top3 = top3PctExprimes(dataset);
+const top3Names = [...dataset.national.candidats]
+  .sort((a, b) => b.pourcentage_exprimes - a.pourcentage_exprimes)
+  .slice(0, 3)
+  .map((c) => c.nom.split(' ').pop())
+  .join(' / ');
+---
+
+<BaseLayout
+  title={summary.title}
+  description={`Résultats officiels du premier tour — ${summary.title}. Pluralité nationale documentée.`}
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/atlas">Atlas</a> → {summary.title}
+  </nav>
+
+  <section>
+    <h2>{dataset.election}</h2>
+    <p class="meta">
+      <time datetime={dataset.date}>{dateLabel}</time> · Source :{' '}
+      <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
+    </p>
+    <p>
+      {dataset.national.candidats.length} candidats au premier tour : les trois premiers (
+      {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés — la
+      pluralité reste visible sur l'ensemble du spectre, ce que le second tour ne reflète plus.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Participation</h3>
+    <NationalSummary national={dataset.national} />
+  </section>
+
+  <ResultsBarChart candidats={dataset.national.candidats} />
+
+  {deptData && <DepartmentSvgMap departements={deptData.departements} electionSlug={slug} />}
+
+  {summary.distorsion_note && (
+    <section class="card">
+      <h3>Premier tour vs second tour</h3>
+      <p>{summary.distorsion_note}</p>
+      <p class="meta">
+        Analyse pédagogique — pas de prédiction ni de moralisation du vote tactique. Voir aussi{' '}
+        <a href="/analyses/legislatives-2024-desistements">législatives 2024 (désistements)</a>.
+      </p>
+    </section>
+  )}
+
+  <section>
+    <h3>Méthodologie</h3>
+    <ul>
+      <li>Données nationales et départementales depuis les résultats officiels publiés.</li>
+      <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
+      <li>Téléchargement des jeux bruts : page <a href="/sources">Sources</a>.</li>
+    </ul>
+  </section>
+</BaseLayout>
