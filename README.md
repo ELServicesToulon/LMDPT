@@ -15,6 +15,12 @@ Couvrir le premier tour avec des données publiques officielles (`data.gouv.fr`)
 - Cache local `data/cache/sources-manifest.json` (`npm run sync:data`)
 - Tests Vitest
 
+## Workspace Cursor (multi-root)
+
+Ouvrir **`lmdpt.code-workspace`** (repo + hub Manusk `projects/lmdpt` + vault second-brain + `Mediconvoi/backend` pour deploy).
+
+Alternative : dossier racine dans `mediconvoi.code-workspace` (monorepo Mediconvoi).
+
 ## Démarrage local
 
 ```bash

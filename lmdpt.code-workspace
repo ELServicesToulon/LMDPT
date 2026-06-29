@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"name": "LMDPT — site Astro",
+			"path": "."
+		},
+		{
+			"name": "Manusk — hub lmdpt",
+			"path": "../mediconvoi/second-brain/projects/lmdpt"
+		},
+		{
+			"name": "Manusk — vault second-brain",
+			"path": "../mediconvoi/second-brain"
+		},
+		{
+			"name": "Mediconvoi — deploy ops",
+			"path": "../Mediconvoi/backend"
+		}
+	],
+	"settings": {
+		"task.allowAutomaticTasks": "off",
+		"files.watcherExclude": {
+			"**/node_modules/**": true,
+			"**/dist/**": true,
+			"**/.git/objects/**": true
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/data/cache": false
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"astro-build.astro-vscode"
+		]
+	}
+}
