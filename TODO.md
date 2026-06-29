@@ -92,4 +92,4 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 1. DNS Cloudflare : `npm run dns:iarbre` (CNAME DNS only — évite challenge 403)
 2. Vérifier le site : [lmdpt.iarbre.org](https://lmdpt.iarbre.org) après deploy GitHub Pages
-3. P2-2 : enrichir journal mises à jour `/sources#mises-a-jour`
+3. P2-3 : dossier long présidentielle 2027 (préparation)

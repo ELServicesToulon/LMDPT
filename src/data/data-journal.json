@@ -1,8 +1,44 @@
 [
   {
+    "date": "2026-06-29",
+    "label": "Législatives 2024 — résultats nationaux (22 nuances)",
+    "source": "resultats-definitifs-france-entiere.xlsx (Ministère de l'Intérieur)",
+    "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/",
+    "pages": ["/atlas/2024-legislatives"],
+    "license": "lov2",
+    "script": "npm run import:legislatives-2024"
+  },
+  {
+    "date": "2026-06-29",
+    "label": "Législatives 2024 — 577 circonscriptions (1er tour)",
+    "source": "lg2024-resultats-circonscriptions-une-ligne-par-circo2.csv",
+    "datasetUrl": "https://www.data.gouv.fr/fr/datasets/resultats-du-1er-tour-des-elections-legislatives-2024-par-circonscription/",
+    "pages": ["/atlas/2024-legislatives"],
+    "license": "lov2",
+    "script": "npm run import:legislatives-2024"
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Législatives 2024 — dossier désistements (306 → 89 duels)",
+    "source": "Ministère de l'Intérieur, Franceinfo (correctif 215)",
+    "pages": ["/analyses/legislatives-2024-desistements"],
+    "license": "lov2",
+    "licenseNote": "Données officielles en Licence Ouverte ; infographie Franceinfo citée comme source.",
+    "script": null
+  },
+  {
+    "date": "2026-06-27",
+    "label": "Présidentielle 2022 — départements (101)",
+    "source": "resultats-par-niveau-dpt-t1-france-entiere.txt",
+    "pages": ["/atlas/2022-presidentielle"],
+    "license": "lov2",
+    "script": "npm run import:dept-2022"
+  },
+  {
     "date": "2026-06-27",
     "label": "Présidentielle 2017 — départements (107)",
     "source": "Presidentielle_2017_Resultats_Tour_1_c.xls (data.gouv.fr)",
+    "pages": ["/atlas/2017-presidentielle"],
     "license": "lov2",
     "script": "npm run import:dept-2017"
   },
@@ -10,36 +46,24 @@
     "date": "2026-06-27",
     "label": "Carte SVG départements (96 métropole + Corse)",
     "source": "gregoiredavid/france-geojson",
+    "pages": ["/atlas/2017-presidentielle", "/atlas/2022-presidentielle"],
     "license": "lov2",
     "script": "npm run build:geo"
   },
   {
     "date": "2026-06-27",
-    "label": "Présidentielle 2022 — départements (101)",
-    "source": "resultats-par-niveau-dpt-t1-france-entiere.txt",
-    "license": "lov2",
-    "script": "npm run import:dept-2022"
-  },
-  {
-    "date": "2026-06-27",
-    "label": "Présidentielles 2017 et 2022 — résultats nationaux",
+    "label": "Présidentielle 2022 — résultats nationaux (12 candidats)",
     "source": "Conseil constitutionnel / Ministère de l'Intérieur",
+    "pages": ["/atlas/2022-presidentielle", "/analyses/presidentielle-distorsion"],
     "license": "lov2",
     "script": null
   },
   {
     "date": "2026-06-27",
-    "label": "Législatives 2024 — dossier désistements",
-    "source": "Ministère de l'Intérieur, Franceinfo (correctif 215)",
+    "label": "Présidentielle 2017 — résultats nationaux (11 candidats)",
+    "source": "Conseil constitutionnel / Ministère de l'Intérieur",
+    "pages": ["/atlas/2017-presidentielle", "/analyses/presidentielle-distorsion"],
     "license": "lov2",
-    "licenseNote": "Données officielles en Licence Ouverte ; infographie Franceinfo citée comme source.",
     "script": null
-  },
-  {
-    "date": "2026-06-29",
-    "label": "Législatives 2024 — national + 577 circonscriptions (1er tour)",
-    "source": "data.gouv.fr — Ministère de l'Intérieur",
-    "license": "lov2",
-    "script": "npm run import:legislatives-2024"
   }
 ]

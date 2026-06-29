@@ -1,10 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import dataJournal from '../data/data-journal.json';
+import { getJournalLastUpdate, getSortedJournal } from '../lib/data-journal';
 import { formatLicenseLabel } from '../lib/license-labels';
 import { loadSourcesManifest } from '../lib/sources';
 
 const manifest = await loadSourcesManifest();
+const dataJournal = getSortedJournal();
+const journalLastUpdate = getJournalLastUpdate();
+const journalLastLabel = journalLastUpdate
+  ? new Date(journalLastUpdate).toLocaleDateString('fr-FR', { dateStyle: 'long' })
+  : null;
 const fetchedAt = new Date(manifest.fetchedAt);
 const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
   dateStyle: 'long',
@@ -27,31 +32,66 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
 
   <section class="card" id="mises-a-jour">
     <h3>Journal des jeux intégrés au site</h3>
-    <p class="meta">JSON statiques versionnés dans le dépôt — indépendant du cache catalogue ci-dessous.</p>
-    <ul class="resources">
-      {
-        dataJournal.map((entry) => (
-          <li>
-            <time datetime={entry.date}>
-              {new Date(entry.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-            </time>
-            {' '}— {entry.label}
-            <span class="meta"> ({entry.source})</span>
-            {entry.license && (
-              <>
-                {' '}· Licence : {formatLicenseLabel(entry.license)}
-                {entry.licenseNote && <span class="meta"> — {entry.licenseNote}</span>}
-              </>
-            )}
-            {entry.script && (
-              <>
-                {' '}· <code>{entry.script}</code>
-              </>
-            )}
-          </li>
-        ))
-      }
-    </ul>
+    <p class="meta">
+      {dataJournal.length} entrée{dataJournal.length > 1 ? 's' : ''} versionnée{dataJournal.length > 1 ? 's' : ''}
+      {journalLastLabel && (
+        <>
+          {' '}· dernière intégration : <time datetime={journalLastUpdate}>{journalLastLabel}</time>
+        </>
+      )}
+      . Fichier source : <code>src/data/data-journal.json</code>.
+    </p>
+    <div class="journal-table-wrap">
+      <table class="journal-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Jeu intégré</th>
+            <th scope="col">Page(s)</th>
+            <th scope="col">Source</th>
+            <th scope="col">Licence</th>
+            <th scope="col">Commande</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            dataJournal.map((entry) => (
+              <tr>
+                <td>
+                  <time datetime={entry.date}>
+                    {new Date(entry.date).toLocaleDateString('fr-FR', { dateStyle: 'short' })}
+                  </time>
+                </td>
+                <td>
+                  <strong>{entry.label}</strong>
+                  {entry.licenseNote && <p class="meta note">{entry.licenseNote}</p>}
+                </td>
+                <td>
+                  <ul class="page-links">
+                    {entry.pages?.map((page) => (
+                      <li>
+                        <a href={page}>{page}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+                <td>
+                  {entry.datasetUrl ? (
+                    <a href={entry.datasetUrl} rel="noopener noreferrer">
+                      {entry.source}
+                    </a>
+                  ) : (
+                    entry.source
+                  )}
+                </td>
+                <td>{formatLicenseLabel(entry.license)}</td>
+                <td>{entry.script ? <code>{entry.script}</code> : <span class="meta">—</span>}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
   </section>
 
   {
@@ -124,3 +164,42 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     )
   }
 </BaseLayout>
+
+<style>
+  .journal-table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .journal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+  }
+  .journal-table th,
+  .journal-table td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.65rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .journal-table th {
+    background: var(--card);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .page-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .page-links li + li {
+    margin-top: 0.2rem;
+  }
+  .note {
+    margin: 0.35rem 0 0;
+    font-size: 0.8rem;
+  }
+</style>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import dataJournal from '../data/data-journal.json';
+import { getSortedJournal } from './data-journal';
 import manifest from '../../data/cache/sources-manifest.json';
 import { formatLicenseLabel } from './license-labels';
 
@@ -19,7 +19,7 @@ describe('formatLicenseLabel', () => {
 
 describe('license coverage (/sources)', () => {
   it('every integrated journal entry has a license', () => {
-    for (const entry of dataJournal) {
+    for (const entry of getSortedJournal()) {
       expect(entry.license, entry.label).toBeTruthy();
     }
   });
