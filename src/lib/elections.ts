@@ -1,10 +1,12 @@
 import type { ElectionDataset } from './election-types';
 import presidentielle2017 from '../data/elections/2017-presidentielle-1er-tour-national.json';
 import presidentielle2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
+import legislatives2024 from '../data/elections/2024-legislatives-1er-tour-national.json';
 
 const REGISTRY: Record<string, ElectionDataset> = {
   '2017-presidentielle': presidentielle2017 as ElectionDataset,
   '2022-presidentielle': presidentielle2022 as ElectionDataset,
+  '2024-legislatives': legislatives2024 as ElectionDataset,
 };
 
 export interface ElectionSummary {
@@ -17,6 +19,14 @@ export interface ElectionSummary {
 }
 
 export const ELECTION_CATALOG: ElectionSummary[] = [
+  {
+    slug: '2024-legislatives',
+    title: 'Législatives 2024 — 1er tour',
+    date: '2024-06-30',
+    tour: 1,
+    distorsion_note:
+      'Second tour : 143 sièges RN — 215 désistements ont reconfiguré 306 triangulaires potentielles en 89 duels binaires.',
+  },
   {
     slug: '2022-presidentielle',
     title: 'Présidentielle 2022 — 1er tour',

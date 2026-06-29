@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import dataJournal from '../data/data-journal.json';
+import { formatLicenseLabel } from '../lib/license-labels';
 import { loadSourcesManifest } from '../lib/sources';
 
 const manifest = await loadSourcesManifest();
@@ -36,6 +37,12 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
             </time>
             {' '}— {entry.label}
             <span class="meta"> ({entry.source})</span>
+            {entry.license && (
+              <>
+                {' '}· Licence : {formatLicenseLabel(entry.license)}
+                {entry.licenseNote && <span class="meta"> — {entry.licenseNote}</span>}
+              </>
+            )}
             {entry.script && (
               <>
                 {' '}· <code>{entry.script}</code>
@@ -86,7 +93,9 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
               <a href={dataset.page} rel="noopener noreferrer">{dataset.title}</a>
             </h3>
             {dataset.organization && <p class="meta">Producteur : {dataset.organization}</p>}
-            {dataset.license && <p class="meta">Licence : {dataset.license}</p>}
+            {dataset.license && (
+              <p class="meta">Licence : {formatLicenseLabel(dataset.license)}</p>
+            )}
             {dataset.last_update && (
               <p class="meta">
                 Dernière mise à jour (métadonnées) :{' '}

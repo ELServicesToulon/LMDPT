@@ -1,0 +1,185 @@
+---
+import type { CirconscriptionResult } from '../lib/election-types';
+import { formatPct } from '../lib/elections';
+import { legendForNuances, nuanceColor, nuanceLabel } from '../lib/circonscriptions';
+
+interface Props {
+  circonscriptions: CirconscriptionResult[];
+  electionSlug: string;
+}
+
+const { circonscriptions } = Astro.props;
+
+const nuanceCodes = [...new Set(circonscriptions.map((c) => c.leader_nuance_code))];
+const legend = legendForNuances(nuanceCodes);
+
+const byDept = new Map<string, CirconscriptionResult[]>();
+for (const c of circonscriptions) {
+  const list = byDept.get(c.departement) ?? [];
+  list.push(c);
+  byDept.set(c.departement, list);
+}
+const departements = [...byDept.keys()].sort();
+---
+
+<section class="card circo-block" aria-labelledby="circo-title">
+  <h3 id="circo-title">577 circonscriptions — leader au 1er tour</h3>
+  <p class="meta">
+    Une ligne par circonscription : candidat en tête, nuance et part des suffrages exprimés. Données
+    officielles agrégées depuis data.gouv.fr.
+  </p>
+
+  <div class="legend" aria-label="Légende des nuances">
+    {
+      legend.slice(0, 8).map((item) => (
+        <span class="legend-item">
+          <span class="swatch" style={`background:${item.color}`} />
+          {item.label}
+        </span>
+      ))
+    }
+  </div>
+
+  <label class="filter">
+    Filtrer par département
+    <select id="dept-filter" aria-controls="circo-table">
+      <option value="">Tous ({circonscriptions.length})</option>
+      {
+        departements.map((d) => (
+          <option value={d}>
+            {d} ({byDept.get(d)?.length ?? 0})
+          </option>
+        ))
+      }
+    </select>
+  </label>
+
+  <div class="table-wrap">
+    <table id="circo-table">
+      <thead>
+        <tr>
+          <th scope="col">Circonscription</th>
+          <th scope="col">Dépt.</th>
+          <th scope="col">Leader</th>
+          <th scope="col">Nuance</th>
+          <th scope="col">%</th>
+          <th scope="col">T2</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          circonscriptions.map((c) => (
+            <tr data-dept={c.departement}>
+              <td>
+                <span class="circo-name">{c.nom}</span>
+                <span class="meta circo-code">{c.code}</span>
+              </td>
+              <td>{c.departement}</td>
+              <td>
+                {c.leader_prenom} {c.leader_nom}
+              </td>
+              <td>
+                <span class="nuance-pill" style={`--nuance-color:${nuanceColor(c.leader_nuance_code)}`}>
+                  {nuanceLabel(c.leader_nuance_code, c.leader_nuance)}
+                </span>
+              </td>
+              <td class="num">{formatPct(c.leader_pct)}</td>
+              <td>{c.qualifie_t2 ? 'Oui' : '—'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  const select = document.getElementById('dept-filter') as HTMLSelectElement | null;
+  const rows = document.querySelectorAll<HTMLTableRowElement>('#circo-table tbody tr');
+
+  select?.addEventListener('change', () => {
+    const dept = select.value;
+    rows.forEach((row) => {
+      const match = !dept || row.dataset.dept === dept;
+      row.hidden = !match;
+    });
+  });
+</script>
+
+<style>
+  .circo-block {
+    margin: 1.5rem 0;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.75rem 0 1rem;
+    font-size: 0.85rem;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  .filter select {
+    max-width: 14rem;
+    padding: 0.35rem 0.5rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    max-height: 28rem;
+    border: 1px solid var(--border, #ddd);
+    border-radius: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th,
+  td {
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border, #eee);
+    vertical-align: top;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: var(--card-bg, #fafafa);
+    z-index: 1;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .circo-name {
+    display: block;
+  }
+  .circo-code {
+    font-size: 0.75rem;
+  }
+  .nuance-pill {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--nuance-color) 18%, transparent);
+    border-left: 3px solid var(--nuance-color);
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+</style>

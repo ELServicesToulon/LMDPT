@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CirconscriptionsTable from '../../components/CirconscriptionsTable.astro';
 import DepartmentSvgMap from '../../components/DepartmentSvgMap.astro';
 import NationalSummary from '../../components/NationalSummary.astro';
 import ResultsBarChart from '../../components/ResultsBarChart.astro';
+import { countLeadersByNuance, getCirconscriptionResults } from '../../lib/circonscriptions';
 import { getDepartmentResults } from '../../lib/departments';
 import { formatPct, getElection, getElectionSummary, top3PctExprimes } from '../../lib/elections';
+import { nuanceLabel } from '../../lib/legislative-style';
 
 export function getStaticPaths() {
   return [
+    { params: { slug: '2024-legislatives' } },
     { params: { slug: '2022-presidentielle' } },
     { params: { slug: '2017-presidentielle' } },
   ];
@@ -17,6 +21,8 @@ const { slug } = Astro.params;
 const summary = slug ? getElectionSummary(slug) : undefined;
 const dataset = slug ? getElection(slug) : undefined;
 const deptData = slug ? getDepartmentResults(slug) : undefined;
+const circoData = slug ? getCirconscriptionResults(slug) : undefined;
+const isLegislatives = Boolean(circoData);
 
 if (!slug || !summary || !dataset) {
   throw new Error(`Élection inconnue : ${slug ?? '(vide)'}`);
@@ -27,8 +33,9 @@ const top3 = top3PctExprimes(dataset);
 const top3Names = [...dataset.national.candidats]
   .sort((a, b) => b.pourcentage_exprimes - a.pourcentage_exprimes)
   .slice(0, 3)
-  .map((c) => c.nom.split(' ').pop())
+  .map((c) => (isLegislatives ? c.nom : c.nom.split(' ').pop()))
   .join(' / ');
+const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [];
 ---
 
 <BaseLayout
@@ -46,9 +53,25 @@ const top3Names = [...dataset.national.candidats]
       <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
     </p>
     <p>
-      {dataset.national.candidats.length} candidats au premier tour : les trois premiers (
-      {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés — la
-      pluralité reste visible sur l'ensemble du spectre, ce que le second tour ne reflète plus.
+      {
+        isLegislatives ? (
+          <>
+            {dataset.national.candidats.length} nuances au premier tour : les trois premières (
+            {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés. En
+            tête de circonscription, les nuances dominantes sont{' '}
+            {circoLeaders
+              .map((entry) => `${nuanceLabel(entry.code)} (${entry.count})`)
+              .join(', ')}
+            .
+          </>
+        ) : (
+          <>
+            {dataset.national.candidats.length} candidats au premier tour : les trois premiers (
+            {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés — la
+            pluralité reste visible sur l'ensemble du spectre, ce que le second tour ne reflète plus.
+          </>
+        )
+      }
     </p>
   </section>
 
@@ -57,7 +80,14 @@ const top3Names = [...dataset.national.candidats]
     <NationalSummary national={dataset.national} />
   </section>
 
-  <ResultsBarChart candidats={dataset.national.candidats} />
+  <ResultsBarChart
+    candidats={dataset.national.candidats}
+    title={isLegislatives ? 'Résultats nationaux par nuance (suffrages exprimés)' : undefined}
+  />
+
+  {circoData && (
+    <CirconscriptionsTable circonscriptions={circoData.circonscriptions} electionSlug={slug} />
+  )}
 
   {deptData && <DepartmentSvgMap departements={deptData.departements} electionSlug={slug} />}
 
@@ -75,8 +105,20 @@ const top3Names = [...dataset.national.candidats]
   <section>
     <h3>Méthodologie</h3>
     <ul>
-      <li>Données nationales et départementales depuis les résultats officiels publiés.</li>
-      <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
+      <li>Données nationales depuis les résultats officiels publiés (data.gouv.fr).</li>
+      {
+        isLegislatives ? (
+          <li>
+            Circonscriptions : CSV « une ligne par circonscription » —{' '}
+            <a href={circoData?.source} rel="noopener noreferrer">
+              source data.gouv.fr
+            </a>
+            .
+          </li>
+        ) : (
+          <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
+        )
+      }
       <li>Téléchargement des jeux bruts : page <a href="/sources">Sources</a>.</li>
     </ul>
   </section>

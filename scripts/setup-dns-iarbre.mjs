@@ -10,7 +10,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadWorkspaceEnv } from "../../mediconvoi/scripts/load-workspace-env.mjs";
+import { loadWorkspaceEnv } from "../../Mediconvoi/scripts/load-workspace-env.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
@@ -28,7 +28,7 @@ async function resolveCloudflareToken() {
   const direct = (process.env.IARBE_CLOUDFLARE_API_TOKEN || process.env.CLOUDFLARE_API_TOKEN || "").trim();
   if (direct) return direct;
 
-  const backendDir = path.resolve(REPO_ROOT, "..", "mediconvoi", "backend");
+  const backendDir = path.resolve(REPO_ROOT, "..", "Mediconvoi", "backend");
   const resolver = path.join(backendDir, "scripts", "resolve-iarbre-cloudflare-token.ts");
   if (!existsSync(resolver)) return null;
 

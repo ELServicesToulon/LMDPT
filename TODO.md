@@ -44,9 +44,10 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Carte départements 2022 (SVG géographique + import TXT officiel) → `npm run import:dept-2022` · `npm run build:geo`
 - [x] Présidentielle 2017 (national + départements XLS) → `/atlas/2017-presidentielle`
 - [x] Dossier analyse législatives 2024 (désistements) → `/analyses/legislatives-2024-desistements`
+- [x] Atlas législatives 2024 — 577 circonscriptions → `/atlas/2024-legislatives` · `npm run import:legislatives-2024`
 - [x] Dossier analyse présidentielle (distorsion 1er/2nd tour) → `/analyses/presidentielle-distorsion`
 - [x] Index analyses → `/analyses`
-- [ ] Accessibilité + mobile-first (base OK, audit à faire)
+- [x] Accessibilité + mobile-first (Lighthouse preview 100/100 — 2026-06-29)
 
 ---
 
@@ -55,8 +56,8 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Mentions légales → `/mentions-legales`
 - [x] Politique de confidentialité → `/confidentialite`
 - [x] Journal des mises à jour données → `/sources#mises-a-jour`
-- [ ] Licences open data par ressource (ODbL, Etalab…) — partiel via page Sources
-- [ ] Revue éditoriale humaine avant publication auto
+- [x] Licences open data par ressource (ODbL, Etalab…) → journal intégré + jeux détaillés `/sources`
+- [x] Revue éditoriale humaine avant publication auto → `docs/REVIEW.md`
 
 ---
 
@@ -89,7 +90,6 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 ## Prochaine action recommandée
 
-1. Vérifier le site : [lmdpt.iarbre.org](https://lmdpt.iarbre.org)
-2. DNS Cloudflare si pas encore fait : `npm run dns:iarbre`
-3. Cartes circonscription législatives 2024 (open data, Phase 3+)
-4. Audit accessibilité mobile-first
+1. DNS Cloudflare : `npm run dns:iarbre` (CNAME DNS only — évite challenge 403)
+2. Vérifier le site : [lmdpt.iarbre.org](https://lmdpt.iarbre.org) après deploy GitHub Pages
+3. P2-2 : enrichir journal mises à jour `/sources#mises-a-jour`

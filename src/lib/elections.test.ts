@@ -27,9 +27,10 @@ describe('elections', () => {
     expect(sum).toBe(data!.national.exprimes);
   });
 
-  it('catalog lists 2017 and 2022', () => {
-    expect(ELECTION_CATALOG.length).toBe(2);
+  it('catalog lists 2017, 2022 and 2024 legislatives', () => {
+    expect(ELECTION_CATALOG.length).toBe(3);
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2017-presidentielle');
+    expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2024-legislatives');
   });
 
   it('formats numbers in fr-FR', () => {

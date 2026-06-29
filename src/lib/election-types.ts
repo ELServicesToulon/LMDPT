@@ -48,3 +48,27 @@ export interface DepartmentElectionDataset {
   source_label: string;
   departements: DepartmentResults[];
 }
+
+export interface CirconscriptionResult {
+  code: string;
+  departement: string;
+  nom: string;
+  inscrits: number;
+  exprimes: number;
+  nb_candidats: number;
+  leader_nom: string;
+  leader_prenom: string;
+  leader_nuance_code: string;
+  leader_nuance: string;
+  leader_voix: number;
+  leader_pct: number;
+  qualifie_t2: boolean;
+}
+
+export interface CirconscriptionElectionDataset {
+  election: string;
+  date: string;
+  source: string;
+  source_label: string;
+  circonscriptions: CirconscriptionResult[];
+}

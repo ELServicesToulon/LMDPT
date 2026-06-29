@@ -1,0 +1,171 @@
+{
+  "election": "Législatives 2024 — 1er tour",
+  "date": "2024-06-30",
+  "tour": 1,
+  "source": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/",
+  "source_label": "Ministère de l'Intérieur — résultats définitifs 1er tour (data.gouv.fr)",
+  "national": {
+    "inscrits": 49332709,
+    "abstention_pct": 33.29,
+    "votants": 32908657,
+    "blancs": 582908,
+    "nuls": 267803,
+    "exprimes": 32057946,
+    "candidats": [
+      {
+        "nom": "Rassemblement National",
+        "nuance": "RN",
+        "voix": 9377297,
+        "pourcentage_exprimes": 29.25,
+        "pourcentage_inscrits": 19.01
+      },
+      {
+        "nom": "Union de la gauche",
+        "nuance": "UG",
+        "voix": 8974566,
+        "pourcentage_exprimes": 27.99,
+        "pourcentage_inscrits": 18.19
+      },
+      {
+        "nom": "Ensemble ! (Majorit prsidentielle)",
+        "nuance": "ENS",
+        "voix": 6425217,
+        "pourcentage_exprimes": 20.04,
+        "pourcentage_inscrits": 13.02
+      },
+      {
+        "nom": "Les Rpublicains",
+        "nuance": "LR",
+        "voix": 2104918,
+        "pourcentage_exprimes": 6.57,
+        "pourcentage_inscrits": 4.27
+      },
+      {
+        "nom": "Union de l'extrme droite",
+        "nuance": "UXD",
+        "voix": 1251210,
+        "pourcentage_exprimes": 3.9,
+        "pourcentage_inscrits": 2.54
+      },
+      {
+        "nom": "Divers droite",
+        "nuance": "DVD",
+        "voix": 1172548,
+        "pourcentage_exprimes": 3.66,
+        "pourcentage_inscrits": 2.38
+      },
+      {
+        "nom": "Divers gauche",
+        "nuance": "DVG",
+        "voix": 491069,
+        "pourcentage_exprimes": 1.53,
+        "pourcentage_inscrits": 1
+      },
+      {
+        "nom": "Divers centre",
+        "nuance": "DVC",
+        "voix": 391408,
+        "pourcentage_exprimes": 1.22,
+        "pourcentage_inscrits": 0.79
+      },
+      {
+        "nom": "Extrme gauche",
+        "nuance": "EXG",
+        "voix": 367158,
+        "pourcentage_exprimes": 1.15,
+        "pourcentage_inscrits": 0.74
+      },
+      {
+        "nom": "Rgionaliste",
+        "nuance": "REG",
+        "voix": 335823,
+        "pourcentage_exprimes": 1.05,
+        "pourcentage_inscrits": 0.68
+      },
+      {
+        "nom": "Reconqute !",
+        "nuance": "REC",
+        "voix": 240006,
+        "pourcentage_exprimes": 0.75,
+        "pourcentage_inscrits": 0.49
+      },
+      {
+        "nom": "Horizons",
+        "nuance": "HOR",
+        "voix": 231667,
+        "pourcentage_exprimes": 0.72,
+        "pourcentage_inscrits": 0.47
+      },
+      {
+        "nom": "Ecologistes",
+        "nuance": "ECO",
+        "voix": 181989,
+        "pourcentage_exprimes": 0.57,
+        "pourcentage_inscrits": 0.37
+      },
+      {
+        "nom": "Union des Dmocrates et Indpendants",
+        "nuance": "UDI",
+        "voix": 163072,
+        "pourcentage_exprimes": 0.51,
+        "pourcentage_inscrits": 0.33
+      },
+      {
+        "nom": "Divers",
+        "nuance": "DIV",
+        "voix": 142866,
+        "pourcentage_exprimes": 0.45,
+        "pourcentage_inscrits": 0.29
+      },
+      {
+        "nom": "Droite souverainiste",
+        "nuance": "DSV",
+        "voix": 90090,
+        "pourcentage_exprimes": 0.28,
+        "pourcentage_inscrits": 0.18
+      },
+      {
+        "nom": "Extrme droite",
+        "nuance": "EXD",
+        "voix": 59679,
+        "pourcentage_exprimes": 0.19,
+        "pourcentage_inscrits": 0.12
+      },
+      {
+        "nom": "Parti socialiste",
+        "nuance": "SOC",
+        "voix": 29242,
+        "pourcentage_exprimes": 0.09,
+        "pourcentage_inscrits": 0.06
+      },
+      {
+        "nom": "Parti radical de gauche",
+        "nuance": "RDG",
+        "voix": 12434,
+        "pourcentage_exprimes": 0.04,
+        "pourcentage_inscrits": 0.03
+      },
+      {
+        "nom": "La France insoumise",
+        "nuance": "FI",
+        "voix": 12223,
+        "pourcentage_exprimes": 0.04,
+        "pourcentage_inscrits": 0.02
+      },
+      {
+        "nom": "Parti communiste franais",
+        "nuance": "COM",
+        "voix": 3125,
+        "pourcentage_exprimes": 0.01,
+        "pourcentage_inscrits": 0.01
+      },
+      {
+        "nom": "Les Ecologistes",
+        "nuance": "VEC",
+        "voix": 2668,
+        "pourcentage_exprimes": 0.01,
+        "pourcentage_inscrits": 0.01
+      }
+    ]
+  }
+}
