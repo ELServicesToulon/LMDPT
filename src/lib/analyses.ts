@@ -5,6 +5,8 @@ export interface AnalysisSummary {
   date: string;
   /** Route Astro sans slash final */
   href: string;
+  /** Dossier stub — données officielles pas encore intégrées */
+  preparation?: boolean;
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
@@ -23,6 +25,15 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
       '306 triangulaires potentielles → 89 après 215 désistements officiels. Impact sur la représentation au second tour.',
     date: '2024-07-07',
     href: '/analyses/legislatives-2024-desistements',
+  },
+  {
+    slug: 'presidentielle-2027-preparation',
+    title: 'Présidentielle 2027 — préparation',
+    description:
+      'Sources officielles, calendrier indicatif et feuille de route pour documenter le premier tour 2027 — sans prédiction.',
+    date: '2026-06-29',
+    href: '/analyses/presidentielle-2027-preparation',
+    preparation: true,
   },
 ];
 

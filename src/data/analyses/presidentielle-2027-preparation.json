@@ -1,0 +1,80 @@
+{
+  "title": "Présidentielle 2027 — dossier de préparation",
+  "status": "preparation",
+  "updated": "2026-06-29",
+  "election_label": "Élection présidentielle 2027",
+  "calendar": {
+    "note": "Dates indicatives — le calendrier définitif est fixé par décret (Code électoral, art. L. 41 et s.). Vérifier Conseil constitutionnel et service-public avant publication.",
+    "premier_tour_indicatif": "2027-04-11",
+    "second_tour_indicatif": "2027-04-25",
+    "publication_liste_candidats_indicatif": "2027-03-08"
+  },
+  "scope": {
+    "objectif": "Préparer l'intégration open data du premier tour 2027 dès publication officielle — pluralité documentée, sans prédiction ni sondage.",
+    "inclus": [
+      "Résultats nationaux et par département (même granularité que 2017/2022)",
+      "Fiches candidats qualifiés (équivalence de présentation)",
+      "Comparaison factuelle 2017 / 2022 / 2027 au premier tour",
+      "Section distorsion 1er / 2nd tour après le second tour"
+    ],
+    "exclu": [
+      "Sondages et projections",
+      "Classements éliminatoires avant scrutin",
+      "Publication automatique sans revue humaine (cf. docs/REVIEW.md)"
+    ]
+  },
+  "milestones": [
+    {
+      "phase": "Veille",
+      "label": "Surveiller data.gouv.fr et archives intérieur.gouv.fr",
+      "gate": "Jeu national 1er tour publié"
+    },
+    {
+      "phase": "Intégration",
+      "label": "Import JSON statique + page Atlas /atlas/2027-presidentielle",
+      "gate": "npm test + npm run build verts"
+    },
+    {
+      "phase": "Analyse",
+      "label": "Dossier distorsion 2027 (compléter presidentielle-distorsion ou page dédiée)",
+      "gate": "Revue éditoriale humaine"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Conseil constitutionnel — élection présidentielle",
+      "url": "https://www.conseil-constitutionnel.fr/elections/presidentielles",
+      "role": "Liste officielle des candidats qualifiés"
+    },
+    {
+      "label": "Archives résultats — Ministère de l'Intérieur",
+      "url": "https://www.archives-resultats-elections.interieur.gouv.fr/",
+      "role": "Résultats officiels par scrutin (à compléter pour 2027)"
+    },
+    {
+      "label": "data.gouv.fr — recherche « élection présidentielle 2027 »",
+      "url": "https://www.data.gouv.fr/fr/search?q=%C3%A9lection+pr%C3%A9sidentielle+2027",
+      "role": "Jeux open data nationaux et territoriaux"
+    },
+    {
+      "label": "Service-public — calendrier électoral",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/R17588",
+      "role": "Dates réglementaires et décrets"
+    },
+    {
+      "label": "Code électoral — campagne électorale (L. 47 A)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417329",
+      "role": "Durée de campagne officielle"
+    },
+    {
+      "label": "Atlas 2022 — référence méthodologique",
+      "url": "/atlas/2022-presidentielle",
+      "role": "Modèle d'intégration national + départements"
+    },
+    {
+      "label": "Atlas 2017 — référence comparative",
+      "url": "/atlas/2017-presidentielle",
+      "role": "Comparaison pluriannuelle premier tour"
+    }
+  ]
+}

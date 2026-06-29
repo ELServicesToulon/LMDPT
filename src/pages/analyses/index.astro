@@ -22,6 +22,7 @@ import { ANALYSIS_CATALOG } from '../../lib/analyses';
           <li class="card">
             <h3>
               <a href={a.href}>{a.title}</a>
+              {a.preparation && <span class="badge">En préparation</span>}
             </h3>
             <p>{a.description}</p>
             <p class="meta">
@@ -45,5 +46,18 @@ import { ANALYSIS_CATALOG } from '../../lib/analyses';
   .analysis-list h3 {
     margin: 0 0 0.35rem;
     font-size: 1.05rem;
+  }
+  .badge {
+    display: inline-block;
+    margin-left: 0.45rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.1rem 0.35rem;
+    vertical-align: middle;
   }
 </style>

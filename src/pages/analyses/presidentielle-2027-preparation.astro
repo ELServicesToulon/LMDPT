@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import analysis from '../../data/analyses/presidentielle-2027-preparation.json';
+
+const t1 = new Date(analysis.calendar.premier_tour_indicatif).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const t2 = new Date(analysis.calendar.second_tour_indicatif).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const liste = new Date(analysis.calendar.publication_liste_candidats_indicatif).toLocaleDateString(
+  'fr-FR',
+  { dateStyle: 'long' },
+);
+const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<BaseLayout
+  title="Présidentielle 2027 — préparation"
+  description="Dossier de préparation — sources officielles et feuille de route pour documenter le premier tour 2027."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Présidentielle 2027
+  </nav>
+
+  <section>
+    <p class="eyebrow">Dossier en préparation</p>
+    <h2>{analysis.title}</h2>
+    <p>
+      Ce dossier recense les <strong>sources officielles</strong> et la feuille de route éditoriale
+      pour couvrir le premier tour de la présidentielle 2027 selon la ligne Democracy Over
+      Elimination. Aucun résultat ni candidature n'est publié ici avant publication officielle.
+    </p>
+    <p class="meta">
+      Dernière mise à jour : <time datetime={analysis.updated}>{updated}</time>
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Calendrier indicatif</h3>
+    <p class="meta">{analysis.calendar.note}</p>
+    <dl class="fact-grid">
+      <div>
+        <dt>Publication liste candidats (indicatif)</dt>
+        <dd>
+          <time datetime={analysis.calendar.publication_liste_candidats_indicatif}>{liste}</time>
+        </dd>
+      </div>
+      <div>
+        <dt>Premier tour (indicatif)</dt>
+        <dd>
+          <time datetime={analysis.calendar.premier_tour_indicatif}>{t1}</time>
+        </dd>
+      </div>
+      <div>
+        <dt>Second tour (indicatif)</dt>
+        <dd>
+          <time datetime={analysis.calendar.second_tour_indicatif}>{t2}</time>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h3>Périmètre prévu</h3>
+    <p>{analysis.scope.objectif}</p>
+    <h4>Inclus</h4>
+    <ul>
+      {analysis.scope.inclus.map((item) => <li>{item}</li>)}
+    </ul>
+    <h4>Exclu</h4>
+    <ul>
+      {analysis.scope.exclu.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>Feuille de route</h3>
+    <ol class="milestones">
+      {
+        analysis.milestones.map((step) => (
+          <li>
+            <strong>{step.phase}</strong> — {step.label}
+            <span class="meta"> (gate : {step.gate})</span>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section>
+    <h3>Sources à surveiller</h3>
+    <ul class="sources-list">
+      {
+        analysis.sources.map((source) => (
+          <li>
+            <a href={source.url} rel="noopener noreferrer">
+              {source.label}
+            </a>
+            <span class="meta"> — {source.role}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta">
+      Voir aussi le <a href="/sources">catalogue open data</a> synchronisé et le journal{' '}
+      <a href="/sources#mises-a-jour">mises à jour</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+  }
+  .fact-grid dt {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .fact-grid dd {
+    margin: 0.15rem 0 0;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .milestones {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .milestones li + li {
+    margin-top: 0.65rem;
+  }
+  .sources-list {
+    padding-left: 1.25rem;
+  }
+  .sources-list li + li {
+    margin-top: 0.5rem;
+  }
+  h4 {
+    font-size: 0.95rem;
+    margin: 1rem 0 0.35rem;
+  }
+</style>

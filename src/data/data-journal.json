@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-06-29",
+    "label": "Présidentielle 2027 — dossier de préparation (sources)",
+    "source": "Conseil constitutionnel · Ministère de l'Intérieur · data.gouv.fr · Légifrance",
+    "pages": ["/analyses/presidentielle-2027-preparation"],
+    "license": "lov2",
+    "licenseNote": "Stub éditorial — pas de jeu de résultats intégré avant publication officielle 2027.",
+    "script": null
+  },
+  {
+    "date": "2026-06-29",
     "label": "Législatives 2024 — résultats nationaux (22 nuances)",
     "source": "resultats-definitifs-france-entiere.xlsx (Ministère de l'Intérieur)",
     "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/",
