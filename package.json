@@ -13,6 +13,7 @@
     "astro": "astro",
     "test": "vitest run",
     "test:watch": "vitest",
+    "ci:status": "node scripts/ci-status.mjs",
     "sync:data": "tsx scripts/sync-data.ts",
     "renifleur": "tsx scripts/renifleur-run.ts",
     "programme-chiffrage-lint": "tsx scripts/programme-chiffrage-lint.ts",
