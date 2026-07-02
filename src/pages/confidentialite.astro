@@ -8,27 +8,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 27 juin 2026</p>
+    <p class="meta">Dernière mise à jour : 2 juillet 2026</p>
   </section>
 
   <section class="card">
     <h3>Données collectées</h3>
     <p>
-      Ce site est un site statique (HTML/CSS/JS). Il ne propose pas de formulaire, de compte
-      utilisateur ni de newsletter. <strong>Aucune donnée personnelle n'est collectée</strong> par
-      l'éditeur lors d'une visite normale.
+      Ce site est principalement un site statique (HTML/CSS/JS). Il ne propose pas de compte
+      utilisateur propre ni de newsletter. <strong>Aucune donnée personnelle n'est collectée</strong> par
+      l'éditeur lors d'une visite normale des pages Atlas, Analyses ou Sources.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Discussion (rubrique Débats)</h3>
+    <p>
+      La rubrique <a href="/debats">Débats</a> permet de commenter via{' '}
+      <a href="https://giscus.app" rel="noopener noreferrer">Giscus</a>, qui s'appuie sur{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT/discussions" rel="noopener noreferrer">
+        GitHub Discussions
+      </a>.
+      Pour commenter, un <strong>compte GitHub</strong> est requis.
+    </p>
+    <p>
+      Les données de commentaire (identifiant GitHub, texte, horodatage) sont traitées par{' '}
+      <strong>GitHub</strong>, pas par LMDPT. Consultez la{' '}
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">
+        politique de confidentialité GitHub
+      </a>.
+      Giscus peut utiliser le stockage local du navigateur pour mémoriser vos préférences d'affichage.
     </p>
   </section>
 
   <section class="card">
     <h3>Cookies et traceurs</h3>
     <p>
-      Le site ne dépose pas de cookies analytics ou publicitaires de la part de LMDPT. L'hébergeur
-      (GitHub Pages) peut enregistrer des logs techniques côté serveur (adresses IP, horodatage) —
-      voir la{' '}
-      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">
-        politique de confidentialité GitHub
-      </a>.
+      LMDPT ne dépose pas de cookies analytics ou publicitaires. L'hébergeur
+      (GitHub Pages / OVH) peut enregistrer des logs techniques côté serveur (adresses IP, horodatage).
+      Le widget Giscus (rubrique Débats) est soumis à la politique GitHub ci-dessus.
     </p>
   </section>
 

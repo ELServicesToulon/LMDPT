@@ -1,0 +1,65 @@
+---
+import type { DebatePosition } from '../lib/debate-types';
+
+interface Props {
+  positions: DebatePosition[];
+}
+
+const { positions } = Astro.props;
+---
+
+<div class="positions">
+  {
+    positions.map((position) => (
+      <section class="card position-card">
+        <h3>{position.label}</h3>
+        <ol class="arguments">
+          {
+            position.arguments.map((arg) => (
+              <li>
+                <p>{arg.text}</p>
+                <p class="meta">
+                  Source :{' '}
+                  {
+                    arg.source.url.startsWith('/') ? (
+                      <a href={arg.source.url}>{arg.source.label}</a>
+                    ) : (
+                      <a href={arg.source.url} rel="noopener noreferrer">
+                        {arg.source.label}
+                      </a>
+                    )
+                  }
+                </p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .positions {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .position-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+  }
+  .arguments {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .arguments li {
+    margin-bottom: 0.85rem;
+  }
+  .arguments li:last-child {
+    margin-bottom: 0;
+  }
+  .arguments p {
+    margin: 0 0 0.25rem;
+  }
+</style>

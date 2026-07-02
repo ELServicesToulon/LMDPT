@@ -2,9 +2,23 @@
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+import { getPublicSocialLinks } from '../config/social';
+import { pageMeta } from '../lib/seo';
+
+const { title, description, ogImage } = Astro.props;
+const socialLinks = getPublicSocialLinks();
+const xLink = socialLinks.find((l) => l.id === 'x');
+const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const meta = pageMeta({
+  title,
+  description,
+  ogImage,
+  siteUrl,
+  pathname: Astro.url.pathname,
+});
 ---
 
 <!doctype html>
@@ -14,8 +28,21 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} — Le Média du Premier Tour</title>
-    {description && <meta name="description" content={description} />}
+    <title>{meta.fullTitle}</title>
+    <meta name="description" content={meta.description} />
+    <link rel="canonical" href={meta.canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Le Média du Premier Tour" />
+    <meta property="og:title" content={meta.fullTitle} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={meta.canonical} />
+    <meta property="og:image" content={meta.ogImage} />
+    <meta property="og:locale" content="fr_FR" />
+    {xLink && <meta name="twitter:site" content={xLink.handle} />}
+    {xLink && <meta name="twitter:card" content="summary_large_image" />}
+    <meta name="twitter:title" content={meta.fullTitle} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={meta.ogImage} />
     <style is:global>
       :root {
         color-scheme: light dark;
@@ -107,6 +134,7 @@ const { title, description } = Astro.props;
           <a href="/">Accueil</a>
           <a href="/atlas">Atlas</a>
           <a href="/analyses">Analyses</a>
+          <a href="/debats">Débats</a>
           <a href="/a-propos">À propos</a>
           <a href="/sources">Sources</a>
         </nav>
@@ -122,6 +150,16 @@ const { title, description } = Astro.props;
           <a href="/mentions-legales">Mentions légales</a>
           {' '}·{' '}
           <a href="/confidentialite">Confidentialité</a>
+          {
+            socialLinks.map((link) => (
+              <>
+                {' '}·{' '}
+                <a href={link.url} rel="me noopener noreferrer">
+                  {link.handle}
+                </a>
+              </>
+            ))
+          }
         </p>
       </footer>
     </div>

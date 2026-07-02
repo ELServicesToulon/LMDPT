@@ -32,6 +32,18 @@ Le premier tour capture la pluralité des préférences ; le second tour la dist
 3. **Les absences de données** sont affichées clairement (pas de silence qui suggère un désaveu).
 4. **Revue humaine** avant toute publication automatique (Phase 3).
 
+## Rubrique Débats
+
+La rubrique **Débats** (`/debats`) documente des questions civiques liées au premier tour et aux mécanismes électoraux.
+
+| Règle | Application |
+|-------|-------------|
+| Pluralité des positions | Minimum 2 positions présentées avec la **même structure** (pas de position « gagnante ») |
+| Arguments sourcés | Chaque argument renvoie à une source identifiable (officielle, académique ou interne LMDPT) |
+| Pas de classement éliminatoire | Interdiction de tier list, notation ou caricature dans les débats |
+| Discussion communautaire | Modérée via GitHub Discussions + Giscus — charte DOE applicable aux commentaires |
+| Distinction fait / opinion | Les débats sont signalés comme espace d'argumentation, pas comme faits établis |
+
 ## Conformité
 
 - Licences open data respectées par ressource (ODbL, Licence Ouverte / Etalab, etc.) — page Sources.

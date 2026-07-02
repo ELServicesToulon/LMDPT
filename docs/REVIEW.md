@@ -4,7 +4,7 @@
 
 ## Quand l’appliquer
 
-- Nouvelle page Atlas, analyse, ou mise à jour substantielle de chiffres
+- Nouvelle page Atlas, analyse, **débat**, ou mise à jour substantielle de chiffres
 - Import / recalcul de jeux de données (`npm run import:*`, `sync:data`)
 - Publication automatique ou semi-automatique (workflow, agent, script)
 
@@ -25,8 +25,18 @@
 
 - [ ] Aucun classement éliminatoire (« top », « flop », tier list) déguisé en analyse
 - [ ] Tous les candidats / forces concernés par le périmètre traités **à égalité de présentation** (même structure de fiche)
+- [ ] Programmes : distinction visible **campagne** / **Institut Montaigne** / **estimation LMDPT**
 - [ ] Distinction claire **fait** vs **interprétation** (analyses = synthèse éditoriale signalée)
 - [ ] Pas de sondage ou projection présentée comme résultat
+
+### 2b. Débats (rubrique `/debats`)
+
+- [ ] Au moins **2 positions** avec structure identique (titres, nombre d'arguments comparable)
+- [ ] Chaque argument possède une **source** (URL externe ou lien interne LMDPT)
+- [ ] Aucune position désignée comme « gagnante » ou supérieure
+- [ ] Charte de participation affichée sur la page débat
+- [ ] `discussion_id` renseigné si statut `ouvert`
+- [ ] Liens vers analyses/atlas connexes pertinents
 
 ### 3. Exactitude technique
 

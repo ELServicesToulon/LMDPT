@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DebatePositions from '../../components/DebatePositions.astro';
+import DiscussionSection from '../../components/DiscussionSection.astro';
+import { DEBATE_CATALOG, getDebate } from '../../lib/debates';
+
+export function getStaticPaths() {
+  return DEBATE_CATALOG.map((d) => ({ params: { slug: d.slug } }));
+}
+
+const { slug } = Astro.params;
+const debate = getDebate(slug!);
+
+if (!debate) {
+  return Astro.redirect('/debats');
+}
+---
+
+<BaseLayout title="Débat" description={debate.context.slice(0, 160)}>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/debats">Débats</a> → {debate.slug}
+  </nav>
+
+  <section>
+    <h2>{debate.question}</h2>
+    <p class="meta">
+      <time datetime={debate.date}>
+        {new Date(debate.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+      </time>
+      {' '}·{' '}
+      {debate.status === 'ouvert' ? 'Débat ouvert' : 'Débat clos'}
+    </p>
+    <p>{debate.context}</p>
+  </section>
+
+  <section>
+    <h3>Positions</h3>
+    <p class="meta">
+      Chaque position est présentée avec la même structure. Le média ne désigne pas de position gagnante.
+    </p>
+    <DebatePositions positions={debate.positions} />
+  </section>
+
+  {
+    debate.related.length > 0 && (
+      <section class="card">
+        <h3>Pour aller plus loin</h3>
+        <ul>
+          {
+            debate.related.map((href) => (
+              <li>
+                <a href={href}>{href}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="card charte">
+    <h3>Charte de participation</h3>
+    <p>{debate.charte}</p>
+  </section>
+
+  {
+    debate.status === 'ouvert' && (
+      <DiscussionSection discussionId={debate.discussion_id} question={debate.question} />
+    )
+  }
+</BaseLayout>
+
+<style>
+  .charte {
+    margin-top: 1.5rem;
+  }
+  .charte h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+  }
+  .charte p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,104 @@
+{
+  "slug": "vote-utile-pluralite",
+  "question": "Le vote utile au premier tour respecte-t-il la pluralité démocratique ?",
+  "date": "2026-07-02",
+  "status": "ouvert",
+  "context": "Au premier tour présidentiel, chaque électeur peut exprimer une préférence sur l'ensemble des candidats qualifiés. Le « vote utile » consiste à choisir un candidat jugé « éligible » au second tour plutôt que celui qui correspond le mieux à ses convictions. Ce débat documente les arguments des deux côtés — sans trancher ni classer les candidats.",
+  "charte": "Débat civique LMDPT : pas de classement éliminatoire, arguments sourcés, modération sur GitHub Discussions. Le média documente les positions, il ne désigne pas de « gagnant ».",
+  "positions": [
+    {
+      "id": "oui",
+      "label": "Oui — le vote utile peut préserver la pluralité",
+      "arguments": [
+        {
+          "text": "Le premier tour reste pluraliste par construction : tous les candidats qualifiés figurent sur le bulletin, et chaque voix est comptabilisée dans les résultats officiels publiés par le Ministère de l'Intérieur.",
+          "source": {
+            "label": "Code électoral — scrutin uninominal majoritaire à deux tours",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006125374"
+          }
+        },
+        {
+          "text": "En 2022, 12 candidats au premier tour présidentiel ont recueilli des suffrages exprimés — la pluralité est visible dans les résultats nationaux et territoriaux, indépendamment des choix tactiques individuels.",
+          "source": {
+            "label": "Résultats officiels présidentielle 2022 — archives intérieur.gouv.fr",
+            "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/presidentielle-2022/"
+          }
+        },
+        {
+          "text": "Le vote utile peut être interprété comme une expression rationnelle de préférence dans un système à deux tours : l'électeur anticipe le second tour tout en participant au scrutin pluraliste du premier.",
+          "source": {
+            "label": "Duverger — lois du vote et systèmes électoraux (synthèse académique)",
+            "url": "https://fr.wikipedia.org/wiki/Lois_de_Duverger"
+          }
+        },
+        {
+          "text": "Les données du premier tour permettent d'analyser la diversité des préférences même lorsque des reports tactiques existent — c'est précisément l'objet de l'Atlas LMDPT.",
+          "source": {
+            "label": "Atlas présidentielle 2022 — LMDPT",
+            "url": "/atlas/2022-presidentielle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "non",
+      "label": "Non — il réduit le spectre exprimable",
+      "arguments": [
+        {
+          "text": "Le vote utile incite à ne pas exprimer sa préférence réelle au profit d'un choix perçu comme « viable », ce qui sous-représente les candidatures minoritaires dans les résultats du premier tour.",
+          "source": {
+            "label": "Analyse distorsion 1er/2nd tour — LMDPT",
+            "url": "/analyses/presidentielle-distorsion"
+          }
+        },
+        {
+          "text": "En 2017, Jean Lassalle (6,95 % des exprimés) et Nicolas Dupont-Aignan (4,70 %) illustrent des candidatures dont le score reflète en partie un report tactique vers d'autres candidats jugés plus « utiles ».",
+          "source": {
+            "label": "Résultats officiels présidentielle 2017 — archives intérieur.gouv.fr",
+            "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/presidentielle-2017/"
+          }
+        },
+        {
+          "text": "Les sondages en amont du scrutin orientent le vote utile en amont du premier tour — ce média n'utilise pas les sondages comme prédiction, mais leur effet sur le comportement électoral est documenté par les sciences politiques.",
+          "source": {
+            "label": "Ligne éditoriale LMDPT — exclusion des sondages prédictifs",
+            "url": "/a-propos"
+          }
+        },
+        {
+          "text": "La distorsion entre premier et second tour montre que les voix du premier tour ne se retrouvent pas intégralement dans le duel binaire — le vote utile au premier tour anticipe cette réduction.",
+          "source": {
+            "label": "Analyse distorsion 1er/2nd tour — LMDPT",
+            "url": "/analyses/presidentielle-distorsion"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nuance",
+      "label": "Nuance — le vote utile documente la pluralité autant qu'il la comprime",
+      "arguments": [
+        {
+          "text": "Les résultats du premier tour restent la photographie la plus fidèle de la diversité politique, même si le comportement individuel est influencé par l'anticipation du second tour.",
+          "source": {
+            "label": "Charte éditoriale — Democracy Over Elimination",
+            "url": "https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md"
+          }
+        },
+        {
+          "text": "Comparer les scores du premier tour entre scrutins (2017, 2022) permet d'observer l'évolution des préférences sans éliminer aucun candidat du périmètre documentaire.",
+          "source": {
+            "label": "Atlas élections — LMDPT",
+            "url": "/atlas"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "/analyses/presidentielle-distorsion",
+    "/atlas/2022-presidentielle",
+    "/atlas/2017-presidentielle"
+  ],
+  "discussion_id": "vote-utile-pluralite"
+}

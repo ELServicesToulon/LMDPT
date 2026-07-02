@@ -1,0 +1,104 @@
+{
+  "slug": "desistements-second-tour",
+  "question": "Les désistements au second tour : mécanisme civique ou distorsion de la pluralité ?",
+  "date": "2026-07-02",
+  "status": "ouvert",
+  "context": "Entre le premier et le second tour, des candidats peuvent se désister pour favoriser un autre candidat — notamment dans les triangulaires législatives. En 2024, 215 désistements officiels ont ramené les triangulaires de 306 à 89. Ce débat présente les arguments pour et contre ce mécanisme, sans moraliser les choix des électeurs ni des candidats.",
+  "charte": "Débat civique LMDPT : pas de classement éliminatoire, arguments sourcés, modération sur GitHub Discussions. Le média documente les positions, il ne désigne pas de « gagnant ».",
+  "positions": [
+    {
+      "id": "civique",
+      "label": "Mécanisme civique — clarification du choix binaire",
+      "arguments": [
+        {
+          "text": "Le désistement permet de transformer une configuration à trois candidats (triangulaire) en duel binaire, conformément à la logique du scrutin majoritaire à deux tours.",
+          "source": {
+            "label": "Code électoral — article L. 162-1 (désistement)",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006125374"
+          }
+        },
+        {
+          "text": "En 2024, 215 candidats se sont désistés officiellement entre les deux tours législatifs — un chiffre documenté par le Ministère de l'Intérieur, pas une estimation médiatique.",
+          "source": {
+            "label": "Analyse législatives 2024 — désistements LMDPT",
+            "url": "/analyses/legislatives-2024-desistements"
+          }
+        },
+        {
+          "text": "Le désistement est un acte volontaire du candidat : il ne retire pas le droit de vote aux électeurs, mais reconfigure les options sur le bulletin du second tour.",
+          "source": {
+            "label": "Service-public.fr — élections législatives",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/F2058"
+          }
+        },
+        {
+          "text": "La réduction des triangulaires (306 → 89) a permis à de nombreux électeurs de se prononcer dans un duel clair plutôt que dans une configuration à trois voies.",
+          "source": {
+            "label": "Franceinfo — décompte désistements législatives 2024",
+            "url": "https://www.franceinfo.fr/elections/legislatives/infographies-legislatives-2024-211-candidats-se-sont-desistes-pour-faire-barrage-au-rn-au-second-tour-selon-notre-decompte_6640605.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "distorsion",
+      "label": "Distorsion — effacement de la pluralité du premier tour",
+      "arguments": [
+        {
+          "text": "Au premier tour 2024, 306 circonscriptions pouvaient accueillir une triangulaire — record historique. Les désistements ont effacé cette pluralité dans plus de deux tiers des cas.",
+          "source": {
+            "label": "Analyse législatives 2024 — désistements LMDPT",
+            "url": "/analyses/legislatives-2024-desistements"
+          }
+        },
+        {
+          "text": "Les voix exprimées au premier tour pour un candidat désisté ne se retrouvent pas sur le bulletin du second tour : l'électeur doit se reporter sur un autre nom ou s'abstenir.",
+          "source": {
+            "label": "Analyse distorsion 1er/2nd tour — LMDPT",
+            "url": "/analyses/presidentielle-distorsion"
+          }
+        },
+        {
+          "text": "La répartition estimée des désistements par bloc (NFP ~127, Ensemble ~81) montre une dimension stratégique collective, pas seulement individuelle.",
+          "source": {
+            "label": "Analyse législatives 2024 — désistements LMDPT",
+            "url": "/analyses/legislatives-2024-desistements"
+          }
+        },
+        {
+          "text": "Le RN est passé de 33,2 % des exprimés au premier tour à 37,0 % au second tour — la reconfiguration du scrutin modifie la photographie électorale.",
+          "source": {
+            "label": "Archives résultats législatives 2024 — intérieur.gouv.fr",
+            "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/legislatives-2024/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nuance",
+      "label": "Nuance — le mécanisme est structurel, ses effets sont mesurables",
+      "arguments": [
+        {
+          "text": "Ce média ne moralise pas le vote tactique ni les désistements : il documente la différence entre la pluralité du premier tour et le duel reconfiguré du second.",
+          "source": {
+            "label": "Charte éditoriale — Democracy Over Elimination",
+            "url": "https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md"
+          }
+        },
+        {
+          "text": "L'Atlas législatives 2024 permet de comparer circonscription par circonscription les résultats du premier et du second tour — outil factuel pour évaluer l'impact des désistements.",
+          "source": {
+            "label": "Atlas législatives 2024 — LMDPT",
+            "url": "/atlas/2024-legislatives"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "/analyses/legislatives-2024-desistements",
+    "/atlas/2024-legislatives",
+    "/analyses/presidentielle-distorsion"
+  ],
+  "discussion_id": "desistements-second-tour"
+}

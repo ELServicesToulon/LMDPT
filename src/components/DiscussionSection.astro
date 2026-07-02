@@ -1,0 +1,96 @@
+---
+import { discussionConfig, getDiscussionUrl } from '../config/discussion';
+
+interface Props {
+  discussionId?: string;
+  question: string;
+}
+
+const { discussionId, question } = Astro.props;
+const showEmbed = discussionConfig.enabled && discussionId;
+const discussionUrl = discussionId ? getDiscussionUrl(discussionId) : discussionConfig.discussionsUrl;
+---
+
+<section class="discussion-section">
+  <h3>Poursuivre le débat</h3>
+  <p>
+    Vous pouvez réagir à ce débat sur GitHub Discussions. Un compte GitHub est requis pour
+    commenter. Les contributions sont modérées selon la{' '}
+    <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md" rel="noopener noreferrer">
+      charte éditoriale LMDPT
+    </a>.
+  </p>
+  <p>
+    <a class="btn btn-secondary" href={discussionUrl} rel="noopener noreferrer">
+      Ouvrir la discussion sur GitHub →
+    </a>
+  </p>
+
+  {
+    showEmbed ? (
+      <div class="giscus-wrap">
+        <script
+          is:inline
+          src="https://giscus.app/client.js"
+          data-repo={discussionConfig.repo}
+          data-repo-id={discussionConfig.repoId}
+          data-category={discussionConfig.category}
+          data-category-id={discussionConfig.categoryId}
+          data-mapping={discussionConfig.mapping}
+          data-term={discussionId}
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme={discussionConfig.theme}
+          data-lang={discussionConfig.lang}
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async
+        />
+      </div>
+    ) : (
+      <p class="meta discussion-fallback">
+        Les commentaires embarqués seront disponibles une fois Giscus configuré en production.
+        En attendant, utilisez le lien GitHub ci-dessus pour participer au débat « {question} ».
+      </p>
+    )
+  }
+</section>
+
+<style>
+  .discussion-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .discussion-section h3 {
+    margin: 0 0 0.75rem;
+  }
+  .giscus-wrap {
+    margin-top: 1.25rem;
+    min-height: 8rem;
+  }
+  .discussion-fallback {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+  }
+  .btn {
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+</style>
