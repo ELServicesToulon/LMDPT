@@ -1,5 +1,5 @@
 ---
-import { discussionConfig, getDiscussionUrl } from '../config/discussion';
+import { discussionConfig, getDiscussionUrl, getGiscusEmbed } from '../config/discussion';
 
 interface Props {
   discussionId?: string;
@@ -9,6 +9,7 @@ interface Props {
 const { discussionId, question } = Astro.props;
 const showEmbed = discussionConfig.enabled && discussionId;
 const discussionUrl = discussionId ? getDiscussionUrl(discussionId) : discussionConfig.discussionsUrl;
+const giscus = discussionId ? getGiscusEmbed(discussionId) : null;
 ---
 
 <section class="discussion-section">
@@ -36,8 +37,8 @@ const discussionUrl = discussionId ? getDiscussionUrl(discussionId) : discussion
           data-repo-id={discussionConfig.repoId}
           data-category={discussionConfig.category}
           data-category-id={discussionConfig.categoryId}
-          data-mapping={discussionConfig.mapping}
-          data-term={discussionId}
+          data-mapping={giscus?.mapping ?? discussionConfig.mapping}
+          data-term={giscus?.term ?? discussionId}
           data-strict="1"
           data-reactions-enabled="1"
           data-emit-metadata="0"

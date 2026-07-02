@@ -37,6 +37,23 @@ Références pour l'intégration des programmes présidentiels. Chaque fiche can
 | Veille renifleur LMDPT | Détection de publication programme (flag uniquement) |
 | Sites candidats | Intégration manuelle après revue `docs/REVIEW.md` |
 
+### Post-événement (veille 2027)
+
+Après publication d’une décision ou d’un vote documenté dans la presse :
+
+1. `npm run renifleur && npm run programme-veille`
+2. Mettre à jour la fiche JSON (`src/data/programmes/presidentielle-2027/{slug}.json`) — **mesure factuelle + source URL**
+3. Mettre à jour `_index.json` (`last_measure_at`, `press_signals`)
+4. Si chiffrage : `docs/PROGRAMMES-CHIFFRAGE-METHODO.md` + `npm run programme-chiffrage-lint`
+5. Entrée `data-journal.json` + `npm test` + deploy
+
+**Ne pas anticiper** le résultat d’un jugement ou vote avant publication source qualifiée.
+
+| Échéance | Fiches concernées |
+|----------|-------------------|
+| Jugement Le Pen (7 juil. 2026) | `le-pen.json`, `bardella.json` |
+| Vote militants PS (9 juil. 2026) | `parti-socialiste.json` |
+
 ## Licence et citation
 
 - Pas de republication intégrale des PDF de campagne — extraits courts + lien source.

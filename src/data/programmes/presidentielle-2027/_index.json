@@ -128,7 +128,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
+      "press_signals": [
+        {
+          "title": "Marine Le Pen affirme qu’elle ne ferait pas campagne avec un bracelet électronique et dit « ne pas avoir peur » avant la décision de la cour d’appel",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/01/presidentielle-marine-le-pen-refuse-de-faire-campagne-avec-un-bracelet-electronique-et-affirme-ne-pas-avoir-peur-avant-la-decision-de-la-cour-d-appel_6717612_6205049.html",
+          "published": "2026-07-01",
+          "detected_at": "2026-07-02"
+        }
+      ]
     },
     {
       "slug": "le-pen",
@@ -137,7 +145,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
+      "press_signals": [
+        {
+          "title": "Jugement en appel de Marine Le Pen : quels scénarios possibles en vue de la présidentielle ?",
+          "url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
+          "published": "2026-07-02",
+          "detected_at": "2026-07-02"
+        },
+        {
+          "title": "Marine Le Pen affirme qu’elle ne ferait pas campagne avec un bracelet électronique et dit « ne pas avoir peur » avant la décision de la cour d’appel",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/01/presidentielle-marine-le-pen-refuse-de-faire-campagne-avec-un-bracelet-electronique-et-affirme-ne-pas-avoir-peur-avant-la-decision-de-la-cour-d-appel_6717612_6205049.html",
+          "published": "2026-07-01",
+          "detected_at": "2026-07-02"
+        }
+      ]
     },
     {
       "slug": "barrot",
@@ -181,6 +203,6 @@
       "chiffrage_available": false
     }
   ],
-  "veille_scan_at": "2026-07-02T20:11:04.887Z",
-  "program_press_hits": 16
+  "veille_scan_at": "2026-07-02T20:45:13.500Z",
+  "program_press_hits": 20
 }

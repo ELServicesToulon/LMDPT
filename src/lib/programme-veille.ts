@@ -2,10 +2,14 @@ import type { RenifleurItem } from './renifleur';
 
 export const PROGRAM_VEILLE_KEYWORDS = [
   'programme',
+  'projet',
   'propositions',
+  'primaire',
   'chiffrage',
   'mesures',
   'financement',
+  'jugement',
+  'éligib',
   'présidentielle 2027',
 ] as const;
 

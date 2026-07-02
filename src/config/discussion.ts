@@ -4,7 +4,7 @@ export interface DiscussionConfig {
   repoId: string;
   categoryId: string;
   category: string;
-  mapping: 'specific' | 'pathname' | 'url' | 'title' | 'og:title';
+  mapping: 'specific' | 'pathname' | 'url' | 'title' | 'og:title' | 'number';
   theme: 'light' | 'dark' | 'preferred_color_scheme';
   lang: string;
   discussionsUrl: string;
@@ -42,4 +42,14 @@ export function getDiscussionUrl(discussionId: string): string {
     DISCUSSION_THREAD_URLS[discussionId] ??
     `${discussionConfig.discussionsUrl}?discussions_q=${encodeURIComponent(discussionId)}`
   );
+}
+
+/** Mapping Giscus : numéro de fil si connu (fiable), sinon terme `specific`. */
+export function getGiscusEmbed(discussionId: string): { mapping: DiscussionConfig['mapping']; term: string } {
+  const threadUrl = DISCUSSION_THREAD_URLS[discussionId];
+  const number = threadUrl?.match(/\/discussions\/(\d+)$/)?.[1];
+  if (number) {
+    return { mapping: 'number', term: number };
+  }
+  return { mapping: 'specific', term: discussionId };
 }

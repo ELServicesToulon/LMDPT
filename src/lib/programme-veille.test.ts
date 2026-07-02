@@ -20,6 +20,7 @@ const item = (title: string, summary = ''): RenifleurItem => ({
 describe('programme-veille', () => {
   it('detects programme keywords', () => {
     expect(matchesProgramNews('Son programme pour 2027')).toBe(true);
+    expect(matchesProgramNews('Mélenchon présente son projet d écorégions')).toBe(true);
     expect(matchesProgramNews('Canicule en France')).toBe(false);
   });
 
