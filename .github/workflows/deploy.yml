@@ -33,8 +33,8 @@ jobs:
           ASTRO_SITE: https://lmdpt.iarbre.org
           ASTRO_BASE: /
           PUBLIC_GISCUS_REPO: ${{ vars.PUBLIC_GISCUS_REPO || 'ELServicesToulon/LMDPT' }}
-          PUBLIC_GISCUS_REPO_ID: ${{ secrets.PUBLIC_GISCUS_REPO_ID }}
-          PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.PUBLIC_GISCUS_CATEGORY_ID }}
+          PUBLIC_GISCUS_REPO_ID: ${{ vars.PUBLIC_GISCUS_REPO_ID }}
+          PUBLIC_GISCUS_CATEGORY_ID: ${{ vars.PUBLIC_GISCUS_CATEGORY_ID }}
           PUBLIC_GISCUS_CATEGORY: ${{ vars.PUBLIC_GISCUS_CATEGORY || 'Débats' }}
 
       - uses: actions/upload-pages-artifact@v3

@@ -9,7 +9,11 @@ Configurer dans GitHub Actions (Settings → Secrets and variables → Actions) 
 | `PUBLIC_GISCUS_REPO` | Variable | Défaut : `ELServicesToulon/LMDPT` |
 | `PUBLIC_GISCUS_CATEGORY` | Variable | Défaut : `Débats` |
 
-**Repo ID connu** (node_id GitHub) : `R_kgDOTGlsIg` → secret `PUBLIC_GISCUS_REPO_ID`.
+**Repo ID connu** (node_id GitHub) : `R_kgDOTGlsIg` → variable `PUBLIC_GISCUS_REPO_ID`.
+
+**Catégorie « Débats »** : `50431033` → variable `PUBLIC_GISCUS_CATEGORY_ID`.
+
+Ces valeurs sont aussi en fallback dans `src/config/discussion.ts` pour le déploiement OVH.
 
 ## Script d'activation
 

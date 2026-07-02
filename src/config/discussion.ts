@@ -15,8 +15,8 @@ function env(key: string): string {
 }
 
 const repo = env('PUBLIC_GISCUS_REPO') || 'ELServicesToulon/LMDPT';
-const repoId = env('PUBLIC_GISCUS_REPO_ID');
-const categoryId = env('PUBLIC_GISCUS_CATEGORY_ID');
+const repoId = env('PUBLIC_GISCUS_REPO_ID') || 'R_kgDOTGlsIg';
+const categoryId = env('PUBLIC_GISCUS_CATEGORY_ID') || '50431033';
 
 export const discussionConfig: DiscussionConfig = {
   enabled: Boolean(repoId && categoryId),
