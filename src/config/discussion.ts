@@ -30,6 +30,16 @@ export const discussionConfig: DiscussionConfig = {
   discussionsUrl: `https://github.com/${repo}/discussions`,
 };
 
+/** Fils GitHub Discussions créés juil. 2026 — mapping Giscus `specific`. */
+const DISCUSSION_THREAD_URLS: Record<string, string> = {
+  'assemblee-premier-tour': 'https://github.com/ELServicesToulon/LMDPT/discussions/1',
+  'vote-utile-pluralite': 'https://github.com/ELServicesToulon/LMDPT/discussions/3',
+  'desistements-second-tour': 'https://github.com/ELServicesToulon/LMDPT/discussions/4',
+};
+
 export function getDiscussionUrl(discussionId: string): string {
-  return `${discussionConfig.discussionsUrl}?discussions_q=${encodeURIComponent(discussionId)}`;
+  return (
+    DISCUSSION_THREAD_URLS[discussionId] ??
+    `${discussionConfig.discussionsUrl}?discussions_q=${encodeURIComponent(discussionId)}`
+  );
 }

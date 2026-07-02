@@ -76,7 +76,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Composants `DebatePositions.astro`, `DiscussionSection.astro` (Giscus)
 - [x] GitHub Discussions + catégorie « Débats » + app Giscus
 - [x] Script `npm run giscus:setup` + doc `docs/GISCUS.md`, `docs/GISCUS-ACTIVATION.md`
-- [ ] Créer les 3 fils GitHub (ou premier commentaire Giscus par page) pour lier les embeds
+- [x] Créer les 3 fils GitHub (juil. 2026 — discussions #1, #3, #4)
 
 ---
 
