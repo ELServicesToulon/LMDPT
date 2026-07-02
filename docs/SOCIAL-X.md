@@ -2,6 +2,16 @@
 
 > Projet civique **séparé** de Mediconvoi.
 
+## Compte relais (quote-repost automatique)
+
+| Champ | Valeur |
+|-------|--------|
+| **Handle** | `@LeMediaDPT` |
+| **URL** | https://x.com/LeMediaDPT |
+| **Rôle** | Quote-reposte chaque post de `@LMDuPremierTour` avec commentaire DOE |
+| **Automatisation** | `Mediconvoi/backend` → `npm run lmdpt-x-repost-bridge` |
+| **Doc** | `second-brain/projects/lmdpt/docs/X-REPOST-BRIDGE.md` |
+
 ## Compte live
 
 | Champ | Valeur |
