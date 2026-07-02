@@ -1,0 +1,38 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Jean-Noël Barrot",
+    "slug": "barrot",
+    "affiliation": "Renaissance (ministre)"
+  },
+  "program": {
+    "published_at": "2026-06-28",
+    "document_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
+    "document_label": "Propositions partielles — discours démocratique (presse, juin 2026)",
+    "status": "partial"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "barrot-2027-institutions-referendum-decentralisation",
+      "theme": "institutions",
+      "label": "Référendum sur la décentralisation",
+      "detail": "Axe « rendre le pouvoir aux Français » — revitaliser la démocratie face au RN et à LFI.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
+      "source_label": "Le Monde — 28 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "barrot-2027-education-service-civique",
+      "theme": "education",
+      "label": "Service civique obligatoire",
+      "detail": "Proposition de réforme institutionnelle pour renforcer l'engagement citoyen.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
+      "source_label": "Le Monde — 28 juin 2026",
+      "as_of": "2026-06"
+    }
+  ],
+  "chiffrages": []
+}

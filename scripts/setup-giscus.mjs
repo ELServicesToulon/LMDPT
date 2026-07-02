@@ -1,21 +1,32 @@
 #!/usr/bin/env node
 /**
- * Active GitHub Discussions (si token admin) et affiche les IDs Giscus.
+ * Active GitHub Discussions (si token admin), crée catégorie + fils débats, affiche IDs Giscus.
  *
  * Usage:
- *   GITHUB_TOKEN=ghp_… node scripts/setup-giscus.mjs
- *   GITHUB_TOKEN=ghp_… node scripts/setup-giscus.mjs --create-category
- *
- * Puis configurer dans GitHub Actions (Settings → Secrets):
- *   PUBLIC_GISCUS_REPO_ID
- *   PUBLIC_GISCUS_CATEGORY_ID
+ *   npm run giscus:setup
+ *   GITHUB_TOKEN=ghp_… npm run giscus:setup -- --create-category
+ *   GITHUB_TOKEN=ghp_… npm run giscus:setup -- --create-category --create-discussions
+ *   GITHUB_TOKEN=ghp_… npm run giscus:setup -- --write-env ../../Mediconvoi/backend/.env
  */
+import { readFileSync, readdirSync, appendFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(HERE, '..');
+const DEBATES_DIR = join(ROOT, 'src/data/debates');
+
 const OWNER = 'ELServicesToulon';
 const REPO = 'LMDPT';
 const CATEGORY_NAME = 'Débats';
+/** node_id public GitHub — cf. docs/GISCUS.md */
+const KNOWN_REPO_NODE_ID = 'R_kgDOTGlsIg';
 
 const token = process.env.GITHUB_TOKEN?.trim();
 const createCategory = process.argv.includes('--create-category');
+const createDiscussions = process.argv.includes('--create-discussions');
+const writeEnvIdx = process.argv.indexOf('--write-env');
+const writeEnvPath = writeEnvIdx >= 0 ? process.argv[writeEnvIdx + 1] : null;
 
 async function gh(path, options = {}) {
   const res = await fetch(`https://api.github.com${path}`, {
@@ -56,6 +67,85 @@ async function graphql(query, variables = {}) {
   return json.data;
 }
 
+function loadDebates() {
+  return readdirSync(DEBATES_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
+      const data = JSON.parse(readFileSync(join(DEBATES_DIR, f), 'utf8'));
+      return {
+        slug: data.slug,
+        question: data.question,
+        context: data.context,
+        charte: data.charte,
+        discussion_id: data.discussion_id ?? data.slug,
+        status: data.status,
+      };
+    });
+}
+
+function writeEnvFile(path, repoNodeId, categoryId) {
+  if (!path) return;
+  const lines = [
+    '',
+    '# LMDPT Giscus (généré par npm run giscus:setup)',
+    `PUBLIC_GISCUS_REPO=${OWNER}/${REPO}`,
+    `PUBLIC_GISCUS_REPO_ID=${repoNodeId}`,
+    `PUBLIC_GISCUS_CATEGORY=${CATEGORY_NAME}`,
+    `PUBLIC_GISCUS_CATEGORY_ID=${categoryId}`,
+    '',
+  ];
+  const existing = existsSync(path) ? readFileSync(path, 'utf8') : '';
+  if (existing.includes('PUBLIC_GISCUS_CATEGORY_ID=')) {
+    console.log(`\n${path} contient déjà PUBLIC_GISCUS_CATEGORY_ID — non modifié.`);
+    return;
+  }
+  appendFileSync(path, lines.join('\n'));
+  console.log(`\nVariables ajoutées à ${path}`);
+}
+
+async function ensureDiscussions(repoId, categoryId) {
+  const debates = loadDebates().filter((d) => d.status === 'ouvert');
+  const existing = await graphql(
+    `query($owner: String!, $name: String!, $categoryId: ID!) {
+      repository(owner: $owner, name: $name) {
+        discussions(first: 50, categoryId: $categoryId) {
+          nodes { title url }
+        }
+      }
+    }`,
+    { owner: OWNER, name: REPO, categoryId },
+  );
+
+  const titles = new Set(existing.repository.discussions.nodes.map((d) => d.title));
+
+  for (const debate of debates) {
+    if (titles.has(debate.question)) {
+      console.log(`  skip (existe) : ${debate.slug}`);
+      continue;
+    }
+    const body = `${debate.context}\n\n---\n\n${debate.charte}\n\n**Terme Giscus** : \`${debate.discussion_id}\`\n\nPage : https://lmdpt.iarbre.org/debats/${debate.slug}`;
+    const created = await graphql(
+      `mutation($repoId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+        createDiscussion(input: {
+          repositoryId: $repoId,
+          categoryId: $categoryId,
+          title: $title,
+          body: $body
+        }) {
+          discussion { title url }
+        }
+      }`,
+      {
+        repoId,
+        categoryId,
+        title: debate.question,
+        body,
+      },
+    );
+    console.log(`  créé : ${created.createDiscussion.discussion.url}`);
+  }
+}
+
 async function main() {
   const repo = await gh(`/repos/${OWNER}/${REPO}`);
   console.log(`Repo: ${repo.full_name}`);
@@ -64,9 +154,12 @@ async function main() {
   console.log(`has_discussions: ${repo.has_discussions}`);
 
   if (!token) {
-    console.log('\nSans GITHUB_TOKEN : activez Discussions manuellement sur GitHub.');
-    console.log('Puis créez la catégorie « Débats » et relancez avec un token admin.');
-    console.log('Voir docs/GISCUS.md');
+    console.log('\nSans GITHUB_TOKEN (scope repo admin) :');
+    console.log('  1. GitHub → Settings → Features → Discussions ON');
+    console.log('  2. Créer catégorie « Débats »');
+    console.log('  3. Relancer : GITHUB_TOKEN=ghp_… npm run giscus:setup -- --create-category --create-discussions --write-env …/backend/.env');
+    console.log('  4. Installer https://github.com/apps/giscus sur le repo');
+    console.log('\nRepo ID connu (déjà utilisable en build) :', KNOWN_REPO_NODE_ID);
     return;
   }
 
@@ -92,7 +185,7 @@ async function main() {
     { owner: OWNER, name: REPO },
   );
 
-  const categories = data.repository.discussionCategories.nodes;
+  let categories = data.repository.discussionCategories.nodes;
   let debats = categories.find((c) => c.name === CATEGORY_NAME);
 
   if (!debats && createCategory) {
@@ -111,6 +204,7 @@ async function main() {
       { repoId: data.repository.id },
     );
     debats = created.createDiscussionCategory.discussionCategory;
+    categories = [...categories, debats];
     console.log('Catégorie créée.');
   }
 
@@ -120,13 +214,21 @@ async function main() {
   }
 
   if (debats) {
-    console.log('\n→ Secrets GitHub Actions à configurer :');
+    console.log('\n→ Variables build / deploy :');
     console.log(`PUBLIC_GISCUS_REPO_ID=${repo.node_id}`);
     console.log(`PUBLIC_GISCUS_CATEGORY_ID=${debats.id}`);
-    console.log('\nInstaller aussi l’app Giscus : https://github.com/apps/giscus');
+
+    if (createDiscussions) {
+      console.log('\nCréation fils débats manquants…');
+      await ensureDiscussions(data.repository.id, debats.id);
+    }
+
+    writeEnvFile(writeEnvPath, repo.node_id, debats.id);
+
+    console.log('\nInstaller l’app Giscus : https://github.com/apps/giscus');
+    console.log('Puis : npm run deploy-lmdpt-ovh (Mediconvoi/backend)');
   } else {
-    console.log(`\nCatégorie « ${CATEGORY_NAME} » absente.`);
-    console.log('Créez-la dans GitHub UI ou relancez avec --create-category');
+    console.log(`\nCatégorie « ${CATEGORY_NAME} » absente — relancer avec --create-category`);
   }
 }
 

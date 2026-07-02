@@ -1,0 +1,72 @@
+{
+  "scrutin": "presidentielle-2017",
+  "candidate": { "name": "François Fillon", "slug": "fillon", "affiliation": "Les Républicains" },
+  "program": {
+    "published_at": "2017-02-13",
+    "document_label": "Programme LR 2017",
+    "status": "published"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "fillon-2017-retraites-65",
+      "theme": "retraites",
+      "label": "Report de l'âge légal à 65 ans",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-fiscalite-100-milliards",
+      "theme": "fiscalite",
+      "label": "100 milliards d'économies sur la dépense publique",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-entreprises-liberalisation",
+      "theme": "entreprises",
+      "label": "Libéralisation du marché du travail et baisse des charges",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-europe-souverainete",
+      "theme": "europe",
+      "label": "Europe des nations et coopération renforcée",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-immigration-quotas",
+      "theme": "immigration",
+      "label": "Quotas d'immigration annuels",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-securite-justice",
+      "theme": "securite",
+      "label": "Renforcement de la justice et des peines",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    },
+    {
+      "id": "fillon-2017-climat-nucleaire",
+      "theme": "climat",
+      "label": "Maintien du nucléaire",
+      "status": "nouveau",
+      "as_of": "2017-02"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "fillon-2017-solde-ofce",
+      "type": "solde",
+      "montant_mdeur": -25,
+      "horizon": "2022",
+      "auteur": "ofce",
+      "source_label": "OFCE — évaluation programmes 2017 (ordre de grandeur)",
+      "confidence": "moyenne"
+    }
+  ]
+}

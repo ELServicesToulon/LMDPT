@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { countLeadersByNuance, getCirconscriptionResults } from './circonscriptions';
+import {
+  aggregateDepartmentLeadersFromCircos,
+  countLeadersByNuance,
+  getCirconscriptionResults,
+} from './circonscriptions';
+import deptPaths from '../data/geo/departments-paths.json';
 import { getElection } from './elections';
 
 describe('legislatives 2024', () => {
@@ -21,5 +26,15 @@ describe('legislatives 2024', () => {
     const leaders = countLeadersByNuance(circo!);
     expect(leaders[0]?.code).toBe('RN');
     expect(leaders[0]?.count).toBeGreaterThan(200);
+  });
+
+  it('aggregates department map from circonscriptions', () => {
+    const circo = getCirconscriptionResults('2024-legislatives');
+    const names = new Map(deptPaths.departements.map((d) => [d.code, d.nom]));
+    const depts = aggregateDepartmentLeadersFromCircos(circo!, names);
+    expect(depts.length).toBeGreaterThan(90);
+    const ain = depts.find((d) => d.code === '01');
+    expect(ain?.circo_count).toBe(5);
+    expect(ain?.breakdown[0]?.count).toBeGreaterThan(0);
   });
 });

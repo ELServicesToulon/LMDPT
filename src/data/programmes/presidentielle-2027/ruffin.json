@@ -1,0 +1,38 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "François Ruffin",
+    "slug": "ruffin",
+    "affiliation": "Debout la France / gauche dégagiste"
+  },
+  "program": {
+    "published_at": "2026-06-26",
+    "document_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
+    "document_label": "Campagne de parrainages — pas de programme chiffré publié (presse, juin 2026)",
+    "status": "partial"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "ruffin-2027-institutions-parrainages-maires",
+      "theme": "institutions",
+      "label": "Tournée de conquête des parrainages de maires (Indre, juin 2026)",
+      "detail": "« Entretien d'embauche » auprès d'élus locaux pour sécuriser les 500 parrainages requis.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
+      "source_label": "Le Monde — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ruffin-2027-institutions-primaire-gauche",
+      "theme": "institutions",
+      "label": "Candidature discutée dans le cadre d'une primaire à gauche",
+      "detail": "Pertinence de la candidature et articulation avec le débat PS/Écologistes évoquées dans la presse.",
+      "status": "inconnu",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
+      "source_label": "Le Monde — 26 juin 2026",
+      "as_of": "2026-06"
+    }
+  ],
+  "chiffrages": []
+}

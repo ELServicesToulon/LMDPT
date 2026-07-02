@@ -1,0 +1,38 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Bruno Retailleau",
+    "slug": "retailleau",
+    "affiliation": "Les Républicains"
+  },
+  "program": {
+    "published_at": "2026-07-01",
+    "document_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+    "document_label": "Propositions partielles — calendrier électoral (presse, juil. 2026)",
+    "status": "partial"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "retailleau-2027-institutions-calendrier",
+      "theme": "institutions",
+      "label": "Opposition au second tour le 2 mai (lendemain du 1er mai)",
+      "detail": "Critique du calendrier officialisé — risque de distorsion liée à la Fête du travail et à la période de réserve.",
+      "status": "nouveau",
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "source_label": "France 24 — 1er juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "retailleau-2027-institutions-primaire-lr",
+      "theme": "institutions",
+      "label": "Primaire ouverte pour désigner le candidat unique de la droite",
+      "detail": "Position LR relayée dans le débat interne (Wauquiez, Philippe, Attal évoqués comme participants possibles).",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "source_label": "Le Monde — 1er juil. 2026",
+      "as_of": "2026-07"
+    }
+  ],
+  "chiffrages": []
+}

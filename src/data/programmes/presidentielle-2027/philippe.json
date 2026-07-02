@@ -1,0 +1,48 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Édouard Philippe",
+    "slug": "philippe",
+    "affiliation": "Horizons"
+  },
+  "program": {
+    "published_at": "2026-07-01",
+    "document_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+    "document_label": "Pas de programme qualifié publié — débat interne à droite (presse, juil. 2026)",
+    "status": "partial"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "philippe-2027-institutions-primaire-droite",
+      "theme": "institutions",
+      "label": "Évoqué comme participant possible à une primaire ouverte de la droite",
+      "detail": "Laurent Wauquiez (LR) se dit ouvert à Attal, Retailleau et Philippe pour désigner un candidat unique.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "source_label": "Le Monde — 1er juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "philippe-2027-institutions-programme-a-preciser",
+      "theme": "institutions",
+      "label": "Programme non détaillé publiquement — appel à le préciser",
+      "detail": "Wauquiez demande à Philippe de clarifier son projet avant la primaire évoquée.",
+      "status": "inconnu",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "source_label": "Le Monde — 1er juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "philippe-2027-institutions-rupture-continuite",
+      "theme": "institutions",
+      "label": "Positionnement « rupture » vs continuité macronienne",
+      "detail": "Analyse presse : recherche d'une rupture avec Macron tout en restant sur certaines lignes des deux quinquennats.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-l-ambivalence-des-heritiers-d-emmanuel-macron-face-au-bilan-des-dix-dernieres-annees-de-mandat_6717455_823448.html",
+      "source_label": "Le Monde — 1er juil. 2026",
+      "as_of": "2026-07"
+    }
+  ],
+  "chiffrages": []
+}

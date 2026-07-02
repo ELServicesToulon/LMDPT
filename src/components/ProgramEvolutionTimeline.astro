@@ -1,0 +1,56 @@
+---
+interface Props {
+  entries: Array<{
+    theme: string;
+    family_label: string;
+    items: Array<{
+      scrutin: string;
+      label: string;
+      status: string;
+      delta_summary?: string;
+    }>;
+  }>;
+  statusLabels: Record<string, string>;
+}
+
+const { entries, statusLabels } = Astro.props;
+---
+
+{entries.map((group) => (
+  <article class="card evolution-block">
+    <h4>{group.family_label} — {group.theme}</h4>
+    <ol class="evo-list">
+      {group.items.map((item) => (
+        <li>
+          <strong>{item.scrutin.replace('presidentielle-', '')}</strong> : {item.label}
+          <span class="badge">{statusLabels[item.status] ?? item.status}</span>
+          {item.delta_summary && <p class="meta">{item.delta_summary}</p>}
+        </li>
+      ))}
+    </ol>
+  </article>
+))}
+
+<style>
+  .evo-list {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+  }
+  .evo-list li {
+    margin-bottom: 0.65rem;
+  }
+  .badge {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--muted);
+  }
+  .evolution-block h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+  }
+</style>

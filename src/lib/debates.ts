@@ -1,10 +1,12 @@
 import voteUtilePluralite from '../data/debates/vote-utile-pluralite.json';
 import desistementsSecondTour from '../data/debates/desistements-second-tour.json';
+import assembleePremierTour from '../data/debates/assemblee-premier-tour.json';
 import type { DebateDataset, DebateSummary } from './debate-types';
 
 const DEBATE_DATASETS: Record<string, DebateDataset> = {
   'vote-utile-pluralite': voteUtilePluralite as DebateDataset,
   'desistements-second-tour': desistementsSecondTour as DebateDataset,
+  'assemblee-premier-tour': assembleePremierTour as DebateDataset,
 };
 
 export const DEBATE_CATALOG: DebateSummary[] = [
@@ -25,6 +27,15 @@ export const DEBATE_CATALOG: DebateSummary[] = [
     date: desistementsSecondTour.date,
     status: desistementsSecondTour.status,
     href: '/debats/desistements-second-tour',
+  },
+  {
+    slug: 'assemblee-premier-tour',
+    question: assembleePremierTour.question,
+    description:
+      'Une chambre parlementaire élue sur le seul premier tour : simulation 2024 et arguments pour/contre.',
+    date: assembleePremierTour.date,
+    status: assembleePremierTour.status,
+    href: '/debats/assemblee-premier-tour',
   },
 ];
 

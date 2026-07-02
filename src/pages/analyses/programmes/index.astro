@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { listScrutins, listCandidates, getVeille2027 } from '../../../lib/programs';
+
+const scrutins = listScrutins();
+const veille = getVeille2027();
+---
+
+<BaseLayout
+  title="Programmes électoraux"
+  description="Fiches programmes, comparaison factuelle et chiffrages sourcés — présidentielles 2017, 2022 et veille 2027."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Programmes
+  </nav>
+
+  <section>
+    <h2>Programmes électoraux</h2>
+    <p>
+      Mesures phares, évolution entre scrutins et chiffrages (Institut Montaigne, OFCE, estimations
+      LMDPT documentées). Présentation équivalente par candidat — sans classement éliminatoire.
+    </p>
+    <p>
+      <a href="/analyses/programmes-comparateur">Ouvrir le comparateur</a> (tableau différentiel
+      et chiffrages).
+    </p>
+  </section>
+
+  {
+    scrutins.map((s) => (
+      <section class="card">
+        <h3>{s.label}</h3>
+        {s.id === 'presidentielle-2027' ? (
+          <>
+            <p class="meta">{veille.disclaimer}</p>
+            <h4>Fiches intégrées</h4>
+            <ul>
+              {listCandidates(s.id).map((f) => (
+                <li>
+                  <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
+                    {f.candidate.name}
+                  </a>
+                  {' '}
+                  — {f.candidate.affiliation} · {f.measures.length} mesures ·{' '}
+                  <span class="meta">{f.program.status}</span>
+                </li>
+              ))}
+            </ul>
+            <h4>Veille (non intégré)</h4>
+            <ul>
+              {veille.candidates
+                .filter((c) => c.program_status === 'awaiting_program')
+                .map((c) => (
+                  <li>
+                    {c.name} ({c.affiliation}) — en attente
+                  </li>
+                ))}
+            </ul>
+            <p>
+              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027">
+                Comparateur 2027
+              </a>
+              {' '}
+              ·{' '}
+              <a href="/analyses/presidentielle-2027-preparation">Dossier préparation 2027</a>
+            </p>
+          </>
+        ) : (
+          <ul>
+            {listCandidates(s.id).map((f) => (
+              <li>
+                <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
+                  {f.candidate.name}
+                </a>
+                {' '}
+                — {f.candidate.affiliation} · {f.measures.length} mesures
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))
+  }
+
+  <section class="card">
+    <h3>Évolution 2017 → 2022</h3>
+    <p>
+      <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2022&evolution=1">
+        Voir les évolutions par famille politique
+      </a>
+    </p>
+  </section>
+</BaseLayout>

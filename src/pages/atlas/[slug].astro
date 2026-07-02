@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CirconscriptionsTable from '../../components/CirconscriptionsTable.astro';
 import DepartmentSvgMap from '../../components/DepartmentSvgMap.astro';
+import LegislativeDepartmentMap from '../../components/LegislativeDepartmentMap.astro';
 import NationalSummary from '../../components/NationalSummary.astro';
 import ResultsBarChart from '../../components/ResultsBarChart.astro';
 import { countLeadersByNuance, getCirconscriptionResults } from '../../lib/circonscriptions';
@@ -86,7 +87,10 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   />
 
   {circoData && (
-    <CirconscriptionsTable circonscriptions={circoData.circonscriptions} electionSlug={slug} />
+    <>
+      <LegislativeDepartmentMap dataset={circoData} electionSlug={slug} />
+      <CirconscriptionsTable circonscriptions={circoData.circonscriptions} electionSlug={slug} />
+    </>
   )}
 
   {deptData && <DepartmentSvgMap departements={deptData.departements} electionSlug={slug} />}
@@ -108,13 +112,19 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <li>Données nationales depuis les résultats officiels publiés (data.gouv.fr).</li>
       {
         isLegislatives ? (
-          <li>
-            Circonscriptions : CSV « une ligne par circonscription » —{' '}
-            <a href={circoData?.source} rel="noopener noreferrer">
-              source data.gouv.fr
-            </a>
-            .
-          </li>
+          <>
+            <li>
+              Carte : contours simplifiés france-geojson (IGN/INSEE), nuances agrégées par
+              département depuis les 577 circonscriptions.
+            </li>
+            <li>
+              Circonscriptions : CSV « une ligne par circonscription » —{' '}
+              <a href={circoData?.source} rel="noopener noreferrer">
+                source data.gouv.fr
+              </a>
+              .
+            </li>
+          </>
         ) : (
           <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
         )

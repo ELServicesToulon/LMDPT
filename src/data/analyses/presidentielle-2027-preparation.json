@@ -1,13 +1,161 @@
 {
   "title": "Présidentielle 2027 — dossier de préparation",
   "status": "preparation",
-  "updated": "2026-06-29",
+  "updated": "2026-07-07",
   "election_label": "Élection présidentielle 2027",
   "calendar": {
-    "note": "Dates indicatives — le calendrier définitif est fixé par décret (Code électoral, art. L. 41 et s.). Vérifier Conseil constitutionnel et service-public avant publication.",
-    "premier_tour_indicatif": "2027-04-11",
-    "second_tour_indicatif": "2027-04-25",
-    "publication_liste_candidats_indicatif": "2027-03-08"
+    "status": "official",
+    "officialized": "2026-07-01",
+    "note": "Dates annoncées par la porte-parole du gouvernement Maud Bregeon à l'issue du conseil des ministres du 1er juillet 2026, après consultations des partis politiques. Décret de convocation à vérifier sur Légifrance et service-public.fr.",
+    "premier_tour_indicatif": "2027-04-18",
+    "second_tour_indicatif": "2027-05-02",
+    "publication_liste_candidats_indicatif": "2027-03-26",
+    "overseas_note": "En Guadeloupe, Martinique, Guyane, Saint-Pierre-et-Miquelon, Saint-Barthélemy, Saint-Martin et Polynésie française, le vote a lieu le samedi précédent (décalage horaire).",
+    "constitutional_window": "Entre le 20e et le 35e jour précédant l'expiration du mandat du président en exercice (fin du quinquennat d'Emmanuel Macron : 14 mai 2027). L'autre option constitutionnelle était les 11 et 25 avril 2027."
+  },
+  "veille": [
+    {
+      "date": "2026-07-07",
+      "label": "Jugement d'appel — Marine Le Pen (décision attendue)",
+      "fact": "La cour d'appel de Paris rend sa décision dans l'affaire des assistants parlementaires européens. Mise à jour éditoriale LMDPT : actualiser les fiches le-pen.json et bardella.json dès publication de la décision (source judiciaire ou presse qualifiée) — sans anticiper le résultat.",
+      "source_label": "Cour d'appel de Paris · France 24 (veille)",
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+    },
+    {
+      "date": "2026-07-09",
+      "label": "Vote militants PS — scénarios primaire à gauche",
+      "fact": "Le Parti socialiste soumet deux scénarios de primaire au vote des militants (9 juillet). Intégration programme : actualiser parti-socialiste.json et veille après résultat.",
+      "source_label": "Le Monde — primaire à gauche",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/primaire-a-gauche-le-parti-socialiste-et-les-ecologistes-se-divisent-sur-leur-strategie-pour-la-presidentielle_6717347_823448.html"
+    },
+    {
+      "date": "2026-07-02",
+      "label": "Panorama candidatures — 34 prétendants identifiés",
+      "fact": "Le Monde recense plus de trente candidats déclarés ou probables ; plusieurs familles politiques pourraient organiser des primaires.",
+      "source_label": "Le Monde — Les Décodeurs",
+      "source_url": "https://www.lemonde.fr/les-decodeurs/article/2026/07/02/presidentielle-2027-qui-sont-les-34-candidats-declares-et-probables_6680905_4355771.html"
+    },
+    {
+      "date": "2026-07-01",
+      "label": "Calendrier officialisé",
+      "fact": "Premier tour le dimanche 18 avril 2027, second tour le dimanche 2 mai 2027.",
+      "source_label": "Conseil des ministres — déclaration Maud Bregeon",
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+    },
+    {
+      "date": "2026-07-01",
+      "label": "Débat sur la période de réserve",
+      "fact": "Le second tour au lendemain du 1er mai soulève des questions sur le respect de la période de réserve électorale ; le gouvernement affirme que les règles habituelles s'appliqueront.",
+      "source_label": "France 24 · Code électoral (campagne électorale)",
+      "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417329"
+    },
+    {
+      "date": "2026-07-02",
+      "label": "Jugement d'appel — affaire assistants parlementaires",
+      "fact": "La cour d'appel de Paris doit rendre son jugement le 7 juillet 2026 dans l'affaire des assistants parlementaires européens du Rassemblement national — décision susceptible d'affecter l'éligibilité de Marine Le Pen pour 2027.",
+      "source_label": "France 24",
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+    },
+    {
+      "date": "2026-06-01",
+      "label": "Fin de mandat — non-candidature Macron",
+      "fact": "Emmanuel Macron ne peut pas se représenter : il occupe un second mandat présidentiel (élu en 2022, mandat jusqu'au 14 mai 2027).",
+      "source_label": "Constitution — art. 6 (alinéa sur la réélection)",
+      "source_url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur"
+    }
+  ],
+  "candidatures_veille": {
+    "disclaimer": "Liste non officielle — expressions d'intention documentées dans la presse. Seule la liste publiée par le Conseil constitutionnel (au plus tard le 4e vendredi précédant le premier tour) fait foi.",
+    "entries": [
+      {
+        "name": "Gabriel Attal",
+        "affiliation": "Renaissance",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      },
+      {
+        "name": "Bruno Retailleau",
+        "affiliation": "Les Républicains",
+        "status": "candidat_declare",
+        "as_of": "2026-07",
+        "source_label": "L'Express (réaction au calendrier)",
+        "source_url": "https://www.lexpress.fr/politique/presidentielle-2027-pourquoi-les-dates-de-lelection-sont-encore-critiquees-OFVPMR7G6RFUTOGSTYTP6TNBAA/"
+      },
+      {
+        "name": "Édouard Philippe",
+        "affiliation": "Horizons",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      },
+      {
+        "name": "Fabien Roussel",
+        "affiliation": "Parti communiste français",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      },
+      {
+        "name": "François Hollande",
+        "affiliation": "Sans étiquette (ancien président PS)",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      },
+      {
+        "name": "Jean-Luc Mélenchon",
+        "affiliation": "La France insoumise",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      },
+      {
+        "name": "Jordan Bardella",
+        "affiliation": "Rassemblement national (candidat de substitution)",
+        "status": "designe_parti",
+        "as_of": "2026-06",
+        "source_label": "France 24",
+        "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+      },
+      {
+        "name": "Marine Le Pen",
+        "affiliation": "Rassemblement national",
+        "status": "candidature_soumise_eligibilite",
+        "as_of": "2026-07",
+        "source_label": "France 24 (affaire judiciaire en cours)",
+        "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+      },
+      {
+        "name": "François Ruffin",
+        "affiliation": "Debout la France",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Le Monde — parrainages maires (Indre)",
+        "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html"
+      },
+      {
+        "name": "Jean-Noël Barrot",
+        "affiliation": "Renaissance",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Le Monde — propositions juin 2026",
+        "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html"
+      },
+      {
+        "name": "Raphaël Glucksmann",
+        "affiliation": "Place publique / socle de gauche",
+        "status": "intention_declaree",
+        "as_of": "2026-06",
+        "source_label": "Presse politique (juin 2026)",
+        "source_url": "https://www.linternaute.com/actualite/politique/10189968-presidentielle-2027-dernier-sondage-date-liste-des-candidats-toutes-les-infos/"
+      }
+    ]
   },
   "scope": {
     "objectif": "Préparer l'intégration open data du premier tour 2027 dès publication officielle — pluralité documentée, sans prédiction ni sondage.",
@@ -15,7 +163,8 @@
       "Résultats nationaux et par département (même granularité que 2017/2022)",
       "Fiches candidats qualifiés (équivalence de présentation)",
       "Comparaison factuelle 2017 / 2022 / 2027 au premier tour",
-      "Section distorsion 1er / 2nd tour après le second tour"
+      "Section distorsion 1er / 2nd tour après le second tour",
+      "Veille factuelle (calendrier, candidatures déclarées) avec source et date"
     ],
     "exclu": [
       "Sondages et projections",
@@ -26,7 +175,17 @@
   "milestones": [
     {
       "phase": "Veille",
-      "label": "Surveiller data.gouv.fr et archives intérieur.gouv.fr",
+      "label": "Jugement Le Pen (7 juil. 2026) — MAJ fiches RN post-décision",
+      "gate": "Source officielle ou presse qualifiée intégrée"
+    },
+    {
+      "phase": "Veille",
+      "label": "Vote PS primaire (9 juil. 2026) — MAJ fiche PS",
+      "gate": "Résultat vote militants documenté"
+    },
+    {
+      "phase": "Veille",
+      "label": "Calendrier officialisé (juillet 2026) — surveiller décret et data.gouv.fr",
       "gate": "Jeu national 1er tour publié"
     },
     {
@@ -58,13 +217,23 @@
     },
     {
       "label": "Service-public — calendrier électoral",
-      "url": "https://www.service-public.fr/particuliers/vosdroits/R17588",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R17588",
       "role": "Dates réglementaires et décrets"
     },
     {
       "label": "Code électoral — campagne électorale (L. 47 A)",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417329",
-      "role": "Durée de campagne officielle"
+      "role": "Durée de campagne officielle et période de réserve"
+    },
+    {
+      "label": "Constitution — art. 6 (mandat présidentiel)",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "role": "Durée du mandat et inéligibilité au 3e mandat"
+    },
+    {
+      "label": "Calendrier 2027 — annonce gouvernement (1er juillet 2026)",
+      "url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "role": "Dates 18 avril / 2 mai 2027 et vote outre-mer le samedi"
     },
     {
       "label": "Atlas 2022 — référence méthodologique",

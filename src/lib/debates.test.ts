@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import voteUtilePluralite from '../data/debates/vote-utile-pluralite.json';
 import desistementsSecondTour from '../data/debates/desistements-second-tour.json';
+import assembleePremierTour from '../data/debates/assemblee-premier-tour.json';
 import {
   DEBATE_CATALOG,
   getDebate,
@@ -9,7 +10,7 @@ import {
 } from './debates';
 import type { DebateDataset } from './debate-types';
 
-const ALL_DEBATES = [voteUtilePluralite, desistementsSecondTour] as DebateDataset[];
+const ALL_DEBATES = [voteUtilePluralite, desistementsSecondTour, assembleePremierTour] as DebateDataset[];
 
 function assertDebateShape(debate: DebateDataset) {
   expect(debate.positions.length).toBeGreaterThanOrEqual(2);
@@ -28,11 +29,12 @@ function assertDebateShape(debate: DebateDataset) {
 
 describe('debates', () => {
   it('lists pilot debates with unique slugs', () => {
-    expect(DEBATE_CATALOG.length).toBeGreaterThanOrEqual(2);
+    expect(DEBATE_CATALOG.length).toBeGreaterThanOrEqual(3);
     const slugs = DEBATE_CATALOG.map((d) => d.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
     expect(slugs).toContain('vote-utile-pluralite');
     expect(slugs).toContain('desistements-second-tour');
+    expect(slugs).toContain('assemblee-premier-tour');
   });
 
   it('resolves debate by slug', () => {
@@ -59,5 +61,10 @@ describe('debates', () => {
   it('desistements debate links to legislatives analysis', () => {
     expect(desistementsSecondTour.related).toContain('/analyses/legislatives-2024-desistements');
     expect(desistementsSecondTour.positions.some((p) => p.id === 'distorsion')).toBe(true);
+  });
+
+  it('assemblee premier tour debate links to simulation', () => {
+    expect(assembleePremierTour.related).toContain('/analyses/assemblee-premier-tour');
+    expect(assembleePremierTour.positions.length).toBeGreaterThanOrEqual(3);
   });
 });

@@ -1,0 +1,163 @@
+{
+  "scrutin": "presidentielle-2022",
+  "candidate": {
+    "name": "Emmanuel Macron",
+    "slug": "macron",
+    "affiliation": "Renaissance"
+  },
+  "program": {
+    "published_at": "2022-03-17",
+    "document_url": "https://www.emmanuelmacron.fr/programme",
+    "document_label": "Programme officiel — campagne 2022",
+    "status": "published"
+  },
+  "evolution_from": "presidentielle-2017",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "macron-2022-retraites-65",
+      "theme": "retraites",
+      "label": "Report de l'âge légal de départ à la retraite à 65 ans",
+      "detail": "Réforme progressive du système de retraite par points, report de l'âge légal.",
+      "status": "modifie",
+      "source_label": "Programme Macron 2022",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-fiscalite-impots-production",
+      "theme": "fiscalite",
+      "label": "Baisse de la fiscalité sur la production (impôt sur les sociétés, CVAE)",
+      "detail": "Allègement fiscal pour les entreprises et compétitivité.",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-pouvoir-achat-bouclier",
+      "theme": "pouvoir_achat",
+      "label": "Bouclier tarifaire énergie et revalorisation du SMIC",
+      "detail": "Mesures de pouvoir d'achat face à l'inflation énergétique.",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-europe-souverainete",
+      "theme": "europe",
+      "label": "Europe de la défense et souveraineté industrielle",
+      "detail": "Renforcement des capacités européennes, pas de Frexit.",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-climat-nucleaire",
+      "theme": "climat",
+      "label": "Relance du nucléaire et objectif neutralité carbone 2050",
+      "detail": "Construction de nouveaux réacteurs EPR, maintien du parc existant.",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-sante-100e",
+      "theme": "sante",
+      "label": "Renforcement des hôpitaux et médecine de ville",
+      "detail": "Investissements santé, pas de révolution structurelle du système.",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-education-enseignants",
+      "theme": "education",
+      "label": "Revalorisation des enseignants et autonomie des établissements",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-immigration-maitrise",
+      "theme": "immigration",
+      "label": "Maîtrise des flux migratoires et accélération des OQTF",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-institutions-presidentielle",
+      "theme": "institutions",
+      "label": "Renforcement du rôle présidentiel et réforme du Conseil constitutionnel",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "macron-2022-emploi-chomage",
+      "theme": "entreprises",
+      "label": "Réforme de l'assurance chômage et formation professionnelle",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "macron-2022-recettes-candidat",
+      "type": "recettes",
+      "montant_mdeur": 44,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne Macron 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "macron-2022-recettes-im",
+      "type": "recettes",
+      "montant_mdeur": 12.7,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "source_label": "Institut Montaigne — synthèse 2022",
+      "confidence": "elevee"
+    },
+    {
+      "id": "macron-2022-depenses-candidat",
+      "type": "depenses",
+      "montant_mdeur": 50,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne Macron 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "macron-2022-depenses-im",
+      "type": "depenses",
+      "montant_mdeur": 57.2,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "macron-2022-solde-candidat",
+      "type": "solde",
+      "montant_mdeur": -6,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne Macron 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "macron-2022-solde-im",
+      "type": "solde",
+      "montant_mdeur": -44.5,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "macron-2022-solde-lmdpt",
+      "type": "solde",
+      "montant_mdeur": -38,
+      "montant_min_mdeur": -52,
+      "montant_max_mdeur": -28,
+      "horizon": "2027",
+      "auteur": "lmdpt",
+      "method_note": "Recalcul sur 6 mesures quantifiables (retraites 65 ans, baisse IS, bouclier énergie) — voir docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Macron 2022",
+      "confidence": "moyenne"
+    }
+  ]
+}

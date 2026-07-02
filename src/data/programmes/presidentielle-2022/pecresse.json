@@ -1,0 +1,129 @@
+{
+  "scrutin": "presidentielle-2022",
+  "candidate": {
+    "name": "Valérie Pécresse",
+    "slug": "pecresse",
+    "affiliation": "Les Républicains"
+  },
+  "program": {
+    "published_at": "2022-03-10",
+    "document_url": "https://www.valeriepecresse.fr/programme",
+    "document_label": "Programme officiel LR 2022",
+    "status": "published"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "pecresse-2022-retraites-65",
+      "theme": "retraites",
+      "label": "Report de l'âge légal à 65 ans",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-fiscalite-15-points",
+      "theme": "fiscalite",
+      "label": "Baisse de 15 points de la dépense publique sur le quinquennat",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-pouvoir-achat-bouclier",
+      "theme": "pouvoir_achat",
+      "label": "Bouclier anti-inflation sur l'énergie",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-europe-souverainete",
+      "theme": "europe",
+      "label": "Europe puissance et souveraineté industrielle",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-securite-justice",
+      "theme": "securite",
+      "label": "Doublement des effectifs de justice et peines planchers",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-immigration-quotas",
+      "theme": "immigration",
+      "label": "Quotas annuels d'immigration et réforme du droit d'asile",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-climat-nucleaire",
+      "theme": "climat",
+      "label": "Programme nucléaire ambitieux et hydrogène vert",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "pecresse-2022-education-autonomie",
+      "theme": "education",
+      "label": "Autonomie des universités et écoles",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "pecresse-2022-recettes-candidat",
+      "type": "recettes",
+      "montant_mdeur": 84,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LR 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "pecresse-2022-recettes-im",
+      "type": "recettes",
+      "montant_mdeur": 16.5,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "pecresse-2022-depenses-candidat",
+      "type": "depenses",
+      "montant_mdeur": 42,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LR 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "pecresse-2022-depenses-im",
+      "type": "depenses",
+      "montant_mdeur": 51.6,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "pecresse-2022-solde-candidat",
+      "type": "solde",
+      "montant_mdeur": 42,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LR 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "pecresse-2022-solde-im",
+      "type": "solde",
+      "montant_mdeur": -35.1,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    }
+  ]
+}

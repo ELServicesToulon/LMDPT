@@ -1,0 +1,438 @@
+---
+import type { CirconscriptionElectionDataset } from '../lib/election-types';
+import deptPaths from '../data/geo/departments-paths.json';
+import { AN1T_BLOCS, aggregateDepartmentBlocsFromCircos } from '../lib/an1t';
+import {
+  aggregateDepartmentLeadersFromCircos,
+  legendForNuances,
+  nuanceColor,
+  nuanceLabel,
+} from '../lib/circonscriptions';
+
+interface Props {
+  dataset: CirconscriptionElectionDataset;
+  electionSlug: string;
+}
+
+const { dataset, electionSlug } = Astro.props;
+
+const departmentNames = new Map(deptPaths.departements.map((d) => [d.code, d.nom]));
+const byNuance = aggregateDepartmentLeadersFromCircos(dataset, departmentNames);
+const byBloc = aggregateDepartmentBlocsFromCircos(dataset, departmentNames);
+
+const nuanceByCode = new Map(byNuance.map((d) => [d.code, d]));
+const blocByCode = new Map(byBloc.map((d) => [d.code, d]));
+
+const blocLabelMap = Object.fromEntries(AN1T_BLOCS.map((b) => [b.id, b.label]));
+const blocColorMap = Object.fromEntries(AN1T_BLOCS.map((b) => [b.id, b.color]));
+
+const nuanceLabelMap = Object.fromEntries(
+  legendForNuances(
+    [...new Set(byNuance.flatMap((d) => d.breakdown.map((b) => b.code)))],
+  ).map((item) => [item.code, item.label]),
+);
+
+function pathsForMode(mode: 'nuance' | 'bloc') {
+  return deptPaths.departements
+    .map((p) => {
+      if (mode === 'nuance') {
+        const result = nuanceByCode.get(p.code);
+        const leader = result?.leader_nuance_code ?? 'unknown';
+        const color = result ? nuanceColor(leader) : '#cccccc';
+        const top = result?.breakdown[0];
+        return {
+          code: p.code,
+          nom: p.nom,
+          d: p.d,
+          leader,
+          color,
+          circoCount: result?.circo_count ?? 0,
+          topCount: top?.count ?? 0,
+          hasData: Boolean(result),
+        };
+      }
+      const result = blocByCode.get(p.code);
+      const leader = result?.leader_bloc_id ?? 'autres';
+      const color = blocColorMap[leader] ?? '#cccccc';
+      const top = result?.breakdown[0];
+      return {
+        code: p.code,
+        nom: p.nom,
+        d: p.d,
+        leader,
+        color,
+        circoCount: result?.circo_count ?? 0,
+        topCount: top?.count ?? 0,
+        hasData: Boolean(result),
+      };
+    })
+    .filter((p) => p.hasData);
+}
+
+const nuancePaths = pathsForMode('nuance');
+const blocPaths = pathsForMode('bloc');
+
+const nuancePayload = byNuance.map((d) => ({
+  code: d.code,
+  nom: d.nom,
+  leader: d.leader_nuance_code,
+  circoCount: d.circo_count,
+  breakdown: d.breakdown.map((b) => ({
+    code: b.code,
+    count: b.count,
+    avgPct: b.avgPct,
+  })),
+}));
+
+const blocPayload = byBloc.map((d) => ({
+  code: d.code,
+  nom: d.nom,
+  leader: d.leader_bloc_id,
+  circoCount: d.circo_count,
+  breakdown: d.breakdown.map((b) => ({
+    code: b.blocId,
+    count: b.count,
+    avgPct: b.avgPct,
+  })),
+}));
+
+const overseasNuance = byNuance.filter(
+  (d) => !deptPaths.departements.some((p) => p.code === d.code),
+);
+const overseasBloc = byBloc.filter((d) => !deptPaths.departements.some((p) => p.code === d.code));
+
+const nuanceLegend = legendForNuances(nuancePaths.map((p) => p.leader)).slice(0, 10);
+const blocLegend = AN1T_BLOCS.filter((b) => blocPaths.some((p) => p.leader === b.id));
+---
+
+<section class="dept-map" aria-labelledby="an1t-map-title">
+  <h3 id="an1t-map-title">Carte — pluralité du 1er tour (base géographique de l'AN1T)</h3>
+  <p class="meta">
+    Comparez la nuance en tête (détail) et le bloc civique LMDPT (agrégat). Les sièges réels de
+    l'Assemblée élue au 2nd tour ne suivent pas cette géographie — voir le comparatif chiffré
+    ci-dessus.
+  </p>
+
+  <div class="mode-toggle" role="tablist" aria-label="Mode d'affichage de la carte">
+    <button type="button" class="mode-btn active" data-mode="nuance" role="tab" aria-selected="true">
+      Nuances (détail)
+    </button>
+    <button type="button" class="mode-btn" data-mode="bloc" role="tab" aria-selected="false">
+      Blocs civiques
+    </button>
+  </div>
+
+  <div class="legend" id={`an1t-legend-${electionSlug}`} aria-label="Légende">
+    {
+      nuanceLegend.map((item) => (
+        <span class="legend-item" data-for="nuance">
+          <span class="swatch" style={`background:${item.color}`} />
+          {item.label}
+        </span>
+      ))
+    }
+    {
+      blocLegend.map((item) => (
+        <span class="legend-item" data-for="bloc" hidden>
+          <span class="swatch" style={`background:${item.color}`} />
+          {item.label}
+        </span>
+      ))
+    }
+  </div>
+
+  <label class="search-label">
+    Rechercher
+    <input
+      type="search"
+      id={`an1t-dept-search-${electionSlug}`}
+      placeholder="Nom ou code (ex. 13, Bouches-du-Rhône)"
+      autocomplete="off"
+    />
+  </label>
+
+  <div class="map-wrap">
+    <svg
+      viewBox={deptPaths.viewBox}
+      role="img"
+      aria-label="Carte de France — pluralité du premier tour législatives 2024"
+      class="france-map"
+      id={`an1t-france-map-${electionSlug}`}
+    >
+      {
+        nuancePaths.map((p) => (
+          <path
+            class="map-path"
+            data-mode="nuance"
+            id={`an1t-dept-nuance-${electionSlug}-${p.code}`}
+            data-code={p.code}
+            data-nom={p.nom.toLowerCase()}
+            data-leader={p.leader}
+            d={p.d}
+            fill={p.color}
+            fill-opacity="0.72"
+            stroke="var(--border)"
+            stroke-width="0.4"
+            tabindex="0"
+          >
+            <title>
+              {p.nom} ({p.code}) — {nuanceLabel(p.leader)} · {p.topCount}/{p.circoCount} circo.
+            </title>
+          </path>
+        ))
+      }
+      {
+        blocPaths.map((p) => (
+          <path
+            class="map-path"
+            data-mode="bloc"
+            hidden
+            id={`an1t-dept-bloc-${electionSlug}-${p.code}`}
+            data-code={p.code}
+            data-nom={p.nom.toLowerCase()}
+            data-leader={p.leader}
+            d={p.d}
+            fill={p.color}
+            fill-opacity="0.72"
+            stroke="var(--border)"
+            stroke-width="0.4"
+            tabindex="0"
+          >
+            <title>
+              {p.nom} ({p.code}) — {blocLabelMap[p.leader] ?? p.leader} · {p.topCount}/{p.circoCount}{' '}
+              circo.
+            </title>
+          </path>
+        ))
+      }
+    </svg>
+  </div>
+
+  {
+    (overseasNuance.length > 0 || overseasBloc.length > 0) && (
+      <section class="overseas">
+        <h4>Outre-mer</h4>
+        <ul class="overseas-list" data-for="nuance">
+          {overseasNuance.map((d) => {
+            const top = d.breakdown[0];
+            return (
+              <li>
+                <span class="swatch" style={`background:${nuanceColor(d.leader_nuance_code)}`} />
+                <strong>{d.nom}</strong> — {nuanceLabel(d.leader_nuance_code)} · {top?.count ?? 0}/
+                {d.circo_count} circo.
+              </li>
+            );
+          })}
+        </ul>
+        <ul class="overseas-list" data-for="bloc" hidden>
+          {overseasBloc.map((d) => {
+            const top = d.breakdown[0];
+            return (
+              <li>
+                <span
+                  class="swatch"
+                  style={`background:${blocColorMap[d.leader_bloc_id] ?? '#888'}`}
+                />
+                <strong>{d.nom}</strong> — {blocLabelMap[d.leader_bloc_id]} · {top?.count ?? 0}/
+                {d.circo_count} circo.
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )
+  }
+
+  <aside class="card dept-detail" id={`an1t-dept-detail-${electionSlug}`} hidden>
+    <h4 id={`an1t-dept-detail-title-${electionSlug}`}>Détail</h4>
+    <ol id={`an1t-dept-detail-list-${electionSlug}`} />
+  </aside>
+</section>
+
+<script define:vars={{ nuancePayload, blocPayload, electionSlug, nuanceLabelMap, blocLabelMap }}>
+  const search = document.getElementById(`an1t-dept-search-${electionSlug}`);
+  const svg = document.getElementById(`an1t-france-map-${electionSlug}`);
+  const detail = document.getElementById(`an1t-dept-detail-${electionSlug}`);
+  const detailTitle = document.getElementById(`an1t-dept-detail-title-${electionSlug}`);
+  const detailList = document.getElementById(`an1t-dept-detail-list-${electionSlug}`);
+  const modeButtons = document.querySelectorAll('.mode-btn');
+  const legendItems = document.querySelectorAll(`#an1t-legend-${electionSlug} .legend-item`);
+  const overseasLists = document.querySelectorAll('.overseas-list');
+
+  let currentMode = 'nuance';
+  const byNuance = new Map(nuancePayload.map((d) => [d.code, d]));
+  const byBloc = new Map(blocPayload.map((d) => [d.code, d]));
+
+  function setMode(mode) {
+    currentMode = mode;
+    modeButtons.forEach((btn) => {
+      const active = btn.getAttribute('data-mode') === mode;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    svg?.querySelectorAll('.map-path').forEach((path) => {
+      path.hidden = path.getAttribute('data-mode') !== mode;
+    });
+    legendItems.forEach((item) => {
+      item.hidden = item.getAttribute('data-for') !== mode;
+    });
+    overseasLists.forEach((list) => {
+      list.hidden = list.getAttribute('data-for') !== mode;
+    });
+    detail.hidden = true;
+  }
+
+  modeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-mode');
+      if (mode === 'nuance' || mode === 'bloc') setMode(mode);
+    });
+  });
+
+  function showDetail(code) {
+    const data = currentMode === 'bloc' ? byBloc.get(code) : byNuance.get(code);
+    const labels = currentMode === 'bloc' ? blocLabelMap : nuanceLabelMap;
+    if (!data || !detail || !detailTitle || !detailList) return;
+    detail.hidden = false;
+    detailTitle.textContent = `${data.nom} (${data.code}) — ${data.circoCount} circonscriptions`;
+    detailList.replaceChildren();
+    for (const b of data.breakdown) {
+      const li = document.createElement('li');
+      li.textContent = `${labels[b.code] ?? b.code} — ${b.count} circo. (moy. ${b.avgPct.toFixed(1)} %)`;
+      detailList.appendChild(li);
+    }
+  }
+
+  search?.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    svg?.querySelectorAll('.map-path:not([hidden])').forEach((path) => {
+      const nom = path.getAttribute('data-nom') ?? '';
+      const code = path.getAttribute('data-code') ?? '';
+      const match = !q || nom.includes(q) || code.includes(q);
+      path.style.opacity = match ? '1' : '0.15';
+    });
+  });
+
+  function bindPath(path) {
+    path.addEventListener('click', () => {
+      const code = path.getAttribute('data-code');
+      if (code) showDetail(code);
+    });
+    path.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const code = path.getAttribute('data-code');
+        if (code) showDetail(code);
+      }
+    });
+  }
+
+  svg?.querySelectorAll('.map-path').forEach((path) => bindPath(path));
+</script>
+
+<style>
+  .mode-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  .mode-btn {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--fg);
+    cursor: pointer;
+  }
+  .mode-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .search-label {
+    display: block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .search-label input {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    margin-top: 0.25rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--fg);
+  }
+  .map-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+  .france-map {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .france-map path {
+    cursor: pointer;
+    transition: fill-opacity 0.15s ease;
+  }
+  .france-map path:hover,
+  .france-map path:focus-visible {
+    fill-opacity: 1;
+    outline: 2px solid var(--accent);
+    outline-offset: 0;
+  }
+  .dept-detail ol {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
+  }
+  .overseas h4 {
+    font-size: 0.95rem;
+    margin: 0 0 0.35rem;
+  }
+  .overseas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .overseas-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+</style>

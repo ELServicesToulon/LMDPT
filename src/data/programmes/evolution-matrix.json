@@ -1,0 +1,249 @@
+{
+  "updated": "2026-07-02",
+  "links": [
+    {
+      "theme": "retraites",
+      "family_slug": "le-pen",
+      "family_label": "Marine Le Pen (RN)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "lepen-2017-retraites-60",
+          "label": "Retraite à 60 ans avec 40 annuités",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "lepen-2022-retraites-65-index",
+          "label": "Âge légal à 65 ans avec indexation",
+          "status": "modifie",
+          "delta_summary": "Assouplissement par rapport à 2017 : 65 ans au lieu de 60 ans."
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "family_slug": "le-pen",
+      "family_label": "Marine Le Pen (RN)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "lepen-2017-europe-frexit",
+          "label": "Référendum sur le maintien dans l'UE",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "lepen-2022-europe-referendum",
+          "label": "Référendum immigration et révision des traités",
+          "status": "modifie",
+          "delta_summary": "Sortie de l'euro retirée ; accent sur référendum immigration."
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "family_slug": "melenchon",
+      "family_label": "Jean-Luc Mélenchon (LFI)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "melenchon-2017-retraites-60",
+          "label": "Retraite à 60 ans",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "melenchon-2022-retraites-60",
+          "label": "Retraite à 60 ans ou 40 annuités",
+          "status": "maintenu",
+          "delta_summary": "Position stable entre 2017 et 2022."
+        }
+      ]
+    },
+    {
+      "theme": "climat",
+      "family_slug": "melenchon",
+      "family_label": "Jean-Luc Mélenchon (LFI)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "melenchon-2017-climat-sortie-nucleaire",
+          "label": "Sortie progressive du nucléaire",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "melenchon-2022-climat-sortie-nucleaire",
+          "label": "Sortie progressive du nucléaire et planification écologique",
+          "status": "maintenu"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "family_slug": "macron",
+      "family_label": "Emmanuel Macron",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "macron-2017-retraites-universelle",
+          "label": "Système universel de retraite par points",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "macron-2022-retraites-65",
+          "label": "Âge légal à 65 ans",
+          "status": "modifie",
+          "delta_summary": "Précision de l'âge légal à 65 ans pour la réforme par points."
+        }
+      ]
+    },
+    {
+      "theme": "climat",
+      "family_slug": "macron",
+      "family_label": "Emmanuel Macron",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "macron-2017-climat-paris",
+          "label": "Accord de Paris et transition énergétique",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "macron-2022-climat-nucleaire",
+          "label": "Relance du nucléaire",
+          "status": "modifie",
+          "delta_summary": "Pivot pro-nucléaire par rapport à la transition générale de 2017."
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "family_slug": "melenchon",
+      "family_label": "Jean-Luc Mélenchon (LFI)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "melenchon-2017-institutions-6e-republique",
+          "label": "VIe République",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "melenchon-2022-institutions-6e-republique",
+          "label": "VIe République et assemblée constituante",
+          "status": "maintenu"
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "melenchon-2027-institutions-ecoregions",
+          "label": "Écorégions remplaçant les régions",
+          "status": "nouveau",
+          "delta_summary": "Ajout d'une refonte territoriale centrée sur l'eau, en complément de la VIe République."
+        }
+      ]
+    },
+    {
+      "theme": "climat",
+      "family_slug": "melenchon",
+      "family_label": "Jean-Luc Mélenchon (LFI)",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "melenchon-2017-climat-sortie-nucleaire",
+          "label": "Sortie progressive du nucléaire",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "melenchon-2022-climat-sortie-nucleaire",
+          "label": "Sortie progressive du nucléaire et planification écologique",
+          "status": "maintenu"
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "melenchon-2027-climat-eau",
+          "label": "Priorité à la gestion de l'eau dans la campagne",
+          "status": "nouveau",
+          "delta_summary": "Thématique eau/hydrique mise en avant explicitement en 2027."
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "family_slug": "parti-socialiste",
+      "family_label": "Parti socialiste",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "hamon-2017-retraites-60",
+          "label": "Retraite à 60 ans (Hamon PS 2017)",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "ps-2027-retraites-62",
+          "label": "Retraite à 62 ans — projet « Vivre libre »",
+          "status": "modifie",
+          "delta_summary": "Assouplissement par rapport à Hamon 2017 (60 ans) mais en retrait vs réforme Macron (64 ans)."
+        }
+      ]
+    },
+    {
+      "theme": "pouvoir_achat",
+      "family_slug": "parti-socialiste",
+      "family_label": "Parti socialiste",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "hamon-2017-pouvoir-achat-rue",
+          "label": "Revenu universel de 750 € (Hamon 2017)",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "ps-2027-pouvoir-achat-smic",
+          "label": "SMIC à ~1 700 € net",
+          "status": "modifie",
+          "delta_summary": "Pivot vers hausse du SMIC plutôt que revenu universel."
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "family_slug": "le-pen",
+      "family_label": "Rassemblement national",
+      "entries": [
+        {
+          "scrutin": "presidentielle-2017",
+          "measure_id": "lepen-2017-institutions-referendum",
+          "label": "Référendums d'initiative citoyenne",
+          "status": "nouveau"
+        },
+        {
+          "scrutin": "presidentielle-2022",
+          "measure_id": "lepen-2022-institutions-plebiscite",
+          "label": "Plebiscite sur les réformes majeures",
+          "status": "maintenu"
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "lepen-2027-institutions-eligibilite-appel",
+          "label": "Candidature sous réserve — jugement d'appel",
+          "status": "nouveau",
+          "delta_summary": "Statut juridique en suspens ; pas de nouveau programme publié."
+        },
+        {
+          "scrutin": "presidentielle-2027",
+          "measure_id": "bardella-2027-institutions-substitution-rn",
+          "label": "Candidat de substitution (Bardella) — scénario judiciaire",
+          "status": "nouveau",
+          "delta_summary": "Pas de nouveau contenu programme ; continuité RN 2022 si candidature."
+        }
+      ]
+    }
+  ]
+}

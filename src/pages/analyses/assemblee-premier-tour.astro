@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import An1tComparatorMap from '../../components/An1tComparatorMap.astro';
+import An1tSeatCompare from '../../components/An1tSeatCompare.astro';
+import analysis from '../../data/analyses/assemblee-premier-tour-2024.json';
+import leg2024National from '../../data/elections/2024-legislatives-1er-tour-national.json';
+import {
+  compareSeatAllocations,
+  countCircosByBloc,
+  simulateAn1tSeats,
+} from '../../lib/an1t';
+import { getCirconscriptionResults } from '../../lib/circonscriptions';
+import type { ElectionDataset } from '../../lib/election-types';
+
+const t1 = new Date(analysis.date_premier_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const t2 = new Date(analysis.date_second_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const dataset = leg2024National as ElectionDataset;
+const circos = getCirconscriptionResults('2024-legislatives');
+const seatsFull = analysis.method.seats_full;
+const seatsProposal = analysis.method.seats_proposal;
+const threshold = analysis.method.threshold_pct;
+
+const an1t577 = simulateAn1tSeats(dataset, seatsFull, threshold);
+const an1t150 = simulateAn1tSeats(dataset, seatsProposal, threshold);
+const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, seatsFull);
+const circoBlocs = circos ? countCircosByBloc(circos) : [];
+---
+
+<BaseLayout
+  title="Assemblée du premier tour — simulation 2024"
+  description="Hémicycle virtuel proportionnel au 1er tour législatif 2024, comparé à l'Assemblée élue au second tour."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Assemblée du premier tour
+  </nav>
+
+  <section>
+    <h2>{analysis.title}</h2>
+    <p>
+      Simulation civique LMDPT : que donnerait une Assemblée nationale attribuée <strong
+        >uniquement</strong
+      > sur les voix du premier tour (<time datetime={analysis.date_premier_tour}>{t1}</time>), comparée
+      à l'Assemblée réellement élue au second tour (<time datetime={analysis.date_second_tour}
+        >{t2}</time>) ?
+    </p>
+    <p class="meta">{analysis.interpretation.resume}</p>
+  </section>
+
+  <An1tSeatCompare
+    title={`Comparatif national — ${seatsFull} sièges`}
+    totalSeats={seatsFull}
+    rows={comparison577}
+  />
+
+  <section class="card">
+    <h3>Proposition institutionnelle — chambre parallèle de {seatsProposal} sièges</h3>
+    <p class="meta">
+      Répartition {analysis.method.name}, seuil {threshold} % — même base de voix T1.
+    </p>
+    <dl class="fact-grid">
+      {
+        an1t150.map((row) => (
+          <div>
+            <dt>{row.label}</dt>
+            <dd>
+              {row.seats} sièges ({row.pctSeats.toFixed(1)} %)
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section class="card">
+    <h3>Pluralité géographique — circonscriptions en tête par bloc (T1)</h3>
+    <p class="meta">
+      Sur 577 circonscriptions, nuance en tête au 1er tour regroupée en blocs civiques (avant
+      désistements).
+    </p>
+    <dl class="fact-grid">
+      {
+        circoBlocs.map((row) => (
+          <div>
+            <dt>{row.label}</dt>
+            <dd>{row.count} circo. en tête</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  {
+    circos && (
+      <An1tComparatorMap dataset={circos} electionSlug="2024-legislatives-an1t" />
+    )
+  }
+
+  <section class="card">
+    <h3>Méthode</h3>
+    <ul>
+      <li>
+        <strong>Voix</strong> : résultats définitifs nationaux 1er tour législatives 2024 (open data).
+      </li>
+      <li>
+        <strong>Blocs</strong> : regroupement éditorial des nuances CodNuaCand (NFP, Ensemble, RN &
+        alliés, LR, autres).
+      </li>
+      <li>
+        <strong>Attribution</strong> : {analysis.method.name}, seuil {threshold} % des suffrages
+        exprimés.
+      </li>
+      <li>
+        <strong>AN réelle</strong> : sièges après 2nd tour, groupes parlementaires regroupés en
+        blocs comparables ({analysis.an_reelle.source_note}).
+      </li>
+    </ul>
+    <p class="meta">{analysis.interpretation.carte_note}</p>
+  </section>
+
+  <section class="card">
+    <h3>Poursuivre le débat</h3>
+    <p>
+      <a href="/debats/assemblee-premier-tour">Faut-il une chambre parlementaire élue sur le seul premier tour ?</a>
+      — discussion modérée sur GitHub.
+    </p>
+    <p class="meta">
+      Voir aussi : <a href="/analyses/legislatives-2024-desistements">désistements 2024</a>,
+      <a href="/atlas/2024-legislatives">atlas législatives</a>.
+    </p>
+  </section>
+
+  <section>
+    <h3>Sources</h3>
+    <ul>
+      {
+        analysis.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.75rem 1.25rem;
+    margin: 1rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  .fact-grid dt {
+    font-size: 0.75rem;
+    color: var(--muted, #666);
+    margin-bottom: 0.15rem;
+  }
+  .fact-grid dd {
+    margin: 0;
+    font-weight: 600;
+  }
+</style>

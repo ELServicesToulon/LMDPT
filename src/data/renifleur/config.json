@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "traditional_media": true,
+  "user_agent": "LMDPT-Renifleur/1.0 (civique; +https://lmdpt.iarbre.org)",
+  "max_items_per_feed": 25,
+  "max_total_items": 35,
+  "exclude_patterns": [
+    "sondage",
+    "baromètre",
+    "intentions de vote",
+    "dernier baromètre"
+  ],
+  "topic_keywords": [
+    "présidentielle",
+    "presidentielle",
+    "2027",
+    "premier tour",
+    "second tour",
+    "élection présidentielle",
+    "election presidentielle",
+    "candidat",
+    "candidature",
+    "parrainage",
+    "conseil constitutionnel",
+    "inéligibilité",
+    "ineligibilite",
+    "elysée",
+    "élysée",
+    "programme",
+    "propositions",
+    "chiffrage",
+    "mesures",
+    "financement"
+  ],
+  "feeds": [
+    {
+      "id": "lemonde-presidentielle-2027",
+      "label": "Le Monde — Élection présidentielle 2027",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/rss_full.xml",
+      "type": "traditional",
+      "filter": "none"
+    },
+    {
+      "id": "france24-france",
+      "label": "France 24 — France",
+      "url": "https://www.france24.com/fr/france/rss",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "lemonde-politique",
+      "label": "Le Monde — Politique",
+      "url": "https://www.lemonde.fr/politique/rss_full.xml",
+      "type": "traditional",
+      "filter": "keywords"
+    }
+  ],
+  "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement."
+}

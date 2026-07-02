@@ -1,0 +1,49 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Philippe Brun",
+    "slug": "philippe-brun",
+    "affiliation": "Parti socialiste"
+  },
+  "program": {
+    "published_at": "2026-06-30",
+    "document_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+    "document_label": "Candidature primaire PS — annonce presse (juin 2026) · s'appuie sur le projet « Vivre libre »",
+    "status": "partial"
+  },
+  "evolution_from": "presidentielle-2017",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "brun-2027-institutions-primaire-ps",
+      "theme": "institutions",
+      "label": "Candidature à la primaire interne du PS (automne 2026)",
+      "detail": "Le député de l'Eure annonce sa candidature à la primaire socialiste pour désigner le candidat à la présidentielle.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+      "source_label": "Le Monde — 30 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "brun-2027-pouvoir-achat-salaires",
+      "theme": "pouvoir_achat",
+      "label": "Campagne centrée sur le thème du salaire",
+      "detail": "Positionnement personnel dans la primaire — articulation attendue avec le projet collectif « Vivre libre » (SMIC ~1 700 € net).",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+      "source_label": "Le Monde — 30 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "brun-2027-institutions-vivre-libre",
+      "theme": "institutions",
+      "label": "Soutien au projet collectif PS « Vivre libre »",
+      "detail": "Candidature dans le cadre du projet adopté par les militants (83 %) — pas de programme distinct chiffré à ce stade.",
+      "status": "maintenu",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html",
+      "source_label": "Le Monde — 26 juin 2026",
+      "as_of": "2026-06"
+    }
+  ],
+  "chiffrages": []
+}

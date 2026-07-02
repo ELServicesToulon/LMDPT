@@ -1,0 +1,17 @@
+[
+  { "id": "fiscalite", "label": "Fiscalité" },
+  { "id": "retraites", "label": "Retraites" },
+  { "id": "europe", "label": "Europe" },
+  { "id": "climat", "label": "Climat & énergie" },
+  { "id": "sante", "label": "Santé" },
+  { "id": "education", "label": "Éducation" },
+  { "id": "securite", "label": "Sécurité" },
+  { "id": "immigration", "label": "Immigration" },
+  { "id": "institutions", "label": "Institutions" },
+  { "id": "pouvoir_achat", "label": "Pouvoir d'achat" },
+  { "id": "entreprises", "label": "Entreprises & travail" },
+  { "id": "logement", "label": "Logement" },
+  { "id": "defense", "label": "Défense" },
+  { "id": "justice", "label": "Justice" },
+  { "id": "numerique", "label": "Numérique" }
+]

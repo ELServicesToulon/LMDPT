@@ -1,20 +1,20 @@
 {
 	"folders": [
 		{
-			"name": "LMDPT — site Astro",
-			"path": "."
+			"name": "LMDPT (site Astro)",
+			"path": "/home/debian/iarbre/le-media-du-premier-tour"
 		},
 		{
-			"name": "Manusk — hub lmdpt",
-			"path": "../mediconvoi/second-brain/projects/lmdpt"
+			"name": "LMDPT hub Manusk",
+			"path": "/home/debian/Mediconvoi/second-brain/projects/lmdpt"
 		},
 		{
-			"name": "Manusk — vault second-brain",
-			"path": "../mediconvoi/second-brain"
+			"name": "Second Brain vault",
+			"path": "/home/debian/Mediconvoi/second-brain"
 		},
 		{
-			"name": "Mediconvoi — deploy ops",
-			"path": "../Mediconvoi/backend"
+			"name": "Mediconvoi backend (deploy)",
+			"path": "/home/debian/Mediconvoi/backend"
 		}
 	],
 	"settings": {
@@ -26,13 +26,10 @@
 		},
 		"search.exclude": {
 			"**/node_modules": true,
-			"**/dist": true,
-			"**/data/cache": false
+			"**/dist": true
 		}
 	},
 	"extensions": {
-		"recommendations": [
-			"astro-build.astro-vscode"
-		]
+		"recommendations": ["anysphere.remote-ssh"]
 	}
 }

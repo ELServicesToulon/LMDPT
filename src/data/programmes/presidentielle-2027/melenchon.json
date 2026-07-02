@@ -1,0 +1,39 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Jean-Luc Mélenchon",
+    "slug": "melenchon",
+    "affiliation": "La France insoumise"
+  },
+  "program": {
+    "published_at": "2026-07-02",
+    "document_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
+    "document_label": "Proposition partielle — écorégions (presse, juil. 2026)",
+    "status": "partial"
+  },
+  "evolution_from": "presidentielle-2022",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "melenchon-2027-institutions-ecoregions",
+      "theme": "institutions",
+      "label": "Remplacement des régions actuelles par des « écorégions »",
+      "detail": "Projet de découpage territorial fondé sur les bassins versants et l'eau — annoncé juillet 2026.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
+      "source_label": "Le Monde — 2 juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "melenchon-2027-climat-eau",
+      "theme": "climat",
+      "label": "« Introduire l'eau dans le débat » présidentiel",
+      "detail": "Priorité affichée à la gestion de l'eau et aux enjeux hydriques dans la campagne.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
+      "source_label": "Le Monde — 2 juil. 2026",
+      "as_of": "2026-07"
+    }
+  ],
+  "chiffrages": []
+}

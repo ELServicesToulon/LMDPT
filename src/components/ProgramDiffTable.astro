@@ -1,0 +1,69 @@
+---
+interface Props {
+  rows: Array<{
+    themeLabel: string;
+    measureLabel: string;
+    byCandidate: Record<string, string | null>;
+    chiffrageSpreadMdeur: number | null;
+  }>;
+  slugs: string[];
+  names: Record<string, string>;
+}
+
+const { rows, slugs, names } = Astro.props;
+---
+
+<div class="table-wrap">
+  <table class="prog-table">
+    <thead>
+      <tr>
+        <th scope="col">Thème</th>
+        <th scope="col">Mesure</th>
+        {slugs.map((slug) => (
+          <th scope="col">{names[slug] ?? slug}</th>
+        ))}
+        <th scope="col">Écart chiffrage</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          <td>{row.themeLabel}</td>
+          <td>{row.measureLabel}</td>
+          {slugs.map((slug) => (
+            <td>{row.byCandidate[slug] ?? '—'}</td>
+          ))}
+          <td>
+            {row.chiffrageSpreadMdeur != null
+              ? `${row.chiffrageSpreadMdeur.toLocaleString('fr-FR')} Md€`
+              : '—'}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .prog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .prog-table th,
+  .prog-table td {
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prog-table th {
+    background: var(--card);
+    font-weight: 600;
+  }
+</style>

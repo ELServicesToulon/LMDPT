@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import {
+  listCandidates,
+  getCandidateProgram,
+  getScrutin,
+  AUTEUR_LABELS,
+  STATUS_LABELS,
+} from '../../../../lib/programs';
+import { formatMdeur } from '../../../../lib/program-compare';
+
+export function getStaticPaths() {
+  const paths: Array<{ params: { scrutin: string; slug: string } }> = [];
+  for (const scrutin of ['presidentielle-2017', 'presidentielle-2022', 'presidentielle-2027']) {
+    for (const file of listCandidates(scrutin)) {
+      paths.push({ params: { scrutin, slug: file.candidate.slug } });
+    }
+  }
+  return paths;
+}
+
+const { scrutin, slug } = Astro.params;
+const file = getCandidateProgram(scrutin!, slug!);
+if (!file) throw new Error(`Programme introuvable: ${scrutin}/${slug}`);
+
+const meta = getScrutin(scrutin!);
+const updated = file.updated
+  ? new Date(file.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' })
+  : null;
+---
+
+<BaseLayout
+  title={`${file.candidate.name} — programme ${scrutin?.replace('presidentielle-', '')}`}
+  description={`Mesures phares et chiffrages — ${file.candidate.name}, ${meta?.label ?? scrutin}.`}
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> →
+    <a href="/analyses/programmes">Programmes</a> →
+    {file.candidate.name}
+  </nav>
+
+  <section>
+    <h2>{file.candidate.name}</h2>
+    <p class="meta">
+      {file.candidate.affiliation} · {meta?.label}
+      {updated && (
+        <>
+          {' '}
+          · MAJ <time datetime={file.updated}>{updated}</time>
+        </>
+      )}
+    </p>
+    {file.program.document_url && (
+      <p>
+        <a href={file.program.document_url} rel="noopener noreferrer">
+          {file.program.document_label ?? 'Document officiel'}
+        </a>
+      </p>
+    )}
+    {file.evolution_from && (
+      <p class="meta">
+        Évolution documentée depuis {file.evolution_from.replace('presidentielle-', '')} —{' '}
+        <a href="/analyses/programmes-comparateur?evolution=1">voir la matrice</a>
+      </p>
+    )}
+  </section>
+
+  <section class="card">
+    <h3>Mesures phares</h3>
+    <table class="prog-table">
+      <thead>
+        <tr>
+          <th>Thème</th>
+          <th>Mesure</th>
+          <th>Évolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        {file.measures.map((m) => (
+          <tr>
+            <td>{m.theme}</td>
+            <td>
+              {m.label}
+              {m.detail && <p class="meta">{m.detail}</p>}
+            </td>
+            <td>{STATUS_LABELS[m.status] ?? m.status}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h3>Chiffrages</h3>
+    <table class="prog-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Montant</th>
+          <th>Auteur</th>
+          <th>Horizon</th>
+        </tr>
+      </thead>
+      <tbody>
+        {file.chiffrages.map((c) => (
+          <tr>
+            <td>{c.type}</td>
+            <td>
+              {formatMdeur(c.montant_mdeur)}
+              {c.montant_min_mdeur != null && c.montant_max_mdeur != null && (
+                <span class="meta">
+                  {' '}
+                  (fourchette {formatMdeur(c.montant_min_mdeur)} – {formatMdeur(c.montant_max_mdeur)})
+                </span>
+              )}
+            </td>
+            <td>
+              {AUTEUR_LABELS[c.auteur] ?? c.auteur}
+              {c.source_url && (
+                <>
+                  {' '}
+                  ·{' '}
+                  <a href={c.source_url} rel="noopener noreferrer">
+                    source
+                  </a>
+                </>
+              )}
+            </td>
+            <td>{c.horizon}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    {file.chiffrages.some((c) => c.auteur === 'lmdpt') && (
+      <p class="meta">
+        Estimations LMDPT : voir docs/PROGRAMMES-CHIFFRAGE-METHODO.md dans le dépôt.
+      </p>
+    )}
+  </section>
+
+  <p>
+    <a href={`/analyses/programmes-comparateur?scrutin=${scrutin}&candidates=${slug}`}>
+      Comparer avec d'autres candidats
+    </a>
+  </p>
+</BaseLayout>
+
+<style>
+  .prog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .prog-table th,
+  .prog-table td {
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+</style>

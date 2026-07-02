@@ -84,12 +84,12 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 - [x] Repo GitHub public [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
 - [x] Workflow GitHub Pages (`.github/workflows/deploy.yml`) — push `Main` → build + deploy
-- [x] Domaine custom configuré côté GitHub (`lmdpt.iarbre.org` + `public/CNAME`)
-- [ ] DNS Cloudflare : `CNAME lmdpt → elservicestoulon.github.io` (`npm run dns:iarbre` avec jeton iarbre)
+- [x] Prod OVH KS-5-B (`npm run deploy-lmdpt-ovh` depuis Mediconvoi/backend)
+- [x] DNS Cloudflare : A `lmdpt` → `37.187.159.93` proxied
 - [ ] Domaine `.fr` dédié — décision L1+ (optionnel)
 
 ## Prochaine action recommandée
 
-1. DNS Cloudflare : `npm run dns:iarbre` (CNAME DNS only — évite challenge 403)
-2. Vérifier le site : [lmdpt.iarbre.org](https://lmdpt.iarbre.org) après deploy GitHub Pages
-3. P3-1 : capture projet LMDPT → second-brain
+1. Publication X manuelle : `second-brain/projects/lmdpt/social-drafts/publication-log.md`
+2. Profil + pin + thread semaine 1, puis posts J+2→J+6
+3. `npm run manusk:capture:lmdpt` après gros changement site

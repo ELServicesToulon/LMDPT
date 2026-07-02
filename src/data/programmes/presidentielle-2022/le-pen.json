@@ -1,0 +1,157 @@
+{
+  "scrutin": "presidentielle-2022",
+  "candidate": {
+    "name": "Marine Le Pen",
+    "slug": "le-pen",
+    "affiliation": "Rassemblement national"
+  },
+  "program": {
+    "published_at": "2022-03-14",
+    "document_url": "https://rassemblementnational.fr/programme",
+    "document_label": "Programme officiel RN 2022",
+    "status": "published"
+  },
+  "evolution_from": "presidentielle-2017",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "lepen-2022-retraites-65-index",
+      "theme": "retraites",
+      "label": "Âge légal de départ à la retraite à 65 ans avec indexation sur l'inflation",
+      "detail": "Évolution par rapport au programme 2017 (60 ans) — position assouplie.",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-fiscalite-tva-energie",
+      "theme": "fiscalite",
+      "label": "Baisse de la TVA sur l'énergie à 5,5 %",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-pouvoir-achat-smic",
+      "theme": "pouvoir_achat",
+      "label": "Hausse du SMIC net de 10 % sur le quinquennat",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-immigration-priorite-nationale",
+      "theme": "immigration",
+      "label": "Priorité nationale à l'emploi, au logement et aux prestations",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-europe-referendum",
+      "theme": "europe",
+      "label": "Référendum sur l'immigration et révision des traités européens",
+      "detail": "Pas de sortie immédiate de l'UE — évolution par rapport à 2017.",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-institutions-plebiscite",
+      "theme": "institutions",
+      "label": "Référendums d'initiative citoyenne et réduction du nombre de députés",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-securite-peines",
+      "theme": "securite",
+      "label": "Peines planchers et fin de l'excuse de minorité",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-sante-hopitaux",
+      "theme": "sante",
+      "label": "10 000 lits d'hôpital supplémentaires et revalorisation des soignants",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-climat-nucleaire",
+      "theme": "climat",
+      "label": "Maintien du nucléaire et moratoire sur les éoliennes",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "lepen-2022-education-maitres",
+      "theme": "education",
+      "label": "Recrutement de 40 000 enseignants et retour du certificat d'études",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "lepen-2022-recettes-candidat",
+      "type": "recettes",
+      "montant_mdeur": 55,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne RN 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "lepen-2022-recettes-im",
+      "type": "recettes",
+      "montant_mdeur": 17.8,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "lepen-2022-depenses-candidat",
+      "type": "depenses",
+      "montant_mdeur": 68.3,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne RN 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "lepen-2022-depenses-im",
+      "type": "depenses",
+      "montant_mdeur": 119.6,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "lepen-2022-solde-candidat",
+      "type": "solde",
+      "montant_mdeur": -13.3,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne RN 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "lepen-2022-solde-im",
+      "type": "solde",
+      "montant_mdeur": -101.8,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "lepen-2022-solde-lmdpt",
+      "type": "solde",
+      "montant_mdeur": -72,
+      "montant_min_mdeur": -95,
+      "montant_max_mdeur": -55,
+      "horizon": "2027",
+      "auteur": "lmdpt",
+      "method_note": "Recalcul TVA énergie + SMIC + lits hôpital — docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Le Pen 2022",
+      "confidence": "moyenne"
+    }
+  ]
+}

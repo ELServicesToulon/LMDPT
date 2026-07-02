@@ -1,5 +1,46 @@
 [
   {
+    "date": "2026-07-02",
+    "label": "Programmes 2027 partiels — veille élargie (Barrot, Le Pen, PS primaire)",
+    "source": "Le Monde · France 24 — élection présidentielle 2027",
+    "pages": [
+      "/analyses/programmes/presidentielle-2027/attal",
+      "/analyses/programmes/presidentielle-2027/melenchon",
+      "/analyses/programmes/presidentielle-2027/parti-socialiste",
+      "/analyses/programmes/presidentielle-2027/philippe-brun",
+      "/analyses/programmes/presidentielle-2027/philippe",
+      "/analyses/programmes/presidentielle-2027/bardella",
+      "/analyses/programmes/presidentielle-2027/le-pen",
+      "/analyses/programmes/presidentielle-2027/barrot",
+      "/analyses/programmes/presidentielle-2027/ruffin",
+      "/analyses/programmes-comparateur?scrutin=presidentielle-2027"
+    ],
+    "license": "lov2",
+    "licenseNote": "Propositions partielles sourcées presse — pas de programme officiel qualifié.",
+    "script": "npm run programme-veille"
+  },
+  {
+    "date": "2026-07-02",
+    "label": "Programmes présidentielles 2017/2022 — mesures et chiffrages",
+    "source": "Institut Montaigne · OFCE · documents de campagne",
+    "pages": [
+      "/analyses/programmes",
+      "/analyses/programmes-comparateur"
+    ],
+    "license": "lov2",
+    "licenseNote": "Chiffrages tiers attribués ; estimations LMDPT documentées dans docs/PROGRAMMES-CHIFFRAGE-METHODO.md",
+    "script": "npm run programme-chiffrage-lint"
+  },
+  {
+    "date": "2026-07-02",
+    "label": "Présidentielle 2027 — calendrier officialisé et veille candidatures",
+    "source": "Conseil des ministres (1er juil. 2026) · Conseil constitutionnel · France 24",
+    "pages": ["/analyses/presidentielle-2027-preparation"],
+    "license": "lov2",
+    "licenseNote": "Mise à jour éditoriale — dates 18 avril / 2 mai 2027 ; pas de jeu de résultats avant publication officielle.",
+    "script": null
+  },
+  {
     "date": "2026-06-29",
     "label": "Présidentielle 2027 — dossier de préparation (sources)",
     "source": "Conseil constitutionnel · Ministère de l'Intérieur · data.gouv.fr · Légifrance",

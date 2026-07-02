@@ -1,0 +1,139 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Parti socialiste — projet « Vivre libre »",
+    "slug": "parti-socialiste",
+    "affiliation": "PS (candidat non désigné)"
+  },
+  "program": {
+    "published_at": "2026-06-26",
+    "document_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html",
+    "document_label": "Projet collectif PS — adopté par 83 % des militants (juin 2026)",
+    "status": "partial"
+  },
+  "evolution_from": "presidentielle-2017",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "ps-2027-institutions-primaire-gauche",
+      "theme": "institutions",
+      "label": "Primaire à gauche — PS et Écologistes sur deux scénarios (vote militants 9 juillet)",
+      "detail": "Pas d'accord sur une primaire unique ; le PS soumet deux options sur les participants et le corps électoral.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/primaire-a-gauche-le-parti-socialiste-et-les-ecologistes-se-divisent-sur-leur-strategie-pour-la-presidentielle_6717347_823448.html",
+      "source_label": "Le Monde — 1er juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "ps-2027-pouvoir-achat-smic",
+      "theme": "pouvoir_achat",
+      "label": "SMIC à environ 1 700 € net par mois",
+      "detail": "Axe central « Vivre libre » — hausse du pouvoir d'achat et démocratie sociale.",
+      "status": "nouveau",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-retraites-62",
+      "theme": "retraites",
+      "label": "Âge légal de départ à la retraite à 62 ans (répartition)",
+      "status": "modifie",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-fiscalite-zucman",
+      "theme": "fiscalite",
+      "label": "Taxe Zucman de 2 % sur les patrimoines supérieurs à 100 M€",
+      "status": "nouveau",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-fiscalite-successions",
+      "theme": "fiscalite",
+      "label": "Impôt sur les grandes successions au-delà de 200 000 €",
+      "status": "nouveau",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-climat-planification",
+      "theme": "climat",
+      "label": "Transition écologique et planification (144 pages, projet collectif)",
+      "status": "nouveau",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-au-ps-un-projet-pas-encore-finalise-mais-deja-debattu-2227929",
+      "source_label": "Les Echos — juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-sante-deserts",
+      "theme": "sante",
+      "label": "Lutte contre les déserts médicaux et insécurité sanitaire",
+      "status": "nouveau",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-securite-delinquance",
+      "theme": "securite",
+      "label": "Réponse à la délinquance et aux « insécurités » (médicale, environnementale)",
+      "status": "nouveau",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026",
+      "as_of": "2026-06"
+    },
+    {
+      "id": "ps-2027-entreprises-reindustrialisation",
+      "theme": "entreprises",
+      "label": "Réindustrialisation et démocratie sociale en entreprise",
+      "status": "nouveau",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-au-ps-un-projet-pas-encore-finalise-mais-deja-debattu-2227929",
+      "source_label": "Les Echos — juin 2026",
+      "as_of": "2026-06"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "ps-2027-smic-lmdpt",
+      "type": "depenses",
+      "montant_mdeur": 9,
+      "montant_min_mdeur": 6,
+      "montant_max_mdeur": 12,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "SMIC ~1 700 € net vs ~1 400 € · +300 € × ~2,5 M SMIC × 12 mois ≈ 9 Md€/an (effet direct, hors reprises)",
+      "confidence": "moyenne",
+      "theme": "pouvoir_achat"
+    },
+    {
+      "id": "ps-2027-zucman-lmdpt",
+      "type": "recettes",
+      "montant_mdeur": 15,
+      "montant_min_mdeur": 10,
+      "montant_max_mdeur": 20,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Taxe 2 % patrimoine >100 M€ — ordre de grandeur études Zucman / débats publics (PS non chiffré officiellement)",
+      "confidence": "faible",
+      "theme": "fiscalite"
+    },
+    {
+      "id": "ps-2027-retraites-62-lmdpt",
+      "type": "depenses",
+      "montant_mdeur": 8,
+      "montant_min_mdeur": 5,
+      "montant_max_mdeur": 12,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Retour 62 ans vs trajectoire 64 ans — ordre de grandeur réformes retraites (~8 Md€/an)",
+      "confidence": "faible",
+      "theme": "retraites"
+    }
+  ]
+}

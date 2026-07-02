@@ -1,0 +1,91 @@
+{
+  "slug": "assemblee-premier-tour",
+  "question": "Faut-il une chambre parlementaire élue sur le seul premier tour ?",
+  "date": "2026-07-02",
+  "status": "ouvert",
+  "context": "Le premier tour législatif ou présidentiel capture la pluralité des préférences ; le second tour, les désistements et le vote utile la reconfigure. LMDPT propose une « Assemblée du premier tour » (AN1T) : un bloc de sièges attribués proportionnellement aux voix du 1er tour, en complément de l'Assemblée uninominale actuelle. Cette simulation civique compare les législatives 2024.",
+  "charte": "Débat civique LMDPT : pas de classement éliminatoire, arguments sourcés, modération sur GitHub Discussions. Le média documente les mécanismes, il ne désigne pas de réforme « gagnante ».",
+  "positions": [
+    {
+      "id": "pour",
+      "label": "Pour — institutionnaliser le miroir du premier tour",
+      "arguments": [
+        {
+          "text": "En 2024, le RN arrive en tête au premier tour avec 29,25 % des suffrages exprimés nationaux, mais le groupe RN à l'Assemblée (125 sièges) est distancé par le Nouveau Front populaire (182 sièges) issu d'une reconfiguration au second tour — l'écart entre pluralité T1 et sièges T2 est mesurable.",
+          "source": {
+            "label": "Simulation AN1T — LMDPT",
+            "url": "/analyses/assemblee-premier-tour"
+          }
+        },
+        {
+          "text": "Une chambre parallèle de 150 sièges élus à la proportionnelle stricte sur le T1 donnerait une voix institutionnelle aux forces présentes dans l'urne avant désistements, sans supprimer le gouvernement issu du scrutin uninomininal.",
+          "source": {
+            "label": "Débat désistements — LMDPT",
+            "url": "/debats/desistements-second-tour"
+          }
+        },
+        {
+          "text": "Les données du premier tour sont déjà publiées par le Ministère de l'Intérieur (open data) : la simulation est reproductible et auditable, pas une intuition médiatique.",
+          "source": {
+            "label": "data.gouv.fr — législatives 2024 T1",
+            "url": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contre",
+      "label": "Contre — garder l'Assemblée issue du second tour seul",
+      "arguments": [
+        {
+          "text": "Le scrutin uninominal majoritaire à deux tours vise la stabilité gouvernementale : un bloc proportionnel T1 pourrait créer une double légitimité (577 + 150) et paralyser l'action publique.",
+          "source": {
+            "label": "Code électoral — scrutin uninominal majoritaire",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006125374"
+          }
+        },
+        {
+          "text": "Le seuil de 3 % en proportionnelle élimine déjà les petites formations : l'AN1T ne serait pas une photographie parfaite de la pluralité, seulement une autre forme de filtre.",
+          "source": {
+            "label": "Simulation AN1T — paramètres",
+            "url": "/analyses/assemblee-premier-tour"
+          }
+        },
+        {
+          "text": "Les 215 désistements de 2024 traduisent un choix civique explicite des candidats et des partis : les ignorer institutionnellement reviendrait à nier une étape délibérée du scrutin.",
+          "source": {
+            "label": "Législatives 2024 — désistements",
+            "url": "/analyses/legislatives-2024-desistements"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nuance",
+      "label": "Nuance — simulation d'abord, loi ensuite",
+      "arguments": [
+        {
+          "text": "Avant toute révision constitutionnelle, publier chaque année un « hémicycle virtuel du premier tour » (comme le fait LMDPT en open data) permet au citoyen de voir l'écart T1/T2 sans modifier les institutions.",
+          "source": {
+            "label": "Charte éditoriale — Democracy Over Elimination",
+            "url": "https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md"
+          }
+        },
+        {
+          "text": "La carte par département montre où la pluralité T1 est visible géographiquement ; les sièges réels du second tour obéissent à une autre logique — les deux visualisations sont complémentaires, pas contradictoires.",
+          "source": {
+            "label": "Atlas législatives 2024",
+            "url": "/atlas/2024-legislatives"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "/analyses/assemblee-premier-tour",
+    "/analyses/legislatives-2024-desistements",
+    "/debats/desistements-second-tour",
+    "/debats/vote-utile-pluralite"
+  ],
+  "discussion_id": "assemblee-premier-tour"
+}

@@ -1,0 +1,86 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "Gabriel Attal",
+    "slug": "attal",
+    "affiliation": "Renaissance"
+  },
+  "program": {
+    "published_at": "2026-07-02",
+    "document_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+    "document_label": "Propositions partielles — entretien Parisien (via Le Monde, juil. 2026)",
+    "status": "partial"
+  },
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "attal-2027-institutions-fonctionnaires",
+      "theme": "institutions",
+      "label": "100 000 départs volontaires de fonctionnaires",
+      "detail": "Réduction des effectifs publics sur le quinquennat, via départs volontaires. Titres presse alternatifs : « suppressions de postes » (Le Monde, 2 juil. 2026).",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "source_label": "Le Monde — 2 juil. 2026",
+      "as_of": "2026-07",
+      "chiffrage_mdeur": 4,
+      "chiffrage_auteur": "lmdpt"
+    },
+    {
+      "id": "attal-2027-fiscalite-impunite-budgetaire",
+      "theme": "fiscalite",
+      "label": "« Impunité budgétaire zéro »",
+      "detail": "Chaque dépense publique devrait être compensée — discours sur la dette et les finances publiques.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "source_label": "Le Monde — 2 juil. 2026",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "attal-2027-fiscalite-reduction-dette",
+      "theme": "fiscalite",
+      "label": "Propositions en matière de réduction de la dette publique",
+      "detail": "Esquisse dans l'entretien Parisien — complément du discours « impunité budgétaire zéro ».",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "source_label": "Le Monde — 2 juil. 2026 (via Le Parisien)",
+      "as_of": "2026-07"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "attal-2027-departs-indemnites-lmdpt",
+      "type": "depenses",
+      "montant_mdeur": 4,
+      "montant_min_mdeur": 2,
+      "montant_max_mdeur": 6,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "100 000 départs volontaires sur 5 ans · indemnité moyenne 200–300 k€/départ → 4 Md€/an en moyenne (docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Attal 2027)",
+      "confidence": "moyenne",
+      "theme": "institutions"
+    },
+    {
+      "id": "attal-2027-departs-economies-lmdpt",
+      "type": "recettes",
+      "montant_mdeur": 1.2,
+      "montant_min_mdeur": 0.8,
+      "montant_max_mdeur": 2,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "20 000 postes/an non remplacés × ~60 k€ coût employeur → ~1,2 Md€/an d'économie de masse salariale (effet direct uniquement)",
+      "confidence": "moyenne",
+      "theme": "institutions"
+    },
+    {
+      "id": "attal-2027-solde-net-departs-lmdpt",
+      "type": "solde",
+      "montant_mdeur": 2.8,
+      "montant_min_mdeur": 0,
+      "montant_max_mdeur": 5.2,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Solde net direct indemnités − économies postes (sans effet macro)",
+      "confidence": "faible"
+    }
+  ]
+}

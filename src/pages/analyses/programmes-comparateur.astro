@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProgramDiffTable from '../../components/ProgramDiffTable.astro';
+import ProgramEvolutionTimeline from '../../components/ProgramEvolutionTimeline.astro';
+import {
+  listCandidates,
+  listScrutins,
+  getEvolutionMatrix,
+  getThemeLabel,
+  STATUS_LABELS,
+  AUTEUR_LABELS,
+} from '../../lib/programs';
+import {
+  buildCompareRows,
+  buildChiffrageSummary,
+  formatMdeur,
+} from '../../lib/program-compare';
+import type { ProgramThemeId } from '../../lib/program-types';
+
+const scrutinId =
+  Astro.url.searchParams.get('scrutin') ?? 'presidentielle-2022';
+const themeFilter = Astro.url.searchParams.get('theme') as ProgramThemeId | null;
+const showEvolution = Astro.url.searchParams.get('evolution') === '1';
+
+const available = listCandidates(scrutinId);
+const defaultSlugs = available.slice(0, 3).map((c) => c.candidate.slug);
+const selectedParam = Astro.url.searchParams.get('candidates');
+const selectedSlugs = selectedParam
+  ? selectedParam.split(',').filter((s) => available.some((c) => c.candidate.slug === s))
+  : defaultSlugs;
+
+const selected = available.filter((c) => selectedSlugs.includes(c.candidate.slug));
+const compareRows = buildCompareRows(selected, themeFilter ?? undefined);
+const chiffrageRows = buildChiffrageSummary(selected);
+const names = Object.fromEntries(selected.map((c) => [c.candidate.slug, c.candidate.name]));
+
+const evolution = getEvolutionMatrix();
+const evolutionDisplay = evolution.links.map((link) => ({
+  theme: getThemeLabel(link.theme),
+  family_label: link.family_label,
+  items: link.entries.map((e) => ({
+    scrutin: e.scrutin,
+    label: e.label,
+    status: e.status,
+    delta_summary: e.delta_summary,
+  })),
+}));
+
+const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.status === 'partial');
+---
+
+<BaseLayout
+  title="Comparateur de programmes"
+  description="Tableau différentiel et chiffrages prévisionnels — programmes présidentiels, sources Institut Montaigne et estimations LMDPT."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Comparateur
+  </nav>
+
+  <section>
+    <h2>Comparateur de programmes</h2>
+    <p>
+      Sélection factuelle — ordre alphabétique. Cellule vide = non précisé dans le programme
+      intégré.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Filtres</h3>
+    <form method="get" class="filter-form">
+      <label>
+        Scrutin
+        <select name="scrutin">
+          {scrutins.map((s) => (
+            <option value={s.id} selected={s.id === scrutinId}>
+              {s.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <fieldset>
+        <legend>Candidats (2 à 4)</legend>
+        {available.map((c) => (
+          <label class="check-label">
+            <input
+              type="checkbox"
+              name="candidates"
+              value={c.candidate.slug}
+              checked={selectedSlugs.includes(c.candidate.slug)}
+            />
+            {c.candidate.name}
+          </label>
+        ))}
+      </fieldset>
+      <label>
+        Thème
+        <select name="theme">
+          <option value="">Tous</option>
+          <option value="fiscalite" selected={themeFilter === 'fiscalite'}>Fiscalité</option>
+          <option value="retraites" selected={themeFilter === 'retraites'}>Retraites</option>
+          <option value="europe" selected={themeFilter === 'europe'}>Europe</option>
+          <option value="climat" selected={themeFilter === 'climat'}>Climat</option>
+          <option value="pouvoir_achat" selected={themeFilter === 'pouvoir_achat'}>Pouvoir d'achat</option>
+          <option value="immigration" selected={themeFilter === 'immigration'}>Immigration</option>
+        </select>
+      </label>
+      <button type="submit">Appliquer</button>
+    </form>
+  </section>
+
+  {selected.length >= 2 && (
+    <>
+      <section class="card">
+        <h3>Tableau différentiel</h3>
+        <ProgramDiffTable rows={compareRows} slugs={selectedSlugs} names={names} />
+      </section>
+
+      <section class="card">
+        <h3>Chiffrage prévisionnel agrégé (Md€/an, horizon 2027)</h3>
+        <p class="meta">
+          Sources : campagne, Institut Montaigne 2022, estimations LMDPT (voir méthodologie repo).
+        </p>
+        <div class="table-wrap">
+          <table class="prog-table">
+            <thead>
+              <tr>
+                <th>Candidat</th>
+                <th>Rec. campagne</th>
+                <th>Rec. IM</th>
+                <th>Dép. campagne</th>
+                <th>Dép. IM</th>
+                <th>Solde IM</th>
+                <th>Solde LMDPT</th>
+              </tr>
+            </thead>
+            <tbody>
+              {chiffrageRows.map((row) => (
+                <tr>
+                  <td>{row.name}</td>
+                  <td>{formatMdeur(row.recettesCandidat)}</td>
+                  <td>{formatMdeur(row.recettesIm)}</td>
+                  <td>{formatMdeur(row.depensesCandidat)}</td>
+                  <td>{formatMdeur(row.depensesIm)}</td>
+                  <td>{formatMdeur(row.soldeIm)}</td>
+                  <td>{formatMdeur(row.soldeLmdpt)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  )}
+
+  {selected.length < 2 && (
+    <p class="meta">Sélectionnez au moins deux candidats pour afficher le tableau différentiel.</p>
+  )}
+
+  {(showEvolution || scrutinId !== 'presidentielle-2027') && (
+    <section class="card">
+      <h3>Évolution par rapport aux scrutins précédents</h3>
+      <ProgramEvolutionTimeline entries={evolutionDisplay} statusLabels={STATUS_LABELS} />
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .filter-form {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .filter-form select,
+  .filter-form button {
+    font: inherit;
+    margin-left: 0.35rem;
+  }
+  fieldset {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+  }
+  .check-label {
+    display: block;
+    margin: 0.25rem 0;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .prog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .prog-table th,
+  .prog-table td {
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.55rem;
+    text-align: left;
+  }
+</style>

@@ -1,0 +1,186 @@
+{
+  "scrutin": "presidentielle-2027",
+  "updated": "2026-07-02",
+  "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
+  "candidates": [
+    {
+      "slug": "attal",
+      "name": "Gabriel Attal",
+      "affiliation": "Renaissance",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-02",
+      "chiffrage_available": true,
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "press_signals": [
+        {
+          "title": "Gabriel Attal veut 100 000 suppressions de postes de fonctionnaires et l’« impunité budgétaire zéro »",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+          "published": "2026-07-02",
+          "detected_at": "2026-07-02"
+        },
+        {
+          "title": "Présidentielle 2027 : Laurent Wauquiez met à mal la candidature de Bruno Retailleau en tendant la main à Edouard Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+          "published": "2026-07-01",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "retailleau",
+      "name": "Bruno Retailleau",
+      "affiliation": "Les Républicains",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-01",
+      "chiffrage_available": false,
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : Laurent Wauquiez vante Edouard Philippe pour mieux attaquer la candidature de Bruno Retailleau",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-laurent-wauquiez-vante-edouard-philippe-pour-mieux-attaquer-la-candidature-de-bruno-retailleau_6717752_823448.html",
+          "published": "2026-07-02",
+          "detected_at": "2026-07-02"
+        },
+        {
+          "title": "Présidentielle 2027 : Laurent Wauquiez met à mal la candidature de Bruno Retailleau en tendant la main à Edouard Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+          "published": "2026-07-01",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "philippe",
+      "name": "Édouard Philippe",
+      "affiliation": "Horizons",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-01",
+      "chiffrage_available": false,
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : Laurent Wauquiez vante Edouard Philippe pour mieux attaquer la candidature de Bruno Retailleau",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-laurent-wauquiez-vante-edouard-philippe-pour-mieux-attaquer-la-candidature-de-bruno-retailleau_6717752_823448.html",
+          "published": "2026-07-02",
+          "detected_at": "2026-07-02"
+        },
+        {
+          "title": "Présidentielle 2027 : Laurent Wauquiez met à mal la candidature de Bruno Retailleau en tendant la main à Edouard Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+          "published": "2026-07-01",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "parti-socialiste",
+      "name": "Parti socialiste — « Vivre libre »",
+      "affiliation": "PS (candidat non désigné)",
+      "program_status": "partial",
+      "last_measure_at": "2026-06-26",
+      "chiffrage_available": true,
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html"
+    },
+    {
+      "slug": "philippe-brun",
+      "name": "Philippe Brun",
+      "affiliation": "Parti socialiste",
+      "program_status": "partial",
+      "last_measure_at": "2026-06-30",
+      "chiffrage_available": false,
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : « Je serai candidat à la primaire interne du PS », annonce le député Philippe Brun",
+          "url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+          "published": "2026-06-30",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "roussel",
+      "name": "Fabien Roussel",
+      "affiliation": "Parti communiste français",
+      "program_status": "awaiting_program",
+      "chiffrage_available": false
+    },
+    {
+      "slug": "hollande",
+      "name": "François Hollande",
+      "affiliation": "Sans étiquette",
+      "program_status": "awaiting_program",
+      "chiffrage_available": false
+    },
+    {
+      "slug": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "affiliation": "La France insoumise",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-02",
+      "chiffrage_available": false,
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html"
+    },
+    {
+      "slug": "bardella",
+      "name": "Jordan Bardella",
+      "affiliation": "Rassemblement national",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-02",
+      "chiffrage_available": false,
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+    },
+    {
+      "slug": "le-pen",
+      "name": "Marine Le Pen",
+      "affiliation": "Rassemblement national",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-02",
+      "chiffrage_available": false,
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+    },
+    {
+      "slug": "barrot",
+      "name": "Jean-Noël Barrot",
+      "affiliation": "Renaissance",
+      "program_status": "partial",
+      "last_measure_at": "2026-06-28",
+      "chiffrage_available": false,
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : Jean-Noël Barrot appelle à « rendre le pouvoir aux Français » face au RN et à LFI",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
+          "published": "2026-06-28",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "ruffin",
+      "name": "François Ruffin",
+      "affiliation": "Debout la France",
+      "program_status": "partial",
+      "last_measure_at": "2026-06-26",
+      "chiffrage_available": false,
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : dans l’Indre, François Ruffin se lance à la conquête des parrainages des maires",
+          "url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
+          "published": "2026-06-26",
+          "detected_at": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "slug": "glucksmann",
+      "name": "Raphaël Glucksmann",
+      "affiliation": "Place publique",
+      "program_status": "awaiting_program",
+      "chiffrage_available": false
+    }
+  ],
+  "veille_scan_at": "2026-07-02T19:55:26.414Z",
+  "program_press_hits": 16
+}

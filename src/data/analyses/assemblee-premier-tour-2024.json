@@ -1,0 +1,41 @@
+{
+  "title": "Assemblée du premier tour — simulation législatives 2024",
+  "date_premier_tour": "2024-06-30",
+  "date_second_tour": "2024-07-07",
+  "method": {
+    "name": "Sainte-Laguë",
+    "threshold_pct": 3,
+    "seats_full": 577,
+    "seats_proposal": 150,
+    "commentaire": "Répartition proportionnelle nationale agrégée au 1er tour uniquement, regroupée en blocs civiques LMDPT. Ne remplace pas la géographie uninominale du 2nd tour."
+  },
+  "sources": [
+    {
+      "label": "Résultats définitifs 1er tour — data.gouv.fr",
+      "url": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/"
+    },
+    {
+      "label": "Archives résultats législatives 2024 (2nd tour)",
+      "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/legislatives-2024/"
+    },
+    {
+      "label": "Composition de l'Assemblée nationale — groupes politiques",
+      "url": "https://www.assemblee-nationale.fr/dyn/deputes/groupes-politiques"
+    }
+  ],
+  "an_reelle": {
+    "seats_total": 577,
+    "source_note": "Sièges après second tour (juillet 2024), regroupés en blocs comparables à la simulation AN1T. Les petits groupes sont fusionnés dans « autres ».",
+    "blocs": [
+      { "id": "nfp", "label": "Nouveau Front populaire", "color": "#c0392b", "seats": 182 },
+      { "id": "ensemble", "label": "Ensemble / centre présidentiel", "color": "#1e4d6b", "seats": 99 },
+      { "id": "rn", "label": "Rassemblement national & alliés droite", "color": "#5c4a72", "seats": 125 },
+      { "id": "lr", "label": "Droite républicaine", "color": "#0066cc", "seats": 47 },
+      { "id": "autres", "label": "Autres groupes", "color": "#718096", "seats": 124 }
+    ]
+  },
+  "interpretation": {
+    "resume": "Au premier tour, le RN et le NFP sont proches en voix nationales (~29 % et ~28 %). Au second tour, la recomposition par désistements et duels binaires produit une Assemblée où le NFP obtient le plus de sièges (182) alors que le RN reste premier parti en voix T1 mais « seulement » 125 députés de son groupe — écart documenté, pas moralisé.",
+    "carte_note": "La carte compare la pluralité géographique du 1er tour (nuances ou blocs en tête par département). Les sièges réels du 2nd tour ne suivent pas la même logique spatiale : le comparatif chiffré ci-dessus en est la traduction nationale."
+  }
+}

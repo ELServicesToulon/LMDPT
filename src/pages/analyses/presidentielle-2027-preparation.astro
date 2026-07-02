@@ -1,6 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import analysis from '../../data/analyses/presidentielle-2027-preparation.json';
+import renifleur from '../../data/renifleur/latest.json';
+import { getVeille2027, PROGRAM_STATUS_LABELS } from '../../lib/programs';
+
+const veilleProgrammes = getVeille2027();
+
+const calendarTitle =
+  analysis.calendar.status === 'official' ? 'Calendrier officiel' : 'Calendrier indicatif';
 
 const t1 = new Date(analysis.calendar.premier_tour_indicatif).toLocaleDateString('fr-FR', {
   dateStyle: 'long',
@@ -13,11 +20,31 @@ const liste = new Date(analysis.calendar.publication_liste_candidats_indicatif).
   { dateStyle: 'long' },
 );
 const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const officialized =
+  analysis.calendar.officialized &&
+  new Date(analysis.calendar.officialized).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const statusLabels: Record<string, string> = {
+  intention_declaree: 'Intention déclarée',
+  candidat_declare: 'Candidature déclarée',
+  designe_parti: 'Désigné par le parti',
+  candidature_soumise_eligibilite: 'Candidature — éligibilité en cours de décision',
+};
+
+const sortedCandidatures = [...analysis.candidatures_veille.entries].sort((a, b) =>
+  a.name.localeCompare(b.name, 'fr'),
+);
+const renifleurUpdated = renifleur.fetched_at
+  ? new Date(renifleur.fetched_at).toLocaleString('fr-FR', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+    })
+  : null;
 ---
 
 <BaseLayout
   title="Présidentielle 2027 — préparation"
-  description="Dossier de préparation — sources officielles et feuille de route pour documenter le premier tour 2027."
+  description="Dossier de préparation — calendrier officialisé, veille factuelle et feuille de route pour documenter le premier tour 2027."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a> → Présidentielle 2027
@@ -29,7 +56,8 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
     <p>
       Ce dossier recense les <strong>sources officielles</strong> et la feuille de route éditoriale
       pour couvrir le premier tour de la présidentielle 2027 selon la ligne Democracy Over
-      Elimination. Aucun résultat ni candidature n'est publié ici avant publication officielle.
+      Elimination. Aucun résultat ni liste officielle de candidats n'est publié ici avant
+      publication par le Conseil constitutionnel.
     </p>
     <p class="meta">
       Dernière mise à jour : <time datetime={analysis.updated}>{updated}</time>
@@ -37,8 +65,15 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
   </section>
 
   <section class="card">
-    <h3>Calendrier indicatif</h3>
+    <h3>{calendarTitle}</h3>
     <p class="meta">{analysis.calendar.note}</p>
+    {
+      officialized && (
+        <p class="meta">
+          Annoncé le <time datetime={analysis.calendar.officialized}>{officialized}</time>
+        </p>
+      )
+    }
     <dl class="fact-grid">
       <div>
         <dt>Publication liste candidats (indicatif)</dt>
@@ -47,18 +82,107 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
         </dd>
       </div>
       <div>
-        <dt>Premier tour (indicatif)</dt>
+        <dt>Premier tour</dt>
         <dd>
           <time datetime={analysis.calendar.premier_tour_indicatif}>{t1}</time>
         </dd>
       </div>
       <div>
-        <dt>Second tour (indicatif)</dt>
+        <dt>Second tour</dt>
         <dd>
           <time datetime={analysis.calendar.second_tour_indicatif}>{t2}</time>
         </dd>
       </div>
     </dl>
+    {analysis.calendar.overseas_note && <p class="meta">{analysis.calendar.overseas_note}</p>}
+    {
+      analysis.calendar.constitutional_window && (
+        <p class="meta">{analysis.calendar.constitutional_window}</p>
+      )
+    }
+  </section>
+
+  <section class="card">
+    <h3>Veille factuelle</h3>
+    <ul class="veille-list">
+      {
+        analysis.veille.map((item) => (
+          <li>
+            <time datetime={item.date}>
+              {new Date(item.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+            </time>
+            — <strong>{item.label}</strong> : {item.fact}{' '}
+            <a href={item.source_url} rel="noopener noreferrer">
+              ({item.source_label})
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    renifleur.enabled && renifleur.items.length > 0 && (
+      <section class="card" id="renifleur-presse">
+        <h3>Renifleur — presse traditionnelle</h3>
+        <p class="meta">{renifleur.disclaimer}</p>
+        {
+          renifleurUpdated && (
+            <p class="meta">
+              Dernier passage : <time datetime={renifleur.fetched_at}>{renifleurUpdated}</time> ·{' '}
+              {renifleur.feeds_ok} flux OK
+            </p>
+          )
+        }
+        <ul class="renifleur-list">
+          {
+            renifleur.items.map((item) => (
+              <li>
+                <time datetime={item.published}>
+                  {new Date(item.published).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+                </time>
+                —{' '}
+                <a href={item.url} rel="noopener noreferrer">
+                  {item.title}
+                </a>
+                <span class="meta"> ({item.source_label})</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="card">
+    <h3>Candidatures — veille (non officielle)</h3>
+    <p class="meta">{analysis.candidatures_veille.disclaimer}</p>
+    <table class="candidatures-table">
+      <thead>
+        <tr>
+          <th scope="col">Personnalité</th>
+          <th scope="col">Étiquette</th>
+          <th scope="col">Statut documenté</th>
+          <th scope="col">Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          sortedCandidatures.map((entry) => (
+            <tr>
+              <td>{entry.name}</td>
+              <td>{entry.affiliation}</td>
+              <td>{statusLabels[entry.status] ?? entry.status}</td>
+              <td>
+                <a href={entry.source_url} rel="noopener noreferrer">
+                  {entry.source_label}
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
   </section>
 
   <section class="card">
@@ -86,6 +210,64 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
         ))
       }
     </ol>
+  </section>
+
+  <section class="card" id="programmes-2027">
+    <h3>Programmes — veille 2027</h3>
+    <p class="meta">{veilleProgrammes.disclaimer}</p>
+    <p>
+      <a href="/analyses/programmes">Index programmes</a> ·{' '}
+      <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2022">
+        Comparateur (référence 2022)
+      </a>
+      {veilleProgrammes.program_press_hits != null && (
+        <span class="meta">
+          {' '}
+          · Dernier scan : {veilleProgrammes.program_press_hits} article(s) « programme » dans le
+          renifleur
+        </span>
+      )}
+    </p>
+    <table class="candidatures-table">
+      <thead>
+        <tr>
+          <th>Candidat (veille)</th>
+          <th>Programme intégré</th>
+          <th>Signaux presse</th>
+          <th>Chiffrage</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          veilleProgrammes.candidates.map((c) => (
+            <tr>
+              <td>
+                {c.name}
+                <span class="meta"> — {c.affiliation}</span>
+              </td>
+              <td>{PROGRAM_STATUS_LABELS[c.program_status] ?? c.program_status}</td>
+              <td>
+                {c.press_signals?.length ? (
+                  <ul class="press-signals">
+                    {c.press_signals.map((s) => (
+                      <li>
+                        <a href={s.url} rel="noopener noreferrer">
+                          {s.title}
+                        </a>
+                        <span class="meta"> — presse, {s.published ?? s.detected_at}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span class="meta">—</span>
+                )}
+              </td>
+              <td>{c.chiffrage_available ? 'oui' : '—'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
   </section>
 
   <section>
@@ -135,6 +317,39 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
     font-size: 1rem;
     font-variant-numeric: tabular-nums;
   }
+  .veille-list {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .veille-list li + li {
+    margin-top: 0.65rem;
+  }
+  .renifleur-list {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .renifleur-list li + li {
+    margin-top: 0.55rem;
+  }
+  .candidatures-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+  }
+  .candidatures-table th,
+  .candidatures-table td {
+    border: 1px solid var(--border, #ddd);
+    padding: 0.45rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .candidatures-table th {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
   .milestones {
     margin: 0;
     padding-left: 1.25rem;
@@ -151,5 +366,14 @@ const updated = new Date(analysis.updated).toLocaleDateString('fr-FR', { dateSty
   h4 {
     font-size: 0.95rem;
     margin: 1rem 0 0.35rem;
+  }
+  .press-signals {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  .press-signals li + li {
+    margin-top: 0.35rem;
   }
 </style>

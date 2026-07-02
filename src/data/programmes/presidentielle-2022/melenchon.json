@@ -1,0 +1,156 @@
+{
+  "scrutin": "presidentielle-2022",
+  "candidate": {
+    "name": "Jean-Luc Mélenchon",
+    "slug": "melenchon",
+    "affiliation": "La France insoumise"
+  },
+  "program": {
+    "published_at": "2022-03-15",
+    "document_url": "https://laec.fr/",
+    "document_label": "L'Avenir en commun — programme LFI 2022",
+    "status": "published"
+  },
+  "evolution_from": "presidentielle-2017",
+  "updated": "2026-07-02",
+  "measures": [
+    {
+      "id": "melenchon-2022-retraites-60",
+      "theme": "retraites",
+      "label": "Retraite à 60 ans ou 40 annuités",
+      "detail": "Abrogation de la réforme Macron et retour à 60 ans.",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-fiscalite-14-tranches",
+      "theme": "fiscalite",
+      "label": "14 tranches d'impôt sur le revenu et contribution sur les revenus du capital",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-pouvoir-achat-smic-1500",
+      "theme": "pouvoir_achat",
+      "label": "SMIC à 1 500 € net",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-climat-sortie-nucleaire",
+      "theme": "climat",
+      "label": "Sortie progressive du nucléaire et planification écologique",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-europe-plan-b",
+      "theme": "europe",
+      "label": "Renégociation des traités européens — plan A / plan B",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-sante-gratuite",
+      "theme": "sante",
+      "label": "Gratuité des soins et salaires des soignants revalorisés",
+      "status": "modifie",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-education-enseignants",
+      "theme": "education",
+      "label": "Embauche massive d'enseignants et gratuité de la cantine scolaire",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-institutions-6e-republique",
+      "theme": "institutions",
+      "label": "VIe République et assemblée constituante",
+      "status": "maintenu",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-logement-gel-loyers",
+      "theme": "logement",
+      "label": "Gel des loyers et encadrement des loyers partout en France",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    },
+    {
+      "id": "melenchon-2022-entreprises-semaine-32h",
+      "theme": "entreprises",
+      "label": "Semaine de 32 heures sans baisse de salaire",
+      "status": "nouveau",
+      "as_of": "2022-03"
+    }
+  ],
+  "chiffrages": [
+    {
+      "id": "melenchon-2022-recettes-candidat",
+      "type": "recettes",
+      "montant_mdeur": 267,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LFI 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "melenchon-2022-recettes-im",
+      "type": "recettes",
+      "montant_mdeur": 112.7,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "melenchon-2022-depenses-candidat",
+      "type": "depenses",
+      "montant_mdeur": 250,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LFI 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "melenchon-2022-depenses-im",
+      "type": "depenses",
+      "montant_mdeur": 331.6,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "melenchon-2022-solde-candidat",
+      "type": "solde",
+      "montant_mdeur": 17,
+      "horizon": "2027",
+      "auteur": "candidat",
+      "source_label": "Campagne LFI 2022",
+      "confidence": "moyenne"
+    },
+    {
+      "id": "melenchon-2022-solde-im",
+      "type": "solde",
+      "montant_mdeur": -218.9,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "confidence": "elevee"
+    },
+    {
+      "id": "melenchon-2022-solde-lmdpt",
+      "type": "solde",
+      "montant_mdeur": -185,
+      "montant_min_mdeur": -240,
+      "montant_max_mdeur": -140,
+      "horizon": "2027",
+      "auteur": "lmdpt",
+      "method_note": "Recalcul retraites 60 ans, SMIC 1500 €, 32h — docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Mélenchon 2022",
+      "confidence": "moyenne"
+    }
+  ]
+}
