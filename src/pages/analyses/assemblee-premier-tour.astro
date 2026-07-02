@@ -53,6 +53,8 @@ const circoBlocs = circos ? countCircosByBloc(circos) : [];
     rows={comparison577}
   />
 
+  <p class="interpretation-note meta">{analysis.interpretation.seuil_note}</p>
+
   <section class="card">
     <h3>Proposition institutionnelle — chambre parallèle de {seatsProposal} sièges</h3>
     <p class="meta">
@@ -147,6 +149,13 @@ const circoBlocs = circos ? countCircosByBloc(circos) : [];
 </BaseLayout>
 
 <style>
+  .interpretation-note {
+    margin: 0.75rem 0 1.5rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--border);
+    max-width: 52rem;
+    line-height: 1.55;
+  }
   .fact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));

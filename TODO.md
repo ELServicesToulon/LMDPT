@@ -69,6 +69,27 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 ---
 
+## Phase 5 — Débats civiques & discussion (juil. 2026)
+
+- [x] Rubrique `/debats` + catalogue (`src/lib/debates.ts`, JSON positions sourcées)
+- [x] Débats pilotes : vote utile, désistements 2024, assemblée premier tour
+- [x] Composants `DebatePositions.astro`, `DiscussionSection.astro` (Giscus)
+- [x] GitHub Discussions + catégorie « Débats » + app Giscus
+- [x] Script `npm run giscus:setup` + doc `docs/GISCUS.md`, `docs/GISCUS-ACTIVATION.md`
+- [ ] Créer les 3 fils GitHub (ou premier commentaire Giscus par page) pour lier les embeds
+
+---
+
+## Phase 6 — AN1T simulation législatives 2024 (juil. 2026)
+
+- [x] Moteur Sainte-Laguë + blocs civiques → `src/lib/an1t.ts` (tests)
+- [x] Analyse `/analyses/assemblee-premier-tour` + comparatif sièges
+- [x] Carte départements T1 (toggle nuances / blocs) → `An1tComparatorMap.astro`
+- [x] Débat lié `/debats/assemblee-premier-tour`
+- [ ] Carte 2nd tour réel par circonscription (import données T2 à prévoir)
+
+---
+
 ## Décisions ouvertes
 
 | Sujet | Options | Décision |
@@ -90,6 +111,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 ## Prochaine action recommandée
 
-1. Publication X manuelle : `second-brain/projects/lmdpt/social-drafts/publication-log.md`
-2. Profil + pin + thread semaine 1, puis posts J+2→J+6
-3. `npm run manusk:capture:lmdpt` après gros changement site
+1. Publication X manuelle : `second-brain/projects/lmdpt/social-drafts/publication-log.md` (semaine 4 = débats + AN1T)
+2. Profil + pin + thread semaine 1, puis enchaîner packs S2→S4
+3. Premier commentaire Giscus sur `/debats/assemblee-premier-tour/` (crée le fil `discussion_id`)
+4. `npm run manusk:capture:lmdpt` (Mediconvoi) après déploiement

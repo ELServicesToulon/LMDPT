@@ -36,6 +36,7 @@
   },
   "interpretation": {
     "resume": "Au premier tour, le RN et le NFP sont proches en voix nationales (~29 % et ~28 %). Au second tour, la recomposition par désistements et duels binaires produit une Assemblée où le NFP obtient le plus de sièges (182) alors que le RN reste premier parti en voix T1 mais « seulement » 125 députés de son groupe — écart documenté, pas moralisé.",
-    "carte_note": "La carte compare la pluralité géographique du 1er tour (nuances ou blocs en tête par département). Les sièges réels du 2nd tour ne suivent pas la même logique spatiale : le comparatif chiffré ci-dessus en est la traduction nationale."
+    "carte_note": "La carte compare la pluralité géographique du 1er tour (nuances ou blocs en tête par département). Les sièges réels du 2nd tour ne suivent pas la même logique spatiale : le comparatif chiffré ci-dessus en est la traduction nationale.",
+    "seuil_note": "Lecture des écarts « Autres » : en simulation AN1T, le bloc Régionalistes & divers (REG, DIV) est sous le seuil de 3 % des suffrages exprimés — 0 siège attribué. À l'Assemblée réelle, « Autres groupes » (124 sièges) agrège de nombreux petits groupes parlementaires élus au 2nd tour dans des duels uninominaux ; ce n'est pas le même objet statistique. Les écarts RN (+98) et Ensemble (+33) traduisent surtout l'effet des désistements et du vote de second tour, pas une « sous-représentation » brute du T1."
   }
 }

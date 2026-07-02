@@ -1,6 +1,6 @@
 # Activation Giscus — checklist (P7-4)
 
-Discussions **désactivées** sur `ELServicesToulon/LMDPT` (juil. 2026). Sans catégorie « Débats », les embeds restent en mode lien GitHub.
+**État prod (juil. 2026)** : Discussions activées, catégorie **Débats**, app Giscus installée sur `ELServicesToulon/LMDPT`. Widget vérifié sur `/debats/vote-utile-pluralite/`.
 
 ## IDs connus
 
@@ -8,19 +8,35 @@ Discussions **désactivées** sur `ELServicesToulon/LMDPT` (juil. 2026). Sans ca
 |----------|--------|
 | `PUBLIC_GISCUS_REPO` | `ELServicesToulon/LMDPT` |
 | `PUBLIC_GISCUS_REPO_ID` | `R_kgDOTGlsIg` |
+| `PUBLIC_GISCUS_CATEGORY` | `Débats` |
+| `PUBLIC_GISCUS_CATEGORY_ID` | `50431033` |
 
-`PUBLIC_GISCUS_CATEGORY_ID` → obtenu après création de la catégorie.
+Fallbacks codés dans `src/config/discussion.ts` pour le build OVH sans `.env`.
 
 ## Activation en une commande (token admin repo)
+
+**Ne pas** utiliser le texte `ghp_VOTRE_TOKEN` — c’est un placeholder. Il faut un **vrai** Personal Access Token.
+
+### Créer le token
+
+1. [github.com/settings/tokens](https://github.com/settings/tokens) → **Fine-grained** (recommandé) ou **Classic**
+2. Accès au repo **ELServicesToulon/LMDPT** avec permissions **Administration** (pour activer Discussions) + **Contents** read
+3. Classic : coche **`repo`** (accès complet aux repos privés si besoin)
+4. Copier le token (il ne s’affiche qu’une fois)
+
+### Lancer le script
 
 ```bash
 cd ~/iarbre/le-media-du-premier-tour
 
-GITHUB_TOKEN=ghp_VOTRE_TOKEN npm run giscus:setup -- \
+# Remplacer par votre vrai token (ghp_… ou github_pat_…)
+GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx npm run giscus:setup -- \
   --create-category \
   --create-discussions \
   --write-env ../../Mediconvoi/backend/.env
 ```
+
+Alternative sans historique shell : `read -s GITHUB_TOKEN && export GITHUB_TOKEN` puis la commande `npm run giscus:setup …`
 
 Puis :
 

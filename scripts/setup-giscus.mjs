@@ -28,6 +28,30 @@ const createDiscussions = process.argv.includes('--create-discussions');
 const writeEnvIdx = process.argv.indexOf('--write-env');
 const writeEnvPath = writeEnvIdx >= 0 ? process.argv[writeEnvIdx + 1] : null;
 
+const PLACEHOLDER_TOKENS = new Set([
+  'ghp_VOTRE_TOKEN',
+  'ghp_xxx',
+  'ghp_…',
+  'your_token_here',
+  'REPLACE_ME',
+]);
+
+function assertValidToken() {
+  if (!token) return;
+  if (PLACEHOLDER_TOKENS.has(token) || /VOTRE|REPLACE|xxx|\.\.\./i.test(token)) {
+    console.error(
+      'GITHUB_TOKEN invalide : vous avez collé le placeholder de la doc, pas un vrai token.\n' +
+        'Créez un PAT : https://github.com/settings/tokens → scope « repo » (classic) ou accès admin au repo LMDPT.\n' +
+        'Puis : GITHUB_TOKEN=ghp_… npm run giscus:setup -- --create-category --create-discussions --write-env …',
+    );
+    process.exit(1);
+  }
+  if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+    console.error('GITHUB_TOKEN : format attendu ghp_… (classic) ou github_pat_… (fine-grained).');
+    process.exit(1);
+  }
+}
+
 async function gh(path, options = {}) {
   const res = await fetch(`https://api.github.com${path}`, {
     ...options,
@@ -46,6 +70,12 @@ async function gh(path, options = {}) {
     body = { raw: text };
   }
   if (!res.ok) {
+    if (res.status === 401) {
+      throw new Error(
+        `${res.status} ${path}: Bad credentials — token invalide, expiré ou révoqué. ` +
+          'Vérifiez https://github.com/settings/tokens (scope repo / accès ELServicesToulon/LMDPT).',
+      );
+    }
     throw new Error(`${res.status} ${path}: ${body.message ?? text}`);
   }
   return body;
@@ -147,6 +177,7 @@ async function ensureDiscussions(repoId, categoryId) {
 }
 
 async function main() {
+  assertValidToken();
   const repo = await gh(`/repos/${OWNER}/${REPO}`);
   console.log(`Repo: ${repo.full_name}`);
   console.log(`PUBLIC_GISCUS_REPO=${OWNER}/${REPO}`);
@@ -220,7 +251,13 @@ async function main() {
 
     if (createDiscussions) {
       console.log('\nCréation fils débats manquants…');
-      await ensureDiscussions(data.repository.id, debats.id);
+      try {
+        await ensureDiscussions(data.repository.id, debats.id);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.warn(`\n⚠ Création fils débats impossible (${msg}).`);
+        console.warn('  Créez les fils à la main dans GitHub Discussions, ou utilisez un PAT admin.');
+      }
     }
 
     writeEnvFile(writeEnvPath, repo.node_id, debats.id);
