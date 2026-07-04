@@ -1,11 +1,101 @@
 {
-  "fetched_at": "2026-07-02T20:45:13.500Z",
+  "fetched_at": "2026-07-04T06:00:05.553Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "« La France bigarrée, celle de Kylian Mbappé et des Bleus, est une réalité trop prometteuse pour servir de punching-ball électoral »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/04/la-france-bigarree-celle-de-kylian-mbappe-et-des-bleus-est-une-realite-trop-prometteuse-pour-servir-de-punching-ball-electoral_6720599_3232.html",
+      "published": "2026-07-04",
+      "summary": "L’équipe de France de la Coupe de monde de football 2026 vient rappeler la diversité et le « grand brassage » à l’œuvre dans le pays. Si ce n’est pas la première fois que ballon rond et identité française se rencontrent, ces retrouvailles sont cruciales à l’approche de l’élection",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Le RN cultive discrètement ses réseaux diplomatiques, un an avant l’élection présidentielle de 2027",
+      "url": "https://www.lemonde.fr/international/article/2026/07/04/le-rn-cultive-discretement-ses-reseaux-diplomatiques-un-an-avant-l-election-presidentielle-de-2027_6720610_3210.html",
+      "published": "2026-07-04",
+      "summary": "Le parti de Marine Le Pen et de Jordan Bardella tente d’étouffer le procès en incompétence qui lui est fait en politique étrangère. La formation d’extrême droite s’appuie sur une poignée de hauts fonctionnaires issus du Quai d’Orsay.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Jean-Luc Mélenchon défend ses « écorégions » afin de mieux attirer les Ecologistes pour la présidentielle de 2027",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/03/presidentielle-2027-jean-luc-melenchon-defend-ses-ecoregions-pour-mieux-attirer-les-ecologistes_6720440_823448.html",
+      "published": "2026-07-03",
+      "summary": "Dans une allocution à la presse, le candidat « insoumis » a commencé à détailler une mesure phare de son programme qui reste largement à préciser. Il a pour cela demandé « l’appui » des Verts, alors qu’une partie de ces derniers appelle à « lancer des discussions avec LFI ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : le RN étoffe son équipe de campagne, avec notamment la nièce de Marine Le Pen",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/03/presidentielle-2027-le-rassemblement-national-etoffe-son-equipe-de-campagne_6720223_823448.html",
+      "published": "2026-07-03",
+      "summary": "Le Rassemblement national a dévoilé vendredi les noms de nouveaux membres de son équipe de campagne pour la présidentielle, dont celui de Nolwenn Olivier, qui sera la directrice de la communication.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Élection présidentielle : qui peut faire face à l'extrême droite ?",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260703-%C3%A9lection-pr%C3%A9sidentielle-qui-peut-faire-face-%C3%A0-l-extr%C3%AAme-droite",
+      "published": "2026-07-03",
+      "summary": "À moins d'un an de l'élection présidentielle, l'extrême droite n'a toujours pas son candidat officiel. Le jugement du procès en appel de l’affaire des assistants parlementaires des eurodéputés du #RN, qui sera rendu mardi 7 juillet par la cour d’appel de Paris, doit trancher la q",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Le Sénat adopte un projet de loi d'urgence agricole riche en mesures clivantes",
+      "url": "https://www.france24.com/fr/france/20260703-le-s%C3%A9nat-adopte-le-projet-de-loi-d-urgence-agricole-avec-des-mesures-clivantes",
+      "published": "2026-07-03",
+      "summary": "Après l'Assemblée nationale, le Sénat a approuvé, dans la nuit de jeudi à vendredi, le projet de loi d'urgence agricole. La nouvelle mouture comporte de nombreux assouplissements aux contraintes environnementales ainsi qu’un volet très abrasif sur la réintroduction dérogatoire d’",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Accord Iran-USA : le porte-avions français rentre à son port d’attache de Toulon, annonce Emmanuel Macron",
+      "url": "https://www.lemonde.fr/international/article/2026/07/03/accord-iran-usa-le-porte-avions-francais-rentre-a-son-port-d-attache-de-toulon-annonce-emmanuel-macron_6720486_3210.html",
+      "published": "2026-07-03",
+      "summary": "Le « Charles-de-Gaulle » se trouve actuellement en mer Méditerranée, a précisé l’Elysée, qui a fait part de « l’évolution favorable » que constitue l’accord entre Téhéran et Washington pour cesser les hostilités.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Pour 2027, un calendrier parlementaire serré où se bousculent les dernières priorités d’Emmanuel Macron",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/03/pour-2027-un-calendrier-parlementaire-serre-ou-se-bousculent-les-dernieres-priorites-d-emmanuel-macron_6720472_823448.html",
+      "published": "2026-07-03",
+      "summary": "La dernière session parlementaire du quinquennat, écourtée par l’élection présidentielle, ne laissera que peu de temps au gouvernement pour faire voter ses derniers textes.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Canicule au travail : la CGT veut un changement d’urgence de la loi ; le gouvernement, des accords par métier",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/03/canicule-au-travail-la-cgt-veut-un-changement-d-urgence-de-la-loi-le-gouvernement-des-accords-par-metier_6719168_823448.html",
+      "published": "2026-07-03",
+      "summary": "Le ministre du travail, Jean-Pierre Farandou, espère des accords d’entreprise avant les canicules de 2027. « Ce n’est pas possible d’attendre l’automne pour faire ça », a réagi la secrétaire générale de la CGT, Sophie Binet.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "L’identité, un thème à haut risque pour la gauche",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/03/l-identite-un-theme-a-haut-risque-pour-la-gauche_6719036_3232.html",
+      "published": "2026-07-03",
+      "summary": "Avec le concept de « nouvelle France », Jean-Luc Mélenchon a placé la question identitaire au cœur de la campagne présidentielle de la gauche. Avec le risque de légitimer le discours de l’extrême droite.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
     {
       "title": "Présidentielle 2027 : Jean-Luc Mélenchon présente son projet d’« écorégions » pour remplacer les régions actuelles et « introduire l’eau dans le débat »",
       "url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
@@ -187,15 +277,6 @@
       "source_type": "traditional"
     },
     {
-      "title": "Un projet de loi sur l'enfance examiné à l'Assemblée, bientôt élargi après l'affaire Lyhanna",
-      "url": "https://www.france24.com/fr/france/20260630-un-projet-de-loi-sur-l-enfance-examin%C3%A9-%C3%A0-l-assembl%C3%A9e-bient%C3%B4t-%C3%A9largi-apr%C3%A8s-l-affaire-lyhanna",
-      "published": "2026-06-30",
-      "summary": "Un projet de loi sur la protection des enfants est examiné à partir de mardi par une commission spéciale à l'Assemblée. Ce texte doit être enrichi de mesures promises par le gouvernement à la suite de l'émotion suscitée par le meurtre de la collégienne Lyhanna.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
       "title": "Maud Bregeon apporte son soutien à Edouard Philippe pour la présidentielle",
       "url": "https://www.lemonde.fr/politique/article/2026/06/29/maud-bregeon-apporte-son-soutien-a-edouard-philippe-pour-la-presidentielle_6716878_823448.html",
       "published": "2026-06-29",
@@ -209,33 +290,6 @@
       "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
       "published": "2026-06-28",
       "summary": "Le ministre des affaires étrangères propose des réformes majeures, dont un référendum sur la décentralisation et le service civique obligatoire, pour revitaliser la démocratie française.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : le NPA-Révolutionnaires présente une troisième candidature d’extrême gauche",
-      "url": "https://www.lemonde.fr/politique/article/2026/06/27/presidentielle-2027-le-npa-revolutionnaires-presente-une-troisieme-candidature-d-extreme-gauche_6716374_823448.html",
-      "published": "2026-06-27",
-      "summary": "Après Lutte ouvrière et Révolution permanente, le Nouveau Parti anticapitaliste-Révolutionnaires tentera de réunir les parrainages pour participer au scrutin, avec comme candidate Selma Labib, conductrice de bus.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : les militants socialistes approuvent largement le projet du parti",
-      "url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html",
-      "published": "2026-06-26",
-      "summary": "Le projet, rédigé sous l’égide de l’eurodéputée Chloé Ridel, nourri de contributions de citoyens, de parlementaires et d’élus, avait été présenté en avril, avant d’être amendé par les militants. Il a été adopté par 83 % des votants.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : dans l’Indre, François Ruffin se lance à la conquête des parrainages des maires",
-      "url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html",
-      "published": "2026-06-26",
-      "summary": "Après un passage à Lyon en avril, le député de la Somme a passé son « entretien d’embauche » dans l’Indre auprès d’élus locaux afin de redynamiser sa campagne. S’il a été accueilli avec bienveillance, la question de la primaire et de la pertinence de sa candidature était néanmoin",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional"
