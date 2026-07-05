@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-04T06:00:05.553Z",
+  "fetched_at": "2026-07-05T06:00:10.484Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,12 +7,66 @@
   "feeds_error": 0,
   "items": [
     {
+      "title": "Présidentielle 2027 : Edouard Philippe et la tentation de former une « UMP 2.0 » autour de lui",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/05/presidentielle-2027-edouard-philippe-et-la-tentation-de-former-une-ump-2-0-autour-de-lui_6720829_823448.html",
+      "published": "2026-07-05",
+      "summary": "L’ex-premier ministre tient dimanche 5 juillet son premier grand meeting de campagne à l’Adidas Arena, à Paris, où il attend plus de 5 000 personnes et de nouveaux soutiens. Il espère s’imposer d’ici à l’automne face à Gabriel Attal et Bruno Retailleau.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Comment Edouard Philippe essaie de faire oublier la retraite à 67 ans pour tous",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/05/comment-edouard-philippe-essaie-de-faire-oublier-la-retraite-a-67-ans-pour-tous_6720821_823448.html",
+      "published": "2026-07-05",
+      "summary": "Dès 2021, le candidat à la présidentielle avait évoqué l’idée, qui le suit depuis, d’un âge de départ reporté à 67 ans, comme dans d’autres pays européens. Il souhaite porter une nouvelle réforme incitant à « travailler plus longtemps », mais réfléchit désormais à un âge pivot di",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Bruno Retailleau, ultime symptôme du rétrécissement idéologique et électoral de la droite LR",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/04/bruno-retailleau-ultime-symptome-du-retrecissement-ideologique-et-electoral-de-la-droite-lr_6720670_823448.html",
+      "published": "2026-07-04",
+      "summary": "En tendant la main à Edouard Philippe, Laurent Wauquiez, le chef des députés Les Républicains à l’Assemblée nationale, pousse Bruno Retailleau à renoncer à sa candidature à l’élection présidentielle. Et souligne les difficultés du Vendéen à incarner une alternative au RN et à Hor",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "A droite, l’impasse stratégique d’un alignement sur les propositions du RN",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/04/a-droite-l-impasse-strategique-d-un-alignement-sur-les-propositions-du-rn_6720646_3232.html",
+      "published": "2026-07-04",
+      "summary": "Depuis plusieurs années, le parti Les Républicains reprend les mots et les propositions du Rassemblement national sur l’immigration et la sécurité. Un choix funeste qui renforce ses deux principaux concurrents, le parti d’extrême droite et Edouard Philippe.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
       "title": "« La France bigarrée, celle de Kylian Mbappé et des Bleus, est une réalité trop prometteuse pour servir de punching-ball électoral »",
       "url": "https://www.lemonde.fr/idees/article/2026/07/04/la-france-bigarree-celle-de-kylian-mbappe-et-des-bleus-est-une-realite-trop-prometteuse-pour-servir-de-punching-ball-electoral_6720599_3232.html",
       "published": "2026-07-04",
       "summary": "L’équipe de France de la Coupe de monde de football 2026 vient rappeler la diversité et le « grand brassage » à l’œuvre dans le pays. Si ce n’est pas la première fois que ballon rond et identité française se rencontrent, ces retrouvailles sont cruciales à l’approche de l’élection",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Marine Le Pen et Jordan Bardella réunis pour montrer leur unité, à trois jours d'un jugement décisif",
+      "url": "https://www.france24.com/fr/france/20260704-marine-le-pen-jordan-bardella-r%C3%A9unis-pour-montrer-leur-unit%C3%A9-%C3%A0-trois-jours-jugement-d%C3%A9cisif-rassemblement-national",
+      "published": "2026-07-04",
+      "summary": "Marine Le Pen a déclaré samedi être prête à soutenir Jordan Bardella si elle ne peut pas concourir une quatrième fois à l'Élysée. Elle le défendra \"avec une grande énergie, une grande conviction et une grande confiance\", a-t-elle déclaré devant les militants réunis pour un \"banqu",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Marine Le Pen et Jordan Bardella affichent leur unité à Liévin, avant la décision dans l’affaire des assistants d’eurodéputés du FN",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/04/marine-le-pen-et-jordan-bardella-affichent-leur-unite-a-lievin-avant-la-decision-dans-l-affaire-des-assistants-d-eurodeputes-du-fn_6720708_823448.html",
+      "published": "2026-07-04",
+      "summary": "La cheffe de file du RN à l’Assemblée connaîtra mardi son sort judiciaire, et donc politique, lorsque la cour d’appel de Paris rendra sa décision. Une peine d’inéligibilité supérieure à deux ans l’empêcherait de concourir à la présidentielle. En première instance, elle avait été ",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional"
     },
     {
@@ -74,24 +128,6 @@
       "url": "https://www.lemonde.fr/politique/article/2026/07/03/pour-2027-un-calendrier-parlementaire-serre-ou-se-bousculent-les-dernieres-priorites-d-emmanuel-macron_6720472_823448.html",
       "published": "2026-07-03",
       "summary": "La dernière session parlementaire du quinquennat, écourtée par l’élection présidentielle, ne laissera que peu de temps au gouvernement pour faire voter ses derniers textes.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Canicule au travail : la CGT veut un changement d’urgence de la loi ; le gouvernement, des accords par métier",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/03/canicule-au-travail-la-cgt-veut-un-changement-d-urgence-de-la-loi-le-gouvernement-des-accords-par-metier_6719168_823448.html",
-      "published": "2026-07-03",
-      "summary": "Le ministre du travail, Jean-Pierre Farandou, espère des accords d’entreprise avant les canicules de 2027. « Ce n’est pas possible d’attendre l’automne pour faire ça », a réagi la secrétaire générale de la CGT, Sophie Binet.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "L’identité, un thème à haut risque pour la gauche",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/03/l-identite-un-theme-a-haut-risque-pour-la-gauche_6719036_3232.html",
-      "published": "2026-07-03",
-      "summary": "Avec le concept de « nouvelle France », Jean-Luc Mélenchon a placé la question identitaire au cœur de la campagne présidentielle de la gauche. Avec le risque de légitimer le discours de l’extrême droite.",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
       "source_type": "traditional"
@@ -245,51 +281,6 @@
       "url": "https://www.lemonde.fr/politique/article/2026/07/01/primaire-a-gauche-le-parti-socialiste-et-les-ecologistes-se-divisent-sur-leur-strategie-pour-la-presidentielle_6717347_823448.html",
       "published": "2026-06-30",
       "summary": "Après avoir échoué à s’entendre sur une proposition unique, le PS soumettra deux scénarios au vote des militants, le 9 juillet, divergeant sur les participants au scrutin et sur le corps électoral.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : « Je serai candidat à la primaire interne du PS », annonce le député Philippe Brun",
-      "url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
-      "published": "2026-06-30",
-      "summary": "Le PS pourrait organiser à l’automne une primaire interne pour choisir son candidat à la présidentielle. Le député de l’Eure Philippe Brun annonce qu’il sera candidat et qu’il souhaite centrer sa candidature sur le thème du salaire.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : « Un marigot de candidatures désespérées, de survie, de challenge ou portées par le dégagisme »",
-      "url": "https://www.lemonde.fr/idees/article/2026/06/30/presidentielle-2027-un-marigot-de-candidatures-desesperees-de-survie-de-challenge-ou-portees-par-le-degagisme_6717191_3232.html",
-      "published": "2026-06-30",
-      "summary": "Dans sa chronique, Françoise Fressoz, éditorialiste au « Monde », établit une typologie des différents prétendants à l’Elysée. Contre toute attente, analyse-t-elle, l’esprit de sérieux pourrait finir par l’emporter tant le pays est confronté à des défis existentiels.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "France : l'élection présidentielle 2027 aura lieu les 18 avril et 2 mai",
-      "url": "https://www.france24.com/fr/france/20260630-france-l-%C3%A9lection-pr%C3%A9sidentielle-2027-aura-lieu-les-18-avril-et-2-mai",
-      "published": "2026-06-30",
-      "summary": "L'élection présidentielle 2027 aura lieu les 18 avril et 2 mai, selon une source au sein de l'exécutif. Ces dates seront officialisées mercredi en conseil des ministres.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Maud Bregeon apporte son soutien à Edouard Philippe pour la présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/06/29/maud-bregeon-apporte-son-soutien-a-edouard-philippe-pour-la-presidentielle_6716878_823448.html",
-      "published": "2026-06-29",
-      "summary": "La porte-parole du gouvernement, proche de Gérald Darmanin, estime que l’ancien premier ministre est le mieux à même d’empêcher l’arrivée au pouvoir du Rassemblement national.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Jean-Noël Barrot appelle à « rendre le pouvoir aux Français » face au RN et à LFI",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html",
-      "published": "2026-06-28",
-      "summary": "Le ministre des affaires étrangères propose des réformes majeures, dont un référendum sur la décentralisation et le service civique obligatoire, pour revitaliser la démocratie française.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional"
