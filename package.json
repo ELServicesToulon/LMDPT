@@ -20,6 +20,7 @@
     "programme-veille": "tsx scripts/programme-veille-run.ts",
     "renifleur:draft": "tsx scripts/renifleur-social-draft.ts",
     "renifleur:draft:refresh": "tsx scripts/renifleur-social-draft.ts --refresh",
+    "pinocmod:draft": "node ../../manusk/second-brain/scripts/lmdpt-pinocmod-social-draft.mjs",
     "sync:all": "tsx scripts/sync-all.ts",
     "sync:all:social": "LMDPT_SYNC_SOCIAL_DRAFT=1 tsx scripts/sync-all.ts",
     "import:dept-2022": "tsx scripts/import-presidentielle-2022-departements.ts",

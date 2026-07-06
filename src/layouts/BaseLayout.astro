@@ -6,10 +6,12 @@ interface Props {
 }
 
 import { getPublicSocialLinks } from '../config/social';
+import { getPublicEcosystemLinks } from '../config/ecosystem';
 import { pageMeta } from '../lib/seo';
 
 const { title, description, ogImage } = Astro.props;
 const socialLinks = getPublicSocialLinks();
+const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
 const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
 const meta = pageMeta({
@@ -123,6 +125,7 @@ const meta = pageMeta({
         color: var(--muted);
         font-family: system-ui, sans-serif;
       }
+      footer .ecosystem { font-size: 0.8rem; margin-top: 0.45rem; }
     </style>
   </head>
   <body>
@@ -161,6 +164,23 @@ const meta = pageMeta({
             ))
           }
         </p>
+        {
+          ecosystemLinks.length > 0 && (
+            <p class="ecosystem">
+              Outils :{' '}
+              {
+                ecosystemLinks.map((link, i) => (
+                  <>
+                    {i > 0 && ' · '}
+                    <a href={link.url} rel="noopener noreferrer" title={link.description}>
+                      {link.label}
+                    </a>
+                  </>
+                ))
+              }
+            </p>
+          )
+        }
       </footer>
     </div>
   </body>
