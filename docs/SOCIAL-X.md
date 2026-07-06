@@ -22,6 +22,17 @@
 | **Créé** | juillet 2026 |
 | **Statut** | **live** — profil à compléter (bio + pin) |
 
+## YouTube — débats en live
+
+| Champ | Valeur |
+|-------|--------|
+| **Chaîne** | [@LMDuPremierTour](https://www.youtube.com/@LMDuPremierTour) |
+| **Live** | https://www.youtube.com/@LMDuPremierTour/live |
+| **Rôle** | Diffusion live des débats civiques `/debats` |
+| **Config site** | `src/config/youtube.ts` · `PUBLIC_YOUTUBE_*` |
+
+Les pages `/debats` affichent un bandeau « Rejoindre le live YouTube ». Replays sur la chaîne ; commentaires écrits via Giscus/GitHub.
+
 ## À compléter sur X (checklist)
 
 - [ ] Bio courte → brouillon Manusk `second-brain/projects/lmdpt/social-drafts/2026-07-02-profil-bio-pin-x.md`

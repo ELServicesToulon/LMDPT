@@ -1,0 +1,64 @@
+---
+import { getYoutubeLiveUrlWithUtm } from '../config/youtube';
+
+interface Props {
+  campaign?: string;
+}
+
+const { campaign = 'debats_live' } = Astro.props;
+const liveUrl = getYoutubeLiveUrlWithUtm(campaign);
+---
+
+<aside class="live-banner" role="note" aria-label="Débats en direct sur YouTube">
+  <p class="live-eyebrow">En direct</p>
+  <p>
+    Les débats civiques LMDPT sont diffusés <strong>en live sur YouTube</strong> — positions sourcées,
+    discussion modérée. Le média documente, il ne tranche pas.
+  </p>
+  <p class="live-cta">
+    <a class="btn-live" href={liveUrl} rel="noopener noreferrer" target="_blank">
+      Rejoindre le live YouTube
+    </a>
+    <span class="meta">Replays sur la chaîne · commentaires GitHub sur chaque page débat</span>
+  </p>
+</aside>
+
+<style>
+  .live-banner {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--accent) 8%, var(--card));
+  }
+  .live-eyebrow {
+    margin: 0 0 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: system-ui, sans-serif;
+  }
+  .live-banner p { margin: 0 0 0.6rem; }
+  .live-banner p:last-child { margin-bottom: 0; }
+  .live-cta { display: flex; flex-direction: column; gap: 0.45rem; }
+  .btn-live {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.45rem 0.85rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--card);
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .btn-live:hover { opacity: 0.92; }
+  .meta {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+  }
+</style>

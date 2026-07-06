@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
 import DebatePositions from '../../components/DebatePositions.astro';
 import DiscussionSection from '../../components/DiscussionSection.astro';
 import { DEBATE_CATALOG, getDebate } from '../../lib/debates';
@@ -17,6 +18,8 @@ if (!debate) {
 ---
 
 <BaseLayout title="Débat" description={debate.context.slice(0, 160)}>
+  <DebateLiveBanner campaign={`debats_${debate.slug}`} />
+
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/debats">Débats</a> → {debate.slug}
   </nav>

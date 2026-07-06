@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
 import { DEBATE_CATALOG } from '../../lib/debates';
 ---
 
@@ -7,6 +8,8 @@ import { DEBATE_CATALOG } from '../../lib/debates';
   title="Débats"
   description="Débats civiques sur la pluralité du premier tour et les mécanismes électoraux — positions sourcées, discussion modérée."
 >
+  <DebateLiveBanner campaign="debats_index" />
+
   <section>
     <h2>Débats</h2>
     <p>
