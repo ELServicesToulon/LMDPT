@@ -16,10 +16,17 @@
   "veille": [
     {
       "date": "2026-07-07",
-      "label": "Jugement d'appel — Marine Le Pen (décision attendue)",
-      "fact": "La cour d'appel de Paris rend sa décision dans l'affaire des assistants parlementaires européens. Mise à jour éditoriale LMDPT : actualiser les fiches le-pen.json et bardella.json dès publication de la décision (source judiciaire ou presse qualifiée) — sans anticiper le résultat.",
-      "source_label": "Cour d'appel de Paris · France 24 (veille)",
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
+      "label": "Jugement d'appel — Marine Le Pen (décision rendue)",
+      "fact": "La cour d'appel de Paris condamne Marine Le Pen à un an de prison ferme sous bracelet électronique et à 15 mois d'inéligibilité (déjà purgés selon les médias). Les réactions politiques fusent à gauche ; le RN qualifie la peine d'allégée. LMDPT documente sans prédire l'issue électorale 2027.",
+      "source_label": "Le Monde · France 24",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/07/affaire-des-assistants-parlementaires-europeens-du-fn-la-justice-en-position-de-decider-du-sort-politique-de-marine-le-pen_6721397_823448.html"
+    },
+    {
+      "date": "2026-07-07",
+      "label": "Canicule — débat transition écologique",
+      "fact": "Elisabeth Borne appelle à « sanctuariser » le fonds vert (2,5 Md€ proposés) dans un entretien au Monde — actualité politique 2027 en marge du débat climatique.",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/07/canicule-elisabeth-borne-appelle-a-sanctuariser-les-moyens-pour-la-transition-ecologique_6721426_823448.html"
     },
     {
       "date": "2026-07-09",

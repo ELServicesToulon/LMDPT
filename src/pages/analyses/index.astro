@@ -1,63 +1,53 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsFeed from '../../components/NewsFeed.astro';
 import { ANALYSIS_CATALOG } from '../../lib/analyses';
+import renifleur from '../../data/renifleur/latest.json';
+import type { RenifleurSnapshot } from '../../lib/renifleur';
+
+const feed = renifleur as RenifleurSnapshot;
 ---
 
 <BaseLayout
   title="Analyses"
   description="Dossiers pédagogiques sur la pluralité du premier tour et la distorsion du second — faits sourcés."
 >
-  <section>
+  <section class="page-intro">
+    <p class="eyebrow">Dossiers documentés</p>
     <h2>Analyses</h2>
     <p>
-      Dossiers documentés : mécanismes électoraux, désistements, distorsion entre premier et second tour.
+      Mécanismes électoraux, désistements, distorsion entre premier et second tour.
       Comparaisons factuelles — pas de classement éliminatoire.
     </p>
   </section>
 
+  {
+    feed.enabled && feed.items.length > 0 && (
+      <NewsFeed items={feed.items} limit={4} disclaimer={feed.disclaimer} fetchedAt={feed.fetched_at} feedsOk={feed.feeds_ok} />
+    )
+  }
+
   <section>
-    <ul class="analysis-list">
+    <h3 class="section-title">Tous les dossiers</h3>
+    <ul class="card-grid">
       {
         ANALYSIS_CATALOG.map((a) => (
-          <li class="card">
-            <h3>
-              <a href={a.href}>{a.title}</a>
-              {a.preparation && <span class="badge">En préparation</span>}
-            </h3>
-            <p>{a.description}</p>
-            <p class="meta">
-              <time datetime={a.date}>
-                {new Date(a.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-              </time>
-            </p>
+          <li>
+            <article class="card">
+              <h3>
+                <a href={a.href}>{a.title}</a>
+                {a.preparation && <span class="status-badge">En préparation</span>}
+              </h3>
+              <p>{a.description}</p>
+              <p class="meta">
+                <time datetime={a.date}>
+                  {new Date(a.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+                </time>
+              </p>
+            </article>
           </li>
         ))
       }
     </ul>
   </section>
 </BaseLayout>
-
-<style>
-  .analysis-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .analysis-list h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1.05rem;
-  }
-  .badge {
-    display: inline-block;
-    margin-left: 0.45rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 0.1rem 0.35rem;
-    vertical-align: middle;
-  }
-</style>

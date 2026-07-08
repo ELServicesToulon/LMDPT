@@ -10,62 +10,37 @@ import { DEBATE_CATALOG } from '../../lib/debates';
 >
   <DebateLiveBanner campaign="debats_index" />
 
-  <section>
-    <h2>Débats</h2>
+  <section class="page-intro">
+    <p class="eyebrow">Discussion modérée</p>
+    <h2>Débats civiques</h2>
     <p>
-      Questions civiques documentées : plusieurs positions présentées à égalité, arguments sourcés,
-      discussion ouverte sur GitHub. Pas de classement éliminatoire — le média documente, il ne tranche pas.
+      Questions documentées : plusieurs positions à égalité, arguments sourcés, fils GitHub ouverts.
+      Pas de classement éliminatoire — le média documente, il ne tranche pas.
     </p>
   </section>
 
   <section>
-    <ul class="debate-list">
+    <h3 class="section-title">Fils ouverts</h3>
+    <ul class="card-grid">
       {
         DEBATE_CATALOG.map((d) => (
-          <li class="card">
-            <h3>
-              <a href={d.href}>{d.question}</a>
-              {d.status === 'ouvert' && <span class="badge badge-open">Ouvert</span>}
-              {d.status === 'clos' && <span class="badge">Clos</span>}
-            </h3>
-            <p>{d.description}</p>
-            <p class="meta">
-              <time datetime={d.date}>
-                {new Date(d.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-              </time>
-            </p>
+          <li>
+            <article class="card">
+              <h3>
+                <a href={d.href}>{d.question}</a>
+                {d.status === 'ouvert' && <span class="status-badge status-badge--open">Ouvert</span>}
+                {d.status === 'clos' && <span class="status-badge">Clos</span>}
+              </h3>
+              <p>{d.description}</p>
+              <p class="meta">
+                <time datetime={d.date}>
+                  {new Date(d.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+                </time>
+              </p>
+            </article>
           </li>
         ))
       }
     </ul>
   </section>
 </BaseLayout>
-
-<style>
-  .debate-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .debate-list h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1.05rem;
-  }
-  .badge {
-    display: inline-block;
-    margin-left: 0.45rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 0.1rem 0.35rem;
-    vertical-align: middle;
-  }
-  .badge-open {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-</style>

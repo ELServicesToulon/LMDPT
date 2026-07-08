@@ -1,0 +1,211 @@
+---
+import type { RenifleurItem } from '../lib/renifleur';
+
+interface Props {
+  items: RenifleurItem[];
+  limit?: number;
+  disclaimer?: string;
+  fetchedAt?: string;
+  feedsOk?: number;
+  moreHref?: string;
+}
+
+const {
+  items,
+  limit = 6,
+  disclaimer,
+  fetchedAt,
+  feedsOk,
+  moreHref = '/analyses/presidentielle-2027-preparation#renifleur-presse',
+} = Astro.props;
+
+const visible = items.slice(0, limit);
+const updatedLabel = fetchedAt
+  ? new Date(fetchedAt).toLocaleString('fr-FR', { dateStyle: 'long', timeStyle: 'short' })
+  : null;
+const [featured, ...rest] = visible;
+---
+
+<section class="news-section" aria-labelledby="news-heading">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Veille presse</p>
+      <h2 id="news-heading">Dernières actualités</h2>
+    </div>
+    {
+      updatedLabel && (
+        <p class="sync-meta">
+          <time datetime={fetchedAt}>{updatedLabel}</time>
+          {feedsOk != null && <span> · {feedsOk} flux</span>}
+        </p>
+      )
+    }
+  </div>
+
+  {disclaimer && <p class="news-disclaimer">{disclaimer}</p>}
+
+  {
+    featured && (
+      <article class="news-featured card">
+        <div class="news-meta-row">
+          <time class="news-date" datetime={featured.published}>
+            {new Date(featured.published).toLocaleDateString('fr-FR', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </time>
+          <span class="news-source">{featured.source_label}</span>
+        </div>
+        <h3>
+          <a href={featured.url} rel="noopener noreferrer">
+            {featured.title}
+          </a>
+        </h3>
+        {featured.summary && <p class="news-summary">{featured.summary}</p>}
+      </article>
+    )
+  }
+
+  {
+    rest.length > 0 && (
+      <ul class="news-grid">
+        {
+          rest.map((item) => (
+            <li>
+              <article class="news-card card">
+                <div class="news-meta-row">
+                  <time class="news-date" datetime={item.published}>
+                    {new Date(item.published).toLocaleDateString('fr-FR', {
+                      day: 'numeric',
+                      month: 'short',
+                    })}
+                  </time>
+                  <span class="news-source">{item.source_label}</span>
+                </div>
+                <h4>
+                  <a href={item.url} rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                </h4>
+                {item.summary && <p class="news-summary">{item.summary.slice(0, 140)}…</p>}
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
+
+  <p class="news-more">
+    <a href={moreHref}>Toute la veille 2027 →</a>
+    {' '}·{' '}
+    <a href="/analyses/presidentielle-2027-preparation">Dossier présidentielle</a>
+  </p>
+</section>
+
+<style>
+  .news-section {
+    margin-bottom: 2.5rem;
+  }
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+  .sync-meta {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .news-disclaimer {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+    line-height: 1.45;
+  }
+  .news-featured h3 {
+    margin: 0.5rem 0 0.65rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+  .news-featured h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .news-featured h3 a:hover {
+    color: var(--accent);
+  }
+  .news-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    align-items: center;
+  }
+  .news-date {
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .news-source {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--accent-soft);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+  .news-summary {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .news-grid {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .news-card {
+    margin-bottom: 0;
+    height: 100%;
+  }
+  .news-card h4 {
+    margin: 0.4rem 0 0.35rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .news-card h4 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .news-card h4 a:hover {
+    color: var(--accent);
+  }
+  .news-card .news-summary {
+    font-size: 0.88rem;
+  }
+  .news-more {
+    margin: 1rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+  }
+</style>

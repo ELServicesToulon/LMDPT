@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsFeed from '../components/NewsFeed.astro';
+import renifleur from '../data/renifleur/latest.json';
+import type { RenifleurSnapshot } from '../lib/renifleur';
+
+const feed = renifleur as RenifleurSnapshot;
 ---
 
 <BaseLayout
@@ -7,17 +12,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Le premier tour : le miroir le plus fidèle de la France politique. Média civique, faits sourcés, Democracy Over Elimination."
 >
   <section class="hero">
-    <p class="eyebrow">Democracy Over Elimination</p>
-    <h2>Le premier tour, miroir de la pluralité</h2>
-    <p class="lead">
-      Documenter exhaustivement les résultats du <strong>premier tour</strong> — là où s'exprime
-      le plus fidèlement la diversité des préférences — et rendre visible la distorsion induite
-      par les désistements et le vote stratégique au second tour.
+    <div class="hero-inner">
+      <p class="eyebrow">Democracy Over Elimination</p>
+      <h2>Le premier tour, miroir de la pluralité</h2>
+      <p class="lead">
+        Documenter exhaustivement les résultats du <strong>premier tour</strong> — là où s'exprime
+        le plus fidèlement la diversité des préférences — et rendre visible la distorsion induite
+        par les désistements et le vote stratégique au second tour.
+      </p>
+      <p class="cta-row">
+        <a class="btn" href="/atlas">Explorer l'Atlas</a>
+        <a class="btn btn-secondary" href="/debats">Débats ouverts</a>
+        <a class="btn btn-secondary" href="/analyses/presidentielle-2027-preparation">Présidentielle 2027</a>
+      </p>
+    </div>
+  </section>
+
+  {
+    feed.enabled && feed.items.length > 0 && (
+      <NewsFeed
+        items={feed.items}
+        limit={6}
+        disclaimer={feed.disclaimer}
+        fetchedAt={feed.fetched_at}
+        feedsOk={feed.feeds_ok}
+      />
+    )
+  }
+
+  <section class="card highlight-card">
+    <p class="eyebrow">Dossier à la une</p>
+    <h3>
+      <a href="/analyses/presidentielle-2027-preparation">Présidentielle 2027 — veille & calendrier</a>
+    </h3>
+    <p>
+      Arrêt d'appel du 7 juillet dans l'affaire des assistants européens du FN, inéligibilité,
+      candidature 2027 : nous documentons les faits sourcés — sans prédiction ni tier list.
     </p>
-    <p class="cta-row">
-      <a class="btn" href="/atlas">Explorer l'Atlas</a>
-      <a class="btn btn-secondary" href="/debats">Débats ouverts</a>
-      <a class="btn btn-secondary" href="/a-propos">Notre mission</a>
+    <p class="meta">
+      <a href="/analyses/presidentielle-2027-preparation">Lire le dossier →</a>
     </p>
   </section>
 
@@ -34,89 +67,83 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
   </section>
 
-  <section>
-    <h3>Débats ouverts</h3>
-    <article class="card">
-      <h4>
-        <a href="/debats/assemblee-premier-tour">Faut-il une chambre élue sur le seul premier tour ?</a>
-        <span class="meta"> (nouveau)</span>
-      </h4>
-      <p>
-        Simulation 2024 : hémicycle virtuel AN1T vs Assemblée réelle — carte et comparatif chiffré.
-      </p>
-    </article>
-    <article class="card">
-      <h4>
-        <a href="/debats/vote-utile-pluralite">Le vote utile respecte-t-il la pluralité démocratique ?</a>
-      </h4>
-      <p>
-        Positions sourcées des deux côtés — discussion modérée sur GitHub. Pas de classement
-        éliminatoire.
-      </p>
-      <p class="meta">
-        <a href="/debats">Voir tous les débats →</a>
-      </p>
-    </article>
+  <section class="content-section">
+    <h3 class="section-title">Débats ouverts</h3>
+    <ul class="card-grid">
+      <li>
+        <article class="card">
+          <h3>
+            <a href="/debats/assemblee-premier-tour">Faut-il une chambre élue sur le seul premier tour ?</a>
+            <span class="status-badge status-badge--open">nouveau</span>
+          </h3>
+          <p>
+            Simulation 2024 : hémicycle virtuel AN1T vs Assemblée réelle — carte et comparatif chiffré.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3>
+            <a href="/debats/vote-utile-pluralite">Le vote utile respecte-t-il la pluralité démocratique ?</a>
+          </h3>
+          <p>
+            Positions sourcées des deux côtés — discussion modérée sur GitHub. Pas de classement
+            éliminatoire.
+          </p>
+          <p class="meta">
+            <a href="/debats">Voir tous les débats →</a>
+          </p>
+        </article>
+      </li>
+    </ul>
   </section>
 
-  <section>
-    <h3>Dossier à la une</h3>
-    <article class="card">
-      <h4>
-        <a href="/analyses/assemblee-premier-tour">Assemblée du premier tour — simulation 2024</a>
-        <span class="meta"> (nouveau)</span>
-      </h4>
-      <p>
-        Hémicycle virtuel AN1T (577 sièges proportionnels au 1er tour) vs Assemblée élue — carte et
-        comparatif chiffré.
-      </p>
-    </article>
-    <article class="card">
-      <h4><a href="/atlas/2024-legislatives">Législatives 2024 — 1er tour (577 circonscriptions)</a></h4>
-      <p>
-        RN 29,26 % · UG 27,99 % · ENS 20,04 % des exprimés — tableau filtrable par département,
-        sources data.gouv.fr.
-      </p>
-    </article>
-    <article class="card">
-      <h4>
-        <a href="/analyses/presidentielle-2027-preparation">Présidentielle 2027 — préparation</a>
-        <span class="meta"> (dossier en cours)</span>
-      </h4>
-      <p>
-        Sources officielles, calendrier indicatif et feuille de route — pluralité du premier tour,
-        sans sondage ni prédiction.
-      </p>
-    </article>
-    <article class="card">
-      <h4><a href="/analyses/presidentielle-distorsion">Présidentielle — distorsion 1er / 2nd tour</a></h4>
-      <p>
-        Pluralité au premier tour, duel binaire au second — mécanismes communs 2017 et 2022, données
-        officielles.
-      </p>
-    </article>
-    <article class="card">
-      <h4><a href="/analyses/legislatives-2024-desistements">Législatives 2024 — désistements</a></h4>
-      <p>
-        306 triangulaires potentielles → 89 après 215 désistements officiels. Comment le second tour
-        reconfigure la pluralité du premier.
-      </p>
-    </article>
-    <article class="card">
-      <h4><a href="/atlas/2022-presidentielle">Présidentielle 2022 — 1er tour</a></h4>
-      <p>
-        Macron 27,85 % · Le Pen 23,15 % · Mélenchon 21,95 % — carte SVG par département.
-      </p>
-    </article>
-    <article class="card">
-      <h4><a href="/atlas/2017-presidentielle">Présidentielle 2017 — 1er tour</a></h4>
-      <p>
-        Macron 24,01 % · Le Pen 21,30 % · Fillon 20,01 % · Mélenchon 19,58 % — quadruple polarisation.
-      </p>
-    </article>
+  <section class="content-section">
+    <h3 class="section-title">Atlas & analyses</h3>
+    <ul class="card-grid">
+      <li>
+        <article class="card">
+          <h3>
+            <a href="/analyses/assemblee-premier-tour">Assemblée du premier tour — simulation 2024</a>
+            <span class="status-badge status-badge--open">nouveau</span>
+          </h3>
+          <p>Hémicycle virtuel AN1T (577 sièges) vs Assemblée élue — comparatif chiffré.</p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3><a href="/atlas/2024-legislatives">Législatives 2024 — 1er tour</a></h3>
+          <p>RN 29,26 % · UG 27,99 % · ENS 20,04 % — 577 circonscriptions, data.gouv.fr.</p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3><a href="/analyses/presidentielle-distorsion">Distorsion 1er / 2nd tour</a></h3>
+          <p>Pluralité au premier tour, duel binaire au second — 2017 et 2022.</p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3><a href="/analyses/legislatives-2024-desistements">Législatives 2024 — désistements</a></h3>
+          <p>306 triangulaires potentielles → 89 après 215 désistements officiels.</p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3><a href="/atlas/2022-presidentielle">Présidentielle 2022 — 1er tour</a></h3>
+          <p>Macron 27,85 % · Le Pen 23,15 % · Mélenchon 21,95 %.</p>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <h3><a href="/atlas/2017-presidentielle">Présidentielle 2017 — 1er tour</a></h3>
+          <p>Macron 24,01 % · Le Pen 21,30 % · quadruple polarisation.</p>
+        </article>
+      </li>
+    </ul>
   </section>
 
-  <section>
+  <section class="card principles">
     <h3>Notre ligne</h3>
     <ul>
       <li>Sources officielles traçables (<a href="/sources">data.gouv.fr</a>)</li>
@@ -128,53 +155,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .hero {
-    margin-bottom: 2rem;
+    margin: -0.25rem -1rem 2rem;
+    padding: 2rem 1rem 2.25rem;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--accent) 14%, var(--bg)) 0%,
+      var(--bg) 55%
+    );
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
-  .eyebrow {
-    font-family: system-ui, sans-serif;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin: 0 0 0.5rem;
+  .hero-inner {
+    max-width: 42rem;
   }
   .hero h2 {
-    font-size: 1.75rem;
+    font-size: clamp(1.55rem, 4vw, 2rem);
     margin: 0 0 1rem;
-    line-height: 1.25;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
   .lead {
     font-size: 1.05rem;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.35rem;
+    max-width: 38rem;
   }
   .cta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.65rem;
     margin: 0;
   }
-  .btn {
-    display: inline-block;
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    padding: 0.55rem 1rem;
-    border-radius: 4px;
-    background: var(--accent);
-    color: var(--bg);
+  .highlight-card h3 {
+    margin: 0.35rem 0 0.65rem;
+    font-size: 1.15rem;
+  }
+  .highlight-card h3 a {
+    color: inherit;
     text-decoration: none;
-    font-weight: 600;
   }
-  .btn-secondary {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-  }
-  .hero .btn-secondary {
+  .highlight-card h3 a:hover {
     color: var(--accent);
   }
-  @media (prefers-color-scheme: dark) {
-    .btn {
-      color: #121416;
-    }
+  .content-section {
+    margin-bottom: 2rem;
+  }
+  .principles ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
   }
 </style>
