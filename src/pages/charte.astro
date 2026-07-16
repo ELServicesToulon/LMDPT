@@ -1,0 +1,462 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { FIRST_ROUND_HUES } from '../lib/comment-politics';
+import { MODERATOR_CHIEF_POLICY } from '../lib/moderation-gate';
+
+const hues = FIRST_ROUND_HUES;
+const updated = '2026-07-16';
+---
+
+<BaseLayout
+  title="Charte"
+  description="Charte complète LMDPT — zéro biais, transparence des couleurs politiques, modératrice IA, Democracy Over Elimination."
+>
+  <article class="charte">
+    <header class="charte-hero card">
+      <p class="eyebrow">Document public · mis à jour {updated}</p>
+      <h1>Charte du Média du Premier Tour</h1>
+      <p class="lead">
+        <strong>Democracy Over Elimination</strong> — la démocratie avant le spectacle.<br />
+        <em>Zéro biais · zéro parti pris · transparence des couleurs politiques.</em>
+      </p>
+      <p class="meta">
+        Tagline : le premier tour est le miroir le plus fidèle de la France politique.
+        Pour une démocratie où l’on vote <strong>pour</strong>, et non contre.
+      </p>
+      <nav class="charte-toc" aria-label="Sommaire de la charte">
+        <a href="#vision">1. Vision</a>
+        <a href="#zero-biais">2. Zéro biais</a>
+        <a href="#couleurs">3. Couleurs politiques</a>
+        <a href="#moderatrice">4. Modératrice IA</a>
+        <a href="#doe">5. Democracy Over Elimination</a>
+        <a href="#debats">6. Débats &amp; commentaires</a>
+        <a href="#perimetre">7. Périmètre</a>
+        <a href="#ton">8. Ton</a>
+        <a href="#engagements">9. Engagements</a>
+        <a href="#refus">10. Ce que nous refusons</a>
+      </nav>
+    </header>
+
+    <section id="vision" class="card">
+      <h2>1. Vision</h2>
+      <p>
+        Couvrir le <strong>premier tour</strong> avec des faits sourcés (open data), sans éliminer ni caricaturer
+        les candidats et forces politiques.
+      </p>
+      <p>
+        Le premier tour capture la pluralité des préférences ; le second tour la distord via désistements et vote
+        stratégique. Nous documentons cette distorsion <strong>sans la moraliser</strong> et sans prendre parti.
+      </p>
+    </section>
+
+    <section id="zero-biais" class="card">
+      <h2>2. Zéro biais · zéro parti pris</h2>
+      <p>
+        Le média se veut <strong>zéro biais</strong> et <strong>sans parti pris</strong> éditorial.
+        Il ne « soutient » personne. Les prises de position des <strong>intervenants</strong> et des
+        <strong>posts</strong> sont les leurs — pas celles de la rédaction.
+      </p>
+      <div class="table-wrap" role="region" aria-label="Règles zéro biais" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Règle</th>
+              <th scope="col">Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Zéro biais</strong></td>
+              <td>
+                Aucune force, candidat ou camp n’est favorisé dans le traitement des faits, titres, tailles de
+                fiche ou ordre d’apparition sans justification documentaire.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Zéro parti pris</strong></td>
+              <td>
+                Pas de soutien éditorial déguisé. Les opinions sont signalées comme telles et rattachées à un
+                intervenant ou une source identifiable.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Équité de traitement</strong></td>
+              <td>
+                Fiches et comparaisons à structure équivalente lorsque les données existent ; absences de
+                données affichées clairement.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Idées vs autorité</strong></td>
+              <td>
+                Les <em>idées politiques</em> du débat démocratique passent. Les <em>autorités</em> religieuses
+                ou idéologiques totalisantes <strong>ne passent pas</strong>.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="couleurs" class="card">
+      <h2>3. Transparence des couleurs politiques</h2>
+      <p>
+        Chaque post, commentaire ou intervenant peut afficher une <strong>teinte politique</strong>
+        (proximité d’idées du 1er tour) : pastille de couleur + libellé.
+      </p>
+      <ul>
+        <li>
+          <strong>Ce que c’est</strong> : un signal de <em>transparence</em> pour le lecteur (où se situe
+          l’idée exprimée dans le spectre du 1er tour).
+        </li>
+        <li>
+          <strong>Ce que ce n’est pas</strong> : une carte d’adhésion partisane, une étiquette d’appartenance,
+          ni un jugement de valeur de la rédaction.
+        </li>
+        <li>
+          <strong>Confiance IA</strong> : indiquée quand disponible ; l’humain peut contester / la modération
+          peut réassigner.
+        </li>
+      </ul>
+      <h3>Palette d’idées 1er tour (affichage public)</h3>
+      <ul class="hue-grid" role="list">
+        {
+          hues.map((h) => (
+            <li class="hue-item">
+              <span class="hue-swatch" style={`background:${h.color}`} aria-hidden="true" />
+              <span class="hue-label">{h.label}</span>
+              <code class="hue-slug">{h.slug}</code>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="meta">
+        Source technique : <code>src/lib/comment-politics.ts</code> · API
+        <code>/api/comments/hues</code>
+      </p>
+    </section>
+
+    <section id="moderatrice" class="card">
+      <h2>4. IA modératrice en cheffe — fourches caudines</h2>
+      <p>
+        La <strong>modératrice IA</strong> est le premier filtre non négociable des commentaires et
+        contributions citoyennes. Politique active :
+      </p>
+      <ul class="policy-flags">
+        <li>
+          Zéro biais : <strong>{MODERATOR_CHIEF_POLICY.zeroBias ? 'oui' : 'non'}</strong>
+        </li>
+        <li>
+          Teinte politique transparente :{' '}
+          <strong>{MODERATOR_CHIEF_POLICY.transparentPoliticalHue ? 'oui' : 'non'}</strong>
+        </li>
+        <li>
+          Blocage autorité religieuse :{' '}
+          <strong>{MODERATOR_CHIEF_POLICY.blockReligiousAuthority ? 'oui' : 'non'}</strong>
+        </li>
+        <li>
+          Blocage autorité idéologique :{' '}
+          <strong>{MODERATOR_CHIEF_POLICY.blockIdeologicalAuthority ? 'oui' : 'non'}</strong>
+        </li>
+      </ul>
+      <h3>Ce qui est refusé</h3>
+      <ol>
+        <li>
+          <strong>Autorité religieuse</strong> — commandement clérical ou divin, prosélytisme d’autorité,
+          imposition normative religieuse.
+        </li>
+        <li>
+          <strong>Autorité idéologique totalisante</strong> — monopole de vérité, interdiction du débat, culte
+          d’obéissance.
+        </li>
+        <li><strong>Haine et appels à la violence</strong>.</li>
+      </ol>
+      <h3>Ce qui est autorisé</h3>
+      <ol>
+        <li>
+          Positions politiques du 1er tour, y compris tranchées, <strong>à condition</strong> d’afficher la
+          teinte politique en transparence.
+        </li>
+        <li>
+          Reformulation = français correct + clarté — <strong>sans</strong> ajouter d’opinion éditoriale
+          partisane.
+        </li>
+      </ol>
+      <p class="meta">
+        Implémentation : <code>src/lib/moderation-gate.ts</code> ·
+        <code>comments-api/server.mjs</code> (preview / publish). File humaine après le filtre IA.
+      </p>
+    </section>
+
+    <section id="doe" class="card">
+      <h2>5. Principes Democracy Over Elimination</h2>
+      <ol>
+        <li>
+          <strong>Aucun candidat n’est « éliminé »</strong> par le média avant le scrutin — tous les candidats
+          officiellement déclarés ont une fiche équivalente si les données existent.
+        </li>
+        <li>
+          <strong>Pas de « tier list »</strong> ni de notation subjective présentée comme objective.
+        </li>
+        <li>
+          <strong>Les absences de données</strong> sont affichées clairement (pas de silence qui suggère un
+          désaveu).
+        </li>
+        <li>
+          <strong>Revue humaine</strong> avant toute publication automatique (Phase 3) — après le filtre IA.
+        </li>
+      </ol>
+    </section>
+
+    <section id="debats" class="card">
+      <h2>6. Débats &amp; commentaires citoyens</h2>
+      <h3>Rubrique Débats</h3>
+      <div class="table-wrap" role="region" aria-label="Règles débats" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Règle</th>
+              <th scope="col">Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pluralité des positions</td>
+              <td>Minimum 2 positions, même structure (pas de position « gagnante »)</td>
+            </tr>
+            <tr>
+              <td>Arguments sourcés</td>
+              <td>Source identifiable (officielle, académique ou documentée LMDPT)</td>
+            </tr>
+            <tr>
+              <td>Pas de classement éliminatoire</td>
+              <td>Interdiction de tier list, notation ou caricature</td>
+            </tr>
+            <tr>
+              <td>Fait / opinion</td>
+              <td>Les débats sont un espace d’argumentation, pas des faits établis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Commentaires sous articles</h3>
+      <ol>
+        <li>Saisie du message</li>
+        <li>Passage par la <strong>modératrice IA</strong> (fourches caudines + reformulation FR)</li>
+        <li>Proposition de <strong>teinte politique</strong> affichée en transparence</li>
+        <li>Validation par l’auteur</li>
+        <li>File modération humaine (contributeur → modo → modo-senior → rédaction)</li>
+      </ol>
+      <p>
+        Voir aussi : <a href="/debats">Débats</a> · <a href="/moderation">Espace modération</a> (équipes
+        habilitées).
+      </p>
+    </section>
+
+    <section id="perimetre" class="card">
+      <h2>7. Périmètre éditorial</h2>
+      <div class="table-wrap" role="region" aria-label="Inclus exclus" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Inclus</th>
+              <th scope="col">Exclu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Données publiques officielles (élections, candidatures, résultats, géographie)</td>
+              <td>Sondages présentés comme prédictions ou « vérité »</td>
+            </tr>
+            <tr>
+              <td>Comparaisons factuelles (programmes, parcours, chiffres vérifiables)</td>
+              <td>Classements éliminatoires type « top / flop »</td>
+            </tr>
+            <tr>
+              <td>Traçabilité : source + date pour chaque donnée</td>
+              <td>Avis éditorial non signalé comme tel</td>
+            </tr>
+            <tr>
+              <td>Teintes politiques transparentes sur posts / intervenants</td>
+              <td>Propagande partisane déguisée en fait</td>
+            </tr>
+            <tr>
+              <td>Idées politiques du débat démocratique</td>
+              <td>Autorité religieuse ou idéologique totalisante</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ton" class="card">
+      <h2>8. Ton</h2>
+      <ul>
+        <li><strong>Sobre, civique, accessible</strong> — français professionnel, phrases claires.</li>
+        <li>
+          <strong>Neutre factuel</strong> sur les données ; prise de position explicite uniquement dans la
+          rubrique ligne / charte, jamais déguisée en fait.
+        </li>
+        <li><strong>Vouvoiement</strong> sur le site public.</li>
+      </ul>
+    </section>
+
+    <section id="engagements" class="card">
+      <h2>9. Engagements de conformité</h2>
+      <ul>
+        <li>Licences open data respectées par ressource (page <a href="/sources">Sources</a>).</li>
+        <li>
+          <a href="/mentions-legales">Mentions légales</a> et
+          <a href="/confidentialite"> politique de confidentialité</a>.
+        </li>
+        <li>Pas de données personnelles traitées sans base légale documentée.</li>
+        <li>Accessibilité : contraste et lisibilité (WCAG 2.2 AA+ ciblés).</li>
+      </ul>
+    </section>
+
+    <section id="refus" class="card">
+      <h2>10. Ce que nous ne faisons pas</h2>
+      <ul>
+        <li>Sondages présentés comme prédictions</li>
+        <li>Propagande partisane ou prise de position déguisée en fait</li>
+        <li>Tier lists, favoris, « vainqueurs » annoncés</li>
+        <li>Laisser passer une autorité religieuse ou idéologique totalisante</li>
+        <li>Publication automatique sans revue (filtre IA puis file humaine)</li>
+      </ul>
+    </section>
+
+    <footer class="charte-foot card">
+      <p>
+        Document source versionné :
+        <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md">docs/EDITORIAL.md</a>
+        · Code : <a href="https://github.com/ELServicesToulon/LMDPT">github.com/ELServicesToulon/LMDPT</a>
+      </p>
+      <p class="meta">
+        Dernière mise à jour publique : {updated}. Toute évolution de la charte est documentée ici et dans le
+        dépôt.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="/a-propos">À propos du média</a>{' '}
+        <a class="btn btn-secondary" href="/sources">Vérifier les sources</a>
+      </p>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .charte {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  .charte-hero h1 {
+    margin: 0.25rem 0 0.75rem;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    line-height: 1.25;
+  }
+  .lead {
+    font-size: 1.08rem;
+    line-height: 1.65;
+  }
+  .charte-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .charte-toc a {
+    font-size: 0.88rem;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-weight: 600;
+  }
+  .charte-toc a:hover {
+    text-decoration: underline;
+  }
+  .charte h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+  .charte h3 {
+    font-size: 1.05rem;
+    margin-top: 1.1rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0.75rem 0;
+  }
+  .charte table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    font-family: system-ui, sans-serif;
+  }
+  .charte th,
+  .charte td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .charte th {
+    background: var(--accent-soft);
+  }
+  .hue-grid {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem;
+  }
+  .hue-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+  }
+  .hue-swatch {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .hue-slug {
+    font-size: 0.75rem;
+    opacity: 0.75;
+    margin-left: auto;
+  }
+  .policy-flags {
+    font-family: system-ui, sans-serif;
+  }
+  .charte-foot {
+    margin-bottom: 2rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin: 0.25rem 0.35rem 0.25rem 0;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--fg);
+    background: var(--card);
+  }
+</style>

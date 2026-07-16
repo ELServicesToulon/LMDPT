@@ -74,7 +74,12 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 - Pas de données personnelles traitées sans base légale documentée.
 
 
+## Page publique
+
+La charte complète est publiée sur le site : **`/charte`** (`src/pages/charte.astro`).
+
 ## Validation
 
 - [x] Ligne DOE posée (2026-06-27)
+- [x] Page `/charte` publique (2026-07-16)
 - [ ] Validation humaine Président / rédaction
