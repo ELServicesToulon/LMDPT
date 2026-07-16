@@ -27,7 +27,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2027-04-18',
     tour: 1,
     distorsion_note:
-      'Projection pédagogique (agrégat sondages 2026) : Bardella ~33,5 % en tête. La pluralité complète (13 candidats illustratifs) serait masquée par un duel au second tour. Voir scénarios AN1T pour impacts législatifs.',
+      'Projection pédagogique (agrégat sondages post-7 juil. 2026) : Le Pen ~35 % en tête (hyp. exclusive type Elabe), devant Philippe ~16,5 % et Mélenchon ~16 %. La pluralité (11 candidats illustratifs) serait masquée par un duel au second tour. Voir scénarios AN1T pour impacts législatifs.',
   },
   {
     slug: '2024-legislatives',

@@ -37,32 +37,32 @@ const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, 
 const circoBlocs = circos ? countCircosByBloc(circos) : [];
 
 // === Sondages illustration — Agrégats récents + scénarios 2027 (pédagogique uniquement) ===
-// Basé sur Ifop (sept/oct 2025), Harris, Elabe récents : RN ~31-34%, gauche unie ~23-25%, Ensemble ~14%, LR ~10%.
-// Deux hypothèses pour 2027 législatives (inspiré des données dissolution).
+// Agrégat pédagogique juil. 2026 (post-candidature Le Pen) — intentions présidentielles regroupées en blocs législatifs.
+// Sources : Elabe / Verian / OpinionWay / Harris / Ifop 7–12 juil. 2026. Illustration uniquement.
 const sondagesBase = [
-  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', seats: 185, pct: 32, pollPct: 32 },
-  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', seats: 140, pct: 24, pollPct: 24 },
-  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', seats: 82, pct: 14, pollPct: 14 },
-  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', seats: 58, pct: 10, pollPct: 10 },
-  { id: 'autres', label: 'Autres & divers', color: '#dddddd', seats: 112, pct: 20, pollPct: 20 },
+  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', seats: 202, pct: 35, pollPct: 35 },
+  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', seats: 150, pct: 26, pollPct: 26 },
+  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', seats: 92, pct: 16, pollPct: 16 },
+  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
+  { id: 'autres', label: 'Autres & divers', color: '#dddddd', seats: 87, pct: 15, pollPct: 15 },
 ];
 
-// Scénario 2027 plus fourni : gauche unie vs divisée (d'après Ifop hypothèses)
+// Scénario 2027 : gauche unie vs divisée (hypothèses pédagogiques)
 const sondagesUnie = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 190, pct: 33, pollPct: 33 },
-  { id: 'nfp', label: 'Gauche unie (NFP-like)', color: '#cc2443', seats: 145, pct: 25, pollPct: 25 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 80, pct: 14, pollPct: 14 },
-  { id: 'lr', label: 'LR & droite', color: '#0066cc', seats: 58, pct: 10, pollPct: 10 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', seats: 104, pct: 18, pollPct: 18 },
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 202, pct: 35, pollPct: 35 },
+  { id: 'nfp', label: 'Gauche unie (NFP-like)', color: '#cc2443', seats: 156, pct: 27, pollPct: 27 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 92, pct: 16, pollPct: 16 },
+  { id: 'lr', label: 'LR & droite', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', seats: 81, pct: 14, pollPct: 14 },
 ];
 
 const sondagesDivisee = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 195, pct: 34, pollPct: 34 },
-  { id: 'nfp-union', label: 'Union PS/EELV/PCF', color: '#cc2443', seats: 90, pct: 16, pollPct: 16 },
-  { id: 'lfi', label: 'LFI & alliés', color: '#cc2443', seats: 55, pct: 9.5, pollPct: 9.5 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 78, pct: 13.5, pollPct: 13.5 },
-  { id: 'lr', label: 'LR', color: '#0066cc', seats: 55, pct: 9.5, pollPct: 9.5 },
-  { id: 'autres', label: 'Autres (Reconquête etc.)', color: '#dddddd', seats: 104, pct: 17.5, pollPct: 17.5 },
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 208, pct: 36, pollPct: 36 },
+  { id: 'nfp-union', label: 'Union PS/EELV/PCF', color: '#cc2443', seats: 87, pct: 15, pollPct: 15 },
+  { id: 'lfi', label: 'LFI & alliés', color: '#cc2443', seats: 64, pct: 11, pollPct: 11 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 87, pct: 15, pollPct: 15 },
+  { id: 'lr', label: 'LR', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
+  { id: 'autres', label: 'Autres (Reconquête etc.)', color: '#dddddd', seats: 85, pct: 15, pollPct: 15 },
 ];
 
 const sondagesBaseTotal = sondagesBase.reduce((s, a) => s + a.seats, 0);
