@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T06:02:48.067Z",
+  "updated": "2026-07-16T06:07:45.004Z",
   "waves": [
     {
       "id": "manual-cluster17-lepoint-20260710",
@@ -228,7 +228,7 @@
     },
     {
       "id": "epoc-row-harris-09072026-h1",
-      "firm": "Harris Interactive / Toluna",
+      "firm": "Harris Interactive / Toluna Harris",
       "firm_id": "harris",
       "fieldwork": "09/07/2026",
       "published_hint": "09/07/2026",
@@ -240,7 +240,7 @@
     },
     {
       "id": "epoc-row-harris-09072026-h2",
-      "firm": "Harris Interactive / Toluna",
+      "firm": "Harris Interactive / Toluna Harris",
       "firm_id": "harris",
       "fieldwork": "09/07/2026",
       "published_hint": "09/07/2026",
@@ -252,7 +252,7 @@
     },
     {
       "id": "epoc-row-harris-09072026-h3",
-      "firm": "Harris Interactive / Toluna",
+      "firm": "Harris Interactive / Toluna Harris",
       "firm_id": "harris",
       "fieldwork": "09/07/2026",
       "published_hint": "09/07/2026",
@@ -264,7 +264,7 @@
     },
     {
       "id": "epoc-row-harris-09072026-h4",
-      "firm": "Harris Interactive / Toluna",
+      "firm": "Harris Interactive / Toluna Harris",
       "firm_id": "harris",
       "fieldwork": "09/07/2026",
       "published_hint": "09/07/2026",
@@ -276,7 +276,7 @@
     },
     {
       "id": "epoc-row-harris-09072026-h5",
-      "firm": "Harris Interactive / Toluna",
+      "firm": "Harris Interactive / Toluna Harris",
       "firm_id": "harris",
       "fieldwork": "09/07/2026",
       "published_hint": "09/07/2026",
@@ -356,6 +356,42 @@
       "source_id": "le-figaro",
       "scores": {},
       "raw_snippet": "Présidentielle 2027 : Hollande «prépare» sa candidature et donne secrètement rendez-vous à ses soutiens ce soir",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "europe-elects-europe-elects-na-gebl8m",
+      "firm": "europe-elects",
+      "firm_id": "europe-elects",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://europeelects.eu/2026/06/02/presidential-election-in-france-2027/",
+      "source_id": "europe-elects",
+      "scores": {},
+      "raw_snippet": "Presidential election in France 2027 - Europe Elects Skip to the content Europe Elects Polls and elections in Europe Live Feed Databases (Parties · Polls · Elections) Affiliations Database Election Results Electoral Calendar Party Database Polling Database Pollster Database EU Tr",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "europe-elects-home-europe-elects-na-jtao26",
+      "firm": "europe-elects",
+      "firm_id": "europe-elects",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://europeelects.eu/",
+      "source_id": "europe-elects-home",
+      "scores": {},
+      "raw_snippet": "Home - Europe Elects Skip to the content Europe Elects Polls and elections in Europe Live Feed Databases (Parties · Polls · Elections) Affiliations Database Election Results Electoral Calendar Party Database Polling Database Pollster Database EU Tracking Council Tracker Parliamen",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "wikipedia-2027-election-elabe-na-rhkp61",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "source_id": "wikipedia-2027-election",
+      "scores": {},
+      "raw_snippet": "Élection présidentielle française de 2027 — Wikipédia Aller au contenu Menu principal Menu principal déplacer vers la barre latérale masquer Navigation Page d’accueil Portails thématiques Article au hasard Contact Contribuer Débuter sur Wikipédia Aide Communauté Pages spéciales M",
       "metric": "intentions_vote"
     }
   ]

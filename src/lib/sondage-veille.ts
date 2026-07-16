@@ -16,11 +16,19 @@ const MOVEMENTS_PATH = join(DATA_DIR, 'movements.jsonl');
 const WAVES_PATH = join(DATA_DIR, 'waves-registry.json');
 
 export interface ProviderRegistry {
-  institutes: Array<{ id: string; label: string; keywords?: string[]; active?: boolean }>;
+  institutes: Array<{
+    id: string;
+    label: string;
+    region?: string;
+    keywords?: string[];
+    active?: boolean;
+    tier?: string;
+  }>;
   aggregators: Array<{
     id: string;
     label: string;
     url: string;
+    region?: string;
     priority?: number;
     parse?: string;
     active?: boolean;
@@ -28,6 +36,7 @@ export interface ProviderRegistry {
   media_partners: Array<{
     id: string;
     label: string;
+    region?: string;
     rss?: string[];
     keywords?: string[];
     active?: boolean;
@@ -97,14 +106,23 @@ const CANDIDATE_ALIASES: Array<{ slug: string; patterns: RegExp }> = [
 const FIRM_PATTERNS: Array<{ id: string; re: RegExp }> = [
   { id: 'elabe', re: /\belabe\b/i },
   { id: 'ifop', re: /\bifop(?:-fiducial)?\b/i },
-  { id: 'harris', re: /\bharris(?:\s+interactive)?\b|\btoluna\b/i },
-  { id: 'ipsos', re: /\bipsos(?:-bva)?\b|\bbva\b/i },
-  { id: 'opinionway', re: /\bopinion\s*way\b|\bopinionway\b/i },
-  { id: 'verian', re: /\bverian\b|\bkantar\b/i },
+  { id: 'harris', re: /\bharris(?:\s+interactive)?\b|\btoluna(?:\s+harris)?\b/i },
+  { id: 'ipsos', re: /\bipsos(?:-bva|-mori)?\b|\bbva\b|\bipsos\s+mori\b/i },
+  { id: 'opinionway', re: /\bopinion[\s-]*way\b|\bopinionway\b/i },
+  { id: 'verian', re: /\bverian\b|\bkantar(?:\s+public)?\b/i },
   { id: 'cluster17', re: /\bcluster\s*17\b|\bcluster17\b/i },
   { id: 'odoxa', re: /\bodoxa\b/i },
   { id: 'yougov', re: /\byougov\b/i },
-  { id: 'csa', re: /\bcsa\b/i },
+  { id: 'csa', re: /\bcsa(?:\s+research)?\b/i },
+  { id: 'viavoice', re: /\bviavoice\b|\bvia\s*voice\b/i },
+  { id: 'pew-research', re: /\bpew(?:\s+research)?\b/i },
+  { id: 'gallup', re: /\bgallup\b/i },
+  { id: 'morning-consult', re: /\bmorning\s+consult\b/i },
+  { id: 'europe-elects', re: /\beurope\s+elects\b/i },
+  { id: 'eurobarometer', re: /\beurobarom[eè]tre\b|\beurobarometer\b/i },
+  { id: 'cevipof', re: /\bcevipof\b/i },
+  { id: 'tns-sofres', re: /\btns\s*sofres\b|\bsofres\b/i },
+  { id: 'lh2', re: /\blh2\b/i },
 ];
 
 export function getProviders(): ProviderRegistry {

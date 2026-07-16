@@ -11,10 +11,24 @@ import {
 } from './sondage-veille';
 
 describe('sondage-veille', () => {
-  it('matches poll firms', () => {
+  it('matches poll firms FR / EU / intl', () => {
     expect(matchFirm('Selon un sondage Elabe pour BFMTV')?.id).toBe('elabe');
     expect(matchFirm('Cluster 17 pour Le Point')?.id).toBe('cluster17');
     expect(matchFirm('Ifop-Fiducial pour Le Figaro')?.id).toBe('ifop');
+    expect(matchFirm('Viavoice pour Libération')?.id).toBe('viavoice');
+    expect(matchFirm('Europe Elects average')?.id).toBe('europe-elects');
+    expect(matchFirm('Pew Research survey on France')?.id).toBe('pew-research');
+  });
+
+  it('indexes multi-region providers', async () => {
+    const { getProviders } = await import('./sondage-veille');
+    const p = getProviders();
+    const fr = p.institutes.filter((i: { region?: string }) => i.region === 'fr');
+    const eu = p.institutes.filter((i: { region?: string }) => i.region === 'eu');
+    const intl = p.institutes.filter((i: { region?: string }) => i.region === 'intl');
+    expect(fr.length).toBeGreaterThanOrEqual(10);
+    expect(eu.length + intl.length).toBeGreaterThanOrEqual(5);
+    expect(p.aggregators.some((a: { id: string }) => a.id === 'europe-elects')).toBe(true);
   });
 
   it('extracts candidate scores from text', () => {

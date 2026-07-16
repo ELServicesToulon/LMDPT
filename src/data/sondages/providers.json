@@ -1,115 +1,410 @@
 {
   "title": "Registre des fournisseurs de sondages — Présidentielle 2027",
   "updated": "2026-07-16",
-  "disclaimer": "Index LMDPT des instituts, agrégateurs et supports de diffusion. Les intentions de vote ne sont ni des résultats officiels ni des prédictions. Notices : commission-des-sondages.fr.",
+  "disclaimer": "Index LMDPT des instituts FR / Europe / hors-Europe et agrégateurs. Intentions de vote ≠ résultats officiels ≠ prédictions. Notices FR : commission-des-sondages.fr. Veille pédagogique Democracy Over Elimination.",
   "scan": {
     "cadence": "2x/jour",
     "hours_local": ["07:30", "19:30"],
     "timezone": "Europe/Paris",
     "user_agent": "LMDPT-SondageVeille/1.0 (+https://lmdpt.iarbre.org; veille pédagogique)"
   },
+  "regions": {
+    "fr": "France — instituts publiant (ou ayant publié) des baromètres présidentiels 2027 / intentions de vote",
+    "eu": "Europe — instituts / agrégateurs pan-européens qui relaient ou comparent la présidentielle FR",
+    "intl": "Hors-Europe — médias et firmes internationales qui couvrent ou citent les sondages FR 2027"
+  },
   "institutes": [
     {
       "id": "ifop",
       "label": "Ifop",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://www.ifop.com/",
       "commission_notices": "https://www.commission-des-sondages.fr/",
-      "rss": [],
-      "scan_urls": [
-        "https://www.ifop.com/categorie/sondages/",
-        "https://www.ifop.com/"
-      ],
+      "scan_urls": ["https://www.ifop.com/", "https://www.ifop.com/categorie/sondages/"],
       "keywords": ["ifop", "ifop-fiducial"],
+      "typical_clients": ["Le Figaro", "LCI", "Sud Radio", "Fiducial"],
+      "active": true,
+      "note": "Baromètres présidentiels fréquents ; vagues post-candidature Le Pen (juil. 2026)."
+    },
+    {
+      "id": "ifop-fiducial",
+      "label": "Ifop-Fiducial",
+      "region": "fr",
+      "type": "marque_commande",
+      "parent": "ifop",
+      "tier": "principal",
+      "keywords": ["ifop-fiducial", "fiducial"],
       "active": true
     },
     {
       "id": "elabe",
       "label": "Elabe",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://elabe.fr/",
       "scan_urls": ["https://elabe.fr/"],
       "keywords": ["elabe"],
+      "typical_clients": ["BFMTV", "La Tribune Dimanche", "Les Échos"],
       "active": true
     },
     {
       "id": "harris",
-      "label": "Harris Interactive / Toluna",
+      "label": "Harris Interactive / Toluna Harris",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://harris-interactive.fr/",
       "scan_urls": ["https://harris-interactive.fr/"],
-      "keywords": ["harris interactive", "toluna", "harris"],
+      "keywords": ["harris interactive", "toluna harris", "toluna", "harris"],
+      "typical_clients": ["M6", "RTL"],
       "active": true
     },
     {
       "id": "ipsos",
-      "label": "Ipsos / Ipsos-BVA",
+      "label": "Ipsos (France)",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://www.ipsos.com/fr-fr",
       "scan_urls": ["https://www.ipsos.com/fr-fr"],
-      "keywords": ["ipsos", "ipsos-bva", "bva"],
-      "active": true
+      "keywords": ["ipsos"],
+      "typical_clients": ["Le Parisien", "France Télévisions", "Radio France", "Cevipof"],
+      "active": true,
+      "note": "Groupe mondial (Paris) ; vagues présidentielles + baromètres Cevipof."
+    },
+    {
+      "id": "ipsos-bva",
+      "label": "Ipsos-BVA (héritage BVA)",
+      "region": "fr",
+      "type": "marque",
+      "parent": "ipsos",
+      "tier": "principal",
+      "keywords": ["ipsos-bva", "bva"],
+      "active": true,
+      "note": "BVA racheté / intégré Ipsos ; libellés historiques « BVA » encore cités."
     },
     {
       "id": "opinionway",
       "label": "OpinionWay",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://www.opinion-way.com/",
       "scan_urls": ["https://www.opinion-way.com/"],
-      "keywords": ["opinionway", "opinion way"],
-      "active": true
-    },
-    {
-      "id": "verian",
-      "label": "Verian (ex-Kantar Public)",
-      "type": "institut",
-      "website": "https://www.veriangroup.com/",
-      "scan_urls": [],
-      "keywords": ["verian", "kantar"],
+      "keywords": ["opinionway", "opinion way", "opinion-way"],
+      "typical_clients": ["Les Échos", "Radio Classique", "CNews"],
       "active": true
     },
     {
       "id": "cluster17",
       "label": "Cluster17",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
       "website": "https://cluster17.com/",
       "scan_urls": ["https://cluster17.com/"],
       "keywords": ["cluster17", "cluster 17"],
+      "typical_clients": ["Le Point"],
       "active": true,
-      "note": "Partenaire fréquent Le Point — parfois « souhait de victoire » plutôt qu’intentions de vote."
+      "note": "Souvent souhaits de victoire / clusters socio-politiques ; exclusif Le Point juil. 2026."
     },
     {
-      "id": "odxa",
-      "label": "Odoxa",
+      "id": "verian",
+      "label": "Verian (ex-Kantar Public)",
+      "region": "fr",
       "type": "institut",
+      "tier": "principal",
+      "website": "https://www.veriangroup.com/",
+      "keywords": ["verian", "kantar public", "kantar"],
+      "active": true,
+      "note": "Ancien Kantar Public ; vagues 2026 citées dans la presse FR."
+    },
+    {
+      "id": "odoxa",
+      "label": "Odoxa",
+      "region": "fr",
+      "type": "institut",
+      "tier": "secondaire",
       "website": "https://www.odoxa.fr/",
       "scan_urls": ["https://www.odoxa.fr/"],
       "keywords": ["odoxa"],
-      "active": true
-    },
-    {
-      "id": "yougov",
-      "label": "YouGov",
-      "type": "institut",
-      "website": "https://fr.yougov.com/",
-      "scan_urls": ["https://fr.yougov.com/"],
-      "keywords": ["yougov"],
+      "typical_clients": ["Le Figaro", "Franceinfo", "Dentsu"],
       "active": true
     },
     {
       "id": "csa",
-      "label": "CSA / Coktail",
+      "label": "CSA Research",
+      "region": "fr",
       "type": "institut",
+      "tier": "secondaire",
       "website": "https://www.csa.eu/",
-      "keywords": ["csa"],
+      "keywords": ["csa", "csa research"],
+      "typical_clients": ["CNews", "Europe 1", "JDD"],
       "active": true
     },
     {
-      "id": "ifop-fiducial",
-      "label": "Ifop-Fiducial",
-      "type": "marque_commande",
+      "id": "ifop-flair",
+      "label": "Ifop Flair / baromètres spéciaux",
+      "region": "fr",
+      "type": "marque",
       "parent": "ifop",
-      "keywords": ["ifop-fiducial", "fiducial"],
+      "tier": "secondaire",
+      "keywords": ["ifop flair"],
+      "active": true
+    },
+    {
+      "id": "ipsos-sopra-steria",
+      "label": "Ipsos-Sopra Steria (estimations soir d’élection)",
+      "region": "fr",
+      "type": "partenariat",
+      "parent": "ipsos",
+      "tier": "exit_poll",
+      "keywords": ["ipsos-sopra", "sopra steria", "estimation ipsos"],
+      "active": true,
+      "note": "Estimations 20h historiques France Télévisions / Radio France — pas baromètre continu."
+    },
+    {
+      "id": "harris-day",
+      "label": "Harris Interactive — estimations soirée",
+      "region": "fr",
+      "type": "exit_poll",
+      "parent": "harris",
+      "tier": "exit_poll",
+      "keywords": ["estimation harris"],
+      "active": true
+    },
+    {
+      "id": "elabe-exit",
+      "label": "Elabe — estimations soirée",
+      "region": "fr",
+      "type": "exit_poll",
+      "parent": "elabe",
+      "tier": "exit_poll",
+      "keywords": ["estimation elabe"],
+      "active": true
+    },
+    {
+      "id": "opinionway-exclusif",
+      "label": "OpinionWay (commandes exclusives médias)",
+      "region": "fr",
+      "type": "marque",
+      "parent": "opinionway",
+      "tier": "secondaire",
+      "keywords": ["opinionway exclusif"],
+      "active": true
+    },
+    {
+      "id": "viavoice",
+      "label": "Viavoice",
+      "region": "fr",
+      "type": "institut",
+      "tier": "secondaire",
+      "website": "https://www.institut-viavoice.com/",
+      "keywords": ["viavoice", "via voice"],
+      "typical_clients": ["Libération", "France Inter"],
+      "active": true
+    },
+    {
+      "id": "ifop-cevipof",
+      "label": "Partenariats Cevipof (Sciences Po) × instituts",
+      "region": "fr",
+      "type": "academique",
+      "tier": "reference",
+      "website": "https://www.sciencespo.fr/cevipof/",
+      "keywords": ["cevipof", "baromètre politique français"],
+      "active": true,
+      "note": "Pas un institut commercial ; baromètres de référence souvent en partenariat Ipsos."
+    },
+    {
+      "id": "ifop-fondapol",
+      "label": "Fondapol / think tanks (commandes)",
+      "region": "fr",
+      "type": "commanditaire",
+      "tier": "secondaire",
+      "keywords": ["fondapol"],
+      "active": true
+    },
+    {
+      "id": "youGov-fr",
+      "label": "YouGov France",
+      "region": "fr",
+      "type": "institut",
+      "tier": "secondaire",
+      "website": "https://fr.yougov.com/",
+      "scan_urls": ["https://fr.yougov.com/"],
+      "keywords": ["yougov"],
+      "active": true,
+      "note": "Présence FR + méthodes UK ; couverture présidentielle variable."
+    },
+    {
+      "id": "cluster17-lepoint",
+      "label": "Cluster17 × Le Point",
+      "region": "fr",
+      "type": "partenariat",
+      "parent": "cluster17",
+      "tier": "principal",
+      "keywords": ["cluster17 le point", "baromètre le point"],
+      "active": true
+    },
+    {
+      "id": "ifop-jdd",
+      "label": "Historique JDD / autres hebdomadaires",
+      "region": "fr",
+      "type": "commanditaire",
+      "tier": "secondaire",
+      "keywords": ["jdd sondage"],
+      "active": true
+    },
+    {
+      "id": "lh2",
+      "label": "LH2 (historique)",
+      "region": "fr",
+      "type": "institut",
+      "tier": "historique",
+      "keywords": ["lh2"],
+      "active": false,
+      "note": "Actif par le passé ; peu de vagues 2026-2027 repérées."
+    },
+    {
+      "id": "tns-sofres",
+      "label": "TNS Sofres (historique → Kantar / Verian)",
+      "region": "fr",
+      "type": "institut",
+      "tier": "historique",
+      "keywords": ["tns sofres", "sofres"],
+      "active": false,
+      "note": "Marque historique ; successeur Kantar Public / Verian."
+    },
+
+    {
+      "id": "yougov-uk",
+      "label": "YouGov (UK / international)",
+      "region": "eu",
+      "type": "institut",
+      "tier": "europe",
+      "website": "https://yougov.co.uk/",
+      "keywords": ["yougov"],
+      "active": true,
+      "note": "Couverture occasionnelle France ; agrégation Europe."
+    },
+    {
+      "id": "ipsos-mori",
+      "label": "Ipsos MORI (UK)",
+      "region": "eu",
+      "type": "institut",
+      "parent": "ipsos",
+      "tier": "europe",
+      "website": "https://www.ipsos.com/en-uk",
+      "keywords": ["ipsos mori", "ipsos-mori"],
+      "active": true
+    },
+    {
+      "id": "kantarnr",
+      "label": "Kantar (Europe / Public)",
+      "region": "eu",
+      "type": "institut",
+      "tier": "europe",
+      "website": "https://www.kantar.com/",
+      "keywords": ["kantar"],
+      "active": true,
+      "note": "Lien Verian / Kantar Public France."
+    },
+    {
+      "id": "gfs-bern",
+      "label": "gfs.bern (Suisse)",
+      "region": "eu",
+      "type": "institut",
+      "tier": "europe",
+      "website": "https://www.gfsbern.ch/",
+      "keywords": ["gfs.bern", "gfs bern"],
+      "active": true,
+      "note": "Peu de baromètres FR directs ; veille comparative EU."
+    },
+    {
+      "id": "forschungsgruppe",
+      "label": "Forschungsgruppe Wahlen (DE)",
+      "region": "eu",
+      "type": "institut",
+      "tier": "europe",
+      "website": "https://www.forschungsgruppe.de/",
+      "keywords": ["forschungsgruppe wahlen"],
+      "active": false,
+      "note": "Focus Allemagne ; pas de terrain FR régulier."
+    },
+    {
+      "id": "inra",
+      "label": "INRA / GfK (historique EU)",
+      "region": "eu",
+      "type": "institut",
+      "tier": "historique",
+      "keywords": ["gfk", "inra"],
+      "active": false
+    },
+    {
+      "id": "eurobarometer",
+      "label": "Eurobaromètre (Commission européenne)",
+      "region": "eu",
+      "type": "officiel",
+      "tier": "reference",
+      "website": "https://europa.eu/eurobarometer/",
+      "keywords": ["eurobaromètre", "eurobarometer"],
+      "active": true,
+      "note": "Pas d’intentions présidentielles FR ; climat d’opinion EU utile en contexte."
+    },
+    {
+      "id": "pew-research",
+      "label": "Pew Research Center",
+      "region": "intl",
+      "type": "institut",
+      "tier": "international",
+      "website": "https://www.pewresearch.org/",
+      "keywords": ["pew research", "pew"],
+      "active": true,
+      "note": "Études d’attitudes FR/EU, rarement intentions de vote présidentielles brutes."
+    },
+    {
+      "id": "gallup",
+      "label": "Gallup",
+      "region": "intl",
+      "type": "institut",
+      "tier": "international",
+      "website": "https://www.gallup.com/",
+      "keywords": ["gallup"],
+      "active": true,
+      "note": "Historique mondial ; couverture FR sporadique via partenaires."
+    },
+    {
+      "id": "morning-consult",
+      "label": "Morning Consult",
+      "region": "intl",
+      "type": "institut",
+      "tier": "international",
+      "website": "https://morningconsult.com/",
+      "keywords": ["morning consult"],
+      "active": true
+    },
+    {
+      "id": "reuters-ipsos",
+      "label": "Reuters / Ipsos (international news polls)",
+      "region": "intl",
+      "type": "partenariat",
+      "parent": "ipsos",
+      "tier": "international",
+      "keywords": ["reuters ipsos", "reuters/ipsos"],
+      "active": true,
+      "note": "Relais presse internationale des baromètres FR (Ifop, Harris cités Reuters)."
+    },
+    {
+      "id": "poll-of-polls",
+      "label": "Politico Poll of Polls (Europe)",
+      "region": "eu",
+      "type": "agregateur_marque",
+      "tier": "europe",
+      "website": "https://www.politico.eu/europe-poll-of-polls/",
+      "keywords": ["poll of polls", "politico poll"],
       "active": true
     }
   ],
@@ -117,6 +412,7 @@
     {
       "id": "epoc",
       "label": "EPOC Info — baromètre 2027",
+      "region": "fr",
       "type": "agregateur",
       "url": "https://www.epocinfo.fr/ep2027.php",
       "priority": 1,
@@ -126,6 +422,7 @@
     {
       "id": "wikipedia-fr",
       "label": "Wikipédia FR — liste de sondages 2027",
+      "region": "fr",
       "type": "agregateur",
       "url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
       "priority": 2,
@@ -135,6 +432,7 @@
     {
       "id": "wikipedia-en",
       "label": "Wikipedia EN — Opinion polling 2027",
+      "region": "intl",
       "type": "agregateur",
       "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
       "priority": 3,
@@ -144,6 +442,7 @@
     {
       "id": "2027presidentielle",
       "label": "2027presidentielle.com — compact",
+      "region": "fr",
       "type": "agregateur",
       "url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
       "priority": 4,
@@ -153,6 +452,7 @@
     {
       "id": "elyseescope",
       "label": "ÉlyséeScope 2027",
+      "region": "fr",
       "type": "agregateur",
       "url": "https://www.elyseescope.com/",
       "priority": 5,
@@ -162,9 +462,51 @@
     {
       "id": "commission-sondages",
       "label": "Commission des sondages — notices",
+      "region": "fr",
       "type": "officiel",
       "url": "https://www.commission-des-sondages.fr/notices/",
       "priority": 6,
+      "parse": "html_text",
+      "active": true
+    },
+    {
+      "id": "europe-elects",
+      "label": "Europe Elects — France 2027",
+      "region": "eu",
+      "type": "agregateur",
+      "url": "https://europeelects.eu/2026/06/02/presidential-election-in-france-2027/",
+      "priority": 7,
+      "parse": "html_text",
+      "active": true,
+      "note": "Moyennes / scénarios pan-européens ; relais international."
+    },
+    {
+      "id": "europe-elects-home",
+      "label": "Europe Elects (home)",
+      "region": "eu",
+      "type": "agregateur",
+      "url": "https://europeelects.eu/",
+      "priority": 8,
+      "parse": "html_text",
+      "active": true
+    },
+    {
+      "id": "politico-pop",
+      "label": "Politico Europe — Poll of Polls",
+      "region": "eu",
+      "type": "agregateur",
+      "url": "https://www.politico.eu/europe-poll-of-polls/",
+      "priority": 9,
+      "parse": "html_text",
+      "active": true
+    },
+    {
+      "id": "wikipedia-2027-election",
+      "label": "Wikipédia FR — page élection 2027",
+      "region": "fr",
+      "type": "agregateur",
+      "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "priority": 10,
       "parse": "html_text",
       "active": true
     }
@@ -173,62 +515,146 @@
     {
       "id": "le-point",
       "label": "Le Point",
+      "region": "fr",
       "type": "media",
       "website": "https://www.lepoint.fr/",
       "rss": [],
-      "scan_urls": [
-        "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/"
-      ],
-      "keywords": ["sondage", "présidentielle", "intentions de vote", "cluster17"],
-      "active": true,
-      "note": "RSS public instable / anti-bot ; seed manuel + URL article exclusif Cluster17."
+      "keywords": ["sondage", "présidentielle", "cluster17"],
+      "institutes": ["cluster17"],
+      "active": true
     },
     {
       "id": "le-figaro",
       "label": "Le Figaro",
+      "region": "fr",
       "type": "media",
       "rss": ["https://www.lefigaro.fr/rss/figaro_politique.xml"],
       "keywords": ["sondage", "présidentielle", "ifop"],
+      "institutes": ["ifop"],
+      "active": true
+    },
+    {
+      "id": "lci",
+      "label": "LCI / TF1 Info",
+      "region": "fr",
+      "type": "media",
+      "keywords": ["sondage", "présidentielle", "ifop"],
+      "institutes": ["ifop"],
+      "active": true
+    },
+    {
+      "id": "bfmtv",
+      "label": "BFMTV",
+      "region": "fr",
+      "type": "media",
+      "rss": ["https://www.bfmtv.com/rss/politique/"],
+      "keywords": ["sondage", "présidentielle", "elabe"],
+      "institutes": ["elabe"],
       "active": true
     },
     {
       "id": "rtl",
       "label": "RTL",
+      "region": "fr",
       "type": "media",
-      "rss": [],
-      "keywords": ["sondage", "présidentielle", "harris"],
-      "active": true,
-      "note": "RSS politique souvent 404 — couverture via agrégateurs EPOC/Wikipedia."
-    },
-    {
-      "id": "bfmtv",
-      "label": "BFMTV",
-      "type": "media",
-      "rss": ["https://www.bfmtv.com/rss/politique/"],
-      "keywords": ["sondage", "présidentielle", "elabe"],
+      "keywords": ["sondage", "harris"],
+      "institutes": ["harris"],
       "active": true
     },
     {
       "id": "les-echos",
       "label": "Les Échos",
+      "region": "fr",
       "type": "media",
-      "rss": [],
-      "keywords": ["sondage", "présidentielle", "opinionway"],
-      "active": true,
-      "note": "RSS souvent 403 — couverture via agrégateurs."
-    },
-    {
-      "id": "lci",
-      "label": "LCI / TF1 Info",
-      "type": "media",
-      "keywords": ["sondage", "présidentielle", "ifop"],
+      "keywords": ["sondage", "opinionway", "elabe"],
+      "institutes": ["opinionway", "elabe"],
       "active": true
     },
     {
       "id": "la-tribune-dimanche",
       "label": "La Tribune Dimanche",
+      "region": "fr",
       "type": "media",
-      "keywords": ["sondage", "elabe", "présidentielle"],
+      "keywords": ["sondage", "elabe"],
+      "institutes": ["elabe"],
+      "active": true
+    },
+    {
+      "id": "le-parisien",
+      "label": "Le Parisien / Aujourd'hui en France",
+      "region": "fr",
+      "type": "media",
+      "keywords": ["sondage", "ipsos"],
+      "institutes": ["ipsos"],
+      "active": true
+    },
+    {
+      "id": "franceinfo",
+      "label": "franceinfo / France Télévisions",
+      "region": "fr",
+      "type": "media",
+      "keywords": ["sondage", "odoxa", "ipsos"],
+      "institutes": ["odoxa", "ipsos"],
+      "active": true
+    },
+    {
+      "id": "liberation",
+      "label": "Libération",
+      "region": "fr",
+      "type": "media",
+      "keywords": ["sondage", "viavoice"],
+      "institutes": ["viavoice"],
+      "active": true
+    },
+    {
+      "id": "reuters",
+      "label": "Reuters",
+      "region": "intl",
+      "type": "media",
+      "website": "https://www.reuters.com/",
+      "keywords": ["france poll", "le pen", "presidential", "ifop", "harris"],
+      "active": true,
+      "note": "Relais international des vagues FR (ex. Ifop/Harris juil. 2026)."
+    },
+    {
+      "id": "politico-eu",
+      "label": "Politico Europe",
+      "region": "eu",
+      "type": "media",
+      "website": "https://www.politico.eu/",
+      "keywords": ["france", "poll", "presidential", "le pen"],
+      "active": true
+    },
+    {
+      "id": "ft",
+      "label": "Financial Times",
+      "region": "intl",
+      "type": "media",
+      "keywords": ["france", "poll", "presidential"],
+      "active": true
+    },
+    {
+      "id": "bloomberg",
+      "label": "Bloomberg",
+      "region": "intl",
+      "type": "media",
+      "keywords": ["france", "election", "poll"],
+      "active": true
+    },
+    {
+      "id": "ap",
+      "label": "Associated Press",
+      "region": "intl",
+      "type": "media",
+      "keywords": ["france", "presidential", "poll"],
+      "active": true
+    },
+    {
+      "id": "bbc",
+      "label": "BBC News",
+      "region": "eu",
+      "type": "media",
+      "keywords": ["france", "election", "poll", "le pen"],
       "active": true
     }
   ]
