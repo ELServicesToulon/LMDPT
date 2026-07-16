@@ -27,7 +27,7 @@ Assets créés pour illustrer le **premier tour** et la ligne **Democracy Over E
 
 **PRINCIPE ABSOLU DE LAÏCITÉ (non négociable)** : 
 - Aucun signe religieux ostentatoire dans AUCUNE illustration, photo, dessin, mème ou visuel du site.
-- Aucune autorité religieuse, aucun symbole religieux (croix, église, voile, kippa, etc.), même discret ou en arrière-plan.
+- aucun symbole religieux (croix, église, voile, kippa, etc.), même discret ou en arrière-plan.
 - Toutes les représentations de citoyens doivent être en tenues quotidiennes neutres, sans aucun attribut religieux.
 - Ce principe s'applique à l'intégralité du site (sauf live YouTube). Toute image contrevenant est bloquée immédiatement.
 - Le site expose des idées et des faits, jamais d'idéologie religieuse ou autoritaire.

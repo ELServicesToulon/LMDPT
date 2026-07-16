@@ -1,11 +1,29 @@
 {
-  "fetched_at": "2026-07-15T19:21:52.686Z",
+  "fetched_at": "2026-07-16T06:14:02.074Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "« Projet Pegasus » : cinq ans après les révélations sur un système mondial d’espionnage de téléphones, l’enquête judiciaire se poursuit",
+      "url": "https://www.lemonde.fr/pixels/article/2026/07/16/projet-pegasus-cinq-ans-apres-les-revelations-sur-un-systeme-mondial-d-espionnage-de-telephones-l-enquete-judiciaire-se-poursuit_6723735_4408996.html",
+      "published": "2026-07-16",
+      "summary": "Deux anciens responsables de l’entreprise israélienne NSO Group, qui a développé le logiciel espion, sont placés sous le statut de témoins assistés. Mais alors que l’Elysée promettait, en 2021, de faire « toute la lumière » sur l’espionnage de six ministres français, un rapproche",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Dominique de Villepin dit que les candidats qui promettent de ne pas augmenter les impôts sont des « menteurs »",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/15/dominique-de-villepin-dit-que-les-candidats-qui-promettent-de-ne-pas-augmenter-les-impots-sont-des-menteurs_6723620_823448.html",
+      "published": "2026-07-15",
+      "summary": "Le probable candidat à la présidentielle s’exprimait au siège parisien de son jeune parti, La France humaniste, devant une poignée de journalistes ainsi qu’une dizaine d’influenceurs et de représentants des nouveaux médias.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
     {
       "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
       "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
@@ -34,7 +52,7 @@
       "source_type": "traditional"
     },
     {
-      "title": "Candidat au poste de Défenseur des droits, François-Noël Buffet bousculé par la gauche lors de son audition devant les députés",
+      "title": "François-Noël Buffet, un candidat au poste de Défenseur des droits bousculé par la gauche lors de son audition devant les députés",
       "url": "https://www.lemonde.fr/societe/article/2026/07/15/candidat-au-poste-de-defenseur-des-droits-francois-noel-buffet-bouscule-par-la-gauche-lors-de-son-audition-devant-les-deputes_6723600_3224.html",
       "published": "2026-07-15",
       "summary": "Le profil du sénateur Les Républicains, proposé par Emmanuel Macron, lui vaut un tir de barrage de nombreux syndicats et associations. L’ancien ministre des outre-mer a notamment participé aux manifestations contre le mariage pour tous et s’est opposé à la constitutionnalisation ",
@@ -65,15 +83,6 @@
       "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
       "published": "2026-07-15",
       "summary": "L’eurodéputé Place publique refuse toujours de faire officiellement acte de candidature à la future primaire du camp social-démocrate, validée par les militants socialistes le 9 juillet.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "« Il faut rendre inéligibles à vie tout homme ou toute femme politique condamnés pour une infraction à la probité »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/15/il-faut-rendre-ineligibles-a-vie-tout-homme-ou-toute-femme-politique-condamnes-pour-une-infraction-a-la-probite_6723449_3232.html",
-      "published": "2026-07-15",
-      "summary": "Les dirigeants politiques jugés pour détournement de biens publics ou prise illégale d’intérêts ont tendance à considérer l’inéligibilité comme la seule réelle sanction parmi l’éventail des peines qu’ils encourent, soutient Eric Halphen, magistrat honoraire, dans une tribune au «",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
       "source_type": "traditional"
@@ -245,15 +254,6 @@
       "url": "https://www.lemonde.fr/podcasts/article/2026/07/08/marine-le-pen-condamnee-et-candidate-un-lancement-de-campagne-inattendu_6721894_5463015.html",
       "published": "2026-07-08",
       "summary": "La présidente du groupe RN à l’Assemblée nationale, condamnée mardi pour détournement de fonds publics par la cour d’appel de Paris, a donné le coup d’envoi de sa campagne présidentielle, malgré les aléas juridiques liés à son pourvoi en cassation. Dans ce podcast, Laura Motet, j",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "« La candidature à la présidentielle de Marine Le Pen constitue l’ultime marqueur d’une dégradation de l’éthique publique »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/08/la-candidature-a-la-presidentielle-de-marine-le-pen-constitue-l-ultime-marqueur-d-une-degradation-de-l-ethique-publique_6721875_3232.html",
-      "published": "2026-07-08",
-      "summary": "La délinquance en col blanc n’est pas moins grave que les autres types de crime ou de délit, estime, dans une tribune au « Monde », le juriste Paul Cassia, qui se demande comment la figure d’une formation politique prônant la fermeté en matière pénale peut briguer l’investiture s",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional"
