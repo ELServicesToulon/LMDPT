@@ -26,6 +26,8 @@ export interface DebateDataset {
   positions: DebatePosition[];
   related: string[];
   discussion_id?: string;
+  /** Watch/live YouTube ponctuel — seulement si URL réelle (chaîne créée). */
+  live_url?: string;
 }
 
 export interface DebateSummary {

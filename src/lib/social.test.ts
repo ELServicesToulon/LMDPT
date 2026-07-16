@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { getPublicSocialLinks, getYoutubeLiveUrl, SOCIAL_LINKS } from '../config/social';
+import {
+  getYoutubeChannelUrl,
+  getYoutubeLiveUrlWithUtm,
+  isYoutubeEnabled,
+} from '../config/youtube';
 
 describe('social links', () => {
   it('exposes live X account', () => {
@@ -8,17 +13,19 @@ describe('social links', () => {
     expect(x?.url).toBe('https://x.com/LMDuPremierTour');
   });
 
-  it('exposes YouTube channel for débats live', () => {
+  it('keeps YouTube off by default until PUBLIC_YOUTUBE_ENABLED', () => {
+    expect(isYoutubeEnabled()).toBe(false);
+    expect(getYoutubeChannelUrl()).toBe('');
+    expect(getYoutubeLiveUrl()).toBe('');
+    expect(getYoutubeLiveUrlWithUtm('debats_index')).toBe('');
     const yt = SOCIAL_LINKS.find((l) => l.id === 'youtube');
-    expect(yt?.handle).toBe('@LMDuPremierTour');
-    expect(yt?.url).toContain('youtube.com');
+    expect(yt?.url).toBe('');
   });
 
-  it('builds live URL on channel', () => {
-    expect(getYoutubeLiveUrl()).toMatch(/youtube\.com\/@LMDuPremierTour\/live$/);
-  });
-
-  it('returns only links with url', () => {
-    expect(getPublicSocialLinks().length).toBeGreaterThanOrEqual(2);
+  it('returns only links with url (X at minimum)', () => {
+    const links = getPublicSocialLinks();
+    expect(links.some((l) => l.id === 'x')).toBe(true);
+    expect(links.every((l) => l.url.length > 0)).toBe(true);
+    expect(links.some((l) => l.id === 'youtube')).toBe(false);
   });
 });

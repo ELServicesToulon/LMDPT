@@ -7,22 +7,26 @@ interface Props {
 }
 
 const { campaign = 'debats_live', directUrl } = Astro.props;
-const liveUrl = directUrl || getYoutubeLiveUrlWithUtm(campaign);
+const liveUrl = (directUrl?.trim() || getYoutubeLiveUrlWithUtm(campaign)).trim();
 ---
 
-<aside class="live-banner" role="note" aria-label="Débats en direct sur YouTube">
-  <p class="live-eyebrow">En direct</p>
-  <p>
-    Les débats civiques LMDPT sont diffusés <strong>en live sur YouTube</strong> — positions sourcées,
-    discussion modérée. Le média documente, il ne tranche pas.
-  </p>
-  <p class="live-cta">
-    <a class="btn-live" href={liveUrl} rel="noopener noreferrer" target="_blank">
-      Rejoindre le live YouTube
-    </a>
-    <span class="meta">Replays sur la chaîne · commentaires GitHub sur chaque page débat</span>
-  </p>
-</aside>
+{
+  liveUrl ? (
+    <aside class="live-banner" role="note" aria-label="Débats en direct sur YouTube">
+      <p class="live-eyebrow">En direct</p>
+      <p>
+        Les débats civiques LMDPT sont diffusés <strong>en live sur YouTube</strong> — positions sourcées,
+        discussion modérée. Le média documente, il ne tranche pas.
+      </p>
+      <p class="live-cta">
+        <a class="btn-live" href={liveUrl} rel="noopener noreferrer" target="_blank">
+          Rejoindre le live YouTube
+        </a>
+        <span class="meta">Replays sur la chaîne · commentaires GitHub sur chaque page débat</span>
+      </p>
+    </aside>
+  ) : null
+}
 
 <style>
   .live-banner {

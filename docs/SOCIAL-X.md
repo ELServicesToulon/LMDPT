@@ -26,12 +26,20 @@
 
 | Champ | Valeur |
 |-------|--------|
-| **Chaîne** | [@LMDuPremierTour](https://www.youtube.com/@LMDuPremierTour) |
-| **Live** | https://www.youtube.com/@LMDuPremierTour/live |
-| **Rôle** | Diffusion live des débats civiques `/debats` |
-| **Config site** | `src/config/youtube.ts` · `PUBLIC_YOUTUBE_*` |
+| **Handle cible** | `@LMDuPremierTour` |
+| **Statut** | **à créer** — `https://www.youtube.com/@LMDuPremierTour` renvoie **404** (juil. 2026) |
+| **Site** | Bandeau live + lien footer **off** tant que `PUBLIC_YOUTUBE_ENABLED` n’est pas `true` |
+| **Config** | `src/config/youtube.ts` · `PUBLIC_YOUTUBE_*` (voir `.env.example`) |
 
-Les pages `/debats` affichent un bandeau « Rejoindre le live YouTube ». Replays sur la chaîne ; commentaires écrits via Giscus/GitHub.
+### Checklist activation YouTube
+
+1. Créer la chaîne YouTube LMDPT (compte Google dédié / Bitwarden)
+2. Revendiquer le handle `@LMDuPremierTour`
+3. Vérifier que `https://www.youtube.com/@LMDuPremierTour` charge (pas 404)
+4. Prod : `PUBLIC_YOUTUBE_ENABLED=true` (+ rebuild/deploy)
+5. Live ponctuel : `PUBLIC_YOUTUBE_LIVE_URL=https://www.youtube.com/watch?v=VIDEO_ID` ou `live_url` sur le JSON débat
+
+Tant que non activé : pas de bandeau « Rejoindre le live » sur `/debats` (évite le 404). Commentaires écrits via Giscus/GitHub.
 
 ## À compléter sur X (checklist)
 
