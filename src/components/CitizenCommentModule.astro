@@ -15,10 +15,11 @@ const apiBase = '/api/comments';
 <section class="ccm" data-thread={threadId} data-api={apiBase} aria-labelledby={`ccm-title-${threadId}`}>
   <h3 id={`ccm-title-${threadId}`}>{title}</h3>
   <p class="ccm-disclaimer meta">
-    Chaque message est <strong>reformulé en français correct</strong> par l’IA, puis une
-    <strong>teinte d’idées du 1er tour</strong> (couleur) vous est proposée — ce n’est
-    <em>pas</em> une étiquette d’appartenance partisane. Vous validez l’édition avant envoi.
-    Publication après modération (hiérarchie : contributeur → modo → modo-senior → rédaction).
+    <strong>Zéro biais · zéro parti pris.</strong> Chaque message est reformulé en français correct par la
+    <strong>modératrice IA</strong>, puis une <strong>teinte politique</strong> (couleur + libellé) est affichée
+    en <em>transparence</em> — proximité d’idées du 1er tour, <em>pas</em> une carte d’adhésion.
+    Aucune autorité religieuse ou idéologique ne passe les fourches caudines. Vous validez avant envoi ;
+    publication après file modération (contributeur → modo → rédaction).
   </p>
 
   <div class="ccm-list" data-role="list" aria-live="polite">
@@ -103,9 +104,10 @@ const apiBase = '/api/comments';
           <article class="ccm-item" style="border-left:4px solid ${c.politicalHue?.color || '#5a6570'}">
             <header>
               <strong>${escapeHtml(c.displayName || 'Citoyen·ne')}</strong>
-              <span class="ccm-pill" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
+              <span class="ccm-pill" title="Teinte politique affichée en transparence (pas une adhésion partisane)" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
               <time class="meta">${c.publishedAt ? new Date(c.publishedAt).toLocaleString('fr-FR') : ''}</time>
             </header>
+            <p class="ccm-hue-meta meta">Couleur politique (transparence) : ${escapeHtml(c.politicalHue?.label || 'Pluraliste / transversal')}</p>
             <p>${escapeHtml(c.body)}</p>
           </article>`,
           )

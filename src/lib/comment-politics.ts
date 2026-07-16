@@ -1,7 +1,8 @@
 /**
  * Palette « idées 1er tour » pour commentaires citoyens LMDPT.
- * Couleurs alignées familles politiques / modèle Wiki AN (XVIIe) quand pertinent.
- * Classification = affinité d’idées, PAS une étiquette d’appartenance partisane.
+ * Transparence des couleurs politiques (zéro biais éditorial) :
+ * la teinte = proximité d’idées, PAS une carte d’adhésion partisane.
+ * Fourches caudines : src/lib/moderation-gate.ts (autorité religieuse / idéologique).
  */
 
 export type CommentRole =

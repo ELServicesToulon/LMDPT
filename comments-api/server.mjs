@@ -65,6 +65,87 @@ const HUES = [
 
 const previews = new Map(); // token → preview payload (TTL in-memory)
 
+/** Fourches caudines — IA modératrice en cheffe (zéro biais · anti-autorité religieuse/idéologique) */
+function gateModeratorChief(text) {
+  const raw = String(text || '');
+  const t = raw
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const hate = [
+    [/\b(mort (aux|à)|il faut (tuer|éliminer|exterminer))\b/i, 'appel-violence'],
+  ];
+  for (const [re, flag] of hate) {
+    if (re.test(raw) || re.test(t)) {
+      return {
+        allowed: false,
+        code: 'HATE_OR_VIOLENCE',
+        reason:
+          'Refusé : appel à la haine ou à la violence. LMDPT documente le débat civique, pas les menaces.',
+        flags: [flag],
+      };
+    }
+  }
+
+  const religious = [
+    [/\b(au nom (de|du|d')\s*(dieu|allah|jesus|jésus|yahvé|yahweh))\b/i, 'invocation-autorité-divine'],
+    [
+      /\b(le pape|l['']imam|le rabbin|l['']évêque|le curé|le prêtre|le pasteur|l['']ayatollah)\s+(ordonne|exige|interdit|commande|déclare que)\b/i,
+      'clerc-commande',
+    ],
+    [/\b(fatwa|excommunication|djihad|jihad)\b/i, 'vocabulaire-autorité-religieuse'],
+    [
+      /\b(seul(e)?\s+(dieu|allah|le coran|la bible|la torah|l['']église|l['']islam)\s+(a|détient)\s+(raison|vérité|autorité))\b/i,
+      'monopole-vérité-religieuse',
+    ],
+    [/\b(soumettez[- ]vous|obéissez)\s+(à|a)\s+(dieu|allah|l['']église|la charia|la sharia)\b/i, 'obéissance-religieuse'],
+    [/\b(charia|sharia)\s+(doit|devra|impose|s['']applique)\b/i, 'imposition-religieuse'],
+  ];
+  for (const [re, flag] of religious) {
+    if (re.test(raw) || re.test(t)) {
+      return {
+        allowed: false,
+        code: 'RELIGIOUS_AUTHORITY',
+        reason:
+          'Refusé par la modératrice IA : aucune autorité religieuse ne passe les fourches caudines. Les idées politiques du 1er tour restent bienvenues.',
+        flags: [flag],
+      };
+    }
+  }
+
+  const ideological = [
+    [/\b(une seule (pensée|vérité|voix|parti)\s+(est|sera)\s+(autorisée|légitime|permise))\b/i, 'monopole-idéologique'],
+    [
+      /\b(tous les (opposants|dissidents)\s+(doivent|devront)\s+(se taire|être (éliminés|réduits|bannis|emprisonnés)))\b/i,
+      'répression-dissidence',
+    ],
+    [/\b(culte de la personnalité|notre guide suprême|le chef a toujours raison)\b/i, 'culte-autorité'],
+    [/\b(interdit de (critiquer|contester|débattre)\s+(le parti|la doctrine|l['']idéologie))\b/i, 'interdit-débat'],
+    [/\b(la (seule|unique)\s+(idéologie|doctrine)\s+(légitime|vraie|correcte))\b/i, 'idéologie-unique'],
+  ];
+  for (const [re, flag] of ideological) {
+    if (re.test(raw) || re.test(t)) {
+      return {
+        allowed: false,
+        code: 'IDEOLOGICAL_AUTHORITY',
+        reason:
+          'Refusé par la modératrice IA : aucune autorité idéologique totalisante. Les positions politiques transparentes du 1er tour restent autorisées.',
+        flags: [flag],
+      };
+    }
+  }
+
+  return {
+    allowed: true,
+    code: 'OK',
+    reason: 'OK — teinte politique à afficher en transparence (zéro biais éditorial).',
+    flags: [],
+  };
+}
+
 function ensureData() {
   mkdirSync(DATA_DIR, { recursive: true });
   const commentsPath = join(DATA_DIR, 'comments.json');
@@ -369,11 +450,16 @@ function lightReformulate(text) {
 
 async function ollamaPreview(raw) {
   const hueList = HUES.map((h) => `${h.slug}|${h.label}`).join('\n');
-  const prompt = `Tu es l'assistant éditorial neutre du Média du Premier Tour (LMDPT).
+  const prompt = `Tu es la MODÉRATRICE IA EN CHEFFE du Média du Premier Tour (LMDPT).
+Ligne non négociable : zéro biais, zéro parti pris, transparence des couleurs politiques.
+Democracy Over Elimination — le média ne soutient aucun camp.
+
 Tâche:
-1) Reformule le message citoyen en français correct, clair, respectueux, sans ajouter d'opinion.
-2) Attribue UNE teinte d'idées parmi la liste (slug) correspondant aux idées des candidats/listes du 1er tour — ce n'est PAS une étiquette d'appartenance partisane de l'auteur.
-3) Justifie en une phrase neutre.
+1) Si le message invoque une AUTORITÉ religieuse (commandement divin/clérical, fatwa, obéissance religieuse, imposition normative religieuse) OU une AUTORITÉ idéologique totalisante (monopole de vérité, interdit de débattre, culte d'obéissance) OU de la haine/violence : réponds JSON
+{"blocked":true,"code":"RELIGIOUS_AUTHORITY|IDEOLOGICAL_AUTHORITY|HATE_OR_VIOLENCE","reason":"...","reformulated":"","slug":"pluraliste","confidence":0,"rationale":"..."}
+2) Sinon : reformule en français correct, clair, respectueux, SANS ajouter d'opinion partisane ni d'autorité religieuse/idéologique.
+3) Attribue UNE teinte politique (slug) parmi la liste = proximité d'idées 1er tour, affichée en TRANSPARENCE — ce n'est PAS une carte d'adhésion partisane.
+4) Justifie la teinte en une phrase neutre (transparence, pas jugement).
 
 Slugs autorisés:
 ${hueList}
@@ -384,7 +470,7 @@ ${raw.slice(0, 2000)}
 """
 
 Réponds UNIQUEMENT en JSON valide:
-{"reformulated":"...","slug":"...","confidence":0.0,"rationale":"..."}`;
+{"blocked":false,"reformulated":"...","slug":"...","confidence":0.0,"rationale":"..."}`;
 
   const timeoutMs = Number(process.env.LMDPT_COMMENTS_OLLAMA_TIMEOUT_MS || 45000);
   const ctrl = new AbortController();
@@ -408,6 +494,12 @@ Réponds UNIQUEMENT en JSON valide:
     const m = text.match(/\{[\s\S]*\}/);
     if (!m) throw new Error('no json');
     const parsed = JSON.parse(m[0]);
+    if (parsed.blocked === true) {
+      const err = new Error(String(parsed.reason || 'Refusé par la modératrice IA.'));
+      err.status = 422;
+      err.code = parsed.code || 'BLOCKED';
+      throw err;
+    }
     const slug = HUES.some((h) => h.slug === parsed.slug) ? parsed.slug : 'pluraliste';
     const reformulated = String(parsed.reformulated || '').trim();
     // Si le modèle renvoie l'original inchangé, appliquer quand même le correcteur local
@@ -438,6 +530,16 @@ async function buildPreview(raw) {
   if (/(https?:\/\/|www\.)/i.test(clean) && clean.split(/\s+/).length < 5) {
     const err = new Error('Lien seul refusé — développez votre idée en quelques mots.');
     err.status = 400;
+    throw err;
+  }
+
+  // Fourches caudines (déterministes) — avant Ollama
+  const gate = gateModeratorChief(clean);
+  if (!gate.allowed) {
+    const err = new Error(gate.reason);
+    err.status = 422;
+    err.code = gate.code;
+    err.flags = gate.flags;
     throw err;
   }
 
@@ -518,7 +620,13 @@ const server = createServer(async (req, res) => {
       return json(res, 200, {
         hues: HUES.map(({ slug, label, color }) => ({ slug, label, color })),
         disclaimer:
-          'La couleur indique une proximité d’idées avec des candidats/listes du 1er tour — pas une appartenance partisane du contributeur.',
+          'Transparence : la couleur indique une proximité d’idées 1er tour — pas une appartenance partisane. LMDPT zéro biais / zéro parti pris.',
+        policy: {
+          zeroBias: true,
+          transparentPoliticalHue: true,
+          blockReligiousAuthority: true,
+          blockIdeologicalAuthority: true,
+        },
       });
     }
 
@@ -547,7 +655,7 @@ const server = createServer(async (req, res) => {
         },
         engine: preview.engine,
         disclaimer:
-          'Teinte d’idées 1er tour (IA). Vous devez valider la reformulation avant publication. LMDPT reste neutre (Democracy Over Elimination).',
+          'Zéro biais LMDPT · teinte politique affichée en transparence (proximité d’idées 1er tour, pas une adhésion partisane). Validez la reformulation avant envoi. Autorité religieuse ou idéologique = refus par la modératrice IA.',
       });
     }
 
@@ -565,6 +673,12 @@ const server = createServer(async (req, res) => {
       // posteur doit confirmer le texte reformulé
       const finalText = String(body.reformulated || preview.reformulated).trim().slice(0, 4000);
       if (finalText.length < 8) return json(res, 400, { error: 'Texte final trop court.' });
+
+      // Re-gate sur le texte final (contourner la preview)
+      const gatePub = gateModeratorChief(finalText);
+      if (!gatePub.allowed) {
+        return json(res, 422, { error: gatePub.reason, code: gatePub.code, flags: gatePub.flags });
+      }
 
       const threadId = String(body.threadId || 'general').slice(0, 200);
       const displayName = String(body.displayName || 'Citoyen·ne').slice(0, 40);
