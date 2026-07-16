@@ -26,6 +26,7 @@ export function getJournalLastUpdate(): string | undefined {
 
 /** Chaque atlas publié doit avoir au moins une entrée journal pointant vers sa page. */
 export const ATLAS_PAGES = [
+  '/atlas/2027-presidentielle',
   '/atlas/2024-legislatives',
   '/atlas/2022-presidentielle',
   '/atlas/2017-presidentielle',

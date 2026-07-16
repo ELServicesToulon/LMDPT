@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { listScrutins, listCandidates, getVeille2027 } from '../../../../lib/programs';
+
+export function getStaticPaths() {
+  return listScrutins().map((s) => ({
+    params: { scrutin: s.id },
+    props: { scrutin: s },
+  }));
+}
+
+const { scrutin } = Astro.props;
+const candidates = listCandidates(scrutin.id);
+const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
+---
+
+<BaseLayout
+  title={`Programmes — ${scrutin.label}`}
+  description={`Fiches programmes ${scrutin.label} — comparaison factuelle, sans classement éliminatoire.`}
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    <a href="/analyses/programmes">Programmes</a>
+    {' → '}
+    {scrutin.label}
+  </nav>
+
+  <section>
+    <h2>{scrutin.label}</h2>
+    <p>
+      Fiches candidats / listes. Présentation équivalente — faits sourcés, pas de classement
+      éliminatoire.
+    </p>
+    {
+      veille && (
+        <p class="meta">{veille.disclaimer}</p>
+      )
+    }
+    <ul>
+      {
+        candidates.map((f) => (
+          <li>
+            <a href={`/analyses/programmes/${scrutin.id}/${f.candidate.slug}`}>
+              {f.candidate.name}
+            </a>
+            {' '}
+            — {f.candidate.affiliation}
+            {f.measures?.length != null && <> · {f.measures.length} mesures</>}
+            {f.program?.status && (
+              <>
+                {' · '}
+                <span class="meta">{f.program.status}</span>
+              </>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    {
+      veille && (
+        <>
+          <h3>Veille (non intégré)</h3>
+          <ul>
+            {veille.candidates
+              .filter((c) => c.program_status === 'awaiting_program')
+              .map((c) => (
+                <li>
+                  {c.name} ({c.affiliation}) — en attente
+                </li>
+              ))}
+          </ul>
+        </>
+      )
+    }
+    <p class="meta">
+      <a href="/analyses/programmes">← Tous les scrutins</a>
+      {' · '}
+      <a href={`/analyses/programmes-comparateur?scrutin=${scrutin.id}`}>Comparateur</a>
+      {
+        scrutin.id === 'presidentielle-2027' && (
+          <>
+            {' · '}
+            <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+          </>
+        )
+      }
+    </p>
+  </section>
+</BaseLayout>

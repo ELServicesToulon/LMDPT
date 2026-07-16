@@ -15,7 +15,7 @@ describe('data journal (/sources#mises-a-jour)', () => {
   });
 
   it('exposes last update date', () => {
-    expect(getJournalLastUpdate()).toBe('2026-07-02');
+    expect(getJournalLastUpdate()).toBe('2026-07-10');
   });
 
   it('covers every published atlas page', () => {

@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-07-08",
+  "updated": "2026-07-15",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -10,7 +10,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html"
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "press_signals": [
+        {
+          "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
+          "published": "2026-07-15",
+          "detected_at": "2026-07-15"
+        },
+        {
+          "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
+          "published": "2026-07-09",
+          "detected_at": "2026-07-15"
+        }
+      ]
     },
     {
       "slug": "retailleau",
@@ -19,7 +33,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-01",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
+          "published": "2026-07-09",
+          "detected_at": "2026-07-15"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -31,10 +53,10 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : en meeting, Edouard Philippe dessine les grands axes de son projet de droite modérée pour un « redressement français »",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/06/en-meeting-edouard-philippe-promet-de-faire-de-l-interet-de-nos-enfants-la-boussole-de-son-projet-presidentiel_6721057_823448.html",
-          "published": "2026-07-06",
-          "detected_at": "2026-07-08"
+          "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
+          "published": "2026-07-09",
+          "detected_at": "2026-07-15"
         }
       ]
     },
@@ -68,7 +90,15 @@
       "name": "François Hollande",
       "affiliation": "Sans étiquette",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Ségolène Royal, Raphaël Glucksmann, François Hollande… La primaire sociale-démocrate cherche ses candidats",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/11/segolene-royal-raphael-glucksmann-francois-hollande-la-primaire-sociale-democrate-cherche-ses-candidats_6722668_823448.html",
+          "published": "2026-07-11",
+          "detected_at": "2026-07-15"
+        }
+      ]
     },
     {
       "slug": "melenchon",
@@ -89,10 +119,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Marine Le Pen et Jordan Bardella main dans la main pour la campagne",
-          "url": "https://www.france24.com/fr/france/20260708-jordan-bardella-se-r%C3%A9jouit-marine-le-pen-pr%C3%A9sidentielle-2027-extreme-droite-rassemblement-national-campagne",
-          "published": "2026-07-08",
-          "detected_at": "2026-07-08"
+          "title": "Présidentielle 2027 : le RN se divise sur le voile, Marine Le Pen envisage un référendum",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/15/presidentielle-2027-le-rn-se-divise-sur-le-voile-marine-le-pen-envisage-un-referendum_6723548_823448.html",
+          "published": "2026-07-15",
+          "detected_at": "2026-07-15"
+        },
+        {
+          "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
+          "published": "2026-07-09",
+          "detected_at": "2026-07-15"
         }
       ]
     },
@@ -106,16 +142,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Marine Le Pen candidate à la présidentielle : le jour où la députée RN a repris la main malgré sa condamnation",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/08/marine-le-pen-candidate-a-la-presidentielle-le-jour-ou-la-deputee-rn-a-repris-la-main-et-defie-la-justice_6721776_823448.html",
-          "published": "2026-07-08",
-          "detected_at": "2026-07-08"
+          "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
+          "published": "2026-07-15",
+          "detected_at": "2026-07-15"
         },
         {
-          "title": "Présidentielle 2027 : Marine Le Pen et Jordan Bardella main dans la main pour la campagne",
-          "url": "https://www.france24.com/fr/france/20260708-jordan-bardella-se-r%C3%A9jouit-marine-le-pen-pr%C3%A9sidentielle-2027-extreme-droite-rassemblement-national-campagne",
-          "published": "2026-07-08",
-          "detected_at": "2026-07-08"
+          "title": "Présidentielle 2027 : le RN se divise sur le voile, Marine Le Pen envisage un référendum",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/15/presidentielle-2027-le-rn-se-divise-sur-le-voile-marine-le-pen-envisage-un-referendum_6723548_823448.html",
+          "published": "2026-07-15",
+          "detected_at": "2026-07-15"
         }
       ]
     },
@@ -142,9 +178,32 @@
       "name": "Raphaël Glucksmann",
       "affiliation": "Place publique",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : en Gironde, Raphaël Glucksmann entretient le suspense sur sa candidature",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
+          "published": "2026-07-15",
+          "detected_at": "2026-07-15"
+        },
+        {
+          "title": "Présidentielle 2027 : Clémentine Autain prend acte de l’échec de la « primaire unitaire » de la gauche et renonce à être candidate",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
+          "published": "2026-07-11",
+          "detected_at": "2026-07-15"
+        }
+      ]
+    },
+    {
+      "slug": "lisnard",
+      "name": "David Lisnard",
+      "affiliation": "Nouvelle Énergie",
+      "program_status": "partial",
+      "last_measure_at": "2026-07-10",
+      "chiffrage_available": false,
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-07-08T17:35:01.303Z",
-  "program_press_hits": 17
+  "veille_scan_at": "2026-07-15T19:21:52.686Z",
+  "program_press_hits": 15
 }

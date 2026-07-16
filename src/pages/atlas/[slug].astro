@@ -12,6 +12,7 @@ import { nuanceLabel } from '../../lib/legislative-style';
 
 export function getStaticPaths() {
   return [
+    { params: { slug: '2027-presidentielle' } },
     { params: { slug: '2024-legislatives' } },
     { params: { slug: '2022-presidentielle' } },
     { params: { slug: '2017-presidentielle' } },
@@ -24,6 +25,7 @@ const dataset = slug ? getElection(slug) : undefined;
 const deptData = slug ? getDepartmentResults(slug) : undefined;
 const circoData = slug ? getCirconscriptionResults(slug) : undefined;
 const isLegislatives = Boolean(circoData);
+const is2027 = slug === '2027-presidentielle';
 
 if (!slug || !summary || !dataset) {
   throw new Error(`Élection inconnue : ${slug ?? '(vide)'}`);
@@ -41,7 +43,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
 <BaseLayout
   title={summary.title}
-  description={`Résultats officiels du premier tour — ${summary.title}. Pluralité nationale documentée.`}
+  description={is2027 ? `Projection pédagogique 2027 — pluralité du premier tour (hypothèses sondages). Données officielles à venir.` : `Résultats officiels du premier tour — ${summary.title}. Pluralité nationale documentée.`}
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/atlas">Atlas</a> → {summary.title}
@@ -65,6 +67,11 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
               .join(', ')}
             .
           </>
+        ) : is2027 ? (
+          <>
+            Projection pédagogique : {dataset.national.candidats.length} candidatures illustratives au premier tour. Les trois premiers (
+            {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés. La pluralité complète du spectre est ici visible — à comparer avec les duels historiques du second tour.
+          </>
         ) : (
           <>
             {dataset.national.candidats.length} candidats au premier tour : les trois premiers (
@@ -85,6 +92,31 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     candidats={dataset.national.candidats}
     title={isLegislatives ? 'Résultats nationaux par nuance (suffrages exprimés)' : undefined}
   />
+
+  {is2027 && (
+    <section class="card">
+      <h3>Focus pluralité 2027 — visualisation &amp; scénarios</h3>
+      <p>
+        Ce graphique expose la <strong>pluralité complète</strong> des préférences au premier tour (projection 2026 agrégée). 
+        Contrairement au duel binaire du second tour, toutes les voix comptent et sont visibles ici : RN en tête, mais centre, gauche et diversités fragmentées.
+      </p>
+      <p class="meta">
+        <strong>Indicateur concentration</strong> : top 3 ~59,5 % (vs ~72 % en 2022 et ~65 % en 2017) — une pluralité encore plus dispersée dans ce scénario.
+      </p>
+      <div class="plurality-note">
+        <strong>Pluralité vs élimination</strong> : La photo du 1er tour révèle le spectre réel des opinions. Les duels suivants la réduisent.
+      </div>
+
+      <h4 style="margin-top:1rem;">Lien vers scénarios AN1T (Assemblée du 1er tour)</h4>
+      <p>
+        Utilisez ces parts de voix projetées comme base pour explorer l'impact d'une répartition proportionnelle des voix du premier tour sur l'Assemblée nationale.
+        <a href="/analyses/assemblee-premier-tour">Ouvrir le simulateur AN1T et l'hémicycle interactif</a> — ajustez les sliders pour simuler un scénario « présidentiel 2027 » (ex. RN 33-35 %, gauche unie ~23-28 %, etc.).
+      </p>
+      <p class="meta">
+        Voir aussi le comparateur de sièges et les cartes pluralité T1 législatives. Ces projections ne sont pas des prédictions : outil pédagogique uniquement.
+      </p>
+    </section>
+  )}
 
   {circoData && (
     <>
@@ -109,27 +141,60 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   <section>
     <h3>Méthodologie</h3>
     <ul>
-      <li>Données nationales depuis les résultats officiels publiés (data.gouv.fr).</li>
-      {
-        isLegislatives ? (
-          <>
-            <li>
-              Carte : contours simplifiés france-geojson (IGN/INSEE), nuances agrégées par
-              département depuis les 577 circonscriptions.
-            </li>
-            <li>
-              Circonscriptions : CSV « une ligne par circonscription » —{' '}
-              <a href={circoData?.source} rel="noopener noreferrer">
-                source data.gouv.fr
-              </a>
-              .
-            </li>
-          </>
-        ) : (
-          <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
-        )
-      }
+      {is2027 ? (
+        <>
+          <li>Données nationales : projection pédagogique agrégée à partir de sondages publics (Ifop, Harris, Ipsos 2026). Aucune valeur officielle.</li>
+          <li>Les cartes départementales et circonscriptions seront ajoutées une fois les résultats réels publiés sur data.gouv.fr (format identique aux atlas 2017/2022).</li>
+          <li>Pluralité visualisée via le graphique à barres ci-dessus (tous les candidats inclus).</li>
+        </>
+      ) : (
+        <>
+          <li>Données nationales depuis les résultats officiels publiés (data.gouv.fr).</li>
+          {
+            isLegislatives ? (
+              <>
+                <li>
+                  Carte : contours simplifiés france-geojson (IGN/INSEE), nuances agrégées par
+                  département depuis les 577 circonscriptions.
+                </li>
+                <li>
+                  Circonscriptions : CSV « une ligne par circonscription » —{' '}
+                  <a href={circoData?.source} rel="noopener noreferrer">
+                    source data.gouv.fr
+                  </a>
+                  .
+                </li>
+              </>
+            ) : (
+              <li>Carte : contours simplifiés france-geojson (IGN/INSEE), résultats Ministère de l'Intérieur.</li>
+            )
+          }
+        </>
+      )}
       <li>Téléchargement des jeux bruts : page <a href="/sources">Sources</a>.</li>
     </ul>
   </section>
+
+  {is2027 && (
+    <section class="card">
+      <h3>Référence historique</h3>
+      <p class="meta">
+        Comparez avec les atlas réels : <a href="/atlas/2022-presidentielle">2022</a> et <a href="/atlas/2017-presidentielle">2017</a>. 
+        Les projections 2027 illustrent l'évolution potentielle de la fragmentation du premier tour.
+      </p>
+      <p>
+        Une fois les résultats officiels disponibles, ce placeholder sera remplacé par les données réelles importées (script similaire aux précédents).
+      </p>
+    </section>
+  )}
 </BaseLayout>
+
+<style>
+  .plurality-note {
+    margin: 0.75rem 0;
+    padding: 0.5rem 0.75rem;
+    background: var(--accent-soft, #f0f4f8);
+    border-left: 3px solid var(--accent, #1e4d6b);
+    font-size: 0.9rem;
+  }
+</style>

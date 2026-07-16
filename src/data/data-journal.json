@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-10",
+    "label": "Présidentielle 2027 — atlas 1er tour (projection nationale pédagogique + pluralité)",
+    "source": "LMDPT — agrégats sondages publics (Ifop/Harris/Ipsos). Placeholder en attente données officielles Ministère de l'Intérieur.",
+    "pages": [
+      "/atlas/2027-presidentielle"
+    ],
+    "license": "lov2",
+    "licenseNote": "Projection pédagogique uniquement — à remplacer par données officielles une fois publiées (data.gouv.fr).",
+    "script": null
+  },
+  {
     "date": "2026-07-02",
     "label": "Programmes 2027 partiels — veille élargie (Barrot, Le Pen, PS primaire)",
     "source": "Le Monde · France 24 — élection présidentielle 2027",
@@ -13,6 +24,7 @@
       "/analyses/programmes/presidentielle-2027/le-pen",
       "/analyses/programmes/presidentielle-2027/barrot",
       "/analyses/programmes/presidentielle-2027/ruffin",
+      "/analyses/programmes/presidentielle-2027/lisnard",
       "/analyses/programmes-comparateur?scrutin=presidentielle-2027"
     ],
     "license": "lov2",

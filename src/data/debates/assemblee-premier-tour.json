@@ -3,7 +3,7 @@
   "question": "Faut-il une chambre parlementaire élue sur le seul premier tour ?",
   "date": "2026-07-02",
   "status": "ouvert",
-  "context": "Le premier tour législatif ou présidentiel capture la pluralité des préférences ; le second tour, les désistements et le vote utile la reconfigure. LMDPT propose une « Assemblée du premier tour » (AN1T) : un bloc de sièges attribués proportionnellement aux voix du 1er tour, en complément de l'Assemblée uninominale actuelle. Cette simulation civique compare les législatives 2024.",
+  "context": "Le premier tour capture la vraie pluralité (Nouveauté & Sécurité : faits sourcés, open data). Le second tour la distord (Sympathie : exclusion de voix). LMDPT propose une « Assemblée du premier tour » (AN1T) pour plus de Confort (compréhension simple) et Orgueil citoyen (chaque voix compte). Cette simulation civique compare 2024 et projette 2027, avec Écologie d'une démocratie durable.",
   "charte": "Débat civique LMDPT : pas de classement éliminatoire, arguments sourcés, modération sur GitHub Discussions. Le média documente les mécanismes, il ne désigne pas de réforme « gagnante ».",
   "positions": [
     {
@@ -83,9 +83,11 @@
   ],
   "related": [
     "/analyses/assemblee-premier-tour",
+    "/analyses/assemblee-premier-tour-mecanismes",
     "/analyses/legislatives-2024-desistements",
     "/debats/desistements-second-tour",
     "/debats/vote-utile-pluralite"
   ],
-  "discussion_id": "assemblee-premier-tour"
+  "discussion_id": "assemblee-premier-tour",
+  "live_url": "https://www.youtube.com/@LMDuPremierTour/live?utm_source=lmdpt&utm_medium=organic&utm_campaign=debats_assemblee-premier-tour"
 }

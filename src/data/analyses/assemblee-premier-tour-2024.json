@@ -27,11 +27,11 @@
     "seats_total": 577,
     "source_note": "Sièges après second tour (juillet 2024), regroupés en blocs comparables à la simulation AN1T. Les petits groupes sont fusionnés dans « autres ».",
     "blocs": [
-      { "id": "nfp", "label": "Nouveau Front populaire", "color": "#c0392b", "seats": 182 },
-      { "id": "ensemble", "label": "Ensemble / centre présidentiel", "color": "#1e4d6b", "seats": 99 },
-      { "id": "rn", "label": "Rassemblement national & alliés droite", "color": "#5c4a72", "seats": 125 },
+      { "id": "nfp", "label": "Nouveau Front populaire", "color": "#cc2443", "seats": 182 },
+      { "id": "ensemble", "label": "Ensemble / centre présidentiel", "color": "#ffeb00", "seats": 99 },
+      { "id": "rn", "label": "Rassemblement national & alliés droite", "color": "#0d378a", "seats": 125 },
       { "id": "lr", "label": "Droite républicaine", "color": "#0066cc", "seats": 47 },
-      { "id": "autres", "label": "Autres groupes", "color": "#718096", "seats": 124 }
+      { "id": "autres", "label": "Autres groupes", "color": "#dddddd", "seats": 124 }
     ]
   },
   "interpretation": {

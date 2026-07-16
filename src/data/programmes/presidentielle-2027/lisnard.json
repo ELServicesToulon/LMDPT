@@ -1,0 +1,108 @@
+{
+  "scrutin": "presidentielle-2027",
+  "candidate": {
+    "name": "David Lisnard",
+    "slug": "lisnard",
+    "affiliation": "Nouvelle Énergie"
+  },
+  "program": {
+    "published_at": "2026-07-10",
+    "document_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+    "document_label": "Programme complet — Nouvelle Énergie (site officiel)",
+    "status": "partial"
+  },
+  "updated": "2026-07-10",
+  "measures": [
+    {
+      "id": "lisnard-2027-institutions-etat-regalien",
+      "theme": "institutions",
+      "label": "Recentrer l'État sur ses missions régaliennes",
+      "detail": "État recentré sur sécurité, défense, justice, diplomatie, santé. Fin du social-étatisme et de la bureaucratie excessive. Décentralisation radicale vers les collectivités.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "source_label": "Site Nouvelle Énergie",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-institutions-debureaucratisation",
+      "theme": "institutions",
+      "label": "Choc massif de débureaucratisation",
+      "detail": "Libération des énergies créatrices par réduction drastique des dépenses publiques, dérégulation et simplification administrative.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "source_label": "Site Nouvelle Énergie",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-education-ecole-excellence",
+      "theme": "education",
+      "label": "École d'excellence et de mérite",
+      "detail": "Abrogation de la carte scolaire, chèque-éducation, certificat de fin de primaire, recentrage sur fondamentaux (lire, écrire, compter, raisonner), autonomie des établissements et des professeurs, classes d'excellence en maths/sciences.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/education/",
+      "source_label": "Site Nouvelle Énergie — Éducation",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-education-lycees-professionnels",
+      "theme": "education",
+      "label": "Valorisation des lycées professionnels et de l'apprentissage",
+      "detail": "Faire des filières pro et de l'apprentissage des voies d'excellence, liées aux besoins économiques locaux.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/education/",
+      "source_label": "Site Nouvelle Énergie — Éducation",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-securite-regalien",
+      "theme": "securite",
+      "label": "Priorité à la sécurité et à l'ordre",
+      "detail": "État fort sur le régalien, maîtrise de la politique migratoire, lutte contre l'incivisme et l'insécurité.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "source_label": "Site Nouvelle Énergie",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-sante-performance",
+      "theme": "sante",
+      "label": "De l'État-providence à l'État-performance",
+      "detail": "Réforme du système de santé pour plus d'efficacité et de responsabilité.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/sante/",
+      "source_label": "Site Nouvelle Énergie — Santé",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-agriculture-souverainete",
+      "theme": "agriculture",
+      "label": "Souveraineté agricole et alimentaire",
+      "detail": "Soutien aux agriculteurs, développement durable, indépendance alimentaire.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/agriculture/",
+      "source_label": "Site Nouvelle Énergie — Agriculture",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-immigration-controle",
+      "theme": "immigration",
+      "label": "Maîtrise de l'immigration",
+      "detail": "Politique migratoire souveraine, indépendante des cours européennes, via référendum si nécessaire.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/immigration/",
+      "source_label": "Site Nouvelle Énergie — Immigration",
+      "as_of": "2026-07"
+    },
+    {
+      "id": "lisnard-2027-economie-liberte",
+      "theme": "economie",
+      "label": "Liberté économique et réduction des dépenses",
+      "detail": "Choc de dérégulation, réduction des impôts et de la dette, confiance dans l'individu et les entreprises.",
+      "status": "nouveau",
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "source_label": "Site Nouvelle Énergie",
+      "as_of": "2026-07"
+    }
+  ],
+  "chiffrages": []
+}

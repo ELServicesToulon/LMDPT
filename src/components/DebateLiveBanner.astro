@@ -3,10 +3,11 @@ import { getYoutubeLiveUrlWithUtm } from '../config/youtube';
 
 interface Props {
   campaign?: string;
+  directUrl?: string;
 }
 
-const { campaign = 'debats_live' } = Astro.props;
-const liveUrl = getYoutubeLiveUrlWithUtm(campaign);
+const { campaign = 'debats_live', directUrl } = Astro.props;
+const liveUrl = directUrl || getYoutubeLiveUrlWithUtm(campaign);
 ---
 
 <aside class="live-banner" role="note" aria-label="Débats en direct sur YouTube">

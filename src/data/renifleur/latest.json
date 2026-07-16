@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-08T17:35:01.303Z",
+  "fetched_at": "2026-07-15T19:21:52.686Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,316 +7,253 @@
   "feeds_error": 0,
   "items": [
     {
+      "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
+      "published": "2026-07-15",
+      "summary": "Son éligibilité à peine recouvrée, le 7 juillet, Marine Le Pen a dévoilé une affiche exaltant le thème de « la renaissance » : celle de la France autant que celle de la candidate. L’audience se tiendra en référé le 27 juillet au tribunal de Paris.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : Jean-Luc Mélenchon, en meeting en Bretagne, s’adresse aux « enfants » des Jacobins pour défendre ses « écorégions »",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-bretagne-jean-luc-melenchon-s-adresse-aux-enfants-des-jacobins-pour-defendre-ses-ecoregions_6723503_823448.html",
+      "published": "2026-07-15",
+      "summary": "Attendu sur les questions de ruralité et d’agriculture, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué, mardi, son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantiqu",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Elon Musk qualifie Marine Le Pen de « dernier espoir de la France »",
+      "url": "https://www.lemonde.fr/pixels/article/2026/07/15/elon-musk-qualifie-marine-le-pen-de-dernier-espoir-de-la-france_6723610_4408996.html",
+      "published": "2026-07-15",
+      "summary": "Jusque-là peu investi dans la politique française alors qu’il s’est déjà illustré par son interventionnisme dans d’autres pays, l’homme le plus riche du monde a apporté mercredi publiquement son soutien à la candidate du Rassemblement national.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Candidat au poste de Défenseur des droits, François-Noël Buffet bousculé par la gauche lors de son audition devant les députés",
+      "url": "https://www.lemonde.fr/societe/article/2026/07/15/candidat-au-poste-de-defenseur-des-droits-francois-noel-buffet-bouscule-par-la-gauche-lors-de-son-audition-devant-les-deputes_6723600_3224.html",
+      "published": "2026-07-15",
+      "summary": "Le profil du sénateur Les Républicains, proposé par Emmanuel Macron, lui vaut un tir de barrage de nombreux syndicats et associations. L’ancien ministre des outre-mer a notamment participé aux manifestations contre le mariage pour tous et s’est opposé à la constitutionnalisation ",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : le RN se divise sur le voile, Marine Le Pen envisage un référendum",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/15/presidentielle-2027-le-rn-se-divise-sur-le-voile-marine-le-pen-envisage-un-referendum_6723548_823448.html",
+      "published": "2026-07-15",
+      "summary": "Plusieurs cadres du parti d’extrême droite, dont son président, Jordan Bardella, doutent de la faisabilité et de l’opportunité de l’interdiction du voile dans l’espace public. Une promesse portée par la candidate du Rassemblement national depuis 2012.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "La « galaxie Stérin » dans le viseur de la commission du Sénat sur le financement privé des politiques publiques",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/15/financement-prive-des-politiques-publiques-la-galaxie-sterin-dans-le-viseur-d-une-commission-du-senat_6723530_823448.html",
+      "published": "2026-07-15",
+      "summary": "Cette commission dénonce, dans son rapport présenté mercredi, « l’opacité de certaines structures privées ». Les activités du milliardaire conservateur Pierre-Edouard Stérin sont notamment montrées du doigt.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : en Gironde, Raphaël Glucksmann entretient le suspense sur sa candidature",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
+      "published": "2026-07-15",
+      "summary": "L’eurodéputé Place publique refuse toujours de faire officiellement acte de candidature à la future primaire du camp social-démocrate, validée par les militants socialistes le 9 juillet.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« Il faut rendre inéligibles à vie tout homme ou toute femme politique condamnés pour une infraction à la probité »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/15/il-faut-rendre-ineligibles-a-vie-tout-homme-ou-toute-femme-politique-condamnes-pour-une-infraction-a-la-probite_6723449_3232.html",
+      "published": "2026-07-15",
+      "summary": "Les dirigeants politiques jugés pour détournement de biens publics ou prise illégale d’intérêts ont tendance à considérer l’inéligibilité comme la seule réelle sanction parmi l’éventail des peines qu’ils encourent, soutient Eric Halphen, magistrat honoraire, dans une tribune au «",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Armel Le Divellec, professeur de droit public : « L’élection présidentielle est un mirage : à elle seule, elle ne livre pas la maîtrise du pouvoir »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/14/armel-le-divellec-professeur-de-droit-public-l-election-presidentielle-est-un-mirage-a-elle-seule-elle-ne-livre-pas-la-maitrise-du-pouvoir_6723310_3232.html",
+      "published": "2026-07-14",
+      "summary": "Les responsables politiques devraient se préoccuper autant des probables élections législatives anticipées que du scrutin présidentiel de 2027 avertit, dans une tribune au « Monde », le directeur adjoint du Centre d’études constitutionnelles et politiques.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Un défilé du 14-Juillet XXL : les Européens et en particulier l'Ukraine mis à l'honneur",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260714-un-d%C3%A9fil%C3%A9-du-14-juillet-xxl-les-europ%C3%A9ens-et-en-particulier-l-ukraine-mis-%C3%A0-l-honneur",
+      "published": "2026-07-14",
+      "summary": "Près de 6.700 troupes à pied, 98 avions, 31 hélicoptères et 315 véhicules : jamais autant de militaires n'auront défilé sur les Champs-Elysées afin d'illustrer \"le réarmement de la France, l'autonomie stratégique de la France et le réveil stratégique européen\", selon l'Elysée.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional"
+    },
+    {
+      "title": "14-Juillet : \"être ici c'est assez fantastique\" pour ce Capitaine de l'artillerie de Marine",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260714-14-juillet-%C3%AAtre-ici-c-est-assez-fantastique-pour-ce-capitaine-de-l-artillerie-de-marine",
+      "published": "2026-07-14",
+      "summary": "Près de 6 700 troupes à pied, 98 avions, 31 hélicoptères et 315 véhicules : jamais autant de militaires n'auront défilé sur les Champs-Elysées afin d'illustrer \"le réarmement de la France, l'autonomie stratégique de la France et le réveil stratégique européen\", selon l'Elysée. Au",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« Première République écologique et citoyenne » : le programme des Ecologistes pour peser en 2027",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/13/premiere-republique-ecologique-et-citoyenne-le-programme-des-ecologistes-pour-peser-en-2027_6723128_823448.html",
+      "published": "2026-07-13",
+      "summary": "Changement de Constitution, sortie du nucléaire, retraite… Le parti Les Ecologistes a présenté, lundi 13 juillet, ses propositions pour l’élection présidentielle, après avoir conforté la candidature de sa secrétaire nationale, Marine Tondelier.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« Chacun joue le coup d’après » : ce que dit la multiplication des candidatures pour la présidentielle 2027",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/13/chacun-joue-le-coup-d-apres-ce-que-dit-la-multiplication-des-candidatures-pour-la-presidentielle-2027_6723092_823448.html",
+      "published": "2026-07-13",
+      "summary": "Avec une trentaine de candidats sur la ligne de départ, la campagne pour l’élection suprême démarre en rangs dispersés, pointant la faiblesse de certains camps, notamment à gauche.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : Marine Tondelier dévoile le programme des Ecologistes",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/13/presidentielle-2027-marine-tondelier-devoile-le-programme-des-ecologistes_6723085_6205049.html",
+      "published": "2026-07-13",
+      "summary": "Porté par dix mois de consultations et 50 000 propositions, le programme promet la proposition de créer une « Première République écologique et citoyenne », une transformation profonde des institutions et de la fiscalité pour 2027.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Jordan Bardella tend la main à « l’électorat historique de la droite » dans un premier entretien à la presse depuis la condamnation de Marine Le Pen",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/12/jordan-bardella-tend-la-main-a-l-electorat-historique-de-la-droite-dans-un-premier-entretien-a-la-presse-depuis-la-condamnation-de-marine-le-pen_6722920_823448.html",
+      "published": "2026-07-12",
+      "summary": "Le président du RN, qui a renoncé à son ambition présidentielle après la candidature de sa mentore au nom du parti d’extrême droite, a dit au « Figaro » son souhait de « réarrimer une partie des élites patriotes aux classes populaires et aux classes moyennes ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Raphaël Glucksmann, une éducation politique passée par la Géorgie",
+      "url": "https://www.lemonde.fr/m-le-mag/article/2026/07/12/raphael-glucksmann-une-education-politique-passee-par-la-georgie_6722846_4500055.html",
+      "published": "2026-07-12",
+      "summary": "L’aspirant candidat à la présidentielle de 2027 a été, de 2009 à 2013, le proche conseiller du président géorgien Mikheïl Saakachvili, alors qu’il était tout juste trentenaire. Une expérience au service d’une puissance étrangère que l’extrême droite comme la gauche radicale ne ma",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Eric Lombard, ancien ministre de l’économie : « Le déficit nuit gravement à la jeunesse. Nous versons plus d’argent en intérêts à nos créanciers que pour former nos enfants »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/11/eric-lombard-ancien-ministre-de-l-economie-le-deficit-nuit-gravement-a-la-jeunesse-nous-versons-plus-d-argent-en-interets-a-nos-creanciers-que-pour-former-nos-enfants_6722721_3232.html",
+      "published": "2026-07-11",
+      "summary": "L’ancien locataire de Bercy propose, dans une tribune au « Monde », quelques règles qui permettraient de retrouver la maîtrise de nos comptes publics en cinq ans. La campagne présidentielle est, selon lui, le bon moment pour orchestrer le retour à un rapport dette-PIB stable.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : Clémentine Autain prend acte de l’échec de la « primaire unitaire » de la gauche et renonce à être candidate",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
+      "published": "2026-07-11",
+      "summary": "La députée écologiste a fait cette annonce samedi, au lendemain de la décision des militants socialistes de réserver leur primaire aux seuls militants du parti à la rose et des partis qui lui sont proches, comme Place publique, de Raphaël Glucksmann.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« Notre modèle de société fondée sur la hausse continue de l’abondance est en faillite, et les politiques regardent ailleurs »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/11/notre-modele-de-societe-fondee-sur-la-hausse-continue-de-l-abondance-est-en-faillite-et-les-politiques-regardent-ailleurs_6722700_3232.html",
+      "published": "2026-07-11",
+      "summary": "A dix mois de l’élection présidentielle, les candidats, au lieu de promettre une augmentation intenable du pouvoir d’achat, doivent rompre avec l’imaginaire de la croissance hérité des « trente glorieuses », estime Benjamin Brice, chercheur en science politique, dans une tribune ",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Ségolène Royal, Raphaël Glucksmann, François Hollande… La primaire sociale-démocrate cherche ses candidats",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/11/segolene-royal-raphael-glucksmann-francois-hollande-la-primaire-sociale-democrate-cherche-ses-candidats_6722668_823448.html",
+      "published": "2026-07-11",
+      "summary": "Après le choix par les militants socialistes d’un processus de désignation pour la présidentielle, certaines personnalités ont confirmé leur participation. D’autres, à l’instar de Raphaël Glucksmann, temporisent pour en connaître les contours. Voire, tels François Hollande ou Kar",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : Ségolène Royal annonce sa participation à la primaire de l’espace socialiste",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/10/presidentielle-2027-segolene-royal-annonce-sa-participation-a-la-primaire-de-l-espace-socialiste_6722443_6205049.html",
+      "published": "2026-07-10",
+      "summary": "La candidate à la présidentielle de 2007 a annoncé qu’elle participerait à cette consultation qui doit se dérouler à l’automne.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Condamnation de Marine Le Pen : « C’est une idée très française de considérer que si l’on empêche une personne de se présenter, c’est l’ensemble de la démocratie qu’on entrave »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/10/condamnation-de-marine-le-pen-c-est-une-idee-tres-francaise-de-considerer-que-si-l-on-empeche-une-personne-de-se-presenter-c-est-l-ensemble-de-la-democratie-qu-on-entrave_6722441_3232.html",
+      "published": "2026-07-10",
+      "summary": "Le sociologue Etienne Ollion explique, dans un entretien au « Monde », que le choix des juges de la cour d’appel de Paris de préserver « la liberté de l’électeur » procède d’une logique implicite selon laquelle la justice ne doit pas trop intervenir dans le jeu politique.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
+      "published": "2026-07-09",
+      "summary": "Si le parti Les Républicains et son président jugent la double finaliste à la présidentielle comme une rivale plus sérieuse que Jordan Bardella, ils pensent pouvoir se différencier d’elle en la présentant comme la candidate de l’« assistanat ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
+      "published": "2026-07-09",
+      "summary": "Après l’arrêt de la cour d’appel, le 7 juillet, les deux candidats ont choisi des stratégies différentes pour tenter de s’imposer en adversaire principal de la cheffe de file du RN. Au sein de l’ex-majorité, ce rebondissement ravive l’inquiétude sur l’éclatement des candidatures ",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« Il a la vie devant lui » : Jordan Bardella ramené à sa condition de numéro deux, après un an à penser à l’Elysée",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/09/il-a-la-vie-devant-lui-apres-un-an-a-penser-a-l-elysee-jordan-bardella-ramene-a-sa-condition-de-numero-deux_6722025_823448.html",
+      "published": "2026-07-09",
+      "summary": "Le président du Rassemblement national a affiché un visage fermé lors de la première sortie de précampagne de Marine Le Pen, qu’il n’a pas même félicitée pour sa candidature à l’élection présidentielle de 2027. La décision de justice du 7 juillet dans l’affaire des assistants par",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : vote décisif au PS pour sceller le sort de la primaire unitaire",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-vote-decisif-pour-olivier-faure-et-le-parti-socialiste-en-vue-de-designer-un-candidat-social-democrate_6722023_823448.html",
+      "published": "2026-07-09",
+      "summary": "Les militants du Parti socialiste se prononcent, jeudi, sur la méthode de départage de leur future tête d’affiche pour 2027. La « primaire de la gauche » incluant Les Ecologistes et les anciens « insoumis » n’est plus à l’ordre du jour.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Marine Le Pen condamnée et candidate : un lancement de campagne inattendu",
+      "url": "https://www.lemonde.fr/podcasts/article/2026/07/08/marine-le-pen-condamnee-et-candidate-un-lancement-de-campagne-inattendu_6721894_5463015.html",
+      "published": "2026-07-08",
+      "summary": "La présidente du groupe RN à l’Assemblée nationale, condamnée mardi pour détournement de fonds publics par la cour d’appel de Paris, a donné le coup d’envoi de sa campagne présidentielle, malgré les aléas juridiques liés à son pourvoi en cassation. Dans ce podcast, Laura Motet, j",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
       "title": "« La candidature à la présidentielle de Marine Le Pen constitue l’ultime marqueur d’une dégradation de l’éthique publique »",
       "url": "https://www.lemonde.fr/idees/article/2026/07/08/la-candidature-a-la-presidentielle-de-marine-le-pen-constitue-l-ultime-marqueur-d-une-degradation-de-l-ethique-publique_6721875_3232.html",
       "published": "2026-07-08",
       "summary": "La délinquance en col blanc n’est pas moins grave que les autres types de crime ou de délit, estime, dans une tribune au « Monde », le juriste Paul Cassia, qui se demande comment la figure d’une formation politique prônant la fermeté en matière pénale peut briguer l’investiture s",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle et risque d’ingérences étrangères : Sébastien Lecornu propose de tripler les peines pour les producteurs de « faux contenus d’information » face à un risque « très aigu »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/presidentielle-et-risque-d-ingerences-etrangeres-sebastien-lecornu-propose-de-tripler-les-peines-pour-les-producteurs-de-faux-contenus-d-information-face-a-un-risque-tres-aigu_6721868_823448.html",
-      "published": "2026-07-08",
-      "summary": "« La période électorale a quelque chose de sacré dans une démocratie, elle mérite une protection particulière », a expliqué le chef du gouvernement.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen candidate à la présidentielle : le jour où la députée RN a repris la main malgré sa condamnation",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/marine-le-pen-candidate-a-la-presidentielle-le-jour-ou-la-deputee-rn-a-repris-la-main-et-defie-la-justice_6721776_823448.html",
-      "published": "2026-07-08",
-      "summary": "Malgré sa condamnation à un an de prison ferme pour « détournement de fonds publics », la députée du Pas-de-Calais voit dans l’absence d’inéligibilité ferme un trou de souris dans lequel s’engouffrer. Plutôt prendre le risque de finir la campagne sous bracelet électronique que la",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Condamnation de Marine Le Pen : la Cour de cassation se prononcera \"au plus tard début avril 2027\"",
-      "url": "https://www.france24.com/fr/france/20260708-condamnation-de-marine-le-pen-la-cour-de-cassation-se-prononcera-au-plus-tard-d%C3%A9but-avril-2027",
-      "published": "2026-07-08",
-      "summary": "La Cour de cassation a indiqué mercredi qu'elle devrait pouvoir statuer \"au plus tard début avril 2027\" sur le pourvoi de Marine Le Pen contre sa condamnation dans l'affaire des assistants d'eurodéputés du Front national (FN, ancêtre du RN). La Cour a toutefois prévenu que ce dél",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Marine Le Pen et Jordan Bardella main dans la main pour la campagne",
-      "url": "https://www.france24.com/fr/france/20260708-jordan-bardella-se-r%C3%A9jouit-marine-le-pen-pr%C3%A9sidentielle-2027-extreme-droite-rassemblement-national-campagne",
-      "published": "2026-07-08",
-      "summary": "Au lendemain de l'annonce de la candidature de Marine Le Pen à la présidentielle française, son lieutenant, Jordan Bardella, a affirmé \"se réjouir\" qu'elle puisse porter les couleurs du Rassemblement national. Lors d'un déplacement à La Flèche, dans la Sarthe, la cheffe de file d",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen candidate en 2027 : pourquoi le RN a éclipsé Jordan Bardella",
-      "url": "https://www.france24.com/fr/france/20260708-marine-le-pen-candidate-en-2027-un-choix-dynastique-du-rn-qui-%C3%A9clipse-jordan-bardella",
-      "published": "2026-07-08",
-      "summary": "Marine Le Pen est candidate à l’élection présidentielle malgré sa condamnation par la cour d'appel de Paris dans l'affaire des assistants parlementaires du Front national. Cette quatrième campagne, qui prive Jordan Bardella de son rôle de joker, s'annonce risquée selon Renaud Fou",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Marine Le Pen abrège un premier déplacement de campagne chahuté",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/presidentielle-2027-marine-le-pen-abrege-un-premier-deplacement-de-campagne-chahute_6721871_823448.html",
-      "published": "2026-07-08",
-      "summary": "Au lendemain de sa condamnation par la cour d’appel de Paris, la cheffe de file de l’extrême droite a écourté, mercredi, sa venue à La Flèche, dans la Sarthe, perturbée par la mobilisation d’une soixantaine d’opposants.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen : la Cour de cassation « pourrait » se prononcer sur le pourvoi de la candidate à la présidentielle « au plus tard début avril 2027 »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/marine-le-pen-la-cour-de-cassation-pourrait-se-prononcer-sur-le-pourvoi-de-la-candidate-a-la-presidentielle-au-plus-tard-debut-avril-2027_6721861_823448.html",
-      "published": "2026-07-08",
-      "summary": "« Ce calendrier est susceptible d’évoluer en fonction des facteurs procéduraux », nuance toutefois la plus haute instance judiciaire, alors que le premier tour de l’élection est prévu pour le 18 avril 2027.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Justice criminelle : députés et sénateurs s’accordent sur le projet de loi de Gérald Darmanin",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/08/justice-criminelle-deputes-et-senateurs-s-accordent-sur-le-projet-de-loi-de-gerald-darmanin_6721848_3224.html",
-      "published": "2026-07-08",
-      "summary": "Sauf surprise, le projet de loi, expurgé de plusieurs mesures clivantes, dont le « plaider-coupable », devrait désormais être adopté sans encombre, la gauche étant la seule à s’y opposer à l’Assemblée.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée en appel : retrouvez les dernières informations sur la condamnation de la candidate du RN à la présidentielle et son entrée en campagne aux côtés de Jordan Bardella",
-      "url": "https://www.lemonde.fr/politique/live/2026/07/08/en-direct-marine-le-pen-condamnee-en-appel-je-me-rejouis-que-marine-puisse-porter-nos-couleurs-declare-jordan-bardella-au-lancement-de-la-campagne-du-rn-dans-la-sarthe_6721429_823448.html",
-      "published": "2026-07-08",
-      "summary": "Marine Le Pen a été reconnue coupable en appel, mardi, dans le procès des assistants parlementaires européens du Front national. Elle a annoncé, dans la foulée, qu’elle serait tout de même candidate à l’élection présidentielle en 2027. « Je me réjouis que Marine puisse porter nos",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Les principes fluctuants de Marine Le Pen",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/08/les-principes-fluctuants-de-marine-le-pen_6721810_3232.html",
-      "published": "2026-07-08",
-      "summary": "La décision de la leader d’extrême droite d’être, après sa condamnation par la Cour d’appel de Paris, candidate à l’élection présidentielle de 2027, rappelle la nature du Rassemblement national : une formation dont un clan familial contrôle jalousement la destinée depuis plus de ",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée mais candidate à la présidentielle : ses adversaires politiques choisissent l’accusation morale",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/marine-le-pen-condamnee-mais-candidate-a-la-presidentielle-ses-adversaires-politiques-choisissent-l-accusation-morale_6721792_823448.html",
-      "published": "2026-07-08",
-      "summary": "Dans l’affaire des assistants parlementaires européens du FN, la réduction de sa peine d’inéligibilité autorise la triple candidate à se relancer dans la course pour la présidentielle en 2027. Un scénario qui rebat les cartes pour les autres prétendants à l’Elysée, qui s’étaient ",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen peut-elle vraiment être candidate à la présidentielle quel que soit le scénario, comme elle l’affirme ?",
-      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/07/08/marine-le-pen-peut-elle-vraiment-etre-candidate-a-la-presidentielle-quel-que-soit-le-scenario-comme-elle-l-affirme_6721783_4355770.html",
-      "published": "2026-07-08",
-      "summary": "La dirigeante d’extrême droite assure que son pourvoi en cassation lui permettra de faire campagne sans bracelet électronique. Mais que dit le droit ?",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen candidate à la présidentielle de 2027 : le mythe du « phénix » de l’extrême droite",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/08/marine-le-pen-candidate-a-la-presidentielle-de-2027-le-mythe-du-phenix-de-l-extreme-droite_6721725_823448.html",
-      "published": "2026-07-08",
-      "summary": "La députée du Pas-de-Calais a assuré, mardi 7 juillet, au « 20 heures » de TF1, qu’elle se présenterait en 2027, en dépit de sa condamnation pour « détournement de fonds publics » par la cour d’appel de Paris.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Canicule : Elisabeth Borne appelle « à sanctuariser les moyens pour la transition écologique »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/07/canicule-elisabeth-borne-appelle-a-sanctuariser-les-moyens-pour-la-transition-ecologique_6721426_823448.html",
-      "published": "2026-07-07",
-      "summary": "Dans un entretien au « Monde », l’ancienne cheffe du gouvernement souhaite que le fonds vert, qui soutient les collectivités pour mener la transition écologique et qui a été raboté ces dernières années, soit relevé à 2,5 milliards d’euros dans le prochain budget.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Affaire des assistants parlementaires européens du FN : la justice en position de décider du sort politique de Marine Le Pen",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/07/affaire-des-assistants-parlementaires-europeens-du-fn-la-justice-en-position-de-decider-du-sort-politique-de-marine-le-pen_6721397_823448.html",
-      "published": "2026-07-07",
-      "summary": "Les juges de la cour d’appel de Paris doivent se prononcer, mardi, sur la culpabilité de Marine Le Pen et de onze coprévenus, condamnés en première instance pour avoir détourné des fonds européens. Le choix de confirmer l’inéligibilité de l’ex-présidente du RN pourrait, en pratiq",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Avec son pourvoi en cassation, le pari risqué de Marine Le Pen",
-      "url": "https://www.france24.com/fr/france/20260707-france-avec-son-pourvoi-en-cassation-le-pari-risque-de-marine-le-pen-rassemblement-national",
-      "published": "2026-07-07",
-      "summary": "Après son jugement en appel, Marine Le Pen a confirmé mardi qu'elle sera la candidate du Rassemblement national à l’élection présidentielle tout en faisant le choix de se pourvoir en cassation. Une façon de gagner du temps pour celle qui espère que soit les délais de justice, soi",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée mais candidate",
-      "url": "https://www.france24.com/fr/%C3%A9missions/on-va-plus-loin/20260707-marine-le-pen-condamn%C3%A9e-mais-candidate",
-      "published": "2026-07-07",
-      "summary": "Marine le Pen reste dans la course à l'Elysée. Condamnée en appel, pour détournements de fonds publics, à trois ans de prison dont un sous bracelet électronique dans l'affaire des assistants parlementaires du FN, la cheffe de file de l'extrême droite maintient sa candidature à la",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen se pourvoit en cassation et reste candidate à l'Élysée",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260707-marine-le-pen-se-pourvoit-en-cassation-et-reste-candidate-%C3%A0-l-%C3%A9lys%C3%A9e",
-      "published": "2026-07-07",
-      "summary": "⁠La cheffe ​de file du Rassemblement national (RN), Marine Le Pen, a annoncé mardi sur TF1 ​qu'elle se pourvoyait en cassation après sa condamnation pour détournement de fonds publics par la cour d'appel de Paris et qu'elle restait candidate à l'élection ​présidentielle de 2027. ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Agnès Evren (LR) : \"Marine Le Pen est condamnée, personne n'est au-dessus des lois\"",
-      "url": "https://www.france24.com/fr/%C3%A9missions/mardi-politique/20260707-agn%C3%A8s-evren-lr-marine-le-pen-est-condamn%C3%A9e-personne-n-est-au-dessus-des-lois",
-      "published": "2026-07-07",
-      "summary": "Dans l’affaire des assistants parlementaires européens du RN, Marine Le Pen est condamnée en appel à 15 mois ferme d’inéligibilité et trois ans de prison. Elle a la possibilité de se présenter en 2027, mais ferait campagne sous bracelet électronique. Pour Agnès Evren, sénatrice L",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen annonce être candidate à la présidentielle et va se pourvoir en cassation",
-      "url": "https://www.france24.com/fr/france/20260707-marine-le-pen-annonce-%C3%AAtre-candidate-%C3%A0-la-pr%C3%A9sidentielle-et-va-se-pourvoir-en-cassation",
-      "published": "2026-07-07",
-      "summary": "Quelques heures après sa condamnation en appel dans l'affaire des assistants parlementaires du Front national, Marine Le Pen a annoncé mardi qu'elle porterait les couleurs de son parti en 2027, sur le plateau du journal de 20 heures de TF1.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Une campagne possible, mais sous bracelet électronique : Marine Le Pen candidate en 2027 ?",
-      "url": "https://www.france24.com/fr/%C3%A9missions/le-d%C3%A9bat/20260707-une-campagne-possible-mais-sous-bracelet-%C3%A9lectronique-marine-le-pen-candidate-en-2027",
-      "published": "2026-07-07",
-      "summary": "Marine Le Pen sera-t-elle candidate à l'élection présidentielle ? L'arrêt de la Cour d'appel de ce 7 juillet ne l'en empêche pas, puisqu'il la condamne à une peine d'inéligibilité de 15 mois fermes déjà purgés dans l'affaire des assistants parlementaires du Front national. Mais s",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Condamnation de Marine Le Pen : les inconnues qui entourent le port du bracelet électronique",
-      "url": "https://www.france24.com/fr/france/20260707-condamnation-de-marine-le-pen-les-inconnues-qui-entourent-le-port-du-bracelet-%C3%A9lectronique",
-      "published": "2026-07-07",
-      "summary": "Condamnée mardi à un an de prison ferme sous surveillance électronique, Marine Le Pen ne serait pas pour autant empêchée de faire campagne en 2027. Explications.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Condamnation allégée pour Marine Le Pen : une victoire de la stratégie du RN ?",
-      "url": "https://www.france24.com/fr/france/20260707-condamnation-allegee-marine-le-pen-victoire-strategie-rassemblement-national-pr%C3%A9sidentielle",
-      "published": "2026-07-07",
-      "summary": "La décision rendue mardi de la cour d’appel du tribunal de Paris, qui permet à Marine Le Pen de se présenter à l’élection présidentielle de 2027, est justifiée par la nécessité de préserver la \"liberté du choix des électeurs\", selon les juges. Une peine allégée par rapport au jug",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "\"Délinquante\", \"privilégiée\" : les critiques fusent à gauche après la condamnation de Marine Le Pen",
-      "url": "https://www.france24.com/fr/france/20260707-d%C3%A9linquante-privil%C3%A9gi%C3%A9e-critiques-fusent-%C3%A0-gauche-apr%C3%A8s-condamnation-marine-le-pen",
-      "published": "2026-07-07",
-      "summary": "La condamnation en appel de Marine Le Pen à un an de prison sous bracelet électronique et à 15 mois d'inéligibilité, déjà purgés, a suscité mardi de vives réactions de la gauche. Le président du groupe PS à l'Assemblée, Boris Vallaud, l'a qualifiée de \"délinquante\". Emmanuel Macr",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée, son avenir politique incertain",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260707-marine-le-pen-condamn%C3%A9e-son-avenir-politique-incertain",
-      "published": "2026-07-07",
-      "summary": "🔴Marine Le Pen a été condamnée en appel à trois ans de prison, dont un an sous bracelet électronique, et à 15 mois d’#inéligibilité dans l’affaire des détournements de fonds du Parlement européen. Cette décision fragilise sa candidature à l’élection présidentielle de 2027, même ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Condamnation de Marine Le Pen : ce qu'il faut retenir",
-      "url": "https://www.france24.com/fr/france/20260707-condamnation-de-marine-le-pen-ce-qu-il-faut-retenir-appel-rn-bardella",
-      "published": "2026-07-07",
-      "summary": "Marine Le Pen a été condamnée, mardi, à un an de prison ferme sous bracelet électronique et à 15 mois d'inéligibilité ferme. Cela ne l'empêche pas de se présenter à l'élection présidentielle de 2027.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Le maintien de Marine Le Pen dans la course à l'Élysée vivement critiqué par ses adversaires",
-      "url": "https://www.france24.com/fr/france/20260707-en-direct-fin-suspense-marine-le-pen-bientot-fixee-avenir-presidentielle-proces-appel-affaire-assistants-parlementaires",
-      "published": "2026-07-07",
-      "summary": "Quelques heures après sa condamnation en appel dans l'affaire des assistants parlementaires européens du RN, Marine Le Pen a annoncé mardi soir sur TF1 se pourvoir en cassation, tout en demeurant candidate à l'élection présidentielle de 2027. Une décision vertement critiquée par ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Après le pourvoi en cassation de Marine Le Pen, les questions en suspens",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/07/apres-le-pourvoi-en-cassation-de-marine-le-pen-les-questions-en-suspens_6721552_823448.html",
-      "published": "2026-07-07",
-      "summary": "La cheffe de file des députés du Rassemblement national a annoncé, mardi, au « 20 heures » de TF1, être candidate à la présidentielle de 2027, affirmant qu’elle ferait campagne « sans bracelet électronique ». Le peut-elle ? Eléments de réponse.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen candidate en 2027 : les différents partis politiques réagissent",
-      "url": "https://www.lemonde.fr/politique/video/2026/07/07/marine-le-pen-candidate-en-2027-les-differents-partis-politiques-reagissent_6721551_823448.html",
-      "published": "2026-07-07",
-      "summary": "La plupart des responsables politiques pointent les incohérences de la cheffe de file du Rassemblement national, qui avait déclaré à plusieurs reprises qu’un élu qui avait été condamné devrait être inéligible « à vie ».",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : la candidature autonome de Marine Tondelier confortée par les militants écologistes en cas d’échec de la primaire",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/06/presidentielle-2027-la-candidature-autonome-de-marine-tondelier-confortee-par-les-militants-ecologistes-en-cas-d-echec-de-la-primaire_6721217_823448.html",
-      "published": "2026-07-06",
-      "summary": "Dans une enquête d’opinion interne aux Ecologistes, 65,13 % des votes exprimés ont soutenu cette solution. Cette enquête n’a toutefois qu’un caractère purement indicatif.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Affaire des assistants parlementaires européens du FN : les différents scénarios judiciaires pour Marine Le Pen après la décision en appel",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/06/affaire-des-assistants-parlementaires-europeens-du-fn-les-differents-scenarios-judiciaires-pour-marine-le-pen-apres-la-decision-en-appel_6721182_3224.html",
-      "published": "2026-07-06",
-      "summary": "Mardi 7 juillet, la cour d’appel de Paris rendra sa décision dans le dossier des assistants parlementaires européens du Front national (FN). Relaxe, prison ferme, bracelet électronique, inéligibilité… « Le Monde » fait le point sur les suites possibles et les questions encore en ",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Marine Tondelier critiquée chez Les Ecologistes avant une semaine décisive pour le parti",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/06/presidentielle-2027-marine-tondelier-critiquee-chez-les-ecologistes-avant-une-semaine-decisive-pour-le-parti_6721132_823448.html",
-      "published": "2026-07-06",
-      "summary": "La secrétaire nationale des Ecologistes consultait les militants jusqu’au lundi 6 juillet, afin de valider l’option d’une candidature autonome pour l’élection présidentielle de 2027. Une stratégie loin de faire l’unanimité en interne.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Au Festival des idées, les partis de gauche affichent leurs différends malgré les demandes d’union",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/06/au-festival-des-idees-les-partis-de-gauche-affichent-leurs-differends-malgre-les-demandes-d-union_6721131_823448.html",
-      "published": "2026-07-06",
-      "summary": "Elus et militants étaient réunis durant le week-end des 4 et 5 juillet, à La Charité-sur-Loire, dans la Nièvre, pour débattre de la place et de l’avenir de la gauche dans le paysage politique, à moins d’un an de la présidentielle de 2027.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : en meeting, Edouard Philippe dessine les grands axes de son projet de droite modérée pour un « redressement français »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/06/en-meeting-edouard-philippe-promet-de-faire-de-l-interet-de-nos-enfants-la-boussole-de-son-projet-presidentiel_6721057_823448.html",
-      "published": "2026-07-06",
-      "summary": "A Paris, dimanche, l’ex-premier ministre s’est livré un peu plus sur le plan personnel et a promis de faire de « l’intérêt de nos enfants » la « boussole » de son projet présidentiel.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional"

@@ -30,6 +30,7 @@ import bardella2027 from '../data/programmes/presidentielle-2027/bardella.json';
 import barrot2027 from '../data/programmes/presidentielle-2027/barrot.json';
 import lePen2027 from '../data/programmes/presidentielle-2027/le-pen.json';
 import ruffin2027 from '../data/programmes/presidentielle-2027/ruffin.json';
+import lisnard2027 from '../data/programmes/presidentielle-2027/lisnard.json';
 
 export const PROGRAM_THEMES = themes as ProgramTheme[];
 
@@ -68,7 +69,7 @@ const PROGRAM_REGISTRY: Record<string, ProgramCandidateFile[]> = {
     pecresse2022,
     zemmour2022,
   ] as ProgramCandidateFile[],
-  'presidentielle-2027': [attal2027, melenchon2027, retailleau2027, ps2027, philippeBrun2027, philippe2027, bardella2027, barrot2027, lePen2027, ruffin2027] as ProgramCandidateFile[],
+  'presidentielle-2027': [attal2027, melenchon2027, retailleau2027, ps2027, philippeBrun2027, philippe2027, bardella2027, barrot2027, lePen2027, ruffin2027, lisnard2027] as ProgramCandidateFile[],
 };
 
 export function getThemeLabel(id: string): string {

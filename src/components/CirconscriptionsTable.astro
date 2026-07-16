@@ -24,10 +24,16 @@ const departements = [...byDept.keys()].sort();
 
 <section class="card circo-block" aria-labelledby="circo-title">
   <h3 id="circo-title">577 circonscriptions — leader au 1er tour</h3>
-  <p class="meta">
+  <p class="meta" id="circo-desc">
     Une ligne par circonscription : candidat en tête, nuance et part des suffrages exprimés. Données
-    officielles agrégées depuis data.gouv.fr.
+    officielles agrégées depuis data.gouv.fr. Utilisez les filtres pour explorer (clavier et lecteur d'écran compatibles).
   </p>
+
+  <!-- Stats rapides pédagogiques pour lisibilité -->
+  <div class="circo-stats" aria-label="Répartition rapide des leaders au 1er tour">
+    <span class="stat">Total circonscriptions : <strong>{circonscriptions.length}</strong></span>
+    <span class="stat">Départements : <strong>{departements.length}</strong></span>
+  </div>
 
   <div class="legend" aria-label="Légende des nuances">
     {
@@ -40,22 +46,36 @@ const departements = [...byDept.keys()].sort();
     }
   </div>
 
-  <label class="filter">
-    Filtrer par département
-    <select id="dept-filter" aria-controls="circo-table">
-      <option value="">Tous ({circonscriptions.length})</option>
-      {
-        departements.map((d) => (
-          <option value={d}>
-            {d} ({byDept.get(d)?.length ?? 0})
-          </option>
-        ))
-      }
-    </select>
-  </label>
+  <div class="filters" role="search" aria-label="Filtrer les circonscriptions">
+    <label class="filter">
+      Filtrer par département
+      <select id="dept-filter" aria-controls="circo-table">
+        <option value="">Tous ({circonscriptions.length})</option>
+        {
+          departements.map((d) => (
+            <option value={d}>
+              {d} ({byDept.get(d)?.length ?? 0})
+            </option>
+          ))
+        }
+      </select>
+    </label>
 
-  <div class="table-wrap">
-    <table id="circo-table">
+    <label class="filter">
+      Rechercher (nom, candidat, nuance)
+      <input 
+        type="search" 
+        id="circo-search" 
+        placeholder="Ex: Paris, Bardella, RN..." 
+        aria-controls="circo-table"
+        autocomplete="off"
+      />
+    </label>
+    <div id="filter-count" class="meta" aria-live="polite" style="margin-top:0.25rem; font-size:0.82rem;"></div>
+  </div>
+
+  <div class="table-wrap" style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+    <table id="circo-table" aria-describedby="circo-desc" style="min-width:520px;">
       <thead>
         <tr>
           <th scope="col">Circonscription</th>
@@ -95,15 +115,35 @@ const departements = [...byDept.keys()].sort();
 
 <script>
   const select = document.getElementById('dept-filter') as HTMLSelectElement | null;
-  const rows = document.querySelectorAll<HTMLTableRowElement>('#circo-table tbody tr');
+  const searchInput = document.getElementById('circo-search') as HTMLInputElement | null;
+  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('#circo-table tbody tr'));
+  const countEl = document.getElementById('filter-count');
 
-  select?.addEventListener('change', () => {
-    const dept = select.value;
+  function applyFilters() {
+    const dept = select?.value || '';
+    const q = (searchInput?.value || '').toLowerCase().trim();
+
+    let visible = 0;
     rows.forEach((row) => {
-      const match = !dept || row.dataset.dept === dept;
-      row.hidden = !match;
+      const rowDept = row.dataset.dept || '';
+      const text = row.textContent?.toLowerCase() || '';
+      const matchDept = !dept || rowDept === dept;
+      const matchSearch = !q || text.includes(q);
+      const show = matchDept && matchSearch;
+      row.hidden = !show;
+      if (show) visible++;
     });
-  });
+
+    if (countEl) {
+      countEl.textContent = `${visible} circonscription${visible > 1 ? 's' : ''} affichée${visible > 1 ? 's' : ''}`;
+    }
+  }
+
+  select?.addEventListener('change', applyFilters);
+  searchInput?.addEventListener('input', applyFilters);
+
+  // init count
+  if (countEl) countEl.textContent = `${rows.length} circonscriptions au total`;
 </script>
 
 <style>
@@ -128,16 +168,30 @@ const departements = [...byDept.keys()].sort();
     border-radius: 2px;
     display: inline-block;
   }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: flex-end;
+  }
   .filter {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
     font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    min-width: 180px;
+    flex: 1 1 220px;
   }
-  .filter select {
-    max-width: 14rem;
-    padding: 0.35rem 0.5rem;
+  .filter select,
+  .filter input[type="search"] {
+    max-width: 100%;
+    padding: 0.4rem 0.55rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .filter input[type="search"] {
+    min-width: 160px;
   }
   .table-wrap {
     overflow-x: auto;
@@ -181,5 +235,31 @@ const departements = [...byDept.keys()].sort();
     border-left: 3px solid var(--nuance-color);
     font-size: 0.8rem;
     line-height: 1.3;
+  }
+  .circo-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.4rem 0 0.6rem;
+    font-size: 0.82rem;
+    font-family: system-ui, sans-serif;
+  }
+  .circo-stats .stat {
+    background: var(--accent-soft);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  /* Mobile responsiveness for circo table viz */
+  @media (max-width: 640px) {
+    .table-wrap { max-height: 22rem; }
+    table { font-size: 0.78rem; min-width: 480px; }
+    th, td { padding: 0.3rem 0.4rem; }
+    .filters { flex-direction: column; }
+    .filter { width: 100%; }
+    .circo-stats { font-size: 0.76rem; }
+  }
+  @media (max-width: 420px) {
+    table { font-size: 0.72rem; min-width: 440px; }
   }
 </style>

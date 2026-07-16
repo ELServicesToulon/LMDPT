@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMDPT — Le Média du Premier Tour (Prototype redesign)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=System-ui&amp;display=swap');
+    
+    :root {
+      --accent: #2563eb;
+    }
+    
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    
+    .dark-card {
+      background-color: #111827;
+      border: 1px solid #374151;
+    }
+    
+    .section-title {
+      letter-spacing: -0.02em;
+    }
+
+    .plain-text {
+      font-size: 1.125rem; /* 18px base */
+      line-height: 1.65;
+    }
+
+    .layer-1 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .layer-2 {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .layer-3 {
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .hero-title {
+      font-feature-settings: "tnum" "ss01";
+      letter-spacing: -0.03em;
+    }
+
+    .card {
+      transition: transform 0.1s ease, border-color 0.1s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-1px);
+      border-color: #4b5563;
+    }
+
+    .focus-ring {
+      transition: box-shadow 0.1s ease;
+    }
+    
+    .focus-ring:focus-visible {
+      box-shadow: 0 0 0 3px #2563eb, 0 0 0 6px #0f172a;
+      outline: none;
+    }
+
+    .nav-link {
+      transition: color 0.1s ease;
+    }
+    
+    .nav-link:hover {
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <div class="max-w-screen-xl mx-auto px-5 sm:px-6 pt-8 pb-16">
+
+    <!-- NAV (simple for prototype) -->
+    <nav class="flex items-center justify-between mb-10">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white text-sm font-bold">1T</div>
+          <span class="font-semibold tracking-tight text-xl">Le Média du Premier Tour</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#focus" class="nav-link text-slate-300 hover:text-white">Pourquoi le 1er tour</a>
+        <a href="#debats" class="nav-link text-slate-300 hover:text-white">Débats en direct</a>
+        <a href="#veille" class="nav-link text-slate-300 hover:text-white">Veille</a>
+        <a href="/analyses/presidentielle-2027-preparation" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm font-medium">Dossier 2027</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="mb-16">
+      <div class="dark-card rounded-3xl p-8 md:p-12">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+          
+          <!-- Text -->
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-sm mb-6">
+              <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
+              <span class="font-medium">Focus Présidentielle 2027 • 1er tour : 18 avril 2027</span>
+            </div>
+
+            <h1 class="hero-title text-4xl md:text-5xl font-semibold tracking-tighter leading-none mb-6">
+              Le premier tour 2027.<br>
+              Vos convictions comptent.
+            </h1>
+
+            <!-- Layer 1: Ultra-clair résumé -->
+            <div class="mb-6 p-4 bg-slate-900 rounded-2xl border border-slate-700">
+              <p class="layer-1 text-slate-100">
+                Au premier tour, votre voix exprime vraiment ce que vous pensez. 
+                Le second tour transforme souvent cela en un duel "contre".
+              </p>
+            </div>
+
+            <p class="layer-2 text-slate-300 max-w-prose mb-8">
+              Nous documentons les faits officiels du premier tour pour que chaque citoyen puisse choisir en connaissance de cause.
+            </p>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="#debats" class="focus-ring px-8 py-4 bg-white text-slate-950 font-semibold rounded-2xl hover:bg-slate-100 transition-colors text-lg">
+                Rejoindre les débats en direct
+              </a>
+              <a href="/analyses/presidentielle-2027-preparation" class="focus-ring px-7 py-4 border border-slate-600 hover:bg-slate-800 rounded-2xl font-medium transition-colors">
+                Voir le dossier complet
+              </a>
+            </div>
+
+            <div class="mt-6 text-sm text-slate-400 flex items-center gap-2">
+              <span>Données open data • 100 % transparent</span>
+            </div>
+          </div>
+
+          <!-- Visual placeholder (keep existing spirit, no light text) -->
+          <div class="flex-1 max-w-md lg:max-w-none">
+            <div class="dark-card rounded-2xl overflow-hidden border border-slate-700">
+              <div class="aspect-[16/9] bg-slate-900 flex items-center justify-center p-6">
+                <div class="text-center">
+                  <div class="text-6xl mb-3">🗳️</div>
+                  <p class="text-slate-400 text-sm">Illustration civique : citoyens déposant leur bulletin<br>au premier tour (strictement laïque)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOCUS 2027 + Pourquoi ce média (layered) -->
+    <section id="focus" class="mb-16">
+      <div class="mb-8">
+        <h2 class="text-3xl font-semibold tracking-tight mb-3">Pourquoi le premier tour change tout</h2>
+        <p class="text-slate-300 max-w-2xl">Trois raisons simples. Chacune s’approfondit selon votre curiosité.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Sécurité -->
+        <div class="dark-card rounded-3xl p-7 border border-slate-700">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-900/50 flex items-center justify-center flex-shrink-0">🛡️</div>
+            <div>
+              <h3 class="font-semibold text-xl mb-1">Sécurité</h3>
+              <p class="layer-1">Au premier tour, votre voix dit vraiment ce que vous pensez.</p>
+            </div>
+          </div>
+          
+          <!-- Layer 2 -->
+          <div class="mb-4">
+            <p class="layer-2 text-slate-300">
+              Le premier tour enregistre vos convictions sans les stratégies du second tour.
+            </p>
+          </div>
+          
+          <!-- Layer 3 (expandable) -->
+          <details class="group">
+            <summary class="cursor-pointer text-sm text-blue-400 hover:text-blue-300 font-medium list-none flex items-center gap-1">
+              Voir les données et nuances 
+              <span class="text-xs">↓</span>
+            </summary>
+            <div class="layer-3 text-slate-300 mt-3 pt-3 border-t border-slate-700">
+              En 2024, le RN a obtenu 29,3 % au premier tour mais seulement 125 sièges après le second. 
+              L’écart entre ce que les Français ont vraiment voté et le résultat final est mesurable. 
+              Sources : Ministère de l’Intérieur, data.gouv.fr.
+            </div>
+          </details>
+        </div>
+
+        <!-- Sympathie -->
+        <div class="dark-card rounded-3xl p-7 border border-slate-700">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-10 h-10 rounded-2xl bg-blue-900/50 flex items-center justify-center flex-shrink-0">🤝</div>
+            <div>
+              <h3 class="font-semibold text-xl mb-1">Sympathie</h3>
+              <p class="layer-1">Beaucoup de citoyens se sentent exclus par le second tour.</p>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <p class="layer-2 text-slate-300">
+              Le second tour pousse souvent à voter "contre" plutôt que "pour".
+            </p>
+          </div>
+          
+          <details class="group">
+            <summary class="cursor-pointer text-sm text-blue-400 hover:text-blue-300 font-medium list-none flex items-center gap-1">
+              Voir les données et nuances 
+              <span class="text-xs">↓</span>
+            </summary>
+            <div class="layer-3 text-slate-300 mt-3 pt-3 border-t border-slate-700">
+              Plus de 200 désistements en 2024 ont modifié le choix des électeurs. 
+              Beaucoup de Français ont voté non par conviction mais pour bloquer. 
+              Le premier tour évite ce mécanisme d’exclusion.
+            </div>
+          </details>
+        </div>
+
+        <!-- Orgueil -->
+        <div class="dark-card rounded-3xl p-7 border border-slate-700">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-10 h-10 rounded-2xl bg-violet-900/50 flex items-center justify-center flex-shrink-0">🌟</div>
+            <div>
+              <h3 class="font-semibold text-xl mb-1">Orgueil</h3>
+              <p class="layer-1">Nous documentons la vraie pluralité pour que vous choisissiez avec fierté.</p>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <p class="layer-2 text-slate-300">
+              Chaque voix du premier tour a de la valeur. Nous la rendons visible.
+            </p>
+          </div>
+          
+          <details class="group">
+            <summary class="cursor-pointer text-sm text-blue-400 hover:text-blue-300 font-medium list-none flex items-center gap-1">
+              Voir les données et nuances 
+              <span class="text-xs">↓</span>
+            </summary>
+            <div class="layer-3 text-slate-300 mt-3 pt-3 border-t border-slate-700">
+              Nous publions les résultats bruts du premier tour, les simulations d’une assemblée proportionnelle au T1 (AN1T), et les comparatifs chiffrés. 
+              Tout est sourcé et reproductible.
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DÉBATS EN DIRECT - NOUVELLE SECTION LIVE YOUTUBE -->
+    <section id="debats" class="mb-16">
+      <div class="dark-card rounded-3xl p-8 md:p-10 border border-slate-700">
+        <div class="flex flex-col lg:flex-row gap-8 items-center">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 text-red-400 rounded-full text-sm font-medium mb-4">
+              <div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+              EN DIRECT
+            </div>
+            
+            <h2 class="text-3xl font-semibold tracking-tight mb-4">Débats en direct sur YouTube</h2>
+            
+            <div class="layer-1 mb-4">
+              Participez aux discussions sur l’importance du premier tour et d’une Assemblée plus représentative.
+            </div>
+            
+            <p class="layer-2 text-slate-300 mb-6 max-w-prose">
+              Chaque semaine, nous organisons des débats civiques avec des positions sourcées. 
+              Le média documente, il ne tranche pas.
+            </p>
+
+            <a href="https://www.youtube.com/@LMDuPremierTour/live" 
+               target="_blank"
+               class="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 hover:bg-slate-100 font-semibold rounded-2xl text-lg focus-ring">
+              <span>Rejoindre le live maintenant</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-3">
+              Thème actuel : Faut-il une Assemblée élue sur le seul premier tour ?
+            </p>
+          </div>
+
+          <div class="flex-shrink-0 w-full lg:w-80">
+            <div class="dark-card border border-slate-600 rounded-2xl p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="text-2xl">📺</div>
+                <div>
+                  <div class="font-semibold">Chaîne YouTube officielle</div>
+                  <div class="text-sm text-slate-400">@LMDuPremierTour</div>
+                </div>
+              </div>
+              <div class="text-sm text-slate-300">
+                Replays disponibles immédiatement après chaque débat.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEILLE PRESSE -->
+    <section id="veille" class="mb-16">
+      <div class="mb-6 flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-semibold tracking-tight">Veille presse</h2>
+          <p class="text-slate-400">Actualités factuelles sur la présidentielle 2027</p>
+        </div>
+        <a href="/analyses/presidentielle-2027-preparation#renifleur-presse" class="text-sm text-blue-400 hover:text-blue-300">Toute la veille →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Exemple article 1 - Layered -->
+        <div class="dark-card rounded-3xl p-7 border border-slate-700">
+          <div class="text-xs uppercase tracking-widest text-slate-400 mb-2">Le Monde — 9 juillet 2026</div>
+          
+          <h3 class="font-semibold text-xl mb-3 leading-snug">Marine Le Pen candidate malgré sa condamnation</h3>
+          
+          <!-- Layer 1 -->
+          <p class="layer-1 mb-3">La candidate du RN maintient sa candidature pour 2027 après l’appel.</p>
+          
+          <details class="mt-2">
+            <summary class="text-sm cursor-pointer text-blue-400">Explication accessible</summary>
+            <div class="layer-2 mt-3 text-slate-300">
+              La cour d’appel a confirmé une peine d’inéligibilité. Marine Le Pen conteste et se pourvoit en cassation. Elle annonce qu’elle sera candidate.
+            </div>
+          </details>
+          
+          <details class="mt-2">
+            <summary class="text-sm cursor-pointer text-blue-400">Analyse approfondie + sources</summary>
+            <div class="layer-3 mt-3 text-slate-300">
+              Le délai pour la décision de la Cour de cassation est estimé à début 2027. 
+              Cela place la question de l’éligibilité au cœur de la campagne. 
+              <a href="https://www.lemonde.fr/..." class="text-blue-400 hover:underline">Source Le Monde</a>
+            </div>
+          </details>
+        </div>
+
+        <!-- Exemple article 2 -->
+        <div class="dark-card rounded-3xl p-7 border border-slate-700">
+          <div class="text-xs uppercase tracking-widest text-slate-400 mb-2">France 24 — 9 juillet 2026</div>
+          
+          <h3 class="font-semibold text-xl mb-3 leading-snug">Le PS vote pour une primaire fermée en 2027</h3>
+          
+          <p class="layer-1 mb-3">Les militants socialistes choisissent une primaire réservée aux adhérents.</p>
+          
+          <details>
+            <summary class="text-sm cursor-pointer text-blue-400">Explication accessible</summary>
+            <div class="layer-2 mt-3 text-slate-300">
+              Le parti veut éviter une primaire ouverte qui pourrait être perturbée. Deux scénarios étaient en discussion.
+            </div>
+          </details>
+          
+          <details>
+            <summary class="text-sm cursor-pointer text-blue-400">Analyse approfondie + sources</summary>
+            <div class="layer-3 mt-3 text-slate-300">
+              La décision renforce le contrôle des instances sur le choix du candidat. 
+              Cela peut compliquer les alliances avec d’autres forces de gauche.
+              <a href="#" class="text-blue-400 hover:underline">Source France 24</a>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Notre ligne (simplifiée en couches) -->
+    <section class="mb-16">
+      <div class="dark-card rounded-3xl p-8">
+        <h2 class="font-semibold text-2xl mb-6">Notre ligne</h2>
+        
+        <div class="space-y-6">
+          <div>
+            <p class="layer-1">Nous publions uniquement des faits officiels et des comparaisons vérifiables.</p>
+            <details class="mt-2">
+              <summary class="text-sm text-blue-400 cursor-pointer">En savoir plus</summary>
+              <div class="layer-2 mt-2">Sources traçables sur data.gouv.fr. Pas de sondages présentés comme prédictions. Revue humaine avant publication.</div>
+            </details>
+          </div>
+          
+          <div>
+            <p class="layer-1">Nous défendons la pluralité du premier tour sans classer les voix.</p>
+            <details class="mt-2">
+              <summary class="text-sm text-blue-400 cursor-pointer">En savoir plus</summary>
+              <div class="layer-2 mt-2">Le premier tour montre ce que les Français pensent vraiment. Le second tour transforme cela en duel.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-400">
+    Le Média du Premier Tour — Faits • Pluralité • Transparence<br>
+    <span class="text-xs">100 % laïque • Idées, pas idéologies • Conçu pour tous les citoyens</span>
+  </footer>
+
+  <script>
+    // Tailwind script
+    function initTailwind() {
+      // Already loaded via CDN
+      console.log('%c[LMDPT Prototype] Dark-first, high-contrast, plain language design ready.', 'color:#64748b');
+    }
+    window.onload = initTailwind;
+  </script>
+</body>
+</html>

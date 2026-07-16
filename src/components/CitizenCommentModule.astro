@@ -1,0 +1,289 @@
+---
+/**
+ * Module commentaires citoyens LMDPT
+ * Flux : saisie → IA (reformulation + teinte 1er tour) → validation posteur → file modo
+ */
+interface Props {
+  threadId: string;
+  title?: string;
+}
+
+const { threadId, title = 'Commentaires citoyens' } = Astro.props;
+const apiBase = '/api/comments';
+---
+
+<section class="ccm" data-thread={threadId} data-api={apiBase} aria-labelledby={`ccm-title-${threadId}`}>
+  <h3 id={`ccm-title-${threadId}`}>{title}</h3>
+  <p class="ccm-disclaimer meta">
+    Chaque message est <strong>reformulé en français correct</strong> par l’IA, puis une
+    <strong>teinte d’idées du 1er tour</strong> (couleur) vous est proposée — ce n’est
+    <em>pas</em> une étiquette d’appartenance partisane. Vous validez l’édition avant envoi.
+    Publication après modération (hiérarchie : contributeur → modo → modo-senior → rédaction).
+  </p>
+
+  <div class="ccm-list" data-role="list" aria-live="polite">
+    <p class="meta ccm-loading">Chargement des commentaires…</p>
+  </div>
+
+  <form class="ccm-form" data-role="form">
+    <label class="ccm-label">
+      Pseudonyme (affiché)
+      <input type="text" name="displayName" maxlength="40" placeholder="Citoyen·ne" autocomplete="nickname" />
+    </label>
+    <label class="ccm-label">
+      Votre message
+      <textarea name="raw" rows="4" maxlength="4000" required placeholder="Exposez une idée, un fait ou une question — pas d’attaque personnelle."></textarea>
+    </label>
+    <button type="submit" class="btn btn-primary" data-role="analyze">Analyser avec l’IA</button>
+  </form>
+
+  <div class="ccm-preview" data-role="preview" hidden>
+    <h4>Prévisualisation — validez avant envoi</h4>
+    <div class="ccm-hue" data-role="hue">
+      <span class="ccm-swatch" data-role="swatch"></span>
+      <div>
+        <strong data-role="hue-label">—</strong>
+        <p class="meta" data-role="hue-rationale"></p>
+        <p class="meta">Confiance IA : <span data-role="hue-conf">—</span></p>
+      </div>
+    </div>
+    <label class="ccm-label">
+      Texte reformulé (modifiable)
+      <textarea name="reformulated" rows="4" maxlength="4000" data-role="reformulated"></textarea>
+    </label>
+    <p class="meta">Original conservé pour la modération (non affiché publiquement tel quel).</p>
+    <div class="ccm-actions">
+      <button type="button" class="btn btn-primary" data-role="publish">Valider et envoyer</button>
+      <button type="button" class="btn btn-secondary" data-role="cancel">Annuler</button>
+    </div>
+    <p class="ccm-status meta" data-role="status" role="status"></p>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const root = document.currentScript && document.currentScript.previousElementSibling;
+    // find section.ccm near script — Astro may place script after section
+  })();
+</script>
+
+<script>
+  function initCcm(root: HTMLElement) {
+    const api = root.dataset.api || '/api/comments';
+    const threadId = root.dataset.thread || 'general';
+    const listEl = root.querySelector('[data-role="list"]') as HTMLElement;
+    const form = root.querySelector('[data-role="form"]') as HTMLFormElement;
+    const preview = root.querySelector('[data-role="preview"]') as HTMLElement;
+    const reformEl = root.querySelector('[data-role="reformulated"]') as HTMLTextAreaElement;
+    const statusEl = root.querySelector('[data-role="status"]') as HTMLElement;
+    const swatch = root.querySelector('[data-role="swatch"]') as HTMLElement;
+    const hueLabel = root.querySelector('[data-role="hue-label"]') as HTMLElement;
+    const hueRat = root.querySelector('[data-role="hue-rationale"]') as HTMLElement;
+    const hueConf = root.querySelector('[data-role="hue-conf"]') as HTMLElement;
+
+    let previewToken = '';
+    let authorKey = localStorage.getItem('lmdpt-author-key');
+    if (!authorKey) {
+      authorKey = crypto.randomUUID();
+      localStorage.setItem('lmdpt-author-key', authorKey);
+    }
+
+    async function loadList() {
+      try {
+        const res = await fetch(`${api}/thread/${encodeURIComponent(threadId)}`);
+        const data = await res.json();
+        const comments = data.comments || [];
+        if (!comments.length) {
+          listEl.innerHTML = '<p class="meta">Aucun commentaire publié pour le moment. Soyez le premier à contribuer.</p>';
+          return;
+        }
+        listEl.innerHTML = comments
+          .map(
+            (c: any) => `
+          <article class="ccm-item" style="border-left:4px solid ${c.politicalHue?.color || '#5a6570'}">
+            <header>
+              <strong>${escapeHtml(c.displayName || 'Citoyen·ne')}</strong>
+              <span class="ccm-pill" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
+              <time class="meta">${c.publishedAt ? new Date(c.publishedAt).toLocaleString('fr-FR') : ''}</time>
+            </header>
+            <p>${escapeHtml(c.body)}</p>
+          </article>`,
+          )
+          .join('');
+      } catch {
+        listEl.innerHTML = '<p class="meta">Commentaires indisponibles (API hors ligne).</p>';
+      }
+    }
+
+    function escapeHtml(s: string) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Analyse IA en cours…';
+      preview.hidden = true;
+      const fd = new FormData(form);
+      const raw = String(fd.get('raw') || '');
+      try {
+        const res = await fetch(`${api}/preview`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Author-Key': authorKey! },
+          body: JSON.stringify({ raw }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Échec analyse');
+        previewToken = data.previewToken;
+        reformEl.value = data.reformulated || '';
+        const h = data.politicalHue || {};
+        swatch.style.background = h.color || '#5a6570';
+        hueLabel.textContent = h.label || '—';
+        hueRat.textContent = h.rationale || '';
+        hueConf.textContent = h.confidence != null ? Math.round(h.confidence * 100) + ' %' : '—';
+        preview.hidden = false;
+        statusEl.textContent = 'Vérifiez la teinte et le texte, puis validez.';
+      } catch (err: any) {
+        statusEl.textContent = err.message || 'Erreur';
+      }
+    });
+
+    root.querySelector('[data-role="cancel"]')?.addEventListener('click', () => {
+      preview.hidden = true;
+      previewToken = '';
+      statusEl.textContent = '';
+    });
+
+    root.querySelector('[data-role="publish"]')?.addEventListener('click', async () => {
+      const fd = new FormData(form);
+      statusEl.textContent = 'Envoi…';
+      try {
+        const res = await fetch(`${api}/publish`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Author-Key': authorKey! },
+          body: JSON.stringify({
+            previewToken,
+            accepted: true,
+            threadId,
+            displayName: String(fd.get('displayName') || 'Citoyen·ne'),
+            reformulated: reformEl.value,
+            authorKey,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Échec publication');
+        statusEl.textContent = data.message || 'OK';
+        preview.hidden = true;
+        form.reset();
+        previewToken = '';
+        await loadList();
+      } catch (err: any) {
+        statusEl.textContent = err.message || 'Erreur';
+      }
+    });
+
+    loadList();
+  }
+
+  document.querySelectorAll<HTMLElement>('section.ccm').forEach(initCcm);
+</script>
+
+<style>
+  .ccm {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .ccm h3 {
+    margin: 0 0 0.5rem;
+    color: var(--fg);
+  }
+  .ccm-disclaimer {
+    margin: 0 0 1rem;
+    line-height: 1.45;
+  }
+  .ccm-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .ccm-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+  }
+  .ccm-item header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    align-items: center;
+    margin-bottom: 0.35rem;
+  }
+  .ccm-pill {
+    font-size: 0.72rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    text-shadow: 0 0 2px #0008;
+  }
+  .ccm-form,
+  .ccm-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    max-width: 40rem;
+  }
+  .ccm-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+    color: var(--fg);
+  }
+  .ccm-label input,
+  .ccm-label textarea,
+  .ccm-preview textarea {
+    font: inherit;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--fg);
+  }
+  .ccm-hue {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+  }
+  .ccm-swatch {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .ccm-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .ccm-preview h4 {
+    margin: 0;
+    color: var(--fg);
+  }
+  .ccm-status {
+    min-height: 1.2em;
+  }
+</style>

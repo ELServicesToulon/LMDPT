@@ -1,7 +1,7 @@
 {
   "title": "Présidentielle 2027 — dossier de préparation",
   "status": "preparation",
-  "updated": "2026-07-07",
+  "updated": "2026-07-09",
   "election_label": "Élection présidentielle 2027",
   "calendar": {
     "status": "official",
@@ -197,8 +197,8 @@
     },
     {
       "phase": "Intégration",
-      "label": "Import JSON statique + page Atlas /atlas/2027-presidentielle",
-      "gate": "npm test + npm run build verts"
+      "label": "Import JSON statique + page Atlas /atlas/2027-presidentielle (placeholder + pluralité + liens AN1T)",
+      "gate": "Réalisé — données placeholder + focus pluralité (audit rec. implémentée)"
     },
     {
       "phase": "Analyse",

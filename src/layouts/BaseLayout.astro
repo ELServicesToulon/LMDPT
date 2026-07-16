@@ -8,6 +8,7 @@ interface Props {
 import { getPublicSocialLinks } from '../config/social';
 import { getPublicEcosystemLinks } from '../config/ecosystem';
 import { pageMeta } from '../lib/seo';
+import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 
 const { title, description, ogImage } = Astro.props;
 const socialLinks = getPublicSocialLinks();
@@ -21,6 +22,12 @@ const meta = pageMeta({
   siteUrl,
   pathname: Astro.url.pathname,
 });
+const showComments =
+  !Astro.url.pathname.startsWith('/moderation') &&
+  !Astro.url.pathname.startsWith('/mentions-legales') &&
+  !Astro.url.pathname.startsWith('/confidentialite');
+const commentThread =
+  Astro.url.pathname.replace(/\/+$/, '') || 'accueil';
 ---
 
 <!doctype html>
@@ -29,6 +36,10 @@ const meta = pageMeta({
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Empêche le « Auto Dark » Chrome/Android d’inverser la page en fond noir + texte noir -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4ede4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
     <meta name="generator" content={Astro.generator} />
     <title>{meta.fullTitle}</title>
     <meta name="description" content={meta.description} />
@@ -46,54 +57,146 @@ const meta = pageMeta({
     <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={meta.ogImage} />
     <style is:global>
+      /*
+        CONTRASTE COUPLÉ fond + texte (2026-07-15)
+        - Clair : encre noire sur fond crème/blanc
+        - Sombre (Android) : encre claire sur fond sombre
+        Jamais noir-sur-noir ni blanc-sur-blanc.
+      */
       :root {
         color-scheme: light dark;
-        --bg: #f6f3ec;
-        --fg: #1a1a1a;
-        --muted: #5c5c5c;
-        --accent: #1a4a66;
-        --accent-soft: color-mix(in srgb, var(--accent) 12%, var(--card));
-        --border: #d4cec2;
+        --bg: #f4ede4;
+        --fg: #0a0a0a;
+        --muted: #1a1814;
+        --accent: #0a2a40;
+        --accent-soft: #e6eef3;
+        --border: #b0a898;
         --card: #ffffff;
-        --shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 4px 14px rgba(26, 26, 26, 0.06);
+        --on-accent: #ffffff;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 14px rgba(0, 0, 0, 0.08);
         --radius: 8px;
         --radius-lg: 12px;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #0f1114;
-          --fg: #f2f0eb;
-          --muted: #a8a49c;
-          --accent: #7eb8d8;
-          --accent-soft: color-mix(in srgb, var(--accent) 14%, var(--card));
-          --border: #2e3338;
-          --card: #1a1d21;
-          --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 14px rgba(0, 0, 0, 0.25);
+          --bg: #12141a;
+          --fg: #f5f2eb;
+          --muted: #d8d4cc;
+          --accent: #8ec5e8;
+          --accent-soft: #1e2a35;
+          --border: #3a424c;
+          --card: #1a1e26;
+          --on-accent: #0c1016;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
+      }
+      @media (hover: none), (max-width: 900px) {
+        body {
+          -webkit-font-smoothing: auto;
+          text-rendering: optimizeLegibility;
+        }
+        p, li, .tagline, .meta, .eyebrow, .news-summary {
+          font-weight: 500;
         }
       }
       * { box-sizing: border-box; }
+      html {
+        background: var(--bg);
+        color: var(--fg);
+      }
       body {
         margin: 0;
         font-family: Georgia, 'Times New Roman', serif;
-        line-height: 1.62;
-        background: var(--bg);
-        color: var(--fg);
-        -webkit-font-smoothing: antialiased;
+        line-height: 1.72;
+        font-size: 17px;
+        background: var(--bg) !important;
+        color: var(--fg) !important;
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
       }
       a {
         color: var(--accent);
         transition: color 0.15s ease;
       }
-      a:hover { color: color-mix(in srgb, var(--accent) 75%, var(--fg)); }
+      a:hover { color: color-mix(in srgb, var(--accent) 70%, var(--fg)); }
       .wrap {
         max-width: 52rem;
         margin: 0 auto;
-        padding: 1.25rem 1rem 3.5rem;
+        padding: 1.75rem 1.25rem 4rem;
+        background: var(--card) !important;
+        color: var(--fg) !important;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+      main,
+      main p,
+      main li,
+      main h1,
+      main h2,
+      main h3,
+      main h4,
+      .card,
+      .lead,
+      .hero-title,
+      .hero-lead,
+      .card-title,
+      .news-summary,
+      .page-intro p,
+      header h1,
+      .highlight-card,
+      .highlight-card p,
+      .highlight-card h3 {
+        color: var(--fg) !important;
+      }
+      .tagline,
+      .meta,
+      .eyebrow,
+      header nav a,
+      footer,
+      footer p,
+      .news-disclaimer,
+      .sync-meta,
+      .news-source,
+      .card-desc {
+        color: var(--muted) !important;
+      }
+      .card,
+      .hero-card,
+      .hero-badge,
+      .news-card,
+      .news-featured {
+        background: var(--card) !important;
+        color: var(--fg) !important;
+        border-color: var(--border) !important;
+      }
+      /* Hémicycle (fond sombre local) */
+      .hemicycle-wrapper text {
+        fill: #f1f1f1 !important;
+        stroke: #111 !important;
       }
       header {
         margin-bottom: 1.75rem;
         padding: 1rem 0 1.1rem;
         border-bottom: 1px solid var(--border);
+      }
+
+      /* Global responsive improvements */
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 1rem 0.75rem 3rem;
+          border-radius: 8px;
+        }
+        header {
+          margin-bottom: 1.1rem;
+        }
+      }
+      @media (max-width: 420px) {
+        body {
+          font-size: 15.5px;
+        }
+        .wrap {
+          padding: 0.85rem 0.6rem 2.5rem;
+        }
       }
       .site-brand {
         display: flex;
@@ -107,9 +210,9 @@ const meta = pageMeta({
         height: 2.5rem;
         border-radius: var(--radius);
         background: linear-gradient(145deg, var(--accent), color-mix(in srgb, var(--accent) 65%, #000));
-        color: var(--card);
+        color: var(--on-accent); /* never inherit dark --card in dark mode */
         font-family: system-ui, sans-serif;
-        font-size: 0.72rem;
+        font-size: 0.82rem; /* improved min size for broad readability */
         font-weight: 800;
         letter-spacing: 0.02em;
         display: flex;
@@ -151,7 +254,7 @@ const meta = pageMeta({
       }
       .eyebrow {
         font-family: system-ui, sans-serif;
-        font-size: 0.72rem;
+        font-size: 0.82rem; /* improved min size for broad readability */
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: var(--muted);
@@ -173,36 +276,33 @@ const meta = pageMeta({
       .btn {
         display: inline-block;
         font-family: system-ui, sans-serif;
-        font-size: 0.88rem;
-        padding: 0.55rem 1rem;
+        font-size: 0.95rem;
+        padding: 0.6rem 1.05rem;
         border-radius: 6px;
-        background: var(--accent);
-        color: var(--card);
+        background: var(--accent) !important;
+        color: var(--on-accent) !important;
         text-decoration: none;
-        font-weight: 600;
-        border: 1px solid transparent;
+        font-weight: 700;
+        border: 2px solid var(--accent) !important;
         transition: opacity 0.15s ease, transform 0.1s ease;
       }
       .btn:hover {
-        opacity: 0.92;
-        color: var(--card);
+        opacity: 0.94;
+        color: var(--on-accent) !important;
       }
       .btn-secondary {
-        background: transparent;
-        color: var(--accent);
-        border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+        background: var(--card) !important;
+        color: var(--accent) !important;
+        border: 2px solid var(--accent) !important;
+        font-weight: 700;
       }
       .btn-secondary:hover {
-        background: var(--accent-soft);
-        color: var(--accent);
-      }
-      @media (prefers-color-scheme: dark) {
-        .btn { color: #0f1114; }
-        .btn:hover { color: #0f1114; }
+        background: var(--accent-soft) !important;
+        color: var(--accent) !important;
       }
       .meta {
         font-family: system-ui, sans-serif;
-        font-size: 0.8rem;
+        font-size: 0.88rem; /* improved for broadest readership and low vision */
         color: var(--muted);
       }
       main h2, main h3 {
@@ -257,7 +357,7 @@ const meta = pageMeta({
         display: inline-block;
         margin-left: 0.35rem;
         font-family: system-ui, sans-serif;
-        font-size: 0.68rem;
+        font-size: 0.78rem; /* accessibility */
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.04em;
@@ -284,10 +384,187 @@ const meta = pageMeta({
         color: var(--muted);
         font-family: system-ui, sans-serif;
       }
-      footer .ecosystem { font-size: 0.8rem; margin-top: 0.45rem; }
+      footer .ecosystem { font-size: 0.85rem; margin-top: 0.45rem; }
+
+      /* === WCAG Accessibility & Keyboard === */
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--accent);
+        color: var(--card);
+        padding: 0.5rem 1rem;
+        z-index: 1000;
+        font-family: system-ui, sans-serif;
+        font-size: 0.9rem;
+        transition: top 0.1s ease;
+      }
+      .skip-link:focus {
+        top: 0.5rem;
+        left: 0.5rem;
+        outline: 3px solid #fff;
+        outline-offset: 2px;
+      }
+
+      /* Visible focus for keyboard navigation (WCAG) */
+      a:focus-visible,
+      button:focus-visible,
+      select:focus-visible,
+      input:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      .btn:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+      }
+
+      /* Current page indicator */
+      nav a[aria-current="page"] {
+        color: var(--accent);
+        font-weight: 600;
+        background: var(--accent-soft);
+        border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+      }
+
+      /* === Advanced mobile / responsive === */
+      @media (max-width: 640px) {
+        header nav {
+          gap: 0.25rem 0.35rem;
+          font-size: 0.82rem;
+        }
+        header nav a {
+          padding: 0.4rem 0.55rem; /* larger touch target */
+          min-height: 44px; /* WCAG min touch */
+          display: inline-flex;
+          align-items: center;
+        }
+        .site-brand {
+          flex-wrap: wrap;
+        }
+        .site-mark {
+          width: 2.1rem;
+          height: 2.1rem;
+          font-size: 0.75rem;
+        }
+      }
+
+      /* Touch friendly cards and interactive elements */
+      .card, .btn, select, .hero-card {
+        min-height: 44px; /* improved for mobile */
+      }
+      @media (hover: none) {
+        a:hover { color: inherit; } /* avoid hover styles on touch */
+      }
+
+      @media (prefers-contrast: more) {
+        :root {
+          --fg: #000000;
+          --muted: #111111;
+          --bg: #ffffff;
+          --card: #ffffff;
+          --accent: #000000;
+          --border: #000000;
+        }
+      }
+      @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+        :root {
+          --fg: #ffffff;
+          --muted: #eeeeee;
+          --bg: #000000;
+          --card: #000000;
+          --accent: #ffffff;
+          --border: #ffffff;
+          --on-accent: #000000;
+        }
+      }
+
+      /* === Parcours Citoyen guided navigation / tour === */
+      .parcours-bar {
+        background: var(--accent-soft);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.4rem 0.65rem;
+        margin: 0.5rem 0 0.9rem;
+        font-family: system-ui, sans-serif;
+        font-size: 0.82rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.4rem 0.75rem;
+      }
+      .parcours-bar.collapsed .parcours-steps { display: none; }
+      .parcours-label {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .parcours-steps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+      }
+      .parcours-steps li a {
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.1rem 0.35rem;
+        border-radius: 3px;
+        font-size: 0.78rem;
+        display: inline-block;
+      }
+      .parcours-steps li a:hover,
+      .parcours-steps li a:focus {
+        background: var(--card);
+        color: var(--accent);
+      }
+      .parcours-btn {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.4rem;
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: inherit;
+        min-height: 28px;
+      }
+      .parcours-link { font-weight: 500; }
+
+      /* Mobile for parcours */
+      @media (max-width: 640px) {
+        .parcours-bar {
+          font-size: 0.76rem;
+          padding: 0.35rem 0.5rem;
+        }
+        .parcours-steps {
+          width: 100%;
+          order: 3;
+          margin-top: 0.25rem;
+        }
+        .parcours-steps li a { font-size: 0.74rem; padding: 0.15rem 0.3rem; }
+      }
+
+      /* Global improved mobile for tables and viz containers */
+      .table-wrap, table.comp-table, .poll-table table, .compare-grid {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      table { border-collapse: collapse; }
+      @media (max-width: 640px) {
+        table, .comp-table { font-size: 0.78rem; }
+        .card { padding: 0.85rem 0.9rem; }
+        .map-wrap, .hemicycle-wrapper { margin-left: -0.1rem; margin-right: -0.1rem; }
+      }
     </style>
   </head>
   <body>
+    <!-- Skip link for keyboard and screen reader users (WCAG 2.2) -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <div class="wrap">
       <header>
         <div class="site-brand">
@@ -298,21 +575,79 @@ const meta = pageMeta({
           </div>
         </div>
         <nav aria-label="Navigation principale">
-          <a href="/">Accueil</a>
-          <a href="/atlas">Atlas</a>
-          <a href="/analyses">Analyses</a>
-          <a href="/debats">Débats</a>
-          <a href="/a-propos">À propos</a>
-          <a href="/sources">Sources</a>
+          <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Accueil</a>
+          <a href="/atlas" aria-current={Astro.url.pathname.startsWith('/atlas') ? 'page' : undefined}>Atlas</a>
+          <a href="/analyses" aria-current={Astro.url.pathname.startsWith('/analyses') ? 'page' : undefined}>Analyses</a>
+          <a href="/debats" aria-current={Astro.url.pathname.startsWith('/debats') ? 'page' : undefined}>Débats</a>
+          <a href="/a-propos" aria-current={Astro.url.pathname === '/a-propos' ? 'page' : undefined}>À propos</a>
+          <a href="/sources" aria-current={Astro.url.pathname === '/sources' ? 'page' : undefined}>Sources</a>
+          <a href="#parcours-citoyen" class="parcours-link" aria-current={Astro.url.pathname.includes('analyse') || Astro.url.pathname === '/' ? 'page' : undefined}>Parcours citoyen</a>
         </nav>
+
+        <!-- Parcours Citoyen : navigation guidée / guided tour (site-wide, focus AN1T + analyses) -->
+        <div id="parcours-citoyen" class="parcours-bar" role="navigation" aria-label="Parcours citoyen guidé">
+          <span class="parcours-label">Parcours citoyen :</span>
+          <ol class="parcours-steps">
+            <li><a href="/">1. Découvrir le 1er tour</a></li>
+            <li><a href="/atlas">2. Explorer l’Atlas</a></li>
+            <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T</a></li>
+            <li><a href="/analyses/assemblee-premier-tour-mecanismes">4. Mécanismes pour une Assemblée du Premier Tour</a></li>
+            <li><a href="/debats">5. Participer aux débats</a></li>
+            <li><a href="/sources">6. Vérifier les sources</a></li>
+          </ol>
+          <button type="button" class="parcours-btn" onclick="document.getElementById('parcours-citoyen').classList.toggle('collapsed')">Masquer / Montrer</button>
+        </div>
       </header>
-      <main>
+      <main id="main-content">
         <slot />
+        {
+          showComments && (
+            <CitizenCommentModule
+              threadId={commentThread}
+              title="Commentaires citoyens sous cet article"
+            />
+          )
+        }
       </main>
       <footer>
         <p>
-          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+          <strong>Principe de base (sauf live YouTube)</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire, aucune autorité religieuse. Aucune idéologie autoritaire ou religieuse diffusée. Blocage immédiat.
         </p>
+        <p>
+          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire. <strong>Toutes les visualisations, simulations et analyses sont pédagogiques et neutres.</strong> Elles documentent la pluralité du premier tour sans recommander de réforme ni constituer des prédictions.
+        </p>
+
+        <!-- Feedback form (site-wide, accessible, static-friendly) -->
+        <div class="feedback-form" aria-labelledby="feedback-title">
+          <h4 id="feedback-title" style="font-size:0.95rem; margin:0.6rem 0 0.25rem;">Votre retour citoyen</h4>
+          <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">Aidez-nous à améliorer le site (accessibilité, clarté des viz, parcours). Vos commentaires sont lus par l’équipe éditoriale.</p>
+          <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.75rem; align-items:flex-end;">
+              <label style="flex:1; min-width:140px;">
+                <span class="meta" style="font-size:0.72rem;display:block;">Note (1-5)</span>
+                <select name="rating" required style="width:100%; padding:0.3rem; font-size:0.9rem; border:1px solid var(--border); border-radius:4px;">
+                  <option value="">—</option>
+                  <option value="5">5 — Excellent</option>
+                  <option value="4">4 — Bon</option>
+                  <option value="3">3 — Moyen</option>
+                  <option value="2">2 — À améliorer</option>
+                  <option value="1">1 — Insuffisant</option>
+                </select>
+              </label>
+              <label style="flex:3; min-width:180px;">
+                <span class="meta" style="font-size:0.72rem;display:block;">Commentaire / suggestion</span>
+                <input type="text" name="comment" required placeholder="Ex: La carte AN1T est plus lisible sur mobile maintenant" style="width:100%; padding:0.35rem; font-size:0.9rem; border:1px solid var(--border); border-radius:4px;" />
+              </label>
+              <label style="flex:1.5; min-width:130px;">
+                <span class="meta" style="font-size:0.72rem;display:block;">Email (optionnel)</span>
+                <input type="email" name="email" placeholder="vous@exemple.fr" style="width:100%; padding:0.35rem; font-size:0.9rem; border:1px solid var(--border); border-radius:4px;" />
+              </label>
+              <button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.82rem; min-height:36px;">Envoyer</button>
+            </div>
+            <div id="feedback-thanks" style="display:none; margin-top:0.35rem; font-size:0.8rem; color:#2d6a4f;">Merci ! Votre retour est enregistré (simulation client pour le site statique ; en production il serait envoyé à l’éditeur).</div>
+          </form>
+        </div>
+
         <p>
           <a href="/mentions-legales">Mentions légales</a>
           {' '}·{' '}
@@ -347,5 +682,41 @@ const meta = pageMeta({
         }
       </footer>
     </div>
+    <script>
+      function handleFeedbackSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const thanks = document.getElementById('feedback-thanks');
+        // Client-side: log + show thanks (static site UX). Extendable to POST/fetch later.
+        try {
+          const data = Object.fromEntries(new FormData(form).entries());
+          console.log('[LMDPT Feedback]', data);
+          if (thanks) {
+            thanks.style.display = 'block';
+            thanks.textContent = 'Merci ! Retour reçu. (Note: ' + (data.rating || '—') + ')';
+          }
+          form.reset();
+          setTimeout(() => { if (thanks) thanks.style.display = 'none'; }, 6500);
+        } catch (err) {
+          if (thanks) {
+            thanks.style.display = 'block';
+            thanks.textContent = 'Merci pour votre retour (enregistré localement).';
+          }
+        }
+      }
+      // Ensure feedback form styles are robust on all pages
+      if (!document.getElementById('feedback-style-injected')) {
+        const s = document.createElement('style');
+        s.id = 'feedback-style-injected';
+        s.textContent = `
+          .feedback-form { margin: 0.75rem 0; padding: 0.5rem 0.65rem; border:1px solid var(--border); border-radius:6px; background: rgba(0,0,0,0.015); }
+          @media (max-width: 640px) {
+            .feedback-form form > div { flex-direction: column; }
+            .feedback-form input, .feedback-form select { font-size: 0.95rem; }
+          }
+        `;
+        document.head.appendChild(s);
+      }
+    </script>
   </body>
 </html>

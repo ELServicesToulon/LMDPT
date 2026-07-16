@@ -50,6 +50,20 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 - Mentions légales et politique de confidentialité avant mise en ligne publique.
 - Pas de données personnelles traitées sans base légale documentée.
 
+## Principe de base — Laïcité, Idées et Idéologies (intégralité du site)
+
+**Règle non négociable** (sauf live YouTube) :
+
+- On expose **des idées**, pas des idéologies.
+- **Aucun signe religieux ostentatoire** dans les photos, illustrations, textes ou éléments visuels.
+- **Aucune autorité religieuse** ne doit être mise en avant ou légitimée.
+- **Aucune idéologie autoritaire ou religieuse** ne doit être diffusée.
+- **Blocage immédiat** de tout contenu contrevenant.
+
+Ce principe s'applique à **l'intégralité du site** : accueil, analyses, atlas, débats, visuels, mèmes, vidéos, etc.
+
+Le média est strictement laïque et civique. Il documente des faits et des positions, il ne propage aucune doctrine religieuse ou autoritaire.
+
 ## Validation
 
 - [x] Ligne DOE posée (2026-06-27)

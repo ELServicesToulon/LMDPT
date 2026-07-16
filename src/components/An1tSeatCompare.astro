@@ -88,7 +88,7 @@ const maxSeats = Math.max(...rows.flatMap((r) => [r.an1tSeats, r.reelleSeats]), 
   }
   .compare-header {
     font-size: 0.75rem;
-    color: var(--muted, #666);
+    color: var(--muted, #3a3732);
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.35rem;
   }
@@ -142,7 +142,13 @@ const maxSeats = Math.max(...rows.flatMap((r) => [r.an1tSeats, r.reelleSeats]), 
     .bar-cell::before {
       content: attr(data-label);
       font-size: 0.7rem;
-      color: var(--muted, #666);
+      color: var(--muted, #3a3732);
     }
+    .compare-grid { font-size: 0.8rem; }
+    .bar { height: 0.7rem; }
+  }
+  @media (max-width: 420px) {
+    .compare-grid { font-size: 0.74rem; }
+    .bar-cell { gap: 0.2rem; }
   }
 </style>

@@ -1,9 +1,11 @@
 import type { ElectionDataset } from './election-types';
 import presidentielle2017 from '../data/elections/2017-presidentielle-1er-tour-national.json';
 import presidentielle2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
+import presidentielle2027 from '../data/elections/2027-presidentielle-1er-tour-national.json';
 import legislatives2024 from '../data/elections/2024-legislatives-1er-tour-national.json';
 
 const REGISTRY: Record<string, ElectionDataset> = {
+  '2027-presidentielle': presidentielle2027 as ElectionDataset,
   '2017-presidentielle': presidentielle2017 as ElectionDataset,
   '2022-presidentielle': presidentielle2022 as ElectionDataset,
   '2024-legislatives': legislatives2024 as ElectionDataset,
@@ -19,6 +21,14 @@ export interface ElectionSummary {
 }
 
 export const ELECTION_CATALOG: ElectionSummary[] = [
+  {
+    slug: '2027-presidentielle',
+    title: 'Présidentielle 2027 — 1er tour (projection)',
+    date: '2027-04-18',
+    tour: 1,
+    distorsion_note:
+      'Projection pédagogique (agrégat sondages 2026) : Bardella ~33,5 % en tête. La pluralité complète (13 candidats illustratifs) serait masquée par un duel au second tour. Voir scénarios AN1T pour impacts législatifs.',
+  },
   {
     slug: '2024-legislatives',
     title: 'Législatives 2024 — 1er tour',

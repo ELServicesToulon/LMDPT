@@ -26,7 +26,7 @@ describe('programs', () => {
   });
 
   it('loads 2027 partial programmes', () => {
-    expect(listCandidates('presidentielle-2027')).toHaveLength(10);
+    expect(listCandidates('presidentielle-2027')).toHaveLength(11);
     const ps = getCandidateProgram('presidentielle-2027', 'parti-socialiste');
     expect(ps?.measures.length).toBeGreaterThanOrEqual(7);
     expect(ps?.chiffrages.some((c) => c.auteur === 'lmdpt')).toBe(true);

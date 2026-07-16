@@ -16,6 +16,7 @@ import {
   formatMdeur,
 } from '../../lib/program-compare';
 import type { ProgramThemeId } from '../../lib/program-types';
+import { simulateFromVoteShares } from '../../lib/an1t';
 
 const scrutinId =
   Astro.url.searchParams.get('scrutin') ?? 'presidentielle-2022';
@@ -102,6 +103,8 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
           <option value="climat" selected={themeFilter === 'climat'}>Climat</option>
           <option value="pouvoir_achat" selected={themeFilter === 'pouvoir_achat'}>Pouvoir d'achat</option>
           <option value="immigration" selected={themeFilter === 'immigration'}>Immigration</option>
+        <option value="institutions" selected={themeFilter === 'institutions'}>Institutions</option>
+        <option value="securite" selected={themeFilter === 'securite'}>Sécurité</option>
         </select>
       </label>
       <button type="submit">Appliquer</button>
@@ -162,6 +165,55 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
       <ProgramEvolutionTimeline entries={evolutionDisplay} statusLabels={STATUS_LABELS} />
     </section>
   )}
+
+  <!-- === NOUVELLE SECTION : LIEN PROGRAMMES → AN1T / SIÈGES / HÉMICYCLE HYBRIDE (depuis audit) === -->
+  <section class="card">
+    <h3>Impact des programmes 2027 sur les scénarios AN1T (sièges &amp; hémicycle hybride)</h3>
+    <p class="meta" style="font-size:0.85rem;">(Contenu 2027 — <a href="?scrutin=presidentielle-2027">basculer le comparateur vers présidentielle-2027</a> pour filtrer les candidats 2027 et voir leurs mesures)</p>
+    <p class="meta">
+      Lien pédagogique entre données programmes existantes et projections de l'Assemblée du Premier Tour. Les mesures « institutions » (et signaux afférents) des candidats 2027 peuvent influencer la pluralité exprimée au 1er tour des législatives (effet d'entraînement post-présidentielle). Cela se traduit dans les allocations de sièges (Sainte-Laguë) et la superposition visuelle sur le modèle officiel de l'hémicycle.
+    </p>
+    <p class="meta" style="font-size:0.85rem;">Les % et sièges ci-dessous sont <em>illustratifs</em> (pas de modèle prédictif). Calculs via simulateFromVoteShares. Voir <a href="/analyses/assemblee-premier-tour#programmes-an1t">détails + hémicycles hybrides sur la page AN1T</a>.</p>
+
+    <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:0.5rem;">
+      {(() => {
+        // Exemples statiques pour les principaux candidats 2027 (utilisent données programmes existantes via import implicite dans contexte)
+        const examples = [
+          { slug: 'bardella', name: 'Jordan Bardella', aff: 'Rassemblement national', inst: 'Continuité RN 2022 + substitution si inéligibilité', bloc: 'rn', pct: 36 },
+          { slug: 'attal', name: 'Gabriel Attal', aff: 'Renaissance', inst: '100k départs volontaires fonctionnaires + impunité budgétaire zéro', bloc: 'ensemble', pct: 19 },
+          { slug: 'melenchon', name: 'Jean-Luc Mélenchon', aff: 'La France insoumise', inst: 'Écorégions (remplacement régions) + eau dans le débat', bloc: 'nfp', pct: 30 },
+          { slug: 'retailleau', name: 'Bruno Retailleau', aff: 'Les Républicains', inst: 'Primaire droite + opposition calendrier 1er mai', bloc: 'lr', pct: 10 },
+        ];
+        return examples.map((ex) => {
+          const base = [
+            { id: 'rn', label: 'RN & alliés', color: '#5c4a72', pct: 28 },
+            { id: 'nfp', label: 'NFP', color: '#c0392b', pct: 25 },
+            { id: 'ensemble', label: 'Ensemble', color: '#1e4d6b', pct: 15 },
+            { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
+            { id: 'autres', label: 'Autres', color: '#718096', pct: 23 },
+          ];
+          const shares = base.map(s => ({...s, pct: s.id === ex.bloc ? ex.pct : s.pct })).map(s => ({...s, pct: Math.max(4, Math.min(42, s.pct))}));
+          const seatsAlloc = simulateFromVoteShares(shares, 577, 3);
+          const bSeats = seatsAlloc.find((s:any)=>s.id===ex.bloc)?.seats ?? Math.round(ex.pct*5.7);
+          return (
+            <div style="border:1px solid #333; padding:0.5rem 0.65rem; border-radius:3px; font-size:0.9rem;">
+              <strong>{ex.name}</strong> ({ex.aff})
+              <p style="margin:0.2rem 0; font-size:0.82rem;"><em>Mesure institutions :</em> {ex.inst}</p>
+              <p style="margin:0.1rem 0; font-size:0.82rem;">
+                <strong>Impact hypothétique AN1T :</strong> renforcement bloc {ex.bloc} (~{ex.pct}% voix T1) → ~{bSeats} sièges projetés. 
+                Hémicycle hybride : densification projection dans quartier correspondant du modèle officiel.
+                <a href="/analyses/assemblee-premier-tour#programmes-an1t">Voir hémicycles</a>.
+              </p>
+            </div>
+          );
+        });
+      })()}
+    </div>
+
+    <p class="meta" style="font-size:0.78rem; margin-top:0.5rem;">
+      Sources : fiches programmes présidentielle-2027/* (mesures institutions via _index + json). Alignement avec AN1T via blocs civiques (AN1T_BLOCS) et simulateFromVoteShares (lib/an1t.ts). Données partielles — programmes n'abordent pas directement le scrutin. Filtrez par thème « institutions » dans le comparateur.
+    </p>
+  </section>
 </BaseLayout>
 
 <style>

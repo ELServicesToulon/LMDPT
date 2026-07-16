@@ -1,0 +1,671 @@
+---
+/**
+ * Simulateur pluralité 1er tour — Outil citoyen simple et pédagogique.
+ * - Sélection de scores % ou profils types (candidats/blocs 1er tour)
+ * - Calcul sièges proportionnels via Sainte-Laguë simplifiée (aligné sur src/lib/an1t.ts)
+ * - Affichage comparatif avec système actuel (résultats réels 2024 après 2 tours)
+ * - Intégration visuelle : mini hémicycle proportionnel (SVG)
+ * - Neutre, accessible (WCAG), mobile-first. Disclaimer pédagogique fort.
+ *
+ * Intégré sur /analyses/assemblee-premier-tour (AN1T).
+ * Ne constitue PAS une prédiction. Illustration uniquement.
+ */
+interface Props {
+  totalSeats?: number;
+  defaultThreshold?: number; // 0 pour pédagogie pure pluralité (pas de seuil)
+}
+
+const { totalSeats = 577, defaultThreshold = 0 } = Astro.props;
+
+const BLOCS = [
+  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', defaultPct: 32 },
+  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', defaultPct: 24 },
+  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', defaultPct: 14 },
+  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', defaultPct: 10 },
+  { id: 'autres', label: 'Autres & divers', color: '#dddddd', defaultPct: 20 },
+];
+
+// Réels 2024 (après 2nd tour, regroupés blocs comparables) — source analyse LMDPT / données officielles
+const REAL_2024 = { rn: 125, nfp: 182, ensemble: 99, lr: 47, autres: 124 };
+
+// Agrégat approximatif voix T1 2024 (blocs LMDPT, pour preset "Réel 1er tour 2024")
+const T1_2024_PCTS = { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 };
+---
+
+<section class="simulator card" aria-labelledby="sim-title">
+  <h3 id="sim-title">Simulateur pluralité du 1er tour</h3>
+
+  <p class="meta">
+    Ajustez les parts de voix au <strong>premier tour</strong> (somme ~100&nbsp;%). 
+    Le calculateur applique une <strong>répartition proportionnelle nationale simplifiée (méthode Sainte-Laguë du projet)</strong>.
+  </p>
+
+  <!-- Sélection scores ou profils types -->
+  <div class="sim-controls">
+    <fieldset class="sim-fieldset">
+      <legend class="sim-legend">1. Scores au 1er tour (en %)</legend>
+
+      <div class="sim-sliders" id="sim-sliders">
+        {BLOCS.map((b) => (
+          <div class="sim-row" data-id={b.id}>
+            <label for={`pct-${b.id}`}>
+              <span class="swatch" style={`background:${b.color}`}></span>
+              {b.label}
+              <span class="val" id={`val-${b.id}`}>{b.defaultPct}</span>%
+            </label>
+            <div class="input-row">
+              <input
+                type="range"
+                id={`pct-${b.id}`}
+                min="0"
+                max="60"
+                step="0.5"
+                value={b.defaultPct}
+                aria-describedby={`val-${b.id}`}
+              />
+              <input
+                type="number"
+                id={`num-${b.id}`}
+                min="0"
+                max="100"
+                step="0.5"
+                value={b.defaultPct}
+                class="num-input"
+                aria-label={`${b.label} pourcentage`}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="sim-total" aria-live="polite">
+        <span id="sim-total-text">Total : 100 %</span>
+        <span id="sim-total-warning" class="warning-text" hidden>⚠ Ajustez pour approcher 100&nbsp;%</span>
+      </div>
+    </fieldset>
+
+    <!-- Sélection candidat type / profils -->
+    <div class="sim-presets">
+      <div class="sim-legend">Ou choisissez un profil type</div>
+      <div class="preset-buttons" role="group" aria-label="Profils types de pluralité 1er tour">
+        <button type="button" class="btn btn-secondary" data-preset="t1-2024">Réel 1er tour 2024 (agrégé)</button>
+        <button type="button" class="btn btn-secondary" data-preset="equilibre">Pluralité équilibrée</button>
+        <button type="button" class="btn btn-secondary" data-preset="rn-fort">RN &amp; alliés fort</button>
+        <button type="button" class="btn btn-secondary" data-preset="gauche-fort">Gauche unie forte</button>
+        <button type="button" class="btn btn-secondary" data-preset="centre">Centre élargi</button>
+        <button type="button" class="btn btn-secondary" data-preset="reset">Réinitialiser</button>
+      </div>
+      <p class="meta small">Ces profils sont des exemples pédagogiques basés sur des agrégats historiques ou hypothèses neutres.</p>
+    </div>
+  </div>
+
+  <div class="sim-actions">
+    <button type="button" id="btn-calc" class="btn btn-primary">Calculer les sièges proportionnels</button>
+    <button type="button" id="btn-compare" class="btn btn-secondary">Afficher comparaison + hémicycle</button>
+  </div>
+
+  <!-- Résultats -->
+  <div id="sim-results" class="sim-results" aria-live="polite" hidden>
+    <h4>Répartition proportionnelle (Sainte-Laguë, {totalSeats} sièges)</h4>
+
+    <div id="sim-seats-table" class="seats-table"></div>
+
+    <!-- Comparatif système actuel -->
+    <div id="sim-compare" class="compare-section" hidden>
+      <h4>Comparaison avec le système actuel (résultats réels 2024)</h4>
+      <p class="meta small">
+        Le système français est <strong>uninominal majoritaire à deux tours</strong> (pas proportionnel). 
+        Voici l’écart entre une répartition pure des voix T1 et les sièges réellement attribués après le 2nd tour.
+      </p>
+      <div id="sim-compare-table" class="compare-table"></div>
+    </div>
+
+    <!-- Intégration visuelle hémicycle hybride simplifié -->
+    <div id="sim-hemicycle" class="mini-hemicycle" hidden>
+      <h4>Visualisation : hémicycle proportionnel (basé sur vos scores)</h4>
+      <div class="hemicycle-mini">
+        <svg id="mini-svg" viewBox="0 0 360 120" width="100%" height="auto" role="img" aria-label="Mini hémicycle proportionnel — sièges distribués selon les parts de voix saisies">
+          <desc>Chaque cercle représente des sièges (échelle réduite pour lisibilité). Couleurs par bloc.</desc>
+          <!-- seats populated by JS -->
+        </svg>
+      </div>
+      <p class="meta small">Hémicycle simplifié (pas hybride complet — structure proportionnelle pure). Pour l’hémicycle hybride détaillé (groupes actuels + projection), voir plus bas sur la page.</p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>⚠ Outil pédagogique uniquement.</strong><br>
+      Ce simulateur illustre l’impact d’une répartition proportionnelle des voix du <em>premier tour</em> (Sainte-Laguë simplifiée, agrégation nationale, seuil 0&nbsp;% pour démonstration). 
+      Il ne prédit rien. Il ne remplace pas le scrutin réel uninominal à deux tours. Les scores saisis sont fictifs ou illustratifs. 
+      Données réelles 2024 : Ministère de l’Intérieur / data.gouv.fr. LMDPT documente la pluralité, sans recommandation.
+    </div>
+  </div>
+</section>
+
+<style>
+  .simulator {
+    border-left: 4px solid var(--accent);
+  }
+  .sim-fieldset {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 0.85rem;
+    margin: 0.5rem 0;
+  }
+  .sim-legend {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0 0.35rem;
+    color: var(--muted);
+  }
+  .sim-sliders {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+  .sim-row {
+    font-size: 0.82rem;
+  }
+  .sim-row label {
+    display: block;
+    margin-bottom: 0.15rem;
+    line-height: 1.25;
+  }
+  .sim-row .swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .sim-row .val {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .input-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .sim-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--accent);
+    height: 26px;
+  }
+  .num-input {
+    width: 62px;
+    font-size: 0.82rem;
+    padding: 2px 4px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--card);
+    color: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+  .sim-total {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    font-family: system-ui, sans-serif;
+  }
+  .warning-text {
+    color: #b45309;
+    margin-left: 0.5rem;
+    font-size: 0.78rem;
+  }
+  .sim-presets {
+    margin-top: 0.6rem;
+  }
+  .preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .preset-buttons .btn {
+    font-size: 0.78rem;
+    padding: 3px 8px;
+  }
+  .sim-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0.6rem 0 0.3rem;
+  }
+  .sim-results {
+    margin-top: 0.8rem;
+    padding: 0.7rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .sim-results h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+  }
+  .seats-table {
+    font-size: 0.85rem;
+    font-family: system-ui, sans-serif;
+  }
+  .seat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+    border-bottom: 1px dotted var(--border);
+  }
+  .seat-row:last-child { border-bottom: none; }
+  .seat-row .label { min-width: 170px; flex: 0 0 auto; }
+  .seat-bar {
+    height: 11px;
+    border-radius: 2px;
+    flex: 0 0 auto;
+    min-width: 3px;
+  }
+  .seat-num {
+    font-variant-numeric: tabular-nums;
+    min-width: 3.2rem;
+    text-align: right;
+  }
+
+  .compare-section {
+    margin-top: 0.9rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+  .compare-table {
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.15rem 0;
+  }
+  .compare-header {
+    font-size: 0.72rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.2rem;
+  }
+  .delta {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .delta.pos { color: #2d6a4f; }
+  .delta.neg { color: #9b2226; }
+
+  .mini-hemicycle {
+    margin: 0.5rem 0;
+    background: #111;
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid #333;
+  }
+  .mini-hemicycle svg { display: block; max-height: 110px; }
+
+  .disclaimer {
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    background: #fef3c7;
+    border: 1px solid #d97706;
+    padding: 0.5rem 0.6rem;
+    border-radius: 4px;
+    color: #451a03;
+  }
+  .disclaimer strong { color: #92400e; }
+
+  .small { font-size: 0.75rem; }
+
+  @media (max-width: 640px) {
+    .sim-sliders { grid-template-columns: 1fr; }
+    .compare-row { grid-template-columns: 1fr; gap: 0.15rem; }
+    .compare-header { display: none; }
+    .seat-row .label { min-width: 120px; font-size: 0.8rem; }
+  }
+</style>
+
+<script>
+  const TOTAL_SEATS = 577;
+  const BLOCS = [
+    { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a' },
+    { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443' },
+    { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00' },
+    { id: 'lr', label: 'Droite républicaine', color: '#0066cc' },
+    { id: 'autres', label: 'Autres & divers', color: '#dddddd' },
+  ];
+  const REAL_2024 = { rn: 125, nfp: 182, ensemble: 99, lr: 47, autres: 124 };
+  const T1_2024_PCTS = { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 };
+
+  const PRESETS = {
+    't1-2024': T1_2024_PCTS,
+    'equilibre': { rn: 22, nfp: 24, ensemble: 22, lr: 12, autres: 20 },
+    'rn-fort': { rn: 38, nfp: 20, ensemble: 14, lr: 9, autres: 19 },
+    'gauche-fort': { rn: 18, nfp: 35, ensemble: 16, lr: 8, autres: 23 },
+    'centre': { rn: 16, nfp: 18, ensemble: 32, lr: 12, autres: 22 },
+    'reset': { rn: 32, nfp: 24, ensemble: 14, lr: 10, autres: 20 }
+  };
+
+  function normalize(pcts) {
+    const sum = Object.values(pcts).reduce((a, b) => a + b, 0);
+    if (sum === 0) return pcts;
+    const factor = 100 / sum;
+    const out = {};
+    Object.keys(pcts).forEach(k => { out[k] = Math.round((pcts[k] * factor) * 10) / 10; });
+    return out;
+  }
+
+  /** Sainte-Laguë simplifiée — alignée sur allocateSainteLague (lib/an1t.ts) */
+  function sainteLagueSim(proportions, totalSeats = TOTAL_SEATS) {
+    // proportions: [{id, label, color, pct}]
+    let sumPct = proportions.reduce((s, p) => s + Math.max(0, p.pct || 0), 0);
+    if (sumPct < 0.001) sumPct = 1;
+    const scaled = proportions.map(p => ({
+      ...p,
+      votes: (Math.max(0, p.pct || 0) / sumPct) * 100000
+    }));
+
+    // Pas de seuil pour la démo pluralité pure (comme demandé)
+    const eligible = scaled.filter(s => s.votes > 0.001);
+    if (eligible.length === 0) {
+      return proportions.map(p => ({ ...p, seats: 0, pctSeats: '0.0' }));
+    }
+
+    let seatCounts = new Map(eligible.map(e => [e.id, 0]));
+    let allocated = 0;
+
+    while (allocated < totalSeats) {
+      let bestQ = -1;
+      let bestId = null;
+      for (const item of eligible) {
+        const s = seatCounts.get(item.id) || 0;
+        const q = item.votes / (2 * s + 1);
+        if (q > bestQ) {
+          bestQ = q;
+          bestId = item.id;
+        }
+      }
+      if (!bestId) break;
+      seatCounts.set(bestId, (seatCounts.get(bestId) || 0) + 1);
+      allocated++;
+      if (allocated > totalSeats * 1.5) break; // safety
+    }
+
+    return proportions.map(p => {
+      const seats = seatCounts.get(p.id) || 0;
+      const pctSeats = totalSeats > 0 ? ((seats / totalSeats) * 100).toFixed(1) : '0.0';
+      return { ...p, seats, pctSeats };
+    }).sort((a, b) => b.seats - a.seats || (b.pct - a.pct));
+  }
+
+  function updateTotals() {
+    const ids = BLOCS.map(b => b.id);
+    let total = 0;
+    ids.forEach(id => {
+      const range = document.getElementById('pct-' + id);
+      const valSpan = document.getElementById('val-' + id);
+      if (range && valSpan) {
+        const v = parseFloat(range.value) || 0;
+        valSpan.textContent = v.toFixed(1);
+        total += v;
+      }
+    });
+    const totEl = document.getElementById('sim-total-text');
+    const warn = document.getElementById('sim-total-warning');
+    if (totEl) totEl.textContent = `Total : ${total.toFixed(1)} %`;
+    if (warn) {
+      const diff = Math.abs(total - 100);
+      warn.hidden = diff < 1.5;
+    }
+    return total;
+  }
+
+  function getCurrentShares() {
+    return BLOCS.map(b => {
+      const el = document.getElementById('pct-' + b.id);
+      return {
+        id: b.id,
+        label: b.label,
+        color: b.color,
+        pct: parseFloat(el ? el.value : '0') || 0
+      };
+    });
+  }
+
+  function renderSeats(results) {
+    const container = document.getElementById('sim-seats-table');
+    if (!container) return;
+    container.innerHTML = '';
+    let totalS = 0;
+
+    results.forEach(r => {
+      totalS += r.seats;
+      const row = document.createElement('div');
+      row.className = 'seat-row';
+      const barW = Math.max(3, Math.round((r.seats / TOTAL_SEATS) * 210));
+      row.innerHTML = `
+        <span class="swatch" style="background:${r.color};width:10px;height:10px;border-radius:2px;flex-shrink:0;"></span>
+        <span class="label"><strong>${r.label}</strong></span>
+        <span class="seat-bar" style="width:${barW}px; background:${r.color};" aria-hidden="true"></span>
+        <span class="seat-num"><strong>${r.seats}</strong> sièges <span style="opacity:0.7;">(${r.pctSeats}%)</span></span>
+      `;
+      container.appendChild(row);
+    });
+
+    const tot = document.createElement('div');
+    tot.className = 'meta';
+    tot.style.marginTop = '0.25rem';
+    tot.style.fontSize = '0.8rem';
+    tot.textContent = `Total calculé : ${totalS} / ${TOTAL_SEATS} sièges`;
+    container.appendChild(tot);
+  }
+
+  function renderCompare(results) {
+    const box = document.getElementById('sim-compare');
+    const tbl = document.getElementById('sim-compare-table');
+    if (!box || !tbl) return;
+
+    tbl.innerHTML = '';
+    const header = document.createElement('div');
+    header.className = 'compare-row compare-header';
+    header.innerHTML = `<span>Bloc</span><span>Proportionnel (sim)</span><span>Système actuel (2024)</span><span>Δ</span>`;
+    tbl.appendChild(header);
+
+    let totalSim = 0;
+    results.forEach(r => {
+      totalSim += r.seats;
+      const real = REAL_2024[r.id] || 0;
+      const delta = r.seats - real;
+      const row = document.createElement('div');
+      row.className = 'compare-row';
+      const deltaClass = delta > 0 ? 'pos' : (delta < 0 ? 'neg' : '');
+      row.innerHTML = `
+        <span><span class="swatch" style="background:${r.color};width:8px;height:8px;border-radius:1px;display:inline-block;margin-right:4px;"></span>${r.label}</span>
+        <span><strong>${r.seats}</strong> <span class="meta">(${r.pctSeats}%)</span></span>
+        <span>${real} <span class="meta">sièges</span></span>
+        <span class="delta ${deltaClass}">${delta > 0 ? '+' : ''}${delta}</span>
+      `;
+      tbl.appendChild(row);
+    });
+
+    box.hidden = false;
+  }
+
+  /** Mini hémicycle proportionnel (SVG simple, intégration visuelle) */
+  function renderMiniHemicycle(results) {
+    const wrap = document.getElementById('sim-hemicycle');
+    const svg = document.getElementById('mini-svg');
+    if (!wrap || !svg) return;
+
+    svg.innerHTML = ''; // clear
+
+    // Background arc
+    const bg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    bg.setAttribute('d', 'M 30 95 Q 180 15 330 95');
+    bg.setAttribute('fill', 'none');
+    bg.setAttribute('stroke', '#333');
+    bg.setAttribute('stroke-width', '18');
+    bg.setAttribute('opacity', '0.6');
+    svg.appendChild(bg);
+
+    // Distribute seats visually (sample representative dots)
+    const totalDots = 64; // visual scale, not literal 577
+    let placed = 0;
+    const dots = [];
+
+    results.forEach(r => {
+      const n = Math.max(1, Math.round((r.seats / TOTAL_SEATS) * totalDots));
+      for (let i = 0; i < n && placed < totalDots; i++) {
+        dots.push({ color: r.color, label: r.label, seats: r.seats });
+        placed++;
+      }
+    });
+
+    // Place along arc (parametric)
+    dots.forEach((d, i) => {
+      const t = i / Math.max(1, dots.length - 1);
+      // arc approx
+      const x = 30 + t * 300;
+      const y = 95 - Math.sin(t * Math.PI) * 78;
+      const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      c.setAttribute('cx', x.toFixed(1));
+      c.setAttribute('cy', y.toFixed(1));
+      c.setAttribute('r', '2.8');
+      c.setAttribute('fill', d.color);
+      c.setAttribute('stroke', '#111');
+      c.setAttribute('stroke-width', '0.4');
+      c.innerHTML = `<title>${d.label} — ~${Math.round(d.seats)} sièges</title>`;
+      svg.appendChild(c);
+    });
+
+    // Center label
+    const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    txt.setAttribute('x', '180');
+    txt.setAttribute('y', '102');
+    txt.setAttribute('text-anchor', 'middle');
+    txt.setAttribute('font-size', '12');
+    txt.setAttribute('font-weight', '700');
+    txt.setAttribute('fill', '#ddd');
+    txt.textContent = `${TOTAL_SEATS}`;
+    svg.appendChild(txt);
+
+    wrap.hidden = false;
+  }
+
+  function runSimulation(showAll = true) {
+    const shares = getCurrentShares();
+    const results = sainteLagueSim(shares, TOTAL_SEATS);
+
+    const resBox = document.getElementById('sim-results');
+    if (resBox) resBox.hidden = false;
+
+    renderSeats(results);
+
+    if (showAll) {
+      renderCompare(results);
+      renderMiniHemicycle(results);
+    }
+  }
+
+  function applyPreset(key) {
+    const map = PRESETS[key] || PRESETS.reset;
+    const normalized = normalize(map);
+
+    BLOCS.forEach(b => {
+      const val = normalized[b.id] ?? b.defaultPct;
+      const r = document.getElementById('pct-' + b.id);
+      const n = document.getElementById('num-' + b.id);
+      if (r) r.value = val;
+      if (n) n.value = val;
+    });
+    updateTotals();
+    runSimulation(true);
+  }
+
+  function syncNumToRange(id, fromNum) {
+    const r = document.getElementById('pct-' + id);
+    const n = document.getElementById('num-' + id);
+    const valEl = document.getElementById('val-' + id);
+    if (!r || !n) return;
+    const v = parseFloat(fromNum ? n.value : r.value) || 0;
+    const clamped = Math.max(0, Math.min(100, Math.round(v * 2) / 2));
+    r.value = clamped;
+    n.value = clamped;
+    if (valEl) valEl.textContent = clamped.toFixed(1);
+    updateTotals();
+  }
+
+  function init() {
+    const ids = BLOCS.map(b => b.id);
+
+    // Sliders + numeric sync
+    ids.forEach(id => {
+      const range = document.getElementById('pct-' + id);
+      const num = document.getElementById('num-' + id);
+      const valSpan = document.getElementById('val-' + id);
+
+      if (range) {
+        range.addEventListener('input', () => {
+          if (num) num.value = range.value;
+          if (valSpan) valSpan.textContent = parseFloat(range.value).toFixed(1);
+          updateTotals();
+        });
+      }
+      if (num) {
+        num.addEventListener('input', () => {
+          syncNumToRange(id, true);
+        });
+        num.addEventListener('blur', () => {
+          syncNumToRange(id, true);
+        });
+      }
+    });
+
+    // Presets
+    document.querySelectorAll('.preset-buttons [data-preset]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-preset');
+        applyPreset(key);
+      });
+    });
+
+    // Actions
+    const btnCalc = document.getElementById('btn-calc');
+    const btnCompare = document.getElementById('btn-compare');
+    if (btnCalc) btnCalc.addEventListener('click', () => runSimulation(true));
+    if (btnCompare) btnCompare.addEventListener('click', () => runSimulation(true));
+
+    // Keyboard support
+    const container = document.querySelector('.simulator');
+    if (container) {
+      container.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON')) {
+          e.preventDefault();
+          runSimulation(true);
+        }
+      });
+    }
+
+    // Init values
+    updateTotals();
+
+    // Auto-run once on load for immediate value (pedagogical)
+    setTimeout(() => {
+      const res = document.getElementById('sim-results');
+      if (res && res.hidden !== false) {
+        // keep hidden until user action or first explicit calc; but show seats on load for demo
+        // runSimulation(false); // disabled to respect "user triggers" preference
+      }
+    }, 80);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Expose for debugging / integration if needed
+  window.__LMDPT_SimulateurPluralite = { runSimulation, applyPreset };
+</script>

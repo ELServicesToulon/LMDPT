@@ -1,0 +1,340 @@
+{
+  "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
+  "updated": "2026-07-15",
+  "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Ipsos-BVA, OpinionWay…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
+  "method": "Moyenne globale EPOC (ensemble des vagues saisies) + dernière fourchette post-déclaration de candidature de Marine Le Pen (7–12 juillet 2026).",
+  "sources": [
+    {
+      "label": "EPOC — moyennes globales présidentielle 2027",
+      "url": "https://www.epocinfo.fr/ep2027.php",
+      "as_of": "2026-07-15"
+    },
+    {
+      "label": "Elabe — 9–12 juil. 2026 (hyp. Le Pen)",
+      "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse",
+      "as_of": "2026-07-12"
+    },
+    {
+      "label": "Ifop — 7–8 juil. 2026 (post-candidature Le Pen)",
+      "url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen",
+      "as_of": "2026-07-08"
+    },
+    {
+      "label": "Harris Interactive / Toluna — 7–9 juil. 2026",
+      "url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723",
+      "as_of": "2026-07-09"
+    },
+    {
+      "label": "Wikipedia — Opinion polling 2027",
+      "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
+      "as_of": "2026-07-15"
+    }
+  ],
+  "notes": [
+    "Les % « moyenne » combinent des hypothèses exclusives (candidat A ou B) : ne pas les additionner.",
+    "RN : Marine Le Pen (candidature déclarée post-jugement d'appel 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti).",
+    "Mise à jour LMDPT : 2026-07-15."
+  ],
+  "candidates": [
+    {
+      "slug": "bardella",
+      "name": "Jordan Bardella",
+      "affiliation": "Rassemblement national",
+      "bloc": "rn",
+      "status": "designe_parti_substitution",
+      "avg_pct": 35.0,
+      "latest_pct": null,
+      "latest_range": "33–37 % (vagues mai–juin 2026, hyp. Bardella)",
+      "latest_source": "Ifop / Ipsos-BVA / Harris (avant candidature Le Pen 7 juil.)",
+      "note": "Non testé dans les vagues post-7 juil. 2026 (scénario Le Pen). Substitution RN si inéligibilité."
+    },
+    {
+      "slug": "le-pen",
+      "name": "Marine Le Pen",
+      "affiliation": "Rassemblement national",
+      "bloc": "rn",
+      "status": "candidature_declaree",
+      "avg_pct": 33.8,
+      "latest_pct": 35.0,
+      "latest_range": "34–36 %",
+      "latest_source": "Elabe 12/07 · Ifop 08/07 · Harris 09/07",
+      "note": "Candidature annoncée le 7 juil. 2026 malgré condamnation en appel (inéligibilité déjà purgée selon presse)."
+    },
+    {
+      "slug": "philippe",
+      "name": "Édouard Philippe",
+      "affiliation": "Horizons",
+      "bloc": "centre-droit",
+      "status": "intention_declaree",
+      "avg_pct": 18.4,
+      "latest_pct": 16.5,
+      "latest_range": "14–20 %",
+      "latest_source": "Elabe 12/07 hyp.1 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "attal",
+      "name": "Gabriel Attal",
+      "affiliation": "Renaissance",
+      "bloc": "centre",
+      "status": "candidature_declaree",
+      "avg_pct": 14.0,
+      "latest_pct": 15.0,
+      "latest_range": "13.5–16 %",
+      "latest_source": "Elabe / Harris / Ifop juil. 2026 (hyp. Attal)",
+      "note": "Candidature annoncée le 22 mai 2026."
+    },
+    {
+      "slug": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "affiliation": "La France insoumise",
+      "bloc": "gauche",
+      "status": "intention_declaree",
+      "avg_pct": 13.3,
+      "latest_pct": 16.0,
+      "latest_range": "14.5–16 %",
+      "latest_source": "Elabe 12/07 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "glucksmann",
+      "name": "Raphaël Glucksmann",
+      "affiliation": "Place publique",
+      "bloc": "gauche-sociale-democrate",
+      "status": "intention_declaree",
+      "avg_pct": 12.1,
+      "latest_pct": 10.5,
+      "latest_range": "9–12 %",
+      "latest_source": "Elabe 12/07 hyp.1 · Ifop 08/07",
+      "note": null
+    },
+    {
+      "slug": "retailleau",
+      "name": "Bruno Retailleau",
+      "affiliation": "Les Républicains",
+      "bloc": "droite",
+      "status": "candidat_declare",
+      "avg_pct": 9.8,
+      "latest_pct": 8.0,
+      "latest_range": "7–11 %",
+      "latest_source": "Elabe 12/07 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "darmanin",
+      "name": "Gérald Darmanin",
+      "affiliation": "Sans étiquette / ex-Ensemble",
+      "bloc": "centre-droit",
+      "status": "hypothese_sondage",
+      "avg_pct": 8.8,
+      "latest_pct": null,
+      "latest_range": "7–14 % (vagues antérieures)",
+      "latest_source": "EPOC moyenne · vagues print. 2026",
+      "note": "Peu présent dans les hypothèses juil. 2026."
+    },
+    {
+      "slug": "hollande",
+      "name": "François Hollande",
+      "affiliation": "Sans étiquette (ex-PS)",
+      "bloc": "gauche",
+      "status": "intention_declaree",
+      "avg_pct": 8.1,
+      "latest_pct": 8.0,
+      "latest_range": "8–9 %",
+      "latest_source": "Elabe 12/07 hyp.3–5",
+      "note": null
+    },
+    {
+      "slug": "lecornu",
+      "name": "Sébastien Lecornu",
+      "affiliation": "Renaissance / Ensemble",
+      "bloc": "centre",
+      "status": "hypothese_sondage",
+      "avg_pct": 6.3,
+      "latest_pct": null,
+      "latest_range": "6–8 % (vagues print. 2026)",
+      "latest_source": "EPOC moyenne",
+      "note": "Absent des hypothèses juil. 2026 post-Le Pen."
+    },
+    {
+      "slug": "ruffin",
+      "name": "François Ruffin",
+      "affiliation": "Picardie debout / indépendant",
+      "bloc": "gauche",
+      "status": "intention_declaree",
+      "avg_pct": 5.8,
+      "latest_pct": 6.0,
+      "latest_range": "6 %",
+      "latest_source": "Elabe 12/07 hyp.3–4",
+      "note": "Affiliation LMDPT historique « Debout la France » corrigée ici (candidature indépendante gauche)."
+    },
+    {
+      "slug": "faure",
+      "name": "Olivier Faure",
+      "affiliation": "Parti socialiste",
+      "bloc": "gauche",
+      "status": "hypothese_sondage",
+      "avg_pct": 5.7,
+      "latest_pct": null,
+      "latest_range": "4–7 % (vagues antérieures)",
+      "latest_source": "EPOC moyenne",
+      "note": "PS : candidat non désigné — fiche programme « Vivre libre » séparée."
+    },
+    {
+      "slug": "bertrand",
+      "name": "Xavier Bertrand",
+      "affiliation": "Les Républicains / indépendant",
+      "bloc": "droite",
+      "status": "hypothese_sondage",
+      "avg_pct": 5.5,
+      "latest_pct": null,
+      "latest_range": "5–6 % (vagues 2025)",
+      "latest_source": "EPOC moyenne",
+      "note": null
+    },
+    {
+      "slug": "wauquiez",
+      "name": "Laurent Wauquiez",
+      "affiliation": "Les Républicains",
+      "bloc": "droite",
+      "status": "hypothese_sondage",
+      "avg_pct": 5.3,
+      "latest_pct": null,
+      "latest_range": "4–7 % (vagues print. 2026)",
+      "latest_source": "EPOC moyenne · Cluster17 avr. 2026",
+      "note": null
+    },
+    {
+      "slug": "zemmour",
+      "name": "Éric Zemmour",
+      "affiliation": "Reconquête",
+      "bloc": "extreme-droite",
+      "status": "intention_declaree",
+      "avg_pct": 4.4,
+      "latest_pct": 3.0,
+      "latest_range": "3–4 %",
+      "latest_source": "Elabe 12/07 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "tondelier",
+      "name": "Marine Tondelier",
+      "affiliation": "Les Écologistes (EELV)",
+      "bloc": "ecologie",
+      "status": "intention_declaree",
+      "avg_pct": 4.1,
+      "latest_pct": 3.5,
+      "latest_range": "2–4 %",
+      "latest_source": "Elabe 12/07 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "villepin",
+      "name": "Dominique de Villepin",
+      "affiliation": "Sans étiquette",
+      "bloc": "centre",
+      "status": "hypothese_sondage",
+      "avg_pct": 4.0,
+      "latest_pct": 2.5,
+      "latest_range": "2.5–3.5 %",
+      "latest_source": "Elabe 12/07",
+      "note": null
+    },
+    {
+      "slug": "roussel",
+      "name": "Fabien Roussel",
+      "affiliation": "Parti communiste français",
+      "bloc": "gauche",
+      "status": "intention_declaree",
+      "avg_pct": 3.1,
+      "latest_pct": 2.5,
+      "latest_range": "2–3 %",
+      "latest_source": "Elabe 12/07 · Harris 09/07",
+      "note": null
+    },
+    {
+      "slug": "bayrou",
+      "name": "François Bayrou",
+      "affiliation": "MoDem",
+      "bloc": "centre",
+      "status": "hypothese_sondage",
+      "avg_pct": 3.0,
+      "latest_pct": null,
+      "latest_range": "≈3 % (vagues 2025)",
+      "latest_source": "EPOC moyenne",
+      "note": null
+    },
+    {
+      "slug": "dupont-aignan",
+      "name": "Nicolas Dupont-Aignan",
+      "affiliation": "Debout la France",
+      "bloc": "droite-souverainiste",
+      "status": "intention_declaree",
+      "avg_pct": 2.1,
+      "latest_pct": 1.5,
+      "latest_range": "1–2 %",
+      "latest_source": "Elabe 12/07 · Ifop 08/07",
+      "note": null
+    },
+    {
+      "slug": "lisnard",
+      "name": "David Lisnard",
+      "affiliation": "Nouvelle Énergie",
+      "bloc": "droite",
+      "status": "intention_declaree",
+      "avg_pct": 2.0,
+      "latest_pct": null,
+      "latest_range": "≈2 % (Ifop 25/06 hyp.8)",
+      "latest_source": "EPOC moyenne · Ifop juin 2026",
+      "note": null
+    },
+    {
+      "slug": "arthaud",
+      "name": "Nathalie Arthaud",
+      "affiliation": "Lutte ouvrière",
+      "bloc": "extreme-gauche",
+      "status": "intention_declaree",
+      "avg_pct": 1.1,
+      "latest_pct": 1.0,
+      "latest_range": "0.5–1.5 %",
+      "latest_source": "Elabe 12/07 · Ifop 08/07",
+      "note": null
+    },
+    {
+      "slug": "poutou",
+      "name": "Philippe Poutou",
+      "affiliation": "NPA",
+      "bloc": "extreme-gauche",
+      "status": "hypothese_sondage",
+      "avg_pct": null,
+      "latest_pct": null,
+      "latest_range": "non testé de façon stable juil. 2026",
+      "latest_source": "—",
+      "note": "Présent dans projection pédagogique LMDPT (≈1,2 %) ; peu de vagues juil. 2026."
+    },
+    {
+      "slug": "barrot",
+      "name": "Jean-Noël Barrot",
+      "affiliation": "Renaissance",
+      "bloc": "centre",
+      "status": "intention_declaree",
+      "avg_pct": null,
+      "latest_pct": null,
+      "latest_range": "non isolé dans les baromètres majeurs",
+      "latest_source": "—",
+      "note": "Veille programme LMDPT — pas de score isolé dans les moyennes EPOC."
+    },
+    {
+      "slug": "parti-socialiste",
+      "name": "Parti socialiste — candidat non désigné",
+      "affiliation": "PS (« Vivre libre »)",
+      "bloc": "gauche",
+      "status": "parti_sans_candidat",
+      "avg_pct": null,
+      "latest_pct": null,
+      "latest_range": "voir Faure / Hollande / Brun / Glucksmann selon hyp.",
+      "latest_source": "—",
+      "note": "Primaire / scénarios en cours — pas de % unique."
+    }
+  ]
+}

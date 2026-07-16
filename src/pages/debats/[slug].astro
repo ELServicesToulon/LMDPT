@@ -18,7 +18,14 @@ if (!debate) {
 ---
 
 <BaseLayout title="Débat" description={debate.context.slice(0, 160)}>
-  <DebateLiveBanner campaign={`debats_${debate.slug}`} />
+  <DebateLiveBanner campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
+  {
+    debate.live_url && (
+      <p class="meta" style="margin-top: -1rem; margin-bottom: 1rem;">
+        <strong>Live en cours :</strong> <a href={debate.live_url} target="_blank" rel="noopener">Rejoindre le live YouTube →</a>
+      </p>
+    )
+  }
 
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/debats">Débats</a> → {debate.slug}

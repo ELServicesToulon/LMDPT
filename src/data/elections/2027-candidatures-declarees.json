@@ -1,0 +1,316 @@
+{
+  "title": "Candidatures déclarées — Présidentielle 2027",
+  "updated": "2026-07-15",
+  "disclaimer": "Liste des personnalités ayant publicisé une candidature à l'élection présidentielle de 2027 (annonces politiques, désignations de parti). Ce n'est pas la liste officielle du Conseil constitutionnel — celle-ci ne sera publiée qu'après dépôt des 500 parrainages d'élus (au plus tard le 4e vendredi précédant le 1er tour, indicatif 26 mars 2027). Aucun classement, aucun sondage.",
+  "legal_note": "Seuls les candidats retenus par le Conseil constitutionnel figureront sur les bulletins. Voir art. 6 Constitution, code électoral (présentations / parrainages).",
+  "sources": [
+    {
+      "label": "LCP — candidats déjà en lice (maj. 10 juil. 2026)",
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "as_of": "2026-07-10"
+    },
+    {
+      "label": "Wikipédia — Élection présidentielle française de 2027 · section Candidats déclarés",
+      "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "as_of": "2026-07-15"
+    },
+    {
+      "label": "Les Échos — candidature Le Pen post-appel (7 juil. 2026)",
+      "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-condamnee-mais-eligible-marine-le-pen-se-pourvoit-en-cassation-et-se-declare-candidate-2241275",
+      "as_of": "2026-07-07"
+    },
+    {
+      "label": "LCP — Attal officialise (22 mai 2026)",
+      "url": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
+      "as_of": "2026-05-22"
+    }
+  ],
+  "categories": [
+    {
+      "id": "declarees",
+      "label": "Candidatures déclarées (en lice)",
+      "description": "Personnalités ayant officialisé une candidature à la présidentielle 2027 (hors seule candidature à une primaire)."
+    },
+    {
+      "id": "parti_designe",
+      "label": "Désignées par un parti",
+      "description": "Investiture ou désignation interne de parti pour porter la candidature."
+    },
+    {
+      "id": "conditionnelle",
+      "label": "Déclarées sous condition / en attente de cadre",
+      "description": "Candidature annoncée sous réserve de primaire, d'union ou de stratégie de camp — non encore figée comme ticket unique."
+    },
+    {
+      "id": "retrait",
+      "label": "Retraits documentés",
+      "description": "Candidatures annoncées puis retirées (documentées)."
+    }
+  ],
+  "entries": [
+    {
+      "slug": "philippe",
+      "name": "Édouard Philippe",
+      "affiliation": "Horizons",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2024-09",
+      "source_label": "Le Point / LCP",
+      "source_url": "https://www.lepoint.fr/politique/exclusif-edouard-philippe-je-serai-candidat-a-la-prochaine-election-presidentielle-03-09-2024-2569359_20.php",
+      "note": "Annonce précoce (sept. 2024)."
+    },
+    {
+      "slug": "attal",
+      "name": "Gabriel Attal",
+      "affiliation": "Renaissance",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-05-22",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
+      "note": "Officialisation depuis l'Aveyron."
+    },
+    {
+      "slug": "retailleau",
+      "name": "Bruno Retailleau",
+      "affiliation": "Les Républicains",
+      "status": "designe_parti",
+      "category": "parti_designe",
+      "declared_at": "2026-04-19",
+      "source_label": "LCP — consultation adhérents LR",
+      "source_url": "https://lcp.fr/actualites/presidentielle-bruno-retailleau-choisi-comme-candidat-officiel-des-republicains-435440",
+      "note": "Candidat officiel LR après vote interne."
+    },
+    {
+      "slug": "lisnard",
+      "name": "David Lisnard",
+      "affiliation": "Nouvelle Énergie",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-03",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/je-suis-candidat-david-lisnard-quitte-lr-et-relance-le-debat-sur-une-primaire-a-droite",
+      "note": "Annonce en quittant LR (fin mars 2026)."
+    },
+    {
+      "slug": "bertrand",
+      "name": "Xavier Bertrand",
+      "affiliation": "Nous France",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-02",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": null
+    },
+    {
+      "slug": "le-pen",
+      "name": "Marine Le Pen",
+      "affiliation": "Rassemblement national",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-07-07",
+      "source_label": "TF1 20h / Les Échos",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-condamnee-mais-eligible-marine-le-pen-se-pourvoit-en-cassation-et-se-declare-candidate-2241275",
+      "note": "Confirme sa candidature le soir du jugement d'appel (éligible). Pourvoi en cassation annoncé. Première intention TF1 sept. 2023."
+    },
+    {
+      "slug": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "affiliation": "La France insoumise",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-05",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+      "note": "Quatrième candidature présidentielle annoncée."
+    },
+    {
+      "slug": "batho",
+      "name": "Delphine Batho",
+      "affiliation": "Génération écologie",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2025-11",
+      "source_label": "L'Obs / LCP",
+      "source_url": "https://www.nouvelobs.com/politique/20251125.OBS110076/delphine-batho-je-suis-candidate-a-l-election-presidentielle-pour-reconstruire-une-ecologie-capable-de-gouverner.html",
+      "note": null
+    },
+    {
+      "slug": "guedj",
+      "name": "Jérôme Guedj",
+      "affiliation": "Gauche républicaine / socialiste",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-02",
+      "source_label": "France Inter / LCP",
+      "source_url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-7h50/l-invite-de-7h50-du-jeudi-05-fevrier-2026-7548548",
+      "note": "Ligne « gauche républicaine, universaliste et laïque »."
+    },
+    {
+      "slug": "bouamrane",
+      "name": "Karim Bouamrane",
+      "affiliation": "Parti socialiste",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP / X",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": "Maire de Saint-Ouen."
+    },
+    {
+      "slug": "arthaud",
+      "name": "Nathalie Arthaud",
+      "affiliation": "Lutte ouvrière",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2025-12-08",
+      "source_label": "Wikipédia / LCP",
+      "source_url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "note": "Candidature LO annoncée le 8 décembre 2025."
+    },
+    {
+      "slug": "dupont-aignan",
+      "name": "Nicolas Dupont-Aignan",
+      "affiliation": "Debout la France",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": null
+    },
+    {
+      "slug": "philippot",
+      "name": "Florian Philippot",
+      "affiliation": "Les Patriotes",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": null
+    },
+    {
+      "slug": "asselineau",
+      "name": "François Asselineau",
+      "affiliation": "Union populaire républicaine",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP / Wikipédia",
+      "source_url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "note": null
+    },
+    {
+      "slug": "egger",
+      "name": "Clara Egger",
+      "affiliation": "Solution démocratique",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": null
+    },
+    {
+      "slug": "mikolajczak",
+      "name": "Antoine Mikolajczak",
+      "affiliation": "Équinoxe",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": null
+    },
+    {
+      "slug": "tondelier",
+      "name": "Marine Tondelier",
+      "affiliation": "Les Écologistes (EELV)",
+      "status": "conditionnelle",
+      "category": "conditionnelle",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": "Investie dans le cadre d'une primaire unitaire de gauche devenue caduque après le vote PS du 9 juil. 2026 ; stratégie à redéfinir."
+    },
+    {
+      "slug": "ruffin",
+      "name": "François Ruffin",
+      "affiliation": "Picardie debout / indépendant",
+      "status": "conditionnelle",
+      "category": "conditionnelle",
+      "declared_at": "2026",
+      "source_label": "LCP / France Inter",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-s-il-n-y-a-pas-de-primaire-moi-j-y-vais-annonce-francois-ruffin",
+      "note": "« S'il n'y a pas de primaire, moi j'y vais » — primaire unitaire abandonnée."
+    },
+    {
+      "slug": "zemmour",
+      "name": "Éric Zemmour",
+      "affiliation": "Reconquête",
+      "status": "conditionnelle",
+      "category": "conditionnelle",
+      "declared_at": "2026",
+      "source_label": "RTL / LCP",
+      "source_url": "https://www.rtl.fr/actu/politique/s-il-n-y-a-pas-de-primaire-je-serai-candidat-eric-zemmour-affirme-sur-rtl-qu-il-se-prepare-a-la-presidentielle-2027-malgre-la-percee-magnifique-de-sarah-knafo-7900630227",
+      "note": "Candidat si pas de primaire à droite ; candidat à la primaire le cas échéant."
+    },
+    {
+      "slug": "royal",
+      "name": "Ségolène Royal",
+      "affiliation": "Parti socialiste",
+      "status": "primaire",
+      "category": "conditionnelle",
+      "declared_at": "2026-07-10",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-segolene-royal-annonce-sa-candidature-a-la-primaire-socialiste",
+      "note": "Candidature à la primaire fermée PS (pas encore ticket présidentiel unique)."
+    },
+    {
+      "slug": "brun",
+      "name": "Philippe Brun",
+      "affiliation": "Parti socialiste",
+      "status": "primaire",
+      "category": "conditionnelle",
+      "declared_at": "2026-06-30",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+      "note": "Candidat à la primaire PS (« candidat des salaires »)."
+    },
+    {
+      "slug": "autain",
+      "name": "Clémentine Autain",
+      "affiliation": "L'Après",
+      "status": "retrait",
+      "category": "retrait",
+      "declared_at": "2026",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
+      "note": "Renonce après l'échec de la primaire unitaire (11 juil. 2026)."
+    },
+    {
+      "slug": "lucas",
+      "name": "Benjamin Lucas",
+      "affiliation": "Génération·s",
+      "status": "retrait",
+      "category": "retrait",
+      "declared_at": "2026",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "note": "Retrait le 7 juil. 2026 — candidature à la primaire devenue sans objet."
+    },
+    {
+      "slug": "bardella",
+      "name": "Jordan Bardella",
+      "affiliation": "Rassemblement national",
+      "status": "substitution_parti",
+      "category": "conditionnelle",
+      "declared_at": "2026",
+      "source_label": "France 24 / presse",
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
+      "note": "Candidat de substitution RN si Le Pen inéligible. Post-7 juil. 2026 : Le Pen est candidate ; Bardella n'est plus le ticket principal annoncé."
+    }
+  ]
+}

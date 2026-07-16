@@ -1,0 +1,30 @@
+{
+  "election": "Présidentielle 2027 — 1er tour (projection pédagogique)",
+  "date": "2027-04-18",
+  "tour": 1,
+  "source": "https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation",
+  "source_label": "Projection LMDPT (pédagogique) — agrégats sondages Ifop, Harris Interactive, Ipsos (mai-juillet 2026). Aucune donnée officielle. Résultats réels à publier par le Ministère de l'Intérieur / Conseil constitutionnel après le scrutin.",
+  "national": {
+    "inscrits": 49000000,
+    "abstention_pct": 26.0,
+    "votants": 36260000,
+    "blancs": 550000,
+    "nuls": 260000,
+    "exprimes": 35450000,
+    "candidats": [
+      { "nom": "Jordan BARDELLA", "nuance": "RN", "voix": 11875750, "pourcentage_exprimes": 33.5, "pourcentage_inscrits": 24.24 },
+      { "nom": "Édouard PHILIPPE", "nuance": "HOR", "voix": 5672000, "pourcentage_exprimes": 16.0, "pourcentage_inscrits": 11.58 },
+      { "nom": "Jean-Luc MÉLENCHON", "nuance": "LFI", "voix": 5317500, "pourcentage_exprimes": 15.0, "pourcentage_inscrits": 10.85 },
+      { "nom": "Gabriel ATTAL", "nuance": "ENS", "voix": 3545000, "pourcentage_exprimes": 10.0, "pourcentage_inscrits": 7.23 },
+      { "nom": "Raphaël GLUCKSMANN", "nuance": "PS", "voix": 3013250, "pourcentage_exprimes": 8.5, "pourcentage_inscrits": 6.15 },
+      { "nom": "Bruno RETAILLEAU", "nuance": "LR", "voix": 1949750, "pourcentage_exprimes": 5.5, "pourcentage_inscrits": 3.98 },
+      { "nom": "Éric ZEMMOUR", "nuance": "REC", "voix": 1347100, "pourcentage_exprimes": 3.8, "pourcentage_inscrits": 2.75 },
+      { "nom": "Fabien ROUSSEL", "nuance": "PCF", "voix": 886250, "pourcentage_exprimes": 2.5, "pourcentage_inscrits": 1.81 },
+      { "nom": "Yannick JADOT (hyp.)", "nuance": "EELV", "voix": 709000, "pourcentage_exprimes": 2.0, "pourcentage_inscrits": 1.45 },
+      { "nom": "Philippe POUTOU", "nuance": "NPA", "voix": 425400, "pourcentage_exprimes": 1.2, "pourcentage_inscrits": 0.87 },
+      { "nom": "Nathalie ARTHAUD", "nuance": "LO", "voix": 283600, "pourcentage_exprimes": 0.8, "pourcentage_inscrits": 0.58 },
+      { "nom": "Nicolas DUPONT-AIGNAN", "nuance": "DLF", "voix": 248150, "pourcentage_exprimes": 0.7, "pourcentage_inscrits": 0.51 },
+      { "nom": "Jean LASSALLE (hyp.)", "nuance": "RES", "voix": 177250, "pourcentage_exprimes": 0.5, "pourcentage_inscrits": 0.36 }
+    ]
+  }
+}

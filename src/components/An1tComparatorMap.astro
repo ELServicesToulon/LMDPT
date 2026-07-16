@@ -435,4 +435,17 @@ const blocLegend = AN1T_BLOCS.filter((b) => blocPaths.some((p) => p.leader === b
     gap: 0.5rem;
     margin-bottom: 0.35rem;
   }
+
+  /* Improved mobile for map viz */
+  @media (max-width: 640px) {
+    .map-wrap { padding: 0.25rem; overflow-x: auto; }
+    .france-map { max-width: 100%; min-width: 280px; }
+    .legend { font-size: 0.7rem; gap: 0.3rem 0.6rem; }
+    .mode-btn { padding: 0.35rem 0.55rem; font-size: 0.78rem; min-height: 40px; }
+    .search-label input { font-size: 0.95rem; padding: 0.45rem; }
+    .dept-detail { font-size: 0.82rem; }
+  }
+  @media (max-width: 420px) {
+    .france-map { min-width: 260px; }
+  }
 </style>

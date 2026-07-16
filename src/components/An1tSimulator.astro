@@ -1,0 +1,813 @@
+---
+/**
+ * An1tSimulator.astro
+ * Simulateur interactif pour l'Assemblée du Premier Tour (AN1T).
+ * - Sliders % par bloc civique (basé sur AN1T_BLOCS)
+ * - Slider seuil d'éligibilité (0-10%)
+ * - Calcul live via impl JS miroir de allocateSainteLague + simulateFromVoteShares (lib/an1t.ts)
+ * - Affichage tableau sièges + % 
+ * - Comparaison vs Assemblée réelle 2024 (delta)
+ * Neutre, pédagogique, accessible, mobile-first. Aucune prédiction.
+ */
+import { AN1T_BLOCS } from '../../lib/an1t';
+
+interface Props {
+  totalSeats?: number;
+  defaultThreshold?: number;
+}
+
+const { totalSeats = 577, defaultThreshold = 3 } = Astro.props;
+
+// Blocs officiels pour les contrôles (labels, couleurs, ids canoniques)
+const BLOCS = AN1T_BLOCS.map((b) => ({
+  id: b.id,
+  label: b.label,
+  color: b.color,
+}));
+
+// Valeurs par défaut initiales (agrégat T1 2024 approx + arrondi pédagogique)
+const DEFAULT_PCTS: Record<string, number> = {
+  rn: 33.0,
+  nfp: 28.0,
+  ensemble: 20.0,
+  lr: 6.5,
+  autres: 12.5,
+};
+
+// Sièges réels 2024 (après 2nd tour, regroupés blocs) — source: assemblee-premier-tour-2024.json
+const REELLE_SEATS: Record<string, number> = {
+  nfp: 182,
+  ensemble: 99,
+  rn: 125,
+  lr: 47,
+  autres: 124,
+};
+---
+
+<section class="an1t-simulator card" aria-labelledby="an1t-sim-title">
+  <h3 id="an1t-sim-title">Simulateur interactif AN1T — % voix &amp; seuil</h3>
+
+  <p class="meta">
+    Modifiez les intentions de vote au <strong>premier tour</strong> par bloc et le <strong>seuil d'éligibilité</strong>.
+    Le calcul utilise la méthode <strong>Sainte-Laguë</strong> (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code> dans <code>lib/an1t.ts</code>.
+    <strong>Illustration pédagogique uniquement.</strong> Les chiffres ne prédisent rien.
+  </p>
+
+  <div class="sim-controls">
+    <!-- Sliders pourcentages par bloc -->
+    <fieldset class="sim-fieldset">
+      <legend class="sim-legend">1. Parts de voix au 1er tour (% exprimés)</legend>
+
+      <div class="sim-sliders" id="an1t-sliders">
+        {BLOCS.map((b) => {
+          const def = DEFAULT_PCTS[b.id] ?? 10;
+          return (
+            <div class="sim-row" data-bloc={b.id}>
+              <label for={`an1t-pct-${b.id}`}>
+                <span class="swatch" style={`background:${b.color}`}></span>
+                {b.label}
+                <span class="val" id={`an1t-val-${b.id}`}>{def.toFixed(1)}</span>%
+              </label>
+              <div class="input-row">
+                <input
+                  type="range"
+                  id={`an1t-pct-${b.id}`}
+                  min="0"
+                  max="60"
+                  step="0.5"
+                  value={def}
+                  aria-describedby={`an1t-val-${b.id}`}
+                />
+                <input
+                  type="number"
+                  id={`an1t-num-${b.id}`}
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value={def}
+                  class="num-input"
+                  aria-label={`Pourcentage ${b.label}`}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="sim-total" aria-live="polite">
+        <span id="an1t-total-text">Total : 100,0 %</span>
+        <span id="an1t-total-warn" class="warn" hidden>⚠ Somme ≠ 100 % (normalisé automatiquement)</span>
+      </div>
+    </fieldset>
+
+    <!-- Seuil : sélecteur discret comme recommandé (0 / 3 / 5 %) -->
+    <fieldset class="sim-fieldset">
+      <legend class="sim-legend">2. Seuil d'éligibilité (exclusion en dessous)</legend>
+      <div class="threshold-selector">
+        <label for="an1t-threshold-select" class="meta">Choisir le seuil national :</label>
+        <select id="an1t-threshold-select" aria-describedby="an1t-threshold-desc">
+          <option value="0">0 % (aucun seuil — tous blocs éligibles)</option>
+          <option value="3" selected>3 % (seuil pédagogique standard)</option>
+          <option value="5">5 % (seuil plus restrictif)</option>
+        </select>
+        <span id="an1t-threshold-desc" class="meta small">Les valeurs correspondent aux simulations documentées (mécanismes, seuils 0/3/5 %). Seuil appliqué avant Sainte-Laguë.</span>
+      </div>
+    </fieldset>
+
+    <!-- Presets rapides -->
+    <div class="sim-presets">
+      <div class="sim-legend">Profils rapides (pédagogiques)</div>
+      <div class="preset-buttons" role="group" aria-label="Scénarios types">
+        <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 (agrégé)</button>
+        <button type="button" class="btn btn-secondary" data-preset="base-2027">Base sondages 2027</button>
+        <button type="button" class="btn btn-secondary" data-preset="rn-forte">RN &amp; alliés forte</button>
+        <button type="button" class="btn btn-secondary" data-preset="gauche-unie">Gauche unie</button>
+        <button type="button" class="btn btn-secondary" data-preset="centre-elargi">Centre élargi</button>
+        <button type="button" class="btn btn-secondary" data-preset="reset">Réinitialiser (3 %)</button>
+      </div>
+    </div>
+
+    <!-- Export -->
+    <div class="sim-export">
+      <div class="sim-legend">Exporter les résultats (pédagogiques)</div>
+      <div class="export-buttons">
+        <button type="button" id="an1t-export-csv" class="btn btn-secondary">Exporter CSV</button>
+        <button type="button" id="an1t-export-json" class="btn btn-secondary">Exporter JSON</button>
+      </div>
+      <span class="meta small">Télécharge les sièges calculés + % voix actuels pour analyse personnelle ou réutilisation (format ouvert).</span>
+    </div>
+  </div>
+
+  <!-- Résultats live -->
+  <div id="an1t-results" class="sim-results" aria-live="polite">
+    <h4>
+      Répartition calculée : <span id="an1t-result-meta">577 sièges — seuil <span id="an1t-result-seuil">3</span>%</span>
+    </h4>
+
+    <div id="an1t-table" class="seats-table" role="table" aria-label="Sièges simulés par bloc"></div>
+
+    <!-- Simple visual : mini-hémicycle (SVG généré client, proportionnel aux sièges simulés ; utilise logique de couleurs des blocs existants) -->
+    <div class="mini-hemicycle" aria-label="Mini visualisation hémicycle proportionnel">
+      <h5>Mini-hémicycle (répartition des sièges simulés)</h5>
+      <svg id="an1t-mini-hemicycle" width="100%" height="92" viewBox="0 0 400 100" aria-hidden="false" role="img"></svg>
+      <p class="meta small">Chaque « siège » représente ~5-6 sièges réels (échelle pour lisibilité). Couleurs = blocs. Illustration uniquement.</p>
+    </div>
+
+    <!-- Comparaison -->
+    <div class="compare-section">
+      <h5>Comparaison avec l'Assemblée réelle (résultats 2nd tour 2024)</h5>
+      <p class="meta small">
+        Les sièges « réels » résultent du scrutin majoritaire uninominal à deux tours (désistements inclus). 
+        L'AN1T simule une répartition purement proportionnelle sur les voix du 1er tour.
+      </p>
+      <div id="an1t-compare" class="compare-table" role="table"></div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Illustration pédagogique et factuelle uniquement.</strong><br />
+      Méthode : agrégation nationale par bloc → application seuil → Sainte-Laguë (1,3,5…). 
+      Identique aux fonctions <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code> de la librairie.
+      Aucune valeur prédictive. Données de référence 2024 : Ministère de l'Intérieur / data.gouv.fr.
+    </div>
+  </div>
+</section>
+
+<style>
+  .an1t-simulator {
+    border-left: 4px solid var(--accent, #334155);
+  }
+  .sim-fieldset {
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 6px;
+    padding: 0.7rem 0.8rem;
+    margin: 0.5rem 0;
+  }
+  .sim-legend {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0 0.3rem;
+    color: var(--muted, #3a3732);
+  }
+  .sim-sliders {
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .sim-row {
+    font-size: 0.82rem;
+  }
+  .sim-row label {
+    display: block;
+    margin-bottom: 0.12rem;
+    line-height: 1.2;
+  }
+  .sim-row .swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .sim-row .val {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .input-row {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  .sim-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--accent, #0f172a);
+    height: 24px;
+  }
+  .num-input {
+    width: 58px;
+    font-size: 0.8rem;
+    padding: 1px 4px;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 3px;
+    background: var(--card, #fff);
+    color: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+  .threshold-num {
+    width: 52px;
+  }
+  .threshold-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .threshold-selector select {
+    width: 100%;
+    max-width: 380px;
+    font-size: 0.85rem;
+    padding: 4px 6px;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 4px;
+    background: var(--card, #fff);
+  }
+  .sim-total {
+    margin-top: 0.35rem;
+    font-size: 0.82rem;
+    font-family: system-ui, sans-serif;
+  }
+  .warn {
+    color: #b45309;
+    margin-left: 0.4rem;
+    font-size: 0.75rem;
+  }
+  .sim-presets {
+    margin-top: 0.4rem;
+  }
+  .preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .preset-buttons .btn {
+    font-size: 0.76rem;
+    padding: 2px 7px;
+  }
+  .sim-results {
+    margin-top: 0.7rem;
+    padding: 0.65rem 0.75rem;
+    background: var(--accent-soft, #f8fafc);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: var(--radius, 6px);
+  }
+  .sim-results h4 {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+  }
+  .sim-results h5 {
+    margin: 0.65rem 0 0.25rem;
+    font-size: 0.88rem;
+  }
+  .seats-table {
+    font-size: 0.84rem;
+    font-family: system-ui, sans-serif;
+  }
+  .seat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.18rem 0;
+    border-bottom: 1px dotted var(--border, #e2e8f0);
+  }
+  .seat-row:last-child {
+    border-bottom: none;
+  }
+  .seat-row .label {
+    min-width: 175px;
+    flex: 0 0 auto;
+  }
+  .seat-bar {
+    height: 10px;
+    border-radius: 2px;
+    flex: 0 0 auto;
+    min-width: 2px;
+  }
+  .seat-num {
+    font-variant-numeric: tabular-nums;
+    min-width: 3.5rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .compare-section {
+    margin-top: 0.65rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border, #e2e8f0);
+  }
+  .compare-table {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr 1fr 1fr;
+    gap: 0.35rem;
+    align-items: center;
+    padding: 0.12rem 0;
+  }
+  .compare-header {
+    font-size: 0.7rem;
+    color: var(--muted, #3a3732);
+    border-bottom: 1px solid var(--border, #e2e8f0);
+    padding-bottom: 0.15rem;
+  }
+  .delta {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .delta.pos {
+    color: #166534;
+  }
+  .delta.neg {
+    color: #9f1239;
+  }
+
+  .disclaimer {
+    margin-top: 0.6rem;
+    font-size: 0.74rem;
+    line-height: 1.3;
+    background: #fefce8;
+    border: 1px solid #ca8a04;
+    padding: 0.4rem 0.55rem;
+    border-radius: 4px;
+    color: #713f12;
+  }
+  .disclaimer strong {
+    color: #854d0e;
+  }
+
+  .small {
+    font-size: 0.74rem;
+  }
+
+  .sim-export {
+    margin-top: 0.5rem;
+    padding-top: 0.3rem;
+    border-top: 1px dotted var(--border, #e2e8f0);
+  }
+  .export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.25rem 0;
+  }
+  .export-buttons .btn {
+    font-size: 0.78rem;
+    padding: 3px 9px;
+  }
+
+  .mini-hemicycle {
+    margin: 0.5rem 0 0.3rem;
+    padding: 0.3rem 0.4rem;
+    background: #f8fafc;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 4px;
+  }
+  .mini-hemicycle h5 {
+    margin: 0 0 0.2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .mini-hemicycle svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .sim-sliders {
+      grid-template-columns: 1fr;
+    }
+    .compare-row {
+      grid-template-columns: 1fr;
+      gap: 0.12rem;
+    }
+    .compare-header {
+      display: none;
+    }
+    .seat-row .label {
+      min-width: 125px;
+      font-size: 0.78rem;
+    }
+    .threshold-selector select {
+      max-width: 100%;
+    }
+    .sim-results, .mini-hemicycle { font-size: 0.82rem; }
+    .mini-hemicycle svg { height: 78px; }
+  }
+  @media (max-width: 420px) {
+    .input-row input[type="range"] { height: 26px; }
+    .seat-row .label { min-width: 110px; font-size: 0.72rem; }
+  }
+</style>
+
+<script>
+  // === Miroir exact des fonctions de lib/an1t.ts pour le client (live calc) ===
+  // allocateSainteLague + simulateFromVoteShares (sans dépendances, pur JS)
+  function allocateSainteLagueClient(
+    items: Array<{ id: string; votes: number }>,
+    totalSeats: number,
+    thresholdPct = 3
+  ): Map<string, number> {
+    const totalVotes = items.reduce((sum, i) => sum + i.votes, 0);
+    if (totalVotes === 0 || totalSeats <= 0) return new Map();
+
+    const minVotes = (totalVotes * thresholdPct) / 100;
+    const eligible = items.filter((i) => i.votes >= minVotes);
+    if (eligible.length === 0) return new Map();
+
+    const seats = new Map<string, number>(eligible.map((i) => [i.id, 0]));
+
+    for (let assigned = 0; assigned < totalSeats; assigned += 1) {
+      let bestId: string | null = null;
+      let bestQ = -1;
+      for (const item of eligible) {
+        const current = seats.get(item.id) ?? 0;
+        const q = item.votes / (2 * current + 1);
+        if (q > bestQ) {
+          bestQ = q;
+          bestId = item.id;
+        }
+      }
+      if (!bestId) break;
+      seats.set(bestId, (seats.get(bestId) ?? 0) + 1);
+    }
+    return seats;
+  }
+
+  function simulateFromVoteSharesClient(
+    shares: Array<{ id: string; label: string; color: string; pct: number }>,
+    totalSeats = 577,
+    thresholdPct = 3
+  ) {
+    if (!shares || shares.length === 0) return [];
+
+    const totalPct = shares.reduce((sum, s) => sum + Math.max(0, s.pct), 0) || 100;
+    const items = shares.map((sh) => ({
+      id: sh.id,
+      votes: Math.round((sh.pct / totalPct) * 100000000),
+    }));
+
+    const seatMap = allocateSainteLagueClient(items, totalSeats, thresholdPct);
+
+    return shares
+      .map((sh) => {
+        const seats = seatMap.get(sh.id) ?? 0;
+        return {
+          id: sh.id,
+          label: sh.label,
+          color: sh.color,
+          pctExprimes: sh.pct,
+          seats,
+          pctSeats: totalSeats > 0 ? (seats / totalSeats) * 100 : 0,
+        };
+      })
+      .sort((a, b) => b.seats - a.seats || b.pctExprimes - a.pctExprimes);
+  }
+
+  // Blocs (doivent rester synchrones avec AN1T_BLOCS côté serveur)
+  const BLOCS = [
+    { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443' },
+    { id: 'ensemble', label: 'Ensemble / centre présidentiel', color: '#ffeb00' },
+    { id: 'rn', label: 'Rassemblement national & alliés droite', color: '#0d378a' },
+    { id: 'lr', label: 'Droite républicaine', color: '#0066cc' },
+    { id: 'autres', label: 'Régionalistes & divers', color: '#dddddd' },
+  ];
+
+  const DEFAULT_PCTS: Record<string, number> = {
+    rn: 33.0,
+    nfp: 28.0,
+    ensemble: 20.0,
+    lr: 6.5,
+    autres: 12.5,
+  };
+
+  const REELLE: Record<string, number> = {
+    nfp: 182,
+    ensemble: 99,
+    rn: 125,
+    lr: 47,
+    autres: 124,
+  };
+
+  const PRESETS: Record<string, Record<string, number>> = {
+    't1-2024': { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
+    'base-2027': { rn: 32, nfp: 24, ensemble: 14, lr: 10, autres: 20 },
+    'rn-forte': { rn: 42, nfp: 18, ensemble: 13, lr: 8, autres: 19 },
+    'gauche-unie': { rn: 26, nfp: 32, ensemble: 15, lr: 8, autres: 19 },
+    'centre-elargi': { rn: 24, nfp: 19, ensemble: 28, lr: 11, autres: 18 },
+    reset: { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
+  };
+
+  const TOTAL_SEATS = 577;
+
+  function normalizePcts(pcts: Record<string, number>): Record<string, number> {
+    const sum = Object.values(pcts).reduce((a, b) => a + Math.max(0, b), 0);
+    if (sum < 0.001) return { ...pcts };
+    const factor = 100 / sum;
+    const out: Record<string, number> = {};
+    Object.keys(pcts).forEach((k) => {
+      out[k] = Math.round((pcts[k] * factor) * 10) / 10;
+    });
+    return out;
+  }
+
+  function getCurrentShares(threshold: number) {
+    return BLOCS.map((b) => {
+      const el = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+      const pct = parseFloat(el?.value || '0') || 0;
+      return { id: b.id, label: b.label, color: b.color, pct };
+    });
+  }
+
+  function updateLiveValues() {
+    const ids = BLOCS.map((b) => b.id);
+    let total = 0;
+
+    ids.forEach((id) => {
+      const range = document.getElementById(`an1t-pct-${id}`) as HTMLInputElement | null;
+      const valSpan = document.getElementById(`an1t-val-${id}`);
+      if (range && valSpan) {
+        const v = parseFloat(range.value) || 0;
+        valSpan.textContent = v.toFixed(1);
+        total += v;
+      }
+    });
+
+    const totEl = document.getElementById('an1t-total-text');
+    const warn = document.getElementById('an1t-total-warn');
+    if (totEl) totEl.textContent = `Total : ${total.toFixed(1)} %`;
+    if (warn) {
+      const diff = Math.abs(total - 100);
+      warn.hidden = diff < 1.2;
+    }
+    return total;
+  }
+
+  function updateThresholdDisplay() {
+    const th = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+    const thVal = document.getElementById('an1t-threshold-val');
+    const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
+    if (th && thVal) {
+      const v = parseFloat(th.value) || 0;
+      thVal.textContent = v.toFixed(1);
+    }
+    if (th && thNum && thNum.value !== th.value) {
+      thNum.value = th.value;
+    }
+  }
+
+  function getThreshold(): number {
+    const th = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+    return parseFloat(th?.value || '3') || 3;
+  }
+
+  function renderTable(results: any[], threshold: number) {
+    const container = document.getElementById('an1t-table');
+    if (!container) return;
+
+    container.innerHTML = '';
+    let totalSeatsCalc = 0;
+
+    results.forEach((r: any) => {
+      totalSeatsCalc += r.seats;
+      const row = document.createElement('div');
+      row.className = 'seat-row';
+      row.setAttribute('role', 'row');
+
+      const barW = Math.max(3, Math.round((r.seats / TOTAL_SEATS) * 230));
+      const pctStr = r.pctSeats.toFixed(1);
+
+      row.innerHTML = `
+        <span class="swatch" style="background:${r.color};width:11px;height:11px;border-radius:2px;flex-shrink:0;"></span>
+        <span class="label"><strong>${r.label}</strong></span>
+        <span class="seat-bar" style="width:${barW}px; background:${r.color};" aria-hidden="true"></span>
+        <span class="seat-num"><strong>${r.seats}</strong> sièges <span style="opacity:0.75;">(${pctStr}%)</span></span>
+        <span class="meta" style="font-size:0.72rem;min-width:3.2rem;">${r.pctExprimes.toFixed(1)}% voix</span>
+      `;
+      container.appendChild(row);
+    });
+
+    const meta = document.getElementById('an1t-result-meta');
+    if (meta) {
+      meta.innerHTML = `${TOTAL_SEATS} sièges — seuil <span id="an1t-result-seuil">${threshold.toFixed(1)}</span>%`;
+    }
+
+    const totRow = document.createElement('div');
+    totRow.className = 'meta';
+    totRow.style.marginTop = '0.2rem';
+    totRow.style.fontSize = '0.78rem';
+    totRow.textContent = `Total sièges : ${totalSeatsCalc} / ${TOTAL_SEATS}`;
+    container.appendChild(totRow);
+  }
+
+  function renderComparison(results: any[]) {
+    const container = document.getElementById('an1t-compare');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const header = document.createElement('div');
+    header.className = 'compare-row compare-header';
+    header.setAttribute('role', 'row');
+    header.innerHTML = `<span>Bloc</span><span>AN1T sim</span><span>Réelle 2024</span><span>Δ</span>`;
+    container.appendChild(header);
+
+    results.forEach((r: any) => {
+      const real = REELLE[r.id] ?? 0;
+      const delta = r.seats - real;
+      const deltaClass = delta > 0 ? 'pos' : delta < 0 ? 'neg' : '';
+
+      const row = document.createElement('div');
+      row.className = 'compare-row';
+      row.setAttribute('role', 'row');
+      row.innerHTML = `
+        <span>
+          <span class="swatch" style="background:${r.color};width:8px;height:8px;border-radius:1px;display:inline-block;margin-right:3px;"></span>
+          ${r.label}
+        </span>
+        <span><strong>${r.seats}</strong> <span class="meta">(${r.pctSeats.toFixed(1)}%)</span></span>
+        <span>${real}</span>
+        <span class="delta ${deltaClass}">${delta > 0 ? '+' : ''}${delta}</span>
+      `;
+      container.appendChild(row);
+    });
+  }
+
+  function runLiveSimulation() {
+    const threshold = getThreshold();
+    const shares = getCurrentShares(threshold);
+    const results = simulateFromVoteSharesClient(shares, TOTAL_SEATS, threshold);
+
+    renderTable(results, threshold);
+    renderComparison(results);
+  }
+
+  function applyPreset(key: string) {
+    const map = PRESETS[key] || PRESETS.reset;
+    const normalized = normalizePcts(map);
+
+    BLOCS.forEach((b) => {
+      const val = normalized[b.id] ?? DEFAULT_PCTS[b.id] ?? 10;
+      const range = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+      const num = document.getElementById(`an1t-num-${b.id}`) as HTMLInputElement | null;
+      const valSpan = document.getElementById(`an1t-val-${b.id}`);
+
+      if (range) range.value = val.toString();
+      if (num) num.value = val.toString();
+      if (valSpan) valSpan.textContent = val.toFixed(1);
+    });
+
+    updateLiveValues();
+
+    // Reset seuil à 3% pour presets principaux (sauf reset explicite)
+    const th = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+    const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
+    const thVal = document.getElementById('an1t-threshold-val');
+    if (key === 'reset' || key === 't1-2024') {
+      if (th) th.value = '3';
+      if (thNum) thNum.value = '3';
+      if (thVal) thVal.textContent = '3.0';
+    }
+
+    runLiveSimulation();
+  }
+
+  function syncInputs(id: string, fromNum: boolean) {
+    const range = document.getElementById(`an1t-pct-${id}`) as HTMLInputElement | null;
+    const num = document.getElementById(`an1t-num-${id}`) as HTMLInputElement | null;
+    const valSpan = document.getElementById(`an1t-val-${id}`);
+
+    if (!range || !num) return;
+
+    let v = parseFloat(fromNum ? num.value : range.value) || 0;
+    v = Math.max(0, Math.min(100, Math.round(v * 2) / 2));
+
+    range.value = v.toString();
+    num.value = v.toString();
+    if (valSpan) valSpan.textContent = v.toFixed(1);
+
+    updateLiveValues();
+    runLiveSimulation();
+  }
+
+  function initSimulator() {
+    const ids = BLOCS.map((b) => b.id);
+
+    // Init default values in DOM
+    ids.forEach((id) => {
+      const def = DEFAULT_PCTS[id] ?? 10;
+      const range = document.getElementById(`an1t-pct-${id}`) as HTMLInputElement | null;
+      const num = document.getElementById(`an1t-num-${id}`) as HTMLInputElement | null;
+      const valSpan = document.getElementById(`an1t-val-${id}`);
+
+      if (range) range.value = def.toString();
+      if (num) num.value = def.toString();
+      if (valSpan) valSpan.textContent = def.toFixed(1);
+    });
+
+    // Sliders % + num sync + live
+    ids.forEach((id) => {
+      const range = document.getElementById(`an1t-pct-${id}`) as HTMLInputElement | null;
+      const num = document.getElementById(`an1t-num-${id}`) as HTMLInputElement | null;
+
+      if (range) {
+        range.addEventListener('input', () => {
+          if (num) num.value = range.value;
+          const valSpan = document.getElementById(`an1t-val-${id}`);
+          if (valSpan) valSpan.textContent = parseFloat(range.value).toFixed(1);
+          updateLiveValues();
+          runLiveSimulation();
+        });
+      }
+      if (num) {
+        num.addEventListener('input', () => syncInputs(id, true));
+        num.addEventListener('blur', () => syncInputs(id, true));
+      }
+    });
+
+    // Threshold live
+    const thRange = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+    const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
+
+    if (thRange) {
+      thRange.addEventListener('input', () => {
+        updateThresholdDisplay();
+        runLiveSimulation();
+      });
+    }
+    if (thNum) {
+      thNum.addEventListener('input', () => {
+        const v = parseFloat(thNum.value) || 0;
+        const clamped = Math.max(0, Math.min(15, Math.round(v * 2) / 2));
+        if (thRange) thRange.value = clamped.toString();
+        updateThresholdDisplay();
+        runLiveSimulation();
+      });
+      thNum.addEventListener('blur', () => {
+        if (thRange) thNum.value = thRange.value;
+      });
+    }
+
+    // Presets
+    document.querySelectorAll('.preset-buttons [data-preset]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-preset') || 'reset';
+        applyPreset(key);
+      });
+    });
+
+    // Keyboard support
+    const root = document.querySelector('.an1t-simulator');
+    if (root) {
+      root.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Enter' && (e.target as HTMLElement)?.tagName === 'INPUT') {
+          e.preventDefault();
+          runLiveSimulation();
+        }
+      });
+    }
+
+    // Initial live values + first calculation
+    updateLiveValues();
+    updateThresholdDisplay();
+    runLiveSimulation();
+  }
+
+  // Boot
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSimulator);
+  } else {
+    initSimulator();
+  }
+</script>

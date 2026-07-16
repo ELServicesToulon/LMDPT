@@ -18,3 +18,4 @@ data/cache/*.json
 .DS_Store
 Thumbs.db
 *.log
+comments-api/data/

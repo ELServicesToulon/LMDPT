@@ -146,6 +146,45 @@ export function simulateAn1tSeats(
     .sort((a, b) => b.seats - a.seats || b.votes - a.votes);
 }
 
+/** Simule sièges Sainte-Laguë à partir de pourcentages d'intentions de vote hypothétiques (pour scénarios 2027 pédagogiques).
+ *  Convertit % en votes proportionnels, applique seuil, retourne SeatAllocation triés.
+ *  Factuel : utilise le même allocateSainteLague que la simulation 2024.
+ */
+export interface HypotheticalShare {
+  id: string;
+  label: string;
+  color: string;
+  pct: number;
+}
+
+export function simulateFromVoteShares(
+  shares: HypotheticalShare[],
+  totalSeats = 577,
+  thresholdPct = 3,
+): SeatAllocation[] {
+  if (!shares || shares.length === 0) return [];
+  const totalPct = shares.reduce((sum, s) => sum + Math.max(0, s.pct), 0) || 100;
+  const items = shares.map((sh) => ({
+    id: sh.id,
+    votes: Math.round((sh.pct / totalPct) * 100000000), // haute résolution pour précision Sainte-Laguë
+  }));
+  const seatMap = allocateSainteLague(items, totalSeats, thresholdPct);
+  return shares
+    .map((sh) => {
+      const seats = seatMap.get(sh.id) ?? 0;
+      return {
+        id: sh.id,
+        label: sh.label,
+        color: sh.color,
+        votes: Math.round((sh.pct / totalPct) * 100000000),
+        pctExprimes: sh.pct,
+        seats,
+        pctSeats: totalSeats > 0 ? (seats / totalSeats) * 100 : 0,
+      };
+    })
+    .sort((a, b) => b.seats - a.seats || b.pctExprimes - a.pctExprimes);
+}
+
 export interface RealAssemblyBloc {
   id: string;
   label: string;

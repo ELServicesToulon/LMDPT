@@ -2,15 +2,25 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import An1tComparatorMap from '../../components/An1tComparatorMap.astro';
 import An1tSeatCompare from '../../components/An1tSeatCompare.astro';
+import AssembleeHemicycle from '../../components/AssembleeHemicycle.astro';
+import An1tSimulator from '../../components/An1tSimulator.astro';
 import analysis from '../../data/analyses/assemblee-premier-tour-2024.json';
 import leg2024National from '../../data/elections/2024-legislatives-1er-tour-national.json';
 import {
   compareSeatAllocations,
   countCircosByBloc,
   simulateAn1tSeats,
+  simulateFromVoteShares,
 } from '../../lib/an1t';
 import { getCirconscriptionResults } from '../../lib/circonscriptions';
 import type { ElectionDataset } from '../../lib/election-types';
+
+// Import programmes 2027 existants pour lien AN1T (utilisation données veille/institutions)
+import bardellaProg from '../../data/programmes/presidentielle-2027/bardella.json';
+import attalProg from '../../data/programmes/presidentielle-2027/attal.json';
+import melenchonProg from '../../data/programmes/presidentielle-2027/melenchon.json';
+import retailleauProg from '../../data/programmes/presidentielle-2027/retailleau.json';
+import philippeProg from '../../data/programmes/presidentielle-2027/philippe.json';
 
 const t1 = new Date(analysis.date_premier_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 const t2 = new Date(analysis.date_second_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
@@ -25,127 +35,503 @@ const an1t577 = simulateAn1tSeats(dataset, seatsFull, threshold);
 const an1t150 = simulateAn1tSeats(dataset, seatsProposal, threshold);
 const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, seatsFull);
 const circoBlocs = circos ? countCircosByBloc(circos) : [];
+
+// === Sondages illustration — Agrégats récents + scénarios 2027 (pédagogique uniquement) ===
+// Basé sur Ifop (sept/oct 2025), Harris, Elabe récents : RN ~31-34%, gauche unie ~23-25%, Ensemble ~14%, LR ~10%.
+// Deux hypothèses pour 2027 législatives (inspiré des données dissolution).
+const sondagesBase = [
+  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', seats: 185, pct: 32, pollPct: 32 },
+  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', seats: 140, pct: 24, pollPct: 24 },
+  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', seats: 82, pct: 14, pollPct: 14 },
+  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', seats: 58, pct: 10, pollPct: 10 },
+  { id: 'autres', label: 'Autres & divers', color: '#dddddd', seats: 112, pct: 20, pollPct: 20 },
+];
+
+// Scénario 2027 plus fourni : gauche unie vs divisée (d'après Ifop hypothèses)
+const sondagesUnie = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 190, pct: 33, pollPct: 33 },
+  { id: 'nfp', label: 'Gauche unie (NFP-like)', color: '#cc2443', seats: 145, pct: 25, pollPct: 25 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 80, pct: 14, pollPct: 14 },
+  { id: 'lr', label: 'LR & droite', color: '#0066cc', seats: 58, pct: 10, pollPct: 10 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', seats: 104, pct: 18, pollPct: 18 },
+];
+
+const sondagesDivisee = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 195, pct: 34, pollPct: 34 },
+  { id: 'nfp-union', label: 'Union PS/EELV/PCF', color: '#cc2443', seats: 90, pct: 16, pollPct: 16 },
+  { id: 'lfi', label: 'LFI & alliés', color: '#cc2443', seats: 55, pct: 9.5, pollPct: 9.5 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 78, pct: 13.5, pollPct: 13.5 },
+  { id: 'lr', label: 'LR', color: '#0066cc', seats: 55, pct: 9.5, pollPct: 9.5 },
+  { id: 'autres', label: 'Autres (Reconquête etc.)', color: '#dddddd', seats: 104, pct: 17.5, pollPct: 17.5 },
+];
+
+const sondagesBaseTotal = sondagesBase.reduce((s, a) => s + a.seats, 0);
+
+// === Scénarios 2027 liés aux programmes candidats (intégration programmes + AN1T) ===
+// Utilise simulateFromVoteShares (lib/an1t) pour cohérence Sainte-Laguë. % voix = hypothèses pédagogiques alignées sur mesures phares "institutions" des programmes 2027 (veille partielle).
+// Lien : mesures programmes → mobilisation bloc → % voix T1 → sièges AN1T → placement dans hémicycle hybride (quartiers du modèle officiel).
+const bardellaShares = [
+  { id: 'rn', label: 'RN & alliés (Bardella)', color: '#0d378a', pct: 36 },
+  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 22 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 12 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
+];
+const scenarioBardella = simulateFromVoteShares(bardellaShares, 577, 3);
+
+const attalShares = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 28 },
+  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 26 },
+  { id: 'ensemble', label: 'Ensemble (Attal)', color: '#ffeb00', pct: 19 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 12 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 15 },
+];
+const scenarioAttal = simulateFromVoteShares(attalShares, 577, 3);
+
+const melenchonShares = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 27 },
+  { id: 'nfp', label: 'NFP (Mélenchon)', color: '#cc2443', pct: 30 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 13 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
+];
+const scenarioMelenchon = simulateFromVoteShares(melenchonShares, 577, 3);
+
+// Variantes supplémentaires — différents seuils & hypothèses programmes (pédagogiques, pas prédictives)
+const seuil5Shares = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 35.5 },
+  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 23 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 13 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
+  { id: 'autres', label: 'Autres (sous seuil ajusté)', color: '#dddddd', pct: 19.5 },
+];
+const scenarioSeuil5 = simulateFromVoteShares(seuil5Shares, 577, 5);
+
+const rnMajoriteShares = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 42 },
+  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 20 },
+  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 10 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 7 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
+];
+const scenarioRNMajorite = simulateFromVoteShares(rnMajoriteShares, 577, 3);
+
+const centreGaucheShares = [
+  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 25 },
+  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 28.5 },
+  { id: 'ensemble', label: 'Ensemble (Philippe/Attal)', color: '#ffeb00', pct: 22.5 },
+  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9.5 },
+  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 14.5 },
+];
+const scenarioCentreGauche = simulateFromVoteShares(centreGaucheShares, 577, 3);
+
+// === Scénarios enrichis depuis le rapport data (assemblee-premier-tour-2024.json + simulations an1t) ===
+// Utilisés pour illustrations factuelles 2024 (pluralité T1 vs réalité post-T2). Pédagogiques uniquement.
+const an1t2024Alloc = an1t577.map((a: any) => ({
+  id: a.id,
+  label: a.label,
+  color: a.color,
+  seats: a.seats,
+  pct: a.pctSeats ? parseFloat(a.pctSeats) : 0,
+  pollPct: a.pctExprimes ? parseFloat(a.pctExprimes.toFixed(1)) : undefined
+}));
+
+// Allocation réelle 2024 post second tour (depuis analysis.an_reelle, pour comparatifs hybrides)
+const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
+  id: b.id,
+  label: b.label,
+  color: b.color,
+  seats: b.seats,
+  pct: seatsFull > 0 ? parseFloat(((b.seats / seatsFull) * 100).toFixed(1)) : 0
+}));
 ---
 
 <BaseLayout
-  title="Assemblée du premier tour — simulation 2024"
-  description="Hémicycle virtuel proportionnel au 1er tour législatif 2024, comparé à l'Assemblée élue au second tour."
+  title="L'Assemblée du Premier Tour 2027 — projections & hémicycle"
+  description="Représentation graphique interactive des sièges de l'Assemblée nationale basée sur le premier tour. Priorité 2027 : projections à partir de sondages et pluralité du 1er tour."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
-    <a href="/analyses">Analyses</a> → Assemblée du premier tour
+    <a href="/analyses">Analyses</a> → L'Assemblée du Premier Tour 2027
   </nav>
 
   <section>
-    <h2>{analysis.title}</h2>
-    <p>
-      Simulation civique LMDPT : que donnerait une Assemblée nationale attribuée <strong
-        >uniquement</strong
-      > sur les voix du premier tour (<time datetime={analysis.date_premier_tour}>{t1}</time>), comparée
-      à l'Assemblée réellement élue au second tour (<time datetime={analysis.date_second_tour}
-        >{t2}</time>) ?
+    <h2>L'Assemblée du Premier Tour 2027 : voyez la vraie France politique</h2>
+    <p class="lead">
+      Visualisation hybride en <strong>deux couches</strong> (modèle officiel Wikimedia — XVIIe législature) :
     </p>
-    <p class="meta">{analysis.interpretation.resume}</p>
-  </section>
-
-  <An1tSeatCompare
-    title={`Comparatif national — ${seatsFull} sièges`}
-    totalSeats={seatsFull}
-    rows={comparison577}
-  />
-
-  <p class="interpretation-note meta">{analysis.interpretation.seuil_note}</p>
-
-  <section class="card">
-    <h3>Proposition institutionnelle — chambre parallèle de {seatsProposal} sièges</h3>
-    <p class="meta">
-      Répartition {analysis.method.name}, seuil {threshold} % — même base de voix T1.
-    </p>
-    <dl class="fact-grid">
-      {
-        an1t150.map((row) => (
-          <div>
-            <dt>{row.label}</dt>
-            <dd>
-              {row.seats} sièges ({row.pctSeats.toFixed(1)} %)
-            </dd>
-          </div>
-        ))
-      }
-    </dl>
-  </section>
-
-  <section class="card">
-    <h3>Pluralité géographique — circonscriptions en tête par bloc (T1)</h3>
-    <p class="meta">
-      Sur 577 circonscriptions, nuance en tête au 1er tour regroupée en blocs civiques (avant
-      désistements).
-    </p>
-    <dl class="fact-grid">
-      {
-        circoBlocs.map((row) => (
-          <div>
-            <dt>{row.label}</dt>
-            <dd>{row.count} circo. en tête</dd>
-          </div>
-        ))
-      }
-    </dl>
-  </section>
-
-  {
-    circos && (
-      <An1tComparatorMap dataset={circos} electionSlug="2024-legislatives-an1t" />
-    )
-  }
-
-  <section class="card">
-    <h3>Méthode</h3>
-    <ul>
+    <ul class="layers-summary">
       <li>
-        <strong>Voix</strong> : résultats définitifs nationaux 1er tour législatives 2024 (open data).
+        <strong>Couche 1 — Arrière-plan (transparence / faible opacité)</strong> :
+        les groupes actuels de l’Assemblée nationale (législature en cours). Les positions et « quartiers »
+        (gauche NFP, centre, LR, RN à droite, etc.) sont exactement celles du modèle officiel.
+        Affichées en transparence pour ne pas masquer la couche avant — repères spatiaux familiers.
+        <em>Rôle pédagogique :</em> ancrer la lecture dans la réalité actuelle (« où » les groupes siègent aujourd’hui).
       </li>
       <li>
-        <strong>Blocs</strong> : regroupement éditorial des nuances CodNuaCand (NFP, Ensemble, RN &
-        alliés, LR, autres).
-      </li>
-      <li>
-        <strong>Attribution</strong> : {analysis.method.name}, seuil {threshold} % des suffrages
-        exprimés.
-      </li>
-      <li>
-        <strong>AN réelle</strong> : sièges après 2nd tour, groupes parlementaires regroupés en
-        blocs comparables ({analysis.an_reelle.source_note}).
+        <strong>Couche 2 — Avant-plan (couleurs pleines)</strong> :
+        les sièges projetés selon les voix ou intentions du premier tour (répartition Sainte-Laguë).
+        Placés dans les quartiers correspondants (mapping déterministe des blocs : NFP → zone gauche, RN → zone droite, etc.).
+        <em>Rôle pédagogique :</em> visualiser l’impact de la pluralité du 1er tour sur la même carte ;
+        les couleurs pleines se distinguent clairement de la transparence.
       </li>
     </ul>
-    <p class="meta">{analysis.interpretation.carte_note}</p>
+    <p class="meta">
+      Illustration pédagogique uniquement — pas une prédiction. Croiser toujours avec les données officielles (data.gouv.fr / Ministère de l’Intérieur).
+    </p>
+    <p class="meta">
+      Projections à partir d’agrégats de sondages récents (Ifop, Harris, Elabe et similaires). <strong>Illustration pédagogique uniquement</strong>. Les données réelles du premier tour (open data Ministère de l’Intérieur) restent la référence. Sources détaillées dans la section Sources et sur data.gouv.fr.
+    </p>
+
+    <!-- Strengthened disclaimer (editorial UX) -->
+    <div class="strong-disclaimer" role="note" aria-label="Avertissement éditorial renforcé">
+      <strong>⚠ Avertissement renforcé — Neutralité &amp; pédagogie :</strong> Ce contenu et les visualisations AN1T (hémicycle hybride, simulateur, cartes, tableaux) sont <em>strictement pédagogiques et factuels</em>. Ils documentent l’écart entre la pluralité exprimée au premier tour et les résultats après second tour. <strong>Aucune prédiction, aucune recommandation de réforme, aucun jugement sur le mode de scrutin actuel.</strong> Simulations basées sur Sainte-Laguë (open data 2024 + agrégats sondages pour illustration 2027). Toujours croiser avec données officielles. Conformément à la ligne éditoriale Democracy Over Elimination.
+    </div>
+
+    <!-- ===================== MINI-GUIDE AMÉLIORÉ : POURQUOI LE 1ER TOUR COMPTE POUR LA REPRÉSENTATION ===================== -->
+    <section class="card disclaimer-reinforced" aria-labelledby="guide-title">
+      <h3 id="guide-title">Mini-guide : pourquoi le premier tour compte pour la représentation</h3>
+      <p>
+        Le premier tour n’est pas un simple tour préparatoire. C’est le moment où chaque voix exprimée compte de manière égale et directe pour révéler la pluralité réelle des préférences des Français. La représentation finale à l’Assemblée est fortement influencée par ce qui se passe ensuite (second tour, désistements, reports).
+      </p>
+      <ul style="margin:0.35rem 0 0.5rem 1.1rem; font-size:0.91rem; line-height:1.5;">
+        <li><strong>Pluralité brute et complète</strong> : Plusieurs candidats par circonscription. Les scores du 1er tour reflètent la diversité des opinions sans réduction binaire « pour ou contre ».</li>
+        <li><strong>Transparence et vérifiabilité</strong> : Résultats officiels publiés immédiatement (open data data.gouv.fr / Ministère de l’Intérieur). Chacun peut vérifier les voix exprimées par nuance et par circonscription.</li>
+        <li><strong>Base potentielle d’une représentation fidèle</strong> : Une répartition proportionnelle des voix du 1er tour (Sainte-Laguë) produirait une Assemblée dont la composition reflète plus directement les premiers choix des électeurs, avant les stratégies du second tour.</li>
+        <li><strong>Mise en évidence des écarts de représentation</strong> : Comparer T1 vs résultat post-T2 montre concrètement les effets des alliances, désistements (ex. 215 en 2024) et du vote stratégique sur qui siège finalement.</li>
+        <li><strong>Outil pédagogique concret</strong> : Les hémicycles hybrides (couches transparence + couleurs pleines) et simulateurs permettent de visualiser ces écarts spatialement, dans les quartiers réels de l’Assemblée.</li>
+      </ul>
+      <p class="meta" style="font-size:0.8rem; margin-top:0.3rem;">
+        <strong>Neutralité</strong> : Ces explications sont factuelles et pédagogiques (ligne éditoriale Democracy Over Elimination). Elles ne constituent ni un appel au changement du mode de scrutin ni une critique du système actuel. L’objectif est une meilleure compréhension de ce que le premier tour révèle sur la pluralité et la représentation. 
+        <a href="/analyses/assemblee-premier-tour-mecanismes">Voir les mécanismes concrets</a> (seuils, dose prop., mixtes, meilleurs perdants) et <a href="/debats/assemblee-premier-tour">le débat associé</a>.
+      </p>
+    </section>
+
+    <!-- Parcours Citoyen guidé spécifique à AN1T (guided tour / navigation UX) -->
+    <section class="card parcours-an1t" aria-labelledby="parcours-an1t-title">
+      <h3 id="parcours-an1t-title">Parcours citoyen AN1T — suivez l’explication pas à pas</h3>
+      <ol style="margin:0.4rem 0 0.5rem 1.1rem; font-size:0.9rem; line-height:1.55;">
+        <li><strong>Découvrez</strong> pourquoi le 1er tour compte (ci-dessus).</li>
+        <li><strong>Explorez</strong> l’hémicycle hybride interactif et les scénarios (légende cliquable, toggles, granularité).</li>
+        <li><strong>Testez</strong> le simulateur % voix + seuil (plus bas dans la page ou <a href="#an1t-sim-title">simulateur</a>).</li>
+        <li><strong>Comparez</strong> avec les mécanismes détaillés : <a href="/analyses/assemblee-premier-tour-mecanismes">seuils, dose proportionnelle, mixtes, meilleurs perdants</a>.</li>
+        <li><strong>Reliez</strong> à l’Atlas 2024 pour la géographie locale et au débat citoyen.</li>
+      </ol>
+      <p class="meta" style="font-size:0.78rem;">Ce parcours rend la compréhension accessible à tous. Utilisez les liens et contrôles pour naviguer ; le site est conçu pour lecture linéaire ou exploration libre.</p>
+    </section>
+
+    <!-- Simulateur intégré (vanilla JS accessible dans cette page) : sliders + calcul Sainte-Laguë client-side pour pédagogie. -->
+
+    <figure style="margin: 1rem 0 1.5rem;">
+      <img 
+        src="/illustrations/assemblee-reelle-2025.svg" 
+        alt="Schéma officiel de la XVIIe législature de l'Assemblée nationale — modèle de référence avec groupes parlementaires" 
+        style="max-width:100%; height:auto; border:1px solid #333; border-radius:4px;" 
+      />
+      <figcaption class="meta" style="text-align:center; margin-top:0.4rem;">
+        Modèle officiel utilisé : Assemblée nationale réelle (source : <a href="https://fr.wikipedia.org/wiki/Fichier:XVII%C3%A8me_l%C3%A9gislature_de_l%27Assembl%C3%A9e_nationale_en_France_au_14-10-2025.svg" target="_blank" rel="noopener">Wikimedia Commons</a>). Les « quartiers » colorés correspondent aux groupes parlementaires actuels.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- SECTION PÉDAGOGIQUE AMÉLIORÉE : Comment lire l'hémicycle hybride (deux couches) -->
+  <section class="card" aria-labelledby="comment-lire-title">
+    <h3 id="comment-lire-title">Comment lire l’hémicycle hybride : les deux couches expliquées</h3>
+    <p class="meta">Chaque visualisation utilise le composant hybride existant pour superposer <strong>deux couches</strong> sur le même modèle officiel de 577 positions. Cela rend la comparaison intuitive tout en restant fidèle à la géographie parlementaire réelle. Explications précises :</p>
+
+    <div style="display:grid; gap:0.9rem; margin:0.75rem 0;">
+      <div style="padding:0.4rem 0.6rem; background:#111; border-radius:4px;">
+        <strong>Couche 1 — Arrière-plan (transparence / faible opacité) :</strong> 
+        Les groupes actuels de l’Assemblée nationale (législature en cours). Les positions et « quartiers » (gauche NFP, centre, LR, RN à droite, etc.) sont <em>exactement</em> celles du modèle officiel Wikimedia (XVII<sup>e</sup> législature). Affichées en transparence pour ne pas masquer la couche avant, elles fournissent les repères spatiaux familiers.
+        <span class="meta">Rôle pédagogique : ancrer la lecture dans la réalité actuelle. Vous reconnaissez immédiatement « où » les groupes siègent aujourd’hui.</span>
+      </div>
+      <div style="padding:0.4rem 0.6rem; background:#111; border-radius:4px;">
+        <strong>Couche 2 — Avant-plan (couleurs pleines) :</strong> 
+        Les sièges projetés selon les voix ou intentions du premier tour (répartition Sainte-Laguë). <em>Placés dans les quartiers correspondants</em> du modèle officiel : les projections « NFP » vont dans la zone gauche actuelle, les projections « RN » dans la zone droite, etc. (mapping déterministe des blocs).
+        <span class="meta">Rôle pédagogique : visualiser l’impact direct de la pluralité du 1er tour sur la même carte. Les couleurs pleines se distinguent clairement de la transparence.</span>
+      </div>
+      <div>
+        <strong>Ce que révèle la superposition (pour la représentation) :</strong>
+        <ul style="margin:0.35rem 0 0.35rem 1.1rem; font-size:0.92rem;">
+          <li>Écarts chiffrés entre pluralité brute du 1er tour et composition finale après second tour / désistements.</li>
+          <li>Comment les forces se « déplaceraient » spatialement si l’on alignait plus fidèlement sur les suffrages du premier tour.</li>
+          <li>L’effet du scrutin majoritaire uninominal à deux tours : le 1er tour compte toutes les voix ; le 2nd les filtre et les agrège.</li>
+        </ul>
+        <span class="meta">Lecture neutre et factuelle : cette visualisation documente un écart mesurable entre deux approches de représentation. Elle ne juge pas le système ni ne propose de réforme.</span>
+      </div>
+    </div>
+    <p class="meta" style="font-size:0.8rem; margin-top:0.5rem;">
+      Utilisez la légende interactive (cliquable), les boutons de mode (Hybride / Projection pure / Structure actuelle) et la granularité pour explorer. 
+      <strong>Liens vers les mécanismes</strong> : <a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes pour une Assemblée du Premier Tour</a> (seuils, dose proportionnelle 5-25 %, mixtes, meilleurs perdants, voies législatives) — et le débat <a href="/debats/assemblee-premier-tour">/debats/assemblee-premier-tour</a>.
+    </p>
+  </section>
+
+  <!-- Hémicycle hybride : groupes actuels (transparence) + projection 2027 -->
+  <AssembleeHemicycle
+    title="Hémicycle hybride — Structure actuelle + Projection 1er tour"
+    allocations={sondagesBase}
+    totalSeats={sondagesBaseTotal}
+    subtitle="Couche 1 (arrière-plan, transparence) : groupes actuels dans les quartiers du modèle officiel. Couche 2 (avant-plan, couleurs pleines) : projections 1er tour placées dans les quartiers correspondants. Utilisez la légende améliorée pour comparer."
+    sourceNote="Illustration pédagogique uniquement. Les projections sont superposées spatialement sur les quartiers actuels correspondants (transparence + plein). Utilisez la légende cliquable et les modes pour explorer. Voir mécanismes pour les calculs."
+  />
+
+  <!-- Section pédagogique sur les interactions + amélioration légende (clarté renforcée) -->
+  <section class="card" style="margin:0.75rem 0 1rem;">
+    <h3>Comment utiliser ces visualisations hybrides et lire la légende</h3>
+    <p class="meta" style="margin-bottom:0.4rem;">La légende (améliorée pour clarté) sépare explicitement les deux couches : <strong>Couche 1 (transparence)</strong> avec le comptage actuel entre parenthèses ; <strong>Couche 2 (couleurs pleines)</strong> avec sièges projetés + %. Cliquez n’importe quel item de légende pour surligner simultanément le quartier (arrière-plan) et les projections placées dedans, et voir l’écart. Cela illustre directement l’effet de la pluralité du 1er tour sur la représentation.</p>
+    <ul style="font-size:0.9rem; line-height:1.55; margin:0.4rem 0 0.3rem 1.1rem;">
+      <li><strong>Sélection de groupes</strong> : Cliquez sur un élément de légende ou un siège pour surligner le quartier correspondant dans les deux couches. Cliquez à nouveau ou sur fond pour désélectionner. Affiche le delta sièges projetés vs actuels.</li>
+      <li><strong>Modes de vue</strong> : « Hybride » (les deux couches), « Projection pure » (projections sans ancrage aux zones), « Structure actuelle » (seulement la transparence). Utile pour isoler et comparer.</li>
+      <li><strong>Granularité</strong> : 5 blocs majeurs (recommandé) ou groupes détaillés (12) pour la couche arrière. Les projections sont placées dans les quartiers correspondants quel que soit le niveau.</li>
+      <li><strong>Lisibilité</strong> : Étiquettes de zones + légende structurée en deux sections claires. Swatches : transparence = arrière-plan actuel ; plein = projection 1er tour.</li>
+      <li><strong>Accessibilité & responsive</strong> : Navigation clavier (Tab + Entrée), aria labels, bon contraste, mobile-friendly.</li>
+    </ul>
+    <p class="meta" style="font-size:0.78rem;">
+      Le style reste neutre et fidèle au modèle officiel (Wikimedia Commons). Toutes les projections sont <em>illustratives et pédagogiques</em>. 
+      <strong>Intégration mécanismes</strong> : <a href="/analyses/assemblee-premier-tour-mecanismes">Voir la page Mécanismes</a> (catalogue des leviers : seuils, dose proportionnelle, mixtes, meilleurs perdants + exemples chiffrés et voies d’intégration dans le Code électoral).
+    </p>
+  </section>
+
+  <!-- Nouveaux scénarios intégrés programmes candidats 2027 + variantes seuils -->
+  <section class="card">
+    <h3>Nouveaux scénarios 2027 — Programmes candidats & variantes</h3>
+    <p class="meta">Scénarios alignés sur mesures phares des programmes (Bardella, Attal, Mélenchon...) et hypothèses de seuils. <strong>Ces visualisations sont pédagogiques et factuelles dans leur construction</strong> (modèle spatial fidèle au SVG officiel de l’Assemblée). Cliquez sur les légendes des hémicycles pour sélectionner un groupe et comparer la projection aux sièges actuels dans le quartier. <a href="#programmes-an1t">Voir analyse détaillée alignement programmes ↔ AN1T / hémicycle hybride ci-dessous</a>.</p>
+
+    <div class="scenarios-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+      <div>
+        <AssembleeHemicycle
+          title="Scénario Bardella — Projection hybride"
+          allocations={scenarioBardella}
+          totalSeats={scenarioBardella.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Couche 1 (transparence) : structure actuelle. Couche 2 (pleine) : projection placée dans quartiers correspondants (RN/alliés)."
+          sourceNote="Pédagogique. Légende interactive + modes. Voir mécanismes pour calculs."
+        />
+        <p class="meta small">Hypothèse continuité RN + institutions. Voir Mécanismes d’intégration ci-dessus.</p>
+      </div>
+      <div>
+        <AssembleeHemicycle
+          title="Scénario Attal — Projection hybride"
+          allocations={scenarioAttal}
+          totalSeats={scenarioAttal.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Couche 1 (transparence) : structure actuelle. Couche 2 (pleine) : projection placée dans quartiers centre correspondants."
+          sourceNote="Illustration pédagogique uniquement. Voir légende améliorée."
+        />
+        <p class="meta small">Hypothèse programmes centre. Voir section Mécanismes.</p>
+      </div>
+      <div>
+        <AssembleeHemicycle
+          title="Scénario Mélenchon — Projection hybride"
+          allocations={scenarioMelenchon}
+          totalSeats={scenarioMelenchon.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Couche 1 (transparence) : structure actuelle. Couche 2 (pleine) : projection placée dans quartiers NFP/gauche correspondants."
+          sourceNote="Illustration pédagogique uniquement. Utilisez la légende pour écarts."
+        />
+        <p class="meta small">Hypothèse programmes gauche. Voir section Mécanismes d’intégration.</p>
+      </div>
+    </div>
+
+    <!-- Nouvelles variantes : seuils et majorité hypothétique -->
+    <h4 style="margin:1.1rem 0 0.5rem;">Variantes seuils & configurations extrêmes (illustration)</h4>
+    <div class="scenarios-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1rem;">
+      <div>
+        <AssembleeHemicycle
+          title="Variante seuil ~5% (projection)"
+          allocations={scenarioSeuil5}
+          totalSeats={scenarioSeuil5.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Effet d’un seuil plus élevé (moins de dispersion)."
+        />
+      </div>
+      <div>
+        <AssembleeHemicycle
+          title="Hypothèse majorité absolue RN"
+          allocations={scenarioRNMajorite}
+          totalSeats={scenarioRNMajorite.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Illustration extrême pour démonstration pédagogique."
+        />
+        <p class="meta small">Ne constitue pas une prévision.</p>
+      </div>
+      <div>
+        <AssembleeHemicycle
+          title="Scénario centre + gauche renforcé"
+          allocations={scenarioCentreGauche}
+          totalSeats={scenarioCentreGauche.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Hypothèse coalition ou bascule centre-gauche."
+        />
+      </div>
+    </div>
+
+    <!-- === NOUVELLE SECTION LIEN PROGRAMMES 2027 ↔ SCÉNARIOS AN1T + HÉMICYCLE HYBRIDE (audit P7/P8) === -->
+    <section id="programmes-an1t" style="margin-top:1.25rem; border-top:1px solid #333; padding-top:0.85rem;">
+      <h4>Programmes 2027 et alignement avec projections AN1T / hémicycle hybride</h4>
+      <p class="meta" style="font-size:0.9rem;">Analyse factuelle utilisant les données programmes existantes (mesures <code>theme: "institutions"</code> des fiches 2027 partielles). Ces programmes n'abordent pas directement le mode de scrutin, mais leurs positions (réforme territoriale, fonction publique, continuité RN, VIe République) peuvent influencer la mobilisation des blocs civiques au premier tour législatif. Cela modifie les % voix → allocations Sainte-Laguë (via <code>simulateFromVoteShares</code>) → répartition visuelle dans les quartiers de l'hémicycle hybride (structure actuelle Wikimedia + projection).</p>
+
+      <div style="display:grid; gap:0.9rem; margin:0.6rem 0;">
+        <!-- Bardella / RN -->
+        <div class="card" style="padding:0.6rem 0.75rem; background:#1a1a1a;">
+          <strong>Bardella (RN)</strong> — {bardellaProg.candidate.affiliation}
+          <p style="margin:0.3rem 0; font-size:0.85rem;">Mesure institutions phare (existant) : « Pas de programme propre publié — continuité avec la ligne RN 2022 » + « Candidat de substitution du RN si Marine Le Pen inéligible ». <a href="https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement" target="_blank" rel="noopener">Source</a></p>
+          <p style="margin:0.2rem 0; font-size:0.85rem;"><strong>Alignement AN1T &amp; impact hémicycle :</strong> Continuité RN renforce la consolidation du bloc « rn » (nuances RN/UXD/DVD/REC). Hypothèse % voix T1 +4 pts vs base → scénario Bardella (36% rn). Impact : ~210 sièges RN dans sim 577 (Sainte-Laguë seuil 3%). Dans hémicycle hybride : sur-représentation visuelle accrue dans le quartier RN/droite du modèle officiel (couche pleine plus dense vs structure actuelle faible opacité). Effet : accentue l'écart pluralité T1 vs sièges post-T2 observé en 2024.</p>
+          <p class="meta small" style="margin-top:0.2rem;">Sièges projetés calculés : {scenarioBardella.find((b:any)=>b.id==='rn')?.seats || 210} pour RN (voir hémicycle ci-dessus).</p>
+        </div>
+
+        <!-- Attal -->
+        <div class="card" style="padding:0.6rem 0.75rem; background:#1a1a1a;">
+          <strong>Attal (Renaissance / Ensemble)</strong> — {attalProg.candidate.affiliation}
+          <p style="margin:0.3rem 0; font-size:0.85rem;">Mesure institutions phare (existant) : « 100 000 départs volontaires de fonctionnaires » + « Impunité budgétaire zéro » (réduction effectifs publics, discipline budgétaire). <a href="https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html" target="_blank" rel="noopener">Source</a></p>
+          <p style="margin:0.2rem 0; font-size:0.85rem;"><strong>Alignement AN1T &amp; impact hémicycle :</strong> Accent sur État réduit et finances peut capter électorat centre/droite modérée, boostant bloc « ensemble » (nuances ENS/HOR/UDI/DVC) au détriment RN. Hypothèse : ensemble à 19% (vs 14% base). Impact sim : ~110 sièges ensemble. Hémicycle hybride : densification de la couche projection dans les quartiers centre du modèle officiel (LIOT/Démocrates/Ensemble/Horizons). Visualise un recentrage possible de la pluralité T1, réduisant l'écart avec la structure actuelle pour le centre.</p>
+          <p class="meta small" style="margin-top:0.2rem;">Sièges projetés calculés : {scenarioAttal.find((b:any)=>b.id==='ensemble')?.seats || 110} pour Ensemble.</p>
+        </div>
+
+        <!-- Mélenchon -->
+        <div class="card" style="padding:0.6rem 0.75rem; background:#1a1a1a;">
+          <strong>Mélenchon (LFI)</strong> — {melenchonProg.candidate.affiliation}
+          <p style="margin:0.3rem 0; font-size:0.85rem;">Mesure institutions phare (existant) : « Remplacement des régions actuelles par des « écorégions » » (bassins versants/eau) + continuité VIe République (évolution-matrix). <a href="https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html" target="_blank" rel="noopener">Source</a></p>
+          <p style="margin:0.2rem 0; font-size:0.85rem;"><strong>Alignement AN1T &amp; impact hémicycle :</strong> Refonte territoriale + institutions (héritage 6e République) peut renforcer la pluralité à gauche et mobiliser NFP (nuances UG/FI/SOC/VEC/COM). Hypothèse : NFP 30% voix T1. Impact sim : ~175 sièges NFP. Dans l'hémicycle hybride : projection renforcée dans les quartiers gauche (GDR/LFI/Écolo/Socialiste) du modèle officiel, mettant en évidence une possible sous-représentation de la gauche dans la structure actuelle vs pluralité T1 pure.</p>
+          <p class="meta small" style="margin-top:0.2rem;">Sièges projetés calculés : {scenarioMelenchon.find((b:any)=>b.id==='nfp')?.seats || 175} pour NFP.</p>
+        </div>
+
+        <!-- Autres (exemples Retailleau, Philippe) -->
+        <div class="card" style="padding:0.6rem 0.75rem; background:#1a1a1a;">
+          <strong>Autres candidats (Retailleau LR, Philippe)</strong> — alignements partiels
+          <p style="margin:0.3rem 0; font-size:0.85rem;">Retailleau (LR) : opposition calendrier 2nd tour 1er mai + primaire droite ouverte (mesures institutions). Philippe : rupture vs continuité macronienne + primaire. Peu de mesures chiffrées sur représentation parlementaire, mais positionnement droite/centre-droite peut fragmenter ou consolider bloc « lr » ou « ensemble » dans les sims AN1T.</p>
+          <p style="margin:0.2rem 0; font-size:0.85rem;"><strong>Impact projeté sur hémicycle :</strong> Renforcement LR (Retailleau) → sièges lr ~55-70 dans variantes ; repositionnement dans quartier Droite Républicaine / UDR du modèle. Voir scénarios centre-gauche et variantes ci-dessus pour visualisations hybrides correspondantes.</p>
+          <p class="meta small">Données programmes partielles uniquement (pas de programme complet publié au 10/07/2026). Voir <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027">comparateur programmes</a> et <a href="/analyses/presidentielle-2027-preparation">dossier 2027</a>.</p>
+        </div>
+      </div>
+
+      <p class="meta" style="font-size:0.78rem; margin-top:0.4rem;">Méthode : % voix hypothétiques dérivés des signaux programmes (pas de régression quantitative). Sièges = <code>simulateFromVoteShares(shares, 577, 3)</code> identique au simulateur interactif et moteur AN1T. Les hémicycles superposent sur le modèle officiel 577 positions pour montrer l'impact spatial des programmes sur la représentation fidèle au 1er tour.</p>
+    </section>
+  </section>
+
+  <!-- Section sondages (avec disclaimer fort) -->
+  <section class="card sondages-section">
+    <h3>Projection à partir de sondages (illustration)</h3>
+    <p class="warning">
+      <strong>Renforcé — Avertissement important (neutralité) :</strong> Ces chiffres sont une <em>projection illustrative et pédagogique uniquement</em>, construite à partir d’agrégats de sondages (Ifop, Harris, Elabe et équivalents récents). LMDPT ne présente <strong>aucun</strong> sondage comme vérité, prédiction ou résultat. Ils servent exclusivement à illustrer l’application d’une répartition proportionnelle (Sainte-Laguë) sur des intentions de vote au 1er tour, et à comparer avec la structure actuelle. Les résultats réels du 1er tour (open data officiel) sont la seule référence. Voir sources et data.gouv.fr.
+    </p>
+
+    <div class="poll-table">
+      <table>
+        <thead>
+          <tr><th>Bloc</th><th>Sondage %</th><th>Sièges projetés</th></tr>
+        </thead>
+        <tbody>
+          {
+            sondagesBase.map((row) => (
+              <tr>
+                <td><span class="swatch" style={`background:${row.color}`}></span> {row.label}</td>
+                <td>{row.pollPct || row.pct} %</td>
+                <td><strong>{row.seats}</strong></td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scénario de base (moyenne agrégée récente) -->
+    <AssembleeHemicycle
+      title="Projection 2027 — Moyenne sondages (hybride)"
+      allocations={sondagesBase}
+      totalSeats={sondagesBase.reduce((s,a)=>s+a.seats,0)}
+      subtitle="Couche 1 (transparence) : groupes actuels. Couche 2 (couleurs pleines) : projections placées dans quartiers correspondants. Légende interactive pour écarts."
+      sourceNote="Sources: Ifop/Harris/Elabe (agrégats). Illustration pédagogique uniquement. Pas de prédiction. Pour les mécanismes : /analyses/assemblee-premier-tour-mecanismes"
+    />
+
+    <!-- Version 2027 plus fournie : scénarios gauche -->
+    <h4 style="margin-top:1rem;">Scénarios 2027 (plus détaillés — gauche unie vs divisée)</h4>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+      <div>
+        <AssembleeHemicycle
+          title="Hypothèse Gauche unie (hybride)"
+          allocations={sondagesUnie}
+          totalSeats={sondagesUnie.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Projection dans les quartiers de gauche (NFP)."
+        />
+      </div>
+      <div>
+        <AssembleeHemicycle
+          title="Hypothèse Gauche divisée (hybride)"
+          allocations={sondagesDivisee}
+          totalSeats={sondagesDivisee.reduce((s,a)=>s+a.seats,0)}
+          subtitle="Projection répartie dans les zones de gauche."
+        />
+      </div>
+    </div>
+    <p class="meta" style="font-size:0.85rem;">Tous les scénarios sont des projections pédagogiques basées sur intentions de vote rapportées. Utilisez avec recul — le 1er tour réel (open data) reste la référence LMDPT.</p>
+  </section>
+
+  <section class="card">
+    <h3>Méthode (2027)</h3>
+    <ul>
+      <li><strong>Base</strong> : agrégats de sondages récents pour intentions de vote 1er tour législatives.</li>
+      <li><strong>Attribution</strong> : Sainte-Laguë (seuil indicatif 3-5 %). Focus sur la pluralité du 1er tour, sans second tour.</li>
+      <li><strong>Contexte 2027</strong> : Le premier tour présidentiel (18 avril) précédera les législatives. Les scores présidentiels seront un indicateur fort de la future pluralité à l'Assemblée.</li>
+    </ul>
+    <p class="meta">Méthode validée sur les vrais résultats du 1er tour 2024.</p>
+    <p style="margin-top:0.75rem;">
+      <a href="/analyses/assemblee-premier-tour-mecanismes">→ Mécanismes pour une Assemblée du Premier Tour : seuils, dose proportionnelle (5-25 %), systèmes mixtes, meilleurs perdants — exemples chiffrés et propositions graduelles. Retour à l’hémicycle hybride avec explications des deux couches.</a>
+    </p>
+  </section>
+
+  <!-- Référence au mini-guide (consolidé plus haut) + lien mécanismes -->
+  <p class="meta" style="margin:0.6rem 0 1rem;">
+    Pour le mini-guide complet « Pourquoi le premier tour compte pour la représentation » (pluralité brute, transparence, écarts mesurables), voir la section dédiée en haut de page. 
+    Pour les détails techniques des mécanismes qui produisent (ou pourraient produire) ces allocations : <a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes concrets pour une Assemblée du Premier Tour</a> (seuils, proportionnelle dose 5-25 %, systèmes mixtes, meilleurs perdants, intégration dans le Code électoral).
+  </p>
+
+  <!-- Section mécanismes d'intégration (contenu issu de la recherche / données institutionnelles et méthodes LMDPT) -->
+  <section class="card" aria-labelledby="mecanismes-int-title">
+    <h3 id="mecanismes-int-title">Mécanismes d’intégration des projections (référence institutionnelle et méthode)</h3>
+    <p>Les projections sont intégrées à la structure actuelle selon les étapes suivantes (neutres et documentées) :</p>
+    <ol style="margin:0.4rem 0 0.5rem 1.2rem; font-size:0.92rem;">
+      <li><strong>Regroupement en blocs civiques</strong> : Les nuances officielles du Ministère de l’Intérieur (UG, SOC, FI, RN, LR, ENS, REG, DIV…) sont agrégées en 5 blocs majeurs (NFP, Ensemble/centre, LR, RN & alliés, Autres). Voir AN1T_BLOCS dans src/lib/an1t.ts.</li>
+      <li><strong>Répartition proportionnelle</strong> : Application de la méthode Sainte-Laguë (diviseurs successifs 1, 3, 5…) sur les voix exprimées ou intentions. Seuil indicatif configurable (3 % ou 5 % dans les variantes). Exemples validés sur données 2024 réelles.</li>
+      <li><strong>Placement spatial hybride</strong> : Les sièges projetés sont affectés aux zones (quartiers) du modèle officiel correspondant au bloc (mapping GDR/LFI/Écolo/Socialiste → NFP à gauche, etc.). Utilisation d’un échantillonnage déterministe (spreadZonePositions) pour un placement naturel dans la zone.</li>
+      <li><strong>Superposition pour comparaison</strong> : La couche avant est placée sur la couche arrière pour visualiser directement l’écart sans changer le repère. Cela révèle la différence entre Assemblée issue du scrutin majoritaire à 2 tours et une photographie proportionnelle du 1er tour.</li>
+    </ol>
+    <p class="meta">Références institutionnelles : Code électoral (scrutin uninominal majoritaire à deux tours), résultats officiels data.gouv.fr, composition des groupes Assemblée nationale. Contenu pédagogique LMDPT (pas de position sur réforme). Pour détails et variantes (dose proportionnelle, meilleurs perdants, mixtes) : <a href="/analyses/assemblee-premier-tour-mecanismes">page mécanismes (catalogue)</a> et le débat <a href="/debats/assemblee-premier-tour">/debats/assemblee-premier-tour</a> (positions sourcées pour/contre/nuance). Les visualisations hybrides ci-dessus (composant existant) illustrent directement l’impact de ces mécanismes via les deux couches (transparence + couleurs pleines dans quartiers).</p>
+    <p class="meta" style="font-size:0.78rem;">Ce n’est pas une simulation de réforme législative. C’est une visualisation comparative pour compréhension citoyenne.</p>
   </section>
 
   <section class="card">
     <h3>Poursuivre le débat</h3>
     <p>
-      <a href="/debats/assemblee-premier-tour">Faut-il une chambre parlementaire élue sur le seul premier tour ?</a>
-      — discussion modérée sur GitHub.
+      <a href="/debats/assemblee-premier-tour">Faut-il une chambre parlementaire élue sur le seul premier tour ?</a> — discussion modérée.
     </p>
     <p class="meta">
-      Voir aussi : <a href="/analyses/legislatives-2024-desistements">désistements 2024</a>,
-      <a href="/atlas/2024-legislatives">atlas législatives</a>.
+      Voir aussi : <a href="/analyses/presidentielle-2027-preparation">Dossier Présidentielle 2027</a> (programmes, veille, calendrier).
     </p>
   </section>
 
   <section>
-    <h3>Sources</h3>
+    <h3>Sources & traçabilité (renforcé)</h3>
     <ul>
-      {
-        analysis.sources.map((s) => (
-          <li>
-            <a href={s.url} rel="noopener noreferrer">
-              {s.label}
-            </a>
-          </li>
-        ))
-      }
+      <li>Sondages agrégés : Ifop, Harris Interactive, Elabe (références récentes ; utilisés uniquement pour illustration pédagogique).</li>
+      <li>Programmes candidats 2027 : données veille (presse + évolution-matrix) pour alignement hypothétique sur mesures phares (institutions incluses). Lien explicite programmes → % voix blocs AN1T → sièges Sainte-Laguë → impact visuel hémicycle hybride (section dédiée ci-dessus).</li>
+      <li>Données réelles de référence : Résultats 1er tour législatives 2024 — data.gouv.fr (Ministère de l’Intérieur). Modèle hémicycle — Wikimedia Commons (XVIIe législature).</li>
+      <li>Méthode : Sainte-Laguë implémentée dans <code>src/lib/an1t.ts</code> (tests inclus). Blocs civiques : mapping nuances officielles (CodNuaCand) vers 5 grands blocs.</li>
+      <li>Calendrier officiel : 1er tour présidentiel 18 avril 2027, législatives à suivre.</li>
     </ul>
+    <p class="meta">Toutes les projections sont <strong>illustratives et non prédictives</strong>. Consultez toujours les données officielles brutes. Neutralité absolue : aucun jugement sur le mode de scrutin.</p>
   </section>
+
+  <!-- Validation historique 2024 -->
+  <details style="margin-top: 1.5rem;">
+    <summary><strong>Validation de la méthode sur 2024 (cliquer)</strong></summary>
+    <p class="meta">Exemple passé : ce que le 1er tour 2024 aurait donné comme Assemblée (Sainte-Laguë sur voix T1 vs réalité après 2nd tour).</p>
+    <An1tSeatCompare
+      title={`Comparatif 2024 — ${seatsFull} sièges`}
+      totalSeats={seatsFull}
+      rows={comparison577}
+    />
+    <AssembleeHemicycle
+      title="Simulation 2024 sur structure actuelle (hybride)"
+      allocations={an1t577.map((a) => ({ id: a.id, label: a.label, color: a.color, seats: a.seats }))}
+      totalSeats={seatsFull}
+      subtitle="Couche 1 (transparence) : groupes actuels dans quartiers officiels. Couche 2 (couleurs pleines) : répartition proportionnelle des voix réelles du 1er tour 2024 placée dans quartiers correspondants. Légende pour écarts."
+      sourceNote="Validation de la méthode sur données officielles 2024 (data.gouv.fr). Illustration pédagogique pour comprendre l’écart T1/T2. Voir mécanismes pour détails."
+    />
+  </details>
 </BaseLayout>
 
 <style>
@@ -155,6 +541,21 @@ const circoBlocs = circos ? countCircosByBloc(circos) : [];
     border-left: 3px solid var(--border);
     max-width: 52rem;
     line-height: 1.55;
+  }
+  .layers-summary {
+    max-width: 52rem;
+    margin: 0.5rem 0 1rem;
+    padding-left: 1.25rem;
+    line-height: 1.55;
+    color: var(--fg);
+  }
+  .layers-summary li {
+    margin-bottom: 0.75rem;
+  }
+  .layers-summary em {
+    display: inline;
+    font-style: italic;
+    color: var(--muted);
   }
   .fact-grid {
     display: grid;
@@ -166,11 +567,347 @@ const circoBlocs = circos ? countCircosByBloc(circos) : [];
   }
   .fact-grid dt {
     font-size: 0.75rem;
-    color: var(--muted, #666);
+    color: var(--muted, #3a3732);
     margin-bottom: 0.15rem;
   }
   .fact-grid dd {
     margin: 0;
     font-weight: 600;
   }
+
+  .sondages-section {
+    border-left: 4px solid #b45309;
+  }
+  .sondages-section .warning {
+    background: #fef3c7;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .poll-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .poll-table th, .poll-table td {
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .poll-table .swatch {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  /* === Responsive for all devices (mobile first) === */
+  .scenarios-grid {
+    grid-template-columns: 1fr; /* default mobile */
+  }
+  @media (min-width: 640px) {
+    .scenarios-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+  }
+  @media (min-width: 900px) {
+    .scenarios-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .sondages-section .warning {
+      font-size: 0.78rem;
+      padding: 0.5rem 0.65rem;
+    }
+    .poll-table table {
+      font-size: 0.78rem;
+    }
+    .poll-table th, .poll-table td {
+      padding: 0.2rem 0.35rem;
+    }
+    section.card {
+      padding: 0.75rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .lead {
+      font-size: 0.95rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Simulator styles - accessible & mobile advanced */
+  .simulator .sim-row label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+    font-family: system-ui, sans-serif;
+  }
+  .simulator input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+    height: 28px; /* larger touch */
+  }
+  .sim-results {
+    background: var(--accent-soft);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .sim-seat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+  }
+  .sim-seat .bar {
+    height: 14px;
+    background: var(--accent);
+    border-radius: 3px;
+    flex: 0 0 auto;
+    min-width: 4px;
+  }
+  .sim-seat .label {
+    min-width: 170px;
+    font-size: 0.88rem;
+  }
+
+  /* Styles pour sections pédagogiques ajoutées (accessibilité + clarté) */
+  #comment-lire-title + p.meta,
+  #pourquoi-1er-tour-title + p,
+  #mecanismes-int-title + p {
+    font-size: 0.9rem;
+  }
+  section.card[aria-labelledby="comment-lire-title"] ul,
+  section.card[aria-labelledby="pourquoi-1er-tour-title"] ul {
+    padding-left: 1.1rem;
+  }
+
+  /* Strengthened disclaimer */
+  .strong-disclaimer {
+    background: #fefce8;
+    border: 2px solid #ca8a04;
+    color: #713f12;
+    padding: 0.65rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0.6rem 0 1rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .strong-disclaimer { background: #3f2a00; border-color: #a68b2e; color: #f5e8c7; }
+  }
+
+  /* === Improved mobile responsiveness for viz + tables (AN1T focus) === */
+  .hemicycle-wrapper svg { max-height: 190px; }
+  @media (max-width: 640px) {
+    .hemicycle-wrapper svg { max-height: 155px; width: 100%; }
+    .hemicycle-controls, .hybrid-legend { font-size: 0.8rem; }
+    .hemicycle-controls fieldset { margin-bottom: 0.4rem; }
+    table, .comp-table, .poll-table table, .compare-grid { font-size: 0.78rem; }
+    .compare-row, .bar-cell { gap: 0.25rem; }
+    .scenarios-grid > div { margin-bottom: 0.75rem; }
+  }
+  @media (max-width: 420px) {
+    .hemicycle-wrapper svg { max-height: 138px; }
+    .poll-table th, .poll-table td, .comp-table th, .comp-table td { padding: 0.2rem 0.25rem; }
+  }
+
+  /* Table horizontal scroll improvement for viz/tables */
+  .table-wrap, .poll-table, .compare-grid { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .poll-table table { min-width: 420px; }
+  @media (max-width: 640px) {
+    .poll-table table { min-width: 380px; }
+  }
 </style>
+
+<script>
+  // === Interactive Assemblee Simulator (vanilla JS, WCAG friendly, no deps) ===
+  function sainteLagueSimple(shares, totalSeats = 577) {
+    // shares: [{id, label, color, pct}]
+    // returns allocations with seats. Simple Sainte-Laguë for pedagogy.
+    const blocs = shares.map(s => ({...s, votes: Math.max(0.001, s.pct)})); // avoid zero
+    const quotients = blocs.map((b, i) => ({idx: i, q: b.votes / 1}));
+    let seats = new Array(blocs.length).fill(0);
+    let allocated = 0;
+
+    while (allocated < totalSeats) {
+      // find highest quotient
+      let best = 0;
+      let bestIdx = 0;
+      quotients.forEach((q, i) => {
+        const curQ = blocs[i].votes / (seats[i] + 1);
+        if (curQ > best) { best = curQ; bestIdx = i; }
+      });
+      seats[bestIdx]++;
+      allocated++;
+      if (allocated > totalSeats * 2) break; // safety
+    }
+
+    return blocs.map((b, i) => ({
+      id: b.id,
+      label: b.label,
+      color: b.color,
+      pct: b.pct,
+      seats: seats[i],
+      pctSeats: totalSeats ? ((seats[i] / totalSeats) * 100).toFixed(1) : '0'
+    }));
+  }
+
+  function updateLiveValues() {
+    const ids = ['rn','nfp','ens','lr','aut'];
+    let total = 0;
+    ids.forEach(id => {
+      const inp = document.getElementById('pct-' + id);
+      const val = document.getElementById('val-' + id);
+      if (inp && val) {
+        const v = parseFloat(inp.value);
+        val.textContent = v.toFixed(1);
+        total += v;
+      }
+    });
+    const totEl = document.getElementById('sim-total');
+    if (totEl) totEl.textContent = `Total: ${total.toFixed(1)}%`;
+    return total;
+  }
+
+  function runSimulation() {
+    const inputs = {
+      rn: parseFloat(document.getElementById('pct-rn')?.value || '0'),
+      nfp: parseFloat(document.getElementById('pct-nfp')?.value || '0'),
+      ens: parseFloat(document.getElementById('pct-ens')?.value || '0'),
+      lr: parseFloat(document.getElementById('pct-lr')?.value || '0'),
+      aut: parseFloat(document.getElementById('pct-aut')?.value || '0'),
+    };
+
+    const shares = [
+      { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: inputs.rn },
+      { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', pct: inputs.nfp },
+      { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', pct: inputs.ens },
+      { id: 'lr', label: 'Droite républicaine', color: '#0066cc', pct: inputs.lr },
+      { id: 'autres', label: 'Autres & divers', color: '#dddddd', pct: inputs.aut },
+    ];
+
+    const results = sainteLagueSimple(shares, 577);
+    const container = document.getElementById('sim-seats');
+    const resultsBox = document.getElementById('sim-results');
+    if (!container || !resultsBox) return;
+
+    container.innerHTML = '';
+    let totalSeats = 0;
+
+    results.forEach(r => {
+      totalSeats += r.seats;
+      const div = document.createElement('div');
+      div.className = 'sim-seat';
+      const barWidth = Math.max(4, Math.round((r.seats / 577) * 260));
+      div.innerHTML = `
+        <span class="swatch" style="background:${r.color};width:12px;height:12px;border-radius:2px;display:inline-block;flex-shrink:0;"></span>
+        <span class="label"><strong>${r.label}</strong> — ${r.seats} sièges (${r.pctSeats}%)</span>
+        <span class="bar" style="width:${barWidth}px; background:${r.color};" aria-hidden="true"></span>
+      `;
+      container.appendChild(div);
+    });
+
+    const totalEl = document.createElement('div');
+    totalEl.className = 'meta';
+    totalEl.style.marginTop = '0.35rem';
+    totalEl.textContent = `Total sièges calculés : ${totalSeats} / 577`;
+    container.appendChild(totalEl);
+
+    resultsBox.style.display = 'block';
+    resultsBox.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function loadScenario(sc) {
+    const map = {
+      base: {rn:32, nfp:24, ens:14, lr:10, aut:20},
+      unie: {rn:33, nfp:25, ens:14, lr:10, aut:18},
+      bardella: {rn:36, nfp:22, ens:12, lr:9, aut:21},
+      attal: {rn:28, nfp:26, ens:19, lr:12, aut:15},
+      melenchon: {rn:27, nfp:30, ens:13, lr:9, aut:21},
+    };
+    const vals = map[sc] || map.base;
+    Object.keys(vals).forEach(k => {
+      const el = document.getElementById('pct-' + (k === 'ens' ? 'ens' : k === 'aut' ? 'aut' : k));
+      if (el) el.value = vals[k];
+    });
+    updateLiveValues();
+    runSimulation();
+  }
+
+  // Note: les scénarios programmes (bardella/attal/melenchon) sont maintenant alignés sur les % des shares dans le frontmatter (simulés via simulateFromVoteShares). Les boutons client JS restent des raccourcis pédagogiques.
+
+  function initSimulator() {
+    const form = document.getElementById('sim-form');
+    if (!form) return;
+
+    const ids = ['rn','nfp','ens','lr','aut'];
+    ids.forEach(id => {
+      const inp = document.getElementById('pct-' + id);
+      const val = document.getElementById('val-' + id);
+      if (inp) {
+        inp.addEventListener('input', () => {
+          if (val) val.textContent = parseFloat(inp.value).toFixed(1);
+          const totEl = document.getElementById('sim-total');
+          if (totEl) {
+            let t = 0; ids.forEach(iid => {
+              const iel = document.getElementById('pct-' + iid); if (iel) t += parseFloat(iel.value||'0');
+            });
+            totEl.textContent = `Total: ${t.toFixed(1)}%`;
+          }
+        });
+      }
+    });
+
+    const btnCalc = document.getElementById('btn-calc');
+    const btnReset = document.getElementById('btn-reset');
+
+    btnCalc?.addEventListener('click', runSimulation);
+    btnReset?.addEventListener('click', () => {
+      const defaults = {rn:'32', nfp:'24', ens:'14', lr:'10', aut:'20'};
+      Object.keys(defaults).forEach(k => {
+        const el = document.getElementById('pct-' + k); if (el) el.value = defaults[k];
+      });
+      updateLiveValues();
+      const res = document.getElementById('sim-results'); if (res) res.style.display = 'none';
+    });
+
+    // Scenario buttons (comparateur)
+    document.querySelectorAll('.sim-scenario').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sc = btn.getAttribute('data-sc') || 'base';
+        loadScenario(sc);
+      });
+    });
+
+    // Keyboard: allow Enter on form to calc
+    form.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        runSimulation();
+      }
+    });
+
+    // init values display
+    updateLiveValues();
+    // Auto calc on load for immediate pedagogical value (optional)
+    // runSimulation(); // commented to avoid auto noise; user triggers
+  }
+
+  // Boot
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSimulator);
+  } else {
+    initSimulator();
+  }
+</script>

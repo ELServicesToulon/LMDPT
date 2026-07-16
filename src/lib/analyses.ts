@@ -28,11 +28,19 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   },
   {
     slug: 'assemblee-premier-tour',
-    title: 'Assemblée du premier tour — simulation 2024',
+    title: 'L\'Assemblée du Premier Tour 2027',
     description:
-      'Hémicycle virtuel proportionnel au 1er tour législatif, comparé à l\'Assemblée élue au 2nd tour.',
-    date: '2026-07-02',
+      'Projections et hémicycle interactif des 577 sièges basés sur le 1er tour. Priorité 2027 : scénarios sondages + programmes candidats.',
+    date: '2026-07-08',
     href: '/analyses/assemblee-premier-tour',
+  },
+  {
+    slug: 'assemblee-premier-tour-mecanismes',
+    title: 'Mécanismes pour une Assemblée du Premier Tour',
+    description:
+      'Résumé accessible : idée d’intégrer la pluralité du premier tour à l’Assemblée. Options détaillées (abaisser seuils, sièges proportionnels 5-25%, systèmes mixtes majoritaire+proportionnel, meilleurs perdants), avantages et limites pour refléter les votes T1 sans déstabiliser la gouvernance. Propositions graduelles : minimal (Code électoral), moyen (25% proportionnel), ambitieux (constitutionnel). Liens vers outils existants (hémicycle hybride, simulateur). Sources du rapport institutionnel. Pédagogique, factuel, neutre.',
+    date: '2026-07-10',
+    href: '/analyses/assemblee-premier-tour-mecanismes',
   },
   {
     slug: 'presidentielle-2027-preparation',

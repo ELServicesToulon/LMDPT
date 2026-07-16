@@ -15,16 +15,15 @@ const giscus = discussionId ? getGiscusEmbed(discussionId) : null;
 <section class="discussion-section">
   <h3>Poursuivre le débat</h3>
   <p>
-    Vous pouvez réagir à ce débat sur GitHub Discussions. Un compte GitHub est requis pour
-    commenter. Les contributions sont modérées selon la{' '}
+    Utilisez le module <strong>Commentaires citoyens</strong> en bas de page (reformulation IA,
+    teinte d’idées du 1er tour, validation, modération). Charte :{' '}
     <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md" rel="noopener noreferrer">
-      charte éditoriale LMDPT
+      éditorial LMDPT
     </a>.
   </p>
-  <p>
-    <a class="btn btn-secondary" href={discussionUrl} rel="noopener noreferrer">
-      Ouvrir la discussion sur GitHub →
-    </a>
+  <p class="meta">
+    Option GitHub Discussions :
+    <a href={discussionUrl} rel="noopener noreferrer">ouvrir « {question} » →</a>
   </p>
 
   {
@@ -50,12 +49,7 @@ const giscus = discussionId ? getGiscusEmbed(discussionId) : null;
           async
         />
       </div>
-    ) : (
-      <p class="meta discussion-fallback">
-        Les commentaires embarqués seront disponibles une fois Giscus configuré en production.
-        En attendant, utilisez le lien GitHub ci-dessus pour participer au débat « {question} ».
-      </p>
-    )
+    ) : null
   }
 </section>
 

@@ -43,6 +43,7 @@ Node **≥ 22.12**.
 |-------|-------------|
 | `/` | Accueil + hero + mission |
 | `/atlas` | Sélecteur d'élections |
+| `/atlas/2027-presidentielle` | Projection 2027 1er tour (placeholder + pluralité + liens AN1T) |
 | `/atlas/2017-presidentielle` | Résultats 1er tour 2017 + carte départements |
 | `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour + carte |
 | `/analyses` | Index des dossiers thématiques |

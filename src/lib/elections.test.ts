@@ -15,6 +15,16 @@ describe('elections', () => {
     expect(data?.national.candidats[0]?.pourcentage_exprimes).toBe(24.01);
   });
 
+  it('loads 2027 presidential projection placeholder', () => {
+    const data = getElection('2027-presidentielle');
+    expect(data).toBeDefined();
+    expect(data?.election).toContain('2027');
+    expect(data?.national.candidats.length).toBeGreaterThan(10);
+    // Placeholder sum check (tolerance for rounding)
+    const sum = data!.national.candidats.reduce((acc, c) => acc + c.voix, 0);
+    expect(Math.abs(sum - data!.national.exprimes)).toBeLessThan(100);
+  });
+
   it('candidate votes sum to exprimes total (2022)', () => {
     const data = getElection('2022-presidentielle');
     const sum = data!.national.candidats.reduce((acc, c) => acc + c.voix, 0);
@@ -27,10 +37,11 @@ describe('elections', () => {
     expect(sum).toBe(data!.national.exprimes);
   });
 
-  it('catalog lists 2017, 2022 and 2024 legislatives', () => {
-    expect(ELECTION_CATALOG.length).toBe(3);
+  it('catalog lists 2017, 2022, 2024 and 2027 presidential projection', () => {
+    expect(ELECTION_CATALOG.length).toBe(4);
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2017-presidentielle');
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2024-legislatives');
+    expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2027-presidentielle');
   });
 
   it('formats numbers in fr-FR', () => {

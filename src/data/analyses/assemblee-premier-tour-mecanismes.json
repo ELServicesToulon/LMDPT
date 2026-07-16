@@ -1,0 +1,62 @@
+{
+  "slug": "assemblee-premier-tour-mecanismes",
+  "title": "Mécanismes pour une Assemblée du Premier Tour",
+  "date": "2026-07-10",
+  "description": "Résumé accessible : intégration de la pluralité du premier tour. Options détaillées (abaisser seuils, sièges proportionnels 5-25%, systèmes mixtes majoritaire+proportionnel, meilleurs perdants). Avantages et limites pour refléter les votes T1 sans destabiliser la gouvernance. Propositions graduelles : minimal (Code électoral), moyen (25% proportionnel), ambitieux (constitutionnel). Liens vers outils hybrides et simulateur. Sources du rapport institutionnel et données officielles.",
+  "sources": [
+    {
+      "label": "Résultats définitifs 1er tour législatives 2024 — data.gouv.fr",
+      "url": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/"
+    },
+    {
+      "label": "Constitution du 4 octobre 1958 (Conseil constitutionnel)",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur"
+    },
+    {
+      "label": "Code électoral — Légifrance (scrutin législatif)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000006112862/"
+    },
+    {
+      "label": "Loi n° 85-690 du 10 juillet 1985 (proportionnelle temporaire)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000321970/"
+    },
+    {
+      "label": "Terra Nova — Proportionnelle : le retour (2023)",
+      "url": "https://tnova.fr/democratie/politique-institutions/proportionnelle-le-retour/"
+    },
+    {
+      "label": "France Stratégie / Plan — notes sur modes de scrutin et proportionnelle compensatoire",
+      "url": "https://www.strategie-plan.gouv.fr/"
+    },
+    {
+      "label": "Note Cédric Villani sur évolution du mode de scrutin des députés (2018)",
+      "url": "https://www.senat.fr/fileadmin/import/files/fileadmin/Fichiers/Images/opecst/programme_auditions_publiques/Note_sur_l_incidence_d_une_evolution_du_mode_de_scrutin_des_deputes.pdf"
+    }
+  ],
+  "reference_data": {
+    "t1_2024_exprimes": 32057946,
+    "blocs_voix_pct": {
+      "rn": 38.03,
+      "nfp": 31.43,
+      "ensemble": 22.49,
+      "lr": 6.57,
+      "autres": 1.49
+    },
+    "an1t_577_seuil3": {
+      "rn": 223,
+      "nfp": 184,
+      "ensemble": 132,
+      "lr": 38,
+      "autres": 0
+    },
+    "an1t_150_seuil3": {
+      "rn": 58,
+      "nfp": 48,
+      "ensemble": 34,
+      "lr": 10,
+      "autres": 0
+    }
+  },
+  "method_note": "Simulations via Sainte-Laguë (lib/an1t.ts). Exemples mixtes et meilleurs perdants sont illustratifs et pédagogiques. Ne constituent pas une proposition de loi.",
+  "constitutional_note": "Le mode de scrutin relève du Code électoral (loi ordinaire). Révision constitutionnelle requise seulement pour création d'une nouvelle assemblée ou modification profonde de la représentation (art. 24 et Titre IV)."
+}
