@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+  <rect width="64" height="64" rx="12" fill="#0066cc"/>
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <text x="32" y="34" text-anchor="middle" dominant-baseline="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">LR</text>
+</svg>

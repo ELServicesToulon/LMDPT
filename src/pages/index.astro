@@ -4,6 +4,7 @@ import NewsFeed from '../components/NewsFeed.astro';
 import renifleur from '../data/renifleur/latest.json';
 import type { RenifleurSnapshot } from '../lib/renifleur';
 import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
+import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 
 const feed = renifleur as RenifleurSnapshot;
 
@@ -43,6 +44,18 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   title="Accueil"
   description="Le premier tour : le miroir le plus fidèle de la France politique. Média civique, faits sourcés, Democracy Over Elimination."
 >
+  <!-- Manifeste — en tête de page -->
+  <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
+    <h2 id="why-media-title">Pourquoi ce média ?</h2>
+    <p class="why-media-lead">
+      Au premier tour, chaque voix exprime des convictions. Le second tour « contre » efface une partie de cette pluralité.
+      Nous documentons les faits du 1er tour pour choisir en connaissance de cause.
+    </p>
+    <p class="why-media-tagline">
+      Faits officiels • Sans filtre • Pour une démocratie où l’on vote <strong>pour</strong>, pas contre.
+    </p>
+  </section>
+
   <!-- HERO REDESIGN (WCAG 2.2 AA, neutral, professional dark-leaning contrast) -->
   <section class="hero">
     <!-- Badge discret -->
@@ -50,7 +63,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <span class="badge-dot"></span>
       <span>Focus Présidentielle 2027</span>
       <span class="sep">•</span>
-      <strong>100% laïque • Idées, pas idéologies</strong>
+      <strong>Idées, pas idéologies</strong>
     </div>
 
     <div class="hero-grid">
@@ -171,15 +184,27 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
               </thead>
               <tbody>
                 {group.entries.map((c: CandidatureEntry) => {
-                  const isRn = /rassemblement national/i.test(c.affiliation);
+                  const party = partyLogoForAffiliation(c.affiliation);
                   return (
-                    <tr class:list={[{ 'declared-row--rn': isRn, 'declared-row--retrait': c.category === 'retrait' }]}>
+                    <tr class:list={[{ 'declared-row--retrait': c.category === 'retrait' }]}>
                       <td>
                         <strong>{c.name}</strong>
-                        {isRn && <span class="poll-tag poll-tag--rn">RN</span>}
                         {c.note && <p class="poll-note">{c.note}</p>}
                       </td>
-                      <td class="poll-aff">{c.affiliation}</td>
+                      <td class="poll-aff">
+                        <span class="party-logo-row">
+                          <img
+                            class="party-logo"
+                            src={partyLogoSrc(party)}
+                            alt=""
+                            width="28"
+                            height="28"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <span class="party-logo-label">{c.affiliation}</span>
+                        </span>
+                      </td>
                       <td>
                         <span class="poll-tag">{statusDeclareLabels[c.status] ?? c.status}</span>
                       </td>
@@ -241,17 +266,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </p>
     <p class="meta">
       <a href="/analyses/assemblee-premier-tour">Explorer la simulation 2027 →</a>
-    </p>
-  </section>
-
-  <section class="card">
-    <h3>Pourquoi ce média ?</h3>
-    <p>
-      Au premier tour, chaque voix exprime des convictions. Le second tour « contre » efface une partie de cette pluralité.
-      Nous documentons les faits du 1er tour pour choisir en connaissance de cause.
-    </p>
-    <p class="meta">
-      Faits officiels • Sans filtre • Pour une démocratie où l’on vote <strong>pour</strong>, pas contre.
     </p>
   </section>
 
@@ -403,6 +417,50 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 </BaseLayout>
 
 <style>
+  /* =====================================================
+     POURQUOI CE MÉDIA — en tête de page
+  ===================================================== */
+  .why-media {
+    margin: 0 0 1.75rem;
+    padding: 1.25rem 1.35rem 1.35rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+    border-left: 4px solid var(--accent, #2563a8);
+    max-width: 52rem;
+  }
+  .why-media h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    color: #0a0a0a !important;
+  }
+  .why-media-lead {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #0a0a0a !important;
+    max-width: 46rem;
+  }
+  .why-media-tagline {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    color: #0a0a0a !important;
+    font-weight: 600;
+  }
+  .why-media-tagline strong {
+    color: #0a0a0a !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    .why-media h2,
+    .why-media-lead,
+    .why-media-tagline,
+    .why-media-tagline strong {
+      color: #f5f2eb !important;
+    }
+  }
+
   /* =====================================================
      HERO REDESIGN — Professional, high-contrast, inclusive
      - WCAG 2.2 AA focus (contrast + visible focus states)
@@ -709,9 +767,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   .declared-table tbody tr:last-child td {
     border-bottom: none;
   }
-  .declared-row--rn {
-    background: color-mix(in srgb, #0d378a 8%, var(--card));
-  }
   .declared-row--retrait {
     opacity: 0.72;
   }
@@ -734,11 +789,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     margin-left: 0.35rem;
     vertical-align: middle;
   }
-  .poll-tag--rn {
-    background: #0d378a;
-    border-color: #0d378a;
-    color: #fff !important;
-  }
   .poll-note {
     margin: 0.25rem 0 0;
     font-size: 0.82rem;
@@ -748,7 +798,27 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   .poll-aff {
     font-size: 0.88rem;
     color: var(--muted) !important;
-    max-width: 14rem;
+    max-width: 16rem;
+  }
+  .party-logo-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    max-width: 100%;
+  }
+  .party-logo {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: cover;
+    border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+    background: var(--bg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  .party-logo-label {
+    line-height: 1.25;
+    color: var(--fg) !important;
   }
   .poll-src {
     font-size: 0.82rem;

@@ -73,7 +73,7 @@
 
 - Doute sur licence ou réutilisation → bloquer publish, documenter dans issue GitHub
 - Donnée contradictoire entre sources → privilégier source **officielle** (Ministère, Conseil constitutionnel) et noter l’écart
-- Décision L1+ (ligne éditoriale, nouveau format) → accord Président avant merge
+- Décision L1+ (ligne éditoriale, nouveau format) → accord **Président** (rédaction non nommée publiquement tant qu’accord personne concernée manquant)
 
 ---
 

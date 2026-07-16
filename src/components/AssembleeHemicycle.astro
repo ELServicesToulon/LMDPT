@@ -966,7 +966,7 @@ const viewBoxH = 185;
   .legend-title {
     font-weight: 600;
     font-size: 0.7rem;
-    color: #d4d0c8; /* WCAG on dark hemicycle panel (Android OLED) */
+    color: #0a0a0a; /* foncé sur fond clair */
     margin-bottom: 0.12rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -988,14 +988,14 @@ const viewBoxH = 185;
     padding: 1px 4px;
     border-radius: 3px;
     font: inherit;
-    color: inherit;
+    color: #0a0a0a; /* lisible sur fond clair du site */
     text-align: left;
     cursor: pointer;
     line-height: 1.15;
   }
 
   .legend-item.current {
-    opacity: 0.82;
+    opacity: 1;
   }
 
   .legend-item.projection {
@@ -1020,10 +1020,11 @@ const viewBoxH = 185;
   }
 
   .legend-item .current-count {
-    font-size: 0.68rem;
-    color: var(--muted, #c8c4bc);
+    font-size: 0.72rem;
+    color: #0a0a0a; /* plus foncé — ex. (186), (65) */
     margin-left: 0.1rem;
     font-variant-numeric: tabular-nums;
+    font-weight: 600;
   }
 
   .swatch {
@@ -1044,8 +1045,9 @@ const viewBoxH = 185;
   .role-pedago {
     margin-top: 0.2rem;
     padding: 0.35rem 0.45rem;
-    border-left: 3px solid var(--accent, #8ec5e8);
-    background: color-mix(in srgb, var(--accent, #8ec5e8) 10%, transparent);
+    border-left: 3px solid var(--accent, #2563a8);
+    background: color-mix(in srgb, var(--accent, #2563a8) 12%, #f5f5f5);
+    color: #0a0a0a;
   }
   .layer1-section .legend-title::before {
     content: "① ";
@@ -1056,14 +1058,15 @@ const viewBoxH = 185;
 
   .label {
     font-weight: 600;
-    color: #f5f2eb;
+    color: #0a0a0a; /* plus foncé — Ensemble / centre, Droite républicaine… */
   }
 
   .numbers {
-    color: #d0ccc4;
-    font-size: 0.7rem;
+    color: #0a0a0a;
+    font-size: 0.72rem;
     font-variant-numeric: tabular-nums;
     margin-left: 0.12rem;
+    font-weight: 600;
   }
 
   .hemicycle-controls {
@@ -1093,38 +1096,46 @@ const viewBoxH = 185;
     color: #faf8f3;
   }
   .ctrl-hint {
-    font-size: 0.7rem;
-    color: #c0bbb2;
+    font-size: 0.78rem;
+    color: #0a0a0a; /* plus foncé, lisible sur fond clair du site */
     margin-left: 0.15rem;
+    line-height: 1.4;
+    font-weight: 500;
   }
 
   .hemicycle-details {
     min-height: 1.75rem;
     font-size: 0.8rem;
-    color: #d2cec4;
+    color: #0a0a0a;
     margin-top: 0.18rem;
     padding-left: 0.1rem;
   }
 
   .details-placeholder {
     margin: 0;
-    opacity: 0.85;
+    opacity: 0.9;
+    color: #0a0a0a;
   }
 
   .source-note {
     font-size: 0.72rem;
     margin-top: 0.28rem;
-    color: #c8c4bc;
+    color: #1a1814;
   }
 
   .legend-explain {
     font-size: 0.72rem;
-    color: #d0ccc4;
+    color: #0a0a0a;
     margin: 0.1rem 0 0.25rem;
     line-height: 1.35;
   }
+  .legend-explain strong,
+  .legend-explain em {
+    color: #0a0a0a;
+  }
   .legend-explain.small {
     font-size: 0.62rem;
+    color: #0a0a0a;
   }
 
   .granularity-section {

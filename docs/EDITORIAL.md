@@ -78,8 +78,20 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 
 La charte complète est publiée sur le site : **`/charte`** (`src/pages/charte.astro`).
 
+## Équipe éditoriale
+
+| Rôle | Statut |
+|------|--------|
+| Directeur / directrice de la publication (LCEN) | **À nommer** après accord explicite de la personne |
+| Rédaction en chef | **À nommer** après accord explicite de la personne |
+
+- **Ne pas** publier de nom, email ou photo de rédaction sans accord de la personne concernée.
+- Détail d’intention / candidatures : hub Manusk privé uniquement (hors ce dépôt public).
+- Revue humaine avant publication : Président / délégué L1+ tant que la rédaction n’est pas formellement nommée.
+
 ## Validation
 
 - [x] Ligne DOE posée (2026-06-27)
 - [x] Page `/charte` publique (2026-07-16)
+- [ ] Accord de la future rédaction (nomination + contact public)
 - [ ] Validation humaine Président / rédaction

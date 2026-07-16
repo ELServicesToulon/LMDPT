@@ -26,20 +26,39 @@
 
 | Champ | Valeur |
 |-------|--------|
-| **Handle cible** | `@LMDuPremierTour` |
-| **Statut** | **à créer** — `https://www.youtube.com/@LMDuPremierTour` renvoie **404** (juil. 2026) |
-| **Site** | Bandeau live + lien footer **off** tant que `PUBLIC_YOUTUBE_ENABLED` n’est pas `true` |
+| **Channel ID** | `UCqSj6qYmHXtM1pSLc-DVCVA` |
+| **URL chaîne** | https://www.youtube.com/channel/UCqSj6qYmHXtM1pSLc-DVCVA |
+| **Handle cible** | `@LMDuPremierTour` — encore **404** (juil. 2026) ; revendiquer dans YouTube Studio |
+| **Studio live** | https://studio.youtube.com/channel/UCqSj6qYmHXtM1pSLc-DVCVA/livestreaming |
+| **Streaming** | **demandé** le **16 juil. 2026 à 10:17** — en attente d’activation YouTube (pas encore de programmation / direct) |
+| **Site** | Bandeau live + lien footer **off** tant que `PUBLIC_YOUTUBE_ENABLED` n’est pas `true` **et** streaming activé |
 | **Config** | `src/config/youtube.ts` · `PUBLIC_YOUTUBE_*` (voir `.env.example`) |
 
 ### Checklist activation YouTube
 
-1. Créer la chaîne YouTube LMDPT (compte Google dédié / Bitwarden)
-2. Revendiquer le handle `@LMDuPremierTour`
-3. Vérifier que `https://www.youtube.com/@LMDuPremierTour` charge (pas 404)
-4. Prod : `PUBLIC_YOUTUBE_ENABLED=true` (+ rebuild/deploy)
-5. Live ponctuel : `PUBLIC_YOUTUBE_LIVE_URL=https://www.youtube.com/watch?v=VIDEO_ID` ou `live_url` sur le JSON débat
+1. [x] Créer la chaîne YouTube LMDPT (ID `UCqSj6qYmHXtM1pSLc-DVCVA`)
+2. [x] Demander l’accès streaming (16 juil. 2026 10:17) — **attendre e-mail / badge Studio « Streaming activé »**
+3. [ ] Quand streaming activé : premier test live non public ou non listé
+4. [ ] Revendiquer le handle `@LMDuPremierTour` (vérifier que l’URL handle charge, pas 404)
+5. [ ] Bitwarden : secrets compte Google / récupération (jamais en clair dans le repo)
+6. [ ] Prod : `PUBLIC_YOUTUBE_ENABLED=true` + `PUBLIC_YOUTUBE_CHANNEL_URL=https://www.youtube.com/channel/UCqSj6qYmHXtM1pSLc-DVCVA` (ou handle) + rebuild/deploy
+7. [ ] Live ponctuel : `PUBLIC_YOUTUBE_LIVE_URL=https://www.youtube.com/watch?v=VIDEO_ID` ou `live_url` sur le JSON débat
 
-Tant que non activé : pas de bandeau « Rejoindre le live » sur `/debats` (évite le 404). Commentaires écrits via Giscus/GitHub.
+Tant que streaming **non activé** par YouTube : pas de bandeau « Rejoindre le live » sur `/debats`. Commentaires écrits via Giscus/GitHub.
+
+### Superposition pour les pauses (Studio)
+
+| Option | Usage |
+|--------|--------|
+| Superposition **par défaut** | Compte à rebours = durée pause — OK 1er live |
+| **Choisir parmi vos vidéos** | Écran de marque — uploader d’abord une vidéo sur la chaîne |
+
+Assets LMDPT : `public/brand/live-pause-overlay.mp4` (+ `.png` / `.svg`).  
+Guide : [`docs/YOUTUBE-LIVE-PAUSE-OVERLAY.md`](YOUTUBE-LIVE-PAUSE-OVERLAY.md).
+
+**Overlay Studio (lien direct)** :  
+https://www.youtube.com/live_apps/overlay?id=ChhVQ3FTajZxWW1IWHRNMXBTTGMtRFZDVkESC0htN04zMFZtRDgz  
+→ chaîne `UCqSj6qYmHXtM1pSLc-DVCVA` · ressource `Hm7N30VmD83`.
 
 ## À compléter sur X (checklist)
 

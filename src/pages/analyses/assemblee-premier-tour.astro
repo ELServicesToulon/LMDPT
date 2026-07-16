@@ -238,16 +238,16 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <h3 id="comment-lire-title">Comment lire l’hémicycle hybride : les deux couches expliquées</h3>
     <p class="meta">Chaque visualisation utilise le composant hybride existant pour superposer <strong>deux couches</strong> sur le même modèle officiel de 577 positions. Cela rend la comparaison intuitive tout en restant fidèle à la géographie parlementaire réelle. Explications précises :</p>
 
-    <div style="display:grid; gap:0.9rem; margin:0.75rem 0;">
-      <div style="padding:0.4rem 0.6rem; background:#111; border-radius:4px;">
-        <strong>Couche 1 — Arrière-plan (transparence / faible opacité) :</strong> 
+    <div class="layer-explain-grid">
+      <div class="layer-explain-box">
+        <strong>Couche 1 — Arrière-plan (transparence / faible opacité) :</strong>
         Les groupes actuels de l’Assemblée nationale (législature en cours). Les positions et « quartiers » (gauche NFP, centre, LR, RN à droite, etc.) sont <em>exactement</em> celles du modèle officiel Wikimedia (XVII<sup>e</sup> législature). Affichées en transparence pour ne pas masquer la couche avant, elles fournissent les repères spatiaux familiers.
-        <span class="meta">Rôle pédagogique : ancrer la lecture dans la réalité actuelle. Vous reconnaissez immédiatement « où » les groupes siègent aujourd’hui.</span>
+        <span class="layer-explain-role">Rôle pédagogique : ancrer la lecture dans la réalité actuelle. Vous reconnaissez immédiatement « où » les groupes siègent aujourd’hui.</span>
       </div>
-      <div style="padding:0.4rem 0.6rem; background:#111; border-radius:4px;">
-        <strong>Couche 2 — Avant-plan (couleurs pleines) :</strong> 
+      <div class="layer-explain-box">
+        <strong>Couche 2 — Avant-plan (couleurs pleines) :</strong>
         Les sièges projetés selon les voix ou intentions du premier tour (répartition Sainte-Laguë). <em>Placés dans les quartiers correspondants</em> du modèle officiel : les projections « NFP » vont dans la zone gauche actuelle, les projections « RN » dans la zone droite, etc. (mapping déterministe des blocs).
-        <span class="meta">Rôle pédagogique : visualiser l’impact direct de la pluralité du 1er tour sur la même carte. Les couleurs pleines se distinguent clairement de la transparence.</span>
+        <span class="layer-explain-role">Rôle pédagogique : visualiser l’impact direct de la pluralité du 1er tour sur la même carte. Les couleurs pleines se distinguent clairement de la transparence.</span>
       </div>
       <div>
         <strong>Ce que révèle la superposition (pour la représentation) :</strong>
@@ -690,6 +690,35 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
   section.card[aria-labelledby="comment-lire-title"] ul,
   section.card[aria-labelledby="pourquoi-1er-tour-title"] ul {
     padding-left: 1.1rem;
+  }
+
+  /* Blocs Couche 1 / Couche 2 : fond sombre → texte blanc (contraste) */
+  .layer-explain-grid {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0.75rem 0;
+  }
+  .layer-explain-box {
+    padding: 0.55rem 0.75rem;
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid #2a2a2a;
+    color: #ffffff !important;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .layer-explain-box strong,
+  .layer-explain-box em,
+  .layer-explain-box span,
+  .layer-explain-box .layer-explain-role,
+  .layer-explain-box .meta {
+    color: #ffffff !important;
+  }
+  .layer-explain-role {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    opacity: 0.95;
   }
 
   /* Strengthened disclaimer */

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import analysis from '../../data/analyses/presidentielle-2027-preparation.json';
 import renifleur from '../../data/renifleur/latest.json';
 import { getVeille2027, PROGRAM_STATUS_LABELS } from '../../lib/programs';
+import { partyLogoForAffiliation, partyLogoSrc } from '../../lib/party-logos';
 
 const veilleProgrammes = getVeille2027();
 
@@ -178,18 +179,34 @@ const renifleurUpdated = renifleur.fetched_at
       </thead>
       <tbody>
         {
-          sortedCandidatures.map((entry) => (
-            <tr>
-              <td>{entry.name}</td>
-              <td>{entry.affiliation}</td>
-              <td>{statusLabels[entry.status] ?? entry.status}</td>
-              <td>
-                <a href={entry.source_url} rel="noopener noreferrer">
-                  {entry.source_label}
-                </a>
-              </td>
-            </tr>
-          ))
+          sortedCandidatures.map((entry) => {
+            const party = partyLogoForAffiliation(entry.affiliation);
+            return (
+              <tr>
+                <td>{entry.name}</td>
+                <td>
+                  <span class="party-logo-row">
+                    <img
+                      class="party-logo"
+                      src={partyLogoSrc(party)}
+                      alt=""
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span>{entry.affiliation}</span>
+                  </span>
+                </td>
+                <td>{statusLabels[entry.status] ?? entry.status}</td>
+                <td>
+                  <a href={entry.source_url} rel="noopener noreferrer">
+                    {entry.source_label}
+                  </a>
+                </td>
+              </tr>
+            );
+          })
         }
       </tbody>
     </table>
@@ -354,6 +371,20 @@ const renifleurUpdated = renifleur.fetched_at
   }
   .renifleur-list li + li {
     margin-top: 0.55rem;
+  }
+  .party-logo-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .party-logo {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: cover;
+    border: 1px solid var(--border, #ddd);
+    background: var(--bg, #fff);
   }
   .candidatures-table {
     width: 100%;

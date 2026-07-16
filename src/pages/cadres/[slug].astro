@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import cadresData from '../../data/cadres.json';
+
+export function getStaticPaths() {
+  return cadresData.cadres.map((c) => ({
+    params: { slug: c.slug },
+    props: { cadre: c },
+  }));
+}
+
+const { cadre } = Astro.props;
+const updated = new Date(cadresData.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<BaseLayout
+  title={`Cadre ${cadre.order} — ${cadre.displayName}`}
+  description={`Espace ${cadre.displayName} (${cadre.role}) — Le Média du Premier Tour.`}
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/cadres">Cadres</a> → {cadre.displayName}
+  </nav>
+
+  <section class:list={['cadre-hero', `cadre-hero--${cadre.status}`]}>
+    <p class="eyebrow">Cadre {cadre.order} · Espace LMDPT</p>
+    <h2>{cadre.displayName}</h2>
+    <p class="cadre-role-line">{cadre.role}</p>
+    <p>
+      <span class:list={['status-pill', `status-pill--${cadre.status}`]}>{cadre.statusLabel}</span>
+    </p>
+    <p class="cadre-summary">{cadre.summary}</p>
+    <p class="meta">
+      Mise à jour <time datetime={cadresData.updated}>{updated}</time>
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Périmètre</h3>
+    <ul>
+      {cadre.perimeters.map((p) => <li>{p}</li>)}
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>Outils & liens</h3>
+    <ul class="tools-list">
+      {
+        cadre.tools.map((t) => (
+          <li>
+            <a href={t.href} rel={t.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+              {t.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    cadre.notes?.length > 0 && (
+      <section class="card">
+        <h3>Notes</h3>
+        <ul>
+          {cadre.notes.map((n) => (
+            <li>{n}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    cadre.slug === 'louison-lecourt' && (
+      <section class="card reserved-notice" role="note">
+        <h3>Activation</h3>
+        <p>
+          Cet espace est <strong>prêt</strong>. Les rôles publics (rédactrice en chef, directrice de la
+          publication, contact mentions légales) ne s’affichent sur le site qu’après{' '}
+          <strong>accord explicite</strong> de Louison Lecourt.
+        </p>
+        <p class="meta">
+          En attendant : gate publication = Président (cadre Moi) ou délégué L1+.
+        </p>
+      </section>
+    )
+  }
+
+  <p class="meta">
+    <a href="/cadres">← Tous les cadres</a>
+    {' · '}
+    <a href="/">Accueil</a>
+    {' · '}
+    <a href="/moderation">Modération</a>
+  </p>
+</BaseLayout>
+
+<style>
+  .cadre-hero {
+    margin-bottom: 1.25rem;
+    padding: 1.15rem 1.25rem;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-left: 5px solid var(--accent, #2563a8);
+  }
+  .cadre-hero--active {
+    border-left-color: #0d6e4f;
+  }
+  .cadre-hero--reserved {
+    border-left-color: #b45309;
+  }
+  .cadre-role-line {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin: 0.35rem 0 0.65rem;
+  }
+  .cadre-summary {
+    max-width: 48rem;
+    line-height: 1.55;
+    color: #0a0a0a;
+    font-size: 1.02rem;
+  }
+  .status-pill {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: #0a0a0a;
+    background: var(--bg, #f4ede4);
+  }
+  .status-pill--active {
+    background: #d1fae5;
+    border-color: #059669;
+  }
+  .status-pill--reserved {
+    background: #fef3c7;
+    border-color: #b45309;
+  }
+  .tools-list {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  .tools-list li + li {
+    margin-top: 0.35rem;
+  }
+  .reserved-notice {
+    border-left: 4px solid #b45309;
+  }
+</style>
