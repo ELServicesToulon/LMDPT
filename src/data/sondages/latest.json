@@ -1,0 +1,499 @@
+{
+  "fetched_at": "2026-07-16T06:02:48.067Z",
+  "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.",
+  "providers_indexed": 24,
+  "sources_ok": 8,
+  "sources_error": 0,
+  "waves": [
+    {
+      "id": "manual-cluster17-lepoint-20260710",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "2026-07-10",
+      "published_hint": "2026-07-11",
+      "source_url": "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/",
+      "source_id": "le-point",
+      "scores": {},
+      "raw_snippet": "Sondage exclusif Cluster17 pour Le Point : Le Pen en tête des souhaits de victoire 2027, Mélenchon en embuscade devant Philippe. 56 % jugent « injustifié » son choix de candidature malgré la condamnation en appel. Paywall — scores d’intentions non extraits auto.",
+      "metric": "souhait_victoire"
+    },
+    {
+      "id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-07-09/12",
+      "published_hint": "2026-07-12",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse",
+      "source_id": "manual",
+      "scores": {
+        "le-pen": 35,
+        "philippe": 16.5,
+        "melenchon": 16,
+        "glucksmann": 10.5,
+        "retailleau": 8,
+        "tondelier": 3.5,
+        "zemmour": 3,
+        "roussel": 2.5,
+        "villepin": 2.5,
+        "dupont-aignan": 1.5,
+        "arthaud": 1
+      },
+      "raw_snippet": "Elabe hyp.1 post-candidature Le Pen — intentions de vote 1er tour.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "manual-ifop-20260708-h1",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "2026-07-07/08",
+      "published_hint": "2026-07-08",
+      "source_url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen",
+      "source_id": "manual",
+      "scores": {
+        "le-pen": 36,
+        "philippe": 19,
+        "melenchon": 15,
+        "glucksmann": 9,
+        "retailleau": 8,
+        "zemmour": 4,
+        "tondelier": 3.5,
+        "roussel": 3,
+        "dupont-aignan": 2,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Ifop LCI/Figaro post-annonce Le Pen — hyp. Philippe.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "manual-verian-20260710",
+      "firm": "Verian",
+      "firm_id": "verian",
+      "fieldwork": "2026-07-08/10",
+      "published_hint": "2026-07-10",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/",
+      "source_id": "manual",
+      "scores": {
+        "le-pen": 37,
+        "philippe": 17,
+        "melenchon": 15,
+        "glucksmann": 11,
+        "attal": 8,
+        "retailleau": 7,
+        "zemmour": 3,
+        "roussel": 2
+      },
+      "raw_snippet": "Verian 8–10 juil. 2026.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "firm_id": "harris",
+      "fieldwork": "2026-07-07/08",
+      "published_hint": "2026-07-08",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723",
+      "source_id": "manual",
+      "scores": {
+        "le-pen": 35,
+        "melenchon": 16,
+        "philippe": 14,
+        "glucksmann": 10,
+        "attal": 8,
+        "retailleau": 7,
+        "zemmour": 4,
+        "tondelier": 2,
+        "roussel": 2,
+        "arthaud": 1,
+        "dupont-aignan": 1
+      },
+      "raw_snippet": "Harris/RTL post-candidature Le Pen.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "manual-opinionway-20260709",
+      "firm": "OpinionWay",
+      "firm_id": "opinionway",
+      "fieldwork": "2026-07-08/09",
+      "published_hint": "2026-07-09",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680",
+      "source_id": "manual",
+      "scores": {
+        "le-pen": 35,
+        "philippe": 18,
+        "melenchon": 13,
+        "glucksmann": 9,
+        "retailleau": 8,
+        "attal": 7,
+        "tondelier": 5,
+        "zemmour": 3,
+        "roussel": 2
+      },
+      "raw_snippet": "OpinionWay / Les Échos.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 34.5,
+        "philippe": 18,
+        "attal": 15.5,
+        "melenchon": 15,
+        "glucksmann": 11,
+        "retailleau": 8,
+        "zemmour": 3.5,
+        "tondelier": 3.5,
+        "roussel": 2.5,
+        "hollande": 8,
+        "ruffin": 6,
+        "villepin": 3.5,
+        "dupont-aignan": 1.5,
+        "arthaud": 1.5
+      },
+      "raw_snippet": "Dernier sondage ELABE 12/07/2026 1er Tour · Hypothèse N°1 35% LE PEN 16.5% PHILIPPE 16% MÉLENCHON 10.5% GLUCKSMANN 8% RETAILLEAU 3.5% TONDELIER 3% ZEMMOUR 2.5% ROUSSEL 2.5% VILLEPIN 1.5% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 34% LE PEN 14.5% MÉLENCHON 13.5% ATTAL 11% ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-elabe-12072026-h1",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "12/07/2026 ELABE 1 — 35% 16.5% — 16% 10.5% 8% — — — — — — — — 3% 3.5% 2.5% 2.5% — 1.5% — 1% 12/07/2026 ELABE 2 — 34% — 13.5% 14.5% 11% 11% — — — — — — — — 3.5% 3.5% 3.5% 2.5% — 1.5% — 1.5% 12/07/2026 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-elabe-12072026-h2",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "12/07/2026 ELABE 2 — 34% — 13.5% 14.5% 11% 11% — — — — — — — — 3.5% 3.5% 3.5% 2.5% — 1.5% — 1.5% 12/07/2026 ELABE 3 — 35% 19% — 14.5% — 9% — 9% — — 6% — — — 2.5% — — 2% — 1.5% — 1.5% 12/07/2026 ELABE ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-elabe-12072026-h3",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "12/07/2026 ELABE 3 — 35% 19% — 14.5% — 9% — 9% — — 6% — — — 2.5% — — 2% — 1.5% — 1.5% 12/07/2026 ELABE 4 — 35.5% — 15.5% 15% — 11% — 8% — — 6% — — — 3.5% — — 2.5% — 1.5% — 1.5% 12/07/2026 ELABE 5 — 34",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-elabe-12072026-h4",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "12/07/2026 ELABE 4 — 35.5% — 15.5% 15% — 11% — 8% — — 6% — — — 3.5% — — 2.5% — 1.5% — 1.5% 12/07/2026 ELABE 5 — 34.5% 18% — 15% — 8% — 8% — — — — — — 3% 4% 3% 3% — 1.5% — 2% 09/07/2026 HARRIS INTERACT",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-elabe-12072026-h5",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "12/07/2026",
+      "published_hint": "12/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "12/07/2026 ELABE 5 — 34.5% 18% — 15% — 8% — 8% — — — — — — 3% 4% 3% 3% — 1.5% — 2% 09/07/2026 HARRIS INTERACTIVE 1 — 35% 14% 8% 16% 10% 7% — — — — — — — — 4% 2% — 2% — 1% — 1% 09/07/2026 HARRIS INTERA",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-09072026-h1",
+      "firm": "Harris Interactive / Toluna",
+      "firm_id": "harris",
+      "fieldwork": "09/07/2026",
+      "published_hint": "09/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 1 — 35% 14% 8% 16% 10% 7% — — — — — — — — 4% 2% — 2% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 2 — 34% 20% — 16% 11% 8% — — — — — — — — 4% 3% — 2% — 1% — 1% 09/07/2026 HARR",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-09072026-h2",
+      "firm": "Harris Interactive / Toluna",
+      "firm_id": "harris",
+      "fieldwork": "09/07/2026",
+      "published_hint": "09/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 2 — 34% 20% — 16% 11% 8% — — — — — — — — 4% 3% — 2% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 3 — 36% — 16% 16% 11% 9% — — — — — — — — 4% 3% — 3% — 1% — 1% 09/07/2026 HARRI",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-09072026-h3",
+      "firm": "Harris Interactive / Toluna",
+      "firm_id": "harris",
+      "fieldwork": "09/07/2026",
+      "published_hint": "09/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 3 — 36% — 16% 16% 11% 9% — — — — — — — — 4% 3% — 3% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 4 — 35% 20% — 16% — 8% — 8% — — — — — — 4% 4% — 3% — 1% — 1% 09/07/2026 HARRIS",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-09072026-h4",
+      "firm": "Harris Interactive / Toluna",
+      "firm_id": "harris",
+      "fieldwork": "09/07/2026",
+      "published_hint": "09/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 4 — 35% 20% — 16% — 8% — 8% — — — — — — 4% 4% — 3% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 5 — 36% — 16% 16% — 8% — 8% — — — — — — 5% 5% — 3% — 2% — 1% 08/07/2026 IFOP 1 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-09072026-h5",
+      "firm": "Harris Interactive / Toluna",
+      "firm_id": "harris",
+      "fieldwork": "09/07/2026",
+      "published_hint": "09/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 5 — 36% — 16% 16% — 8% — 8% — — — — — — 5% 5% — 3% — 2% — 1% 08/07/2026 IFOP 1 — 36% 19% — 15% 9% 8% — — — — — — — — 4% 3.5% — 3% — 2% — 0.5% 08/07/2026 IFOP 2 — 36% — 15",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-08072026-h1",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "08/07/2026",
+      "published_hint": "08/07/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "08/07/2026 IFOP 1 — 36% 19% — 15% 9% 8% — — — — — — — — 4% 3.5% — 3% — 2% — 0.5% 08/07/2026 IFOP 2 — 36% — 15% 15% 12% 10% — — — — — — — — 3.5% 4% — 2% — 2% — 0.5% 25/06/2026 IFOP 1 36% — 14% 8% 13% 9",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "wikipedia-fr-elabe-na-glsy0c",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "source_id": "wikipedia-fr",
+      "scores": {},
+      "raw_snippet": "Liste de sondages sur l'élection présidentielle française de 2027 — Wikipédia Aller au contenu Menu principal Menu principal déplacer vers la barre latérale masquer Navigation Page d’accueil Portails thématiques Article au hasard Contact Contribuer Débuter sur Wikipédia Aide Comm",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "wikipedia-en-elabe-na-btp44l",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
+      "source_id": "wikipedia-en",
+      "scores": {},
+      "raw_snippet": "Opinion polling for the 2027 French presidential election - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Uplo",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027presidentielle-elabe-16072026-h3pmxt",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "16/07/2026",
+      "published_hint": "16/07/2026",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {},
+      "raw_snippet": "Sondages Présidentielle 2027 (COMPACT) – intentions de vote, baromètres, enquêtes Accueil Infos en direct Actu municipales 2026 Actu partis politique Sondages & tendances Live News (EN) Sondages Présidentielle 2027 Mise à jour auto (cache 6h) : 16/07/2026 07:24 • Cache servi • So",
+      "metric": "souhait_victoire"
+    },
+    {
+      "id": "elyseescope-ifop-na-lfwax",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.elyseescope.com/",
+      "source_id": "elyseescope",
+      "scores": {},
+      "raw_snippet": "ÉlyséeScope 2027 | Candidats, sondages et programmes présidentielle 2027 Top Actu Sondages Thèmes Candidats Newsletter Événements Vidéos Carte Temps réel Comprendre Chiffres Voter Sources FAQ Vue d'ensemble Présidentielle 2027 🔴 Top Actu 📊 Sondages Candidats Candidats déclarés ",
+      "metric": "souhait_victoire"
+    },
+    {
+      "id": "commission-sondages-elabe-na-6p9iiw",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Commission des sondages (contrôle, interdiction, publication) --> --> --> espace de consultation des notices Les notices r&eacute;dig&eacute;es par les instituts sont publi&eacute;es sur ce site en application de l'article 3 de la loi du 19 mars 1977 modifi&eacute;e par la loi du",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "rss-le-figaro-330018",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-hollande-prepare-sa-candidature-et-donne-secretement-rendez-vous-a-ses-soutiens-ce-soir-20260715",
+      "source_id": "le-figaro",
+      "scores": {},
+      "raw_snippet": "Présidentielle 2027 : Hollande «prépare» sa candidature et donne secrètement rendez-vous à ses soutiens ce soir",
+      "metric": "intentions_vote"
+    }
+  ],
+  "head_by_wave": [
+    {
+      "wave_id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 35
+    },
+    {
+      "wave_id": "manual-ifop-20260708-h1",
+      "firm": "Ifop",
+      "head": "le-pen",
+      "pct": 36
+    },
+    {
+      "wave_id": "manual-verian-20260710",
+      "firm": "Verian",
+      "head": "le-pen",
+      "pct": 37
+    },
+    {
+      "wave_id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "head": "le-pen",
+      "pct": 35
+    },
+    {
+      "wave_id": "manual-opinionway-20260709",
+      "firm": "OpinionWay",
+      "head": "le-pen",
+      "pct": 35
+    },
+    {
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 34.5
+    }
+  ],
+  "movements": [
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Cluster17",
+      "comment": "Cluster17 / Le Point (2026-07-10) : Le Pen en tête des souhaits de victoire, Mélenchon en embuscade devant Philippe — 56 % jugent la candidature « injustifiée » (paywall ; pas d’intentions de vote isolées auto).",
+      "wave_id": "manual-cluster17-lepoint-20260710",
+      "source_url": "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (2026-07-09/12) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "manual-elabe-20260712-h1",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Ifop",
+      "comment": "Ifop (2026-07-07/08) : le pen en tête à 36 % (intentions de vote).",
+      "wave_id": "manual-ifop-20260708-h1",
+      "source_url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Verian",
+      "comment": "Verian (2026-07-08/10) : le pen en tête à 37 % (intentions de vote).",
+      "wave_id": "manual-verian-20260710",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Harris Interactive",
+      "comment": "Harris Interactive (2026-07-07/08) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "manual-harris-20260708",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "OpinionWay",
+      "comment": "OpinionWay (2026-07-08/09) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "manual-opinionway-20260709",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (12/07/2026) : le pen en tête à 34,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-12072026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe signalé (date n/d) — scores non extraits automatiquement ; vérifier la source.",
+      "wave_id": "commission-sondages-elabe-na-6p9iiw",
+      "source_url": "https://www.commission-des-sondages.fr/notices/"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe signalé (16/07/2026) — scores non extraits automatiquement ; vérifier la source.",
+      "wave_id": "2027presidentielle-elabe-16072026-h3pmxt",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php"
+    },
+    {
+      "at": "2026-07-16T06:02:48.067Z",
+      "kind": "new_wave",
+      "firm": "Ifop",
+      "comment": "Ifop signalé (date n/d) — scores non extraits automatiquement ; vérifier la source.",
+      "wave_id": "elyseescope-ifop-na-lfwax",
+      "source_url": "https://www.elyseescope.com/"
+    }
+  ],
+  "brief": [
+    "Cluster17 / Le Point (2026-07-10) : Le Pen en tête des souhaits de victoire, Mélenchon en embuscade devant Philippe — 56 % jugent la candidature « injustifiée » (paywall ; pas d’intentions de vote isolées auto).",
+    "Elabe (2026-07-09/12) : le pen en tête à 35 % (intentions de vote).",
+    "Ifop (2026-07-07/08) : le pen en tête à 36 % (intentions de vote).",
+    "Verian (2026-07-08/10) : le pen en tête à 37 % (intentions de vote).",
+    "Harris Interactive (2026-07-07/08) : le pen en tête à 35 % (intentions de vote).",
+    "OpinionWay (2026-07-08/09) : le pen en tête à 35 % (intentions de vote).",
+    "Elabe (12/07/2026) : le pen en tête à 34,5 % (intentions de vote).",
+    "Elabe signalé (date n/d) — scores non extraits automatiquement ; vérifier la source.",
+    "Elabe signalé (16/07/2026) — scores non extraits automatiquement ; vérifier la source.",
+    "Ifop signalé (date n/d) — scores non extraits automatiquement ; vérifier la source."
+  ],
+  "errors": []
+}

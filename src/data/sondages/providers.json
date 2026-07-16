@@ -1,0 +1,235 @@
+{
+  "title": "Registre des fournisseurs de sondages — Présidentielle 2027",
+  "updated": "2026-07-16",
+  "disclaimer": "Index LMDPT des instituts, agrégateurs et supports de diffusion. Les intentions de vote ne sont ni des résultats officiels ni des prédictions. Notices : commission-des-sondages.fr.",
+  "scan": {
+    "cadence": "2x/jour",
+    "hours_local": ["07:30", "19:30"],
+    "timezone": "Europe/Paris",
+    "user_agent": "LMDPT-SondageVeille/1.0 (+https://lmdpt.iarbre.org; veille pédagogique)"
+  },
+  "institutes": [
+    {
+      "id": "ifop",
+      "label": "Ifop",
+      "type": "institut",
+      "website": "https://www.ifop.com/",
+      "commission_notices": "https://www.commission-des-sondages.fr/",
+      "rss": [],
+      "scan_urls": [
+        "https://www.ifop.com/categorie/sondages/",
+        "https://www.ifop.com/"
+      ],
+      "keywords": ["ifop", "ifop-fiducial"],
+      "active": true
+    },
+    {
+      "id": "elabe",
+      "label": "Elabe",
+      "type": "institut",
+      "website": "https://elabe.fr/",
+      "scan_urls": ["https://elabe.fr/"],
+      "keywords": ["elabe"],
+      "active": true
+    },
+    {
+      "id": "harris",
+      "label": "Harris Interactive / Toluna",
+      "type": "institut",
+      "website": "https://harris-interactive.fr/",
+      "scan_urls": ["https://harris-interactive.fr/"],
+      "keywords": ["harris interactive", "toluna", "harris"],
+      "active": true
+    },
+    {
+      "id": "ipsos",
+      "label": "Ipsos / Ipsos-BVA",
+      "type": "institut",
+      "website": "https://www.ipsos.com/fr-fr",
+      "scan_urls": ["https://www.ipsos.com/fr-fr"],
+      "keywords": ["ipsos", "ipsos-bva", "bva"],
+      "active": true
+    },
+    {
+      "id": "opinionway",
+      "label": "OpinionWay",
+      "type": "institut",
+      "website": "https://www.opinion-way.com/",
+      "scan_urls": ["https://www.opinion-way.com/"],
+      "keywords": ["opinionway", "opinion way"],
+      "active": true
+    },
+    {
+      "id": "verian",
+      "label": "Verian (ex-Kantar Public)",
+      "type": "institut",
+      "website": "https://www.veriangroup.com/",
+      "scan_urls": [],
+      "keywords": ["verian", "kantar"],
+      "active": true
+    },
+    {
+      "id": "cluster17",
+      "label": "Cluster17",
+      "type": "institut",
+      "website": "https://cluster17.com/",
+      "scan_urls": ["https://cluster17.com/"],
+      "keywords": ["cluster17", "cluster 17"],
+      "active": true,
+      "note": "Partenaire fréquent Le Point — parfois « souhait de victoire » plutôt qu’intentions de vote."
+    },
+    {
+      "id": "odxa",
+      "label": "Odoxa",
+      "type": "institut",
+      "website": "https://www.odoxa.fr/",
+      "scan_urls": ["https://www.odoxa.fr/"],
+      "keywords": ["odoxa"],
+      "active": true
+    },
+    {
+      "id": "yougov",
+      "label": "YouGov",
+      "type": "institut",
+      "website": "https://fr.yougov.com/",
+      "scan_urls": ["https://fr.yougov.com/"],
+      "keywords": ["yougov"],
+      "active": true
+    },
+    {
+      "id": "csa",
+      "label": "CSA / Coktail",
+      "type": "institut",
+      "website": "https://www.csa.eu/",
+      "keywords": ["csa"],
+      "active": true
+    },
+    {
+      "id": "ifop-fiducial",
+      "label": "Ifop-Fiducial",
+      "type": "marque_commande",
+      "parent": "ifop",
+      "keywords": ["ifop-fiducial", "fiducial"],
+      "active": true
+    }
+  ],
+  "aggregators": [
+    {
+      "id": "epoc",
+      "label": "EPOC Info — baromètre 2027",
+      "type": "agregateur",
+      "url": "https://www.epocinfo.fr/ep2027.php",
+      "priority": 1,
+      "parse": "epoc_html",
+      "active": true
+    },
+    {
+      "id": "wikipedia-fr",
+      "label": "Wikipédia FR — liste de sondages 2027",
+      "type": "agregateur",
+      "url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "priority": 2,
+      "parse": "wikipedia_mention",
+      "active": true
+    },
+    {
+      "id": "wikipedia-en",
+      "label": "Wikipedia EN — Opinion polling 2027",
+      "type": "agregateur",
+      "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
+      "priority": 3,
+      "parse": "wikipedia_mention",
+      "active": true
+    },
+    {
+      "id": "2027presidentielle",
+      "label": "2027presidentielle.com — compact",
+      "type": "agregateur",
+      "url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "priority": 4,
+      "parse": "html_text",
+      "active": true
+    },
+    {
+      "id": "elyseescope",
+      "label": "ÉlyséeScope 2027",
+      "type": "agregateur",
+      "url": "https://www.elyseescope.com/",
+      "priority": 5,
+      "parse": "html_text",
+      "active": true
+    },
+    {
+      "id": "commission-sondages",
+      "label": "Commission des sondages — notices",
+      "type": "officiel",
+      "url": "https://www.commission-des-sondages.fr/notices/",
+      "priority": 6,
+      "parse": "html_text",
+      "active": true
+    }
+  ],
+  "media_partners": [
+    {
+      "id": "le-point",
+      "label": "Le Point",
+      "type": "media",
+      "website": "https://www.lepoint.fr/",
+      "rss": [],
+      "scan_urls": [
+        "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/"
+      ],
+      "keywords": ["sondage", "présidentielle", "intentions de vote", "cluster17"],
+      "active": true,
+      "note": "RSS public instable / anti-bot ; seed manuel + URL article exclusif Cluster17."
+    },
+    {
+      "id": "le-figaro",
+      "label": "Le Figaro",
+      "type": "media",
+      "rss": ["https://www.lefigaro.fr/rss/figaro_politique.xml"],
+      "keywords": ["sondage", "présidentielle", "ifop"],
+      "active": true
+    },
+    {
+      "id": "rtl",
+      "label": "RTL",
+      "type": "media",
+      "rss": [],
+      "keywords": ["sondage", "présidentielle", "harris"],
+      "active": true,
+      "note": "RSS politique souvent 404 — couverture via agrégateurs EPOC/Wikipedia."
+    },
+    {
+      "id": "bfmtv",
+      "label": "BFMTV",
+      "type": "media",
+      "rss": ["https://www.bfmtv.com/rss/politique/"],
+      "keywords": ["sondage", "présidentielle", "elabe"],
+      "active": true
+    },
+    {
+      "id": "les-echos",
+      "label": "Les Échos",
+      "type": "media",
+      "rss": [],
+      "keywords": ["sondage", "présidentielle", "opinionway"],
+      "active": true,
+      "note": "RSS souvent 403 — couverture via agrégateurs."
+    },
+    {
+      "id": "lci",
+      "label": "LCI / TF1 Info",
+      "type": "media",
+      "keywords": ["sondage", "présidentielle", "ifop"],
+      "active": true
+    },
+    {
+      "id": "la-tribune-dimanche",
+      "label": "La Tribune Dimanche",
+      "type": "media",
+      "keywords": ["sondage", "elabe", "présidentielle"],
+      "active": true
+    }
+  ]
+}

@@ -38,13 +38,21 @@
       "label": "Wikipedia — Opinion polling 2027 (section Since July 2026)",
       "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
       "as_of": "2026-07-16"
+    },
+    {
+      "label": "Cluster17 / Le Point — souhaits de victoire (exclusif)",
+      "url": "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/",
+      "as_of": "2026-07-11",
+      "metric": "souhait_victoire",
+      "note": "Le Pen en tête des souhaits de victoire, Mélenchon en embuscade, Philippe 3e. 56 % jugent la candidature Le Pen « injustifiée ». Paywall — pas fusionné dans latest_pct intentions."
     }
   ],
   "notes": [
     "Les % « moyenne » combinent des hypothèses exclusives (candidat A ou B) : ne pas les additionner.",
     "RN : Marine Le Pen (candidature déclarée 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti) — jamais dans la même hypothèse de 1er tour.",
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
-    "Mise à jour LMDPT : 2026-07-16 (vagues 7–12 juil. 2026)."
+    "Veille auto 2×/jour : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille.",
+    "Mise à jour LMDPT : 2026-07-16 (vagues 7–12 juil. 2026 + seed Cluster17/Le Point)."
   ],
   "waves_latest": [
     {

@@ -16,6 +16,8 @@
     "ci:status": "node scripts/ci-status.mjs",
     "sync:data": "tsx scripts/sync-data.ts",
     "renifleur": "tsx scripts/renifleur-run.ts",
+    "sondage:veille": "tsx scripts/sondage-veille-run.ts",
+    "sondage:veille:seed": "tsx scripts/sondage-veille-run.ts --seed-only",
     "programme-chiffrage-lint": "tsx scripts/programme-chiffrage-lint.ts",
     "programme-veille": "tsx scripts/programme-veille-run.ts",
     "renifleur:draft": "tsx scripts/renifleur-social-draft.ts",
