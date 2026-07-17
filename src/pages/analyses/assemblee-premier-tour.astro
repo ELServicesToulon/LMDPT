@@ -4,6 +4,7 @@ import An1tComparatorMap from '../../components/An1tComparatorMap.astro';
 import An1tSeatCompare from '../../components/An1tSeatCompare.astro';
 import AssembleeHemicycle from '../../components/AssembleeHemicycle.astro';
 import An1tSimulator from '../../components/An1tSimulator.astro';
+import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
 import analysis from '../../data/analyses/assemblee-premier-tour-2024.json';
 import leg2024National from '../../data/elections/2024-legislatives-1er-tour-national.json';
 import {
@@ -18,6 +19,7 @@ import {
   allocToHemiRows,
   buildPollAn1tBundle,
 } from '../../lib/poll-to-an1t';
+import { programProximityColor } from '../../lib/program-proximity';
 import sondages2027 from '../../data/elections/2027-sondages-candidats.json';
 
 // Import programmes 2027 existants pour lien AN1T (utilisation données veille/institutions)
@@ -40,6 +42,24 @@ const an1t577 = simulateAn1tSeats(dataset, seatsFull, threshold);
 const an1t150 = simulateAn1tSeats(dataset, seatsProposal, threshold);
 const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, seatsFull);
 const circoBlocs = circos ? countCircosByBloc(circos) : [];
+
+/** Hémicycle 100 % 1er tour — couleurs proximité de programmes */
+const firstRoundPure = an1t577.map((a) => ({
+  id: a.id,
+  label: a.label,
+  seats: a.seats,
+  color: programProximityColor(a.id, a.color),
+  pctExprimes: a.pctExprimes,
+  pctSeats: a.pctSeats,
+}));
+
+/** Assemblée réelle post-législatives 2024 (blocs comparables) */
+const realAssembly = analysis.an_reelle.blocs.map((b) => ({
+  id: b.id,
+  label: b.label,
+  seats: b.seats,
+  color: b.color,
+}));
 
 // === Sondages illustration — branchés sur 2027-sondages-candidats.json (P7-5) ===
 // Intentions présidentielles → blocs AN1T → Sainte-Laguë. Pédagogique uniquement (DOE).
@@ -139,37 +159,44 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
   </nav>
 
   <section>
-    <h2>L'Assemblée du Premier Tour 2027 : voyez la vraie France politique</h2>
+    <h2>L'Assemblée du Premier Tour : un même 1er tour, deux traductions en sièges</h2>
     <p class="lead">
-      Visualisation hybride en <strong>deux couches</strong> (modèle officiel Wikimedia — XVIIe législature) :
+      Visualisation principale en <strong>deux hémicycles côte à côte</strong> (même modèle géométrique Wikimedia — 577 sièges) :
     </p>
     <ul class="layers-summary">
       <li>
-        <strong>Couche 1 — Arrière-plan (transparence / faible opacité)</strong> :
-        les groupes actuels de l’Assemblée nationale (législature en cours). Les positions et « quartiers »
-        (gauche NFP, centre, LR, RN à droite, etc.) sont exactement celles du modèle officiel.
-        Affichées en transparence pour ne pas masquer la couche avant — repères spatiaux familiers.
-        <em>Rôle pédagogique :</em> ancrer la lecture dans la réalité actuelle (« où » les groupes siègent aujourd’hui).
+        <strong>À gauche — Assemblée 100&nbsp;% 1er tour</strong> :
+        répartition <em>Sainte-Laguë</em> sur les voix exprimées du 1er tour des législatives 2024 uniquement
+        (modèle AN1T LMDPT). Sièges placés le long de l’arc selon le <strong>spectre de proximité de programmes</strong>
+        (teintes proches = familles d’idées proches).
       </li>
       <li>
-        <strong>Couche 2 — Avant-plan (couleurs pleines)</strong> :
-        les sièges projetés selon les voix ou intentions du premier tour (répartition Sainte-Laguë).
-        Placés dans les quartiers correspondants (mapping déterministe des blocs : NFP → zone gauche, RN → zone droite, etc.).
-        <em>Rôle pédagogique :</em> visualiser l’impact de la pluralité du 1er tour sur la même carte ;
-        les couleurs pleines se distinguent clairement de la transparence.
+        <strong>À droite — Assemblée réelle</strong> :
+        composition issue des législatives qui ont <em>suivi</em> ce premier tour (second tour, désistements, uninominal).
+        Couleurs des blocs institutionnels.
       </li>
     </ul>
     <p class="meta">
-      Illustration pédagogique uniquement — pas une prédiction. Croiser toujours avec les données officielles (data.gouv.fr / Ministère de l’Intérieur).
-    </p>
-    <p class="meta">
-      Projections à partir d’agrégats de sondages récents (Ifop, Harris, Elabe et similaires). <strong>Illustration pédagogique uniquement</strong>. Les données réelles du premier tour (open data Ministère de l’Intérieur) restent la référence. Sources détaillées dans la section Sources et sur data.gouv.fr.
+      Données de référence : open data 1er tour législatives 2024 (data.gouv.fr / Ministère de l’Intérieur). Illustration pédagogique — pas une prédiction.
     </p>
 
     <!-- Strengthened disclaimer (editorial UX) -->
     <div class="strong-disclaimer" role="note" aria-label="Avertissement éditorial renforcé">
-      <strong>⚠ Avertissement renforcé — Neutralité &amp; pédagogie :</strong> Ce contenu et les visualisations AN1T (hémicycle hybride, simulateur, cartes, tableaux) sont <em>strictement pédagogiques et factuels</em>. Ils documentent l’écart entre la pluralité exprimée au premier tour et les résultats après second tour. <strong>Aucune prédiction, aucune recommandation de réforme, aucun jugement sur le mode de scrutin actuel.</strong> Simulations basées sur Sainte-Laguë (open data 2024 + agrégats sondages pour illustration 2027). Toujours croiser avec données officielles. Conformément à la ligne éditoriale Democracy Over Elimination.
+      <strong>⚠ Avertissement renforcé — Neutralité &amp; pédagogie :</strong> Ces deux hémicycles documentent un écart mesurable entre la pluralité du 1er tour et l’Assemblée élue. <strong>Aucune prédiction, aucune recommandation de réforme, aucun jugement sur le mode de scrutin actuel.</strong> Conformément à la ligne Democracy Over Elimination.
     </div>
+
+    <!-- ===== VISUEL PRINCIPAL : 100% T1 vs Assemblée réelle ===== -->
+    <DualAssembleeCompare
+      firstRoundAlloc={firstRoundPure}
+      realAlloc={realAssembly}
+      totalSeats={seatsFull}
+      t1Label="1er tour 30 juin 2024"
+      t2Label="Législatives suivies (juil. 2024)"
+      firstRoundTitle="Assemblée 100 % 1er tour"
+      realTitle="Assemblée réelle après législatives"
+      firstRoundMeta={`Sainte-Laguë nationale, seuil ${threshold} % — voix T1 open data uniquement. Couleurs = proximité de programmes (spectre d’idées). Géométrie : modèle Wikimedia 577 sièges.`}
+      realMeta={`${analysis.an_reelle.source_note} Couleurs = blocs institutionnels comparables.`}
+    />
 
     <!-- ===================== MINI-GUIDE AMÉLIORÉ : POURQUOI LE 1ER TOUR COMPTE POUR LA REPRÉSENTATION ===================== -->
     <section class="card disclaimer-reinforced" aria-labelledby="guide-title">
