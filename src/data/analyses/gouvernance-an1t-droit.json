@@ -1,0 +1,455 @@
+{
+  "slug": "gouvernance-an1t-droit",
+  "title": "Droit électoral, Assemblée 100 % 1er tour et gouvernance non bloquée",
+  "date": "2026-07-17",
+  "updated": "2026-07-17",
+  "disclaimer": "Synthèse documentaire pédagogique LMDPT (Democracy Over Elimination). Ce n’est ni un avis juridique, ni un projet de loi, ni un conseil de réforme. Croiser toujours avec les textes officiels (Légifrance, Conseil constitutionnel, data.gouv.fr) et un professionnel du droit si action concrète.",
+  "corpus_juridique": [
+    {
+      "id": "const-24",
+      "label": "Constitution art. 24 — Parlement",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "L’Assemblée nationale est élue au suffrage direct ; le Sénat au suffrage indirect. La Constitution fixe le principe bicaméral et le mode général d’élection, sans figer le détail du scrutin législatif dans le texte constitutionnel.",
+      "role": "Cadre organique de la représentation nationale."
+    },
+    {
+      "id": "const-25",
+      "label": "Constitution art. 25 — Loi organique",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "Une loi organique fixe la durée des pouvoirs de chaque assemblée, le nombre de ses membres, leur indemnité, les conditions d’éligibilité, le régime des inéligibilités et des incompatibilités.",
+      "role": "Nombre de députés, mandat, éligibilité → loi organique. Le mode de scrutin détaillé est surtout dans le Code électoral (loi)."
+    },
+    {
+      "id": "const-34",
+      "label": "Constitution art. 34 — Domaine de la loi",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "La loi fixe les règles concernant le régime électoral des assemblées parlementaires.",
+      "role": "Le mode de scrutin des députés relève du législateur (pas du seul règlement ou du décret)."
+    },
+    {
+      "id": "const-38",
+      "label": "Constitution art. 38 — Ordonnances",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "Le Gouvernement peut, pour l’exécution de son programme, demander au Parlement l’autorisation de prendre par ordonnances des mesures qui sont normalement du domaine de la loi.",
+      "role": "Risque de contournement du débat parlementaire. Une réforme électorale majeure par ordonnance serait politiquement et juridiquement sensible ; la voie législative claire est préférable."
+    },
+    {
+      "id": "const-49",
+      "label": "Constitution art. 49 — Engagement de responsabilité (dont 49 al. 3)",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "Le Premier ministre peut, après délibération du Conseil des ministres, engager la responsabilité du Gouvernement devant l’Assemblée nationale sur le vote d’un projet de loi de finances ou de financement de la sécurité sociale. Dans ce cas, ce projet est considéré comme adopté, sauf si une motion de censure est votée.",
+      "role": "Outil de déblocage unilatéral. L’étude LMDPT explore des alternatives pour gouverner sans en faire le pivot permanent."
+    },
+    {
+      "id": "const-11",
+      "label": "Constitution art. 11 — Référendum législatif",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "Le Président peut soumettre au référendum tout projet de loi portant sur l’organisation des pouvoirs publics…",
+      "role": "Piste possible pour une réforme de l’organisation des pouvoirs publics, sous conditions strictes et contrôle du Conseil constitutionnel."
+    },
+    {
+      "id": "const-89",
+      "label": "Constitution art. 89 — Révision constitutionnelle",
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "extrait": "L’initiative de la révision appartient concurremment au Président et aux membres du Parlement. Projet ou proposition adopté par les deux assemblées en termes identiques, puis référendum ou Congrès (3/5).",
+      "role": "Obligatoire si l’on touche au cœur constitutionnel (ex. composition bicamérale, suffrage, pouvoirs du Premier ministre / 49)."
+    },
+    {
+      "id": "code-electoral",
+      "label": "Code électoral — scrutin des députés",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006070239/",
+      "extrait": "Les députés sont élus au scrutin uninominal majoritaire à deux tours (dispositions législatives du Code électoral).",
+      "role": "Texte opérationnel du mode de scrutin actuel. C’est le premier levier pour introduire une dose ou une clé proportionnelle du 1er tour."
+    },
+    {
+      "id": "loi-1985",
+      "label": "Loi n° 85-690 du 10 juillet 1985 (proportionnelle temporaire)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000321970/",
+      "extrait": "Précédent historique : scrutin de liste proportionnel départemental pour les législatives de 1986, puis retour au uninominal.",
+      "role": "Preuve que le mode de scrutin peut changer par la loi sans réforme constitutionnelle majeure."
+    },
+    {
+      "id": "vie-publique-scrutin",
+      "label": "Vie publique — mode de scrutin des législatives",
+      "url": "https://www.vie-publique.fr/eclairage/38634-le-mode-de-scrutin-des-elections-legislatives",
+      "extrait": "Fiche pédagogique institutionnelle sur le scrutin uninominal majoritaire à deux tours.",
+      "role": "Source secondaire officielle de vulgarisation."
+    },
+    {
+      "id": "vie-publique-deputes",
+      "label": "Vie publique — comment sont élus les députés",
+      "url": "https://www.vie-publique.fr/fiches/19483-comment-sont-elus-les-deputes",
+      "extrait": "Présentation du cadre d’élection des députés.",
+      "role": "Source secondaire officielle."
+    }
+  ],
+  "chemins_application": [
+    {
+      "id": "voie-A",
+      "titre": "Voie A — Loi (Code électoral) : dose ou clé proportionnelle",
+      "niveau": "loi ordinaire",
+      "temps_indicatif": "1 session à 18 mois selon majorité et navette",
+      "contenu_type": [
+        "Introduire X % de sièges répartis à la proportionnelle nationale ou régionale à partir des voix du 1er tour (dose 10–25 %).",
+        "Ou : uninominal maintenu + compensation proportionnelle (sièges correctifs).",
+        "Ou : meilleurs perdants / listes complémentaires."
+      ],
+      "procedure": [
+        "1. Initiative : projet (Gouvernement) ou proposition (parlementaires).",
+        "2. Examen AN + Sénat (art. 45 navette) ; éventuelle CMP.",
+        "3. Promulgation ; contrôle a priori possible du Conseil constitutionnel (saisine 60 députés / 60 sénateurs).",
+        "4. Application au prochain renouvellement (souvent non rétroactif en cours de législature)."
+      ],
+      "constitutionnel": "En principe pas de révision si l’on reste dans le cadre art. 24–25–34 (élection des députés au suffrage direct, nombre fixé par loi organique).",
+      "risques": [
+        "Censure partielle si atteinte disproportionnée à l’égalité du suffrage ou à la sincérité du scrutin.",
+        "Blocage au Sénat / navette longue.",
+        "Usage du 49.3 pour « forcer » — politiquement coûteux et hors ligne de gouvernance non bloquée proposée ici."
+      ],
+      "lien_fil_directeur": "Correspond aux scénarios 10–25 % du dual hémicycle LMDPT."
+    },
+    {
+      "id": "voie-B",
+      "titre": "Voie B — 100 % 1er tour (proportionnelle intégrale)",
+      "niveau": "loi (+ organique si nombre de sièges / découpage change)",
+      "temps_indicatif": "12–24 mois",
+      "contenu_type": [
+        "Scrutin de liste proportionnel (national, régional ou départemental) sur les suffrages du 1er tour unique.",
+        "Seuil d’accès (ex. 3–5 %) — trade-off pluralité / gouvernabilité.",
+        "Méthode de répartition (Hare, Sainte-Laguë, D’Hondt)."
+      ],
+      "procedure": [
+        "1. Loi modifiant le Code électoral (remplacement uninominal T1/T2).",
+        "2. Si redécoupage ou variation du nombre de députés : loi organique (art. 25) + validation Conseil constitutionnel.",
+        "3. Calendrier électoral et digicode technique (listes, parité, financement)."
+      ],
+      "constitutionnel": "Possible sans réécrire l’art. 24 si l’Assemblée reste élue au suffrage direct. L’historique 1985–1986 le montre.",
+      "risques": [
+        "Fragmentation parlementaire si seuil trop bas.",
+        "Perte du lien circonscription–député (critiqué par une partie de la doctrine et des élus).",
+        "Transition : quel sort de la législature en cours ?"
+      ],
+      "lien_fil_directeur": "Correspond à l’hémicycle « Assemblée 100 % 1er tour » LMDPT."
+    },
+    {
+      "id": "voie-C",
+      "titre": "Voie C — Révision constitutionnelle (gouvernance + scrutin)",
+      "niveau": "art. 89 (ou art. 11 selon objet)",
+      "temps_indicatif": "18–36 mois",
+      "contenu_type": [
+        "Encadrer ou supprimer le 49 al. 3 / introduire motion de censure constructive.",
+        "Limiter les ordonnances (art. 38) sur matières sociales / électorales.",
+        "Figer une dose minimale de proportionnelle dans la Constitution (option).",
+        "Clarifier dissolution / durée de session / agenda parlementaire."
+      ],
+      "procedure": [
+        "1. Projet ou proposition de révision.",
+        "2. Vote identique AN + Sénat.",
+        "3. Référendum ou Congrès (3/5 des suffrages exprimés)."
+      ],
+      "constitutionnel": "Obligatoire pour toucher durablement au 49.3, à l’équilibre exécutif–législatif, ou à des verrous structurels.",
+      "risques": [
+        "Seuil politique très élevé (bicaméral + peuple ou Congrès).",
+        "Instrumentalisation référendaire.",
+        "Durée et incertitude."
+      ],
+      "lien_fil_directeur": "Nécessaire si l’on veut une gouvernance non bloquée structurelle, pas seulement un mode de scrutin."
+    },
+    {
+      "id": "voie-D",
+      "titre": "Voie D — Référendum d’organisation des pouvoirs publics (art. 11)",
+      "niveau": "présidentiel + contrôle constitutionnel",
+      "temps_indicatif": "variable",
+      "contenu_type": [
+        "Projet de loi portant sur l’organisation des pouvoirs publics pouvant inclure le régime électoral des assemblées, sous réserve de la jurisprudence du Conseil constitutionnel."
+      ],
+      "procedure": [
+        "1. Proposition du Gouvernement.",
+        "2. Contrôle du Conseil constitutionnel sur le champ de l’art. 11.",
+        "3. Campagne et scrutin référendaire."
+      ],
+      "constitutionnel": "Champ strictement encadré ; ne remplace pas toujours l’art. 89.",
+      "risques": [
+        "Incertitude jurisprudentielle sur le périmètre.",
+        "Polarisation binaire du débat (oui/non)."
+      ],
+      "lien_fil_directeur": "Piste exceptionnelle, pas le chemin de travail par défaut LMDPT."
+    }
+  ],
+  "scenarios_representation": [
+    {
+      "id": "s-100",
+      "label": "100 % 1er tour (proportionnelle intégrale)",
+      "dose_pct": 100,
+      "description": "Tous les sièges répartis à partir des voix du 1er tour (Sainte-Laguë, seuil paramétrable).",
+      "avantages": [
+        "Fidélité maximale à la pluralité T1 (fil directeur LMDPT).",
+        "Chaque voix pèse de façon plus égale au niveau national.",
+        "Réduit l’effet « duel forcé » et les désistements stratégiques."
+      ],
+      "inconvenients": [
+        "Majorité absolue plus rare → coalitions obligatoires.",
+        "Risque de fragmentation si seuil trop bas.",
+        "Affaiblit le lien uninominal local (circonscription)."
+      ]
+    },
+    {
+      "id": "s-25",
+      "label": "Dose 25 % proportionnelle (mixte)",
+      "dose_pct": 25,
+      "description": "≈144 sièges à la proportionnelle sur voix T1 + ≈433 uninominaux.",
+      "avantages": [
+        "Compromis historicisé (débats 2018–2023).",
+        "Corrige une partie de la distorsion sans tout basculer.",
+        "Plus acceptable pour les élus uninominaux."
+      ],
+      "inconvenients": [
+        "Deux catégories de députés (légitimité duale).",
+        "Correction partielle seulement (cas 2017/2022/2024).",
+        "Complexité technique (listes, seuil, collèges)."
+      ]
+    },
+    {
+      "id": "s-15",
+      "label": "Dose 15 % proportionnelle",
+      "dose_pct": 15,
+      "description": "≈87 sièges compensatoires / listes nationales ou régionales.",
+      "avantages": [
+        "Changement incrémental, plus facile à négocier.",
+        "Test grandeur nature sans rupture totale."
+      ],
+      "inconvenients": [
+        "Impact faible sur les grands écarts (ex. 2017 centre +229 vs T1).",
+        "Peut sembler cosmétique."
+      ]
+    },
+    {
+      "id": "s-0",
+      "label": "Statu quo uninominal T1/T2 (référence)",
+      "dose_pct": 0,
+      "description": "Scrutin actuel du Code électoral.",
+      "avantages": [
+        "Simplicité locale ; tradition Ve République.",
+        "Favorise des majorités plus claires (mais pas toujours)."
+      ],
+      "inconvenients": [
+        "Écarte massivement la pluralité T1 (cas 2017 RN/FN, 2022 RN, 2024 RN).",
+        "Désistements et « vote utile » deviennent le second tour réel."
+      ]
+    }
+  ],
+  "etudes_de_cas": [
+    {
+      "id": "cas-2017",
+      "scrutin": "Présidentielle 2017 → législatives juin 2017",
+      "slug_atlas": "2017-presidentielle",
+      "constat": "Au 1er tour présidentiel, la pluralité est large (Macron, Le Pen, Fillon, Mélenchon…). En Assemblée 100 % T1 (blocs, Sainte-Laguë), la carte est multipolaire. Aux législatives qui suivent, la majorité présidentielle obtient une majorité écrasante de sièges.",
+      "chiffres_lmdpt": {
+        "assemblee_t1_blocs": {
+          "nfp": 160,
+          "rn": 150,
+          "ensemble": 139,
+          "lr": 115,
+          "autres": 13
+        },
+        "assemblee_legislatives": {
+          "ensemble": 368,
+          "lr": 112,
+          "nfp": 61,
+          "rn": 8,
+          "autres": 28
+        },
+        "delta_notable": [
+          { "bloc": "ensemble", "delta": 229, "lecture": "Sur-représentation massive de la majorité issue de la présidentielle." },
+          { "bloc": "rn", "delta": -142, "lecture": "Sous-représentation extrême par rapport à la pluralité T1 présidentielle." },
+          { "bloc": "nfp", "delta": -99, "lecture": "Gauche très en dessous de sa part T1 agrégée." }
+        ]
+      },
+      "avantages_statu_quo_vu_gouvernance": [
+        "Majorité claire pour gouverner sans coalition formelle.",
+        "Stabilité du calendrier législatif 2017–2022 (relativement)."
+      ],
+      "inconvenients_statu_quo": [
+        "Écart démocratie d’opinion (T1) / démocratie de sièges.",
+        "Sentiment d’exclusion d’une partie des électeurs du 1er tour."
+      ],
+      "si_an1t_100": {
+        "gouvernance": "Coalition multipolaire probable (centre + une aile).",
+        "avantage": "Légitimité de composition plus proche du 1er tour.",
+        "risque": "Négociation gouvernementale plus longue ; besoin de règles anti-blocage."
+      }
+    },
+    {
+      "id": "cas-2022",
+      "scrutin": "Présidentielle 2022 → législatives juin 2022",
+      "slug_atlas": "2022-presidentielle",
+      "constat": "T1 présidentiel très tripolaire (Macron / Le Pen / Mélenchon). Assemblée 100 % T1 : quasi équilibre RN / NFP / centre. Législatives : majorité relative Ensemble, NUPES 2e force, RN 3e.",
+      "chiffres_lmdpt": {
+        "assemblee_t1_blocs": {
+          "rn": 186,
+          "nfp": 184,
+          "ensemble": 161,
+          "lr": 28,
+          "autres": 18
+        },
+        "assemblee_legislatives": {
+          "ensemble": 251,
+          "nfp": 159,
+          "rn": 89,
+          "lr": 72,
+          "autres": 6
+        },
+        "delta_notable": [
+          { "bloc": "ensemble", "delta": 90, "lecture": "Bonus uninominal pour le camp présidentiel." },
+          { "bloc": "rn", "delta": -97, "lecture": "RN largement sous sa part T1 présidentielle." },
+          { "bloc": "nfp", "delta": -25, "lecture": "Écart moindre que 2017 grâce à l’union NUPES, mais encore négatif." }
+        ]
+      },
+      "avantages_statu_quo_vu_gouvernance": [
+        "Gouvernement possible en minorité relative (avec 49.3 fréquent ensuite)."
+      ],
+      "inconvenients_statu_quo": [
+        "Usage intensif du 49.3 → crispation démocratique.",
+        "Assemblée fragmentée sans règles de coalition constructives."
+      ],
+      "si_an1t_100": {
+        "gouvernance": "Aucun camp > 200 sièges → coalition ou contrat de législature indispensable.",
+        "avantage": "Incite à négocier un programme public plutôt qu’à forcer par 49.3.",
+        "risque": "Immobilisme si aucune règle de motion constructive / agenda partagé."
+      }
+    },
+    {
+      "id": "cas-2024",
+      "scrutin": "Législatives 2024 (T1 30 juin → T2 7 juil.)",
+      "slug_atlas": "2024-legislatives",
+      "constat": "T1 législatif : RN en tête des voix agrégées LMDPT. Assemblée 100 % T1 (seuil 3 %) : RN 223, NFP 184, Ensemble 132. Assemblée réelle : NFP 182, RN 125, Ensemble 99, « autres » 124 — recomposition par désistements et duels.",
+      "chiffres_lmdpt": {
+        "assemblee_t1_blocs": {
+          "rn": 223,
+          "nfp": 184,
+          "ensemble": 132,
+          "lr": 38,
+          "autres": 0
+        },
+        "assemblee_legislatives": {
+          "nfp": 182,
+          "rn": 125,
+          "ensemble": 99,
+          "lr": 47,
+          "autres": 124
+        },
+        "delta_notable": [
+          { "bloc": "rn", "delta": -98, "lecture": "Écart majeur entre voix T1 et sièges après désistements." },
+          { "bloc": "autres", "delta": 124, "lecture": "« Autres » réel agrège des petits groupes ; objet statistique différent du seuil AN1T." },
+          { "bloc": "nfp", "delta": -2, "lecture": "Proche de sa part AN1T en sièges agrégés — cas particulier 2024." }
+        ]
+      },
+      "avantages_statu_quo_vu_gouvernance": [
+        "Fronts électoraux de second tour ont reconfiguré les duels."
+      ],
+      "inconvenients_statu_quo": [
+        "Gouvernabilité fragile ; majorité introuvable sans accords.",
+        "La pluralité T1 reste mal lisible dans le débat public."
+      ],
+      "si_an1t_100": {
+        "gouvernance": "Triple pôle RN / NFP / centre → contrat de législature ou technicien avec feuille de route votée.",
+        "avantage": "Rend visible le coût des non-accords (pas de majorité cachée).",
+        "risque": "Sans garde-fous anti-blocage, dissolution en série."
+      }
+    }
+  ],
+  "gouvernance_non_bloquee": {
+    "objectif": "Conserver une Assemblée plus fidèle au 1er tour tout en évitant l’immobilisme, sans faire des décrets/ordonnances ni du 49.3 le mode normal de gouvernement.",
+    "principes": [
+      "Majorité de projet plutôt que majorité de siège forcée.",
+      "Publicité des accords de coalition (programme, calendrier, red lines).",
+      "Sanctions politiques claires (censure constructive) plutôt que passage en force.",
+      "Respect du domaine de la loi pour les règles électorales (art. 34) — pas de contournement par décret."
+    ],
+    "leviers_sans_49_3": [
+      {
+        "id": "censure-constructive",
+        "titre": "Motion de censure constructive",
+        "description": "L’Assemblée ne peut renverser le gouvernement qu’en élisant en même temps un successeur (inspiration allemande). Réduit les chutes sans alternative.",
+        "niveau": "Révision constitutionnelle (art. 49 / architecture gouvernementale)."
+      },
+      {
+        "id": "contrat-legislature",
+        "titre": "Contrat de législature public",
+        "description": "Accord pluriannuel (budget, priorités, clauses de revoyure) signé par les groupes. Le non-respect déclenche renégociation ou censure constructive, pas le 49.3 permanent.",
+        "niveau": "Pratique parlementaire + éventuel règlement AN ; solide si appuyé par réforme constitutionnelle légère."
+      },
+      {
+        "id": "agenda-partage",
+        "titre": "Agenda parlementaire partagé",
+        "description": "Réserver une part fixe de l’ordre du jour aux groupes d’opposition et aux propositions issues du contrat, pour éviter le monopole de l’exécutif (sans tout geler).",
+        "niveau": "Règlement de l’Assemblée + loi organique relative aux sessions (selon périmètre)."
+      },
+      {
+        "id": "budget-echeancier",
+        "titre": "Échéancier budgétaire garanti",
+        "description": "Calendrier contraignant pour PLF/PLFSS avec vote final daté ; en cas d’échec, mécanisme de reconduction limitée des services votés (éviter l’arrêt de l’État sans 49.3 permanent).",
+        "niveau": "Loi organique relative aux lois de finances (LOLF) + pratique."
+      },
+      {
+        "id": "seuil-prop",
+        "titre": "Seuil de représentation calibré (3–5 %)",
+        "description": "En AN1T 100 %, un seuil évite la dispersion extrême tout en gardant la pluralité des grands blocs T1.",
+        "niveau": "Code électoral (loi)."
+      },
+      {
+        "id": "dose-progressive",
+        "titre": "Dose progressive 15 % → 25 % → évaluation",
+        "description": "Chemin incrémental : mesurer l’impact sur distorsion et stabilité avant 100 %.",
+        "niveau": "Loi (Code électoral) + clause d’évaluation parlementaire."
+      },
+      {
+        "id": "pas-ordonnance-electorale",
+        "titre": "Interdit politique d’ordonnance sur le mode de scrutin",
+        "description": "Engagement de ne pas utiliser l’art. 38 pour le régime électoral des députés — domaine réservé au débat parlementaire public (art. 34).",
+        "niveau": "Doctrine gouvernementale / éventuellement verrou organique."
+      },
+      {
+        "id": "mediation-institutionnelle",
+        "titre": "Médiation de coalition (tiers)",
+        "description": "Président de l’Assemblée ou personnalité désignée pour faciliter les accords de gouvernement en début de législature (délai 15–30 jours).",
+        "niveau": "Règlement + coutume ; peut être formalisé."
+      }
+    ],
+    "ce_que_lon_evite": [
+      "49.3 comme routine de passage des textes non budgétaires.",
+      "Ordonnances (art. 38) sur le cœur électoral ou social sans débat.",
+      "Décrets qui contournent le domaine de la loi (art. 34).",
+      "Dissolution immédiate sans tentative de contrat de législature."
+    ],
+    "architecture_proposee_lmdpt": {
+      "nom": "Gouvernance de pluralité (schéma pédagogique)",
+      "etapes": [
+        "J+0 : résultats 1er tour publiés open data (déjà le cas).",
+        "J+1–7 : répartition des sièges selon la clé choisie (100 % T1 ou dose).",
+        "J+8–30 : négociations de contrat de législature public (programme, budget, red lines).",
+        "Investiture : vote d’investiture ou motion constructive si révision.",
+        "En cours de mandat : désaccords → renégociation ou censure constructive ; pas de 49.3 hors cas budgétaires strictement limités (si conservés).",
+        "Fin de cycle : évaluation publique de la distorsion T1 / sièges (tableau LMDPT)."
+      ]
+    }
+  },
+  "checklist_operateurs": [
+    "1. Choisir le scénario (s-0 / s-15 / s-25 / s-100) et le seuil.",
+    "2. Rédiger l’exposé des motifs + étude d’impact (distorsion 2017/2022/2024 via atlas LMDPT).",
+    "3. Voie A ou B : dépôt projet/proposition de loi (Code électoral) ; organique si nombre de sièges.",
+    "4. Navette ; éviter 49.3 — privilégier CMP et compromis public.",
+    "5. Saisine possible du Conseil constitutionnel ; sécuriser égalité du suffrage.",
+    "6. Si gouvernance anti-blocage : préparer révision art. 49 (voie C) en parallèle ou en second temps.",
+    "7. Application au prochain renouvellement ; communication open data des écarts."
+  ],
+  "liens_internes": [
+    { "href": "/analyses/assemblee-premier-tour", "label": "Assemblée du Premier Tour (dual + Δ)" },
+    { "href": "/analyses/assemblee-premier-tour-mecanismes", "label": "Mécanismes (seuils, doses, mixtes)" },
+    { "href": "/atlas", "label": "Atlas multi-scrutins" },
+    { "href": "/atlas/2017-presidentielle", "label": "Cas 2017" },
+    { "href": "/atlas/2022-presidentielle", "label": "Cas 2022" },
+    { "href": "/atlas/2024-legislatives", "label": "Cas 2024" },
+    { "href": "/debats/assemblee-premier-tour", "label": "Débat citoyen" }
+  ]
+}

@@ -51,6 +51,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/assemblee-premier-tour-mecanismes',
   },
   {
+    slug: 'gouvernance-an1t-droit',
+    title: 'Droit électoral, AN1T et gouvernance non bloquée',
+    description:
+      'Corpus juridique (Constitution, Code électoral), chemins pour 100 % 1er tour ou dose proportionnelle, études de cas 2017–2022–2024, gouvernance sans 49.3 ni décrets de contournement. Synthèse documentaire DOE.',
+    date: '2026-07-17',
+    href: '/analyses/gouvernance-an1t-droit',
+  },
+  {
     slug: 'alerte-citoyenne',
     title: 'Alerte citoyenne — débat public',
     description:
