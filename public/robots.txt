@@ -1,0 +1,49 @@
+# Le Média du Premier Tour — https://lmdpt.iarbre.org
+# Crawlers moteurs de recherche + agents IA : indexation bienvenue sur le contenu public.
+
+User-agent: *
+Allow: /
+Disallow: /moderation
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://lmdpt.iarbre.org/sitemap.xml
+Sitemap: https://lmdpt.iarbre.org/sitemap-images.xml
+
+# AI / LLM crawlers (explicit allow — contenu civique open data)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Fichiers d’aide pour les IA
+# https://lmdpt.iarbre.org/llms.txt
+# https://lmdpt.iarbre.org/ai.txt

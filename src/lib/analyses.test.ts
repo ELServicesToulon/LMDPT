@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import preparation from '../data/analyses/presidentielle-2027-preparation.json';
+import alertes from '../data/alertes-citoyennes.json';
 import { ANALYSIS_CATALOG, getAnalysis } from './analyses';
 
 describe('analyses', () => {
@@ -8,8 +9,18 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('legislatives-2024-desistements');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('assemblee-premier-tour');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-distorsion');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-2022-legislatives');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-2027-preparation');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('programmes-comparateur');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('alerte-citoyenne');
+  });
+
+  it('alerte citoyenne documents 11 points with X signal source', () => {
+    expect(alertes.items.length).toBe(11);
+    expect(alertes.signal.status_id).toBe('2077697375322140699');
+    expect(alertes.signal.url).toContain('2077697375322140699');
+    expect(alertes.items.filter((i) => i.region === 'fr').length).toBe(8);
+    expect(alertes.items.filter((i) => i.region === 'ue').length).toBe(3);
   });
 
   it('resolves analysis by slug', () => {

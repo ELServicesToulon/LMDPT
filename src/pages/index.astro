@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsFeed from '../components/NewsFeed.astro';
+import AlerteCitoyenne from '../components/AlerteCitoyenne.astro';
 import renifleur from '../data/renifleur/latest.json';
 import type { RenifleurSnapshot } from '../lib/renifleur';
 import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
 import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
+import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 
 const feed = renifleur as RenifleurSnapshot;
 
@@ -42,7 +44,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 
 <BaseLayout
   title="Accueil"
-  description="Le premier tour : le miroir le plus fidèle de la France politique. Média civique, faits sourcés, Democracy Over Elimination."
+  description="Le premier tour : le miroir le plus fidèle de la France politique. Atlas open data, présidentielle 2027 (18 avril), programmes sourcés, alerte citoyenne — Democracy Over Elimination, sans sondages ni tier list."
+  keywords="premier tour, présidentielle 2027, LMDPT, open data élections, pluralité, Democracy Over Elimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
   <!-- Manifeste — en tête de page -->
   <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
@@ -125,6 +128,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </div>
   </section>
 
+  <!-- Alerte citoyenne (conditions du débat public) -->
+  <AlerteCitoyenne previewLimit={4} />
+
   {
     feed.enabled && feed.items.length > 0 && (
       <NewsFeed
@@ -177,6 +183,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
                 <tr>
                   <th scope="col">Nom</th>
                   <th scope="col">Affiliation</th>
+                  <th scope="col">X (officiel)</th>
                   <th scope="col">Statut</th>
                   <th scope="col">Depuis</th>
                   <th scope="col">Source</th>
@@ -185,6 +192,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
               <tbody>
                 {group.entries.map((c: CandidatureEntry) => {
                   const party = partyLogoForAffiliation(c.affiliation);
+                  const xCand = xForCandidate(c.slug);
+                  const xParty = xForAffiliation(c.affiliation);
                   return (
                     <tr class:list={[{ 'declared-row--retrait': c.category === 'retrait' }]}>
                       <td>
@@ -204,6 +213,33 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
                           />
                           <span class="party-logo-label">{c.affiliation}</span>
                         </span>
+                      </td>
+                      <td class="x-links">
+                        {xCand?.url ? (
+                          <a
+                            class="x-link x-link--person"
+                            href={xCand.url}
+                            rel="noopener noreferrer"
+                            title={`X — ${c.name}`}
+                          >
+                            {formatXHandle(xCand.handle)}
+                          </a>
+                        ) : (
+                          <span class="meta">—</span>
+                        )}
+                        {xParty?.url && (
+                          <>
+                            {' '}
+                            <a
+                              class="x-link x-link--party"
+                              href={xParty.url}
+                              rel="noopener noreferrer"
+                              title={`X — ${xParty.label ?? c.affiliation}`}
+                            >
+                              parti
+                            </a>
+                          </>
+                        )}
                       </td>
                       <td>
                         <span class="poll-tag">{statusDeclareLabels[c.status] ?? c.status}</span>
@@ -794,6 +830,24 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     font-size: 0.82rem;
     color: var(--muted) !important;
     line-height: 1.35;
+  }
+  .x-links {
+    white-space: nowrap;
+    font-size: 0.88rem;
+  }
+  .x-link {
+    color: var(--accent, #2563a8) !important;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .x-link:hover,
+  .x-link:focus-visible {
+    text-decoration: underline;
+  }
+  .x-link--party {
+    font-weight: 500;
+    font-size: 0.8rem;
+    opacity: 0.9;
   }
   .poll-aff {
     font-size: 0.88rem;

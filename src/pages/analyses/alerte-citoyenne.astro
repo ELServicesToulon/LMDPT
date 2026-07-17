@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import alertes from '../../data/alertes-citoyennes.json';
+
+const updated = new Date(alertes.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const signalDate = new Date(alertes.signal.published).toLocaleString('fr-FR', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+});
+const frItems = alertes.items.filter((i) => i.region === 'fr');
+const ueItems = alertes.items.filter((i) => i.region === 'ue');
+const regionLabel = (id: string) =>
+  alertes.regions.find((r) => r.id === id)?.label ?? id.toUpperCase();
+---
+
+<BaseLayout
+  title="Alerte citoyenne — débat public"
+  description="Tour d’horizon documenté des textes et projets (France / UE) cités comme encadrant la liberté d’expression et le débat politique avant le premier tour 2027. Synthèse civique LMDPT, sources signalées."
+  type="article"
+  keywords="alerte citoyenne, liberté d'expression, débat public, présidentielle 2027, Chat Control, ingérence intérieure, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Alerte citoyenne
+  </nav>
+
+  <section class="alerte-page-intro">
+    <p class="eyebrow">{alertes.eyebrow}</p>
+    <h2>{alertes.title}</h2>
+    <p class="meta">
+      Mise à jour : <time datetime={alertes.updated}>{updated}</time>
+      · Statut : {alertes.status}
+    </p>
+    <p>{alertes.lead}</p>
+    <p class="alerte-angle"><strong>Angle LMDPT.</strong> {alertes.lmdpt_angle}</p>
+  </section>
+
+  <section class="card alerte-signal-card" aria-labelledby="signal-title">
+    <h3 id="signal-title">{alertes.signal.label}</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>Auteur</dt>
+        <dd>
+          {alertes.signal.author}
+          <span class="meta"> — {alertes.signal.role}</span>
+        </dd>
+      </div>
+      <div>
+        <dt>Publication</dt>
+        <dd>
+          <time datetime={alertes.signal.published}>{signalDate}</time>
+          · {alertes.signal.platform}
+        </dd>
+      </div>
+      <div>
+        <dt>Lien source</dt>
+        <dd>
+          <a href={alertes.signal.url} rel="noopener noreferrer">
+            x.com/i/status/{alertes.signal.status_id}
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <p>{alertes.signal.summary}</p>
+    <p class="meta">{alertes.signal.engagement_note}</p>
+  </section>
+
+  <section class="card" aria-labelledby="fr-title">
+    <h3 id="fr-title">🇫🇷 En France — {frItems.length} points</h3>
+    <ol class="alerte-full-list">
+      {
+        frItems.map((item) => (
+          <li id={`point-${item.n}`}>
+            <div class="alerte-item-head">
+              <span class="alerte-badge" data-region={item.region}>
+                {regionLabel(item.region)}
+              </span>
+              <span class="alerte-status-pill">{item.status_label}</span>
+            </div>
+            <h4>
+              <span class="alerte-n">{item.n}.</span> {item.title}
+            </h4>
+            <p>{item.fact}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="ue-title">
+    <h3 id="ue-title">🇪🇺 À Bruxelles — {ueItems.length} points</h3>
+    <ol class="alerte-full-list" start={frItems.length + 1}>
+      {
+        ueItems.map((item) => (
+          <li id={`point-${item.n}`}>
+            <div class="alerte-item-head">
+              <span class="alerte-badge" data-region={item.region}>
+                {regionLabel(item.region)}
+              </span>
+              <span class="alerte-status-pill">{item.status_label}</span>
+            </div>
+            <h4>
+              <span class="alerte-n">{item.n}.</span> {item.title}
+            </h4>
+            <p>{item.fact}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="card">
+    <h3>Lecture citoyenne</h3>
+    <p>{alertes.closing}</p>
+    <p class="meta disclaimer-box">{alertes.disclaimer}</p>
+  </section>
+
+  <section class="card">
+    <h3>Sources &amp; pistes de recoupement</h3>
+    <ul>
+      {
+        alertes.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h4 class="meta" style="margin-top:1rem;">Prochaines étapes rédaction LMDPT</h4>
+    <ul class="meta">
+      {alertes.next_steps_lmdpt.map((step) => <li>{step}</li>)}
+    </ul>
+  </section>
+
+  <p class="meta">
+    <a href="/analyses/presidentielle-2027-preparation">← Dossier présidentielle 2027</a>
+    {' · '}
+    <a href="/charte">Charte éditoriale</a>
+    {' · '}
+    <a href="/">Accueil</a>
+  </p>
+</BaseLayout>
+
+<style>
+  .alerte-page-intro h2 {
+    margin-top: 0.25rem;
+  }
+
+  .alerte-angle {
+    max-width: 72ch;
+    line-height: 1.55;
+  }
+
+  .alerte-signal-card {
+    border-left: 4px solid #c45c26;
+  }
+
+  .alerte-full-list {
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1.15rem;
+  }
+
+  .alerte-full-list li {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .alerte-full-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .alerte-item-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .alerte-full-list h4 {
+    margin: 0 0 0.4rem;
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .alerte-n {
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+  }
+
+  .alerte-full-list p {
+    margin: 0;
+    line-height: 1.55;
+    max-width: 75ch;
+  }
+
+  .alerte-badge {
+    font-family: system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+  }
+
+  .alerte-badge[data-region='fr'] {
+    background: color-mix(in srgb, #002654 12%, white);
+    color: #002654;
+  }
+
+  .alerte-badge[data-region='ue'] {
+    background: color-mix(in srgb, #003399 14%, white);
+    color: #003399;
+  }
+
+  .alerte-status-pill {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--accent-soft, #eef1f6);
+    padding: 0.12rem 0.55rem;
+    border-radius: 999px;
+  }
+
+  .disclaimer-box {
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--muted) 8%, transparent);
+    line-height: 1.5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .alerte-badge[data-region='fr'] {
+      background: color-mix(in srgb, #6b9fd4 22%, transparent);
+      color: #c5dbf5;
+    }
+    .alerte-badge[data-region='ue'] {
+      background: color-mix(in srgb, #5b7fd4 22%, transparent);
+      color: #c9d6f8;
+    }
+  }
+</style>

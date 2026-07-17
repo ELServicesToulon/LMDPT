@@ -1,0 +1,392 @@
+{
+  "title": "Comptes X officiels — candidats & partis (Présidentielle 2027)",
+  "updated": "2026-07-17",
+  "disclaimer": "Liens vers des comptes X publics documentés (personnalités politiques / formations). Ce n'est pas un classement, ni une liste du Conseil constitutionnel. Vérifier le badge / la bio sur X en cas de doute. Comptes non trouvés ou ambigus : null.",
+  "method": "Résolution HTTP des handles connus + titre de page X (2026-07-17). Handles en casse URL canonique https://x.com/{handle}.",
+  "candidates": [
+    {
+      "slug": "le-pen",
+      "name": "Marine Le Pen",
+      "handle": "MLP_officiel",
+      "url": "https://x.com/MLP_officiel",
+      "verified_http": 200,
+      "note": "Compte personnel officiel."
+    },
+    {
+      "slug": "bardella",
+      "name": "Jordan Bardella",
+      "handle": "J_Bardella",
+      "url": "https://x.com/J_Bardella",
+      "verified_http": 200,
+      "note": "Président RN — substitution documentée si ticket Le Pen indisponible."
+    },
+    {
+      "slug": "philippe",
+      "name": "Édouard Philippe",
+      "handle": "edouardphilippe",
+      "url": "https://x.com/edouardphilippe",
+      "verified_http": 200,
+      "note": "Compte personnel (alias historique EPhilippe_LH pour Le Havre)."
+    },
+    {
+      "slug": "attal",
+      "name": "Gabriel Attal",
+      "handle": "GabrielAttal",
+      "url": "https://x.com/GabrielAttal",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "handle": "JLMelenchon",
+      "url": "https://x.com/JLMelenchon",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "retailleau",
+      "name": "Bruno Retailleau",
+      "handle": "BrunoRetailleau",
+      "url": "https://x.com/BrunoRetailleau",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "glucksmann",
+      "name": "Raphaël Glucksmann",
+      "handle": "rglucks1",
+      "url": "https://x.com/rglucks1",
+      "verified_http": 200,
+      "note": "Place publique — non encore ticket unique 2027."
+    },
+    {
+      "slug": "tondelier",
+      "name": "Marine Tondelier",
+      "handle": "marinetondelier",
+      "url": "https://x.com/marinetondelier",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "ruffin",
+      "name": "François Ruffin",
+      "handle": "Francois_Ruffin",
+      "url": "https://x.com/Francois_Ruffin",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "zemmour",
+      "name": "Éric Zemmour",
+      "handle": "ZemmourEric",
+      "url": "https://x.com/ZemmourEric",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "dupont-aignan",
+      "name": "Nicolas Dupont-Aignan",
+      "handle": "dupontaignan",
+      "url": "https://x.com/dupontaignan",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "philippot",
+      "name": "Florian Philippot",
+      "handle": "f_philippot",
+      "url": "https://x.com/f_philippot",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "asselineau",
+      "name": "François Asselineau",
+      "handle": "f_asselineau",
+      "url": "https://x.com/f_asselineau",
+      "verified_http": 200,
+      "note": "Compte personnel actuel. Ancien handle @UPR_Asselineau archivé."
+    },
+    {
+      "slug": "arthaud",
+      "name": "Nathalie Arthaud",
+      "handle": "n_arthaud",
+      "url": "https://x.com/n_arthaud",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "batho",
+      "name": "Delphine Batho",
+      "handle": "delphinebatho",
+      "url": "https://x.com/delphinebatho",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "lisnard",
+      "name": "David Lisnard",
+      "handle": "davidlisnard",
+      "url": "https://x.com/davidlisnard",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "bertrand",
+      "name": "Xavier Bertrand",
+      "handle": "xavierbertrand",
+      "url": "https://x.com/xavierbertrand",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "royal",
+      "name": "Ségolène Royal",
+      "handle": "RoyalSegolene",
+      "url": "https://x.com/RoyalSegolene",
+      "verified_http": 200,
+      "note": "Primaire PS documentée."
+    },
+    {
+      "slug": "brun",
+      "name": "Philippe Brun",
+      "handle": "philippebrun",
+      "url": "https://x.com/philippebrun",
+      "verified_http": 200,
+      "note": "Primaire PS documentée."
+    },
+    {
+      "slug": "autain",
+      "name": "Clémentine Autain",
+      "handle": "Clem_Autain",
+      "url": "https://x.com/Clem_Autain",
+      "verified_http": 200,
+      "note": "Retrait documenté juil. 2026."
+    },
+    {
+      "slug": "lucas",
+      "name": "Benjamin Lucas",
+      "handle": "BenjaminLucas",
+      "url": "https://x.com/BenjaminLucas",
+      "verified_http": 200,
+      "note": "Retrait documenté juil. 2026."
+    },
+    {
+      "slug": "guedj",
+      "name": "Jérôme Guedj",
+      "handle": "JeromeGuedj",
+      "url": "https://x.com/JeromeGuedj",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "bouamrane",
+      "name": "Karim Bouamrane",
+      "handle": "Karim_Bouamrane",
+      "url": "https://x.com/Karim_Bouamrane",
+      "verified_http": 200,
+      "note": null
+    },
+    {
+      "slug": "egger",
+      "name": "Clara Egger",
+      "handle": "ClaraEgger",
+      "url": "https://x.com/ClaraEgger",
+      "verified_http": 200,
+      "note": "Vérifier bio (homonymes possibles)."
+    },
+    {
+      "slug": "mikolajczak",
+      "name": "Antoine Mikolajczak",
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Pas de compte X public clairement identifiable au scan 2026-07-17."
+    }
+  ],
+  "parties": [
+    {
+      "id": "rn",
+      "label": "Rassemblement national",
+      "affiliation_match": ["Rassemblement national"],
+      "handle": "RNational_off",
+      "url": "https://x.com/RNational_off",
+      "verified_http": 200
+    },
+    {
+      "id": "renaissance",
+      "label": "Renaissance",
+      "affiliation_match": ["Renaissance"],
+      "handle": "renaissance",
+      "url": "https://x.com/renaissance",
+      "verified_http": 200
+    },
+    {
+      "id": "horizons",
+      "label": "Horizons",
+      "affiliation_match": ["Horizons"],
+      "handle": "Horizons",
+      "url": "https://x.com/Horizons",
+      "verified_http": 200
+    },
+    {
+      "id": "lr",
+      "label": "Les Républicains",
+      "affiliation_match": ["Les Républicains"],
+      "handle": "lesRepublicains",
+      "url": "https://x.com/lesRepublicains",
+      "verified_http": 200
+    },
+    {
+      "id": "lfi",
+      "label": "La France insoumise",
+      "affiliation_match": ["La France insoumise"],
+      "handle": "FranceInsoumise",
+      "url": "https://x.com/FranceInsoumise",
+      "verified_http": 200
+    },
+    {
+      "id": "ps",
+      "label": "Parti socialiste",
+      "affiliation_match": ["Parti socialiste"],
+      "handle": "partisocialiste",
+      "url": "https://x.com/partisocialiste",
+      "verified_http": 200
+    },
+    {
+      "id": "eelv",
+      "label": "Les Écologistes (EELV)",
+      "affiliation_match": ["Les Écologistes (EELV)", "Les Écologistes", "EELV"],
+      "handle": "EELV",
+      "url": "https://x.com/EELV",
+      "verified_http": 200
+    },
+    {
+      "id": "reconquete",
+      "label": "Reconquête",
+      "affiliation_match": ["Reconquête"],
+      "handle": "Reconquete_off",
+      "url": "https://x.com/Reconquete_off",
+      "verified_http": 200
+    },
+    {
+      "id": "dlf",
+      "label": "Debout la France",
+      "affiliation_match": ["Debout la France"],
+      "handle": "DLF_Officiel",
+      "url": "https://x.com/DLF_Officiel",
+      "verified_http": 200
+    },
+    {
+      "id": "les-patriotes",
+      "label": "Les Patriotes",
+      "affiliation_match": ["Les Patriotes"],
+      "handle": "LesPatriotes_LP",
+      "url": "https://x.com/LesPatriotes_LP",
+      "verified_http": 200
+    },
+    {
+      "id": "lo",
+      "label": "Lutte ouvrière",
+      "affiliation_match": ["Lutte ouvrière"],
+      "handle": "LutteOuvriere",
+      "url": "https://x.com/LutteOuvriere",
+      "verified_http": 200
+    },
+    {
+      "id": "place-publique",
+      "label": "Place publique",
+      "affiliation_match": ["Place publique"],
+      "handle": "place_publique",
+      "url": "https://x.com/place_publique",
+      "verified_http": 200
+    },
+    {
+      "id": "generations",
+      "label": "Génération·s",
+      "affiliation_match": ["Génération·s", "Générations"],
+      "handle": "GenerationsMvt",
+      "url": "https://x.com/GenerationsMvt",
+      "verified_http": 200
+    },
+    {
+      "id": "generation-ecologie",
+      "label": "Génération écologie",
+      "affiliation_match": ["Génération écologie"],
+      "handle": "GEcologie",
+      "url": "https://x.com/GEcologie",
+      "verified_http": 200
+    },
+    {
+      "id": "upr",
+      "label": "Union populaire républicaine",
+      "affiliation_match": ["Union populaire républicaine"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Pas de compte parti distinct fiable — voir @f_asselineau."
+    },
+    {
+      "id": "nouvelle-energie",
+      "label": "Nouvelle Énergie",
+      "affiliation_match": ["Nouvelle Énergie"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Pas de compte parti clairement identifiable (handle NouvelleEnergie homonyme non politique)."
+    },
+    {
+      "id": "nous-france",
+      "label": "Nous France",
+      "affiliation_match": ["Nous France"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Compte parti non trouvé au scan 2026-07-17."
+    },
+    {
+      "id": "lapres",
+      "label": "L'Après",
+      "affiliation_match": ["L'Après"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Compte parti non trouvé au scan 2026-07-17."
+    },
+    {
+      "id": "picardie-debout",
+      "label": "Picardie debout",
+      "affiliation_match": ["Picardie debout / indépendant", "Picardie debout"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Utiliser le compte personnel Ruffin."
+    },
+    {
+      "id": "solution-democratique",
+      "label": "Solution démocratique",
+      "affiliation_match": ["Solution démocratique"],
+      "handle": null,
+      "url": null,
+      "verified_http": null
+    },
+    {
+      "id": "equinoxe",
+      "label": "Équinoxe",
+      "affiliation_match": ["Équinoxe"],
+      "handle": null,
+      "url": null,
+      "verified_http": null
+    },
+    {
+      "id": "gauche-republicaine",
+      "label": "Gauche républicaine / socialiste",
+      "affiliation_match": ["Gauche républicaine / socialiste"],
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Utiliser le compte personnel Guedj."
+    }
+  ]
+}

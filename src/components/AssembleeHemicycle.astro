@@ -15,6 +15,9 @@ interface Props {
   subtitle?: string;
   sourceNote?: string;
   hybrid?: boolean; // default true for this viz
+  initialMode?: 'hybrid' | 'projection' | 'current';
+  initialGranularity?: 'major' | 'detailed';
+  showControls?: boolean;
 }
 
 const {
@@ -69,6 +72,14 @@ const MAJOR_LABELS: Record<string, string> = {
   lr: 'Droite républicaine',
   rn: 'Rassemblement national & alliés',
   autres: 'Autres & divers',
+};
+
+const SHORT_BLOC_LABELS: Record<string, string> = {
+  nfp: 'NFP',
+  ensemble: 'Ensemble',
+  lr: 'LR',
+  rn: 'RN',
+  autres: 'Autres',
 };
 
 // Build all positions with their current major bloc
@@ -222,6 +233,15 @@ const detailedCurrentLegend = detailedGroups.map((g) => ({
 const instanceId = `hybrid-hemicycle-${Math.random().toString(36).slice(2, 10)}`;
 const viewBoxW = 360;
 const viewBoxH = 185;
+
+const compactLegend = !showControls;
+const showCurrentLegend = !compactLegend || initialMode === 'hybrid' || initialMode === 'current';
+const showProjectionLegend = !compactLegend || initialMode === 'hybrid' || initialMode === 'projection';
+
+const compactCurrentTitle =
+  initialMode === 'current' ? 'Composition actuelle' : 'Référence actuelle (transparence)';
+const compactProjectionTitle =
+  initialMode === 'projection' ? 'Répartition projetée' : 'Projection (couleurs pleines)';
 ---
 
 <section class="hemicycle" aria-labelledby={`hemicycle-title-${instanceId}`}>
@@ -370,102 +390,146 @@ const viewBoxH = 185;
     </div>
   </div>
 
-  <!-- Légende interactive — 2 couches pédagogiques (spec Democracy Over Elimination) -->
-  <div class="hybrid-legend" data-hemicycle-id={instanceId}>
-    <div class="legend-section layer1-section">
-      <div class="legend-title">Couche 1 — Arrière-plan (transparence / faible opacité)</div>
-      <p class="legend-explain">
-        <strong>Les groupes actuels de l’Assemblée nationale</strong> (législature en cours). Les positions et « quartiers »
-        (gauche NFP, centre, LR, RN à droite, etc.) sont exactement celles du <strong>modèle officiel Wikimedia
-        (XVIIe législature)</strong>. Affichées en <strong>transparence</strong> pour ne pas masquer la couche avant,
-        elles fournissent les repères spatiaux familiers.
-      </p>
-      <p class="legend-explain role-pedago">
-        <em>Rôle pédagogique :</em> ancrer la lecture dans la réalité actuelle. Vous reconnaissez immédiatement
-        « où » les groupes siègent aujourd’hui. Chiffres entre parenthèses = sièges actuels dans ce quartier.
-      </p>
-      <div class="legend-items current-legend">
-        {
-          currentLegend.map((item) => (
-            <button 
-              type="button"
-              class="legend-item current" 
-              data-key={item.key}
-              data-bloc={item.label}
-              aria-pressed="false"
-              title={`Couche 1 (transparence) : ${item.label} — ${item.currentSeats} sièges actuels (modèle Wikimedia). Cliquez pour surligner le quartier.`}
-            >
-              <span class="swatch swatch-layer1" style={`background:${item.color}`}></span>
-              <span class="label">{item.label}</span>
-              <span class="current-count">({item.currentSeats})</span>
-            </button>
-          ))
-        }
-      </div>
-    </div>
+  <!-- Légende — compacte (pages comparatif) ou interactive (simulateur) -->
+  <div class={`hybrid-legend${compactLegend ? ' hybrid-legend--compact' : ''}`} data-hemicycle-id={instanceId}>
+    {compactLegend ? (
+      <>
+        {showCurrentLegend && (
+          <div class="legend-section layer1-section" data-layer="current">
+            <div class="legend-title">{compactCurrentTitle}</div>
+            <ul class="legend-compact-list">
+              {currentLegend.map((item) => (
+                <li class="legend-compact-row">
+                  <span class="swatch swatch-layer1" style={`background:${item.color}`} aria-hidden="true"></span>
+                  <span class="legend-compact-label">{SHORT_BLOC_LABELS[item.key] ?? item.key}</span>
+                  <span class="legend-compact-value">{item.currentSeats}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {showProjectionLegend && (
+          <div class="legend-section layer2-section" data-layer="projection">
+            <div class="legend-title">{compactProjectionTitle}</div>
+            <ul class="legend-compact-list">
+              {legendProjection.map((item, idx) => {
+                const blocId = projectionAllocations[idx]?.id || '';
+                return (
+                  <li class="legend-compact-row">
+                    <span class="swatch swatch-layer2" style={`background:${item.color}`} aria-hidden="true"></span>
+                    <span class="legend-compact-label">{SHORT_BLOC_LABELS[blocId] ?? item.label}</span>
+                    <span class="legend-compact-value">{item.seats} <span class="legend-compact-pct">({item.pct}&nbsp;%)</span></span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+      </>
+    ) : (
+      <>
+        {showCurrentLegend && (
+          <div class="legend-section layer1-section" data-layer="current">
+            <div class="legend-title">Couche 1 — Arrière-plan (transparence / faible opacité)</div>
+            <p class="legend-explain">
+              <strong>Les groupes actuels de l’Assemblée nationale</strong> (législature en cours). Les positions et « quartiers »
+              (gauche NFP, centre, LR, RN à droite, etc.) sont exactement celles du <strong>modèle officiel Wikimedia
+              (XVIIe législature)</strong>. Affichées en <strong>transparence</strong> pour ne pas masquer la couche avant,
+              elles fournissent les repères spatiaux familiers.
+            </p>
+            <p class="legend-explain role-pedago">
+              <em>Rôle pédagogique :</em> ancrer la lecture dans la réalité actuelle. Vous reconnaissez immédiatement
+              « où » les groupes siègent aujourd’hui. Chiffres entre parenthèses = sièges actuels dans ce quartier.
+            </p>
+            <div class="legend-items current-legend">
+              {
+                currentLegend.map((item) => (
+                  <button
+                    type="button"
+                    class="legend-item current"
+                    data-key={item.key}
+                    data-bloc={item.label}
+                    aria-pressed="false"
+                    title={`Couche 1 (transparence) : ${item.label} — ${item.currentSeats} sièges actuels (modèle Wikimedia). Cliquez pour surligner le quartier.`}
+                  >
+                    <span class="swatch swatch-layer1" style={`background:${item.color}`}></span>
+                    <span class="label">{item.label}</span>
+                    <span class="current-count">({item.currentSeats})</span>
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+        )}
 
-    <div class="legend-section layer2-section">
-      <div class="legend-title">Couche 2 — Avant-plan (couleurs pleines)</div>
-      <p class="legend-explain">
-        <strong>Les sièges projetés</strong> selon les voix ou intentions du <strong>premier tour</strong>
-        (répartition <strong>Sainte-Laguë</strong>). Placés dans les quartiers correspondants du modèle officiel :
-        les projections « NFP » vont dans la zone gauche actuelle, les projections « RN » dans la zone droite, etc.
-        (<strong>mapping déterministe des blocs</strong>).
-      </p>
-      <p class="legend-explain role-pedago">
-        <em>Rôle pédagogique :</em> visualiser l’impact direct de la pluralité du 1er tour sur la <strong>même carte</strong>.
-        Les couleurs pleines se distinguent clairement de la transparence de la couche 1.
-      </p>
-      <div class="legend-items projection-legend">
-        {
-          legendProjection.map((item, idx) => (
-            <button 
-              type="button"
-              class="legend-item projection" 
-              data-bloc={item.label} 
-              data-color={item.color}
-              data-key={projectionAllocations[idx]?.id || ''}
-              aria-pressed="false"
-              title={`Couche 2 (pleine) : ${item.label} — ${item.seats} sièges (${item.pct} %). Placée dans le quartier correspondant. Cliquez pour sélectionner.`}
-            >
-              <span class="swatch swatch-layer2" style={`background:${item.color}`}></span>
-              <span class="label">{item.label}</span>
-              <span class="numbers">{item.seats} sièges ({item.pct}%)</span>
-            </button>
-          ))
-        }
-      </div>
-    </div>
+        {showProjectionLegend && (
+          <div class="legend-section layer2-section" data-layer="projection">
+            <div class="legend-title">Couche 2 — Avant-plan (couleurs pleines)</div>
+            <p class="legend-explain">
+              <strong>Les sièges projetés</strong> selon les voix ou intentions du <strong>premier tour</strong>
+              (répartition <strong>Sainte-Laguë</strong>). Placés dans les quartiers correspondants du modèle officiel :
+              les projections « NFP » vont dans la zone gauche actuelle, les projections « RN » dans la zone droite, etc.
+              (<strong>mapping déterministe des blocs</strong>).
+            </p>
+            <p class="legend-explain role-pedago">
+              <em>Rôle pédagogique :</em> visualiser l’impact direct de la pluralité du 1er tour sur la <strong>même carte</strong>.
+              Les couleurs pleines se distinguent clairement de la transparence de la couche 1.
+            </p>
+            <div class="legend-items projection-legend">
+              {
+                legendProjection.map((item, idx) => (
+                  <button
+                    type="button"
+                    class="legend-item projection"
+                    data-bloc={item.label}
+                    data-color={item.color}
+                    data-key={projectionAllocations[idx]?.id || ''}
+                    aria-pressed="false"
+                    title={`Couche 2 (pleine) : ${item.label} — ${item.seats} sièges (${item.pct} %). Placée dans le quartier correspondant. Cliquez pour sélectionner.`}
+                  >
+                    <span class="swatch swatch-layer2" style={`background:${item.color}`}></span>
+                    <span class="label">{item.label}</span>
+                    <span class="numbers">{item.seats} sièges ({item.pct}%)</span>
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+        )}
+      </>
+    )}
 
-    <!-- Granularité simple : toggle 5 blocs vs nuances (pédagogique). Les projections sont agrégées en 5 blocs ; nuances fines disponibles sur données réelles 2024. -->
-    <div class="granularity-section" aria-label="Niveau de granularité">
-      <span class="legend-title">Granularité d’affichage</span>
-      <div class="granularity-toggle" role="group">
-        <button type="button" class="gran-btn active" data-gran="blocs" aria-pressed="true">5 blocs majeurs (recommandé pour lisibilité)</button>
-        <button type="button" class="gran-btn" data-gran="nuances" aria-pressed="false">Plus de nuances (si données détaillées)</button>
+    {showControls && (
+      <div class="granularity-section" aria-label="Niveau de granularité">
+        <span class="legend-title">Granularité d’affichage</span>
+        <div class="granularity-toggle" role="group">
+          <button type="button" class="gran-btn active" data-gran="blocs" aria-pressed="true">5 blocs majeurs (recommandé pour lisibilité)</button>
+          <button type="button" class="gran-btn" data-gran="nuances" aria-pressed="false">Plus de nuances (si données détaillées)</button>
+        </div>
+        <p class="legend-explain small">Les 5 blocs (NFP, Ensemble, LR, RN, Autres) agrègent les nuances officielles. La couche arrière (transparence) montre les groupes actuels ; la couche avant (couleurs pleines) reste placée dans les quartiers correspondants pour comparaison directe. Basculer n’affecte pas les calculs de projection. Pour données détaillées 2024 par nuance : voir l’atlas.</p>
       </div>
-      <p class="legend-explain small">Les 5 blocs (NFP, Ensemble, LR, RN, Autres) agrègent les nuances officielles. La couche arrière (transparence) montre les groupes actuels ; la couche avant (couleurs pleines) reste placée dans les quartiers correspondants pour comparaison directe. Basculer n’affecte pas les calculs de projection. Pour données détaillées 2024 par nuance : voir l’atlas.</p>
-    </div>
+    )}
   </div>
 
-  <!-- Sélecteur de vues complet (hybride / pure projection / structure actuelle) + granularité (amélioration) -->
-  <div class="hemicycle-controls viz-mode-controls" data-hemicycle-id={instanceId} role="group" aria-label="Options d'affichage : mode de vue et granularité">
-    <fieldset class="mode-selector">
-      <legend>Mode de vue</legend>
-      <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="hybrid" checked aria-describedby="mode-help"> Hybride</label>
-      <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="projection"> Projection pure</label>
-      <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="current"> Structure actuelle</label>
-    </fieldset>
-    <fieldset class="gran-selector">
-      <legend>Granularité quartiers</legend>
-      <label class="ctrl-label"><input type="radio" name={`gran-${instanceId}`} value="major" checked> 5 grands blocs</label>
-      <label class="ctrl-label"><input type="radio" name={`gran-${instanceId}`} value="detailed"> Groupes détaillés (12)</label>
-    </fieldset>
-    <button type="button" class="ctrl-btn reset-btn" data-action="reset" title="Réinitialise surbrillances et sélections">Réinitialiser</button>
-    <span class="ctrl-hint" id="mode-help">Hybride = Couche 1 (transparence : groupes actuels Wikimedia) + Couche 2 (pleines : projections Sainte-Laguë 1er tour dans les mêmes quartiers). Pure = projection seule. Actuelle = structure réelle seule.</span>
-  </div>
+  {showControls && (
+    <div class="hemicycle-controls viz-mode-controls" data-hemicycle-id={instanceId} role="group" aria-label="Options d'affichage : mode de vue et granularité">
+      <fieldset class="mode-selector">
+        <legend>Mode de vue</legend>
+        <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="hybrid" checked={initialMode === 'hybrid'} aria-describedby="mode-help"> Hybride</label>
+        <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="projection" checked={initialMode === 'projection'}> Projection pure</label>
+        <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="current" checked={initialMode === 'current'}> Structure actuelle</label>
+      </fieldset>
+      <fieldset class="gran-selector">
+        <legend>Granularité quartiers</legend>
+        <label class="ctrl-label"><input type="radio" name={`gran-${instanceId}`} value="major" checked={initialGranularity === 'major'}> 5 grands blocs</label>
+        <label class="ctrl-label"><input type="radio" name={`gran-${instanceId}`} value="detailed" checked={initialGranularity === 'detailed'}> Groupes détaillés (12)</label>
+      </fieldset>
+      <button type="button" class="ctrl-btn reset-btn" data-action="reset" title="Réinitialise surbrillances et sélections">Réinitialiser</button>
+      <span class="ctrl-hint" id="mode-help">Hybride = Couche 1 (transparence : groupes actuels Wikimedia) + Couche 2 (pleines : projections Sainte-Laguë 1er tour dans les mêmes quartiers). Pure = projection seule. Actuelle = structure réelle seule.</span>
+    </div>
+  )}
 
-  <!-- FAQ / explications en couches intégrée (pédagogie) -->
+  {showControls && (
   <details class="pedagogy-faq" data-hemicycle-id={instanceId}>
     <summary>Explications claires — Comment lire l’hémicycle hybride et pourquoi le 1er tour pour la représentation ? (cliquez)</summary>
     <div class="faq-content">
@@ -477,8 +541,9 @@ const viewBoxH = 185;
       <p class="meta">Outil pédagogique neutre. Illustre l’impact de la prise en compte des voix du premier tour sur la représentation (couches : transparence actuelle + couleurs pleines dans quartiers). Pas de jugement sur le mode de scrutin, pas de prédiction. Voir <a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes pour une Assemblée du Premier Tour</a> pour seuils, doses proportionnelles (5-25 %), mixtes, meilleurs perdants et intégration Code électoral.</p>
     </div>
   </details>
+  )}
 
-  <div class="hemicycle-details" id={`details-${instanceId}`} aria-live="polite" role="status">
+  <div class="hemicycle-details" id={`details-${instanceId}`} aria-live="polite" role="status" style={showControls ? undefined : 'display:none'}>
     <p class="details-placeholder">Survolez ou cliquez sur la légende (améliorée : couche 1 transparence vs couche 2 pleine) ou un siège. Utilisez Hybride / Projection / Actuelle + granularité. Clavier : Tab + Entrée pour sélection ; Échap pour reset.</p>
   </div>
 
@@ -527,7 +592,7 @@ const viewBoxH = 185;
   .text-alt-summary { font-size: 0.78rem; }
 </style>
 
-<script define:vars={{ instanceId, CURRENT_SEATS, MAJOR_LABELS, detailedCurrentLegend, legendProjection }}>
+<script define:vars={{ instanceId, CURRENT_SEATS, MAJOR_LABELS, detailedCurrentLegend, legendProjection, initialMode, initialGranularity }}>
   function initHybridHemicycle(id) {
     const container = document.querySelector(`[data-hemicycle-id="${id}"]`);
     if (!container) return;
@@ -552,8 +617,8 @@ const viewBoxH = 185;
     const modeRadios = Array.from(container.querySelectorAll(`input[name="viewmode-${id}"]`));
     const granRadios = Array.from(container.querySelectorAll(`input[name="gran-${id}"]`));
 
-    let currentMode = 'hybrid';
-    let currentGran = 'major';
+    let currentMode = initialMode || 'hybrid';
+    let currentGran = initialGranularity || 'major';
     let selectedKey = null;
 
     function updateSeatStyles(highlightLabel = null, dimOthers = false) {
@@ -632,8 +697,8 @@ const viewBoxH = 185;
       // Update legend dynamically (simple rebuild for mode)
       const legendContainer = container.querySelector('.hybrid-legend');
       if (legendContainer) {
-        const projSection = legendContainer.querySelector('.legend-section:nth-child(2)');
-        const currentSection = legendContainer.querySelector('.legend-section:nth-child(1)');
+        const projSection = legendContainer.querySelector('[data-layer="projection"]');
+        const currentSection = legendContainer.querySelector('[data-layer="current"]');
         if (mode === 'current') {
           if (projSection) projSection.style.display = 'none';
           if (currentSection) {
@@ -771,8 +836,8 @@ const viewBoxH = 185;
     }
     wireSelectors();
 
-    // Initial apply
-    setTimeout(() => applyViewMode(currentMode || 'hybrid', currentGran || 'major'), 25);
+    // Initial apply (respect props initialMode / initialGranularity)
+    setTimeout(() => applyViewMode(currentMode, currentGran), 25);
 
     // Legend interactions (click = select, hover = preview)
     legendItems.forEach(item => {
@@ -957,6 +1022,60 @@ const viewBoxH = 185;
   .hybrid-legend {
     margin-top: 0.4rem;
     font-size: 0.78rem;
+    color: var(--fg);
+  }
+
+  .hybrid-legend--compact {
+    font-size: 0.88rem;
+    margin-top: 0.55rem;
+    padding: 0.55rem 0.65rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .hybrid-legend--compact .legend-section {
+    margin-bottom: 0.45rem;
+  }
+
+  .hybrid-legend--compact .legend-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .legend-compact-list {
+    list-style: none;
+    margin: 0.2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+  }
+
+  .legend-compact-row {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    align-items: center;
+    gap: 0.45rem;
+    line-height: 1.35;
+    color: var(--fg);
+  }
+
+  .legend-compact-label {
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .legend-compact-value {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--fg);
+    white-space: nowrap;
+  }
+
+  .legend-compact-pct {
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.92em;
   }
 
   .legend-section {
@@ -966,10 +1085,18 @@ const viewBoxH = 185;
   .legend-title {
     font-weight: 600;
     font-size: 0.7rem;
-    color: #0a0a0a; /* foncé sur fond clair */
+    color: var(--fg);
     margin-bottom: 0.12rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
+  }
+
+  .hybrid-legend--compact .legend-title {
+    font-size: 0.78rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--fg);
+    margin-bottom: 0.25rem;
   }
 
   .legend-items {
@@ -988,7 +1115,7 @@ const viewBoxH = 185;
     padding: 1px 4px;
     border-radius: 3px;
     font: inherit;
-    color: #0a0a0a; /* lisible sur fond clair du site */
+    color: var(--fg);
     text-align: left;
     cursor: pointer;
     line-height: 1.15;
@@ -1003,15 +1130,15 @@ const viewBoxH = 185;
   }
 
   .legend-item:hover {
-    background: rgba(255,255,255,0.04);
-    border-color: rgba(255,255,255,0.1);
+    background: color-mix(in srgb, var(--fg) 6%, transparent);
+    border-color: var(--border);
   }
 
   .legend-item.selected,
   .legend-item[aria-pressed="true"] {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.25);
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+    background: color-mix(in srgb, var(--accent) 14%, var(--card));
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
   }
 
   .legend-item:focus-visible {
@@ -1021,7 +1148,7 @@ const viewBoxH = 185;
 
   .legend-item .current-count {
     font-size: 0.72rem;
-    color: #0a0a0a; /* plus foncé — ex. (186), (65) */
+    color: var(--muted);
     margin-left: 0.1rem;
     font-variant-numeric: tabular-nums;
     font-weight: 600;
@@ -1032,7 +1159,13 @@ const viewBoxH = 185;
     height: 9px;
     border-radius: 1.5px;
     flex-shrink: 0;
-    border: 1px solid rgba(255,255,255,0.28);
+    border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+  }
+
+  .hybrid-legend--compact .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
   }
   /* Légende : couche 1 = pastille semi-transparente ; couche 2 = pastille pleine + bord */
   .swatch-layer1 {
@@ -1046,8 +1179,8 @@ const viewBoxH = 185;
     margin-top: 0.2rem;
     padding: 0.35rem 0.45rem;
     border-left: 3px solid var(--accent, #2563a8);
-    background: color-mix(in srgb, var(--accent, #2563a8) 12%, #f5f5f5);
-    color: #0a0a0a;
+    background: color-mix(in srgb, var(--accent, #2563a8) 12%, var(--card));
+    color: var(--fg);
   }
   .layer1-section .legend-title::before {
     content: "① ";
@@ -1058,11 +1191,11 @@ const viewBoxH = 185;
 
   .label {
     font-weight: 600;
-    color: #0a0a0a; /* plus foncé — Ensemble / centre, Droite républicaine… */
+    color: var(--fg);
   }
 
   .numbers {
-    color: #0a0a0a;
+    color: var(--muted);
     font-size: 0.72rem;
     font-variant-numeric: tabular-nums;
     margin-left: 0.12rem;
@@ -1097,7 +1230,7 @@ const viewBoxH = 185;
   }
   .ctrl-hint {
     font-size: 0.78rem;
-    color: #0a0a0a; /* plus foncé, lisible sur fond clair du site */
+    color: var(--muted);
     margin-left: 0.15rem;
     line-height: 1.4;
     font-weight: 500;
@@ -1106,7 +1239,7 @@ const viewBoxH = 185;
   .hemicycle-details {
     min-height: 1.75rem;
     font-size: 0.8rem;
-    color: #0a0a0a;
+    color: var(--fg);
     margin-top: 0.18rem;
     padding-left: 0.1rem;
   }
@@ -1114,28 +1247,28 @@ const viewBoxH = 185;
   .details-placeholder {
     margin: 0;
     opacity: 0.9;
-    color: #0a0a0a;
+    color: var(--muted);
   }
 
   .source-note {
     font-size: 0.72rem;
     margin-top: 0.28rem;
-    color: #1a1814;
+    color: var(--muted);
   }
 
   .legend-explain {
     font-size: 0.72rem;
-    color: #0a0a0a;
+    color: var(--muted);
     margin: 0.1rem 0 0.25rem;
     line-height: 1.35;
   }
   .legend-explain strong,
   .legend-explain em {
-    color: #0a0a0a;
+    color: var(--fg);
   }
   .legend-explain.small {
     font-size: 0.62rem;
-    color: #0a0a0a;
+    color: var(--muted);
   }
 
   .granularity-section {

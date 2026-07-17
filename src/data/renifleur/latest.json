@@ -1,11 +1,74 @@
 {
-  "fetched_at": "2026-07-16T06:14:02.074Z",
+  "fetched_at": "2026-07-17T06:00:12.565Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
+      "published": "2026-07-17",
+      "summary": "Suspendus depuis octobre 2025, les six membres Les Républicains du gouvernement Lecornu incarnent pour Bruno Retailleau une page révolue : celle d’une droite alliée avec la Macronie. Les bannis estiment ne pas avoir trahi leur famille politique et plaident pour un candidat unique",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Présidentielle 2027 : Bernard Cazeneuve se déclare candidat dans un entretien au « Parisien » et décline la primaire socialiste",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/16/presidentielle-2027-bernard-cazeneuve-se-declare-candidat-dans-un-entretien-au-parisien-et-decline-la-primaire-socialiste_6723827_823448.html",
+      "published": "2026-07-16",
+      "summary": "Celui qui se présente comme « un républicain de gauche » et un « social-démocrate » esquisse dans cette interview ses premières propositions en vue de la course à l’Elysée.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Loi d’urgence agricole : les parlementaires s’accordent en commission mixte paritaire sur ce texte aux mesures contestées concernant l’eau et les pesticides",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/16/loi-d-urgence-agricole-les-parlementaires-s-accordent-en-commission-mixte-paritaire-sur-ce-texte-aux-mesures-contestees-concernant-l-eau-et-les-pesticides_6723809_823448.html",
+      "published": "2026-07-16",
+      "summary": "Quatorze parlementaires des deux Chambres, réunis lors de cette CMP, ont abouti à un texte commun sur ce projet déposé en réponse à la colère des agriculteurs cet hiver. Le texte doit désormais être soumis pour un ultime vote à l’Assemblée nationale lundi soir et au Sénat mardi, ",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "« La présidentielle de 2027 ne pourra pas ignorer la déplaisante arithmétique budgétaire »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/16/la-presidentielle-de-2027-ne-pourra-pas-ignorer-la-deplaisante-arithmetique-budgetaire_6723796_3232.html",
+      "published": "2026-07-16",
+      "summary": "Stabiliser durablement la dette suppose un ajustement de 125 milliards d’euros avant la fin du prochain quinquennat, constatent, dans une tribune au « Monde », quatre économistes qui ont rendu au gouvernement mercredi un rapport sur l’état des finances publiques.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Budget 2027 : les gagnants et les perdants des premiers arbitrages du gouvernement",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/16/budget-2027-les-gagnants-et-perdants-des-premiers-arbitrages-du-gouvernement_6723785_823448.html",
+      "published": "2026-07-16",
+      "summary": "Matignon a transmis au Parlement son « tiré à part », le document préparatoire qui synthétise les plafonds de crédits retenus pour chaque ministère dans le projet de loi de finances pour 2027. Hors défense et charge de la dette, l’exécutif veut limiter à 0,4 % la hausse des dépen",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Budget de l’Etat : le gouvernement veut limiter à 0,4 % la hausse des dépenses ministérielles en 2027, hors dette et armée",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/16/budget-de-l-etat-le-gouvernement-veut-limiter-a-0-4-la-hausse-des-depenses-ministerielles-en-2027-hors-dette-et-armee_6723758_823448.html",
+      "published": "2026-07-16",
+      "summary": "C’est la mission écologie qui enregistre la plus forte hausse de ses crédits (+ 1,5 milliard d’euros), devant la mission solidarité (+ 1,1 milliard) et la justice (+ 0,4 milliard).",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
+    {
+      "title": "Fin de vie : l’adoption d’une loi « historique », l’émotion des députés, la retenue du gouvernement",
+      "url": "https://www.lemonde.fr/societe/article/2026/07/16/fin-de-vie-la-loi-historique-sur-l-aide-a-mourir-adoptee-definitivement-au-cours-d-un-debat-teinte-d-emotion_6723752_3224.html",
+      "published": "2026-07-16",
+      "summary": "Partisans et opposants du texte ont débattu une dernière fois, mercredi 15 juillet. La proposition de loi a été adoptée avec une courte majorité, par 50 voix d’écart, avec une position très en retrait de l’exécutif. Sébastien Lecornu a annoncé qu’il allait saisir le Conseil const",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional"
+    },
     {
       "title": "« Projet Pegasus » : cinq ans après les révélations sur un système mondial d’espionnage de téléphones, l’enquête judiciaire se poursuit",
       "url": "https://www.lemonde.fr/pixels/article/2026/07/16/projet-pegasus-cinq-ans-apres-les-revelations-sur-un-systeme-mondial-d-espionnage-de-telephones-l-enquete-judiciaire-se-poursuit_6723735_4408996.html",
@@ -40,51 +103,6 @@
       "summary": "Attendu sur les questions de ruralité et d’agriculture, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué, mardi, son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantiqu",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Elon Musk qualifie Marine Le Pen de « dernier espoir de la France »",
-      "url": "https://www.lemonde.fr/pixels/article/2026/07/15/elon-musk-qualifie-marine-le-pen-de-dernier-espoir-de-la-france_6723610_4408996.html",
-      "published": "2026-07-15",
-      "summary": "Jusque-là peu investi dans la politique française alors qu’il s’est déjà illustré par son interventionnisme dans d’autres pays, l’homme le plus riche du monde a apporté mercredi publiquement son soutien à la candidate du Rassemblement national.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "François-Noël Buffet, un candidat au poste de Défenseur des droits bousculé par la gauche lors de son audition devant les députés",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/15/candidat-au-poste-de-defenseur-des-droits-francois-noel-buffet-bouscule-par-la-gauche-lors-de-son-audition-devant-les-deputes_6723600_3224.html",
-      "published": "2026-07-15",
-      "summary": "Le profil du sénateur Les Républicains, proposé par Emmanuel Macron, lui vaut un tir de barrage de nombreux syndicats et associations. L’ancien ministre des outre-mer a notamment participé aux manifestations contre le mariage pour tous et s’est opposé à la constitutionnalisation ",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : le RN se divise sur le voile, Marine Le Pen envisage un référendum",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/presidentielle-2027-le-rn-se-divise-sur-le-voile-marine-le-pen-envisage-un-referendum_6723548_823448.html",
-      "published": "2026-07-15",
-      "summary": "Plusieurs cadres du parti d’extrême droite, dont son président, Jordan Bardella, doutent de la faisabilité et de l’opportunité de l’interdiction du voile dans l’espace public. Une promesse portée par la candidate du Rassemblement national depuis 2012.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "La « galaxie Stérin » dans le viseur de la commission du Sénat sur le financement privé des politiques publiques",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/financement-prive-des-politiques-publiques-la-galaxie-sterin-dans-le-viseur-d-une-commission-du-senat_6723530_823448.html",
-      "published": "2026-07-15",
-      "summary": "Cette commission dénonce, dans son rapport présenté mercredi, « l’opacité de certaines structures privées ». Les activités du milliardaire conservateur Pierre-Edouard Stérin sont notamment montrées du doigt.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : en Gironde, Raphaël Glucksmann entretient le suspense sur sa candidature",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
-      "published": "2026-07-15",
-      "summary": "L’eurodéputé Place publique refuse toujours de faire officiellement acte de candidature à la future primaire du camp social-démocrate, validée par les militants socialistes le 9 juillet.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
       "source_type": "traditional"
     },
     {
@@ -236,24 +254,6 @@
       "url": "https://www.lemonde.fr/politique/article/2026/07/09/il-a-la-vie-devant-lui-apres-un-an-a-penser-a-l-elysee-jordan-bardella-ramene-a-sa-condition-de-numero-deux_6722025_823448.html",
       "published": "2026-07-09",
       "summary": "Le président du Rassemblement national a affiché un visage fermé lors de la première sortie de précampagne de Marine Le Pen, qu’il n’a pas même félicitée pour sa candidature à l’élection présidentielle de 2027. La décision de justice du 7 juillet dans l’affaire des assistants par",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : vote décisif au PS pour sceller le sort de la primaire unitaire",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-vote-decisif-pour-olivier-faure-et-le-parti-socialiste-en-vue-de-designer-un-candidat-social-democrate_6722023_823448.html",
-      "published": "2026-07-09",
-      "summary": "Les militants du Parti socialiste se prononcent, jeudi, sur la méthode de départage de leur future tête d’affiche pour 2027. La « primaire de la gauche » incluant Les Ecologistes et les anciens « insoumis » n’est plus à l’ordre du jour.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée et candidate : un lancement de campagne inattendu",
-      "url": "https://www.lemonde.fr/podcasts/article/2026/07/08/marine-le-pen-condamnee-et-candidate-un-lancement-de-campagne-inattendu_6721894_5463015.html",
-      "published": "2026-07-08",
-      "summary": "La présidente du groupe RN à l’Assemblée nationale, condamnée mardi pour détournement de fonds publics par la cour d’appel de Paris, a donné le coup d’envoi de sa campagne présidentielle, malgré les aléas juridiques liés à son pourvoi en cassation. Dans ce podcast, Laura Motet, j",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional"

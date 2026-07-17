@@ -4,6 +4,7 @@ import analysis from '../../data/analyses/presidentielle-2027-preparation.json';
 import renifleur from '../../data/renifleur/latest.json';
 import { getVeille2027, PROGRAM_STATUS_LABELS } from '../../lib/programs';
 import { partyLogoForAffiliation, partyLogoSrc } from '../../lib/party-logos';
+import { formatXHandle, xForAffiliation, xForCandidateName } from '../../lib/x-officiels';
 
 const veilleProgrammes = getVeille2027();
 
@@ -113,8 +114,11 @@ const renifleurUpdated = renifleur.fetched_at
     }
   </section>
 
-  <section class="card">
+  <section class="card" id="veille">
     <h3>Veille factuelle</h3>
+    <p class="meta">
+      <a href="/analyses/alerte-citoyenne">Alerte citoyenne — débat public (11 points FR/UE) →</a>
+    </p>
     <ul class="veille-list">
       {
         analysis.veille.map((item) => (
@@ -173,6 +177,7 @@ const renifleurUpdated = renifleur.fetched_at
         <tr>
           <th scope="col">Personnalité</th>
           <th scope="col">Étiquette</th>
+          <th scope="col">X (officiel)</th>
           <th scope="col">Statut documenté</th>
           <th scope="col">Source</th>
         </tr>
@@ -181,6 +186,8 @@ const renifleurUpdated = renifleur.fetched_at
         {
           sortedCandidatures.map((entry) => {
             const party = partyLogoForAffiliation(entry.affiliation);
+            const xCand = xForCandidateName(entry.name);
+            const xParty = xForAffiliation(entry.affiliation);
             return (
               <tr>
                 <td>{entry.name}</td>
@@ -197,6 +204,23 @@ const renifleurUpdated = renifleur.fetched_at
                     />
                     <span>{entry.affiliation}</span>
                   </span>
+                </td>
+                <td>
+                  {xCand?.url ? (
+                    <a href={xCand.url} rel="noopener noreferrer">
+                      {formatXHandle(xCand.handle)}
+                    </a>
+                  ) : (
+                    <span class="meta">—</span>
+                  )}
+                  {xParty?.url && (
+                    <>
+                      {' · '}
+                      <a href={xParty.url} rel="noopener noreferrer" title={xParty.label}>
+                        parti
+                      </a>
+                    </>
+                  )}
                 </td>
                 <td>{statusLabels[entry.status] ?? entry.status}</td>
                 <td>

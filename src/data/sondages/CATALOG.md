@@ -1,7 +1,8 @@
 # Catalogue — organismes de sondage (présidentielle FR 2027)
 
-**Mise à jour** : 2026-07-16 · Source machine : [`providers.json`](./providers.json)  
-**Veille** : `npm run sondage:veille` (2×/jour · timer `lmdpt-sondage-veille`)
+**Mise à jour** : 2026-07-17 · Source machine : [`providers.json`](./providers.json)  
+**Veille** : `npm run sondage:veille` (2×/jour · 06:45 + 18:15 Europe/Paris · timer `lmdpt-sondage-veille`)  
+**X officiels** : [`../elections/2027-x-officiels.json`](../elections/2027-x-officiels.json)
 
 > Intentions de vote = **illustration pédagogique**. Pas de prédiction. Notices : [Commission des sondages](https://www.commission-des-sondages.fr/).
 

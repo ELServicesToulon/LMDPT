@@ -1,0 +1,131 @@
+{
+  "slug": "presidentielle-2022-legislatives",
+  "title": "Présidentielle 2022 → législatives : du 1er tour au scrutin suivant",
+  "date": "2026-07-16",
+  "date_presidentielle_t1": "2022-04-10",
+  "date_presidentielle_t2": "2022-04-24",
+  "date_legislatives_t1": "2022-06-12",
+  "date_legislatives_t2": "2022-06-19",
+  "description": "Comparaison claire : derniers sondages et résultats du 1er tour présidentiel 2022, puis 1er et 2nd tour des législatives qui ont suivi. Données officielles (Ministère de l'Intérieur / data.gouv.fr).",
+  "sondages_note": "Agrégat des dernières enquêtes publiées les 7–9 avril 2022 (veille du 1er tour), avant proclamation des résultats. Illustration de l'écart sondages / urnes — pas une moyenne unique officielle.",
+  "presidentielle_t1": {
+    "participation_pct": 73.69,
+    "abstention_pct": 26.31,
+    "exprimes": 35132947,
+    "sondages_finaux": [
+      { "id": "macron", "label": "Emmanuel Macron", "pct_sondage": 26.5, "source": "Ifop 8 avr. 2022" },
+      { "id": "le-pen", "label": "Marine Le Pen", "pct_sondage": 23.0, "source": "Ifop 8 avr. 2022" },
+      { "id": "melenchon", "label": "Jean-Luc Mélenchon", "pct_sondage": 22.0, "source": "Ifop 8 avr. 2022" },
+      { "id": "zemmour", "label": "Éric Zemmour", "pct_sondage": 8.5, "source": "Ifop 8 avr. 2022" },
+      { "id": "pecresse", "label": "Valérie Pécresse", "pct_sondage": 5.0, "source": "Ifop 8 avr. 2022" },
+      { "id": "jadot", "label": "Yannick Jadot", "pct_sondage": 4.5, "source": "Ifop 8 avr. 2022" }
+    ],
+    "resultats": [
+      { "id": "macron", "label": "Emmanuel Macron", "nuance": "LREM", "pct_exprimes": 27.85 },
+      { "id": "le-pen", "label": "Marine Le Pen", "nuance": "RN", "pct_exprimes": 23.15 },
+      { "id": "melenchon", "label": "Jean-Luc Mélenchon", "nuance": "LFI", "pct_exprimes": 21.95 },
+      { "id": "zemmour", "label": "Éric Zemmour", "nuance": "REC", "pct_exprimes": 7.07 },
+      { "id": "pecresse", "label": "Valérie Pécresse", "nuance": "LR", "pct_exprimes": 4.78 },
+      { "id": "jadot", "label": "Yannick Jadot", "nuance": "EELV", "pct_exprimes": 4.63 }
+    ],
+    "second_tour": {
+      "macron_pct": 58.55,
+      "le_pen_pct": 41.45
+    }
+  },
+  "legislatives_t1": {
+    "participation_pct": 47.51,
+    "abstention_pct": 52.49,
+    "exprimes": 22744708,
+    "nuances": [
+      { "code": "ENS", "label": "Ensemble (majorité présidentielle)", "pct_exprimes": 25.75 },
+      { "code": "NUP", "label": "NUPES (union de la gauche)", "pct_exprimes": 25.66 },
+      { "code": "RN", "label": "Rassemblement national", "pct_exprimes": 18.68 },
+      { "code": "LR", "label": "Les Républicains", "pct_exprimes": 10.42 },
+      { "code": "REC", "label": "Reconquête", "pct_exprimes": 4.24 },
+      { "code": "DVG", "label": "Divers gauche (hors NUP)", "pct_exprimes": 3.14 },
+      { "code": "ECO", "label": "Écologistes (hors NUP)", "pct_exprimes": 2.67 }
+    ],
+    "blocs_comparables": [
+      {
+        "id": "centre",
+        "label": "Centre / présidentielle (ENS + alliés)",
+        "pct_exprimes": 27.87,
+        "detail": "ENS 25,75 % + DVC 1,25 % + UDI 0,87 %"
+      },
+      {
+        "id": "gauche",
+        "label": "Gauche élargie (NUPES + écologistes + divers gauche)",
+        "pct_exprimes": 33.2,
+        "detail": "NUP 25,66 % + DVG 3,14 % + ECO 2,67 % + DXG/RDG 1,73 %"
+      },
+      {
+        "id": "rn",
+        "label": "Rassemblement national",
+        "pct_exprimes": 18.68,
+        "detail": "RN seul"
+      },
+      {
+        "id": "droite",
+        "label": "Droite hors RN (LR + Reconquête + divers droite)",
+        "pct_exprimes": 17.12,
+        "detail": "LR 10,42 % + REC 4,24 % + DVD 2,33 % + DSV 1,10 %"
+      }
+    ]
+  },
+  "legislatives_t2_sieges": [
+    { "label": "Ensemble (ENS + MODEM / alliés)", "seats": 251, "detail": "244 ENS + 4 DVC + 3 UDI" },
+    { "label": "NUPES (NUP + alliés)", "seats": 159, "detail": "127 NUP + 22 DVG + 10 REG" },
+    { "label": "Rassemblement national", "seats": 89, "detail": "RN" },
+    { "label": "Les Républicains (+ divers droite)", "seats": 72, "detail": "61 LR + 10 DVD + 1 DSV" },
+    { "label": "Autres", "seats": 6, "detail": "1 DIV + 5 élus au 1er tour sans 2nd tour" }
+  ],
+  "comparaison_cles": [
+    {
+      "theme": "Participation",
+      "presidentielle": "73,7 % des inscrits ont voté au 1er tour présidentiel",
+      "legislatives": "47,5 % au 1er tour législatif — abstention en hausse de +26 points",
+      "lecture": "L'élection présidentielle mobilise davantage que les législatives suivantes, même juste après un second tour présidentiel."
+    },
+    {
+      "theme": "Rassemblement national",
+      "presidentielle": "23,2 % pour Marine Le Pen au 1er tour",
+      "legislatives": "18,7 % au 1er tour législatif — le RN perd 4,5 points entre les deux scrutins",
+      "lecture": "Le score présidentiel de Le Pen ne se transpose pas à l'identique en voix législatives nationales agrégées."
+    },
+    {
+      "theme": "Gauche",
+      "presidentielle": "Mélenchon 22,0 % — candidats écologistes et socialistes séparés",
+      "legislatives": "NUPES 25,7 % — alliance LFI-PS-EELV-PCF entre les deux scrutins",
+      "lecture": "La recomposition en coalition (NUPES) modifie la lecture nationale : la gauche apparaît plus haute en agrégat législatif qu'aucun candidat présidentiel pris isolément."
+    },
+    {
+      "theme": "Majorité sortante",
+      "presidentielle": "Macron 27,9 % au 1er tour",
+      "legislatives": "Ensemble ~27,9 % au 1er tour législatif, puis 251 sièges au 2nd tour",
+      "lecture": "Le scrutin uninominal majoritaire à deux tours transforme des scores proches en majorité relative à l'Assemblée."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Présidentielle 2022 — résultats définitifs 1er tour (data.gouv.fr)",
+      "url": "https://www.data.gouv.fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-1er-tour"
+    },
+    {
+      "label": "Législatives 2022 — résultats définitifs 1er tour (data.gouv.fr)",
+      "url": "https://www.data.gouv.fr/datasets/elections-legislatives-des-12-et-19-juin-2022-resultats-definitifs-du-premier-tour"
+    },
+    {
+      "label": "Législatives 2022 — résultats définitifs 2nd tour (data.gouv.fr)",
+      "url": "https://www.data.gouv.fr/datasets/elections-legislatives-des-12-et-19-juin-2022-resultats-definitifs-du-second-tour"
+    },
+    {
+      "label": "Ifop — dernier sondage avant 1er tour présidentiel 2022 (8 avril)",
+      "url": "https://www.ifop.com/publication/presidentielle-2022-1er-tour/"
+    },
+    {
+      "label": "Atlas LMDPT — présidentielle 2022",
+      "url": "/atlas/2022-presidentielle"
+    }
+  ]
+}

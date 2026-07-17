@@ -4,8 +4,10 @@
   "disclaimer": "Index LMDPT des instituts FR / Europe / hors-Europe et agrégateurs. Intentions de vote ≠ résultats officiels ≠ prédictions. Notices FR : commission-des-sondages.fr. Veille pédagogique Democracy Over Elimination.",
   "scan": {
     "cadence": "2x/jour",
-    "hours_local": ["07:30", "19:30"],
+    "hours_local": ["06:45", "18:15"],
     "timezone": "Europe/Paris",
+    "jitter_sec": 240,
+    "rationale": "Avant sync-social 07:15 et hors pic work-loops ; soir avant soirée éditoriale.",
     "user_agent": "LMDPT-SondageVeille/1.0 (+https://lmdpt.iarbre.org; veille pédagogique)"
   },
   "regions": {

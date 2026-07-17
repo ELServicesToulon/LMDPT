@@ -1,6 +1,286 @@
 {
-  "updated": "2026-07-16T06:07:45.004Z",
+  "updated": "2026-07-17T08:08:25.408Z",
   "waves": [
+    {
+      "id": "commission-ipsos-9mai",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "9 mai",
+      "published_hint": "9 mai",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : barometre politique IPSOS BVA La Tribune dimanche (9 mai) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-opinionway-9juillet",
+      "firm": "OpinionWay",
+      "firm_id": "opinionway",
+      "fieldwork": "9 juillet",
+      "published_hint": "9 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Presitrack OPINIONWAY Les Echos (9 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-harris-8juillet",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "8 juillet",
+      "published_hint": "8 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : IV TOLUNA HARRIS INTERACTIVE RTL (8 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-yougov-7mai",
+      "firm": "yougov",
+      "firm_id": "yougov",
+      "fieldwork": "7 mai",
+      "published_hint": "7 mai",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique mai YOUGOV Huffpost (7 mai) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-yougov-7juin",
+      "firm": "yougov",
+      "firm_id": "yougov",
+      "fieldwork": "7 juin",
+      "published_hint": "7 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique YOUGOV Huffpost (7 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-odoxa-30juin",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "30 juin",
+      "published_hint": "30 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre ODOXA (30 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-verian-3juin",
+      "firm": "Verian (ex-Kantar Public)",
+      "firm_id": "verian",
+      "fieldwork": "3 juin",
+      "published_hint": "3 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique VERIAN Figaro Magazine (3 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-yougov-3juillet",
+      "firm": "yougov",
+      "firm_id": "yougov",
+      "fieldwork": "3 juillet",
+      "published_hint": "3 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique YOUGOV Huffpost (3 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-unknown-29mai",
+      "firm": "Barometre confiance politique THI",
+      "firm_id": null,
+      "fieldwork": "29 mai",
+      "published_hint": "29 mai",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre confiance politique THI (29 mai) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-harris-29mai",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "29 mai",
+      "published_hint": "29 mai",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : TOLUNA HARRIS INTERACTIVE (29 mai) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-harris-2830avril",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28-30 avril",
+      "published_hint": "28-30 avril",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 35,
+        "le-pen": 33
+      },
+      "raw_snippet": "Harris 28-30 avril 1 725 1 12 4 4 11 — 19 — 9 1 34 Bardella 5 — 1 13 3 4 12 14 — — 12 1 35 Bardella 5 — 1 12 4 4 11 — 19 — 10 1 32 Le Pen 6 — 1 12 4 4 12 14 — — 13 2 33 Le Pen 5 — Bruno Retailleau est désigné candidat des Républicains (LR) par les adhérents du parti ( 19 avril 20",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-ipsos-2728mai",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "27-28 mai",
+      "published_hint": "27-28 mai",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 35,
+        "le-pen": 32
+      },
+      "raw_snippet": "Ipsos 27-28 mai 1 500 1 13 3 4 11 8,5 13 — 7,5 1,5 33,5 Bardella 4 — 1 13 3 4 11 8,5 14 — 8,5 1,5 31 Le Pen 4,5 — 1 13,5 4 4 7 Hollande ( PS ) 9,5 13,5 — 8 1,5 34 Bardella 4 — 1 13,5 4 4 7 Hollande ( PS ) 9,5 14,5 — 8.5 1,5 32 Le Pen 4,5 — 1 13 3 4 14 14,5 — — 10 1,5 35 Bardella ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-ifop-2628mai",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "26-28 mai",
+      "published_hint": "26-28 mai",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 34,
+        "le-pen": 32
+      },
+      "raw_snippet": "Ifop 26-28 mai 1 501 0,5 13 2,5 4 9 9 14 — 8 2 34 Bardella 4 — 0,5 13 3,5 4 10 — 18 2,5 9 2 34 Bardella 3,5 — 0,5 13 3 4 11 16 — 3 10 2,5 34 Bardella 3 — 0,5 13 3 4 11 — 19 2 9 1,5 33 Le Pen 4 — 0,5 13 3 3,5 11,5 16 — 3 11,5 2 32 Le Pen 4 — 0,5 14 4 5 8 Hollande ( PS ) — 20 — 9 1",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-ifop-2627fvrier",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "26-27 février",
+      "published_hint": "26-27 février",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 37,
+        "le-pen": 35
+      },
+      "raw_snippet": "Ifop 26-27 février 1 393 1 11 2 4 10 — 16 3,5 10 2,5 36 Bardella 4 — 1 10 2 4 11 — 16 5 11 2 34 Le Pen 4 — 2 10 3 4 12 11 — 4 12 2 36 Bardella 4 — 2 11 2 4,5 12 10 — 4,5 12 3 35 Le Pen 4 — 1,5 10 3 4 13 8 Darmanin — 5 13 2,5 37 Bardella 3 — 2 10 3 4,5 13 6 Lecornu — 5 13 3 37 Bar",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-harris-26juin",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "26 juin",
+      "published_hint": "26 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre confiance politique TOLUNA HARRIS INTERACTIVE LCI (26 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-elabe-2527mars",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "25-27 mars",
+      "published_hint": "25-27 mars",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 38.5,
+        "le-pen": 34
+      },
+      "raw_snippet": "Elabe 25-27 mars 1 504 0,5 10,5 3 4,5 10,5 — 20,5 3 7 2,5 35 Bardella 3 — 0,5 11,5 3,5 5 8,5 — 22 2,5 8,5 3 31,5 Le Pen 3,5 — 1 12 4 4,5 4,5 Faure ( PS ) — 25,5 3 — 2,5 38 Bardella 5 Knafo — 1 12 2,5 4 12,5 11,5 — 6 10 2,5 34 Le Pen 4 Knafo — 0,5 13 3 5 12,5 8 Darmanin — 5 8,5 2,",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-harris-2527mai",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "25-27 mai",
+      "published_hint": "25-27 mai",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 32,
+        "le-pen": 32
+      },
+      "raw_snippet": "Harris 25-27 mai 1 744 1 15 3 3 10 — 17 — 9 2 34 Bardella 6 — 1 15 4 3 11 14 — — 10 2 34 Bardella 6 — 1 14 3 3 11 — 19 — 10 2 31 Le Pen 6 — 1 15 4 3 11 15 — — 11 2 32 Le Pen 6 — 1 14 3 3 10 9 13 — 8 2 32 Bardella 5 — Gabriel Attal , secrétaire général de Renaissance (RE), se décl",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-odoxa-2526mars",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "25-26 mars",
+      "published_hint": "25-26 mars",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 36,
+        "le-pen": 34
+      },
+      "raw_snippet": "Odoxa 25-26 mars 1 299 1 12 2 5 10 — 21 — 8 2 34 Bardella 5 Knafo — 1 13 2 4 10 — 25 — — 2 38 Bardella 5 Knafo — Harris 22 mars 1 062 1 11 3 4 14 — 18 — 7 2 35 Bardella 5 — 1 11 3 5 14 13 — — 10 2 36 Bardella 5 — Ifop 26-27 février 1 393 1 11 2 4 10 — 16 3,5 10 2,5 36 Bardella 4 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-ifop-25juin",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "25 juin",
+      "published_hint": "25 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : IV IFOP Le Figaro (25 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-ifop-2224juin",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "22-24 juin",
+      "published_hint": "22-24 juin",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 37,
+        "le-pen": 32,
+        "glucksmann": 11
+      },
+      "raw_snippet": "Ifop 22-24 juin 1 415 0,5 13 3 2,5 9 8 14 — 8 2 36 Bardella 4 — 0,5 13 3 3,5 10 — 19 — 9 2 36 Bardella 4 — 0,5 13 2,5 3,5 11 15 — — 11 2 37 Bardella 4,5 — 1 12 3 4 9 — 20 — 11 2 32 Le Pen 6 — 1 13 3 3 11 15 — — 14 3 32 Le Pen 5 — 1,5 15 9 Hollande ( PS ) — 21 — 10 3 37 Bardella 3",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-harris-22mars",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "22 mars",
+      "published_hint": "22 mars",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 36,
+        "le-pen": 35
+      },
+      "raw_snippet": "Harris 22 mars 1 062 1 11 3 4 14 — 18 — 7 2 35 Bardella 5 — 1 11 3 5 14 13 — — 10 2 36 Bardella 5 — Ifop 26-27 février 1 393 1 11 2 4 10 — 16 3,5 10 2,5 36 Bardella 4 — 1 10 2 4 11 — 16 5 11 2 34 Le Pen 4 — 2 10 3 4 12 11 — 4 12 2 36 Bardella 4 — 2 11 2 4,5 12 10 — 4,5 12 3 35 Le",
+      "metric": "intentions_vote"
+    },
     {
       "id": "manual-cluster17-lepoint-20260710",
       "firm": "Cluster17",
@@ -128,6 +408,45 @@
       "metric": "intentions_vote"
     },
     {
+      "id": "2027pres-odoxa-2021mai",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "20-21 mai",
+      "published_hint": "20-21 mai",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 35,
+        "le-pen": 32
+      },
+      "raw_snippet": "Odoxa 20-21 mai 1 005 0,5 16 2,5 4 11 — 17 — 9 2 32 Bardella 6 — Jean-Luc Mélenchon est désigné candidat de la France insoumise (LFI) par les élus du mouvement ( 3 mai 2026 ). Harris 28-30 avril 1 725 1 12 4 4 11 — 19 — 9 1 34 Bardella 5 — 1 13 3 4 12 14 — — 12 1 35 Bardella 5 — ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-ifop-18juin",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "18 juin",
+      "published_hint": "18 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Tableau de bord IFOP (18 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027presidentielle-elabe-17072026-h3pmxt",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "17/07/2026",
+      "published_hint": "17/07/2026",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {},
+      "raw_snippet": "Sondages Présidentielle 2027 (COMPACT) – intentions de vote, baromètres, enquêtes Accueil Infos en direct Actu municipales 2026 Actu partis politique Sondages & tendances Live News (EN) Sondages Présidentielle 2027 Mise à jour auto (cache 6h) : 17/07/2026 01:36 • Cache servi • So",
+      "metric": "souhait_victoire"
+    },
+    {
       "id": "2027presidentielle-elabe-16072026-h3pmxt",
       "firm": "Elabe",
       "firm_id": "elabe",
@@ -136,8 +455,56 @@
       "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
       "source_id": "2027presidentielle",
       "scores": {},
-      "raw_snippet": "Sondages Présidentielle 2027 (COMPACT) – intentions de vote, baromètres, enquêtes Accueil Infos en direct Actu municipales 2026 Actu partis politique Sondages & tendances Live News (EN) Sondages Présidentielle 2027 Mise à jour auto (cache 6h) : 16/07/2026 07:24 • Cache servi • So",
+      "raw_snippet": "Sondages Présidentielle 2027 (COMPACT) – intentions de vote, baromètres, enquêtes Accueil Infos en direct Actu municipales 2026 Actu partis politique Sondages & tendances Live News (EN) Sondages Présidentielle 2027 Mise à jour auto (cache 6h) : 16/07/2026 19:29 • Cache servi • So",
       "metric": "souhait_victoire"
+    },
+    {
+      "id": "commission-cluster17-14juillet",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "14 juillet",
+      "published_hint": "14 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Baromètre Cluster17 Le Point (14 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-ifop-14juillet",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "14 juillet",
+      "published_hint": "14 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Tableau de bord IFOP Paris match (14 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-opinionway-13juin",
+      "firm": "OpinionWay",
+      "firm_id": "opinionway",
+      "fieldwork": "13 juin",
+      "published_hint": "13 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : IV OPINIONWAY JDD (13 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-ipsos-13juin",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13 juin",
+      "published_hint": "13 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique IPSOS BVA La Tribune dimanche (13 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
     },
     {
       "id": "epoc-elabe-12072026",
@@ -224,6 +591,57 @@
       "source_id": "epoc",
       "scores": {},
       "raw_snippet": "12/07/2026 ELABE 5 — 34.5% 18% — 15% — 8% — 8% — — — — — — 3% 4% 3% 3% — 1.5% — 2% 09/07/2026 HARRIS INTERACTIVE 1 — 35% 14% 8% 16% 10% 7% — — — — — — — — 4% 2% — 2% — 1% — 1% 09/07/2026 HARRIS INTERA",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-verian-12juin",
+      "firm": "Verian (ex-Kantar Public)",
+      "firm_id": "verian",
+      "fieldwork": "12 juin",
+      "published_hint": "12 juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre vague 3 VERIAN Le Figaro Mag (12 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-cluster17-11juin",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "11 Juin",
+      "published_hint": "11 Juin",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Baromètre CLUSTER17 Le Point (11 Juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "2027pres-opinionway-1011juin",
+      "firm": "OpinionWay",
+      "firm_id": "opinionway",
+      "fieldwork": "10-11 juin",
+      "published_hint": "10-11 juin",
+      "source_url": "https://2027presidentielle.com/sondages-presidentielle-2027.php",
+      "source_id": "2027presidentielle",
+      "scores": {
+        "bardella": 33.5,
+        "le-pen": 31
+      },
+      "raw_snippet": "OpinionWay 10-11 juin 1 001 1 16 — — 16 — 19 — 9 2 34 Bardella / Le Pen 3 — 1 13 3 5 13 — 19 — 8 2 33 Bardella / Le Pen 3 — 1 13 4 4 14 14 — — 9 2 35 Bardella / Le Pen 4 — Ipsos 27-28 mai 1 500 1 13 3 4 11 8,5 13 — 7,5 1,5 33,5 Bardella 4 — 1 13 3 4 11 8,5 14 — 8,5 1,5 31 Le Pen ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-verian-10juillet",
+      "firm": "Verian (ex-Kantar Public)",
+      "firm_id": "verian",
+      "fieldwork": "10 juillet",
+      "published_hint": "10 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : IV 1er tour VERIAN LHemicycle (10 juillet) — PDF notice, scores non extraits auto.",
       "metric": "intentions_vote"
     },
     {
@@ -355,7 +773,7 @@
       "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-hollande-prepare-sa-candidature-et-donne-secretement-rendez-vous-a-ses-soutiens-ce-soir-20260715",
       "source_id": "le-figaro",
       "scores": {},
-      "raw_snippet": "Présidentielle 2027 : Hollande «prépare» sa candidature et donne secrètement rendez-vous à ses soutiens ce soir",
+      "raw_snippet": "Présidentielle 2027 : Hollande «prépare» sa candidature et donne secrètement rendez-vous à ses soutiens",
       "metric": "intentions_vote"
     },
     {

@@ -55,11 +55,13 @@ EOF
 
 cat > "$TIMER_FILE" <<EOF
 [Unit]
-Description=Timer quotidien LMDPT sync:all:social (08:00)
+Description=Timer quotidien LMDPT sync:all:social (07:15, après veille sondages)
 
 [Timer]
-OnCalendar=*-*-* 08:00:00
+OnCalendar=*-*-* 07:15:00
 Persistent=true
+RandomizedDelaySec=120
+AccuracySec=1min
 Unit=${UNIT_NAME}.service
 
 [Install]
@@ -70,5 +72,5 @@ systemctl daemon-reload
 systemctl enable --now "${UNIT_NAME}.timer"
 systemctl start "${UNIT_NAME}.service" || true
 
-echo "OK — ${UNIT_NAME}.timer actif (08:00 daily)"
+echo "OK — ${UNIT_NAME}.timer actif (07:15 daily, après veille sondages 06:45)"
 systemctl list-timers "${UNIT_NAME}.timer" --no-pager

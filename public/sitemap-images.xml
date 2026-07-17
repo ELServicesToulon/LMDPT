@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lmdpt.iarbre.org/</loc>
+    <image:image>
+      <image:loc>https://lmdpt.iarbre.org/brand/og-default.png</image:loc>
+      <image:title>Le Média du Premier Tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lmdpt.iarbre.org/</loc>
+    <image:image>
+      <image:loc>https://lmdpt.iarbre.org/illustrations/2027/hero-premier-tour-2027.jpg</image:loc>
+      <image:title>Présidentielle 2027 — premier tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lmdpt.iarbre.org/</loc>
+    <image:image>
+      <image:loc>https://lmdpt.iarbre.org/illustrations/2027/democracy-over-elimination.jpg</image:loc>
+      <image:title>Democracy Over Elimination</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation/</loc>
+    <image:image>
+      <image:loc>https://lmdpt.iarbre.org/illustrations/2027/dessin-urne-2027.jpg</image:loc>
+      <image:title>Urne Premier Tour 2027</image:title>
+    </image:image>
+  </url>
+</urlset>

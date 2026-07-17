@@ -1,7 +1,7 @@
 {
   "title": "Présidentielle 2027 — dossier de préparation",
   "status": "preparation",
-  "updated": "2026-07-09",
+  "updated": "2026-07-16",
   "election_label": "Élection présidentielle 2027",
   "calendar": {
     "status": "official",
@@ -14,6 +14,13 @@
     "constitutional_window": "Entre le 20e et le 35e jour précédant l'expiration du mandat du président en exercice (fin du quinquennat d'Emmanuel Macron : 14 mai 2027). L'autre option constitutionnelle était les 11 et 25 avril 2027."
   },
   "veille": [
+    {
+      "date": "2026-07-16",
+      "label": "Alerte citoyenne — conditions du débat public (11 points FR/UE)",
+      "fact": "Synthèse documentaire LMDPT des textes et projets cités dans un thread X de Sarah Knafo (députée européenne) : ingérence intérieure, PPL séparatisme / gels de fonds, entrisme, inéligibilité, temps de parole en ligne, vérification d'âge, Chat Control, Bouclier européen de la démocratie. Dossier dédié : /analyses/alerte-citoyenne. LMDPT ne reprend pas les qualifications politiques ; il relie chaque objet pour le citoyen du 1er tour 2027.",
+      "source_label": "LMDPT · signal X Sarah Knafo",
+      "source_url": "https://x.com/i/status/2077697375322140699"
+    },
     {
       "date": "2026-07-07",
       "label": "Jugement d'appel — Marine Le Pen (décision rendue)",

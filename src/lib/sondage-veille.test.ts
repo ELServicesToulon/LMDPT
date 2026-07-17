@@ -5,6 +5,7 @@ import {
   extractScores,
   matchFirm,
   parseEpocHtml,
+  parseCommissionNotices,
   diffWaves,
   seedKnownWaves,
   type DetectedWave,
@@ -88,5 +89,70 @@ describe('sondage-veille', () => {
     expect(lp).toBeDefined();
     expect(lp?.source_url).toContain('lepoint.fr');
     expect(lp?.metric).toBe('souhait_victoire');
+  });
+
+  it('parses Commission notices without inventing scores', () => {
+    const html = `
+      <p class="download-line"><a>10228 Pres Baromètre Cluster17 Le Point 14 juillet</a></p>
+      <p class="download-line"><a>10225 Pres IV 1er tour VERIAN LHemicycle 10 juillet</a></p>
+      <p class="download-line"><a>10223 Pres IV TOLUNA HARRIS INTERACTIVE RTL 8 juillet</a></p>
+    `;
+    const waves = parseCommissionNotices(html, 'https://www.commission-des-sondages.fr/notices/');
+    expect(waves.length).toBeGreaterThanOrEqual(2);
+    expect(waves.every((w) => Object.keys(w.scores).length === 0)).toBe(true);
+    expect(waves.some((w) => /verian/i.test(w.firm))).toBe(true);
+  });
+
+  it('does not re-flag empty-score firm+fieldwork already known', () => {
+    const base: DetectedWave = {
+      id: 'commission-elabe-14juillet',
+      firm: 'Elabe',
+      firm_id: 'elabe',
+      fieldwork: '14 juillet',
+      published_hint: null,
+      source_url: 'https://www.commission-des-sondages.fr/notices/',
+      source_id: 'commission-sondages',
+      scores: {},
+      raw_snippet: 'Notice Commission : ELABE 14 juillet',
+      metric: 'intentions_vote',
+    };
+    const moves = diffWaves([base], [{ ...base, id: 'commission-elabe-14juillet-b' }], '2026-07-17T12:00:00.000Z');
+    expect(moves).toHaveLength(0);
+  });
+
+  it('does not compare historical Bardella scores to current Le Pen wave', () => {
+    const prev: DetectedWave[] = [
+      {
+        id: 'manual-elabe-20260712-h1',
+        firm: 'Elabe',
+        firm_id: 'elabe',
+        fieldwork: '2026-07-09/12',
+        published_hint: '2026-07-12',
+        source_url: 'https://example.com',
+        source_id: 'manual',
+        scores: { 'le-pen': 35, philippe: 16.5 },
+        raw_snippet: '',
+        metric: 'intentions_vote',
+      },
+    ];
+    const next: DetectedWave[] = [
+      ...prev,
+      {
+        id: '2027pres-elabe-2527mars',
+        firm: 'Elabe',
+        firm_id: 'elabe',
+        fieldwork: '25-27 mars',
+        published_hint: null,
+        source_url: 'https://2027presidentielle.com/',
+        source_id: '2027presidentielle',
+        scores: { bardella: 38.5, philippe: 13 },
+        raw_snippet: '',
+        metric: 'intentions_vote',
+      },
+    ];
+    const moves = diffWaves(prev, next, '2026-07-17T12:00:00.000Z');
+    expect(moves.filter((m) => m.kind === 'head_change' || m.kind === 'score_shift')).toHaveLength(
+      0,
+    );
   });
 });

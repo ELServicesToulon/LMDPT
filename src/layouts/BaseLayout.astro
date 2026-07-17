@@ -3,24 +3,53 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  keywords?: string;
+  /** article = analyses / dossiers (JSON-LD + og:type) */
+  type?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 import { getPublicSocialLinks } from '../config/social';
 import { getPublicEcosystemLinks } from '../config/ecosystem';
-import { pageMeta } from '../lib/seo';
+import {
+  pageMeta,
+  organizationJsonLd,
+  websiteJsonLd,
+  webPageJsonLd,
+} from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, keywords, type, noindex } = Astro.props;
 const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
 const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const isArticle =
+  type === 'article' ||
+  Astro.url.pathname.startsWith('/analyses/') ||
+  Astro.url.pathname.startsWith('/debats/');
 const meta = pageMeta({
   title,
   description,
   ogImage,
   siteUrl,
   pathname: Astro.url.pathname,
+  keywords,
+  type: isArticle ? 'article' : 'website',
+  noindex:
+    noindex ||
+    Astro.url.pathname.startsWith('/moderation') ||
+    Astro.url.pathname.startsWith('/cadres'),
+});
+const jsonLdOrg = organizationJsonLd(siteUrl);
+const jsonLdSite = websiteJsonLd(siteUrl);
+const jsonLdPage = webPageJsonLd({
+  siteUrl,
+  title: meta.fullTitle,
+  description: meta.description,
+  canonical: meta.canonical,
+  ogImage: meta.ogImage,
+  type: meta.type,
 });
 const showComments =
   !Astro.url.pathname.startsWith('/moderation') &&
@@ -37,6 +66,7 @@ const commentThread =
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/brand/og-default.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Empêche le « Auto Dark » Chrome/Android d’inverser la page en fond noir + texte noir -->
     <meta name="color-scheme" content="light dark" />
@@ -45,19 +75,33 @@ const commentThread =
     <meta name="generator" content={Astro.generator} />
     <title>{meta.fullTitle}</title>
     <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    <meta name="robots" content={meta.robots} />
+    <meta name="googlebot" content={meta.robots} />
+    <meta name="author" content="Le Média du Premier Tour" />
+    <meta name="language" content="French" />
     <link rel="canonical" href={meta.canonical} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Le Média du Premier Tour" />
+    <link rel="alternate" hreflang="fr" href={meta.canonical} />
+    <link rel="alternate" hreflang="x-default" href={meta.canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <meta property="og:type" content={meta.type === 'article' ? 'article' : 'website'} />
+    <meta property="og:site_name" content={meta.siteName} />
     <meta property="og:title" content={meta.fullTitle} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={meta.canonical} />
     <meta property="og:image" content={meta.ogImage} />
+    <meta property="og:image:alt" content={meta.fullTitle} />
     <meta property="og:locale" content="fr_FR" />
     {xLink && <meta name="twitter:site" content={xLink.handle} />}
+    {xLink && <meta name="twitter:creator" content={xLink.handle} />}
     {xLink && <meta name="twitter:card" content="summary_large_image" />}
     <meta name="twitter:title" content={meta.fullTitle} />
     <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={meta.ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdOrg)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdSite)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPage)} />
     <style is:global>
       /*
         CONTRASTE COUPLÉ fond + texte (2026-07-15)

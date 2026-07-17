@@ -19,6 +19,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/presidentielle-distorsion',
   },
   {
+    slug: 'presidentielle-2022-legislatives',
+    title: 'Présidentielle 2022 → législatives',
+    description:
+      'Sondages et 1er tour présidentiel 2022 comparés aux législatives de juin (participation, blocs, 577 sièges). Données officielles.',
+    date: '2026-07-16',
+    href: '/analyses/presidentielle-2022-legislatives',
+  },
+  {
     slug: 'legislatives-2024-desistements',
     title: 'Législatives 2024 — désistements',
     description:
@@ -41,6 +49,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
       'Résumé accessible : idée d’intégrer la pluralité du premier tour à l’Assemblée. Options détaillées (abaisser seuils, sièges proportionnels 5-25%, systèmes mixtes majoritaire+proportionnel, meilleurs perdants), avantages et limites pour refléter les votes T1 sans déstabiliser la gouvernance. Propositions graduelles : minimal (Code électoral), moyen (25% proportionnel), ambitieux (constitutionnel). Liens vers outils existants (hémicycle hybride, simulateur). Sources du rapport institutionnel. Pédagogique, factuel, neutre.',
     date: '2026-07-10',
     href: '/analyses/assemblee-premier-tour-mecanismes',
+  },
+  {
+    slug: 'alerte-citoyenne',
+    title: 'Alerte citoyenne — débat public',
+    description:
+      'Tour d’horizon documenté (France / UE) des textes et projets cités comme encadrant la liberté d’expression avant le premier tour 2027.',
+    date: '2026-07-16',
+    href: '/analyses/alerte-citoyenne',
   },
   {
     slug: 'presidentielle-2027-preparation',

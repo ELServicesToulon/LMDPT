@@ -1,0 +1,138 @@
+{
+  "title": "Alerte citoyenne — conditions du débat public",
+  "updated": "2026-07-16",
+  "status": "active",
+  "eyebrow": "Veille civique · liberté d’expression",
+  "lead": "Tour d’horizon documenté de textes et projets (France / UE) cités dans le débat public comme susceptibles d’encadrer la parole politique, les médias et les réseaux — avant le premier tour 2027.",
+  "disclaimer": "Synthèse documentaire LMDPT (ligne Democracy Over Elimination). Ce n’est ni un avis juridique ni un soutien à un camp. Chaque point reprend un objet législatif ou une prise de position publique ; les qualifications politiques restent celles des acteurs cités. À vérifier sur les textes officiels (Légifrance, Sénat, Assemblée, Commission européenne).",
+  "signal": {
+    "label": "Signal de synthèse (16 juillet 2026)",
+    "author": "Sarah Knafo",
+    "role": "Députée européenne",
+    "platform": "X",
+    "url": "https://x.com/i/status/2077697375322140699",
+    "status_id": "2077697375322140699",
+    "published": "2026-07-16T10:10:30.000Z",
+    "summary": "Thread listant onze projets français et européens présentés comme une même logique de restriction de la liberté d’expression (ingérence intérieure, gels d’avoirs, dissolutions, inéligibilité, temps de parole en ligne, vérification d’âge, Chat Control, etc.).",
+    "engagement_note": "Engagement élevé au moment de la capture (plusieurs milliers de likes / reposts) — indicateur de portée, pas de véracité."
+  },
+  "lmdpt_angle": "Pour le premier tour 2027, la pluralité des idées suppose un débat public accessible. LMDPT documente les règles et projets qui encadrent ce débat — sans prédiction électorale ni classement de camps.",
+  "regions": [
+    { "id": "fr", "label": "France" },
+    { "id": "ue", "label": "Union européenne" }
+  ],
+  "items": [
+    {
+      "n": 1,
+      "region": "fr",
+      "title": "« Ingérence intérieure » — cadre sénatorial",
+      "fact": "Concept d’« ingérence intérieure » évoqué dans le débat au Sénat, avec un rapprochement centre / LR / PS selon le signal. Enjeu citoyen : requalification éventuelle de prises de position politiques légales (immigration, euro numérique, critique de l’UE) hors du seul registre « ingérence étrangère ».",
+      "status": "débat_parlementaire",
+      "status_label": "Débat parlementaire"
+    },
+    {
+      "n": 2,
+      "region": "fr",
+      "title": "Proposition Retailleau — séparatisme / gels de fonds",
+      "fact": "Proposition de loi contre le séparatisme adoptée au Sénat le 5 mai 2026 (selon le signal), en attente à l’Assemblée. Article 6 cité : gel de fonds sans condamnation pénale pour propos contribuant à « discrimination, haine ou violence » — contours juridiques à lire dans le texte déposé.",
+      "status": "adopte_senat",
+      "status_label": "Adoptée au Sénat · AN en attente"
+    },
+    {
+      "n": 3,
+      "region": "fr",
+      "title": "Projet Nuñez — entrisme, dissolutions, interdiction de livres",
+      "fact": "Projet visant l’entrisme : dissolutions, gels d’avoirs, et possibilité d’interdiction de livres par les ministres de l’Intérieur et de la Culture « dans un délai très court » selon le signal. Périmètre rédactionnel large (« vivre ensemble ») signalé comme risque d’extension.",
+      "status": "projet",
+      "status_label": "Projet / discussion"
+    },
+    {
+      "n": 4,
+      "region": "fr",
+      "title": "Inéligibilité obligatoire (après retrait Yadan → texte Bergé)",
+      "fact": "Proposition Yadan retirée ; annonce d’un texte porté par Aurore Bergé prévoyant une inéligibilité obligatoire pour élu condamné pour propos jugés haineux. Enjeu : qui définit le seuil « offensant / haineux » et l’impact sur la représentation citoyenne.",
+      "status": "annonce",
+      "status_label": "Annonce gouvernementale"
+    },
+    {
+      "n": 5,
+      "region": "fr",
+      "title": "Temps de parole politique sur les réseaux (Paul Midy)",
+      "fact": "Proposition du député Renaissance Paul Midy d’encadrer le temps de parole des politiques sur les réseaux sociaux, sur le modèle audiovisuel. Enjeu : extension éventuelle de l’équité des temps de parole hors médias traditionnels.",
+      "status": "proposition",
+      "status_label": "Proposition parlementaire"
+    },
+    {
+      "n": 6,
+      "region": "fr",
+      "title": "Interdiction des réseaux sociaux aux moins de 15 ans",
+      "fact": "Mesure votée (selon le signal), portée par l’exécutif et soutenue largement. Effet collatéral documenté dans le débat : vérification d’âge pour tous les utilisateurs → liaison identité / compte et traçabilité des prises de position.",
+      "status": "vote",
+      "status_label": "Votée (à confirmer Légifrance)"
+    },
+    {
+      "n": 7,
+      "region": "fr",
+      "title": "Prises de position sur médias privés (Ruffin / Mélenchon)",
+      "fact": "François Ruffin annonce qu’il fermerait CNews s’il arrivait au pouvoir ; Jean-Luc Mélenchon qu’il démantèlerait le groupe Bolloré — selon le signal. Ce ne sont pas des textes en vigueur : intentions politiques sur le pluralisme médiatique.",
+      "status": "prise_position",
+      "status_label": "Prise de position politique"
+    },
+    {
+      "n": 8,
+      "region": "fr",
+      "title": "Habilitation DGSI refusée pour opinions souverainistes",
+      "fact": "Cas d’un refus d’habilitation au motif d’opinions souverainistes, validé par le tribunal administratif selon le signal. Enjeu : filtrage d’agents publics sur idées politiques (frontière avec la liberté d’opinion des agents).",
+      "status": "jurisprudence",
+      "status_label": "Jurisprudence administrative (signalée)"
+    },
+    {
+      "n": 9,
+      "region": "ue",
+      "title": "Vérification d’âge UE + app d’identité européenne",
+      "fact": "L’UE pousse la vérification d’âge pour l’accès aux réseaux. Application d’identité européenne présentée par Ursula von der Leyen ; le signal affirme un contournement intégral en 48 h — à recouper avec les comptes techniques indépendants.",
+      "status": "ue_projet",
+      "status_label": "Cadre UE / digital identity"
+    },
+    {
+      "n": 10,
+      "region": "ue",
+      "title": "Chat Control — scan des messages privés",
+      "fact": "Relance du projet dit « Chat Control » : scan automatisé de messages privés et photos sous motif de protection des mineurs. Enjeu de proportionnalité et de confidentialité des communications.",
+      "status": "ue_projet",
+      "status_label": "Projet UE en discussion"
+    },
+    {
+      "n": 11,
+      "region": "ue",
+      "title": "« Bouclier européen de la démocratie »",
+      "fact": "Initiative citée : financements pour médias « indépendants », ONG et réseau de fact-checkers. Enjeu de gouvernance : qui définit la vérité factuelle lorsque le financeur est institutionnel.",
+      "status": "ue_initiative",
+      "status_label": "Initiative UE"
+    }
+  ],
+  "closing": "Onze objets, une même question pour le citoyen du premier tour : quelles règles encadreront encore le débat public en 2027 ? LMDPT suivra les textes officiels et les votes — pas les slogans.",
+  "sources": [
+    {
+      "label": "Sarah Knafo — thread X (16/07/2026)",
+      "url": "https://x.com/i/status/2077697375322140699"
+    },
+    {
+      "label": "Légifrance — portail du droit français",
+      "url": "https://www.legifrance.gouv.fr/"
+    },
+    {
+      "label": "Sénat — travaux parlementaires",
+      "url": "https://www.senat.fr/"
+    },
+    {
+      "label": "Assemblée nationale — propositions et projets de loi",
+      "url": "https://www.assemblee-nationale.fr/"
+    }
+  ],
+  "next_steps_lmdpt": [
+    "Recouper chaque point n°1–6 avec le texte exact (n° de PPL / PJL) dès publication Légifrance ou site parlementaire.",
+    "Ajouter un jalon dans la veille 2027 si un texte est définitivement adopté avant l’ouverture de la campagne officielle.",
+    "Ne pas publier d’avis juridique ; renvoyer vers sources primaires."
+  ]
+}

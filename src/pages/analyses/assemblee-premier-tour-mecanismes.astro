@@ -4,622 +4,211 @@ import AssembleeHemicycle from '../../components/AssembleeHemicycle.astro';
 import analysis from '../../data/analyses/assemblee-premier-tour-2024.json';
 import mecanismesData from '../../data/analyses/assemblee-premier-tour-mecanismes.json';
 import leg2024National from '../../data/elections/2024-legislatives-1er-tour-national.json';
-import { simulateAn1tSeats } from '../../lib/an1t';
+import { simulateAn1tSeats, simulateFromVoteShares } from '../../lib/an1t';
 import type { ElectionDataset } from '../../lib/election-types';
 
 const dataset = leg2024National as ElectionDataset;
-const an1t577 = simulateAn1tSeats(dataset, 577, 3);
-const an1t150 = simulateAn1tSeats(dataset, 150, 3);
+const an1t2024 = simulateAn1tSeats(dataset, 577, 3);
 
 const t1Date = new Date(analysis.date_premier_tour).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 
-// Exemples chiffrés concrets (calculs basés sur données T1 2024 open data + Sainte-Laguë)
-const seats577 = an1t577.map(a => ({ id: a.id, label: a.label, seats: a.seats, pct: a.pctSeats }));
-const total577 = 577;
-const seats150 = an1t150.map(a => ({ id: a.id, label: a.label, seats: a.seats, pct: a.pctSeats }));
-const total150 = 150;
-
-// Exemples seuils (approximations proportionnelles pour pédagogie ; simulation complète pour 0 % et 5 %)
-const thresholdExamples = [
-  { seuil: '0 % (aucun)', rn: 219, nfp: 181, ens: 130, lr: 38, autres: 9, note: 'Inclut « autres » (~1,5 % voix) — fidélité maximale à la pluralité T1' },
-  { seuil: '3 % (actuel AN1T)', rn: 223, nfp: 184, ens: 132, lr: 38, autres: 0, note: 'Seuil standard utilisé dans les simulations LMDPT' },
-  { seuil: '5 %', rn: 228, nfp: 188, ens: 135, lr: 26, autres: 0, note: 'Élimine plus de forces marginales ; renforce les 4 principaux' },
+// Agrégat pédagogique juil. 2026 — intentions présidentielles → blocs législatifs (Ifop, Harris, Elabe…)
+const pollShares2027 = [
+  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', pct: 35 },
+  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', pct: 26 },
+  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', pct: 16 },
+  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', pct: 8 },
+  { id: 'autres', label: 'Autres & divers', color: '#dddddd', pct: 15 },
 ];
+const an1t2027 = simulateFromVoteShares(pollShares2027, 577, 3);
 
-// Comparaison réelle vs AN1T (577 sièges, données 2024)
-const realSeats = { rn: 125, nfp: 182, ens: 99, lr: 47, autres: 124 };
-const an1tPure = { rn: 223, nfp: 184, ens: 132, lr: 38, autres: 0 }; // seuil 3% Sainte-Laguë
+const allocations2027 = an1t2027.map((a) => ({
+  id: a.id,
+  label: a.label,
+  color: a.color,
+  seats: a.seats,
+}));
 
-// Exemples doses proportionnelles 5-25% (illustratifs pour sièges compensatoires ou mixtes)
-const doseExamples = [
-  { dose: '5 % proportionnel (≈29 sièges)', note: 'Correction légère des distorsions majoritaires ; lien local préservé à 95 %.' },
-  { dose: '10 % proportionnel (≈58 sièges)', note: 'Correction modérée ; compatible avec redécoupage minimal.' },
-  { dose: '25 % proportionnel (≈144 sièges)', note: 'Équilibre significatif majoritaire + proportionnel ; modèle mixte classique.' },
-];
+const allocationsAn1t2024 = an1t2024.map((a) => ({
+  id: a.id,
+  label: a.label,
+  color: a.color,
+  seats: a.seats,
+}));
 
-// Exemples systèmes mixtes (illustratifs, sur base T1 2024 ; dose 25 % = 144 sièges prop compensatoires)
-const mixte25 = [
-  { label: 'RN & alliés', seatsMaj: 170, seatsProp: 53, total: 223, note: 'Meilleurs perdants T1 prioritaires' },
-  { label: 'NFP', seatsMaj: 155, seatsProp: 29, total: 184, note: 'Compensation sur scores T1' },
-  { label: 'Ensemble', seatsMaj: 95, seatsProp: 37, total: 132, note: 'Sièges locaux majoritaires + prop' },
-  { label: 'LR', seatsMaj: 35, seatsProp: 3, total: 38, note: 'Faible compensation' },
-];
+const blocOrder = ['rn', 'nfp', 'ensemble', 'lr', 'autres'] as const;
+const blocLabels: Record<string, string> = {
+  rn: 'RN & alliés',
+  nfp: 'Nouveau Front populaire',
+  ensemble: 'Ensemble / centre',
+  lr: 'Droite républicaine',
+  autres: 'Autres & divers',
+};
+
+function seatsById(alloc: { id: string; seats: number }[]): Record<string, number> {
+  return Object.fromEntries(alloc.map((a) => [a.id, a.seats]));
+}
+
+const seats2027 = seatsById(allocations2027);
+const seatsAn1t2024 = seatsById(allocationsAn1t2024);
+
+const comparisonRows = blocOrder.map((id) => ({
+  id,
+  label: blocLabels[id],
+  y2027: seats2027[id] ?? 0,
+  an1t2024: seatsAn1t2024[id] ?? 0,
+}));
 ---
 
 <BaseLayout
   title="Mécanismes pour une Assemblée du Premier Tour"
-  description="Résumé accessible : l’idée d’intégrer la pluralité du premier tour à l’Assemblée. Options détaillées (abaisser seuils, sièges proportionnels 5-25%, systèmes mixtes majoritaire+proportionnel, meilleurs perdants). Avantages et limites pour refléter les votes T1 sans déstabiliser la gouvernance. Propositions graduelles : minimal (Code électoral), moyen (25% proportionnel), ambitieux (constitutionnel). Liens vers hémicycle hybride et simulateur. Sources du rapport et données officielles. Neutre et pédagogique."
+  description="Comparaison visuelle : scénario Assemblée 2027 (sondages) vs Assemblée du premier tour 2024 (Sainte-Laguë, seuil 3 %). Pédagogique, neutre."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
-    <a href="/analyses">Analyses</a> → <a href="/analyses/assemblee-premier-tour">L’Assemblée du Premier Tour 2027</a> → Mécanismes pour une Assemblée du Premier Tour
+    <a href="/analyses">Analyses</a> → <a href="/analyses/assemblee-premier-tour">L’Assemblée du Premier Tour</a> → Mécanismes
   </nav>
 
   <section>
-    <h2>Mécanismes pour une Assemblée du Premier Tour (AN1T) : seuils, proportionnelle et variantes</h2>
+    <h2>Assemblée 2027 et Assemblée du premier tour</h2>
     <p class="lead">
-      <strong>Idée accessible</strong> : Intégrer la pluralité du premier tour dans la composition de l’Assemblée nationale. Le premier tour capture les préférences réelles et multiples des électeurs. Les mécanismes décrits ici permettent d’en tenir compte plus fidèlement pour l’attribution des sièges, sans les effets de recomposition du second tour.
+      Deux hémicycles côte à côte : une <strong>projection 2027</strong> à partir d’agrégats de sondages récents
+      (juillet 2026, regroupés en blocs législatifs) et l’<strong>Assemblée du premier tour</strong> calculée
+      sur les voix réelles du 1er tour législatives ({t1Date}), réparties en Sainte-Laguë (seuil 3&nbsp;%).
     </p>
-    <p class="meta">
-      Données de référence : résultats définitifs du 1er tour législatives 2024 (open data Ministère de l’Intérieur / data.gouv.fr). Simulations LMDPT (Sainte-Laguë). 
-      Contenu strictement neutre, factuel et pédagogique. Aucune prise de position sur réforme. Aligné avec la charte LMDPT. Inspiré des rapports institutionnels et think tanks (Terra Nova 2023, notes France Stratégie / historiques parlementaires).
-    </p>
-
-    <!-- Strengthened disclaimer (mecanismes) -->
-    <div class="strong-disclaimer" role="note" aria-label="Avertissement renforcé">
-      <strong>⚠ Avertissement éditorial renforcé :</strong> Les tableaux, exemples chiffrés et propositions graduelles (Code électoral → 25 % proportionnel → révision) sont <em>des illustrations techniques</em> fondées sur données T1 2024. Ils ne constituent ni un programme, ni une prédiction, ni une recommandation. Ce dossier vise uniquement à rendre les mécanismes compréhensibles pour un public citoyen. Consultez toujours les textes légaux officiels.
-    </div>
-  </section>
-
-  <!-- Résumé accessible (couche 1) -->
-  <section class="card">
-    <h3>Résumé accessible : l’idée d’intégrer la pluralité du premier tour à l’Assemblée</h3>
-    <p>
-      Actuellement, les 577 députés sont élus au scrutin uninominal majoritaire à deux tours dans des circonscriptions. Le premier tour révèle la pluralité des préférences ; le second tour la recompose via alliances et éliminations.
-    </p>
-    <p>
-      Une « Assemblée du Premier Tour » utiliserait les scores du T1 pour attribuer des sièges de manière plus proportionnelle aux voix nationales ou locales. 
-      Plusieurs leviers existent :
-    </p>
-
-    <!-- Schéma simple de flux (lisibilité WCAG : tokens, étapes empilables) -->
-    <div class="an1t-flow" role="group" aria-labelledby="an1t-flow-title">
-      <p id="an1t-flow-title" class="an1t-flow-title">Schéma simple du processus AN1T</p>
-      <ol class="an1t-flow-steps">
-        <li class="an1t-flow-step">
-          <span class="an1t-flow-num" aria-hidden="true">1</span>
-          <span class="an1t-flow-label">Votes T1 par circonscription</span>
-        </li>
-        <li class="an1t-flow-arrow-item" aria-hidden="true"><span class="an1t-flow-arrow">↓</span></li>
-        <li class="an1t-flow-step">
-          <span class="an1t-flow-num" aria-hidden="true">2</span>
-          <span class="an1t-flow-label">Agrégation nationale / par bloc</span>
-        </li>
-        <li class="an1t-flow-arrow-item" aria-hidden="true"><span class="an1t-flow-arrow">↓</span></li>
-        <li class="an1t-flow-step">
-          <span class="an1t-flow-num" aria-hidden="true">3</span>
-          <span class="an1t-flow-label">Application du seuil (ex. 3&nbsp;%)</span>
-        </li>
-        <li class="an1t-flow-arrow-item" aria-hidden="true"><span class="an1t-flow-arrow">↓</span></li>
-        <li class="an1t-flow-step">
-          <span class="an1t-flow-num" aria-hidden="true">4</span>
-          <span class="an1t-flow-label">Répartition (Sainte-Laguë ou meilleurs perdants)</span>
-        </li>
-        <li class="an1t-flow-arrow-item" aria-hidden="true"><span class="an1t-flow-arrow">↓</span></li>
-        <li class="an1t-flow-step an1t-flow-step--result">
-          <span class="an1t-flow-num" aria-hidden="true">5</span>
-          <span class="an1t-flow-label">Sièges AN1T</span>
-        </li>
-      </ol>
-      <p class="an1t-flow-variant">
-        <strong>Variante mixte :</strong> sièges majoritaires locaux + compensation via meilleurs perdants T1.
-      </p>
-    </div>
-    <ul>
-      <li><strong>Seuil</strong> : pourcentage minimum de voix pour accéder aux sièges (ex. 3 % ou 5 %).</li>
-      <li><strong>Dose proportionnelle</strong> : part des sièges attribués à la proportionnelle (0 % = tout majoritaire ; 100 % = tout proportionnel ; ex. 25 % ou 50 %).</li>
-      <li><strong>Mixte</strong> : combinaison de sièges locaux (uninominal) + sièges nationaux/régionaux proportionnels.</li>
-      <li><strong>Meilleurs perdants</strong> : les sièges proportionnels sont attribués aux candidats d’un parti ayant obtenu les meilleurs scores au T1 parmi ceux non élus localement.</li>
-    </ul>
-    <p>
-      <strong>Exemple concret 2024 (577 sièges, proportionnelle pure nationale, seuil 3 %, Sainte-Laguë)</strong> : 
-      RN &amp; alliés ≈ 223 sièges, NFP ≈ 184, Ensemble ≈ 132, LR ≈ 38 (autres : 0). 
-      À comparer aux sièges réels après second tour (NFP 182, RN 125, Ensemble 99…).
-    </p>
-    <p class="meta">
-      Ces écarts illustrent l’impact des mécanismes. <a href="/analyses/assemblee-premier-tour">Voir l’outil d’hémicycle hybride interactif</a> (composant existant) pour visualiser les allocations proportionnelles T1 superposées (couche 1 transparence = groupes actuels + couche 2 couleurs pleines = projections dans quartiers correspondants). Explications pédagogiques des deux couches, légende améliorée et mini-guide « pourquoi le 1er tour compte pour la représentation » sur la page de simulation.
+    <p class="meta disclaimer">
+      Illustration pédagogique — pas une prédiction ni une proposition de réforme.
     </p>
   </section>
 
-  <!-- Options détaillées -->
-  <section>
-    <h3>Options détaillées</h3>
-
-    <!-- 1. Seuils -->
-    <div class="card option-card">
-      <h4>1. Les seuils d’accès</h4>
-      <p>
-        Un seuil (exprimé en % des suffrages exprimés) exclut les listes/partis en dessous avant répartition. Il limite la fragmentation mais réduit la fidélité à la pluralité du T1.
-      </p>
-      <table class="comp-table">
-        <thead>
-          <tr><th>Seuil</th><th>RN &amp; alliés</th><th>NFP</th><th>Ensemble</th><th>LR</th><th>Autres</th><th>Remarque</th></tr>
-        </thead>
-        <tbody>
-          {thresholdExamples.map((ex) => (
-            <tr>
-              <td><strong>{ex.seuil}</strong></td>
-              <td>{ex.rn}</td>
-              <td>{ex.nfp}</td>
-              <td>{ex.ens}</td>
-              <td>{ex.lr}</td>
-              <td>{ex.autres}</td>
-              <td class="meta">{ex.note}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p class="meta">Exemples indicatifs sur base voix T1 2024 (577 sièges). Un seuil plus élevé favorise les grands blocs au détriment des petits. Abaisser le seuil (ex. de 5 % à 3 % ou 0 %) augmente la représentation des sensibilités plus marginales exprimées au T1.</p>
-    </div>
-
-    <!-- 2. Dose proportionnelle (5-25 % focus) -->
-    <div class="card option-card">
-      <h4>2. Dose proportionnelle (part des sièges)</h4>
-      <p>
-        La « dose » désigne la proportion de sièges distribués selon les voix nationales (ou agrégées) plutôt qu’au scrutin majoritaire local. 
-        Exemples classiques : 0 % (statu quo majoritaire), 25 %, 50 %, ou 100 % (proportionnelle intégrale).
-      </p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-        <div>
-          <strong>Proportionnelle pure 577 sièges (dose 100 %)</strong>
-          <ul style="font-size:0.9rem;">
-            {seats577.map((s) => (
-              <li>{s.label} : <strong>{s.seats}</strong> sièges ({s.pct.toFixed(1)} %)</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <strong>Proposition 150 sièges (dose partielle, chambre parallèle)</strong>
-          <ul style="font-size:0.9rem;">
-            {seats150.map((s) => (
-              <li>{s.label} : <strong>{s.seats}</strong> sièges ({s.pct.toFixed(1)} %)</li>
-            ))}
-          </ul>
-          <p class="meta">Exemple souvent évoqué : 150 sièges proportionnels + 577 majoritaires inchangés (double légitimité possible).</p>
-        </div>
-      </div>
-
-      <h5 style="margin-top:0.75rem;">Exemples de doses proportionnelles limitées (5-25 %)</h5>
-      <ul style="font-size:0.9rem;">
-        {doseExamples.map((d) => (
-          <li><strong>{d.dose}</strong> — {d.note}</li>
-        ))}
-      </ul>
-      <p class="meta">Ces doses peuvent s’appliquer via sièges compensatoires (meilleurs perdants) ou sièges additionnels, sans supprimer le scrutin majoritaire local.</p>
-    </div>
-
-    <!-- 3 & 4. Mixte + Meilleurs perdants -->
-    <div class="card option-card">
-      <h4>3. Systèmes mixtes + 4. Mécanisme des « meilleurs perdants »</h4>
-      <p>
-        Un système mixte combine :
-      </p>
-      <ul>
-        <li>Sièges « locaux » : uninominal majoritaire dans des circonscriptions (souvent redécoupées si dose élevée).</li>
-        <li>Sièges « proportionnels » : attribués au niveau national ou régional pour corriger les distorsions.</li>
-      </ul>
-      <p>
-        <strong>Meilleurs perdants</strong> : méthode courante pour désigner les élus proportionnels sans listes bloquées. 
-        Pour chaque parti, on classe les candidats non élus au scrutin local par ordre décroissant de voix au T1 ; on prend les premiers pour combler le quota proportionnel. Cela reflète la pluralité locale tout en corrigeant au niveau national.
-      </p>
-      <p>
-        <strong>Systèmes mixtes (majoritaire + proportionnel)</strong> : combinaison classique (ex. 75 % majoritaire local + 25 % proportionnel compensatoire). Les sièges proportionnels corrigent les écarts entre voix nationales T1 et sièges locaux remportés. Variantes : compensatoire (les prop corrigent) ou parallèle/additif (indépendants).
-      </p>
-
-      <h5 style="margin-top:1rem;">Exemple illustratif mixte 25 % proportionnelle (≈144 sièges compensatoires) — base T1 2024</h5>
-      <table class="comp-table">
-        <thead>
-          <tr><th>Bloc</th><th>Sièges majoritaires (locaux)</th><th>Sièges prop (meilleurs perdants T1)</th><th>Total</th></tr>
-        </thead>
-        <tbody>
-          {mixte25.map((row) => (
-            <tr>
-              <td>{row.label}</td>
-              <td>{row.seatsMaj}</td>
-              <td>{row.seatsProp}</td>
-              <td><strong>{row.total}</strong></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p class="meta">Les chiffres majoritaires sont indicatifs (similaires à la logique actuelle ajustée). Les sièges prop vont prioritairement aux candidats ayant le plus fort score T1 dans leur parti parmi les perdants de circonscription. Variante : vote unique (T1 multifonction) ou double vote (local + liste).</p>
-    </div>
-  </section>
-
-  <!-- Comparaison AN réelle vs AN1T -->
-  <section class="card">
-    <h3>Comparaison : Assemblée réelle 2024 (post-2nd tour) vs simulation AN1T proportionnelle pure (T1 2024)</h3>
-    <table class="comp-table">
-      <thead>
-        <tr><th>Bloc</th><th>Sièges réels (2nd tour)</th><th>AN1T proportionnelle T1 (seuil 3 %)</th><th>Écart</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>RN &amp; alliés</td><td>125</td><td>223</td><td class="meta">+98 (sous-représenté au final)</td></tr>
-        <tr><td>NFP</td><td>182</td><td>184</td><td class="meta">+2</td></tr>
-        <tr><td>Ensemble</td><td>99</td><td>132</td><td class="meta">+33</td></tr>
-        <tr><td>LR</td><td>47</td><td>38</td><td class="meta">−9</td></tr>
-        <tr><td>Autres</td><td>124</td><td>0</td><td class="meta">−124 (agrégation différente : petits groupes vs seuil)</td></tr>
-      </tbody>
-    </table>
-    <p class="meta">L’écart illustre comment le second tour et les désistements recomposent la représentation par rapport à la pluralité brute du premier tour. L’outil d’hémicycle hybride permet de visualiser ces écarts spatialement.</p>
-  </section>
-
-  <!-- Avantages et limites pour refléter la pluralité du 1er tour sans déstabiliser la gouvernance -->
-  <section class="card">
-    <h3>Avantages et limites pour refléter les votes du premier tour sans déstabiliser la gouvernance</h3>
-    <p>
-      Les mécanismes visent à intégrer plus fidèlement la pluralité exprimée au T1 (chaque voix du premier tour pèse davantage) tout en maintenant la capacité de l’institution à former des majorités opérationnelles pour gouverner. Le dosage (seuil, dose, mixte) est le levier central.
-    </p>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0;">
-      <div>
-        <h4 style="font-size:1rem;">Avantages (pluralité)</h4>
-        <ul style="font-size:0.9rem;">
-          <li><strong>Fidélité aux voix du T1</strong> : chaque suffrage exprimé au premier tour contribue plus directement à la répartition nationale des sièges, sans être effacé par les désistements ou les reports stratégiques.</li>
-          <li><strong>Transparence immédiate</strong> : les scores T1 sont officiels, publics et connus le soir du scrutin ; la simulation est reproductible en open data (Sainte-Laguë + agrégats blocs).</li>
-          <li><strong>Réduction du vote utile négatif</strong> : moins d’incitation à « barrer la route » au second tour ; les petites sensibilités ou les candidats locaux forts peuvent être représentés sans alliance forcée.</li>
-          <li><strong>Visibilité de la géographie de la pluralité</strong> : combinable avec l’atlas circonscriptions (pluralité T1 par département) et l’hémicycle hybride.</li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="font-size:1rem;">Limites (gouvernance et représentation)</h4>
-        <ul style="font-size:0.9rem;">
-          <li><strong>Gouvernabilité</strong> : une représentation plus fidèle à la pluralité (souvent fragmentée) peut conduire à des majorités relatives plus fréquentes et à des coalitions obligatoires. Le statu quo majoritaire favorise généralement des majorités claires ou des blocs dominants.</li>
-          <li><strong>Lien territorial</strong> : la proportionnelle pure nationale affaiblit le lien député-circonscription. Les systèmes mixtes avec meilleurs perdants ou proportionnelle régionale cherchent à le préserver.</li>
-          <li><strong>Effet des seuils</strong> : tout seuil (0 %, 3 %, 5 %) exclut mécaniquement une partie de la pluralité (ex. régionalistes, extrêmes marginaux). Un seuil trop bas fragmente ; trop haut filtre des voix réelles du T1.</li>
-          <li><strong>Comportements adaptatifs</strong> : partis et électeurs modifieraient tactiques (présentations multiples, reports au T1). Les simulations actuelles sont « statiques » sur données 2024.</li>
-          <li><strong>Double légitimité</strong> : une chambre parallèle (ex. 150 sièges) crée deux catégories de députés ; une réforme intégrée modifie l’Assemblée unique.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="meta">Aucun mécanisme ne supprime complètement les arbitrages entre pluralité et stabilité. Les choix portent sur le dosage.</p>
-  </section>
-
-  <!-- Propositions graduelles -->
-  <section class="card">
-    <h3>Propositions graduelles : minimal (Code électoral), moyen (25 % proportionnel), ambitieux (constitutionnel)</h3>
-    <p>Du plus léger (modification du Code électoral) au plus ambitieux (révision constitutionnelle). Toutes les options ci-dessous s’appuient sur les résultats du premier tour déjà disponibles. Alignées avec la vision « Democracy Over Elimination » : refléter la pluralité du T1 sans présumer de la meilleure gouvernance.</p>
-
-    <ol style="font-size:0.95rem; line-height:1.65;">
-      <li><strong>Minimal (changement du Code électoral)</strong> : Modification ordinaire du Code électoral pour abaisser les seuils, introduire une petite dose proportionnelle ou formaliser les meilleurs perdants pour compensation. Ex. : ajustement des articles L.120 et suivants. Publication de simulations publiques (comme l’outil LMDPT). Aucune révision constitutionnelle. Permet une meilleure intégration de la pluralité T1 par ajustements techniques mineurs.</li>
-      <li><strong>Moyen (25 % proportionnel)</strong> : Système mixte : ~75 % majoritaire local (433 sièges) + ~25 % (144 sièges) proportionnels compensatoires sur scores T1 (meilleurs perdants). Modifie le Code électoral + redécoupage partiel possible. Loi ordinaire ou organique. Préserve la gouvernance majoritaire pour l’essentiel tout en reflétant mieux la pluralité du premier tour. Modèle mixte classique analysé dans la littérature institutionnelle.</li>
-      <li><strong>Ambitieux (constitutionnel)</strong> : Refonte plus large avec dose élevée (50 %+ ) ou proportionnelle intégrale (nationale/départementale). Peut impliquer révision constitutionnelle (art. 89) si création d’une nouvelle assemblée ou modification profonde du mode de représentation (art. 24 et Titre IV). Exige consensus large. Exemple historique de proportionnelle (loi 1985, abrogée 1986).</li>
-    </ol>
-    <p class="meta">Le choix du seuil (abaisser à 0-3 % ou maintenir/hausser à 5 %) et de la dose (5 %, 10 %, 25 %, 50 %) sont des paramètres indépendants combinables dans chaque niveau.</p>
-  </section>
-
-  <!-- Intégration concrète + lien outil hémicycle -->
-  <!-- Liens avec les outils existants -->
-  <section class="card">
-    <h3>Liens avec les outils existants (hémicycle hybride et simulateur)</h3>
-    <p>
-      Les mécanismes décrits ici ne sont pas seulement théoriques : ils sont déjà implémentés et visualisables via les outils interactifs du site.
-    </p>
-    <ul>
-      <li><strong>Hémicycle hybride</strong> : composant <a href="/analyses/assemblee-premier-tour">AssembleeHemicycle</a> sur la page principale. Superpose les allocations proportionnelles T1 (dose variable, seuils) à la structure réelle des groupes de l’Assemblée. Permet de comparer visuellement pluralité T1 vs réalité post-second tour.</li>
-      <li><strong>Simulateur</strong> : sur <a href="/analyses/assemblee-premier-tour">/analyses/assemblee-premier-tour</a>, utilisez l’outil interactif (sliders, scénarios 2027, export) pour tester en direct différentes doses (5-25-50-100 %), seuils (0/3/5 %) et hypothèses de voix. Les calculs reposent sur la même fonction <code>simulateAn1tSeats</code> (Sainte-Laguë) que les exemples de cette page.</li>
-      <li><strong>Atlas géographique</strong> : <a href="/atlas/2024-legislatives">Atlas des législatives 2024</a> montre la pluralité locale du T1 par circonscription et département — donnée de base indispensable pour concevoir des systèmes mixtes avec ancrage territorial.</li>
-    </ul>
-    <p class="meta">Ces outils permettent au lecteur de reproduire et varier les exemples de cette page sur données réelles ou projections.</p>
-  </section>
-
-  <section class="card">
-    <h3>Comment ça pourrait s’intégrer concrètement ? Exemples chiffrés</h3>
-    <p>
-      Les mécanismes ci-dessus peuvent s’appliquer directement aux données du premier tour déjà collectées. Voici des illustrations chiffrées sur les résultats 2024 (exprimes ≈ 32,06 millions).
-    </p>
-
-    <h4>Exemple 1 — Proportionnelle pure (577 sièges, seuil 3 %)</h4>
-    <p>
-      RN &amp; alliés : 223 sièges ; NFP : 184 ; Ensemble : 132 ; LR : 38. 
-      Écart majeur avec la réalité post-second tour (RN 125, NFP 182). Visualisez la répartition sur la structure actuelle via l’outil hybride.
-    </p>
-
-    <div style="margin: 1rem 0;">
+  <section class="hemicycle-grid">
+    <div class="hemicycle-panel">
       <AssembleeHemicycle
-        title="Exemple : Allocation AN1T 577 sièges (hybride pédagogique)"
-        allocations={an1t577.map(a => ({ id: a.id, label: a.label, color: a.color, seats: a.seats }))}
+        title="Assemblée 2027 (scénario sondages)"
+        allocations={allocations2027}
         totalSeats={577}
-        subtitle="Couche 1 (transparence) : groupes actuels. Couche 2 (couleurs pleines) : projection proportionnelle T1 2024 placée dans quartiers correspondants du modèle. Légende pour écarts."
+        subtitle="Hybride : structure actuelle (transparence) + projection sondages juil. 2026 dans les quartiers correspondants."
+        initialMode="hybrid"
+        showControls={false}
       />
     </div>
-
-    <h4>Exemple 2 — Chambre de 150 sièges proportionnels</h4>
-    <p>
-      RN : ≈ 58 sièges ; NFP : ≈ 48 ; Ensemble : ≈ 34 ; LR : ≈ 10. 
-      Cette « dose » limitée peut coexister avec l’Assemblée issue du second tour sans révision constitutionnelle majeure.
-    </p>
-
-    <h4>Exemple 3 — Intégration via meilleurs perdants (mixte 25 %)</h4>
-    <p>
-      Dans un système mixte, après attribution des sièges locaux, les 144 sièges compensatoires iraient aux candidats ayant le plus haut score T1 par parti parmi les non-élus. 
-      Un candidat RN arrivé deuxième avec 38 % dans une circonscription rurale perdue au second tour pourrait ainsi obtenir un siège « proportionnel » national. 
-      L’expérience du vote pour l’électeur reste proche du bulletin unique actuel (premier tour multifonction comme décrit dans les rapports Terra Nova).
-    </p>
-
-    <p class="meta" style="margin-top:1rem;">
-      <strong>Lien explicite vers l’outil existant</strong> : 
-      L’outil d’<a href="/analyses/assemblee-premier-tour">hémicycle hybride interactif</a> (sur la page principale de simulation) permet déjà de superposer des allocations proportionnelles T1 à la carte des groupes actuels (transparence + couleurs pleines placées dans quartiers correspondants). 
-      Explications améliorées des couches, légende clarifiée et mini-guide sur le rôle du 1er tour pour la représentation y sont intégrés. Il constitue une base concrète pour tester visuellement les variantes ci-dessus sur données réelles ou projections 2027. Retour : <a href="/analyses/assemblee-premier-tour">page hémicycle hybride + simulateur</a>.
-    </p>
+    <div class="hemicycle-panel">
+      <AssembleeHemicycle
+        title="Assemblée du premier tour (2024)"
+        allocations={allocationsAn1t2024}
+        totalSeats={577}
+        subtitle={`577 sièges — voix du 1er tour législatives ${t1Date}, Sainte-Laguë, seuil 3 %.`}
+        initialMode="projection"
+        showControls={false}
+      />
+    </div>
   </section>
 
-  <!-- Section dédiée intégration institutionnelle -->
   <section class="card">
-    <h3>Comment cela pourrait s'intégrer dans la Constitution et le Code électoral</h3>
-    <p>
-      Le système électoral pour l'élection des députés est régi principalement par la loi, et non fixé en détail par la Constitution. Toute évolution vers une « Assemblée du Premier Tour » (AN1T) ou des mécanismes associés (seuils, dose, mixtes, meilleurs perdants) s'inscrit dans ce cadre législatif existant, avec des degrés variables de complexité.
-    </p>
-
-    <h4>Cadre constitutionnel</h4>
-    <ul style="font-size:0.9rem;">
-      <li><strong>Article 24 de la Constitution du 4 octobre 1958</strong> : « Les députés à l'Assemblée nationale sont élus au suffrage direct. » Le texte ne prescrit ni le scrutin majoritaire ni la proportionnelle. Il pose le principe de l'élection directe et de la représentation nationale.</li>
-      <li><strong>Articles 25 et suivants</strong> : la durée des pouvoirs et certaines règles de composition relèvent de la loi organique. Le nombre de députés est fixé par la loi organique (dispositions codifiées dans le Code électoral).</li>
-      <li>Principes directeurs : égalité devant le suffrage et sincérité du scrutin (contrôle du Conseil constitutionnel sur les lois électorales).</li>
-    </ul>
-
-    <h4>Cadre du Code électoral</h4>
-    <ul style="font-size:0.9rem;">
-      <li>Livre Ier, Titre II (élections à l'Assemblée nationale) : les articles L. 120 et suivants définissent le scrutin uninominal majoritaire à deux tours dans les circonscriptions (art. L. 123 principalement).</li>
-      <li>Le seuil, le mode de répartition (plus forte moyenne, etc.) et les modalités de candidature sont fixés par ces articles et décrets d'application.</li>
-      <li>Exemple historique concret : la loi n° 85-690 du 10 juillet 1985 a modifié le Code électoral pour instaurer un scrutin de liste proportionnel départemental (seuil de 5 % des suffrages exprimés, répartition à la plus forte moyenne). Appliqué uniquement aux législatives de 1986, puis abrogé par la loi du 11 juillet 1986 rétablissant le scrutin majoritaire à deux tours.</li>
-    </ul>
-
-    <h4>Voies d'intégration pour les mécanismes AN1T</h4>
-    <table class="comp-table" style="margin:0.75rem 0;">
+    <h3>Écarts par bloc (577 sièges)</h3>
+    <table class="comp-table">
       <thead>
-        <tr><th>Mécanisme / option</th><th>Voie législative probable</th><th>Exemples / notes</th></tr>
+        <tr>
+          <th>Bloc</th>
+          <th>Scénario 2027 (sondages)</th>
+          <th>AN1T 2024 (1er tour réel)</th>
+          <th>Écart</th>
+        </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Modification du scrutin (dose proportionnelle, mixtes, meilleurs perdants)</td>
-          <td>Loi ordinaire modifiant le Code électoral (art. L.123 et s.)</td>
-          <td>Redécoupage des circonscriptions souvent associé (loi). Compatible avec un premier tour multifonction.</td>
-        </tr>
-        <tr>
-          <td>Proportionnelle intégrale ou seuil national</td>
-          <td>Loi modifiant le Code électoral (précédent 1985)</td>
-          <td>Peut inclure agrégation nationale ou départementale. Pas de révision constitutionnelle requise a priori.</td>
-        </tr>
-        <tr>
-          <td>Chambre parallèle / 150 sièges AN1T (dose consultative)</td>
-          <td>Loi (éventuellement organique pour création)</td>
-          <td>Peut coexister avec les 577 sans toucher au gouvernement issu du scrutin majoritaire. Moins invasif.</td>
-        </tr>
-        <tr>
-          <td>Réforme structurelle forte (nouvelle assemblée ou refonte bicamérale)</td>
-          <td>Révision constitutionnelle (art. 89)</td>
-          <td>Nécessaire si création d'une nouvelle chambre ou modification profonde de la représentation (Titre IV).</td>
-        </tr>
+        {comparisonRows.map((row) => {
+          const delta = row.y2027 - row.an1t2024;
+          const deltaLabel = delta > 0 ? `+${delta}` : `${delta}`;
+          return (
+            <tr>
+              <td>{row.label}</td>
+              <td>{row.y2027}</td>
+              <td>{row.an1t2024}</td>
+              <td class="meta">{deltaLabel}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
-
     <p class="meta">
-      Sources : Constitution du 4 octobre 1958 (Conseil constitutionnel) ; Code électoral sur Légifrance ; loi du 10 juillet 1985 et historique parlementaire. Les simulations LMDPT (données T1) peuvent servir de base technique pour évaluer l'impact de toute modification législative proposée.
-    </p>
-    <p>
-      L'Atlas des résultats par circonscription (<a href="/atlas/2024-legislatives">/atlas/2024-legislatives</a>) documente la distribution locale des voix au premier tour — donnée essentielle pour concevoir des mécanismes mixtes qui combinent proportionnelle nationale et ancrage territorial.
+      Le scénario 2027 traduit des intentions de vote actuelles ; l’AN1T 2024 part des suffrages officiels
+      du premier tour. Les deux utilisent la même méthode (Sainte-Laguë, seuil 3&nbsp;%) — seules les sources de voix diffèrent.
     </p>
   </section>
 
-  <section class="card">
-    <h3>Poursuivre</h3>
+  <section class="card links-card">
+    <h3>Aller plus loin</h3>
     <ul>
-      <li><a href="/analyses/assemblee-premier-tour">Retour à la simulation interactive &amp; hémicycle hybride 2027</a></li>
-      <li><a href="/debats/assemblee-premier-tour">Débat : Faut-il une chambre parlementaire élue sur le seul premier tour ?</a> (positions sourcées, pluralité)</li>
-      <li><a href="/analyses/legislatives-2024-desistements">Impact des désistements 2024</a></li>
+      <li><a href="/analyses/assemblee-premier-tour">Simulateur interactif</a> — hybride, seuils, autres scénarios 2027</li>
+      <li><a href="/debats/assemblee-premier-tour">Débat associé</a> — faut-il une chambre élue sur le seul 1er tour ?</li>
+      <li><a href="/analyses/legislatives-2024-desistements">Désistements 2024</a> — impact sur la recomposition</li>
     </ul>
-  </section>
-
-  <!-- Parcours citoyen guidé pour cette page (AN1T focus) -->
-  <section class="card" style="background: #f8fafc; border-left: 4px solid var(--accent);">
-    <h3 style="margin-top:0;">Parcours citoyen : étapes recommandées sur ce dossier</h3>
-    <ol style="font-size:0.9rem; margin:0.25rem 0 0.4rem 1.1rem;">
-      <li>Lire le résumé accessible ci-dessus.</li>
-      <li>Consulter les tableaux comparatifs (seuils, dose, mixte).</li>
-      <li>Étudier les avantages/limites et propositions graduelles.</li>
-      <li>Revenir à <a href="/analyses/assemblee-premier-tour">l’outil AN1T interactif</a> pour visualiser les allocations.</li>
-      <li>Participer au débat ou vérifier les sources.</li>
-    </ol>
-    <p class="meta" style="font-size:0.78rem;">Ce parcours rend les mécanismes complexes accessibles. Naviguez librement ou suivez l’ordre.</p>
   </section>
 
   <section>
-    <h3>Sources et références</h3>
-    <ul class="meta" style="font-size:0.85rem; line-height:1.5;">
-      {mecanismesData.sources.map((s) => (
+    <h3>Sources</h3>
+    <ul class="meta sources-list">
+      {mecanismesData.sources.slice(0, 4).map((s) => (
         <li><a href={s.url} target="_blank" rel="noopener">{s.label}</a></li>
       ))}
-      <li>Simulation : méthode Sainte-Laguë implémentée dans <code>src/lib/an1t.ts</code> (LMDPT). Blocs civiques agrégés à partir des nuances officielles.</li>
-      <li>Données groupes actuels : Assemblée nationale (structure pour hémicycle hybride).</li>
-      <li>Simulation 150 sièges et comparatifs : issues du jeu de données <code>assemblee-premier-tour-2024.json</code>.</li>
-      <li>Rapport institutionnel de référence : analyses sur systèmes mixtes, dose proportionnelle et seuils (Terra Nova « Proportionnelle : le retour », notes France Stratégie et rapports parlementaires historiques sur le Code électoral). Les simulations LMDPT documentent les écarts sans préconiser.</li>
+      <li>Sondages 2027 (illustration) : agrégats Elabe, Verian, OpinionWay, Harris, Ifop (7–12 juil. 2026).</li>
     </ul>
-    <p class="meta">Ce contenu est strictement pédagogique et factuel. Les projections ne constituent pas des prédictions ni des prises de position sur une réforme. Données de référence dans <code>assemblee-premier-tour-mecanismes.json</code>. aligné avec la charte éditoriale LMDPT (Democracy Over Elimination).</p>
+    <p class="meta">{mecanismesData.method_note}</p>
   </section>
 
   <style>
-    .option-card { margin-bottom: 1.25rem; }
+    .lead { font-size: 1.05rem; line-height: 1.5; max-width: 42rem; }
+    .disclaimer {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.65rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+    }
+    .hemicycle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+    .hemicycle-panel {
+      padding: 0.85rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border, #ddd);
+      border-radius: var(--radius-lg, 10px);
+    }
+    .hemicycle-panel :global(.hemicycle h3) {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
     .comp-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.85rem;
-      margin: 0.75rem 0;
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
     }
-    .comp-table th, .comp-table td {
-      padding: 0.4rem 0.5rem;
+    .comp-table th,
+    .comp-table td {
+      padding: 0.45rem 0.55rem;
       border-bottom: 1px solid var(--border, #ddd);
       text-align: left;
-      vertical-align: top;
     }
     .comp-table th {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--muted, #3a3732);
-      background: rgba(0,0,0,0.02);
+      background: rgba(0, 0, 0, 0.02);
     }
-    .comp-table td.meta { font-size: 0.78rem; color: var(--muted, #3a3732); }
-    .lead { font-size: 1.05rem; line-height: 1.5; }
-    .btn-like {
-      display: inline-block;
-      padding: 0.35rem 0.6rem;
-      background: #f4f4f4;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
+    .links-card ul {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.6;
     }
-    @media (max-width: 640px) {
-      .comp-table { font-size: 0.78rem; }
-      .comp-table th, .comp-table td { padding: 0.3rem 0.35rem; }
-    }
-
-    /* Strengthened disclaimer styles — tokens (pas de hex fixes illisibles) */
-    .strong-disclaimer {
-      background: var(--card);
-      border: 2px solid var(--accent);
-      color: var(--fg);
-      padding: 0.75rem 0.9rem;
-      border-radius: 6px;
-      font-size: 0.95rem;
+    .sources-list {
+      font-size: 0.85rem;
       line-height: 1.5;
-      margin: 0.5rem 0 0.9rem;
+      padding-left: 1.2rem;
     }
-
-    /* Schéma flux AN1T — lisible mobile + contraste élevé */
-    .an1t-flow {
-      margin: 1rem 0 1.25rem;
-      padding: 1rem 1rem 0.85rem;
-      background: var(--card);
-      border: 2px solid var(--border);
-      border-radius: var(--radius-lg, 10px);
-      color: var(--fg);
-    }
-    .an1t-flow-title {
-      margin: 0 0 0.85rem;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--fg) !important;
-      line-height: 1.3;
-    }
-    .an1t-flow-steps {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.15rem;
-    }
-    .an1t-flow-step {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin: 0;
-      min-height: 2.5rem;
-    }
-    .an1t-flow-arrow-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      min-height: 1.25rem;
-      list-style: none;
-    }
-    .an1t-flow-num {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.75rem;
-      height: 1.75rem;
-      border-radius: 50%;
-      background: var(--accent);
-      color: var(--on-accent, #fff);
-      font-weight: 700;
-      font-size: 0.9rem;
-      line-height: 1;
-    }
-    .an1t-flow-label {
-      flex: 1;
-      padding: 0.55rem 0.75rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--fg) !important;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.35;
-    }
-    .an1t-flow-step--result .an1t-flow-label {
-      border-color: var(--accent);
-      border-width: 2px;
-      background: color-mix(in srgb, var(--accent) 12%, var(--bg));
-    }
-    .an1t-flow-arrow {
-      color: var(--accent) !important;
-      font-size: 1.25rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .an1t-flow-variant {
-      margin: 0.9rem 0 0;
-      padding: 0.65rem 0.75rem;
-      border-left: 4px solid var(--accent);
-      background: var(--bg);
-      color: var(--fg) !important;
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-    .an1t-flow-variant strong {
-      color: var(--fg) !important;
-    }
-
-    /* Desktop : flux horizontal compact */
-    @media (min-width: 860px) {
-      .an1t-flow-steps {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.35rem 0.4rem;
-      }
-      .an1t-flow-step {
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: 11.5rem;
-      }
-      .an1t-flow-arrow-item {
-        flex: 0 0 auto;
-        min-height: auto;
-      }
-      .an1t-flow-arrow {
-        transform: rotate(-90deg);
-        display: inline-block;
-      }
-      .an1t-flow-label {
-        font-size: 0.92rem;
-        padding: 0.5rem 0.55rem;
-      }
-    }
-
-    /* Mobile responsiveness for tables/viz on mecanismes AN1T page */
-    .comp-table, table { display: block; overflow-x: auto; white-space: nowrap; max-width: 100%; }
     @media (max-width: 640px) {
-      .comp-table { font-size: 0.76rem; }
-      .option-card, .card { padding: 0.7rem 0.8rem; }
-      table { font-size: 0.76rem; }
-      .comp-table th, .comp-table td { padding: 0.25rem 0.3rem; }
-    }
-    @media (max-width: 420px) {
-      .comp-table { font-size: 0.72rem; }
+      .comp-table { font-size: 0.82rem; display: block; overflow-x: auto; white-space: nowrap; }
+      .hemicycle-grid { grid-template-columns: 1fr; }
     }
   </style>
 </BaseLayout>

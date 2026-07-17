@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsFeed from '../../components/NewsFeed.astro';
+import AlerteCitoyenne from '../../components/AlerteCitoyenne.astro';
 import { ANALYSIS_CATALOG } from '../../lib/analyses';
 import renifleur from '../../data/renifleur/latest.json';
 import type { RenifleurSnapshot } from '../../lib/renifleur';
@@ -23,6 +24,8 @@ const feed = renifleur as RenifleurSnapshot;
       <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire, Blocage immédiat. (Sauf live YouTube)
     </p>
   </section>
+
+  <AlerteCitoyenne previewLimit={3} />
 
   {
     feed.enabled && feed.items.length > 0 && (
