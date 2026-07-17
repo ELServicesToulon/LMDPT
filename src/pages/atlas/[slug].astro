@@ -59,8 +59,8 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
     </p>
     <p class="fil-directeur-tag">
-      <strong>Fil directeur LMDPT</strong> — même 1er tour, deux traductions : pluralité proportionnelle
-      (gauche) vs résultat réel qui a suivi (droite). Couleurs T1 = proximité de programmes.
+      <strong>Fil directeur LMDPT</strong> — Assemblée du 1er tour (gauche) vs Assemblée des législatives
+      qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.
     </p>
     <p>
       {
@@ -102,6 +102,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
           firstRoundMeta={dual.firstRoundMeta}
           realMeta={dual.realMeta}
           realPending={dual.realPending}
+          differential={dual.differential}
         />
       )
     }

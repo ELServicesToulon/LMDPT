@@ -35,6 +35,15 @@ interface Props {
   t2Label?: string;
   /** Résultat réel pas encore connu (ex. présidentielle 2027) */
   realPending?: boolean;
+  /** Différentiel sièges (T1 prop. − réel législatif) */
+  differential?: Array<{
+    id: string;
+    label: string;
+    firstRoundSeats: number;
+    realSeats: number;
+    delta: number;
+    color: string;
+  }>;
 }
 
 const {
@@ -48,6 +57,7 @@ const {
   t1Label = '1er tour',
   t2Label = 'Après législatives',
   realPending = false,
+  differential,
 } = Astro.props;
 
 // Positions officielles (modèle établi Wikimedia)
@@ -137,12 +147,12 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
 
 <section class="dual-assemblee" aria-labelledby={`dual-title-${uid}`}>
   <header class="dual-header">
-    <h3 id={`dual-title-${uid}`}>Deux Assemblées, un même 1er tour</h3>
+    <h3 id={`dual-title-${uid}`}>Deux Assemblées — 1er tour vs ce qui a suivi</h3>
     <p class="dual-lead">
-      À gauche : ce que donnerait une Assemblée <strong>entièrement calée sur les voix du 1er tour</strong>
-      (modèle AN1T / Sainte-Laguë, hémicycle Wikimedia). Couleurs = <strong>proximité de programmes</strong>
-      (spectre d’idées gauche → droite). À droite : l’Assemblée <strong>réelle</strong> issue des
-      législatives qui ont suivi ce premier tour.
+      À gauche : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
+      couleurs = <strong>proximité de programmes</strong>). À droite : Assemblée <strong>réelle des législatives</strong>
+      qui ont suivi (présidentielle → législatives) ou composition post-scrutin législatif.
+      Le différentiel de sièges documente l’écart — sans le moraliser.
     </p>
   </header>
 
@@ -257,13 +267,51 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     </article>
   </div>
 
+  {
+    differential && differential.length > 0 && (
+      <div class="diff-table-wrap" role="region" aria-label="Différentiel de sièges">
+        <h4 class="diff-title">Différentiel de sièges (législatives réelles − Assemblée 1er tour)</h4>
+        <p class="meta diff-intro">
+          Δ positif = plus de sièges après les législatives qu’en proportion pure du 1er tour.
+          Δ négatif = moins de sièges — effet uninominal, désistements, reports, participation.
+        </p>
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th scope="col">Bloc</th>
+              <th scope="col">Assemblée 1er tour</th>
+              <th scope="col">Législatives réelles</th>
+              <th scope="col">Δ sièges</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              differential.map((row) => (
+                <tr>
+                  <td>
+                    <span class="swatch" style={`background:${row.color}`}></span>
+                    {row.label}
+                  </td>
+                  <td class="num">{row.firstRoundSeats}</td>
+                  <td class="num">{row.realSeats}</td>
+                  <td class:list={['num', 'delta', { 'delta-pos': row.delta > 0, 'delta-neg': row.delta < 0 }]}>
+                    {row.delta > 0 ? `+${row.delta}` : row.delta}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   <aside class="dual-footnote" aria-label="Lecture">
     <p>
-      <strong>Lecture DOE</strong> — Même 1er tour, deux traductions en sièges. À gauche : pluralité des
-      voix T1 convertie proportionnellement (Sainte-Laguë). À droite : filtre du second tour, des
-      désistements et du uninominal. Les couleurs de gauche suivent la <em>proximité des programmes</em>
-      (teintes proches = familles d’idées proches) ; celles de droite les blocs institutionnels.
-      Illustration pédagogique — pas une prédiction ni un jugement sur le mode de scrutin.
+      <strong>Lecture DOE</strong> — En France, une présidentielle est toujours suivie de législatives.
+      À gauche : pluralité du 1er tour (présidentiel ou législatif) en proportion Sainte-Laguë.
+      À droite : Assemblée réellement élue ensuite. Couleurs de gauche = <em>proximité de programmes</em> ;
+      couleurs de droite = blocs institutionnels. Pas de prédiction ni de jugement sur le mode de scrutin.
     </p>
     <p class="spectrum-key" aria-hidden="true">
       <span class="sk-label">Proximité programmes</span>
@@ -435,6 +483,53 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     font-size: 0.9rem;
     line-height: 1.5;
     max-width: 22rem;
+  }
+  .diff-table-wrap {
+    margin-top: 1.15rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border, #e5e2dc);
+  }
+  .diff-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.02rem;
+    color: var(--fg, #0a0a0a);
+  }
+  .diff-intro {
+    margin: 0 0 0.55rem;
+    font-size: 0.86rem;
+  }
+  .diff-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .diff-table th,
+  .diff-table td {
+    text-align: left;
+    padding: 0.45rem 0.5rem;
+    border-bottom: 1px solid var(--border, #e5e2dc);
+    color: var(--fg, #0a0a0a);
+  }
+  .diff-table th {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .diff-table .num {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .diff-table .delta {
+    font-weight: 700;
+  }
+  .diff-table .delta-pos {
+    color: #1a7a3a;
+  }
+  .diff-table .delta-neg {
+    color: #a32020;
+  }
+  .diff-table td .swatch {
+    margin-right: 0.4rem;
+    vertical-align: middle;
   }
   @media (prefers-color-scheme: dark) {
     .dual-panel {

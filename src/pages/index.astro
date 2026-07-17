@@ -54,11 +54,12 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <!-- Fil directeur — pour tous les scrutins -->
   <section class="card fil-directeur" id="fil-directeur" aria-labelledby="fil-directeur-title">
     <p class="eyebrow">Fil directeur du site</p>
-    <h2 id="fil-directeur-title">Un même 1er tour, deux traductions — pour tous les scrutins</h2>
+    <h2 id="fil-directeur-title">1er tour présidentiel → législatives — différentiel pour tous les scrutins</h2>
     <p>
-      Sur <strong>chaque</strong> élection de l’atlas : à gauche, la pluralité du 1er tour en représentation
-      proportionnelle (Sainte-Laguë, couleurs = proximité de programmes) ; à droite, le résultat réel qui a suivi
-      (second tour présidentiel ou Assemblée post-législatives). C’est la boussole Democracy Over Elimination.
+      Sur <strong>chaque présidentielle</strong> : à gauche, l’Assemblée du <strong>1er tour présidentiel</strong>
+      (Sainte-Laguë, proximité de programmes) ; à droite, l’Assemblée réelle des
+      <strong>législatives qui ont suivi</strong>. Tableau Δ sièges. Même logique pour un législatif pur.
+      Boussole Democracy Over Elimination.
     </p>
     <p class="meta">
       <a href="/atlas">Voir tous les scrutins →</a>
@@ -84,6 +85,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
           firstRoundMeta={dualHome.firstRoundMeta}
           realMeta={dualHome.realMeta}
           realPending={dualHome.realPending}
+          differential={dualHome.differential}
         />
       )
     }

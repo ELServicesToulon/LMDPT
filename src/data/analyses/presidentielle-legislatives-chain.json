@@ -1,0 +1,97 @@
+{
+  "title": "Chaîne présidentielle → législatives",
+  "updated": "2026-07-17",
+  "disclaimer": "En France, chaque présidentielle est suivie de législatives. Le fil directeur LMDPT compare l’Assemblée issue d’une répartition proportionnelle du 1er tour présidentiel (Sainte-Laguë, 577 sièges) à l’Assemblée réelle élue aux législatives qui ont suivi. Pédagogique — pas une prédiction.",
+  "chains": {
+    "2017-presidentielle": {
+      "presidentielle_t1": "2017-04-23",
+      "presidentielle_t2": "2017-05-07",
+      "legislatives_t1": "2017-06-11",
+      "legislatives_t2": "2017-06-18",
+      "legislatives_label": "Législatives juin 2017 (XVe législature)",
+      "legislatives_source": "Ministère de l’Intérieur — composition Assemblée après 2nd tour juin 2017 (regroupement LMDPT en blocs comparables)",
+      "legislatives_seats": [
+        {
+          "id": "ensemble",
+          "label": "Majorité présidentielle (REM + MoDem + UDI)",
+          "seats": 368,
+          "detail": "REM 308 + MoDem 42 + UDI 18"
+        },
+        {
+          "id": "lr",
+          "label": "Les Républicains",
+          "seats": 112,
+          "detail": "LR"
+        },
+        {
+          "id": "nfp",
+          "label": "Gauche (FI + PS + PCF + apparentés)",
+          "seats": 61,
+          "detail": "FI 17 + PS 30 + PCF 10 + PRG/écologistes ~4"
+        },
+        {
+          "id": "rn",
+          "label": "Front national",
+          "seats": 8,
+          "detail": "FN"
+        },
+        {
+          "id": "autres",
+          "label": "Autres & non-inscrits",
+          "seats": 28,
+          "detail": "Divers, regionalistes, non-inscrits"
+        }
+      ]
+    },
+    "2022-presidentielle": {
+      "presidentielle_t1": "2022-04-10",
+      "presidentielle_t2": "2022-04-24",
+      "legislatives_t1": "2022-06-12",
+      "legislatives_t2": "2022-06-19",
+      "legislatives_label": "Législatives juin 2022 (XVIe législature)",
+      "legislatives_source": "data.gouv.fr — résultats définitifs 2nd tour ; regroupement LMDPT (voir presidentielle-2022-legislatives.json)",
+      "legislatives_seats": [
+        {
+          "id": "ensemble",
+          "label": "Ensemble (ENS + MODEM / alliés)",
+          "seats": 251,
+          "detail": "244 ENS + 4 DVC + 3 UDI"
+        },
+        {
+          "id": "nfp",
+          "label": "NUPES (NUP + alliés)",
+          "seats": 159,
+          "detail": "127 NUP + 22 DVG + 10 REG"
+        },
+        {
+          "id": "rn",
+          "label": "Rassemblement national",
+          "seats": 89,
+          "detail": "RN"
+        },
+        {
+          "id": "lr",
+          "label": "Les Républicains (+ divers droite)",
+          "seats": 72,
+          "detail": "61 LR + 10 DVD + 1 DSV"
+        },
+        {
+          "id": "autres",
+          "label": "Autres",
+          "seats": 6,
+          "detail": "DIV / élus au 1er tour"
+        }
+      ]
+    },
+    "2027-presidentielle": {
+      "presidentielle_t1": "2027-04-18",
+      "presidentielle_t2": "2027-05-02",
+      "legislatives_t1": "2027-06",
+      "legislatives_t2": "2027-06",
+      "legislatives_label": "Législatives 2027 — à venir",
+      "legislatives_source": null,
+      "legislatives_seats": [],
+      "pending": true
+    }
+  }
+}

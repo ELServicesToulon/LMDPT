@@ -14,10 +14,10 @@ const duals = listScrutinDuals();
   <section>
     <h2>Atlas des premiers tours</h2>
     <p class="lead">
-      <strong>Fil directeur du site</strong> — pour <em>chaque</em> scrutin : à gauche, ce que donnerait une
-      représentation <strong>100&nbsp;% calée sur les voix du 1er tour</strong> (Sainte-Laguë, proximité de
-      programmes) ; à droite, le <strong>résultat réel</strong> qui a suivi (second tour présidentiel ou
-      Assemblée post-législatives).
+      <strong>Fil directeur du site</strong> — pour <em>chaque</em> présidentielle : Assemblée du
+      <strong>1er tour présidentiel</strong> (Sainte-Laguë) vs Assemblée réelle des
+      <strong>législatives qui ont suivi</strong>. Pour un législatif pur : T1 proportionnel vs composition post-T2.
+      Tableau de différentiel de sièges sur chaque dual.
     </p>
     <p class="meta">
       Ligne Democracy Over Elimination — documenter le 1er tour, pas le transformer en ranking. Illustration
@@ -65,6 +65,7 @@ const duals = listScrutinDuals();
           firstRoundMeta={dual.firstRoundMeta}
           realMeta={dual.realMeta}
           realPending={dual.realPending}
+          differential={dual.differential}
         />
       </section>
     ))

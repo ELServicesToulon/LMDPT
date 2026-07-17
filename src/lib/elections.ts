@@ -27,7 +27,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2027-04-18',
     tour: 1,
     distorsion_note:
-      'Projection pédagogique (agrégat sondages post-7 juil. 2026) : Le Pen ~35 % en tête (hyp. exclusive type Elabe), devant Philippe ~16,5 % et Mélenchon ~16 %. La pluralité (11 candidats illustratifs) serait masquée par un duel au second tour. Voir scénarios AN1T pour impacts législatifs.',
+      'Projection : Assemblée 1er tour présidentiel (Sainte-Laguë) vs législatives 2027 à venir — fil directeur DOE.',
   },
   {
     slug: '2024-legislatives',
@@ -35,7 +35,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2024-06-30',
     tour: 1,
     distorsion_note:
-      'Second tour : 143 sièges RN — 215 désistements ont reconfiguré 306 triangulaires potentielles en 89 duels binaires.',
+      'Assemblée 100 % T1 législatif vs composition réelle juil. 2024 (désistements, uninominal).',
   },
   {
     slug: '2022-presidentielle',
@@ -43,7 +43,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2022-04-10',
     tour: 1,
     distorsion_note:
-      'Second tour : Macron 58,55 % vs Le Pen 41,45 % — les 21,95 % de Mélenchon et neuf autres candidats absents du duel.',
+      'Assemblée 1er tour présidentiel (Sainte-Laguë) vs Assemblée réelle des législatives juin 2022 (Ensemble 251, NUPES 159, RN 89, LR 72…).',
   },
   {
     slug: '2017-presidentielle',
@@ -51,7 +51,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2017-04-23',
     tour: 1,
     distorsion_note:
-      'Second tour : Macron 66,10 % vs Le Pen 33,90 % — Fillon (20,01 %), Mélenchon (19,58 %) et huit autres candidats hors du binaire.',
+      'Assemblée 1er tour présidentiel (Sainte-Laguë) vs Assemblée réelle des législatives juin 2017 (majorité REM/MoDem dominante).',
   },
 ];
 
