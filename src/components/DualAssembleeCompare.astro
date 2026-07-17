@@ -8,6 +8,7 @@ import groupsRaw from '../data/assemblee-current-groups-2025.json';
 import {
   programProximityColor,
   realAssemblyColor,
+  sortHemicycleLeftToRight,
   spectrumSortKey,
 } from '../lib/program-proximity';
 
@@ -69,30 +70,21 @@ for (const g of groupsRaw as Array<{ circles: Array<{ x: number; y: number }> }>
   }
 }
 
-/** Trie les sièges le long de l’arc : gauche (x bas) → droite (x haut), y pour stabilité */
-function sortHemicyclePositions(positions: Pos[]): Pos[] {
-  return [...positions].sort((a, b) => {
-    // Angle depuis le centre bas de l’hémicycle (approx. 180, 185)
-    const cx = 180;
-    const cy = 185;
-    const angA = Math.atan2(cy - a.y, a.x - cx);
-    const angB = Math.atan2(cy - b.y, b.x - cx);
-    return angA - angB;
-  });
-}
-
-const orderedSeats = sortHemicyclePositions(allPositions);
+/**
+ * Sièges ordonnés **gauche → centre → droite** (convention Assemblée nationale).
+ * Vue face à l’hémicycle : partis de gauche à gauche de l’écran, droite à droite.
+ */
+const orderedSeats = sortHemicycleLeftToRight(allPositions);
 
 function buildDots(
   alloc: SeatRow[],
   colorFn: (id: string, fallback?: string) => string,
 ): Array<{ x: number; y: number; color: string; label: string; id: string }> {
-  // Ordonner les blocs le long du spectre (gauche → droite)
+  // Remplir l’arc de gauche à droite : nfp → ensemble → lr → rn → autres
   const sorted = [...alloc]
     .filter((a) => (a.seats ?? 0) > 0)
     .sort((a, b) => spectrumSortKey(a.id) - spectrumSortKey(b.id));
 
-  // Si un id n’est pas dans SPECTRUM_SEAT_ORDER, garder son ordre relatif
   const dots: Array<{ x: number; y: number; color: string; label: string; id: string }> = [];
   let cursor = 0;
   for (const bloc of sorted) {
@@ -109,7 +101,6 @@ function buildDots(
       });
     }
   }
-  // Sièges non attribués (seuil / reste) → gris
   while (cursor < orderedSeats.length) {
     const pos = orderedSeats[cursor++];
     dots.push({ x: pos.x, y: pos.y, color: '#d0d0d0', label: 'Non attribué / seuil', id: 'vacant' });
@@ -149,10 +140,10 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
   <header class="dual-header">
     <h3 id={`dual-title-${uid}`}>Deux Assemblées — 1er tour vs ce qui a suivi</h3>
     <p class="dual-lead">
-      À gauche : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
-      couleurs = <strong>proximité de programmes</strong>). À droite : Assemblée <strong>réelle des législatives</strong>
-      qui ont suivi (présidentielle → législatives) ou composition post-scrutin législatif.
-      Le différentiel de sièges documente l’écart — sans le moraliser.
+      À gauche de l’écran : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
+      couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée <strong>réelle des législatives</strong>
+      qui ont suivi. <strong>Convention hémicycle</strong> : partis de <em>gauche à gauche</em>,
+      <em>centre au centre</em>, partis de <em>droite à droite</em> (vue face à l’hémicycle).
     </p>
   </header>
 
@@ -183,8 +174,14 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
               </circle>
             ))
           }
+          <!-- Repères conventionnels : gauche | centre | droite -->
+          <g class="hemi-zone-labels" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#c8c4bc" text-anchor="middle">
+            <text x="55" y="100">Gauche</text>
+            <text x="180" y="38">Centre</text>
+            <text x="305" y="100">Droite</text>
+          </g>
           <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
-            {firstSeatsSum}/{totalSeats} sièges · spectre programmes
+            {firstSeatsSum}/{totalSeats} · gauche → centre → droite
           </text>
         </svg>
       </div>
@@ -242,8 +239,13 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
                     </circle>
                   ))
                 }
+                <g class="hemi-zone-labels" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#c8c4bc" text-anchor="middle">
+                  <text x="55" y="100">Gauche</text>
+                  <text x="180" y="38">Centre</text>
+                  <text x="305" y="100">Droite</text>
+                </g>
                 <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
-                  {realSeatsSum}/{totalSeats} sièges · résultat réel
+                  {realSeatsSum}/{totalSeats} · gauche → centre → droite
                 </text>
               </svg>
             </div>

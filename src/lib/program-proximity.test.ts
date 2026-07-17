@@ -3,14 +3,27 @@ import {
   colorFromSpectrumAxis,
   programProximityColor,
   realAssemblyColor,
+  sortHemicycleLeftToRight,
   spectrumSortKey,
 } from './program-proximity';
 
 describe('program-proximity', () => {
-  it('orders spectrum left to right', () => {
+  it('orders spectrum left to right (convention AN)', () => {
     expect(spectrumSortKey('nfp')).toBeLessThan(spectrumSortKey('ensemble'));
     expect(spectrumSortKey('ensemble')).toBeLessThan(spectrumSortKey('lr'));
     expect(spectrumSortKey('lr')).toBeLessThan(spectrumSortKey('rn'));
+  });
+
+  it('sorts hemicycle seats left (low x) to right (high x)', () => {
+    const positions = [
+      { x: 300, y: 100 },
+      { x: 50, y: 100 },
+      { x: 180, y: 40 },
+    ];
+    const sorted = sortHemicycleLeftToRight(positions);
+    expect(sorted[0].x).toBeLessThan(sorted[sorted.length - 1].x);
+    // first seat should be the leftmost-ish
+    expect(sorted[0].x).toBe(50);
   });
 
   it('gives distinct hex colors along the spectrum', () => {

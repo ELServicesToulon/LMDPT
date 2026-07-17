@@ -102,17 +102,43 @@ export function programProximityColor(blocId: string | undefined, fallback = '#9
   return fallback;
 }
 
-/** Ordre de placement dans l’hémicycle (gauche → droite, modèle établi). */
+/**
+ * Ordre de placement dans l’hémicycle — convention Assemblée nationale :
+ * **gauche** (écran gauche) → **centre** → **droite** (écran droite).
+ * Vue face à l’hémicycle (président d’assemblée en bas).
+ */
 export const SPECTRUM_SEAT_ORDER = ['nfp', 'ensemble', 'lr', 'rn', 'autres'] as const;
 
 export function spectrumSortKey(blocId: string): number {
-  // Candidats & sous-blocs : ordre continu sur l’axe 0–1
+  // Candidats & sous-blocs : ordre continu sur l’axe 0 (gauche) → 1 (droite)
   if (BLOC_SPECTRUM_AXIS[blocId] != null && !(SPECTRUM_SEAT_ORDER as readonly string[]).includes(blocId)) {
     return BLOC_SPECTRUM_AXIS[blocId];
   }
   const i = SPECTRUM_SEAT_ORDER.indexOf(blocId as (typeof SPECTRUM_SEAT_ORDER)[number]);
-  if (i >= 0) return i;
+  if (i >= 0) {
+    // indices 0..4 mappés sur 0..1 pour rester comparable aux axes candidats
+    return i / Math.max(1, SPECTRUM_SEAT_ORDER.length - 1);
+  }
   return BLOC_SPECTRUM_AXIS[blocId] ?? 0.5;
+}
+
+export type HemiPos = { x: number; y: number };
+
+/**
+ * Trie les sièges le long de l’arc hémicycle : **gauche → droite**.
+ * Centre géométrique approximatif du modèle Wikimedia (viewBox 360×185).
+ */
+export function sortHemicycleLeftToRight(
+  positions: HemiPos[],
+  cx = 180,
+  cy = 185,
+): HemiPos[] {
+  return [...positions].sort((a, b) => {
+    // atan2 depuis le bas de l’hémicycle : angB - angA = parcours de gauche (x bas) à droite (x haut)
+    const angA = Math.atan2(cy - a.y, a.x - cx);
+    const angB = Math.atan2(cy - b.y, b.x - cx);
+    return angB - angA;
+  });
 }
 
 /**
