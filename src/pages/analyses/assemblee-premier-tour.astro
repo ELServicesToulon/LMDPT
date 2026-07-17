@@ -19,7 +19,7 @@ import {
   allocToHemiRows,
   buildPollAn1tBundle,
 } from '../../lib/poll-to-an1t';
-import { programProximityColor } from '../../lib/program-proximity';
+import { buildScrutinDual } from '../../lib/scrutin-dual';
 import sondages2027 from '../../data/elections/2027-sondages-candidats.json';
 
 // Import programmes 2027 existants pour lien AN1T (utilisation données veille/institutions)
@@ -43,23 +43,10 @@ const an1t150 = simulateAn1tSeats(dataset, seatsProposal, threshold);
 const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, seatsFull);
 const circoBlocs = circos ? countCircosByBloc(circos) : [];
 
-/** Hémicycle 100 % 1er tour — couleurs proximité de programmes */
-const firstRoundPure = an1t577.map((a) => ({
-  id: a.id,
-  label: a.label,
-  seats: a.seats,
-  color: programProximityColor(a.id, a.color),
-  pctExprimes: a.pctExprimes,
-  pctSeats: a.pctSeats,
-}));
-
-/** Assemblée réelle post-législatives 2024 (blocs comparables) */
-const realAssembly = analysis.an_reelle.blocs.map((b) => ({
-  id: b.id,
-  label: b.label,
-  seats: b.seats,
-  color: b.color,
-}));
+/** Fil directeur multi-scrutins — cas législatives 2024 */
+const dual2024 = buildScrutinDual('2024-legislatives')!;
+const firstRoundPure = dual2024.firstRound;
+const realAssembly = dual2024.real;
 
 // === Sondages illustration — branchés sur 2027-sondages-candidats.json (P7-5) ===
 // Intentions présidentielles → blocs AN1T → Sainte-Laguë. Pédagogique uniquement (DOE).
@@ -189,14 +176,19 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <DualAssembleeCompare
       firstRoundAlloc={firstRoundPure}
       realAlloc={realAssembly}
-      totalSeats={seatsFull}
-      t1Label="1er tour 30 juin 2024"
-      t2Label="Législatives suivies (juil. 2024)"
-      firstRoundTitle="Assemblée 100 % 1er tour"
-      realTitle="Assemblée réelle après législatives"
-      firstRoundMeta={`Sainte-Laguë nationale, seuil ${threshold} % — voix T1 open data uniquement. Couleurs = proximité de programmes (spectre d’idées). Géométrie : modèle Wikimedia 577 sièges.`}
-      realMeta={`${analysis.an_reelle.source_note} Couleurs = blocs institutionnels comparables.`}
+      totalSeats={dual2024.totalSeats}
+      t1Label={dual2024.t1Label}
+      t2Label={dual2024.realLabel}
+      firstRoundTitle={dual2024.firstRoundTitle}
+      realTitle={dual2024.realTitle}
+      firstRoundMeta={dual2024.firstRoundMeta}
+      realMeta={dual2024.realMeta}
+      realPending={dual2024.realPending}
     />
+    <p class="meta">
+      Même fil directeur sur <a href="/atlas">tous les scrutins de l’atlas</a>
+      (présidentielles 2017 · 2022 · projection 2027 · législatives 2024).
+    </p>
 
     <!-- ===================== MINI-GUIDE AMÉLIORÉ : POURQUOI LE 1ER TOUR COMPTE POUR LA REPRÉSENTATION ===================== -->
     <section class="card disclaimer-reinforced" aria-labelledby="guide-title">

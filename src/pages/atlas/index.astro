@@ -1,25 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
 import { ELECTION_CATALOG } from '../../lib/elections';
+import { listScrutinDuals } from '../../lib/scrutin-dual';
+
+const duals = listScrutinDuals();
 ---
 
 <BaseLayout
   title="Atlas"
-  description="Atlas des premiers tours — résultats officiels, pluralité et distorsions documentées."
+  description="Atlas des premiers tours — fil directeur LMDPT : pluralité T1 vs résultat réel, pour tous les scrutins."
 >
   <section>
-    <h2>Atlas des premiers tours : la photographie officielle du vote</h2>
-    <p>
-      Résultats officiels, faits sourcés, sans filtre. La photographie la plus proche de la pluralité des préférences — avant les désistements et le « vote contre ».
-      Explorez sans classement éliminatoire : chaque voix compte pour une démocratie où l’on vote <em>pour</em>, pas contre.
+    <h2>Atlas des premiers tours</h2>
+    <p class="lead">
+      <strong>Fil directeur du site</strong> — pour <em>chaque</em> scrutin : à gauche, ce que donnerait une
+      représentation <strong>100&nbsp;% calée sur les voix du 1er tour</strong> (Sainte-Laguë, proximité de
+      programmes) ; à droite, le <strong>résultat réel</strong> qui a suivi (second tour présidentiel ou
+      Assemblée post-législatives).
     </p>
     <p class="meta">
-      Ligne éditoriale : Democracy Over Elimination — documenter le 1er tour, pas le transformer en ranking.
+      Ligne Democracy Over Elimination — documenter le 1er tour, pas le transformer en ranking. Illustration
+      pédagogique, pas de prédiction.
     </p>
   </section>
 
   <section>
-    <h3>Élections disponibles</h3>
+    <h3>Scrutins</h3>
     <ul class="election-list">
       {
         ELECTION_CATALOG.map((e) => (
@@ -33,24 +40,67 @@ import { ELECTION_CATALOG } from '../../lib/elections';
               </time>
               {' '}· tour {e.tour}
             </p>
+            {e.distorsion_note && <p class="meta distorsion">{e.distorsion_note}</p>}
           </li>
         ))
       }
     </ul>
-    <p class="meta">
-      Législatives 2024 : tableau des 577 circonscriptions avec filtre département.
-    </p>
   </section>
+
+  {
+    duals.map((dual) => (
+      <section class="scrutin-block" id={dual.slug} aria-labelledby={`h-${dual.slug}`}>
+        <h3 id={`h-${dual.slug}`}>
+          <a href={`/atlas/${dual.slug}`}>{dual.title}</a>
+        </h3>
+        {dual.distorsionNote && <p class="meta">{dual.distorsionNote}</p>}
+        <DualAssembleeCompare
+          firstRoundAlloc={dual.firstRound}
+          realAlloc={dual.real}
+          totalSeats={dual.totalSeats}
+          t1Label={dual.t1Label}
+          t2Label={dual.realLabel}
+          firstRoundTitle={dual.firstRoundTitle}
+          realTitle={dual.realTitle}
+          firstRoundMeta={dual.firstRoundMeta}
+          realMeta={dual.realMeta}
+          realPending={dual.realPending}
+        />
+      </section>
+    ))
+  }
 </BaseLayout>
 
 <style>
+  .lead {
+    max-width: 52rem;
+    line-height: 1.55;
+    font-size: 1.05rem;
+  }
   .election-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    gap: 0.75rem;
   }
   .election-list h4 {
     margin: 0 0 0.35rem;
     font-size: 1.05rem;
+  }
+  .distorsion {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+  }
+  .scrutin-block {
+    margin: 1.75rem 0 2rem;
+  }
+  .scrutin-block h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+  .fil-directeur-tag {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 </style>

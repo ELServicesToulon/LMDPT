@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CirconscriptionsTable from '../../components/CirconscriptionsTable.astro';
 import DepartmentSvgMap from '../../components/DepartmentSvgMap.astro';
+import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
 import LegislativeDepartmentMap from '../../components/LegislativeDepartmentMap.astro';
 import NationalSummary from '../../components/NationalSummary.astro';
 import ResultsBarChart from '../../components/ResultsBarChart.astro';
@@ -9,6 +10,7 @@ import { countLeadersByNuance, getCirconscriptionResults } from '../../lib/circo
 import { getDepartmentResults } from '../../lib/departments';
 import { formatPct, getElection, getElectionSummary, top3PctExprimes } from '../../lib/elections';
 import { nuanceLabel } from '../../lib/legislative-style';
+import { buildScrutinDual } from '../../lib/scrutin-dual';
 
 export function getStaticPaths() {
   return [
@@ -26,6 +28,7 @@ const deptData = slug ? getDepartmentResults(slug) : undefined;
 const circoData = slug ? getCirconscriptionResults(slug) : undefined;
 const isLegislatives = Boolean(circoData);
 const is2027 = slug === '2027-presidentielle';
+const dual = slug ? buildScrutinDual(slug) : null;
 
 if (!slug || !summary || !dataset) {
   throw new Error(`Élection inconnue : ${slug ?? '(vide)'}`);
@@ -55,6 +58,10 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <time datetime={dataset.date}>{dateLabel}</time> · Source :{' '}
       <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
     </p>
+    <p class="fil-directeur-tag">
+      <strong>Fil directeur LMDPT</strong> — même 1er tour, deux traductions : pluralité proportionnelle
+      (gauche) vs résultat réel qui a suivi (droite). Couleurs T1 = proximité de programmes.
+    </p>
     <p>
       {
         isLegislatives ? (
@@ -81,6 +88,23 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         )
       }
     </p>
+
+    {
+      dual && (
+        <DualAssembleeCompare
+          firstRoundAlloc={dual.firstRound}
+          realAlloc={dual.real}
+          totalSeats={dual.totalSeats}
+          t1Label={dual.t1Label}
+          t2Label={dual.realLabel}
+          firstRoundTitle={dual.firstRoundTitle}
+          realTitle={dual.realTitle}
+          firstRoundMeta={dual.firstRoundMeta}
+          realMeta={dual.realMeta}
+          realPending={dual.realPending}
+        />
+      )
+    }
   </section>
 
   <section class="card">

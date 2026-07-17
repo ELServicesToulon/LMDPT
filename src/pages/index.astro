@@ -7,8 +7,12 @@ import type { RenifleurSnapshot } from '../lib/renifleur';
 import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
 import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
+import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
+import { buildScrutinDual } from '../lib/scrutin-dual';
 
 const feed = renifleur as RenifleurSnapshot;
+/** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
+const dualHome = buildScrutinDual('2022-presidentielle');
 
 type CandidatureEntry = (typeof candidaturesDeclarees.entries)[number];
 
@@ -47,6 +51,44 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   description="Le premier tour : le miroir le plus fidèle de la France politique. Atlas open data, présidentielle 2027 (18 avril), programmes sourcés, alerte citoyenne — Democracy Over Elimination, sans sondages ni tier list."
   keywords="premier tour, présidentielle 2027, LMDPT, open data élections, pluralité, Democracy Over Elimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
+  <!-- Fil directeur — pour tous les scrutins -->
+  <section class="card fil-directeur" id="fil-directeur" aria-labelledby="fil-directeur-title">
+    <p class="eyebrow">Fil directeur du site</p>
+    <h2 id="fil-directeur-title">Un même 1er tour, deux traductions — pour tous les scrutins</h2>
+    <p>
+      Sur <strong>chaque</strong> élection de l’atlas : à gauche, la pluralité du 1er tour en représentation
+      proportionnelle (Sainte-Laguë, couleurs = proximité de programmes) ; à droite, le résultat réel qui a suivi
+      (second tour présidentiel ou Assemblée post-législatives). C’est la boussole Democracy Over Elimination.
+    </p>
+    <p class="meta">
+      <a href="/atlas">Voir tous les scrutins →</a>
+      {' · '}
+      <a href="/atlas/2024-legislatives">Législatives 2024</a>
+      {' · '}
+      <a href="/atlas/2022-presidentielle">Présidentielle 2022</a>
+      {' · '}
+      <a href="/atlas/2017-presidentielle">2017</a>
+      {' · '}
+      <a href="/analyses/assemblee-premier-tour">Assemblée du 1er tour</a>
+    </p>
+    {
+      dualHome && (
+        <DualAssembleeCompare
+          firstRoundAlloc={dualHome.firstRound}
+          realAlloc={dualHome.real}
+          totalSeats={dualHome.totalSeats}
+          t1Label={dualHome.t1Label}
+          t2Label={dualHome.realLabel}
+          firstRoundTitle={dualHome.firstRoundTitle}
+          realTitle={dualHome.realTitle}
+          firstRoundMeta={dualHome.firstRoundMeta}
+          realMeta={dualHome.realMeta}
+          realPending={dualHome.realPending}
+        />
+      )
+    }
+  </section>
+
   <!-- Manifeste — en tête de page -->
   <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
     <h2 id="why-media-title">Pourquoi ce média ?</h2>

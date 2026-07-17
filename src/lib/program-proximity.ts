@@ -6,8 +6,9 @@
  * Aligné sur FIRST_ROUND_HUES (comment-politics) + couleurs Wiki groupes.
  */
 
-/** Position sur un axe 0 (gauche radicale) → 1 (droite nationale) */
+/** Position sur un axe 0 (gauche radicale) → 1 (droite nationale) — blocs + candidats */
 export const BLOC_SPECTRUM_AXIS: Record<string, number> = {
+  // blocs législatifs
   nfp: 0.12,
   'nfp-union': 0.22,
   lfi: 0.08,
@@ -20,6 +21,32 @@ export const BLOC_SPECTRUM_AXIS: Record<string, number> = {
   udr: 0.78,
   rn: 0.92,
   autres: 0.5,
+  // candidats présidentiels (proximité programmes)
+  arthaud: 0.02,
+  poutou: 0.05,
+  melenchon: 0.1,
+  roussel: 0.16,
+  hidalgo: 0.28,
+  hamon: 0.3,
+  jadot: 0.32,
+  glucksmann: 0.3,
+  tondelier: 0.28,
+  lassalle: 0.42,
+  cheminade: 0.45,
+  macron: 0.5,
+  attal: 0.48,
+  philippe: 0.55,
+  fillon: 0.68,
+  pecresse: 0.7,
+  retailleau: 0.7,
+  asselineau: 0.75,
+  'dupont-aignan': 0.82,
+  zemmour: 0.88,
+  bardella: 0.9,
+  'le-pen': 0.92,
+  villepin: 0.58,
+  ruffin: 0.12,
+  vacant: 0.5,
 };
 
 /**
@@ -79,6 +106,10 @@ export function programProximityColor(blocId: string | undefined, fallback = '#9
 export const SPECTRUM_SEAT_ORDER = ['nfp', 'ensemble', 'lr', 'rn', 'autres'] as const;
 
 export function spectrumSortKey(blocId: string): number {
+  // Candidats & sous-blocs : ordre continu sur l’axe 0–1
+  if (BLOC_SPECTRUM_AXIS[blocId] != null && !(SPECTRUM_SEAT_ORDER as readonly string[]).includes(blocId)) {
+    return BLOC_SPECTRUM_AXIS[blocId];
+  }
   const i = SPECTRUM_SEAT_ORDER.indexOf(blocId as (typeof SPECTRUM_SEAT_ORDER)[number]);
   if (i >= 0) return i;
   return BLOC_SPECTRUM_AXIS[blocId] ?? 0.5;

@@ -33,6 +33,8 @@ interface Props {
   /** Date / libellé du scrutin T1 */
   t1Label?: string;
   t2Label?: string;
+  /** Résultat réel pas encore connu (ex. présidentielle 2027) */
+  realPending?: boolean;
 }
 
 const {
@@ -45,6 +47,7 @@ const {
   realMeta = 'Composition issue du second tour et des duels uninominaux qui ont suivi le 1er tour. Couleurs = groupes / blocs institutionnels.',
   t1Label = '1er tour',
   t2Label = 'Après législatives',
+  realPending = false,
 } = Astro.props;
 
 // Positions officielles (modèle établi Wikimedia)
@@ -84,7 +87,7 @@ function buildDots(
   let cursor = 0;
   for (const bloc of sorted) {
     const n = Math.max(0, Math.floor(bloc.seats));
-    const color = colorFn(bloc.id, bloc.color);
+    const color = bloc.color || colorFn(bloc.id, bloc.color);
     for (let i = 0; i < n && cursor < orderedSeats.length; i++) {
       const pos = orderedSeats[cursor++];
       dots.push({
@@ -192,51 +195,65 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
       </ul>
     </article>
 
-    <!-- DROITE : Assemblée réelle -->
+    <!-- DROITE : résultat réel (ou en attente) -->
     <article class="dual-panel dual-panel--real" aria-labelledby={`real-title-${uid}`}>
       <div class="panel-badge panel-badge--real">{t2Label}</div>
       <h4 id={`real-title-${uid}`}>{realTitle}</h4>
       <p class="panel-meta">{realMeta}</p>
-      <div class="hemi-wrap">
-        <svg
-          viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
-          width="100%"
-          height="auto"
-          role="img"
-          aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
-        >
-          <desc>
-            Hémicycle de l’Assemblée réelle après les législatives qui ont suivi le 1er tour.
-            Même géométrie Wikimedia ; couleurs institutionnelles.
-          </desc>
-          {
-            realDots.map((d) => (
-              <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
-                <title>
-                  {d.label} — siège Assemblée réelle
-                </title>
-              </circle>
-            ))
-          }
-          <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
-            {realSeatsSum}/{totalSeats} sièges · composition réelle
-          </text>
-        </svg>
-      </div>
-      <ul class="dual-legend" aria-label="Légende Assemblée réelle">
-        {
-          realLegend.map((item) => (
-            <li>
-              <span class="swatch" style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}></span>
-              <span class="leg-label">{item.label}</span>
-              <span class="leg-seats">
-                <strong>{item.seats}</strong>
-                <span class="meta"> ({item.pct}%)</span>
-              </span>
-            </li>
-          ))
-        }
-      </ul>
+      {
+        realPending || realAlloc.length === 0 ? (
+          <div class="hemi-wrap hemi-pending" role="status">
+            <p class="pending-msg">
+              <strong>Résultat réel en attente</strong><br />
+              Le fil directeur LMDPT documente d’abord le 1er tour.
+              La comparaison binaire / post-scrutin s’affichera dès les résultats officiels.
+            </p>
+          </div>
+        ) : (
+          <>
+            <div class="hemi-wrap">
+              <svg
+                viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
+                width="100%"
+                height="auto"
+                role="img"
+                aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
+              >
+                <desc>
+                  Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue).
+                  Même géométrie Wikimedia ; couleurs institutionnelles.
+                </desc>
+                {
+                  realDots.map((d) => (
+                    <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
+                      <title>
+                        {d.label} — siège résultat réel
+                      </title>
+                    </circle>
+                  ))
+                }
+                <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
+                  {realSeatsSum}/{totalSeats} sièges · résultat réel
+                </text>
+              </svg>
+            </div>
+            <ul class="dual-legend" aria-label="Légende résultat réel">
+              {
+                realLegend.map((item) => (
+                  <li>
+                    <span class="swatch" style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}></span>
+                    <span class="leg-label">{item.label}</span>
+                    <span class="leg-seats">
+                      <strong>{item.seats}</strong>
+                      <span class="meta"> ({item.pct}%)</span>
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </>
+        )
+      }
     </article>
   </div>
 
@@ -403,6 +420,21 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     justify-content: space-between;
     font-size: 0.72rem;
     color: var(--muted, #1c1a17);
+  }
+  .hemi-pending {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+  .pending-msg {
+    margin: 0;
+    text-align: center;
+    color: #e8e6e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 22rem;
   }
   @media (prefers-color-scheme: dark) {
     .dual-panel {

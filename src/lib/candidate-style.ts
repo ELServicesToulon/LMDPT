@@ -55,6 +55,15 @@ const SLUG_RULES: Array<[RegExp, string]> = [
   [/ARTHAUD/, 'arthaud'],
   [/ASSELINEAU/, 'asselineau'],
   [/CHEMINADE/, 'cheminade'],
+  // 2027 + candidats courants
+  [/PHILIPPE/, 'philippe'],
+  [/ATTAL/, 'attal'],
+  [/GLUCKSMANN/, 'glucksmann'],
+  [/RETAILLEAU/, 'retailleau'],
+  [/TONDELIER/, 'tondelier'],
+  [/BARDELLA/, 'bardella'],
+  [/VILLEPIN/, 'villepin'],
+  [/RUFFIN/, 'ruffin'],
 ];
 
 export function candidateSlug(nom: string, prenom: string): string {
