@@ -14,6 +14,11 @@ import {
 } from '../../lib/an1t';
 import { getCirconscriptionResults } from '../../lib/circonscriptions';
 import type { ElectionDataset } from '../../lib/election-types';
+import {
+  allocToHemiRows,
+  buildPollAn1tBundle,
+} from '../../lib/poll-to-an1t';
+import sondages2027 from '../../data/elections/2027-sondages-candidats.json';
 
 // Import programmes 2027 existants pour lien AN1T (utilisation données veille/institutions)
 import bardellaProg from '../../data/programmes/presidentielle-2027/bardella.json';
@@ -36,36 +41,15 @@ const an1t150 = simulateAn1tSeats(dataset, seatsProposal, threshold);
 const comparison577 = compareSeatAllocations(an1t577, analysis.an_reelle.blocs, seatsFull);
 const circoBlocs = circos ? countCircosByBloc(circos) : [];
 
-// === Sondages illustration — Agrégats récents + scénarios 2027 (pédagogique uniquement) ===
-// Agrégat pédagogique juil. 2026 (post-candidature Le Pen) — intentions présidentielles regroupées en blocs législatifs.
-// Sources : Elabe / Verian / OpinionWay / Harris / Ifop 7–12 juil. 2026. Illustration uniquement.
-const sondagesBase = [
-  { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a', seats: 202, pct: 35, pollPct: 35 },
-  { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443', seats: 150, pct: 26, pollPct: 26 },
-  { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00', seats: 92, pct: 16, pollPct: 16 },
-  { id: 'lr', label: 'Droite républicaine', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
-  { id: 'autres', label: 'Autres & divers', color: '#dddddd', seats: 87, pct: 15, pollPct: 15 },
-];
-
-// Scénario 2027 : gauche unie vs divisée (hypothèses pédagogiques)
-const sondagesUnie = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 202, pct: 35, pollPct: 35 },
-  { id: 'nfp', label: 'Gauche unie (NFP-like)', color: '#cc2443', seats: 156, pct: 27, pollPct: 27 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 92, pct: 16, pollPct: 16 },
-  { id: 'lr', label: 'LR & droite', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', seats: 81, pct: 14, pollPct: 14 },
-];
-
-const sondagesDivisee = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', seats: 208, pct: 36, pollPct: 36 },
-  { id: 'nfp-union', label: 'Union PS/EELV/PCF', color: '#cc2443', seats: 87, pct: 15, pollPct: 15 },
-  { id: 'lfi', label: 'LFI & alliés', color: '#cc2443', seats: 64, pct: 11, pollPct: 11 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', seats: 87, pct: 15, pollPct: 15 },
-  { id: 'lr', label: 'LR', color: '#0066cc', seats: 46, pct: 8, pollPct: 8 },
-  { id: 'autres', label: 'Autres (Reconquête etc.)', color: '#dddddd', seats: 85, pct: 15, pollPct: 15 },
-];
-
+// === Sondages illustration — branchés sur 2027-sondages-candidats.json (P7-5) ===
+// Intentions présidentielles → blocs AN1T → Sainte-Laguë. Pédagogique uniquement (DOE).
+const pollBundle = buildPollAn1tBundle(sondages2027, seatsFull, threshold);
+const sondagesBase = allocToHemiRows(pollBundle.baseAlloc);
+const sondagesUnie = allocToHemiRows(pollBundle.unieAlloc);
+const sondagesDivisee = allocToHemiRows(pollBundle.diviseeAlloc);
 const sondagesBaseTotal = sondagesBase.reduce((s, a) => s + a.seats, 0);
+const pollWaveLabel = pollBundle.waveLabel;
+const pollUpdated = pollBundle.updated;
 
 // === Scénarios 2027 liés aux programmes candidats (intégration programmes + AN1T) ===
 // Utilise simulateFromVoteShares (lib/an1t) pour cohérence Sainte-Laguë. % voix = hypothèses pédagogiques alignées sur mesures phares "institutions" des programmes 2027 (veille partielle).
@@ -428,13 +412,20 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
       </table>
     </div>
 
-    <!-- Scénario de base (moyenne agrégée récente) -->
+    <p class="meta" style="font-size:0.9rem;margin:0.5rem 0 1rem;">
+      Vague de référence : <strong>{pollWaveLabel || 'agrégat juil. 2026'}</strong>
+      · données mises à jour <time datetime={pollUpdated}>{pollUpdated}</time>
+      · source machine <code>2027-sondages-candidats.json</code> (veille <code>sondage:veille</code>).
+      <strong>Pas de prédiction</strong> — illustration Sainte-Laguë uniquement.
+    </p>
+
+    <!-- Scénario de base (vague primaire juil. 2026) -->
     <AssembleeHemicycle
-      title="Projection 2027 — Moyenne sondages (hybride)"
+      title="Projection 2027 — Agrégat sondages (hybride)"
       allocations={sondagesBase}
       totalSeats={sondagesBase.reduce((s,a)=>s+a.seats,0)}
       subtitle="Couche 1 (transparence) : groupes actuels. Couche 2 (couleurs pleines) : projections placées dans quartiers correspondants. Légende interactive pour écarts."
-      sourceNote="Sources: Ifop/Harris/Elabe (agrégats). Illustration pédagogique uniquement. Pas de prédiction. Pour les mécanismes : /analyses/assemblee-premier-tour-mecanismes"
+      sourceNote={`Sources: ${pollWaveLabel || 'Ifop/Harris/Elabe'}. MAJ ${pollUpdated}. Illustration pédagogique uniquement. Pas de prédiction. Mécanismes : /analyses/assemblee-premier-tour-mecanismes`}
     />
 
     <!-- Version 2027 plus fournie : scénarios gauche -->
