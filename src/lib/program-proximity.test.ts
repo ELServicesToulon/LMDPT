@@ -42,8 +42,21 @@ describe('program-proximity', () => {
     expect(programProximityColor('nfp')).not.toBe(programProximityColor('rn'));
   });
 
+  it('uses consensus party colors (écologie = vert, etc.)', () => {
+    expect(programProximityColor('eco').toLowerCase()).toBe('#00c000');
+    expect(programProximityColor('eelv').toLowerCase()).toBe('#00c000');
+    expect(programProximityColor('jadot').toLowerCase()).toBe('#00c000');
+    expect(programProximityColor('tondelier').toLowerCase()).toBe('#00c000');
+    expect(programProximityColor('rn').toLowerCase()).toBe('#0d378a');
+    expect(programProximityColor('ensemble').toLowerCase()).toBe('#ffeb00');
+    expect(programProximityColor('lr').toLowerCase()).toBe('#0066cc');
+    expect(programProximityColor('lfi').toLowerCase()).toBe('#cc2443');
+    expect(programProximityColor('ps').toLowerCase()).toBe('#ff8080');
+  });
+
   it('uses institutional colors for real assembly', () => {
     expect(realAssemblyColor('rn')).toBe('#0d378a');
     expect(realAssemblyColor('ensemble')).toBe('#ffeb00');
+    expect(realAssemblyColor('eco').toLowerCase()).toBe('#00c000');
   });
 });

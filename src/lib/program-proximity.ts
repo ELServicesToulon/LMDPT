@@ -1,10 +1,15 @@
 /**
  * Couleurs par proximité de programmes / idées (spectre 1er tour).
- * Pas une carte d’adhésion : teintes continues gauche → droite
- * pour lire la pluralité dans l’hémicycle AN1T.
+ * **Priorité** : couleurs consensus partis (Wiki AN / médias FR)
+ * — ex. écologie = vert `#00c000`, RN = bleu nuit, Ensemble = jaune.
+ * Spectre HSL seulement si aucun consensus identifiable.
  *
- * Aligné sur FIRST_ROUND_HUES (comment-politics) + couleurs Wiki groupes.
+ * Source consensus : `assemblee-wiki-colors.ts` (MAJOR_BLOC / CONSENSUS_*).
  */
+import {
+  MAJOR_BLOC_COLORS,
+  consensusPartyColor,
+} from './assemblee-wiki-colors';
 
 /** Position sur un axe 0 (gauche radicale) → 1 (droite nationale) — blocs + candidats */
 export const BLOC_SPECTRUM_AXIS: Record<string, number> = {
@@ -87,18 +92,24 @@ function hslToHex(h: number, s: number, l: number): string {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-/** Couleur bloc pour hémicycle « 1er tour pur » (proximité programmes). */
+/**
+ * Couleur bloc / candidat pour hémicycle « 1er tour pur ».
+ * 1) Couleur consensus parti si connue (écologie=vert, etc.)
+ * 2) Sinon spectre de proximité (idées voisines = teintes proches)
+ */
 export function programProximityColor(blocId: string | undefined, fallback = '#95a5a6'): string {
   if (!blocId) return fallback;
+  const consensus = consensusPartyColor(blocId);
+  if (consensus) return consensus;
+
   const id = blocId.toLowerCase();
   if (BLOC_SPECTRUM_AXIS[id] != null) {
     return colorFromSpectrumAxis(BLOC_SPECTRUM_AXIS[id]);
   }
-  // fallback keywords
-  if (/nfp|gauche|lfi|insoumis|social|eco/.test(id)) return colorFromSpectrumAxis(0.15);
-  if (/ensemble|centre|horizons|modem|democrate/.test(id)) return colorFromSpectrumAxis(0.5);
-  if (/lr|droite|republic/.test(id)) return colorFromSpectrumAxis(0.7);
-  if (/rn|rassemblement|national/.test(id)) return colorFromSpectrumAxis(0.92);
+  // fallback keywords (spectre si pas de consensus)
+  if (/gauche/.test(id)) return colorFromSpectrumAxis(0.15);
+  if (/centre/.test(id)) return colorFromSpectrumAxis(0.5);
+  if (/droite/.test(id)) return colorFromSpectrumAxis(0.7);
   return fallback;
 }
 
@@ -146,14 +157,19 @@ export function sortHemicycleLeftToRight(
  * teintes Wiki / groupes officiels — lisibilité institutionnelle.
  */
 export const REAL_ASSEMBLY_BLOC_COLORS: Record<string, string> = {
-  nfp: '#cc2443',
-  ensemble: '#ffeb00',
-  lr: '#0066cc',
-  rn: '#0d378a',
-  autres: '#b0b0b0',
+  nfp: MAJOR_BLOC_COLORS.nfp,
+  ensemble: MAJOR_BLOC_COLORS.ensemble,
+  lr: MAJOR_BLOC_COLORS.lr,
+  rn: MAJOR_BLOC_COLORS.rn,
+  eco: '#00c000',
+  lfi: MAJOR_BLOC_COLORS.nfp,
+  ps: '#ff8080',
+  autres: MAJOR_BLOC_COLORS.autres,
 };
 
 export function realAssemblyColor(blocId: string | undefined, fallback = '#b0b0b0'): string {
   if (!blocId) return fallback;
+  const consensus = consensusPartyColor(blocId);
+  if (consensus) return consensus;
   return REAL_ASSEMBLY_BLOC_COLORS[blocId] ?? fallback;
 }

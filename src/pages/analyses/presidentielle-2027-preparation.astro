@@ -58,8 +58,10 @@ const renifleurUpdated = renifleur.fetched_at
 
     <img 
       src="/illustrations/2027/dessin-urne-2027.jpg" 
-      alt="Dessin ligne claire : urne transparente du Premier Tour 2027 avec miroir reflétant la France — illustration civique" 
+      alt="Croquis humoristique style X : urne transparente du 1er tour et miroir de la France — illustration civique laïque" 
       style="width:100%; max-height: 380px; object-fit: cover; border-radius: 10px; margin: 0.75rem 0 1rem; border: 1px solid var(--border);"
+      loading="eager"
+      decoding="async"
     />
 
     <p>
@@ -68,13 +70,97 @@ const renifleurUpdated = renifleur.fetched_at
       Elimination. Aucun résultat ni liste officielle de candidats n'est publié ici avant
       publication par le Conseil constitutionnel.
     </p>
+
+    <!-- 3 piliers (P15-1 / P8-7) — focus 2027 -->
+    <div class="piliers-2027" role="list" aria-label="Trois piliers appliqués au dossier 2027">
+      <a class="pilier-2027" role="listitem" href="/sources">
+        <span class="p-kicker">Pilier 1</span>
+        <strong>Sécurité &amp; faits</strong>
+        <span class="p-desc">Calendrier officiel, data.gouv, licences — zéro prédiction.</span>
+      </a>
+      <a class="pilier-2027" role="listitem" href="/atlas/2027-presidentielle">
+        <span class="p-kicker">Pilier 2</span>
+        <strong>Pluralité réelle</strong>
+        <span class="p-desc">Atlas 2027 + AN1T : spectre complet du 1er tour, pas le duel.</span>
+      </a>
+      <a class="pilier-2027" role="listitem" href="/charte">
+        <span class="p-kicker">Pilier 3</span>
+        <strong>Democracy Over Elimination</strong>
+        <span class="p-desc">Pas de tier list, pas de favori — vote pour, pas contre.</span>
+      </a>
+    </div>
+    <p class="meta" role="note">
+      <strong>Disclaimer :</strong> toute projection 2027 (atlas, simulateur) est
+      <em>pédagogique uniquement</em> — pas un pronostic électoral.
+    </p>
+
     <p>
       <strong>Nouveau :</strong> <a href="/atlas/2027-presidentielle">Atlas Présidentielle 2027</a> — placeholder national avec projection de pluralité 1er tour + lien vers scénarios AN1T (en attendant données réelles).
+    </p>
+    <p>
+      <strong>Déclarations X :</strong>
+      <a href="/analyses/declarations-x-candidats">fil chronologique</a>
+      des posts publics des comptes officiels candidats (registre X + collecte auto).
     </p>
     <p class="meta">
       Dernière mise à jour : <time datetime={analysis.updated}>{updated}</time>
     </p>
   </section>
+
+  <style>
+    .piliers-2027 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      margin: 1rem 0 0.75rem;
+    }
+    @media (min-width: 700px) {
+      .piliers-2027 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .pilier-2027 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 10px);
+      background: var(--card);
+      text-decoration: none;
+      color: var(--fg);
+      border-top: 3px solid var(--accent);
+      min-height: 6rem;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pilier-2027:nth-child(1) { border-top-color: #1d4ed8; }
+    .pilier-2027:nth-child(2) { border-top-color: #059669; }
+    .pilier-2027:nth-child(3) { border-top-color: var(--accent, #c2410c); }
+    .pilier-2027:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 16px -6px rgb(0 0 0 / 0.12);
+    }
+    .pilier-2027:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .pilier-2027 .p-kicker {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pilier-2027 strong {
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+    .pilier-2027 .p-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+  </style>
 
   <section class="card">
     <h3>{calendarTitle}</h3>
@@ -322,16 +408,18 @@ const renifleurUpdated = renifleur.fetched_at
   </section>
 
   <section class="card">
-    
-    <h3>Visuels 2027 — à partager</h3>
-    <p class="meta">Illustrations et mèmes pour accompagner la couverture du premier tour.</p>
+    <h3>Croquis X 2027 — à partager</h3>
+    <p class="meta">
+      Croquis humoristiques style X (encre + aquarelle) pour accompagner la couverture du premier tour —
+      légers sur les mécanismes, jamais sur les personnes.
+    </p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-top: 0.5rem;">
-      <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Mème Le 1er Tour ne ment pas — illustration civique" style="width:100%; border-radius:6px;" />
-      <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Toutes les voix comptent — illustration civique" style="width:100%; border-radius:6px;" />
-      <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Democracy Over Elimination — illustration civique" style="width:100%; border-radius:6px;" />
+      <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Croquis mème : Le 1er tour ne ment pas" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
+      <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Croquis : toutes les voix égales au 1er tour" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
+      <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Croquis : Democracy Over Elimination" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
     </div>
     <p class="meta" style="margin-top:0.6rem;">
-      <a href="/">Voir tous les visuels &amp; l’animation sur l’accueil →</a>
+      <a href="/#visuels-2027">Voir tous les croquis &amp; l’animation sur l’accueil →</a>
     </p>
   </section>
 

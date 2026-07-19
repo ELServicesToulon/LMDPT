@@ -25,6 +25,17 @@ Le premier tour capture la pluralité des préférences ; le second tour la dist
 - **Neutre factuel** sur les données ; prise de position explicite uniquement dans la rubrique « ligne » (manifeste), jamais déguisée en fait.
 - Vouvoiement ou tutoiement : **vouvoiement** sur le site public (public large).
 
+### Esprit français (légendes & mèmes civiques) — 2026-07-17
+
+| Autorisé | Interdit |
+|----------|----------|
+| Légèreté sur les **mécanismes** (1er/2nd tour, vote « pour » vs « contre », pluralité) | Caricature de **personnes**, camps ou candidats |
+| Jeu de mots **doux**, oralité courte, pince-sans-rire civique | Satire « à la Charlie Hebdo », causticité, provocation |
+| Mèmes **illustratifs** + légende avec esprit | Mèmes politiques de buzz sans fondement |
+| Texte principal = clarté / autorité factuelle | Humour dans les titres d’analyses data (reste sobre) |
+
+**Règle** : le corps du site reste pédagogique ; les **figcaptions** des visuels peuvent porter la « saveur » française. Pas d’irrévérence institutionnelle gratuite.
+
 ## Zéro biais · zéro parti pris · transparence des couleurs
 
 Le média se veut **zéro biais** et **sans parti pris** éditorial.

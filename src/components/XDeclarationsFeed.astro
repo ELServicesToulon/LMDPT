@@ -1,0 +1,151 @@
+---
+import type { XDeclarationItem } from '../lib/x-declarations';
+import { formatDeclarationDate } from '../lib/x-declarations';
+import { formatXHandle } from '../lib/x-officiels';
+
+interface Props {
+  items: XDeclarationItem[];
+  limit?: number;
+  showFilters?: boolean;
+}
+
+const { items, limit = 80, showFilters = true } = Astro.props;
+const visible = items.slice(0, limit);
+const names = [...new Map(items.map((i) => [i.slug, i.name])).entries()].sort((a, b) =>
+  a[1].localeCompare(b[1], 'fr'),
+);
+---
+
+<section class="x-decl-section" aria-labelledby="x-decl-heading">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Comptes X officiels</p>
+      <h2 id="x-decl-heading">Déclarations — ordre chronologique</h2>
+    </div>
+    <p class="sync-meta">{visible.length} posts affichés · {items.length} collectés</p>
+  </div>
+
+  {
+    showFilters && names.length > 1 && (
+      <div class="x-decl-filters" role="group" aria-label="Filtrer par candidat">
+        <button type="button" class="x-decl-chip is-active" data-filter="*">
+          Tous
+        </button>
+        {names.map(([slug, name]) => (
+          <button type="button" class="x-decl-chip" data-filter={slug}>
+            {name}
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  <ol class="x-decl-timeline">
+    {
+      visible.map((item) => (
+        <li class="x-decl-item" data-slug={item.slug}>
+          <article class="card x-decl-card">
+            <header class="x-decl-meta">
+              <time datetime={item.created_at}>{formatDeclarationDate(item.created_at)}</time>
+              <span class="x-decl-author">
+                <strong>{item.name}</strong>
+                <a href={`https://x.com/${item.handle}`} rel="noopener noreferrer">
+                  {formatXHandle(item.handle)}
+                </a>
+              </span>
+              {item.source === 'party' && <span class="status-badge">Parti</span>}
+            </header>
+            <p class="x-decl-text">{item.text}</p>
+            <p class="meta">
+              <a href={item.url} rel="noopener noreferrer">
+                Voir sur X
+              </a>
+            </p>
+          </article>
+        </li>
+      ))
+    }
+  </ol>
+
+  {
+    visible.length === 0 && (
+      <p class="meta">Aucune déclaration collectée — lancer <code>npm run x:declarations</code>.</p>
+    )
+  }
+</section>
+
+<style>
+  .x-decl-section {
+    margin: 1.5rem 0 2.5rem;
+  }
+  .x-decl-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  .x-decl-chip {
+    border: 1px solid var(--border, #d4c4b0);
+    background: var(--surface, #fff);
+    color: inherit;
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .x-decl-chip.is-active {
+    background: var(--accent, #1a5f4a);
+    color: #fff;
+    border-color: transparent;
+  }
+  .x-decl-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .x-decl-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .x-decl-meta time {
+    color: var(--muted, #5c5348);
+    font-variant-numeric: tabular-nums;
+  }
+  .x-decl-author a {
+    margin-left: 0.35rem;
+    font-size: 0.9em;
+  }
+  .x-decl-text {
+    white-space: pre-wrap;
+    margin: 0 0 0.5rem;
+    line-height: 1.45;
+  }
+  .x-decl-item.is-hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  const section = document.querySelector('.x-decl-section');
+  if (section) {
+    const chips = section.querySelectorAll('.x-decl-chip');
+    const items = section.querySelectorAll('.x-decl-item');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = (chip as HTMLButtonElement).dataset.filter ?? '*';
+        chips.forEach((c) => c.classList.toggle('is-active', c === chip));
+        items.forEach((el) => {
+          const show = filter === '*' || (el as HTMLElement).dataset.slug === filter;
+          el.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  }
+</script>

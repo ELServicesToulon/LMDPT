@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-07-17",
+  "updated": "2026-07-19",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -13,16 +13,16 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
+          "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
+          "published": "2026-07-18",
+          "detected_at": "2026-07-19"
+        },
+        {
           "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
           "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
           "published": "2026-07-15",
-          "detected_at": "2026-07-17"
-        },
-        {
-          "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
-          "published": "2026-07-09",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -31,7 +31,7 @@
       "name": "Bruno Retailleau",
       "affiliation": "Les Républicains",
       "program_status": "partial",
-      "last_measure_at": "2026-07-01",
+      "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
       "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
       "press_signals": [
@@ -39,13 +39,7 @@
           "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
           "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
           "published": "2026-07-17",
-          "detected_at": "2026-07-17"
-        },
-        {
-          "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
-          "published": "2026-07-09",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -54,21 +48,21 @@
       "name": "Édouard Philippe",
       "affiliation": "Horizons",
       "program_status": "partial",
-      "last_measure_at": "2026-07-01",
+      "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
+          "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
+          "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
+          "published": "2026-07-18",
+          "detected_at": "2026-07-19"
+        },
+        {
           "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
           "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
           "published": "2026-07-17",
-          "detected_at": "2026-07-17"
-        },
-        {
-          "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
-          "published": "2026-07-09",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -77,7 +71,7 @@
       "name": "Parti socialiste — « Vivre libre »",
       "affiliation": "PS (candidat non désigné)",
       "program_status": "partial",
-      "last_measure_at": "2026-06-26",
+      "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html"
     },
@@ -86,7 +80,7 @@
       "name": "Philippe Brun",
       "affiliation": "Parti socialiste",
       "program_status": "partial",
-      "last_measure_at": "2026-06-30",
+      "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html"
     },
@@ -108,7 +102,7 @@
           "title": "Ségolène Royal, Raphaël Glucksmann, François Hollande… La primaire sociale-démocrate cherche ses candidats",
           "url": "https://www.lemonde.fr/politique/article/2026/07/11/segolene-royal-raphael-glucksmann-francois-hollande-la-primaire-sociale-democrate-cherche-ses-candidats_6722668_823448.html",
           "published": "2026-07-11",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -117,7 +111,7 @@
       "name": "Jean-Luc Mélenchon",
       "affiliation": "La France insoumise",
       "program_status": "partial",
-      "last_measure_at": "2026-07-02",
+      "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html"
     },
@@ -126,38 +120,24 @@
       "name": "Jordan Bardella",
       "affiliation": "Rassemblement national",
       "program_status": "partial",
-      "last_measure_at": "2026-07-02",
+      "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
-          "published": "2026-07-09",
-          "detected_at": "2026-07-17"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
     },
     {
       "slug": "le-pen",
       "name": "Marine Le Pen",
       "affiliation": "Rassemblement national",
       "program_status": "partial",
-      "last_measure_at": "2026-07-02",
+      "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Budget 2027 : les gagnants et les perdants des premiers arbitrages du gouvernement",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/16/budget-2027-les-gagnants-et-perdants-des-premiers-arbitrages-du-gouvernement_6723785_823448.html",
-          "published": "2026-07-16",
-          "detected_at": "2026-07-17"
-        },
-        {
           "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
           "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
           "published": "2026-07-15",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -166,7 +146,7 @@
       "name": "Jean-Noël Barrot",
       "affiliation": "Renaissance",
       "program_status": "partial",
-      "last_measure_at": "2026-06-28",
+      "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/06/28/presidentielle-2027-jean-noel-barrot-appelle-a-rendre-le-pouvoir-aux-francais-face-au-rn-et-a-lfi_6716572_6205049.html"
     },
@@ -175,7 +155,7 @@
       "name": "François Ruffin",
       "affiliation": "Debout la France",
       "program_status": "partial",
-      "last_measure_at": "2026-06-26",
+      "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-dans-l-indre-francois-ruffin-se-lance-a-la-conquete-des-parrainages-des-maires_6715915_823448.html"
     },
@@ -190,13 +170,13 @@
           "title": "Présidentielle 2027 : Clémentine Autain prend acte de l’échec de la « primaire unitaire » de la gauche et renonce à être candidate",
           "url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
           "published": "2026-07-11",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         },
         {
           "title": "Ségolène Royal, Raphaël Glucksmann, François Hollande… La primaire sociale-démocrate cherche ses candidats",
           "url": "https://www.lemonde.fr/politique/article/2026/07/11/segolene-royal-raphael-glucksmann-francois-hollande-la-primaire-sociale-democrate-cherche-ses-candidats_6722668_823448.html",
           "published": "2026-07-11",
-          "detected_at": "2026-07-17"
+          "detected_at": "2026-07-19"
         }
       ]
     },
@@ -210,6 +190,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-07-17T06:00:12.565Z",
-  "program_press_hits": 15
+  "veille_scan_at": "2026-07-19T05:15:38.177Z",
+  "program_press_hits": 12
 }

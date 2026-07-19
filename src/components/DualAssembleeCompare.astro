@@ -45,6 +45,13 @@ interface Props {
     delta: number;
     color: string;
   }>;
+  /**
+   * Mode accueil / perf : barres empilées au lieu de 577×2 cercles SVG
+   * (~250 ko HTML en moins). Hémicycle complet sur les pages analyses.
+   */
+  compact?: boolean;
+  /** Lien vers l’hémicycle interactif complet (si compact) */
+  fullHref?: string;
 }
 
 const {
@@ -59,6 +66,8 @@ const {
   t2Label = 'Après législatives',
   realPending = false,
   differential,
+  compact = false,
+  fullHref = '/analyses/assemblee-premier-tour',
 } = Astro.props;
 
 // Positions officielles (modèle établi Wikimedia)
@@ -108,8 +117,8 @@ function buildDots(
   return dots;
 }
 
-const firstDots = buildDots(firstRoundAlloc, programProximityColor);
-const realDots = buildDots(realAlloc, (id, fb) => realAssemblyColor(id, fb));
+const firstDots = compact ? [] : buildDots(firstRoundAlloc, programProximityColor);
+const realDots = compact ? [] : buildDots(realAlloc, (id, fb) => realAssemblyColor(id, fb));
 
 function legendFrom(alloc: SeatRow[], colorFn: (id: string, fb?: string) => string) {
   return [...alloc]
@@ -136,14 +145,28 @@ const viewBoxH = 185;
 const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
-<section class="dual-assemblee" aria-labelledby={`dual-title-${uid}`}>
+<section class:list={['dual-assemblee', { 'dual-assemblee--compact': compact }]} aria-labelledby={`dual-title-${uid}`}>
   <header class="dual-header">
     <h3 id={`dual-title-${uid}`}>Deux Assemblées — 1er tour vs ce qui a suivi</h3>
     <p class="dual-lead">
-      À gauche de l’écran : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
-      couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée <strong>réelle des législatives</strong>
-      qui ont suivi. <strong>Convention hémicycle</strong> : partis de <em>gauche à gauche</em>,
-      <em>centre au centre</em>, partis de <em>droite à droite</em> (vue face à l’hémicycle).
+      {
+        compact ? (
+          <>
+            Comparaison <strong>proportion 1er tour</strong> vs <strong>Assemblée réelle</strong> des
+            législatives qui ont suivi (barres = parts de sièges, spectre gauche → droite). Pour l’hémicycle
+            interactif 577 sièges :{' '}
+            <a href={fullHref}>ouvrir le simulateur AN1T →</a>
+          </>
+        ) : (
+          <>
+            À gauche de l’écran : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
+            couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée{' '}
+            <strong>réelle des législatives</strong> qui ont suivi. <strong>Convention hémicycle</strong> :
+            partis de <em>gauche à gauche</em>, <em>centre au centre</em>, partis de <em>droite à droite</em>{' '}
+            (vue face à l’hémicycle).
+          </>
+        )
+      }
     </p>
   </header>
 
@@ -152,39 +175,78 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     <article class="dual-panel dual-panel--t1" aria-labelledby={`t1-title-${uid}`}>
       <div class="panel-badge panel-badge--t1">{t1Label}</div>
       <h4 id={`t1-title-${uid}`}>{firstRoundTitle}</h4>
-      <p class="panel-meta">{firstRoundMeta}</p>
-      <div class="hemi-wrap">
-        <svg
-          viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
-          width="100%"
-          height="auto"
-          role="img"
-          aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges attribués sur ${totalSeats}`}
-        >
-          <desc>
-            Hémicycle 100 % premier tour. Sièges placés de gauche à droite selon le spectre
-            de proximité de programmes. Méthode Sainte-Laguë, seuil 3 %.
-          </desc>
-          {
-            firstDots.map((d) => (
-              <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
-                <title>
-                  {d.label} — siège 1er tour (proximité programmes)
-                </title>
-              </circle>
-            ))
-          }
-          <!-- Repères conventionnels : gauche | centre | droite -->
-          <g class="hemi-zone-labels" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#c8c4bc" text-anchor="middle">
-            <text x="55" y="100">Gauche</text>
-            <text x="180" y="38">Centre</text>
-            <text x="305" y="100">Droite</text>
-          </g>
-          <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
-            {firstSeatsSum}/{totalSeats} · gauche → centre → droite
-          </text>
-        </svg>
-      </div>
+      <p class="panel-meta">{compact ? 'Sièges Sainte-Laguë sur le 1er tour — couleurs proximité de programmes.' : firstRoundMeta}</p>
+      {
+        compact ? (
+          <div
+            class="stack-bar"
+            role="img"
+            aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges sur ${totalSeats}`}
+          >
+            <div class="stack-bar-track">
+              {
+                firstLegend.map((item) => (
+                  <span
+                    class="stack-seg"
+                    style={`flex:${item.seats};background:${item.color}`}
+                    title={`${item.label} : ${item.seats} sièges (${item.pct}%)`}
+                  />
+                ))
+              }
+            </div>
+            <p class="stack-cap">
+              {firstSeatsSum}/{totalSeats} sièges · gauche → droite
+            </p>
+          </div>
+        ) : (
+          <div class="hemi-wrap">
+            <svg
+              viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
+              width="100%"
+              height="auto"
+              role="img"
+              aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges attribués sur ${totalSeats}`}
+            >
+              <desc>
+                Hémicycle 100 % premier tour. Sièges placés de gauche à droite selon le spectre de proximité
+                de programmes. Méthode Sainte-Laguë, seuil 3 %.
+              </desc>
+              {
+                firstDots.map((d) => (
+                  <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
+                    <title>
+                      {d.label} — siège 1er tour (proximité programmes)
+                    </title>
+                  </circle>
+                ))
+              }
+              <g
+                class="hemi-zone-labels"
+                font-family="system-ui,sans-serif"
+                font-size="7"
+                font-weight="600"
+                fill="#c8c4bc"
+                text-anchor="middle"
+              >
+                <text x="55" y="100">Gauche</text>
+                <text x="180" y="38">Centre</text>
+                <text x="305" y="100">Droite</text>
+              </g>
+              <text
+                x="180"
+                y="178"
+                text-anchor="middle"
+                class="hemi-cap"
+                fill="#1c1a17"
+                font-size="8"
+                font-weight="600"
+              >
+                {firstSeatsSum}/{totalSeats} · gauche → centre → droite
+              </text>
+            </svg>
+          </div>
+        )
+      }
       <ul class="dual-legend" aria-label="Légende 1er tour">
         {
           firstLegend.map((item) => (
@@ -206,16 +268,56 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     <article class="dual-panel dual-panel--real" aria-labelledby={`real-title-${uid}`}>
       <div class="panel-badge panel-badge--real">{t2Label}</div>
       <h4 id={`real-title-${uid}`}>{realTitle}</h4>
-      <p class="panel-meta">{realMeta}</p>
+      <p class="panel-meta">{compact ? 'Composition réelle après législatives — couleurs blocs institutionnels.' : realMeta}</p>
       {
         realPending || realAlloc.length === 0 ? (
           <div class="hemi-wrap hemi-pending" role="status">
             <p class="pending-msg">
               <strong>Résultat réel en attente</strong><br />
-              Le fil directeur LMDPT documente d’abord le 1er tour.
-              La comparaison binaire / post-scrutin s’affichera dès les résultats officiels.
+              Le fil directeur LMDPT documente d’abord le 1er tour. La comparaison s’affichera dès les
+              résultats officiels.
             </p>
           </div>
+        ) : compact ? (
+          <>
+            <div
+              class="stack-bar"
+              role="img"
+              aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
+            >
+              <div class="stack-bar-track">
+                {
+                  realLegend.map((item) => (
+                    <span
+                      class="stack-seg"
+                      style={`flex:${item.seats};background:${item.color}`}
+                      title={`${item.label} : ${item.seats} sièges (${item.pct}%)`}
+                    />
+                  ))
+                }
+              </div>
+              <p class="stack-cap">
+                {realSeatsSum}/{totalSeats} sièges · gauche → droite
+              </p>
+            </div>
+            <ul class="dual-legend" aria-label="Légende résultat réel">
+              {
+                realLegend.map((item) => (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}
+                    ></span>
+                    <span class="leg-label">{item.label}</span>
+                    <span class="leg-seats">
+                      <strong>{item.seats}</strong>
+                      <span class="meta"> ({item.pct}%)</span>
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </>
         ) : (
           <>
             <div class="hemi-wrap">
@@ -227,8 +329,8 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
                 aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
               >
                 <desc>
-                  Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue).
-                  Même géométrie Wikimedia ; couleurs institutionnelles.
+                  Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue). Même géométrie
+                  Wikimedia ; couleurs institutionnelles.
                 </desc>
                 {
                   realDots.map((d) => (
@@ -239,12 +341,27 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
                     </circle>
                   ))
                 }
-                <g class="hemi-zone-labels" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#c8c4bc" text-anchor="middle">
+                <g
+                  class="hemi-zone-labels"
+                  font-family="system-ui,sans-serif"
+                  font-size="7"
+                  font-weight="600"
+                  fill="#c8c4bc"
+                  text-anchor="middle"
+                >
                   <text x="55" y="100">Gauche</text>
                   <text x="180" y="38">Centre</text>
                   <text x="305" y="100">Droite</text>
                 </g>
-                <text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#1c1a17" font-size="8" font-weight="600">
+                <text
+                  x="180"
+                  y="178"
+                  text-anchor="middle"
+                  class="hemi-cap"
+                  fill="#1c1a17"
+                  font-size="8"
+                  font-weight="600"
+                >
                   {realSeatsSum}/{totalSeats} · gauche → centre → droite
                 </text>
               </svg>
@@ -253,7 +370,10 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
               {
                 realLegend.map((item) => (
                   <li>
-                    <span class="swatch" style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}></span>
+                    <span
+                      class="swatch"
+                      style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}
+                    ></span>
                     <span class="leg-label">{item.label}</span>
                     <span class="leg-seats">
                       <strong>{item.seats}</strong>
@@ -268,6 +388,14 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
       }
     </article>
   </div>
+
+  {
+    compact && (
+      <p class="compact-cta meta">
+        <a class="btn btn-secondary" href={fullHref}>Voir l’hémicycle complet 577 sièges (AN1T) →</a>
+      </p>
+    )
+  }
 
   {
     differential && differential.length > 0 && (
@@ -331,6 +459,36 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
     border: 1px solid var(--border, #e5e2dc);
     border-radius: var(--radius-lg, 12px);
   }
+  .stack-bar {
+    margin-bottom: 0.65rem;
+  }
+  .stack-bar-track {
+    display: flex;
+    height: 28px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0f1419;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .stack-seg {
+    min-width: 2px;
+    height: 100%;
+  }
+  .stack-cap {
+    margin: 0.35rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted, #1c1a17);
+    text-align: center;
+  }
+  .compact-cta {
+    margin: 1rem 0 0;
+    text-align: center;
+  }
+  .compact-cta .btn {
+    display: inline-block;
+  }
+
   .dual-header h3 {
     margin: 0 0 0.45rem;
     font-size: 1.28rem;
@@ -456,15 +614,17 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
   .sk-bar {
     height: 10px;
     border-radius: 999px;
+    /* Consensus : gauche rouge → écolo vert → centre jaune → LR bleu → RN bleu nuit */
     background: linear-gradient(
       90deg,
-      #c0392b 0%,
-      #e67e22 28%,
-      #f1c40f 50%,
-      #2980b9 75%,
+      #cc2443 0%,
+      #00c000 22%,
+      #ffeb00 48%,
+      #0066cc 72%,
       #0d378a 100%
     );
   }
+
   .sk-ends {
     display: flex;
     justify-content: space-between;

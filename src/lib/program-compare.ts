@@ -4,6 +4,7 @@ import { getThemeLabel } from './programs';
 export interface CompareRow {
   theme: ProgramThemeId;
   themeLabel: string;
+  subtheme?: string;
   measureKey: string;
   measureLabel: string;
   byCandidate: Record<string, string | null>;
@@ -41,10 +42,11 @@ function findMeasureByTheme(
   return file.measures.find((m) => m.theme === theme && m.id.includes(measureKey));
 }
 
-/** Lignes comparatives par thème — une ligne par mesure du premier candidat sélectionné ayant ce thème. */
+/** Lignes comparatives par thème — une ligne par mesure unique (thème + label). */
 export function buildCompareRows(
   candidates: ProgramCandidateFile[],
   themeFilter?: ProgramThemeId,
+  subthemeFilter?: string,
 ): CompareRow[] {
   const slugs = candidates.map((c) => c.candidate.slug);
   const rows: CompareRow[] = [];
@@ -53,7 +55,8 @@ export function buildCompareRows(
   for (const file of candidates) {
     for (const m of file.measures) {
       if (themeFilter && m.theme !== themeFilter) continue;
-      const key = `${m.theme}::${m.label}`;
+      if (subthemeFilter && (m.subtheme || '') !== subthemeFilter) continue;
+      const key = `${m.theme}::${m.subtheme || ''}::${m.label}`;
       if (seen.has(key)) continue;
       seen.add(key);
 
@@ -64,7 +67,10 @@ export function buildCompareRows(
       for (const slug of slugs) {
         const cf = candidates.find((c) => c.candidate.slug === slug);
         const match = cf?.measures.find(
-          (x) => x.theme === m.theme && x.label === m.label,
+          (x) =>
+            x.theme === m.theme &&
+            x.label === m.label &&
+            (x.subtheme || '') === (m.subtheme || ''),
         );
         byCandidate[slug] = measureCell(match);
         if (match?.chiffrage_mdeur != null) chiffrages.push(match.chiffrage_mdeur);
@@ -79,6 +85,7 @@ export function buildCompareRows(
       rows.push({
         theme: m.theme,
         themeLabel: getThemeLabel(m.theme),
+        subtheme: m.subtheme,
         measureKey: m.id,
         measureLabel: m.label,
         byCandidate,
@@ -91,8 +98,25 @@ export function buildCompareRows(
   return rows.sort((a, b) => {
     const t = a.themeLabel.localeCompare(b.themeLabel, 'fr');
     if (t !== 0) return t;
+    const s = (a.subtheme || '').localeCompare(b.subtheme || '', 'fr');
+    if (s !== 0) return s;
     return a.measureLabel.localeCompare(b.measureLabel, 'fr');
   });
+}
+
+/** Sous-thèmes présents dans un ensemble de programmes (pour filtres UI). */
+export function listSubthemes(
+  candidates: ProgramCandidateFile[],
+  themeFilter?: ProgramThemeId,
+): string[] {
+  const set = new Set<string>();
+  for (const f of candidates) {
+    for (const m of f.measures) {
+      if (themeFilter && m.theme !== themeFilter) continue;
+      if (m.subtheme?.trim()) set.add(m.subtheme.trim());
+    }
+  }
+  return [...set].sort((a, b) => a.localeCompare(b, 'fr'));
 }
 
 function chiffrageByType(

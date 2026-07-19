@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T08:08:25.408Z",
+  "updated": "2026-07-19T04:46:33.799Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -459,6 +459,18 @@
       "metric": "souhait_victoire"
     },
     {
+      "id": "commission-verian-16juillet",
+      "firm": "Verian (ex-Kantar Public)",
+      "firm_id": "verian",
+      "fieldwork": "16 juillet",
+      "published_hint": "16 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique VERIAN Figaro mag (16 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
       "id": "commission-cluster17-14juillet",
       "firm": "Cluster17",
       "firm_id": "cluster17",
@@ -810,6 +822,18 @@
       "source_id": "wikipedia-2027-election",
       "scores": {},
       "raw_snippet": "Élection présidentielle française de 2027 — Wikipédia Aller au contenu Menu principal Menu principal déplacer vers la barre latérale masquer Navigation Page d’accueil Portails thématiques Article au hasard Contact Contribuer Débuter sur Wikipédia Aide Communauté Pages spéciales M",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "rss-le-figaro-e1xmxa",
+      "firm": "Media",
+      "firm_id": null,
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-macron-appelle-a-se-mefier-des-sondages-predisant-la-victoire-de-le-pen-20260717",
+      "source_id": "le-figaro",
+      "scores": {},
+      "raw_snippet": "Présidentielle 2027 : Macron appelle à se «méfier» des sondages prédisant la victoire de Le Pen",
       "metric": "intentions_vote"
     }
   ]

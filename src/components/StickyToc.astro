@@ -1,0 +1,91 @@
+---
+/**
+ * Sommaire collant (pages longues) — accessibilité clavier + skip.
+ */
+interface TocItem {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  title?: string;
+  items: TocItem[];
+  id?: string;
+}
+
+const { title = 'Sommaire', items, id = 'page-toc' } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <nav class="sticky-toc" id={id} aria-label={title}>
+      <details open>
+        <summary>
+          <span class="sticky-toc-title">{title}</span>
+          <span class="sticky-toc-count meta">{items.length} sections</span>
+        </summary>
+        <ol class="sticky-toc-list">
+          {items.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    </nav>
+  )
+}
+
+<style>
+  .sticky-toc {
+    position: sticky;
+    top: 0.5rem;
+    z-index: 20;
+    margin: 0 0 1.25rem;
+    padding: 0.55rem 0.85rem;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    max-width: 52rem;
+  }
+  .sticky-toc summary {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.75rem;
+    list-style: none;
+    font-weight: 600;
+  }
+  .sticky-toc summary::-webkit-details-marker {
+    display: none;
+  }
+  .sticky-toc-title::before {
+    content: '☰ ';
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .sticky-toc-list {
+    margin: 0.5rem 0 0.15rem;
+    padding: 0 0 0 1.15rem;
+    display: grid;
+    gap: 0.25rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+  .sticky-toc-list a {
+    text-decoration: none;
+  }
+  .sticky-toc-list a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 640px) {
+    .sticky-toc {
+      top: 0;
+      border-radius: 0;
+      margin-left: -0.25rem;
+      margin-right: -0.25rem;
+    }
+  }
+</style>

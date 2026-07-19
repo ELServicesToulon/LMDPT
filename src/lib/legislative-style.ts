@@ -1,22 +1,25 @@
-/** Couleurs et libellés — nuances législatives 2024 (1er tour). */
+/** Couleurs et libellés — nuances législatives 2024 (1er tour).
+ * Aligné couleurs **consensus** Wiki AN / médias FR (écologie = vert, etc.).
+ */
+import { CONSENSUS_PARTY_COLORS } from './assemblee-wiki-colors';
 
 export const NUANCE_PALETTE: Record<string, string> = {
-  RN: '#5c4a72',
-  UG: '#c0392b',
-  ENS: '#1e4d6b',
-  LR: '#0066cc',
-  UXD: '#8b6914',
-  DVD: '#336699',
-  DVG: '#e91e8c',
-  REG: '#2d8a4e',
-  EXG: '#990000',
-  REC: '#8b4513',
-  HOR: '#4a5568',
-  DVC: '#718096',
-  DSV: '#555555',
-  UDI: '#2c5282',
-  FI: '#cc3333',
-  ECO: '#2d8a4e',
+  RN: CONSENSUS_PARTY_COLORS.rn,
+  UG: CONSENSUS_PARTY_COLORS.nfp,
+  ENS: CONSENSUS_PARTY_COLORS.ensemble,
+  LR: CONSENSUS_PARTY_COLORS.lr,
+  UXD: CONSENSUS_PARTY_COLORS.reconquete,
+  DVD: CONSENSUS_PARTY_COLORS.lr,
+  DVG: CONSENSUS_PARTY_COLORS.ps,
+  REG: CONSENSUS_PARTY_COLORS.liot,
+  EXG: CONSENSUS_PARTY_COLORS.exg,
+  REC: CONSENSUS_PARTY_COLORS.reconquete,
+  HOR: CONSENSUS_PARTY_COLORS.horizons,
+  DVC: CONSENSUS_PARTY_COLORS.modem,
+  DSV: CONSENSUS_PARTY_COLORS.autres,
+  UDI: CONSENSUS_PARTY_COLORS.modem,
+  FI: CONSENSUS_PARTY_COLORS.lfi,
+  ECO: CONSENSUS_PARTY_COLORS.eco, // vert consensus
 };
 
 export const NUANCE_LABELS: Record<string, string> = {

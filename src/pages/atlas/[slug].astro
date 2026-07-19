@@ -52,6 +52,20 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     <a href="/atlas">Atlas</a> → {summary.title}
   </nav>
 
+  {
+    is2027 && (
+      <nav class="meta" aria-label="Piliers du dossier 2027" style="display:flex;flex-wrap:wrap;gap:0.35rem 0.75rem;margin:0.5rem 0 0.75rem;">
+        <a href="/sources">🔒 Sécurité &amp; faits</a>
+        <span aria-hidden="true">·</span>
+        <a href="/analyses/assemblee-premier-tour">🌈 Pluralité (AN1T)</a>
+        <span aria-hidden="true">·</span>
+        <a href="/charte">🗳️ Democracy Over Elimination</a>
+        <span aria-hidden="true">·</span>
+        <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+      </nav>
+    )
+  }
+
   <section>
     <h2>{dataset.election}</h2>
     <p class="meta">
@@ -78,6 +92,10 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
           <>
             Projection pédagogique : {dataset.national.candidats.length} candidatures illustratives au premier tour. Les trois premiers (
             {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés. La pluralité complète du spectre est ici visible — à comparer avec les duels historiques du second tour.
+            <span class="meta" style="display:block;margin-top:0.5rem;">
+              <strong>Cartes départementales :</strong> stub — import data.gouv après le scrutin
+              (même pipeline que 2017/2022). National uniquement pour l’instant.
+            </span>
           </>
         ) : (
           <>
@@ -121,6 +139,12 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   {is2027 && (
     <section class="card">
       <h3>Focus pluralité 2027 — visualisation &amp; scénarios</h3>
+      <p class="meta" role="note">
+        <strong>Projection pédagogique uniquement</strong> — pas de données officielles du scrutin 2027.
+        Aucune prédiction de résultat. Voir les piliers
+        <a href="/">Sécurité &amp; faits</a> ·
+        <a href="/charte">Democracy Over Elimination</a>.
+      </p>
       <p>
         Ce graphique expose la <strong>pluralité complète</strong> des préférences au premier tour (projection 2026 agrégée). 
         Contrairement au duel binaire du second tour, toutes les voix comptent et sont visibles ici : RN en tête, mais centre, gauche et diversités fragmentées.

@@ -2,6 +2,7 @@
 interface Props {
   rows: Array<{
     themeLabel: string;
+    subtheme?: string;
     measureLabel: string;
     byCandidate: Record<string, string | null>;
     chiffrageSpreadMdeur: number | null;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const { rows, slugs, names } = Astro.props;
+const showSubtheme = rows.some((r) => Boolean(r.subtheme));
 ---
 
 <div class="table-wrap">
@@ -18,6 +20,7 @@ const { rows, slugs, names } = Astro.props;
     <thead>
       <tr>
         <th scope="col">Thème</th>
+        {showSubtheme && <th scope="col">Sous-thème</th>}
         <th scope="col">Mesure</th>
         {slugs.map((slug) => (
           <th scope="col">{names[slug] ?? slug}</th>
@@ -29,6 +32,7 @@ const { rows, slugs, names } = Astro.props;
       {rows.map((row) => (
         <tr>
           <td>{row.themeLabel}</td>
+          {showSubtheme && <td>{row.subtheme || '—'}</td>}
           <td>{row.measureLabel}</td>
           {slugs.map((slug) => (
             <td>{row.byCandidate[slug] ?? '—'}</td>

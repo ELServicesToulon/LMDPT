@@ -1,4 +1,5 @@
 import type { RenifleurItem, RenifleurSnapshot } from './renifleur';
+import { applyQualiteToDraftMarkdown, reviewQualiteRedaction } from './qualite-redaction';
 
 const SITE_DOSSIER =
   'https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=renifleur';
@@ -32,7 +33,10 @@ function formatSourceLine(item: RenifleurItem): string {
 export function buildPostCopy(item: RenifleurItem, siteLink: string): string {
   const suffix = `\n\n${siteLink}#renifleur-presse`;
   const maxTitleLen = Math.max(40, MAX_TWEET - 'Veille presse — …\n\n'.length - suffix.length);
-  const headline = truncateForX(item.title.replace(/\s+/g, ' ').trim(), maxTitleLen);
+  const rawHeadline = item.title.replace(/\s+/g, ' ').trim();
+  // Gate qualité : mots accolés / typos avant troncature X
+  const cleaned = reviewQualiteRedaction(rawHeadline).corrected;
+  const headline = truncateForX(cleaned, maxTitleLen);
   return `Veille presse — ${headline}${suffix}`;
 }
 
@@ -94,7 +98,9 @@ export function buildRenifleurSocialDraft(
   md += `- [ ] Revue humaine Président\n`;
   md += `- [ ] Cocher \`publication-log.md\` après publish\n`;
 
-  return md;
+  // Gate qualité rédaction (mots accolés, typos) — agent /lmdpt-qualite-redaction
+  const { markdown: withQualite } = applyQualiteToDraftMarkdown(md);
+  return withQualite;
 }
 
 export { SITE_DOSSIER, MAX_TWEET };

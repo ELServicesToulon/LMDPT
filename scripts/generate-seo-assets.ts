@@ -30,7 +30,6 @@ const CORE_ROUTES: { path: string; changefreq: string; priority: string }[] = [
   { path: '/debats/assemblee-premier-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/desistements-second-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/vote-utile-pluralite', changefreq: 'monthly', priority: '0.7' },
-  { path: '/cadres', changefreq: 'monthly', priority: '0.5' },
   { path: '/mentions-legales', changefreq: 'yearly', priority: '0.3' },
   { path: '/confidentialite', changefreq: 'yearly', priority: '0.3' },
 ];

@@ -7,32 +7,103 @@
   },
   "program": {
     "published_at": "2026-07-02",
-    "document_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-    "document_label": "Pas de programme 2027 distinct — candidat de substitution RN (presse, juil. 2026)",
+    "document_url": "https://rassemblementnational.fr/programme",
+    "document_label": "Pas de programme 2027 distinct — substitution RN + continuité mesures Le Pen / RN 2022",
     "status": "partial"
   },
   "evolution_from": "presidentielle-2022",
-  "updated": "2026-07-02",
+  "updated": "2026-07-18",
   "measures": [
     {
       "id": "bardella-2027-institutions-substitution-rn",
       "theme": "institutions",
       "label": "Candidat de substitution du RN si Marine Le Pen déclarée inéligible",
-      "detail": "Jugement en appel attendu le 7 juillet 2026 (affaire assistants parlementaires européens).",
+      "detail": "Scénario documenté presse (appel assistants parlementaires européens, juil. 2026).",
       "status": "nouveau",
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "source_label": "France 24 — 2 juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
-      "id": "bardella-2027-institutions-continuite-2022",
-      "theme": "institutions",
-      "label": "Pas de programme propre publié — continuité avec la ligne RN 2022",
-      "detail": "Mesures et chiffrages documentés : voir fiche Marine Le Pen 2022 (Institut Montaigne + évolution 2017→2022).",
+      "id": "bardella-2027-retraites-65-index",
+      "theme": "retraites",
+      "label": "Âge légal à 65 ans avec indexation (continuité ligne RN 2022)",
       "status": "maintenu",
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "source_label": "France 24 — 2 juil. 2026",
-      "as_of": "2026-07"
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
+    },
+    {
+      "id": "bardella-2027-fiscalite-tva-energie",
+      "theme": "fiscalite",
+      "label": "Baisse de la TVA sur l'énergie à 5,5 % (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "TVA & impôts"
+    },
+    {
+      "id": "bardella-2027-pouvoir-achat-smic",
+      "theme": "pouvoir_achat",
+      "label": "Hausse du SMIC net de 10 % (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Salaires"
+    },
+    {
+      "id": "bardella-2027-immigration-priorite-nationale",
+      "theme": "immigration",
+      "label": "Priorité nationale emploi / logement / prestations (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Priorité nationale"
+    },
+    {
+      "id": "bardella-2027-europe-referendum",
+      "theme": "europe",
+      "label": "Référendum immigration et révision des traités (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
+    },
+    {
+      "id": "bardella-2027-securite-peines",
+      "theme": "securite",
+      "label": "Peines planchers et fin de l'excuse de minorité (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Ordre public"
+    },
+    {
+      "id": "bardella-2027-climat-nucleaire",
+      "theme": "climat",
+      "label": "Nucléaire et moratoire éoliennes (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Énergie"
+    },
+    {
+      "id": "bardella-2027-institutions-plebiscite",
+      "theme": "institutions",
+      "label": "RIC et réduction du nombre de députés (continuité RN 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Gouvernance"
     }
   ],
   "chiffrages": []

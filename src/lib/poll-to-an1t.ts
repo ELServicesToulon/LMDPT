@@ -35,6 +35,7 @@ export const AN1T_BLOC_UI: Record<
   string,
   { id: string; label: string; color: string }
 > = {
+  // Couleurs consensus Wiki AN / médias FR (écologie #00c000 via consensusPartyColor si split)
   rn: { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a' },
   nfp: { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443' },
   ensemble: { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00' },

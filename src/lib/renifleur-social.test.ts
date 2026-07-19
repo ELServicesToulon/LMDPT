@@ -51,5 +51,16 @@ describe('renifleur-social', () => {
     expect(md).toContain('draft');
     expect(md).toContain('Gate REVIEW');
     expect(md).toContain('Le Monde');
+    expect(md).toContain('Gate qualité rédaction');
+    expect(md).toContain('Qualité rédaction');
+  });
+
+  it('cleans glued words in post copy', () => {
+    const copy = buildPostCopy(
+      { ...sampleItem, title: 'Plus de placesdenprison demandées' },
+      'https://lmdpt.iarbre.org/test',
+    );
+    expect(copy).toMatch(/places d'emprisonnement/i);
+    expect(copy).not.toContain('placesdenprison');
   });
 });

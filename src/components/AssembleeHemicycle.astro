@@ -512,7 +512,10 @@ const compactProjectionTitle =
   </div>
 
   {showControls && (
-    <div class="hemicycle-controls viz-mode-controls" data-hemicycle-id={instanceId} role="group" aria-label="Options d'affichage : mode de vue et granularité">
+    <p class="meta hemicycle-a11y-hint" id={`hemi-a11y-${instanceId}`}>
+      Clavier : Tab vers la légende et les sièges focusables · Entrée/Espace pour sélectionner · Échap pour effacer la sélection.
+    </p>
+    <div class="hemicycle-controls viz-mode-controls" data-hemicycle-id={instanceId} role="group" aria-label="Options d'affichage : mode de vue et granularité" aria-describedby={`hemi-a11y-${instanceId}`}>
       <fieldset class="mode-selector">
         <legend>Mode de vue</legend>
         <label class="ctrl-label"><input type="radio" name={`viewmode-${instanceId}`} value="hybrid" checked={initialMode === 'hybrid'} aria-describedby="mode-help"> Hybride</label>

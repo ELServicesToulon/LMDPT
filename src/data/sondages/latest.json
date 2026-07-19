@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-17T08:08:25.408Z",
+  "fetched_at": "2026-07-19T04:46:33.799Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 11,
@@ -315,6 +315,18 @@
       "metric": "souhait_victoire"
     },
     {
+      "id": "commission-verian-16juillet",
+      "firm": "Verian (ex-Kantar Public)",
+      "firm_id": "verian",
+      "fieldwork": "16 juillet",
+      "published_hint": "16 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre politique VERIAN Figaro mag (16 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
       "id": "commission-cluster17-14juillet",
       "firm": "Cluster17",
       "firm_id": "cluster17",
@@ -387,6 +399,18 @@
       "metric": "intentions_vote"
     },
     {
+      "id": "rss-le-figaro-e1xmxa",
+      "firm": "Media",
+      "firm_id": null,
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-macron-appelle-a-se-mefier-des-sondages-predisant-la-victoire-de-le-pen-20260717",
+      "source_id": "le-figaro",
+      "scores": {},
+      "raw_snippet": "Présidentielle 2027 : Macron appelle à se «méfier» des sondages prédisant la victoire de Le Pen",
+      "metric": "intentions_vote"
+    },
+    {
       "id": "rss-le-figaro-330018",
       "firm": "Ifop",
       "firm_id": "ifop",
@@ -439,7 +463,7 @@
   ],
   "movements": [],
   "brief": [
-    "Scan 2026-07-17T08:08 — aucun mouvement détecté (27 vague(s) en mémoire, 11 source(s) OK)."
+    "Scan 2026-07-19T04:46 — aucun mouvement détecté (29 vague(s) en mémoire, 11 source(s) OK)."
   ],
   "errors": [
     {

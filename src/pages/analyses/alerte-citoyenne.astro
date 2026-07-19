@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
 import alertes from '../../data/alertes-citoyennes.json';
 
 const updated = new Date(alertes.updated).toLocaleDateString('fr-FR', {
@@ -13,6 +14,24 @@ const frItems = alertes.items.filter((i) => i.region === 'fr');
 const ueItems = alertes.items.filter((i) => i.region === 'ue');
 const regionLabel = (id: string) =>
   alertes.regions.find((r) => r.id === id)?.label ?? id.toUpperCase();
+
+const verificationLabel: Record<string, string> = {
+  confirmed: 'Confirmé (texte officiel)',
+  partial: 'Partiel — à recouper',
+  unconfirmed_signal: 'À recouper (signal secondaire)',
+};
+
+const tocItems = [
+  { href: '#signal-title', label: 'Point de départ (source secondaire)' },
+  { href: '#fr-title', label: `France (${frItems.length})` },
+  ...frItems.map((i) => ({ href: `#point-${i.n}`, label: `${i.n}. ${i.title.slice(0, 48)}${i.title.length > 48 ? '…' : ''}` })),
+  { href: '#ue-title', label: `Union européenne (${ueItems.length})` },
+  ...ueItems.map((i) => ({ href: `#point-${i.n}`, label: `${i.n}. ${i.title.slice(0, 48)}${i.title.length > 48 ? '…' : ''}` })),
+  { href: '#lectures-complementaires', label: 'Lectures complémentaires' },
+  { href: '#sources-recoupement', label: 'Sources & recoupement' },
+];
+
+type AlerteItem = (typeof alertes.items)[number];
 ---
 
 <BaseLayout
@@ -34,9 +53,12 @@ const regionLabel = (id: string) =>
     </p>
     <p>{alertes.lead}</p>
     <p class="alerte-angle"><strong>Angle LMDPT.</strong> {alertes.lmdpt_angle}</p>
+    <p class="meta disclaimer-box">{alertes.disclaimer}</p>
   </section>
 
-  <section class="card alerte-signal-card" aria-labelledby="signal-title">
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card alerte-signal-card" aria-labelledby="signal-title" id="signal">
     <h3 id="signal-title">{alertes.signal.label}</h3>
     <dl class="fact-grid">
       <div>
@@ -70,18 +92,56 @@ const regionLabel = (id: string) =>
     <h3 id="fr-title">🇫🇷 En France — {frItems.length} points</h3>
     <ol class="alerte-full-list">
       {
-        frItems.map((item) => (
+        frItems.map((item: AlerteItem) => (
           <li id={`point-${item.n}`}>
             <div class="alerte-item-head">
               <span class="alerte-badge" data-region={item.region}>
                 {regionLabel(item.region)}
               </span>
               <span class="alerte-status-pill">{item.status_label}</span>
+              {item.official?.verification && (
+                <span class="alerte-verif" data-verif={item.official.verification}>
+                  {verificationLabel[item.official.verification] ?? item.official.verification}
+                </span>
+              )}
             </div>
             <h4>
               <span class="alerte-n">{item.n}.</span> {item.title}
             </h4>
             <p>{item.fact}</p>
+            {
+              item.official?.primary_urls?.length > 0 && (
+                <div class="alerte-official">
+                  <p class="meta alerte-subhead">Statut / sources officielles</p>
+                  <ul>
+                    {item.official.primary_urls.map((u) => (
+                      <li>
+                        <a href={u.url} rel="noopener noreferrer">
+                          {u.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+            {
+              item.counterpoints?.length > 0 && (
+                <div class="alerte-counter">
+                  <p class="meta alerte-subhead">Lectures complémentaires / contrepoints</p>
+                  <ul>
+                    {item.counterpoints.map((c) => (
+                      <li>
+                        <a href={c.url} rel="noopener noreferrer">
+                          {c.label}
+                        </a>
+                        {c.note && <span class="meta"> — {c.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
           </li>
         ))
       }
@@ -92,31 +152,90 @@ const regionLabel = (id: string) =>
     <h3 id="ue-title">🇪🇺 À Bruxelles — {ueItems.length} points</h3>
     <ol class="alerte-full-list" start={frItems.length + 1}>
       {
-        ueItems.map((item) => (
+        ueItems.map((item: AlerteItem) => (
           <li id={`point-${item.n}`}>
             <div class="alerte-item-head">
               <span class="alerte-badge" data-region={item.region}>
                 {regionLabel(item.region)}
               </span>
               <span class="alerte-status-pill">{item.status_label}</span>
+              {item.official?.verification && (
+                <span class="alerte-verif" data-verif={item.official.verification}>
+                  {verificationLabel[item.official.verification] ?? item.official.verification}
+                </span>
+              )}
             </div>
             <h4>
               <span class="alerte-n">{item.n}.</span> {item.title}
             </h4>
             <p>{item.fact}</p>
+            {
+              item.official?.primary_urls?.length > 0 && (
+                <div class="alerte-official">
+                  <p class="meta alerte-subhead">Statut / sources officielles</p>
+                  <ul>
+                    {item.official.primary_urls.map((u) => (
+                      <li>
+                        <a href={u.url} rel="noopener noreferrer">
+                          {u.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+            {
+              item.counterpoints?.length > 0 && (
+                <div class="alerte-counter">
+                  <p class="meta alerte-subhead">Lectures complémentaires / contrepoints</p>
+                  <ul>
+                    {item.counterpoints.map((c) => (
+                      <li>
+                        <a href={c.url} rel="noopener noreferrer">
+                          {c.label}
+                        </a>
+                        {c.note && <span class="meta"> — {c.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
           </li>
         ))
       }
     </ol>
   </section>
 
+  {
+    alertes.complementary_readings?.length > 0 && (
+      <section class="card" id="lectures-complementaires" aria-labelledby="compl-title">
+        <h3 id="compl-title">Lectures complémentaires</h3>
+        <p class="meta">
+          Cadres généraux pour lire les points ci-dessus sans fausse équivalence factuelle —
+          pas un « pour / contre » partisan.
+        </p>
+        <ul>
+          {alertes.complementary_readings.map((r) => (
+            <li>
+              <a href={r.url} rel={r.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                {r.label}
+              </a>
+              {r.note && <span class="meta"> — {r.note}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
   <section class="card">
     <h3>Lecture citoyenne</h3>
     <p>{alertes.closing}</p>
-    <p class="meta disclaimer-box">{alertes.disclaimer}</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="sources-recoupement">
     <h3>Sources &amp; pistes de recoupement</h3>
     <ul>
       {
@@ -139,6 +258,8 @@ const regionLabel = (id: string) =>
     <a href="/analyses/presidentielle-2027-preparation">← Dossier présidentielle 2027</a>
     {' · '}
     <a href="/charte">Charte éditoriale</a>
+    {' · '}
+    <a href="/sources#methodologie-blocs">Méthodo données</a>
     {' · '}
     <a href="/">Accueil</a>
   </p>
@@ -194,7 +315,7 @@ const regionLabel = (id: string) =>
     font-family: system-ui, sans-serif;
   }
 
-  .alerte-full-list p {
+  .alerte-full-list > li > p {
     margin: 0;
     line-height: 1.55;
     max-width: 75ch;
@@ -227,6 +348,38 @@ const regionLabel = (id: string) =>
     background: var(--accent-soft, #eef1f6);
     padding: 0.12rem 0.55rem;
     border-radius: 999px;
+  }
+
+  .alerte-verif {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .alerte-verif[data-verif='confirmed'] {
+    background: color-mix(in srgb, #2d6a4f 14%, white);
+    color: #1b4332;
+  }
+  .alerte-verif[data-verif='partial'] {
+    background: color-mix(in srgb, #b08900 12%, white);
+    color: #6b4f00;
+  }
+  .alerte-verif[data-verif='unconfirmed_signal'] {
+    background: color-mix(in srgb, #9b2226 10%, white);
+    color: #6a040f;
+  }
+
+  .alerte-subhead {
+    margin: 0.65rem 0 0.25rem;
+    font-weight: 600;
+  }
+  .alerte-official ul,
+  .alerte-counter ul {
+    margin: 0.15rem 0 0;
+    padding-left: 1.15rem;
+    max-width: 75ch;
+    line-height: 1.45;
   }
 
   .disclaimer-box {

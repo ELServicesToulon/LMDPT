@@ -44,8 +44,11 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
       )}
       . Fichier source : <code>src/data/data-journal.json</code>.
     </p>
-    <div class="journal-table-wrap">
+    <div class="journal-table-wrap" role="region" aria-label="Journal des jeux de données" tabindex="0">
       <table class="journal-table">
+        <caption class="table-caption">
+          Journal des jeux open data intégrés au site (date, pages, source, licence, commande de sync).
+        </caption>
         <thead>
           <tr>
             <th scope="col">Date</th>
@@ -123,6 +126,135 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     ))
   }
 
+  <section class="card methodo-blocs" id="methodologie-blocs" aria-labelledby="methodo-blocs-title">
+    <h2 id="methodo-blocs-title">Méthodologie — agrégation des nuances en blocs</h2>
+    <p class="methodo-lead">
+      Les résultats officiels du premier tour sont publiés en <strong>nuances</strong> (codes Ministère de l’Intérieur).
+      Pour comparer ou simuler une Assemblée, LMDPT <strong>regroupe</strong> ces nuances en
+      <strong>5 blocs civiques</strong> (NFP, Ensemble, Droite républicaine, RN&nbsp;&amp;&nbsp;alliés, Autres),
+      avec un <strong>seuil de 3&nbsp;%</strong> des voix avant répartition <strong>Sainte-Laguë</strong> (577 sièges).
+    </p>
+    <p class="meta">
+      Ce regroupement est <strong>éditorial et transparent</strong> : ce n’est ni une affiliation partisane,
+      ni une prédiction de second tour. Le détail nuance par nuance reste dans l’<a href="/atlas">Atlas</a>.
+      Source de vérité code : <code>src/lib/an1t.ts</code> (<code>AN1T_BLOCS</code>, <code>allocateSainteLague</code>).
+    </p>
+
+    <h3>Deux niveaux de lecture</h3>
+    <div class="journal-table-wrap" role="region" aria-label="Deux niveaux de lecture des données" tabindex="0">
+      <table class="journal-table">
+        <caption class="table-caption">
+          Deux niveaux : nuances officielles (Atlas) vs blocs civiques LMDPT (simulations AN1T).
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Niveau</th>
+            <th scope="col">Usage</th>
+            <th scope="col">Où le voir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nuances officielles</strong></td>
+            <td>Fidélité aux fichiers source</td>
+            <td>Atlas (577 circonscriptions, cartes détaillées)</td>
+          </tr>
+          <tr>
+            <td><strong>Blocs civiques LMDPT</strong></td>
+            <td>Lisibilité, simulations AN1T, comparaisons 1er tour</td>
+            <td>
+              <a href="/analyses/assemblee-premier-tour">Assemblée du Premier Tour</a>,
+              hémicycles « 5 grands blocs »
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Mapping nuances → blocs (législatives 2024)</h3>
+    <div class="journal-table-wrap" role="region" aria-label="Mapping nuances vers blocs" tabindex="0">
+      <table class="journal-table methodo-map">
+        <caption class="table-caption">
+          Mapping déterministe des codes nuance Ministère de l’Intérieur vers les 5 blocs civiques LMDPT (législatives 2024).
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Bloc</th>
+            <th scope="col">Label public</th>
+            <th scope="col">Codes nuance</th>
+            <th scope="col">Couleur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>nfp</code></td>
+            <td>Nouveau Front populaire</td>
+            <td>UG, DVG, EXG, FI, SOC, COM, VEC, ECO, RDG</td>
+            <td><span class="swatch" style="background:#c0392b" aria-hidden="true"></span> #c0392b</td>
+          </tr>
+          <tr>
+            <td><code>ensemble</code></td>
+            <td>Ensemble / centre présidentiel</td>
+            <td>ENS, HOR, UDI, DVC</td>
+            <td><span class="swatch" style="background:#1e4d6b" aria-hidden="true"></span> #1e4d6b</td>
+          </tr>
+          <tr>
+            <td><code>lr</code></td>
+            <td>Droite républicaine</td>
+            <td>LR</td>
+            <td><span class="swatch" style="background:#0066cc" aria-hidden="true"></span> #0066cc</td>
+          </tr>
+          <tr>
+            <td><code>rn</code></td>
+            <td>Rassemblement national &amp; alliés</td>
+            <td>RN, UXD, DVD, REC, DSV, EXD</td>
+            <td><span class="swatch" style="background:#5c4a72" aria-hidden="true"></span> #5c4a72</td>
+          </tr>
+          <tr>
+            <td><code>autres</code></td>
+            <td>Régionalistes &amp; divers</td>
+            <td>REG, DIV (+ nuance non mappée)</td>
+            <td><span class="swatch" style="background:#718096" aria-hidden="true"></span> #718096</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="methodo-rules">
+      <li><strong>Transparence</strong> — mapping public et versionné (code + cette note).</li>
+      <li><strong>Proximité de programmes / idées</strong> — lecture pédagogique du 1er tour, pas une carte d’adhésion.</li>
+      <li><strong>Codes hors table</strong> — basculent dans <code>autres</code> (aucun silence silencieux).</li>
+      <li>
+        <strong>Libellés d’époque</strong> — en 2022 les pages peuvent dire « Gauche / Centre / LR / Extrême droite » ;
+        en 2024 « NFP / Ensemble / Droite républicaine / RN &amp; alliés ». Les <strong>codes source</strong> et ce mapping font foi pour les simulations.
+      </li>
+    </ul>
+
+    <h3>Sainte-Laguë et seuil de 3&nbsp;%</h3>
+    <ol class="methodo-rules">
+      <li>Calcul des voix (et % exprimés) par bloc.</li>
+      <li><strong>Seuil</strong> : seuls les blocs ≥ <strong>3&nbsp;%</strong> des voix totalisées entrent dans la répartition.</li>
+      <li><strong>Sainte-Laguë</strong> : quotients successifs (diviseurs impairs 1, 3, 5…) jusqu’à 577 sièges.</li>
+      <li>Sortie : sièges et % de sièges par bloc — <strong>outil pédagogique</strong>, pas une réforme adoptée ni un pronostic de second tour.</li>
+    </ol>
+
+    <h3>Ce que cette méthode ne fait pas</h3>
+    <ul class="methodo-rules">
+      <li>Ne fusionne pas les nuances dans l’Atlas détaillé.</li>
+      <li>Ne remplace pas le second tour réel ni les désistements.</li>
+      <li>Ne désigne pas de vainqueur, favori ou « camp légitime ».</li>
+      <li>Ne constitue pas un avis juridique ou un conseil de vote.</li>
+    </ul>
+    <p class="meta">
+      Voir aussi : <a href="/charte">Charte</a>
+      {' · '}
+      <a href="/a-propos">À propos</a>
+      {' · '}
+      <a href="/analyses/assemblee-premier-tour">AN1T</a>
+      {' · '}
+      <a href="/atlas">Atlas</a>
+    </p>
+  </section>
+
   {
     manifest.datasets.length > 0 && (
       <section>
@@ -170,8 +302,23 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
 
 <style>
   .journal-table-wrap {
-    overflow-x: auto;
+    overflow: auto;
     margin-top: 1rem;
+    max-height: min(60vh, 28rem);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline-offset: 2px;
+  }
+  .journal-table-wrap:focus {
+    outline: 2px solid var(--accent, #2c5282);
+  }
+  .table-caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.4;
   }
   .journal-table {
     width: 100%;
@@ -186,12 +333,34 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     vertical-align: top;
     text-align: left;
   }
-  .journal-table th {
+  .journal-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     background: var(--card);
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--muted);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .methodo-blocs .methodo-lead {
+    max-width: 52rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .methodo-map .swatch {
+    display: inline-block;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    vertical-align: -0.1rem;
+    margin-right: 0.25rem;
+  }
+  .methodo-rules {
+    max-width: 52rem;
+    line-height: 1.5;
   }
   .page-links {
     list-style: none;

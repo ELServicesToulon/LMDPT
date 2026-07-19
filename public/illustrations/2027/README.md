@@ -1,35 +1,34 @@
 # Visuels Élection 2027 — Le Média du Premier Tour
 
-Assets créés pour illustrer le **premier tour** et la ligne **Democracy Over Elimination**.
+Assets pour illustrer le **premier tour** et la ligne **Democracy Over Elimination**.
+
+## Style (2026-07-18)
+
+**Croquis humoristiques style X** : encre noire + aquarelle, papier crème, esprit fil Twitter/X.
+Légèreté sur les *mécanismes* électoraux — jamais de caricature de camp ni de personnalités nommées.
 
 ## Fichiers
 
-- `hero-premier-tour-2027.jpg` — Hero principal (bannière accueil)
-- `democracy-over-elimination.jpg` — Concept central
-- `pluralite-1er-tour.jpg` — Pluralité des voix
-- `dessin-urne-2027.jpg` — Urne transparente + miroir
-- `photo-citoyens-data-2027.jpg` — Scène citoyens + data ouverte (style photo illustrative)
-- `meme-1er-tour-ne-ment-pas.jpg` — Mème signature
-- `meme-vote-pensee.jpg` — Mème "je vote ce que je pense"
-- `illustration-voix-egales.jpg` — Toutes les voix égales
+| Fichier | Sujet |
+|---------|--------|
+| `hero-premier-tour-2027.jpg` / `.webp` | Hero accueil — urne + idées + citoyens |
+| `democracy-over-elimination.jpg` | Flèches du 2e tour cassées |
+| `pluralite-1er-tour.jpg` | Urne / confettis de bulletins |
+| `dessin-urne-2027.jpg` | Urne + miroir « France » |
+| `photo-citoyens-data-2027.jpg` | Open data 1er tour |
+| `meme-1er-tour-ne-ment-pas.jpg` | Mème croquis vérité |
+| `meme-vote-pensee.jpg` | Vote « pour » au 1er tour |
+| `illustration-voix-egales.jpg` | Balance des voix |
 
-**Animation** :
-- `/videos/2027/hero-voting-animation.mp4` (6s, push-in civique)
+**Animation** : `/videos/2027/hero-voting-animation.mp4` (6s, push-in croquis)
 
-## Utilisation
+Archive pré-croquis : `archive-pre-croquis-2026-07-18/`
 
-- Accueil : hero + galerie complète
-- Page Présidentielle 2027 : illustration + mini-galerie mèmes
-- Threads X / posts sociaux : pièces jointes (mèmes + dessins)
-- OG images : utiliser hero ou pluralité (adapter ratio si besoin)
+## PRINCIPE ABSOLU DE LAÏCITÉ (non négociable)
 
-**Style** : dessins élégants, mèmes respectueux et civiques, palette cohérente avec le site (off-white + bleu profond + accents tricolores).
+- Aucun signe religieux ostentatoire dans AUCUNE illustration.
+- Tenues quotidiennes neutres uniquement.
+- Pas de logo de parti, pas de caricature de personnalités nommées.
+- Sauf live YouTube (exception documentée ailleurs).
 
-**PRINCIPE ABSOLU DE LAÏCITÉ (non négociable)** : 
-- Aucun signe religieux ostentatoire dans AUCUNE illustration, photo, dessin, mème ou visuel du site.
-- aucun symbole religieux (croix, église, voile, kippa, etc.), même discret ou en arrière-plan.
-- Toutes les représentations de citoyens doivent être en tenues quotidiennes neutres, sans aucun attribut religieux.
-- Ce principe s'applique à l'intégralité du site (sauf live YouTube). Toute image contrevenant est bloquée immédiatement.
-- Le site expose des idées et des faits, jamais d'idéologie religieuse ou autoritaire.
-
-Générés 2026-07-09 — focus Élection 2027.
+Générés 2026-07-18 — remplacement dessins réalistes → croquis X humoristiques.

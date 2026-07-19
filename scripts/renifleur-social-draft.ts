@@ -1,6 +1,7 @@
 #!/usr/bin/env tsx
 /**
  * Génère un brouillon X depuis le renifleur presse (revue humaine obligatoire).
+ * Inclut gate qualité rédaction (mots accolés / typos) via qualite-redaction.
  *
  * Usage :
  *   npm run renifleur:draft
@@ -59,7 +60,11 @@ async function main() {
   mkdirSync(outDir, { recursive: true });
   writeFileSync(outFile, markdown, 'utf8');
   console.log(`OK → ${outFile}`);
-  console.log(`Articles : ${snapshot.items.length} · revue humaine avant publish`);
+  console.log(`Articles : ${snapshot.items.length} · gate qualité rédaction + revue humaine avant publish`);
+  if (markdown.includes('DecisionTag')) {
+    const m = markdown.match(/\*\*DecisionTag\*\* : (SHIP|FIX-FIRST)/);
+    if (m) console.log(`Qualité rédaction : ${m[1]}`);
+  }
 }
 
 main().catch((err) => {

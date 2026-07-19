@@ -123,8 +123,14 @@ Dossier + atlas : https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparat
 
 ```bash
 npm run renifleur          # fetch RSS → latest.json
-npm run renifleur:draft    # brouillon X → second-brain/.../social-drafts/auto/
+npm run renifleur:draft    # brouillon X → second-brain/.../social-drafts/auto/ (+ gate qualité rédaction)
 npm run renifleur:draft:refresh  # refetch + brouillon
+npm run alliances:matrix   # scores alliances programmes 2017/2022/2027
+npm run x:declarations     # fil chronologique posts X candidats → analyses/declarations-x-candidats
+
+# Follow comptes officiels (backend Mediconvoi, OAuth LMDPT) :
+# cd ~/Mediconvoi/backend && npm run lmdpt-x-follow-candidats -- --dry-run
+# npm run lmdpt-x-follow-candidats
 ```
 
 Sortie : `second-brain/projects/lmdpt/social-drafts/auto/YYYY-MM-DD-renifleur-draft.md`  

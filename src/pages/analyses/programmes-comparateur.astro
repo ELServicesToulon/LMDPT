@@ -14,6 +14,7 @@ import {
   buildCompareRows,
   buildChiffrageSummary,
   formatMdeur,
+  listSubthemes,
 } from '../../lib/program-compare';
 import type { ProgramThemeId } from '../../lib/program-types';
 import { simulateFromVoteShares } from '../../lib/an1t';
@@ -21,6 +22,7 @@ import { simulateFromVoteShares } from '../../lib/an1t';
 const scrutinId =
   Astro.url.searchParams.get('scrutin') ?? 'presidentielle-2022';
 const themeFilter = Astro.url.searchParams.get('theme') as ProgramThemeId | null;
+const subthemeFilter = Astro.url.searchParams.get('subtheme') || null;
 const showEvolution = Astro.url.searchParams.get('evolution') === '1';
 
 const available = listCandidates(scrutinId);
@@ -31,7 +33,12 @@ const selectedSlugs = selectedParam
   : defaultSlugs;
 
 const selected = available.filter((c) => selectedSlugs.includes(c.candidate.slug));
-const compareRows = buildCompareRows(selected, themeFilter ?? undefined);
+const subthemes = listSubthemes(selected, themeFilter ?? undefined);
+const compareRows = buildCompareRows(
+  selected,
+  themeFilter ?? undefined,
+  subthemeFilter ?? undefined,
+);
 const chiffrageRows = buildChiffrageSummary(selected);
 const names = Object.fromEntries(selected.map((c) => [c.candidate.slug, c.candidate.name]));
 
@@ -107,8 +114,22 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
         <option value="securite" selected={themeFilter === 'securite'}>Sécurité</option>
         </select>
       </label>
+      <label>
+        Sous-thème
+        <select name="subtheme" aria-label="Filtrer par sous-thème">
+          <option value="">Tous</option>
+          {subthemes.map((st) => (
+            <option value={st} selected={subthemeFilter === st}>
+              {st}
+            </option>
+          ))}
+        </select>
+      </label>
       <button type="submit">Appliquer</button>
     </form>
+    {subthemes.length === 0 && (
+      <p class="meta">Aucun sous-thème renseigné pour cette sélection (granularité progressive P17).</p>
+    )}
   </section>
 
   {selected.length >= 2 && (

@@ -1,10 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
+import StickyToc from '../../components/StickyToc.astro';
 import { ELECTION_CATALOG } from '../../lib/elections';
 import { listScrutinDuals } from '../../lib/scrutin-dual';
 
 const duals = listScrutinDuals();
+const tocItems = [
+  { href: '#scrutins', label: 'Liste des scrutins' },
+  ...duals.map((d) => ({ href: `#${d.slug}`, label: d.title })),
+  { href: '/sources#methodologie-blocs', label: 'Méthodo : nuances → blocs' },
+];
 ---
 
 <BaseLayout
@@ -20,12 +26,16 @@ const duals = listScrutinDuals();
       Tableau de différentiel de sièges sur chaque dual.
     </p>
     <p class="meta">
-      Ligne Democracy Over Elimination — documenter le 1er tour, pas le transformer en ranking. Illustration
-      pédagogique, pas de prédiction.
+      Documenter le 1er tour, pas le transformer en ranking. Illustration pédagogique, pas de prédiction.
+      {' · '}
+      Les nuances officielles sont ici ; le regroupement en 5 blocs pour les simulations est expliqué dans la
+      <a href="/sources#methodologie-blocs">méthodologie d’agrégation</a>.
     </p>
   </section>
 
-  <section>
+  <StickyToc title="Sommaire Atlas" items={tocItems} />
+
+  <section id="scrutins">
     <h3>Scrutins</h3>
     <ul class="election-list">
       {

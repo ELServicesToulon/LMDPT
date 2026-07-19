@@ -1,25 +1,31 @@
 {
   "title": "Alerte citoyenne — conditions du débat public",
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "status": "active",
   "eyebrow": "Veille civique · liberté d’expression",
   "lead": "Tour d’horizon documenté de textes et projets (France / UE) cités dans le débat public comme susceptibles d’encadrer la parole politique, les médias et les réseaux — avant le premier tour 2027.",
   "disclaimer": "Synthèse documentaire LMDPT (ligne Democracy Over Elimination). Ce n’est ni un avis juridique ni un soutien à un camp. Chaque point reprend un objet législatif ou une prise de position publique ; les qualifications politiques restent celles des acteurs cités. À vérifier sur les textes officiels (Légifrance, Sénat, Assemblée, Commission européenne).",
   "signal": {
-    "label": "Signal de synthèse (16 juillet 2026)",
+    "label": "Point de départ (source secondaire)",
     "author": "Sarah Knafo",
     "role": "Députée européenne",
     "platform": "X",
     "url": "https://x.com/i/status/2077697375322140699",
     "status_id": "2077697375322140699",
     "published": "2026-07-16T10:10:30.000Z",
-    "summary": "Thread listant onze projets français et européens présentés comme une même logique de restriction de la liberté d’expression (ingérence intérieure, gels d’avoirs, dissolutions, inéligibilité, temps de parole en ligne, vérification d’âge, Chat Control, etc.).",
-    "engagement_note": "Engagement élevé au moment de la capture (plusieurs milliers de likes / reposts) — indicateur de portée, pas de véracité."
+    "summary": "Thread public du 16 juillet 2026 servant de liste de sujets à documenter. LMDPT ne reprend pas les qualifications politiques de l’autrice ; chaque objet est recoupé, autant que possible, avec un texte ou dossier officiel.",
+    "engagement_note": "Engagement élevé au moment de la capture (plusieurs milliers de likes / reposts) — indicateur de portée, pas de véracité. Source secondaire uniquement."
   },
   "lmdpt_angle": "Pour le premier tour 2027, la pluralité des idées suppose un débat public accessible. LMDPT documente les règles et projets qui encadrent ce débat — sans prédiction électorale ni classement de camps.",
   "regions": [
-    { "id": "fr", "label": "France" },
-    { "id": "ue", "label": "Union européenne" }
+    {
+      "id": "fr",
+      "label": "France"
+    },
+    {
+      "id": "ue",
+      "label": "Union européenne"
+    }
   ],
   "items": [
     {
@@ -28,23 +34,99 @@
       "title": "« Ingérence intérieure » — cadre sénatorial",
       "fact": "Concept d’« ingérence intérieure » évoqué dans le débat au Sénat, avec un rapprochement centre / LR / PS selon le signal. Enjeu citoyen : requalification éventuelle de prises de position politiques légales (immigration, euro numérique, critique de l’UE) hors du seul registre « ingérence étrangère ».",
       "status": "débat_parlementaire",
-      "status_label": "Débat parlementaire"
+      "status_label": "Débat parlementaire",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Sénat — travaux parlementaires (portail)",
+            "url": "https://www.senat.fr/"
+          },
+          {
+            "label": "Assemblée nationale — dossiers législatifs",
+            "url": "https://www.assemblee-nationale.fr/dyn/17/dossiers"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "Légifrance — chercher le texte exact une fois déposé",
+          "url": "https://www.legifrance.gouv.fr/",
+          "note": "Tant qu’aucun n° de PPL/PJL n’est publié, le point reste un débat de qualification, pas une norme en vigueur."
+        }
+      ]
     },
     {
       "n": 2,
       "region": "fr",
-      "title": "Proposition Retailleau — séparatisme / gels de fonds",
-      "fact": "Proposition de loi contre le séparatisme adoptée au Sénat le 5 mai 2026 (selon le signal), en attente à l’Assemblée. Article 6 cité : gel de fonds sans condamnation pénale pour propos contribuant à « discrimination, haine ou violence » — contours juridiques à lire dans le texte déposé.",
+      "title": "PPL Retailleau — entrisme islamiste / outils de lutte",
+      "fact": "Proposition de loi visant à lutter contre l’entrisme islamiste en France (Sénat n° 455, 2025-2026), déposée le 16 mars 2026 par Bruno Retailleau et collègues, adoptée par le Sénat le 5 mai 2026 (texte n° 101). Transmise à l’Assemblée nationale (proposition n° 2752, 17e législature, déposée le 6 mai 2026). Le signal X du 16/07 évoquait gels de fonds et propos ; les contours exacts se lisent dans le texte et le rapport de commission — pas dans le thread.",
       "status": "adopte_senat",
-      "status_label": "Adoptée au Sénat · AN en attente"
+      "status_label": "Adoptée Sénat 05/05/2026 · AN n° 2752",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Sénat — dossier législatif ppl25-455",
+            "url": "https://www.senat.fr/dossier-legislatif/ppl25-455.html"
+          },
+          {
+            "label": "Sénat — texte adopté n° 101 (05/05/2026)",
+            "url": "https://www.senat.fr/leg/tas25-101.html"
+          },
+          {
+            "label": "Assemblée nationale — PPL n° 2752",
+            "url": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2752_proposition-loi"
+          },
+          {
+            "label": "AN — dossier DLR5L17N53936",
+            "url": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53936"
+          }
+        ],
+        "verification": "confirmed"
+      },
+      "counterpoints": [
+        {
+          "label": "Sénat — compte rendu / débats (scrutins)",
+          "url": "https://www.senat.fr/scrutin-public/dossiers/ppl25-455_scr.html#lec1",
+          "note": "Lire les débats et scrutins pour les positions des groupes — LMDPT ne tranche pas."
+        },
+        {
+          "label": "CNCDH — liberté d’expression / ordre public",
+          "url": "https://www.cncdh.fr/",
+          "note": "Cadre institutionnel pour peser les outils de police administrative vs libertés."
+        }
+      ]
     },
     {
       "n": 3,
       "region": "fr",
       "title": "Projet Nuñez — entrisme, dissolutions, interdiction de livres",
-      "fact": "Projet visant l’entrisme : dissolutions, gels d’avoirs, et possibilité d’interdiction de livres par les ministres de l’Intérieur et de la Culture « dans un délai très court » selon le signal. Périmètre rédactionnel large (« vivre ensemble ») signalé comme risque d’extension.",
+      "fact": "Dans le débat sur l’entrisme, un texte gouvernemental plus « rigoureux » a été évoqué (portefeuille Intérieur / Nuñez selon la couverture presse du 5–6 mai 2026). Pas de PJL définitif recoupé ici au 17/07/2026 — rester sur le dossier Sénat ppl25-455 et les annonces ministérielles officielles.",
       "status": "projet",
-      "status_label": "Projet / discussion"
+      "status_label": "Projet / discussion",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Sénat — PPL Retailleau (contexte concurrent Nuñez évoqué presse)",
+            "url": "https://www.senat.fr/dossier-legislatif/ppl25-455.html"
+          },
+          {
+            "label": "Ministère de l’Intérieur",
+            "url": "https://www.interieur.gouv.fr/"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "Conseil d’État — contentieux dissolutions / libertés",
+          "url": "https://www.conseil-etat.fr/",
+          "note": "Toute extension des dissolutions ou interdictions est contrôlée in fine par le juge administratif."
+        }
+      ]
     },
     {
       "n": 4,
@@ -52,7 +134,28 @@
       "title": "Inéligibilité obligatoire (après retrait Yadan → texte Bergé)",
       "fact": "Proposition Yadan retirée ; annonce d’un texte porté par Aurore Bergé prévoyant une inéligibilité obligatoire pour élu condamné pour propos jugés haineux. Enjeu : qui définit le seuil « offensant / haineux » et l’impact sur la représentation citoyenne.",
       "status": "annonce",
-      "status_label": "Annonce gouvernementale"
+      "status_label": "Annonce gouvernementale",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Assemblée nationale — propositions de loi",
+            "url": "https://www.assemblee-nationale.fr/dyn/17/textes"
+          },
+          {
+            "label": "Légifrance — code électoral (inéligibilités)",
+            "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070239/LEGISCTA000006148455/"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "Conseil constitutionnel — jurisprudence inéligibilité",
+          "url": "https://www.conseil-constitutionnel.fr/",
+          "note": "Les peines complémentaires d’inéligibilité sont encadrées par la Constitution et la CEDH."
+        }
+      ]
     },
     {
       "n": 5,
@@ -60,7 +163,28 @@
       "title": "Temps de parole politique sur les réseaux (Paul Midy)",
       "fact": "Proposition du député Renaissance Paul Midy d’encadrer le temps de parole des politiques sur les réseaux sociaux, sur le modèle audiovisuel. Enjeu : extension éventuelle de l’équité des temps de parole hors médias traditionnels.",
       "status": "proposition",
-      "status_label": "Proposition parlementaire"
+      "status_label": "Proposition parlementaire",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Assemblée nationale — fiche député Paul Midy",
+            "url": "https://www.assemblee-nationale.fr/dyn/deputes/PA795108"
+          },
+          {
+            "label": "ARCOM — temps de parole (audiovisuel)",
+            "url": "https://www.arcom.fr/"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "ARCOM — cadre légal du pluralisme audiovisuel",
+          "url": "https://www.arcom.fr/nous-connaitre/missions-et-activites",
+          "note": "Le pluralisme audiovisuel a un cadre distinct des plateformes ; toute extension nécessite un texte précis."
+        }
+      ]
     },
     {
       "n": 6,
@@ -68,7 +192,28 @@
       "title": "Interdiction des réseaux sociaux aux moins de 15 ans",
       "fact": "Mesure votée (selon le signal), portée par l’exécutif et soutenue largement. Effet collatéral documenté dans le débat : vérification d’âge pour tous les utilisateurs → liaison identité / compte et traçabilité des prises de position.",
       "status": "vote",
-      "status_label": "Votée (à confirmer Légifrance)"
+      "status_label": "Votée (à confirmer Légifrance)",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Légifrance — recherche textes",
+            "url": "https://www.legifrance.gouv.fr/"
+          },
+          {
+            "label": "CNIL — vérification d’âge & vie privée",
+            "url": "https://www.cnil.fr/"
+          }
+        ],
+        "verification": "unconfirmed_signal"
+      },
+      "counterpoints": [
+        {
+          "label": "CNIL — protection des mineurs en ligne",
+          "url": "https://www.cnil.fr/fr/proteger-les-mineurs-en-ligne",
+          "note": "La protection des mineurs et la minimisation des données d’identité doivent être lues ensemble."
+        }
+      ]
     },
     {
       "n": 7,
@@ -76,7 +221,24 @@
       "title": "Prises de position sur médias privés (Ruffin / Mélenchon)",
       "fact": "François Ruffin annonce qu’il fermerait CNews s’il arrivait au pouvoir ; Jean-Luc Mélenchon qu’il démantèlerait le groupe Bolloré — selon le signal. Ce ne sont pas des textes en vigueur : intentions politiques sur le pluralisme médiatique.",
       "status": "prise_position",
-      "status_label": "Prise de position politique"
+      "status_label": "Prise de position politique",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "CSA/ARCOM — concentration & pluralisme",
+            "url": "https://www.arcom.fr/"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "RSF — liberté de la presse (France)",
+          "url": "https://rsf.org/fr/pays/france",
+          "note": "Le pluralisme médiatique se discute aussi hors intentions de campagne, via concentration et régulation."
+        }
+      ]
     },
     {
       "n": 8,
@@ -84,7 +246,28 @@
       "title": "Habilitation DGSI refusée pour opinions souverainistes",
       "fact": "Cas d’un refus d’habilitation au motif d’opinions souverainistes, validé par le tribunal administratif selon le signal. Enjeu : filtrage d’agents publics sur idées politiques (frontière avec la liberté d’opinion des agents).",
       "status": "jurisprudence",
-      "status_label": "Jurisprudence administrative (signalée)"
+      "status_label": "Jurisprudence administrative (signalée)",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Légifrance — jurisprudence administrative",
+            "url": "https://www.legifrance.gouv.fr/search/cetat"
+          },
+          {
+            "label": "Conseil d’État",
+            "url": "https://www.conseil-etat.fr/"
+          }
+        ],
+        "verification": "unconfirmed_signal"
+      },
+      "counterpoints": [
+        {
+          "label": "Défenseur des droits — agents publics & non-discrimination",
+          "url": "https://www.defenseurdesdroits.fr/",
+          "note": "Cadre de lecture des droits des agents face aux exigences de sécurité."
+        }
+      ]
     },
     {
       "n": 9,
@@ -92,15 +275,74 @@
       "title": "Vérification d’âge UE + app d’identité européenne",
       "fact": "L’UE pousse la vérification d’âge pour l’accès aux réseaux. Application d’identité européenne présentée par Ursula von der Leyen ; le signal affirme un contournement intégral en 48 h — à recouper avec les comptes techniques indépendants.",
       "status": "ue_projet",
-      "status_label": "Cadre UE / digital identity"
+      "status_label": "Cadre UE / digital identity",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Commission — European Digital Identity",
+            "url": "https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-digital-identity_en"
+          },
+          {
+            "label": "EUR-Lex — règlement eIDAS 910/2014",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32014R0910"
+          },
+          {
+            "label": "DSA — protection des mineurs (lignes directrices Commission)",
+            "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors"
+          }
+        ],
+        "verification": "confirmed"
+      },
+      "counterpoints": [
+        {
+          "label": "EDRi — identité numérique",
+          "url": "https://edri.org/",
+          "note": "Risques de traçabilité et surveillance associés à l’ID numérique."
+        }
+      ]
     },
     {
       "n": 10,
       "region": "ue",
-      "title": "Chat Control — scan des messages privés",
-      "fact": "Relance du projet dit « Chat Control » : scan automatisé de messages privés et photos sous motif de protection des mineurs. Enjeu de proportionnalité et de confidentialité des communications.",
+      "title": "CSAM / « Chat Control » — proposition de règlement UE",
+      "fact": "Proposition de règlement visant à prévenir et combattre les abus sexuels sur enfants en ligne (COM/2022/209 — CSAM), souvent surnommée « Chat Control » dans le débat public. Négociations interinstitutionnelles en cours ; le règlement provisoire (UE) 2021/1232 (dérogation ePrivacy pour détection volontaire) a expiré le 3 avril 2026 faute d’extension. Enjeu : proportionnalité du scan, chiffrement, protection des mineurs.",
       "status": "ue_projet",
-      "status_label": "Projet UE en discussion"
+      "status_label": "Proposition UE en discussion (CSAM)",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "EUR-Lex — COM(2022) 209 (proposition CSAM)",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex:52022PC0209"
+          },
+          {
+            "label": "EUR-Lex — EN TXT CELEX 52022PC0209",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52022PC0209"
+          },
+          {
+            "label": "PE Legislative Train — combating CSAM online",
+            "url": "https://www.europarl.europa.eu/legislative-train/spotlight-JD22/file-combating-child-sexual-abuse-online"
+          },
+          {
+            "label": "Règlement (UE) 2021/1232 (provisoire, fin validité 03/04/2026)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2021/1232/oj"
+          }
+        ],
+        "verification": "confirmed"
+      },
+      "counterpoints": [
+        {
+          "label": "EDRi — Chat Control",
+          "url": "https://edri.org/our-work/chat-control/",
+          "note": "Analyse droits numériques sur le scan et le chiffrement."
+        },
+        {
+          "label": "Conseil de l’UE — lutte contre les abus sexuels sur enfants",
+          "url": "https://www.consilium.europa.eu/en/policies/fight-against-child-sexual-abuse/",
+          "note": "Position / actualité institutionnelle du Conseil."
+        }
+      ]
     },
     {
       "n": 11,
@@ -108,13 +350,56 @@
       "title": "« Bouclier européen de la démocratie »",
       "fact": "Initiative citée : financements pour médias « indépendants », ONG et réseau de fact-checkers. Enjeu de gouvernance : qui définit la vérité factuelle lorsque le financeur est institutionnel.",
       "status": "ue_initiative",
-      "status_label": "Initiative UE"
+      "status_label": "Initiative UE",
+      "official": {
+        "status_as_of": "2026-07-17",
+        "primary_urls": [
+          {
+            "label": "Commission — Protecting democracy",
+            "url": "https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/new-push-european-democracy/protecting-democracy_en"
+          },
+          {
+            "label": "EUR-Lex",
+            "url": "https://eur-lex.europa.eu/"
+          }
+        ],
+        "verification": "partial"
+      },
+      "counterpoints": [
+        {
+          "label": "EDMO — European Digital Media Observatory",
+          "url": "https://edmo.eu/",
+          "note": "Réseau de fact-checking et de recherche sur la désinformation — utile pour comparer financements et gouvernance."
+        }
+      ]
     }
   ],
-  "closing": "Onze objets, une même question pour le citoyen du premier tour : quelles règles encadreront encore le débat public en 2027 ? LMDPT suivra les textes officiels et les votes — pas les slogans.",
+  "complementary_readings": [
+    {
+      "label": "Déclaration universelle des droits de l’homme — art. 19",
+      "url": "https://www.un.org/fr/about-us/universal-declaration-of-human-rights",
+      "note": "Cadre international de la liberté d’expression."
+    },
+    {
+      "label": "CEDH — art. 10 (CEDH)",
+      "url": "https://www.echr.coe.int/documents/d/echr/Convention_FRA",
+      "note": "Standard européen : liberté d’expression et restrictions prévues par la loi."
+    },
+    {
+      "label": "CNCDH — liberté d’expression",
+      "url": "https://www.cncdh.fr/",
+      "note": "Avis français sur les équilibres entre libertés et ordre public."
+    },
+    {
+      "label": "LMDPT — Charte éditoriale",
+      "url": "/charte",
+      "note": "Ligne Democracy Over Elimination : documenter sans prendre parti."
+    }
+  ],
+  "closing": "Onze objets, une même question pour le citoyen du premier tour : quelles règles encadreront encore le débat public en 2027 ? LMDPT suit les textes officiels et les votes — pas les slogans.",
   "sources": [
     {
-      "label": "Sarah Knafo — thread X (16/07/2026)",
+      "label": "Sarah Knafo — thread X (16/07/2026) — source secondaire",
       "url": "https://x.com/i/status/2077697375322140699"
     },
     {
@@ -128,10 +413,18 @@
     {
       "label": "Assemblée nationale — propositions et projets de loi",
       "url": "https://www.assemblee-nationale.fr/"
+    },
+    {
+      "label": "EUR-Lex — droit de l’Union européenne",
+      "url": "https://eur-lex.europa.eu/"
+    },
+    {
+      "label": "EDRi — European Digital Rights",
+      "url": "https://edri.org/"
     }
   ],
   "next_steps_lmdpt": [
-    "Recouper chaque point n°1–6 avec le texte exact (n° de PPL / PJL) dès publication Légifrance ou site parlementaire.",
+    "Recouper chaque point n°1–6 avec le n° exact de PPL / PJL dès publication Légifrance ou site parlementaire (passer verification → confirmed).",
     "Ajouter un jalon dans la veille 2027 si un texte est définitivement adopté avant l’ouverture de la campagne officielle.",
     "Ne pas publier d’avis juridique ; renvoyer vers sources primaires."
   ]

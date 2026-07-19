@@ -9,7 +9,7 @@
  * - Comparaison vs Assemblée réelle 2024 (delta)
  * Neutre, pédagogique, accessible, mobile-first. Aucune prédiction.
  */
-import { AN1T_BLOCS } from '../../lib/an1t';
+import { AN1T_BLOCS } from '../lib/an1t';
 
 interface Props {
   totalSeats?: number;
@@ -49,9 +49,18 @@ const REELLE_SEATS: Record<string, number> = {
 
   <p class="meta">
     Modifiez les intentions de vote au <strong>premier tour</strong> par bloc et le <strong>seuil d'éligibilité</strong>.
-    Le calcul utilise la méthode <strong>Sainte-Laguë</strong> (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code> dans <code>lib/an1t.ts</code>.
+    Le calcul utilise la méthode
+    <button type="button" class="tooltip-trigger" aria-describedby="tip-sainte-lague" id="btn-tip-sl">
+      Sainte-Laguë
+    </button>
+    (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code>.
     <strong>Illustration pédagogique uniquement.</strong> Les chiffres ne prédisent rien.
   </p>
+  <div id="tip-sainte-lague" class="sim-tooltip" role="tooltip">
+    <strong>Sainte-Laguë</strong> : méthode de répartition proportionnelle aux plus forts restes
+    avec diviseurs 1, 3, 5, 7… Chaque siège va au quotient le plus élevé. Utilisée ici pour
+    illustrer une Assemblée calée sur le 1er tour — pas une réforme en vigueur.
+  </div>
 
   <div class="sim-controls">
     <!-- Sliders pourcentages par bloc -->
@@ -74,19 +83,19 @@ const REELLE_SEATS: Record<string, number> = {
                   id={`an1t-pct-${b.id}`}
                   min="0"
                   max="60"
-                  step="0.5"
+                  step="0.1"
                   value={def}
-                  aria-describedby={`an1t-val-${b.id}`}
+                  aria-describedby={`an1t-val-${b.id} tip-slider-precision`}
                 />
                 <input
                   type="number"
                   id={`an1t-num-${b.id}`}
                   min="0"
                   max="100"
-                  step="0.5"
+                  step="0.1"
                   value={def}
                   class="num-input"
-                  aria-label={`Pourcentage ${b.label}`}
+                  aria-label={`Pourcentage ${b.label} (pas 0,1 %)`}
                 />
               </div>
             </div>
@@ -98,6 +107,12 @@ const REELLE_SEATS: Record<string, number> = {
         <span id="an1t-total-text">Total : 100,0 %</span>
         <span id="an1t-total-warn" class="warn" hidden>⚠ Somme ≠ 100 % (normalisé automatiquement)</span>
       </div>
+      <p id="tip-slider-precision" class="meta small">
+        Précision des sliders : <strong>0,1&nbsp;%</strong>. La somme est normalisée à 100&nbsp;% avant Sainte-Laguë.
+      </p>
+      <p class="sim-mobile-hint meta">
+        Mobile : glissez les curseurs (zones ≥ 44&nbsp;px) — les presets et exports sont sous les contrôles.
+      </p>
     </fieldset>
 
     <!-- Seuil : sélecteur discret comme recommandé (0 / 3 / 5 %) -->
@@ -118,7 +133,8 @@ const REELLE_SEATS: Record<string, number> = {
     <div class="sim-presets">
       <div class="sim-legend">Profils rapides (pédagogiques)</div>
       <div class="preset-buttons" role="group" aria-label="Scénarios types">
-        <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 (agrégé)</button>
+        <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 législatives</button>
+        <button type="button" class="btn btn-secondary" data-preset="t1-2022">T1 2022 présidentielle</button>
         <button type="button" class="btn btn-secondary" data-preset="base-2027">Base sondages 2027</button>
         <button type="button" class="btn btn-secondary" data-preset="rn-forte">RN &amp; alliés forte</button>
         <button type="button" class="btn btn-secondary" data-preset="gauche-unie">Gauche unie</button>
@@ -129,12 +145,39 @@ const REELLE_SEATS: Record<string, number> = {
 
     <!-- Export -->
     <div class="sim-export">
-      <div class="sim-legend">Exporter les résultats (pédagogiques)</div>
-      <div class="export-buttons">
-        <button type="button" id="an1t-export-csv" class="btn btn-secondary">Exporter CSV</button>
-        <button type="button" id="an1t-export-json" class="btn btn-secondary">Exporter JSON</button>
+      <div class="sim-legend" id="an1t-export-legend">Exporter les résultats (pédagogiques)</div>
+      <div class="export-buttons" role="group" aria-labelledby="an1t-export-legend">
+        <button
+          type="button"
+          id="an1t-export-csv"
+          class="btn btn-secondary"
+          aria-label="Exporter les sièges simulés en CSV (format ouvert pédagogique)"
+        >Exporter CSV</button>
+        <button
+          type="button"
+          id="an1t-export-json"
+          class="btn btn-secondary"
+          aria-label="Exporter les sièges simulés en JSON (format ouvert pédagogique)"
+        >Exporter JSON</button>
+        <button
+          type="button"
+          id="an1t-export-png"
+          class="btn btn-secondary"
+          aria-label="Exporter le mini-hémicycle en image PNG pédagogique"
+        >Exporter PNG (hémicycle)</button>
+        <button
+          type="button"
+          id="an1t-share-url"
+          class="btn btn-secondary"
+          aria-label="Copier le lien de partage avec les pourcentages et le seuil actuels"
+        >Copier le lien</button>
       </div>
-      <span class="meta small">Télécharge les sièges calculés + % voix actuels pour analyse personnelle ou réutilisation (format ouvert).</span>
+      <span class="meta small" id="an1t-export-help">
+        Télécharge les sièges calculés + % voix actuels (CSV/JSON) ou le mini-hémicycle (PNG) —
+        formats ouverts, usage pédagogique uniquement (pas de prédiction).
+        Le lien reprend les % et le seuil dans l’URL (partage pédagogique).
+      </span>
+      <p id="an1t-share-status" class="meta small" role="status" aria-live="polite" hidden></p>
     </div>
   </div>
 
@@ -221,14 +264,18 @@ const REELLE_SEATS: Record<string, number> = {
   .sim-row input[type="range"] {
     flex: 1;
     accent-color: var(--accent, #0f172a);
-    height: 24px;
+    height: 28px;
+    /* P16-2 — zone tactile confortable (min ~44px via padding vertical) */
+    padding: 8px 0;
+    touch-action: pan-y;
   }
   .num-input {
-    width: 58px;
-    font-size: 0.8rem;
-    padding: 1px 4px;
+    width: 64px;
+    min-height: 44px;
+    font-size: 0.9rem;
+    padding: 6px 8px;
     border: 1px solid var(--border, #e2e8f0);
-    border-radius: 3px;
+    border-radius: 6px;
     background: var(--card, #fff);
     color: inherit;
     font-variant-numeric: tabular-nums;
@@ -244,10 +291,11 @@ const REELLE_SEATS: Record<string, number> = {
   .threshold-selector select {
     width: 100%;
     max-width: 380px;
-    font-size: 0.85rem;
-    padding: 4px 6px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    padding: 8px 10px;
     border: 1px solid var(--border, #e2e8f0);
-    border-radius: 4px;
+    border-radius: 6px;
     background: var(--card, #fff);
   }
   .sim-total {
@@ -269,8 +317,9 @@ const REELLE_SEATS: Record<string, number> = {
     gap: 0.3rem;
   }
   .preset-buttons .btn {
-    font-size: 0.76rem;
-    padding: 2px 7px;
+    font-size: 0.82rem;
+    padding: 0.55rem 0.75rem;
+    min-height: 44px;
   }
   .sim-results {
     margin-top: 0.7rem;
@@ -365,6 +414,40 @@ const REELLE_SEATS: Record<string, number> = {
     color: #854d0e;
   }
 
+  /* P15-3 — tooltips pédagogiques */
+  .tooltip-trigger {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: var(--accent, #c2410c);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  .tooltip-trigger:focus-visible {
+    outline: 3px solid var(--accent, #c2410c);
+    outline-offset: 2px;
+  }
+  .sim-tooltip {
+    display: none;
+    margin: 0.4rem 0 0.75rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--fg, #0a0a0a);
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-left: 3px solid var(--accent, #c2410c);
+    border-radius: 6px;
+    max-width: 52rem;
+  }
+  .sim-tooltip.is-open {
+    display: block;
+  }
+
   .small {
     font-size: 0.74rem;
   }
@@ -381,8 +464,9 @@ const REELLE_SEATS: Record<string, number> = {
     margin: 0.25rem 0;
   }
   .export-buttons .btn {
-    font-size: 0.78rem;
-    padding: 3px 9px;
+    font-size: 0.82rem;
+    padding: 0.55rem 0.85rem;
+    min-height: 44px;
   }
 
   .mini-hemicycle {
@@ -425,9 +509,19 @@ const REELLE_SEATS: Record<string, number> = {
     }
     .sim-results, .mini-hemicycle { font-size: 0.82rem; }
     .mini-hemicycle svg { height: 78px; }
+    /* P16-2 — note mobile : sliders = gesture primaire (pas de swipe hémicycle) */
+    .sim-mobile-hint {
+      display: block;
+      margin: 0.35rem 0 0.15rem;
+      font-size: 0.78rem;
+      color: var(--muted, #3a3732);
+    }
+  }
+  .sim-mobile-hint {
+    display: none;
   }
   @media (max-width: 420px) {
-    .input-row input[type="range"] { height: 26px; }
+    .input-row input[type="range"] { height: 32px; padding: 10px 0; }
     .seat-row .label { min-width: 110px; font-size: 0.72rem; }
   }
 </style>
@@ -522,7 +616,13 @@ const REELLE_SEATS: Record<string, number> = {
   };
 
   const PRESETS: Record<string, Record<string, number>> = {
+    // Législatives 2024 T1 — agrégat blocs LMDPT (open data Min. Intérieur)
     't1-2024': { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
+    // Présidentielle 2022 T1 — voix nationales mappées vers blocs AN1T (pédagogique) :
+    // nfp = Mélenchon+Jadot+Roussel+Hidalgo+Poutou+Arthaud ;
+    // ensemble = Macron ; lr = Pécresse ; rn = Le Pen+Zemmour+Dupont-Aignan ; autres = Lassalle.
+    // Source : data/elections/2022-presidentielle-1er-tour-national.json · méthodo /sources#methodologie-blocs
+    't1-2022': { nfp: 32.0, ensemble: 27.8, lr: 4.8, rn: 32.3, autres: 3.1 },
     // Agrégat pédagogique juil. 2026 (blocs législatifs, pas présidentielle) — RN ↑ post-Le Pen
     'base-2027': { rn: 35, nfp: 26, ensemble: 16, lr: 8, autres: 15 },
     'rn-forte': { rn: 42, nfp: 18, ensemble: 13, lr: 8, autres: 19 },
@@ -695,10 +795,12 @@ const REELLE_SEATS: Record<string, number> = {
     const th = document.getElementById('an1t-threshold') as HTMLInputElement | null;
     const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
     const thVal = document.getElementById('an1t-threshold-val');
-    if (key === 'reset' || key === 't1-2024') {
+    if (key === 'reset' || key === 't1-2024' || key === 't1-2022') {
       if (th) th.value = '3';
       if (thNum) thNum.value = '3';
       if (thVal) thVal.textContent = '3.0';
+      const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+      if (thSelect) thSelect.value = '3';
     }
 
     runLiveSimulation();
@@ -712,7 +814,8 @@ const REELLE_SEATS: Record<string, number> = {
     if (!range || !num) return;
 
     let v = parseFloat(fromNum ? num.value : range.value) || 0;
-    v = Math.max(0, Math.min(100, Math.round(v * 2) / 2));
+    // P15-3 — pas de 0,1 % (avant : 0,5)
+    v = Math.max(0, Math.min(100, Math.round(v * 10) / 10));
 
     range.value = v.toString();
     num.value = v.toString();
@@ -788,6 +891,12 @@ const REELLE_SEATS: Record<string, number> = {
       });
     });
 
+    // Exports (CSV / JSON / PNG hémicycle) + share URL
+    document.getElementById('an1t-export-csv')?.addEventListener('click', exportCsv);
+    document.getElementById('an1t-export-json')?.addEventListener('click', exportJson);
+    document.getElementById('an1t-export-png')?.addEventListener('click', exportPng);
+    document.getElementById('an1t-share-url')?.addEventListener('click', copyShareUrl);
+
     // Keyboard support
     const root = document.querySelector('.an1t-simulator');
     if (root) {
@@ -799,16 +908,222 @@ const REELLE_SEATS: Record<string, number> = {
       });
     }
 
+    // Restore from ?an1t=… share query (P16-1)
+    applyShareFromUrl();
+
     // Initial live values + first calculation
     updateLiveValues();
     updateThresholdDisplay();
     runLiveSimulation();
   }
 
+  function getExportRows() {
+    const th = parseFloat((document.getElementById('an1t-threshold') as HTMLInputElement)?.value || '3') || 3;
+    const shares = getCurrentShares(th);
+    const results = simulateFromVoteSharesClient(shares, TOTAL_SEATS, th);
+    return { th, shares, results };
+  }
+
+  function downloadBlob(filename: string, blob: Blob) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  }
+
+  // Contrats d'export alignés sur src/lib/an1t-export.ts (tests vitest P15-2)
+  function buildExportCsvClient(results, th) {
+    const header = 'bloc_id,label,pct_voix,sieges,pct_sieges,seuil_pct,total_sieges';
+    const lines = results.map(
+      (r) =>
+        `${r.id},"${String(r.label).replace(/"/g, '""')}",${Number(r.pctExprimes).toFixed(1)},${r.seats},${Number(r.pctSeats).toFixed(2)},${th},${TOTAL_SEATS}`,
+    );
+    return [header, ...lines, `# source=LMDPT AN1T pédagogique;date=${new Date().toISOString()}`].join('\n');
+  }
+
+  function buildExportJsonClient(shares, results, th) {
+    return {
+      meta: {
+        tool: 'LMDPT AN1T simulator',
+        method: 'Sainte-Laguë',
+        pedagogical: true,
+        threshold_pct: th,
+        total_seats: TOTAL_SEATS,
+        exported_at: new Date().toISOString(),
+        url: typeof location !== 'undefined' ? location.href : '',
+      },
+      inputs: shares,
+      results,
+    };
+  }
+
+  function exportCsv() {
+    const { th, results } = getExportRows();
+    const csv = buildExportCsvClient(results, th);
+    downloadBlob(`lmdpt-an1t-${Date.now()}.csv`, new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  }
+
+  function exportJson() {
+    const { th, shares, results } = getExportRows();
+    const payload = buildExportJsonClient(shares, results, th);
+    downloadBlob(
+      `lmdpt-an1t-${Date.now()}.json`,
+      new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }),
+    );
+  }
+
+  /** Encode compact (miroir lib/an1t-export encodeAn1tShareQuery) */
+  function encodeShareQuery(shares, th) {
+    const body = shares
+      .map((s) => `${s.id}:${(Math.round(Math.max(0, Number(s.pct) || 0) * 10) / 10).toFixed(1)}`)
+      .join(',');
+    return `v1_${th}_${body}`;
+  }
+
+  function buildShareUrl() {
+    const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+    const th =
+      parseFloat(thSelect?.value || '') ||
+      parseFloat((document.getElementById('an1t-threshold') as HTMLInputElement)?.value || '3') ||
+      3;
+    const shares = BLOCS.map((b) => {
+      const el = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+      return { id: b.id, pct: parseFloat(el?.value || '0') || 0 };
+    });
+    const u = new URL(location.href);
+    u.searchParams.set('an1t', encodeShareQuery(shares, th));
+    u.hash = 'an1t-sim-title';
+    return u.toString();
+  }
+
+  function setShareStatus(msg: string, ok = true) {
+    const el = document.getElementById('an1t-share-status');
+    if (!el) return;
+    el.hidden = false;
+    el.textContent = msg;
+    el.style.color = ok ? 'var(--accent, #166534)' : '#9f1239';
+  }
+
+  async function copyShareUrl() {
+    const url = buildShareUrl();
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      history.replaceState(null, '', url);
+      setShareStatus('Lien copié — partage pédagogique (pas une prédiction).');
+    } catch {
+      setShareStatus(`Copie manuelle : ${url}`, false);
+    }
+  }
+
+  function applyShareFromUrl() {
+    try {
+      const raw = new URL(location.href).searchParams.get('an1t');
+      if (!raw) return;
+      const m = raw.trim().match(/^v1_([0-9]+(?:\.[0-9]+)?)_(.+)$/);
+      if (!m) return;
+      const th = Math.max(0, Math.min(15, parseFloat(m[1]) || 3));
+      const map = new Map();
+      for (const part of m[2].split(',')) {
+        const [id, pctStr] = part.split(':');
+        if (id && pctStr !== undefined) map.set(id, Math.max(0, Math.min(100, parseFloat(pctStr) || 0)));
+      }
+      BLOCS.forEach((b) => {
+        if (!map.has(b.id)) return;
+        const v = map.get(b.id);
+        const range = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+        const num = document.getElementById(`an1t-num-${b.id}`) as HTMLInputElement | null;
+        const valSpan = document.getElementById(`an1t-val-${b.id}`);
+        if (range) range.value = String(v);
+        if (num) num.value = String(v);
+        if (valSpan) valSpan.textContent = Number(v).toFixed(1);
+      });
+      const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+      const thVal = [0, 3, 5].includes(th) ? String(th) : '3';
+      if (thSelect) thSelect.value = thVal;
+      const thRange = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+      const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
+      if (thRange) thRange.value = thVal;
+      if (thNum) thNum.value = thVal;
+      setShareStatus('Scénario restauré depuis le lien partagé (pédagogique).');
+    } catch {
+      /* ignore malformed share */
+    }
+  }
+
+  function exportPng() {
+    const svg = document.getElementById('an1t-mini-hemicycle') as SVGSVGElement | null;
+    if (!svg) return;
+    const clone = svg.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    if (!clone.getAttribute('width')) clone.setAttribute('width', '800');
+    if (!clone.getAttribute('height')) clone.setAttribute('height', '200');
+    const xml = new XMLSerializer().serializeToString(clone);
+    const svgBlob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(svgBlob);
+    const img = new Image();
+    img.onload = () => {
+      const scale = 2;
+      const w = Math.max(400, img.width || 400) * scale;
+      const h = Math.max(100, img.height || 100) * scale;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h + 48;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        URL.revokeObjectURL(url);
+        return;
+      }
+      ctx.fillStyle = '#faf8f5';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 24, w, h);
+      ctx.fillStyle = '#1c1a17';
+      ctx.font = '16px system-ui,sans-serif';
+      ctx.fillText('LMDPT — mini-hémicycle AN1T (pédagogique)', 12, 18);
+      canvas.toBlob((blob) => {
+        if (blob) downloadBlob(`lmdpt-an1t-hemicycle-${Date.now()}.png`, blob);
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    };
+    img.onerror = () => URL.revokeObjectURL(url);
+    img.src = url;
+  }
+
+  function initTooltips() {
+    const btn = document.getElementById('btn-tip-sl');
+    const tip = document.getElementById('tip-sainte-lague');
+    if (!btn || !tip) return;
+    btn.addEventListener('click', () => {
+      const open = tip.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
   // Boot
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSimulator);
+    document.addEventListener('DOMContentLoaded', () => {
+      initSimulator();
+      initTooltips();
+    });
   } else {
     initSimulator();
+    initTooltips();
   }
 </script>

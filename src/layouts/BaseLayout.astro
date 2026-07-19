@@ -38,8 +38,7 @@ const meta = pageMeta({
   type: isArticle ? 'article' : 'website',
   noindex:
     noindex ||
-    Astro.url.pathname.startsWith('/moderation') ||
-    Astro.url.pathname.startsWith('/cadres'),
+    Astro.url.pathname.startsWith('/moderation'),
 });
 const jsonLdOrg = organizationJsonLd(siteUrl);
 const jsonLdSite = websiteJsonLd(siteUrl);
@@ -53,7 +52,6 @@ const jsonLdPage = webPageJsonLd({
 });
 const showComments =
   !Astro.url.pathname.startsWith('/moderation') &&
-  !Astro.url.pathname.startsWith('/cadres') &&
   !Astro.url.pathname.startsWith('/mentions-legales') &&
   !Astro.url.pathname.startsWith('/confidentialite') &&
   !Astro.url.pathname.startsWith('/charte');
@@ -627,7 +625,6 @@ const commentThread =
           <a href="/debats" aria-current={Astro.url.pathname.startsWith('/debats') ? 'page' : undefined}>Débats</a>
           <a href="/charte" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
           <a href="/a-propos" aria-current={Astro.url.pathname === '/a-propos' ? 'page' : undefined}>À propos</a>
-          <a href="/cadres" aria-current={Astro.url.pathname.startsWith('/cadres') ? 'page' : undefined}>Cadres</a>
           <a href="/sources" aria-current={Astro.url.pathname === '/sources' ? 'page' : undefined}>Sources</a>
           <a href="#parcours-citoyen" class="parcours-link" aria-current={Astro.url.pathname.includes('analyse') || Astro.url.pathname === '/' ? 'page' : undefined}>Parcours citoyen</a>
         </nav>
@@ -659,12 +656,15 @@ const commentThread =
       </main>
       <footer>
         <p>
-          <strong>Zéro biais · zéro parti pris</strong> — transparence des couleurs politiques des posts et intervenants.
-          Aucune autorité religieuse ou idéologique ne passe les fourches caudines de la modératrice IA.
-          Ligne <em>Democracy Over Elimination</em>.
+          Transparence des couleurs politiques des posts et intervenants.
+          Ligne <em>Democracy Over Elimination</em> — <a href="/charte">charte</a>.
         </p>
         <p>
-          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire. <strong>Visualisations et analyses pédagogiques et neutres</strong> : pluralité du premier tour, sans ranking ni favori.
+          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+          {' · '}
+          <a href="/sources#methodologie-blocs">Méthodo blocs</a>
+          {' · '}
+          <a href="/a-propos">À propos</a>
         </p>
 
         <!-- Feedback form (site-wide, accessible, static-friendly) -->
@@ -699,10 +699,16 @@ const commentThread =
         </div>
 
         <p>
+          <a href="/a-propos">À propos</a>
+          {' · '}
           <a href="/charte">Charte</a>
           {' · '}
+          <a href="/sources">Sources</a>
+          {' · '}
+          <a href="/sources#methodologie-blocs">Méthodo</a>
+          {' · '}
           <a href="/mentions-legales">Mentions légales</a>
-          {' '}·{' '}
+          {' · '}
           <a href="/confidentialite">Confidentialité</a>
           {
             socialLinks.map((link) => (

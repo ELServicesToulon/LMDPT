@@ -7,31 +7,110 @@
   },
   "program": {
     "published_at": "2026-07-01",
-    "document_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
-    "document_label": "Propositions partielles — calendrier électoral (presse, juil. 2026)",
+    "document_url": "https://www.lefigaro.fr/politique/presidentielle-2027-bruno-retailleau-durcit-le-ton-sur-l-immigration-et-se-dit-favorable-a-la-suppression-du-droit-du-sol-20260701",
+    "document_label": "Propositions partielles — immigration / institutions (Valeurs actuelles, Figaro, TF1 — 2026)",
     "status": "partial"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-18",
   "measures": [
+    {
+      "id": "retailleau-2027-immigration-droit-du-sol",
+      "theme": "immigration",
+      "label": "Suppression du droit du sol",
+      "detail": "« Sur le droit du sol, je suis pour sa suppression » — entretien Valeurs actuelles, juil. 2026.",
+      "status": "nouveau",
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-bruno-retailleau-durcit-le-ton-sur-l-immigration-et-se-dit-favorable-a-la-suppression-du-droit-du-sol-20260701",
+      "source_label": "Le Figaro — 1er juil. 2026",
+      "as_of": "2026-07",
+      "subtheme": "Priorité nationale"
+    },
+    {
+      "id": "retailleau-2027-immigration-regroupement",
+      "theme": "immigration",
+      "label": "Réduction drastique du regroupement familial",
+      "detail": "Engagement campagne LR — flux migratoires.",
+      "status": "nouveau",
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-bruno-retailleau-durcit-le-ton-sur-l-immigration-et-se-dit-favorable-a-la-suppression-du-droit-du-sol-20260701",
+      "source_label": "Le Figaro — 1er juil. 2026",
+      "as_of": "2026-07",
+      "subtheme": "Priorité nationale"
+    },
+    {
+      "id": "retailleau-2027-immigration-aides-5-ans",
+      "theme": "immigration",
+      "label": "Fin des aides automatiques — 5 ans de présence légale et de travail",
+      "detail": "Conditionnement des prestations sociales pour les étrangers primo-arrivants.",
+      "status": "nouveau",
+      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-bruno-retailleau-durcit-le-ton-sur-l-immigration-et-se-dit-favorable-a-la-suppression-du-droit-du-sol-20260701",
+      "source_label": "Le Figaro — 1er juil. 2026",
+      "as_of": "2026-07",
+      "subtheme": "Priorité nationale"
+    },
+    {
+      "id": "retailleau-2027-institutions-referendums",
+      "theme": "institutions",
+      "label": "Référendums sur immigration, justice pénale et primauté du droit national",
+      "detail": "Annonce de candidature / TF1 : soumettre directement par référendum plusieurs grands textes.",
+      "status": "nouveau",
+      "source_url": "https://www.publicsenat.fr/actualites/politique/referendum-sur-limmigration-primaute-du-droit-national-le-projet-de-bruno-retailleau-est-il-faisable",
+      "source_label": "Public Sénat — févr. 2026",
+      "as_of": "2026-02",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "retailleau-2027-institutions-revision-constitutionnelle-migration",
+      "theme": "institutions",
+      "label": "Révision constitutionnelle pour maîtriser les flux migratoires",
+      "detail": "Contester le cadre jurisprudentiel qui bloque certaines expulsions (synthèses presse 2026).",
+      "status": "nouveau",
+      "source_url": "https://www.elyseescope.com/candidat/bruno-retailleau/immigration",
+      "source_label": "ÉlyséeScope — immigration Retailleau",
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "retailleau-2027-securite-justice-penale",
+      "theme": "securite",
+      "label": "« Révolution » de la justice pénale (axe référendaire)",
+      "detail": "Priorité régalienne affichée — détails du package législatif à paraître.",
+      "status": "nouveau",
+      "source_url": "https://www.publicsenat.fr/actualites/politique/referendum-sur-limmigration-primaute-du-droit-national-le-projet-de-bruno-retailleau-est-il-faisable",
+      "source_label": "Public Sénat — 2026",
+      "as_of": "2026-02",
+      "subtheme": "Ordre public"
+    },
     {
       "id": "retailleau-2027-institutions-calendrier",
       "theme": "institutions",
       "label": "Opposition au second tour le 2 mai (lendemain du 1er mai)",
-      "detail": "Critique du calendrier officialisé — risque de distorsion liée à la Fête du travail et à la période de réserve.",
+      "detail": "Critique du calendrier officialisé — distorsion liée à la Fête du travail.",
       "status": "nouveau",
       "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
       "source_label": "France 24 — 1er juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "retailleau-2027-institutions-primaire-lr",
       "theme": "institutions",
       "label": "Primaire ouverte pour désigner le candidat unique de la droite",
-      "detail": "Position LR relayée dans le débat interne (Wauquiez, Philippe, Attal évoqués comme participants possibles).",
+      "detail": "Débat interne LR (Wauquiez, Philippe, Attal évoqués).",
       "status": "nouveau",
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "source_label": "Le Monde — 1er juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "retailleau-2027-logement-interets-emprunt",
+      "theme": "logement",
+      "label": "Déduction d'intérêts d'emprunt pour résidence principale (selon nombre d'enfants)",
+      "detail": "Proposition IFRAP : 50/75/100 % des intérêts selon 1/2/3+ enfants mineurs.",
+      "status": "nouveau",
+      "source_url": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+      "source_label": "IFRAP — comparateur 2027",
+      "as_of": "2026-07",
+      "subtheme": "Accès logement"
     }
   ],
   "chiffrages": []

@@ -76,6 +76,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     preparation: true,
   },
   {
+    slug: 'declarations-x-candidats',
+    title: 'Déclarations X des candidats',
+    description:
+      'Fil chronologique des posts publics des comptes X officiels (personnalités 2027) — pas de classement.',
+    date: '2026-07-17',
+    href: '/analyses/declarations-x-candidats',
+  },
+  {
     slug: 'programmes',
     title: 'Programmes électoraux',
     description:

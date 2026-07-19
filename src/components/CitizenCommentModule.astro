@@ -15,11 +15,10 @@ const apiBase = '/api/comments';
 <section class="ccm" data-thread={threadId} data-api={apiBase} aria-labelledby={`ccm-title-${threadId}`}>
   <h3 id={`ccm-title-${threadId}`}>{title}</h3>
   <p class="ccm-disclaimer meta">
-    <strong>Zéro biais · zéro parti pris.</strong> Chaque message est reformulé en français correct par la
-    <strong>modératrice IA</strong>, puis une <strong>teinte politique</strong> (couleur + libellé) est affichée
-    en <em>transparence</em> — proximité d’idées du 1er tour, <em>pas</em> une carte d’adhésion.
-    Aucune autorité religieuse ou idéologique ne passe les fourches caudines. Vous validez avant envoi ;
-    publication après file modération (contributeur → modo → rédaction).
+    Chaque message est reformulé par la <strong>modératrice IA</strong>, avec une
+    <strong>teinte politique</strong> affichée en transparence (proximité d’idées du 1er tour, pas une adhésion).
+    Vous validez avant envoi ; publication après file modération.
+    <a href="/charte">Charte</a>.
   </p>
 
   <div class="ccm-list" data-role="list" aria-live="polite">
@@ -90,12 +89,18 @@ const apiBase = '/api/comments';
     }
 
     async function loadList() {
+      const controller = new AbortController();
+      const timer = window.setTimeout(() => controller.abort(), 8000);
       try {
-        const res = await fetch(`${api}/thread/${encodeURIComponent(threadId)}`);
+        const res = await fetch(`${api}/thread/${encodeURIComponent(threadId)}`, {
+          signal: controller.signal,
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const comments = data.comments || [];
         if (!comments.length) {
-          listEl.innerHTML = '<p class="meta">Aucun commentaire publié pour le moment. Soyez le premier à contribuer.</p>';
+          listEl.innerHTML =
+            '<p class="meta">Aucun commentaire publié pour le moment. Soyez le premier à contribuer.</p>';
           return;
         }
         listEl.innerHTML = comments
@@ -112,8 +117,13 @@ const apiBase = '/api/comments';
           </article>`,
           )
           .join('');
-      } catch {
-        listEl.innerHTML = '<p class="meta">Commentaires indisponibles (API hors ligne).</p>';
+      } catch (err: any) {
+        const aborted = err?.name === 'AbortError';
+        listEl.innerHTML = aborted
+          ? '<p class="meta">Commentaires indisponibles (délai dépassé). Vous pouvez tout de même rédiger un message ci-dessous.</p>'
+          : '<p class="meta">Commentaires indisponibles (API hors ligne). Vous pouvez tout de même rédiger un message ci-dessous.</p>';
+      } finally {
+        window.clearTimeout(timer);
       }
     }
 

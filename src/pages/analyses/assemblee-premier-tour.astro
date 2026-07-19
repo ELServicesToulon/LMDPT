@@ -5,6 +5,7 @@ import An1tSeatCompare from '../../components/An1tSeatCompare.astro';
 import AssembleeHemicycle from '../../components/AssembleeHemicycle.astro';
 import An1tSimulator from '../../components/An1tSimulator.astro';
 import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
+import StickyToc from '../../components/StickyToc.astro';
 import analysis from '../../data/analyses/assemblee-premier-tour-2024.json';
 import leg2024National from '../../data/elections/2024-legislatives-1er-tour-national.json';
 import {
@@ -139,13 +140,27 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
 
 <BaseLayout
   title="L'Assemblée du Premier Tour 2027 — projections & hémicycle"
-  description="Représentation graphique interactive des sièges de l'Assemblée nationale basée sur le premier tour. Priorité 2027 : projections à partir de sondages et pluralité du 1er tour."
+  description="Simulation pédagogique de l'Assemblée nationale à partir du premier tour (Sainte-Laguë, AN1T). Hémicycle hybride, pluralité des voix, export CSV/JSON/PNG — pas de prédiction électorale."
+  keywords="Assemblée du Premier Tour, AN1T, Sainte-Laguë, hémicycle, pluralité, premier tour, simulation pédagogique, LMDPT"
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a> → L'Assemblée du Premier Tour 2027
   </nav>
 
-  <section>
+  <StickyToc
+    title="Sommaire AN1T"
+    items={[
+      { href: '#dual-compare', label: 'Deux hémicycles (T1 vs réelle)' },
+      { href: '#guide-title', label: 'Mini-guide représentation' },
+      { href: '#an1t-sim-title', label: 'Simulateur Sainte-Laguë' },
+      { href: '#comment-lire-title', label: 'Lire l’hémicycle hybride' },
+      { href: '/sources#methodologie-blocs', label: 'Méthodo agrégation blocs' },
+      { href: '/analyses/assemblee-premier-tour-mecanismes', label: 'Mécanismes' },
+      { href: '/debats/assemblee-premier-tour', label: 'Débat' },
+    ]}
+  />
+
+  <section id="dual-compare">
     <h2>L'Assemblée du Premier Tour : un même 1er tour, deux traductions en sièges</h2>
     <p class="lead">
       Visualisation principale en <strong>deux hémicycles côte à côte</strong> (même modèle géométrique Wikimedia — 577 sièges) :
@@ -165,6 +180,9 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     </ul>
     <p class="meta">
       Données de référence : open data 1er tour législatives 2024 (data.gouv.fr / Ministère de l’Intérieur). Illustration pédagogique — pas une prédiction.
+      {' · '}
+      Agrégation nuances → 5 blocs + Sainte-Laguë 3&nbsp;% —
+      <a href="/sources#methodologie-blocs"><strong>méthodo</strong></a>.
     </p>
 
     <!-- Strengthened disclaimer (editorial UX) -->
@@ -226,7 +244,16 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
       <p class="meta" style="font-size:0.78rem;">Ce parcours rend la compréhension accessible à tous. Utilisez les liens et contrôles pour naviguer ; le site est conçu pour lecture linéaire ou exploration libre.</p>
     </section>
 
-    <!-- Simulateur intégré (vanilla JS accessible dans cette page) : sliders + calcul Sainte-Laguë client-side pour pédagogie. -->
+    <!-- Simulateur interactif AN1T (composant + presets T1 2024 / T1 2022 / 2027) -->
+    <section class="card" id="an1t-sim-title" aria-labelledby="an1t-sim-heading">
+      <h3 id="an1t-sim-heading">Simulateur — voix 1er tour → sièges (Sainte-Laguë)</h3>
+      <p class="meta">
+        Ajustez les % par bloc civique. Presets calibrés : législatives 2024, présidentielle 2022 (mapping documenté),
+        projections pédagogiques 2027. Détail du regroupement nuances → blocs :
+        <a href="/sources#methodologie-blocs">méthodo</a>.
+      </p>
+      <An1tSimulator />
+    </section>
 
     <figure style="margin: 1rem 0 1.5rem;">
       <img 

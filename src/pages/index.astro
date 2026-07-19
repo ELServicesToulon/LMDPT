@@ -51,32 +51,169 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   description="Le premier tour : le miroir le plus fidèle de la France politique. Atlas open data, présidentielle 2027 (18 avril), programmes sourcés, alerte citoyenne — Democracy Over Elimination, sans sondages ni tier list."
   keywords="premier tour, présidentielle 2027, LMDPT, open data élections, pluralité, Democracy Over Elimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
-  <!-- Fil directeur — pour tous les scrutins -->
+  <!--
+    HERO FIRST (Créateur de site · cycle 2026-07-17)
+    Pattern adapté (pas copié) des leaders news : value prop ≤ 5 s + CTA piliers above the fold.
+    Hémicycle dual déplacé sous le hero (profondeur, pas premier écran).
+  -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>Média civique · open data</span>
+      <span class="sep">•</span>
+      <strong>Democracy Over Elimination</strong>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-visual hero-visual--animated">
+        <!-- Croquis X humoristique + micro-vidéo (poster = LCP webp/jpeg) · 2026-07-18 -->
+        <video
+          class="hero-img hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/illustrations/2027/hero-premier-tour-2027.webp"
+          width="1280"
+          height="720"
+          aria-label="Animation croquis humoristique : pluralité du premier tour, urne transparente et idées colorées"
+        >
+          <source src="/videos/2027/hero-voting-animation.mp4" type="video/mp4" />
+        </video>
+        <picture class="hero-static-fallback">
+          <source
+            type="image/webp"
+            srcset="/illustrations/2027/hero-premier-tour-2027.webp"
+          />
+          <img
+            src="/illustrations/2027/hero-premier-tour-2027.jpg"
+            alt="Croquis humoristique style X : citoyens et urne transparente du 1er tour débordant d’idées colorées — illustration civique laïque."
+            class="hero-img"
+            width="1280"
+            height="720"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </div>
+
+      <div class="hero-inner">
+        <h1 class="hero-title" id="hero-title">
+          Le premier tour, sans filtre&nbsp;: la photo réelle de la France politique
+        </h1>
+
+        <p class="hero-lead">
+          Atlas open data, simulation d’Assemblée du 1er tour, dossier 2027.
+          <strong>Faits sourcés</strong> — pas de sondages «&nbsp;favori&nbsp;», pas de tier list.
+        </p>
+
+        <div class="cta-row" role="group" aria-label="Actions principales">
+          <a class="btn btn-primary" href="/analyses/assemblee-premier-tour"
+            >Simuler l’Assemblée du 1er tour →</a
+          >
+          <a class="btn btn-secondary" href="/analyses/presidentielle-2027-preparation"
+            >Dossier présidentielle 2027</a
+          >
+          <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
+        </div>
+
+        <p class="meta">
+          1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> · Sources
+          data.gouv / Ministère de l’Intérieur
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 piliers éditoriaux (P15-1 / P8-7) — above the fold, WCAG focus rings -->
+    <div
+      class="hero-cards pilier-cards"
+      role="list"
+      aria-label="Trois piliers du média"
+    >
+      <a href="/sources" class="hero-card pilier-card" role="listitem" data-pilier="faits">
+        <div class="card-icon" aria-hidden="true">🔒</div>
+        <div>
+          <div class="pilier-kicker">Pilier 1</div>
+          <div class="card-title">Sécurité &amp; faits</div>
+          <div class="card-desc">
+            Open data officiels (data.gouv / Ministère). Sources primaires, licences affichées — pas de rumeur.
+          </div>
+        </div>
+      </a>
+      <a href="/atlas" class="hero-card pilier-card" role="listitem" data-pilier="pluralite">
+        <div class="card-icon" aria-hidden="true">🌈</div>
+        <div>
+          <div class="pilier-kicker">Pilier 2</div>
+          <div class="card-title">Pluralité réelle</div>
+          <div class="card-desc">
+            Atlas 1er tour + simulation AN1T : toutes les voix visibles, sans réduction binaire.
+          </div>
+        </div>
+      </a>
+      <a href="/charte" class="hero-card pilier-card" role="listitem" data-pilier="doe">
+        <div class="card-icon" aria-hidden="true">🗳️</div>
+        <div>
+          <div class="pilier-kicker">Pilier 3</div>
+          <div class="card-title">Democracy Over Elimination</div>
+          <div class="card-desc">
+            Vote <strong>pour</strong>, pas contre. Pas de sondages «&nbsp;favori&nbsp;», pas de tier list.
+          </div>
+        </div>
+      </a>
+    </div>
+    <p class="hero-disclaimer meta" role="note">
+      Contenu pédagogique et documentaire. Les simulations (AN1T, projections 2027) ne sont
+      <strong>ni des prédictions ni des consignes de vote</strong>.
+    </p>
+  </section>
+
+  <!-- Manifeste court — renforce le 5 s test -->
+  <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
+    <h2 id="why-media-title">Pourquoi ce média&nbsp;?</h2>
+    <p class="why-media-lead">
+      Au premier tour, chaque voix porte une conviction. Le second tour «&nbsp;contre&nbsp;» efface une partie de
+      cette pluralité. Nous documentons les faits du 1er tour pour choisir en connaissance de cause.
+    </p>
+    <p class="why-media-tagline">
+      Faits officiels · Sans classement éliminatoire · Vote <strong>pour</strong>, pas contre.
+    </p>
+    <nav class="pilier-shortcuts" aria-label="Raccourcis piliers">
+      <a href="/analyses/assemblee-premier-tour">Simuler l’AN1T</a>
+      <span aria-hidden="true">·</span>
+      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+      <span aria-hidden="true">·</span>
+      <a href="/atlas/2022-presidentielle">Atlas 2022</a>
+      <span aria-hidden="true">·</span>
+      <a href="/sources">Sources</a>
+    </nav>
+  </section>
+
+  <!-- Fil directeur + dual hémicycle (profondeur, après value prop) -->
   <section class="card fil-directeur" id="fil-directeur" aria-labelledby="fil-directeur-title">
     <p class="eyebrow">Fil directeur du site</p>
-    <h2 id="fil-directeur-title">1er tour présidentiel → législatives — différentiel pour tous les scrutins</h2>
+    <h2 id="fil-directeur-title">1er tour présidentiel → législatives — le différentiel visible</h2>
     <p>
-      Sur <strong>chaque présidentielle</strong> : à gauche, l’Assemblée du <strong>1er tour présidentiel</strong>
-      (Sainte-Laguë, proximité de programmes) ; à droite, l’Assemblée réelle des
-      <strong>législatives qui ont suivi</strong>. Tableau Δ sièges. Même logique pour un législatif pur.
-      Boussole Democracy Over Elimination.
+      Sur <strong>chaque présidentielle</strong>&nbsp;: à gauche, l’Assemblée calée sur le
+      <strong>1er tour présidentiel</strong> (Sainte-Laguë, proximité de programmes)&nbsp;; à droite,
+      l’Assemblée réelle des <strong>législatives qui ont suivi</strong>. Tableau Δ sièges.
     </p>
     <p class="meta">
-      <a href="/atlas">Voir tous les scrutins →</a>
+      <a href="/analyses/assemblee-premier-tour">Ouvrir le simulateur AN1T →</a>
+      {' · '}
+      <a href="/atlas">Tous les scrutins</a>
+      {' · '}
+      <a href="/atlas/2022-presidentielle">2022</a>
       {' · '}
       <a href="/atlas/2024-legislatives">Législatives 2024</a>
       {' · '}
-      <a href="/atlas/2022-presidentielle">Présidentielle 2022</a>
-      {' · '}
-      <a href="/atlas/2017-presidentielle">2017</a>
-      {' · '}
-      <a href="/analyses/assemblee-premier-tour">Assemblée du 1er tour</a>
-      {' · '}
-      <a href="/analyses/gouvernance-an1t-droit">Droit & gouvernance non bloquée</a>
+      <a href="/analyses/gouvernance-an1t-droit">Droit &amp; gouvernance</a>
     </p>
     {
       dualHome && (
         <DualAssembleeCompare
+          compact
+          fullHref="/analyses/assemblee-premier-tour"
           firstRoundAlloc={dualHome.firstRound}
           realAlloc={dualHome.real}
           totalSeats={dualHome.totalSeats}
@@ -91,87 +228,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
         />
       )
     }
-  </section>
 
-  <!-- Manifeste — en tête de page -->
-  <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
-    <h2 id="why-media-title">Pourquoi ce média ?</h2>
-    <p class="why-media-lead">
-      Au premier tour, chaque voix exprime des convictions. Le second tour « contre » efface une partie de cette pluralité.
-      Nous documentons les faits du 1er tour pour choisir en connaissance de cause.
-    </p>
-    <p class="why-media-tagline">
-      Faits officiels • Sans filtre • Pour une démocratie où l’on vote <strong>pour</strong>, pas contre.
-    </p>
-  </section>
-
-  <!-- HERO REDESIGN (WCAG 2.2 AA, neutral, professional dark-leaning contrast) -->
-  <section class="hero">
-    <!-- Badge discret -->
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      <span>Focus Présidentielle 2027</span>
-      <span class="sep">•</span>
-      <strong>Idées, pas idéologies</strong>
-    </div>
-
-    <div class="hero-grid">
-      <!-- Visual (now using premium inclusive illustration) 
-           RÈGLE SITE-WIDE : Ce principe d'aucun signe religieux ostentatoire est valable pour l'intégralité du site 
-           (photos, illustrations, mèmes, vidéos, textes, UI). Tenues neutres uniquement.
-      -->
-      <div class="hero-visual">
-        <img 
-          src="/illustrations/2027/hero-premier-tour-2027.jpg" 
-          alt="Citoyens divers (tous âges et origines) en tenues quotidiennes neutres, déposant leur bulletin dans une urne transparente dans un bureau de vote français. Illustration civique professionnelle et inclusive pour l'élection présidentielle 2027."
-          class="hero-img"
-        />
-      </div>
-
-      <!-- Texte + CTAs -->
-      <div class="hero-inner">
-        <h1 class="hero-title">Le premier tour 2027 : préparez-vous avec les faits</h1>
-
-        <p class="hero-lead">
-          Données officielles. Pluralité réelle.<br>
-          <strong>Faits sourcés</strong> — rien d’autre.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="/analyses/presidentielle-2027-preparation">Dossier complet 2027 →</a>
-          <a class="btn btn-secondary" href="/analyses/presidentielle-2027-preparation#calendrier">Calendrier officiel</a>
-          <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour">Simulation interactive</a>
-        </div>
-
-        <p class="meta">1er tour : 18 avril 2027 • 2e tour : 2 mai 2027 • Données open data • 100 % transparent</p>
-      </div>
-    </div>
-
-    <!-- 3 cartes utiles (remplace les éléments vides / invisibles) -->
-    <!-- Accessibilité : liens clairs, icônes décoratives, contraste élevé -->
-    <div class="hero-cards">
-      <a href="/analyses/presidentielle-2027-preparation#calendrier" class="hero-card">
-        <div class="card-icon">📅</div>
-        <div>
-          <div class="card-title">Calendrier officiel &amp; dates clés 2027</div>
-          <div class="card-desc">Inscriptions, campagnes, Conseil constitutionnel</div>
-        </div>
-      </a>
-      <a href="/analyses/assemblee-premier-tour" class="hero-card">
-        <div class="card-icon">📊</div>
-        <div>
-          <div class="card-title">Explorer les données open data &amp; simulations</div>
-          <div class="card-desc">Atlas, projections 1er tour, hémicycle AN1T</div>
-        </div>
-      </a>
-      <a href="/analyses/presidentielle-2027-preparation" class="hero-card">
-        <div class="card-icon">📄</div>
-        <div>
-          <div class="card-title">Dossier complet PDF (à venir)</div>
-          <div class="card-desc">Synthèse programmes + sources officielles</div>
-        </div>
-      </a>
-    </div>
   </section>
 
   <!-- Alerte citoyenne (conditions du débat public) -->
@@ -448,52 +505,93 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </ul>
   </section>
 
-  <!-- Visuels & illustrations 2027 -->
-  <section class="visuals-section">
-    <h3 class="section-title">Illustrations, dessins, mèmes &amp; animations — Élection 2027</h3>
+  <!-- Visuels 2027 — croquis humoristiques style X (laïcs, civiques) -->
+  <section class="visuals-section" id="visuels-2027" aria-labelledby="visuels-2027-title">
+    <h3 class="section-title" id="visuels-2027-title">Croquis humoristiques style X &amp; animations — Élection 2027</h3>
     <p class="lead" style="max-width: 52rem;">
       Pour incarner le premier tour : pluralité réelle, démocratie sans élimination prématurée.
-      Dessins, photos illustratives et mèmes civiques à partager — alignés sur la ligne éditoriale DOE.
+      <strong>Croquis encre + aquarelle</strong> façon fil X — légers sur les <em>mécanismes</em>, jamais sur les personnes.
+      Zéro signe religieux, zéro logo de parti, zéro caricature de camp.
     </p>
 
     <div class="visuals-grid">
-      <figure class="visual-card">
-        <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Illustration Democracy Over Elimination : citoyen brisant les flèches du second tour — dessin civique" />
-        <figcaption>Dessin — Democracy Over Elimination</figcaption>
+      <figure class="visual-card" style="--i: 0">
+        <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Croquis humoristique : citoyen brisant les flèches du second tour — Democracy Over Elimination" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis X</span>
+          <strong>Democracy Over Elimination</strong>
+          <span class="visual-wit">Le second tour aime les flèches. Le premier préfère les bulletins.</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/pluralite-1er-tour.jpg" alt="Illustration pluralité : urne débordant de bulletins colorés — dessin civique" />
-        <figcaption>Dessin — La pluralité au 1er tour</figcaption>
+      <figure class="visual-card" style="--i: 1">
+        <img src="/illustrations/2027/pluralite-1er-tour.jpg" alt="Croquis humoristique : urne débordant de bulletins colorés — pluralité du 1er tour" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis X</span>
+          <strong>La pluralité au 1er tour</strong>
+          <span class="visual-wit">Trop de couleurs dans l’urne ? C’est le pays qui parle — pas un bug.</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/dessin-urne-2027.jpg" alt="Dessin ligne claire : urne transparente Premier Tour 2027 avec miroir tricolore — illustration civique" />
-        <figcaption>Dessin — L'urne du 1er Tour</figcaption>
+      <figure class="visual-card" style="--i: 2">
+        <img src="/illustrations/2027/dessin-urne-2027.jpg" alt="Croquis humoristique : urne transparente et miroir du 1er tour — miroir de la France" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis X</span>
+          <strong>L’urne-miroir du 1er tour</strong>
+          <span class="visual-wit">Transparente comme les chiffres… quand on se donne la peine de les regarder.</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/photo-citoyens-data-2027.jpg" alt="Scène illustrative : citoyens consultent les données ouvertes du 1er tour — illustration civique" />
-        <figcaption>Photo illustrative — Données &amp; citoyens</figcaption>
+      <figure class="visual-card" style="--i: 3">
+        <img src="/illustrations/2027/photo-citoyens-data-2027.jpg" alt="Croquis humoristique : citoyens consultent les données ouvertes du 1er tour" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis X</span>
+          <strong>Données &amp; citoyens</strong>
+          <span class="visual-wit">La fierté civique, version open data : moins de slogans, plus de sources.</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Mème civique : Le 1er Tour ne ment pas — illustration civique" />
-        <figcaption>Mème — Le 1er tour ne ment pas</figcaption>
+      <figure class="visual-card" style="--i: 4">
+        <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Croquis mème : Le 1er tour ne ment pas — bulletin-miroir" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis mème</span>
+          <strong>Le 1er tour ne ment pas</strong>
+          <span class="visual-wit">Le second, lui, fait des arrangements. On documente l’écart — sans le moraliser.</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/meme-vote-pensee.jpg" alt="Mème : Je vote ce que je pense vraiment au premier tour — illustration civique" />
-        <figcaption>Mème — Vote ce que vous pensez</figcaption>
+      <figure class="visual-card" style="--i: 5">
+        <img src="/illustrations/2027/meme-vote-pensee.jpg" alt="Croquis mème : Je vote ce que je pense au premier tour" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis mème</span>
+          <strong>Votez ce que vous pensez</strong>
+          <span class="visual-wit">Le « contre » peut attendre le second tour. Au premier, on dit « pour ».</span>
+        </figcaption>
       </figure>
-      <figure class="visual-card">
-        <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Illustration : toutes les voix égales au premier tour — illustration civique" />
-        <figcaption>Dessin — Toutes les voix comptent</figcaption>
+      <figure class="visual-card" style="--i: 6">
+        <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Croquis humoristique : balance des voix égales au premier tour" loading="lazy" decoding="async" />
+        <figcaption>
+          <span class="visual-label">Croquis X</span>
+          <strong>Toutes les voix comptent</strong>
+          <span class="visual-wit">Même celles qu’on redistribue ensuite. D’où l’intérêt de les lire avant.</span>
+        </figcaption>
       </figure>
     </div>
 
     <div class="video-embed">
-      <h4>Animation — Le vote au 1er Tour</h4>
-      <video controls playsinline preload="metadata" width="100%" style="max-width: 820px; border-radius: 8px; box-shadow: var(--shadow);">
+      <h4>Animation — croquis 1er tour (6&nbsp;s)</h4>
+      <video
+        class="gallery-video"
+        controls
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        width="100%"
+        poster="/illustrations/2027/hero-premier-tour-2027.webp"
+      >
         <source src="/videos/2027/hero-voting-animation.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la vidéo.
       </video>
-      <p class="meta">Animation douce : citoyens votant, urne transparente, fierté civique (6s) — </p>
+      <p class="meta">
+        Six secondes : croquis animé, urne transparente, idées qui bougent — on vote <em>pour</em>, pas pour éliminer.
+      </p>
     </div>
   </section>
 </BaseLayout>
@@ -578,6 +676,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     height: 6px;
     background: var(--accent);
     border-radius: 50%;
+    animation: lmdpt-pulse 1.8s ease-in-out infinite;
   }
 
   .hero-badge .sep { opacity: 0.4; }
@@ -662,7 +761,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     padding-left: 1.2rem;
   }
 
-  /* 3 cartes secondaires visibles et utiles (fix for empty rectangles) */
+  /* 3 piliers éditoriaux (P15-1) — grid 1→3, contrastes WCAG, focus-ring */
   .hero-cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -685,13 +784,39 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     border-radius: var(--radius-lg);
     text-decoration: none;
     color: var(--fg) !important;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.2, 0.64, 1);
+    animation: lmdpt-rise 0.55s ease both;
+    animation-delay: calc(0.12s * var(--card-i, 0));
+    min-height: 6.5rem;
+  }
+
+  .hero-card:nth-child(1) { --card-i: 1; }
+  .hero-card:nth-child(2) { --card-i: 2; }
+  .hero-card:nth-child(3) { --card-i: 3; }
+
+  .pilier-card[data-pilier='faits'] {
+    border-top: 3px solid #1d4ed8;
+  }
+  .pilier-card[data-pilier='pluralite'] {
+    border-top: 3px solid #059669;
+  }
+  .pilier-card[data-pilier='doe'] {
+    border-top: 3px solid var(--accent, #c2410c);
+  }
+
+  .pilier-kicker {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted) !important;
+    margin-bottom: 0.15rem;
   }
 
   .hero-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.08);
-    transform: translateY(-1px);
+    box-shadow: 0 8px 20px -4px rgb(0 0 0 / 0.12);
+    transform: translateY(-4px);
   }
 
   .hero-card:focus-visible {
@@ -707,17 +832,40 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   }
 
   .hero-card .card-title {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.97rem;
     line-height: 1.25;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
     color: var(--fg) !important;
   }
 
   .hero-card .card-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--muted) !important;
-    line-height: 1.4;
+    line-height: 1.45;
+  }
+
+  .hero-disclaimer {
+    margin: 0.85rem 0 0;
+    max-width: 70ch;
+    line-height: 1.45;
+  }
+
+  .pilier-shortcuts {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  .pilier-shortcuts a {
+    font-weight: 600;
+  }
+
+  .pilier-shortcuts a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .hero-badge {
@@ -726,9 +874,14 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     border-color: var(--border) !important;
   }
 
-  /* Hero visual */
+  /* Hero visual — croquis animé */
   .hero-visual {
     width: 100%;
+    position: relative;
+  }
+
+  .hero-visual--animated {
+    isolation: isolate;
   }
 
   .hero-img {
@@ -740,6 +893,18 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     display: block;
+    background: var(--card);
+  }
+
+  .hero-video {
+    position: relative;
+    z-index: 1;
+    animation: lmdpt-float 5.5s ease-in-out infinite;
+  }
+
+  /* Fallback image hidden when video can play; shown if video fails / reduced-motion */
+  .hero-static-fallback {
+    display: none;
   }
 
   @media (min-width: 860px) {
@@ -747,6 +912,20 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       max-height: 380px;
     }
   }
+
+  .hero-title {
+    animation: lmdpt-rise 0.55s ease both;
+  }
+  .hero-lead {
+    animation: lmdpt-rise 0.55s ease 0.08s both;
+  }
+  .cta-row {
+    animation: lmdpt-rise 0.55s ease 0.14s both;
+  }
+  .hero-badge {
+    animation: lmdpt-rise 0.45s ease both;
+  }
+
   .visuals-section {
     margin-top: 2.5rem;
   }
@@ -763,18 +942,98 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
+    transition: transform 0.25s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+    animation: lmdpt-rise 0.55s ease both;
+    animation-delay: calc(0.07s * var(--i, 0));
+  }
+  .visual-card:hover {
+    transform: translateY(-5px) rotate(-0.4deg);
+    box-shadow: 0 12px 28px -8px rgb(0 0 0 / 0.16);
+    border-color: var(--accent);
   }
   .visual-card img {
     width: 100%;
     height: auto;
     display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+  .visual-card:hover img {
+    transform: scale(1.04);
+  }
+  .gallery-video {
+    max-width: 820px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+
+  @keyframes lmdpt-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+    50% { opacity: 0.85; transform: scale(1.15); box-shadow: 0 0 0 6px transparent; }
+  }
+  @keyframes lmdpt-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes lmdpt-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .badge-dot,
+    .hero-video,
+    .hero-title,
+    .hero-lead,
+    .cta-row,
+    .hero-badge,
+    .hero-card,
+    .visual-card {
+      animation: none !important;
+    }
+    .hero-card:hover,
+    .visual-card:hover,
+    .visual-card:hover img {
+      transform: none;
+    }
+    .hero-video {
+      display: none;
+    }
+    .hero-static-fallback {
+      display: block;
+    }
   }
   .visual-card figcaption {
-    padding: 0.6rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.65rem 0.8rem 0.75rem;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--fg);
     background: var(--bg);
     border-top: 1px solid var(--border);
+    line-height: 1.35;
+  }
+  .visual-card .visual-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .visual-card figcaption strong {
+    font-size: 0.95rem;
+    color: var(--fg);
+  }
+  .visual-card .visual-wit {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.4;
   }
   .video-embed {
     margin-top: 1.5rem;

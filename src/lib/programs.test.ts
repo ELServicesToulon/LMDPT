@@ -3,6 +3,7 @@ import {
   buildChiffrageSummary,
   buildCompareRows,
   formatMdeur,
+  listSubthemes,
 } from './program-compare';
 import { lintAllProgramFiles, lintChiffrage } from './program-chiffrage';
 import {
@@ -34,10 +35,18 @@ describe('programs', () => {
     expect(brun?.program.status).toBe('partial');
     const bardella = getCandidateProgram('presidentielle-2027', 'bardella');
     expect(bardella?.evolution_from).toBe('presidentielle-2022');
+    expect(bardella!.measures.length).toBeGreaterThanOrEqual(7);
     const barrot = getCandidateProgram('presidentielle-2027', 'barrot');
     expect(barrot?.measures).toHaveLength(2);
     const lePen = getCandidateProgram('presidentielle-2027', 'le-pen');
     expect(lePen?.measures.some((m) => m.id.includes('eligibilite'))).toBe(true);
+    expect(lePen!.measures.length).toBeGreaterThanOrEqual(8);
+    const philippe = getCandidateProgram('presidentielle-2027', 'philippe');
+    expect(philippe!.measures.length).toBeGreaterThanOrEqual(6);
+    const retailleau = getCandidateProgram('presidentielle-2027', 'retailleau');
+    expect(retailleau!.measures.some((m) => m.theme === 'immigration')).toBe(true);
+    const mel = getCandidateProgram('presidentielle-2027', 'melenchon');
+    expect(mel!.measures.length).toBeGreaterThanOrEqual(8);
   });
 
   it('evolution matrix includes 2027 melenchon entries', () => {
@@ -61,6 +70,16 @@ describe('program-compare', () => {
     const mel = getCandidateProgram('presidentielle-2027', 'melenchon')!;
     const rows = buildCompareRows([ps, mel], 'retraites');
     expect(rows.length).toBeGreaterThan(0);
+  });
+
+  it('lists subthemes and filters compare rows (P17-1)', () => {
+    const bardella = getCandidateProgram('presidentielle-2027', 'bardella')!;
+    const mel = getCandidateProgram('presidentielle-2027', 'melenchon')!;
+    expect(bardella.measures.some((m) => m.subtheme)).toBe(true);
+    const subs = listSubthemes([bardella, mel], 'immigration');
+    expect(subs.length).toBeGreaterThan(0);
+    const filtered = buildCompareRows([bardella, mel], 'immigration', subs[0]);
+    expect(filtered.every((r) => r.subtheme === subs[0])).toBe(true);
   });
 
   it('builds compare rows for two candidates', () => {
