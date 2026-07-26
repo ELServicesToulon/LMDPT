@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T04:46:33.786Z",
+  "updated": "2026-07-26T16:18:08.345Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -870,6 +870,18 @@
       "source_id": "le-figaro",
       "scores": {},
       "raw_snippet": "Présidentielle 2027 : Mélenchon-Le Pen, dernière bataille après un quart de siècle d’affrontement",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "rss-le-figaro-y2dco8",
+      "firm": "Media",
+      "firm_id": null,
+      "fieldwork": null,
+      "published_hint": null,
+      "source_url": "https://www.lefigaro.fr/elections/presidentielles/en-2017-le-hold-up-d-emmanuel-macron-et-de-ses-fideles-prets-a-le-suivre-jusqu-en-enfer-20260726",
+      "source_id": "le-figaro",
+      "scores": {},
+      "raw_snippet": "En 2017, le hold-up d’Emmanuel Macron et de ses fidèles « prêts à le suivre jusqu’en enfer »",
       "metric": "intentions_vote"
     }
   ]

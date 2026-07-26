@@ -124,7 +124,7 @@ Puis `docker exec` / reload nginx conteneur LMDPT.
 | Email | ✅ | `CONTACT_MEDICONVOI_MAIL_PASSWORD` → SMTP contact@ | — |
 | Google | ✅ | `iarbre_GOOGLE_OAUTH_CLIENT_*` | `https://lmdpt.iarbre.org/api/auth/callback/google` |
 | X | ✅ | `LEMEDIA-DPT-X-API-v2` (`oauth2_client_*`) | `https://lmdpt.iarbre.org/api/auth/callback/x` |
-| Apple | ❌ | absent | Services ID + `…/callback/apple` |
+| Apple | ❌ **SKIP** (2026-07-26) | pas de membership Developer | pack `P41-O3` · rouvrir si membership |
 
 Env prod : `/etc/lmdpt-comments.env` (root 600) · restart `lmdpt-comments.service`.
 
@@ -135,13 +135,12 @@ Sans ces URIs, le bouton redirige vers IdP puis erreur `redirect_uri_mismatch`.
 
 ## P41-O2 — redirect URIs (2026-07-26)
 
-**Pack** : `second-brain/projects/lmdpt/docs/2026-07-26-P41-O2-redirect-uris-go-pack.md`
+**Pack** : `second-brain/projects/lmdpt/docs/2026-07-26-P41-O2-redirect-uris-go-pack.md`  
+**Statut** : **SHIP login** (callbacks console validés 2026-07-26)
 
 | | |
 |--|--|
 | Google client (prod) | `748914516227-tgrop94cvom5u9v74b1eqoe4dig6fg3p…` (projet **mediconvoi**) |
-| X client | `VURQNG9O…` (LeMediaDPT Bridge) |
-| API publique update URI | **inexistante** (Google & X) → **humain console** |
-| Probe X | page « Something went wrong » tant que callback LMDPT non ajouté |
-
-Après clics console → smoke navigateur `/connexion`.
+| X client | `VURQNG9O…` (**LeMediaDPT Bridge** — pas app Pay Per Use) |
+| Callbacks | `…/callback/google` · `…/callback/x` |
+| Probe | Google headless OK · X nav OK (headless bot = faux négatif fréquent) |
