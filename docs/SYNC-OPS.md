@@ -57,10 +57,30 @@ GITHUB_TOKEN=ghp_… node scripts/setup-giscus.mjs --create-category
 
 Puis ajouter les IDs dans `Mediconvoi/backend/.env` et redéployer.
 
+## Deploy local VPS (releases + symlink)
+
+Sur KS-5-B le conteneur `lmdpt-website` bind-monte `~/lmdpt-website/current` :
+
+```bash
+# après npm run build dans le-media-du-premier-tour
+TS=$(date +%Y%m%d-%H%M%S)
+DEST=~/lmdpt-website/releases/$TS
+rsync -a --delete dist/ "$DEST/"
+ln -sfn "$DEST" ~/lmdpt-website/current
+# IMPORTANT : Docker résout le symlink au démarrage — restart obligatoire
+docker restart lmdpt-website
+# smoke
+curl -sS -o /dev/null -w '%{http_code}\n' https://lmdpt.iarbre.org/analyses/programmes/axes/
+```
+
+Sans `docker restart`, une nouvelle release peut rester invisible (404 sur pages neuves, ex. `/axes/`).
+
+**Publication X** : jamais auto sans revue (P10-2 BLOQUÉ Ω 2026-07-26).
+
 ## Flux quotidien type
 
 1. Timer 8h → `sync:all:social`
 2. Relire `social-drafts/auto/YYYY-MM-DD-renifleur-draft.md`
 3. Publier sur X si gate `docs/REVIEW.md` OK
 4. Cocher `publication-log.md`
-5. Deploy site si contenu changé : `npm run deploy-lmdpt-ovh`
+5. Deploy site si contenu changé : `npm run deploy-lmdpt-ovh` (+ restart container si deploy local)
