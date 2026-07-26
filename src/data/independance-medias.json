@@ -1,0 +1,498 @@
+{
+  "schema": "lmdpt-independance-medias-v1",
+  "title": "Indépendance des médias — financement (subvention / public / privé)",
+  "updated": "2026-07-24",
+  "period": {
+    "from": "2017-05-07",
+    "label": "depuis la présidentielle 2017 (corpus v1 2024–2026)"
+  },
+  "disclaimer": "Synthèse documentaire LMDPT — pas un score moral, pas un avis juridique, pas une carte d’adhésion. Les pastilles politiques portent sur les flux de financement (lecture pédagogique 1er tour). Montants et parts : ordres de grandeur sourcés ou omis (fail-closed).",
+  "methodology_note": "Chaque entrée liste des flux funding[] avec kind (subvention_etat | audiovisuel_public | capital_prive | autre) et political_hue. Sources publiques uniquement. verification=partial si source secondaire dominante. Distinct de l’observatoire de la censure.",
+  "media": [
+    {
+      "id": "le-monde",
+      "name": "Le Monde",
+      "type": "presse",
+      "independence_summary": "Quotidien du groupe Le Monde : capital privé (actionnaires industriels) + aides publiques à la presse documentées. L’indépendance éditoriale est contractuelle au sein du groupe, pas une absence de financement externe.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "lm-capital",
+          "kind": "capital_prive",
+          "label": "Groupe Le Monde (actionnariat privé)",
+          "share_note": "Pôle capitalistique privé (dont actionnaires industriels documentés publiquement)",
+          "political_hue": {
+            "family": "centre",
+            "label": "Capital privé · lecture centre / affaires"
+          },
+          "sources": [
+            {
+              "label": "Le Monde — Qui sommes-nous / groupe",
+              "url": "https://www.lemonde.fr/qui-sommes-nous/"
+            }
+          ]
+        },
+        {
+          "id": "lm-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État)",
+          "share_note": "Bénéficiaire des dispositifs d’aide à la presse écrite (DGMIC / Culture)",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse écrite",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-figaro",
+      "name": "Le Figaro",
+      "type": "presse",
+      "independence_summary": "Quotidien du groupe Figaro (Dassault) : financement dominant capital privé, complété par les aides publiques à la presse.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "figaro-dassault",
+          "kind": "capital_prive",
+          "label": "Groupe Figaro / Dassault",
+          "share_note": "Contrôle actionnarial privé documenté",
+          "political_hue": {
+            "family": "droite",
+            "label": "Capital privé · lecture droite"
+          },
+          "sources": [
+            {
+              "label": "Le Figaro — Groupe Figaro",
+              "url": "https://www.lefigaro.fr/"
+            },
+            {
+              "label": "Dassault Group — médias",
+              "url": "https://www.dassault.fr/"
+            }
+          ]
+        },
+        {
+          "id": "figaro-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État)",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liberation",
+      "name": "Libération",
+      "type": "presse",
+      "independence_summary": "Quotidien historiquement engagé à gauche ; capital privé (évolutions actionnariales documentées) et aides à la presse. L’indépendance relative dépend du pacte éditorial face à l’actionnaire.",
+      "verification": "partial",
+      "funding": [
+        {
+          "id": "libe-capital",
+          "kind": "capital_prive",
+          "label": "Actionnariat privé (évolutif)",
+          "share_note": "Structure capitalistique privée — vérifier l’actionnaire actuel avant tout %",
+          "political_hue": {
+            "family": "social-democrate",
+            "label": "Capital privé · lecture social-démocrate / centre-gauche"
+          },
+          "sources": [
+            {
+              "label": "Libération — Qui sommes-nous",
+              "url": "https://www.liberation.fr/liberation-et-vous/qui-sommes-nous/"
+            }
+          ]
+        },
+        {
+          "id": "libe-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État)",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humanite",
+      "name": "L’Humanité",
+      "type": "presse",
+      "independence_summary": "Quotidien lié historiquement au mouvement communiste ; financement mixte (structure associative / société, dons, aides presse). Forte dépendance aux soutiens militants et aux dispositifs publics.",
+      "verification": "partial",
+      "funding": [
+        {
+          "id": "huma-structure",
+          "kind": "capital_prive",
+          "label": "Structure éditoriale / sociétariat",
+          "share_note": "Organisation privée / associative autour du titre",
+          "political_hue": {
+            "family": "gauche-radicale",
+            "label": "Structure · lecture gauche radicale"
+          },
+          "sources": [
+            {
+              "label": "L’Humanité — À propos",
+              "url": "https://www.humanite.fr/"
+            }
+          ]
+        },
+        {
+          "id": "huma-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État)",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        },
+        {
+          "id": "huma-dons",
+          "kind": "autre",
+          "label": "Dons / campagnes de soutien lecteurs",
+          "political_hue": {
+            "family": "gauche-radicale",
+            "label": "Lecteurs · lecture gauche radicale"
+          },
+          "sources": [
+            {
+              "label": "L’Humanité — Soutenir",
+              "url": "https://www.humanite.fr/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valeurs-actuelles",
+      "name": "Valeurs actuelles",
+      "type": "presse",
+      "independence_summary": "Hebdomadaire d’opinion ; capital privé dominant. Les aides à la presse éventuelles n’annulent pas la dépendance au groupe propriétaire.",
+      "verification": "partial",
+      "funding": [
+        {
+          "id": "va-capital",
+          "kind": "capital_prive",
+          "label": "Groupe privé (Valmonde / actionnariat documenté)",
+          "political_hue": {
+            "family": "droite-nationale",
+            "label": "Capital privé · lecture droite nationale"
+          },
+          "sources": [
+            {
+              "label": "Valeurs actuelles — Accueil",
+              "url": "https://www.valeursactuelles.com/"
+            }
+          ]
+        },
+        {
+          "id": "va-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État) — si éligible",
+          "share_note": "Dispositifs Culture / DGMIC — vérifier listes annuelles avant montant",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jdd",
+      "name": "Le Journal du Dimanche",
+      "type": "presse",
+      "independence_summary": "Hebdomadaire du pôle Lagardère / orbite Vivendi : capital privé structurant ; aides presse possibles. L’indépendance éditoriale est un enjeu public documenté lors des changements de direction.",
+      "verification": "partial",
+      "funding": [
+        {
+          "id": "jdd-capital",
+          "kind": "capital_prive",
+          "label": "Lagardère / Vivendi (orbite Bolloré)",
+          "political_hue": {
+            "family": "droite-nationale",
+            "label": "Capital privé · lecture droite nationale / groupe"
+          },
+          "sources": [
+            {
+              "label": "Le JDD — Accueil",
+              "url": "https://www.lejdd.fr/"
+            },
+            {
+              "label": "Vivendi — Groupe",
+              "url": "https://www.vivendi.com/"
+            }
+          ]
+        },
+        {
+          "id": "jdd-aides",
+          "kind": "subvention_etat",
+          "label": "Aides à la presse (État)",
+          "political_hue": {
+            "family": "autre",
+            "label": "État · aides presse (institutionnel)"
+          },
+          "sources": [
+            {
+              "label": "Ministère de la Culture — Presse",
+              "url": "https://www.culture.gouv.fr/Thematiques/Presse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "france-televisions",
+      "name": "France Télévisions",
+      "type": "television",
+      "independence_summary": "Groupe audiovisuel public : financement dominant par ressources publiques (budget / contribution). Indépendance = statut de service public + cahier des charges, pas capital privé dominant.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "ftv-public",
+          "kind": "audiovisuel_public",
+          "label": "Dotation / budget audiovisuel public",
+          "share_note": "Financement public principal du service public audiovisuel",
+          "political_hue": {
+            "family": "autre",
+            "label": "Service public · institutionnel"
+          },
+          "sources": [
+            {
+              "label": "France Télévisions — Groupe",
+              "url": "https://www.francetelevisions.fr/"
+            },
+            {
+              "label": "Arcom — Audiovisuel public",
+              "url": "https://www.arcom.fr/"
+            }
+          ]
+        },
+        {
+          "id": "ftv-pub",
+          "kind": "autre",
+          "label": "Recettes publicitaires / partenariats",
+          "political_hue": {
+            "family": "centre",
+            "label": "Marché publicitaire · lecture centre / affaires"
+          },
+          "sources": [
+            {
+              "label": "France Télévisions — Groupe",
+              "url": "https://www.francetelevisions.fr/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radio-france",
+      "name": "Radio France",
+      "type": "radio",
+      "independence_summary": "Groupe radio de service public : financement public dominant. L’indépendance éditoriale relève du statut et du contrôle parlementaire / Arcom, pas d’un actionnaire privé.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "rf-public",
+          "kind": "audiovisuel_public",
+          "label": "Dotation / budget audiovisuel public",
+          "political_hue": {
+            "family": "autre",
+            "label": "Service public · institutionnel"
+          },
+          "sources": [
+            {
+              "label": "Radio France — Groupe",
+              "url": "https://www.radiofrance.fr/"
+            },
+            {
+              "label": "Arcom — Audiovisuel",
+              "url": "https://www.arcom.fr/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cnews",
+      "name": "CNews",
+      "type": "television",
+      "independence_summary": "Chaîne d’information du groupe Canal+ / Vivendi : capital privé structurant. Pas de logique « subvention presse écrite » ; dépendance principale à l’actionnaire et à la régulation Arcom.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "cnews-capital",
+          "kind": "capital_prive",
+          "label": "Canal+ / Vivendi",
+          "political_hue": {
+            "family": "droite-nationale",
+            "label": "Capital privé · lecture droite nationale / groupe"
+          },
+          "sources": [
+            {
+              "label": "CNews — Accueil",
+              "url": "https://www.cnews.fr/"
+            },
+            {
+              "label": "Vivendi — Groupe",
+              "url": "https://www.vivendi.com/"
+            }
+          ]
+        },
+        {
+          "id": "cnews-pub",
+          "kind": "autre",
+          "label": "Publicité / distribution payante",
+          "political_hue": {
+            "family": "centre",
+            "label": "Marché · lecture centre / affaires"
+          },
+          "sources": [
+            {
+              "label": "Arcom — Chaînes TNT",
+              "url": "https://www.arcom.fr/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bfmtv",
+      "name": "BFMTV",
+      "type": "television",
+      "independence_summary": "Chaîne d’info du groupe Altice Media : capital privé dominant. Indépendance relative = distance éditoriale face à l’actionnaire et contraintes Arcom.",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "bfm-capital",
+          "kind": "capital_prive",
+          "label": "Altice Media / groupe Drahi",
+          "political_hue": {
+            "family": "centre",
+            "label": "Capital privé · lecture centre / affaires"
+          },
+          "sources": [
+            {
+              "label": "BFMTV — Accueil",
+              "url": "https://www.bfmtv.com/"
+            },
+            {
+              "label": "Altice France — Groupe",
+              "url": "https://www.altice.fr/"
+            }
+          ]
+        },
+        {
+          "id": "bfm-pub",
+          "kind": "autre",
+          "label": "Publicité",
+          "political_hue": {
+            "family": "centre",
+            "label": "Marché publicitaire"
+          },
+          "sources": [
+            {
+              "label": "Arcom — Audiovisuel",
+              "url": "https://www.arcom.fr/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mediapart",
+      "name": "Mediapart",
+      "type": "agence",
+      "independence_summary": "Pure player : modèle dominant abonnements lecteurs (refus affiché de la pub et de certains financements). Indépendance relative élevée côté capital, sans équivalence « zéro lien institutionnel ».",
+      "verification": "documented",
+      "funding": [
+        {
+          "id": "mp-abo",
+          "kind": "autre",
+          "label": "Abonnements lecteurs",
+          "share_note": "Modèle affiché : indépendance via lecteurs",
+          "political_hue": {
+            "family": "autre",
+            "label": "Lecteurs · pluraliste / non classé"
+          },
+          "sources": [
+            {
+              "label": "Mediapart — Qui sommes-nous",
+              "url": "https://www.mediapart.fr/qui-sommes-nous"
+            }
+          ]
+        },
+        {
+          "id": "mp-structure",
+          "kind": "capital_prive",
+          "label": "Société éditrice / actionnariat salarié & fondateurs",
+          "political_hue": {
+            "family": "social-democrate",
+            "label": "Structure privée · lecture social-démocrate / indépendante"
+          },
+          "sources": [
+            {
+              "label": "Mediapart — Qui sommes-nous",
+              "url": "https://www.mediapart.fr/qui-sommes-nous"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blast",
+      "name": "Blast",
+      "type": "agence",
+      "independence_summary": "Média numérique indépendant : financement surtout dons / abonnements / campagnes. Peu ou pas de logique « grand groupe » ; vulnérabilité économique ≠ dépendance actionnariale.",
+      "verification": "partial",
+      "funding": [
+        {
+          "id": "blast-dons",
+          "kind": "autre",
+          "label": "Dons / abonnements / crowdfunding",
+          "political_hue": {
+            "family": "gauche-radicale",
+            "label": "Lecteurs · lecture gauche radicale"
+          },
+          "sources": [
+            {
+              "label": "Blast — Accueil",
+              "url": "https://www.blast-info.fr/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

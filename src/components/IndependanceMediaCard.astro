@@ -1,0 +1,147 @@
+---
+import type { IndependanceMediaEntry } from '../lib/independance-medias';
+import {
+  FUNDING_KIND_LABELS,
+  MEDIA_TYPE_LABELS,
+} from '../lib/independance-medias';
+
+interface Props {
+  item: IndependanceMediaEntry;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="ind-card">
+  <header class="ind-card-head">
+    <div class="ind-card-titles">
+      <h3>{item.name}</h3>
+      <p class="meta">
+        {MEDIA_TYPE_LABELS[item.type]}
+        {
+          item.verification === 'partial' && (
+            <span> · vérification partielle</span>
+          )
+        }
+      </p>
+    </div>
+  </header>
+
+  <p class="ind-summary">{item.independence_summary}</p>
+
+  <h4 class="ind-funding-title">Financements</h4>
+  <ul class="ind-funding-list">
+    {
+      item.funding.map((f) => {
+        const color = f.political_hue.color || '#718096';
+        return (
+          <li class="ind-funding-item" style={`border-left-color:${color}`}>
+            <div class="ind-funding-badges">
+              <span class="ind-kind-badge">{FUNDING_KIND_LABELS[f.kind]}</span>
+              <span
+                class="ind-hue-badge"
+                title="Teinte pédagogique du flux — pas une carte d’adhésion"
+              >
+                <span
+                  class="ind-swatch"
+                  style={`background:${color}`}
+                  aria-hidden="true"
+                />
+                <span>{f.political_hue.label}</span>
+              </span>
+            </div>
+            <p class="ind-funding-label">{f.label}</p>
+            {f.share_note && <p class="meta ind-share">{f.share_note}</p>}
+            {f.amount_note && <p class="meta ind-share">{f.amount_note}</p>}
+            <ul class="ind-sources">
+              {f.sources.map((s) => (
+                <li>
+                  <a href={s.url} rel="noopener noreferrer">
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ul>
+</article>
+
+<style>
+  .ind-card {
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    padding: 1rem 1.1rem 1.15rem;
+    margin: 0;
+  }
+  .ind-card-head {
+    margin-bottom: 0.55rem;
+  }
+  .ind-card-titles h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.15rem;
+  }
+  .ind-summary {
+    margin: 0 0 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .ind-funding-title {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+  }
+  .ind-funding-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .ind-funding-item {
+    border-left: 4px solid #718096;
+    padding: 0.45rem 0 0.45rem 0.75rem;
+  }
+  .ind-funding-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.65rem;
+    align-items: center;
+    margin-bottom: 0.35rem;
+  }
+  .ind-kind-badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 3px;
+    background: var(--bg, #f7f7f7);
+  }
+  .ind-hue-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .ind-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .ind-funding-label {
+    margin: 0 0 0.25rem;
+    font-size: 0.92rem;
+  }
+  .ind-share {
+    margin: 0 0 0.35rem;
+  }
+  .ind-sources {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+  }
+</style>

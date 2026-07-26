@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IndependanceMediaCard from '../../components/IndependanceMediaCard.astro';
+import {
+  FUNDING_KIND_LABELS,
+  MEDIA_TYPE_LABELS,
+  countFundingByKind,
+  getIndependanceView,
+  sortMediaByName,
+  type FundingKind,
+  type MediaType,
+} from '../../lib/independance-medias';
+
+const data = getIndependanceView();
+const media = sortMediaByName(data.media);
+const kindCounts = countFundingByKind(data.media);
+const kinds = Object.keys(FUNDING_KIND_LABELS) as FundingKind[];
+
+const mediaByType = (['television', 'radio', 'presse', 'agence', 'autre'] as MediaType[])
+  .map((type) => ({
+    type,
+    label: MEDIA_TYPE_LABELS[type],
+    items: media.filter((m) => m.type === type),
+  }))
+  .filter((g) => g.items.length > 0);
+---
+
+<BaseLayout
+  title="Indépendance des médias"
+  description="Indépendance relative des médias FR : subventions État, audiovisuel public, capital privé — badges de teinte politique par flux de financement. Synthèse documentaire LMDPT."
+  keywords="indépendance médias, subventions presse, aides à la presse, audiovisuel public, financement médias, LMDPT, pluralité"
+>
+  <article class="ind-page">
+    <header class="card ind-hero">
+      <p class="eyebrow">Veille civique · pluralité de l’information</p>
+      <h1>Indépendance des médias — subventions, public, privé</h1>
+      <p class="lead">
+        Pour chaque média du corpus : lecture d’<strong>indépendance relative</strong>
+        et liste des <strong>flux de financement</strong> (aides État, audiovisuel
+        public, capital privé, abonnements/dons), chacun avec une pastille de
+        <strong>teinte politique pédagogique</strong>.
+      </p>
+      <p class="meta">
+        Période : {data.period.label} (depuis {data.period.from}) · mise à jour
+        {data.updated} · {data.media.length} médias ·
+        {kindCounts.subvention_etat} flux aides ·
+        {kindCounts.audiovisuel_public} flux public ·
+        {kindCounts.capital_prive} flux capital ·
+        {kindCounts.autre} autres
+      </p>
+      <p class="meta disclaimer-box">{data.disclaimer}</p>
+      <p class="meta methodology-box">{data.methodology_note}</p>
+    </header>
+
+    <nav class="card ind-toc" aria-label="Sommaire indépendance médias">
+      <ol>
+        <li><a href="#legende">Légende des financements</a></li>
+        <li><a href="#medias">Médias du corpus</a></li>
+        <li><a href="#methode">Méthode</a></li>
+      </ol>
+    </nav>
+
+    <section class="card" id="legende" aria-labelledby="legende-title">
+      <h2 id="legende-title">Légende des financements</h2>
+      <ul class="ind-legend">
+        {
+          kinds.map((k) => (
+            <li>
+              <strong>{FUNDING_KIND_LABELS[k]}</strong>
+              <span class="meta"> — {kindCounts[k]} flux dans le seed</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="meta">
+        La couleur du badge porte sur le <em>flux</em> (État, groupe, lecteurs…),
+        pas une adhésion partisane du titre. Voir
+        <a href="/sources#methodologie-blocs">méthodologie des blocs</a>.
+      </p>
+    </section>
+
+    <section class="card" id="medias" aria-labelledby="medias-title">
+      <h2 id="medias-title">Médias du corpus</h2>
+      <p>
+        Seed v1 : presse nationale et TV/radio majeures FR. Enrichissement
+        itératif via <code>/lmdpt-independance-medias</code>.
+      </p>
+      {
+        mediaByType.map((group) => (
+          <div class="ind-type-block">
+            <h3>{group.label}</h3>
+            <div class="ind-media-grid">
+              {group.items.map((item) => (
+                <IndependanceMediaCard item={item} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="card" id="methode" aria-labelledby="methode-title">
+      <h2 id="methode-title">Méthode</h2>
+      <ul>
+        <li>
+          Inclusion : audience nationale FR + au moins une URL vérifiable par flux.
+        </li>
+        <li>
+          Fail-closed : doute sur montant / propriétaire →
+          <code>partial</code> ou omission — jamais d’invention.
+        </li>
+        <li>
+          Distinct de l’
+          <a href="/observatoire-censure/">observatoire de la censure</a>
+          (sanctions ≠ financement).
+        </li>
+        <li>
+          Hub voisin :
+          <a href="/liberte-d-expression">Liberté d’expression</a>.
+        </li>
+      </ul>
+      <p class="meta">
+        Agent de maintenance : <code>/lmdpt-independance-medias</code> · seed v1 non
+        exhaustif.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .ind-hero .lead {
+    font-size: 1.08rem;
+    line-height: 1.55;
+    max-width: 46rem;
+  }
+  .disclaimer-box,
+  .methodology-box {
+    border-left: 3px solid var(--border, #ccc);
+    padding-left: 0.85rem;
+    margin-top: 0.75rem;
+  }
+  .methodology-box {
+    border-left-color: #1e4d6b;
+  }
+  .ind-toc ol {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  .ind-legend {
+    margin: 0.5rem 0 0.75rem;
+    padding-left: 1.2rem;
+  }
+  .ind-type-block {
+    margin-top: 1.25rem;
+  }
+  .ind-type-block h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+  }
+  .ind-media-grid {
+    display: grid;
+    gap: 1rem;
+  }
+</style>
