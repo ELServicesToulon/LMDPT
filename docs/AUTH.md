@@ -11,7 +11,30 @@
 | `google` | OAuth2 / OIDC | `LMDPT_GOOGLE_CLIENT_ID` · `LMDPT_GOOGLE_CLIENT_SECRET` |
 | `x` | OAuth2 PKCE | `LMDPT_X_OAUTH_CLIENT_ID` · `LMDPT_X_OAUTH_CLIENT_SECRET` |
 | `apple` | Sign in with Apple (form_post) | `LMDPT_APPLE_CLIENT_ID` · `TEAM_ID` · `KEY_ID` · `PRIVATE_KEY` |
-| `email` | Magic link 15 min | `LMDPT_SMTP_HOST` ou `LMDPT_SMTP_URL` (webhook) · dev : log |
+| `email` | Magic link 15 min | SMTP OVH `ssl0.ovh.net:465` · user `contact@mediconvoi.fr` · ou `LMDPT_SMTP_URL` webhook · dev : log |
+
+### SMTP OVH (prod LMDPT · 2026-07-26)
+
+| Champ | Valeur |
+|-------|--------|
+| Host | `ssl0.ovh.net` |
+| Port | `465` (TLS implicite) |
+| User / From | `contact@mediconvoi.fr` |
+| Mot de passe | Bitwarden `CONTACT_MEDICONVOI_MAIL_PASSWORD` · env fichier `/etc/lmdpt-comments.env` (root 600) |
+| **Pas** `vigi@` | Adresse inexistante — boîte sécu = **`medivigil@mediconvoi.fr`** (mdp **absent** du vault / 535 — voir `Mediconvoi/backend/docs/SMTP-OVH-CONTACT-MEDIVIGIL.md`) |
+
+| Boîte | AUTH | LMDPT |
+|-------|------|-------|
+| `contact@mediconvoi.fr` | ✅ | **From / User SMTP** (prod) |
+| `medivigil@mediconvoi.fr` | ❌ mdp manquant | non branché (sécu Mediconvoi) |
+
+```bash
+# smoke
+curl -sS -X POST https://lmdpt.iarbre.org/api/auth/email/start \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"vous@exemple.fr","next":"/compte"}'
+# journal : MAGIC LINK sent via SMTP { host: ssl0.ovh.net, from: contact@… }
+```
 
 Redirects prod :
 
@@ -92,4 +115,33 @@ Puis `docker exec` / reload nginx conteneur LMDPT.
 2. Bitwarden `LMDPT-AUTH-*` → env systemd comments-api  
 3. `LMDPT_AUTH_ENABLED=1` · `LMDPT_SESSION_SECRET=…`  
 4. Reload nginx (proxy `/api/auth/`)  
-5. Smoke : `/api/auth/providers` · magic link · 1 OAuth  
+5. Smoke : `/api/auth/providers` · magic link · 1 OAuth
+
+## P41-O — secrets branchés (2026-07-26 L1+)
+
+| Provider | enabled | Source vault | Callback à autoriser (humain) |
+|----------|---------|--------------|-------------------------------|
+| Email | ✅ | `CONTACT_MEDICONVOI_MAIL_PASSWORD` → SMTP contact@ | — |
+| Google | ✅ | `iarbre_GOOGLE_OAUTH_CLIENT_*` | `https://lmdpt.iarbre.org/api/auth/callback/google` |
+| X | ✅ | `LEMEDIA-DPT-X-API-v2` (`oauth2_client_*`) | `https://lmdpt.iarbre.org/api/auth/callback/x` |
+| Apple | ❌ | absent | Services ID + `…/callback/apple` |
+
+Env prod : `/etc/lmdpt-comments.env` (root 600) · restart `lmdpt-comments.service`.
+
+**Google Cloud Console** (client iarbre `1008470530429-…`) : Authorized redirect URIs → ajouter le callback LMDPT.  
+**X Developer Portal** (app LeMediaDPT Bridge, client `VURQNG9O…`) : User authentication → Callback URI / Redirect URL → callback X LMDPT.
+
+Sans ces URIs, le bouton redirige vers IdP puis erreur `redirect_uri_mismatch`.
+
+## P41-O2 — redirect URIs (2026-07-26)
+
+**Pack** : `second-brain/projects/lmdpt/docs/2026-07-26-P41-O2-redirect-uris-go-pack.md`
+
+| | |
+|--|--|
+| Google client (prod) | `748914516227-tgrop94cvom5u9v74b1eqoe4dig6fg3p…` (projet **mediconvoi**) |
+| X client | `VURQNG9O…` (LeMediaDPT Bridge) |
+| API publique update URI | **inexistante** (Google & X) → **humain console** |
+| Probe X | page « Something went wrong » tant que callback LMDPT non ajouté |
+
+Après clics console → smoke navigateur `/connexion`.
