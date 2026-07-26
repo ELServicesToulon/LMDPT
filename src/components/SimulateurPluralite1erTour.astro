@@ -292,12 +292,13 @@ const T1_2024_PCTS = { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.
     font-variant-numeric: tabular-nums;
     text-align: right;
   }
-  .delta.pos { color: #2d6a4f; }
-  .delta.neg { color: #9b2226; }
+  .delta.pos { color: var(--delta-pos, #0f6b3c); }
+  .delta.neg { color: var(--delta-neg, #b42318); }
 
   .mini-hemicycle {
     margin: 0.5rem 0;
-    background: #111;
+    background: #0f1419;
+    color: #f5f2eb;
     border-radius: 6px;
     padding: 4px;
     border: 1px solid #333;
@@ -308,13 +309,13 @@ const T1_2024_PCTS = { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.
     margin-top: 0.7rem;
     font-size: 0.78rem;
     line-height: 1.35;
-    background: #fef3c7;
-    border: 1px solid #d97706;
+    background: color-mix(in srgb, #ca8a04 18%, var(--card));
+    border: 1px solid color-mix(in srgb, #d97706 55%, var(--border));
     padding: 0.5rem 0.6rem;
     border-radius: 4px;
-    color: #451a03;
+    color: var(--fg);
   }
-  .disclaimer strong { color: #92400e; }
+  .disclaimer strong { color: var(--fg); }
 
   .small { font-size: 0.75rem; }
 

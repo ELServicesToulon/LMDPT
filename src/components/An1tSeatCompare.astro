@@ -124,10 +124,10 @@ const maxSeats = Math.max(...rows.flatMap((r) => [r.an1tSeats, r.reelleSeats]), 
     font-variant-numeric: tabular-nums;
   }
   .delta.pos {
-    color: #2d6a4f;
+    color: var(--delta-pos, #0f6b3c);
   }
   .delta.neg {
-    color: #9b2226;
+    color: var(--delta-neg, #b42318);
   }
   @media (max-width: 640px) {
     .compare-header {

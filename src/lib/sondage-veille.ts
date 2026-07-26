@@ -306,18 +306,126 @@ function nameToSlug(name: string): string | null {
   return map[n] ?? null;
 }
 
+/** Notices Commission des sondages — liste des dépôts (pas d'intentions scorées). */
+export function parseCommissionNotices(html: string, sourceUrl: string): DetectedWave[] {
+  const waves: DetectedWave[] = [];
+  // e.g. 10228 Pres Baromètre Cluster17 Le Point 14 juillet
+  const re =
+    /Pres\s+([^<]{8,120}?)\s+(\d{1,2}\s+juillet|\d{1,2}\s+juin|\d{1,2}\s+mai|\d{1,2}\s+avril|\d{1,2}\s+mars|\d{1,2}\s+f[eé]vrier|\d{1,2}\s+janvier)/gi;
+  const seen = new Set<string>();
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null && waves.length < 12) {
+    const title = stripHtml(m[1]).trim();
+    const dateHint = m[2].trim();
+    // Juillet 2026 notices only in the open panel we care about for now
+    if (!/juillet/i.test(dateHint)) continue;
+    const firm = matchFirm(title);
+    // Only track IV / intentions / baromètre présidentiel — not generic popularity alone
+    if (!/IV|intentions?|barom[eè]tre|presitrack|1er\s*tour|tableau\s+de\s+bord/i.test(title)) {
+      continue;
+    }
+    const firmKey = firm?.id ?? 'unknown';
+    const id = `commission-${firmKey}-${dateHint.replace(/\W/g, '').toLowerCase()}`;
+    if (seen.has(id)) continue;
+    seen.add(id);
+    waves.push({
+      id,
+      firm: firm?.label ?? title.slice(0, 40),
+      firm_id: firm?.id ?? null,
+      fieldwork: dateHint,
+      published_hint: dateHint,
+      source_url: sourceUrl,
+      source_id: 'commission-sondages',
+      scores: {},
+      raw_snippet: `Notice Commission : ${title} (${dateHint}) — PDF notice, scores non extraits auto.`,
+      metric: /souhait|popularit/i.test(title) ? 'unknown' : 'intentions_vote',
+    });
+  }
+  return waves;
+}
+
+/**
+ * 2027presidentielle compact table rows:
+ * "Elabe 9-10 juillet 1 503 1 16 2,5 … 35 3"
+ * Prefer scored extractions over empty firm mentions.
+ */
+export function parse2027PresidentielleHtml(html: string, sourceUrl: string): DetectedWave[] {
+  const text = stripHtml(html);
+  const waves: DetectedWave[] = [];
+  const rowRe =
+    /\b(Elabe|Ifop|Harris(?:\s+Interactive)?|OpinionWay|Verian|Ipsos(?:-BVA)?|Odoxa|Cluster\s*17)\s+(\d{1,2}(?:\s*[-–]\s*\d{1,2})?\s+(?:janvier|f[eé]vrier|mars|avril|mai|juin|juillet|ao[uû]t|septembre|octobre|novembre|d[eé]cembre))\s+[\d\s]{1,6}/gi;
+  let m: RegExpExecArray | null;
+  const seen = new Set<string>();
+  while ((m = rowRe.exec(text)) !== null && waves.length < 15) {
+    const firmLabel = m[1].replace(/\s+/g, ' ');
+    const firm = matchFirm(firmLabel);
+    const fieldwork = m[2].replace(/\s+/g, ' ').trim();
+    const chunk = text.slice(m.index, m.index + 320);
+    const scores = extractScores(chunk);
+    // Also try EPOC-style "35% LE PEN" if present nearby
+    if (!Object.keys(scores).length) {
+      const pairs = [...chunk.matchAll(/(\d{1,2}(?:[.,]\d{1,2})?)\s*%?\s+(Le\s*Pen|Philippe|M[eé]lenchon|Attal|Glucksmann|Retailleau|Bardella|Tondelier|Zemmour)/gi)];
+      for (const [, pct, name] of pairs) {
+        const slug = nameToSlug(name);
+        if (slug) scores[slug] = Number.parseFloat(pct.replace(',', '.'));
+      }
+    }
+    const id = `2027pres-${(firm?.id ?? firmLabel).toLowerCase().replace(/\s+/g, '-')}-${fieldwork.replace(/\W/g, '').toLowerCase()}`;
+    if (seen.has(id)) continue;
+    seen.add(id);
+    // Keep only scored recent rows (post-juin 2026) — ignore historical Bardella archive noise
+    if (!Object.keys(scores).length) continue;
+    if (!isRecentFieldwork(fieldwork) && !/juillet|juil|2026-07|08\/07|09\/07|1[0-2]\/07/i.test(fieldwork)) {
+      continue;
+    }
+    waves.push({
+      id,
+      firm: firm?.label ?? firmLabel,
+      firm_id: firm?.id ?? null,
+      fieldwork,
+      published_hint: fieldwork,
+      source_url: sourceUrl,
+      source_id: '2027presidentielle',
+      scores,
+      raw_snippet: chunk.slice(0, 280),
+      metric: 'intentions_vote',
+    });
+  }
+  return waves;
+}
+
 export function parseGenericHtml(
   html: string,
   sourceUrl: string,
   sourceId: string,
 ): DetectedWave[] {
+  // Specialized parsers are called from runSondageVeille — avoid recursion here.
+  if (sourceId === 'commission-sondages') {
+    return parseCommissionNotices(html, sourceUrl);
+  }
+  if (sourceId === '2027presidentielle') {
+    return parse2027PresidentielleHtml(html, sourceUrl);
+  }
+
   const text = stripHtml(html);
   const firm = matchFirm(text.slice(0, 2000)) ?? matchFirm(text);
   const scores = extractScores(text.slice(0, 4000));
   const fieldwork = extractFieldwork(text.slice(0, 4000));
   if (!firm && Object.keys(scores).length === 0) return [];
 
-  const id = `${sourceId}-${(firm?.id ?? 'unknown')}-${fieldwork?.replace(/\W/g, '') ?? 'na'}-${hashSnippet(text.slice(0, 120))}`;
+  // Stable id without content hash when scores exist (avoid daily re-flag)
+  const firmKey = firm?.id ?? 'unknown';
+  const fieldKey = fieldwork?.replace(/\W/g, '') ?? 'na';
+  const id =
+    Object.keys(scores).length > 0
+      ? `${sourceId}-${firmKey}-${fieldKey}`
+      : `${sourceId}-${firmKey}-${fieldKey}-${hashSnippet(text.slice(0, 120))}`;
+
+  // Empty-score mentions: only keep if looks like a real poll headline
+  if (!Object.keys(scores).length) {
+    if (!/sondage|intentions?\s+de\s+vote|barom[eè]tre/i.test(text.slice(0, 800))) return [];
+  }
+
   return [
     {
       id,
@@ -414,40 +522,45 @@ function formatPct(n: number): string {
   return `${n.toLocaleString('fr-FR', { maximumFractionDigits: 1 })} %`;
 }
 
+/** Fieldwork looks like post–Le Pen candidature window (juil. 2026+) or explicit ISO-ish. */
+export function isRecentFieldwork(fieldwork: string | null | undefined): boolean {
+  if (!fieldwork) return false;
+  const f = fieldwork.toLowerCase();
+  // ISO-like 2026-07 / 2026-06 late
+  if (/2026-0[7-9]|2026-1[0-2]|202[7-9]/.test(f)) return true;
+  if (/\b(juillet|juil|août|aout|septembre|octobre|novembre|décembre|decembre)\s*2026\b/i.test(f))
+    return true;
+  if (/\b(0?[7-9]|1[0-2])[\/\-]2026\b/.test(f)) return true;
+  if (/\b(0?[7-9]|1[0-2])\/0?7\/2026\b/.test(f)) return true;
+  // "9-12 juillet" / "14 juillet" without year → assume current cycle if juillet/août
+  if (/\b(juillet|juil|août|aout)\b/i.test(f) && !/202[0-5]/.test(f)) return true;
+  // DD/MM/2026 with month >= 7
+  const dmy = f.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](2026)/);
+  if (dmy && Number(dmy[2]) >= 7) return true;
+  return false;
+}
+
 export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string): Movement[] {
   const movements: Movement[] = [];
-  const prevByFirm = new Map<string, DetectedWave>();
+  const prevByExact = new Map<string, DetectedWave>();
   for (const w of prev) {
     const key = `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}`;
-    prevByFirm.set(key, w);
-    // also index by firm only for latest
-    if (!prevByFirm.has(w.firm_id ?? w.firm)) prevByFirm.set(w.firm_id ?? w.firm, w);
+    prevByExact.set(key, w);
   }
 
   const seenIds = new Set(prev.map((w) => w.id));
 
   for (const w of next) {
-    if (!seenIds.has(w.id) && Object.keys(w.scores).length > 0) {
-      // check if same firm+fieldwork already known
-      const key = `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}`;
-      const old = prevByFirm.get(key) ?? prevByFirm.get(w.firm_id ?? w.firm);
-      if (!old || old.id === w.id) {
-        if (!old || JSON.stringify(old.scores) !== JSON.stringify(w.scores)) {
-          if (!old) {
-            movements.push({
-              at,
-              kind: 'new_wave',
-              firm: w.firm,
-              comment: commentForNewWave(w),
-              wave_id: w.id,
-              source_url: w.source_url,
-            });
-          }
-        }
-      }
+    if (seenIds.has(w.id)) continue;
 
-      if (old && Object.keys(old.scores).length && Object.keys(w.scores).length) {
-        const oldHead = headOfWave(old);
+    const hasScores = Object.keys(w.scores).length > 0;
+    const key = `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}`;
+    const oldExact = prevByExact.get(key);
+
+    if (hasScores) {
+      // Prefer exact firm+fieldwork match only for shifts (avoid Bardella-history vs Le Pen-current)
+      if (oldExact && Object.keys(oldExact.scores).length) {
+        const oldHead = headOfWave(oldExact);
         const newHead = headOfWave(w);
         if (oldHead && newHead && oldHead.head !== newHead.head) {
           movements.push({
@@ -460,7 +573,7 @@ export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string
           });
         }
         for (const [slug, pct] of Object.entries(w.scores)) {
-          const prevPct = old.scores[slug];
+          const prevPct = oldExact.scores[slug];
           if (prevPct != null && Math.abs(prevPct - pct) >= 0.5) {
             movements.push({
               at,
@@ -476,12 +589,37 @@ export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string
             });
           }
         }
-      } else if (!old && Object.keys(w.scores).length > 0) {
-        // already pushed new_wave
+      } else if (!oldExact && isRecentFieldwork(w.fieldwork)) {
+        // Truly new scored wave in recent window
+        const sameScoresKnown = prev.some(
+          (p) =>
+            (p.firm_id ?? p.firm) === (w.firm_id ?? w.firm) &&
+            JSON.stringify(p.scores) === JSON.stringify(w.scores),
+        );
+        if (!sameScoresKnown) {
+          movements.push({
+            at,
+            kind: 'new_wave',
+            firm: w.firm,
+            comment: commentForNewWave(w),
+            wave_id: w.id,
+            source_url: w.source_url,
+          });
+        }
       }
-    } else if (!seenIds.has(w.id) && Object.keys(w.scores).length === 0 && w.raw_snippet) {
-      // mention only
-      if (/sondage|baromètre/i.test(w.raw_snippet)) {
+    } else if (w.raw_snippet && isRecentFieldwork(w.fieldwork)) {
+      // Empty-score mentions: commission / headlines — only recent, once per firm+fieldwork
+      const alreadyField = prev.some(
+        (p) =>
+          (p.firm_id ?? p.firm) === (w.firm_id ?? w.firm) &&
+          (p.fieldwork ?? '') === (w.fieldwork ?? '') &&
+          p.source_id === w.source_id,
+      );
+      if (
+        !alreadyField &&
+        (w.source_id === 'commission-sondages' ||
+          /sondage|baromètre|notice Commission/i.test(w.raw_snippet))
+      ) {
         movements.push({
           at,
           kind: 'new_wave',
@@ -555,6 +693,10 @@ export async function runSondageVeille(
     let parsed: DetectedWave[] = [];
     if (agg.parse === 'epoc_html' || agg.id === 'epoc') {
       parsed = parseEpocHtml(res.text, agg.url);
+    } else if (agg.id === 'commission-sondages') {
+      parsed = parseCommissionNotices(res.text, agg.url);
+    } else if (agg.id === '2027presidentielle' || agg.parse === '2027pres_html') {
+      parsed = parse2027PresidentielleHtml(res.text, agg.url);
     } else {
       parsed = parseGenericHtml(res.text, agg.url, agg.id);
     }

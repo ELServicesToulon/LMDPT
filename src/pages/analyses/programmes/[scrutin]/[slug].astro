@@ -6,8 +6,10 @@ import {
   getScrutin,
   AUTEUR_LABELS,
   STATUS_LABELS,
+  getThemeLabel,
 } from '../../../../lib/programs';
 import { formatMdeur } from '../../../../lib/program-compare';
+import { getCandidateFamily } from '../../../../lib/program-families';
 
 export function getStaticPaths() {
   const paths: Array<{ params: { scrutin: string; slug: string } }> = [];
@@ -24,6 +26,7 @@ const file = getCandidateProgram(scrutin!, slug!);
 if (!file) throw new Error(`Programme introuvable: ${scrutin}/${slug}`);
 
 const meta = getScrutin(scrutin!);
+const family = getCandidateFamily(file.candidate.slug);
 const updated = file.updated
   ? new Date(file.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' })
   : null;
@@ -40,15 +43,27 @@ const updated = file.updated
   </nav>
 
   <section>
+    <p class="eyebrow">Fiche programme · synthèse documentaire</p>
     <h2>{file.candidate.name}</h2>
+    <p class="lead-programme">
+      Mesures et chiffrages issus de sources documentées (campagne, Institut Montaigne ou
+      estimation LMDPT — étiquetés ci-dessous). Ce n’est ni un classement ni une consigne de vote.
+    </p>
     <p class="meta">
-      {file.candidate.affiliation} · {meta?.label}
+      {file.candidate.affiliation} · {family.label} · {meta?.label}
       {updated && (
         <>
           {' '}
           · MAJ <time datetime={file.updated}>{updated}</time>
         </>
       )}
+    </p>
+    <p class="meta">
+      <a
+        href={`/analyses/programmes-comparateur?scrutin=${scrutin}&family=${family.id}&view=family`}
+      >
+        Comparer au sein de la famille « {family.shortLabel} »
+      </a>
     </p>
     {file.program.document_url && (
       <p>
@@ -65,72 +80,104 @@ const updated = file.updated
     )}
   </section>
 
-  <section class="card">
-    <h3>Mesures phares</h3>
-    <table class="prog-table">
-      <thead>
-        <tr>
-          <th>Thème</th>
-          <th>Mesure</th>
-          <th>Évolution</th>
-        </tr>
-      </thead>
-      <tbody>
-        {file.measures.map((m) => (
+  <section class="card" aria-labelledby="mesures-heading">
+    <h3 id="mesures-heading">Mesures phares</h3>
+    <div class="table-wrap" role="region" aria-label="Mesures phares" tabindex="0">
+      <table class="prog-table">
+        <caption class="meta">
+          {file.measures.length} mesure{file.measures.length > 1 ? 's' : ''} — {file.candidate.name}
+        </caption>
+        <thead>
           <tr>
-            <td>{m.theme}</td>
-            <td>
-              {m.label}
-              {m.detail && <p class="meta">{m.detail}</p>}
-            </td>
-            <td>{STATUS_LABELS[m.status] ?? m.status}</td>
+            <th scope="col">Thème</th>
+            <th scope="col">Sous-thème</th>
+            <th scope="col">Mesure</th>
+            <th scope="col">Chiffrage</th>
+            <th scope="col">Évolution</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {file.measures.map((m) => (
+            <tr>
+              <td>{getThemeLabel(m.theme)}</td>
+              <td>{m.subtheme || '—'}</td>
+              <td>
+                {m.label}
+                {m.detail && <p class="meta">{m.detail}</p>}
+              </td>
+              <td>
+                {m.chiffrage_mdeur != null
+                  ? `${formatMdeur(m.chiffrage_mdeur)}${
+                      m.chiffrage_auteur
+                        ? ` (${AUTEUR_LABELS[m.chiffrage_auteur] ?? m.chiffrage_auteur})`
+                        : ''
+                    }`
+                  : '—'}
+              </td>
+              <td>{STATUS_LABELS[m.status] ?? m.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
-  <section class="card">
-    <h3>Chiffrages</h3>
-    <table class="prog-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Montant</th>
-          <th>Auteur</th>
-          <th>Horizon</th>
-        </tr>
-      </thead>
-      <tbody>
-        {file.chiffrages.map((c) => (
-          <tr>
-            <td>{c.type}</td>
-            <td>
-              {formatMdeur(c.montant_mdeur)}
-              {c.montant_min_mdeur != null && c.montant_max_mdeur != null && (
-                <span class="meta">
-                  {' '}
-                  (fourchette {formatMdeur(c.montant_min_mdeur)} – {formatMdeur(c.montant_max_mdeur)})
-                </span>
-              )}
-            </td>
-            <td>
-              {AUTEUR_LABELS[c.auteur] ?? c.auteur}
-              {c.source_url && (
-                <>
-                  {' '}
-                  ·{' '}
-                  <a href={c.source_url} rel="noopener noreferrer">
-                    source
-                  </a>
-                </>
-              )}
-            </td>
-            <td>{c.horizon}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+  <section class="card" aria-labelledby="chiffrages-heading">
+    <h3 id="chiffrages-heading">Chiffrages</h3>
+    {file.chiffrages.length === 0 ? (
+      <p class="meta" role="status">
+        Aucun chiffrage agrégé intégré pour ce dossier (programme partiel ou mesures non
+        quantifiables). Voir le{' '}
+        <a href={`/analyses/programmes-comparateur?scrutin=${scrutin}&family=${family.id}&view=family`}>
+          comparateur famille
+        </a>
+        .
+      </p>
+    ) : (
+      <div class="table-wrap" role="region" aria-label="Chiffrages programme" tabindex="0">
+        <table class="prog-table">
+          <caption class="meta">Montants en Md€/an — badges auteur obligatoires</caption>
+          <thead>
+            <tr>
+              <th scope="col">Type</th>
+              <th scope="col">Montant</th>
+              <th scope="col">Auteur</th>
+              <th scope="col">Horizon</th>
+            </tr>
+          </thead>
+          <tbody>
+            {file.chiffrages.map((c) => (
+              <tr>
+                <td>{c.type}</td>
+                <td>
+                  {formatMdeur(c.montant_mdeur)}
+                  {c.montant_min_mdeur != null && c.montant_max_mdeur != null && (
+                    <span class="meta">
+                      {' '}
+                      (fourchette {formatMdeur(c.montant_min_mdeur)} –{' '}
+                      {formatMdeur(c.montant_max_mdeur)})
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {AUTEUR_LABELS[c.auteur] ?? c.auteur}
+                  {c.source_url && (
+                    <>
+                      {' '}
+                      ·{' '}
+                      <a href={c.source_url} rel="noopener noreferrer">
+                        source
+                      </a>
+                    </>
+                  )}
+                </td>
+                <td>{c.horizon}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
     {file.chiffrages.some((c) => c.auteur === 'lmdpt') && (
       <p class="meta">
         Estimations LMDPT : voir docs/PROGRAMMES-CHIFFRAGE-METHODO.md dans le dépôt.
@@ -146,6 +193,19 @@ const updated = file.updated
 </BaseLayout>
 
 <style>
+  .lead-programme {
+    max-width: 72ch;
+    line-height: 1.55;
+    margin: 0 0 0.75rem;
+    font-size: 1.02rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .table-wrap:focus-visible {
+    outline: 2px solid var(--accent, #1e4d6b);
+    outline-offset: 2px;
+  }
   .prog-table {
     width: 100%;
     border-collapse: collapse;
@@ -158,5 +218,15 @@ const updated = file.updated
     padding: 0.45rem 0.55rem;
     text-align: left;
     vertical-align: top;
+  }
+  .prog-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--card, #f7f5f0);
+  }
+  .prog-table caption {
+    caption-side: bottom;
+    text-align: left;
+    padding-top: 0.35rem;
   }
 </style>

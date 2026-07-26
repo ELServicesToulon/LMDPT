@@ -34,6 +34,7 @@ Le média se veut **zéro biais** et **sans parti pris** éditorial.
 | **Zéro biais** | Aucune force, candidat ou camp n’est favorisé dans le traitement des faits, titres, tailles de fiche ou ordre d’apparition sans justification documentaire. |
 | **Zéro parti pris** | Le média ne « soutient » personne. Les prises de position des **intervenants** et des **posts** sont les leurs, pas celles de la rédaction. |
 | **Transparence des couleurs politiques** | Chaque post / commentaire / intervenant affiche une **teinte politique** (proximité d’idées 1er tour) de façon visible — pastille + libellé. Ce n’est **pas** une carte d’adhésion partisane ; c’est un **signal de transparence** pour le lecteur. |
+| **Badges obligatoires sur toute publication** | **Toute** publication (site, brouillon X, carte programme, déclaration, débat, veille presse) porte **le ou les badges couleurs d’idées** (`PoliticalHueBadges` / `hueBadgesForPublication`). Multi-camps cités → **plusieurs** pastilles. Implémentation : `src/lib/comment-politics.ts` · `src/components/PoliticalHueBadges.astro`. |
 | **Idées vs autorité** | Les **idées politiques** du débat démocratique passent. Les **autorités** religieuses ou idéologiques totalisantes **ne passent pas**. |
 
 ### IA modératrice en cheffe (fourches caudines)

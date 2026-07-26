@@ -1,69 +1,81 @@
 {
   "scrutin": "presidentielle-2017",
-  "candidate": { "name": "Marine Le Pen", "slug": "le-pen", "affiliation": "Front national" },
+  "candidate": {
+    "name": "Marine Le Pen",
+    "slug": "le-pen",
+    "affiliation": "Front national"
+  },
   "program": {
     "published_at": "2017-02-04",
     "document_url": "https://www.frontnational.com/144-programme/",
     "document_label": "Programme FN 2017",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "lepen-2017-retraites-60",
       "theme": "retraites",
       "label": "Retraite à 60 ans avec 40 annuités",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Âge légal"
     },
     {
       "id": "lepen-2017-europe-frexit",
       "theme": "europe",
       "label": "Référendum sur le maintien dans l'Union européenne",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "lepen-2017-immigration-priorite",
       "theme": "immigration",
       "label": "Priorité nationale et réduction de l'immigration",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "lepen-2017-fiscalite-franc",
       "theme": "fiscalite",
       "label": "Sortie de l'euro et retour au franc",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "lepen-2017-pouvoir-achat-tva",
       "theme": "pouvoir_achat",
       "label": "Baisse de la TVA sur les produits de première nécessité",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Salaires"
     },
     {
       "id": "lepen-2017-securite-peines",
       "theme": "securite",
       "label": "Peines planchers et renforcement des forces de l'ordre",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Ordre public"
     },
     {
       "id": "lepen-2017-institutions-referendum",
       "theme": "institutions",
       "label": "Référendums d'initiative citoyenne",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "lepen-2017-climat-nucleaire",
       "theme": "climat",
       "label": "Maintien du nucléaire",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Transition"
     }
   ],
   "chiffrages": [

@@ -9,7 +9,12 @@
  * - Comparaison vs Assemblée réelle 2024 (delta)
  * Neutre, pédagogique, accessible, mobile-first. Aucune prédiction.
  */
-import { AN1T_BLOCS } from '../../lib/an1t';
+import { AN1T_BLOCS, aggregatePresidentialPctByBloc } from '../lib/an1t';
+import {
+  an1tMultiScrutinClientPayload,
+  getAn1tScrutinMode,
+} from '../lib/an1t-multi-scrutin';
+import pres2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
 
 interface Props {
   totalSeats?: number;
@@ -24,6 +29,16 @@ const BLOCS = AN1T_BLOCS.map((b) => ({
   label: b.label,
   color: b.color,
 }));
+
+/** Calibrage T1 2022 présidentielle — open data archives Intérieur (voix → blocs pédagogiques). */
+const PRESET_T1_2022 = aggregatePresidentialPctByBloc(
+  pres2022.national.candidats,
+  pres2022.national.exprimes,
+);
+
+/** Multi-scrutins P10-5 — présidentielles 2017/2022 + légis 2024 + projection 2027 */
+const MULTI_SCRUTIN = an1tMultiScrutinClientPayload();
+const PRESET_T1_2017 = getAn1tScrutinMode('presidentielle-2017')!.blocPcts;
 
 // Valeurs par défaut initiales (agrégat T1 2024 approx + arrondi pédagogique)
 const DEFAULT_PCTS: Record<string, number> = {
@@ -49,11 +64,41 @@ const REELLE_SEATS: Record<string, number> = {
 
   <p class="meta">
     Modifiez les intentions de vote au <strong>premier tour</strong> par bloc et le <strong>seuil d'éligibilité</strong>.
-    Le calcul utilise la méthode <strong>Sainte-Laguë</strong> (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code> dans <code>lib/an1t.ts</code>.
+    Le calcul utilise la méthode
+    <button type="button" class="tooltip-trigger" aria-describedby="tip-sainte-lague" id="btn-tip-sl">
+      Sainte-Laguë
+    </button>
+    (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code>.
     <strong>Illustration pédagogique uniquement.</strong> Les chiffres ne prédisent rien.
+    Multi-scrutins (P10-5)&nbsp;: basculez entre législatives et présidentielles historiques.
   </p>
+  <div id="tip-sainte-lague" class="sim-tooltip" role="tooltip">
+    <strong>Sainte-Laguë</strong> : méthode de répartition proportionnelle aux plus forts restes
+    avec diviseurs 1, 3, 5, 7… Chaque siège va au quotient le plus élevé. Utilisée ici pour
+    illustrer une Assemblée calée sur le 1er tour — pas une réforme en vigueur.
+  </div>
 
   <div class="sim-controls">
+    <!-- Multi-scrutin P10-5 -->
+    <fieldset class="sim-fieldset" id="an1t-scrutin-fieldset">
+      <legend class="sim-legend">0. Scrutin de référence (multi-scrutins)</legend>
+      <label for="an1t-scrutin-mode" class="meta">Choisir le calibrage T1 + comparaison Assemblée réelle</label>
+      <select id="an1t-scrutin-mode" aria-describedby="an1t-scrutin-desc">
+        {MULTI_SCRUTIN.modes.map((m) => (
+          <option value={m.id} selected={m.id === 'legislatives-2024'}>
+            {m.label}
+          </option>
+        ))}
+      </select>
+      <p id="an1t-scrutin-desc" class="meta small" data-role="scrutin-note">
+        {MULTI_SCRUTIN.modes.find((m) => m.id === 'legislatives-2024')?.sourceNote}
+      </p>
+      <p class="meta small">
+        Comparaison&nbsp;: <span id="an1t-scrutin-real-label">Assemblée réelle 2024</span>
+        · T1&nbsp;: <span id="an1t-scrutin-t1-label">1er tour législatives 2024</span>
+      </p>
+    </fieldset>
+
     <!-- Sliders pourcentages par bloc -->
     <fieldset class="sim-fieldset">
       <legend class="sim-legend">1. Parts de voix au 1er tour (% exprimés)</legend>
@@ -74,19 +119,19 @@ const REELLE_SEATS: Record<string, number> = {
                   id={`an1t-pct-${b.id}`}
                   min="0"
                   max="60"
-                  step="0.5"
+                  step="0.1"
                   value={def}
-                  aria-describedby={`an1t-val-${b.id}`}
+                  aria-describedby={`an1t-val-${b.id} tip-slider-precision`}
                 />
                 <input
                   type="number"
                   id={`an1t-num-${b.id}`}
                   min="0"
                   max="100"
-                  step="0.5"
+                  step="0.1"
                   value={def}
                   class="num-input"
-                  aria-label={`Pourcentage ${b.label}`}
+                  aria-label={`Pourcentage ${b.label} (pas 0,1 %)`}
                 />
               </div>
             </div>
@@ -98,6 +143,12 @@ const REELLE_SEATS: Record<string, number> = {
         <span id="an1t-total-text">Total : 100,0 %</span>
         <span id="an1t-total-warn" class="warn" hidden>⚠ Somme ≠ 100 % (normalisé automatiquement)</span>
       </div>
+      <p id="tip-slider-precision" class="meta small">
+        Précision des sliders : <strong>0,1&nbsp;%</strong>. La somme est normalisée à 100&nbsp;% avant Sainte-Laguë.
+      </p>
+      <p class="sim-mobile-hint meta">
+        Mobile : glissez les curseurs (zones ≥ 44&nbsp;px) — les presets et exports sont sous les contrôles.
+      </p>
     </fieldset>
 
     <!-- Seuil : sélecteur discret comme recommandé (0 / 3 / 5 %) -->
@@ -116,25 +167,68 @@ const REELLE_SEATS: Record<string, number> = {
 
     <!-- Presets rapides -->
     <div class="sim-presets">
-      <div class="sim-legend">Profils rapides (pédagogiques)</div>
+      <div class="sim-legend">Profils rapides (pédagogiques — pas des prédictions)</div>
       <div class="preset-buttons" role="group" aria-label="Scénarios types">
-        <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 (agrégé)</button>
+        <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 législatives</button>
+        <button type="button" class="btn btn-secondary" data-preset="t1-2022">T1 2022 présidentielle</button>
+        <button type="button" class="btn btn-secondary" data-preset="t1-2017">T1 2017 présidentielle</button>
         <button type="button" class="btn btn-secondary" data-preset="base-2027">Base sondages 2027</button>
         <button type="button" class="btn btn-secondary" data-preset="rn-forte">RN &amp; alliés forte</button>
         <button type="button" class="btn btn-secondary" data-preset="gauche-unie">Gauche unie</button>
         <button type="button" class="btn btn-secondary" data-preset="centre-elargi">Centre élargi</button>
         <button type="button" class="btn btn-secondary" data-preset="reset">Réinitialiser (3 %)</button>
       </div>
+      <div class="sim-legend" style="margin-top:0.55rem">Scénarios candidats 2027 (hypothèses institutions — DOE)</div>
+      <div class="preset-buttons" role="group" aria-label="Scénarios candidats 2027">
+        <button type="button" class="btn btn-secondary" data-preset="cand-bardella">Bardella</button>
+        <button type="button" class="btn btn-secondary" data-preset="cand-attal">Attal</button>
+        <button type="button" class="btn btn-secondary" data-preset="cand-melenchon">Mélenchon</button>
+        <button type="button" class="btn btn-secondary" data-preset="cand-philippe">Philippe</button>
+        <button type="button" class="btn btn-secondary" data-preset="cand-retailleau">Retailleau</button>
+      </div>
+      <p class="meta small">
+        Ces profils alignent des % de voix T1 sur des blocs législatifs à partir de lectures pédagogiques
+        des programmes (pas un sondage). Voir aussi{' '}
+        <a href="/analyses/assemblee-premier-tour-mecanismes">mécanismes</a> ·{' '}
+        <a href="/soutenir">soutenir</a> · <a href="/pack-data-an1t">Pack Data AN1T</a>.
+      </p>
     </div>
 
     <!-- Export -->
     <div class="sim-export">
-      <div class="sim-legend">Exporter les résultats (pédagogiques)</div>
-      <div class="export-buttons">
-        <button type="button" id="an1t-export-csv" class="btn btn-secondary">Exporter CSV</button>
-        <button type="button" id="an1t-export-json" class="btn btn-secondary">Exporter JSON</button>
+      <div class="sim-legend" id="an1t-export-legend">Exporter les résultats (pédagogiques)</div>
+      <div class="export-buttons" role="group" aria-labelledby="an1t-export-legend">
+        <button
+          type="button"
+          id="an1t-export-csv"
+          class="btn btn-secondary"
+          aria-label="Exporter les sièges simulés en CSV (format ouvert pédagogique)"
+        >Exporter CSV</button>
+        <button
+          type="button"
+          id="an1t-export-json"
+          class="btn btn-secondary"
+          aria-label="Exporter les sièges simulés en JSON (format ouvert pédagogique)"
+        >Exporter JSON</button>
+        <button
+          type="button"
+          id="an1t-export-png"
+          class="btn btn-secondary"
+          aria-label="Exporter le mini-hémicycle en image PNG pédagogique"
+        >Exporter PNG (hémicycle)</button>
+        <button
+          type="button"
+          id="an1t-share-url"
+          class="btn btn-secondary"
+          aria-label="Copier le lien de partage avec les pourcentages et le seuil actuels"
+        >Copier le lien</button>
       </div>
-      <span class="meta small">Télécharge les sièges calculés + % voix actuels pour analyse personnelle ou réutilisation (format ouvert).</span>
+      <span class="meta small" id="an1t-export-help">
+        Télécharge les sièges calculés + % voix actuels (CSV/JSON) ou le mini-hémicycle (PNG) —
+        formats ouverts, usage pédagogique uniquement (pas de prédiction).
+        Le lien reprend les % et le seuil dans l’URL (partage pédagogique).
+      </span>
+      <p id="an1t-share-status" class="meta small" role="status" aria-live="polite" hidden></p>
     </div>
   </div>
 
@@ -221,14 +315,18 @@ const REELLE_SEATS: Record<string, number> = {
   .sim-row input[type="range"] {
     flex: 1;
     accent-color: var(--accent, #0f172a);
-    height: 24px;
+    height: 28px;
+    /* P16-2 — zone tactile confortable (min ~44px via padding vertical) */
+    padding: 8px 0;
+    touch-action: pan-y;
   }
   .num-input {
-    width: 58px;
-    font-size: 0.8rem;
-    padding: 1px 4px;
+    width: 64px;
+    min-height: 44px;
+    font-size: 0.9rem;
+    padding: 6px 8px;
     border: 1px solid var(--border, #e2e8f0);
-    border-radius: 3px;
+    border-radius: 6px;
     background: var(--card, #fff);
     color: inherit;
     font-variant-numeric: tabular-nums;
@@ -244,10 +342,11 @@ const REELLE_SEATS: Record<string, number> = {
   .threshold-selector select {
     width: 100%;
     max-width: 380px;
-    font-size: 0.85rem;
-    padding: 4px 6px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    padding: 8px 10px;
     border: 1px solid var(--border, #e2e8f0);
-    border-radius: 4px;
+    border-radius: 6px;
     background: var(--card, #fff);
   }
   .sim-total {
@@ -269,8 +368,9 @@ const REELLE_SEATS: Record<string, number> = {
     gap: 0.3rem;
   }
   .preset-buttons .btn {
-    font-size: 0.76rem;
-    padding: 2px 7px;
+    font-size: 0.82rem;
+    padding: 0.55rem 0.75rem;
+    min-height: 44px;
   }
   .sim-results {
     margin-top: 0.7rem;
@@ -345,10 +445,10 @@ const REELLE_SEATS: Record<string, number> = {
     text-align: right;
   }
   .delta.pos {
-    color: #166534;
+    color: var(--delta-pos, #0f6b3c);
   }
   .delta.neg {
-    color: #9f1239;
+    color: var(--delta-neg, #b42318);
   }
 
   .disclaimer {
@@ -363,6 +463,40 @@ const REELLE_SEATS: Record<string, number> = {
   }
   .disclaimer strong {
     color: #854d0e;
+  }
+
+  /* P15-3 — tooltips pédagogiques */
+  .tooltip-trigger {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: var(--accent, #c2410c);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  .tooltip-trigger:focus-visible {
+    outline: 3px solid var(--accent, #c2410c);
+    outline-offset: 2px;
+  }
+  .sim-tooltip {
+    display: none;
+    margin: 0.4rem 0 0.75rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--fg, #0a0a0a);
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-left: 3px solid var(--accent, #c2410c);
+    border-radius: 6px;
+    max-width: 52rem;
+  }
+  .sim-tooltip.is-open {
+    display: block;
   }
 
   .small {
@@ -381,27 +515,40 @@ const REELLE_SEATS: Record<string, number> = {
     margin: 0.25rem 0;
   }
   .export-buttons .btn {
-    font-size: 0.78rem;
-    padding: 3px 9px;
+    font-size: 0.82rem;
+    padding: 0.55rem 0.85rem;
+    min-height: 44px;
   }
 
+  .results-flash {
+    animation: an1t-flash 0.35s ease;
+  }
+  .mini-hemicycle.flash-update {
+    animation: an1t-flash 0.35s ease;
+  }
+  @keyframes an1t-flash {
+    0% { box-shadow: 0 0 0 0 rgba(10, 42, 64, 0.35); }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
   .mini-hemicycle {
     margin: 0.5rem 0 0.3rem;
     padding: 0.3rem 0.4rem;
-    background: #f8fafc;
+    background: var(--surface-2, var(--bg));
     border: 1px solid var(--border, #e2e8f0);
     border-radius: 4px;
+    color: var(--fg);
   }
   .mini-hemicycle h5 {
     margin: 0 0 0.2rem;
     font-size: 0.78rem;
     font-weight: 600;
+    color: var(--fg);
   }
   .mini-hemicycle svg {
     display: block;
     max-width: 100%;
     height: auto;
-    background: #fff;
+    background: var(--card, #fff);
     border-radius: 3px;
   }
 
@@ -425,14 +572,30 @@ const REELLE_SEATS: Record<string, number> = {
     }
     .sim-results, .mini-hemicycle { font-size: 0.82rem; }
     .mini-hemicycle svg { height: 78px; }
+    /* P16-2 — note mobile : sliders = gesture primaire (pas de swipe hémicycle) */
+    .sim-mobile-hint {
+      display: block;
+      margin: 0.35rem 0 0.15rem;
+      font-size: 0.78rem;
+      color: var(--muted, #3a3732);
+    }
+  }
+  .sim-mobile-hint {
+    display: none;
   }
   @media (max-width: 420px) {
-    .input-row input[type="range"] { height: 26px; }
+    .input-row input[type="range"] { height: 32px; padding: 10px 0; }
     .seat-row .label { min-width: 110px; font-size: 0.72rem; }
   }
 </style>
 
-<script>
+<script
+  define:vars={{
+    PRESET_T1_2022_CLIENT: PRESET_T1_2022,
+    PRESET_T1_2017_CLIENT: PRESET_T1_2017,
+    MULTI_SCRUTIN_CLIENT: MULTI_SCRUTIN,
+  }}
+>
   // === Miroir exact des fonctions de lib/an1t.ts pour le client (live calc) ===
   // allocateSainteLague + simulateFromVoteShares (sans dépendances, pur JS)
   function allocateSainteLagueClient(
@@ -513,23 +676,83 @@ const REELLE_SEATS: Record<string, number> = {
     autres: 12.5,
   };
 
-  const REELLE: Record<string, number> = {
+  let REELLE: Record<string, number> = {
     nfp: 182,
     ensemble: 99,
     rn: 125,
     lr: 47,
     autres: 124,
   };
+  let realPending = false;
 
   const PRESETS: Record<string, Record<string, number>> = {
+    // Législatives 2024 T1 — agrégat blocs LMDPT (open data Min. Intérieur)
     't1-2024': { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
+    // Présidentielle 2022 T1 — injecté côté serveur depuis open data (aggregatePresidentialPctByBloc)
+    // Source : 2022-presidentielle-1er-tour-national.json · méthodo /sources#methodologie-blocs
+    't1-2022': PRESET_T1_2022_CLIENT,
+    // Présidentielle 2017 T1 — open data + nuances FN/EM (P10-5)
+    't1-2017': PRESET_T1_2017_CLIENT as Record<string, number>,
     // Agrégat pédagogique juil. 2026 (blocs législatifs, pas présidentielle) — RN ↑ post-Le Pen
     'base-2027': { rn: 35, nfp: 26, ensemble: 16, lr: 8, autres: 15 },
     'rn-forte': { rn: 42, nfp: 18, ensemble: 13, lr: 8, autres: 19 },
     'gauche-unie': { rn: 26, nfp: 32, ensemble: 15, lr: 8, autres: 19 },
     'centre-elargi': { rn: 24, nfp: 19, ensemble: 28, lr: 11, autres: 18 },
+    // Candidats 2027 — mêmes hypothèses que assemblee-premier-tour.astro (scénarios programmes)
+    'cand-bardella': { rn: 36, nfp: 22, ensemble: 12, lr: 9, autres: 21 },
+    'cand-attal': { rn: 28, nfp: 26, ensemble: 19, lr: 12, autres: 15 },
+    'cand-melenchon': { rn: 27, nfp: 30, ensemble: 13, lr: 9, autres: 21 },
+    'cand-philippe': { rn: 25, nfp: 24, ensemble: 22, lr: 11, autres: 18 },
+    'cand-retailleau': { rn: 30, nfp: 22, ensemble: 14, lr: 16, autres: 18 },
     reset: { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
   };
+
+  const MODE_TO_PRESET: Record<string, string> = {
+    'legislatives-2024': 't1-2024',
+    'presidentielle-2022': 't1-2022',
+    'presidentielle-2017': 't1-2017',
+    'presidentielle-2027': 'base-2027',
+  };
+
+  function applyScrutinMode(modeId: string) {
+    const modes = (MULTI_SCRUTIN_CLIENT as { modes: Array<Record<string, unknown>> }).modes || [];
+    const mode = modes.find((m) => m.id === modeId) as
+      | {
+          id: string;
+          blocPcts: Record<string, number>;
+          realSeats: Record<string, number>;
+          realPending: boolean;
+          realLabel: string;
+          t1Label: string;
+          sourceNote: string;
+          defaultThreshold: number;
+        }
+      | undefined;
+    if (!mode) return;
+
+    REELLE = { ...mode.realSeats };
+    realPending = Boolean(mode.realPending);
+
+    const note = document.getElementById('an1t-scrutin-desc');
+    if (note) note.textContent = mode.sourceNote || '';
+    const realLab = document.getElementById('an1t-scrutin-real-label');
+    if (realLab) {
+      realLab.textContent = mode.realPending
+        ? `${mode.realLabel} (en attente)`
+        : mode.realLabel;
+    }
+    const t1Lab = document.getElementById('an1t-scrutin-t1-label');
+    if (t1Lab) t1Lab.textContent = mode.t1Label || '';
+
+    const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+    if (thSelect && mode.defaultThreshold != null) {
+      const t = String(mode.defaultThreshold);
+      if ([...thSelect.options].some((o) => o.value === t)) thSelect.value = t;
+    }
+
+    const presetKey = MODE_TO_PRESET[modeId] || 'reset';
+    applyPreset(presetKey);
+  }
 
   const TOTAL_SEATS = 577;
 
@@ -665,6 +888,66 @@ const REELLE_SEATS: Record<string, number> = {
     });
   }
 
+  /** Mini-hémicycle proportionnel (barres courbes simplifiées) — feedback temps réel P7-7 */
+  function renderMiniHemicycle(results: any[]) {
+    const svg = document.getElementById('an1t-mini-hemicycle') as SVGSVGElement | null;
+    if (!svg) return;
+    const W = 400;
+    const H = 100;
+    const cx = W / 2;
+    const cy = H - 6;
+    const R = 88;
+    const total = results.reduce((s, r) => s + (r.seats || 0), 0) || TOTAL_SEATS;
+    // Arc from π to 0 (demi-cercle haut)
+    let angle = Math.PI;
+    const parts: string[] = [];
+    const legendBits: string[] = [];
+    results.forEach((r) => {
+      const seats = r.seats || 0;
+      if (seats <= 0) return;
+      const sweep = (seats / total) * Math.PI;
+      const a0 = angle;
+      const a1 = angle - sweep;
+      const x0 = cx + R * Math.cos(a0);
+      const y0 = cy - R * Math.sin(a0);
+      const x1 = cx + R * Math.cos(a1);
+      const y1 = cy - R * Math.sin(a1);
+      const large = sweep > Math.PI ? 1 : 0;
+      // annular sector approx: outer arc + inner arc reverse
+      const rIn = R * 0.42;
+      const xi0 = cx + rIn * Math.cos(a0);
+      const yi0 = cy - rIn * Math.sin(a0);
+      const xi1 = cx + rIn * Math.cos(a1);
+      const yi1 = cy - rIn * Math.sin(a1);
+      const d = [
+        `M ${x0.toFixed(1)} ${y0.toFixed(1)}`,
+        `A ${R} ${R} 0 ${large} 0 ${x1.toFixed(1)} ${y1.toFixed(1)}`,
+        `L ${xi1.toFixed(1)} ${yi1.toFixed(1)}`,
+        `A ${rIn} ${rIn} 0 ${large} 1 ${xi0.toFixed(1)} ${yi0.toFixed(1)}`,
+        'Z',
+      ].join(' ');
+      parts.push(
+        `<path d="${d}" fill="${r.color}" stroke="rgba(0,0,0,0.12)" stroke-width="0.6"><title>${r.label}: ${seats} sièges</title></path>`,
+      );
+      legendBits.push(`${r.label} ${seats}`);
+      angle = a1;
+    });
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute(
+      'aria-label',
+      `Mini-hémicycle AN1T : ${legendBits.join(', ')} — total ${total} sièges`,
+    );
+    svg.innerHTML =
+      `<rect x="0" y="0" width="${W}" height="${H}" fill="transparent"/>` + parts.join('');
+    // flash feedback
+    const wrap = svg.closest('.mini-hemicycle');
+    if (wrap) {
+      wrap.classList.remove('flash-update');
+      void (wrap as HTMLElement).offsetWidth;
+      wrap.classList.add('flash-update');
+    }
+  }
+
   function runLiveSimulation() {
     const threshold = getThreshold();
     const shares = getCurrentShares(threshold);
@@ -672,6 +955,13 @@ const REELLE_SEATS: Record<string, number> = {
 
     renderTable(results, threshold);
     renderComparison(results);
+    renderMiniHemicycle(results);
+    const flash = document.getElementById('an1t-results');
+    if (flash) {
+      flash.classList.remove('results-flash');
+      void flash.offsetWidth;
+      flash.classList.add('results-flash');
+    }
   }
 
   function applyPreset(key: string) {
@@ -699,6 +989,16 @@ const REELLE_SEATS: Record<string, number> = {
       if (th) th.value = '3';
       if (thNum) thNum.value = '3';
       if (thVal) thVal.textContent = '3.0';
+      const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+      if (thSelect) thSelect.value = '3';
+    }
+    if (key === 't1-2022' || key === 't1-2017') {
+      if (th) th.value = '1';
+      if (thNum) thNum.value = '1';
+      if (thVal) thVal.textContent = '1.0';
+      const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+      // select n'a que 0/3/5 — garder 0 pour préserver pluralité présidentielle
+      if (thSelect) thSelect.value = '0';
     }
 
     runLiveSimulation();
@@ -712,7 +1012,8 @@ const REELLE_SEATS: Record<string, number> = {
     if (!range || !num) return;
 
     let v = parseFloat(fromNum ? num.value : range.value) || 0;
-    v = Math.max(0, Math.min(100, Math.round(v * 2) / 2));
+    // P15-3 — pas de 0,1 % (avant : 0,5)
+    v = Math.max(0, Math.min(100, Math.round(v * 10) / 10));
 
     range.value = v.toString();
     num.value = v.toString();
@@ -780,13 +1081,71 @@ const REELLE_SEATS: Record<string, number> = {
       });
     }
 
-    // Presets
+    // Multi-scrutin selector (P10-5)
+    const scrutinSel = document.getElementById('an1t-scrutin-mode') as HTMLSelectElement | null;
+    if (scrutinSel) {
+      scrutinSel.addEventListener('change', () => applyScrutinMode(scrutinSel.value));
+    }
+
+    // Presets + swipe horizontal (mobile gestures P7-7)
+    const presetKeys: string[] = [];
     document.querySelectorAll('.preset-buttons [data-preset]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const key = btn.getAttribute('data-preset') || 'reset';
-        applyPreset(key);
-      });
+      const key = btn.getAttribute('data-preset') || 'reset';
+      presetKeys.push(key);
+      btn.addEventListener('click', () => applyPreset(key));
     });
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+    document.querySelectorAll('.sim-presets').forEach((zone) => {
+      const el = zone as HTMLElement;
+      el.style.touchAction = 'pan-y';
+      el.addEventListener(
+        'touchstart',
+        (e: TouchEvent) => {
+          const t = e.changedTouches[0];
+          swipeStartX = t.clientX;
+          swipeStartY = t.clientY;
+        },
+        { passive: true },
+      );
+      el.addEventListener(
+        'touchend',
+        (e: TouchEvent) => {
+          const t = e.changedTouches[0];
+          const dx = t.clientX - swipeStartX;
+          const dy = t.clientY - swipeStartY;
+          if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+          if (!presetKeys.length) return;
+          // find current nearest active-ish: use last applied stored
+          const cur = (el.dataset.lastPreset || presetKeys[0]) as string;
+          let idx = presetKeys.indexOf(cur);
+          if (idx < 0) idx = 0;
+          idx = dx < 0 ? Math.min(presetKeys.length - 1, idx + 1) : Math.max(0, idx - 1);
+          const next = presetKeys[idx];
+          el.dataset.lastPreset = next;
+          applyPreset(next);
+          setShareStatus(`Preset « ${next} » (geste glisser)`);
+        },
+        { passive: true },
+      );
+    });
+
+    // Double-tap reset on total bar (mobile)
+    let lastTap = 0;
+    document.getElementById('an1t-total-text')?.addEventListener('click', () => {
+      const now = Date.now();
+      if (now - lastTap < 350) {
+        applyPreset('reset');
+        setShareStatus('Réinitialisé (double tap total %).');
+      }
+      lastTap = now;
+    });
+
+    // Exports (CSV / JSON / PNG hémicycle) + share URL
+    document.getElementById('an1t-export-csv')?.addEventListener('click', exportCsv);
+    document.getElementById('an1t-export-json')?.addEventListener('click', exportJson);
+    document.getElementById('an1t-export-png')?.addEventListener('click', exportPng);
+    document.getElementById('an1t-share-url')?.addEventListener('click', copyShareUrl);
 
     // Keyboard support
     const root = document.querySelector('.an1t-simulator');
@@ -799,16 +1158,222 @@ const REELLE_SEATS: Record<string, number> = {
       });
     }
 
+    // Restore from ?an1t=… share query (P16-1)
+    applyShareFromUrl();
+
     // Initial live values + first calculation
     updateLiveValues();
     updateThresholdDisplay();
     runLiveSimulation();
   }
 
+  function getExportRows() {
+    const th = parseFloat((document.getElementById('an1t-threshold') as HTMLInputElement)?.value || '3') || 3;
+    const shares = getCurrentShares(th);
+    const results = simulateFromVoteSharesClient(shares, TOTAL_SEATS, th);
+    return { th, shares, results };
+  }
+
+  function downloadBlob(filename: string, blob: Blob) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  }
+
+  // Contrats d'export alignés sur src/lib/an1t-export.ts (tests vitest P15-2)
+  function buildExportCsvClient(results, th) {
+    const header = 'bloc_id,label,pct_voix,sieges,pct_sieges,seuil_pct,total_sieges';
+    const lines = results.map(
+      (r) =>
+        `${r.id},"${String(r.label).replace(/"/g, '""')}",${Number(r.pctExprimes).toFixed(1)},${r.seats},${Number(r.pctSeats).toFixed(2)},${th},${TOTAL_SEATS}`,
+    );
+    return [header, ...lines, `# source=LMDPT AN1T pédagogique;date=${new Date().toISOString()}`].join('\n');
+  }
+
+  function buildExportJsonClient(shares, results, th) {
+    return {
+      meta: {
+        tool: 'LMDPT AN1T simulator',
+        method: 'Sainte-Laguë',
+        pedagogical: true,
+        threshold_pct: th,
+        total_seats: TOTAL_SEATS,
+        exported_at: new Date().toISOString(),
+        url: typeof location !== 'undefined' ? location.href : '',
+      },
+      inputs: shares,
+      results,
+    };
+  }
+
+  function exportCsv() {
+    const { th, results } = getExportRows();
+    const csv = buildExportCsvClient(results, th);
+    downloadBlob(`lmdpt-an1t-${Date.now()}.csv`, new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  }
+
+  function exportJson() {
+    const { th, shares, results } = getExportRows();
+    const payload = buildExportJsonClient(shares, results, th);
+    downloadBlob(
+      `lmdpt-an1t-${Date.now()}.json`,
+      new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }),
+    );
+  }
+
+  /** Encode compact (miroir lib/an1t-export encodeAn1tShareQuery) */
+  function encodeShareQuery(shares, th) {
+    const body = shares
+      .map((s) => `${s.id}:${(Math.round(Math.max(0, Number(s.pct) || 0) * 10) / 10).toFixed(1)}`)
+      .join(',');
+    return `v1_${th}_${body}`;
+  }
+
+  function buildShareUrl() {
+    const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+    const th =
+      parseFloat(thSelect?.value || '') ||
+      parseFloat((document.getElementById('an1t-threshold') as HTMLInputElement)?.value || '3') ||
+      3;
+    const shares = BLOCS.map((b) => {
+      const el = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+      return { id: b.id, pct: parseFloat(el?.value || '0') || 0 };
+    });
+    const u = new URL(location.href);
+    u.searchParams.set('an1t', encodeShareQuery(shares, th));
+    u.hash = 'an1t-sim-title';
+    return u.toString();
+  }
+
+  function setShareStatus(msg: string, ok = true) {
+    const el = document.getElementById('an1t-share-status');
+    if (!el) return;
+    el.hidden = false;
+    el.textContent = msg;
+    el.style.color = ok ? 'var(--accent, #166534)' : '#9f1239';
+  }
+
+  async function copyShareUrl() {
+    const url = buildShareUrl();
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      history.replaceState(null, '', url);
+      setShareStatus('Lien copié — partage pédagogique (pas une prédiction).');
+    } catch {
+      setShareStatus(`Copie manuelle : ${url}`, false);
+    }
+  }
+
+  function applyShareFromUrl() {
+    try {
+      const raw = new URL(location.href).searchParams.get('an1t');
+      if (!raw) return;
+      const m = raw.trim().match(/^v1_([0-9]+(?:\.[0-9]+)?)_(.+)$/);
+      if (!m) return;
+      const th = Math.max(0, Math.min(15, parseFloat(m[1]) || 3));
+      const map = new Map();
+      for (const part of m[2].split(',')) {
+        const [id, pctStr] = part.split(':');
+        if (id && pctStr !== undefined) map.set(id, Math.max(0, Math.min(100, parseFloat(pctStr) || 0)));
+      }
+      BLOCS.forEach((b) => {
+        if (!map.has(b.id)) return;
+        const v = map.get(b.id);
+        const range = document.getElementById(`an1t-pct-${b.id}`) as HTMLInputElement | null;
+        const num = document.getElementById(`an1t-num-${b.id}`) as HTMLInputElement | null;
+        const valSpan = document.getElementById(`an1t-val-${b.id}`);
+        if (range) range.value = String(v);
+        if (num) num.value = String(v);
+        if (valSpan) valSpan.textContent = Number(v).toFixed(1);
+      });
+      const thSelect = document.getElementById('an1t-threshold-select') as HTMLSelectElement | null;
+      const thVal = [0, 3, 5].includes(th) ? String(th) : '3';
+      if (thSelect) thSelect.value = thVal;
+      const thRange = document.getElementById('an1t-threshold') as HTMLInputElement | null;
+      const thNum = document.getElementById('an1t-threshold-num') as HTMLInputElement | null;
+      if (thRange) thRange.value = thVal;
+      if (thNum) thNum.value = thVal;
+      setShareStatus('Scénario restauré depuis le lien partagé (pédagogique).');
+    } catch {
+      /* ignore malformed share */
+    }
+  }
+
+  function exportPng() {
+    const svg = document.getElementById('an1t-mini-hemicycle') as SVGSVGElement | null;
+    if (!svg) return;
+    const clone = svg.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    if (!clone.getAttribute('width')) clone.setAttribute('width', '800');
+    if (!clone.getAttribute('height')) clone.setAttribute('height', '200');
+    const xml = new XMLSerializer().serializeToString(clone);
+    const svgBlob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(svgBlob);
+    const img = new Image();
+    img.onload = () => {
+      const scale = 2;
+      const w = Math.max(400, img.width || 400) * scale;
+      const h = Math.max(100, img.height || 100) * scale;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h + 48;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        URL.revokeObjectURL(url);
+        return;
+      }
+      ctx.fillStyle = '#faf8f5';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 24, w, h);
+      ctx.fillStyle = '#1c1a17';
+      ctx.font = '16px system-ui,sans-serif';
+      ctx.fillText('LMDPT — mini-hémicycle AN1T (pédagogique)', 12, 18);
+      canvas.toBlob((blob) => {
+        if (blob) downloadBlob(`lmdpt-an1t-hemicycle-${Date.now()}.png`, blob);
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    };
+    img.onerror = () => URL.revokeObjectURL(url);
+    img.src = url;
+  }
+
+  function initTooltips() {
+    const btn = document.getElementById('btn-tip-sl');
+    const tip = document.getElementById('tip-sainte-lague');
+    if (!btn || !tip) return;
+    btn.addEventListener('click', () => {
+      const open = tip.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
   // Boot
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSimulator);
+    document.addEventListener('DOMContentLoaded', () => {
+      initSimulator();
+      initTooltips();
+    });
   } else {
     initSimulator();
+    initTooltips();
   }
 </script>

@@ -12,7 +12,7 @@
     "status": "published"
   },
   "evolution_from": "presidentielle-2017",
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "macron-2022-retraites-65",
@@ -21,7 +21,8 @@
       "detail": "Réforme progressive du système de retraite par points, report de l'âge légal.",
       "status": "modifie",
       "source_label": "Programme Macron 2022",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
     },
     {
       "id": "macron-2022-fiscalite-impots-production",
@@ -29,7 +30,8 @@
       "label": "Baisse de la fiscalité sur la production (impôt sur les sociétés, CVAE)",
       "detail": "Allègement fiscal pour les entreprises et compétitivité.",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "macron-2022-pouvoir-achat-bouclier",
@@ -37,7 +39,8 @@
       "label": "Bouclier tarifaire énergie et revalorisation du SMIC",
       "detail": "Mesures de pouvoir d'achat face à l'inflation énergétique.",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Salaires"
     },
     {
       "id": "macron-2022-europe-souverainete",
@@ -45,7 +48,8 @@
       "label": "Europe de la défense et souveraineté industrielle",
       "detail": "Renforcement des capacités européennes, pas de Frexit.",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "macron-2022-climat-nucleaire",
@@ -53,7 +57,8 @@
       "label": "Relance du nucléaire et objectif neutralité carbone 2050",
       "detail": "Construction de nouveaux réacteurs EPR, maintien du parc existant.",
       "status": "modifie",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Transition"
     },
     {
       "id": "macron-2022-sante-100e",
@@ -61,35 +66,40 @@
       "label": "Renforcement des hôpitaux et médecine de ville",
       "detail": "Investissements santé, pas de révolution structurelle du système.",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Accès aux soins"
     },
     {
       "id": "macron-2022-education-enseignants",
       "theme": "education",
       "label": "Revalorisation des enseignants et autonomie des établissements",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "École"
     },
     {
       "id": "macron-2022-immigration-maitrise",
       "theme": "immigration",
       "label": "Maîtrise des flux migratoires et accélération des OQTF",
       "status": "modifie",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "macron-2022-institutions-presidentielle",
       "theme": "institutions",
       "label": "Renforcement du rôle présidentiel et réforme du Conseil constitutionnel",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "macron-2022-emploi-chomage",
       "theme": "entreprises",
       "label": "Réforme de l'assurance chômage et formation professionnelle",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Emploi & industrie"
     }
   ],
   "chiffrages": [

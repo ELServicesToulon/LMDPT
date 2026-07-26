@@ -7,33 +7,182 @@
   },
   "program": {
     "published_at": "2026-07-02",
-    "document_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-    "document_label": "Pas de programme 2027 distinct publié — candidature sous réserve judiciaire (presse, juil. 2026)",
+    "document_url": "https://rassemblementnational.fr/programme",
+    "document_label": "Pas de programme 2027 distinct publié — continuité mesures RN 2022 + contexte judiciaire (presse)",
     "status": "partial"
   },
   "evolution_from": "presidentielle-2022",
-  "updated": "2026-07-02",
+  "updated": "2026-07-20",
   "measures": [
     {
       "id": "lepen-2027-institutions-eligibilite-appel",
       "theme": "institutions",
-      "label": "Candidature sous réserve — jugement en appel le 7 juillet 2026",
-      "detail": "Affaire assistants parlementaires européens : la cour d'appel de Paris tranche sur une éventuelle inéligibilité de cinq ans.",
+      "label": "Candidature sous réserve — jugement en appel (assistants parlementaires européens)",
+      "detail": "Enjeu d'inéligibilité ; scénario de substitution Jordan Bardella documenté par la presse (juil. 2026).",
       "status": "nouveau",
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "source_label": "France 24 — 2 juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
-      "id": "lepen-2027-institutions-continuite-2022",
-      "theme": "institutions",
-      "label": "Pas de programme 2027 publié — continuité avec le programme RN 2022",
-      "detail": "Mesures et chiffrages Institut Montaigne : voir fiche 2022. En cas d'inéligibilité, Jordan Bardella désigné candidat de substitution.",
+      "id": "lepen-2027-retraites-65-index",
+      "theme": "retraites",
+      "label": "Âge légal à 65 ans avec indexation sur l'inflation (continuité 2022)",
+      "detail": "Mesure programme RN 2022 — pas de document 2027 distinct publié à la date d'intégration.",
       "status": "maintenu",
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "source_label": "France 24 — 2 juil. 2026",
-      "as_of": "2026-07"
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
+    },
+    {
+      "id": "lepen-2027-fiscalite-tva-energie",
+      "theme": "fiscalite",
+      "label": "Baisse de la TVA sur l'énergie à 5,5 % (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "chiffrage_mdeur": -8,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "TVA & impôts"
+    },
+    {
+      "id": "lepen-2027-pouvoir-achat-smic",
+      "theme": "pouvoir_achat",
+      "label": "Hausse du SMIC net de 10 % sur le quinquennat (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "chiffrage_mdeur": 30,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "Salaires"
+    },
+    {
+      "id": "lepen-2027-immigration-priorite-nationale",
+      "theme": "immigration",
+      "label": "Priorité nationale à l'emploi, au logement et aux prestations (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Priorité nationale"
+    },
+    {
+      "id": "lepen-2027-europe-referendum",
+      "theme": "europe",
+      "label": "Référendum sur l'immigration et révision des traités européens (continuité 2022)",
+      "detail": "Pas de sortie immédiate de l'UE dans le texte 2022.",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
+    },
+    {
+      "id": "lepen-2027-institutions-plebiscite",
+      "theme": "institutions",
+      "label": "Référendums d'initiative citoyenne et réduction du nombre de députés (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "lepen-2027-securite-peines",
+      "theme": "securite",
+      "label": "Peines planchers et fin de l'excuse de minorité (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Ordre public"
+    },
+    {
+      "id": "lepen-2027-sante-hopitaux",
+      "theme": "sante",
+      "label": "10 000 lits d'hôpital et revalorisation des soignants (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "chiffrage_mdeur": 0.5,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "Hôpital"
+    },
+    {
+      "id": "lepen-2027-climat-nucleaire",
+      "theme": "climat",
+      "label": "Maintien du nucléaire et moratoire sur les éoliennes (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "Énergie"
+    },
+    {
+      "id": "lepen-2027-education-maitres",
+      "theme": "education",
+      "label": "Recrutement de 40 000 enseignants et certificat d'études (continuité 2022)",
+      "status": "maintenu",
+      "source_url": "https://rassemblementnational.fr/programme",
+      "source_label": "Programme RN 2022 (continuité)",
+      "as_of": "2022-03",
+      "subtheme": "École"
     }
   ],
-  "chiffrages": []
+  "chiffrages": [
+    {
+      "id": "lepen-2027-recettes-tva-energie-lmdpt",
+      "type": "recettes",
+      "montant_mdeur": -8,
+      "montant_min_mdeur": -12,
+      "montant_max_mdeur": -5,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Continuité RN 2022 : TVA énergie 5,5 % — ~25 Md€ base × ~14 pts → −8 Md€ recettes (docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Le Pen 2022/2027)",
+      "confidence": "moyenne",
+      "theme": "fiscalite",
+      "source_label": "Continuité programme RN 2022"
+    },
+    {
+      "id": "lepen-2027-depenses-smic-lits-lmdpt",
+      "type": "depenses",
+      "montant_mdeur": 30.5,
+      "montant_min_mdeur": 22,
+      "montant_max_mdeur": 40,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "SMIC +10 % (~3 Md€/pt × 10 = 30) + 10 000 lits (~0,5) — continuité 2022, pas de document 2027 distinct",
+      "confidence": "moyenne",
+      "theme": "pouvoir_achat",
+      "source_label": "Continuité programme RN 2022"
+    },
+    {
+      "id": "lepen-2027-solde-lmdpt",
+      "type": "solde",
+      "montant_mdeur": -72,
+      "montant_min_mdeur": -95,
+      "montant_max_mdeur": -55,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Reprise solde LMDPT 2022 (−72) tant qu'aucun programme 2027 distinct n'est publié — docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Le Pen 2027 continuité",
+      "confidence": "faible",
+      "source_label": "Continuité chiffrage LMDPT Le Pen 2022"
+    },
+    {
+      "id": "lepen-2027-solde-im-ref",
+      "type": "solde",
+      "montant_mdeur": -101.8,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "source_label": "Institut Montaigne 2022 (référence historique, pas de chiffrage 2027)",
+      "confidence": "elevee",
+      "method_note": "Référence IM 2022 affichée pour comparaison — non recalculée pour 2027"
+    }
+  ]
 }

@@ -15,11 +15,15 @@ const apiBase = '/api/comments';
 <section class="ccm" data-thread={threadId} data-api={apiBase} aria-labelledby={`ccm-title-${threadId}`}>
   <h3 id={`ccm-title-${threadId}`}>{title}</h3>
   <p class="ccm-disclaimer meta">
-    <strong>Zéro biais · zéro parti pris.</strong> Chaque message est reformulé en français correct par la
-    <strong>modératrice IA</strong>, puis une <strong>teinte politique</strong> (couleur + libellé) est affichée
-    en <em>transparence</em> — proximité d’idées du 1er tour, <em>pas</em> une carte d’adhésion.
-    Aucune autorité religieuse ou idéologique ne passe les fourches caudines. Vous validez avant envoi ;
-    publication après file modération (contributeur → modo → rédaction).
+    Chaque message est reformulé par la <strong>modératrice IA</strong>, avec une
+    <strong>teinte politique</strong> affichée en transparence (proximité d’idées du 1er tour, pas une adhésion).
+    Vous validez avant envoi ; publication après file modération.
+    <strong>Connexion requise</strong> pour publier (Google, X, Apple ou email).
+    <a href="/charte">Charte</a> · <a href="/connexion">Connexion</a>.
+  </p>
+
+  <p class="meta ccm-auth" data-role="auth-banner" hidden>
+    <a class="btn btn-primary" data-role="login-link" href="/connexion">Identifiez-vous pour commenter</a>
   </p>
 
   <div class="ccm-list" data-role="list" aria-live="polite">
@@ -88,14 +92,53 @@ const apiBase = '/api/comments';
       authorKey = crypto.randomUUID();
       localStorage.setItem('lmdpt-author-key', authorKey);
     }
+    let authUser: { displayName?: string } | null = null;
+    const authBanner = root.querySelector('[data-role="auth-banner"]') as HTMLElement | null;
+    const loginLink = root.querySelector('[data-role="login-link"]') as HTMLAnchorElement | null;
+    if (loginLink) {
+      const next = encodeURIComponent(location.pathname + location.search);
+      loginLink.href = `/connexion?next=${next}`;
+    }
+
+    async function refreshAuth() {
+      try {
+        const res = await fetch('/api/auth/me', { credentials: 'include' });
+        const data = await res.json();
+        authUser = data.authenticated ? data.user : null;
+        if (authBanner) authBanner.hidden = Boolean(authUser);
+        if (authUser?.displayName) {
+          const dn = form?.querySelector('input[name="displayName"]') as HTMLInputElement | null;
+          if (dn && !dn.value) dn.value = authUser.displayName;
+        }
+        const nav = document.getElementById('nav-auth');
+        if (nav) {
+          if (authUser) {
+            nav.textContent = 'Compte';
+            nav.setAttribute('href', '/compte');
+          } else {
+            nav.textContent = 'Connexion';
+            nav.setAttribute('href', '/connexion');
+          }
+        }
+      } catch {
+        authUser = null;
+      }
+    }
 
     async function loadList() {
+      const controller = new AbortController();
+      const timer = window.setTimeout(() => controller.abort(), 8000);
       try {
-        const res = await fetch(`${api}/thread/${encodeURIComponent(threadId)}`);
+        const res = await fetch(`${api}/thread/${encodeURIComponent(threadId)}`, {
+          signal: controller.signal,
+          credentials: 'include',
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const comments = data.comments || [];
         if (!comments.length) {
-          listEl.innerHTML = '<p class="meta">Aucun commentaire publié pour le moment. Soyez le premier à contribuer.</p>';
+          listEl.innerHTML =
+            '<p class="meta">Aucun commentaire publié pour le moment. Soyez le premier à contribuer.</p>';
           return;
         }
         listEl.innerHTML = comments
@@ -112,8 +155,13 @@ const apiBase = '/api/comments';
           </article>`,
           )
           .join('');
-      } catch {
-        listEl.innerHTML = '<p class="meta">Commentaires indisponibles (API hors ligne).</p>';
+      } catch (err: any) {
+        const aborted = err?.name === 'AbortError';
+        listEl.innerHTML = aborted
+          ? '<p class="meta">Commentaires indisponibles (délai dépassé). Vous pouvez tout de même rédiger un message ci-dessous.</p>'
+          : '<p class="meta">Commentaires indisponibles (API hors ligne). Vous pouvez tout de même rédiger un message ci-dessous.</p>';
+      } finally {
+        window.clearTimeout(timer);
       }
     }
 
@@ -127,6 +175,11 @@ const apiBase = '/api/comments';
 
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (!authUser) {
+        statusEl.textContent = 'Connectez-vous pour commenter.';
+        if (authBanner) authBanner.hidden = false;
+        return;
+      }
       statusEl.textContent = 'Analyse IA en cours…';
       preview.hidden = true;
       const fd = new FormData(form);
@@ -134,6 +187,7 @@ const apiBase = '/api/comments';
       try {
         const res = await fetch(`${api}/preview`, {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json', 'X-Author-Key': authorKey! },
           body: JSON.stringify({ raw }),
         });
@@ -160,11 +214,16 @@ const apiBase = '/api/comments';
     });
 
     root.querySelector('[data-role="publish"]')?.addEventListener('click', async () => {
+      if (!authUser) {
+        statusEl.textContent = 'Connectez-vous pour publier.';
+        return;
+      }
       const fd = new FormData(form);
       statusEl.textContent = 'Envoi…';
       try {
         const res = await fetch(`${api}/publish`, {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json', 'X-Author-Key': authorKey! },
           body: JSON.stringify({
             previewToken,
@@ -176,6 +235,11 @@ const apiBase = '/api/comments';
           }),
         });
         const data = await res.json();
+        if (res.status === 401) {
+          statusEl.textContent = data.error || 'Connexion requise';
+          if (authBanner) authBanner.hidden = false;
+          return;
+        }
         if (!res.ok) throw new Error(data.error || 'Échec publication');
         statusEl.textContent = data.message || 'OK';
         preview.hidden = true;
@@ -187,7 +251,7 @@ const apiBase = '/api/comments';
       }
     });
 
-    loadList();
+    refreshAuth().then(loadList);
   }
 
   document.querySelectorAll<HTMLElement>('section.ccm').forEach(initCcm);

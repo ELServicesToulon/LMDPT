@@ -1,5 +1,7 @@
 ---
 import type { DebatePosition } from '../lib/debate-types';
+import { hueBadgesForText } from '../lib/comment-politics';
+import PoliticalHueBadges from './PoliticalHueBadges.astro';
 
 interface Props {
   positions: DebatePosition[];
@@ -10,9 +12,20 @@ const { positions } = Astro.props;
 
 <div class="positions">
   {
-    positions.map((position) => (
-      <section class="card position-card">
-        <h3>{position.label}</h3>
+    positions.map((position) => {
+      const argText = position.arguments.map((a) => a.text).join(' ');
+      const hues = hueBadgesForText(`${position.label}\n${argText}`, 2);
+      const primary = hues[0]!;
+      return (
+      <section
+        class="card position-card"
+        data-hue={primary.slug}
+        style={`border-left: 4px solid ${primary.color}`}
+      >
+        <header class="position-head">
+          <h3>{position.label}</h3>
+          <PoliticalHueBadges hues={hues} size="sm" />
+        </header>
         <ol class="arguments">
           {
             position.arguments.map((arg) => (
@@ -35,7 +48,8 @@ const { positions } = Astro.props;
           }
         </ol>
       </section>
-    ))
+      );
+    })
   }
 </div>
 
@@ -45,9 +59,19 @@ const { positions } = Astro.props;
     flex-direction: column;
     gap: 0;
   }
+  .position-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.4rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
   .position-card h3 {
-    margin: 0 0 0.75rem;
+    margin: 0;
     font-size: 1.05rem;
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .arguments {
     margin: 0;

@@ -1,0 +1,397 @@
+{
+  "timezone": "Europe/Paris",
+  "days": [
+    {
+      "id": "doe-arrows",
+      "heroVideo": "/videos/2027/hero-voting-animation.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-premier-tour-2027.webp",
+      "heroPosterJpg": "/illustrations/2027/hero-premier-tour-2027.jpg",
+      "heroAlt": "Croquis humoristique style X : citoyens et urne transparente du 1er tour débordant d’idées colorées — illustration civique laïque.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "Croquis humoristique : citoyen brisant les flèches du second tour — Democracy Over Elimination",
+          "label": "Croquis X",
+          "title": "Democracy Over Elimination",
+          "wit": "Le second tour aime les flèches. Le premier préfère les bulletins."
+        },
+        {
+          "src": "/illustrations/2027/pluralite-1er-tour.jpg",
+          "alt": "Croquis humoristique : urne débordant de bulletins colorés — pluralité du 1er tour",
+          "label": "Croquis X",
+          "title": "La pluralité au 1er tour",
+          "wit": "Trop de couleurs dans l’urne ? C’est le pays qui parle — pas un bug."
+        },
+        {
+          "src": "/illustrations/2027/dessin-urne-2027.jpg",
+          "alt": "Croquis humoristique : urne transparente et miroir du 1er tour — miroir de la France",
+          "label": "Croquis X",
+          "title": "L’urne-miroir du 1er tour",
+          "wit": "Transparente comme les chiffres… quand on se donne la peine de les regarder."
+        },
+        {
+          "src": "/illustrations/2027/photo-citoyens-data-2027.jpg",
+          "alt": "Croquis humoristique : citoyens consultent les données ouvertes du 1er tour",
+          "label": "Croquis X",
+          "title": "Données & citoyens",
+          "wit": "Moins de slogans. Plus de sources. Open data."
+        },
+        {
+          "src": "/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg",
+          "alt": "Croquis mème : Le 1er tour ne ment pas — bulletin-miroir",
+          "label": "Croquis mème",
+          "title": "Le 1er tour ne ment pas",
+          "wit": "Le second arrange. On mesure l’écart — sans le moraliser."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-pluralite-2022-presidentielle.jpg",
+          "alt": "Illustration hybride : pluralité du 1er tour présidentielle 2022",
+          "label": "Hybride",
+          "title": "Pluralité 2022",
+          "wit": "2022 en un coup d’œil : le spectre avant le duel."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-voting-animation.mp4",
+        "poster": "/illustrations/2027/hero-premier-tour-2027.webp",
+        "caption": "Six secondes : on vote pour, pas pour éliminer."
+      }
+    },
+    {
+      "id": "urne-miroir",
+      "heroVideo": "/videos/2027/hero-urne-nb-croquis.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+      "heroPosterJpg": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.jpg",
+      "heroAlt": "Croquis encre noir et blanc : citoyens et urne transparente débordante de bulletins — sans texte, illustration civique laïque.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/dessin-urne-2027.jpg",
+          "alt": "Croquis humoristique : urne transparente et miroir du 1er tour",
+          "label": "Croquis X",
+          "title": "L’urne-miroir",
+          "wit": "Le miroir ne choisit pas. Il reflète."
+        },
+        {
+          "src": "/illustrations/2027/illustration-voix-egales.jpg",
+          "alt": "Croquis humoristique : balance des voix égales au premier tour",
+          "label": "Croquis X",
+          "title": "Toutes les voix comptent",
+          "wit": "Même celles qu’on redistribue ensuite. Lis-les d’abord."
+        },
+        {
+          "src": "/illustrations/2027/meme-vote-pensee.jpg",
+          "alt": "Croquis mème : Je vote ce que je pense au premier tour",
+          "label": "Croquis mème",
+          "title": "Votez ce que vous pensez",
+          "wit": "Le « contre » attend le second tour. Au premier : « pour »."
+        },
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "Croquis : Democracy Over Elimination",
+          "label": "Croquis X",
+          "title": "Pas d’élimination prématurée",
+          "wit": "La démocratie avant le spectacle du duel."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-1er-tour-2024-legislatives.jpg",
+          "alt": "Illustration hybride : 1er tour législatives 2024",
+          "label": "Hybride",
+          "title": "Législatives 2024 T1",
+          "wit": "577 circonscriptions. Une pluralité à lire avant le second tour."
+        },
+        {
+          "src": "/illustrations/2027/pluralite-1er-tour.jpg",
+          "alt": "Croquis : pluralité du 1er tour",
+          "label": "Croquis X",
+          "title": "Urne pleine",
+          "wit": "Ce n’est pas du bruit. C’est le pays."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-urne-nb-croquis.mp4",
+        "poster": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+        "caption": "Six secondes : croquis N&B — l’urne, les voix, le miroir vide."
+      }
+    },
+    {
+      "id": "voix-egales",
+      "heroVideo": "/videos/2027/hero-voting-animation.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-premier-tour-2027.webp",
+      "heroPosterJpg": "/illustrations/2027/illustration-voix-egales.jpg",
+      "heroAlt": "Croquis : balance des voix égales au premier tour — civique laïque.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/illustration-voix-egales.jpg",
+          "alt": "Croquis : balance des voix égales",
+          "label": "Croquis X",
+          "title": "Voix égales",
+          "wit": "Une voix = une voix. Avant les arrangements."
+        },
+        {
+          "src": "/illustrations/2027/photo-citoyens-data-2027.jpg",
+          "alt": "Croquis : citoyens et open data",
+          "label": "Croquis X",
+          "title": "Citoyens & data",
+          "wit": "La fierté civique, version open data."
+        },
+        {
+          "src": "/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg",
+          "alt": "Croquis mème : Le 1er tour ne ment pas",
+          "label": "Croquis mème",
+          "title": "Le 1er tour ne ment pas",
+          "wit": "Les chiffres officiels d’abord. Les narratifs ensuite."
+        },
+        {
+          "src": "/illustrations/2027/pluralite-1er-tour.jpg",
+          "alt": "Croquis : pluralité",
+          "label": "Croquis X",
+          "title": "Spectre coloré",
+          "wit": "Le duel n’est pas le pays. Le 1er tour, oui."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-pluralite-2022-presidentielle.jpg",
+          "alt": "Hybride pluralité 2022",
+          "label": "Hybride",
+          "title": "Mémoire 2022",
+          "wit": "Relire le 1er tour, pas seulement le 24 avril."
+        },
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "Croquis DOE",
+          "label": "Croquis X",
+          "title": "DOE",
+          "wit": "Democracy Over Elimination — ligne non négociable."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-voting-animation.mp4",
+        "poster": "/illustrations/2027/illustration-voix-egales.jpg",
+        "caption": "Croquis animé — pluralité visible en six secondes."
+      }
+    },
+    {
+      "id": "open-data",
+      "heroVideo": "/videos/2027/hero-urne-nb-croquis.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+      "heroPosterJpg": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.jpg",
+      "heroAlt": "Croquis encre noir et blanc : citoyens et urne transparente débordante de bulletins — sans texte, illustration civique laïque.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/photo-citoyens-data-2027.jpg",
+          "alt": "Croquis : open data 1er tour",
+          "label": "Croquis X",
+          "title": "Open data",
+          "wit": "data.gouv + Ministère. Pas de rumeur."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-1er-tour-2024-legislatives.jpg",
+          "alt": "Hybride législatives 2024",
+          "label": "Hybride",
+          "title": "Carte 2024",
+          "wit": "Chaque circo a une histoire de 1er tour."
+        },
+        {
+          "src": "/illustrations/2027/dessin-urne-2027.jpg",
+          "alt": "Urne-miroir",
+          "label": "Croquis X",
+          "title": "Urne 2027",
+          "wit": "18 avril 2027 : le prochain miroir."
+        },
+        {
+          "src": "/illustrations/2027/meme-vote-pensee.jpg",
+          "alt": "Vote pensée",
+          "label": "Croquis mème",
+          "title": "Conviction d’abord",
+          "wit": "Au premier tour, on vote ce qu’on pense."
+        },
+        {
+          "src": "/illustrations/2027/illustration-voix-egales.jpg",
+          "alt": "Voix égales",
+          "label": "Croquis X",
+          "title": "Égalité des voix",
+          "wit": "Avant la redistribution, la lecture."
+        },
+        {
+          "src": "/illustrations/2027/pluralite-1er-tour.jpg",
+          "alt": "Pluralité",
+          "label": "Croquis X",
+          "title": "Pluralité",
+          "wit": "Toutes les couleurs dans l’urne."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-urne-nb-croquis.mp4",
+        "poster": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+        "caption": "Six secondes : croquis N&B — l’urne, les voix, le miroir vide."
+      }
+    },
+    {
+      "id": "meme-verite",
+      "heroVideo": "/videos/2027/hero-voting-animation.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-premier-tour-2027.webp",
+      "heroPosterJpg": "/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg",
+      "heroAlt": "Croquis mème : Le 1er tour ne ment pas.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg",
+          "alt": "Le 1er tour ne ment pas",
+          "label": "Croquis mème",
+          "title": "Le 1er tour ne ment pas",
+          "wit": "Bulletin-miroir. Zéro spin."
+        },
+        {
+          "src": "/illustrations/2027/meme-vote-pensee.jpg",
+          "alt": "Vote pensée",
+          "label": "Croquis mème",
+          "title": "Je vote ce que je pense",
+          "wit": "Le « contre » peut attendre."
+        },
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "DOE",
+          "label": "Croquis X",
+          "title": "Briser les flèches",
+          "wit": "Élimination prématurée = spectacle, pas démocratie."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-pluralite-2022-presidentielle.jpg",
+          "alt": "Hybride 2022",
+          "label": "Hybride",
+          "title": "2022 pluralité",
+          "wit": "Ce que le second tour a compressé."
+        },
+        {
+          "src": "/illustrations/2027/photo-citoyens-data-2027.jpg",
+          "alt": "Citoyens data",
+          "label": "Croquis X",
+          "title": "Preuve ouverte",
+          "wit": "Sources primaires ou rien."
+        },
+        {
+          "src": "/illustrations/2027/dessin-urne-2027.jpg",
+          "alt": "Urne",
+          "label": "Croquis X",
+          "title": "Miroir France",
+          "wit": "Regarder avant de réduire."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-voting-animation.mp4",
+        "poster": "/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg",
+        "caption": "Mème croquis animé — vérité du 1er tour."
+      }
+    },
+    {
+      "id": "hybrid-2024",
+      "heroVideo": "/videos/2027/hero-urne-nb-croquis.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+      "heroPosterJpg": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.jpg",
+      "heroAlt": "Croquis encre noir et blanc : citoyens et urne transparente débordante de bulletins — sans texte, illustration civique laïque.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-1er-tour-2024-legislatives.jpg",
+          "alt": "Hybride législatives 2024 T1",
+          "label": "Hybride",
+          "title": "Législatives 2024",
+          "wit": "Le T1 avant les désistements."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-pluralite-2022-presidentielle.jpg",
+          "alt": "Hybride 2022",
+          "label": "Hybride",
+          "title": "Présidentielle 2022",
+          "wit": "Même logique : lire le spectre."
+        },
+        {
+          "src": "/illustrations/2027/pluralite-1er-tour.jpg",
+          "alt": "Pluralité",
+          "label": "Croquis X",
+          "title": "Bulletins colorés",
+          "wit": "La France parle en couleurs."
+        },
+        {
+          "src": "/illustrations/2027/illustration-voix-egales.jpg",
+          "alt": "Voix égales",
+          "label": "Croquis X",
+          "title": "Balance",
+          "wit": "Compter avant de couper."
+        },
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "DOE",
+          "label": "Croquis X",
+          "title": "DOE",
+          "wit": "Pas de tier list. Pas de favori."
+        },
+        {
+          "src": "/illustrations/2027/meme-vote-pensee.jpg",
+          "alt": "Vote pensée",
+          "label": "Croquis mème",
+          "title": "Pour, pas contre",
+          "wit": "Au premier tour, on choisit."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-urne-nb-croquis.mp4",
+        "poster": "/illustrations/2027/hero-urne-nb-croquis-2026-07-25.webp",
+        "caption": "Six secondes : croquis N&B — l’urne, les voix, le miroir vide."
+      }
+    },
+    {
+      "id": "vote-pensee",
+      "heroVideo": "/videos/2027/hero-voting-animation.mp4",
+      "heroPosterWebp": "/illustrations/2027/hero-premier-tour-2027.webp",
+      "heroPosterJpg": "/illustrations/2027/meme-vote-pensee.jpg",
+      "heroAlt": "Croquis mème : Je vote ce que je pense au premier tour.",
+      "gallery": [
+        {
+          "src": "/illustrations/2027/meme-vote-pensee.jpg",
+          "alt": "Vote pensée",
+          "label": "Croquis mème",
+          "title": "Votez ce que vous pensez",
+          "wit": "Conviction au T1. Stratégie plus tard — si besoin."
+        },
+        {
+          "src": "/illustrations/2027/democracy-over-elimination.jpg",
+          "alt": "DOE",
+          "label": "Croquis X",
+          "title": "Democracy Over Elimination",
+          "wit": "La démocratie avant l’élimination."
+        },
+        {
+          "src": "/illustrations/2027/dessin-urne-2027.jpg",
+          "alt": "Urne",
+          "label": "Croquis X",
+          "title": "Urne transparente",
+          "wit": "Voir pour comprendre."
+        },
+        {
+          "src": "/illustrations/2027/photo-citoyens-data-2027.jpg",
+          "alt": "Data",
+          "label": "Croquis X",
+          "title": "Citoyens informés",
+          "wit": "Choisir en connaissance de cause."
+        },
+        {
+          "src": "/illustrations/2027/hybrid/hybrid-pluralite-2022-presidentielle.jpg",
+          "alt": "Hybride 2022",
+          "label": "Hybride",
+          "title": "Mémoire T1",
+          "wit": "Ce que l’atlas montre — sans ranking."
+        },
+        {
+          "src": "/illustrations/2027/illustration-voix-egales.jpg",
+          "alt": "Voix",
+          "label": "Croquis X",
+          "title": "Chaque voix",
+          "wit": "Y compris celles qu’on oublie trop vite."
+        }
+      ],
+      "galleryVideo": {
+        "src": "/videos/2027/hero-voting-animation.mp4",
+        "poster": "/illustrations/2027/meme-vote-pensee.jpg",
+        "caption": "Six secondes pour rappeler : on vote pour."
+      }
+    }
+  ]
+}

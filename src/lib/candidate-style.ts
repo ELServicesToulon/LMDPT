@@ -1,22 +1,44 @@
-/** Slugs, couleurs et libellés candidats — élections présidentielles. */
+/** Slugs, couleurs et libellés candidats — élections présidentielles.
+ * Couleurs **consensus** (Wiki AN / médias FR) via assemblee-wiki-colors.
+ * Ex. écologie = vert `#00c000`, RN = bleu nuit, Ensemble = jaune.
+ */
+import {
+  CONSENSUS_CANDIDATE_COLORS,
+  CONSENSUS_PARTY_COLORS,
+  consensusPartyColor,
+} from './assemblee-wiki-colors';
 
 export const CANDIDATE_PALETTE: Record<string, string> = {
-  macron: '#1e4d6b',
-  'le-pen': '#5c4a72',
-  melenchon: '#c0392b',
-  fillon: '#0066cc',
-  hamon: '#e91e8c',
-  zemmour: '#8b6914',
-  pecresse: '#336699',
-  jadot: '#2d8a4e',
-  lassalle: '#6b8e23',
-  roussel: '#cc3333',
-  'dupont-aignan': '#555555',
-  hidalgo: '#9b59b6',
-  poutou: '#444444',
-  arthaud: '#990000',
-  asselineau: '#2c5282',
-  cheminade: '#718096',
+  // Consensus courants
+  ...CONSENSUS_CANDIDATE_COLORS,
+  // Alias / historiques 2017-2022 déjà dans CONSENSUS_* ; surcharges explicites :
+  macron: CONSENSUS_PARTY_COLORS.ensemble,
+  'le-pen': CONSENSUS_PARTY_COLORS.rn,
+  melenchon: CONSENSUS_PARTY_COLORS.lfi,
+  fillon: CONSENSUS_PARTY_COLORS.lr,
+  hamon: CONSENSUS_PARTY_COLORS.ps,
+  zemmour: CONSENSUS_PARTY_COLORS.reconquete,
+  pecresse: CONSENSUS_PARTY_COLORS.lr,
+  jadot: CONSENSUS_PARTY_COLORS.eco,
+  lassalle: CONSENSUS_PARTY_COLORS.liot,
+  roussel: CONSENSUS_PARTY_COLORS.pcf,
+  'dupont-aignan': CONSENSUS_PARTY_COLORS.autres,
+  hidalgo: CONSENSUS_PARTY_COLORS.ps,
+  poutou: CONSENSUS_PARTY_COLORS.exg,
+  arthaud: CONSENSUS_PARTY_COLORS.exg,
+  asselineau: CONSENSUS_PARTY_COLORS.autres,
+  cheminade: CONSENSUS_PARTY_COLORS.autres,
+  // 2027
+  attal: CONSENSUS_PARTY_COLORS.ensemble,
+  bardella: CONSENSUS_PARTY_COLORS.rn,
+  philippe: CONSENSUS_PARTY_COLORS.horizons,
+  retailleau: CONSENSUS_PARTY_COLORS.lr,
+  tondelier: CONSENSUS_PARTY_COLORS.eco,
+  glucksmann: CONSENSUS_PARTY_COLORS.ps,
+  ruffin: CONSENSUS_PARTY_COLORS.lfi,
+  barrot: CONSENSUS_PARTY_COLORS.modem,
+  lisnard: CONSENSUS_PARTY_COLORS.udr,
+  'philippe-brun': CONSENSUS_PARTY_COLORS.ps,
 };
 
 export const CANDIDATE_LABELS: Record<string, string> = {
@@ -55,6 +77,15 @@ const SLUG_RULES: Array<[RegExp, string]> = [
   [/ARTHAUD/, 'arthaud'],
   [/ASSELINEAU/, 'asselineau'],
   [/CHEMINADE/, 'cheminade'],
+  // 2027 + candidats courants
+  [/PHILIPPE/, 'philippe'],
+  [/ATTAL/, 'attal'],
+  [/GLUCKSMANN/, 'glucksmann'],
+  [/RETAILLEAU/, 'retailleau'],
+  [/TONDELIER/, 'tondelier'],
+  [/BARDELLA/, 'bardella'],
+  [/VILLEPIN/, 'villepin'],
+  [/RUFFIN/, 'ruffin'],
 ];
 
 export function candidateSlug(nom: string, prenom: string): string {
@@ -70,7 +101,8 @@ export function candidateSlug(nom: string, prenom: string): string {
 }
 
 export function candidateColor(slug: string): string {
-  return CANDIDATE_PALETTE[slug] ?? '#888888';
+  if (CANDIDATE_PALETTE[slug]) return CANDIDATE_PALETTE[slug];
+  return consensusPartyColor(slug) ?? '#888888';
 }
 
 export function candidateLabel(slug: string, fallbackNom?: string): string {

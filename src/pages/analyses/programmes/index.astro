@@ -1,9 +1,21 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listScrutins, listCandidates, getVeille2027 } from '../../../lib/programs';
+import {
+  getCandidateFamily,
+  groupCandidatesByFamily,
+} from '../../../lib/program-families';
+import {
+  buildProgramIntegrationReport,
+  formatPct,
+  programRelatedDataGouvLinks,
+} from '../../../lib/program-coverage';
 
 const scrutins = listScrutins();
 const veille = getVeille2027();
+const families2027 = groupCandidatesByFamily(listCandidates('presidentielle-2027'));
+const integration2027 = buildProgramIntegrationReport('presidentielle-2027');
+const dataGouvLinks = programRelatedDataGouvLinks();
 ---
 
 <BaseLayout
@@ -21,8 +33,19 @@ const veille = getVeille2027();
       LMDPT documentées). Présentation équivalente par candidat — sans classement éliminatoire.
     </p>
     <p>
-      <a href="/analyses/programmes-comparateur">Ouvrir le comparateur</a> (tableau différentiel
-      et chiffrages).
+      <a href="/analyses/programmes/axes?scrutin=presidentielle-2027"><strong>Grands axes</strong></a>
+      — propositions des candidats par thème (fiscalité, retraites, Europe…) ·{' '}
+      <a href="/analyses/programmes-comparateur">Comparateur tableau</a> ·{' '}
+      <a href="/analyses/programmes-comparateur?view=coverage">couverture thématique</a>.
+    </p>
+    <p class="meta" role="status">
+      Intégration 2027 (P10-4)&nbsp;: {integration2027.candidateCount} fiches ·{' '}
+      {integration2027.measureCount} mesures · sous-thèmes {formatPct(integration2027.subthemeRate)} ·
+      remplissage thèmes {formatPct(integration2027.fillRate)}
+      {integration2027.thinCandidates.length > 0
+        ? ` · fiches minces : ${integration2027.thinCandidates.join(', ')}`
+        : ''}
+      .
     </p>
   </section>
 
@@ -33,18 +56,38 @@ const veille = getVeille2027();
         {s.id === 'presidentielle-2027' ? (
           <>
             <p class="meta">{veille.disclaimer}</p>
-            <h4>Fiches intégrées</h4>
+            <h4>Par famille politique</h4>
             <ul>
-              {listCandidates(s.id).map((f) => (
+              {families2027.map((g) => (
                 <li>
-                  <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
-                    {f.candidate.name}
+                  <a
+                    href={`/analyses/programmes-comparateur?scrutin=presidentielle-2027&family=${g.family.id}&view=family`}
+                  >
+                    {g.family.label}
                   </a>
-                  {' '}
-                  — {f.candidate.affiliation} · {f.measures.length} mesures ·{' '}
-                  <span class="meta">{f.program.status}</span>
+                  {' — '}
+                  {g.candidates.length} fiche{g.candidates.length > 1 ? 's' : ''} ·{' '}
+                  {g.candidates.filter((c) => c.chiffrages.length > 0).length} chiffrée
+                  {g.candidates.filter((c) => c.chiffrages.length > 0).length > 1 ? 's' : ''}
                 </li>
               ))}
+            </ul>
+            <h4>Fiches intégrées</h4>
+            <ul>
+              {listCandidates(s.id).map((f) => {
+                const fam = getCandidateFamily(f.candidate.slug);
+                return (
+                  <li>
+                    <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
+                      {f.candidate.name}
+                    </a>
+                    {' '}
+                    — {f.candidate.affiliation} · {fam.shortLabel} · {f.measures.length} mesures
+                    {f.chiffrages.length > 0 ? ` · ${f.chiffrages.length} chiffrage(s)` : ''} ·{' '}
+                    <span class="meta">{f.program.status}</span>
+                  </li>
+                );
+              })}
             </ul>
             <h4>Veille (non intégré)</h4>
             <ul>
@@ -57,13 +100,36 @@ const veille = getVeille2027();
                 ))}
             </ul>
             <p>
+              <a href="/analyses/programmes/axes?scrutin=presidentielle-2027">Grands axes 2027</a>
+              {' · '}
               <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027">
                 Comparateur 2027
               </a>
-              {' '}
-              ·{' '}
+              {' · '}
+              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027&view=family">
+                Vue familles
+              </a>
+              {' · '}
+              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027&view=coverage">
+                Couverture thématique
+              </a>
+              {' · '}
               <a href="/analyses/presidentielle-2027-preparation">Dossier préparation 2027</a>
             </p>
+            <h4>Granularité data.gouv (pluralité 1er tour)</h4>
+            <ul>
+              {dataGouvLinks.map((l) => (
+                <li>
+                  <a
+                    href={l.href}
+                    rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {l.label}
+                  </a>
+                  <span class="meta"> — {l.note}</span>
+                </li>
+              ))}
+            </ul>
           </>
         ) : (
           <ul>

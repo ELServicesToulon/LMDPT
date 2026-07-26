@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mon compte"
+  description="Compte lecteur LMDPT — pseudonyme, providers liés, déconnexion."
+  noindex={true}
+>
+  <section>
+    <p class="eyebrow">Espace lecteur</p>
+    <h1>Mon compte</h1>
+    <p class="lead meta" id="compte-loading">Chargement de la session…</p>
+  </section>
+
+  <section class="card" id="compte-guest" hidden>
+    <p>Vous n’êtes pas connecté.</p>
+    <p><a class="btn btn-primary" href="/connexion?next=/compte">Se connecter</a></p>
+  </section>
+
+  <section class="card" id="compte-user" hidden>
+    <h2>Profil affiché</h2>
+    <p>
+      <strong id="user-name">—</strong>
+      <span class="meta" id="user-id"></span>
+    </p>
+    <p class="meta">
+      Providers liés : <span id="user-providers">—</span>
+    </p>
+    <p class="meta">
+      L’email n’est jamais publié. La teinte politique s’applique aux <em>messages</em>, pas à votre
+      identité de compte.
+    </p>
+    <form id="profile-form">
+      <label>
+        <span class="meta">Pseudonyme par défaut</span>
+        <input type="text" name="displayName" maxlength="40" autocomplete="nickname" />
+      </label>
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+      <p class="meta" id="profile-status" role="status"></p>
+    </form>
+    <hr />
+    <button type="button" class="btn btn-secondary" id="logout-btn">Se déconnecter</button>
+  </section>
+</BaseLayout>
+
+<script>
+  (async () => {
+    const loading = document.getElementById('compte-loading');
+    const guest = document.getElementById('compte-guest');
+    const userBox = document.getElementById('compte-user');
+
+    async function refresh() {
+      const res = await fetch('/api/auth/me', { credentials: 'include' });
+      const data = await res.json();
+      if (loading) loading.hidden = true;
+      if (!data.authenticated || !data.user) {
+        guest!.hidden = false;
+        userBox!.hidden = true;
+        return;
+      }
+      guest!.hidden = true;
+      userBox!.hidden = false;
+      document.getElementById('user-name')!.textContent = data.user.displayName || 'Citoyen·ne';
+      document.getElementById('user-id')!.textContent = `(${data.user.id})`;
+      document.getElementById('user-providers')!.textContent = (data.user.providers || []).join(', ') || '—';
+      const input = document.querySelector('#profile-form input[name="displayName"]') as HTMLInputElement;
+      if (input) input.value = data.user.displayName || '';
+    }
+
+    try {
+      await refresh();
+    } catch {
+      if (loading) loading.textContent = 'API auth indisponible.';
+    }
+
+    document.getElementById('logout-btn')?.addEventListener('click', async () => {
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+      location.href = '/';
+    });
+
+    document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('profile-status');
+      const fd = new FormData(e.target as HTMLFormElement);
+      try {
+        const res = await fetch('/api/auth/profile', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ displayName: String(fd.get('displayName') || '') }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Échec');
+        if (status) status.textContent = 'Enregistré.';
+        await refresh();
+      } catch (err: any) {
+        if (status) status.textContent = err.message || 'Erreur';
+      }
+    });
+  })();
+</script>
+
+<style>
+  #profile-form label {
+    display: block;
+    margin: 0.75rem 0;
+  }
+  #profile-form input {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.45rem 0.6rem;
+    font: inherit;
+  }
+</style>

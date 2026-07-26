@@ -1,0 +1,254 @@
+---
+/**
+ * Grands axes : une section par thème, cartes propositions par candidat.
+ * Chaque carte porte le badge couleur d’idée du candidat (règle éditoriale).
+ */
+import type { ProgramAxesPageData } from '../lib/program-axes';
+import { STATUS_LABELS } from '../lib/programs';
+import { hueFromCandidateSlug } from '../lib/comment-politics';
+import PoliticalHueBadges from './PoliticalHueBadges.astro';
+
+interface Props {
+  data: ProgramAxesPageData;
+  scrutinId: string;
+  showEmptyAxes?: boolean;
+}
+
+const { data, scrutinId, showEmptyAxes = false } = Astro.props;
+const axes = showEmptyAxes ? data.axes : data.axes.filter((a) => a.measureCount > 0);
+const nameBySlug = Object.fromEntries(data.candidates.map((c) => [c.slug, c.name]));
+---
+
+<nav class="axes-toc" aria-label="Sommaire des grands axes">
+  <p class="axes-toc-label">Aller à l’axe</p>
+  <ul>
+    {
+      axes.map((axis) => (
+        <li>
+          <a href={`#axe-${axis.themeId}`}>
+            {axis.themeLabel}
+            <span class="meta">({axis.candidateCount})</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+{
+  axes.map((axis) => (
+    <section class="axis-block card" id={`axe-${axis.themeId}`} aria-labelledby={`h-${axis.themeId}`}>
+      <header class="axis-head">
+        <h2 id={`h-${axis.themeId}`}>{axis.themeLabel}</h2>
+        <p class="meta">
+          {axis.measureCount} proposition{axis.measureCount > 1 ? 's' : ''} ·{' '}
+          {axis.candidateCount} candidat{axis.candidateCount > 1 ? 's' : ''}
+          {axis.silentSlugs.length > 0
+            ? ` · sans mesure ici : ${axis.silentSlugs.map((s) => nameBySlug[s] ?? s).join(', ')}`
+            : ''}
+        </p>
+        <p class="axis-links">
+          <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}&theme=${axis.themeId}`}>
+            Comparateur · {axis.themeLabel}
+          </a>
+        </p>
+      </header>
+
+      <div class="proposals-grid">
+        {axis.proposals.map((p) => {
+          const hue = hueFromCandidateSlug(p.slug);
+          return (
+          <article
+            class="proposal-card"
+            data-family={p.familyId}
+            data-hue={hue.slug}
+            style={`border-left: 4px solid ${hue.color}`}
+          >
+            <header class="proposal-head">
+              <div class="proposal-head-row">
+                <h3>
+                  <a href={`/analyses/programmes/${scrutinId}/${p.slug}`}>{p.name}</a>
+                </h3>
+                <PoliticalHueBadges hues={[hue]} size="sm" />
+              </div>
+              <p class="meta">
+                {p.affiliation} · {p.familyLabel}
+              </p>
+            </header>
+            <ul class="measure-list">
+              {p.measures.map((m) => (
+                <li>
+                  <span class="measure-label">{m.label}</span>
+                  {m.chiffrage_mdeur != null && (
+                    <span class="chiffrage" title="Chiffrage Md€/an">
+                      {m.chiffrage_mdeur > 0 ? '+' : ''}
+                      {m.chiffrage_mdeur} Md€
+                      {m.chiffrage_auteur ? ` · ${m.chiffrage_auteur}` : ''}
+                    </span>
+                  )}
+                  <span class="status-pill">{STATUS_LABELS[m.status] ?? m.status}</span>
+                  {m.subtheme && <span class="subtheme">{m.subtheme}</span>}
+                  {m.detail && <p class="measure-detail">{m.detail}</p>}
+                  {m.source_url && (
+                    <p class="meta source">
+                      <a href={m.source_url} rel="noopener noreferrer" target="_blank">
+                        {m.source_label ?? 'Source'}
+                      </a>
+                      {m.as_of ? ` · ${m.as_of}` : ''}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </article>
+          );
+        })}
+      </div>
+    </section>
+  ))
+}
+
+<style>
+  .axes-toc {
+    margin: 1rem 0 1.5rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+    background: var(--card);
+  }
+  .axes-toc-label {
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .axes-toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+  }
+  .axes-toc a {
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .axis-block {
+    margin: 1.5rem 0;
+    padding: 1rem 1.1rem 1.15rem;
+  }
+  .axis-head h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+    color: var(--fg);
+  }
+  .axis-links {
+    margin: 0.35rem 0 0.75rem;
+    font-size: 0.9rem;
+  }
+  .proposals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  @media (min-width: 800px) {
+    .proposals-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1100px) {
+    .proposals-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .proposal-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+    background: var(--bg);
+    color: var(--fg);
+    padding: 0.75rem 0.85rem 0.9rem;
+  }
+  .proposal-head-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.35rem 0.6rem;
+  }
+  .proposal-head h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .proposal-head h3 a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .proposal-head h3 a:hover,
+  .proposal-head h3 a:focus-visible {
+    text-decoration: underline;
+  }
+  .measure-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .measure-list li {
+    border-top: 1px dashed color-mix(in srgb, var(--border) 70%, transparent);
+    padding-top: 0.55rem;
+  }
+  .measure-list li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .measure-label {
+    display: block;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--fg);
+  }
+  .chiffrage {
+    display: inline-block;
+    margin-top: 0.2rem;
+    margin-right: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.08rem 0.45rem;
+  }
+  .status-pill {
+    display: inline-block;
+    margin-top: 0.2rem;
+    margin-right: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.08rem 0.4rem;
+    color: var(--muted);
+  }
+  .subtheme {
+    display: inline-block;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .measure-detail {
+    margin: 0.35rem 0 0;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+  .source {
+    margin: 0.25rem 0 0;
+  }
+</style>

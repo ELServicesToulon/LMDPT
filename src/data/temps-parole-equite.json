@@ -1,0 +1,187 @@
+{
+  "title": "Temps de parole et équité d'exposition",
+  "updated": "2026-07-26",
+  "disclaimer": "Synthèse pédagogique LMDPT — données Arcom open data (Licence Ouverte). Comparaison à l'égalité stricte 1/n pour cette vague municipale. Ce n'est pas une prédiction électorale ni un avis juridique Arcom. Democracy Over Elimination.",
+  "formula": "indice = part_exposition / part_sondage",
+  "doe": "Sondage = dénominateur de comparaison, jamais prédiction LMDPT",
+  "delta": 0.25,
+  "wave": {
+    "id": "arcom-municipales-2026-dec25-partis-top10",
+    "period": {
+      "start": "2025-12-01",
+      "end": "2025-12-31",
+      "label": "pre_campagne"
+    },
+    "media": {
+      "name": "Agrégat services Arcom — municipales 2026 (déc. 2025)",
+      "kind": "aggregate"
+    },
+    "exposure_type": "parole",
+    "unit": "minutes"
+  },
+  "baseline": {
+    "kind": "equality_1n",
+    "label": "Baseline égalité stricte (1/n) — mode équité municipale",
+    "note": "Étalon égalité 1/n (chaque acteur du top a la même part théorique). Pour croiser avec un sondage présidentiel, voir l'agent temps-parole + poll-templates."
+  },
+  "source": {
+    "url": "https://www.data.gouv.fr/datasets/temps-de-parole-des-partis-et-personnalites-politiques-elections-municipales-2026",
+    "title": "Arcom LO2 — CSV partis politiques décembre 2025",
+    "verification": "documented",
+    "notes": "Import data.gouv 2026-07-26. Exclut totaux exécutif/président. Minutes = somme toutes colonnes service×type."
+  },
+  "rows": [
+    {
+      "id": "p0",
+      "label": "Rassemblement national",
+      "part_expo_pct": 25.148,
+      "part_poll_pct": 10,
+      "indice": 2.515,
+      "flag": "over"
+    },
+    {
+      "id": "p1",
+      "label": "Renaissance",
+      "part_expo_pct": 17.061,
+      "part_poll_pct": 10,
+      "indice": 1.706,
+      "flag": "over"
+    },
+    {
+      "id": "p2",
+      "label": "La France insoumise",
+      "part_expo_pct": 16.057,
+      "part_poll_pct": 10,
+      "indice": 1.606,
+      "flag": "over"
+    },
+    {
+      "id": "p3",
+      "label": "Les Républicains",
+      "part_expo_pct": 9.866,
+      "part_poll_pct": 10,
+      "indice": 0.987,
+      "flag": "in_band"
+    },
+    {
+      "id": "p4",
+      "label": "Divers Droite",
+      "part_expo_pct": 7.657,
+      "part_poll_pct": 10,
+      "indice": 0.766,
+      "flag": "in_band"
+    },
+    {
+      "id": "p5",
+      "label": "Parti socialiste",
+      "part_expo_pct": 7.068,
+      "part_poll_pct": 10,
+      "indice": 0.707,
+      "flag": "under"
+    },
+    {
+      "id": "p6",
+      "label": "Les Ecologistes",
+      "part_expo_pct": 4.82,
+      "part_poll_pct": 10,
+      "indice": 0.482,
+      "flag": "under"
+    },
+    {
+      "id": "p7",
+      "label": "Horizons",
+      "part_expo_pct": 4.524,
+      "part_poll_pct": 10,
+      "indice": 0.452,
+      "flag": "under"
+    },
+    {
+      "id": "p8",
+      "label": "Divers Gauche",
+      "part_expo_pct": 4.117,
+      "part_poll_pct": 10,
+      "indice": 0.412,
+      "flag": "under"
+    },
+    {
+      "id": "p9",
+      "label": "Mouvement démocrate",
+      "part_expo_pct": 3.682,
+      "part_poll_pct": 10,
+      "indice": 0.368,
+      "flag": "under"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "p0",
+      "label": "Rassemblement national",
+      "kind": "sur-exposition",
+      "indice": 2.515,
+      "part_expo_pct": 25.148,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p1",
+      "label": "Renaissance",
+      "kind": "sur-exposition",
+      "indice": 1.706,
+      "part_expo_pct": 17.061,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p2",
+      "label": "La France insoumise",
+      "kind": "sur-exposition",
+      "indice": 1.606,
+      "part_expo_pct": 16.057,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p5",
+      "label": "Parti socialiste",
+      "kind": "sous-exposition",
+      "indice": 0.707,
+      "part_expo_pct": 7.068,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p6",
+      "label": "Les Ecologistes",
+      "kind": "sous-exposition",
+      "indice": 0.482,
+      "part_expo_pct": 4.82,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p7",
+      "label": "Horizons",
+      "kind": "sous-exposition",
+      "indice": 0.452,
+      "part_expo_pct": 4.524,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p8",
+      "label": "Divers Gauche",
+      "kind": "sous-exposition",
+      "indice": 0.412,
+      "part_expo_pct": 4.117,
+      "part_poll_pct": 10
+    },
+    {
+      "id": "p9",
+      "label": "Mouvement démocrate",
+      "kind": "sous-exposition",
+      "indice": 0.368,
+      "part_expo_pct": 3.682,
+      "part_poll_pct": 10
+    }
+  ],
+  "links": {
+    "arcom": "https://www.arcom.fr/temps-parole/election",
+    "data_gouv": "https://www.data.gouv.fr/datasets/temps-de-parole-des-partis-et-personnalites-politiques-elections-municipales-2026",
+    "liberte": "/liberte-d-expression",
+    "observatoire": "/observatoire-censure/"
+  }
+}

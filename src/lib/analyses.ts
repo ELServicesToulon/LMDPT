@@ -19,6 +19,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/presidentielle-distorsion',
   },
   {
+    slug: 'presidentielle-2022-legislatives',
+    title: 'Présidentielle 2022 → législatives',
+    description:
+      'Sondages et 1er tour présidentiel 2022 comparés aux législatives de juin (participation, blocs, 577 sièges). Données officielles.',
+    date: '2026-07-16',
+    href: '/analyses/presidentielle-2022-legislatives',
+  },
+  {
     slug: 'legislatives-2024-desistements',
     title: 'Législatives 2024 — désistements',
     description:
@@ -43,6 +51,30 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/assemblee-premier-tour-mecanismes',
   },
   {
+    slug: 'gouvernance-an1t-droit',
+    title: 'Droit électoral, AN1T et gouvernance non bloquée',
+    description:
+      'Corpus juridique (Constitution, Code électoral), chemins pour 100 % 1er tour ou dose proportionnelle, études de cas 2017–2022–2024, gouvernance sans 49.3 ni décrets de contournement. Synthèse documentaire DOE.',
+    date: '2026-07-17',
+    href: '/analyses/gouvernance-an1t-droit',
+  },
+  {
+    slug: 'alerte-citoyenne',
+    title: 'Alerte citoyenne — débat public',
+    description:
+      'Tour d’horizon documenté (France / UE) des textes et projets cités comme encadrant la liberté d’expression avant le premier tour 2027.',
+    date: '2026-07-16',
+    href: '/analyses/alerte-citoyenne',
+  },
+  {
+    slug: 'temps-parole-equite',
+    title: 'Temps de parole — équité d’exposition',
+    description:
+      'Indices d’équité du temps de parole (open data Arcom) vs étalon — sur/sous-exposition documentée, pas de prédiction.',
+    date: '2026-07-26',
+    href: '/analyses/temps-parole-equite',
+  },
+  {
     slug: 'presidentielle-2027-preparation',
     title: 'Présidentielle 2027 — préparation',
     description:
@@ -50,6 +82,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     date: '2026-07-02',
     href: '/analyses/presidentielle-2027-preparation',
     preparation: true,
+  },
+  {
+    slug: 'declarations-x-candidats',
+    title: 'Déclarations X des candidats',
+    description:
+      'Fil chronologique des posts publics des comptes X officiels (personnalités 2027) — pas de classement.',
+    date: '2026-07-17',
+    href: '/analyses/declarations-x-candidats',
   },
   {
     slug: 'programmes',

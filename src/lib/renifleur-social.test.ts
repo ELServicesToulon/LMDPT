@@ -3,6 +3,7 @@ import type { RenifleurItem } from './renifleur';
 import {
   buildPostCopy,
   buildRenifleurSocialDraft,
+  ideaColorBadgesForItem,
   pickDraftItems,
   truncateForX,
 } from './renifleur-social';
@@ -17,6 +18,13 @@ const sampleItem: RenifleurItem = {
   source_type: 'traditional',
 };
 
+const attalItem: RenifleurItem = {
+  ...sampleItem,
+  title: 'Gabriel Attal présente sa réforme de l’école',
+  summary: 'Le Premier ministre Renaissance défend le réarmement civique.',
+  url: 'https://example.com/attal',
+};
+
 describe('renifleur-social', () => {
   it('truncates long copy for X', () => {
     const long = 'a'.repeat(300);
@@ -24,11 +32,19 @@ describe('renifleur-social', () => {
     expect(truncateForX(long).endsWith('…')).toBe(true);
   });
 
-  it('builds post copy with site link', () => {
+  it('builds post copy with site link and idea-color badge tag', () => {
     const copy = buildPostCopy(sampleItem, 'https://lmdpt.iarbre.org/test?utm_campaign=x');
     expect(copy).toContain('lmdpt.iarbre.org');
     expect(copy).toContain('#renifleur-presse');
+    expect(copy).toMatch(/\[.+\]/); // badge label tag
     expect(copy.length).toBeLessThanOrEqual(280);
+  });
+
+  it('ideaColorBadgesForItem always returns ≥1 badge', () => {
+    const badges = ideaColorBadgesForItem(attalItem);
+    expect(badges.length).toBeGreaterThanOrEqual(1);
+    expect(badges[0]!.color).toMatch(/^#/);
+    expect(badges[0]!.slug).toBe('attal');
   });
 
   it('picks top N items', () => {
@@ -51,5 +67,18 @@ describe('renifleur-social', () => {
     expect(md).toContain('draft');
     expect(md).toContain('Gate REVIEW');
     expect(md).toContain('Le Monde');
+    expect(md).toContain('Gate qualité rédaction');
+    expect(md).toContain('Qualité rédaction');
+    expect(md).toContain('Couleurs d’idées');
+    expect(md).toContain('Badge(s) couleurs d’idées');
+  });
+
+  it('cleans glued words in post copy', () => {
+    const copy = buildPostCopy(
+      { ...sampleItem, title: 'Plus de placesdenprison demandées' },
+      'https://lmdpt.iarbre.org/test',
+    );
+    expect(copy).toMatch(/places d'emprisonnement/i);
+    expect(copy).not.toContain('placesdenprison');
   });
 });

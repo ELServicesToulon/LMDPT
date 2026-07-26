@@ -1,0 +1,182 @@
+---
+/**
+ * Applique le set du jour (Europe/Paris) au hero + galerie.
+ * Le HTML initial est déjà peuplé au build ; ce script corrige si le jour a changé
+ * depuis le dernier deploy (SSG) et force l’override scoop (`hero-daily-override.json`).
+ */
+
+interface Props {
+  poolUrl?: string;
+  overrideUrl?: string;
+  initialDayKey: string;
+  initialIndex: number;
+}
+
+const {
+  poolUrl = '/illustrations/2027/visual-daily-pool.json',
+  overrideUrl = '/illustrations/2027/hero-daily-override.json',
+  initialDayKey,
+  initialIndex,
+} = Astro.props;
+---
+
+<script
+  is:inline
+  define:vars={{ poolUrl, overrideUrl, initialDayKey, initialIndex }}
+>
+  (function () {
+    function parisDayKey(date) {
+      return new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Paris',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).format(date);
+    }
+
+    function epochDayFromKey(dayKey) {
+      var parts = dayKey.split('-');
+      var y = Number(parts[0]);
+      var mo = Number(parts[1]);
+      var d = Number(parts[2]);
+      return Math.floor(Date.UTC(y, mo - 1, d) / 86400000);
+    }
+
+    function dayIndexFromKey(dayKey, length) {
+      var epoch = epochDayFromKey(dayKey);
+      return ((epoch % length) + length) % length;
+    }
+
+    function applySet(set) {
+      var video = document.getElementById('daily-hero-video');
+      if (video) {
+        video.setAttribute('poster', set.heroPosterWebp || set.heroPosterJpg);
+        video.setAttribute('aria-label', set.heroAlt || '');
+        var source = video.querySelector('source');
+        if (source && set.heroVideo) {
+          if (source.getAttribute('src') !== set.heroVideo) {
+            source.setAttribute('src', set.heroVideo);
+            video.load();
+          }
+        }
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) {
+          video.removeAttribute('autoplay');
+          try {
+            video.pause();
+          } catch (_) {}
+        }
+      }
+
+      var picWebp = document.getElementById('daily-hero-webp');
+      if (picWebp && set.heroPosterWebp) picWebp.setAttribute('srcset', set.heroPosterWebp);
+      var picImg = document.getElementById('daily-hero-img');
+      if (picImg) {
+        if (set.heroPosterJpg) picImg.setAttribute('src', set.heroPosterJpg);
+        if (set.heroAlt) picImg.setAttribute('alt', set.heroAlt);
+      }
+
+      var cards = document.querySelectorAll('#visuels-2027 [data-daily-gallery-item]');
+      var gallery = set.gallery || [];
+      for (var i = 0; i < cards.length; i++) {
+        var item = gallery[i];
+        if (!item) continue;
+        var card = cards[i];
+        var img = card.querySelector('img');
+        if (img) {
+          img.setAttribute('src', item.src);
+          img.setAttribute('alt', item.alt || '');
+        }
+        var label = card.querySelector('.visual-label');
+        if (label) label.textContent = item.label || '';
+        var title = card.querySelector('strong');
+        if (title) title.textContent = item.title || '';
+        var wit = card.querySelector('.visual-wit');
+        if (wit) wit.textContent = item.wit || '';
+      }
+
+      var gVideo = document.getElementById('daily-gallery-video');
+      if (gVideo && set.galleryVideo) {
+        gVideo.setAttribute('poster', set.galleryVideo.poster || set.heroPosterJpg);
+        var gSrc = gVideo.querySelector('source');
+        if (gSrc && set.galleryVideo.src) {
+          if (gSrc.getAttribute('src') !== set.galleryVideo.src) {
+            gSrc.setAttribute('src', set.galleryVideo.src);
+            gVideo.load();
+          }
+        }
+      }
+      var gCap = document.getElementById('daily-gallery-caption');
+      if (gCap && set.galleryVideo && set.galleryVideo.caption) {
+        gCap.textContent = set.galleryVideo.caption;
+      }
+
+      var badge = document.getElementById('daily-visual-badge');
+      if (badge) {
+        badge.textContent = 'Visuel du jour · ' + (set.id || '');
+        badge.hidden = false;
+      }
+
+      document.documentElement.setAttribute('data-daily-visual-id', set.id || '');
+    }
+
+    function mergeOverride(base, ov, dayKey) {
+      if (!ov || !ov.forceDaily || ov.dayKey !== dayKey) return base;
+      if (!ov.heroVideo || !ov.heroPosterJpg) return base;
+      var next = {};
+      for (var k in base) next[k] = base[k];
+      next.id = ov.id || 'scoop-' + dayKey;
+      next.heroVideo = ov.heroVideo;
+      next.heroPosterWebp = ov.heroPosterWebp || ov.heroPosterJpg;
+      next.heroPosterJpg = ov.heroPosterJpg;
+      next.heroAlt = ov.heroAlt || base.heroAlt;
+      next.galleryVideo = ov.galleryVideo
+        ? {
+            src: ov.galleryVideo.src || ov.heroVideo,
+            poster: ov.galleryVideo.poster || ov.heroPosterWebp || ov.heroPosterJpg,
+            caption: ov.galleryVideo.caption,
+          }
+        : {
+            src: ov.heroVideo,
+            poster: ov.heroPosterWebp || ov.heroPosterJpg,
+            caption: 'Vidéo hero du jour — croquis N&B scoop.',
+          };
+      return next;
+    }
+
+    var today = parisDayKey(new Date());
+
+    function loadAndApply() {
+      return Promise.all([
+        fetch(poolUrl, { credentials: 'same-origin' }).then(function (r) {
+          if (!r.ok) throw new Error('pool ' + r.status);
+          return r.json();
+        }),
+        fetch(overrideUrl + '?d=' + today, { credentials: 'same-origin' })
+          .then(function (r) {
+            return r.ok ? r.json() : null;
+          })
+          .catch(function () {
+            return null;
+          }),
+      ]).then(function (pair) {
+        var pool = pair[0];
+        var ov = pair[1];
+        var days = pool && pool.days;
+        if (!days || !days.length) return;
+        var idx = dayIndexFromKey(today, days.length);
+        var set = mergeOverride(days[idx], ov, today);
+        applySet(set);
+        document.documentElement.setAttribute('data-daily-visual-index', String(idx));
+      });
+    }
+
+    // Toujours tenter l’override (même si le jour build == aujourd’hui) :
+    // permet une MAJ scoop sans redeploy complet (fichiers static + live mp4).
+    loadAndApply().catch(function () {
+      if (today === initialDayKey) {
+        document.documentElement.setAttribute('data-daily-visual-index', String(initialIndex));
+      }
+    });
+  })();
+</script>

@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  SUPPORT_TIERS,
+  PACK_DATA,
+  getDonateUrl,
+  donateReady,
+} from '../config/soutenir';
+
+const ready = donateReady();
+const donateUrl = getDonateUrl();
+const donateIsTest = ready && (donateUrl.includes('/test_') || donateUrl.includes('buy.stripe.com/test'));
+const thankYou = Astro.url.searchParams.get('don') === 'merci';
+const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const packPath = PACK_DATA.path;
+---
+
+<BaseLayout
+  title="Soutenir le média"
+  description="Soutenez Le Média du Premier Tour : dons citoyens pour l’hébergement, les données open data et les outils pédagogiques — sans pub politique."
+  keywords="soutenir LMDPT, don média civique, Democracy Over Elimination, mécénat données électorales"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> → Soutenir
+  </nav>
+
+  {
+    thankYou && (
+      <p class="card thank-you" role="status">
+        <strong>Merci.</strong> Votre don sécurisé via Stripe aide à garder le miroir du 1er tour
+        ouvert — sans pub politique.
+      </p>
+    )
+  }
+
+  <section>
+    <h2>Soutenir le miroir du 1er tour</h2>
+    <p class="lead">
+      Sans pub politique, sans sondage «&nbsp;favori&nbsp;». Votre don paie l’hébergement,
+      la sync data.gouv et les simulateurs — pour que la pluralité reste lisible.
+    </p>
+    <p class="meta disclaimer">
+      Transparence : les montants aident à couvrir hébergement (KS-5 / OVH), sync data.gouv,
+      maintenance des simulateurs et du site. Aucune donnée électorale officielle n’est
+      paywallée.
+    </p>
+  </section>
+
+  <section class="card" id="dons" aria-labelledby="dons-title">
+    <h3 id="dons-title">Soutien citoyen (mensuel indicatif)</h3>
+    <p class="meta">
+      Montants suggérés — le formulaire de don externe peut proposer d’autres sommes ou un don
+      ponctuel.
+    </p>
+    <div class="tier-grid" role="list">
+      {
+        SUPPORT_TIERS.map((t) => (
+          <article class="tier-card" role="listitem">
+            <h4 class="tier-label">{t.label}</h4>
+            <p class="tier-price">
+              <strong>{t.amountEur}&nbsp;€</strong>
+              <span class="meta"> / mois</span>
+            </p>
+            <p class="tier-blurb">{t.blurb}</p>
+            {
+              ready ? (
+                <a
+                  class="btn btn-primary"
+                  href={donateUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Soutenir à {t.amountEur}&nbsp;€ →
+                </a>
+              ) : (
+                <a class="btn btn-secondary" href="#config-don">
+                  Lien de don en configuration
+                </a>
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+
+    {
+      ready ? (
+        <p class="cta-block">
+          <a class="btn btn-primary btn-lg" href={donateUrl} rel="noopener noreferrer" target="_blank">
+            Ouvrir la page de don sécurisée →
+          </a>
+          {
+            donateIsTest && (
+              <span class="meta test-banner">
+                {' '}
+                Mode <strong>Stripe test</strong> — carte test 4242… ; pas de vrai débit.
+              </span>
+            )
+          }
+        </p>
+      ) : (
+        <div class="card config-card" id="config-don">
+          <h4>Configuration du lien de don</h4>
+          <p>
+            La page est en ligne ; le <strong>paiement externe</strong> (HelloAsso ou Payment Link
+            Stripe) n’est pas encore branché. Dès qu’une URL HTTPS est fournie au build :
+          </p>
+          <pre class="code-block"><code>PUBLIC_LMDPT_DONATE_URL=https://www.helloasso.com/…</code></pre>
+          <p class="meta">
+            Puis rebuild + deploy. En attendant, vous pouvez nous écrire via{' '}
+            <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
+              GitHub Issues
+            </a>{' '}
+            (soutien institutionnel, mécénat, partenariat data).
+          </p>
+        </div>
+      )
+    }
+  </section>
+
+  <section class="card" id="pack-data" aria-labelledby="pack-title">
+    <h3 id="pack-title">
+      {PACK_DATA.name}{' '}
+      <span class="badge-soon">{PACK_DATA.priceEurYear}&nbsp;€ / an · précommande intérêt</span>
+    </h3>
+    <p>
+      Produit data pour chercheurs, rédactions, enseignants et assos — <strong>sans bloquer</strong>{' '}
+      l’atlas ni les résultats officiels gratuits.
+    </p>
+    <ul>
+      {PACK_DATA.includes.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+    <p>
+      <a class="btn btn-primary" href={packPath}>Fiche produit complète →</a>{' '}
+      <a class="btn btn-secondary" href={PACK_DATA.interestIssueUrl} rel="noopener noreferrer"
+        >Liste d’attente</a
+      >
+    </p>
+  </section>
+
+  <section class="card" id="ce-que-ca-finance">
+    <h3>À quoi sert votre soutien</h3>
+    <ul>
+      <li>Serveur & TLS (<code>lmdpt.iarbre.org</code>), déploiements, backups</li>
+      <li>Imports data.gouv (présidentielles, législatives) et contrôle qualité</li>
+      <li>Outils pédagogiques : AN1T, mécanismes, atlas, débats</li>
+      <li>Temps éditorial (sources, charte DOE, relectures)</li>
+    </ul>
+    <p class="meta">
+      Nous n’acceptons pas de publicité politique ni de sponsoring partisan. Voir la{' '}
+      <a href="/charte">charte</a>.
+    </p>
+  </section>
+
+  <section class="card links-card">
+    <h3>Continuer la lecture</h3>
+    <ul>
+      <li><a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes AN1T</a> — seuils, doses, pluralité</li>
+      <li><a href="/analyses/assemblee-premier-tour">Simulateur</a></li>
+      <li><a href="/sources">Sources & licences</a></li>
+      <li><a href="/charte">Charte Democracy Over Elimination</a></li>
+    </ul>
+  </section>
+
+  <p class="meta">Page mise à jour : {updated}</p>
+
+  <style>
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      max-width: 42rem;
+    }
+    .disclaimer {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.65rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+    }
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.85rem;
+      margin: 1rem 0;
+    }
+    .tier-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 10px);
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .tier-label {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .tier-price {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    .tier-blurb {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    .tier-card .btn {
+      align-self: flex-start;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      border: 1px solid var(--border);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--on-accent) !important;
+      border-color: var(--accent);
+    }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--fg) !important;
+    }
+    .btn-lg {
+      padding: 0.55rem 1.1rem;
+      font-size: 1rem;
+    }
+    .cta-block {
+      margin: 1rem 0 0.25rem;
+    }
+    .badge-soon {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--accent-soft);
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
+    .code-block {
+      background: var(--accent-soft);
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+    }
+    .config-card h4 {
+      margin-top: 0;
+    }
+    .links-card ul {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+  </style>
+</BaseLayout>

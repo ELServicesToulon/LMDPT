@@ -105,12 +105,17 @@ const nuanceLegend = legendForNuances(nuancePaths.map((p) => p.leader)).slice(0,
 const blocLegend = AN1T_BLOCS.filter((b) => blocPaths.some((p) => p.leader === b.id));
 ---
 
-<section class="dept-map" aria-labelledby="an1t-map-title">
+<section class="dept-map" aria-labelledby="an1t-map-title" id={`an1t-comparator-${electionSlug}`}>
   <h3 id="an1t-map-title">Carte — pluralité du 1er tour (base géographique de l'AN1T)</h3>
   <p class="meta">
     Comparez la nuance en tête (détail) et le bloc civique LMDPT (agrégat). Les sièges réels de
-    l'Assemblée élue au 2nd tour ne suivent pas cette géographie — voir le comparatif chiffré
-    ci-dessus.
+    l'Assemblée élue au 2nd tour ne suivent pas cette géographie — voir le
+    <a href="#hemicycle-scale">hémicycle hybride 577 / 150</a>
+    et le comparatif chiffré.
+    {' · '}
+    <a href="/atlas/2024-legislatives/">Atlas législatives 2024</a>
+    {' · '}
+    <a href="/analyses/assemblee-premier-tour#dual-compare">T1 vs Assemblée réelle</a>.
   </p>
 
   <div class="mode-toggle" role="tablist" aria-label="Mode d'affichage de la carte">

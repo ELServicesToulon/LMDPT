@@ -13,6 +13,8 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
+import { handleAuthRoutes, resolveSessionUser } from './lib/auth/router.mjs';
+import { authEnabled, authRequired } from './lib/auth/config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = process.env.LMDPT_COMMENTS_DATA || join(__dirname, 'data');
@@ -29,16 +31,17 @@ const ROLE_LEVEL = {
   redaction: 4,
 };
 
+/** Aligné sur src/lib/comment-politics.ts — teintes 1er tour (commentaires + articles presse) */
 const HUES = [
-  { slug: 'melenchon', label: 'Mélenchon / LFI', color: '#cc2443', themes: ['insoumis', 'lfi', 'retraite 60', 'smic', 'planification', 'sixième république'] },
+  { slug: 'melenchon', label: 'Mélenchon / LFI', color: '#cc2443', themes: ['insoumis', 'lfi', 'mélenchon', 'france insoumise', 'retraite 60', 'smic', 'planification', 'sixième république'] },
   { slug: 'ruffin', label: 'Ruffin', color: '#c0392b', themes: ['ruffin', 'ouvrier', 'picardie'] },
-  { slug: 'parti-socialiste', label: 'Socialiste / social-démocrate', color: '#ff8080', themes: ['socialiste', 'ps', 'égalité', 'service public', 'glucksmann', 'hollande'] },
+  { slug: 'parti-socialiste', label: 'Socialiste / social-démocrate', color: '#ff8080', themes: ['socialiste', 'social-démocrate', 'cazeneuve', 'hollande', 'égalité', 'service public', 'glucksmann', 'primaire socialiste'] },
   { slug: 'glucksmann', label: 'Glucksmann / Place publique', color: '#e85d75', themes: ['glucksmann', 'place publique', 'europe sociale'] },
   { slug: 'roussel', label: 'Roussel / PCF', color: '#dd0000', themes: ['communiste', 'pcf', 'roussel', 'nucléaire'] },
-  { slug: 'ecolo', label: 'Écologiste', color: '#00c000', themes: ['écologie', 'climat', 'biodiversité', 'transition'] },
-  { slug: 'attal', label: 'Attal / Renaissance', color: '#ffeb00', themes: ['attal', 'renaissance', 'école', 'autorité'] },
-  { slug: 'philippe', label: 'Philippe / Horizons', color: '#0001b8', themes: ['philippe', 'horizons', 'centre'] },
-  { slug: 'barrot', label: 'Barrot / centre', color: '#ff9900', themes: ['barrot', 'modem', 'démocrates', 'europe'] },
+  { slug: 'ecolo', label: 'Écologiste', color: '#00c000', themes: ['écologie', 'climat', 'biodiversité', 'transition', 'tondelier', 'eelv'] },
+  { slug: 'attal', label: 'Attal / Renaissance', color: '#ffeb00', themes: ['attal', 'renaissance', 'macron', 'école', 'autorité', 'macronie', 'bloc central'] },
+  { slug: 'philippe', label: 'Philippe / Horizons', color: '#0001b8', themes: ['édouard philippe', 'edouard philippe', 'horizons', 'centre droit'] },
+  { slug: 'barrot', label: 'Barrot / centre', color: '#ff9900', themes: ['barrot', 'modem', 'démocrates', 'bayrou'] },
   {
     slug: 'retailleau',
     label: 'Retailleau / LR',
@@ -46,7 +49,7 @@ const HUES = [
     themes: [
       'retailleau',
       'républicains',
-      'lr',
+      'les républicains',
       'sécurité',
       'immigration',
       'prison',
@@ -55,11 +58,13 @@ const HUES = [
       'emprisonnement',
       'peine',
       'justice pénale',
+      'bertrand',
     ],
   },
-  { slug: 'lisnard', label: 'Lisnard', color: '#162561', themes: ['lisnard', 'maire', 'collectivités'] },
-  { slug: 'le-pen', label: 'Le Pen / RN', color: '#0d378a', themes: ['le pen', 'rn', 'priorité nationale', 'référendum', 'frontières'] },
-  { slug: 'bardella', label: 'Bardella / RN', color: '#0d378a', themes: ['bardella', 'rn', 'jeunesse'] },
+  { slug: 'lisnard', label: 'Lisnard', color: '#162561', themes: ['lisnard', 'maire', 'collectivités', 'nouvelle énergie'] },
+  { slug: 'le-pen', label: 'Le Pen / RN', color: '#0d378a', themes: ['le pen', 'marine le pen', 'rassemblement national', 'priorité nationale', 'référendum', 'frontières'] },
+  { slug: 'bardella', label: 'Bardella / RN', color: '#0d378a', themes: ['bardella', 'jeunesse'] },
+  { slug: 'zemmour', label: 'Zemmour / Reconquête', color: '#000080', themes: ['zemmour', 'reconquête', 'knafo', 'remigration'] },
   { slug: 'pluraliste', label: 'Pluraliste / transversal 1er tour', color: '#5a6570', themes: ['premier tour', 'pluralité', 'démocratie', 'proportionnelle', 'représentation'] },
 ];
 
@@ -149,9 +154,24 @@ function gateModeratorChief(text) {
 function ensureData() {
   mkdirSync(DATA_DIR, { recursive: true });
   const commentsPath = join(DATA_DIR, 'comments.json');
+  const tipsPath = join(DATA_DIR, 'tips.json');
   const modsPath = join(DATA_DIR, 'moderators.json');
   if (!existsSync(commentsPath)) {
     writeFileSync(commentsPath, JSON.stringify({ version: 1, comments: [] }, null, 2));
+  }
+  if (!existsSync(tipsPath)) {
+    writeFileSync(
+      tipsPath,
+      JSON.stringify(
+        {
+          version: 1,
+          tips: [],
+          note: 'Suggestions & alertes lecteurs — pending → modo → published (visible site).',
+        },
+        null,
+        2,
+      ),
+    );
   }
   if (!existsSync(modsPath)) {
     // Tokens en clair uniquement en local data (hors git) — à remplacer en prod
@@ -178,6 +198,90 @@ function saveComments(db) {
   writeFileSync(join(DATA_DIR, 'comments.json'), JSON.stringify(db, null, 2));
 }
 
+function loadTips() {
+  ensureData();
+  return JSON.parse(readFileSync(join(DATA_DIR, 'tips.json'), 'utf8'));
+}
+
+function saveTips(db) {
+  writeFileSync(join(DATA_DIR, 'tips.json'), JSON.stringify(db, null, 2));
+}
+
+const TIP_TYPES = new Set(['suggestion', 'alerte']);
+
+function publicTip(t) {
+  return {
+    id: t.id,
+    type: t.type,
+    title: t.title,
+    body: t.body,
+    sourceUrl: t.sourceUrl || null,
+    displayName: t.displayName,
+    publishedAt: t.publishedAt,
+    createdAt: t.createdAt,
+  };
+}
+
+function sanitizeTipInput(body) {
+  const type = String(body.type || 'suggestion').toLowerCase().trim();
+  if (!TIP_TYPES.has(type)) {
+    const err = new Error('Type invalide — suggestion ou alerte.');
+    err.status = 400;
+    throw err;
+  }
+  const title = String(body.title || '').trim().slice(0, 160);
+  const text = String(body.body || body.text || '').trim().slice(0, 4000);
+  const displayName = String(body.displayName || 'Lecteur·rice').trim().slice(0, 40) || 'Lecteur·rice';
+  const sourceUrlRaw = String(body.sourceUrl || '').trim().slice(0, 500);
+  let sourceUrl = null;
+  if (sourceUrlRaw) {
+    try {
+      const u = new URL(sourceUrlRaw);
+      if (u.protocol !== 'http:' && u.protocol !== 'https:') throw new Error('bad proto');
+      sourceUrl = u.toString();
+    } catch {
+      const err = new Error('URL source invalide (http/https uniquement).');
+      err.status = 400;
+      throw err;
+    }
+  }
+  if (title.length < 5) {
+    const err = new Error('Titre trop court (5 caractères min.).');
+    err.status = 400;
+    throw err;
+  }
+  if (text.length < 20) {
+    const err = new Error('Texte trop court (20 caractères min.).');
+    err.status = 400;
+    throw err;
+  }
+  const gate = gateModeratorChief(`${title}\n${text}`);
+  if (!gate.allowed) {
+    const err = new Error(gate.reason);
+    err.status = 422;
+    err.code = gate.code;
+    err.flags = gate.flags;
+    throw err;
+  }
+  // Email optionnel — stocké hors vue publique, jamais publié
+  const emailRaw = String(body.email || '').trim().toLowerCase().slice(0, 120);
+  let contactEmail = null;
+  if (emailRaw) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailRaw)) {
+      const err = new Error('Email invalide.');
+      err.status = 400;
+      throw err;
+    }
+    if (!body.consentContact) {
+      const err = new Error('Consentement requis pour laisser un email de contact.');
+      err.status = 400;
+      throw err;
+    }
+    contactEmail = emailRaw;
+  }
+  return { type, title, text, displayName, sourceUrl, contactEmail };
+}
+
 function loadMods() {
   ensureData();
   return JSON.parse(readFileSync(join(DATA_DIR, 'moderators.json'), 'utf8'));
@@ -189,32 +293,61 @@ function findMod(token) {
   return mods.accounts.find((a) => a.token === token) || null;
 }
 
-function json(res, status, body) {
-  const payload = JSON.stringify(body);
-  res.writeHead(status, {
-    'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': '*',
+function corsHeaders(extra = {}) {
+  return {
+    'Access-Control-Allow-Origin': process.env.LMDPT_CORS_ORIGIN || publicOriginHint(),
+    'Access-Control-Allow-Credentials': 'true',
     'Access-Control-Allow-Headers': 'Content-Type, X-Mod-Token, X-Author-Key',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Cache-Control': 'no-store',
-  });
+    ...extra,
+  };
+}
+
+function publicOriginHint() {
+  const u = process.env.LMDPT_PUBLIC_URL || 'https://lmdpt.iarbre.org';
+  try {
+    return new URL(u).origin;
+  } catch {
+    return 'https://lmdpt.iarbre.org';
+  }
+}
+
+function json(res, status, body, { setCookie } = {}) {
+  const payload = JSON.stringify(body);
+  const headers = {
+    'Content-Type': 'application/json; charset=utf-8',
+    ...corsHeaders(),
+  };
+  if (setCookie) headers['Set-Cookie'] = setCookie;
+  res.writeHead(status, headers);
   res.end(payload);
 }
 
-function readBody(req) {
+function readBody(req, { raw = false } = {}) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     req.on('data', (c) => chunks.push(c));
     req.on('end', () => {
       try {
-        const raw = Buffer.concat(chunks).toString('utf8');
-        resolve(raw ? JSON.parse(raw) : {});
+        const text = Buffer.concat(chunks).toString('utf8');
+        if (raw) return resolve(text);
+        if (!text) return resolve({});
+        const ct = String(req.headers['content-type'] || '');
+        if (ct.includes('application/x-www-form-urlencoded')) {
+          return resolve(Object.fromEntries(new URLSearchParams(text)));
+        }
+        resolve(JSON.parse(text));
       } catch (e) {
         reject(e);
       }
     });
     req.on('error', reject);
   });
+}
+
+function parseForm(text) {
+  return Object.fromEntries(new URLSearchParams(String(text || '')));
 }
 
 function classifyHeuristic(text) {
@@ -605,15 +738,32 @@ function authorKey(req, body) {
 
 const server = createServer(async (req, res) => {
   if (req.method === 'OPTIONS') {
-    return json(res, 204, {});
+    res.writeHead(204, corsHeaders());
+    return res.end();
   }
 
   const url = new URL(req.url || '/', `http://${HOST}:${PORT}`);
   const path = url.pathname.replace(/\/+$/, '') || '/';
 
   try {
+    const authHandled = await handleAuthRoutes(req, res, {
+      dataDir: DATA_DIR,
+      path,
+      method: req.method || 'GET',
+      readBody,
+      json,
+      parseForm,
+    });
+    if (authHandled) return;
+
     if (req.method === 'GET' && (path === '/health' || path === '/api/comments/health')) {
-      return json(res, 200, { ok: true, service: 'lmdpt-comments', ollama: OLLAMA_MODEL });
+      return json(res, 200, {
+        ok: true,
+        service: 'lmdpt-comments',
+        ollama: OLLAMA_MODEL,
+        authEnabled: authEnabled(),
+        authRequired: authRequired(),
+      });
     }
 
     if (req.method === 'GET' && path === '/api/comments/hues') {
@@ -661,6 +811,14 @@ const server = createServer(async (req, res) => {
 
     if (req.method === 'POST' && path === '/api/comments/publish') {
       const body = await readBody(req);
+      const sessionUser = resolveSessionUser(req, DATA_DIR);
+      if (authRequired() && !sessionUser) {
+        return json(res, 401, {
+          error: 'Connexion requise pour publier un commentaire.',
+          code: 'AUTH_REQUIRED',
+          loginUrl: '/connexion',
+        });
+      }
       const token = body.previewToken;
       const preview = previews.get(token);
       if (!preview || preview.expiresAt < Date.now()) {
@@ -681,13 +839,16 @@ const server = createServer(async (req, res) => {
       }
 
       const threadId = String(body.threadId || 'general').slice(0, 200);
-      const displayName = String(body.displayName || 'Citoyen·ne').slice(0, 40);
+      const displayName = String(
+        body.displayName || sessionUser?.displayNameDefault || 'Citoyen·ne',
+      ).slice(0, 40);
       const key = authorKey(req, body);
 
       const comment = {
         id: randomUUID(),
         threadId,
         displayName,
+        userId: sessionUser?.id || null,
         authorKeyHash: createHash('sha256').update(key).digest('hex').slice(0, 24),
         raw: preview.raw,
         body: finalText,
@@ -783,6 +944,111 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ok: true, comment: c });
     }
 
+    // --- Tips / suggestions & alertes lecteurs ---
+    if (req.method === 'GET' && path === '/api/comments/tips/published') {
+      const db = loadTips();
+      const typeFilter = url.searchParams.get('type');
+      let list = db.tips.filter((t) => t.status === 'published');
+      if (typeFilter && TIP_TYPES.has(typeFilter)) {
+        list = list.filter((t) => t.type === typeFilter);
+      }
+      list.sort((a, b) => new Date(b.publishedAt || b.createdAt) - new Date(a.publishedAt || a.createdAt));
+      return json(res, 200, {
+        tips: list.map(publicTip),
+        disclaimer:
+          'Signalements et suggestions de lecteurs validés par la rédaction LMDPT. Synthèse documentaire — à vérifier sur les sources officielles.',
+      });
+    }
+
+    if (req.method === 'POST' && path === '/api/comments/tips/submit') {
+      const body = await readBody(req);
+      let parsed;
+      try {
+        parsed = sanitizeTipInput(body);
+      } catch (e) {
+        return json(res, e.status || 400, {
+          error: e.message,
+          code: e.code || undefined,
+          flags: e.flags || undefined,
+        });
+      }
+      const tip = {
+        id: randomUUID(),
+        type: parsed.type,
+        title: parsed.title,
+        body: parsed.text,
+        sourceUrl: parsed.sourceUrl,
+        displayName: parsed.displayName,
+        contactEmail: parsed.contactEmail,
+        authorKeyHash: createHash('sha256').update(authorKey(req, body)).digest('hex').slice(0, 24),
+        status: 'pending',
+        createdAt: new Date().toISOString(),
+        publishedAt: null,
+        moderation: { history: [] },
+      };
+      const db = loadTips();
+      db.tips.push(tip);
+      saveTips(db);
+      return json(res, 201, {
+        id: tip.id,
+        status: tip.status,
+        message:
+          'Proposition enregistrée — elle apparaîtra sur le site uniquement après validation éditoriale.',
+      });
+    }
+
+    if (req.method === 'GET' && path === '/api/comments/mod/tips-queue') {
+      const mod = findMod(req.headers['x-mod-token']);
+      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const db = loadTips();
+      const queue = db.tips
+        .filter((t) => t.status === 'pending')
+        .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      return json(res, 200, {
+        role: mod.role,
+        queue: queue.map((t) => ({
+          ...publicTip(t),
+          status: t.status,
+          contactEmail: t.contactEmail || null,
+        })),
+      });
+    }
+
+    if (req.method === 'POST' && path === '/api/comments/mod/tips-action') {
+      const mod = findMod(req.headers['x-mod-token']);
+      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const body = await readBody(req);
+      const { tipId, action } = body;
+      const db = loadTips();
+      const t = db.tips.find((x) => x.id === tipId);
+      if (!t) return json(res, 404, { error: 'Proposition introuvable' });
+      const at = new Date().toISOString();
+      if (action === 'approve') {
+        // Re-gate avant publication site
+        const gate = gateModeratorChief(`${t.title}\n${t.body}`);
+        if (!gate.allowed) {
+          return json(res, 422, { error: gate.reason, code: gate.code, flags: gate.flags });
+        }
+        t.status = 'published';
+        t.publishedAt = at;
+      } else if (action === 'reject' || action === 'hide') {
+        t.status = 'rejected';
+      } else {
+        return json(res, 400, { error: 'action invalide (approve|reject)' });
+      }
+      t.moderation.history.push({ at, by: mod.id, role: mod.role, action });
+      saveTips(db);
+      return json(res, 200, {
+        ok: true,
+        tip: publicTip(t),
+        status: t.status,
+        message:
+          t.status === 'published'
+            ? 'Validé — visible sur /contribuer et dans le fil lecteurs.'
+            : 'Proposition rejetée.',
+      });
+    }
+
     return json(res, 404, { error: 'not found' });
   } catch (e) {
     const status = e.status || 500;
@@ -805,4 +1071,7 @@ ensureData();
 server.listen(PORT, HOST, () => {
   console.log(`lmdpt-comments listening on http://${HOST}:${PORT}`);
   console.log(`data: ${DATA_DIR}`);
+  console.log(
+    `auth: enabled=${authEnabled()} required=${authRequired()} (LMDPT_AUTH_ENABLED / LMDPT_AUTH_REQUIRED)`,
+  );
 });

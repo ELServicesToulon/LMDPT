@@ -1,0 +1,489 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
+import study from '../../data/analyses/gouvernance-an1t-droit.json';
+import { buildScrutinDual } from '../../lib/scrutin-dual';
+
+const dual2017 = buildScrutinDual('2017-presidentielle');
+const dual2022 = buildScrutinDual('2022-presidentielle');
+const dual2024 = buildScrutinDual('2024-legislatives');
+
+const updated = new Date(study.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<BaseLayout
+  title={study.title}
+  description="Chemins de droit pour une Assemblée 100 % 1er tour ou une dose proportionnelle ; études de cas 2017–2022–2024 ; gouvernance non bloquée sans 49.3 ni décrets de contournement. Synthèse documentaire DOE."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Droit électoral & gouvernance AN1T
+  </nav>
+
+  <header class="hero-study">
+    <p class="eyebrow">Fil directeur · droit · cas pratiques</p>
+    <h2>{study.title}</h2>
+    <p class="lead">{study.disclaimer}</p>
+    <p class="meta">Mise à jour <time datetime={study.updated}>{updated}</time></p>
+  </header>
+
+  <section class="card" id="sommaire">
+    <h3>Sommaire</h3>
+    <ol class="toc">
+      <li><a href="#corpus">1. Corpus juridique (textes de droit)</a></li>
+      <li><a href="#chemins">2. Chemins pour appliquer une nouvelle Assemblée</a></li>
+      <li><a href="#scenarios">3. Scénarios 100 % / doses — avantages & inconvénients</a></li>
+      <li><a href="#cas">4. Études de cas (2017, 2022, 2024)</a></li>
+      <li><a href="#gouvernance">5. Gouvernance non bloquée (sans 49.3 ni décrets)</a></li>
+      <li><a href="#checklist">6. Checklist opérateur</a></li>
+    </ol>
+  </section>
+
+  <!-- 1. CORPUS -->
+  <section class="card" id="corpus">
+    <h3>1. Corpus juridique du processus électoral</h3>
+    <p>
+      Textes de référence pour comprendre <strong>où</strong> se décide le mode de scrutin et
+      <strong>comment</strong> le changer. Toujours vérifier la version consolidée sur Légifrance /
+      Conseil constitutionnel.
+    </p>
+    <div class="corpus-list">
+      {
+        study.corpus_juridique.map((t) => (
+          <article class="corpus-item">
+            <h4>
+              <a href={t.url} rel="noopener noreferrer">{t.label}</a>
+            </h4>
+            <p class="extrait">{t.extrait}</p>
+            <p class="meta"><strong>Rôle :</strong> {t.role}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- 2. CHEMINS -->
+  <section class="card" id="chemins">
+    <h3>2. Chemins pour appliquer une Assemblée 100 % 1er tour ou une dose</h3>
+    <p class="meta">
+      Du plus accessible (loi) au plus lourd (révision). Le fil directeur LMDPT recommande de commencer
+      par la <strong>voie A</strong> (dose) ou <strong>B</strong> (100 % T1), et de traiter la
+      gouvernance anti-blocage en <strong>voie C</strong> si l’Assemblée devient multipolaire.
+    </p>
+    {
+      study.chemins_application.map((v) => (
+        <article class="voie">
+          <h4>{v.titre}</h4>
+          <p class="meta">
+            Niveau : <strong>{v.niveau}</strong> · Temps indicatif : {v.temps_indicatif}
+          </p>
+          <h5>Contenu type</h5>
+          <ul>
+            {v.contenu_type.map((c) => (
+              <li>{c}</li>
+            ))}
+          </ul>
+          <h5>Procédure</h5>
+          <ol>
+            {v.procedure.map((p) => (
+              <li>{p}</li>
+            ))}
+          </ol>
+          <p>
+            <strong>Constitutionnel :</strong> {v.constitutionnel}
+          </p>
+          <h5>Risques</h5>
+          <ul>
+            {v.risques.map((r) => (
+              <li>{r}</li>
+            ))}
+          </ul>
+          <p class="meta">{v.lien_fil_directeur}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <!-- 3. SCENARIOS -->
+  <section class="card" id="scenarios">
+    <h3>3. Scénarios de représentation — avantages & inconvénients</h3>
+    <div class="scenarios-grid">
+      {
+        study.scenarios_representation.map((s) => (
+          <article class="scenario">
+            <h4>
+              {s.label}
+              <span class="dose">dose {s.dose_pct} %</span>
+            </h4>
+            <p>{s.description}</p>
+            <h5>Avantages</h5>
+            <ul class="pros">
+              {s.avantages.map((a) => (
+                <li>{a}</li>
+              ))}
+            </ul>
+            <h5>Inconvénients</h5>
+            <ul class="cons">
+              {s.inconvenients.map((a) => (
+                <li>{a}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- 4. CAS -->
+  <section class="card" id="cas">
+    <h3>4. Études de cas — scrutins passés</h3>
+    <p>
+      Pour chaque présidentielle : <strong>Assemblée du 1er tour</strong> (Sainte-Laguë LMDPT) vs
+      <strong>Assemblée réelle des législatives qui ont suivi</strong>. Voir aussi l’atlas.
+    </p>
+
+    {
+      dual2017 && (
+        <div class="cas-block">
+          <h4 id="cas-2017">2017 — présidentielle → législatives</h4>
+          <p>{study.etudes_de_cas.find((c) => c.id === 'cas-2017')?.constat}</p>
+          <DualAssembleeCompare
+            firstRoundAlloc={dual2017.firstRound}
+            realAlloc={dual2017.real}
+            totalSeats={dual2017.totalSeats}
+            t1Label={dual2017.t1Label}
+            t2Label={dual2017.realLabel}
+            firstRoundTitle={dual2017.firstRoundTitle}
+            realTitle={dual2017.realTitle}
+            firstRoundMeta={dual2017.firstRoundMeta}
+            realMeta={dual2017.realMeta}
+            realPending={dual2017.realPending}
+            differential={dual2017.differential}
+          />
+          <div class="cas-grid">
+            <div>
+              <h5>Si statu quo (ce qui s’est passé)</h5>
+              <ul>
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2017')
+                  ?.avantages_statu_quo_vu_gouvernance.map((x) => <li class="pro-item">{x}</li>)}
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2017')
+                  ?.inconvenients_statu_quo.map((x) => <li class="con-item">{x}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h5>Si Assemblée 100 % 1er tour</h5>
+              <p>
+                <strong>Gouvernance :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2017')?.si_an1t_100.gouvernance}
+              </p>
+              <p>
+                <strong>Avantage :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2017')?.si_an1t_100.avantage}
+              </p>
+              <p>
+                <strong>Risque :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2017')?.si_an1t_100.risque}
+              </p>
+            </div>
+          </div>
+          <p class="meta">
+            <a href="/atlas/2017-presidentielle">Ouvrir le cas 2017 dans l’atlas →</a>
+          </p>
+        </div>
+      )
+    }
+
+    {
+      dual2022 && (
+        <div class="cas-block">
+          <h4 id="cas-2022">2022 — présidentielle → législatives</h4>
+          <p>{study.etudes_de_cas.find((c) => c.id === 'cas-2022')?.constat}</p>
+          <DualAssembleeCompare
+            firstRoundAlloc={dual2022.firstRound}
+            realAlloc={dual2022.real}
+            totalSeats={dual2022.totalSeats}
+            t1Label={dual2022.t1Label}
+            t2Label={dual2022.realLabel}
+            firstRoundTitle={dual2022.firstRoundTitle}
+            realTitle={dual2022.realTitle}
+            firstRoundMeta={dual2022.firstRoundMeta}
+            realMeta={dual2022.realMeta}
+            realPending={dual2022.realPending}
+            differential={dual2022.differential}
+          />
+          <div class="cas-grid">
+            <div>
+              <h5>Si statu quo</h5>
+              <ul>
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2022')
+                  ?.avantages_statu_quo_vu_gouvernance.map((x) => <li class="pro-item">{x}</li>)}
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2022')
+                  ?.inconvenients_statu_quo.map((x) => <li class="con-item">{x}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h5>Si Assemblée 100 % 1er tour</h5>
+              <p>
+                <strong>Gouvernance :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2022')?.si_an1t_100.gouvernance}
+              </p>
+              <p>
+                <strong>Avantage :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2022')?.si_an1t_100.avantage}
+              </p>
+              <p>
+                <strong>Risque :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2022')?.si_an1t_100.risque}
+              </p>
+            </div>
+          </div>
+          <p class="meta">
+            <a href="/atlas/2022-presidentielle">Ouvrir le cas 2022 dans l’atlas →</a>
+          </p>
+        </div>
+      )
+    }
+
+    {
+      dual2024 && (
+        <div class="cas-block">
+          <h4 id="cas-2024">2024 — législatives (T1 → T2)</h4>
+          <p>{study.etudes_de_cas.find((c) => c.id === 'cas-2024')?.constat}</p>
+          <DualAssembleeCompare
+            firstRoundAlloc={dual2024.firstRound}
+            realAlloc={dual2024.real}
+            totalSeats={dual2024.totalSeats}
+            t1Label={dual2024.t1Label}
+            t2Label={dual2024.realLabel}
+            firstRoundTitle={dual2024.firstRoundTitle}
+            realTitle={dual2024.realTitle}
+            firstRoundMeta={dual2024.firstRoundMeta}
+            realMeta={dual2024.realMeta}
+            realPending={dual2024.realPending}
+            differential={dual2024.differential}
+          />
+          <div class="cas-grid">
+            <div>
+              <h5>Si statu quo</h5>
+              <ul>
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2024')
+                  ?.avantages_statu_quo_vu_gouvernance.map((x) => <li class="pro-item">{x}</li>)}
+                {study.etudes_de_cas
+                  .find((c) => c.id === 'cas-2024')
+                  ?.inconvenients_statu_quo.map((x) => <li class="con-item">{x}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h5>Si Assemblée 100 % 1er tour</h5>
+              <p>
+                <strong>Gouvernance :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2024')?.si_an1t_100.gouvernance}
+              </p>
+              <p>
+                <strong>Avantage :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2024')?.si_an1t_100.avantage}
+              </p>
+              <p>
+                <strong>Risque :</strong>{' '}
+                {study.etudes_de_cas.find((c) => c.id === 'cas-2024')?.si_an1t_100.risque}
+              </p>
+            </div>
+          </div>
+          <p class="meta">
+            <a href="/atlas/2024-legislatives">Ouvrir le cas 2024 dans l’atlas →</a>
+          </p>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- 5. GOUVERNANCE -->
+  <section class="card" id="gouvernance">
+    <h3>5. Système de gouvernance non bloqué (éviter décrets & 49.3)</h3>
+    <p>
+      <strong>Objectif :</strong> {study.gouvernance_non_bloquee.objectif}
+    </p>
+    <h4>Principes</h4>
+    <ul>
+      {study.gouvernance_non_bloquee.principes.map((p) => <li>{p}</li>)}
+    </ul>
+    <h4>Leviers sans 49.3 permanent</h4>
+    <div class="leviers">
+      {
+        study.gouvernance_non_bloquee.leviers_sans_49_3.map((l) => (
+          <article class="levier">
+            <h5>{l.titre}</h5>
+            <p>{l.description}</p>
+            <p class="meta">Niveau juridique : {l.niveau}</p>
+          </article>
+        ))
+      }
+    </div>
+    <h4>Ce que l’on évite</h4>
+    <ul class="avoid">
+      {study.gouvernance_non_bloquee.ce_que_lon_evite.map((x) => <li>{x}</li>)}
+    </ul>
+    <h4>{study.gouvernance_non_bloquee.architecture_proposee_lmdpt.nom}</h4>
+    <ol>
+      {study.gouvernance_non_bloquee.architecture_proposee_lmdpt.etapes.map((e) => <li>{e}</li>)}
+    </ol>
+  </section>
+
+  <!-- 6. CHECKLIST -->
+  <section class="card" id="checklist">
+    <h3>6. Checklist — chemin d’application</h3>
+    <ol class="checklist">
+      {study.checklist_operateurs.map((c) => <li>{c}</li>)}
+    </ol>
+  </section>
+
+  <section class="card">
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        study.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer">{study.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-study {
+    margin-bottom: 1.25rem;
+  }
+  .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .toc {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+  }
+  .corpus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+  }
+  .corpus-item {
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: 8px;
+    background: var(--bg, #faf9f7);
+  }
+  .corpus-item h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+  }
+  .extrait {
+    margin: 0 0 0.35rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .voie {
+    margin: 1.1rem 0;
+    padding: 0.85rem 0 0.25rem;
+    border-top: 1px solid var(--border, #e5e2dc);
+  }
+  .voie h4 {
+    margin: 0 0 0.35rem;
+  }
+  .voie h5 {
+    margin: 0.65rem 0 0.25rem;
+    font-size: 0.92rem;
+  }
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+  }
+  .scenario {
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: 8px;
+    padding: 0.75rem 0.85rem;
+  }
+  .scenario h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.98rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  .dose {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    background: #e8f0fe;
+    color: #1a3a6b;
+  }
+  .scenario h5 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 0.85rem;
+  }
+  .pros li {
+    color: #1a5c32;
+  }
+  .cons li {
+    color: #8a2222;
+  }
+  .cas-block {
+    margin: 1.5rem 0 2rem;
+  }
+  .cas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  @media (max-width: 720px) {
+    .cas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .pro-item {
+    color: #1a5c32;
+  }
+  .con-item {
+    color: #8a2222;
+  }
+  .leviers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin: 0.75rem 0 1rem;
+  }
+  .levier {
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: 8px;
+    padding: 0.7rem 0.8rem;
+    background: var(--bg, #faf9f7);
+  }
+  .levier h5 {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+  }
+  .avoid li {
+    color: #8a2222;
+  }
+  .checklist {
+    line-height: 1.65;
+  }
+  .disclaimer {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+  }
+</style>

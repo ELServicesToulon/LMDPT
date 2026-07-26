@@ -2,6 +2,7 @@
 interface Props {
   rows: Array<{
     themeLabel: string;
+    subtheme?: string;
     measureLabel: string;
     byCandidate: Record<string, string | null>;
     chiffrageSpreadMdeur: number | null;
@@ -11,13 +12,18 @@ interface Props {
 }
 
 const { rows, slugs, names } = Astro.props;
+const showSubtheme = rows.some((r) => Boolean(r.subtheme));
 ---
 
-<div class="table-wrap">
+<div class="table-wrap" role="region" aria-label="Tableau différentiel des mesures" tabindex="0">
   <table class="prog-table">
+    <caption class="visually-hidden">
+      Comparaison des mesures par thème entre {slugs.map((s) => names[s] ?? s).join(', ')}
+    </caption>
     <thead>
       <tr>
         <th scope="col">Thème</th>
+        {showSubtheme && <th scope="col">Sous-thème</th>}
         <th scope="col">Mesure</th>
         {slugs.map((slug) => (
           <th scope="col">{names[slug] ?? slug}</th>
@@ -26,20 +32,29 @@ const { rows, slugs, names } = Astro.props;
       </tr>
     </thead>
     <tbody>
-      {rows.map((row) => (
+      {rows.length === 0 ? (
         <tr>
-          <td>{row.themeLabel}</td>
-          <td>{row.measureLabel}</td>
-          {slugs.map((slug) => (
-            <td>{row.byCandidate[slug] ?? '—'}</td>
-          ))}
-          <td>
-            {row.chiffrageSpreadMdeur != null
-              ? `${row.chiffrageSpreadMdeur.toLocaleString('fr-FR')} Md€`
-              : '—'}
+          <td colspan={3 + slugs.length + (showSubtheme ? 1 : 0)}>
+            Aucune mesure pour ce filtre.
           </td>
         </tr>
-      ))}
+      ) : (
+        rows.map((row) => (
+          <tr>
+            <td>{row.themeLabel}</td>
+            {showSubtheme && <td>{row.subtheme || '—'}</td>}
+            <td>{row.measureLabel}</td>
+            {slugs.map((slug) => (
+              <td>{row.byCandidate[slug] ?? '—'}</td>
+            ))}
+            <td>
+              {row.chiffrageSpreadMdeur != null
+                ? `${row.chiffrageSpreadMdeur.toLocaleString('fr-FR')} Md€`
+                : '—'}
+            </td>
+          </tr>
+        ))
+      )}
     </tbody>
   </table>
 </div>
@@ -65,5 +80,20 @@ const { rows, slugs, names } = Astro.props;
   .prog-table th {
     background: var(--card);
     font-weight: 600;
+  }
+  .table-wrap:focus-visible {
+    outline: 2px solid var(--accent, #1e4d6b);
+    outline-offset: 2px;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 </style>

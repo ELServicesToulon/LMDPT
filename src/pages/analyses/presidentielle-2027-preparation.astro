@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import analysis from '../../data/analyses/presidentielle-2027-preparation.json';
 import renifleur from '../../data/renifleur/latest.json';
 import { getVeille2027, PROGRAM_STATUS_LABELS } from '../../lib/programs';
+import { partyLogoForAffiliation, partyLogoSrc } from '../../lib/party-logos';
+import { formatXHandle, xForAffiliation, xForCandidateName } from '../../lib/x-officiels';
+import { ensureItemPoliticalHue, type RenifleurItem } from '../../lib/renifleur';
 
 const veilleProgrammes = getVeille2027();
 
@@ -43,36 +46,121 @@ const renifleurUpdated = renifleur.fetched_at
 ---
 
 <BaseLayout
-  title="Présidentielle 2027 — préparation"
-  description="Dossier de préparation — calendrier officialisé, veille factuelle et feuille de route pour documenter le premier tour 2027."
+  title="Présidentielle 2027 — 18 avril, le prochain miroir"
+  description="1er tour le 18 avril 2027. Calendrier officiel, veille factuelle, atlas et AN1T — zéro prédiction, zéro favori. Democracy Over Elimination."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a> → Présidentielle 2027
   </nav>
 
   <section>
-    <p class="eyebrow">Dossier en préparation</p>
+    <p class="eyebrow">Dossier vivant · 1er tour 18 avril 2027</p>
     <h2>{analysis.title}</h2>
 
     <img 
       src="/illustrations/2027/dessin-urne-2027.jpg" 
-      alt="Dessin ligne claire : urne transparente du Premier Tour 2027 avec miroir reflétant la France — illustration civique" 
+      alt="Croquis humoristique style X : urne transparente du 1er tour et miroir de la France — illustration civique laïque" 
       style="width:100%; max-height: 380px; object-fit: cover; border-radius: 10px; margin: 0.75rem 0 1rem; border: 1px solid var(--border);"
+      loading="eager"
+      decoding="async"
     />
 
     <p>
-      Ce dossier recense les <strong>sources officielles</strong> et la feuille de route éditoriale
-      pour couvrir le premier tour de la présidentielle 2027 selon la ligne Democracy Over
-      Elimination. Aucun résultat ni liste officielle de candidats n'est publié ici avant
-      publication par le Conseil constitutionnel.
+      <strong>18 avril 2027</strong> : prochain miroir du pays. Ici : sources officielles,
+      calendrier, veille — <em>pas</em> de liste de candidats avant le Conseil constitutionnel,
+      <em>pas</em> de pronostic.
     </p>
+
+    <!-- 3 piliers (P15-1 / P8-7) — focus 2027 -->
+    <div class="piliers-2027" role="list" aria-label="Trois piliers appliqués au dossier 2027">
+      <a class="pilier-2027" role="listitem" href="/sources">
+        <span class="p-kicker">Pilier 1</span>
+        <strong>Sécurité &amp; faits</strong>
+        <span class="p-desc">Calendrier officiel, data.gouv, licences — zéro prédiction.</span>
+      </a>
+      <a class="pilier-2027" role="listitem" href="/atlas/2027-presidentielle">
+        <span class="p-kicker">Pilier 2</span>
+        <strong>Pluralité réelle</strong>
+        <span class="p-desc">Atlas 2027 + AN1T : spectre complet du 1er tour, pas le duel.</span>
+      </a>
+      <a class="pilier-2027" role="listitem" href="/charte">
+        <span class="p-kicker">Pilier 3</span>
+        <strong>Democracy Over Elimination</strong>
+        <span class="p-desc">Pas de tier list, pas de favori — vote pour, pas contre.</span>
+      </a>
+    </div>
+    <p class="meta" role="note">
+      <strong>Disclaimer :</strong> toute projection 2027 (atlas, simulateur) est
+      <em>pédagogique uniquement</em> — pas un pronostic électoral.
+    </p>
+
     <p>
       <strong>Nouveau :</strong> <a href="/atlas/2027-presidentielle">Atlas Présidentielle 2027</a> — placeholder national avec projection de pluralité 1er tour + lien vers scénarios AN1T (en attendant données réelles).
+    </p>
+    <p>
+      <strong>Déclarations X :</strong>
+      <a href="/analyses/declarations-x-candidats">fil chronologique</a>
+      des posts publics des comptes officiels candidats (registre X + collecte auto).
     </p>
     <p class="meta">
       Dernière mise à jour : <time datetime={analysis.updated}>{updated}</time>
     </p>
   </section>
+
+  <style>
+    .piliers-2027 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      margin: 1rem 0 0.75rem;
+    }
+    @media (min-width: 700px) {
+      .piliers-2027 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .pilier-2027 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 10px);
+      background: var(--card);
+      text-decoration: none;
+      color: var(--fg);
+      border-top: 3px solid var(--accent);
+      min-height: 6rem;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pilier-2027:nth-child(1) { border-top-color: #1d4ed8; }
+    .pilier-2027:nth-child(2) { border-top-color: #059669; }
+    .pilier-2027:nth-child(3) { border-top-color: var(--accent, #c2410c); }
+    .pilier-2027:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 16px -6px rgb(0 0 0 / 0.12);
+    }
+    .pilier-2027:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .pilier-2027 .p-kicker {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pilier-2027 strong {
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+    .pilier-2027 .p-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+  </style>
 
   <section class="card">
     <h3>{calendarTitle}</h3>
@@ -112,8 +200,11 @@ const renifleurUpdated = renifleur.fetched_at
     }
   </section>
 
-  <section class="card">
+  <section class="card" id="veille">
     <h3>Veille factuelle</h3>
+    <p class="meta">
+      <a href="/analyses/alerte-citoyenne">Alerte citoyenne — débat public (11 points FR/UE) →</a>
+    </p>
     <ul class="veille-list">
       {
         analysis.veille.map((item) => (
@@ -146,18 +237,39 @@ const renifleurUpdated = renifleur.fetched_at
         }
         <ul class="renifleur-list">
           {
-            renifleur.items.map((item) => (
-              <li>
-                <time datetime={item.published}>
-                  {new Date(item.published).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-                </time>
-                —{' '}
-                <a href={item.url} rel="noopener noreferrer">
-                  {item.title}
-                </a>
-                <span class="meta"> ({item.source_label})</span>
-              </li>
-            ))
+            renifleur.items.map((raw) => {
+              const item = ensureItemPoliticalHue(raw as RenifleurItem);
+              const hue = item.politicalHue;
+              return (
+                <li
+                  class="renifleur-item"
+                  style={hue ? `border-left: 3px solid ${hue.color}` : undefined}
+                  data-hue={hue?.slug}
+                >
+                  <div class="renifleur-item-meta">
+                    <time datetime={item.published}>
+                      {new Date(item.published).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+                    </time>
+                    <span class="meta"> · {item.source_label}</span>
+                    {
+                      hue && (
+                        <span
+                          class="renifleur-hue"
+                          style={`--hue: ${hue.color}`}
+                          title={hue.rationale}
+                        >
+                          <span class="renifleur-hue-swatch" aria-hidden="true"></span>
+                          {hue.label}
+                        </span>
+                      )
+                    }
+                  </div>
+                  <a href={item.url} rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })
           }
         </ul>
       </section>
@@ -172,24 +284,60 @@ const renifleurUpdated = renifleur.fetched_at
         <tr>
           <th scope="col">Personnalité</th>
           <th scope="col">Étiquette</th>
+          <th scope="col">X (officiel)</th>
           <th scope="col">Statut documenté</th>
           <th scope="col">Source</th>
         </tr>
       </thead>
       <tbody>
         {
-          sortedCandidatures.map((entry) => (
-            <tr>
-              <td>{entry.name}</td>
-              <td>{entry.affiliation}</td>
-              <td>{statusLabels[entry.status] ?? entry.status}</td>
-              <td>
-                <a href={entry.source_url} rel="noopener noreferrer">
-                  {entry.source_label}
-                </a>
-              </td>
-            </tr>
-          ))
+          sortedCandidatures.map((entry) => {
+            const party = partyLogoForAffiliation(entry.affiliation);
+            const xCand = xForCandidateName(entry.name);
+            const xParty = xForAffiliation(entry.affiliation);
+            return (
+              <tr>
+                <td>{entry.name}</td>
+                <td>
+                  <span class="party-logo-row">
+                    <img
+                      class="party-logo"
+                      src={partyLogoSrc(party)}
+                      alt=""
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span>{entry.affiliation}</span>
+                  </span>
+                </td>
+                <td>
+                  {xCand?.url ? (
+                    <a href={xCand.url} rel="noopener noreferrer">
+                      {formatXHandle(xCand.handle)}
+                    </a>
+                  ) : (
+                    <span class="meta">—</span>
+                  )}
+                  {xParty?.url && (
+                    <>
+                      {' · '}
+                      <a href={xParty.url} rel="noopener noreferrer" title={xParty.label}>
+                        parti
+                      </a>
+                    </>
+                  )}
+                </td>
+                <td>{statusLabels[entry.status] ?? entry.status}</td>
+                <td>
+                  <a href={entry.source_url} rel="noopener noreferrer">
+                    {entry.source_label}
+                  </a>
+                </td>
+              </tr>
+            );
+          })
         }
       </tbody>
     </table>
@@ -281,16 +429,18 @@ const renifleurUpdated = renifleur.fetched_at
   </section>
 
   <section class="card">
-    
-    <h3>Visuels 2027 — à partager</h3>
-    <p class="meta">Illustrations et mèmes pour accompagner la couverture du premier tour.</p>
+    <h3>Croquis X 2027 — à partager</h3>
+    <p class="meta">
+      Croquis humoristiques style X (encre + aquarelle) pour accompagner la couverture du premier tour —
+      légers sur les mécanismes, jamais sur les personnes.
+    </p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-top: 0.5rem;">
-      <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Mème Le 1er Tour ne ment pas — illustration civique" style="width:100%; border-radius:6px;" />
-      <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Toutes les voix comptent — illustration civique" style="width:100%; border-radius:6px;" />
-      <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Democracy Over Elimination — illustration civique" style="width:100%; border-radius:6px;" />
+      <img src="/illustrations/2027/meme-1er-tour-ne-ment-pas.jpg" alt="Croquis mème : Le 1er tour ne ment pas" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
+      <img src="/illustrations/2027/illustration-voix-egales.jpg" alt="Croquis : toutes les voix égales au 1er tour" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
+      <img src="/illustrations/2027/democracy-over-elimination.jpg" alt="Croquis : Democracy Over Elimination" style="width:100%; border-radius:6px;" loading="lazy" decoding="async" />
     </div>
     <p class="meta" style="margin-top:0.6rem;">
-      <a href="/">Voir tous les visuels &amp; l’animation sur l’accueil →</a>
+      <a href="/#visuels-2027">Voir tous les croquis &amp; l’animation sur l’accueil →</a>
     </p>
   </section>
 
@@ -348,12 +498,74 @@ const renifleurUpdated = renifleur.fetched_at
   .veille-list li + li {
     margin-top: 0.65rem;
   }
+  .renifleur-hue-note {
+    margin: 0 0 0.75rem;
+    font-size: 0.84rem;
+  }
   .renifleur-list {
     margin: 0;
-    padding-left: 1.25rem;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.65rem;
   }
-  .renifleur-list li + li {
-    margin-top: 0.55rem;
+  .renifleur-item {
+    padding: 0.55rem 0.65rem 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  .renifleur-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.4rem;
+    margin-bottom: 0.25rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+  }
+  .renifleur-hue {
+    --hue: #5a6570;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.12rem 0.45rem 0.12rem 0.3rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--hue) 16%, var(--card));
+    border: 1px solid color-mix(in srgb, var(--hue) 40%, var(--border));
+    color: var(--fg);
+  }
+  .renifleur-hue-swatch {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: var(--hue);
+    border: 1px solid color-mix(in srgb, var(--hue) 35%, #000);
+    flex-shrink: 0;
+  }
+  .renifleur-item a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .renifleur-item a:hover {
+    color: var(--accent);
+  }
+  .party-logo-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .party-logo {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: cover;
+    border: 1px solid var(--border, #ddd);
+    background: var(--bg, #fff);
   }
   .candidatures-table {
     width: 100%;

@@ -12,7 +12,7 @@
     "status": "partial"
   },
   "evolution_from": "presidentielle-2017",
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "brun-2027-institutions-primaire-ps",
@@ -22,7 +22,8 @@
       "status": "nouveau",
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
       "source_label": "Le Monde — 30 juin 2026",
-      "as_of": "2026-06"
+      "as_of": "2026-06",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "brun-2027-pouvoir-achat-salaires",
@@ -32,7 +33,8 @@
       "status": "nouveau",
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
       "source_label": "Le Monde — 30 juin 2026",
-      "as_of": "2026-06"
+      "as_of": "2026-06",
+      "subtheme": "Salaires"
     },
     {
       "id": "brun-2027-institutions-vivre-libre",
@@ -42,7 +44,50 @@
       "status": "maintenu",
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/26/presidentielle-2027-les-militants-socialistes-approuvent-largement-le-projet-du-parti_6715917_823448.html",
       "source_label": "Le Monde — 26 juin 2026",
-      "as_of": "2026-06"
+      "as_of": "2026-06",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "brun-2027-via-ps-smic",
+      "theme": "pouvoir_achat",
+      "label": "SMIC à environ 1 700 € net (via projet PS « Vivre libre »)",
+      "detail": "Héritage explicite du projet collectif PS — Brun ne publie pas de programme distinct.",
+      "status": "maintenu",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026 (projet PS)",
+      "as_of": "2026-06",
+      "subtheme": "Salaires"
+    },
+    {
+      "id": "brun-2027-via-ps-retraites-62",
+      "theme": "retraites",
+      "label": "Âge légal à 62 ans — répartition (via projet PS)",
+      "detail": "Mesure du projet « Vivre libre » reprise comme référentiel de campagne primaire.",
+      "status": "maintenu",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026 (projet PS)",
+      "as_of": "2026-06",
+      "subtheme": "Âge légal"
+    },
+    {
+      "id": "brun-2027-via-ps-zucman",
+      "theme": "fiscalite",
+      "label": "Taxe Zucman 2 % patrimoines > 100 M€ (via projet PS)",
+      "status": "maintenu",
+      "source_url": "https://www.franceinfo.fr/politique/ps/hausse-des-salaires-retraite-a-62-ans-le-parti-socialiste-presente-son-projet-a-moins-d-un-an-de-la-presidentielle_7956644.html",
+      "source_label": "franceinfo — 26 juin 2026 (projet PS)",
+      "as_of": "2026-06",
+      "subtheme": "TVA & impôts"
+    },
+    {
+      "id": "brun-2027-via-ps-climat",
+      "theme": "climat",
+      "label": "Transition écologique et planification (via projet PS)",
+      "status": "maintenu",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-au-ps-un-projet-pas-encore-finalise-mais-deja-debattu-2227929",
+      "source_label": "Les Echos — juin 2026 (projet PS)",
+      "as_of": "2026-06",
+      "subtheme": "Transition"
     }
   ],
   "chiffrages": []

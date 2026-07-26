@@ -8,15 +8,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 2 juillet 2026</p>
+    <p class="meta">Dernière mise à jour : 26 juillet 2026</p>
   </section>
 
   <section class="card">
     <h3>Données collectées</h3>
     <p>
-      Ce site est principalement un site statique (HTML/CSS/JS). Il ne propose pas de compte
-      utilisateur propre ni de newsletter. <strong>Aucune donnée personnelle n'est collectée</strong> par
-      l'éditeur lors d'une visite normale des pages Atlas, Analyses ou Sources.
+      Ce site est principalement un site statique (HTML/CSS/JS). Lors d’une visite normale des pages
+      Atlas, Analyses ou Sources <strong>sans compte</strong>, aucune donnée personnelle n’est
+      collectée par l’éditeur (hors logs techniques d’hébergement).
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Compte lecteur (connexion Google, X, Apple, email)</h3>
+    <p>
+      L’espace <a href="/connexion">Connexion</a> permet de s’identifier pour
+      <strong>publier un commentaire citoyen</strong>. Providers : Google, X (Twitter), Apple, ou
+      lien magique email. Sous-traitants techniques d’authentification : les fournisseurs d’identité
+      choisis. LMDPT stocke un identifiant technique, les providers liés, un pseudonyme, et (si
+      fourni) un email <strong>non public</strong>. Cookie de session HttpOnly
+      (<code>lmdpt_session</code>), durée max. 30 jours.
+    </p>
+    <p>
+      Base légale : intérêt légitime (modération et intégrité des commentaires) et/ou consentement
+      (création de compte). Finalité : authentifier l’auteur d’un commentaire ; pas de publicité, pas
+      de revente. La teinte politique affichée sur un message n’est <strong>pas</strong> une
+      adhésion partisane de compte.
+    </p>
+    <p>
+      Droits d’accès / effacement : via
+      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer"
+        >issue GitHub</a
+      >
+      ou contact rédaction, en indiquant le pseudonyme et le provider utilisé. Voir aussi
+      <a href="/docs" hidden></a><code>docs/AUTH.md</code> côté dépôt.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Suggestions &amp; alertes lecteurs (<a href="/contribuer">/contribuer</a>)</h3>
+    <p>
+      L’espace Contribuer et le formulaire de retour en pied de page permettent d’envoyer une
+      <strong>suggestion</strong> ou une <strong>alerte</strong>. Les données traitées : titre, texte,
+      pseudonyme, lien source optionnel, et <strong>email optionnel</strong> uniquement si vous
+      cochez le consentement de contact. L’email n’est <strong>jamais publié</strong> sur le site.
+    </p>
+    <p>
+      Base légale : intérêt légitime éditorial (art. 6.1.f RGPD) pour la modération de contenus
+      publics, et consentement pour l’email de contact. Finalité : file d’attente rédactionnelle ;
+      publication sur le site uniquement après validation humaine. Durée : propositions rejetées
+      purgées périodiquement ; publiées conservées tant que visibles.
+    </p>
+    <p>
+      Droit d’accès / effacement :{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
+        ouvrir une issue GitHub
+      </a>
+      en précisant le pseudonyme et la date approximative.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Commentaires citoyens (module pages)</h3>
+    <p>
+      Le module commentaires utilise l’API locale LMDPT (<code>/api/comments</code>) : texte,
+      pseudonyme, teinte politique calculée, file modération. La publication nécessite une
+      <a href="/connexion">connexion</a> lorsque l’auth est activée en production. Lecture publique
+      sans compte.
     </p>
   </section>
 
@@ -43,8 +102,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="card">
     <h3>Cookies et traceurs</h3>
     <p>
-      LMDPT ne dépose pas de cookies analytics ou publicitaires. L'hébergeur
-      (GitHub Pages / OVH) peut enregistrer des logs techniques côté serveur (adresses IP, horodatage).
+      LMDPT ne dépose pas de cookies analytics ou publicitaires. Cookie de session
+      <code>lmdpt_session</code> uniquement si vous vous connectez (HttpOnly, Secure en HTTPS).
+      L'hébergeur (OVH / reverse-proxy) peut enregistrer des logs techniques (adresses IP, horodatage).
       Le widget Giscus (rubrique Débats) est soumis à la politique GitHub ci-dessus.
     </p>
   </section>

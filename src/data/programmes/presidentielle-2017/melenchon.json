@@ -1,69 +1,81 @@
 {
   "scrutin": "presidentielle-2017",
-  "candidate": { "name": "Jean-Luc Mélenchon", "slug": "melenchon", "affiliation": "La France insoumise" },
+  "candidate": {
+    "name": "Jean-Luc Mélenchon",
+    "slug": "melenchon",
+    "affiliation": "La France insoumise"
+  },
   "program": {
     "published_at": "2017-02-16",
     "document_url": "https://laec.fr/",
     "document_label": "L'Avenir en commun — programme LFI 2017",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "melenchon-2017-retraites-60",
       "theme": "retraites",
       "label": "Retraite à 60 ans",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Âge légal"
     },
     {
       "id": "melenchon-2017-climat-sortie-nucleaire",
       "theme": "climat",
       "label": "Sortie progressive du nucléaire",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Transition"
     },
     {
       "id": "melenchon-2017-fiscalite-14-tranches",
       "theme": "fiscalite",
       "label": "14 tranches d'impôt sur le revenu",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "melenchon-2017-europe-plan-b",
       "theme": "europe",
       "label": "Plan A / plan B sur l'Europe",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "melenchon-2017-institutions-6e-republique",
       "theme": "institutions",
       "label": "VIe République",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "melenchon-2017-sante-gratuite",
       "theme": "sante",
       "label": "Sécurité sociale intégrale et gratuité des soins",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Accès aux soins"
     },
     {
       "id": "melenchon-2017-education-enseignants",
       "theme": "education",
       "label": "Embauche d'enseignants et école publique laïque",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "École"
     },
     {
       "id": "melenchon-2017-entreprises-32h",
       "theme": "entreprises",
       "label": "Réduction du temps de travail",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Emploi & industrie"
     }
   ],
   "chiffrages": [

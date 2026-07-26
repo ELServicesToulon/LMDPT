@@ -8,51 +8,121 @@ import {
   getEvolutionMatrix,
   getThemeLabel,
   STATUS_LABELS,
-  AUTEUR_LABELS,
 } from '../../lib/programs';
 import {
   buildCompareRows,
   buildChiffrageSummary,
+  buildFamilyChiffrageSummary,
   formatMdeur,
+  listSubthemes,
 } from '../../lib/program-compare';
+import {
+  buildThemeCoverageMatrix,
+  formatPct,
+  programRelatedDataGouvLinks,
+} from '../../lib/program-coverage';
+import {
+  defaultCrossFamilySlugs,
+  filterCandidatesByFamily,
+  getCandidateFamily,
+  getFamilyMeta,
+  listFamiliesForCandidates,
+  type PoliticalFamilyId,
+} from '../../lib/program-families';
 import type { ProgramThemeId } from '../../lib/program-types';
 import { simulateFromVoteShares } from '../../lib/an1t';
 
 const scrutinId =
-  Astro.url.searchParams.get('scrutin') ?? 'presidentielle-2022';
+  Astro.url.searchParams.get('scrutin') ?? 'presidentielle-2027';
 const themeFilter = Astro.url.searchParams.get('theme') as ProgramThemeId | null;
+const subthemeFilter = Astro.url.searchParams.get('subtheme') || null;
+const familyFilter = (Astro.url.searchParams.get('family') || '') as PoliticalFamilyId | '';
 const showEvolution = Astro.url.searchParams.get('evolution') === '1';
+const viewParam = Astro.url.searchParams.get('view') || 'candidats';
+const viewMode =
+  viewParam === 'family' ? 'family' : viewParam === 'coverage' ? 'coverage' : 'candidats';
 
-const available = listCandidates(scrutinId);
-const defaultSlugs = available.slice(0, 3).map((c) => c.candidate.slug);
+
+const availableAll = listCandidates(scrutinId);
+const available = filterCandidatesByFamily(availableAll, familyFilter || null);
+const familiesPresent = listFamiliesForCandidates(availableAll);
+
+// Multi-select: getAll (form checkboxes) + fallback CSV dans un seul param
+const selectedFromGetAll = Astro.url.searchParams.getAll('candidates').filter(Boolean);
 const selectedParam = Astro.url.searchParams.get('candidates');
-const selectedSlugs = selectedParam
-  ? selectedParam.split(',').filter((s) => available.some((c) => c.candidate.slug === s))
-  : defaultSlugs;
+const rawSelected =
+  selectedFromGetAll.length > 0
+    ? selectedFromGetAll
+    : selectedParam
+      ? selectedParam.split(',').map((s) => s.trim()).filter(Boolean)
+      : [];
 
-const selected = available.filter((c) => selectedSlugs.includes(c.candidate.slug));
-const compareRows = buildCompareRows(selected, themeFilter ?? undefined);
+const defaultSlugs =
+  scrutinId === 'presidentielle-2027'
+    ? defaultCrossFamilySlugs(availableAll, 4)
+    : availableAll.slice(0, 3).map((c) => c.candidate.slug);
+
+const selectedSlugs = rawSelected.length
+  ? rawSelected.filter((s) => availableAll.some((c) => c.candidate.slug === s))
+  : familyFilter
+    ? available.slice(0, 4).map((c) => c.candidate.slug)
+    : defaultSlugs;
+
+const selected = availableAll.filter((c) => selectedSlugs.includes(c.candidate.slug));
+const subthemes = listSubthemes(selected, themeFilter ?? undefined);
+const compareRows = buildCompareRows(
+  selected,
+  themeFilter ?? undefined,
+  subthemeFilter ?? undefined,
+);
 const chiffrageRows = buildChiffrageSummary(selected);
+const familyRows = buildFamilyChiffrageSummary(
+  familyFilter ? available : availableAll,
+);
 const names = Object.fromEntries(selected.map((c) => [c.candidate.slug, c.candidate.name]));
+const coverageMatrix = buildThemeCoverageMatrix(availableAll, scrutinId);
+const dataGouvLinks = programRelatedDataGouvLinks();
+
 
 const evolution = getEvolutionMatrix();
-const evolutionDisplay = evolution.links.map((link) => ({
-  theme: getThemeLabel(link.theme),
-  family_label: link.family_label,
-  items: link.entries.map((e) => ({
-    scrutin: e.scrutin,
-    label: e.label,
-    status: e.status,
-    delta_summary: e.delta_summary,
-  })),
-}));
+const evolutionDisplay = evolution.links
+  .filter((link) => {
+    if (!familyFilter) return true;
+    // evolution matrix family_slug is candidate-oriented — map loosely
+    const fam = getCandidateFamily(link.family_slug);
+    return fam.id === familyFilter || link.family_slug.includes(familyFilter.replace(/-/g, ''));
+  })
+  .map((link) => ({
+    theme: getThemeLabel(link.theme),
+    family_label: link.family_label,
+    items: link.entries.map((e) => ({
+      scrutin: e.scrutin,
+      label: e.label,
+      status: e.status,
+      delta_summary: e.delta_summary,
+    })),
+  }));
 
 const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.status === 'partial');
+
+const themeOptions: Array<{ id: ProgramThemeId | ''; label: string }> = [
+  { id: '', label: 'Tous' },
+  { id: 'fiscalite', label: 'Fiscalité' },
+  { id: 'retraites', label: 'Retraites' },
+  { id: 'europe', label: 'Europe' },
+  { id: 'climat', label: 'Climat' },
+  { id: 'pouvoir_achat', label: "Pouvoir d'achat" },
+  { id: 'immigration', label: 'Immigration' },
+  { id: 'institutions', label: 'Institutions' },
+  { id: 'securite', label: 'Sécurité' },
+  { id: 'sante', label: 'Santé' },
+  { id: 'education', label: 'Éducation' },
+];
 ---
 
 <BaseLayout
   title="Comparateur de programmes"
-  description="Tableau différentiel et chiffrages prévisionnels — programmes présidentiels, sources Institut Montaigne et estimations LMDPT."
+  description="Tableau différentiel, chiffrages prévisionnels et granularité par famille politique — programmes présidentiels sourcés."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Comparateur
@@ -61,17 +131,115 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
   <section>
     <h2>Comparateur de programmes</h2>
     <p>
-      Sélection factuelle — ordre alphabétique. Cellule vide = non précisé dans le programme
-      intégré.
+      Sélection factuelle — ordre alphabétique des candidats, familles politiques en granularité
+      pédagogique (gauche → droite). Cellule vide = non précisé dans le programme intégré.
+    </p>
+    <p class="meta">
+      Vue&nbsp;:
+      <a
+        href={`?scrutin=${scrutinId}${familyFilter ? `&family=${familyFilter}` : ''}&view=candidats`}
+        aria-current={viewMode === 'candidats' ? 'page' : undefined}
+      >
+        par candidat
+      </a>
+      ·
+      <a
+        href={`?scrutin=${scrutinId}${familyFilter ? `&family=${familyFilter}` : ''}&view=family`}
+        aria-current={viewMode === 'family' ? 'page' : undefined}
+      >
+        par famille politique
+      </a>
+      ·
+      <a
+        href={`?scrutin=${scrutinId}&view=coverage`}
+        aria-current={viewMode === 'coverage' ? 'page' : undefined}
+      >
+        couverture thématique
+      </a>
+      ·
+      <a href="/analyses/programmes">Dossiers programmes</a>
     </p>
   </section>
 
-  <section class="card">
-    <h3>Filtres</h3>
-    <form method="get" class="filter-form">
+  <section class="card" aria-labelledby="coverage-heading" id="couverture-thematique">
+    <h3 id="coverage-heading">Couverture thématique (comparatif candidats)</h3>
+    <p class="meta">
+      Matrice pédagogique P10-4 — cellule = nombre de mesures intégrées par thème.
+      Pas de ranking. Remplissage&nbsp;: {formatPct(coverageMatrix.fillRate)} · sous-thèmes&nbsp;:
+      {formatPct(coverageMatrix.subthemeRate)} ({coverageMatrix.measuresWithSubtheme}/
+      {coverageMatrix.totalMeasures} mesures).
+    </p>
+    <div class="table-wrap" role="region" aria-label="Matrice couverture thématique programmes" tabindex="0">
+      <table class="prog-table coverage-matrix">
+        <caption class="meta">
+          Couverture {scrutinId.replace('presidentielle-', 'présidentielle ')} — thèmes ×
+          candidats intégrés
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Candidat</th>
+            <th scope="col">Famille</th>
+            <th scope="col">Mesures</th>
+            <th scope="col">Thèmes</th>
+            {coverageMatrix.themes.map((t) => (
+              <th scope="col" title={t.label}>
+                {t.label.slice(0, 4)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {coverageMatrix.rows.map((row) => (
+            <tr>
+              <th scope="row">
+                <a href={`/analyses/programmes/${scrutinId}/${row.slug}`}>{row.name}</a>
+              </th>
+              <td>{row.familyLabel}</td>
+              <td>{row.measureCount}</td>
+              <td>
+                {row.themesCovered}/{coverageMatrix.themes.length}
+              </td>
+              {coverageMatrix.themes.map((t) => {
+                const cell = row.byTheme[t.id];
+                const n = cell?.count ?? 0;
+                return (
+                  <td
+                    class:list={['cov-cell', n > 0 && 'cov-fill']}
+                    title={`${t.label}: ${n} mesure(s)${cell?.subthemes?.length ? ` · ${cell.subthemes.join(', ')}` : ''}`}
+                  >
+                    {n > 0 ? n : '·'}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <h4 id="datagouv-programmes-heading">Granularité open data (data.gouv)</h4>
+    <p class="meta">
+      Les programmes ne sont pas des jeux data.gouv — la pluralité 1er tour s'ancre sur les
+      résultats officiels (Min. Intérieur) synchronisés via data.gouv.fr.
+    </p>
+    <ul>
+      {dataGouvLinks.map((l) => (
+        <li>
+          <a href={l.href} rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            {l.label}
+          </a>
+          <span class="meta"> — {l.note}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="filtres-heading">
+    <h3 id="filtres-heading">Filtres</h3>
+    <form method="get" class="filter-form" role="search" aria-label="Filtres du comparateur">
+      <input type="hidden" name="view" value={viewMode} />
       <label>
         Scrutin
-        <select name="scrutin">
+        <select name="scrutin" aria-label="Choisir le scrutin">
           {scrutins.map((s) => (
             <option value={s.id} selected={s.id === scrutinId}>
               {s.label}
@@ -79,67 +247,175 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
           ))}
         </select>
       </label>
+
+      <label>
+        Famille politique
+        <select name="family" aria-label="Filtrer par famille politique">
+          <option value="">Toutes les familles</option>
+          {familiesPresent.map((f) => (
+            <option value={f.id} selected={familyFilter === f.id}>
+              {f.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
       <fieldset>
-        <legend>Candidats (2 à 4)</legend>
-        {available.map((c) => (
-          <label class="check-label">
-            <input
-              type="checkbox"
-              name="candidates"
-              value={c.candidate.slug}
-              checked={selectedSlugs.includes(c.candidate.slug)}
-            />
-            {c.candidate.name}
-          </label>
-        ))}
+        <legend>Candidats (2 à 4 recommandés)</legend>
+        {availableAll.map((c) => {
+          const fam = getCandidateFamily(c.candidate.slug);
+          const hiddenByFamily = familyFilter && fam.id !== familyFilter;
+          return (
+            <label class:list={['check-label', hiddenByFamily && 'is-muted']}>
+              <input
+                type="checkbox"
+                name="candidates"
+                value={c.candidate.slug}
+                checked={selectedSlugs.includes(c.candidate.slug)}
+                disabled={Boolean(hiddenByFamily)}
+              />
+              {c.candidate.name}
+              <span class="family-badge" title={fam.description}>{fam.shortLabel}</span>
+              {c.chiffrages.length > 0 && (
+                <span class="meta" title="Chiffrage disponible"> · €</span>
+              )}
+            </label>
+          );
+        })}
       </fieldset>
+
       <label>
         Thème
-        <select name="theme">
+        <select name="theme" aria-label="Filtrer par thème">
+          {themeOptions.map((t) => (
+            <option value={t.id} selected={(themeFilter || '') === t.id}>
+              {t.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Sous-thème
+        <select name="subtheme" aria-label="Filtrer par sous-thème">
           <option value="">Tous</option>
-          <option value="fiscalite" selected={themeFilter === 'fiscalite'}>Fiscalité</option>
-          <option value="retraites" selected={themeFilter === 'retraites'}>Retraites</option>
-          <option value="europe" selected={themeFilter === 'europe'}>Europe</option>
-          <option value="climat" selected={themeFilter === 'climat'}>Climat</option>
-          <option value="pouvoir_achat" selected={themeFilter === 'pouvoir_achat'}>Pouvoir d'achat</option>
-          <option value="immigration" selected={themeFilter === 'immigration'}>Immigration</option>
-        <option value="institutions" selected={themeFilter === 'institutions'}>Institutions</option>
-        <option value="securite" selected={themeFilter === 'securite'}>Sécurité</option>
+          {subthemes.map((st) => (
+            <option value={st} selected={subthemeFilter === st}>
+              {st}
+            </option>
+          ))}
         </select>
       </label>
       <button type="submit">Appliquer</button>
     </form>
+    {subthemes.length === 0 && (
+      <p class="meta">Aucun sous-thème renseigné pour cette sélection (granularité progressive).</p>
+    )}
+    {familyFilter && (
+      <p class="meta">
+        Filtre famille : <strong>{getFamilyMeta(familyFilter).label}</strong>
+        {' — '}
+        <a href={`?scrutin=${scrutinId}&view=${viewMode}`}>retirer le filtre famille</a>
+      </p>
+    )}
   </section>
 
-  {selected.length >= 2 && (
+  {/* Toujours visible en SSG (query params absents au build) — cœur gate P8-5 */}
+  <section class="card" aria-labelledby="family-chiffrage-heading">
+      <h3 id="family-chiffrage-heading">Chiffrage par famille politique</h3>
+      <p class="meta">
+        Agrégats pédagogiques (moyenne / fourchette des soldes LMDPT disponibles). Pas de ranking.
+        Confiance faible sur 2027 tant que les programmes officiels ne sont pas complets.
+        Vue détaillée : liens famille ci-dessous (filtre UI si hébergement dynamique / preview).
+      </p>
+      <div class="table-wrap" role="region" aria-label="Tableau chiffrage par famille" tabindex="0">
+        <table class="prog-table">
+          <caption class="meta">
+            Familles présentes sur {scrutinId.replace('presidentielle-', 'présidentielle ')} —
+            mesures intégrées et soldes LMDPT
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Famille</th>
+              <th scope="col">Candidats</th>
+              <th scope="col">Mesures</th>
+              <th scope="col">Thèmes</th>
+              <th scope="col">Avec chiffrage</th>
+              <th scope="col">Solde LMDPT (moy.)</th>
+              <th scope="col">Fourchette LMDPT</th>
+              <th scope="col">Solde IM (moy.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {familyRows.map((row) => (
+              <tr>
+                <th scope="row">
+                  <a
+                    href={`?scrutin=${scrutinId}&family=${row.familyId}&view=family`}
+                    aria-label={`Filtrer sur ${row.familyLabel}`}
+                  >
+                    {row.familyLabel}
+                  </a>
+                </th>
+                <td>
+                  {row.candidateCount}
+                  <span class="meta"> ({row.candidateNames.join(', ')})</span>
+                </td>
+                <td>{row.measureCount}</td>
+                <td>{row.themesCovered}</td>
+                <td>
+                  {row.withChiffrage}/{row.candidateCount}
+                </td>
+                <td>{formatMdeur(row.soldeLmdptAvg)}</td>
+                <td>
+                  {row.soldeLmdptMin != null && row.soldeLmdptMax != null
+                    ? `${formatMdeur(row.soldeLmdptMin)} → ${formatMdeur(row.soldeLmdptMax)}`
+                    : '—'}
+                </td>
+                <td>{formatMdeur(row.soldeImAvg)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  {selected.length >= 2 && viewMode === 'candidats' && (
     <>
-      <section class="card">
-        <h3>Tableau différentiel</h3>
+      <section class="card" aria-labelledby="diff-heading">
+        <h3 id="diff-heading">Tableau différentiel</h3>
         <ProgramDiffTable rows={compareRows} slugs={selectedSlugs} names={names} />
       </section>
 
-      <section class="card">
-        <h3>Chiffrage prévisionnel agrégé (Md€/an, horizon 2027)</h3>
+      <section class="card" aria-labelledby="chiffrage-heading">
+        <h3 id="chiffrage-heading">Chiffrage prévisionnel agrégé (Md€/an)</h3>
         <p class="meta">
-          Sources : campagne, Institut Montaigne 2022, estimations LMDPT (voir méthodologie repo).
+          Sources : campagne, Institut Montaigne 2022 (réf. historique), estimations LMDPT
+          (voir méthodo repo). Colonne famille = granularité P8-5.
         </p>
-        <div class="table-wrap">
+        <div class="table-wrap" role="region" aria-label="Tableau chiffrage candidats" tabindex="0">
           <table class="prog-table">
+            <caption class="meta">Chiffrages par candidat sélectionné</caption>
             <thead>
               <tr>
-                <th>Candidat</th>
-                <th>Rec. campagne</th>
-                <th>Rec. IM</th>
-                <th>Dép. campagne</th>
-                <th>Dép. IM</th>
-                <th>Solde IM</th>
-                <th>Solde LMDPT</th>
+                <th scope="col">Candidat</th>
+                <th scope="col">Famille</th>
+                <th scope="col">Rec. campagne</th>
+                <th scope="col">Rec. IM</th>
+                <th scope="col">Dép. campagne</th>
+                <th scope="col">Dép. IM</th>
+                <th scope="col">Solde IM</th>
+                <th scope="col">Solde LMDPT</th>
               </tr>
             </thead>
             <tbody>
               {chiffrageRows.map((row) => (
                 <tr>
-                  <td>{row.name}</td>
+                  <th scope="row">{row.name}</th>
+                  <td>
+                    <a href={`?scrutin=${scrutinId}&family=${row.familyId}&view=candidats`}>
+                      {row.familyLabel}
+                    </a>
+                  </td>
                   <td>{formatMdeur(row.recettesCandidat)}</td>
                   <td>{formatMdeur(row.recettesIm)}</td>
                   <td>{formatMdeur(row.depensesCandidat)}</td>
@@ -155,34 +431,84 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
     </>
   )}
 
-  {selected.length < 2 && (
-    <p class="meta">Sélectionnez au moins deux candidats pour afficher le tableau différentiel.</p>
+  {selected.length >= 2 && viewMode === 'family' && (
+    <section class="card" aria-labelledby="diff-family-heading">
+      <h3 id="diff-family-heading">Tableau différentiel (sélection actuelle)</h3>
+      <p class="meta">
+        Même matrice mesures, avec sélection filtrable par famille. Passez en vue
+        «&nbsp;par candidat&nbsp;» pour le détail chiffrage ligne à ligne.
+      </p>
+      <ProgramDiffTable rows={compareRows} slugs={selectedSlugs} names={names} />
+    </section>
   )}
 
-  {(showEvolution || scrutinId !== 'presidentielle-2027') && (
-    <section class="card">
-      <h3>Évolution par rapport aux scrutins précédents</h3>
+  {selected.length < 2 && (
+    <p class="meta" role="status">
+      Sélectionnez au moins deux candidats pour afficher le tableau différentiel.
+    </p>
+  )}
+
+  {(showEvolution || scrutinId !== 'presidentielle-2027' || evolutionDisplay.length > 0) && (
+    <section class="card" aria-labelledby="evolution-heading">
+      <h3 id="evolution-heading">Évolution par famille politique (scrutins précédents)</h3>
       <ProgramEvolutionTimeline entries={evolutionDisplay} statusLabels={STATUS_LABELS} />
     </section>
   )}
 
-  <!-- === NOUVELLE SECTION : LIEN PROGRAMMES → AN1T / SIÈGES / HÉMICYCLE HYBRIDE (depuis audit) === -->
-  <section class="card">
-    <h3>Impact des programmes 2027 sur les scénarios AN1T (sièges &amp; hémicycle hybride)</h3>
-    <p class="meta" style="font-size:0.85rem;">(Contenu 2027 — <a href="?scrutin=presidentielle-2027">basculer le comparateur vers présidentielle-2027</a> pour filtrer les candidats 2027 et voir leurs mesures)</p>
-    <p class="meta">
-      Lien pédagogique entre données programmes existantes et projections de l'Assemblée du Premier Tour. Les mesures « institutions » (et signaux afférents) des candidats 2027 peuvent influencer la pluralité exprimée au 1er tour des législatives (effet d'entraînement post-présidentielle). Cela se traduit dans les allocations de sièges (Sainte-Laguë) et la superposition visuelle sur le modèle officiel de l'hémicycle.
+  <section class="card" aria-labelledby="an1t-link-heading">
+    <h3 id="an1t-link-heading">
+      Impact des programmes 2027 sur les scénarios AN1T (sièges &amp; hémicycle hybride)
+    </h3>
+    <p class="meta" style="font-size:0.85rem;">
+      Contenu 2027 —
+      <a href="?scrutin=presidentielle-2027">basculer le comparateur vers présidentielle-2027</a>
+      pour filtrer les candidats 2027 et voir leurs mesures. Lien pédagogique uniquement.
     </p>
-    <p class="meta" style="font-size:0.85rem;">Les % et sièges ci-dessous sont <em>illustratifs</em> (pas de modèle prédictif). Calculs via simulateFromVoteShares. Voir <a href="/analyses/assemblee-premier-tour#programmes-an1t">détails + hémicycles hybrides sur la page AN1T</a>.</p>
+    <p class="meta">
+      Les mesures «&nbsp;institutions&nbsp;» des candidats 2027 peuvent influencer la pluralité
+      exprimée au 1er tour des législatives. Cela se traduit dans les allocations de sièges
+      (Sainte-Laguë) et la superposition visuelle sur le modèle officiel de l'hémicycle.
+    </p>
+    <p class="meta" style="font-size:0.85rem;">
+      Les % et sièges ci-dessous sont <em>illustratifs</em> (pas de modèle prédictif). Voir
+      <a href="/analyses/assemblee-premier-tour#programmes-an1t">détails AN1T</a>.
+    </p>
 
     <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:0.5rem;">
       {(() => {
-        // Exemples statiques pour les principaux candidats 2027 (utilisent données programmes existantes via import implicite dans contexte)
         const examples = [
-          { slug: 'bardella', name: 'Jordan Bardella', aff: 'Rassemblement national', inst: 'Continuité RN 2022 + substitution si inéligibilité', bloc: 'rn', pct: 36 },
-          { slug: 'attal', name: 'Gabriel Attal', aff: 'Renaissance', inst: '100k départs volontaires fonctionnaires + impunité budgétaire zéro', bloc: 'ensemble', pct: 19 },
-          { slug: 'melenchon', name: 'Jean-Luc Mélenchon', aff: 'La France insoumise', inst: 'Écorégions (remplacement régions) + eau dans le débat', bloc: 'nfp', pct: 30 },
-          { slug: 'retailleau', name: 'Bruno Retailleau', aff: 'Les Républicains', inst: 'Primaire droite + opposition calendrier 1er mai', bloc: 'lr', pct: 10 },
+          {
+            slug: 'bardella',
+            name: 'Jordan Bardella',
+            aff: 'Rassemblement national',
+            inst: 'Continuité RN 2022 + substitution si inéligibilité',
+            bloc: 'rn',
+            pct: 36,
+          },
+          {
+            slug: 'attal',
+            name: 'Gabriel Attal',
+            aff: 'Renaissance',
+            inst: '100k départs volontaires fonctionnaires + impunité budgétaire zéro',
+            bloc: 'ensemble',
+            pct: 19,
+          },
+          {
+            slug: 'melenchon',
+            name: 'Jean-Luc Mélenchon',
+            aff: 'La France insoumise',
+            inst: 'Écorégions (remplacement régions) + eau dans le débat',
+            bloc: 'nfp',
+            pct: 30,
+          },
+          {
+            slug: 'retailleau',
+            name: 'Bruno Retailleau',
+            aff: 'Les Républicains',
+            inst: 'Primaire droite + opposition calendrier 1er mai',
+            bloc: 'lr',
+            pct: 10,
+          },
         ];
         return examples.map((ex) => {
           const base = [
@@ -192,16 +518,25 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
             { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
             { id: 'autres', label: 'Autres', color: '#718096', pct: 23 },
           ];
-          const shares = base.map(s => ({...s, pct: s.id === ex.bloc ? ex.pct : s.pct })).map(s => ({...s, pct: Math.max(4, Math.min(42, s.pct))}));
+          const shares = base
+            .map((s) => ({ ...s, pct: s.id === ex.bloc ? ex.pct : s.pct }))
+            .map((s) => ({ ...s, pct: Math.max(4, Math.min(42, s.pct)) }));
           const seatsAlloc = simulateFromVoteShares(shares, 577, 3);
-          const bSeats = seatsAlloc.find((s:any)=>s.id===ex.bloc)?.seats ?? Math.round(ex.pct*5.7);
+          const bSeats =
+            seatsAlloc.find((s: { id: string }) => s.id === ex.bloc)?.seats ??
+            Math.round(ex.pct * 5.7);
+          const fam = getCandidateFamily(ex.slug);
           return (
-            <div style="border:1px solid #333; padding:0.5rem 0.65rem; border-radius:3px; font-size:0.9rem;">
-              <strong>{ex.name}</strong> ({ex.aff})
-              <p style="margin:0.2rem 0; font-size:0.82rem;"><em>Mesure institutions :</em> {ex.inst}</p>
+            <div class="an1t-card">
+              <strong>{ex.name}</strong>
+              <span class="family-badge">{fam.shortLabel}</span>
+              <span class="meta"> ({ex.aff})</span>
+              <p style="margin:0.2rem 0; font-size:0.82rem;">
+                <em>Mesure institutions :</em> {ex.inst}
+              </p>
               <p style="margin:0.1rem 0; font-size:0.82rem;">
-                <strong>Impact hypothétique AN1T :</strong> renforcement bloc {ex.bloc} (~{ex.pct}% voix T1) → ~{bSeats} sièges projetés. 
-                Hémicycle hybride : densification projection dans quartier correspondant du modèle officiel.
+                <strong>Impact hypothétique AN1T :</strong> renforcement bloc {ex.bloc} (~
+                {ex.pct}% voix T1) → ~{bSeats} sièges projetés.
                 <a href="/analyses/assemblee-premier-tour#programmes-an1t">Voir hémicycles</a>.
               </p>
             </div>
@@ -209,10 +544,6 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
         });
       })()}
     </div>
-
-    <p class="meta" style="font-size:0.78rem; margin-top:0.5rem;">
-      Sources : fiches programmes présidentielle-2027/* (mesures institutions via _index + json). Alignement avec AN1T via blocs civiques (AN1T_BLOCS) et simulateFromVoteShares (lib/an1t.ts). Données partielles — programmes n'abordent pas directement le scrutin. Filtrez par thème « institutions » dans le comparateur.
-    </p>
   </section>
 </BaseLayout>
 
@@ -229,6 +560,12 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
     font: inherit;
     margin-left: 0.35rem;
   }
+  .filter-form button {
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0.45rem 1rem;
+    cursor: pointer;
+  }
   fieldset {
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -237,9 +574,37 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
   .check-label {
     display: block;
     margin: 0.25rem 0;
+    min-height: 1.5rem;
+  }
+  .check-label.is-muted {
+    opacity: 0.45;
+  }
+  .family-badge {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.05rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: var(--muted, #3a3732);
+    background: var(--card, #f7f5f0);
   }
   .table-wrap {
     overflow-x: auto;
+  }
+  .table-wrap:focus-visible {
+    outline: 2px solid var(--accent, #1e4d6b);
+    outline-offset: 2px;
+  }
+  .coverage-matrix .cov-cell {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted, #3a3732);
+  }
+  .coverage-matrix .cov-fill {
+    background: color-mix(in srgb, var(--accent, #1e4d6b) 12%, transparent);
+    font-weight: 600;
+    color: var(--fg, #0a0a0a);
   }
   .prog-table {
     width: 100%;
@@ -252,5 +617,26 @@ const scrutins = listScrutins().filter((s) => s.status === 'complete' || s.statu
     border: 1px solid var(--border);
     padding: 0.45rem 0.55rem;
     text-align: left;
+  }
+  .prog-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--card, #f7f5f0);
+    z-index: 1;
+  }
+  .prog-table caption {
+    caption-side: bottom;
+    text-align: left;
+    padding-top: 0.35rem;
+  }
+  .an1t-card {
+    border: 1px solid var(--border, #333);
+    padding: 0.5rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+  }
+  a[aria-current='page'] {
+    font-weight: 700;
+    text-decoration: none;
   }
 </style>

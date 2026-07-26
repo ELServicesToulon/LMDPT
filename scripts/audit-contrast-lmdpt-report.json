@@ -1,0 +1,169 @@
+{
+  "pages": [
+    {
+      "url": "https://lmdpt.iarbre.org/",
+      "scheme": "light",
+      "fails": [],
+      "vars": {
+        "--bg": "#f4ede4",
+        "--fg": "#0a0a0a",
+        "--muted": "#1a1814",
+        "--accent": "#0a2a40",
+        "--card": "#fff",
+        "--delta-pos": "#0f6b3c",
+        "--delta-neg": "#b42318",
+        "--on-accent": "#fff"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/a-propos/",
+      "scheme": "light",
+      "fails": [],
+      "vars": {
+        "--bg": "#f4ede4",
+        "--fg": "#0a0a0a",
+        "--muted": "#1a1814",
+        "--accent": "#0a2a40",
+        "--card": "#fff",
+        "--delta-pos": "#0f6b3c",
+        "--delta-neg": "#b42318",
+        "--on-accent": "#fff"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/charte/",
+      "scheme": "light",
+      "fails": [],
+      "vars": {
+        "--bg": "#f4ede4",
+        "--fg": "#0a0a0a",
+        "--muted": "#1a1814",
+        "--accent": "#0a2a40",
+        "--card": "#fff",
+        "--delta-pos": "#0f6b3c",
+        "--delta-neg": "#b42318",
+        "--on-accent": "#fff"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/sources/",
+      "scheme": "light",
+      "fails": [],
+      "vars": {
+        "--bg": "#f4ede4",
+        "--fg": "#0a0a0a",
+        "--muted": "#1a1814",
+        "--accent": "#0a2a40",
+        "--card": "#fff",
+        "--delta-pos": "#0f6b3c",
+        "--delta-neg": "#b42318",
+        "--on-accent": "#fff"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/analyses/",
+      "scheme": "light",
+      "fails": [],
+      "vars": {
+        "--bg": "#f4ede4",
+        "--fg": "#0a0a0a",
+        "--muted": "#1a1814",
+        "--accent": "#0a2a40",
+        "--card": "#fff",
+        "--delta-pos": "#0f6b3c",
+        "--delta-neg": "#b42318",
+        "--on-accent": "#fff"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/",
+      "scheme": "dark",
+      "fails": [],
+      "vars": {
+        "--bg": "#12141a",
+        "--fg": "#f5f2eb",
+        "--muted": "#d8d4cc",
+        "--accent": "#8ec5e8",
+        "--card": "#1a1e26",
+        "--delta-pos": "#6ee7a8",
+        "--delta-neg": "#ff9b9b",
+        "--on-accent": "#0c1016"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/a-propos/",
+      "scheme": "dark",
+      "fails": [],
+      "vars": {
+        "--bg": "#12141a",
+        "--fg": "#f5f2eb",
+        "--muted": "#d8d4cc",
+        "--accent": "#8ec5e8",
+        "--card": "#1a1e26",
+        "--delta-pos": "#6ee7a8",
+        "--delta-neg": "#ff9b9b",
+        "--on-accent": "#0c1016"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/charte/",
+      "scheme": "dark",
+      "fails": [],
+      "vars": {
+        "--bg": "#12141a",
+        "--fg": "#f5f2eb",
+        "--muted": "#d8d4cc",
+        "--accent": "#8ec5e8",
+        "--card": "#1a1e26",
+        "--delta-pos": "#6ee7a8",
+        "--delta-neg": "#ff9b9b",
+        "--on-accent": "#0c1016"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/sources/",
+      "scheme": "dark",
+      "fails": [],
+      "vars": {
+        "--bg": "#12141a",
+        "--fg": "#f5f2eb",
+        "--muted": "#d8d4cc",
+        "--accent": "#8ec5e8",
+        "--card": "#1a1e26",
+        "--delta-pos": "#6ee7a8",
+        "--delta-neg": "#ff9b9b",
+        "--on-accent": "#0c1016"
+      }
+    },
+    {
+      "url": "https://lmdpt.iarbre.org/analyses/",
+      "scheme": "dark",
+      "fails": [],
+      "vars": {
+        "--bg": "#12141a",
+        "--fg": "#f5f2eb",
+        "--muted": "#d8d4cc",
+        "--accent": "#8ec5e8",
+        "--card": "#1a1e26",
+        "--delta-pos": "#6ee7a8",
+        "--delta-neg": "#ff9b9b",
+        "--on-accent": "#0c1016"
+      }
+    }
+  ],
+  "summary": {
+    "failPagesLight": 0,
+    "failPagesDark": 0,
+    "totalFails": 0,
+    "darkVars": {
+      "--bg": "#12141a",
+      "--fg": "#f5f2eb",
+      "--muted": "#d8d4cc",
+      "--accent": "#8ec5e8",
+      "--card": "#1a1e26",
+      "--delta-pos": "#6ee7a8",
+      "--delta-neg": "#ff9b9b",
+      "--on-accent": "#0c1016"
+    }
+  }
+}

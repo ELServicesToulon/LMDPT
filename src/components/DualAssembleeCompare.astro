@@ -1,0 +1,783 @@
+---
+/**
+ * Comparaison visuelle côte à côte :
+ *  - Gauche : Assemblée 100 % 1er tour (Sainte-Laguë AN1T, modèle Wikimedia, couleurs proximité programmes)
+ *  - Droite : Assemblée réelle issue des législatives qui ont suivi ce 1er tour
+ */
+import groupsRaw from '../data/assemblee-current-groups-2025.json';
+import {
+  programProximityColor,
+  realAssemblyColor,
+  sortHemicycleLeftToRight,
+  spectrumSortKey,
+} from '../lib/program-proximity';
+
+interface SeatRow {
+  id: string;
+  label: string;
+  seats: number;
+  color?: string;
+  pctExprimes?: number;
+  pctSeats?: number;
+}
+
+interface Props {
+  /** Sièges AN1T depuis voix du 1er tour uniquement */
+  firstRoundAlloc: SeatRow[];
+  /** Sièges réels après législatives (2nd tour / composition) */
+  realAlloc: SeatRow[];
+  totalSeats?: number;
+  firstRoundTitle?: string;
+  realTitle?: string;
+  firstRoundMeta?: string;
+  realMeta?: string;
+  /** Date / libellé du scrutin T1 */
+  t1Label?: string;
+  t2Label?: string;
+  /** Résultat réel pas encore connu (ex. présidentielle 2027) */
+  realPending?: boolean;
+  /** Différentiel sièges (T1 prop. − réel législatif) */
+  differential?: Array<{
+    id: string;
+    label: string;
+    firstRoundSeats: number;
+    realSeats: number;
+    delta: number;
+    color: string;
+  }>;
+  /**
+   * Mode accueil / perf : barres empilées au lieu de 577×2 cercles SVG
+   * (~250 ko HTML en moins). Hémicycle complet sur les pages analyses.
+   */
+  compact?: boolean;
+  /** Lien vers l’hémicycle interactif complet (si compact) */
+  fullHref?: string;
+}
+
+const {
+  firstRoundAlloc,
+  realAlloc,
+  totalSeats = 577,
+  firstRoundTitle = 'Assemblée 100 % 1er tour',
+  realTitle = 'Assemblée réelle (législatives)',
+  firstRoundMeta = 'Sainte-Laguë sur les exprimés du 1er tour (modèle Wikimedia).',
+  realMeta = 'Composition après second tour / duels uninominaux.',
+  t1Label = '1er tour',
+  t2Label = 'Après législatives',
+  realPending = false,
+  differential,
+  compact = false,
+  fullHref = '/analyses/assemblee-premier-tour',
+} = Astro.props;
+
+// Positions officielles (modèle établi Wikimedia)
+type Pos = { x: number; y: number };
+const allPositions: Pos[] = [];
+for (const g of groupsRaw as Array<{ circles: Array<{ x: number; y: number }> }>) {
+  for (const c of g.circles) {
+    allPositions.push({ x: c.x, y: c.y });
+  }
+}
+
+/**
+ * Sièges ordonnés **gauche → centre → droite** (convention Assemblée nationale).
+ * Vue face à l’hémicycle : partis de gauche à gauche de l’écran, droite à droite.
+ */
+const orderedSeats = sortHemicycleLeftToRight(allPositions);
+
+function buildDots(
+  alloc: SeatRow[],
+  colorFn: (id: string, fallback?: string) => string,
+): Array<{ x: number; y: number; color: string; label: string; id: string }> {
+  // Remplir l’arc de gauche à droite : nfp → ensemble → lr → rn → autres
+  const sorted = [...alloc]
+    .filter((a) => (a.seats ?? 0) > 0)
+    .sort((a, b) => spectrumSortKey(a.id) - spectrumSortKey(b.id));
+
+  const dots: Array<{ x: number; y: number; color: string; label: string; id: string }> = [];
+  let cursor = 0;
+  for (const bloc of sorted) {
+    const n = Math.max(0, Math.floor(bloc.seats));
+    const color = bloc.color || colorFn(bloc.id, bloc.color);
+    for (let i = 0; i < n && cursor < orderedSeats.length; i++) {
+      const pos = orderedSeats[cursor++];
+      dots.push({
+        x: pos.x,
+        y: pos.y,
+        color,
+        label: bloc.label,
+        id: bloc.id,
+      });
+    }
+  }
+  while (cursor < orderedSeats.length) {
+    const pos = orderedSeats[cursor++];
+    dots.push({ x: pos.x, y: pos.y, color: '#d0d0d0', label: 'Non attribué / seuil', id: 'vacant' });
+  }
+  return dots;
+}
+
+const firstDots = compact ? [] : buildDots(firstRoundAlloc, programProximityColor);
+const realDots = compact ? [] : buildDots(realAlloc, (id, fb) => realAssemblyColor(id, fb));
+
+function legendFrom(alloc: SeatRow[], colorFn: (id: string, fb?: string) => string) {
+  return [...alloc]
+    .filter((a) => (a.seats ?? 0) > 0)
+    .sort((a, b) => spectrumSortKey(a.id) - spectrumSortKey(b.id))
+    .map((a) => ({
+      id: a.id,
+      label: a.label,
+      seats: a.seats,
+      color: colorFn(a.id, a.color),
+      pct: totalSeats > 0 ? ((a.seats / totalSeats) * 100).toFixed(1) : '0',
+      voix: a.pctExprimes != null ? a.pctExprimes.toFixed(1) : null,
+    }));
+}
+
+const firstLegend = legendFrom(firstRoundAlloc, programProximityColor);
+const realLegend = legendFrom(realAlloc, (id, fb) => realAssemblyColor(id, fb));
+
+const firstSeatsSum = firstRoundAlloc.reduce((s, a) => s + (a.seats || 0), 0);
+const realSeatsSum = realAlloc.reduce((s, a) => s + (a.seats || 0), 0);
+
+const viewBoxW = 360;
+const viewBoxH = 185;
+const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<section class:list={['dual-assemblee', { 'dual-assemblee--compact': compact }]} aria-labelledby={`dual-title-${uid}`}>
+  <header class="dual-header">
+    <h3 id={`dual-title-${uid}`}>Deux Assemblées — 1er tour vs ce qui a suivi</h3>
+    <p class="dual-lead">
+      {
+        compact ? (
+          <>
+            Comparaison <strong>proportion 1er tour</strong> vs <strong>Assemblée réelle</strong> des
+            législatives qui ont suivi (barres = parts de sièges, spectre gauche → droite). Pour l’hémicycle
+            interactif 577 sièges :{' '}
+            <a href={fullHref}>ouvrir le simulateur AN1T →</a>
+          </>
+        ) : (
+          <>
+            À gauche de l’écran : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
+            couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée{' '}
+            <strong>réelle des législatives</strong> qui ont suivi. <strong>Convention hémicycle</strong> :
+            partis de <em>gauche à gauche</em>, <em>centre au centre</em>, partis de <em>droite à droite</em>{' '}
+            (vue face à l’hémicycle).
+          </>
+        )
+      }
+    </p>
+  </header>
+
+  <div class="dual-grid">
+    <!-- GAUCHE : 100% 1er tour -->
+    <article class="dual-panel dual-panel--t1" aria-labelledby={`t1-title-${uid}`}>
+      <div class="panel-badge panel-badge--t1">{t1Label}</div>
+      <h4 id={`t1-title-${uid}`}>{firstRoundTitle}</h4>
+      {!compact && firstRoundMeta && <p class="panel-meta">{firstRoundMeta}</p>}
+      {
+        compact ? (
+          <div
+            class="stack-bar"
+            role="img"
+            aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges sur ${totalSeats}`}
+          >
+            <div class="stack-bar-track">
+              {
+                firstLegend.map((item) => (
+                  <span
+                    class="stack-seg"
+                    style={`flex:${item.seats};background:${item.color}`}
+                    title={`${item.label} : ${item.seats} sièges (${item.pct}%)`}
+                  />
+                ))
+              }
+            </div>
+            <p class="stack-cap">
+              {firstSeatsSum}/{totalSeats} sièges · gauche → droite
+            </p>
+          </div>
+        ) : (
+          <div class="hemi-wrap">
+            <svg
+              viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
+              width="100%"
+              height="auto"
+              role="img"
+              aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges attribués sur ${totalSeats}`}
+            >
+              <desc>
+                Hémicycle 100 % premier tour. Sièges placés de gauche à droite selon le spectre de proximité
+                de programmes. Méthode Sainte-Laguë, seuil 3 %.
+              </desc>
+              {
+                firstDots.map((d) => (
+                  <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
+                    <title>
+                      {d.label} — siège 1er tour (proximité programmes)
+                    </title>
+                  </circle>
+                ))
+              }
+              <g
+                class="hemi-zone-labels"
+                font-family="system-ui,sans-serif"
+                font-size="7"
+                font-weight="600"
+                fill="#c8c4bc"
+                text-anchor="middle"
+              >
+                <text x="55" y="100">Gauche</text>
+                <text x="180" y="38">Centre</text>
+                <text x="305" y="100">Droite</text>
+              </g>
+              <text
+                x="180"
+                y="178"
+                text-anchor="middle"
+                class="hemi-cap"
+                fill="#1c1a17"
+                font-size="8"
+                font-weight="600"
+              >
+                {firstSeatsSum}/{totalSeats} · gauche → centre → droite
+              </text>
+            </svg>
+          </div>
+        )
+      }
+      <ul class="dual-legend" aria-label="Légende 1er tour">
+        {
+          firstLegend.map((item) => (
+            <li>
+              <span class="swatch" style={`background:${item.color}`}></span>
+              <span class="leg-label">{item.label}</span>
+              <span class="leg-seats">
+                <strong>{item.seats}</strong>
+                <span class="meta"> ({item.pct}%)</span>
+                {item.voix != null && <span class="meta"> · {item.voix}% voix T1</span>}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <!-- DROITE : résultat réel (ou en attente) -->
+    <article class="dual-panel dual-panel--real" aria-labelledby={`real-title-${uid}`}>
+      <div class="panel-badge panel-badge--real">{t2Label}</div>
+      <h4 id={`real-title-${uid}`}>{realTitle}</h4>
+      <p class="panel-meta">{compact ? 'Composition réelle après législatives — couleurs blocs institutionnels.' : realMeta}</p>
+      {
+        realPending || realAlloc.length === 0 ? (
+          <div class="hemi-wrap hemi-pending" role="status">
+            <p class="pending-msg">
+              <strong>Résultat réel en attente</strong><br />
+              Le fil directeur LMDPT documente d’abord le 1er tour. La comparaison s’affichera dès les
+              résultats officiels.
+            </p>
+          </div>
+        ) : compact ? (
+          <>
+            <div
+              class="stack-bar"
+              role="img"
+              aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
+            >
+              <div class="stack-bar-track">
+                {
+                  realLegend.map((item) => (
+                    <span
+                      class="stack-seg"
+                      style={`flex:${item.seats};background:${item.color}`}
+                      title={`${item.label} : ${item.seats} sièges (${item.pct}%)`}
+                    />
+                  ))
+                }
+              </div>
+              <p class="stack-cap">
+                {realSeatsSum}/{totalSeats} sièges · gauche → droite
+              </p>
+            </div>
+            <ul class="dual-legend" aria-label="Légende résultat réel">
+              {
+                realLegend.map((item) => (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}
+                    ></span>
+                    <span class="leg-label">{item.label}</span>
+                    <span class="leg-seats">
+                      <strong>{item.seats}</strong>
+                      <span class="meta"> ({item.pct}%)</span>
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </>
+        ) : (
+          <>
+            <div class="hemi-wrap">
+              <svg
+                viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
+                width="100%"
+                height="auto"
+                role="img"
+                aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
+              >
+                <desc>
+                  Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue). Même géométrie
+                  Wikimedia ; couleurs institutionnelles.
+                </desc>
+                {
+                  realDots.map((d) => (
+                    <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
+                      <title>
+                        {d.label} — siège résultat réel
+                      </title>
+                    </circle>
+                  ))
+                }
+                <g
+                  class="hemi-zone-labels"
+                  font-family="system-ui,sans-serif"
+                  font-size="7"
+                  font-weight="600"
+                  fill="#c8c4bc"
+                  text-anchor="middle"
+                >
+                  <text x="55" y="100">Gauche</text>
+                  <text x="180" y="38">Centre</text>
+                  <text x="305" y="100">Droite</text>
+                </g>
+                <text
+                  x="180"
+                  y="178"
+                  text-anchor="middle"
+                  class="hemi-cap"
+                  fill="#1c1a17"
+                  font-size="8"
+                  font-weight="600"
+                >
+                  {realSeatsSum}/{totalSeats} · gauche → centre → droite
+                </text>
+              </svg>
+            </div>
+            <ul class="dual-legend" aria-label="Légende résultat réel">
+              {
+                realLegend.map((item) => (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`background:${item.color}; border:1px solid rgba(0,0,0,0.12)`}
+                    ></span>
+                    <span class="leg-label">{item.label}</span>
+                    <span class="leg-seats">
+                      <strong>{item.seats}</strong>
+                      <span class="meta"> ({item.pct}%)</span>
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </>
+        )
+      }
+    </article>
+  </div>
+
+  {
+    compact && (
+      <p class="compact-cta meta">
+        <a class="btn btn-secondary" href={fullHref}>Voir l’hémicycle complet 577 sièges (AN1T) →</a>
+      </p>
+    )
+  }
+
+  {
+    differential && differential.length > 0 && (
+      <div class="diff-table-wrap" role="region" aria-label="Différentiel de sièges">
+        <h4 class="diff-title">Différentiel de sièges (législatives réelles − Assemblée 1er tour)</h4>
+        <p class="meta diff-intro">
+          Δ positif = plus de sièges après les législatives qu’en proportion pure du 1er tour.
+          Δ négatif = moins de sièges — effet uninominal, désistements, reports, participation.
+        </p>
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th scope="col">Bloc</th>
+              <th scope="col">Assemblée 1er tour</th>
+              <th scope="col">Législatives réelles</th>
+              <th scope="col">Δ sièges</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              differential.map((row) => (
+                <tr>
+                  <td>
+                    <span class="swatch" style={`background:${row.color}`}></span>
+                    {row.label}
+                  </td>
+                  <td class="num">{row.firstRoundSeats}</td>
+                  <td class="num">{row.realSeats}</td>
+                  <td class:list={['num', 'delta', { 'delta-pos': row.delta > 0, 'delta-neg': row.delta < 0 }]}>
+                    {row.delta > 0 ? `+${row.delta}` : row.delta}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
+  {
+    !compact && (
+      <aside class="dual-footnote" aria-label="Lecture">
+        <p>
+          <strong>Lecture</strong> — Gauche : pluralité du 1er tour (Sainte-Laguë). Droite : Assemblée
+          élue ensuite. Pas de prédiction sur le mode de scrutin.
+        </p>
+        <p class="spectrum-key" aria-hidden="true">
+          <span class="sk-label">Proximité programmes</span>
+          <span class="sk-bar"></span>
+          <span class="sk-ends"><span>Gauche</span><span>Centre</span><span>Droite</span></span>
+        </p>
+      </aside>
+    )
+  }
+</section>
+
+<style>
+  .dual-assemblee {
+    margin: 1.25rem 0 1.75rem;
+    padding: 1.15rem 1.2rem 1.35rem;
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: var(--radius-lg, 12px);
+  }
+  .stack-bar {
+    margin-bottom: 0.65rem;
+  }
+  .stack-bar-track {
+    display: flex;
+    height: 28px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--fg) 12%, var(--card));
+    border: 1px solid var(--border);
+  }
+  .stack-seg {
+    min-width: 2px;
+    height: 100%;
+  }
+  .stack-cap {
+    margin: 0.35rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted, #1c1a17);
+    text-align: center;
+  }
+  .compact-cta {
+    margin: 1rem 0 0;
+    text-align: center;
+  }
+  .compact-cta .btn {
+    display: inline-block;
+  }
+
+  .dual-header h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.28rem;
+    color: var(--fg, #0a0a0a);
+  }
+  .dual-lead {
+    margin: 0 0 1rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--fg, #0a0a0a);
+    max-width: 58rem;
+  }
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+  }
+  @media (max-width: 820px) {
+    .dual-grid {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+  }
+  .dual-panel {
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: 10px;
+    padding: 0.85rem 0.9rem 1rem;
+    background: var(--bg, #faf9f7);
+  }
+  .dual-panel--t1 {
+    border-top: 3px solid #c0392b;
+  }
+  .dual-panel--real {
+    border-top: 3px solid #0d378a;
+  }
+  .panel-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    margin-bottom: 0.4rem;
+  }
+  .panel-badge--t1 {
+    background: #fde8e8;
+    color: #7a1f1f;
+  }
+  .panel-badge--real {
+    background: #e3eaf8;
+    color: #0d378a;
+  }
+  .dual-panel h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    color: var(--fg, #0a0a0a);
+  }
+  .panel-meta {
+    margin: 0 0 0.65rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--muted, #1c1a17);
+  }
+  /* Panneau hémicycle volontairement sombre — texte clair forcé (AA) */
+  .hemi-wrap {
+    background: #0f1419;
+    color: #f5f2eb;
+    border-radius: 8px;
+    padding: 0.4rem 0.3rem 0.2rem;
+    margin-bottom: 0.65rem;
+  }
+  .hemi-wrap p,
+  .hemi-wrap span,
+  .hemi-wrap strong,
+  .hemi-wrap li {
+    color: #f5f2eb !important;
+  }
+  .hemi-wrap svg text.hemi-cap {
+    fill: #e8e6e1 !important;
+  }
+  .dual-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+  }
+  .dual-legend li {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    gap: 0.45rem;
+    align-items: center;
+    font-size: 0.86rem;
+    color: var(--fg, #0a0a0a);
+  }
+  .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .leg-label {
+    line-height: 1.25;
+  }
+  .leg-seats {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .dual-footnote {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--border, #e5e2dc);
+  }
+  .dual-footnote p {
+    margin: 0 0 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--fg, #0a0a0a);
+  }
+  .spectrum-key {
+    display: grid;
+    gap: 0.25rem;
+    max-width: 28rem;
+  }
+  .sk-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted, #1c1a17);
+  }
+  .sk-bar {
+    height: 10px;
+    border-radius: 999px;
+    /* Consensus : gauche rouge → écolo vert → centre jaune → LR bleu → RN bleu nuit */
+    background: linear-gradient(
+      90deg,
+      #cc2443 0%,
+      #00c000 22%,
+      #ffeb00 48%,
+      #0066cc 72%,
+      #0d378a 100%
+    );
+  }
+
+  .sk-ends {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--muted, #1c1a17);
+  }
+  .hemi-pending {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+  .pending-msg {
+    margin: 0;
+    text-align: center;
+    color: #e8e6e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 22rem;
+  }
+  .diff-table-wrap {
+    margin-top: 1.15rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border, #e5e2dc);
+  }
+  .diff-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.02rem;
+    color: var(--fg, #0a0a0a);
+  }
+  .diff-intro {
+    margin: 0 0 0.55rem;
+    font-size: 0.86rem;
+  }
+  .diff-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .diff-table th,
+  .diff-table td {
+    text-align: left;
+    padding: 0.45rem 0.5rem;
+    border-bottom: 1px solid var(--border, #e5e2dc);
+    color: var(--fg, #0a0a0a);
+  }
+  .diff-table th {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .diff-table .num {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .diff-table .delta {
+    font-weight: 700;
+  }
+  .diff-table .delta-pos {
+    color: var(--delta-pos, #0f6b3c);
+  }
+  .diff-table .delta-neg {
+    color: var(--delta-neg, #b42318);
+  }
+  .diff-table td .swatch {
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+
+  /* Responsive dual + Δ table (mobile-first polish) */
+  @media (max-width: 640px) {
+    .dual-assemblee {
+      margin: 0.85rem 0 1.15rem;
+      padding: 0.9rem 0.75rem 1.05rem;
+      border-radius: 10px;
+    }
+    .dual-header h3 {
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+    .dual-lead {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .dual-panel {
+      padding: 0.75rem 0.7rem 0.85rem;
+    }
+    .dual-panel h4 {
+      font-size: 0.98rem;
+      line-height: 1.3;
+    }
+    .dual-legend li {
+      grid-template-columns: 14px minmax(0, 1fr);
+      gap: 0.35rem 0.45rem;
+      align-items: start;
+    }
+    .leg-seats {
+      grid-column: 2;
+      white-space: normal;
+      font-size: 0.84rem;
+    }
+    .stack-bar-track {
+      height: 32px;
+    }
+    .diff-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-inline: -0.15rem;
+      padding-inline: 0.15rem;
+    }
+    .diff-table {
+      font-size: 0.84rem;
+      min-width: 18rem;
+    }
+    .diff-table th,
+    .diff-table td {
+      padding: 0.4rem 0.4rem;
+    }
+    .compact-cta .btn {
+      width: 100%;
+      text-align: center;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dual-footnote p {
+      font-size: 0.84rem;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .dual-panel {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .panel-badge--t1 {
+      background: rgba(192, 57, 43, 0.25);
+      color: #f5c4c4;
+    }
+    .panel-badge--real {
+      background: rgba(13, 55, 138, 0.35);
+      color: #c5d4f5;
+    }
+  }
+</style>

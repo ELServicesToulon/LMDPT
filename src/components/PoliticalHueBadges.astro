@@ -1,0 +1,135 @@
+---
+/**
+ * Badges couleurs d’idées 1er tour — obligatoire sur toute publication LMDPT.
+ * DOE : proximité d’idées citées, pas carte d’adhésion partisane.
+ */
+import type { HueBadge } from '../lib/comment-politics';
+
+interface Props {
+  hues: HueBadge[];
+  /** sm = pastille compacte (cartes), md = standard */
+  size?: 'sm' | 'md';
+  /** Afficher le détail confiance / rationale en sous-ligne */
+  showMeta?: boolean;
+  class?: string;
+}
+
+const { hues, size = 'md', showMeta = false, class: className = '' } = Astro.props;
+const list = hues.length > 0 ? hues : [{ slug: 'pluraliste', label: 'Pluraliste / transversal 1er tour', color: '#5a6570' }];
+const primary = list[0]!;
+---
+
+<div
+  class:list={['phb', `phb--${size}`, className]}
+  data-hue={primary.slug}
+  role="group"
+  aria-label="Couleurs d’idées politiques (transparence 1er tour)"
+>
+  {
+    list.map((h) => (
+      <span
+        class="phb-badge"
+        style={`--hue: ${h.color}`}
+        data-hue={h.slug}
+        title={h.rationale ?? h.label}
+      >
+        <span class="phb-swatch" aria-hidden="true" />
+        <span class="phb-label">{h.label}</span>
+      </span>
+    ))
+  }
+  {
+    showMeta && primary.rationale && (
+      <p class="phb-meta meta">
+        Couleur(s) d’idées (transparence) : {list.map((h) => h.label).join(' · ')}
+        {primary.confidence != null && <> · confiance {Math.round(primary.confidence * 100)}&nbsp;%</>}
+        {primary.rationale && <> — {primary.rationale}</>}
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .phb {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.45rem;
+    max-width: 100%;
+  }
+
+  .phb-badge {
+    --hue: #5a6570;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--fg);
+    background: color-mix(in srgb, var(--hue) 16%, var(--card, var(--bg, #fff)));
+    border: 1px solid color-mix(in srgb, var(--hue) 45%, var(--border, #ccc));
+    border-radius: 999px;
+    max-width: 100%;
+  }
+
+  .phb--md .phb-badge {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem 0.15rem 0.35rem;
+  }
+
+  .phb--sm .phb-badge {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem 0.1rem 0.28rem;
+  }
+
+  .phb-swatch {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--hue);
+    border: 1px solid color-mix(in srgb, var(--hue) 40%, #000);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--hue) 20%, transparent);
+  }
+
+  .phb--sm .phb-swatch {
+    width: 0.58rem;
+    height: 0.58rem;
+  }
+
+  .phb-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 14rem;
+  }
+
+  .phb--sm .phb-label {
+    max-width: 11rem;
+  }
+
+  .phb-meta {
+    flex-basis: 100%;
+    margin: 0.15rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* Jaune Attal : contraste lisible */
+  .phb-badge[data-hue='attal'] {
+    color: #1a1a1a;
+    background: color-mix(in srgb, #ffeb00 28%, var(--card, var(--bg, #fff)));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .phb-badge {
+      color: var(--fg);
+      background: color-mix(in srgb, var(--hue) 22%, var(--card, var(--bg, #1a1a1a)));
+    }
+    .phb-badge[data-hue='attal'] {
+      color: #f5f2eb;
+      background: color-mix(in srgb, #ffeb00 18%, var(--card, var(--bg, #1a1a1a)));
+    }
+  }
+</style>

@@ -1,35 +1,49 @@
 # Visuels Élection 2027 — Le Média du Premier Tour
 
-Assets créés pour illustrer le **premier tour** et la ligne **Democracy Over Elimination**.
+Assets pour illustrer le **premier tour** et la ligne **Democracy Over Elimination**.
+
+## Style (2026-07-18)
+
+**Croquis humoristiques style X** : encre noire + aquarelle, papier crème, esprit fil Twitter/X.
+Légèreté sur les *mécanismes* électoraux — jamais de caricature de camp ni de personnalités nommées.
+
+## Rotation quotidienne (P17 · 2026-07-22)
+
+- Registry : [`visual-daily-pool.json`](./visual-daily-pool.json) — **≥ 7** sets (timezone `Europe/Paris`)
+- Lib : `src/lib/visual-daily.ts` · composant `DailyVisuals.astro`
+- Sélection : `epochDays(Paris) % N` — change chaque jour **sans** redeploy
+- `hybrid/` branché dans le pool
+- Une seule MP4 hero pour l’instant ; posters + galeries varient par jour
 
 ## Fichiers
 
-- `hero-premier-tour-2027.jpg` — Hero principal (bannière accueil)
-- `democracy-over-elimination.jpg` — Concept central
-- `pluralite-1er-tour.jpg` — Pluralité des voix
-- `dessin-urne-2027.jpg` — Urne transparente + miroir
-- `photo-citoyens-data-2027.jpg` — Scène citoyens + data ouverte (style photo illustrative)
-- `meme-1er-tour-ne-ment-pas.jpg` — Mème signature
-- `meme-vote-pensee.jpg` — Mème "je vote ce que je pense"
-- `illustration-voix-egales.jpg` — Toutes les voix égales
+| Fichier | Sujet |
+|---------|--------|
+| `hero-premier-tour-2027.jpg` / `.webp` | Hero (souvent poster webp LCP) |
+| `democracy-over-elimination.jpg` | Flèches du 2e tour cassées |
+| `pluralite-1er-tour.jpg` | Urne / confettis de bulletins |
+| `dessin-urne-2027.jpg` | Urne + miroir « France » |
+| `photo-citoyens-data-2027.jpg` | Open data 1er tour |
+| `meme-*.jpg` | Mèmes croquis |
+| `illustration-voix-egales.jpg` | Balance des voix |
+| `hybrid/*.jpg` | Sets hybrides (inclus rotation) |
+| `visual-daily-pool.json` | Calendrier des sets |
 
-**Animation** :
-- `/videos/2027/hero-voting-animation.mp4` (6s, push-in civique)
+**Animations hero** :
+- `/videos/2027/hero-voting-animation.mp4` (6s, push-in croquis couleur — sets pairs)
+- `/videos/2027/hero-urne-nb-croquis.mp4` (6s, croquis encre **N&B sans texte** — sets impairs)
+- Poster N&B : `hero-urne-nb-croquis-2026-07-25.jpg` / `.webp`
+- **Quotidien scoop** (forcé) : `npm run hero:daily` → `hero-daily-live.mp4` + `hero-daily-override.json`  
+  Timer **07:40 Europe/Paris** (reco Directrice) : `bash scripts/install-hero-daily-timer.sh`
 
-## Utilisation
+Archive pré-croquis : `archive-pre-croquis-2026-07-18/`
 
-- Accueil : hero + galerie complète
-- Page Présidentielle 2027 : illustration + mini-galerie mèmes
-- Threads X / posts sociaux : pièces jointes (mèmes + dessins)
-- OG images : utiliser hero ou pluralité (adapter ratio si besoin)
+## PRINCIPE ABSOLU DE LAÏCITÉ (non négociable)
 
-**Style** : dessins élégants, mèmes respectueux et civiques, palette cohérente avec le site (off-white + bleu profond + accents tricolores).
+- Aucun signe religieux ostentatoire dans AUCUNE illustration.
+- Tenues quotidiennes neutres uniquement.
+- Pas de logo de parti, pas de caricature de personnalités nommées.
+- Sauf live YouTube (exception documentée ailleurs).
 
-**PRINCIPE ABSOLU DE LAÏCITÉ (non négociable)** : 
-- Aucun signe religieux ostentatoire dans AUCUNE illustration, photo, dessin, mème ou visuel du site.
-- aucun symbole religieux (croix, église, voile, kippa, etc.), même discret ou en arrière-plan.
-- Toutes les représentations de citoyens doivent être en tenues quotidiennes neutres, sans aucun attribut religieux.
-- Ce principe s'applique à l'intégralité du site (sauf live YouTube). Toute image contrevenant est bloquée immédiatement.
-- Le site expose des idées et des faits, jamais d'idéologie religieuse ou autoritaire.
-
-Générés 2026-07-09 — focus Élection 2027.
+Générés 2026-07-18 — remplacement dessins réalistes → croquis X humoristiques.
+Rotation quotidienne 2026-07-22 (P17).

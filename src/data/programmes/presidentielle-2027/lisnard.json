@@ -11,7 +11,7 @@
     "document_label": "Programme complet — Nouvelle Énergie (site officiel)",
     "status": "partial"
   },
-  "updated": "2026-07-10",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "lisnard-2027-institutions-etat-regalien",
@@ -21,7 +21,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
       "source_label": "Site Nouvelle Énergie",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "lisnard-2027-institutions-debureaucratisation",
@@ -31,7 +32,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
       "source_label": "Site Nouvelle Énergie",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "lisnard-2027-education-ecole-excellence",
@@ -41,7 +43,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/education/",
       "source_label": "Site Nouvelle Énergie — Éducation",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "École"
     },
     {
       "id": "lisnard-2027-education-lycees-professionnels",
@@ -51,7 +54,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/education/",
       "source_label": "Site Nouvelle Énergie — Éducation",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "École"
     },
     {
       "id": "lisnard-2027-securite-regalien",
@@ -61,7 +65,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
       "source_label": "Site Nouvelle Énergie",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Ordre public"
     },
     {
       "id": "lisnard-2027-sante-performance",
@@ -71,7 +76,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/sante/",
       "source_label": "Site Nouvelle Énergie — Santé",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Accès aux soins"
     },
     {
       "id": "lisnard-2027-agriculture-souverainete",
@@ -81,7 +87,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/agriculture/",
       "source_label": "Site Nouvelle Énergie — Agriculture",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Général"
     },
     {
       "id": "lisnard-2027-immigration-controle",
@@ -91,7 +98,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/immigration/",
       "source_label": "Site Nouvelle Énergie — Immigration",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "lisnard-2027-economie-liberte",
@@ -101,7 +109,8 @@
       "status": "nouveau",
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
       "source_label": "Site Nouvelle Énergie",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Général"
     }
   ],
   "chiffrages": []

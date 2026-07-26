@@ -45,6 +45,8 @@ export interface ProgramDocument {
 export interface ProgramMeasure {
   id: string;
   theme: ProgramThemeId;
+  /** Sous-thème optionnel pour granularité comparateur (P8-2 / P17-1) */
+  subtheme?: string;
   label: string;
   detail?: string;
   status: MeasureEvolutionStatus;

@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  PACK_DATA,
+  getPackCheckoutUrl,
+  packCheckoutReady,
+} from '../config/soutenir';
+
+const checkoutReady = packCheckoutReady();
+const checkoutUrl = getPackCheckoutUrl();
+const checkoutIsTest = checkoutReady && checkoutUrl.includes('/test_');
+const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<BaseLayout
+  title={PACK_DATA.name}
+  description={`${PACK_DATA.name} — ${PACK_DATA.priceEurYear} €/an. Exports AN1T, méthode, briefings. Média civique LMDPT, sans paywall des résultats officiels.`}
+  keywords="Pack Data AN1T, export Sainte-Laguë, données électorales pédagogiques, LMDPT, pluralité premier tour"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> → <a href="/soutenir">Soutenir</a> → Pack Data AN1T
+  </nav>
+
+  <section class="hero-pack">
+    <p class="eyebrow">Produit data · LMDPT</p>
+    <h2>{PACK_DATA.name}</h2>
+    <p class="lead">{PACK_DATA.tagline}</p>
+    <p class="price-line">
+      <strong class="price">{PACK_DATA.priceEurYear}&nbsp;€</strong>
+      <span class="meta"> / an · TTC indicatif · {PACK_DATA.currency}</span>
+    </p>
+    <p class="meta disclaimer">
+      L’atlas, les résultats data.gouv et les analyses publiques restent <strong>gratuits</strong>.
+      Ce pack finance le travail d’outillage et de documentation — pas un accès « secret » aux
+      bulletins officiels.
+    </p>
+
+    <div class="cta-row" role="group" aria-label="Acheter ou manifester son intérêt">
+      {
+        checkoutReady ? (
+          <a class="btn btn-primary btn-lg" href={checkoutUrl} rel="noopener noreferrer" target="_blank">
+            Souscrire — {PACK_DATA.priceEurYear}&nbsp;€ / an →
+          </a>
+        ) : (
+          <a class="btn btn-primary btn-lg" href={PACK_DATA.interestIssueUrl} rel="noopener noreferrer">
+            Manifestez votre intérêt (liste d’attente) →
+          </a>
+        )
+      }
+      <a class="btn btn-secondary" href="/soutenir">Soutenir par un don</a>
+      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour">Voir le simulateur gratuit</a>
+    </div>
+    {
+      !checkoutReady && (
+        <p class="meta checkout-note">
+          Checkout Stripe non branché. Dès qu’un Payment Link est fourni au build (
+          <code>PUBLIC_LMDPT_PACK_CHECKOUT_URL</code>), le bouton passe en paiement direct.
+        </p>
+      )
+    }
+    {
+      checkoutReady && checkoutIsTest && (
+        <p class="meta checkout-note">
+          <strong>Stripe mode test</strong> — paiement simulé (carte 4242…). Bascule live = nouveaux
+          Payment Links + rebuild.
+        </p>
+      )
+    }
+  </section>
+
+  <section class="card" id="contenu">
+    <h3>Contenu du pack</h3>
+    <ul class="check-list">
+      {PACK_DATA.includes.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+    <p class="meta">
+      Les exports s’appuient sur le moteur déjà en production (
+      <code>lib/an1t.ts</code>, <code>lib/an1t-export.ts</code> — CSV / JSON / PNG côté simulateur).
+    </p>
+  </section>
+
+  <section class="card" id="hors-scope">
+    <h3>Hors scope (volontairement)</h3>
+    <ul>
+      {PACK_DATA.notIncluded.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="card" id="pour-qui">
+    <h3>Pour qui ?</h3>
+    <div class="who-grid">
+      <div>
+        <h4>Enseignants & éducation civique</h4>
+        <p class="meta">Supports de cours, exports pour travaux dirigés.</p>
+      </div>
+      <div>
+        <h4>Chercheurs & étudiants</h4>
+        <p class="meta">Jeux de sièges AN1T documentés, méthode reproductible.</p>
+      </div>
+      <div>
+        <h4>Rédactions data / OSINT léger</h4>
+        <p class="meta">Baseline pluralité T1 pour articles — attribution requise.</p>
+      </div>
+      <div>
+        <h4>Associations</h4>
+        <p class="meta">Ateliers « lire le 1er tour » sans dépendance aux sondages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="licence">
+    <h3>Licence d’usage (résumé)</h3>
+    <ul>
+      <li>
+        <strong>Autorisé</strong> : usage pédagogique, recherche, documentation interne, citation
+        avec lien vers lmdpt.iarbre.org.
+      </li>
+      <li>
+        <strong>Sur demande</strong> : republication presse, produits commerciaux, redistribution
+        massives des exports.
+      </li>
+      <li>
+        <strong>Interdit</strong> : présenter les simulations comme résultats officiels du Ministère
+        de l’Intérieur ; deepfakes ou désinformation.
+      </li>
+    </ul>
+    <p class="meta">
+      Cadre LMDPT R4 (exactitude, attribution, pas de manipulation). Détail charte :{' '}
+      <a href="/charte">/charte</a> · sources : <a href="/sources">/sources</a>.
+    </p>
+  </section>
+
+  <section class="card" id="methode">
+    <h3>Méthode en 4 points</h3>
+    <ol>
+      <li>Voix du 1er tour (data.gouv / imports LMDPT)</li>
+      <li>Regroupement en blocs civiques (méthodo publique)</li>
+      <li>Seuil d’accès (ex. 0 / 3 / 5 %)</li>
+      <li>Répartition Sainte-Laguë sur 577 sièges (ou dose mixte documentée)</li>
+    </ol>
+    <p>
+      Approfondir :{' '}
+      <a href="/analyses/assemblee-premier-tour-mecanismes">mécanismes AN1T</a> ·{' '}
+      <a href="/analyses/assemblee-premier-tour">simulateur</a>.
+    </p>
+  </section>
+
+  <section class="card" id="faq">
+    <h3>FAQ courte</h3>
+    <dl class="faq">
+      <dt>Dois-je payer pour l’atlas ?</dt>
+      <dd>Non. Atlas, analyses et simulateur de base restent gratuits.</dd>
+      <dt>C’est une prédiction 2027 ?</dt>
+      <dd>Non. Outil pédagogique de pluralité T1 — pas un ranking de candidats.</dd>
+      <dt>Quand le paiement en ligne ?</dt>
+      <dd>
+        Dès configuration d’un Payment Link Stripe (ou équivalent) + rebuild. En attendant : liste
+        d’attente GitHub.
+      </dd>
+      <dt>Facture / orga ?</dt>
+      <dd>
+        Contacter via{' '}
+        <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer"
+          >GitHub Issues</a
+        >{' '}
+        (devis atelier ou multi-licences).
+      </dd>
+    </dl>
+  </section>
+
+  <p class="meta">Fiche produit mise à jour : {updated} · statut {PACK_DATA.status}</p>
+
+  <style>
+    .hero-pack .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+    .lead {
+      font-size: 1.08rem;
+      max-width: 40rem;
+      line-height: 1.55;
+    }
+    .price-line {
+      margin: 0.75rem 0;
+    }
+    .price {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    .disclaimer {
+      padding: 0.5rem 0.65rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+      max-width: 42rem;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--on-accent) !important;
+      border-color: var(--accent);
+    }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--fg) !important;
+    }
+    .btn-lg {
+      padding: 0.6rem 1.15rem;
+      font-size: 1.02rem;
+    }
+    .checkout-note {
+      max-width: 40rem;
+    }
+    .check-list {
+      line-height: 1.55;
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.85rem;
+    }
+    .who-grid h4 {
+      margin: 0 0 0.25rem;
+      font-size: 0.98rem;
+    }
+    .who-grid p {
+      margin: 0;
+    }
+    .faq dt {
+      font-weight: 700;
+      margin-top: 0.65rem;
+    }
+    .faq dd {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+    }
+  </style>
+</BaseLayout>

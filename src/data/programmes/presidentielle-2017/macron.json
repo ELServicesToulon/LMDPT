@@ -1,69 +1,81 @@
 {
   "scrutin": "presidentielle-2017",
-  "candidate": { "name": "Emmanuel Macron", "slug": "macron", "affiliation": "En Marche !" },
+  "candidate": {
+    "name": "Emmanuel Macron",
+    "slug": "macron",
+    "affiliation": "En Marche !"
+  },
   "program": {
     "published_at": "2017-03-02",
     "document_url": "https://www.bfmtv.com/politique/emmanuel-macron/emmanuel-macron-devoile-son-programme-presidentiel_AN-201703020203.html",
     "document_label": "Programme En Marche ! 2017",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "macron-2017-fiscalite-impots",
       "theme": "fiscalite",
       "label": "Allègement de la fiscalité sur le capital et le travail",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "macron-2017-retraites-universelle",
       "theme": "retraites",
       "label": "Système universel de retraite par points",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Âge légal"
     },
     {
       "id": "macron-2017-europe-renforcement",
       "theme": "europe",
       "label": "Renforcement de la zone euro et coopération européenne",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "macron-2017-climat-paris",
       "theme": "climat",
       "label": "Accord de Paris et transition énergétique",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Transition"
     },
     {
       "id": "macron-2017-emploi-assurance-chomage",
       "theme": "entreprises",
       "label": "Réforme de l'assurance chômage et formation",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Emploi & industrie"
     },
     {
       "id": "macron-2017-education-college",
       "theme": "education",
       "label": "Réforme du collège et autonomie des établissements",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "École"
     },
     {
       "id": "macron-2017-immigration-asile",
       "theme": "immigration",
       "label": "Réforme du droit d'asile et accueil des réfugiés",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "macron-2017-institutions-moralisation",
       "theme": "institutions",
       "label": "Loi de moralisation de la vie publique",
       "status": "nouveau",
-      "as_of": "2017-03"
+      "as_of": "2017-03",
+      "subtheme": "Gouvernance"
     }
   ],
   "chiffrages": [

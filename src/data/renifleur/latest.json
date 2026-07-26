@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-16T06:14:02.074Z",
+  "fetched_at": "2026-07-26T13:24:51.775Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,13 +7,260 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "« Projet Pegasus » : cinq ans après les révélations sur un système mondial d’espionnage de téléphones, l’enquête judiciaire se poursuit",
-      "url": "https://www.lemonde.fr/pixels/article/2026/07/16/projet-pegasus-cinq-ans-apres-les-revelations-sur-un-systeme-mondial-d-espionnage-de-telephones-l-enquete-judiciaire-se-poursuit_6723735_4408996.html",
-      "published": "2026-07-16",
-      "summary": "Deux anciens responsables de l’entreprise israélienne NSO Group, qui a développé le logiciel espion, sont placés sous le statut de témoins assistés. Mais alors que l’Elysée promettait, en 2021, de faire « toute la lumière » sur l’espionnage de six ministres français, un rapproche",
+      "title": "Présidentielle 2027 : les « insoumis » et leurs caravanes populaires à la conquête des abstentionnistes",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/26/presidentielle-2027-les-insoumis-et-leurs-caravanes-populaires-a-la-conquete-des-abstentionnistes_6732763_823448.html",
+      "published": "2026-07-26",
+      "summary": "Tout au long de l’été, les militants de La France insoumise sillonnent la France, privilégiant les quartiers populaires pour encourager les habitants à s’inscrire sur les listes électorales. Mais aussi pour mieux faire connaître la candidature de Jean-Luc Mélenchon.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Pierre Lefébure, politiste : « Le suractivisme d’un candidat à la présidentielle est risqué, tout ce qu’il dit peut lui être renvoyé au visage plus tard »",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/24/pierre-lefebure-politiste-le-suractivisme-d-un-candidat-a-la-presidentielle-est-risque-tout-ce-qu-il-dit-peut-lui-etre-renvoye-au-visage-plus-tard_6731504_823448.html",
+      "published": "2026-07-24",
+      "summary": "L’été 2026 s’annonce moins riche en campagnes politiques que d’autres étés précédant le scrutin, mais il promet de donner à voir tout l’éventail des usages en communication et déambulation publique, observe, dans un entretien au « Monde », le maître de conférences en science poli",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : l’écologiste Marine Tondelier poursuit sa campagne malgré la pression de l’union",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-l-ecologiste-marine-tondelier-poursuit-sa-campagne-malgre-la-pression-de-l-union_6731501_823448.html",
+      "published": "2026-07-24",
+      "summary": "Sillonnant le pays à bord d’un van électrique, la secrétaire nationale des Ecologistes continue de porter ses idées pendant que les appels à l’union continuent de diviser le parti.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : tondelier"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : en Bretagne, Gabriel Attal mène campagne pour faire décoller sa candidature",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-en-bretagne-gabriel-attal-mene-campagne-pour-faire-decoller-sa-candidature_6731467_823448.html",
+      "published": "2026-07-24",
+      "summary": "Arpentant durant trois jours la région, le candidat à l’Elysée s’est affiché, jeudi, aux côtés du patron Michel-Edouard Leclerc et a martelé sa volonté de « réduire l’écart entre le [salaire] net et le brut ». La trêve estivale est l’occasion pour lui de multiplier les déplacemen",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : l’été, une période de précampagne difficile à ignorer pour les candidats",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-pendant-l-ete-une-periode-de-precampagne-difficile-a-ignorer-pour-les-candidats_6731416_823448.html",
+      "published": "2026-07-24",
+      "summary": "A quelques mois de l’élection, la période estivale est un moment privilégié pour certains candidats de se montrer sur le terrain et pour les partis de consolider leur base.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Loi d’urgence agricole : le Conseil constitutionnel saisi par des députés « insoumis » et écologistes",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/24/loi-d-urgence-agricole-le-conseil-constitutionnel-saisi-par-des-deputes-insoumis-et-ecologistes_6731496_823448.html",
+      "published": "2026-07-24",
+      "summary": "Les députés requérants arguent notamment que la réintroduction sous conditions de certains pesticides interdits n’a pas de lien avec le projet de loi initial, et devrait donc être censurée comme cavalier législatif.",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : insoumis"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : comment Matignon négocie avec les banques françaises pour qu’elles acceptent de financer la campagne de Marine Le Pen",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/23/presidentielle-2027-comment-matignon-negocie-avec-les-banques-francaises-pour-qu-elles-acceptent-de-financer-la-campagne-de-marine-le-pen_6730921_823448.html",
+      "published": "2026-07-23",
+      "summary": "Un consortium de banques devrait permettre à la candidate d’extrême droite d’obtenir un emprunt en France. Le premier ministre est disposé à ce que ce prêt soit partiellement garanti par l’Etat, par le biais de la prochaine loi de finances.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen"
+      }
+    },
+    {
+      "title": "La Chine n’a pas lancé un programme de charité pour offrir des climatiseurs aux Français",
+      "url": "https://www.france24.com/fr/france/20260723-la-chine-n-a-pas-lanc%C3%A9-un-programme-de-charit%C3%A9-pour-offrir-des-climatiseurs-aux-fran%C3%A7ais",
+      "published": "2026-07-23",
+      "summary": "Des internautes affirment que la Chine se moquerait du manque de climatisation en France. Ils partagent une vidéo humoristique en chinois annonçant la création d'une association destinée à offrir des climatiseurs recyclés aux Français. En réalité, il s'agit d'une vidéo parodique ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : climat"
+      }
+    },
+    {
+      "title": "Réforme de la justice : le Conseil constitutionnel censure le recours à la généalogie génétique de la loi portée par Gérald Darmanin",
+      "url": "https://www.lemonde.fr/societe/article/2026/07/23/reforme-de-la-justice-le-conseil-constitutionnel-censure-le-recours-a-la-genealogie-genetique-de-la-loi-portee-par-gerald-darmanin_6731175_3224.html",
+      "published": "2026-07-23",
+      "summary": "Les sages ont jugé le dispositif contraire à la Constitution faute de garanties suffisantes pour concilier recherche des auteurs d’infractions et respect de la vie privée, tout en validant les principales mesures contestées de la loi portée par Gérald Darmanin.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "philippe",
+        "label": "Philippe / Horizons",
+        "color": "#0001b8",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : réforme, reforme"
+      }
+    },
+    {
+      "title": "Interdiction des réseaux sociaux aux moins de 15 ans : LFI dépose un recours devant le Conseil constitutionnel",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/23/interdiction-des-reseaux-sociaux-aux-moins-de-15-ans-lfi-depose-un-recours-devant-le-conseil-constitutionnel_6731174_823448.html",
+      "published": "2026-07-23",
+      "summary": "Les députés « insoumis » à l’origine de ce recours considèrent que l’interdiction et le contrôle de l’âge constituent une atteinte à la liberté d’expression et de communication, mais aussi au droit au respect de la vie privée.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : insoumis, lfi"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Jean-Luc Mélenchon tend une nouvelle fois la main aux Ecologistes en leur proposant un accord « global »",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/22/presidentielle-2027-jean-luc-melenchon-propose-un-accord-global-aux-ecologistes-pour-unir-la-gauche_6730025_823448.html",
+      "published": "2026-07-22",
+      "summary": "« Nous ne renonçons pas à une stratégie unitaire. Notre main tendue, c’est la “Nouvelle alliance populaire” », a expliqué le candidat « insoumis » dans une interview au média écologiste en ligne « Reporterre ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+      }
+    },
+    {
+      "title": "Le géographe Frédéric Giraut réagit aux « écorégions » promues par Jean-Luc Mélenchon : « Le biorégionalisme ne peut penser la question urbaine et migratoire autrement qu’en termes négatifs »",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/22/le-geographe-frederic-giraut-reagit-aux-ecoregions-promues-par-jean-luc-melenchon-le-bioregionalisme-ne-peut-penser-la-question-urbaine-et-migratoire-autrement-qu-en-termes-negatifs_6729986_3232.html",
+      "published": "2026-07-22",
+      "summary": "La proposition du candidat « insoumis » à l’élection présidentielle de redessiner la carte de France autour de 13 nouvelles zones s’inscrit dans une tradition de pensée qui fait primer les données naturelles et de supposés héritages culturels sur les réalités sociales et économiq",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
+      "published": "2026-07-18",
+      "summary": "Des élus macronistes et des centristes peu convaincus par Gabriel Attal et Edouard Philippe entretiennent le dialogue notamment avec Bernard Cazeneuve. Ils seraient prêts à soutenir dès le premier tour un candidat de la gauche réformiste dans le cadre d’une coalition.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal, macron"
+      }
+    },
+    {
+      "title": "Pour l’élection présidentielle 2027, la gauche sociale-démocrate cherche toujours son candidat",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/18/hollande-cazeneuve-glucksmann-la-gauche-sociale-democrate-cherche-toujours-son-candidat_6724309_823448.html",
+      "published": "2026-07-18",
+      "summary": "Le 9 juillet, les militants socialistes ont opté pour une primaire interne qui doit se tenir en octobre, mais ce choix n’a pas fait disparaître les profondes tensions au sein du PS. La multiplication de prétendants officieux brouille les cartes.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : socialiste"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
+      "published": "2026-07-17",
+      "summary": "Suspendus depuis octobre 2025, les six membres Les Républicains du gouvernement Lecornu incarnent pour leur président, Bruno Retailleau, une page révolue : celle d’une droite alliée avec la Macronie. Les bannis estiment ne pas avoir trahi leur famille politique et plaident pour u",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Bernard Cazeneuve se déclare candidat dans un entretien au « Parisien » et décline la primaire socialiste",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/16/presidentielle-2027-bernard-cazeneuve-se-declare-candidat-dans-un-entretien-au-parisien-et-decline-la-primaire-socialiste_6723827_823448.html",
+      "published": "2026-07-16",
+      "summary": "Celui qui se présente comme « un républicain de gauche » et un « social-démocrate » esquisse dans cette interview ses premières propositions en vue de la course à l’Elysée.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : cazeneuve, socialiste, social-democrate"
+      }
     },
     {
       "title": "Dominique de Villepin dit que les candidats qui promettent de ne pas augmenter les impôts sont des « menteurs »",
@@ -22,7 +269,14 @@
       "summary": "Le probable candidat à la présidentielle s’exprimait au siège parisien de son jeune parti, La France humaniste, devant une poignée de journalistes ainsi qu’une dizaine d’influenceurs et de représentants des nouveaux médias.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
     },
     {
       "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
@@ -31,7 +285,14 @@
       "summary": "Son éligibilité à peine recouvrée, le 7 juillet, Marine Le Pen a dévoilé une affiche exaltant le thème de « la renaissance » : celle de la France autant que celle de la candidate. L’audience se tiendra en référé le 27 juillet au tribunal de Paris.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Attal / Renaissance · Le Pen / RN) — teinte pluraliste."
+      }
     },
     {
       "title": "Présidentielle 2027 : Jean-Luc Mélenchon, en meeting en Bretagne, s’adresse aux « enfants » des Jacobins pour défendre ses « écorégions »",
@@ -40,52 +301,14 @@
       "summary": "Attendu sur les questions de ruralité et d’agriculture, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué, mardi, son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantiqu",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Elon Musk qualifie Marine Le Pen de « dernier espoir de la France »",
-      "url": "https://www.lemonde.fr/pixels/article/2026/07/15/elon-musk-qualifie-marine-le-pen-de-dernier-espoir-de-la-france_6723610_4408996.html",
-      "published": "2026-07-15",
-      "summary": "Jusque-là peu investi dans la politique française alors qu’il s’est déjà illustré par son interventionnisme dans d’autres pays, l’homme le plus riche du monde a apporté mercredi publiquement son soutien à la candidate du Rassemblement national.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "François-Noël Buffet, un candidat au poste de Défenseur des droits bousculé par la gauche lors de son audition devant les députés",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/15/candidat-au-poste-de-defenseur-des-droits-francois-noel-buffet-bouscule-par-la-gauche-lors-de-son-audition-devant-les-deputes_6723600_3224.html",
-      "published": "2026-07-15",
-      "summary": "Le profil du sénateur Les Républicains, proposé par Emmanuel Macron, lui vaut un tir de barrage de nombreux syndicats et associations. L’ancien ministre des outre-mer a notamment participé aux manifestations contre le mariage pour tous et s’est opposé à la constitutionnalisation ",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : le RN se divise sur le voile, Marine Le Pen envisage un référendum",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/presidentielle-2027-le-rn-se-divise-sur-le-voile-marine-le-pen-envisage-un-referendum_6723548_823448.html",
-      "published": "2026-07-15",
-      "summary": "Plusieurs cadres du parti d’extrême droite, dont son président, Jordan Bardella, doutent de la faisabilité et de l’opportunité de l’interdiction du voile dans l’espace public. Une promesse portée par la candidate du Rassemblement national depuis 2012.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "La « galaxie Stérin » dans le viseur de la commission du Sénat sur le financement privé des politiques publiques",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/financement-prive-des-politiques-publiques-la-galaxie-sterin-dans-le-viseur-d-une-commission-du-senat_6723530_823448.html",
-      "published": "2026-07-15",
-      "summary": "Cette commission dénonce, dans son rapport présenté mercredi, « l’opacité de certaines structures privées ». Les activités du milliardaire conservateur Pierre-Edouard Stérin sont notamment montrées du doigt.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : en Gironde, Raphaël Glucksmann entretient le suspense sur sa candidature",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
-      "published": "2026-07-15",
-      "summary": "L’eurodéputé Place publique refuse toujours de faire officiellement acte de candidature à la future primaire du camp social-démocrate, validée par les militants socialistes le 9 juillet.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, lfi"
+      }
     },
     {
       "title": "Armel Le Divellec, professeur de droit public : « L’élection présidentielle est un mirage : à elle seule, elle ne livre pas la maîtrise du pouvoir »",
@@ -94,25 +317,14 @@
       "summary": "Les responsables politiques devraient se préoccuper autant des probables élections législatives anticipées que du scrutin présidentiel de 2027 avertit, dans une tribune au « Monde », le directeur adjoint du Centre d’études constitutionnelles et politiques.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Un défilé du 14-Juillet XXL : les Européens et en particulier l'Ukraine mis à l'honneur",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260714-un-d%C3%A9fil%C3%A9-du-14-juillet-xxl-les-europ%C3%A9ens-et-en-particulier-l-ukraine-mis-%C3%A0-l-honneur",
-      "published": "2026-07-14",
-      "summary": "Près de 6.700 troupes à pied, 98 avions, 31 hélicoptères et 315 véhicules : jamais autant de militaires n'auront défilé sur les Champs-Elysées afin d'illustrer \"le réarmement de la France, l'autonomie stratégique de la France et le réveil stratégique européen\", selon l'Elysée.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
-    },
-    {
-      "title": "14-Juillet : \"être ici c'est assez fantastique\" pour ce Capitaine de l'artillerie de Marine",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260714-14-juillet-%C3%AAtre-ici-c-est-assez-fantastique-pour-ce-capitaine-de-l-artillerie-de-marine",
-      "published": "2026-07-14",
-      "summary": "Près de 6 700 troupes à pied, 98 avions, 31 hélicoptères et 315 véhicules : jamais autant de militaires n'auront défilé sur les Champs-Elysées afin d'illustrer \"le réarmement de la France, l'autonomie stratégique de la France et le réveil stratégique européen\", selon l'Elysée. Au",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
     },
     {
       "title": "« Première République écologique et citoyenne » : le programme des Ecologistes pour peser en 2027",
@@ -121,7 +333,14 @@
       "summary": "Changement de Constitution, sortie du nucléaire, retraite… Le parti Les Ecologistes a présenté, lundi 13 juillet, ses propositions pour l’élection présidentielle, après avoir conforté la candidature de sa secrétaire nationale, Marine Tondelier.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes, tondelier"
+      }
     },
     {
       "title": "« Chacun joue le coup d’après » : ce que dit la multiplication des candidatures pour la présidentielle 2027",
@@ -130,7 +349,14 @@
       "summary": "Avec une trentaine de candidats sur la ligne de départ, la campagne pour l’élection suprême démarre en rangs dispersés, pointant la faiblesse de certains camps, notamment à gauche.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
     },
     {
       "title": "Présidentielle 2027 : Marine Tondelier dévoile le programme des Ecologistes",
@@ -139,124 +365,14 @@
       "summary": "Porté par dix mois de consultations et 50 000 propositions, le programme promet la proposition de créer une « Première République écologique et citoyenne », une transformation profonde des institutions et de la fiscalité pour 2027.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Jordan Bardella tend la main à « l’électorat historique de la droite » dans un premier entretien à la presse depuis la condamnation de Marine Le Pen",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/12/jordan-bardella-tend-la-main-a-l-electorat-historique-de-la-droite-dans-un-premier-entretien-a-la-presse-depuis-la-condamnation-de-marine-le-pen_6722920_823448.html",
-      "published": "2026-07-12",
-      "summary": "Le président du RN, qui a renoncé à son ambition présidentielle après la candidature de sa mentore au nom du parti d’extrême droite, a dit au « Figaro » son souhait de « réarrimer une partie des élites patriotes aux classes populaires et aux classes moyennes ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Raphaël Glucksmann, une éducation politique passée par la Géorgie",
-      "url": "https://www.lemonde.fr/m-le-mag/article/2026/07/12/raphael-glucksmann-une-education-politique-passee-par-la-georgie_6722846_4500055.html",
-      "published": "2026-07-12",
-      "summary": "L’aspirant candidat à la présidentielle de 2027 a été, de 2009 à 2013, le proche conseiller du président géorgien Mikheïl Saakachvili, alors qu’il était tout juste trentenaire. Une expérience au service d’une puissance étrangère que l’extrême droite comme la gauche radicale ne ma",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Eric Lombard, ancien ministre de l’économie : « Le déficit nuit gravement à la jeunesse. Nous versons plus d’argent en intérêts à nos créanciers que pour former nos enfants »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/11/eric-lombard-ancien-ministre-de-l-economie-le-deficit-nuit-gravement-a-la-jeunesse-nous-versons-plus-d-argent-en-interets-a-nos-creanciers-que-pour-former-nos-enfants_6722721_3232.html",
-      "published": "2026-07-11",
-      "summary": "L’ancien locataire de Bercy propose, dans une tribune au « Monde », quelques règles qui permettraient de retrouver la maîtrise de nos comptes publics en cinq ans. La campagne présidentielle est, selon lui, le bon moment pour orchestrer le retour à un rapport dette-PIB stable.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Clémentine Autain prend acte de l’échec de la « primaire unitaire » de la gauche et renonce à être candidate",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
-      "published": "2026-07-11",
-      "summary": "La députée écologiste a fait cette annonce samedi, au lendemain de la décision des militants socialistes de réserver leur primaire aux seuls militants du parti à la rose et des partis qui lui sont proches, comme Place publique, de Raphaël Glucksmann.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "« Notre modèle de société fondée sur la hausse continue de l’abondance est en faillite, et les politiques regardent ailleurs »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/11/notre-modele-de-societe-fondee-sur-la-hausse-continue-de-l-abondance-est-en-faillite-et-les-politiques-regardent-ailleurs_6722700_3232.html",
-      "published": "2026-07-11",
-      "summary": "A dix mois de l’élection présidentielle, les candidats, au lieu de promettre une augmentation intenable du pouvoir d’achat, doivent rompre avec l’imaginaire de la croissance hérité des « trente glorieuses », estime Benjamin Brice, chercheur en science politique, dans une tribune ",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Ségolène Royal, Raphaël Glucksmann, François Hollande… La primaire sociale-démocrate cherche ses candidats",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/11/segolene-royal-raphael-glucksmann-francois-hollande-la-primaire-sociale-democrate-cherche-ses-candidats_6722668_823448.html",
-      "published": "2026-07-11",
-      "summary": "Après le choix par les militants socialistes d’un processus de désignation pour la présidentielle, certaines personnalités ont confirmé leur participation. D’autres, à l’instar de Raphaël Glucksmann, temporisent pour en connaître les contours. Voire, tels François Hollande ou Kar",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : Ségolène Royal annonce sa participation à la primaire de l’espace socialiste",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/10/presidentielle-2027-segolene-royal-annonce-sa-participation-a-la-primaire-de-l-espace-socialiste_6722443_6205049.html",
-      "published": "2026-07-10",
-      "summary": "La candidate à la présidentielle de 2007 a annoncé qu’elle participerait à cette consultation qui doit se dérouler à l’automne.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Condamnation de Marine Le Pen : « C’est une idée très française de considérer que si l’on empêche une personne de se présenter, c’est l’ensemble de la démocratie qu’on entrave »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/10/condamnation-de-marine-le-pen-c-est-une-idee-tres-francaise-de-considerer-que-si-l-on-empeche-une-personne-de-se-presenter-c-est-l-ensemble-de-la-democratie-qu-on-entrave_6722441_3232.html",
-      "published": "2026-07-10",
-      "summary": "Le sociologue Etienne Ollion explique, dans un entretien au « Monde », que le choix des juges de la cour d’appel de Paris de préserver « la liberté de l’électeur » procède d’une logique implicite selon laquelle la justice ne doit pas trop intervenir dans le jeu politique.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : avec Marine Le Pen, Bruno Retailleau retrouve son adversaire « socialiste » préférée",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-avec-marine-le-pen-bruno-retailleau-retrouve-son-adversaire-socialiste-preferee_6722039_823448.html",
-      "published": "2026-07-09",
-      "summary": "Si le parti Les Républicains et son président jugent la double finaliste à la présidentielle comme une rivale plus sérieuse que Jordan Bardella, ils pensent pouvoir se différencier d’elle en la présentant comme la candidate de l’« assistanat ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : la candidature de Marine Le Pen bouscule le match Attal-Philippe",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/09/marine-le-pen-candidate-malgre-sa-condamnation-gabriel-attal-et-edouard-philippe-face-au-scenario-le-plus-craint-par-le-bloc-central_6722030_823448.html",
-      "published": "2026-07-09",
-      "summary": "Après l’arrêt de la cour d’appel, le 7 juillet, les deux candidats ont choisi des stratégies différentes pour tenter de s’imposer en adversaire principal de la cheffe de file du RN. Au sein de l’ex-majorité, ce rebondissement ravive l’inquiétude sur l’éclatement des candidatures ",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "« Il a la vie devant lui » : Jordan Bardella ramené à sa condition de numéro deux, après un an à penser à l’Elysée",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/09/il-a-la-vie-devant-lui-apres-un-an-a-penser-a-l-elysee-jordan-bardella-ramene-a-sa-condition-de-numero-deux_6722025_823448.html",
-      "published": "2026-07-09",
-      "summary": "Le président du Rassemblement national a affiché un visage fermé lors de la première sortie de précampagne de Marine Le Pen, qu’il n’a pas même félicitée pour sa candidature à l’élection présidentielle de 2027. La décision de justice du 7 juillet dans l’affaire des assistants par",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Présidentielle 2027 : vote décisif au PS pour sceller le sort de la primaire unitaire",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/09/presidentielle-2027-vote-decisif-pour-olivier-faure-et-le-parti-socialiste-en-vue-de-designer-un-candidat-social-democrate_6722023_823448.html",
-      "published": "2026-07-09",
-      "summary": "Les militants du Parti socialiste se prononcent, jeudi, sur la méthode de départage de leur future tête d’affiche pour 2027. La « primaire de la gauche » incluant Les Ecologistes et les anciens « insoumis » n’est plus à l’ordre du jour.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
-    },
-    {
-      "title": "Marine Le Pen condamnée et candidate : un lancement de campagne inattendu",
-      "url": "https://www.lemonde.fr/podcasts/article/2026/07/08/marine-le-pen-condamnee-et-candidate-un-lancement-de-campagne-inattendu_6721894_5463015.html",
-      "published": "2026-07-08",
-      "summary": "La présidente du groupe RN à l’Assemblée nationale, condamnée mardi pour détournement de fonds publics par la cour d’appel de Paris, a donné le coup d’envoi de sa campagne présidentielle, malgré les aléas juridiques liés à son pourvoi en cassation. Dans ce podcast, Laura Motet, j",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional"
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : tondelier"
+      }
     }
   ]
 }

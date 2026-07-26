@@ -11,63 +11,71 @@
     "document_label": "Programme officiel Reconquête 2022",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "zemmour-2022-immigration-moratoire",
       "theme": "immigration",
       "label": "Moratoire sur l'immigration et référendum sur l'immigration",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "zemmour-2022-retraites-64",
       "theme": "retraites",
       "label": "Âge légal de départ à la retraite à 64 ans",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
     },
     {
       "id": "zemmour-2022-fiscalite-impot-riches",
       "theme": "fiscalite",
       "label": "Impôt plancher de 30 % sur les revenus du capital",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "zemmour-2022-pouvoir-achat-tva",
       "theme": "pouvoir_achat",
       "label": "Baisse de la TVA sur les produits de première nécessité",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Salaires"
     },
     {
       "id": "zemmour-2022-europe-frexit",
       "theme": "europe",
       "label": "Renégociation des traités européens et sortie de Schengen si échec",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "zemmour-2022-securite-peines",
       "theme": "securite",
       "label": "Peines planchers, doublement des places de prison",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Ordre public"
     },
     {
       "id": "zemmour-2022-institutions-president",
       "theme": "institutions",
       "label": "Renforcement des pouvoirs présidentiels",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "zemmour-2022-climat-nucleaire",
       "theme": "climat",
       "label": "Relance du nucléaire, fin des subventions aux éoliennes",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Transition"
     }
   ],
   "chiffrages": [

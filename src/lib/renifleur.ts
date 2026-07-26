@@ -1,4 +1,5 @@
 import config from '../data/renifleur/config.json';
+import { resolvePoliticalHue, type ResolvedPoliticalHue } from './comment-politics';
 
 export interface RenifleurFeed {
   id: string;
@@ -20,6 +21,9 @@ export interface RenifleurConfig {
   disclaimer: string;
 }
 
+/** Teinte 1er tour (modératrice IA / heuristique) — transparence, pas adhésion */
+export type RenifleurPoliticalHue = ResolvedPoliticalHue;
+
 export interface RenifleurItem {
   title: string;
   url: string;
@@ -28,6 +32,8 @@ export interface RenifleurItem {
   source_id: string;
   source_label: string;
   source_type: 'traditional';
+  /** Couleur politique des acteurs / idées cités (IA / heuristique LMDPT) */
+  politicalHue?: RenifleurPoliticalHue;
 }
 
 export interface RenifleurSnapshot {
@@ -127,17 +133,40 @@ export function filterFeedItems(
       return true;
     })
     .slice(0, cfg.max_items_per_feed)
-    .map((item) => ({
-      title: item.title,
-      url: item.url,
-      published: toIsoDate(item.published),
-      summary: item.summary.slice(0, 280),
-      source_id: feed.id,
-      source_label: feed.label,
-      source_type: 'traditional' as const,
-    }));
+    .map((item) => {
+      const summary = item.summary.slice(0, 280);
+      return {
+        title: item.title,
+        url: item.url,
+        published: toIsoDate(item.published),
+        summary,
+        source_id: feed.id,
+        source_label: feed.label,
+        source_type: 'traditional' as const,
+        politicalHue: politicalHueForArticle(item.title, summary),
+      };
+    });
 
   return selected;
+}
+
+/** Teinte politique pour un article presse (titre + chapô). */
+export function politicalHueForArticle(title: string, summary = ''): RenifleurPoliticalHue {
+  return resolvePoliticalHue(`${title}\n${summary}`);
+}
+
+/**
+ * Garantit une teinte sur un item (snapshot historique sans politicalHue,
+ * ou reclassement après mise à jour de la palette).
+ */
+export function ensureItemPoliticalHue(item: RenifleurItem): RenifleurItem {
+  if (item.politicalHue?.slug && item.politicalHue?.color) {
+    return item;
+  }
+  return {
+    ...item,
+    politicalHue: politicalHueForArticle(item.title, item.summary ?? ''),
+  };
 }
 
 export async function fetchRenifleurSnapshot(

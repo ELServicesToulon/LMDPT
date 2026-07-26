@@ -7,33 +7,179 @@
   },
   "program": {
     "published_at": "2026-07-02",
-    "document_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
-    "document_label": "Proposition partielle — écorégions (presse, juil. 2026)",
+    "document_url": "https://melenchon2027.fr/programme2025/livre/",
+    "document_label": "L'Avenir en commun — édition 2025 + propositions 2026 (écorégions) — partial campagne",
     "status": "partial"
   },
   "evolution_from": "presidentielle-2022",
-  "updated": "2026-07-02",
+  "updated": "2026-07-20",
   "measures": [
     {
       "id": "melenchon-2027-institutions-ecoregions",
       "theme": "institutions",
       "label": "Remplacement des régions actuelles par des « écorégions »",
-      "detail": "Projet de découpage territorial fondé sur les bassins versants et l'eau — annoncé juillet 2026.",
+      "detail": "Découpage autour des bassins versants ; biens communs eau, air, biodiversité. Annonce 2 juil. 2026.",
       "status": "nouveau",
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
       "source_label": "Le Monde — 2 juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "melenchon-2027-climat-eau",
       "theme": "climat",
       "label": "« Introduire l'eau dans le débat » présidentiel",
-      "detail": "Priorité affichée à la gestion de l'eau et aux enjeux hydriques dans la campagne.",
+      "detail": "Priorité hydrique et gestion de crise écologique via les écorégions.",
       "status": "nouveau",
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
       "source_label": "Le Monde — 2 juil. 2026",
-      "as_of": "2026-07"
+      "as_of": "2026-07",
+      "subtheme": "Énergie"
+    },
+    {
+      "id": "melenchon-2027-climat-regle-verte",
+      "theme": "climat",
+      "label": "Instaurer la « règle verte »",
+      "detail": "Axe Avenir en commun — ne pas prélever plus que ce que la nature peut reconstituer.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/",
+      "source_label": "melenchon2027.fr — Avenir en commun 2025",
+      "as_of": "2026-07",
+      "subtheme": "Énergie"
+    },
+    {
+      "id": "melenchon-2027-retraites-60",
+      "theme": "retraites",
+      "label": "Retraite à 60 ans (abrogation de la réforme à 64 ans)",
+      "detail": "Restaurer le droit à la retraite à 60 ans à taux plein pour 40 annuités — programme 2025 / campagne 2027.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/chapitre8/s8/",
+      "source_label": "melenchon2027.fr — retraite digne",
+      "as_of": "2026-07",
+      "chiffrage_mdeur": 15,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "Âge légal"
+    },
+    {
+      "id": "melenchon-2027-pouvoir-achat-smic-1700",
+      "theme": "pouvoir_achat",
+      "label": "SMIC à 1 700 € net",
+      "detail": "Hausse du SMIC — communication campagne LFI 2026.",
+      "status": "modifie",
+      "source_url": "https://lafranceinsoumise.fr/",
+      "source_label": "lafranceinsoumise.fr — axes campagne",
+      "as_of": "2026-07",
+      "chiffrage_mdeur": 9,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "Salaires"
+    },
+    {
+      "id": "melenchon-2027-pouvoir-achat-bloquer-prix",
+      "theme": "pouvoir_achat",
+      "label": "Bloquer les prix",
+      "detail": "Mesure phare affichée sur les supports de campagne LFI.",
+      "status": "maintenu",
+      "source_url": "https://lafranceinsoumise.fr/",
+      "source_label": "lafranceinsoumise.fr",
+      "as_of": "2026-07",
+      "subtheme": "Salaires"
+    },
+    {
+      "id": "melenchon-2027-fiscalite-isf",
+      "theme": "fiscalite",
+      "label": "Rétablir l'ISF",
+      "detail": "Fiscalité du patrimoine — Avenir en commun / communication 2026.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/",
+      "source_label": "melenchon2027.fr",
+      "as_of": "2026-07",
+      "chiffrage_mdeur": 10,
+      "chiffrage_auteur": "lmdpt",
+      "subtheme": "TVA & impôts"
+    },
+    {
+      "id": "melenchon-2027-sante-secu-integrale",
+      "theme": "sante",
+      "label": "Sécurité sociale intégrale gérée par les cotisants",
+      "detail": "Gratuité des soins / extension — continuité programme.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/",
+      "source_label": "melenchon2027.fr",
+      "as_of": "2026-07",
+      "subtheme": "Hôpital"
+    },
+    {
+      "id": "melenchon-2027-institutions-vie-republique",
+      "theme": "institutions",
+      "label": "VIe République et assemblée constituante (continuité)",
+      "detail": "Ligne institutionnelle historique LFI — à articuler avec le projet d'écorégions.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/",
+      "source_label": "Avenir en commun 2025",
+      "as_of": "2026-07",
+      "subtheme": "Gouvernance"
+    },
+    {
+      "id": "melenchon-2027-europe-plan-ab",
+      "theme": "europe",
+      "label": "Renégociation des traités — plan A / plan B (continuité)",
+      "detail": "Maintien de la doctrine européenne LFI tant qu'un document 2027 distinct ne la modifie pas.",
+      "status": "maintenu",
+      "source_url": "https://melenchon2027.fr/programme2025/livre/",
+      "source_label": "Avenir en commun — continuité 2022→2025",
+      "as_of": "2026-07",
+      "subtheme": "Souveraineté"
     }
   ],
-  "chiffrages": []
+  "chiffrages": [
+    {
+      "id": "melenchon-2027-depenses-retraites-smic-lmdpt",
+      "type": "depenses",
+      "montant_mdeur": 24,
+      "montant_min_mdeur": 18,
+      "montant_max_mdeur": 35,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Retraite 60 ans (~15 Md€ vs trajectoire 64/65) + SMIC 1 700 € net (~+300 € × 2,5 M × 12 ≈ 9 Md€) — hors 32 h non reconfirmées 2027",
+      "confidence": "moyenne",
+      "theme": "retraites",
+      "source_label": "Avenir en commun 2025 + axes campagne 2026"
+    },
+    {
+      "id": "melenchon-2027-recettes-isf-lmdpt",
+      "type": "recettes",
+      "montant_mdeur": 10,
+      "montant_min_mdeur": 5,
+      "montant_max_mdeur": 20,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Rétablissement ISF — ordre de grandeur bas (hors 14 tranches IR 2022 non chiffrées ici faute de détail 2027)",
+      "confidence": "faible",
+      "theme": "fiscalite",
+      "source_label": "Avenir en commun — ISF"
+    },
+    {
+      "id": "melenchon-2027-solde-lmdpt",
+      "type": "solde",
+      "montant_mdeur": -160,
+      "montant_min_mdeur": -220,
+      "montant_max_mdeur": -120,
+      "horizon": "2027-2032",
+      "auteur": "lmdpt",
+      "method_note": "Actualisation partielle du solde 2022 (−185) : SMIC rehaussé à 1 700 €, 32 h non retenue faute de signal 2027 fort → fourchette −220/−120, point central −160. docs/PROGRAMMES-CHIFFRAGE-METHODO.md § Mélenchon 2027",
+      "confidence": "faible",
+      "source_label": "Estimation LMDPT actualisée 2027 (partiel)"
+    },
+    {
+      "id": "melenchon-2027-solde-im-ref",
+      "type": "solde",
+      "montant_mdeur": -218.9,
+      "horizon": "2027",
+      "auteur": "institut_montaigne",
+      "source_url": "https://www.institutmontaigne.org/presidentielle-2022/synthese-des-chiffrages",
+      "source_label": "Institut Montaigne 2022 (référence historique)",
+      "confidence": "elevee",
+      "method_note": "Référence IM 2022 — pas de chiffrage IM 2027 disponible"
+    }
+  ]
 }

@@ -1,0 +1,243 @@
+{
+  "schema": "lmdpt-observatoire-censure-v1-lite",
+  "title": "Observatoire de la censure en France depuis la présidentielle 2017",
+  "updated": "2026-07-24",
+  "period": {
+    "from": "2017-05-07",
+    "label": "Depuis la présidentielle 2017"
+  },
+  "disclaimer": "Synthèse documentaire LMDPT — pas d’avis juridique. Motif officieux = lecture secondaire attribuée, jamais affirmée comme fait LMDPT. À recouper sur sources primaires (Arcom, justice, UE, plateformes).",
+  "taxonomy_note": "Ne pas confondre décision d’autorité publique (Arcom, justice, UE) et modération privée de plateforme (CGU).",
+  "media": [
+    {
+      "id": "rt-france",
+      "name": "RT France",
+      "type": "television",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Suspension de la diffusion de RT et Sputnik dans l’UE dans le cadre des mesures restrictives liées à l’agression de l’Ukraine par la Russie (propagande / désinformation d’État selon le Conseil). Conseil de l’UE — communiqué 2 mars 2022 Règlement (UE) 2022/350",
+      "motif_officieux": "Dans le débat FR, certains acteurs y voient une censure géopolitique de voix critiques de l’OTAN ; d’autres une mesure de sécurité informationnelle face à un média d’État belligérant. Cour de justice de l’UE — affaires RT France (contexte contentieux)",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "c8",
+      "name": "C8",
+      "type": "television",
+      "action_label": "Non-renouvellement",
+      "motif_officiel": "Dans l’appel aux candidatures TNT (28/02/2024), l’Arcom ne retient pas le projet C8 ; le Conseil d’État (19/02/2025) juge qu’aucune illégalité n’a été commise, au regard notamment de l’intérêt du public et du pluralisme des courants d’expression socio-culturels (loi 1986). Arcom — prise d’acte décision Conseil d’État (19/02/2025) Arcom — communiqué (rappel examen comparatif C8/NRJ12)",
+      "motif_officieux": "Pour certains commentateurs, sanction d’un style « clash » Canal+ ; pour d’autres, ciblage politique d’une antenne populaire. LMDPT ne tranche pas. Arcom — communiqué 23/02/2025",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "nrj-12",
+      "name": "NRJ 12",
+      "type": "television",
+      "action_label": "Non-renouvellement",
+      "motif_officiel": "Même cycle TNT que C8 : projet NRJ 12 non retenu par l’Arcom ; légalité de la procédure confirmée par le Conseil d’État le 19/02/2025 (critères loi 1986, examen comparatif des candidatures). Arcom — prise d’acte décision Conseil d’État (19/02/2025) Arcom — appel aux candidatures TNT (28/02/2024)",
+      "motif_officieux": "Souvent lu comme arbitrage économique / audience plutôt que censure idéologique ; débat public sur la diversité de l’offre TNT. Arcom — communiqué 23/02/2025",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "cnews",
+      "name": "CNews",
+      "type": "television",
+      "action_label": "Sanction",
+      "motif_officiel": "Série d’interventions Arcom envers SESI (CNews) : sanction pécuniaire 20/04/2022 (1 €, « Midi News ») ; mises en demeure 10/05/2022 (honnêteté / pluralisme des points de vue) ; sanction 50 000 € le 17/01/2024 pour manquements aux obligations d’honnêteté et d’expression des points de vue sur sujets controversés. Arcom — décision 20/04/2022 (sanction SESI / Midi News) Arcom — mise en demeure 10/05/2022 (Les Points sur les i) Arcom — décision 17/01/2024 (sanction 50 000 € SESI)",
+      "motif_officieux": "Camp critique : harcèlement régulateur d’une chaîne « de droite » ; camp favorable : application normale du cahier des charges face à une ligne éditoriale polarisante. Arcom — décision 17/01/2024",
+      "political_hue_label": "Droite",
+      "verification": "documented"
+    },
+    {
+      "id": "c8-tpmp-sanctions-arcom",
+      "name": "C8 — TPMP (sanctions Arcom)",
+      "type": "television",
+      "action_label": "Non-renouvellement",
+      "motif_officiel": "Série de sanctions Arcom sur « Touche pas à mon poste » (C8) : notamment 3,5 M€ le 9 février 2023 (émission du 10/11/2022 — atteinte aux droits de l’invité, maîtrise de l’antenne) ; 300 000 € (émission 05/10/2022) ; 500 000 € (émission 09/03/2023). Décisions et communiqués publics Arcom. Arcom — décisions TPMP 10/11/2022 (sanction 3,5 M€, 09/02/2023) Arcom — décision 09/02/2023 (amende C8) Arcom — TPMP 09/03/2023 (500 000 €, 26/07/2023)",
+      "motif_officieux": "Lecture Canal+/défense : sanctions cumulées préparant l’éviction TNT ; lecture régulateur : manquements déontologiques répétés. Distinct du non-renouvellement TNT 2024/2025. Arcom — communiqué TPMP nov. 2022",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "rossiya-rtr-rtr-planeta",
+      "name": "Rossiya RTR / RTR Planeta",
+      "type": "television",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Suspension des activités de diffusion dans l’UE de Rossiya RTR / RTR Planeta, dans le cadre du sixième paquet de sanctions liées à l’agression de l’Ukraine (organes d’État russes, propagande / désinformation selon le Conseil). Conseil de l’UE — 6e paquet (3 juin 2022) EUR-Lex — portail droit de l’UE (sanctions médias)",
+      "motif_officieux": "Même polarisation que RT/Sputnik : censure géopolitique vs sécurité informationnelle. Audience FR limitée mais cas documenté UE. Conseil de l’UE — 6e paquet",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "rossiya-24-russia-24",
+      "name": "Rossiya 24 / Russia 24",
+      "type": "television",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Suspension de la diffusion dans l’UE de Rossiya 24 / Russia 24 (média d’État russe) au titre du sixième paquet de sanctions du 3 juin 2022. Conseil de l’UE — 6e paquet (3 juin 2022) EUR-Lex — règlement connexe 2022/879",
+      "motif_officieux": "Lecture critique : extension du gel audiovisuel ; lecture favorable : cohérence avec les mesures RT/Sputnik. Conseil de l’UE — 6e paquet",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "perviy-kanal-channel-one-russia",
+      "name": "Perviy Kanal / Channel One Russia",
+      "type": "television",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Suspension de la diffusion dans l’UE de Perviy Kanal (Channel One Russia), organe audiovisuel d’État russe, au titre du sixième paquet de sanctions du 3 juin 2022 (même cadre que RTR Planeta / Rossiya 24). Conseil de l’UE — 6e paquet (3 juin 2022) EUR-Lex — règlement 2022/879",
+      "motif_officieux": "Lecture critique : élargissement du gel des chaînes grand public russes ; lecture favorable : cohérence des mesures contre la propagande d’État en temps de guerre. Conseil de l’UE — 6e paquet",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "ntv-ntv-mir",
+      "name": "NTV / NTV Mir",
+      "type": "television",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Suspension de la diffusion dans l’UE de NTV / NTV Mir (groupe audiovisuel russe) dans le cadre du sixième paquet de sanctions du 3 juin 2022. Conseil de l’UE — 6e paquet (3 juin 2022) EUR-Lex — règlement 2022/879",
+      "motif_officieux": "Débat public : atteinte au pluralisme informationnel vs limitation d’un canal d’influence d’État. Audience FR secondaire. EUR-Lex 2022/879",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "sud-radio",
+      "name": "Sud Radio",
+      "type": "radio",
+      "action_label": "Sanction",
+      "motif_officiel": "Interventions Arcom sur Sud Radio / Sud Radio+ (émission « Bercoff dans tous ses états ») : mise en demeure documentée (séquence 18/03/2022) ; mises en garde 2024 pour traitement jugé manquant de rigueur sur le dérèglement climatique (consensus scientifique, maîtrise de l’antenne). Arcom — mises en garde Bercoff 07/12/2023 (publié 25/06/2024) Arcom — mises en garde Bercoff 25/03 et 02/05/2024",
+      "motif_officieux": "Présenté par des animateurs / auditeurs comme pression sur une radio « hors consensus » ; présenté par d’autres comme régulation ordinaire. Arcom — mise en garde Bercoff déc. 2023",
+      "political_hue_label": "Droite",
+      "verification": "documented"
+    },
+    {
+      "id": "valeurs-actuelles",
+      "name": "Valeurs actuelles",
+      "type": "presse",
+      "action_label": "Fermeture",
+      "motif_officiel": "Condamnations judiciaires documentées pour diffamation ou manquements au droit de la presse (affaires successives ; peines et dommages selon jugements). Légifrance — portail jurisprudence Justice.fr — portail",
+      "motif_officieux": "Camp critique du magazine : « acharnement » judiciaire ; camp adverse : responsabilité de la presse face aux atteintes aux personnes. Pas une fermeture administrative. Légifrance",
+      "political_hue_label": "Droite",
+      "verification": "documented"
+    },
+    {
+      "id": "sputnik",
+      "name": "Sputnik",
+      "type": "autre",
+      "action_label": "Suspension de diffusion",
+      "motif_officiel": "Même cadre que RT : interdiction de diffusion / distribution dans l’UE des contenus de l’organe d’État russe Sputnik. Conseil de l’UE — communiqué 2 mars 2022",
+      "motif_officieux": "Lecture critique : atteinte au pluralisme informationnel ; lecture favorable : limitation d’un outil de guerre informationnelle. EUR-Lex — règlement 2022/350",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    },
+    {
+      "id": "le-m-dia",
+      "name": "Le Média",
+      "type": "autre",
+      "action_label": "Sanction",
+      "motif_officiel": "Janvier 2019 : YouTube applique une limite d’âge à des vidéos du Média (violences policières / Gilets jaunes) tout en indiquant que le règlement communauté n’est pas forcément violé — motif « risque de ne pas convenir à tous les publics » (documenté par Arrêt sur images). 2022 : le Média dénonce des blocages Content ID TF1 sur YouTube et annonce une plainte (communiqué média daté). Arrêt sur images — « Censure » du Média / flou YouTube (janv. 2019) Le Média — plainte TF1 / censure YouTube (2022)",
+      "motif_officieux": "Lecture Le Média : censure politique / industrielle ; lecture plateforme / ayants droit : protection mineurs ou droits d’auteur. LMDPT ne tranche pas. Arrêt sur images — analyse modération YouTube",
+      "political_hue_label": "Gauche radicale",
+      "verification": "documented"
+    },
+    {
+      "id": "blast",
+      "name": "Blast",
+      "type": "autre",
+      "action_label": "Sanction",
+      "motif_officiel": "Aucune décision YouTube / Google France publiquement datée n’a été recoupée pour Blast au 23/07/2026. Les articles Blast datés 2022–2023 documentent une pression économique et des procédures-bâillons — distincts d’un ban YouTube. Cas maintenu en vérification partielle faute de preuve primaire plateforme. Blast — « situation très périlleuse » (2022) Blast — « plus grand défi » (2023) YouTube — Politiques de monétisation (cadre)",
+      "motif_officieux": "Récit interne / sympathisant : freins algo / monétisation ; sans notice YouTube publique, LMDPT refuse de passer en « documented ». Blast — soutenir",
+      "political_hue_label": "autre",
+      "verification": "documented"
+    }
+  ],
+  "influencers": [
+    {
+      "id": "dieudonn-dieudolive",
+      "display_name": "Dieudonné",
+      "handle": "dieudolive",
+      "motif_officiel": "Le 29–30 juin 2020, YouTube supprime la chaîne de Dieudonné (~400 000 abonnés). Google France (AFP) : suppression « suite à des enfreintes répétées au règlement de la communauté YouTube » (discours de haine), dans le cadre du durcissement des règles hate speech. France 24 — chaîne YouTube Dieudonné supprimée (30/06/2020) Numerama — confirmation YouTube / règlement (30/06/2020) YouTube — Règles de la communauté",
+      "motif_officieux": "L’intéressé dénonce une censure politique ; Google France invoque la haine. Contentieux judiciaire FR distinct. Le Parisien — réactions / UEJF (30/06/2020)",
+      "verification": "partial"
+    },
+    {
+      "id": "alain-soral-r-egalitereconciliation",
+      "display_name": "Alain Soral / É&R",
+      "handle": "EgaliteReconciliation",
+      "motif_officiel": "13/12/2017 : Facebook supprime les pages Alain Soral et Égalité & Réconciliation (« organisations ou personnes qui prêchent la haine », confirmation Facebook à la presse). 06/07/2020 : YouTube ferme définitivement ERTV Officiel et ERTV International pour enfreintes répétées aux CGU (discours de haine) ; Google France précise l’interdiction de recréer une chaîne. franceinfo — YouTube supprime les chaînes Soral (06/07/2020) BFMTV — ban définitif YouTube Soral (07/07/2020) StreetPress — Facebook fe",
+      "motif_officieux": "Soral / E&R crient à la censure ; Facebook et YouTube invoquent la haine. Deux décisions plateforme distinctes (2017 Meta, 2020 Google). Numerama — Facebook E&R (déc. 2017)",
+      "verification": "partial"
+    },
+    {
+      "id": "fdesouche-f-desouche",
+      "display_name": "Fdesouche",
+      "handle": "F_Desouche",
+      "motif_officiel": "Aucune suspension/ban Twitter/X définitif publiquement daté (communiqué plateforme) n’a été recoupé pour @F_Desouche au 23/07/2026. Le compte demeure actif ; épisodes de restriction temporaire (ex. vérif. âge DSA, fév. 2026) rapportés par sources secondaires — insuffisant pour « documented » ban. Fail-closed partial. Boulevard Voltaire — verrouillage temporaire âge DSA (27/02/2026) X — Rules (cadre)",
+      "motif_officieux": "Le compte et des lecteurs parlent de censure immigrationniste ; X invoque ses règles. Statut post-rachat X variable. X Help Center",
+      "verification": "partial"
+    },
+    {
+      "id": "papacito-papacitooff",
+      "display_name": "Papacito",
+      "handle": "PapacitoOff",
+      "motif_officiel": "Janvier 2021 : suspension du compte Twitter de Papacito (rapportée par la presse). Motif exact Twitter non publié en communiqué nominatif ; cadre = règles Twitter. Aucune suspension Twitch nominative datée n’a été recoupée — l’entrée Twitch antérieure est corrigée. Valeurs actuelles — suspension Twitter Papacito (11/01/2021) Femme Actuelle — ban Twitter janv. 2021 (rappel) X — Rules",
+      "motif_officieux": "Camp Papacito : censure ; Twitter : application des règles. Pas de preuve Twitch datée — fail-closed sur Twitch. Valeurs actuelles (11/01/2021)",
+      "verification": "partial"
+    },
+    {
+      "id": "livre-noir-livrenoirmedia",
+      "display_name": "Livre Noir",
+      "handle": "LivreNoirMedia",
+      "motif_officiel": "Le 17 mars 2022, YouTube supprime un contenu Livre Noir et applique une restriction d’une semaine (« Votre contenu a été supprimé car il ne respecte pas les règles de la communauté » — message plateforme rapporté). Contexte : diffusion reportage « Grand Remplacement » / Molenbeek ; l’équipe évoque aussi un strike lié à un entretien Papacito (COVID). Boulevard Voltaire — Livre noir censuré YouTube (mars 2022) Le Salon Beige — message YouTube / strike 7 jours (17/03/2022) YouTube — Community Guide",
+      "motif_officieux": "Livre Noir : censure politique en campagne présidentielle ; YouTube : règles communauté.",
+      "verification": "partial"
+    },
+    {
+      "id": "omerta-omertamedia",
+      "display_name": "Omerta",
+      "handle": "OmertaMedia",
+      "motif_officiel": "Aucune décision YouTube / Google France publiquement datée n’a été recoupée pour Omerta au 23/07/2026. Cas maintenu partial (fail-closed). YouTube — Community Guidelines YouTube — Community Guidelines (cadre, non décision nominative)",
+      "motif_officieux": "Lecture interne : censure d’enquêtes dérangeantes ; lecture plateforme : risque publicitaire. YouTube How it works",
+      "verification": "partial"
+    },
+    {
+      "id": "rt-en-fran-ais-comptes-sociaux-rtenfrancais",
+      "display_name": "RT en français (comptes sociaux)",
+      "handle": "RTenfrancais",
+      "motif_officiel": "Dans le sillage du règlement UE 2022/350, restrictions de diffusion et de monétisation / accès sur plusieurs plateformes pour les organes couverts. Règlement (UE) 2022/350",
+      "motif_officieux": "Extension « soft » du gel audiovisuel aux réseaux ; débat sur la portée extraterritoriale des CGU. Conseil de l’UE — sanctions RT/Sputnik",
+      "verification": "partial"
+    },
+    {
+      "id": "hold-up-thana-tv-cosyst-me-holdupmedia",
+      "display_name": "Hold-Up / Thana TV (écosystème)",
+      "handle": "HoldUpMedia",
+      "motif_officiel": "11/11/2020 : sortie de Hold-Up. 12/11/2020 : Vimeo retire le film (règles vaccins / désinformation ; message production documenté). Facebook ajoute des alertes « informations partiellement fausses ». 09/02/2021 : YouTube ferme la chaîne Thana TV / Hold-up média (modération COVID-19) — faits repris par sources secondaires datées ; YouTube France communique sur la suppression massive de contenus médicaux trompeurs COVID en 2020. Le Monde — contre-vérités Hold-Up + retrait Vimeo (12/11/2020) Numera",
+      "motif_officieux": "Producteurs : censure sanitaire ; plateformes / fact-checkers : lutte contre la désinformation médicale. Effet Streisand documenté. FranceSoir — campagne FB (11/11/2020, source secondaire intéressée)",
+      "verification": "partial"
+    },
+    {
+      "id": "usul-usul",
+      "display_name": "Usul",
+      "handle": "Usul",
+      "motif_officiel": "Aucune décision YouTube / Google France publiquement datée n’a été recoupée pour Usul. Mentions dans l’écosystème Blast (2023). Cas maintenu partial — fail-closed. Blast — défi 2023 (mention Usul) YouTube — Politiques de monétisation",
+      "motif_officieux": "Sans communiqué plateforme, LMDPT refuse le statut documented. YouTube Support",
+      "verification": "partial"
+    },
+    {
+      "id": "sputnik-comptes-sociaux-fr-sputnik-fr",
+      "display_name": "Sputnik (comptes sociaux FR)",
+      "handle": "sputnik_fr",
+      "motif_officiel": "Même cadre que RT : interdiction de diffusion UE étendue de facto aux distributions numériques ; plateformes appliquent le règlement / leurs politiques sur organes d’État sanctionnés. Règlement (UE) 2022/350 Conseil de l’UE — communiqué RT/Sputnik",
+      "motif_officieux": "Lecture critique : censures géopolitiques sur les réseaux ; lecture favorable : cohérence avec le gel audiovisuel. EUR-Lex 2022/350",
+      "verification": "partial"
+    },
+    {
+      "id": "tv-libert-s-tvlibertes",
+      "display_name": "TV Libertés",
+      "handle": "TVLibertes",
+      "motif_officiel": "Le 14 juin 2018, YouTube ferme la chaîne TV Libertés après trois avertissements pour atteinte aux droits d’auteur — confirmation d’un représentant YouTube à l’AFP. Message plateforme : compte clôturé suite à des réclamations de tiers pour atteinte au droit d’auteur. FranceSoir — TV Libertés YouTube / AFP (juin 2018) Boulevard Voltaire — interview Martial Bild (juin 2018) YouTube — Copyright Center (cadre)",
+      "motif_officieux": "Direction TVL : décision « politique » / censure sous prétexte juridique ; YouTube : copyright strikes répétés. LMDPT ne tranche pas. Boulevard Voltaire — Martial Bild",
+      "verification": "partial"
+    }
+  ]
+}

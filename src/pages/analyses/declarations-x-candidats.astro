@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import XDeclarationsFeed from '../../components/XDeclarationsFeed.astro';
+import type { XDeclarationsSnapshot } from '../../lib/x-declarations';
+import { sortDeclarationsChrono } from '../../lib/x-declarations';
+import { getXRegistry, formatXHandle } from '../../lib/x-officiels';
+import raw from '../../data/elections/x-declarations-latest.json';
+
+const snap = raw as XDeclarationsSnapshot;
+const items = sortDeclarationsChrono(snap.items ?? [], 'desc');
+const registry = getXRegistry();
+const withHandle = registry.candidates.filter((c) => c.handle);
+const updated = snap.fetched_at
+  ? new Date(snap.fetched_at).toLocaleString('fr-FR', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+    })
+  : null;
+---
+
+<BaseLayout
+  title="Déclarations X des candidats"
+  description="Fil chronologique des posts publics des comptes X officiels des candidats à la présidentielle 2027 — LMDPT, Democracy Over Elimination."
+  type="article"
+  keywords="déclarations X, candidats présidentielle 2027, comptes officiels, LMDPT, premier tour"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Déclarations X candidats
+  </nav>
+
+  <section class="page-intro">
+    <p class="eyebrow">Veille réseaux · 1er tour 2027</p>
+    <h2>Déclarations des candidats sur X</h2>
+    <p>
+      Section qui regroupe les <strong>publications publiques</strong> des comptes X documentés
+      comme officiels (personnalités politiques). Tri strictement
+      <strong>chronologique</strong> (plus récent en premier). Pas de classement, pas de favori —
+      ligne <em>Democracy Over Elimination</em>.
+    </p>
+    <p class="meta">
+      {
+        updated && (
+          <>
+            Dernière collecte : <time datetime={snap.fetched_at}>{updated}</time>
+            {' · '}
+          </>
+        )
+      }
+      {snap.accounts_ok} comptes OK
+      {snap.accounts_error > 0 && <> · {snap.accounts_error} erreur(s)</>}
+      {
+        snap.follow_account && (
+          <>
+            {' · '}
+            Compte LMDPT ayant suivi : @{snap.follow_account}
+          </>
+        )
+      }
+    </p>
+    <p class="news-disclaimer">{snap.disclaimer}</p>
+  </section>
+
+  <XDeclarationsFeed items={items} limit={120} />
+
+  <section class="card">
+    <h3>Comptes suivis (registre)</h3>
+    <p class="meta">
+      Source : <code>2027-x-officiels.json</code> · {withHandle.length} handles candidats
+    </p>
+    <ul class="x-handle-list">
+      {
+        withHandle.map((c) => (
+          <li>
+            <strong>{c.name}</strong>
+            {c.handle && (
+              <>
+                {' '}
+                <a href={c.url ?? `https://x.com/${c.handle}`} rel="noopener noreferrer">
+                  {formatXHandle(c.handle)}
+                </a>
+              </>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h3>Méthode & ops</h3>
+    <p class="meta">{snap.method}</p>
+    <ul>
+      <li>
+        Collecte fil site : <code>npm run x:declarations</code> (repo LMDPT)
+      </li>
+      <li>
+        Follow depuis le compte OAuth LMDPT : <code>npm run lmdpt-x-follow-candidats</code> (backend
+        Mediconvoi)
+      </li>
+      <li>
+        Compte public média :{' '}
+        <a href="https://x.com/LMDuPremierTour" rel="noopener noreferrer">@LMDuPremierTour</a>
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .x-handle-list {
+    columns: 2;
+    gap: 1.5rem;
+    margin: 0.75rem 0 0;
+    padding-left: 1.1rem;
+  }
+  @media (max-width: 640px) {
+    .x-handle-list {
+      columns: 1;
+    }
+  }
+</style>

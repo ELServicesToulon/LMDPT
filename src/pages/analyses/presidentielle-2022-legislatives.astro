@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import analysis from '../../data/analyses/presidentielle-2022-legislatives.json';
+import presidentielle2022 from '../../data/elections/2022-presidentielle-1er-tour-national.json';
+
+const tPres = new Date(analysis.date_presidentielle_t1).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const tLeg1 = new Date(analysis.date_legislatives_t1).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const tLeg2 = new Date(analysis.date_legislatives_t2).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const resultById = Object.fromEntries(
+  analysis.presidentielle_t1.resultats.map((r) => [r.id, r]),
+);
+
+const pollVsResult = analysis.presidentielle_t1.sondages_finaux.map((s) => {
+  const r = resultById[s.id];
+  const pctResult = r?.pct_exprimes ?? 0;
+  const delta = pctResult - s.pct_sondage;
+  return { ...s, pct_result: pctResult, delta };
+});
+
+const presCompareRows = [
+  {
+    id: 'macron',
+    label: 'Macron / Ensemble',
+    pres_pct: resultById.macron?.pct_exprimes ?? 0,
+    leg_pct: analysis.legislatives_t1.blocs_comparables.find((b) => b.id === 'centre')?.pct_exprimes ?? 0,
+  },
+  {
+    id: 'le-pen',
+    label: 'Le Pen / RN',
+    pres_pct: resultById['le-pen']?.pct_exprimes ?? 0,
+    leg_pct: analysis.legislatives_t1.blocs_comparables.find((b) => b.id === 'rn')?.pct_exprimes ?? 0,
+  },
+  {
+    id: 'melenchon',
+    label: 'Mélenchon / gauche unie',
+    pres_pct: resultById.melenchon?.pct_exprimes ?? 0,
+    leg_pct: analysis.legislatives_t1.blocs_comparables.find((b) => b.id === 'gauche')?.pct_exprimes ?? 0,
+  },
+  {
+    id: 'droite',
+    label: 'Pécresse + Zemmour / droite hors RN',
+    pres_pct: (resultById.pecresse?.pct_exprimes ?? 0) + (resultById.zemmour?.pct_exprimes ?? 0),
+    leg_pct: analysis.legislatives_t1.blocs_comparables.find((b) => b.id === 'droite')?.pct_exprimes ?? 0,
+  },
+];
+---
+
+<BaseLayout
+  title="Présidentielle 2022 → législatives"
+  description="Comparaison claire : sondages et 1er tour présidentiel 2022, puis législatives de juin. Données officielles, lecture neutre."
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Présidentielle 2022 → législatives
+  </nav>
+
+  <section>
+    <h2>{analysis.title}</h2>
+    <p class="lead">
+      En avril 2022, les Français votent pour la présidentielle ; en juin, pour renouveler l'Assemblée.
+      Cette page compare <strong>les sondages et le 1er tour présidentiel</strong> aux <strong>législatives qui suivent</strong>
+      — sans prédiction ni jugement, sur données officielles.
+    </p>
+    <p class="meta disclaimer">
+      Les sondages sont des photographies avant vote ; les résultats sont proclamés par le ministère de l'Intérieur.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>1. Présidentielle 2022 — sondages vs résultat du 1er tour (<time datetime={analysis.date_presidentielle_t1}>{tPres}</time>)</h3>
+    <p class="meta">{analysis.sondages_note}</p>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Candidat</th>
+          <th>Dernier sondage</th>
+          <th>Résultat officiel</th>
+          <th>Écart</th>
+        </tr>
+      </thead>
+      <tbody>
+        {pollVsResult.map((row) => {
+          const d = row.delta;
+          const dLabel = d > 0 ? `+${d.toFixed(2)}` : d.toFixed(2);
+          return (
+            <tr>
+              <td>{row.label}</td>
+              <td>{row.pct_sondage.toFixed(1)} %</td>
+              <td><strong>{row.pct_result.toFixed(2)} %</strong></td>
+              <td class="meta">{dLabel} pt</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    <p>
+      Les écarts restent modérés sur le trio de tête (Macron, Le Pen, Mélenchon). Le 2nd tour oppose ensuite
+      Macron ({analysis.presidentielle_t1.second_tour.macron_pct} %) à Le Pen ({analysis.presidentielle_t1.second_tour.le_pen_pct} %)
+      — les autres voix du 1er tour ne sont plus exprimables.
+    </p>
+    <p class="meta">
+      <a href="/atlas/2022-presidentielle">Atlas présidentielle 2022 →</a>
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>2. Du 1er tour présidentiel au 1er tour législatif (<time datetime={analysis.date_legislatives_t1}>{tLeg1}</time>)</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>Participation présidentielle</dt>
+        <dd>{analysis.presidentielle_t1.participation_pct} %</dd>
+      </div>
+      <div>
+        <dt>Participation législative</dt>
+        <dd>{analysis.legislatives_t1.participation_pct} %</dd>
+      </div>
+      <div>
+        <dt>Abstention législative</dt>
+        <dd>{analysis.legislatives_t1.abstention_pct} %</dd>
+      </div>
+      <div>
+        <dt>Suffrages exprimés (lég.)</dt>
+        <dd>{analysis.legislatives_t1.exprimes.toLocaleString('fr-FR')}</dd>
+      </div>
+    </dl>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Force politique</th>
+          <th>Prés. T1 2022 (% exprimés)</th>
+          <th>Lég. T1 2022 (% exprimés)</th>
+          <th>Écart</th>
+        </tr>
+      </thead>
+      <tbody>
+        {presCompareRows.map((row) => {
+          const delta = row.leg_pct - row.pres_pct;
+          const dLabel = delta > 0 ? `+${delta.toFixed(2)}` : delta.toFixed(2);
+          return (
+            <tr>
+              <td>{row.label}</td>
+              <td>{row.pres_pct.toFixed(2)} %</td>
+              <td><strong>{row.leg_pct.toFixed(2)} %</strong></td>
+              <td class="meta">{dLabel} pt</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+
+    <h4 class="sub-title">Nuances officielles — 1er tour législatif</h4>
+    <table class="comp-table comp-table--compact">
+      <thead>
+        <tr><th>Nuance</th><th>% exprimés</th></tr>
+      </thead>
+      <tbody>
+        {analysis.legislatives_t1.nuances.map((n) => (
+          <tr>
+            <td>{n.label}</td>
+            <td>{n.pct_exprimes.toFixed(2)} %</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h3>3. Législatives — sièges après 2nd tour (<time datetime={analysis.date_legislatives_t2}>{tLeg2}</time>)</h3>
+    <p>
+      Le scrutin uninominal majoritaire à deux tours ne traduit pas les % du 1er tour en sièges à l'identique.
+      Voici la composition de l'Assemblée issue du 2nd tour :
+    </p>
+    <table class="comp-table">
+      <thead>
+        <tr><th>Bloc</th><th>Sièges</th><th>Détail</th></tr>
+      </thead>
+      <tbody>
+        {analysis.legislatives_t2_sieges.map((row) => (
+          <tr>
+            <td><strong>{row.label}</strong></td>
+            <td>{row.seats}</td>
+            <td class="meta">{row.detail}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="meta">Total : 577 députés (dont quelques élus dès le 1er tour sans second tour).</p>
+  </section>
+
+  <section class="card">
+    <h3>Lectures clés</h3>
+    <ul class="readings">
+      {analysis.comparaison_cles.map((item) => (
+        <li>
+          <strong>{item.theme}</strong> — Présidentielle : {item.presidentielle}. Législatives : {item.legislatives}.
+          <span class="meta reading-note">{item.lecture}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="card links-card">
+    <h3>Prolongements</h3>
+    <ul>
+      <li><a href="/analyses/presidentielle-distorsion">Distorsion 1er / 2nd tour (présidentielle)</a></li>
+      <li><a href="/analyses/assemblee-premier-tour-mecanismes">Assemblée du premier tour — mécanismes</a></li>
+      <li><a href="/analyses/programmes/presidentielle-2022">Programmes candidats 2022</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Sources</h3>
+    <ul class="meta sources-list">
+      {analysis.sources.map((s) => (
+        <li>
+          <a href={s.url} target={s.url.startsWith('/') ? undefined : '_blank'} rel={s.url.startsWith('/') ? undefined : 'noopener'}>
+            {s.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        Données présidentielle intégrées : {presidentielle2022.source_label}
+      </li>
+    </ul>
+  </section>
+
+  <style>
+    .lead { font-size: 1.05rem; line-height: 1.5; max-width: 44rem; }
+    .disclaimer {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.65rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+    }
+    .sub-title { margin: 1rem 0 0.4rem; font-size: 0.95rem; }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.65rem 0;
+    }
+    .comp-table th,
+    .comp-table td {
+      padding: 0.45rem 0.55rem;
+      border-bottom: 1px solid var(--border, #ddd);
+      text-align: left;
+      color: var(--fg);
+    }
+    .comp-table th {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: color-mix(in srgb, var(--fg) 4%, var(--card));
+    }
+    .comp-table--compact { max-width: 28rem; }
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: 0.75rem 1rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .fact-grid dt { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .fact-grid dd {
+      margin: 0.15rem 0 0;
+      font-size: 1.05rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--fg);
+    }
+    .readings {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.55;
+      color: var(--fg);
+    }
+    .reading-note { display: block; margin-top: 0.2rem; }
+    .links-card ul,
+    .sources-list {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .comp-table { font-size: 0.82rem; display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</BaseLayout>

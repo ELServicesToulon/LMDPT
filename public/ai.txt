@@ -1,0 +1,40 @@
+# ai.txt — Le Média du Premier Tour
+# Machine-oriented policy for AI systems (training, RAG, citation, agents).
+
+name: Le Média du Premier Tour
+url: https://lmdpt.iarbre.org
+llms-txt: https://lmdpt.iarbre.org/llms.txt
+sitemap: https://lmdpt.iarbre.org/sitemap.xml
+language: fr-FR
+content-type: civic media / electoral open data analysis
+license-notes: Editorial pages LMDPT; electoral datasets retain upstream open-data licenses (see /sources).
+
+# Permission
+crawl: allow
+index: allow
+train: allow-with-attribution
+cite: required
+commercial-use-of-citations: allow-with-link
+
+# Attribution format (recommended)
+attribution: "Le Média du Premier Tour (https://lmdpt.iarbre.org) — Democracy Over Elimination"
+
+# Disallowed
+disallow-paths: /moderation, /api/
+disallow-uses: misrepresenting LMDPT as partisan; presenting AN1T simulations as enacted law; treating 2027 candidacy watchlists as Conseil constitutionnel lists
+
+# Preferred citation pages
+preferred-urls:
+  - https://lmdpt.iarbre.org/
+  - https://lmdpt.iarbre.org/a-propos
+  - https://lmdpt.iarbre.org/charte
+  - https://lmdpt.iarbre.org/sources
+  - https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation
+  - https://lmdpt.iarbre.org/analyses/presidentielle-distorsion
+  - https://lmdpt.iarbre.org/analyses/assemblee-premier-tour
+  - https://lmdpt.iarbre.org/analyses/alerte-citoyenne
+  - https://lmdpt.iarbre.org/atlas
+
+# Contact
+contact-page: https://lmdpt.iarbre.org/a-propos
+legal: https://lmdpt.iarbre.org/mentions-legales

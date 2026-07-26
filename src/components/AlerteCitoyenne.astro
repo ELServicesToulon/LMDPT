@@ -1,0 +1,291 @@
+---
+/**
+ * Alerte citoyenne — bandeau + aperçu des points (accueil / analyses).
+ * Données : src/data/alertes-citoyennes.json
+ */
+import alertes from '../data/alertes-citoyennes.json';
+
+interface Props {
+  /** Nombre de points affichés en aperçu (0 = aucun détail) */
+  previewLimit?: number;
+  /** Lien vers le dossier complet */
+  moreHref?: string;
+  /** Afficher le signal source (auteur + lien X) */
+  showSignal?: boolean;
+}
+
+const {
+  previewLimit = 4,
+  moreHref = '/analyses/alerte-citoyenne',
+  showSignal = true,
+} = Astro.props;
+
+const preview = alertes.items.slice(0, previewLimit);
+const updatedLabel = new Date(alertes.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const regionLabel = (id: string) =>
+  alertes.regions.find((r) => r.id === id)?.label ?? id.toUpperCase();
+---
+
+<section
+  class="alerte-citoyenne"
+  id="alerte-citoyenne"
+  aria-labelledby="alerte-citoyenne-title"
+>
+  <div class="alerte-head">
+    <div>
+      <p class="eyebrow alerte-eyebrow">{alertes.eyebrow}</p>
+      <h2 id="alerte-citoyenne-title">{alertes.title}</h2>
+    </div>
+    <p class="alerte-updated">
+      MAJ <time datetime={alertes.updated}>{updatedLabel}</time>
+      · {alertes.items.length} points
+    </p>
+  </div>
+
+  <p class="alerte-lead">{alertes.lead}</p>
+
+  {
+    showSignal && (
+      <p class="alerte-signal">
+        <strong>{alertes.signal.label}</strong> — {alertes.signal.author} (
+        {alertes.signal.role}) ·{' '}
+        <a href={alertes.signal.url} rel="noopener noreferrer">
+          Source X ↗
+        </a>
+      </p>
+    )
+  }
+
+  {
+    preview.length > 0 && (
+      <ol class="alerte-preview">
+        {preview.map((item) => (
+          <li>
+            <span class="alerte-badge" data-region={item.region}>
+              {regionLabel(item.region)}
+            </span>
+            <span class="alerte-n">{item.n}.</span>
+            <strong>{item.title}</strong>
+            <span class="alerte-status">{item.status_label}</span>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+
+  <p class="alerte-disclaimer">{alertes.disclaimer}</p>
+
+  <p class="alerte-more">
+    <a class="btn-alerte" href={moreHref}>Lire l’alerte complète ({alertes.items.length} points) →</a>
+    {' '}
+    <a href="/contribuer">Proposer une alerte</a>
+    {' '}
+    <a href="/analyses/presidentielle-2027-preparation#veille">Veille 2027</a>
+  </p>
+</section>
+
+<style>
+  .alerte-citoyenne {
+    margin: 0 0 2.25rem;
+    padding: 1.15rem 1.25rem 1.25rem;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid color-mix(in srgb, #c45c26 35%, var(--border, #d4cfc6));
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, #c45c26 9%, var(--card, #fff)) 0%,
+        var(--card, #fff) 55%
+      );
+    box-shadow: 0 1px 0 color-mix(in srgb, #c45c26 12%, transparent);
+  }
+
+  .alerte-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5rem 1.25rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .alerte-eyebrow {
+    color: #a84a1a;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .alerte-citoyenne h2 {
+    margin: 0.15rem 0 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .alerte-updated {
+    margin: 0;
+    font-family: var(--font-sans, system-ui, sans-serif);
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .alerte-lead {
+    margin: 0 0 0.65rem;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    max-width: 72ch;
+  }
+
+  .alerte-signal {
+    margin: 0 0 0.85rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--fg);
+    padding: 0.55rem 0.75rem;
+    border-left: 3px solid #c45c26;
+    background: color-mix(in srgb, #c45c26 6%, transparent);
+  }
+
+  .alerte-preview {
+    margin: 0 0 0.9rem;
+    padding: 0 0 0 0.15rem;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .alerte-preview li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .alerte-n {
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--muted);
+    min-width: 1.4rem;
+  }
+
+  .alerte-badge {
+    font-family: system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+    background: var(--accent-soft, #e8eef8);
+    color: var(--muted);
+  }
+
+  .alerte-badge[data-region='fr'] {
+    background: color-mix(in srgb, #002654 12%, white);
+    color: #002654;
+  }
+
+  .alerte-badge[data-region='ue'] {
+    background: color-mix(in srgb, #003399 14%, white);
+    color: #003399;
+  }
+
+  .alerte-status {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .alerte-disclaimer {
+    margin: 0 0 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+    max-width: 78ch;
+  }
+
+  .alerte-more {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.92rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    align-items: center;
+  }
+
+  .btn-alerte {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    text-decoration: none;
+    color: #8a3d14;
+    border-bottom: 1px solid color-mix(in srgb, #c45c26 50%, transparent);
+  }
+
+  .btn-alerte:hover {
+    color: #c45c26;
+  }
+
+  @media (max-width: 640px) {
+    .alerte-citoyenne {
+      padding: 1rem 0.95rem 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .alerte-citoyenne h2 {
+      font-size: 1.2rem;
+    }
+    .alerte-updated {
+      white-space: normal;
+      width: 100%;
+    }
+    .alerte-lead {
+      font-size: 0.98rem;
+    }
+    .alerte-preview li {
+      font-size: 0.92rem;
+      gap: 0.3rem 0.4rem;
+    }
+    .alerte-status {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .btn-alerte {
+      min-height: 44px;
+      align-items: center;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .alerte-citoyenne {
+      border-color: color-mix(in srgb, #e07a3a 40%, var(--border));
+      background: linear-gradient(
+        135deg,
+        color-mix(in srgb, #e07a3a 12%, var(--card)) 0%,
+        var(--card) 55%
+      );
+    }
+
+    .alerte-eyebrow,
+    .btn-alerte {
+      color: #f0a46a;
+    }
+
+    .alerte-badge[data-region='fr'] {
+      background: color-mix(in srgb, #6b9fd4 22%, transparent);
+      color: #c5dbf5;
+    }
+
+    .alerte-badge[data-region='ue'] {
+      background: color-mix(in srgb, #5b7fd4 22%, transparent);
+      color: #c9d6f8;
+    }
+  }
+</style>

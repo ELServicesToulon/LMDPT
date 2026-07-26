@@ -1,0 +1,295 @@
+---
+/**
+ * Temps de parole — indices d'équité d'exposition (LMDPT)
+ * Snapshot : src/data/temps-parole-equite.json (Arcom open data)
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import data from '../../data/temps-parole-equite.json';
+import {
+  flagLabel,
+  indiceBarPercent,
+  sortRowsByIndiceDesc,
+  countByFlag,
+} from '../../lib/temps-parole-equite';
+
+const rows = sortRowsByIndiceDesc(data.rows);
+const counts = countByFlag(data.rows);
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const period = data.wave?.period;
+const periodLabel =
+  period?.start && period?.end ? `${period.start} → ${period.end}` : period?.label || '—';
+---
+
+<BaseLayout
+  title="Temps de parole et équité d'exposition"
+  description="Indices d'équité du temps de parole médiatique (Arcom open data) comparés à un étalon — synthèse LMDPT, pas de prédiction électorale."
+  type="website"
+  keywords="temps de parole, Arcom, pluralisme, équité médiatique, exposition, LMDPT, municipales 2026"
+  commentThread="temps-parole-equite"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/liberte-d-expression">Liberté d’expression</a>
+    {' → '}
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    Temps de parole
+  </nav>
+
+  <section class="tpe-intro" aria-labelledby="tpe-title">
+    <p class="eyebrow">Pluralisme médiatique · open data Arcom</p>
+    <h1 id="tpe-title">{data.title}</h1>
+    <p class="meta">
+      Mise à jour : <time datetime={data.updated}>{updated}</time>
+      {' · '}
+      Vague <code>{data.wave.id}</code>
+      {' · '}
+      {data.wave.exposure_type} ({data.wave.unit})
+    </p>
+    <p class="lead">
+      On mesure l’écart entre la <strong>part de temps de parole</strong> d’un acteur et un
+      <strong>étalon</strong> (ici : égalité stricte 1/n pour le top partis). Formule :
+      <code>{data.formula}</code>
+    </p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{data.doe}</p>
+  </section>
+
+  <nav class="tpe-toc" aria-label="Sommaire">
+    <a href="#indices">Indices</a>
+    <a href="#alertes">Alertes</a>
+    <a href="#methode">Méthode</a>
+  </nav>
+
+  <section class="card tpe-meta" aria-labelledby="meta-title">
+    <h2 id="meta-title">Périmètre de la vague</h2>
+    <ul class="tpe-meta-list">
+      <li>
+        <strong>Médias.</strong> {data.wave.media?.name || '—'}
+      </li>
+      <li>
+        <strong>Période.</strong> {periodLabel}
+        {period?.label ? ` (${period.label})` : ''}
+      </li>
+      <li>
+        <strong>Étalon.</strong> {data.baseline.label}
+        {data.baseline.note ? ` — ${data.baseline.note}` : ''}
+      </li>
+      <li>
+        <strong>Bande δ.</strong> ±{Math.round(data.delta * 100)} % autour de l’indice 1
+        (sur-exposition si &gt; {1 + data.delta}, sous si &lt; {1 - data.delta})
+      </li>
+      <li>
+        <strong>Source.</strong>
+        {
+          data.source?.url ? (
+            <a href={data.source.url} rel="noopener noreferrer">
+              {data.source.title || data.source.url}
+            </a>
+          ) : (
+            '—'
+          )
+        }
+        {data.source?.verification ? ` · ${data.source.verification}` : ''}
+      </li>
+    </ul>
+    <p class="meta">
+      {counts.over ?? 0} sur-exposition · {counts.under ?? 0} sous-exposition ·{' '}
+      {counts.in_band ?? 0} dans la bande
+    </p>
+  </section>
+
+  <section id="indices" class="card" aria-labelledby="indices-title">
+    <h2 id="indices-title">Indices par acteur</h2>
+    <p class="meta">
+      Barre proportionnelle à l’indice (plafond visualisé à 3× l’égalité). Tableau trié par indice
+      décroissant.
+    </p>
+    <div class="table-wrap" role="region" aria-label="Tableau des indices" tabindex="0">
+      <table class="tpe-table">
+        <caption>
+          Parts d’exposition vs étalon — vague {data.wave.id}
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Acteur</th>
+            <th scope="col">% parole</th>
+            <th scope="col">% étalon</th>
+            <th scope="col">Indice</th>
+            <th scope="col">Lecture</th>
+            <th scope="col">Visualisation</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r) => {
+              const bar = indiceBarPercent(r.indice);
+              const flagClass =
+                r.flag === 'over' ? 'tpe-over' : r.flag === 'under' ? 'tpe-under' : 'tpe-band';
+              return (
+                <tr>
+                  <th scope="row">{r.label}</th>
+                  <td>{r.part_expo_pct != null ? r.part_expo_pct.toFixed(1) : '—'}</td>
+                  <td>{r.part_poll_pct != null ? r.part_poll_pct.toFixed(1) : '—'}</td>
+                  <td>
+                    <strong>{r.indice != null ? r.indice.toFixed(2) : '—'}</strong>
+                  </td>
+                  <td>
+                    <span class={`status-badge ${flagClass}`}>{flagLabel(r.flag)}</span>
+                  </td>
+                  <td class="tpe-bar-cell">
+                    <div
+                      class="tpe-bar"
+                      role="img"
+                      aria-label={`Indice ${r.indice ?? 0}, barre ${bar} pour cent du plafond`}
+                    >
+                      <span class={`tpe-bar-fill ${flagClass}`} style={`width: ${bar}%`} />
+                      <span class="tpe-bar-eq" title="Égalité (indice 1)" style="left: 33.3%" />
+                    </div>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="alertes" class="card" aria-labelledby="alertes-title">
+    <h2 id="alertes-title">Alertes (hors bande δ)</h2>
+    {
+      data.alerts?.length ? (
+        <ul class="tpe-alerts">
+          {data.alerts.map((a) => (
+            <li>
+              <strong>{a.kind}</strong> — {a.label} · indice {a.indice} (expo {a.part_expo_pct} % vs
+              étalon {a.part_poll_pct} %)
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Aucune alerte hors bande pour cette vague.</p>
+      )
+    }
+  </section>
+
+  <section id="methode" class="card" aria-labelledby="methode-title">
+    <h2 id="methode-title">Méthode</h2>
+    <ol>
+      <li>
+        <strong>Numérateur.</strong> Minutes de temps de parole agrégées (open data Arcom), top
+        partis hors totaux « exécutif / président ».
+      </li>
+      <li>
+        <strong>Dénominateur.</strong> Pour cette page : <em>égalité 1/n</em> sur le même top. Une
+        vague future pourra croiser des <em>parts de sondage</em> (institut + date) — le sondage
+        reste un étalon de comparaison, jamais une prédiction LMDPT.
+      </li>
+      <li>
+        <strong>Indice.</strong> {data.formula} — &gt; 1+δ sur-exposition, &lt; 1−δ sous-exposition.
+      </li>
+    </ol>
+    <p class="meta">
+      Agent vault : <code>lmdpt-temps-parole-controle</code> · commande{' '}
+      <code>/lmdpt-temps-parole</code>
+    </p>
+    <p>
+      Voir aussi :
+      <a href="/liberte-d-expression">Liberté d’expression</a>
+      {' · '}
+      <a href="/observatoire-censure/">Observatoire de la censure</a>
+      {' · '}
+      <a href={data.links?.arcom || 'https://www.arcom.fr/temps-parole/election'} rel="noopener"
+        >Portail Arcom temps de parole</a
+      >
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .tpe-intro .lead {
+    max-width: 42rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+  }
+  .tpe-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .tpe-meta-list {
+    padding-left: 1.2rem;
+  }
+  .tpe-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .tpe-table th,
+  .tpe-table td {
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: middle;
+  }
+  .tpe-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg, #fff);
+    z-index: 1;
+  }
+  .tpe-bar-cell {
+    min-width: 8rem;
+  }
+  .tpe-bar {
+    position: relative;
+    height: 0.75rem;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .tpe-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 70%, #888);
+  }
+  .tpe-bar-fill.tpe-over {
+    background: #c45c26;
+  }
+  .tpe-bar-fill.tpe-under {
+    background: #5b7c99;
+  }
+  .tpe-bar-fill.tpe-band {
+    background: #2a9d6e;
+  }
+  .tpe-bar-eq {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: color-mix(in srgb, currentColor 45%, transparent);
+  }
+  .status-badge.tpe-over {
+    color: #8a3b12;
+  }
+  .status-badge.tpe-under {
+    color: #2f4f6a;
+  }
+  .tpe-alerts {
+    padding-left: 1.2rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  @media (max-width: 640px) {
+    .tpe-table {
+      font-size: 0.85rem;
+    }
+  }
+</style>

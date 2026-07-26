@@ -1,0 +1,140 @@
+---
+/**
+ * Page programmes par grands axes — propositions des candidats sous chaque thème.
+ * DOE : pas de ranking, pas de prédiction, sources sur chaque mesure.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProgramAxesBoard from '../../../components/ProgramAxesBoard.astro';
+import { listScrutins, getScrutin } from '../../../lib/programs';
+import { buildProgramAxesBoard } from '../../../lib/program-axes';
+
+const defaultScrutin = 'presidentielle-2027';
+const scrutinParam = Astro.url.searchParams.get('scrutin') ?? defaultScrutin;
+const scrutinMeta = getScrutin(scrutinParam) ?? getScrutin(defaultScrutin)!;
+const scrutinId = scrutinMeta.id;
+const scrutins = listScrutins();
+const data = buildProgramAxesBoard(scrutinId);
+
+const title = `Programmes par grands axes — ${scrutinMeta.label}`;
+const description = `Propositions des candidats regroupées par grands axes (fiscalité, retraites, Europe, climat, sécurité…) — ${scrutinMeta.label}. Comparaison factuelle, sans classement.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Grands axes
+  </nav>
+
+  <header class="page-intro">
+    <h1>Programmes par grands axes</h1>
+    <p class="lead">
+      Pour chaque grand thème politique, les <strong>propositions documentées</strong> des candidats
+      — une case par candidat, mesures sourcées. Aucun classement, aucune prédiction d’élimination.
+    </p>
+    <p class="meta" role="status">
+      {scrutinMeta.label} · {data.candidates.length} fiches · {data.themesCovered} axes couverts ·{' '}
+      {data.totalMeasures} mesures
+    </p>
+  </header>
+
+  <form class="scrutin-switch card" method="get" action="/analyses/programmes/axes">
+    <label for="scrutin">
+      Scrutin
+      <select id="scrutin" name="scrutin" onchange="this.form.submit()">
+        {
+          scrutins.map((s) => (
+            <option value={s.id} selected={s.id === scrutinId}>
+              {s.label}
+            </option>
+          ))
+        }
+      </select>
+    </label>
+    <noscript>
+      <button type="submit">Afficher</button>
+    </noscript>
+    <p class="meta">
+      <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}`}>Comparateur tableau</a>
+      {' · '}
+      <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}&view=coverage`}>
+        Couverture thématique
+      </a>
+      {' · '}
+      <a href="/analyses/programmes">Index fiches</a>
+    </p>
+  </form>
+
+  <p class="disclaimer card">
+    <strong>Méthode.</strong> Taxonomie LMDPT (15 axes). Données issues des fiches programmes
+    intégrées (mesures + sources). Statuts « partiel » = programme incomplet ou continuité d’un
+    scrutin antérieur. Chiffrages en Md€/an lorsque disponibles (auteur indiqué). Voir{' '}
+    <a href="/sources">Sources</a> et la <a href="/charte">charte éditoriale</a>.
+  </p>
+
+  <ProgramAxesBoard data={data} scrutinId={scrutinId} />
+
+  {
+    data.axes.some((a) => a.measureCount === 0) && (
+      <details class="empty-axes card">
+        <summary>Axes sans proposition pour ce scrutin ({data.axes.filter((a) => a.measureCount === 0).length})</summary>
+        <ul>
+          {data.axes
+            .filter((a) => a.measureCount === 0)
+            .map((a) => (
+              <li>{a.themeLabel}</li>
+            ))}
+        </ul>
+      </details>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .page-intro h1 {
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.5rem, 4vw, 1.95rem);
+    color: var(--fg);
+  }
+  .lead {
+    max-width: 62ch;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--fg);
+  }
+  .scrutin-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0.75rem 1.25rem;
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+  }
+  .scrutin-switch label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .scrutin-switch select {
+    min-width: 16rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--fg);
+    font-size: 1rem;
+  }
+  .disclaimer {
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .empty-axes {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+  }
+  .empty-axes ul {
+    margin: 0.5rem 0 0;
+  }
+</style>

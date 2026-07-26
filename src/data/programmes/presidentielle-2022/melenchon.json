@@ -12,7 +12,7 @@
     "status": "published"
   },
   "evolution_from": "presidentielle-2017",
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "melenchon-2022-retraites-60",
@@ -20,70 +20,80 @@
       "label": "Retraite à 60 ans ou 40 annuités",
       "detail": "Abrogation de la réforme Macron et retour à 60 ans.",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
     },
     {
       "id": "melenchon-2022-fiscalite-14-tranches",
       "theme": "fiscalite",
       "label": "14 tranches d'impôt sur le revenu et contribution sur les revenus du capital",
       "status": "modifie",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "melenchon-2022-pouvoir-achat-smic-1500",
       "theme": "pouvoir_achat",
       "label": "SMIC à 1 500 € net",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Salaires"
     },
     {
       "id": "melenchon-2022-climat-sortie-nucleaire",
       "theme": "climat",
       "label": "Sortie progressive du nucléaire et planification écologique",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Transition"
     },
     {
       "id": "melenchon-2022-europe-plan-b",
       "theme": "europe",
       "label": "Renégociation des traités européens — plan A / plan B",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "melenchon-2022-sante-gratuite",
       "theme": "sante",
       "label": "Gratuité des soins et salaires des soignants revalorisés",
       "status": "modifie",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Accès aux soins"
     },
     {
       "id": "melenchon-2022-education-enseignants",
       "theme": "education",
       "label": "Embauche massive d'enseignants et gratuité de la cantine scolaire",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "École"
     },
     {
       "id": "melenchon-2022-institutions-6e-republique",
       "theme": "institutions",
       "label": "VIe République et assemblée constituante",
       "status": "maintenu",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Gouvernance"
     },
     {
       "id": "melenchon-2022-logement-gel-loyers",
       "theme": "logement",
       "label": "Gel des loyers et encadrement des loyers partout en France",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Accès au logement"
     },
     {
       "id": "melenchon-2022-entreprises-semaine-32h",
       "theme": "entreprises",
       "label": "Semaine de 32 heures sans baisse de salaire",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Emploi & industrie"
     }
   ],
   "chiffrages": [

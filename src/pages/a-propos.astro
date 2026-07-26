@@ -7,16 +7,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Mission, charte éditoriale et méthodologie — Le Média du Premier Tour."
 >
   <section>
-    <h2>Le premier tour, miroir de la pluralité</h2>
+    <h2>Le 1er tour, miroir — pas le duel</h2>
     <p class="tagline-block">
       Le premier tour : le miroir le plus fidèle de la France politique.<br />
       Pour une démocratie où l'on vote <em>pour</em>, et non contre.
     </p>
     <p>
-      <strong>Le Média du Premier Tour</strong> documente de manière exhaustive et transparente
-      les résultats du premier tour des scrutins nationaux. Le premier tour capture la pluralité
-      des préférences ; le second tour, lui, est structurellement distordu par les désistements
-      et le vote stratégique (« éliminer » plutôt que « voter pour »).
+      <strong>Le Média du Premier Tour</strong> rend visible la pluralité des préférences au 1er tour.
+      Le second tour, lui, est distordu par désistements et vote «&nbsp;contre&nbsp;».
+      Ici : faits officiels, zéro tier list.
     </p>
   </section>
 
@@ -36,6 +35,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       {' · '}
       source versionnée :
       <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md">docs/EDITORIAL.md</a>
+    </p>
+  </section>
+
+  <section class="card" id="methodologie">
+    <h3>Méthodologie des données</h3>
+    <p>
+      Les fichiers open data du Ministère de l’Intérieur publient des <strong>nuances</strong>.
+      Pour les simulations d’Assemblée du Premier Tour, LMDPT regroupe ces nuances en
+      <strong>5 blocs civiques</strong>, applique un <strong>seuil de 3&nbsp;%</strong>, puis
+      répartit 577 sièges en <strong>Sainte-Laguë</strong>.
+    </p>
+    <p class="meta">
+      Tableau complet nuances → blocs, couleurs et limites de la méthode :
+      <a href="/sources#methodologie-blocs"><strong>Sources — méthodologie d’agrégation</strong></a>.
     </p>
   </section>
 

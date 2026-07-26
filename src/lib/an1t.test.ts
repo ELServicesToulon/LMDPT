@@ -1,13 +1,18 @@
 import { describe, expect, it } from 'vitest';
 import leg2024National from '../data/elections/2024-legislatives-1er-tour-national.json';
 import leg2024Circos from '../data/elections/2024-legislatives-1er-tour-circonscriptions.json';
+import pres2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
 import anReelle from '../data/analyses/assemblee-premier-tour-2024.json';
 import {
   allocateSainteLague,
+  aggregatePresidentialPctByBloc,
   compareSeatAllocations,
   countCircosByBloc,
   nuanceToBlocId,
+  presidentialNuanceToBlocId,
   simulateAn1tSeats,
+  simulateFromVoteShares,
+  AN1T_BLOCS,
 } from './an1t';
 import type { ElectionDataset } from './election-types';
 import type { CirconscriptionElectionDataset } from './election-types';
@@ -56,5 +61,42 @@ describe('an1t', () => {
     const cmp = compareSeatAllocations(an1t, anReelle.an_reelle.blocs, 577);
     expect(cmp.length).toBeGreaterThanOrEqual(4);
     expect(cmp.reduce((s, r) => s + r.reelleSeats, 0)).toBe(577);
+  });
+
+  it('maps presidential 2022 nuances to pedagogical AN1T blocs', () => {
+    expect(presidentialNuanceToBlocId('LREM')).toBe('ensemble');
+    expect(presidentialNuanceToBlocId('LFI')).toBe('nfp');
+    expect(presidentialNuanceToBlocId('EELV')).toBe('nfp');
+    expect(presidentialNuanceToBlocId('RN')).toBe('rn');
+    expect(presidentialNuanceToBlocId('REC')).toBe('rn');
+    expect(presidentialNuanceToBlocId('DLF')).toBe('rn');
+    expect(presidentialNuanceToBlocId('LR')).toBe('lr');
+    expect(presidentialNuanceToBlocId('RES')).toBe('autres');
+  });
+
+  it('calibrates T1 2022 présidentielle preset from open data (sum≈100, key blocs)', () => {
+    const pcts = aggregatePresidentialPctByBloc(
+      pres2022.national.candidats,
+      pres2022.national.exprimes,
+    );
+    const sum = Object.values(pcts).reduce((s, n) => s + n, 0);
+    expect(sum).toBeCloseTo(100, 0);
+    // Ordres de grandeur officiels (arrondis 1 décimale)
+    expect(pcts.ensemble).toBeCloseTo(27.9, 0); // Macron 27,85
+    expect(pcts.lr).toBeCloseTo(4.8, 0); // Pécresse 4,78
+    expect(pcts.rn).toBeGreaterThan(31); // Le Pen+Zemmour+DA ≈ 32,3
+    expect(pcts.nfp).toBeGreaterThan(30); // Mélenchon+écologistes+PCF+… ≈ 31,9
+    expect(pcts.autres).toBeCloseTo(3.1, 0); // Lassalle 3,13
+
+    const shares = AN1T_BLOCS.map((b) => ({
+      id: b.id,
+      label: b.label,
+      color: b.color,
+      pct: pcts[b.id] ?? 0,
+    }));
+    const seats = simulateFromVoteShares(shares, 577, 3);
+    expect(seats.reduce((s, r) => s + r.seats, 0)).toBe(577);
+    expect(seats.some((r) => r.id === 'rn' && r.seats > 100)).toBe(true);
+    expect(seats.some((r) => r.id === 'nfp' && r.seats > 100)).toBe(true);
   });
 });

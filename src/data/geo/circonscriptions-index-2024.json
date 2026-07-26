@@ -1,0 +1,2893 @@
+{
+  "version": 1,
+  "source_election": "2024-legislatives",
+  "source_label": "Géographie des 577 circonscriptions — issue des résultats 1er tour législatives 2024 (data.gouv.fr). Réutilisable pour mapper d’autres scrutins (présidentielle 2017/2022/2027) tant que le découpage reste stable.",
+  "count": 577,
+  "circonscriptions": [
+    {
+      "code": "0101",
+      "departement": "01",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0102",
+      "departement": "01",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0103",
+      "departement": "01",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0104",
+      "departement": "01",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "0105",
+      "departement": "01",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "0201",
+      "departement": "02",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0202",
+      "departement": "02",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0203",
+      "departement": "02",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0204",
+      "departement": "02",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "0205",
+      "departement": "02",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "0301",
+      "departement": "03",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0302",
+      "departement": "03",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0303",
+      "departement": "03",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0401",
+      "departement": "04",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0402",
+      "departement": "04",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0501",
+      "departement": "05",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0502",
+      "departement": "05",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0601",
+      "departement": "06",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0602",
+      "departement": "06",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0603",
+      "departement": "06",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0604",
+      "departement": "06",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "0605",
+      "departement": "06",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "0606",
+      "departement": "06",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "0607",
+      "departement": "06",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "0608",
+      "departement": "06",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "0609",
+      "departement": "06",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "0701",
+      "departement": "07",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0702",
+      "departement": "07",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0703",
+      "departement": "07",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0801",
+      "departement": "08",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0802",
+      "departement": "08",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "0803",
+      "departement": "08",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "0901",
+      "departement": "09",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "0902",
+      "departement": "09",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1001",
+      "departement": "10",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1002",
+      "departement": "10",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1003",
+      "departement": "10",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1101",
+      "departement": "11",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1102",
+      "departement": "11",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1103",
+      "departement": "11",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1201",
+      "departement": "12",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1202",
+      "departement": "12",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1203",
+      "departement": "12",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1301",
+      "departement": "13",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1302",
+      "departement": "13",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1303",
+      "departement": "13",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1304",
+      "departement": "13",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "1305",
+      "departement": "13",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "1306",
+      "departement": "13",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "1307",
+      "departement": "13",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "1308",
+      "departement": "13",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "1309",
+      "departement": "13",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "1310",
+      "departement": "13",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "1311",
+      "departement": "13",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "1312",
+      "departement": "13",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "1313",
+      "departement": "13",
+      "nom": "13me circonscription"
+    },
+    {
+      "code": "1314",
+      "departement": "13",
+      "nom": "14me circonscription"
+    },
+    {
+      "code": "1315",
+      "departement": "13",
+      "nom": "15me circonscription"
+    },
+    {
+      "code": "1316",
+      "departement": "13",
+      "nom": "16me circonscription"
+    },
+    {
+      "code": "1401",
+      "departement": "14",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1402",
+      "departement": "14",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1403",
+      "departement": "14",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1404",
+      "departement": "14",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "1405",
+      "departement": "14",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "1406",
+      "departement": "14",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "1501",
+      "departement": "15",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1502",
+      "departement": "15",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1601",
+      "departement": "16",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1602",
+      "departement": "16",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1603",
+      "departement": "16",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1701",
+      "departement": "17",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1702",
+      "departement": "17",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1703",
+      "departement": "17",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1704",
+      "departement": "17",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "1705",
+      "departement": "17",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "1801",
+      "departement": "18",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1802",
+      "departement": "18",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "1803",
+      "departement": "18",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "1901",
+      "departement": "19",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "1902",
+      "departement": "19",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2101",
+      "departement": "21",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2102",
+      "departement": "21",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2103",
+      "departement": "21",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2104",
+      "departement": "21",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2105",
+      "departement": "21",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "2201",
+      "departement": "22",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2202",
+      "departement": "22",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2203",
+      "departement": "22",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2204",
+      "departement": "22",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2205",
+      "departement": "22",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "2301",
+      "departement": "23",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2401",
+      "departement": "24",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2402",
+      "departement": "24",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2403",
+      "departement": "24",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2404",
+      "departement": "24",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2501",
+      "departement": "25",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2502",
+      "departement": "25",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2503",
+      "departement": "25",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2504",
+      "departement": "25",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2505",
+      "departement": "25",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "2601",
+      "departement": "26",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2602",
+      "departement": "26",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2603",
+      "departement": "26",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2604",
+      "departement": "26",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2701",
+      "departement": "27",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2702",
+      "departement": "27",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2703",
+      "departement": "27",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2704",
+      "departement": "27",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2705",
+      "departement": "27",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "2801",
+      "departement": "28",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2802",
+      "departement": "28",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2803",
+      "departement": "28",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2804",
+      "departement": "28",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2901",
+      "departement": "29",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2902",
+      "departement": "29",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2903",
+      "departement": "29",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "2904",
+      "departement": "29",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "2905",
+      "departement": "29",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "2906",
+      "departement": "29",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "2907",
+      "departement": "29",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "2908",
+      "departement": "29",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "2A01",
+      "departement": "2A",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2A02",
+      "departement": "2A",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "2B01",
+      "departement": "2B",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "2B02",
+      "departement": "2B",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3001",
+      "departement": "30",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3002",
+      "departement": "30",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3003",
+      "departement": "30",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3004",
+      "departement": "30",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3005",
+      "departement": "30",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3006",
+      "departement": "30",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3101",
+      "departement": "31",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3102",
+      "departement": "31",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3103",
+      "departement": "31",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3104",
+      "departement": "31",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3105",
+      "departement": "31",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3106",
+      "departement": "31",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3107",
+      "departement": "31",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "3108",
+      "departement": "31",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "3109",
+      "departement": "31",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "3110",
+      "departement": "31",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "3201",
+      "departement": "32",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3202",
+      "departement": "32",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3301",
+      "departement": "33",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3302",
+      "departement": "33",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3303",
+      "departement": "33",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3304",
+      "departement": "33",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3305",
+      "departement": "33",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3306",
+      "departement": "33",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3307",
+      "departement": "33",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "3308",
+      "departement": "33",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "3309",
+      "departement": "33",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "3310",
+      "departement": "33",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "3311",
+      "departement": "33",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "3312",
+      "departement": "33",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "3401",
+      "departement": "34",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3402",
+      "departement": "34",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3403",
+      "departement": "34",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3404",
+      "departement": "34",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3405",
+      "departement": "34",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3406",
+      "departement": "34",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3407",
+      "departement": "34",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "3408",
+      "departement": "34",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "3409",
+      "departement": "34",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "3501",
+      "departement": "35",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3502",
+      "departement": "35",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3503",
+      "departement": "35",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3504",
+      "departement": "35",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3505",
+      "departement": "35",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3506",
+      "departement": "35",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3507",
+      "departement": "35",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "3508",
+      "departement": "35",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "3601",
+      "departement": "36",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3602",
+      "departement": "36",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3701",
+      "departement": "37",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3702",
+      "departement": "37",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3703",
+      "departement": "37",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3704",
+      "departement": "37",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3705",
+      "departement": "37",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3801",
+      "departement": "38",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3802",
+      "departement": "38",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3803",
+      "departement": "38",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "3804",
+      "departement": "38",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "3805",
+      "departement": "38",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "3806",
+      "departement": "38",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "3807",
+      "departement": "38",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "3808",
+      "departement": "38",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "3809",
+      "departement": "38",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "3810",
+      "departement": "38",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "3901",
+      "departement": "39",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "3902",
+      "departement": "39",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "3903",
+      "departement": "39",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4001",
+      "departement": "40",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4002",
+      "departement": "40",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4003",
+      "departement": "40",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4101",
+      "departement": "41",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4102",
+      "departement": "41",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4103",
+      "departement": "41",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4201",
+      "departement": "42",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4202",
+      "departement": "42",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4203",
+      "departement": "42",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4204",
+      "departement": "42",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "4205",
+      "departement": "42",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "4206",
+      "departement": "42",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "4301",
+      "departement": "43",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4302",
+      "departement": "43",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4401",
+      "departement": "44",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4402",
+      "departement": "44",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4403",
+      "departement": "44",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4404",
+      "departement": "44",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "4405",
+      "departement": "44",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "4406",
+      "departement": "44",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "4407",
+      "departement": "44",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "4408",
+      "departement": "44",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "4409",
+      "departement": "44",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "4410",
+      "departement": "44",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "4501",
+      "departement": "45",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4502",
+      "departement": "45",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4503",
+      "departement": "45",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4504",
+      "departement": "45",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "4505",
+      "departement": "45",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "4506",
+      "departement": "45",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "4601",
+      "departement": "46",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4602",
+      "departement": "46",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4701",
+      "departement": "47",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4702",
+      "departement": "47",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4703",
+      "departement": "47",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4801",
+      "departement": "48",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4901",
+      "departement": "49",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "4902",
+      "departement": "49",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "4903",
+      "departement": "49",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "4904",
+      "departement": "49",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "4905",
+      "departement": "49",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "4906",
+      "departement": "49",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "4907",
+      "departement": "49",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "5001",
+      "departement": "50",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5002",
+      "departement": "50",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5003",
+      "departement": "50",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5004",
+      "departement": "50",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5101",
+      "departement": "51",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5102",
+      "departement": "51",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5103",
+      "departement": "51",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5104",
+      "departement": "51",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5105",
+      "departement": "51",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "5201",
+      "departement": "52",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5202",
+      "departement": "52",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5301",
+      "departement": "53",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5302",
+      "departement": "53",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5303",
+      "departement": "53",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5401",
+      "departement": "54",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5402",
+      "departement": "54",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5403",
+      "departement": "54",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5404",
+      "departement": "54",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5405",
+      "departement": "54",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "5406",
+      "departement": "54",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "5501",
+      "departement": "55",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5502",
+      "departement": "55",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5601",
+      "departement": "56",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5602",
+      "departement": "56",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5603",
+      "departement": "56",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5604",
+      "departement": "56",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5605",
+      "departement": "56",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "5606",
+      "departement": "56",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "5701",
+      "departement": "57",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5702",
+      "departement": "57",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5703",
+      "departement": "57",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5704",
+      "departement": "57",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5705",
+      "departement": "57",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "5706",
+      "departement": "57",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "5707",
+      "departement": "57",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "5708",
+      "departement": "57",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "5709",
+      "departement": "57",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "5801",
+      "departement": "58",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5802",
+      "departement": "58",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5901",
+      "departement": "59",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "5902",
+      "departement": "59",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "5903",
+      "departement": "59",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "5904",
+      "departement": "59",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "5905",
+      "departement": "59",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "5906",
+      "departement": "59",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "5907",
+      "departement": "59",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "5908",
+      "departement": "59",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "5909",
+      "departement": "59",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "5910",
+      "departement": "59",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "5911",
+      "departement": "59",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "5912",
+      "departement": "59",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "5913",
+      "departement": "59",
+      "nom": "13me circonscription"
+    },
+    {
+      "code": "5914",
+      "departement": "59",
+      "nom": "14me circonscription"
+    },
+    {
+      "code": "5915",
+      "departement": "59",
+      "nom": "15me circonscription"
+    },
+    {
+      "code": "5916",
+      "departement": "59",
+      "nom": "16me circonscription"
+    },
+    {
+      "code": "5917",
+      "departement": "59",
+      "nom": "17me circonscription"
+    },
+    {
+      "code": "5918",
+      "departement": "59",
+      "nom": "18me circonscription"
+    },
+    {
+      "code": "5919",
+      "departement": "59",
+      "nom": "19me circonscription"
+    },
+    {
+      "code": "5920",
+      "departement": "59",
+      "nom": "20me circonscription"
+    },
+    {
+      "code": "5921",
+      "departement": "59",
+      "nom": "21me circonscription"
+    },
+    {
+      "code": "6001",
+      "departement": "60",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6002",
+      "departement": "60",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6003",
+      "departement": "60",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6004",
+      "departement": "60",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6005",
+      "departement": "60",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6006",
+      "departement": "60",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6007",
+      "departement": "60",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "6101",
+      "departement": "61",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6102",
+      "departement": "61",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6103",
+      "departement": "61",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6201",
+      "departement": "62",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6202",
+      "departement": "62",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6203",
+      "departement": "62",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6204",
+      "departement": "62",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6205",
+      "departement": "62",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6206",
+      "departement": "62",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6207",
+      "departement": "62",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "6208",
+      "departement": "62",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "6209",
+      "departement": "62",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "6210",
+      "departement": "62",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "6211",
+      "departement": "62",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "6212",
+      "departement": "62",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "6301",
+      "departement": "63",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6302",
+      "departement": "63",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6303",
+      "departement": "63",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6304",
+      "departement": "63",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6305",
+      "departement": "63",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6401",
+      "departement": "64",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6402",
+      "departement": "64",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6403",
+      "departement": "64",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6404",
+      "departement": "64",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6405",
+      "departement": "64",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6406",
+      "departement": "64",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6501",
+      "departement": "65",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6502",
+      "departement": "65",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6601",
+      "departement": "66",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6602",
+      "departement": "66",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6603",
+      "departement": "66",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6604",
+      "departement": "66",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6701",
+      "departement": "67",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6702",
+      "departement": "67",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6703",
+      "departement": "67",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6704",
+      "departement": "67",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6705",
+      "departement": "67",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6706",
+      "departement": "67",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6707",
+      "departement": "67",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "6708",
+      "departement": "67",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "6709",
+      "departement": "67",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "6801",
+      "departement": "68",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6802",
+      "departement": "68",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6803",
+      "departement": "68",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6804",
+      "departement": "68",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6805",
+      "departement": "68",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6806",
+      "departement": "68",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6901",
+      "departement": "69",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "6902",
+      "departement": "69",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "6903",
+      "departement": "69",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "6904",
+      "departement": "69",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "6905",
+      "departement": "69",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "6906",
+      "departement": "69",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "6907",
+      "departement": "69",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "6908",
+      "departement": "69",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "6909",
+      "departement": "69",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "6910",
+      "departement": "69",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "6911",
+      "departement": "69",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "6912",
+      "departement": "69",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "6913",
+      "departement": "69",
+      "nom": "13me circonscription"
+    },
+    {
+      "code": "6914",
+      "departement": "69",
+      "nom": "14me circonscription"
+    },
+    {
+      "code": "7001",
+      "departement": "70",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7002",
+      "departement": "70",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7101",
+      "departement": "71",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7102",
+      "departement": "71",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7103",
+      "departement": "71",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7104",
+      "departement": "71",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7105",
+      "departement": "71",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7201",
+      "departement": "72",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7202",
+      "departement": "72",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7203",
+      "departement": "72",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7204",
+      "departement": "72",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7205",
+      "departement": "72",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7301",
+      "departement": "73",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7302",
+      "departement": "73",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7303",
+      "departement": "73",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7304",
+      "departement": "73",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7401",
+      "departement": "74",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7402",
+      "departement": "74",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7403",
+      "departement": "74",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7404",
+      "departement": "74",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7405",
+      "departement": "74",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7406",
+      "departement": "74",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "7501",
+      "departement": "75",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7502",
+      "departement": "75",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7503",
+      "departement": "75",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7504",
+      "departement": "75",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7505",
+      "departement": "75",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7506",
+      "departement": "75",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "7507",
+      "departement": "75",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "7508",
+      "departement": "75",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "7509",
+      "departement": "75",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "7510",
+      "departement": "75",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "7511",
+      "departement": "75",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "7512",
+      "departement": "75",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "7513",
+      "departement": "75",
+      "nom": "13me circonscription"
+    },
+    {
+      "code": "7514",
+      "departement": "75",
+      "nom": "14me circonscription"
+    },
+    {
+      "code": "7515",
+      "departement": "75",
+      "nom": "15me circonscription"
+    },
+    {
+      "code": "7516",
+      "departement": "75",
+      "nom": "16me circonscription"
+    },
+    {
+      "code": "7517",
+      "departement": "75",
+      "nom": "17me circonscription"
+    },
+    {
+      "code": "7518",
+      "departement": "75",
+      "nom": "18me circonscription"
+    },
+    {
+      "code": "7601",
+      "departement": "76",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7602",
+      "departement": "76",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7603",
+      "departement": "76",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7604",
+      "departement": "76",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7605",
+      "departement": "76",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7606",
+      "departement": "76",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "7607",
+      "departement": "76",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "7608",
+      "departement": "76",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "7609",
+      "departement": "76",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "7610",
+      "departement": "76",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "7701",
+      "departement": "77",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7702",
+      "departement": "77",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7703",
+      "departement": "77",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7704",
+      "departement": "77",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7705",
+      "departement": "77",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7706",
+      "departement": "77",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "7707",
+      "departement": "77",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "7708",
+      "departement": "77",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "7709",
+      "departement": "77",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "7710",
+      "departement": "77",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "7711",
+      "departement": "77",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "7801",
+      "departement": "78",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7802",
+      "departement": "78",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7803",
+      "departement": "78",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "7804",
+      "departement": "78",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "7805",
+      "departement": "78",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "7806",
+      "departement": "78",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "7807",
+      "departement": "78",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "7808",
+      "departement": "78",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "7809",
+      "departement": "78",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "7810",
+      "departement": "78",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "7811",
+      "departement": "78",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "7812",
+      "departement": "78",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "7901",
+      "departement": "79",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "7902",
+      "departement": "79",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "7903",
+      "departement": "79",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8001",
+      "departement": "80",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8002",
+      "departement": "80",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8003",
+      "departement": "80",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8004",
+      "departement": "80",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8005",
+      "departement": "80",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "8101",
+      "departement": "81",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8102",
+      "departement": "81",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8103",
+      "departement": "81",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8201",
+      "departement": "82",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8202",
+      "departement": "82",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8301",
+      "departement": "83",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8302",
+      "departement": "83",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8303",
+      "departement": "83",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8304",
+      "departement": "83",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8305",
+      "departement": "83",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "8306",
+      "departement": "83",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "8307",
+      "departement": "83",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "8308",
+      "departement": "83",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "8401",
+      "departement": "84",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8402",
+      "departement": "84",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8403",
+      "departement": "84",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8404",
+      "departement": "84",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8405",
+      "departement": "84",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "8501",
+      "departement": "85",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8502",
+      "departement": "85",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8503",
+      "departement": "85",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8504",
+      "departement": "85",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8505",
+      "departement": "85",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "8601",
+      "departement": "86",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8602",
+      "departement": "86",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8603",
+      "departement": "86",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8604",
+      "departement": "86",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8701",
+      "departement": "87",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8702",
+      "departement": "87",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8703",
+      "departement": "87",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8801",
+      "departement": "88",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8802",
+      "departement": "88",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8803",
+      "departement": "88",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "8804",
+      "departement": "88",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "8901",
+      "departement": "89",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "8902",
+      "departement": "89",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "8903",
+      "departement": "89",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9001",
+      "departement": "90",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9002",
+      "departement": "90",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9101",
+      "departement": "91",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9102",
+      "departement": "91",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9103",
+      "departement": "91",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9104",
+      "departement": "91",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "9105",
+      "departement": "91",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "9106",
+      "departement": "91",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "9107",
+      "departement": "91",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "9108",
+      "departement": "91",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "9109",
+      "departement": "91",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "9110",
+      "departement": "91",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "9201",
+      "departement": "92",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9202",
+      "departement": "92",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9203",
+      "departement": "92",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9204",
+      "departement": "92",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "9205",
+      "departement": "92",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "9206",
+      "departement": "92",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "9207",
+      "departement": "92",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "9208",
+      "departement": "92",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "9209",
+      "departement": "92",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "9210",
+      "departement": "92",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "9211",
+      "departement": "92",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "9212",
+      "departement": "92",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "9213",
+      "departement": "92",
+      "nom": "13me circonscription"
+    },
+    {
+      "code": "9301",
+      "departement": "93",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9302",
+      "departement": "93",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9303",
+      "departement": "93",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9304",
+      "departement": "93",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "9305",
+      "departement": "93",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "9306",
+      "departement": "93",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "9307",
+      "departement": "93",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "9308",
+      "departement": "93",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "9309",
+      "departement": "93",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "9310",
+      "departement": "93",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "9311",
+      "departement": "93",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "9312",
+      "departement": "93",
+      "nom": "12me circonscription"
+    },
+    {
+      "code": "9401",
+      "departement": "94",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9402",
+      "departement": "94",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9403",
+      "departement": "94",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9404",
+      "departement": "94",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "9405",
+      "departement": "94",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "9406",
+      "departement": "94",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "9407",
+      "departement": "94",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "9408",
+      "departement": "94",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "9409",
+      "departement": "94",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "9410",
+      "departement": "94",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "9411",
+      "departement": "94",
+      "nom": "11me circonscription"
+    },
+    {
+      "code": "9501",
+      "departement": "95",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "9502",
+      "departement": "95",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "9503",
+      "departement": "95",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "9504",
+      "departement": "95",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "9505",
+      "departement": "95",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "9506",
+      "departement": "95",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "9507",
+      "departement": "95",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "9508",
+      "departement": "95",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "9509",
+      "departement": "95",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "9510",
+      "departement": "95",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "97101",
+      "departement": "97",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "97102",
+      "departement": "97",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "97103",
+      "departement": "97",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "97104",
+      "departement": "97",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "97201",
+      "departement": "97",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "97202",
+      "departement": "97",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "97203",
+      "departement": "97",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "97204",
+      "departement": "97",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "97301",
+      "departement": "97",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "97302",
+      "departement": "97",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "97401",
+      "departement": "97",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "97402",
+      "departement": "97",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "97403",
+      "departement": "97",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "97404",
+      "departement": "97",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "97405",
+      "departement": "97",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "97406",
+      "departement": "97",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "97407",
+      "departement": "97",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "97501",
+      "departement": "97",
+      "nom": "Saint-Pierre-et-Miquelon"
+    },
+    {
+      "code": "97601",
+      "departement": "97",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "97602",
+      "departement": "97",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "98601",
+      "departement": "98",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "98701",
+      "departement": "98",
+      "nom": "1ere circonscription"
+    },
+    {
+      "code": "98702",
+      "departement": "98",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "98703",
+      "departement": "98",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "98801",
+      "departement": "98",
+      "nom": "1ere circonscription"
+    },
+    {
+      "code": "98802",
+      "departement": "98",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "ZX01",
+      "departement": "ZX",
+      "nom": "1re circonscription"
+    },
+    {
+      "code": "ZZ01",
+      "departement": "ZZ",
+      "nom": "1ere circonscription"
+    },
+    {
+      "code": "ZZ02",
+      "departement": "ZZ",
+      "nom": "2me circonscription"
+    },
+    {
+      "code": "ZZ03",
+      "departement": "ZZ",
+      "nom": "3me circonscription"
+    },
+    {
+      "code": "ZZ04",
+      "departement": "ZZ",
+      "nom": "4me circonscription"
+    },
+    {
+      "code": "ZZ05",
+      "departement": "ZZ",
+      "nom": "5me circonscription"
+    },
+    {
+      "code": "ZZ06",
+      "departement": "ZZ",
+      "nom": "6me circonscription"
+    },
+    {
+      "code": "ZZ07",
+      "departement": "ZZ",
+      "nom": "7me circonscription"
+    },
+    {
+      "code": "ZZ08",
+      "departement": "ZZ",
+      "nom": "8me circonscription"
+    },
+    {
+      "code": "ZZ09",
+      "departement": "ZZ",
+      "nom": "9me circonscription"
+    },
+    {
+      "code": "ZZ10",
+      "departement": "ZZ",
+      "nom": "10me circonscription"
+    },
+    {
+      "code": "ZZ11",
+      "departement": "ZZ",
+      "nom": "11me circonscription"
+    }
+  ]
+}

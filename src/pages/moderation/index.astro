@@ -3,22 +3,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Modération commentaires"
-  description="File d’attente et hiérarchie des modérateurs LMDPT — accès réservé."
+  title="Modération"
+  description="File d’attente commentaires et suggestions/alertes lecteurs LMDPT — accès réservé."
 >
   <section class="mod-page">
-    <h2>Modération — commentaires citoyens</h2>
+    <h2>Modération LMDPT</h2>
     <p class="meta">
-      Hiérarchie : <strong>contributeur</strong> (post + validation IA) → <strong>modo</strong> (approuve/masque) →
-      <strong>modo-senior</strong> (recoloration teinte) → <strong>rédaction</strong>.
+      Hiérarchie : <strong>contributeur</strong> → <strong>modo</strong> → <strong>modo-senior</strong> →
+      <strong>rédaction</strong>. Les suggestions/alertes n’apparaissent sur le site qu’après
+      <strong>approbation</strong>.
     </p>
     <label class="mod-label">
       Jeton modo
       <input type="password" id="mod-token" autocomplete="off" placeholder="X-Mod-Token" />
     </label>
     <div class="mod-actions">
-      <button type="button" class="btn btn-primary" id="mod-refresh">Charger la file</button>
+      <button type="button" class="btn btn-primary" id="mod-refresh">Charger les files</button>
     </div>
+
+    <h3>Suggestions &amp; alertes lecteurs</h3>
+    <div id="mod-tips-queue" class="mod-queue"></div>
+
+    <h3>Commentaires citoyens</h3>
     <div id="mod-queue" class="mod-queue"></div>
     <p id="mod-status" class="meta" role="status"></p>
   </section>
@@ -27,46 +33,133 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <script>
   const api = '/api/comments';
   const queueEl = document.getElementById('mod-queue')!;
+  const tipsEl = document.getElementById('mod-tips-queue')!;
   const statusEl = document.getElementById('mod-status')!;
   const tokenInput = document.getElementById('mod-token') as HTMLInputElement;
+
+  function token() {
+    return tokenInput.value.trim();
+  }
+
+  function escapeHtml(s: string) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function safeHttpUrl(u?: string | null) {
+    if (!u) return '';
+    try {
+      const parsed = new URL(u);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return '';
+      return parsed.toString();
+    } catch {
+      return '';
+    }
+  }
+
+  async function loadTipsQueue() {
+    const res = await fetch(`${api}/mod/tips-queue`, {
+      headers: { 'X-Mod-Token': token() },
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Accès tips refusé');
+    const queue = data.queue || [];
+    if (!queue.length) {
+      tipsEl.innerHTML = '<p class="meta">File suggestions/alertes vide.</p>';
+      return data.role as string;
+    }
+    tipsEl.innerHTML = queue
+      .map((t: any) => {
+        const href = safeHttpUrl(t.sourceUrl);
+        const src = href
+          ? `<p class="meta"><a href="${escapeHtml(href)}" rel="noopener noreferrer">Source</a></p>`
+          : '';
+        const email = t.contactEmail
+          ? ` · <span class="meta">${escapeHtml(t.contactEmail)}</span>`
+          : '';
+        return `
+        <article class="mod-item tip-${escapeHtml(t.type)}">
+          <p><strong>${t.type === 'alerte' ? 'Alerte' : 'Suggestion'}</strong> · ${escapeHtml(t.displayName)}${email}</p>
+          <p><strong>${escapeHtml(t.title)}</strong></p>
+          <p>${escapeHtml(t.body)}</p>
+          ${src}
+          <div class="mod-item-actions">
+            <button type="button" data-tip-act="approve" data-id="${escapeHtml(t.id)}">Approuver → site</button>
+            <button type="button" data-tip-act="reject" data-id="${escapeHtml(t.id)}">Rejeter</button>
+          </div>
+        </article>`;
+      })
+      .join('');
+    return data.role as string;
+  }
+
+  async function loadCommentsQueue() {
+    const res = await fetch(`${api}/mod/queue`, {
+      headers: { 'X-Mod-Token': token() },
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Accès refusé');
+    const queue = data.queue || [];
+    if (!queue.length) {
+      queueEl.innerHTML = '<p class="meta">File commentaires vide.</p>';
+      return;
+    }
+    queueEl.innerHTML = queue
+      .map(
+        (c: any) => `
+        <article class="mod-item" style="border-left:4px solid ${escapeHtml(c.politicalHue?.color || '#666')}">
+          <p><strong>${escapeHtml(c.displayName)}</strong> · <span class="meta">${escapeHtml(c.politicalHue?.label || '')}</span></p>
+          <p>${escapeHtml(c.body)}</p>
+          <p class="meta">Brut : ${escapeHtml(c.raw)}</p>
+          <div class="mod-item-actions">
+            <button type="button" data-act="approve" data-id="${escapeHtml(c.id)}">Approuver</button>
+            <button type="button" data-act="hide" data-id="${escapeHtml(c.id)}">Masquer</button>
+            <button type="button" data-act="recolor" data-id="${escapeHtml(c.id)}" data-slug="pluraliste">Recolor pluraliste</button>
+          </div>
+        </article>`,
+      )
+      .join('');
+  }
 
   async function loadQueue() {
     statusEl.textContent = 'Chargement…';
     try {
-      const res = await fetch(`${api}/mod/queue`, {
-        headers: { 'X-Mod-Token': tokenInput.value.trim() },
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Accès refusé');
-      const queue = data.queue || [];
-      if (!queue.length) {
-        queueEl.innerHTML = '<p class="meta">File vide.</p>';
-        statusEl.textContent = `Connecté (${data.role})`;
-        return;
-      }
-      queueEl.innerHTML = queue
-        .map(
-          (c: any) => `
-        <article class="mod-item" style="border-left:4px solid ${c.politicalHue?.color || '#666'}">
-          <p><strong>${c.displayName}</strong> · <span class="meta">${c.politicalHue?.label}</span></p>
-          <p>${c.body}</p>
-          <p class="meta">Brut : ${c.raw}</p>
-          <div class="mod-item-actions">
-            <button type="button" data-act="approve" data-id="${c.id}">Approuver</button>
-            <button type="button" data-act="hide" data-id="${c.id}">Masquer</button>
-            <button type="button" data-act="recolor" data-id="${c.id}" data-slug="pluraliste">Recolor pluraliste</button>
-          </div>
-        </article>`,
-        )
-        .join('');
-      statusEl.textContent = `Connecté (${data.role}) — ${queue.length} en attente`;
+      const role = await loadTipsQueue();
+      await loadCommentsQueue();
+      statusEl.textContent = `Connecté (${role})`;
     } catch (e: any) {
       statusEl.textContent = e.message || 'Erreur';
+      tipsEl.innerHTML = '';
       queueEl.innerHTML = '';
     }
   }
 
   document.getElementById('mod-refresh')?.addEventListener('click', loadQueue);
+
+  tipsEl.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement).closest('button[data-tip-act]') as HTMLButtonElement | null;
+    if (!btn) return;
+    const res = await fetch(`${api}/mod/tips-action`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Mod-Token': token(),
+      },
+      body: JSON.stringify({ tipId: btn.dataset.id, action: btn.dataset.tipAct }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      statusEl.textContent = data.error || 'Échec tip';
+      return;
+    }
+    statusEl.textContent = data.message || 'OK';
+    await loadQueue();
+  });
+
   queueEl.addEventListener('click', async (e) => {
     const btn = (e.target as HTMLElement).closest('button[data-act]') as HTMLButtonElement | null;
     if (!btn) return;
@@ -77,7 +170,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Mod-Token': tokenInput.value.trim(),
+        'X-Mod-Token': token(),
       },
       body: JSON.stringify({ commentId, action, slug }),
     });
@@ -98,35 +191,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    margin: 1rem 0;
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
   }
-  .mod-label input {
-    padding: 0.4rem 0.5rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
+  .mod-actions {
+    margin-bottom: 1rem;
   }
   .mod-queue {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
   .mod-item {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--card);
+    border: 1px solid var(--border, #ccc);
+    border-radius: 6px;
+    padding: 0.75rem;
+  }
+  .mod-item.tip-alerte {
+    border-left: 4px solid #b45309;
   }
   .mod-item-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
   }
   .mod-item-actions button {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.55rem;
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
     cursor: pointer;
   }
 </style>

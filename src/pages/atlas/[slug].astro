@@ -2,13 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CirconscriptionsTable from '../../components/CirconscriptionsTable.astro';
 import DepartmentSvgMap from '../../components/DepartmentSvgMap.astro';
+import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
 import LegislativeDepartmentMap from '../../components/LegislativeDepartmentMap.astro';
 import NationalSummary from '../../components/NationalSummary.astro';
 import ResultsBarChart from '../../components/ResultsBarChart.astro';
-import { countLeadersByNuance, getCirconscriptionResults } from '../../lib/circonscriptions';
-import { getDepartmentResults } from '../../lib/departments';
+import {
+  compareFirstRoundPlurality,
+  countLeadersByNuance,
+  getCircoMapReadiness,
+  getCirconscriptionGeoIndex,
+  getCirconscriptionResults,
+} from '../../lib/circonscriptions';
+import { getDepartmentMapReadiness, getDepartmentResults } from '../../lib/departments';
 import { formatPct, getElection, getElectionSummary, top3PctExprimes } from '../../lib/elections';
 import { nuanceLabel } from '../../lib/legislative-style';
+import { buildScrutinDual } from '../../lib/scrutin-dual';
 
 export function getStaticPaths() {
   return [
@@ -23,9 +31,31 @@ const { slug } = Astro.params;
 const summary = slug ? getElectionSummary(slug) : undefined;
 const dataset = slug ? getElection(slug) : undefined;
 const deptData = slug ? getDepartmentResults(slug) : undefined;
+const deptReadiness = slug ? getDepartmentMapReadiness(slug) : null;
 const circoData = slug ? getCirconscriptionResults(slug) : undefined;
 const isLegislatives = Boolean(circoData);
 const is2027 = slug === '2027-presidentielle';
+const dual = slug ? buildScrutinDual(slug) : null;
+const circoReadiness = slug ? getCircoMapReadiness(slug) : null;
+const geoIndex = getCirconscriptionGeoIndex();
+const showDeptMap = Boolean(deptData && deptData.departements.length > 0);
+const pluralityRows =
+  is2027
+    ? compareFirstRoundPlurality(
+        (
+          [
+            { slug: '2017-presidentielle', label: 'Présidentielle 2017' },
+            { slug: '2022-presidentielle', label: 'Présidentielle 2022' },
+            { slug: '2027-presidentielle', label: 'Présidentielle 2027 (projection)' },
+          ] as const
+        )
+          .map((r) => {
+            const ds = getElection(r.slug);
+            return ds ? { ...r, dataset: ds } : null;
+          })
+          .filter((r): r is NonNullable<typeof r> => r !== null),
+      )
+    : [];
 
 if (!slug || !summary || !dataset) {
   throw new Error(`Élection inconnue : ${slug ?? '(vide)'}`);
@@ -49,11 +79,29 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     <a href="/atlas">Atlas</a> → {summary.title}
   </nav>
 
+  {
+    is2027 && (
+      <nav class="meta" aria-label="Piliers du dossier 2027" style="display:flex;flex-wrap:wrap;gap:0.35rem 0.75rem;margin:0.5rem 0 0.75rem;">
+        <a href="/sources">🔒 Sécurité &amp; faits</a>
+        <span aria-hidden="true">·</span>
+        <a href="/analyses/assemblee-premier-tour">🌈 Pluralité (AN1T)</a>
+        <span aria-hidden="true">·</span>
+        <a href="/charte">🗳️ Democracy Over Elimination</a>
+        <span aria-hidden="true">·</span>
+        <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+      </nav>
+    )
+  }
+
   <section>
     <h2>{dataset.election}</h2>
     <p class="meta">
       <time datetime={dataset.date}>{dateLabel}</time> · Source :{' '}
       <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
+    </p>
+    <p class="fil-directeur-tag">
+      <strong>Fil directeur LMDPT</strong> — Assemblée du 1er tour (gauche) vs Assemblée des législatives
+      qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.
     </p>
     <p>
       {
@@ -71,6 +119,15 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
           <>
             Projection pédagogique : {dataset.national.candidats.length} candidatures illustratives au premier tour. Les trois premiers (
             {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés. La pluralité complète du spectre est ici visible — à comparer avec les duels historiques du second tour.
+            <span class="meta" style="display:block;margin-top:0.5rem;">
+              <strong>Cartes départementales :</strong>{' '}
+              {deptReadiness?.stub
+                ? `pipeline stub enregistré (${deptReadiness.dept_count} dept) — import data.gouv après le scrutin (miroir 2017/2022).`
+                : 'national + départements si disponibles.'}{' '}
+              National projection uniquement pour l’instant.
+              <strong> Géographie circo :</strong> index {geoIndex.count} circonscriptions prêt
+              (base <a href="/atlas/2024-legislatives">législatives 2024</a>) — mapping post-scrutin.
+            </span>
           </>
         ) : (
           <>
@@ -81,6 +138,24 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         )
       }
     </p>
+
+    {
+      dual && (
+        <DualAssembleeCompare
+          firstRoundAlloc={dual.firstRound}
+          realAlloc={dual.real}
+          totalSeats={dual.totalSeats}
+          t1Label={dual.t1Label}
+          t2Label={dual.realLabel}
+          firstRoundTitle={dual.firstRoundTitle}
+          realTitle={dual.realTitle}
+          firstRoundMeta={dual.firstRoundMeta}
+          realMeta={dual.realMeta}
+          realPending={dual.realPending}
+          differential={dual.differential}
+        />
+      )
+    }
   </section>
 
   <section class="card">
@@ -96,16 +171,81 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   {is2027 && (
     <section class="card">
       <h3>Focus pluralité 2027 — visualisation &amp; scénarios</h3>
+      <p class="meta" role="note">
+        <strong>Projection pédagogique uniquement</strong> — pas de données officielles du scrutin 2027.
+        Aucune prédiction de résultat. Voir les piliers
+        <a href="/">Sécurité &amp; faits</a> ·
+        <a href="/charte">Democracy Over Elimination</a>.
+      </p>
       <p>
         Ce graphique expose la <strong>pluralité complète</strong> des préférences au premier tour (projection 2026 agrégée). 
         Contrairement au duel binaire du second tour, toutes les voix comptent et sont visibles ici : RN en tête, mais centre, gauche et diversités fragmentées.
       </p>
-      <p class="meta">
-        <strong>Indicateur concentration</strong> : top 3 ~59,5 % (vs ~72 % en 2022 et ~65 % en 2017) — une pluralité encore plus dispersée dans ce scénario.
-      </p>
       <div class="plurality-note">
         <strong>Pluralité vs élimination</strong> : La photo du 1er tour révèle le spectre réel des opinions. Les duels suivants la réduisent.
       </div>
+
+      <h4 style="margin-top:1rem;" id="comparatif-pluralite">Comparatif concentration 1er tour (top 3)</h4>
+      <p class="meta">
+        Indicateur DOE : part des trois premiers candidats dans les exprimés. Plus bas = pluralité plus dispersée.
+        Source nationale open data (2017/2022) · projection pédagogique (2027).
+      </p>
+      {pluralityRows.length > 0 && (
+        <div class="table-wrap" role="region" aria-labelledby="comparatif-pluralite" tabindex="0">
+          <table>
+            <caption class="visually-hidden">Comparatif pluralité premier tour 2017, 2022 et projection 2027</caption>
+            <thead>
+              <tr>
+                <th scope="col">Scrutin</th>
+                <th scope="col">Candidats</th>
+                <th scope="col">Top 3 (exprimés)</th>
+                <th scope="col">En tête</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pluralityRows.map((row) => (
+                <tr>
+                  <td>{row.label}</td>
+                  <td>{row.candidats}</td>
+                  <td>
+                    <strong>{formatPct(row.top3_pct)}</strong>
+                  </td>
+                  <td>
+                    {row.leader_nom} ({formatPct(row.leader_pct)})
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <h4 style="margin-top:1.25rem;" id="granularite-circo">Granularité circonscriptions / départements (P8-4)</h4>
+      <p>
+        Index géographique : <strong>{geoIndex.count} circonscriptions</strong> (découpage
+        <a href="/atlas/2024-legislatives">législatives 2024</a>).
+        {circoReadiness && (
+          <>
+            {' '}
+            {circoReadiness.note}
+          </>
+        )}
+      </p>
+      <ul>
+        <li>
+          Pipeline prêt : <code>npm run build:circo-index</code> ·{' '}
+          <code>npm run import:circo-map -- --slug 2017-presidentielle</code> (mapping pédagogique
+          département → 577 circo).
+        </li>
+        <li>
+          Après le scrutin 2027 : importer les résultats officiels data.gouv (même famille que{' '}
+          <code>import:legislatives-2024</code>) puis enregistrer dans <code>circonscriptions.ts</code>.
+        </li>
+        <li>
+          Atlas de référence circo live :{' '}
+          <a href="/atlas/2024-legislatives">577 leaders 1er tour législatives 2024</a>.
+        </li>
+      </ul>
 
       <h4 style="margin-top:1rem;">Lien vers scénarios AN1T (Assemblée du 1er tour)</h4>
       <p>
@@ -125,7 +265,20 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     </>
   )}
 
-  {deptData && <DepartmentSvgMap departements={deptData.departements} electionSlug={slug} />}
+  {showDeptMap && deptData && (
+    <DepartmentSvgMap departements={deptData.departements} electionSlug={slug} />
+  )}
+
+  {is2027 && deptReadiness?.stub && (
+    <section class="card" aria-labelledby="dept-stub-2027">
+      <h3 id="dept-stub-2027">Cartes départementales 2027 — stub pipeline</h3>
+      <p>
+        Structure données prête (<code>2027-presidentielle-1er-tour-departements.json</code>) :
+        0 département jusqu’à la publication officielle. Même schéma que 2017/2022.
+      </p>
+      <p class="meta">{deptReadiness.note}</p>
+    </section>
+  )}
 
   {summary.distorsion_note && (
     <section class="card">
@@ -144,7 +297,12 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       {is2027 ? (
         <>
           <li>Données nationales : projection pédagogique agrégée à partir de sondages publics (Ifop, Harris, Ipsos 2026). Aucune valeur officielle.</li>
-          <li>Les cartes départementales et circonscriptions seront ajoutées une fois les résultats réels publiés sur data.gouv.fr (format identique aux atlas 2017/2022).</li>
+          <li>
+            Géographie circo : index {geoIndex.count} issu des législatives 2024 (lien atlas). Stub
+            départements 2027 enregistré (0 ligne) ; cartes et résultats circo officiels après
+            publication data.gouv.fr (pipeline `import:circo-map` / import législatives).
+          </li>
+          <li>Comparatif pluralité top 3 : 2017 / 2022 (officiel) vs 2027 (projection) — pas un ranking de candidats.</li>
           <li>Pluralité visualisée via le graphique à barres ci-dessus (tous les candidats inclus).</li>
         </>
       ) : (

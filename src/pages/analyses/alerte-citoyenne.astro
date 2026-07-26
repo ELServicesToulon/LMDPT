@@ -1,0 +1,524 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import alertes from '../../data/alertes-citoyennes.json';
+
+const updated = new Date(alertes.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const signalDate = new Date(alertes.signal.published).toLocaleString('fr-FR', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+});
+const frItems = alertes.items.filter((i) => i.region === 'fr');
+const ueItems = alertes.items.filter((i) => i.region === 'ue');
+const regionLabel = (id: string) =>
+  alertes.regions.find((r) => r.id === id)?.label ?? id.toUpperCase();
+
+const verificationLabel: Record<string, string> = {
+  confirmed: 'Confirmé (texte officiel)',
+  partial: 'Partiel — à recouper',
+  unconfirmed_signal: 'À recouper (signal secondaire)',
+};
+
+const tocItems = [
+  { href: '#signal-title', label: 'Point de départ (source secondaire)' },
+  { href: '#fr-title', label: `France (${frItems.length})` },
+  ...frItems.map((i) => ({ href: `#point-${i.n}`, label: `${i.n}. ${i.title.slice(0, 48)}${i.title.length > 48 ? '…' : ''}` })),
+  { href: '#ue-title', label: `Union européenne (${ueItems.length})` },
+  ...ueItems.map((i) => ({ href: `#point-${i.n}`, label: `${i.n}. ${i.title.slice(0, 48)}${i.title.length > 48 ? '…' : ''}` })),
+  { href: '#lectures-complementaires', label: 'Lectures complémentaires' },
+  { href: '#sources-recoupement', label: 'Sources & recoupement' },
+];
+
+type AlerteItem = (typeof alertes.items)[number];
+---
+
+<BaseLayout
+  title="Alerte citoyenne — débat public"
+  description="Tour d’horizon documenté des textes et projets (France / UE) cités comme encadrant la liberté d’expression et le débat politique avant le premier tour 2027. Synthèse civique LMDPT, sources signalées."
+  type="article"
+  keywords="alerte citoyenne, liberté d'expression, débat public, présidentielle 2027, Chat Control, ingérence intérieure, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Alerte citoyenne
+  </nav>
+
+  <section class="alerte-page-intro">
+    <p class="eyebrow">{alertes.eyebrow}</p>
+    <h2>{alertes.title}</h2>
+    <p class="meta">
+      Mise à jour : <time datetime={alertes.updated}>{updated}</time>
+      · Statut : {alertes.status}
+    </p>
+    <p>{alertes.lead}</p>
+    <p class="alerte-angle"><strong>Angle LMDPT.</strong> {alertes.lmdpt_angle}</p>
+    <p class="meta disclaimer-box">{alertes.disclaimer}</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card alerte-signal-card" aria-labelledby="signal-title" id="signal">
+    <h3 id="signal-title">{alertes.signal.label}</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>Auteur</dt>
+        <dd>
+          {alertes.signal.author}
+          <span class="meta"> — {alertes.signal.role}</span>
+        </dd>
+      </div>
+      <div>
+        <dt>Publication</dt>
+        <dd>
+          <time datetime={alertes.signal.published}>{signalDate}</time>
+          · {alertes.signal.platform}
+        </dd>
+      </div>
+      <div>
+        <dt>Lien source</dt>
+        <dd>
+          <a href={alertes.signal.url} rel="noopener noreferrer">
+            x.com/i/status/{alertes.signal.status_id}
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <p>{alertes.signal.summary}</p>
+    <p class="meta">{alertes.signal.engagement_note}</p>
+  </section>
+
+  <section class="card" aria-labelledby="fr-title">
+    <h3 id="fr-title">France — {frItems.length} points</h3>
+    <ol class="alerte-full-list">
+      {
+        frItems.map((item: AlerteItem) => (
+          <li id={`point-${item.n}`}>
+            <div class="alerte-item-head">
+              <span class="alerte-badge" data-region={item.region}>
+                {regionLabel(item.region)}
+              </span>
+              <span class="alerte-status-pill">{item.status_label}</span>
+              {item.official?.verification && (
+                <span class="alerte-verif" data-verif={item.official.verification}>
+                  {verificationLabel[item.official.verification] ?? item.official.verification}
+                </span>
+              )}
+            </div>
+            <h4>
+              <span class="alerte-n">{item.n}.</span> {item.title}
+            </h4>
+            <p>{item.fact}</p>
+            {
+              item.official?.status_as_of && (
+                <p class="meta alerte-asof">
+                  Statut documentaire au{' '}
+                  <time datetime={item.official.status_as_of}>
+                    {new Date(item.official.status_as_of).toLocaleDateString('fr-FR', {
+                      dateStyle: 'long',
+                    })}
+                  </time>
+                </p>
+              )
+            }
+            {
+              item.official?.primary_urls?.length > 0 && (
+                <div class="alerte-official">
+                  <p class="meta alerte-subhead">Statut / sources officielles</p>
+                  <ul>
+                    {item.official.primary_urls.map((u) => (
+                      <li>
+                        <a href={u.url} rel="noopener noreferrer">
+                          {u.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+            {
+              item.counterpoints?.length > 0 && (
+                <div class="alerte-counter">
+                  <p class="meta alerte-subhead">Lectures complémentaires / contrepoints</p>
+                  <ul>
+                    {item.counterpoints.map((c) => (
+                      <li>
+                        <a href={c.url} rel="noopener noreferrer">
+                          {c.label}
+                        </a>
+                        {c.note && <span class="meta"> — {c.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="ue-title">
+    <h3 id="ue-title">Union européenne — {ueItems.length} points</h3>
+    <ol class="alerte-full-list" start={frItems.length + 1}>
+      {
+        ueItems.map((item: AlerteItem) => (
+          <li id={`point-${item.n}`}>
+            <div class="alerte-item-head">
+              <span class="alerte-badge" data-region={item.region}>
+                {regionLabel(item.region)}
+              </span>
+              <span class="alerte-status-pill">{item.status_label}</span>
+              {item.official?.verification && (
+                <span class="alerte-verif" data-verif={item.official.verification}>
+                  {verificationLabel[item.official.verification] ?? item.official.verification}
+                </span>
+              )}
+            </div>
+            <h4>
+              <span class="alerte-n">{item.n}.</span> {item.title}
+            </h4>
+            <p>{item.fact}</p>
+            {
+              item.official?.status_as_of && (
+                <p class="meta alerte-asof">
+                  Statut documentaire au{' '}
+                  <time datetime={item.official.status_as_of}>
+                    {new Date(item.official.status_as_of).toLocaleDateString('fr-FR', {
+                      dateStyle: 'long',
+                    })}
+                  </time>
+                </p>
+              )
+            }
+            {
+              item.official?.primary_urls?.length > 0 && (
+                <div class="alerte-official">
+                  <p class="meta alerte-subhead">Statut / sources officielles</p>
+                  <ul>
+                    {item.official.primary_urls.map((u) => (
+                      <li>
+                        <a href={u.url} rel="noopener noreferrer">
+                          {u.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+            {
+              item.counterpoints?.length > 0 && (
+                <div class="alerte-counter">
+                  <p class="meta alerte-subhead">Lectures complémentaires / contrepoints</p>
+                  <ul>
+                    {item.counterpoints.map((c) => (
+                      <li>
+                        <a href={c.url} rel="noopener noreferrer">
+                          {c.label}
+                        </a>
+                        {c.note && <span class="meta"> — {c.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  {
+    alertes.complementary_readings?.length > 0 && (
+      <section class="card" id="lectures-complementaires" aria-labelledby="compl-title">
+        <h3 id="compl-title">Lectures complémentaires</h3>
+        <p class="meta">
+          Cadres généraux pour lire les points ci-dessus sans fausse équivalence factuelle —
+          pas un « pour / contre » partisan.
+        </p>
+        <ul>
+          {alertes.complementary_readings.map((r) => (
+            <li>
+              <a href={r.url} rel={r.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                {r.label}
+              </a>
+              {r.note && <span class="meta"> — {r.note}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="card">
+    <h3>Lecture citoyenne</h3>
+    <p>{alertes.closing}</p>
+  </section>
+
+  <section class="card" id="sources-recoupement">
+    <h3>Sources &amp; pistes de recoupement</h3>
+    <ul>
+      {
+        alertes.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h4 class="meta" style="margin-top:1rem;">Prochaines étapes rédaction LMDPT</h4>
+    <ul class="meta">
+      {alertes.next_steps_lmdpt.map((step) => <li>{step}</li>)}
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="lecteurs-title">
+    <h3 id="lecteurs-title">Signalements lecteurs validés</h3>
+    <p class="meta">
+      Les alertes proposées via <a href="/contribuer">/contribuer</a> n’apparaissent ici qu’après
+      validation rédactionnelle.
+    </p>
+    <div id="lecteur-alertes" class="lecteur-alertes">
+      <p class="meta">Chargement…</p>
+    </div>
+  </section>
+
+  <p class="meta">
+    <a href="/analyses/presidentielle-2027-preparation">← Dossier présidentielle 2027</a>
+    {' · '}
+    <a href="/contribuer">Proposer une alerte</a>
+    {' · '}
+    <a href="/charte">Charte éditoriale</a>
+    {' · '}
+    <a href="/sources#methodologie-blocs">Méthodo données</a>
+    {' · '}
+    <a href="/">Accueil</a>
+  </p>
+</BaseLayout>
+
+<script>
+  function escapeHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+  function safeHttpUrl(u) {
+    if (!u) return '';
+    try {
+      const parsed = new URL(u);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return '';
+      return parsed.toString();
+    } catch {
+      return '';
+    }
+  }
+  (async () => {
+    const el = document.getElementById('lecteur-alertes');
+    if (!el) return;
+    try {
+      const res = await fetch('/api/comments/tips/published?type=alerte');
+      const data = await res.json();
+      const tips = data.tips || [];
+      if (!tips.length) {
+        el.innerHTML =
+          '<p class="meta">Pas encore de signalement lecteur validé. <a href="/contribuer">Proposer une alerte</a>.</p>';
+        return;
+      }
+      el.innerHTML = tips
+        .map((t) => {
+          const when = t.publishedAt ? new Date(t.publishedAt).toLocaleDateString('fr-FR') : '';
+          const href = safeHttpUrl(t.sourceUrl);
+          const src = href
+            ? ` · <a href="${escapeHtml(href)}" rel="noopener noreferrer">Source</a>`
+            : '';
+          return `<article class="lecteur-tip">
+            <h4>${escapeHtml(t.title)}</h4>
+            <p>${escapeHtml(t.body)}</p>
+            <p class="meta">${escapeHtml(t.displayName)}${when ? ' · ' + escapeHtml(when) : ''}${src}</p>
+          </article>`;
+        })
+        .join('');
+    } catch {
+      el.innerHTML = '<p class="meta">Fil lecteurs indisponible pour le moment.</p>';
+    }
+  })();
+</script>
+
+<style>
+  .alerte-page-intro h2 {
+    margin-top: 0.25rem;
+  }
+
+  .alerte-angle {
+    max-width: 72ch;
+    line-height: 1.55;
+  }
+
+  .alerte-signal-card {
+    border-left: 4px solid #c45c26;
+  }
+
+  .alerte-full-list {
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1.15rem;
+  }
+
+  .lecteur-tip {
+    border-left: 3px solid #b45309;
+    padding-left: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .lecteur-tip h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+  }
+
+  .alerte-full-list li {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .alerte-full-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .alerte-item-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .alerte-full-list h4 {
+    margin: 0 0 0.4rem;
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .alerte-n {
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+  }
+
+  .alerte-full-list > li > p {
+    margin: 0;
+    line-height: 1.55;
+    max-width: 75ch;
+  }
+
+  .alerte-badge {
+    font-family: system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+  }
+
+  .alerte-badge[data-region='fr'] {
+    background: color-mix(in srgb, #002654 12%, white);
+    color: #002654;
+  }
+
+  .alerte-badge[data-region='ue'] {
+    background: color-mix(in srgb, #003399 14%, white);
+    color: #003399;
+  }
+
+  .alerte-status-pill {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--accent-soft, #eef1f6);
+    padding: 0.12rem 0.55rem;
+    border-radius: 999px;
+  }
+
+  .alerte-verif {
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .alerte-verif[data-verif='confirmed'] {
+    background: color-mix(in srgb, #2d6a4f 14%, white);
+    color: #1b4332;
+  }
+  .alerte-verif[data-verif='partial'] {
+    background: color-mix(in srgb, #b08900 12%, white);
+    color: #6b4f00;
+  }
+  .alerte-verif[data-verif='unconfirmed_signal'] {
+    background: color-mix(in srgb, #9b2226 10%, white);
+    color: #6a040f;
+  }
+
+  .alerte-asof {
+    margin: 0.45rem 0 0;
+    font-size: 0.82rem;
+  }
+
+  .alerte-subhead {
+    margin: 0.65rem 0 0.25rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .alerte-full-list {
+      gap: 1rem;
+    }
+    .alerte-full-list h4 {
+      font-size: 1.02rem;
+    }
+    .alerte-item-head {
+      gap: 0.35rem;
+    }
+    .alerte-status-pill,
+    .alerte-verif {
+      max-width: 100%;
+      white-space: normal;
+      line-height: 1.35;
+    }
+  }
+  .alerte-official ul,
+  .alerte-counter ul {
+    margin: 0.15rem 0 0;
+    padding-left: 1.15rem;
+    max-width: 75ch;
+    line-height: 1.45;
+  }
+
+  .disclaimer-box {
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--muted) 8%, transparent);
+    line-height: 1.5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .alerte-badge[data-region='fr'] {
+      background: color-mix(in srgb, #6b9fd4 22%, transparent);
+      color: #c5dbf5;
+    }
+    .alerte-badge[data-region='ue'] {
+      background: color-mix(in srgb, #5b7fd4 22%, transparent);
+      color: #c9d6f8;
+    }
+  }
+</style>

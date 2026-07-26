@@ -1,5 +1,8 @@
 ---
 import type { RenifleurItem } from '../lib/renifleur';
+import { ensureItemPoliticalHue } from '../lib/renifleur';
+import { hueBadgesForText, type HueBadge } from '../lib/comment-politics';
+import PoliticalHueBadges from './PoliticalHueBadges.astro';
 
 interface Props {
   items: RenifleurItem[];
@@ -19,7 +22,27 @@ const {
   moreHref = '/analyses/presidentielle-2027-preparation#renifleur-presse',
 } = Astro.props;
 
-const visible = items.slice(0, limit);
+function huesForItem(item: RenifleurItem): HueBadge[] {
+  const fromText = hueBadgesForText(`${item.title}\n${item.summary ?? ''}`, 3);
+  if (fromText.length > 0) return fromText;
+  if (item.politicalHue?.slug && item.politicalHue?.color) {
+    return [
+      {
+        slug: item.politicalHue.slug,
+        label: item.politicalHue.label,
+        color: item.politicalHue.color,
+        rationale: item.politicalHue.rationale,
+        confidence: item.politicalHue.confidence,
+      },
+    ];
+  }
+  return [{ slug: 'pluraliste', label: 'Pluraliste / transversal 1er tour', color: '#5a6570' }];
+}
+
+const visible = items.slice(0, limit).map((raw) => {
+  const item = ensureItemPoliticalHue(raw);
+  return { item, hues: huesForItem(item) };
+});
 const updatedLabel = fetchedAt
   ? new Date(fetchedAt).toLocaleString('fr-FR', { dateStyle: 'long', timeStyle: 'short' })
   : null;
@@ -43,26 +66,30 @@ const [featured, ...rest] = visible;
   </div>
 
   {disclaimer && <p class="news-disclaimer">{disclaimer}</p>}
-
   {
     featured && (
-      <article class="news-featured card">
+      <article
+        class="news-featured card"
+        style={`border-left: 4px solid ${featured.hues[0]?.color ?? '#5a6570'}`}
+        data-hue={featured.hues[0]?.slug}
+      >
         <div class="news-meta-row">
-          <time class="news-date" datetime={featured.published}>
-            {new Date(featured.published).toLocaleDateString('fr-FR', {
+          <time class="news-date" datetime={featured.item.published}>
+            {new Date(featured.item.published).toLocaleDateString('fr-FR', {
               day: 'numeric',
               month: 'long',
               year: 'numeric',
             })}
           </time>
-          <span class="news-source">{featured.source_label}</span>
+          <span class="news-source">{featured.item.source_label}</span>
+          <PoliticalHueBadges hues={featured.hues} size="sm" />
         </div>
         <h3>
-          <a href={featured.url} rel="noopener noreferrer">
-            {featured.title}
+          <a href={featured.item.url} rel="noopener noreferrer">
+            {featured.item.title}
           </a>
         </h3>
-        {featured.summary && <p class="news-summary">{featured.summary}</p>}
+        {featured.item.summary && <p class="news-summary">{featured.item.summary}</p>}
       </article>
     )
   }
@@ -71,9 +98,13 @@ const [featured, ...rest] = visible;
     rest.length > 0 && (
       <ul class="news-grid">
         {
-          rest.map((item) => (
+          rest.map(({ item, hues }) => (
             <li>
-              <article class="news-card card">
+              <article
+                class="news-card card"
+                style={`border-left: 4px solid ${hues[0]?.color ?? '#5a6570'}`}
+                data-hue={hues[0]?.slug}
+              >
                 <div class="news-meta-row">
                   <time class="news-date" datetime={item.published}>
                     {new Date(item.published).toLocaleDateString('fr-FR', {
@@ -82,6 +113,7 @@ const [featured, ...rest] = visible;
                     })}
                   </time>
                   <span class="news-source">{item.source_label}</span>
+                  <PoliticalHueBadges hues={hues} size="sm" />
                 </div>
                 <h4>
                   <a href={item.url} rel="noopener noreferrer">
@@ -101,16 +133,17 @@ const [featured, ...rest] = visible;
     <a href={moreHref}>Toute la veille 2027 →</a>
     {' '}·{' '}
     <a href="/analyses/presidentielle-2027-preparation">Dossier présidentielle</a>
+    {' '}·{' '}
+    <a href="/charte">Charte des couleurs</a>
   </p>
 </section>
 
 <style>
   /* =====================================================
-     VEILLE PRESSE — Redesigned modern readable cards
-     - Generous spacing & padding (WCAG friendly)
-     - High contrast text
-     - Clear visual hierarchy
-     - Good touch targets and focus states
+     VEILLE PRESSE — cartes + teinte politique IA
+     - Swatch / pastille couleur 1er tour
+     - Bordure latérale = même teinte
+     - WCAG friendly (label texte + title)
   ===================================================== */
   .news-section {
     margin-bottom: 2.5rem;
@@ -140,7 +173,7 @@ const [featured, ...rest] = visible;
   }
 
   .news-disclaimer {
-    margin: 0 0 1.25rem;
+    margin: 0 0 0.55rem;
     font-size: 0.875rem;
     color: var(--muted);
     font-family: system-ui, sans-serif;
@@ -175,7 +208,7 @@ const [featured, ...rest] = visible;
   .news-meta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 0.7rem;
+    gap: 0.4rem 0.55rem;
     align-items: center;
     margin-bottom: 0.35rem;
   }
@@ -218,17 +251,29 @@ const [featured, ...rest] = visible;
     }
   }
 
+  @media (min-width: 900px) {
+    .news-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   .news-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 0.95rem 1.1rem;
     height: 100%;
-    transition: border-color 0.1s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
 
   .news-card:hover {
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+    box-shadow: 0 4px 14px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .news-card a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .news-card h4 {
@@ -236,6 +281,27 @@ const [featured, ...rest] = visible;
     font-size: 1.02rem;
     line-height: 1.35;
     font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .news-section {
+      margin-bottom: 1.75rem;
+    }
+    .section-head h2 {
+      font-size: 1.28rem;
+    }
+    .news-featured {
+      padding: 0.95rem 1rem;
+    }
+    .news-featured h3 {
+      font-size: 1.08rem;
+    }
+    .news-card {
+      padding: 0.85rem 0.95rem;
+    }
+    .news-summary {
+      font-size: 0.95rem;
+    }
   }
 
   .news-card h4 a {

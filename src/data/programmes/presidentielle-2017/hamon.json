@@ -1,61 +1,72 @@
 {
   "scrutin": "presidentielle-2017",
-  "candidate": { "name": "Benoît Hamon", "slug": "hamon", "affiliation": "Parti socialiste" },
+  "candidate": {
+    "name": "Benoît Hamon",
+    "slug": "hamon",
+    "affiliation": "Parti socialiste"
+  },
   "program": {
     "published_at": "2017-02-16",
     "document_label": "Programme PS 2017 — revenu universel",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "hamon-2017-pouvoir-achat-rue",
       "theme": "pouvoir_achat",
       "label": "Revenu universel de 750 €",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Salaires"
     },
     {
       "id": "hamon-2017-retraites-60",
       "theme": "retraites",
       "label": "Retraite à 60 ans",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Âge légal"
     },
     {
       "id": "hamon-2017-climat-transition",
       "theme": "climat",
       "label": "Transition écologique et taxe carbone",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Transition"
     },
     {
       "id": "hamon-2017-education-enseignants",
       "theme": "education",
       "label": "Doublement du nombre d'enseignants",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "École"
     },
     {
       "id": "hamon-2017-fiscalite-riches",
       "theme": "fiscalite",
       "label": "Taxation des hauts revenus et du capital",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "hamon-2017-europe-social",
       "theme": "europe",
       "label": "Europe sociale et écologique",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "hamon-2017-sante-prevention",
       "theme": "sante",
       "label": "Renforcement de la prévention santé",
       "status": "nouveau",
-      "as_of": "2017-02"
+      "as_of": "2017-02",
+      "subtheme": "Accès aux soins"
     }
   ],
   "chiffrages": [

@@ -3,30 +3,63 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  keywords?: string;
+  /** article = analyses / dossiers (JSON-LD + og:type) */
+  type?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 import { getPublicSocialLinks } from '../config/social';
 import { getPublicEcosystemLinks } from '../config/ecosystem';
-import { pageMeta } from '../lib/seo';
+import {
+  pageMeta,
+  organizationJsonLd,
+  websiteJsonLd,
+  webPageJsonLd,
+} from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, keywords, type, noindex } = Astro.props;
 const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
 const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const isArticle =
+  type === 'article' ||
+  Astro.url.pathname.startsWith('/analyses/') ||
+  Astro.url.pathname.startsWith('/debats/');
 const meta = pageMeta({
   title,
   description,
   ogImage,
   siteUrl,
   pathname: Astro.url.pathname,
+  keywords,
+  type: isArticle ? 'article' : 'website',
+  noindex:
+    noindex ||
+    Astro.url.pathname.startsWith('/moderation'),
+});
+const jsonLdOrg = organizationJsonLd(siteUrl);
+const jsonLdSite = websiteJsonLd(siteUrl);
+const jsonLdPage = webPageJsonLd({
+  siteUrl,
+  title: meta.fullTitle,
+  description: meta.description,
+  canonical: meta.canonical,
+  ogImage: meta.ogImage,
+  type: meta.type,
 });
 const showComments =
   !Astro.url.pathname.startsWith('/moderation') &&
+  !Astro.url.pathname.startsWith('/contribuer') &&
   !Astro.url.pathname.startsWith('/mentions-legales') &&
   !Astro.url.pathname.startsWith('/confidentialite') &&
-  !Astro.url.pathname.startsWith('/charte');
+  !Astro.url.pathname.startsWith('/charte') &&
+  !Astro.url.pathname.startsWith('/soutenir') &&
+  !Astro.url.pathname.startsWith('/pack-data') &&
+  !Astro.url.pathname.startsWith('/connexion') &&
+  !Astro.url.pathname.startsWith('/compte');
 const commentThread =
   Astro.url.pathname.replace(/\/+$/, '') || 'accueil';
 ---
@@ -36,6 +69,7 @@ const commentThread =
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/brand/og-default.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Empêche le « Auto Dark » Chrome/Android d’inverser la page en fond noir + texte noir -->
     <meta name="color-scheme" content="light dark" />
@@ -44,19 +78,33 @@ const commentThread =
     <meta name="generator" content={Astro.generator} />
     <title>{meta.fullTitle}</title>
     <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    <meta name="robots" content={meta.robots} />
+    <meta name="googlebot" content={meta.robots} />
+    <meta name="author" content="Le Média du Premier Tour" />
+    <meta name="language" content="French" />
     <link rel="canonical" href={meta.canonical} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Le Média du Premier Tour" />
+    <link rel="alternate" hreflang="fr" href={meta.canonical} />
+    <link rel="alternate" hreflang="x-default" href={meta.canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <meta property="og:type" content={meta.type === 'article' ? 'article' : 'website'} />
+    <meta property="og:site_name" content={meta.siteName} />
     <meta property="og:title" content={meta.fullTitle} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={meta.canonical} />
     <meta property="og:image" content={meta.ogImage} />
+    <meta property="og:image:alt" content={meta.fullTitle} />
     <meta property="og:locale" content="fr_FR" />
     {xLink && <meta name="twitter:site" content={xLink.handle} />}
+    {xLink && <meta name="twitter:creator" content={xLink.handle} />}
     {xLink && <meta name="twitter:card" content="summary_large_image" />}
     <meta name="twitter:title" content={meta.fullTitle} />
     <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={meta.ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdOrg)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdSite)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPage)} />
     <style is:global>
       /*
         CONTRASTE COUPLÉ fond + texte (2026-07-15)
@@ -104,6 +152,11 @@ const commentThread =
       html {
         background: var(--bg);
         color: var(--fg);
+        overflow-x: clip;
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
       }
       body {
         margin: 0;
@@ -114,19 +167,28 @@ const commentThread =
         color: var(--fg) !important;
         -webkit-font-smoothing: auto;
         -moz-osx-font-smoothing: auto;
+        overflow-x: clip;
+        min-height: 100dvh;
+      }
+      img, video, svg, canvas, iframe {
+        max-width: 100%;
+        height: auto;
       }
       a {
         color: var(--accent);
         transition: color 0.15s ease;
       }
       a:hover { color: color-mix(in srgb, var(--accent) 70%, var(--fg)); }
+      /* Conteneur principal : largeur lecture + dual panels, edge-to-edge mobile */
       .wrap {
-        max-width: 52rem;
-        margin: 0 auto;
-        padding: 1.75rem 1.25rem 4rem;
+        --wrap-pad-x: 1.35rem;
+        max-width: min(68rem, 100%);
+        width: 100%;
+        margin: 0.85rem auto;
+        padding: 1.75rem var(--wrap-pad-x) 4rem;
         background: var(--card) !important;
         color: var(--fg) !important;
-        border-radius: 10px;
+        border-radius: 12px;
         box-shadow: var(--shadow);
       }
       main,
@@ -182,13 +244,33 @@ const commentThread =
       }
 
       /* Global responsive improvements */
+      @media (max-width: 900px) {
+        .wrap {
+          --wrap-pad-x: 1.1rem;
+          max-width: 100%;
+          margin: 0.5rem auto;
+          border-radius: 10px;
+        }
+      }
       @media (max-width: 640px) {
         .wrap {
-          padding: 1rem 0.75rem 3rem;
-          border-radius: 8px;
+          --wrap-pad-x: 0.95rem;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 1rem var(--wrap-pad-x) 3rem;
+          min-height: 100dvh;
         }
         header {
           margin-bottom: 1.1rem;
+          padding-bottom: 0.85rem;
+        }
+        header h1 {
+          font-size: 1.12rem;
+          line-height: 1.25;
+        }
+        .tagline {
+          font-size: 0.88rem;
         }
       }
       @media (max-width: 420px) {
@@ -196,7 +278,8 @@ const commentThread =
           font-size: 15.5px;
         }
         .wrap {
-          padding: 0.85rem 0.6rem 2.5rem;
+          --wrap-pad-x: 0.85rem;
+          padding: 0.85rem var(--wrap-pad-x) 2.5rem;
         }
       }
       .site-brand {
@@ -240,6 +323,7 @@ const commentThread =
         display: flex;
         gap: 0.35rem 0.5rem;
         flex-wrap: wrap;
+        align-items: center;
       }
       header nav a {
         text-decoration: none;
@@ -247,6 +331,7 @@ const commentThread =
         padding: 0.35rem 0.65rem;
         border-radius: 999px;
         border: 1px solid transparent;
+        white-space: nowrap;
       }
       header nav a:hover {
         color: var(--accent);
@@ -407,11 +492,14 @@ const commentThread =
         outline-offset: 2px;
       }
 
-      /* Visible focus for keyboard navigation (WCAG) */
+      /* Visible focus for keyboard navigation (WCAG) — P8-8 standard site-wide */
       a:focus-visible,
       button:focus-visible,
       select:focus-visible,
-      input:focus-visible {
+      input:focus-visible,
+      textarea:focus-visible,
+      summary:focus-visible,
+      [tabindex]:focus-visible {
         outline: 3px solid var(--accent);
         outline-offset: 2px;
         border-radius: 4px;
@@ -419,6 +507,49 @@ const commentThread =
       .btn:focus-visible {
         outline: 3px solid #fff;
         outline-offset: 3px;
+      }
+
+      /* Tableaux longs + régions focusables (atlas, programmes, circo) */
+      .table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+      }
+      .table-wrap:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: var(--card);
+      }
+
+      /* Sélecteurs / filtres — cibles tactiles 44px (P8-8) */
+      .filters,
+      .atlas-selectors,
+      .preset-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .filters button,
+      .filters select,
+      .atlas-selectors button,
+      .preset-buttons button {
+        min-height: 44px;
+      }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
 
       /* Current page indicator */
@@ -431,18 +562,47 @@ const commentThread =
 
       /* === Advanced mobile / responsive === */
       @media (max-width: 640px) {
+        /* Nav : défilement horizontal (thumb zone) + cibles 44px */
         header nav {
-          gap: 0.25rem 0.35rem;
-          font-size: 0.82rem;
+          gap: 0.3rem;
+          font-size: 0.8rem;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: thin;
+          overscroll-behavior-x: contain;
+          padding: 0.15rem 0 0.45rem;
+          margin: 0 calc(-1 * var(--wrap-pad-x, 0.95rem));
+          padding-inline: var(--wrap-pad-x, 0.95rem);
+          scroll-snap-type: x proximity;
+          mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            #000 0.75rem,
+            #000 calc(100% - 1.25rem),
+            transparent 100%
+          );
         }
         header nav a {
-          padding: 0.4rem 0.55rem; /* larger touch target */
-          min-height: 44px; /* WCAG min touch */
+          padding: 0.45rem 0.7rem;
+          min-height: 44px;
           display: inline-flex;
           align-items: center;
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          border: 1px solid var(--border);
+          background: color-mix(in srgb, var(--bg) 55%, var(--card));
+        }
+        header nav a[aria-current="page"] {
+          border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
         }
         .site-brand {
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
+          gap: 0.6rem;
+        }
+        .site-brand > div {
+          min-width: 0;
         }
         .site-mark {
           width: 2.1rem;
@@ -455,8 +615,14 @@ const commentThread =
       .card, .btn, select, .hero-card {
         min-height: 44px; /* improved for mobile */
       }
+      .btn {
+        text-align: center;
+      }
       @media (hover: none) {
         a:hover { color: inherit; } /* avoid hover styles on touch */
+        .card:hover {
+          border-color: var(--border);
+        }
       }
 
       @media (prefers-contrast: more) {
@@ -550,15 +716,62 @@ const commentThread =
       }
 
       /* Global improved mobile for tables and viz containers */
-      .table-wrap, table.comp-table, .poll-table table, .compare-grid {
+      .table-wrap,
+      .table-scroll,
+      .declared-table-wrap,
+      .diff-table-wrap,
+      .poll-table,
+      .compare-grid {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        max-width: 100%;
       }
-      table { border-collapse: collapse; }
+      /* Indicateur de scroll horizontal (ombre douce) */
+      .table-wrap,
+      .table-scroll,
+      .declared-table-wrap {
+        background:
+          linear-gradient(var(--card) 30%, transparent) left center / 24px 100% no-repeat local,
+          linear-gradient(transparent, var(--card) 70%) right center / 24px 100% no-repeat local,
+          radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.12), transparent) left center / 14px 100% no-repeat scroll,
+          radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.12), transparent) right center / 14px 100% no-repeat scroll;
+        background-color: var(--card);
+      }
+      table { border-collapse: collapse; width: 100%; }
       @media (max-width: 640px) {
-        table, .comp-table { font-size: 0.78rem; }
-        .card { padding: 0.85rem 0.9rem; }
-        .map-wrap, .hemicycle-wrapper { margin-left: -0.1rem; margin-right: -0.1rem; }
+        table, .comp-table { font-size: 0.82rem; }
+        .card {
+          padding: 0.9rem 0.95rem;
+          border-radius: var(--radius-lg, 12px);
+        }
+        .page-intro h2,
+        .section-title {
+          font-size: 1.2rem;
+          line-height: 1.25;
+        }
+        .map-wrap,
+        .hemicycle-wrapper {
+          margin-left: 0;
+          margin-right: 0;
+          max-width: 100%;
+        }
+        footer {
+          margin-top: 2.25rem;
+          font-size: 0.82rem;
+          word-break: break-word;
+        }
+        footer p {
+          line-height: 1.55;
+        }
+      }
+
+      /* Tablette : grille 2 colonnes plus aérée */
+      @media (min-width: 641px) and (max-width: 900px) {
+        .card-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.95rem;
+        }
       }
     </style>
   </head>
@@ -580,10 +793,36 @@ const commentThread =
           <a href="/atlas" aria-current={Astro.url.pathname.startsWith('/atlas') ? 'page' : undefined}>Atlas</a>
           <a href="/analyses" aria-current={Astro.url.pathname.startsWith('/analyses') ? 'page' : undefined}>Analyses</a>
           <a href="/debats" aria-current={Astro.url.pathname.startsWith('/debats') ? 'page' : undefined}>Débats</a>
-          <a href="/independance-medias" aria-current={Astro.url.pathname.startsWith('/independance-medias') ? 'page' : undefined}>Indépendance médias</a>
+          <a
+            href="/liberte-d-expression"
+            aria-current={
+              Astro.url.pathname.startsWith('/liberte-d-expression') ||
+              Astro.url.pathname.startsWith('/observatoire-censure')
+                ? 'page'
+                : undefined
+            }
+            >Liberté d’expression</a
+          >
+          <a
+            href="/observatoire-censure"
+            aria-current={Astro.url.pathname.startsWith('/observatoire-censure') ? 'page' : undefined}
+            >Observatoire censure</a
+          >
+          <a href="/contribuer" aria-current={Astro.url.pathname.startsWith('/contribuer') ? 'page' : undefined}>Contribuer</a>
           <a href="/charte" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
           <a href="/a-propos" aria-current={Astro.url.pathname === '/a-propos' ? 'page' : undefined}>À propos</a>
           <a href="/sources" aria-current={Astro.url.pathname === '/sources' ? 'page' : undefined}>Sources</a>
+          <a href="/soutenir" aria-current={Astro.url.pathname.startsWith('/soutenir') ? 'page' : undefined}>Soutenir</a>
+          <a
+            href="/connexion"
+            id="nav-auth"
+            aria-current={
+              Astro.url.pathname === '/connexion' || Astro.url.pathname === '/compte'
+                ? 'page'
+                : undefined
+            }
+            >Connexion</a
+          >
           <a href="#parcours-citoyen" class="parcours-link" aria-current={Astro.url.pathname.includes('analyse') || Astro.url.pathname === '/' ? 'page' : undefined}>Parcours citoyen</a>
         </nav>
 
@@ -593,10 +832,13 @@ const commentThread =
           <ol class="parcours-steps">
             <li><a href="/">1. Découvrir le 1er tour</a></li>
             <li><a href="/atlas">2. Explorer l’Atlas</a></li>
-            <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T</a></li>
-            <li><a href="/analyses/assemblee-premier-tour-mecanismes">4. Mécanismes pour une Assemblée du Premier Tour</a></li>
-            <li><a href="/debats">5. Participer aux débats</a></li>
-            <li><a href="/sources">6. Vérifier les sources</a></li>
+            <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T (pluralité)</a></li>
+            <li><a href="/liberte-d-expression">4. Liberté d’expression</a></li>
+            <li><a href="/observatoire-censure">5. Observatoire de la censure</a></li>
+            <li><a href="/analyses/assemblee-premier-tour-mecanismes">6. Mécanismes Assemblée 1er tour</a></li>
+            <li><a href="/debats">7. Participer aux débats</a></li>
+            <li><a href="/contribuer">8. Suggestions &amp; alertes</a></li>
+            <li><a href="/sources">9. Vérifier les sources</a></li>
           </ol>
           <button type="button" class="parcours-btn" onclick="document.getElementById('parcours-citoyen').classList.toggle('collapsed')">Masquer / Montrer</button>
         </div>
@@ -614,18 +856,24 @@ const commentThread =
       </main>
       <footer>
         <p>
-          <strong>Zéro biais · zéro parti pris</strong> — transparence des couleurs politiques des posts et intervenants.
-          Aucune autorité religieuse ou idéologique ne passe les fourches caudines de la modératrice IA.
-          Ligne <em>Democracy Over Elimination</em>.
+          Transparence des couleurs politiques des posts et intervenants.
+          Ligne <em>Democracy Over Elimination</em> — <a href="/charte">charte</a>.
         </p>
         <p>
-          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire. <strong>Visualisations et analyses pédagogiques et neutres</strong> : pluralité du premier tour, sans ranking ni favori.
+          Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
+          {' · '}
+          <a href="/sources#methodologie-blocs">Méthodo blocs</a>
+          {' · '}
+          <a href="/a-propos">À propos</a>
         </p>
 
-        <!-- Feedback form (site-wide, accessible, static-friendly) -->
+        <!-- Feedback → file suggestions (validation rédaction avant publication site) -->
         <div class="feedback-form" aria-labelledby="feedback-title">
           <h4 id="feedback-title" style="font-size:0.95rem; margin:0.6rem 0 0.25rem;">Votre retour citoyen</h4>
-          <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">Aidez-nous à améliorer le site (accessibilité, clarté des viz, parcours). Vos commentaires sont lus par l’équipe éditoriale.</p>
+          <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">
+            Suggestion rapide (site / clarté). Pour une <strong>alerte citoyenne</strong> sourcée :
+            <a href="/contribuer">espace Contribuer</a>. Rien n’est publié sans validation éditoriale.
+          </p>
           <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
             <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.75rem; align-items:flex-end;">
               <label style="flex:1; min-width:140px;">
@@ -641,7 +889,7 @@ const commentThread =
               </label>
               <label style="flex:3; min-width:180px;">
                 <span class="meta" style="font-size:0.72rem;display:block;">Commentaire / suggestion</span>
-                <input type="text" name="comment" required placeholder="Ex: La carte AN1T est plus lisible sur mobile maintenant" style="width:100%; padding:0.35rem; font-size:0.9rem; border:1px solid var(--border); border-radius:4px;" />
+                <input type="text" name="comment" required minlength="20" placeholder="Ex: La carte AN1T est plus lisible sur mobile maintenant" style="width:100%; padding:0.35rem; font-size:0.9rem; border:1px solid var(--border); border-radius:4px;" />
               </label>
               <label style="flex:1.5; min-width:130px;">
                 <span class="meta" style="font-size:0.72rem;display:block;">Email (optionnel)</span>
@@ -649,15 +897,27 @@ const commentThread =
               </label>
               <button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.82rem; min-height:36px;">Envoyer</button>
             </div>
-            <div id="feedback-thanks" style="display:none; margin-top:0.35rem; font-size:0.8rem; color:#2d6a4f;">Merci ! Votre retour est enregistré (simulation client pour le site statique ; en production il serait envoyé à l’éditeur).</div>
+            <label class="meta" style="display:flex; gap:0.4rem; align-items:flex-start; margin-top:0.35rem; font-size:0.72rem;">
+              <input type="checkbox" name="consentContact" value="1" />
+              Contact rédaction uniquement pour cette suggestion (si email).
+            </label>
+            <div id="feedback-thanks" style="display:none; margin-top:0.35rem; font-size:0.8rem; color:#2d6a4f;"></div>
           </form>
         </div>
 
         <p>
+          <a href="/a-propos">À propos</a>
+          {' · '}
           <a href="/charte">Charte</a>
           {' · '}
+          <a href="/sources">Sources</a>
+          {' · '}
+          <a href="/sources#methodologie-blocs">Méthodo</a>
+          {' · '}
+          <a href="/soutenir">Soutenir</a>
+          {' · '}
           <a href="/mentions-legales">Mentions légales</a>
-          {' '}·{' '}
+          {' · '}
           <a href="/confidentialite">Confidentialité</a>
           {
             socialLinks.map((link) => (
@@ -690,24 +950,51 @@ const commentThread =
       </footer>
     </div>
     <script>
-      function handleFeedbackSubmit(e) {
+      async function handleFeedbackSubmit(e) {
         e.preventDefault();
         const form = e.target;
         const thanks = document.getElementById('feedback-thanks');
-        // Client-side: log + show thanks (static site UX). Extendable to POST/fetch later.
         try {
           const data = Object.fromEntries(new FormData(form).entries());
-          console.log('[LMDPT Feedback]', data);
+          const comment = String(data.comment || '').trim();
+          const email = String(data.email || '').trim();
+          const consent = data.consentContact === '1';
+          if (email && !consent) {
+            if (thanks) {
+              thanks.style.display = 'block';
+              thanks.style.color = '#9b2226';
+              thanks.textContent = 'Cochez le consentement si vous laissez un email.';
+            }
+            return;
+          }
+          const res = await fetch('/api/comments/tips/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: 'suggestion',
+              title: 'Retour site (note ' + (data.rating || '—') + ')',
+              body: comment,
+              displayName: 'Lecteur·rice',
+              email,
+              consentContact: consent,
+            }),
+          });
+          const payload = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(payload.error || 'Échec envoi');
           if (thanks) {
             thanks.style.display = 'block';
-            thanks.textContent = 'Merci ! Retour reçu. (Note: ' + (data.rating || '—') + ')';
+            thanks.style.color = '#2d6a4f';
+            thanks.textContent =
+              'Merci ! Suggestion en file — publication sur le site uniquement après validation.';
           }
           form.reset();
           setTimeout(() => { if (thanks) thanks.style.display = 'none'; }, 6500);
         } catch (err) {
           if (thanks) {
             thanks.style.display = 'block';
-            thanks.textContent = 'Merci pour votre retour (enregistré localement).';
+            thanks.style.color = '#9b2226';
+            thanks.textContent =
+              (err && err.message) || 'Envoi impossible — réessayez ou utilisez /contribuer.';
           }
         }
       }

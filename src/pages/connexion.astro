@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const next = Astro.url.searchParams.get('next') || '/';
+const err = Astro.url.searchParams.get('error') || '';
+const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
+---
+
+<BaseLayout
+  title="Connexion"
+  description="Identifiez-vous sur Le Média du Premier Tour — Google, X, Apple ou email. Requis pour commenter."
+  noindex={true}
+>
+  <section class="auth-hero">
+    <p class="eyebrow">Compte lecteur</p>
+    <h1>Connexion</h1>
+    <p class="lead">
+      Identifiez-vous pour publier un commentaire citoyen. La <strong>teinte politique</strong> reste
+      liée au message (transparence DOE), pas une carte d’adhésion de compte. Votre email n’est
+      <strong>jamais</strong> affiché publiquement.
+    </p>
+    <p class="meta">
+      Service non destiné aux moins de 15 ans · <a href="/confidentialite">Confidentialité</a> ·
+      <a href="/charte">Charte</a>
+    </p>
+  </section>
+
+  {
+    err && (
+      <p class="auth-error" role="alert">
+        Connexion impossible : {err.replace(/_/g, ' ')}. Réessayez ou utilisez un autre moyen.
+      </p>
+    )
+  }
+
+  <section class="card auth-card" aria-labelledby="oauth-title">
+    <h2 id="oauth-title">Continuer avec</h2>
+    <div class="auth-providers" id="auth-providers">
+      <a class="btn btn-primary auth-btn" href={`/api/auth/start/google?next=${nextQ}`} data-provider="google">
+        Google
+      </a>
+      <a class="btn btn-primary auth-btn" href={`/api/auth/start/x?next=${nextQ}`} data-provider="x">
+        X
+      </a>
+      <a class="btn btn-primary auth-btn" href={`/api/auth/start/apple?next=${nextQ}`} data-provider="apple">
+        Apple
+      </a>
+    </div>
+    <p class="meta" id="providers-status" role="status">Vérification des providers…</p>
+  </section>
+
+  <section class="card auth-card" aria-labelledby="email-title">
+    <h2 id="email-title">Lien magique par email</h2>
+    <form id="email-form" novalidate>
+      <label>
+        <span class="meta">Adresse email</span>
+        <input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="vous@exemple.fr" />
+      </label>
+      <input type="hidden" name="next" value={next.startsWith('/') ? next : '/'} />
+      <button type="submit" class="btn btn-primary">Recevoir le lien</button>
+      <p class="meta" id="email-status" role="status"></p>
+    </form>
+  </section>
+
+  <p class="meta">
+    Déjà connecté ? <a href="/compte">Voir mon compte</a>
+  </p>
+</BaseLayout>
+
+<script>
+  (async () => {
+    const status = document.getElementById('providers-status');
+    try {
+      const res = await fetch('/api/auth/providers', { credentials: 'include' });
+      const data = await res.json();
+      const map = Object.fromEntries((data.providers || []).map((p: any) => [p.id, p.enabled]));
+      document.querySelectorAll<HTMLAnchorElement>('[data-provider]').forEach((a) => {
+        const id = a.dataset.provider!;
+        if (!map[id]) {
+          a.classList.add('is-disabled');
+          a.setAttribute('aria-disabled', 'true');
+          a.href = '#';
+          a.title = 'Provider non configuré (secrets manquants)';
+        }
+      });
+      if (status) {
+        status.textContent = data.authEnabled
+          ? 'Choisissez un provider ou l’email.'
+          : 'Auth serveur encore désactivée (LMDPT_AUTH_ENABLED) — providers listés pour prévisualisation.';
+      }
+    } catch {
+      if (status) status.textContent = 'Impossible de joindre l’API auth.';
+    }
+
+    const form = document.getElementById('email-form') as HTMLFormElement | null;
+    const emailStatus = document.getElementById('email-status');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (emailStatus) emailStatus.textContent = 'Envoi…';
+      const fd = new FormData(form);
+      try {
+        const res = await fetch('/api/auth/email/start', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: String(fd.get('email') || ''),
+            next: String(fd.get('next') || '/'),
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Échec');
+        if (emailStatus) {
+          emailStatus.textContent = data.message || 'Lien envoyé.';
+          if (data.devVerifyUrl) {
+            emailStatus.innerHTML += ` <a href="${data.devVerifyUrl}">Lien dev</a>`;
+          }
+        }
+      } catch (err: any) {
+        if (emailStatus) emailStatus.textContent = err.message || 'Erreur';
+      }
+    });
+  })();
+</script>
+
+<style>
+  .auth-hero {
+    margin-bottom: 1.25rem;
+  }
+  .auth-card {
+    margin-bottom: 1rem;
+  }
+  .auth-providers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  .auth-btn.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .auth-error {
+    background: #fde8e8;
+    color: #5c1010;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid #e0a0a0;
+  }
+  #email-form label {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  #email-form input[type='email'] {
+    width: 100%;
+    max-width: 28rem;
+    padding: 0.5rem 0.65rem;
+    font: inherit;
+  }
+</style>

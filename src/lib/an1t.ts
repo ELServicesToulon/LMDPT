@@ -50,6 +50,109 @@ export function nuanceToBlocId(nuanceCode: string): string {
   return nuanceToBlocMap.get(nuanceCode) ?? 'autres';
 }
 
+/**
+ * Mapping nuances **présidentielles** (labels archives Intérieur) → blocs AN1T pédagogiques.
+ * Distinct des CodNuaCand législatives (UG, ENS, …).
+ *
+ * Méthodo : nfp = gauche + écologie + extrême gauche ;
+ * ensemble = centre sortant ; lr = droite républicaine ;
+ * rn = RN + alliés extrême droite / souverainistes durs ;
+ * autres = divers (ex. Lassalle).
+ */
+export const PRESIDENTIAL_NUANCE_TO_BLOC: Record<string, string> = {
+  LREM: 'ensemble',
+  ENS: 'ensemble',
+  HOR: 'ensemble',
+  /** 2017 — En Marche */
+  EM: 'ensemble',
+  LFI: 'nfp',
+  FI: 'nfp',
+  PS: 'nfp',
+  SOC: 'nfp',
+  /** 2017 — Hamon / PS dissidence */
+  SP: 'nfp',
+  EELV: 'nfp',
+  VEC: 'nfp',
+  ECO: 'nfp',
+  PCF: 'nfp',
+  COM: 'nfp',
+  NPA: 'nfp',
+  LO: 'nfp',
+  EXG: 'nfp',
+  UG: 'nfp',
+  DVG: 'nfp',
+  LR: 'lr',
+  RN: 'rn',
+  /** 2017 — Front national */
+  FN: 'rn',
+  REC: 'rn',
+  DLF: 'rn',
+  EXD: 'rn',
+  DVD: 'rn',
+  RES: 'autres',
+  REG: 'autres',
+  DIV: 'autres',
+  /** 2017 — Asselineau UPR */
+  UPR: 'autres',
+};
+
+export function presidentialNuanceToBlocId(nuanceCode: string): string {
+  const key = String(nuanceCode || '').trim().toUpperCase();
+  return PRESIDENTIAL_NUANCE_TO_BLOC[key] ?? 'autres';
+}
+
+/** Agrège un 1er tour présidentiel national vers % par blocs AN1T (1 décimale, somme ~100). */
+export function aggregatePresidentialPctByBloc(
+  candidates: Array<{ nuance: string; pourcentage_exprimes?: number; voix?: number }>,
+  exprimes?: number,
+): Record<string, number> {
+  const votes = new Map<string, number>();
+  for (const id of AN1T_BLOCS.map((b) => b.id)) votes.set(id, 0);
+
+  const useVoix = candidates.some((c) => typeof c.voix === 'number' && (c.voix ?? 0) > 0);
+  if (useVoix && exprimes && exprimes > 0) {
+    for (const c of candidates) {
+      const blocId = presidentialNuanceToBlocId(c.nuance);
+      votes.set(blocId, (votes.get(blocId) ?? 0) + (c.voix ?? 0));
+    }
+    const out: Record<string, number> = {};
+    for (const [id, v] of votes) {
+      out[id] = Math.round((v / exprimes) * 1000) / 10;
+    }
+    return normalizeBlocPcts(out);
+  }
+
+  for (const c of candidates) {
+    const blocId = presidentialNuanceToBlocId(c.nuance);
+    votes.set(blocId, (votes.get(blocId) ?? 0) + (c.pourcentage_exprimes ?? 0));
+  }
+  const out: Record<string, number> = {};
+  for (const [id, v] of votes) {
+    out[id] = Math.round(v * 10) / 10;
+  }
+  return normalizeBlocPcts(out);
+}
+
+/** Normalise un dictionnaire de % pour viser 100,0 (1 décimale). */
+export function normalizeBlocPcts(pcts: Record<string, number>): Record<string, number> {
+  const keys = Object.keys(pcts);
+  const sum = keys.reduce((s, k) => s + Math.max(0, pcts[k] || 0), 0);
+  if (sum < 0.001) return { ...pcts };
+  const factor = 100 / sum;
+  const scaled: Record<string, number> = {};
+  for (const k of keys) {
+    scaled[k] = Math.round(Math.max(0, pcts[k] || 0) * factor * 10) / 10;
+  }
+  // Ajuste le plus gros bloc pour coller à 100,0 après arrondis
+  const sum2 = keys.reduce((s, k) => s + scaled[k], 0);
+  const drift = Math.round((100 - sum2) * 10) / 10;
+  if (Math.abs(drift) >= 0.05) {
+    const main = keys.slice().sort((a, b) => scaled[b] - scaled[a])[0];
+    if (main) scaled[main] = Math.round((scaled[main] + drift) * 10) / 10;
+  }
+  return scaled;
+}
+
 export function getBloc(id: string): An1tBloc | undefined {
   return AN1T_BLOCS.find((b) => b.id === id);
 }

@@ -11,63 +11,71 @@
     "document_label": "Programme officiel LR 2022",
     "status": "published"
   },
-  "updated": "2026-07-02",
+  "updated": "2026-07-21",
   "measures": [
     {
       "id": "pecresse-2022-retraites-65",
       "theme": "retraites",
       "label": "Report de l'âge légal à 65 ans",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Âge légal"
     },
     {
       "id": "pecresse-2022-fiscalite-15-points",
       "theme": "fiscalite",
       "label": "Baisse de 15 points de la dépense publique sur le quinquennat",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "TVA & impôts"
     },
     {
       "id": "pecresse-2022-pouvoir-achat-bouclier",
       "theme": "pouvoir_achat",
       "label": "Bouclier anti-inflation sur l'énergie",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Salaires"
     },
     {
       "id": "pecresse-2022-europe-souverainete",
       "theme": "europe",
       "label": "Europe puissance et souveraineté industrielle",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Souveraineté"
     },
     {
       "id": "pecresse-2022-securite-justice",
       "theme": "securite",
       "label": "Doublement des effectifs de justice et peines planchers",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Ordre public"
     },
     {
       "id": "pecresse-2022-immigration-quotas",
       "theme": "immigration",
       "label": "Quotas annuels d'immigration et réforme du droit d'asile",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Priorité nationale"
     },
     {
       "id": "pecresse-2022-climat-nucleaire",
       "theme": "climat",
       "label": "Programme nucléaire ambitieux et hydrogène vert",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "Transition"
     },
     {
       "id": "pecresse-2022-education-autonomie",
       "theme": "education",
       "label": "Autonomie des universités et écoles",
       "status": "nouveau",
-      "as_of": "2022-03"
+      "as_of": "2022-03",
+      "subtheme": "École"
     }
   ],
   "chiffrages": [

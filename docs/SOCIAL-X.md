@@ -1,33 +1,33 @@
-# Compte X — Le Média du Premier Tour (LMDPT)
+# Compte X — Le Media Du Premier Tour (LMDPT)
 
 > Projet civique **séparé** de Mediconvoi.
 
-## Compte relais (quote-repost automatique)
-
-| Champ | Valeur |
-|-------|--------|
-| **Handle** | `@LeMediaDPT` |
-| **URL** | https://x.com/LeMediaDPT |
-| **Rôle** | Quote-reposte chaque post de `@LMDuPremierTour` avec commentaire DOE |
-| **Automatisation** | `Mediconvoi/backend` → `npm run lmdpt-x-repost-bridge` |
-| **Doc** | `second-brain/projects/lmdpt/docs/X-REPOST-BRIDGE.md` |
-
-## Compte live
+## Compte unique (canon · 2026-07-26)
 
 | Champ | Valeur |
 |-------|--------|
 | **Handle** | `@LMDuPremierTour` |
 | **URL** | https://x.com/LMDuPremierTour |
 | **Nom affiché** | Le Media Du Premier Tour |
+| **User id** | `2072732260076224512` |
 | **Créé** | juillet 2026 |
-| **Statut** | **live** — profil à compléter (bio + pin) |
+| **Statut** | **live** — seul compte X LMDPT |
+
+**Décision Ω 2026-07-26** : garder **uniquement** ce compte. L’ancien relais `@LeMediaDPT` **n’existe plus** — ne plus documenter, ne plus OAuth, ne plus pont repost.
+
+| Ancien | Statut |
+|--------|--------|
+| `@LeMediaDPT` | **abandonné / n’existe plus** |
+| Pont quote-repost `lmdpt-x-repost-bridge` | **off** (GO-auto disabled · pas de 2e compte) |
+
+OAuth / publish / brand : toujours **@LMDuPremierTour** (OAuth1 `.lemedia-x-api.json` ou OAuth2 perso — vérifier `users/me` = `LMDuPremierTour`).
 
 ## YouTube — débats en live
 
 | Champ | Valeur |
 |-------|--------|
 | **Handle cible** | `@LMDuPremierTour` |
-| **Statut** | **à créer** — `https://www.youtube.com/@LMDuPremierTour` renvoie **404** (juil. 2026) |
+| **Statut** | **à créer / activer** — voir `autonomy/lmdpt-youtube-live/` |
 | **Site** | Bandeau live + lien footer **off** tant que `PUBLIC_YOUTUBE_ENABLED` n’est pas `true` |
 | **Config** | `src/config/youtube.ts` · `PUBLIC_YOUTUBE_*` (voir `.env.example`) |
 
@@ -38,102 +38,3 @@
 3. Vérifier que `https://www.youtube.com/@LMDuPremierTour` charge (pas 404)
 4. Prod : `PUBLIC_YOUTUBE_ENABLED=true` (+ rebuild/deploy)
 5. Live ponctuel : `PUBLIC_YOUTUBE_LIVE_URL=https://www.youtube.com/watch?v=VIDEO_ID` ou `live_url` sur le JSON débat
-
-Tant que non activé : pas de bandeau « Rejoindre le live » sur `/debats` (évite le 404). Commentaires écrits via Giscus/GitHub.
-
-## À compléter sur X (checklist)
-
-- [ ] Bio courte → brouillon Manusk `second-brain/projects/lmdpt/social-drafts/2026-07-02-profil-bio-pin-x.md`
-- [ ] Lien site : `https://lmdpt.iarbre.org?utm_source=x&utm_medium=organic&utm_campaign=bio_link`
-- [ ] Avatar + bannière → **PNG prêts** : `public/brand/lmdpt-avatar-x.png` · `lmdpt-banner-x.png` (regénérer : `npm run brand:png`)
-- [ ] 2FA activée → Bitwarden `LMDPT-X-ACCOUNT`
-- [ ] **Post épinglé** → brouillon Manusk `social-drafts/2026-07-02-profil-bio-pin-x.md`
-- [ ] **Thread + semaine 1** → `social-drafts/2026-07-pack-publication-semaine1-x.md`
-- [ ] **Semaine 2** → `social-drafts/2026-07-pack-publication-semaine2-x.md`
-- [ ] **Suivi publication** → `social-drafts/publication-log.md`
-- [ ] **Avatar / bannière** → `public/brand/lmdpt-avatar-x.png` · `lmdpt-banner-x.png` (+ SVG sources)
-
-### Bio recommandée (160 car. max) — copy-paste
-
-```
-Média civique · 1er tour · open data
-Democracy Over Elimination
-Pas de sondages. Pas de tier list.
-🔗 ci-dessous
-```
-
-### Post épinglé — copy-paste
-
-```
-Bienvenue sur Le Média du Premier Tour.
-
-Nous documentons la pluralité du 1er tour (open data, sources officielles) et la distorsion 1er → 2nd tour — sans sondage, sans « favori », sans tier list.
-
-Présidentielle 2027 : 18 avril · 2 mai
-Dossier + atlas : https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=pinned
-```
-
-## Handles non retenus
-
-| Handle | Note |
-|--------|------|
-| `@lmdpt` | Pris (autre compte) |
-| `@LeMediaDuPremierTour` | Non utilisé — handle retenu : `@LMDuPremierTour` |
-
-## Intégration site
-
-- Config : `src/config/social.ts`
-- Footer : lien `@LMDuPremierTour` sur toutes les pages (`BaseLayout.astro`)
-
-## Règles éditoriales X (cf. `docs/EDITORIAL.md`)
-
-| OK | Interdit |
-|----|----------|
-| Atlas, analyses, veille factuelle (renifleur) | Sondages comme vérité |
-| Liens vers pages sourcées | Tier list / « favoris » |
-| Contexte distorsion 1er/2nd tour | Buzz sans source |
-| Threads pédagogiques open data | Prise de parti déguisée |
-
-## Premiers posts (brouillon — revue humaine avant publish)
-
-1. **Lancement** — présentation DOE + lien site
-2. **Calendrier 2027** — 18 avril / 2 mai (source gouvernement)
-3. **Dossier préparation** — lien `/analyses/presidentielle-2027-preparation`
-
-## Automatisation brouillons (revue humaine)
-
-```bash
-npm run renifleur          # fetch RSS → latest.json
-npm run renifleur:draft    # brouillon X → second-brain/.../social-drafts/auto/
-npm run renifleur:draft:refresh  # refetch + brouillon
-```
-
-Sortie : `second-brain/projects/lmdpt/social-drafts/auto/YYYY-MM-DD-renifleur-draft.md`  
-**Jamais** auto-post — gate `docs/REVIEW.md` + cocher `publication-log.md`.
-
-### Cycle sync (opt-in brouillon)
-
-```bash
-npm run sync:all              # build standard — pas de brouillon X
-npm run sync:all:social       # data + renifleur + brouillon X
-```
-
-Cron exemple (1×/jour, 8h) :
-
-```cron
-0 8 * * * cd /home/debian/iarbre/le-media-du-premier-tour && npm run sync:all:social >> /tmp/lmdpt-sync.log 2>&1
-```
-
-## Automatisation future (hors scope)
-
-- ~~Renifleur RSS → brouillons threads~~ → `npm run renifleur:draft` (2026-07-02)
-- Pas d'auto-post sans GO L1+
-
-## Historique
-
-| Date | Action |
-|------|--------|
-| 2026-07-02 | Fiche compte X LMDPT créée |
-| 2026-07-02 | Agent **lmdpt-social** + skill `lmdpt-social-director` · `/lmdpt-social` |
-| 2026-07-02 | Pipeline `npm run renifleur:draft` → `social-drafts/auto/` |
-| 2026-07-02 | PNG avatar/bannière/OG + meta `summary_large_image` sur le site |

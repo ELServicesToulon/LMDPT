@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" role="img" aria-label="Le Média du Premier Tour">
-  <rect width="1500" height="500" fill="#1e4d6b"/>
-  <text x="80" y="200" fill="#f7f5f0" font-family="Georgia, serif" font-size="48" font-weight="600">Le Média du Premier Tour</text>
-  <text x="80" y="270" fill="#a8c4d4" font-family="system-ui, sans-serif" font-size="28">Pluralité · open data · Democracy Over Elimination</text>
-  <text x="80" y="340" fill="#7eb8d8" font-family="system-ui, sans-serif" font-size="24">lmdpt.iarbre.org</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#122f42"/>
+      <stop offset="55%" stop-color="#1e4d6b"/>
+      <stop offset="100%" stop-color="#163a52"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="500" fill="url(#bg)"/>
+  <!-- Trame discrète (données / territoire) -->
+  <g stroke="#f7f5f0" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="125" x2="1500" y2="125"/>
+    <line x1="0" y1="250" x2="1500" y2="250"/>
+    <line x1="0" y1="375" x2="1500" y2="375"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+    <line x1="1200" y1="0" x2="1200" y2="500"/>
+  </g>
+  <!-- Emblème pluralité (gauche) -->
+  <g transform="translate(220 250)">
+    <circle r="118" fill="none" stroke="#f7f5f0" stroke-width="20"/>
+    <circle r="40" fill="#f7f5f0"/>
+    <g fill="#f7f5f0">
+      <circle cx="0" cy="-118" r="14"/>
+      <circle cx="83" cy="-83" r="14"/>
+      <circle cx="118" cy="0" r="14"/>
+      <circle cx="83" cy="83" r="14"/>
+      <circle cx="0" cy="118" r="14"/>
+      <circle cx="-83" cy="83" r="14"/>
+      <circle cx="-118" cy="0" r="14"/>
+      <circle cx="-83" cy="-83" r="14"/>
+    </g>
+  </g>
+  <!-- Wordmark + tagline -->
+  <g fill="#f7f5f0" font-family="system-ui,Segoe UI,Helvetica,Arial,sans-serif">
+    <text x="420" y="210" font-size="54" font-weight="700" letter-spacing="-0.01em">Le Média du Premier Tour</text>
+    <text x="420" y="270" font-size="28" font-weight="500" fill-opacity="0.92">Pluralité · faits sourcés · vote pour — pas contre</text>
+    <text x="420" y="330" font-size="22" font-weight="600" letter-spacing="0.04em" fill-opacity="0.75">lmdpt.iarbre.org  ·  Democracy Over Elimination</text>
+  </g>
 </svg>

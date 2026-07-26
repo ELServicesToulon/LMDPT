@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="LMDPT">
-  <rect width="400" height="400" fill="#1e4d6b"/>
-  <text x="200" y="168" text-anchor="middle" fill="#f7f5f0" font-family="system-ui, sans-serif" font-size="52" font-weight="700">LMDPT</text>
-  <text x="200" y="228" text-anchor="middle" fill="#a8c4d4" font-family="Georgia, serif" font-size="22">1er tour</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="LMDPT — Le Média du Premier Tour">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#163a52"/>
+      <stop offset="100%" stop-color="#1e4d6b"/>
+    </linearGradient>
+  </defs>
+  <!-- Fond charte LMDPT -->
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Anneau pluralité -->
+  <circle cx="200" cy="188" r="112" fill="none" stroke="#f7f5f0" stroke-width="22"/>
+  <!-- Noyau 1er tour -->
+  <circle cx="200" cy="188" r="38" fill="#f7f5f0"/>
+  <!-- 8 voix autour (pluralité) -->
+  <g fill="#f7f5f0">
+    <circle cx="200" cy="58" r="12"/>
+    <circle cx="292" cy="96" r="12"/>
+    <circle cx="330" cy="188" r="12"/>
+    <circle cx="292" cy="280" r="12"/>
+    <circle cx="200" cy="318" r="12"/>
+    <circle cx="108" cy="280" r="12"/>
+    <circle cx="70" cy="188" r="12"/>
+    <circle cx="108" cy="96" r="12"/>
+  </g>
+  <!-- Monogramme discret sous le pictogramme -->
+  <text x="200" y="368" text-anchor="middle" font-family="system-ui,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="28" font-weight="700" letter-spacing="0.12em" fill="#f7f5f0">LMDPT</text>
 </svg>

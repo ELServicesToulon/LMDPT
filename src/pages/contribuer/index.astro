@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contribuer — suggestions & alertes"
+  description="Proposez une suggestion ou une alerte citoyenne. Après validation éditoriale LMDPT, l’information est publiée sur le site."
+  article={true}
+>
+  <section class="contrib-hero">
+    <p class="eyebrow">Espace lecteurs</p>
+    <h1>Suggestions &amp; alertes</h1>
+    <p class="lead">
+      Signalez un fait à documenter ou proposez une amélioration. Rien n’est publié automatiquement :
+      la rédaction valide, puis le site affiche l’information.
+    </p>
+    <p class="meta">
+      Ligne <strong>Democracy Over Elimination</strong> · sources officielles privilégiées · pas de compte requis.
+      Voir la <a href="/charte">charte</a> et la <a href="/confidentialite">confidentialité</a>.
+    </p>
+  </section>
+
+  <section class="card contrib-form-card" aria-labelledby="form-title">
+    <h2 id="form-title">Envoyer une proposition</h2>
+    <form id="tip-form" novalidate>
+      <fieldset>
+        <legend class="meta">Type</legend>
+        <label class="radio">
+          <input type="radio" name="type" value="alerte" checked />
+          Alerte citoyenne (fait / texte / projet à documenter)
+        </label>
+        <label class="radio">
+          <input type="radio" name="type" value="suggestion" />
+          Suggestion (site, clarté, angle documentaire)
+        </label>
+      </fieldset>
+
+      <label>
+        <span class="meta">Titre</span>
+        <input type="text" name="title" required minlength="5" maxlength="160" placeholder="Ex. : PPL au Sénat sur…" />
+      </label>
+
+      <label>
+        <span class="meta">Description</span>
+        <textarea
+          name="body"
+          required
+          minlength="20"
+          maxlength="4000"
+          rows="6"
+          placeholder="Faits sourçables, contexte, enjeu pour le débat du 1er tour — sans appel à la haine ni autorité religieuse."
+        ></textarea>
+      </label>
+
+      <label>
+        <span class="meta">Lien source (optionnel)</span>
+        <input type="url" name="sourceUrl" maxlength="500" placeholder="https://www.senat.fr/…" />
+      </label>
+
+      <label>
+        <span class="meta">Pseudonyme affiché</span>
+        <input type="text" name="displayName" maxlength="40" placeholder="Lecteur·rice" />
+      </label>
+
+      <label>
+        <span class="meta">Email de contact (optionnel, jamais publié)</span>
+        <input type="email" name="email" maxlength="120" placeholder="vous@exemple.fr" autocomplete="email" />
+      </label>
+
+      <label class="check">
+        <input type="checkbox" name="consentContact" value="1" />
+        J’accepte que la rédaction me contacte uniquement au sujet de cette proposition (si email fourni).
+      </label>
+
+      <p id="tip-status" class="meta" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-primary">Envoyer pour validation</button>
+    </form>
+  </section>
+
+  <section class="card" aria-labelledby="published-title">
+    <h2 id="published-title">Déjà validés &amp; publiés</h2>
+    <p class="meta">
+      Fil des propositions approuvées par la rédaction — aussi liées depuis
+      <a href="/analyses/alerte-citoyenne">Alerte citoyenne</a>.
+    </p>
+    <div id="published-tips" class="published-tips">
+      <p class="meta">Chargement…</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const api = '/api/comments';
+  const form = document.getElementById('tip-form') as HTMLFormElement | null;
+  const statusEl = document.getElementById('tip-status');
+  const listEl = document.getElementById('published-tips');
+
+  function escapeHtml(s: string) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function safeHttpUrl(u?: string | null) {
+    if (!u) return '';
+    try {
+      const parsed = new URL(u);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return '';
+      return parsed.toString();
+    } catch {
+      return '';
+    }
+  }
+
+  async function loadPublished() {
+    if (!listEl) return;
+    try {
+      const res = await fetch(`${api}/tips/published`);
+      const data = await res.json();
+      const tips = data.tips || [];
+      if (!tips.length) {
+        listEl.innerHTML = '<p class="meta">Aucune proposition validée pour le moment — soyez le premier signalement sourcé.</p>';
+        return;
+      }
+      listEl.innerHTML = tips
+        .map(
+          (t: {
+            type: string;
+            title: string;
+            body: string;
+            sourceUrl?: string;
+            displayName: string;
+            publishedAt?: string;
+          }) => {
+            const badge = t.type === 'alerte' ? 'Alerte' : 'Suggestion';
+            const when = t.publishedAt ? new Date(t.publishedAt).toLocaleDateString('fr-FR') : '';
+            const href = safeHttpUrl(t.sourceUrl);
+            const src = href
+              ? `<p class="meta"><a href="${escapeHtml(href)}" rel="noopener noreferrer">Source</a></p>`
+              : '';
+            return `<article class="tip-card tip-${escapeHtml(t.type)}">
+              <p class="tip-badge">${badge} · ${escapeHtml(t.displayName)}${when ? ` · ${escapeHtml(when)}` : ''}</p>
+              <h3>${escapeHtml(t.title)}</h3>
+              <p>${escapeHtml(t.body)}</p>
+              ${src}
+            </article>`;
+          },
+        )
+        .join('');
+    } catch {
+      listEl.innerHTML =
+        '<p class="meta">Fil temporairement indisponible (API). Réessayez plus tard.</p>';
+    }
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!statusEl) return;
+    statusEl.textContent = 'Envoi…';
+    const fd = new FormData(form);
+    const email = String(fd.get('email') || '').trim();
+    const consent = fd.get('consentContact') === '1';
+    if (email && !consent) {
+      statusEl.textContent = 'Cochez le consentement si vous laissez un email.';
+      return;
+    }
+    try {
+      const res = await fetch(`${api}/tips/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: fd.get('type'),
+          title: fd.get('title'),
+          body: fd.get('body'),
+          sourceUrl: fd.get('sourceUrl') || '',
+          displayName: fd.get('displayName') || 'Lecteur·rice',
+          email,
+          consentContact: consent,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Échec');
+      statusEl.textContent = data.message || 'Enregistré — en attente de validation.';
+      form.reset();
+      (form.querySelector('input[value="alerte"]') as HTMLInputElement | null)?.click();
+    } catch (err: any) {
+      statusEl.textContent = err.message || 'Erreur d’envoi';
+    }
+  });
+
+  loadPublished();
+</script>
+
+<style>
+  .contrib-hero {
+    max-width: 40rem;
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted, #5a6570);
+    margin: 0 0 0.35rem;
+  }
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .contrib-form-card label,
+  .contrib-form-card fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+  }
+  .contrib-form-card fieldset {
+    border: none;
+    padding: 0;
+  }
+  .contrib-form-card .radio,
+  .contrib-form-card .check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .contrib-form-card input[type='text'],
+  .contrib-form-card input[type='url'],
+  .contrib-form-card input[type='email'],
+  .contrib-form-card textarea {
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 4px;
+    font: inherit;
+  }
+  .published-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .tip-card {
+    border-left: 4px solid var(--accent, #2d6a4f);
+    padding: 0.35rem 0 0.35rem 0.85rem;
+  }
+  .tip-card.tip-alerte {
+    border-left-color: #b45309;
+  }
+  .tip-badge {
+    font-size: 0.75rem;
+    color: var(--muted, #5a6570);
+    margin: 0 0 0.25rem;
+  }
+  .tip-card h3 {
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+</style>
