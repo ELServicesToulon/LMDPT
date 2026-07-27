@@ -1,0 +1,65 @@
+---
+/**
+ * Outils Google gratuits — Search Console, GA4, GTM, Ads (optionnels via env).
+ * Zéro script tiers si aucun PUBLIC_* n’est défini.
+ */
+import {
+  getGoogleSeoConfig,
+  hasGoogleTracking,
+  consentModeBootstrapScript,
+  ga4ConfigScript,
+  googleAdsConfigScript,
+} from '../lib/google-seo';
+
+const cfg = getGoogleSeoConfig();
+const tracking = hasGoogleTracking(cfg);
+const needsGtag =
+  Boolean(cfg.ga4MeasurementId || cfg.googleAdsId) && !cfg.gtmContainerId;
+// Si GTM est présent, on le laisse charger gtag ; sinon gtag.js direct.
+const loadConsent = tracking && cfg.consentModeDefaultDenied;
+---
+
+{cfg.siteVerification && (
+  <meta name="google-site-verification" content={cfg.siteVerification} />
+)}
+
+{tracking && (
+  <>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  </>
+)}
+
+{loadConsent && (
+  <script is:inline set:html={consentModeBootstrapScript()} />
+)}
+
+{cfg.gtmContainerId && (
+  <script
+    is:inline
+    set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${cfg.gtmContainerId}');`}
+  />
+)}
+
+{needsGtag && (
+  <>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${cfg.ga4MeasurementId || cfg.googleAdsId}`}
+    />
+    <script
+      is:inline
+      set:html={[
+        `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}`,
+        cfg.ga4MeasurementId ? ga4ConfigScript(cfg.ga4MeasurementId) : '',
+        cfg.googleAdsId ? googleAdsConfigScript(cfg.googleAdsId) : '',
+      ]
+        .filter(Boolean)
+        .join('\n')}
+    />
+  </>
+)}

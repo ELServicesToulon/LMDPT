@@ -1,23 +1,59 @@
 # Le Média du Premier Tour — https://lmdpt.iarbre.org
-# Crawlers moteurs de recherche + agents IA : indexation bienvenue sur le contenu public.
+# Crawlers moteurs + Google (Search / News / Discover / Inspection) bienvenus.
+# Généré par npm run seo:assets — ne pas éditer à la main (sauf besoin urgent).
 
 User-agent: *
 Allow: /
 Disallow: /moderation
 Disallow: /api/
+Disallow: /connexion
+Disallow: /compte
 
-# Sitemaps
+# Sitemaps (Search Console — soumettre l’index en priorité)
+Sitemap: https://lmdpt.iarbre.org/sitemap-index.xml
 Sitemap: https://lmdpt.iarbre.org/sitemap.xml
 Sitemap: https://lmdpt.iarbre.org/sitemap-images.xml
+Sitemap: https://lmdpt.iarbre.org/sitemap-news.xml
 
-# AI / LLM crawlers (explicit allow — contenu civique open data)
+# --- Google (outils gratuits de référencement) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+# AI / LLM crawlers
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: anthropic-ai
@@ -44,6 +80,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Fichiers d’aide pour les IA
+# Aide IA
 # https://lmdpt.iarbre.org/llms.txt
 # https://lmdpt.iarbre.org/ai.txt
+# Doc Google SEO : docs/GOOGLE-SEO.md

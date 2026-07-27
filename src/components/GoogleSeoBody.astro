@@ -1,0 +1,20 @@
+---
+/**
+ * Noscript GTM (body) — uniquement si PUBLIC_GTM_CONTAINER_ID est défini.
+ */
+import { getGoogleSeoConfig } from '../lib/google-seo';
+
+const cfg = getGoogleSeoConfig();
+---
+
+{cfg.gtmContainerId && (
+  <noscript>
+    <iframe
+      src={`https://www.googletagmanager.com/ns.html?id=${cfg.gtmContainerId}`}
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+      title="Google Tag Manager"
+    />
+  </noscript>
+)}
