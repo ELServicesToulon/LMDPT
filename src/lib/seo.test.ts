@@ -29,7 +29,7 @@ describe('pageMeta', () => {
       siteUrl: 'https://lmdpt.iarbre.org',
       pathname: '/',
     });
-    expect(meta.description).toContain('Democracy Over Elimination');
+    expect(meta.description).toContain('démocratie avant l’élimination');
     expect(meta.fullTitle).toContain('Le Média du Premier Tour');
   });
 

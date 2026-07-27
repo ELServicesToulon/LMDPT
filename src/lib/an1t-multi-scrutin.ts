@@ -125,7 +125,7 @@ export function listAn1tScrutinModes(): An1tScrutinMode[] {
       totalSeats: 577,
       defaultThreshold: 3,
       dualSlug: '2024-legislatives',
-      sourceNote: 'Open data Min. Intérieur · agrégat blocs LMDPT',
+      sourceNote: 'Données ouvertes ministère de l’Intérieur · agrégat blocs LMDPT',
     },
     {
       id: 'presidentielle-2022',

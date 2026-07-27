@@ -766,7 +766,7 @@ export async function runSondageVeille(
   return {
     fetched_at: at,
     disclaimer:
-      'Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.',
+      'Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.',
     providers_indexed: institutes + media + aggs,
     sources_ok: sourcesOk,
     sources_error: sourcesError,

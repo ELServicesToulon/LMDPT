@@ -46,6 +46,13 @@ describe('independance-medias', () => {
     ).toBe('#abcdef');
   });
 
+  it('aligns FAMILY_COLORS on palette 1er tour', () => {
+    expect(FAMILY_COLORS.centre).toBe('#ffeb00');
+    expect(FAMILY_COLORS['droite-nationale']).toBe('#0d378a');
+    expect(FAMILY_COLORS.autre).toBe('#5a6570');
+    expect(FAMILY_COLORS['gauche-radicale']).toBe('#cc2443');
+  });
+
   it('enriches view with resolved hue colors', () => {
     const view = getIndependanceView();
     expect(view.media.length).toBe(12);

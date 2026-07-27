@@ -17,8 +17,8 @@ const packPath = PACK_DATA.path;
 
 <BaseLayout
   title="Soutenir le média"
-  description="Soutenez Le Média du Premier Tour : dons citoyens pour l’hébergement, les données open data et les outils pédagogiques — sans pub politique."
-  keywords="soutenir LMDPT, don média civique, Democracy Over Elimination, mécénat données électorales"
+  description="Soutenez Le Média du Premier Tour : dons citoyens pour l’hébergement, les données ouvertes et les outils pédagogiques — sans pub politique."
+  keywords="soutenir LMDPT, don média civique, démocratie avant l’élimination, mécénat données électorales"
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/">Accueil</a> → Soutenir
@@ -37,12 +37,12 @@ const packPath = PACK_DATA.path;
     <h2>Soutenir le miroir du 1er tour</h2>
     <p class="lead">
       Sans pub politique, sans sondage «&nbsp;favori&nbsp;». Votre don paie l’hébergement,
-      la sync data.gouv et les simulateurs — pour que la pluralité reste lisible.
+      la synchronisation data.gouv et les simulateurs — pour que la pluralité reste lisible.
     </p>
     <p class="meta disclaimer">
-      Transparence : les montants aident à couvrir hébergement (KS-5 / OVH), sync data.gouv,
+      Transparence : les montants aident à couvrir hébergement (KS-5 / OVH), synchronisation data.gouv,
       maintenance des simulateurs et du site. Aucune donnée électorale officielle n’est
-      paywallée.
+      mise derrière un péage.
     </p>
   </section>
 
@@ -93,7 +93,7 @@ const packPath = PACK_DATA.path;
             donateIsTest && (
               <span class="meta test-banner">
                 {' '}
-                Mode <strong>Stripe test</strong> — carte test 4242… ; pas de vrai débit.
+                Mode <strong>essai Stripe</strong> — carte test 4242… ; pas de vrai débit.
               </span>
             )
           }
@@ -102,12 +102,11 @@ const packPath = PACK_DATA.path;
         <div class="card config-card" id="config-don">
           <h4>Configuration du lien de don</h4>
           <p>
-            La page est en ligne ; le <strong>paiement externe</strong> (HelloAsso ou Payment Link
-            Stripe) n’est pas encore branché. Dès qu’une URL HTTPS est fournie au build :
+            La page est en ligne ; le <strong>paiement externe</strong> (HelloAsso ou lien de paiement Stripe) n’est pas encore branché. Dès qu’une URL HTTPS est fournie au build :
           </p>
           <pre class="code-block"><code>PUBLIC_LMDPT_DONATE_URL=https://www.helloasso.com/…</code></pre>
           <p class="meta">
-            Puis rebuild + deploy. En attendant, vous pouvez nous écrire via{' '}
+            Puis reconstruction et mise en ligne. En attendant, vous pouvez nous écrire via{' '}
             <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
               GitHub Issues
             </a>{' '}
@@ -124,7 +123,7 @@ const packPath = PACK_DATA.path;
       <span class="badge-soon">{PACK_DATA.priceEurYear}&nbsp;€ / an · précommande intérêt</span>
     </h3>
     <p>
-      Produit data pour chercheurs, rédactions, enseignants et assos — <strong>sans bloquer</strong>{' '}
+      Offre de données pour chercheurs, rédactions, enseignants et associations — <strong>sans bloquer</strong>{' '}
       l’atlas ni les résultats officiels gratuits.
     </p>
     <ul>
@@ -146,7 +145,7 @@ const packPath = PACK_DATA.path;
       <li>Serveur & TLS (<code>lmdpt.iarbre.org</code>), déploiements, backups</li>
       <li>Imports data.gouv (présidentielles, législatives) et contrôle qualité</li>
       <li>Outils pédagogiques : AN1T, mécanismes, atlas, débats</li>
-      <li>Temps éditorial (sources, charte DOE, relectures)</li>
+      <li>Temps éditorial (sources, charte éditoriale, relectures)</li>
     </ul>
     <p class="meta">
       Nous n’acceptons pas de publicité politique ni de sponsoring partisan. Voir la{' '}
@@ -160,7 +159,7 @@ const packPath = PACK_DATA.path;
       <li><a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes AN1T</a> — seuils, doses, pluralité</li>
       <li><a href="/analyses/assemblee-premier-tour">Simulateur</a></li>
       <li><a href="/sources">Sources & licences</a></li>
-      <li><a href="/charte">Charte Democracy Over Elimination</a></li>
+      <li><a href="/charte">Charte — la démocratie avant l’élimination</a></li>
     </ul>
   </section>
 

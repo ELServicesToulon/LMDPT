@@ -1,12 +1,12 @@
 # Ligne éditoriale — Le Média du Premier Tour
 
-> **Democracy Over Elimination** — la démocratie avant le spectacle.
+> **La démocratie avant l’élimination** — la démocratie avant le spectacle.
 
 **Tagline** : Le premier tour : le miroir le plus fidèle de la France politique. Pour une démocratie où l'on vote pour, et non contre.
 
 ## Vision
 
-Couvrir le **premier tour** avec des faits sourcés (open data), sans éliminer ni caricaturer les candidats et forces politiques.
+Couvrir le **premier tour** avec des faits sourcés (données ouvertes), sans éliminer ni caricaturer les candidats et forces politiques.
 
 Le premier tour capture la pluralité des préférences ; le second tour la distord via désistements et vote stratégique. Nous documentons cette distorsion sans la moraliser.
 
@@ -24,6 +24,21 @@ Le premier tour capture la pluralité des préférences ; le second tour la dist
 - **Sobre, civique, accessible** — français professionnel, phrases courtes.
 - **Neutre factuel** sur les données ; prise de position explicite uniquement dans la rubrique « ligne » (manifeste), jamais déguisée en fait.
 - Vouvoiement ou tutoiement : **vouvoiement** sur le site public (public large).
+
+## Langue — français correct uniquement (impératif · Président 2026-07-27)
+
+**Règle non négociable** : tout contenu **éditorial public** du média (site, journal, charte, drafts X prêts à publier, libellés UI visibles, alt texts, titres SEO) est rédigé en **bon français uniquement**.
+
+| OK | Interdit (gate FAIL / BLOCK publish) |
+|----|--------------------------------------|
+| Français correct : orthographe, accents, accords, ponctuation FR, espaces | Anglais éditorial, franglais, anglicismes inutiles quand un équivalent FR clair existe |
+| Citations / noms propres / sigles officiels dans leur langue d’origine (signalés) | Corps de page ou brouillon public majoritairement en anglais |
+| Termes techniques sourcés une fois, glossés en français | Mots accolés, fautes récurrentes, jargon anglo non glossé |
+| Gate `/lmdpt-qualite-redaction` PASS avant `ready_review` | Publier sans relecture FR |
+
+**Exceptions** (hors rédaction éditoriale) : code, identifiants techniques, URLs, noms de fichiers, métadonnées machine, licences citées telles quelles.
+
+**Gate** : `bot-quality-gate` + agent `lmdpt-qualite-redaction` — FAIL = pas de SHIP publication.
 
 ## Zéro biais · zéro parti pris · transparence des couleurs
 
@@ -49,7 +64,7 @@ La **modératrice IA** est le premier filtre non négociable des commentaires et
 
 Implémentation : `src/lib/moderation-gate.ts` · `comments-api/server.mjs` (preview / publish).
 
-## Principes Democracy Over Elimination
+## Principes — La démocratie avant l’élimination
 
 1. **Aucun candidat n’est « éliminé »** par le média avant le scrutin — tous les candidats officiellement déclarés ont une fiche équivalente si les données existent.
 2. **Pas de « tier list »** ni de notation subjective présentée comme objective.
@@ -70,7 +85,7 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 
 ## Conformité
 
-- Licences open data respectées par ressource (ODbL, Licence Ouverte / Etalab, etc.) — page Sources.
+- Licences de données ouvertes respectées par ressource (ODbL, Licence Ouverte / Etalab, etc.) — page Sources.
 - Mentions légales et politique de confidentialité avant mise en ligne publique.
 - Pas de données personnelles traitées sans base légale documentée.
 
@@ -83,4 +98,5 @@ La charte complète est publiée sur le site : **`/charte`** (`src/pages/charte.
 
 - [x] Ligne DOE posée (2026-06-27)
 - [x] Page `/charte` publique (2026-07-16)
-- [ ] Validation humaine Président / rédaction
+- [x] Impératif langue FR correct uniquement (2026-07-27 · Président)
+- [ ] Validation humaine Président / rédaction (reste : deploy charte L1+)

@@ -14,15 +14,15 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
 
 <BaseLayout
   title={PACK_DATA.name}
-  description={`${PACK_DATA.name} — ${PACK_DATA.priceEurYear} €/an. Exports AN1T, méthode, briefings. Média civique LMDPT, sans paywall des résultats officiels.`}
-  keywords="Pack Data AN1T, export Sainte-Laguë, données électorales pédagogiques, LMDPT, pluralité premier tour"
+  description={`${PACK_DATA.name} — ${PACK_DATA.priceEurYear} €/an. Exports AN1T, méthode, dossiers. Média civique LMDPT, sans péage sur les résultats officiels.`}
+  keywords="lot de données AN1T, export Sainte-Laguë, données électorales pédagogiques, LMDPT, pluralité premier tour"
 >
   <nav class="meta" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a> → <a href="/soutenir">Soutenir</a> → Pack Data AN1T
+    <a href="/">Accueil</a> → <a href="/soutenir">Soutenir</a> → Lot de données AN1T
   </nav>
 
   <section class="hero-pack">
-    <p class="eyebrow">Produit data · LMDPT</p>
+    <p class="eyebrow">Offre données · LMDPT</p>
     <h2>{PACK_DATA.name}</h2>
     <p class="lead">{PACK_DATA.tagline}</p>
     <p class="price-line">
@@ -53,16 +53,16 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
     {
       !checkoutReady && (
         <p class="meta checkout-note">
-          Checkout Stripe non branché. Dès qu’un Payment Link est fourni au build (
-          <code>PUBLIC_LMDPT_PACK_CHECKOUT_URL</code>), le bouton passe en paiement direct.
+          Paiement en ligne non encore activé. Dès qu’un lien de paiement est fourni au
+          déploiement, le bouton ouvre le règlement direct.
         </p>
       )
     }
     {
       checkoutReady && checkoutIsTest && (
         <p class="meta checkout-note">
-          <strong>Stripe mode test</strong> — paiement simulé (carte 4242…). Bascule live = nouveaux
-          Payment Links + rebuild.
+          <strong>Mode essai Stripe</strong> — paiement simulé (carte de test). Passage en
+          production = nouveaux liens de paiement + reconstruction du site.
         </p>
       )
     }
@@ -82,7 +82,7 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
   </section>
 
   <section class="card" id="hors-scope">
-    <h3>Hors scope (volontairement)</h3>
+    <h3>Hors périmètre (volontairement)</h3>
     <ul>
       {PACK_DATA.notIncluded.map((item) => (
         <li>{item}</li>
@@ -102,8 +102,8 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
         <p class="meta">Jeux de sièges AN1T documentés, méthode reproductible.</p>
       </div>
       <div>
-        <h4>Rédactions data / OSINT léger</h4>
-        <p class="meta">Baseline pluralité T1 pour articles — attribution requise.</p>
+        <h4>Rédactions données &amp; veille ouverte</h4>
+        <p class="meta">Référence de pluralité du 1er tour pour articles — attribution requise.</p>
       </div>
       <div>
         <h4>Associations</h4>
@@ -120,12 +120,12 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
         avec lien vers lmdpt.iarbre.org.
       </li>
       <li>
-        <strong>Sur demande</strong> : republication presse, produits commerciaux, redistribution
+        <strong>Sur demande</strong> : republication presse, produits commerciaux, redistributions
         massives des exports.
       </li>
       <li>
         <strong>Interdit</strong> : présenter les simulations comme résultats officiels du Ministère
-        de l’Intérieur ; deepfakes ou désinformation.
+        de l’Intérieur ; hypertrucages ou désinformation.
       </li>
     </ul>
     <p class="meta">
@@ -155,10 +155,10 @@ const updated = new Date().toLocaleDateString('fr-FR', { dateStyle: 'long' });
       <dt>Dois-je payer pour l’atlas ?</dt>
       <dd>Non. Atlas, analyses et simulateur de base restent gratuits.</dd>
       <dt>C’est une prédiction 2027 ?</dt>
-      <dd>Non. Outil pédagogique de pluralité T1 — pas un ranking de candidats.</dd>
+      <dd>Non. Outil pédagogique de pluralité du 1er tour — pas un classement de candidats.</dd>
       <dt>Quand le paiement en ligne ?</dt>
       <dd>
-        Dès configuration d’un Payment Link Stripe (ou équivalent) + rebuild. En attendant : liste
+        Dès configuration d’un lien de paiement Stripe (ou équivalent) puis reconstruction du site. En attendant : liste
         d’attente GitHub.
       </dd>
       <dt>Facture / orga ?</dt>

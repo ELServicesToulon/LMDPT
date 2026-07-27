@@ -18,6 +18,9 @@ import {
   webPageJsonLd,
 } from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
+import { DOE_FR } from '../lib/doe';
+import GoogleSeoTools from '../components/GoogleSeoTools.astro';
+import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 
 const { title, description, ogImage, keywords, type, noindex } = Astro.props;
 const socialLinks = getPublicSocialLinks();
@@ -87,7 +90,11 @@ const commentThread =
     <link rel="alternate" hreflang="fr" href={meta.canonical} />
     <link rel="alternate" hreflang="x-default" href={meta.canonical} />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-images.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-news.xml" title="Google News" />
     <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <GoogleSeoTools />
     <meta property="og:type" content={meta.type === 'article' ? 'article' : 'website'} />
     <meta property="og:site_name" content={meta.siteName} />
     <meta property="og:title" content={meta.fullTitle} />
@@ -107,36 +114,43 @@ const commentThread =
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPage)} />
     <style is:global>
       /*
-        CONTRASTE COUPLÉ fond + texte (2026-07-15)
-        - Clair : encre noire sur fond crème/blanc
-        - Sombre (Android) : encre claire sur fond sombre
+        CONTRASTE COUPLÉ fond + texte (2026-07-27 renforcé)
+        - Clair : encre quasi pure sur papier clair (WCAG AAA corps)
+        - Sombre : encre claire sur fond très sombre
+        - Hero / croquis : rendu N&B (filter + assets /nb/)
         Jamais noir-sur-noir ni blanc-sur-blanc.
       */
       :root {
         color-scheme: light dark;
-        --bg: #f4ede4;
-        --fg: #0a0a0a;
-        --muted: #1a1814;
-        --accent: #0a2a40;
-        --accent-soft: #e6eef3;
-        --border: #b0a898;
+        --bg: #f7f4ef;
+        --fg: #000000;
+        --muted: #1c1c1c;
+        --accent: #061825;
+        --accent-soft: #e8eef3;
+        --border: #4a453c;
         --card: #ffffff;
         --on-accent: #ffffff;
-        --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 14px rgba(0, 0, 0, 0.08);
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1);
         --radius: 8px;
         --radius-lg: 12px;
+        --table-head-bg: #f0ebe3;
+        --table-stripe: #faf8f5;
+        --ink: #000000;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #12141a;
-          --fg: #f5f2eb;
-          --muted: #d8d4cc;
-          --accent: #8ec5e8;
-          --accent-soft: #1e2a35;
-          --border: #3a424c;
-          --card: #1a1e26;
-          --on-accent: #0c1016;
-          --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.4);
+          --bg: #0b0d11;
+          --fg: #faf8f5;
+          --muted: #e4e0d8;
+          --accent: #a8d4f0;
+          --accent-soft: #1a2430;
+          --border: #8a929c;
+          --card: #141820;
+          --on-accent: #0a0c10;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.5);
+          --table-head-bg: #1c222c;
+          --table-stripe: #12161e;
+          --ink: #faf8f5;
         }
       }
       @media (hover: none), (max-width: 900px) {
@@ -174,11 +188,29 @@ const commentThread =
         max-width: 100%;
         height: auto;
       }
+      /* Hero + croquis / galerie : noir & blanc + contraste encre */
+      .hero-visual img,
+      .hero-visual video,
+      .hero-img,
+      .hero-video,
+      .visual-gallery img,
+      .gallery-grid img,
+      .daily-gallery img,
+      figure.visual img,
+      .croquis img {
+        filter: grayscale(1) contrast(1.12);
+      }
       a {
         color: var(--accent);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.12em;
         transition: color 0.15s ease;
       }
-      a:hover { color: color-mix(in srgb, var(--accent) 70%, var(--fg)); }
+      a:hover { color: color-mix(in srgb, var(--accent) 55%, var(--fg)); }
+      a:focus-visible {
+        outline: 3px solid var(--fg);
+        outline-offset: 2px;
+      }
       /* Conteneur principal : largeur lecture + dual panels, edge-to-edge mobile */
       .wrap {
         --wrap-pad-x: 1.35rem;
@@ -776,6 +808,7 @@ const commentThread =
     </style>
   </head>
   <body>
+    <GoogleSeoBody />
     <!-- Skip link for keyboard and screen reader users (WCAG 2.2) -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
@@ -806,7 +839,7 @@ const commentThread =
           <a
             href="/observatoire-censure"
             aria-current={Astro.url.pathname.startsWith('/observatoire-censure') ? 'page' : undefined}
-            >Observatoire censure</a
+            >Observatoire de la censure</a
           >
           <a href="/contribuer" aria-current={Astro.url.pathname.startsWith('/contribuer') ? 'page' : undefined}>Contribuer</a>
           <a href="/charte" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
@@ -857,7 +890,7 @@ const commentThread =
       <footer>
         <p>
           Transparence des couleurs politiques des posts et intervenants.
-          Ligne <em>Democracy Over Elimination</em> — <a href="/charte">charte</a>.
+          Ligne <em>{DOE_FR}</em> — <a href="/charte">charte</a>.
         </p>
         <p>
           Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.

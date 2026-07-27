@@ -1,5 +1,5 @@
 /**
- * Couverture thématique programmes + liens open data (P10-4).
+ * Couverture thématique programmes + liens données ouvertes (P10-4).
  * Granularité : thème × candidat + sous-thèmes + datasets data.gouv du 1er tour.
  */
 import type { ProgramCandidateFile, ProgramMeasure, ProgramThemeId } from './program-types';
@@ -146,7 +146,7 @@ export function programRelatedDataGouvLinks(): ProgramDataGouvLink[] {
     {
       label: 'Atlas présidentielle 2022 (résultats 1er tour)',
       href: '/atlas/2022-presidentielle',
-      note: 'Granularité nationale + départements — open data Min. Intérieur via data.gouv',
+      note: 'Granularité nationale + départements — données ouvertes du ministère de l’Intérieur via data.gouv',
     },
     {
       label: 'Atlas présidentielle 2017',

@@ -1,7 +1,7 @@
 /** Métadonnées Open Graph / Twitter / JSON-LD — SEO moteurs + IA. */
 
 const DEFAULT_DESCRIPTION =
-  'Média civique du premier tour : pluralité des voix, open data officiels, Democracy Over Elimination. Présidentielle 2027, atlas électoral, programmes sourcés — sans sondages ni tier list.';
+  'Média civique du premier tour : pluralité des voix, données ouvertes officielles, la démocratie avant l’élimination. Présidentielle 2027, atlas électoral, programmes sourcés — sans sondages ni classement éliminatoire.';
 
 const DEFAULT_OG_IMAGE = '/brand/og-default.png';
 
@@ -10,9 +10,9 @@ const DEFAULT_KEYWORDS = [
   'premier tour',
   'élection présidentielle 2027',
   'pluralité électorale',
-  'open data élections',
+  'données ouvertes électorales',
   'data.gouv.fr',
-  'Democracy Over Elimination',
+  'démocratie avant élimination',
   'LMDPT',
   'Le Média du Premier Tour',
   'atlas électoral',
@@ -66,7 +66,7 @@ export function organizationJsonLd(siteUrl: string) {
     '@type': 'NewsMediaOrganization',
     '@id': `${base}/#organization`,
     name: SITE_NAME,
-    alternateName: ['LMDPT', 'Le Media du Premier Tour'],
+    alternateName: ['LMDPT', 'Le Média du Premier Tour'],
     url: `${base}/`,
     logo: {
       '@type': 'ImageObject',
@@ -82,7 +82,7 @@ export function organizationJsonLd(siteUrl: string) {
     knowsAbout: [
       'Élections françaises',
       'Premier tour',
-      'Open data électoral',
+      'Données ouvertes électorales',
       'Présidentielle 2027',
       'Pluralité politique',
     ],

@@ -19,35 +19,67 @@ const types = [
   { id: 'autre', label: 'Agence / numérique' },
 ] as const;
 
-/** Map label libre observatoire → badge couleur d’idée. */
+const FAMILY_TO_SLUG: Record<string, string> = {
+  'gauche-radicale': 'melenchon',
+  'social-democrate': 'parti-socialiste',
+  centre: 'attal',
+  droite: 'retailleau',
+  'droite-nationale': 'le-pen',
+  autre: 'pluraliste',
+};
+
+type ObsHueRef = { family?: string; label?: string };
+
+/** Map famille / label libre observatoire → badge couleur d’idée (aligné indépendance). */
+function hueFromFamily(family: string | undefined, label: string | undefined): HueBadge | null {
+  const fam = (family ?? '').trim();
+  if (!fam || !(fam in FAMILY_COLORS)) return null;
+  return {
+    slug: FAMILY_TO_SLUG[fam] ?? 'pluraliste',
+    label: (label ?? fam).trim() || fam,
+    color: FAMILY_COLORS[fam],
+  };
+}
+
 function hueFromObsLabel(label: string | undefined): HueBadge {
   const raw = (label ?? 'autre').trim();
   const n = raw
     .toLowerCase()
     .normalize('NFD')
     .replace(/\p{M}/gu, '');
+  if (/nationale|rn|le pen|bardella/.test(n)) {
+    return { slug: 'le-pen', label: raw, color: FAMILY_COLORS['droite-nationale'] };
+  }
   if (/gauche|lfi|insoumis|radical/.test(n)) {
-    return { slug: 'melenchon', label: raw, color: FAMILY_COLORS['gauche-radicale'] ?? '#cc2443' };
+    return { slug: 'melenchon', label: raw, color: FAMILY_COLORS['gauche-radicale'] };
   }
   if (/social|ps|glucksmann/.test(n)) {
-    return { slug: 'parti-socialiste', label: raw, color: FAMILY_COLORS['social-democrate'] ?? '#ff8080' };
+    return { slug: 'parti-socialiste', label: raw, color: FAMILY_COLORS['social-democrate'] };
   }
   if (/centre|macron|renaissance/.test(n)) {
-    return { slug: 'attal', label: raw, color: '#ffeb00' };
-  }
-  if (/nationale|rn|le pen|bardella|extreme/.test(n)) {
-    return { slug: 'le-pen', label: raw, color: FAMILY_COLORS['droite-nationale'] ?? '#0d378a' };
+    return { slug: 'attal', label: raw, color: FAMILY_COLORS.centre };
   }
   if (/droite|lr|republicain/.test(n)) {
-    return { slug: 'retailleau', label: raw, color: FAMILY_COLORS.droite ?? '#0066cc' };
+    return { slug: 'retailleau', label: raw, color: FAMILY_COLORS.droite };
   }
   if (/ecolo|vert|climat/.test(n)) {
     return { slug: 'ecolo', label: raw, color: '#00c000' };
   }
-  // fallback heuristique texte, sinon autre
   const fromText = hueBadgesForText(raw, 1);
   if (fromText[0] && fromText[0].slug !== 'pluraliste') return fromText[0];
-  return { slug: 'pluraliste', label: raw || 'Autre', color: FAMILY_COLORS.autre ?? '#718096' };
+  return { slug: 'pluraliste', label: raw || 'Autre', color: FAMILY_COLORS.autre };
+}
+
+function resolveObsHue(entry: {
+  political_hue?: ObsHueRef;
+  political_hue_label?: string;
+  display_name?: string;
+  motif_officiel?: string;
+}): HueBadge {
+  const fromFamily = hueFromFamily(entry.political_hue?.family, entry.political_hue?.label);
+  if (fromFamily) return fromFamily;
+  if (entry.political_hue_label) return hueFromObsLabel(entry.political_hue_label);
+  return hueFromObsLabel(`${entry.display_name ?? ''} ${entry.motif_officiel ?? ''}`);
 }
 ---
 
@@ -99,7 +131,7 @@ function hueFromObsLabel(label: string | undefined): HueBadge {
             <h3>{t.label}</h3>
             <div class="obs-media-grid">
               {items.map((m) => {
-                const hue = hueFromObsLabel(m.political_hue_label);
+                const hue = resolveObsHue(m);
                 return (
                 <article
                   class="obs-card"
@@ -146,10 +178,12 @@ function hueFromObsLabel(label: string | undefined): HueBadge {
     <div class="obs-media-grid">
       {
         data.influencers.map((inf) => {
-          const hue = hueFromObsLabel(
-            (inf as { political_hue_label?: string }).political_hue_label ??
-              `${inf.display_name} ${inf.motif_officiel ?? ''}`,
-          );
+          const hue = resolveObsHue(inf as {
+            political_hue?: ObsHueRef;
+            political_hue_label?: string;
+            display_name?: string;
+            motif_officiel?: string;
+          });
           return (
           <article
             class="obs-inf-card"
@@ -187,11 +221,16 @@ function hueFromObsLabel(label: string | undefined): HueBadge {
       <li>Période : à partir du <strong>7 mai 2017</strong> (présidentielle).</li>
       <li>
         Inclusion : impact diffusion France, au moins une source vérifiable ; doute →
-        <em>partial</em>.
+        <em>vérification partielle</em>.
       </li>
       <li>
         Motif <strong>officieux</strong> toujours étiqueté lecture secondaire — jamais comme
         fait LMDPT.
+      </li>
+      <li>
+        Teintes politiques : familles pédagogiques du 1er tour — mêmes couleurs que
+        <a href="/independance-medias">indépendance des médias</a> et la
+        <a href="/charte#couleurs">charte</a>. Pas une carte d’adhésion.
       </li>
       <li>
         Voir aussi : <a href="/liberte-d-expression">hub Liberté d’expression</a>,

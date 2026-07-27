@@ -1,6 +1,6 @@
 # Le Média du Premier Tour (LMDPT)
 
-> **Democracy Over Elimination** — média civique, premier tour, faits sourcés via open data.
+> **La démocratie avant l’élimination** — média civique, premier tour, faits sourcés via open data.
 
 Couvrir le premier tour avec des données publiques officielles (`data.gouv.fr`), sans éliminer ni caricaturer — la démocratie avant le spectacle.
 

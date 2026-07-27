@@ -13,7 +13,7 @@ const updated = new Date(study.updated).toLocaleDateString('fr-FR', { dateStyle:
 
 <BaseLayout
   title={study.title}
-  description="Chemins de droit pour une Assemblée 100 % 1er tour ou une dose proportionnelle ; études de cas 2017–2022–2024 ; gouvernance non bloquée sans 49.3 ni décrets de contournement. Synthèse documentaire DOE."
+  description="Chemins de droit pour une Assemblée 100 % 1er tour ou une dose proportionnelle ; études de cas 2017–2022–2024 ; gouvernance non bloquée sans 49.3 ni décrets de contournement. Synthèse documentaire (démocratie avant l’élimination)."
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a> → Droit électoral & gouvernance AN1T
@@ -34,7 +34,7 @@ const updated = new Date(study.updated).toLocaleDateString('fr-FR', { dateStyle:
       <li><a href="#scenarios">3. Scénarios 100 % / doses — avantages & inconvénients</a></li>
       <li><a href="#cas">4. Études de cas (2017, 2022, 2024)</a></li>
       <li><a href="#gouvernance">5. Gouvernance non bloquée (sans 49.3 ni décrets)</a></li>
-      <li><a href="#checklist">6. Checklist opérateur</a></li>
+      <li><a href="#checklist">6. Liste de contrôle opérateur</a></li>
     </ol>
   </section>
 
@@ -335,7 +335,7 @@ const updated = new Date(study.updated).toLocaleDateString('fr-FR', { dateStyle:
 
   <!-- 6. CHECKLIST -->
   <section class="card" id="checklist">
-    <h3>6. Checklist — chemin d’application</h3>
+    <h3>6. Liste de contrôle — chemin d’application</h3>
     <ol class="checklist">
       {study.checklist_operateurs.map((c) => <li>{c}</li>)}
     </ol>

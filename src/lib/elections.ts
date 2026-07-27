@@ -27,7 +27,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2027-04-18',
     tour: 1,
     distorsion_note:
-      'Projection : Assemblée 1er tour présidentiel (Sainte-Laguë) vs législatives 2027 à venir — fil directeur DOE.',
+      'Projection : Assemblée 1er tour présidentiel (Sainte-Laguë) vs législatives 2027 à venir — fil directeur « démocratie avant l’élimination ».',
   },
   {
     slug: '2024-legislatives',

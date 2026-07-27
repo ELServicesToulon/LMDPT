@@ -1,6 +1,6 @@
 # TODO — Le Média du Premier Tour
 
-> **Democracy Over Elimination** — média civique, données publiques, premier tour.  
+> **La démocratie avant l’élimination** — média civique, données publiques, premier tour.  
 > Créé le **2026-06-27**. Source de cadrage : [conversation Grok](https://grok.com/share/c2hhcmQtNA_5c541291-4ab3-4a52-84ab-4306f008bf9a).
 
 ---
@@ -13,7 +13,7 @@ Couvrir le premier tour avec des faits sourcés (open data), sans éliminer ni c
 
 ## Phase 0 — Fondations (maintenant)
 
-- [x] Valider le périmètre éditorial (sujets, ton, ligne « Democracy Over Elimination ») → `docs/EDITORIAL.md`
+- [x] Valider le périmètre éditorial (sujets, ton, ligne « La démocratie avant l’élimination ») → `docs/EDITORIAL.md`
 - [x] Choisir la stack → **Astro 7 + TypeScript**
 - [x] Initialiser le dépôt Git + `.gitignore`
 - [x] Définir la structure du repo (`src/`, `docs/`, `data/cache/`…)

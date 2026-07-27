@@ -55,14 +55,18 @@ export interface IndependanceMediasDataset {
   media: IndependanceMediaEntry[];
 }
 
-/** Couleurs pédagogiques par famille (alignées observatoire / 1er tour). */
+/**
+ * Couleurs pédagogiques par famille — alignées sur FIRST_ROUND_HUES
+ * (`comment-politics.ts`) pour cohérence site / observatoire / indépendance.
+ * centre = Attal/Renaissance · droite-nationale = Le Pen/RN · autre = pluraliste.
+ */
 export const FAMILY_COLORS: Record<string, string> = {
-  'gauche-radicale': '#cc2443',
-  'social-democrate': '#ff8080',
-  centre: '#1e4d6b',
-  droite: '#0066cc',
-  'droite-nationale': '#5c4a72',
-  autre: '#718096',
+  'gauche-radicale': '#cc2443', // melenchon
+  'social-democrate': '#ff8080', // parti-socialiste
+  centre: '#ffeb00', // attal
+  droite: '#0066cc', // retailleau
+  'droite-nationale': '#0d378a', // le-pen / RN
+  autre: '#5a6570', // pluraliste
 };
 
 export const FUNDING_KIND_LABELS: Record<FundingKind, string> = {

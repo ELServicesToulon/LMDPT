@@ -16,6 +16,7 @@ import {
   type HeroDailyOverride,
   type VisualDailyPool,
 } from '../lib/visual-daily';
+import { DOE_FR } from '../lib/doe';
 import visualDailyPool from '../../public/illustrations/2027/visual-daily-pool.json';
 import heroDailyOverrideJson from '../../public/illustrations/2027/hero-daily-override.json';
 
@@ -26,6 +27,11 @@ const dailySet = applyHeroDailyOverride(
   heroDailyOverrideJson as HeroDailyOverride,
   dailyVisual.dayKey,
 );
+const dailyBadgeLabel =
+  dailySet.gallery?.[0]?.title?.trim() ||
+  dailySet.heroAlt?.split('—')[0]?.trim() ||
+  '1er tour';
+
 /** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
 const dualHome = buildScrutinDual('2022-presidentielle');
 
@@ -63,8 +69,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 
 <BaseLayout
   title="Accueil"
-  description="Le 1er tour est la photo réelle de la France politique. Atlas open data, Assemblée AN1T, dossier 2027 (18 avril) — Democracy Over Elimination : faits sourcés, zéro sondage « favori », zéro tier list."
-  keywords="premier tour, présidentielle 2027, LMDPT, open data élections, pluralité, Democracy Over Elimination, atlas électoral, alerte citoyenne, programmes candidats"
+  description="Le 1er tour est la photo réelle de la France politique. Atlas en données ouvertes, Assemblée AN1T, dossier 2027 (18 avril) — la démocratie avant l’élimination : faits sourcés, zéro sondage « favori », zéro classement éliminatoire."
+  keywords="premier tour, présidentielle 2027, LMDPT, données ouvertes électorales, pluralité, démocratie avant élimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} />
   <!--
@@ -75,11 +81,11 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="hero" id="top" aria-labelledby="hero-title" data-daily-visual-set={dailySet.id}>
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      <span>Média civique · open data</span>
-      <span class="sep">•</span>
-      <strong>Democracy Over Elimination</strong>
-      <span class="sep">•</span>
-      <span id="daily-visual-badge" class="daily-visual-badge">Visuel du jour · {dailySet.id}</span>
+      <span>Média civique · données ouvertes</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <strong>{DOE_FR}</strong>
+      <span class="sep" aria-hidden="true">·</span>
+      <span id="daily-visual-badge" class="daily-visual-badge">Visuel du jour · {dailyBadgeLabel}</span>
     </div>
 
     <div class="hero-grid">
@@ -125,8 +131,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
         </h1>
 
         <p class="hero-lead">
-          Ouvre l’atlas, simule l’Assemblée du 1er tour, suis 2027.
-          <strong>Faits officiels</strong> — zéro sondage «&nbsp;favori&nbsp;», zéro tier list.
+          Ouvrez l’atlas, simulez l’Assemblée du 1er tour, suivez 2027.{' '}
+          <strong>Faits officiels</strong> — zéro sondage «&nbsp;favori&nbsp;», zéro classement
+          éliminatoire.
         </p>
 
         <div class="cta-row" role="group" aria-label="Actions principales">
@@ -179,7 +186,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
           <div class="pilier-kicker">Pilier 3</div>
           <div class="card-title">Vote pour, pas contre</div>
           <div class="card-desc">
-            Democracy Over Elimination. Zéro favori. Zéro tier list.
+            {DOE_FR}. Zéro favori. Zéro classement éliminatoire.
           </div>
         </div>
       </a>
@@ -205,7 +212,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <span aria-hidden="true">·</span>
       <a href="/liberte-d-expression">Liberté d’expression</a>
       <span aria-hidden="true">·</span>
-      <a href="/observatoire-censure">Observatoire censure</a>
+      <a href="/observatoire-censure">Observatoire de la censure</a>
       <span aria-hidden="true">·</span>
       <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
       <span aria-hidden="true">·</span>
@@ -557,7 +564,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <li><strong>Modératrice IA</strong> — aucune autorité religieuse ou idéologique ne passe les fourches caudines ; les idées politiques du débat restent bienvenues.</li>
       <li>Sources officielles traçables (<a href="/sources">data.gouv.fr</a>)</li>
       <li>Comparaisons factuelles, sans classement éliminatoire</li>
-      <li><strong>Democracy Over Elimination</strong> — pluralité du 1er tour, sans ranking ni favori.</li>
+      <li><strong>{DOE_FR}</strong> — pluralité du 1er tour, sans classement ni favori.</li>
       <li>Lisibilité maximale (WCAG 2.2 AA+), revue humaine après filtre IA.</li>
       <li>Document complet : <a href="/charte"><strong>Charte publique</strong></a>.</li>
     </ul>
@@ -567,7 +574,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="visuals-section" id="visuels-2027" aria-labelledby="visuels-2027-title">
     <h3 class="section-title" id="visuels-2027-title">Croquis du jour &amp; animations — Élection 2027</h3>
     <p class="lead" style="max-width: 52rem;">
-      Chaque jour, un autre regard sur le 1er tour : pluralité, mécanismes, open data.
+      Chaque jour, un autre regard sur le 1er tour : pluralité, mécanismes, données ouvertes.{' '}
       <strong>Croquis encre + aquarelle</strong> façon fil X — légers sur les <em>mécanismes</em>, jamais sur les personnes.
       Zéro signe religieux, zéro logo de parti, zéro caricature de camp.
     </p>

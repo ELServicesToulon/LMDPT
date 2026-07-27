@@ -330,7 +330,7 @@ export function buildScrutinDual(slug: string): ScrutinDualPair | null {
       firstRoundMeta:
         'Voix du 1er tour présidentiel regroupées en blocs (proximité de programmes), puis Sainte-Laguë sur 577 sièges. Ce n’est pas le résultat du second tour présidentiel — c’est la photo proportionnelle de la pluralité T1.',
       realMeta: following.pending
-        ? 'Les législatives suivent toujours la présidentielle. Résultats à publier après le scrutin — fil directeur DOE : documenter d’abord le 1er tour.'
+        ? 'Les législatives suivent toujours la présidentielle. Résultats à publier après le scrutin — fil directeur « démocratie avant l’élimination » : documenter d’abord le 1er tour.'
         : `Sièges réels après les législatives qui ont suivi cette présidentielle. ${following.source ?? ''}`.trim(),
       firstRound: first,
       real: following.rows,

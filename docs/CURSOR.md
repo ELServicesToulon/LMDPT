@@ -4,7 +4,7 @@ Tu travailles sur **Le Média du Premier Tour** (`le-media-du-premier-tour` / [L
 
 ## Mission
 
-Média civique indépendant **Democracy Over Elimination** :
+Média civique indépendant **La démocratie avant l’élimination** :
 
 - Représenter exhaustivement les résultats du **premier tour** (présidentielles, législatives).
 - Montrer que le 1er tour est la photographie la plus fidèle de la pluralité nationale.

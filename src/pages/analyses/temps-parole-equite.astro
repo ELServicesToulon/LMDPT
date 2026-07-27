@@ -1,7 +1,7 @@
 ---
 /**
  * Temps de parole — indices d'équité d'exposition (LMDPT)
- * Snapshot : src/data/temps-parole-equite.json (Arcom open data)
+ * Snapshot : src/data/temps-parole-equite.json (données ouvertes Arcom)
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import data from '../../data/temps-parole-equite.json';
@@ -22,7 +22,7 @@ const periodLabel =
 
 <BaseLayout
   title="Temps de parole et équité d'exposition"
-  description="Indices d'équité du temps de parole médiatique (Arcom open data) comparés à un étalon — synthèse LMDPT, pas de prédiction électorale."
+  description="Indices d'équité du temps de parole médiatique (données ouvertes Arcom) comparés à un étalon — synthèse LMDPT, pas de prédiction électorale."
   type="website"
   keywords="temps de parole, Arcom, pluralisme, équité médiatique, exposition, LMDPT, municipales 2026"
   commentThread="temps-parole-equite"
@@ -36,7 +36,7 @@ const periodLabel =
   </nav>
 
   <section class="tpe-intro" aria-labelledby="tpe-title">
-    <p class="eyebrow">Pluralisme médiatique · open data Arcom</p>
+    <p class="eyebrow">Pluralisme médiatique · données ouvertes Arcom</p>
     <h1 id="tpe-title">{data.title}</h1>
     <p class="meta">
       Mise à jour : <time datetime={data.updated}>{updated}</time>
@@ -177,7 +177,7 @@ const periodLabel =
     <h2 id="methode-title">Méthode</h2>
     <ol>
       <li>
-        <strong>Numérateur.</strong> Minutes de temps de parole agrégées (open data Arcom), top
+        <strong>Numérateur.</strong> Minutes de temps de parole agrégées (données ouvertes Arcom), top
         partis hors totaux « exécutif / président ».
       </li>
       <li>

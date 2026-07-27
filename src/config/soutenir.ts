@@ -18,14 +18,14 @@ export type SupportTier = {
 export const SUPPORT_TIERS: SupportTier[] = [
   {
     id: 'cafe',
-    label: 'Un café data',
+    label: 'Un café pour les données',
     amountEur: 3,
     period: 'month',
-    blurb: 'Hébergement & sync open data.',
+    blurb: 'Hébergement & synchronisation des données ouvertes.',
   },
   {
     id: 'doe',
-    label: 'Soutien DOE',
+    label: 'Soutien ligne éditoriale',
     amountEur: 5,
     period: 'month',
     blurb: 'Atlas + analyses + maintenance site.',
@@ -35,7 +35,7 @@ export const SUPPORT_TIERS: SupportTier[] = [
     label: 'Pluralité',
     amountEur: 10,
     period: 'month',
-    blurb: 'Simulateurs, exports & briefings.',
+    blurb: 'Simulateurs, exports et notes de synthèse.',
   },
 ];
 
@@ -56,29 +56,29 @@ export function donateReady(): boolean {
   }
 }
 
-/** Pack Data AN1T — SKU hero monétisation pro (phase C). */
+/** Lot de données AN1T — offre monétisation pro (phase C). */
 export const PACK_DATA = {
   id: 'pack-data-an1t',
-  name: 'Pack Data AN1T',
+  name: 'Lot de données AN1T',
   priceEurYear: 49,
   currency: 'EUR',
   status: 'preorder_interest' as const, // pas encore de checkout live
   path: '/pack-data-an1t',
-  tagline: 'Données & exports pédagogiques autour de l’Assemblée du Premier Tour',
+  tagline: 'Données et exports pédagogiques autour de l’Assemblée du Premier Tour',
   includes: [
     'Exports CSV / JSON / PNG des simulations Sainte-Laguë (seuils documentés)',
-    'Accès guide méthode AN1T (blocs, seuil, Sainte-Laguë) + liens atlas open data',
-    '2 briefings PDF / an (pluralité T1, hors promesse électorale)',
-    'Licence usage non commercial / pédagogique (attribution LMDPT)',
+    'Accès au guide de méthode AN1T (blocs, seuil, Sainte-Laguë) + liens atlas en données ouvertes',
+    '2 dossiers PDF / an (pluralité du 1er tour, hors promesse électorale)',
+    'Licence d’usage non commercial / pédagogique (attribution LMDPT)',
   ],
   notIncluded: [
     'Données nominatives d’électeurs',
     'Prédictions ou classements éliminatoires',
     'Droit de republication presse sans accord écrit',
-    'Support prioritaire 24/7 ou API haute volumétrie',
+    'Assistance prioritaire 24 h/24 ou API à très fort volume',
   ],
   interestIssueUrl:
-    'https://github.com/ELServicesToulon/LMDPT/issues/new?title=Pack%20Data%20AN1T%20—%20intérêt%2049%E2%82%AC&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%C2%B7e%20par%20le%20Pack%20Data%20AN1T%20(49%20%E2%82%AC%2Fan).%0A%0AProfil%20%3A%20%0AUsage%20pr%C3%A9vu%20%3A%20%0A',
+    'https://github.com/ELServicesToulon/LMDPT/issues/new?title=Lot%20de%20donn%C3%A9es%20AN1T%20%E2%80%94%20int%C3%A9r%C3%AAt%2049%E2%82%AC&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%C2%B7e%20par%20le%20lot%20de%20donn%C3%A9es%20AN1T%20(49%20%E2%82%AC%2Fan).%0A%0AProfil%20%3A%20%0AUsage%20pr%C3%A9vu%20%3A%20%0A',
 };
 
 /** Payment Link Stripe pack (optionnel, build-time). */

@@ -4,19 +4,19 @@ import { FIRST_ROUND_HUES } from '../lib/comment-politics';
 import { MODERATOR_CHIEF_POLICY } from '../lib/moderation-gate';
 
 const hues = FIRST_ROUND_HUES;
-const updated = '2026-07-16';
+const updated = '2026-07-27';
 ---
 
 <BaseLayout
   title="Charte"
-  description="Charte complète LMDPT — zéro biais, transparence des couleurs politiques, modératrice IA, Democracy Over Elimination."
+  description="Charte complète LMDPT — zéro biais, transparence des couleurs politiques, modératrice IA, démocratie avant l’élimination."
 >
   <article class="charte">
     <header class="charte-hero card">
       <p class="eyebrow">Document public · mis à jour {updated}</p>
       <h1>Charte du Média du Premier Tour</h1>
       <p class="lead">
-        <strong>Democracy Over Elimination</strong> — la démocratie avant le spectacle du duel.<br />
+        <strong>La démocratie avant l’élimination</strong> — la démocratie avant le spectacle du duel.<br />
         <em>Zéro biais · zéro parti pris · transparence des couleurs politiques.</em>
       </p>
       <p class="meta">
@@ -28,10 +28,10 @@ const updated = '2026-07-16';
         <a href="#zero-biais">2. Zéro biais</a>
         <a href="#couleurs">3. Couleurs politiques</a>
         <a href="#moderatrice">4. Modératrice IA</a>
-        <a href="#doe">5. Democracy Over Elimination</a>
+        <a href="#doe">5. La démocratie avant l’élimination</a>
         <a href="#debats">6. Débats &amp; commentaires</a>
         <a href="#perimetre">7. Périmètre</a>
-        <a href="#ton">8. Ton</a>
+        <a href="#ton">8. Ton &amp; langue</a>
         <a href="#engagements">9. Engagements</a>
         <a href="#refus">10. Ce que nous refusons</a>
       </nav>
@@ -40,7 +40,7 @@ const updated = '2026-07-16';
     <section id="vision" class="card">
       <h2>1. Vision</h2>
       <p>
-        Couvrir le <strong>premier tour</strong> avec des faits sourcés (open data), sans éliminer ni caricaturer
+        Couvrir le <strong>premier tour</strong> avec des faits sourcés (données ouvertes), sans éliminer ni caricaturer
         les candidats et forces politiques.
       </p>
       <p>
@@ -189,14 +189,14 @@ const updated = '2026-07-16';
     </section>
 
     <section id="doe" class="card">
-      <h2>5. Principes Democracy Over Elimination</h2>
+      <h2>5. Principes — la démocratie avant l’élimination</h2>
       <ol>
         <li>
           <strong>Aucun candidat n’est « éliminé »</strong> par le média avant le scrutin — tous les candidats
           officiellement déclarés ont une fiche équivalente si les données existent.
         </li>
         <li>
-          <strong>Pas de « tier list »</strong> ni de notation subjective présentée comme objective.
+          <strong>Pas de classement éliminatoire</strong> ni de notation subjective présentée comme objective.
         </li>
         <li>
           <strong>Les absences de données</strong> sont affichées clairement (pas de silence qui suggère un
@@ -230,7 +230,7 @@ const updated = '2026-07-16';
             </tr>
             <tr>
               <td>Pas de classement éliminatoire</td>
-              <td>Interdiction de tier list, notation ou caricature</td>
+              <td>Interdiction de classement éliminatoire, notation ou caricature</td>
             </tr>
             <tr>
               <td>Fait / opinion</td>
@@ -290,9 +290,15 @@ const updated = '2026-07-16';
     </section>
 
     <section id="ton" class="card">
-      <h2>8. Ton</h2>
+      <h2>8. Ton &amp; langue</h2>
       <ul>
         <li><strong>Sobre, civique, accessible</strong> — français professionnel, phrases claires.</li>
+        <li>
+          <strong>Français correct uniquement</strong> — impératif : tout contenu éditorial public
+          (site, journal, drafts prêts à publier, libellés visibles) est rédigé en{' '}
+          <strong>bon français</strong>. Pas d’anglais éditorial, pas de franglais, pas d’anglicismes
+          inutiles. Citations et noms propres dans leur langue d’origine restent autorisés.
+        </li>
         <li>
           <strong>Neutre factuel</strong> sur les données ; prise de position explicite uniquement dans la
           rubrique ligne / charte, jamais déguisée en fait.
@@ -304,7 +310,7 @@ const updated = '2026-07-16';
     <section id="engagements" class="card">
       <h2>9. Engagements de conformité</h2>
       <ul>
-        <li>Licences open data respectées par ressource (page <a href="/sources">Sources</a>).</li>
+        <li>Licences de données ouvertes respectées par ressource (page <a href="/sources">Sources</a>).</li>
         <li>
           <a href="/mentions-legales">Mentions légales</a> et
           <a href="/confidentialite"> politique de confidentialité</a>.
@@ -319,9 +325,10 @@ const updated = '2026-07-16';
       <ul>
         <li>Sondages présentés comme prédictions</li>
         <li>Propagande partisane ou prise de position déguisée en fait</li>
-        <li>Tier lists, favoris, « vainqueurs » annoncés</li>
+        <li>Classements éliminatoires, favoris, « vainqueurs » annoncés</li>
         <li>Laisser passer une autorité religieuse ou idéologique totalisante</li>
         <li>Publication automatique sans revue (filtre IA puis file humaine)</li>
+        <li>Anglais éditorial, franglais ou français incorrect sur les surfaces publiques</li>
       </ul>
     </section>
 

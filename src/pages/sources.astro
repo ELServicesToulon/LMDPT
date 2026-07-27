@@ -23,13 +23,13 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
   description="Traçabilité éditoriale — jeux de données data.gouv.fr utilisés pour le premier tour."
 >
   <section>
-    <h2>Sources open data</h2>
+    <h2>Sources en données ouvertes</h2>
     <p class="meta">
       Dernière synchronisation : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
       (fuseau Europe/Paris). Régénérer : <code>npm run sync:data</code>.
     </p>
     <p class="meta">
-      <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire, Blocage immédiat. (Sauf live YouTube)
+      <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire : blocage immédiat. (sauf direct YouTube)
     </p>
   </section>
 
@@ -47,7 +47,7 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     <div class="journal-table-wrap" role="region" aria-label="Journal des jeux de données" tabindex="0">
       <table class="journal-table">
         <caption class="table-caption">
-          Journal des jeux open data intégrés au site (date, pages, source, licence, commande de sync).
+          Journal des jeux de données ouvertes intégrés au site (date, pages, source, licence, commande de sync).
         </caption>
         <thead>
           <tr>
@@ -304,45 +304,65 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
   .journal-table-wrap {
     overflow: auto;
     margin-top: 1rem;
-    max-height: min(60vh, 28rem);
-    border: 1px solid var(--border);
+    max-height: min(70vh, 36rem);
+    border: 2px solid var(--border);
     border-radius: 8px;
     outline-offset: 2px;
+    background: var(--card);
+    color: var(--fg);
   }
   .journal-table-wrap:focus {
-    outline: 2px solid var(--accent, #2c5282);
+    outline: 3px solid var(--fg);
   }
   .table-caption {
     caption-side: top;
     text-align: left;
-    padding: 0.5rem 0.65rem;
-    font-size: 0.82rem;
-    color: var(--muted);
+    padding: 0.55rem 0.7rem;
+    font-size: 0.86rem;
+    color: var(--fg);
+    font-weight: 600;
     line-height: 1.4;
+    background: var(--table-head-bg, var(--card));
+    border-bottom: 1px solid var(--border);
   }
   .journal-table {
     width: 100%;
     border-collapse: collapse;
     font-family: system-ui, sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.92rem;
+    color: var(--fg);
   }
   .journal-table th,
   .journal-table td {
     border: 1px solid var(--border);
-    padding: 0.55rem 0.65rem;
+    padding: 0.6rem 0.7rem;
     vertical-align: top;
     text-align: left;
+    color: var(--fg);
+  }
+  .journal-table tbody tr:nth-child(even) {
+    background: var(--table-stripe, transparent);
   }
   .journal-table thead th {
     position: sticky;
     top: 0;
     z-index: 1;
-    background: var(--card);
-    font-size: 0.78rem;
+    background: var(--table-head-bg, var(--card));
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    color: var(--fg);
+    font-weight: 700;
+    box-shadow: 0 2px 0 var(--border);
+  }
+  .journal-table td strong {
+    color: var(--fg);
+    font-weight: 700;
+  }
+  .journal-table .note,
+  .journal-table .meta {
     color: var(--muted);
-    box-shadow: 0 1px 0 var(--border);
+    font-weight: 500;
   }
   .methodo-blocs .methodo-lead {
     max-width: 52rem;

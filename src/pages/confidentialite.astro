@@ -4,11 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Confidentialité"
-  description="Politique de confidentialité — Le Média du Premier Tour. Pas de cookies publicitaires ni d'analytics tiers."
+  description="Politique de confidentialité — Le Média du Premier Tour. Analytics Google optionnels (désactivés par défaut)."
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 26 juillet 2026</p>
+    <p class="meta">Dernière mise à jour : 27 juillet 2026</p>
   </section>
 
   <section class="card">
@@ -102,10 +102,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="card">
     <h3>Cookies et traceurs</h3>
     <p>
-      LMDPT ne dépose pas de cookies analytics ou publicitaires. Cookie de session
-      <code>lmdpt_session</code> uniquement si vous vous connectez (HttpOnly, Secure en HTTPS).
-      L'hébergeur (OVH / reverse-proxy) peut enregistrer des logs techniques (adresses IP, horodatage).
-      Le widget Giscus (rubrique Débats) est soumis à la politique GitHub ci-dessus.
+      <strong>Par défaut</strong>, LMDPT ne dépose pas de cookies analytics ou publicitaires.
+      Cookie de session <code>lmdpt_session</code> uniquement si vous vous connectez (HttpOnly,
+      Secure en HTTPS). L’hébergeur (OVH / reverse-proxy) peut enregistrer des logs techniques
+      (adresses IP, horodatage). Le widget Giscus (rubrique Débats) est soumis à la politique GitHub
+      ci-dessus.
+    </p>
+    <p>
+      <strong>Outils Google de référencement</strong> (Search Console) : la vérification de
+      propriété n’installe pas de cookie lecteur. Les sitemaps et données structurées sont des
+      fichiers publics sans traceur.
+    </p>
+    <p>
+      <strong>Google Analytics 4 / Tag Manager</strong> : désactivés tant qu’aucun identifiant
+      n’est configuré au build. S’ils sont activés un jour, le site utilisera le Consent Mode v2
+      (stockage analytics refusé par défaut) et cette page sera mise à jour avec la base légale
+      (consentement) et le sous-traitant Google Ireland. Voir <code>docs/GOOGLE-SEO.md</code>.
     </p>
   </section>
 

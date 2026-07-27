@@ -54,7 +54,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'gouvernance-an1t-droit',
     title: 'Droit électoral, AN1T et gouvernance non bloquée',
     description:
-      'Corpus juridique (Constitution, Code électoral), chemins pour 100 % 1er tour ou dose proportionnelle, études de cas 2017–2022–2024, gouvernance sans 49.3 ni décrets de contournement. Synthèse documentaire DOE.',
+      'Corpus juridique (Constitution, Code électoral), chemins pour 100 % 1er tour ou dose proportionnelle, études de cas 2017–2022–2024, gouvernance sans 49.3 ni décrets de contournement. Synthèse documentaire (démocratie avant l’élimination).',
     date: '2026-07-17',
     href: '/analyses/gouvernance-an1t-droit',
   },
@@ -70,7 +70,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'temps-parole-equite',
     title: 'Temps de parole — équité d’exposition',
     description:
-      'Indices d’équité du temps de parole (open data Arcom) vs étalon — sur/sous-exposition documentée, pas de prédiction.',
+      'Indices d’équité du temps de parole (données ouvertes Arcom) vs étalon — sur/sous-exposition documentée, pas de prédiction.',
     date: '2026-07-26',
     href: '/analyses/temps-parole-equite',
   },
@@ -78,7 +78,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'presidentielle-2027-preparation',
     title: 'Présidentielle 2027 — préparation',
     description:
-      'Calendrier officialisé (18 avril / 2 mai 2027), veille factuelle et feuille de route open data — sans prédiction ni sondage.',
+      'Calendrier officialisé (18 avril / 2 mai 2027), veille factuelle et feuille de route en données ouvertes — sans prédiction ni sondage.',
     date: '2026-07-02',
     href: '/analyses/presidentielle-2027-preparation',
     preparation: true,

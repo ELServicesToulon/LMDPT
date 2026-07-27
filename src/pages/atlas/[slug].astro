@@ -86,7 +86,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         <span aria-hidden="true">·</span>
         <a href="/analyses/assemblee-premier-tour">🌈 Pluralité (AN1T)</a>
         <span aria-hidden="true">·</span>
-        <a href="/charte">🗳️ Democracy Over Elimination</a>
+        <a href="/charte">🗳️ La démocratie avant l’élimination</a>
         <span aria-hidden="true">·</span>
         <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
       </nav>
@@ -124,7 +124,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
               {deptReadiness?.stub
                 ? `pipeline stub enregistré (${deptReadiness.dept_count} dept) — import data.gouv après le scrutin (miroir 2017/2022).`
                 : 'national + départements si disponibles.'}{' '}
-              National projection uniquement pour l’instant.
+              National projection uniquement pour l’instant.{' '}
               <strong> Géographie circo :</strong> index {geoIndex.count} circonscriptions prêt
               (base <a href="/atlas/2024-legislatives">législatives 2024</a>) — mapping post-scrutin.
             </span>
@@ -175,7 +175,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         <strong>Projection pédagogique uniquement</strong> — pas de données officielles du scrutin 2027.
         Aucune prédiction de résultat. Voir les piliers
         <a href="/">Sécurité &amp; faits</a> ·
-        <a href="/charte">Democracy Over Elimination</a>.
+        <a href="/charte">La démocratie avant l’élimination</a>.
       </p>
       <p>
         Ce graphique expose la <strong>pluralité complète</strong> des préférences au premier tour (projection 2026 agrégée). 
@@ -187,8 +187,8 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
       <h4 style="margin-top:1rem;" id="comparatif-pluralite">Comparatif concentration 1er tour (top 3)</h4>
       <p class="meta">
-        Indicateur DOE : part des trois premiers candidats dans les exprimés. Plus bas = pluralité plus dispersée.
-        Source nationale open data (2017/2022) · projection pédagogique (2027).
+        Indicateur de pluralité : part des trois premiers candidats dans les exprimés. Plus bas = pluralité plus dispersée.
+        Source nationale en données ouvertes (2017/2022) · projection pédagogique (2027).
       </p>
       {pluralityRows.length > 0 && (
         <div class="table-wrap" role="region" aria-labelledby="comparatif-pluralite" tabindex="0">
@@ -242,7 +242,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
           <code>import:legislatives-2024</code>) puis enregistrer dans <code>circonscriptions.ts</code>.
         </li>
         <li>
-          Atlas de référence circo live :{' '}
+          Atlas de référence circonscriptions en ligne :{' '}
           <a href="/atlas/2024-legislatives">577 leaders 1er tour législatives 2024</a>.
         </li>
       </ul>
@@ -302,7 +302,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
             départements 2027 enregistré (0 ligne) ; cartes et résultats circo officiels après
             publication data.gouv.fr (pipeline `import:circo-map` / import législatives).
           </li>
-          <li>Comparatif pluralité top 3 : 2017 / 2022 (officiel) vs 2027 (projection) — pas un ranking de candidats.</li>
+          <li>Comparatif pluralité top 3 : 2017 / 2022 (officiel) vs 2027 (projection) — pas un classement de candidats.</li>
           <li>Pluralité visualisée via le graphique à barres ci-dessus (tous les candidats inclus).</li>
         </>
       ) : (

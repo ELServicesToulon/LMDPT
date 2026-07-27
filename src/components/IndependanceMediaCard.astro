@@ -33,7 +33,7 @@ const { item } = Astro.props;
   <ul class="ind-funding-list">
     {
       item.funding.map((f) => {
-        const color = f.political_hue.color || '#718096';
+        const color = f.political_hue.color || '#5a6570';
         return (
           <li class="ind-funding-item" style={`border-left-color:${color}`}>
             <div class="ind-funding-badges">

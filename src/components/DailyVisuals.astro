@@ -113,7 +113,11 @@ const {
 
       var badge = document.getElementById('daily-visual-badge');
       if (badge) {
-        badge.textContent = 'Visuel du jour · ' + (set.id || '');
+        badge.textContent =
+          'Visuel du jour · ' +
+          ((set.gallery && set.gallery[0] && set.gallery[0].title) ||
+            (set.heroAlt && String(set.heroAlt).split('—')[0].trim()) ||
+            '1er tour');
         badge.hidden = false;
       }
 

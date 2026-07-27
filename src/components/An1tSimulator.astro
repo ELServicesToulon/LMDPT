@@ -30,7 +30,7 @@ const BLOCS = AN1T_BLOCS.map((b) => ({
   color: b.color,
 }));
 
-/** Calibrage T1 2022 présidentielle — open data archives Intérieur (voix → blocs pédagogiques). */
+/** Calibrage T1 2022 présidentielle — données ouvertes des archives de l’Intérieur (voix → blocs pédagogiques). */
 const PRESET_T1_2022 = aggregatePresidentialPctByBloc(
   pres2022.national.candidats,
   pres2022.national.exprimes,
@@ -68,7 +68,7 @@ const REELLE_SEATS: Record<string, number> = {
     <button type="button" class="tooltip-trigger" aria-describedby="tip-sainte-lague" id="btn-tip-sl">
       Sainte-Laguë
     </button>
-    (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code>.
+    (diviseurs impairs) identique à <code>allocateSainteLague</code> et <code>simulateFromVoteShares</code>.{' '}
     <strong>Illustration pédagogique uniquement.</strong> Les chiffres ne prédisent rien.
     Multi-scrutins (P10-5)&nbsp;: basculez entre législatives et présidentielles historiques.
   </p>
@@ -178,7 +178,7 @@ const REELLE_SEATS: Record<string, number> = {
         <button type="button" class="btn btn-secondary" data-preset="centre-elargi">Centre élargi</button>
         <button type="button" class="btn btn-secondary" data-preset="reset">Réinitialiser (3 %)</button>
       </div>
-      <div class="sim-legend" style="margin-top:0.55rem">Scénarios candidats 2027 (hypothèses institutions — DOE)</div>
+      <div class="sim-legend" style="margin-top:0.55rem">Scénarios candidats 2027 (hypothèses institutions — ligne éditoriale)</div>
       <div class="preset-buttons" role="group" aria-label="Scénarios candidats 2027">
         <button type="button" class="btn btn-secondary" data-preset="cand-bardella">Bardella</button>
         <button type="button" class="btn btn-secondary" data-preset="cand-attal">Attal</button>
@@ -190,7 +190,7 @@ const REELLE_SEATS: Record<string, number> = {
         Ces profils alignent des % de voix T1 sur des blocs législatifs à partir de lectures pédagogiques
         des programmes (pas un sondage). Voir aussi{' '}
         <a href="/analyses/assemblee-premier-tour-mecanismes">mécanismes</a> ·{' '}
-        <a href="/soutenir">soutenir</a> · <a href="/pack-data-an1t">Pack Data AN1T</a>.
+        <a href="/soutenir">soutenir</a> · <a href="/pack-data-an1t">Lot de données AN1T</a>.
       </p>
     </div>
 
@@ -686,12 +686,12 @@ const REELLE_SEATS: Record<string, number> = {
   let realPending = false;
 
   const PRESETS: Record<string, Record<string, number>> = {
-    // Législatives 2024 T1 — agrégat blocs LMDPT (open data Min. Intérieur)
+    // Législatives 2024 T1 — agrégat blocs LMDPT (données ouvertes du ministère de l’Intérieur)
     't1-2024': { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
-    // Présidentielle 2022 T1 — injecté côté serveur depuis open data (aggregatePresidentialPctByBloc)
+    // Présidentielle 2022 T1 — injecté côté serveur depuis données ouvertes (aggregatePresidentialPctByBloc)
     // Source : 2022-presidentielle-1er-tour-national.json · méthodo /sources#methodologie-blocs
     't1-2022': PRESET_T1_2022_CLIENT,
-    // Présidentielle 2017 T1 — open data + nuances FN/EM (P10-5)
+    // Présidentielle 2017 T1 — données ouvertes + nuances FN/EM (P10-5)
     't1-2017': PRESET_T1_2017_CLIENT as Record<string, number>,
     // Agrégat pédagogique juil. 2026 (blocs législatifs, pas présidentielle) — RN ↑ post-Le Pen
     'base-2027': { rn: 35, nfp: 26, ensemble: 16, lr: 8, autres: 15 },

@@ -105,5 +105,5 @@ export const MODERATOR_CHIEF_POLICY = {
   transparentPoliticalHue: true,
   blockReligiousAuthority: true,
   blockIdeologicalAuthority: true,
-  line: 'Democracy Over Elimination — zéro biais, zéro parti pris, transparence des couleurs politiques.',
+  line: 'La démocratie avant l’élimination — zéro biais, zéro parti pris, transparence des couleurs politiques.',
 } as const;

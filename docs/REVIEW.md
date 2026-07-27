@@ -21,7 +21,7 @@
 - [ ] **Licence** du jeu intégré documentée sur `/sources` (journal ou jeux détaillés)
 - [ ] Absence de donnée signalée explicitement (pas de case vide ambiguë)
 
-### 2. Neutralité Democracy Over Elimination
+### 2. Neutralité — La démocratie avant l’élimination
 
 - [ ] Aucun classement éliminatoire (« top », « flop », tier list) déguisé en analyse
 - [ ] Tous les candidats / forces concernés par le périmètre traités **à égalité de présentation** (même structure de fiche)
@@ -37,6 +37,14 @@
 - [ ] Charte de participation affichée sur la page débat
 - [ ] `discussion_id` renseigné si statut `ouvert`
 - [ ] Liens vers analyses/atlas connexes pertinents
+
+### 2c. Langue — français correct uniquement (impératif)
+
+- [ ] Texte public **100 % en bon français** (orthographe, accents, accords, ponctuation FR)
+- [ ] Aucun anglais éditorial / franglais / anglicisme inutile (citations & noms propres OK)
+- [ ] Zéro mots accolés / fusions d’espaces
+- [ ] Gate `/lmdpt-qualite-redaction` ou checklist `bot-quality-gate` = **PASS**
+- [ ] FAIL langue → **bloquer** publish / deploy contenu (pas de contournement « on corrigera après »)
 
 ### 3. Exactitude technique
 
