@@ -830,7 +830,8 @@ const commentThread =
             href="/liberte-d-expression"
             aria-current={
               Astro.url.pathname.startsWith('/liberte-d-expression') ||
-              Astro.url.pathname.startsWith('/observatoire-censure')
+              Astro.url.pathname.startsWith('/observatoire-censure') ||
+              Astro.url.pathname.startsWith('/assemblee-influenceurs')
                 ? 'page'
                 : undefined
             }
@@ -840,6 +841,11 @@ const commentThread =
             href="/observatoire-censure"
             aria-current={Astro.url.pathname.startsWith('/observatoire-censure') ? 'page' : undefined}
             >Observatoire de la censure</a
+          >
+          <a
+            href="/assemblee-influenceurs"
+            aria-current={Astro.url.pathname.startsWith('/assemblee-influenceurs') ? 'page' : undefined}
+            >Assemblée des influenceurs</a
           >
           <a href="/contribuer" aria-current={Astro.url.pathname.startsWith('/contribuer') ? 'page' : undefined}>Contribuer</a>
           <a href="/charte" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
@@ -868,10 +874,11 @@ const commentThread =
             <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T (pluralité)</a></li>
             <li><a href="/liberte-d-expression">4. Liberté d’expression</a></li>
             <li><a href="/observatoire-censure">5. Observatoire de la censure</a></li>
-            <li><a href="/analyses/assemblee-premier-tour-mecanismes">6. Mécanismes Assemblée 1er tour</a></li>
-            <li><a href="/debats">7. Participer aux débats</a></li>
-            <li><a href="/contribuer">8. Suggestions &amp; alertes</a></li>
-            <li><a href="/sources">9. Vérifier les sources</a></li>
+            <li><a href="/assemblee-influenceurs">6. Assemblée des influenceurs</a></li>
+            <li><a href="/analyses/assemblee-premier-tour-mecanismes">7. Mécanismes Assemblée 1er tour</a></li>
+            <li><a href="/debats">8. Participer aux débats</a></li>
+            <li><a href="/contribuer">9. Suggestions &amp; alertes</a></li>
+            <li><a href="/sources">10. Vérifier les sources</a></li>
           </ol>
           <button type="button" class="parcours-btn" onclick="document.getElementById('parcours-citoyen').classList.toggle('collapsed')">Masquer / Montrer</button>
         </div>

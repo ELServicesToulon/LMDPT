@@ -1,0 +1,492 @@
+{
+  "schema": "lmdpt-influenceurs-network-hue-estimate-v1",
+  "updated": "2026-07-27",
+  "method": "Deux lectures : (A) influenceurs/médias LMDPT hors élus Wikidata — réponse principale à la question « réseaux » ; (B) corpus 577 complet. Une entrée présente sur le réseau = une voix. Pas de pondération par abonnés. Teintes = familles pédagogiques 1er tour.",
+  "disclaimer": "Estimation documentaire sur le corpus local. Sur le corpus 577, X/Facebook sont tirés vers le centre par le volume d’élus Renaissance/MoDem/Horizons (Wikidata XVI). La lecture « influenceurs seuls » évite ce biais parlementaire.",
+  "networks": {
+    "youtube": {
+      "n_accounts": 44,
+      "top_family": "gauche-radicale",
+      "top_label": "Gauche radicale",
+      "top_count": 12,
+      "top_pct": 27.3,
+      "top3": [
+        {
+          "label": "Gauche radicale",
+          "count": 12,
+          "pct": 27.3
+        },
+        {
+          "label": "Droite nationale",
+          "count": 11,
+          "pct": 25.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 9,
+          "pct": 20.5
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 12,
+        "Social-démocrate": 4,
+        "Centre": 4,
+        "Droite": 4,
+        "Droite nationale": 11,
+        "Autre / transversal": 9
+      }
+    },
+    "tiktok": {
+      "n_accounts": 18,
+      "top_family": "droite-nationale",
+      "top_label": "Droite nationale",
+      "top_count": 6,
+      "top_pct": 33.3,
+      "top3": [
+        {
+          "label": "Droite nationale",
+          "count": 6,
+          "pct": 33.3
+        },
+        {
+          "label": "Centre",
+          "count": 4,
+          "pct": 22.2
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 4,
+          "pct": 22.2
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 4,
+        "Droite": 1,
+        "Droite nationale": 6,
+        "Autre / transversal": 4
+      }
+    },
+    "twitch": {
+      "n_accounts": 5,
+      "top_family": "social-democrate",
+      "top_label": "Social-démocrate",
+      "top_count": 2,
+      "top_pct": 40.0,
+      "top3": [
+        {
+          "label": "Social-démocrate",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 1,
+          "pct": 20.0
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 0,
+        "Droite": 0,
+        "Droite nationale": 0,
+        "Autre / transversal": 2
+      }
+    },
+    "x": {
+      "n_accounts": 61,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 14,
+      "top_pct": 23.0,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 14,
+          "pct": 23.0
+        },
+        {
+          "label": "Droite nationale",
+          "count": 14,
+          "pct": 23.0
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 10,
+          "pct": 16.4
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 10,
+        "Social-démocrate": 8,
+        "Centre": 14,
+        "Droite": 6,
+        "Droite nationale": 14,
+        "Autre / transversal": 9
+      }
+    },
+    "facebook": {
+      "n_accounts": 57,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 14,
+      "top_pct": 24.6,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 14,
+          "pct": 24.6
+        },
+        {
+          "label": "Droite nationale",
+          "count": 13,
+          "pct": 22.8
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 10,
+          "pct": 17.5
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 10,
+        "Social-démocrate": 7,
+        "Centre": 14,
+        "Droite": 5,
+        "Droite nationale": 13,
+        "Autre / transversal": 8
+      }
+    }
+  },
+  "networks_full_corpus": {
+    "youtube": {
+      "n_accounts": 80,
+      "top_family": "gauche-radicale",
+      "top_label": "Gauche radicale",
+      "top_count": 28,
+      "top_pct": 35.0,
+      "top3": [
+        {
+          "label": "Gauche radicale",
+          "count": 28,
+          "pct": 35.0
+        },
+        {
+          "label": "Droite nationale",
+          "count": 16,
+          "pct": 20.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 13,
+          "pct": 16.2
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 28,
+        "Social-démocrate": 4,
+        "Centre": 11,
+        "Droite": 8,
+        "Droite nationale": 16,
+        "Autre / transversal": 13
+      }
+    },
+    "tiktok": {
+      "n_accounts": 18,
+      "top_family": "droite-nationale",
+      "top_label": "Droite nationale",
+      "top_count": 6,
+      "top_pct": 33.3,
+      "top3": [
+        {
+          "label": "Droite nationale",
+          "count": 6,
+          "pct": 33.3
+        },
+        {
+          "label": "Centre",
+          "count": 4,
+          "pct": 22.2
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 4,
+          "pct": 22.2
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 4,
+        "Droite": 1,
+        "Droite nationale": 6,
+        "Autre / transversal": 4
+      }
+    },
+    "twitch": {
+      "n_accounts": 5,
+      "top_family": "social-democrate",
+      "top_label": "Social-démocrate",
+      "top_count": 2,
+      "top_pct": 40.0,
+      "top3": [
+        {
+          "label": "Social-démocrate",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 1,
+          "pct": 20.0
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 0,
+        "Droite": 0,
+        "Droite nationale": 0,
+        "Autre / transversal": 2
+      }
+    },
+    "x": {
+      "n_accounts": 559,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 230,
+      "top_pct": 41.1,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 230,
+          "pct": 41.1
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 100,
+          "pct": 17.9
+        },
+        {
+          "label": "Droite nationale",
+          "count": 80,
+          "pct": 14.3
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 100,
+        "Social-démocrate": 30,
+        "Centre": 230,
+        "Droite": 54,
+        "Droite nationale": 80,
+        "Autre / transversal": 65
+      }
+    },
+    "facebook": {
+      "n_accounts": 289,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 125,
+      "top_pct": 43.3,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 125,
+          "pct": 43.3
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 52,
+          "pct": 18.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 34,
+          "pct": 11.8
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 52,
+        "Social-démocrate": 19,
+        "Centre": 125,
+        "Droite": 30,
+        "Droite nationale": 29,
+        "Autre / transversal": 34
+      }
+    }
+  },
+  "networks_influencers_only": {
+    "youtube": {
+      "n_accounts": 44,
+      "top_family": "gauche-radicale",
+      "top_label": "Gauche radicale",
+      "top_count": 12,
+      "top_pct": 27.3,
+      "top3": [
+        {
+          "label": "Gauche radicale",
+          "count": 12,
+          "pct": 27.3
+        },
+        {
+          "label": "Droite nationale",
+          "count": 11,
+          "pct": 25.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 9,
+          "pct": 20.5
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 12,
+        "Social-démocrate": 4,
+        "Centre": 4,
+        "Droite": 4,
+        "Droite nationale": 11,
+        "Autre / transversal": 9
+      }
+    },
+    "tiktok": {
+      "n_accounts": 18,
+      "top_family": "droite-nationale",
+      "top_label": "Droite nationale",
+      "top_count": 6,
+      "top_pct": 33.3,
+      "top3": [
+        {
+          "label": "Droite nationale",
+          "count": 6,
+          "pct": 33.3
+        },
+        {
+          "label": "Centre",
+          "count": 4,
+          "pct": 22.2
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 4,
+          "pct": 22.2
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 4,
+        "Droite": 1,
+        "Droite nationale": 6,
+        "Autre / transversal": 4
+      }
+    },
+    "twitch": {
+      "n_accounts": 5,
+      "top_family": "social-democrate",
+      "top_label": "Social-démocrate",
+      "top_count": 2,
+      "top_pct": 40.0,
+      "top3": [
+        {
+          "label": "Social-démocrate",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Autre / transversal",
+          "count": 2,
+          "pct": 40.0
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 1,
+          "pct": 20.0
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 1,
+        "Social-démocrate": 2,
+        "Centre": 0,
+        "Droite": 0,
+        "Droite nationale": 0,
+        "Autre / transversal": 2
+      }
+    },
+    "x": {
+      "n_accounts": 61,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 14,
+      "top_pct": 23.0,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 14,
+          "pct": 23.0
+        },
+        {
+          "label": "Droite nationale",
+          "count": 14,
+          "pct": 23.0
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 10,
+          "pct": 16.4
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 10,
+        "Social-démocrate": 8,
+        "Centre": 14,
+        "Droite": 6,
+        "Droite nationale": 14,
+        "Autre / transversal": 9
+      }
+    },
+    "facebook": {
+      "n_accounts": 57,
+      "top_family": "centre",
+      "top_label": "Centre",
+      "top_count": 14,
+      "top_pct": 24.6,
+      "top3": [
+        {
+          "label": "Centre",
+          "count": 14,
+          "pct": 24.6
+        },
+        {
+          "label": "Droite nationale",
+          "count": 13,
+          "pct": 22.8
+        },
+        {
+          "label": "Gauche radicale",
+          "count": 10,
+          "pct": 17.5
+        }
+      ],
+      "by_family": {
+        "Gauche radicale": 10,
+        "Social-démocrate": 7,
+        "Centre": 14,
+        "Droite": 5,
+        "Droite nationale": 13,
+        "Autre / transversal": 8
+      }
+    }
+  }
+}

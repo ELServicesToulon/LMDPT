@@ -1,0 +1,366 @@
+---
+/**
+ * Assemblée des influenceurs — hémicycle fictif pédagogique (DOE).
+ * Dataset : src/data/assemblee-influenceurs.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfluenceursHemicycle from '../../components/InfluenceursHemicycle.astro';
+import InfluenceurBackers from '../../components/InfluenceurBackers.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import {
+  DEPENDENCY_KIND_LABELS,
+  STANCE_STATUS_LABELS,
+  FAMILY_COLORS,
+  familyHueBadge,
+  getAssembleeInfluenceursView,
+} from '../../lib/assemblee-influenceurs';
+import hueEstimate from '../../data/influenceurs-network-hue-estimate.json';
+
+const view = getAssembleeInfluenceursView();
+const updated = new Date(view.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+const nameById = Object.fromEntries(
+  view.influencers.map((i) => [i.id, i.display_name]),
+);
+
+const NETWORK_ORDER = ['youtube', 'tiktok', 'twitch', 'x', 'facebook'] as const;
+const NETWORK_LABELS: Record<(typeof NETWORK_ORDER)[number], string> = {
+  youtube: 'YouTube',
+  tiktok: 'TikTok',
+  twitch: 'Twitch',
+  x: 'X',
+  facebook: 'Facebook',
+};
+const networkRows = NETWORK_ORDER.map((id) => {
+  const n = (hueEstimate.networks as Record<string, {
+    n_accounts: number;
+    top_family: string;
+    top_label: string;
+    top_pct: number;
+    top3: Array<{ label: string; pct: number }>;
+  }>)[id];
+  if (!n) return null;
+  return {
+    id,
+    label: NETWORK_LABELS[id],
+    ...n,
+    color: FAMILY_COLORS[n.top_family] ?? FAMILY_COLORS.autre,
+  };
+}).filter(Boolean);
+---
+
+<BaseLayout
+  title="Assemblée des influenceurs"
+  description="Assemblée fictive pédagogique LMDPT : influenceurs placés sur les bancs selon leur teinte politique déclarée ou estimée — description, liens, dépendances économiques et financeurs sourcés."
+  type="website"
+  keywords="assemblée influenceurs, hémicycle, teinte politique, dépendances économiques, liberté d'expression, LMDPT, pluralité"
+  commentThread="assemblee-influenceurs"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/liberte-d-expression">Liberté d’expression</a> → Assemblée des influenceurs
+  </nav>
+
+  <article class="ai-page">
+    <header class="card ai-hero">
+      <p class="eyebrow">Fiction pédagogique · Democracy Over Elimination</p>
+      <h1>{view.title}</h1>
+      <p class="lead">
+        Chaque siège représente une <strong>figure du débat public</strong> (influenceur,
+        média, élu·e documenté·e). <strong>577 sièges</strong> — étalon Assemblée nationale.
+        Placement sur l’axe gauche–droite pédagogique du 1er tour.
+        <strong>Siège plein</strong> = position déclarée/sourcée ;
+        <strong>siège en pointillé</strong> = estimation documentaire.
+        Fiction pédagogique — <em>pas</em> la composition actuelle de l’AN.
+      </p>
+      <p class="meta">
+        Période : {view.period.label} (depuis {view.period.from}) · mise à jour {updated} ·{' '}
+        {view.counts.total} influenceurs · {view.counts.declare} déclarée{view.counts.declare > 1 ? 's' : ''} ·{' '}
+        {view.counts.estime} estimée{view.counts.estime > 1 ? 's' : ''} ·{' '}
+        {view.backers.length} financeur{view.backers.length > 1 ? 's' : ''} documenté{view.backers.length > 1 ? 's' : ''}
+      </p>
+      <p class="meta disclaimer-box">{view.disclaimer}</p>
+    </header>
+
+    <nav class="card ai-toc" aria-label="Sommaire assemblée influenceurs">
+      <ol>
+        <li><a href="#hemicycle">Hémicycle</a></li>
+        <li><a href="#reseaux">Couleurs par réseau</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#fiches">Fiches détaillées</a></li>
+        <li><a href="#financeurs">Financeurs de la sphère</a></li>
+        <li><a href="#droit-de-reponse">Droit de réponse</a></li>
+      </ol>
+    </nav>
+
+    <section class="card" id="hemicycle" aria-labelledby="hemicycle-title">
+      <h2 id="hemicycle-title" class="visually-hidden">Hémicycle</h2>
+      <InfluenceursHemicycle
+        seated={view.seated}
+        declareCount={view.counts.declare}
+        estimeCount={view.counts.estime}
+      />
+    </section>
+
+    <section class="card" id="reseaux" aria-labelledby="reseaux-title">
+      <h2 id="reseaux-title">Couleur politique la plus représentée par réseau</h2>
+      <p class="meta">
+        Lecture sur les <strong>influenceurs / médias</strong> du corpus (hors élus Wikidata) :
+        une fiche présente sur le réseau = une voix. Pas de pondération par abonnés.
+      </p>
+      <ul class="ai-net-list">
+        {
+          networkRows.map((row) => (
+            <li class="ai-net-item" style={`border-left-color:${row!.color}`}>
+              <div class="ai-net-head">
+                <strong>{row!.label}</strong>
+                <span class="meta"> · {row!.n_accounts} comptes</span>
+              </div>
+              <p class="ai-net-top">
+                <span
+                  class="ai-net-swatch"
+                  style={`background:${row!.color}`}
+                  aria-hidden="true"
+                />
+                <strong>{row!.top_label}</strong>
+                <span class="meta"> — {row!.top_pct}&nbsp;%</span>
+              </p>
+              <p class="meta">
+                Top 3 :{' '}
+                {row!.top3.map((t) => `${t.label} ${t.pct}%`).join(' · ')}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="meta disclaimer-box">{hueEstimate.disclaimer}</p>
+    </section>
+
+    <section class="card" id="methode" aria-labelledby="methode-title">
+      <h2 id="methode-title">Méthode</h2>
+      <p class="meta methodology-box">{view.methodology_note}</p>
+      <ul>
+        <li>
+          <strong>Déclaré</strong> : ≥ 1 URL de déclaration publique de position ; siège plein.
+        </li>
+        <li>
+          <strong>Estimé</strong> : rationale + sources + confiance ; siège pointillé ; filtrable.
+        </li>
+        <li>
+          Teintes = familles pédagogiques 1er tour (pas une carte d’adhésion). Voir
+          <a href="/sources#methodologie-blocs">méthodologie des blocs</a>.
+        </li>
+        <li>
+          Distinct de l’
+          <a href="/observatoire-censure/">observatoire de la censure</a>
+          (sanctions) et de l’
+          <a href="/independance-medias/">indépendance des médias</a>
+          (aides / capital presse).
+        </li>
+        <li>
+          Pas de tier list, pas de score moral — ligne
+          <em>démocratie avant l’élimination</em>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="fiches" aria-labelledby="fiches-title">
+      <h2 id="fiches-title">Fiches détaillées</h2>
+      <p class="meta">
+        Liste complète (accessible sans JavaScript). {view.counts.total} fiches — influenceurs,
+        médias et figures publiques documentées.
+      </p>
+      <div class="ai-fiches">
+        {
+          view.seated.map((inf) => {
+            const hue = familyHueBadge(String(inf.stance.family), inf.stance.label);
+            return (
+              <article class="ai-fiche" id={`inf-${inf.id}`}>
+                <header class="ai-fiche-head">
+                  <h3>
+                    {inf.display_name}
+                    {inf.handle && <span class="meta"> @{inf.handle}</span>}
+                  </h3>
+                  <p class="meta">
+                    {STANCE_STATUS_LABELS[inf.stance.status]}
+                    {inf.stance.status === 'estime' &&
+                      inf.stance.confidence != null && (
+                        <> · confiance {Math.round(inf.stance.confidence * 100)}&nbsp;%</>
+                      )}
+                    {inf.verification === 'partial' && <> · vérification partielle</>}
+                  </p>
+                  <PoliticalHueBadges hues={[hue]} size="sm" />
+                </header>
+                <p>{inf.summary}</p>
+                {inf.stance.rationale && (
+                  <p class="meta">
+                    <strong>Indices :</strong> {inf.stance.rationale}
+                  </p>
+                )}
+                {inf.platforms.length > 0 && (
+                  <>
+                    <h4>Liens</h4>
+                    <ul>
+                      {inf.platforms.map((p) => (
+                        <li>
+                          <a href={p.url} rel="noopener noreferrer">
+                            {p.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                <h4>Dépendances économiques</h4>
+                {inf.dependencies.length === 0 ? (
+                  <p class="meta">Aucun flux documenté à ce jour.</p>
+                ) : (
+                  <ul>
+                    {inf.dependencies.map((d) => (
+                      <li>
+                        <strong>{DEPENDENCY_KIND_LABELS[d.kind]}</strong> — {d.label}
+                        <ul>
+                          {d.sources.map((s) => (
+                            <li>
+                              <a href={s.url} rel="noopener noreferrer">
+                                {s.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <h4>Sources de la teinte</h4>
+                <ul>
+                  {inf.stance.sources.map((s) => (
+                    <li>
+                      <a href={s.url} rel="noopener noreferrer">
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                {inf.observatoire_ref && (
+                  <p class="meta">
+                    <a href="/observatoire-censure/#influenceurs">Voir aussi l’observatoire</a>
+                  </p>
+                )}
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="card" id="financeurs" aria-labelledby="financeurs-title">
+      <h2 id="financeurs-title">Financeurs de la sphère</h2>
+      <p>
+        Principaux investisseurs, mécènes, MCN ou plateformes liés à plusieurs comptes —
+        uniquement si sourcés. Distinct des aides presse de
+        <a href="/independance-medias/">/independance-medias</a>.
+      </p>
+      <InfluenceurBackers backers={view.backers} influencerNames={nameById} />
+    </section>
+
+    <section class="card" id="droit-de-reponse" aria-labelledby="ddr-title">
+      <h2 id="ddr-title">Droit de réponse</h2>
+      <p>
+        Toute personne ou structure nommée peut demander une correction factuelle (erreur de
+        source, teinte, dépendance) via une
+        <a
+          href="https://github.com/iarbre/le-media-du-premier-tour/issues"
+          rel="noopener noreferrer"
+          >issue GitHub</a
+        >
+        ou la page <a href="/contribuer">Contribuer</a>. Les teintes politiques sont
+        contestables : ce sont des lectures pédagogiques, pas des cartes d’adhésion.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .ai-page {
+    display: grid;
+    gap: 1rem;
+  }
+  .ai-hero .lead {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .disclaimer-box,
+  .methodology-box {
+    padding: 0.65rem 0.75rem;
+    border-left: 3px solid var(--border, #ccc);
+    background: color-mix(in srgb, var(--card, #fff) 85%, #f0f4f8);
+  }
+  .ai-toc ol {
+    margin: 0.25rem 0 0;
+    padding-left: 1.2rem;
+  }
+  .ai-fiches {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .ai-net-list {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .ai-net-item {
+    border: 1px solid var(--border, #ddd);
+    border-left: 4px solid #718096;
+    border-radius: 6px;
+    padding: 0.65rem 0.85rem;
+    background: var(--card, #fff);
+  }
+  .ai-net-head {
+    margin-bottom: 0.25rem;
+  }
+  .ai-net-top {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.2rem 0;
+  }
+  .ai-net-swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .ai-fiche {
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    background: var(--card, #fff);
+  }
+  .ai-fiche-head h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+  }
+  .ai-fiche h4 {
+    margin: 0.65rem 0 0.25rem;
+    font-size: 0.95rem;
+  }
+  .ai-fiche ul {
+    margin: 0.2rem 0;
+    padding-left: 1.1rem;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

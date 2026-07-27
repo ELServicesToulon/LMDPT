@@ -1,0 +1,461 @@
+---
+/**
+ * Hémicycle fictif — 1 influenceur = 1 siège.
+ * Plein = position déclarée ; pointillé = estimée.
+ */
+import type { SeatedInfluencer } from '../lib/assemblee-influenceurs';
+import {
+  FAMILY_COLORS,
+  FAMILY_HEMI_ORDER,
+  STANCE_STATUS_LABELS,
+  DEPENDENCY_KIND_LABELS,
+} from '../lib/assemblee-influenceurs';
+import { getFamilyMeta } from '../lib/program-families';
+
+interface Props {
+  seated: SeatedInfluencer[];
+  title?: string;
+  subtitle?: string;
+  declareCount: number;
+  estimeCount: number;
+}
+
+const {
+  seated,
+  title = 'Assemblée fictive des influenceurs',
+  subtitle = 'Fiction pédagogique — pas un parlement, pas un score moral.',
+  declareCount,
+  estimeCount,
+} = Astro.props;
+
+const instanceId = `inf-hemi-${Math.random().toString(36).slice(2, 10)}`;
+const viewW = 360;
+const viewH = 200;
+
+const legend = FAMILY_HEMI_ORDER.map((fam) => {
+  const count = seated.filter((s) => String(s.stance.family) === fam).length;
+  return {
+    fam,
+    label: getFamilyMeta(fam).shortLabel,
+    color: FAMILY_COLORS[fam] ?? FAMILY_COLORS.autre,
+    count,
+  };
+}).filter((l) => l.count > 0);
+
+const payload = seated.map((s) => ({
+  id: s.id,
+  display_name: s.display_name,
+  handle: s.handle ?? '',
+  summary: s.summary,
+  color: s.color,
+  family: String(s.stance.family),
+  stance_status: s.stance.status,
+  stance_label: s.stanceLabel,
+  confidence: s.stance.confidence ?? null,
+  rationale: s.stance.rationale ?? '',
+  platforms: s.platforms,
+  dependencies: s.dependencies.map((d) => ({
+    kind: d.kind,
+    kindLabel: DEPENDENCY_KIND_LABELS[d.kind],
+    label: d.label,
+    share_note: d.share_note ?? '',
+    sources: d.sources,
+  })),
+  verification: s.verification,
+  observatoire_ref: s.observatoire_ref ?? '',
+  stance_sources: s.stance.sources,
+}));
+---
+
+<section class="inf-hemi" aria-labelledby={`title-${instanceId}`}>
+  <h2 id={`title-${instanceId}`}>{title}</h2>
+  {subtitle && <p class="meta">{subtitle}</p>}
+  <p class="meta inf-counts" aria-live="polite">
+    {seated.length} sièges · {declareCount} déclarée{declareCount > 1 ? 's' : ''} ·{' '}
+    {estimeCount} estimée{estimeCount > 1 ? 's' : ''} (pointillé)
+  </p>
+
+  <div class="inf-controls">
+    <label class="inf-toggle">
+      <input type="checkbox" id={`hide-estime-${instanceId}`} />
+      Masquer les positions estimées
+    </label>
+  </div>
+
+  <div class="inf-hemi-layout">
+    <svg
+      viewBox={`0 0 ${viewW} ${viewH}`}
+      width="100%"
+      height="auto"
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      aria-label={`${title} — ${seated.length} influenceurs`}
+      aria-describedby={`desc-${instanceId}`}
+      class="inf-svg"
+    >
+      <desc id={`desc-${instanceId}`}>
+        Hémicycle fictif pédagogique. Chaque cercle est un influenceur. Remplissage plein =
+        position politique ouvertement déclarée et sourcée. Contour pointillé = estimation
+        documentaire. Survolez ou focalisez un siège pour le détail. Ce n’est pas un parlement
+        ni un score moral.
+      </desc>
+      <g id={`seats-${instanceId}`}>
+        {
+          seated.map((s) => {
+            const isEstime = s.stance.status === 'estime';
+            const statusLabel = STANCE_STATUS_LABELS[s.stance.status];
+            return (
+              <circle
+                cx={s.seat.x.toFixed(2)}
+                cy={s.seat.y.toFixed(2)}
+                r={s.seat.r.toFixed(2)}
+                fill={s.color}
+                fill-opacity={isEstime ? '0.45' : '1'}
+                stroke={isEstime ? s.color : '#1a1a1a'}
+                stroke-width={isEstime ? '1.4' : '0.55'}
+                stroke-dasharray={isEstime ? '2.2 1.6' : 'none'}
+                tabindex="0"
+                role="button"
+                data-id={s.id}
+                data-family={s.stance.family}
+                data-status={s.stance.status}
+                class:list={['inf-seat', isEstime && 'inf-seat--estime']}
+                aria-label={`${s.display_name} — ${s.stanceLabel} — ${statusLabel}`}
+              >
+                <title>
+                  {s.display_name}
+                  {s.handle ? ` (@${s.handle})` : ''} — {s.stanceLabel} ({statusLabel})
+                </title>
+              </circle>
+            );
+          })
+        }
+      </g>
+    </svg>
+
+    <aside
+      class="inf-detail"
+      id={`detail-${instanceId}`}
+      aria-live="polite"
+      hidden
+    >
+      <p class="meta">Survolez ou sélectionnez un siège.</p>
+    </aside>
+  </div>
+
+  <ul class="inf-legend" role="list" aria-label="Légende des familles">
+    {
+      legend.map((l) => (
+        <li>
+          <button
+            type="button"
+            class="inf-legend-btn"
+            data-family={l.fam}
+            aria-pressed="false"
+            style={`--leg: ${l.color}`}
+          >
+            <span class="inf-swatch" aria-hidden="true" />
+            <span>
+              {l.label} ({l.count})
+            </span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="meta inf-legend-hint">
+    Plein = déclaré · Pointillé = estimé · Clic légende = filtrer la famille
+  </p>
+
+  <script
+    type="application/json"
+    id={`data-${instanceId}`}
+    set:html={JSON.stringify(payload)}
+  />
+</section>
+
+<script define:vars={{ instanceId }}>
+  (function () {
+    const dataEl = document.getElementById(`data-${instanceId}`);
+    const detail = document.getElementById(`detail-${instanceId}`);
+    const hideCb = document.getElementById(`hide-estime-${instanceId}`);
+    const seatsRoot = document.getElementById(`seats-${instanceId}`);
+    if (!dataEl || !detail || !seatsRoot) return;
+
+    /** @type {Array<any>} */
+    let people = [];
+    try {
+      people = JSON.parse(dataEl.textContent || '[]');
+    } catch {
+      people = [];
+    }
+    const byId = Object.fromEntries(people.map((p) => [p.id, p]));
+    let activeFamily = null;
+
+    function esc(s) {
+      return String(s || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderDetail(p) {
+      if (!p) {
+        detail.hidden = true;
+        detail.innerHTML = '<p class="meta">Survolez ou sélectionnez un siège.</p>';
+        return;
+      }
+      detail.hidden = false;
+      const conf =
+        p.confidence != null
+          ? ` · confiance ${Math.round(p.confidence * 100)}&nbsp;%`
+          : '';
+      const status =
+        p.stance_status === 'declare'
+          ? 'Déclarée (sourcée)'
+          : 'Estimée (faisceau d’indices)';
+      const platforms =
+        (p.platforms || [])
+          .map(
+            (pl) =>
+              `<li><a href="${esc(pl.url)}" rel="noopener noreferrer">${esc(pl.label)}</a></li>`,
+          )
+          .join('') || '<li class="meta">Aucun lien listé</li>';
+      const deps =
+        (p.dependencies || []).length === 0
+          ? '<p class="meta">Aucun flux documenté à ce jour.</p>'
+          : `<ul>${(p.dependencies || [])
+              .map(
+                (d) =>
+                  `<li><strong>${esc(d.kindLabel)}</strong> — ${esc(d.label)}${
+                    d.share_note ? ` <span class="meta">(${esc(d.share_note)})</span>` : ''
+                  }<ul>${(d.sources || [])
+                    .map(
+                      (s) =>
+                        `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+                    )
+                    .join('')}</ul></li>`,
+              )
+              .join('')}</ul>`;
+      const stanceSources = (p.stance_sources || [])
+        .map(
+          (s) =>
+            `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+        )
+        .join('');
+      const obs = p.observatoire_ref
+        ? `<p class="meta"><a href="/observatoire-censure/#influenceurs">Fiche observatoire</a> (réf. ${esc(p.observatoire_ref)})</p>`
+        : '';
+      detail.innerHTML = `
+        <h3>${esc(p.display_name)}${p.handle ? ` <span class="meta">@${esc(p.handle)}</span>` : ''}</h3>
+        <p class="inf-badge-row">
+          <span class="inf-status" data-status="${esc(p.stance_status)}">${esc(status)}${conf}</span>
+          <span class="inf-hue" style="--hue:${esc(p.color)}">
+            <span class="inf-swatch" aria-hidden="true"></span>${esc(p.stance_label)}
+          </span>
+        </p>
+        <p>${esc(p.summary)}</p>
+        ${p.rationale ? `<p class="meta"><strong>Indices :</strong> ${esc(p.rationale)}</p>` : ''}
+        <h4>Liens</h4>
+        <ul>${platforms}</ul>
+        <h4>Dépendances économiques</h4>
+        ${deps}
+        <h4>Sources de la teinte</h4>
+        <ul>${stanceSources}</ul>
+        ${obs}
+        <p class="meta">Vérification : ${esc(p.verification)} · teinte = famille pédagogique, pas carte d’adhésion.</p>
+      `;
+    }
+
+    function applyVisibility() {
+      const hideEstime = hideCb && hideCb.checked;
+      seatsRoot.querySelectorAll('.inf-seat').forEach((el) => {
+        const id = el.getAttribute('data-id');
+        const p = byId[id];
+        const familyOk = !activeFamily || (p && p.family === activeFamily);
+        const statusOk = !hideEstime || (p && p.stance_status === 'declare');
+        const show = familyOk && statusOk;
+        el.style.display = show ? '' : 'none';
+        el.setAttribute('aria-hidden', show ? 'false' : 'true');
+      });
+    }
+
+    seatsRoot.querySelectorAll('.inf-seat').forEach((el) => {
+      const show = () => {
+        seatsRoot.querySelectorAll('.inf-seat').forEach((c) => c.classList.remove('inf-seat--active'));
+        el.classList.add('inf-seat--active');
+        renderDetail(byId[el.getAttribute('data-id')]);
+      };
+      el.addEventListener('mouseenter', show);
+      el.addEventListener('focus', show);
+      el.addEventListener('click', show);
+      el.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          show();
+        }
+      });
+    });
+
+    if (hideCb) hideCb.addEventListener('change', applyVisibility);
+
+    document.querySelectorAll(`#title-${instanceId}`).forEach(() => {});
+    const legendRoot = seatsRoot.closest('.inf-hemi');
+    if (legendRoot) {
+      legendRoot.querySelectorAll('.inf-legend-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const fam = btn.getAttribute('data-family');
+          const pressed = btn.getAttribute('aria-pressed') === 'true';
+          legendRoot.querySelectorAll('.inf-legend-btn').forEach((b) =>
+            b.setAttribute('aria-pressed', 'false'),
+          );
+          if (pressed) {
+            activeFamily = null;
+          } else {
+            activeFamily = fam;
+            btn.setAttribute('aria-pressed', 'true');
+          }
+          applyVisibility();
+        });
+      });
+    }
+  })();
+</script>
+
+<style>
+  .inf-hemi {
+    margin: 1.25rem 0 2rem;
+  }
+  .inf-counts {
+    margin: 0.25rem 0 0.75rem;
+  }
+  .inf-controls {
+    margin-bottom: 0.75rem;
+  }
+  .inf-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .inf-hemi-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  @media (max-width: 800px) {
+    .inf-hemi-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .inf-svg {
+    max-height: 280px;
+    background: color-mix(in srgb, var(--card, #fff) 92%, #e8eef5);
+    border: 1px solid var(--border, #ddd);
+    border-radius: 8px;
+  }
+  .inf-seat {
+    cursor: pointer;
+    transition: stroke-width 0.12s ease, filter 0.12s ease;
+  }
+  .inf-seat:hover,
+  .inf-seat:focus,
+  .inf-seat--active {
+    stroke: #111 !important;
+    stroke-width: 2.2px !important;
+    filter: brightness(1.08);
+    outline: none;
+  }
+  .inf-detail {
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #ddd);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    min-height: 8rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .inf-detail[hidden] {
+    display: block;
+    opacity: 0.7;
+  }
+  .inf-detail h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.1rem;
+  }
+  .inf-detail h4 {
+    margin: 0.75rem 0 0.3rem;
+    font-size: 0.92rem;
+  }
+  .inf-detail ul {
+    margin: 0.2rem 0 0.4rem;
+    padding-left: 1.1rem;
+  }
+  .inf-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0 0 0.55rem;
+  }
+  .inf-status {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    border: 1px solid var(--border, #ccc);
+    background: var(--bg, #f5f5f5);
+  }
+  .inf-status[data-status='estime'] {
+    border-style: dashed;
+  }
+  .inf-hue {
+    --hue: #5a6570;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem 0.15rem 0.3rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--hue) 16%, var(--card, #fff));
+    border: 1px solid color-mix(in srgb, var(--hue) 45%, var(--border, #ccc));
+  }
+  .inf-swatch {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: var(--hue, var(--leg, #888));
+    border: 1px solid color-mix(in srgb, var(--hue, var(--leg, #888)) 40%, #000);
+    display: inline-block;
+  }
+  .inf-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.85rem 0 0.25rem;
+    padding: 0;
+  }
+  .inf-legend-btn {
+    --leg: #888;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--leg) 40%, var(--border, #ccc));
+    background: color-mix(in srgb, var(--leg) 12%, var(--card, #fff));
+    cursor: pointer;
+  }
+  .inf-legend-btn[aria-pressed='true'] {
+    outline: 2px solid var(--leg);
+    outline-offset: 1px;
+  }
+  .inf-legend-hint {
+    margin: 0;
+  }
+</style>

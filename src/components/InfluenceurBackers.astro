@@ -1,0 +1,109 @@
+---
+/**
+ * Financeurs de la sphère influence — cartes sourcées.
+ */
+import type { BackerEntry } from '../lib/assemblee-influenceurs';
+import { BACKER_KIND_LABELS } from '../lib/assemblee-influenceurs';
+
+interface Props {
+  backers: Array<
+    BackerEntry & {
+      political_hue: BackerEntry['political_hue'] & { color?: string };
+    }
+  >;
+  influencerNames?: Record<string, string>;
+}
+
+const { backers, influencerNames = {} } = Astro.props;
+---
+
+{
+  backers.length === 0 ? (
+    <p class="meta backers-empty">
+      Aucun financeur de la sphère influence n’est documenté à ce jour (règle anti-invention :
+      pas de flux sans URL). Les dépendances économiques apparaîtront ici dès qu’une source
+      primaire ou secondaire datée sera recoupée.
+    </p>
+  ) : (
+    <ul class="backers-list">
+      {backers.map((b) => {
+        const color = b.political_hue.color || '#5a6570';
+        return (
+          <li class="backer-card" style={`border-left-color:${color}`}>
+            <header class="backer-head">
+              <h3>{b.name}</h3>
+              <p class="meta">
+                {BACKER_KIND_LABELS[b.kind]}
+                <span
+                  class="backer-hue"
+                  title="Teinte pédagogique du financeur — pas une carte d’adhésion"
+                >
+                  <span class="backer-swatch" style={`background:${color}`} aria-hidden="true" />
+                  {b.political_hue.label}
+                </span>
+              </p>
+            </header>
+            <p>{b.summary}</p>
+            {b.linked_influencers.length > 0 && (
+              <p class="meta">
+                Lié à :{' '}
+                {b.linked_influencers
+                  .map((id) => influencerNames[id] || id)
+                  .join(' · ')}
+              </p>
+            )}
+            <ul class="backer-sources">
+              {b.sources.map((s) => (
+                <li>
+                  <a href={s.url} rel="noopener noreferrer">
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        );
+      })}
+    </ul>
+  )
+}
+
+<style>
+  .backers-empty {
+    margin: 0.5rem 0 1rem;
+  }
+  .backers-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .backer-card {
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #ddd);
+    border-left: 4px solid #718096;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+  }
+  .backer-head h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+  }
+  .backer-hue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: 0.5rem;
+  }
+  .backer-swatch {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .backer-sources {
+    margin: 0.45rem 0 0;
+    padding-left: 1.1rem;
+  }
+</style>
