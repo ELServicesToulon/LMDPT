@@ -1,0 +1,426 @@
+---
+/**
+ * Développement hiérarchique calqué sur le schéma assemblée-influenceurs :
+ * famille (stance.family) → catégorie (category) → fiche.
+ * Coquille légère en HTML ; listes + corps chargés à l’ouverture via dataUrl.
+ */
+import type { SeatedInfluencer } from '../lib/assemblee-influenceurs';
+import {
+  FAMILY_COLORS,
+  FAMILY_HEMI_ORDER,
+} from '../lib/assemblee-influenceurs';
+import { getFamilyMeta } from '../lib/program-families';
+
+interface Props {
+  seated: SeatedInfluencer[];
+  /** JSON client partagé (listes + détails) */
+  dataUrl?: string;
+}
+
+const {
+  seated,
+  dataUrl = '/data/assemblee-influenceurs-client.json',
+} = Astro.props;
+
+const CAT_LABELS: Record<string, string> = {
+  influenceur: 'Influenceurs & médias',
+  'societe-civile': 'Société civile (créateurs, ONG, vulgarisation)',
+  'elu-parlementaire': 'Élu·e·s / figures parlementaires',
+  journaliste: 'Journalistes',
+};
+
+function catLabel(c: string | undefined): string {
+  const key = c || 'influenceur';
+  return CAT_LABELS[key] ?? key;
+}
+
+/** Coquille seule — pas de 577 noms dans le HTML */
+const byFamily = FAMILY_HEMI_ORDER.map((fam) => {
+  const members = seated.filter((s) => String(s.stance.family) === fam);
+  const counts = new Map<string, number>();
+  for (const m of members) {
+    const cat = m.category || 'influenceur';
+    counts.set(cat, (counts.get(cat) || 0) + 1);
+  }
+  const categories = [...counts.entries()]
+    .map(([id, count]) => ({ id, label: catLabel(id), count }))
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'));
+  return {
+    fam,
+    label: getFamilyMeta(fam).shortLabel,
+    color: FAMILY_COLORS[fam] ?? FAMILY_COLORS.autre,
+    count: members.length,
+    categories,
+  };
+}).filter((g) => g.count > 0);
+
+const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<section class="ai-dev" aria-labelledby={`dev-title-${instanceId}`}>
+  <div class="ai-dev-toolbar">
+    <p class="meta" id={`dev-title-${instanceId}`}>
+      Schéma : <code>stance.family</code> → <code>category</code> → fiche. Développez une
+      famille, puis une catégorie — les noms se chargent à la demande.
+    </p>
+    <div class="ai-dev-filters" role="group" aria-label="Filtrer par catégorie">
+      <button type="button" class="ai-dev-filter" data-filter="all" aria-pressed="true">
+        Tout
+      </button>
+      <button type="button" class="ai-dev-filter" data-filter="influenceur" aria-pressed="false">
+        Influenceurs
+      </button>
+      <button type="button" class="ai-dev-filter" data-filter="societe-civile" aria-pressed="false">
+        Société civile
+      </button>
+      <button type="button" class="ai-dev-filter" data-filter="elu-parlementaire" aria-pressed="false">
+        Élu·e·s
+      </button>
+    </div>
+    <div class="ai-dev-actions">
+      <button type="button" class="ai-dev-btn" data-action="collapse-all">Tout replier</button>
+    </div>
+  </div>
+
+  <div class="ai-dev-tree" id={`tree-${instanceId}`}>
+    {
+      byFamily.map((g) => (
+        <details class="ai-dev-family" data-family={g.fam} style={`--fam:${g.color}`}>
+          <summary class="ai-dev-family-sum">
+            <span class="ai-dev-swatch" aria-hidden="true" />
+            <span class="ai-dev-family-label">{g.label}</span>
+            <span class="meta"> · {g.count} siège{g.count > 1 ? 's' : ''}</span>
+          </summary>
+          <div class="ai-dev-family-body">
+            {g.categories.map((cat) => (
+              <details
+                class="ai-dev-cat"
+                data-category={cat.id}
+                data-family={g.fam}
+                open={g.categories.length === 1}
+              >
+                <summary>
+                  {cat.label}
+                  <span class="meta"> · {cat.count}</span>
+                </summary>
+                <ul class="ai-dev-list" data-list-for={`${g.fam}::${cat.id}`}>
+                  <li class="meta ai-dev-placeholder">Ouverture…</li>
+                </ul>
+              </details>
+            ))}
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<script define:vars={{ instanceId, dataUrl }}>
+  (function () {
+    const root = document.getElementById(`tree-${instanceId}`);
+    const section = root && root.closest('.ai-dev');
+    if (!root || !section) return;
+
+    /** @type {Record<string, any>|null} */
+    let data = null;
+    let loading = null;
+
+    function esc(s) {
+      return String(s || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function ensureData() {
+      if (data) return Promise.resolve(data);
+      if (loading) return loading;
+      loading = fetch(dataUrl, { credentials: 'same-origin' })
+        .then((r) => r.json())
+        .then((j) => {
+          data = j;
+          return data;
+        })
+        .catch(() => {
+          data = {};
+          return data;
+        });
+      return loading;
+    }
+
+    function platformKinds(p) {
+      const seen = {};
+      const out = [];
+      for (const pl of p.platforms || []) {
+        if (!seen[pl.kind]) {
+          seen[pl.kind] = true;
+          out.push(pl.kind);
+        }
+        if (out.length >= 4) break;
+      }
+      return out.join(' · ');
+    }
+
+    function renderBody(p) {
+      if (!p) return '<p class="meta">Fiche introuvable.</p>';
+      const conf =
+        p.confidence != null
+          ? ` · confiance ${Math.round(p.confidence * 100)}&nbsp;%`
+          : '';
+      const platforms =
+        (p.platforms || [])
+          .map(
+            (pl) =>
+              `<li><a href="${esc(pl.url)}" rel="noopener noreferrer">${esc(pl.label)}</a></li>`,
+          )
+          .join('') || '<li class="meta">Aucun lien</li>';
+      const deps =
+        !(p.dependencies || []).length
+          ? '<p class="meta">Aucun flux documenté à ce jour.</p>'
+          : `<ul>${(p.dependencies || [])
+              .map(
+                (d) =>
+                  `<li><strong>${esc(d.kindLabel)}</strong> — ${esc(d.label)}<ul>${(d.sources || [])
+                    .map(
+                      (s) =>
+                        `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+                    )
+                    .join('')}</ul></li>`,
+              )
+              .join('')}</ul>`;
+      const sources = (p.stance_sources || [])
+        .map(
+          (s) =>
+            `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+        )
+        .join('');
+      const obs = p.observatoire_ref
+        ? `<p class="meta"><a href="/observatoire-censure/#influenceurs">Observatoire</a></p>`
+        : '';
+      return `
+        <p class="meta">${esc(p.statusLabel)}${conf} · ${esc(p.verification)}
+          <span class="ai-dev-hue" style="--hue:${esc(p.color)}"><span class="ai-dev-swatch"></span>${esc(p.stance_label)}</span>
+        </p>
+        <p>${esc(p.summary)}</p>
+        ${p.rationale ? `<p class="meta"><strong>Indices (teinte actuelle) :</strong> ${esc(p.rationale)}</p>` : ''}
+        ${
+          (p.stance_history || []).length
+            ? `<h4>Évolution documentée</h4>
+        <p class="meta">« Il n’y a que les imbéciles qui ne changent pas d’avis ».</p>
+        <ol>${(p.stance_history || [])
+          .map(
+            (h) => `<li><strong>${esc(h.as_of)}</strong> → ${esc(h.label)}
+              <ul>${(h.motifs || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul></li>`,
+          )
+          .join('')}</ol>`
+            : ''
+        }
+        <h4>Liens</h4><ul>${platforms}</ul>
+        <h4>Dépendances économiques</h4>${deps}
+        <h4>Sources de la teinte actuelle</h4><ul>${sources}</ul>
+        ${obs}
+      `;
+    }
+
+    function bindFiche(el) {
+      el.addEventListener('toggle', async () => {
+        if (!el.open) return;
+        const id = el.getAttribute('data-id');
+        const body = el.querySelector(`[data-body-for="${id}"]`);
+        if (!body || body.getAttribute('data-loaded') === '1') return;
+        body.innerHTML = '<p class="meta">Chargement…</p>';
+        const map = await ensureData();
+        body.innerHTML = renderBody(map[id]);
+        body.setAttribute('data-loaded', '1');
+      });
+    }
+
+    async function fillCategory(catEl) {
+      if (catEl.getAttribute('data-list-loaded') === '1') return;
+      const fam = catEl.getAttribute('data-family');
+      const cat = catEl.getAttribute('data-category');
+      const list = catEl.querySelector('.ai-dev-list');
+      if (!list) return;
+      list.innerHTML = '<li class="meta">Chargement de la liste…</li>';
+      const map = await ensureData();
+      const items = Object.values(map)
+        .filter((p) => p.family === fam && (p.category || 'influenceur') === cat)
+        .sort((a, b) =>
+          String(a.display_name).localeCompare(String(b.display_name), 'fr', {
+            sensitivity: 'base',
+          }),
+        );
+      if (!items.length) {
+        list.innerHTML = '<li class="meta">Aucune entrée.</li>';
+        catEl.setAttribute('data-list-loaded', '1');
+        return;
+      }
+      list.innerHTML = items
+        .map((inf) => {
+          const plats = platformKinds(inf);
+          return `<li><details class="ai-dev-fiche" id="inf-${esc(inf.id)}" data-id="${esc(inf.id)}" data-category="${esc(cat)}">
+            <summary>
+              <span class="ai-dev-name">${esc(inf.display_name)}</span>
+              ${inf.handle ? `<span class="meta"> @${esc(inf.handle)}</span>` : ''}
+              ${plats ? `<span class="meta ai-dev-plats"> — ${esc(plats)}</span>` : ''}
+            </summary>
+            <div class="ai-dev-fiche-body" data-body-for="${esc(inf.id)}"><p class="meta">Ouverture…</p></div>
+          </details></li>`;
+        })
+        .join('');
+      list.querySelectorAll('.ai-dev-fiche').forEach(bindFiche);
+      catEl.setAttribute('data-list-loaded', '1');
+    }
+
+    root.querySelectorAll('.ai-dev-cat').forEach((catEl) => {
+      const maybeFill = () => {
+        if (catEl.open) fillCategory(catEl);
+      };
+      catEl.addEventListener('toggle', maybeFill);
+      maybeFill();
+    });
+
+    section.querySelectorAll('.ai-dev-filter').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter') || 'all';
+        section.querySelectorAll('.ai-dev-filter').forEach((b) =>
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'),
+        );
+        root.querySelectorAll('.ai-dev-cat').forEach((cat) => {
+          const id = cat.getAttribute('data-category');
+          const show = filter === 'all' || filter === id;
+          cat.hidden = !show;
+        });
+        root.querySelectorAll('.ai-dev-family').forEach((fam) => {
+          const visible = [...fam.querySelectorAll('.ai-dev-cat')].some((c) => !c.hidden);
+          fam.hidden = !visible;
+        });
+      });
+    });
+
+    const collapseBtn = section.querySelector('[data-action="collapse-all"]');
+    if (collapseBtn) {
+      collapseBtn.addEventListener('click', () => {
+        root.querySelectorAll('details').forEach((d) => {
+          d.open = false;
+        });
+      });
+    }
+  })();
+</script>
+
+<style>
+  .ai-dev-toolbar {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  .ai-dev-filters,
+  .ai-dev-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .ai-dev-filter,
+  .ai-dev-btn {
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 4px;
+    background: var(--card, #fff);
+    cursor: pointer;
+  }
+  .ai-dev-filter[aria-pressed='true'] {
+    border-color: var(--accent, #1a5f7a);
+    background: color-mix(in srgb, var(--accent, #1a5f7a) 12%, #fff);
+  }
+  .ai-dev-tree {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .ai-dev-family {
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    border-left: 4px solid var(--fam, #888);
+    padding: 0.15rem 0.5rem 0.35rem;
+    background: var(--card, #fff);
+  }
+  .ai-dev-family-sum {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.15rem;
+    list-style: none;
+  }
+  .ai-dev-family-sum::-webkit-details-marker {
+    display: none;
+  }
+  .ai-dev-swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    background: var(--fam, #888);
+    flex-shrink: 0;
+  }
+  .ai-dev-family-label {
+    font-weight: 600;
+  }
+  .ai-dev-family-body {
+    padding: 0 0.25rem 0.35rem 0.85rem;
+    display: grid;
+    gap: 0.25rem;
+  }
+  .ai-dev-cat {
+    border-top: 1px solid color-mix(in srgb, var(--border, #ddd) 70%, transparent);
+    padding-top: 0.2rem;
+  }
+  .ai-dev-cat > summary {
+    cursor: pointer;
+    padding: 0.35rem 0;
+    font-weight: 500;
+  }
+  .ai-dev-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.35rem 0.5rem;
+  }
+  .ai-dev-fiche {
+    margin: 0.15rem 0;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--card, #fff) 92%, #e8eef3);
+  }
+  .ai-dev-fiche > summary {
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+  }
+  .ai-dev-name {
+    font-weight: 600;
+  }
+  .ai-dev-plats {
+    font-size: 0.85em;
+  }
+  .ai-dev-fiche-body {
+    padding: 0.35rem 0.65rem 0.75rem;
+    border-top: 1px solid var(--border, #e0e0e0);
+  }
+  .ai-dev-fiche-body h4 {
+    margin: 0.65rem 0 0.25rem;
+    font-size: 0.95rem;
+  }
+  .ai-dev-hue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: 0.35rem;
+  }
+  .ai-dev-hue .ai-dev-swatch {
+    background: var(--hue, #888);
+  }
+  .ai-dev-placeholder {
+    padding: 0.25rem 0;
+  }
+</style>

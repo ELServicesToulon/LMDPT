@@ -1,0 +1,232 @@
+---
+/**
+ * Moteur de recherche site (header) — index client pages + influenceurs.
+ */
+interface Props {
+  indexUrl?: string;
+}
+const { indexUrl = '/data/site-search-index.json' } = Astro.props;
+---
+
+<div class="site-search" data-index-url={indexUrl}>
+  <form role="search" aria-label="Rechercher sur le site" class="site-search-form" action="/assemblee-influenceurs" method="get">
+    <label class="visually-hidden" for="site-search-q">Rechercher</label>
+    <input
+      type="search"
+      id="site-search-q"
+      name="q"
+      placeholder="Rechercher une page, un influenceur, un député…"
+      autocomplete="off"
+      enterkeyhint="search"
+    />
+    <button type="submit">Chercher</button>
+  </form>
+  <div class="site-search-results" id="site-search-results" hidden role="listbox" aria-label="Résultats de recherche"></div>
+</div>
+
+<script>
+  (function () {
+    const root = document.querySelector('.site-search');
+    if (!root) return;
+    const input = root.querySelector('#site-search-q');
+    const box = root.querySelector('#site-search-results');
+    const indexUrl = root.getAttribute('data-index-url') || '/data/site-search-index.json';
+    if (!(input instanceof HTMLInputElement) || !(box instanceof HTMLElement)) return;
+
+    /** @type {{ title: string, url: string, kind: string, keywords?: string, followers?: number }[]} */
+    let items = [];
+    let loaded = false;
+
+    function esc(s) {
+      return String(s || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    async function ensure() {
+      if (loaded) return;
+      try {
+        const res = await fetch(indexUrl, { credentials: 'same-origin' });
+        const data = await res.json();
+        items = Array.isArray(data.items) ? data.items : [];
+        loaded = true;
+      } catch {
+        items = [];
+        loaded = true;
+      }
+    }
+
+    function score(item, q) {
+      const hay = `${item.title} ${item.keywords || ''} ${item.url}`.toLowerCase();
+      if (!hay.includes(q)) return 0;
+      let s = 0;
+      if (item.title.toLowerCase().startsWith(q)) s += 40;
+      if (item.title.toLowerCase().includes(q)) s += 20;
+      if ((item.keywords || '').toLowerCase().includes(q)) s += 10;
+      if (item.kind === 'page') s += 5;
+      if (item.followers) s += Math.min(15, Math.log10(item.followers + 1));
+      return s;
+    }
+
+    function render(q) {
+      const query = q.trim().toLowerCase();
+      if (query.length < 2) {
+        box.hidden = true;
+        box.innerHTML = '';
+        return;
+      }
+      const hits = items
+        .map((it) => ({ it, s: score(it, query) }))
+        .filter((x) => x.s > 0)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 12);
+      if (!hits.length) {
+        box.hidden = false;
+        box.innerHTML = '<p class="site-search-empty">Aucun résultat</p>';
+        return;
+      }
+      box.hidden = false;
+      box.innerHTML = hits
+        .map(({ it }) => {
+          const kind =
+            it.kind === 'influenceur'
+              ? 'Influenceur'
+              : it.kind === 'elu'
+                ? 'Député·e'
+                : it.kind === 'societe-civile'
+                  ? 'Société civile'
+                  : 'Page';
+          const fol = it.followers
+            ? ` · ~${it.followers >= 1e6 ? (it.followers / 1e6).toFixed(1).replace(/\.0$/, '') + ' M' : it.followers >= 1e3 ? Math.round(it.followers / 1e3) + ' k' : it.followers} ab.`
+            : '';
+          return `<a role="option" class="site-search-hit" href="${esc(it.url)}"><span class="site-search-kind">${esc(kind)}</span><span class="site-search-title">${esc(it.title)}${esc(fol)}</span></a>`;
+        })
+        .join('');
+    }
+
+    let t = 0;
+    input.addEventListener('input', () => {
+      clearTimeout(t);
+      t = window.setTimeout(async () => {
+        await ensure();
+        render(input.value);
+      }, 120);
+    });
+    input.addEventListener('focus', async () => {
+      await ensure();
+      render(input.value);
+    });
+    document.addEventListener('click', (ev) => {
+      if (!root.contains(ev.target)) {
+        box.hidden = true;
+      }
+    });
+    input.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        box.hidden = true;
+        input.blur();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .site-search {
+    position: relative;
+    width: min(100%, 28rem);
+    margin: 0.55rem 0 0.15rem;
+  }
+  .site-search-form {
+    display: flex;
+    gap: 0.35rem;
+    align-items: stretch;
+  }
+  .site-search-form input[type='search'] {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    font-size: 0.92rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 6px;
+    background: var(--card, #fff);
+    color: inherit;
+  }
+  .site-search-form button {
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid color-mix(in srgb, var(--accent, #1a5f7a) 55%, #333);
+    background: color-mix(in srgb, var(--accent, #1a5f7a) 18%, var(--card, #fff));
+    cursor: pointer;
+  }
+  .site-search-results {
+    position: absolute;
+    z-index: 40;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    max-height: min(60vh, 22rem);
+    overflow: auto;
+    background: var(--card, #fff);
+    border: 1px solid var(--border, #ddd);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px color-mix(in srgb, #000 12%, transparent);
+    padding: 0.35rem;
+  }
+  .site-search-hit {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.45rem;
+    align-items: baseline;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .site-search-hit:hover,
+  .site-search-hit:focus {
+    background: color-mix(in srgb, var(--accent, #1a5f7a) 12%, var(--card, #fff));
+    outline: none;
+  }
+  .site-search-kind {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    opacity: 0.75;
+  }
+  .site-search-title {
+    font-size: 0.9rem;
+  }
+  .site-search-empty {
+    margin: 0;
+    padding: 0.55rem;
+    font-size: 0.88rem;
+    opacity: 0.75;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 640px) {
+    .site-search {
+      width: 100%;
+    }
+    .site-search-hit {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+</style>
