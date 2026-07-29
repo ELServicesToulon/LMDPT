@@ -1,0 +1,1305 @@
+{
+  "schema": "lmdpt-assemblee-audience-overrides-v1",
+  "as_of": "2026-07",
+  "methodology": "Ordres de grandeur pédagogiques pour le placement des rangs (1er rang = plus d’abonnés). Pas un scrape live ni un score moral. Sources publiques / notoriété documentée ; députés hors liste = fourchette basse estimée.",
+  "defaults": {
+    "elu-parlementaire": {
+      "min": 2500,
+      "max": 45000
+    },
+    "influenceur": {
+      "min": 40000,
+      "max": 180000
+    },
+    "other": {
+      "min": 20000,
+      "max": 120000
+    },
+    "societe-civile": {
+      "min": 20000,
+      "max": 350000
+    }
+  },
+  "by_id": {
+    "hugo-decrypte": {
+      "followers_total": 4200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Chaîne YouTube + multi-réseaux — ordre de grandeur public."
+    },
+    "x-emmanuel-macron": {
+      "followers_total": 9800000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Compte X présidentiel — ordre de grandeur public."
+    },
+    "x-jordan-bardella": {
+      "followers_total": 2100000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-marine-le-pen": {
+      "followers_total": 3200000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-cyril-hanouna": {
+      "followers_total": 1500000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "brut-fr": {
+      "followers_total": 5500000,
+      "primary_platform": "facebook",
+      "status": "estimate"
+    },
+    "bfmtv-clips-yt": {
+      "followers_total": 3800000,
+      "primary_platform": "youtube",
+      "status": "estimate"
+    },
+    "papacito-papacitooff": {
+      "followers_total": 900000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "usul-usul": {
+      "followers_total": 650000,
+      "primary_platform": "youtube",
+      "status": "estimate"
+    },
+    "ultia": {
+      "followers_total": 720000,
+      "primary_platform": "twitch",
+      "status": "estimate"
+    },
+    "jean-massiet": {
+      "followers_total": 480000,
+      "primary_platform": "twitch",
+      "status": "estimate"
+    },
+    "gaspard-g": {
+      "followers_total": 350000,
+      "primary_platform": "youtube",
+      "status": "estimate"
+    },
+    "x-eric-zemmour": {
+      "followers_total": 1800000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-le-monde": {
+      "followers_total": 11000000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-jl-melenchon": {
+      "followers_total": 2900000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-gabriel-attal": {
+      "followers_total": 1600000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "x-elysee": {
+      "followers_total": 4500000,
+      "primary_platform": "x",
+      "status": "estimate"
+    },
+    "franceinfo-yt": {
+      "followers_total": 2200000,
+      "primary_platform": "youtube",
+      "status": "estimate"
+    },
+    "casus-lady": {
+      "followers_total": 68000,
+      "primary_platform": "tiktok",
+      "status": "estimate",
+      "note": "TikTok ~50–70k / YouTube ~47–50k (ordres publics 2025–2026). Focus éditorial partagé avec Nathan Keskon, Ali Babal (@BolbBilal) et Jack Le Fou (@JackLeFouX)."
+    },
+    "camille-etienne": {
+      "followers_total": 450000,
+      "primary_platform": "instagram",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "rokhaya-diallo": {
+      "followers_total": 380000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "tatiana-ventose": {
+      "followers_total": 320000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "le-raptor-dissident": {
+      "followers_total": 280000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "salome-saque": {
+      "followers_total": 210000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "attac-france": {
+      "followers_total": 120000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "greenpeace-france": {
+      "followers_total": 500000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "oxfam-france": {
+      "followers_total": 180000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "fondation-abbe-pierre": {
+      "followers_total": 220000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "bondy-blog": {
+      "followers_total": 150000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "disclose-ngo": {
+      "followers_total": 160000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "amnesty-france": {
+      "followers_total": 350000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "sos-mediterranee": {
+      "followers_total": 140000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "cyrus-north": {
+      "followers_total": 900000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "monsieur-phi": {
+      "followers_total": 550000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "la-tronche-en-biais": {
+      "followers_total": 400000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "hygiene-mentale": {
+      "followers_total": 480000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "nota-bene-histoire": {
+      "followers_total": 2800000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "dirtybiology": {
+      "followers_total": 1800000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "science-etonnante": {
+      "followers_total": 1200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "linguisticae": {
+      "followers_total": 700000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "loopsider": {
+      "followers_total": 600000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "aj-plus-francais": {
+      "followers_total": 900000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "caroline-fourest": {
+      "followers_total": 280000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "natacha-polony": {
+      "followers_total": 250000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "mathieu-bock-cote": {
+      "followers_total": 200000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "elisabeth-levy": {
+      "followers_total": 120000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "damien-leveque-civique": {
+      "followers_total": 450000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "academic-media": {
+      "followers_total": 80000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "youth-for-climate-france": {
+      "followers_total": 90000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "anv-cop21": {
+      "followers_total": 70000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "les-jours": {
+      "followers_total": 200000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "mcfly-carlito": {
+      "followers_total": 7500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "bilal-hassani": {
+      "followers_total": 1500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "clique-tv": {
+      "followers_total": 800000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique (société civile)."
+    },
+    "sc-scilabus": {
+      "followers_total": 700000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-astronogeek": {
+      "followers_total": 600000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-e-penser": {
+      "followers_total": 900000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-chat-sceptique": {
+      "followers_total": 250000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-defakator": {
+      "followers_total": 400000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-le-vortex": {
+      "followers_total": 800000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cours-ados": {
+      "followers_total": 200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-lumni": {
+      "followers_total": 300000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-colas-droin": {
+      "followers_total": 180000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-manon-bril": {
+      "followers_total": 500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-histony": {
+      "followers_total": 350000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-clype": {
+      "followers_total": 150000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-le-monde-moderne-extra": {
+      "followers_total": 200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-elucid": {
+      "followers_total": 280000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-le-media-zone": {
+      "followers_total": 200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-partager-c-est-sympa": {
+      "followers_total": 180000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ouvrez-les-guillemets": {
+      "followers_total": 120000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-datagueule": {
+      "followers_total": 500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-thinkerview-extra": {
+      "followers_total": 600000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-frenesie": {
+      "followers_total": 100000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-hugodecrypte-actu": {
+      "followers_total": 4000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-journal-du-geek-civique": {
+      "followers_total": 200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-micode": {
+      "followers_total": 1500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-underscore": {
+      "followers_total": 800000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-realtime-callback": {
+      "followers_total": 150000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-poisson-fecond": {
+      "followers_total": 400000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-joueur-du-grenier": {
+      "followers_total": 4000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-natoo": {
+      "followers_total": 6000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-enjoyphoenix": {
+      "followers_total": 1000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-squeezie-societe": {
+      "followers_total": 19000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-amixem": {
+      "followers_total": 8000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-lama-fache": {
+      "followers_total": 2000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-dr-nozman": {
+      "followers_total": 5000000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-bruce-benamran": {
+      "followers_total": 900000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fanny-ruwet": {
+      "followers_total": 300000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-marina-rollman": {
+      "followers_total": 200000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-guillaume-meurice": {
+      "followers_total": 400000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-charline-vanhoenacker": {
+      "followers_total": 250000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-thomas-wiesel": {
+      "followers_total": 500000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-debout-debout": {
+      "followers_total": 80000,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ligue-des-droits-de-l-homme": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-sos-racisme": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-licra": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-mrap": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-planning-familial": {
+      "followers_total": 90000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-noustoutes": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-osez-le-feminisme": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-des-femmes": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-sidaction": {
+      "followers_total": 120000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-aides": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-restos-du-c-ur": {
+      "followers_total": 300000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-secours-populaire": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-secours-catholique": {
+      "followers_total": 140000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-emmaus-france": {
+      "followers_total": 180000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-croix-rouge-francaise": {
+      "followers_total": 400000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-medecins-du-monde": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-medecins-sans-frontieres": {
+      "followers_total": 350000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-handicap-international": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-wwf-france": {
+      "followers_total": 250000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-france-nature-environnement": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-surfrider-foundation-europe": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-zero-waste-france": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-friends-of-the-earth-france": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-reseau-action-climat": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-alternatiba": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-extinction-rebellion-france": {
+      "followers_total": 90000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-les-soulevements-de-la-terre": {
+      "followers_total": 120000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-l214": {
+      "followers_total": 300000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-spa": {
+      "followers_total": 400000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-30-millions-d-amis": {
+      "followers_total": 250000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ufc-que-choisir": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-60-millions-de-consommateurs": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-la-quadrature-du-net": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-framasoft": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-april": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-wikimedia-france": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-open-knowledge-france": {
+      "followers_total": 20000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-reporters-sans-frontieres": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cpj-europe": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-observatoire-international-des-prisons": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cimade": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-gisti": {
+      "followers_total": 25000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-utopia-56": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-emmaus-solidarite": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-de-france": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-institut-montaigne": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-jean-jaures": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-terra-nova": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-copernic": {
+      "followers_total": 20000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ifrap": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-contribuables-associes": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-pour-la-recherche-sur-les-administrati": {
+      "followers_total": 20000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-institut-des-libertes": {
+      "followers_total": 25000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-identite-et-democratie-echos-fr": {
+      "followers_total": 20000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-civitas": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-agrif": {
+      "followers_total": 15000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-sos-chretiente": {
+      "followers_total": 20000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-la-manif-pour-tous-archives": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-syndicat-de-la-magistrature": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-usb-magistrats": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-syndicat-des-avocats-de-france": {
+      "followers_total": 25000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-conseil-national-des-barreaux": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ordre-des-medecins": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cgt": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cfdt": {
+      "followers_total": 180000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fo-force-ouvriere": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cftc": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cfe-cgc": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-solidaires-sud": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fsu": {
+      "followers_total": 90000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-unef": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fage": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-uni": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-blast-asso": {
+      "followers_total": 400000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-streetpress-asso": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-mediapart-societe-des-journalistes": {
+      "followers_total": 500000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-arret-sur-images": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-acrimed": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-le-canard-enchaine": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fakir": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cqfd": {
+      "followers_total": 40000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-revue-ballast": {
+      "followers_total": 50000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-le-vent-se-leve": {
+      "followers_total": 120000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-regards": {
+      "followers_total": 60000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-politis": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-l-humanite": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-causeur": {
+      "followers_total": 100000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-boulevard-voltaire": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-valeurs-actuelles-societe": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-frontieres-media": {
+      "followers_total": 180000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-livre-noir": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-omerta": {
+      "followers_total": 150000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-elements": {
+      "followers_total": 30000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-contrepoints": {
+      "followers_total": 70000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-atlantico": {
+      "followers_total": 120000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-slate-fr": {
+      "followers_total": 200000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-numerama": {
+      "followers_total": 250000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-next": {
+      "followers_total": 80000,
+      "primary_platform": "site",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-collectif-qui-a-tue-mon-fils": {
+      "followers_total": 40000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-collages-feminicides": {
+      "followers_total": 80000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-balance-ton-agency": {
+      "followers_total": 50000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-metoo-media": {
+      "followers_total": 60000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-police-nationale-plr-echos-citoyens": {
+      "followers_total": 100000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-vigie-laicite": {
+      "followers_total": 30000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-printemps-republicain": {
+      "followers_total": 50000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-ldh-paris": {
+      "followers_total": 70000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-greenpeace-actions": {
+      "followers_total": 400000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-wwf-actu": {
+      "followers_total": 200000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-sea-shepherd-france": {
+      "followers_total": 80000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-l214-enquetes": {
+      "followers_total": 250000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-fondation-abbe-pierre-actu": {
+      "followers_total": 200000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cncdh": {
+      "followers_total": 40000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-defenseur-des-droits": {
+      "followers_total": 100000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-cnil": {
+      "followers_total": 150000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-arcom-echos-citoyens": {
+      "followers_total": 80000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-hadopi-arcom-droits": {
+      "followers_total": 20000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-openstreetmap-france": {
+      "followers_total": 25000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-data-for-good": {
+      "followers_total": 30000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "sc-latitudes": {
+      "followers_total": 20000,
+      "primary_platform": "x",
+      "status": "estimate",
+      "note": "Ordre de grandeur pédagogique P45g."
+    },
+    "nathan-keskon": {
+      "followers_total": 2440,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "YouTube ~2,44 k abonnés (ordre public about page 2026-07) — focus éditorial égal Casus, pas un inflation d’audience."
+    },
+    "ali-babal-bolb-bilal": {
+      "followers_total": 53500,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "YouTube Sagesse d’islam ~53,5 k (about 2026-07) + X @BolbBilal — ordre pédagogique ; focus éditorial égal Casus (~68 k)."
+    },
+    "jack-le-fou": {
+      "followers_total": 82900,
+      "primary_platform": "youtube",
+      "status": "estimate",
+      "note": "YouTube @JackLeFouX ~82,9 k abonnés (about 2026-07) + X @JackLeFouX — devant Casus (~68 k) ; focus éditorial égal du cluster."
+    }
+  }
+}

@@ -1,18 +1,136 @@
 [
   {
+    "date": "2026-07-26",
+    "label": "Temps de parole — équité d’exposition (vague Arcom, déc. 2025)",
+    "source": "Arcom · data.gouv.fr (Licence Ouverte)",
+    "datasetUrl": "https://www.data.gouv.fr/datasets/temps-de-parole-des-partis-et-personnalites-politiques-elections-municipales-2026",
+    "pages": [
+      "/analyses/temps-parole-equite",
+      "/liberte-d-expression"
+    ],
+    "license": "lov2",
+    "licenseNote": "Synthèse pédagogique LMDPT. Le sondage sert de dénominateur de comparaison, jamais de prédiction. Ce n’est pas un avis juridique Arcom.",
+    "script": null
+  },
+  {
+    "date": "2026-07-26",
+    "label": "Programmes 2027 — index de veille (MAJ fiches et couverture presse)",
+    "source": "Veille presse LMDPT · documents de campagne partiels",
+    "pages": [
+      "/analyses/programmes",
+      "/analyses/programmes-comparateur?scrutin=presidentielle-2027"
+    ],
+    "license": "lov2",
+    "licenseNote": "Propositions partielles sourcées. Aucun programme officiel qualifié tant que le document de campagne n’est pas publié par le camp.",
+    "script": "npm run programme-veille"
+  },
+  {
+    "date": "2026-07-24",
+    "label": "Observatoire de la censure — médias et influenceurs (depuis 2017)",
+    "source": "Arcom · Conseil de l’UE · décisions de justice · CGU plateformes (sources primaires citées par entrée)",
+    "pages": [
+      "/observatoire-censure",
+      "/liberte-d-expression"
+    ],
+    "license": "lov2",
+    "licenseNote": "Synthèse documentaire LMDPT, pas un avis juridique. Motif officieux = lecture secondaire attribuée, jamais affirmée comme fait LMDPT.",
+    "script": null
+  },
+  {
+    "date": "2026-07-21",
+    "label": "Alerte citoyenne — conditions du débat public (FR / UE)",
+    "source": "Légifrance · Assemblée nationale · Sénat · Commission européenne · recoupements presse",
+    "pages": [
+      "/analyses/alerte-citoyenne",
+      "/liberte-d-expression"
+    ],
+    "license": "lov2",
+    "licenseNote": "Tableau de bord documenté. Chaque point distingue fait confirmé, signal partiel et source secondaire. Pas de soutien à un camp.",
+    "script": null
+  },
+  {
+    "date": "2026-07-17",
+    "label": "Assemblée du premier tour — simulation législatives 2024 (Sainte-Laguë)",
+    "source": "Ministère de l’Intérieur · data.gouv.fr · Assemblée nationale (groupes)",
+    "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/",
+    "pages": [
+      "/analyses/assemblee-premier-tour",
+      "/analyses/assemblee-premier-tour-mecanismes"
+    ],
+    "license": "lov2",
+    "licenseNote": "Répartition proportionnelle nationale agrégée au 1er tour uniquement. Ne remplace pas la géographie uninominale du second tour.",
+    "script": null
+  },
+  {
+    "date": "2026-07-17",
+    "label": "Gouvernance AN1T — corpus juridique et chemins d’application",
+    "source": "Légifrance · Constitution · code électoral · études de cas documentées",
+    "pages": [
+      "/analyses/gouvernance-an1t-droit"
+    ],
+    "license": "lov2",
+    "licenseNote": "Analyse juridique pédagogique. Pas un conseil en droit. La démocratie avant l’élimination.",
+    "script": null
+  },
+  {
+    "date": "2026-07-17",
+    "label": "Présidentielle 2027 — candidatures déclarées (veille, hors liste officielle)",
+    "source": "LCP · presse · annonces de parti (avant parrainages Conseil constitutionnel)",
+    "pages": [
+      "/analyses/presidentielle-2027-preparation"
+    ],
+    "license": "lov2",
+    "licenseNote": "Ce n’est pas la liste officielle du Conseil constitutionnel. Aucun classement, aucun sondage présenté comme résultat.",
+    "script": null
+  },
+  {
+    "date": "2026-07-17",
+    "label": "Déclarations X des candidats — fil chronologique (comptes officiels)",
+    "source": "X (comptes publics listés) · agrégation LMDPT",
+    "pages": [
+      "/analyses/declarations-x-candidats"
+    ],
+    "license": "lov2",
+    "licenseNote": "Fil de transparence. Les propos restent ceux des comptes cités, pas une ligne éditoriale LMDPT.",
+    "script": null
+  },
+  {
+    "date": "2026-07-17",
+    "label": "Sondages présidentielle 2027 — catalogue instituts et vagues (veille)",
+    "source": "Ifop · Elabe · Harris · Ipsos · OpinionWay · Cluster17 · Commission des sondages",
+    "pages": [
+      "/atlas/2027-presidentielle",
+      "/analyses/presidentielle-2027-preparation"
+    ],
+    "license": "lov2",
+    "licenseNote": "Intentions de vote = illustration pédagogique uniquement. Pas de prédiction. Notices Commission des sondages.",
+    "script": "npm run sondage:veille"
+  },
+  {
     "date": "2026-07-10",
-    "label": "Présidentielle 2027 — atlas 1er tour (projection nationale pédagogique + pluralité)",
-    "source": "LMDPT — agrégats sondages publics (Ifop/Harris/Ipsos). Placeholder en attente données officielles Ministère de l'Intérieur.",
+    "label": "Présidentielle 2027 — atlas 1er tour (projection pédagogique)",
+    "source": "Agrégats de sondages publics (Ifop · Harris · Ipsos) — LMDPT",
     "pages": [
       "/atlas/2027-presidentielle"
     ],
     "license": "lov2",
-    "licenseNote": "Projection pédagogique uniquement — à remplacer par données officielles une fois publiées (data.gouv.fr).",
+    "licenseNote": "Projection pédagogique en attente des données officielles du Ministère de l’Intérieur (data.gouv.fr).",
+    "script": null
+  },
+  {
+    "date": "2026-07-10",
+    "label": "Assemblée nationale — composition des groupes (référence 2025)",
+    "source": "Assemblée nationale — groupes politiques",
+    "pages": [
+      "/analyses/assemblee-premier-tour"
+    ],
+    "license": "lov2",
+    "licenseNote": "Référence de composition réelle pour comparer à la simulation AN1T. Pas un classement.",
     "script": null
   },
   {
     "date": "2026-07-02",
-    "label": "Programmes 2027 partiels — veille élargie (Barrot, Le Pen, PS primaire)",
+    "label": "Programmes 2027 partiels — veille élargie",
     "source": "Le Monde · France 24 — élection présidentielle 2027",
     "pages": [
       "/analyses/programmes/presidentielle-2027/attal",
@@ -28,103 +146,140 @@
       "/analyses/programmes-comparateur?scrutin=presidentielle-2027"
     ],
     "license": "lov2",
-    "licenseNote": "Propositions partielles sourcées presse — pas de programme officiel qualifié.",
+    "licenseNote": "Propositions partielles sourcées presse. Pas de programme officiel qualifié.",
     "script": "npm run programme-veille"
   },
   {
     "date": "2026-07-02",
-    "label": "Programmes présidentielles 2017/2022 — mesures et chiffrages",
+    "label": "Programmes présidentielles 2017 et 2022 — mesures et chiffrages",
     "source": "Institut Montaigne · OFCE · documents de campagne",
     "pages": [
       "/analyses/programmes",
       "/analyses/programmes-comparateur"
     ],
     "license": "lov2",
-    "licenseNote": "Chiffrages tiers attribués ; estimations LMDPT documentées dans docs/PROGRAMMES-CHIFFRAGE-METHODO.md",
+    "licenseNote": "Chiffrages tiers attribués. Estimations LMDPT documentées dans docs/PROGRAMMES-CHIFFRAGE-METHODO.md.",
     "script": "npm run programme-chiffrage-lint"
   },
   {
     "date": "2026-07-02",
     "label": "Présidentielle 2027 — calendrier officialisé et veille candidatures",
     "source": "Conseil des ministres (1er juil. 2026) · Conseil constitutionnel · France 24",
-    "pages": ["/analyses/presidentielle-2027-preparation"],
+    "pages": [
+      "/analyses/presidentielle-2027-preparation"
+    ],
     "license": "lov2",
-    "licenseNote": "Mise à jour éditoriale — dates 18 avril / 2 mai 2027 ; pas de jeu de résultats avant publication officielle.",
+    "licenseNote": "Dates retenues : 18 avril et 2 mai 2027. Pas de jeu de résultats avant publication officielle.",
+    "script": null
+  },
+  {
+    "date": "2026-07-02",
+    "label": "Débats civiques — trois questions premier tour",
+    "source": "LMDPT — rubrique Débats (arguments sourcés, positions égales)",
+    "pages": [
+      "/debats",
+      "/debats/assemblee-premier-tour",
+      "/debats/desistements-second-tour",
+      "/debats/vote-utile-pluralite"
+    ],
+    "license": "lov2",
+    "licenseNote": "Espace d’argumentation, pas de faits établis. Minimum deux positions à structure identique. Pas de classement éliminatoire.",
     "script": null
   },
   {
     "date": "2026-06-29",
     "label": "Présidentielle 2027 — dossier de préparation (sources)",
-    "source": "Conseil constitutionnel · Ministère de l'Intérieur · data.gouv.fr · Légifrance",
-    "pages": ["/analyses/presidentielle-2027-preparation"],
+    "source": "Conseil constitutionnel · Ministère de l’Intérieur · data.gouv.fr · Légifrance",
+    "pages": [
+      "/analyses/presidentielle-2027-preparation"
+    ],
     "license": "lov2",
-    "licenseNote": "Stub éditorial — pas de jeu de résultats intégré avant publication officielle 2027.",
+    "licenseNote": "Dossier de sources. Pas de jeu de résultats intégré avant publication officielle 2027.",
     "script": null
   },
   {
     "date": "2026-06-29",
     "label": "Législatives 2024 — résultats nationaux (22 nuances)",
-    "source": "resultats-definitifs-france-entiere.xlsx (Ministère de l'Intérieur)",
+    "source": "Ministère de l’Intérieur — resultats-definitifs-france-entiere.xlsx",
     "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/",
-    "pages": ["/atlas/2024-legislatives"],
+    "pages": [
+      "/atlas/2024-legislatives"
+    ],
     "license": "lov2",
     "script": "npm run import:legislatives-2024"
   },
   {
     "date": "2026-06-29",
     "label": "Législatives 2024 — 577 circonscriptions (1er tour)",
-    "source": "lg2024-resultats-circonscriptions-une-ligne-par-circo2.csv",
+    "source": "Ministère de l’Intérieur — lg2024-resultats-circonscriptions (une ligne par circo)",
     "datasetUrl": "https://www.data.gouv.fr/fr/datasets/resultats-du-1er-tour-des-elections-legislatives-2024-par-circonscription/",
-    "pages": ["/atlas/2024-legislatives"],
+    "pages": [
+      "/atlas/2024-legislatives"
+    ],
     "license": "lov2",
     "script": "npm run import:legislatives-2024"
   },
   {
     "date": "2026-06-27",
-    "label": "Législatives 2024 — dossier désistements (306 → 89 duels)",
-    "source": "Ministère de l'Intérieur, Franceinfo (correctif 215)",
-    "pages": ["/analyses/legislatives-2024-desistements"],
+    "label": "Législatives 2024 — dossier désistements (306 duels ramenés à 89)",
+    "source": "Ministère de l’Intérieur · Franceinfo (correctif 215)",
+    "pages": [
+      "/analyses/legislatives-2024-desistements"
+    ],
     "license": "lov2",
-    "licenseNote": "Données officielles en Licence Ouverte ; infographie Franceinfo citée comme source.",
+    "licenseNote": "Données officielles en Licence Ouverte. Infographie Franceinfo citée comme source secondaire.",
     "script": null
   },
   {
     "date": "2026-06-27",
     "label": "Présidentielle 2022 — départements (101)",
-    "source": "resultats-par-niveau-dpt-t1-france-entiere.txt",
-    "pages": ["/atlas/2022-presidentielle"],
+    "source": "Ministère de l’Intérieur — resultats-par-niveau-dpt-t1-france-entiere.txt",
+    "pages": [
+      "/atlas/2022-presidentielle"
+    ],
     "license": "lov2",
     "script": "npm run import:dept-2022"
   },
   {
     "date": "2026-06-27",
     "label": "Présidentielle 2017 — départements (107)",
-    "source": "Presidentielle_2017_Resultats_Tour_1_c.xls (data.gouv.fr)",
-    "pages": ["/atlas/2017-presidentielle"],
+    "source": "data.gouv.fr — Presidentielle_2017_Resultats_Tour_1_c.xls",
+    "pages": [
+      "/atlas/2017-presidentielle"
+    ],
     "license": "lov2",
     "script": "npm run import:dept-2017"
   },
   {
     "date": "2026-06-27",
-    "label": "Carte SVG départements (96 métropole + Corse)",
+    "label": "Carte SVG des départements (métropole et Corse)",
     "source": "gregoiredavid/france-geojson",
-    "pages": ["/atlas/2017-presidentielle", "/atlas/2022-presidentielle"],
+    "pages": [
+      "/atlas/2017-presidentielle",
+      "/atlas/2022-presidentielle"
+    ],
     "license": "lov2",
     "script": "npm run build:geo"
   },
   {
     "date": "2026-06-27",
     "label": "Présidentielle 2022 — résultats nationaux (12 candidats)",
-    "source": "Conseil constitutionnel / Ministère de l'Intérieur",
-    "pages": ["/atlas/2022-presidentielle", "/analyses/presidentielle-distorsion"],
+    "source": "Conseil constitutionnel · Ministère de l’Intérieur",
+    "pages": [
+      "/atlas/2022-presidentielle",
+      "/analyses/presidentielle-distorsion"
+    ],
     "license": "lov2",
     "script": null
   },
   {
     "date": "2026-06-27",
     "label": "Présidentielle 2017 — résultats nationaux (11 candidats)",
-    "source": "Conseil constitutionnel / Ministère de l'Intérieur",
-    "pages": ["/atlas/2017-presidentielle", "/analyses/presidentielle-distorsion"],
+    "source": "Conseil constitutionnel · Ministère de l’Intérieur",
+    "pages": [
+      "/atlas/2017-presidentielle",
+      "/analyses/presidentielle-distorsion"
+    ],
     "license": "lov2",
     "script": null
   }

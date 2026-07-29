@@ -1,0 +1,224 @@
+{
+  "schema": "lmdpt-stance-veille-watchlist-v1",
+  "title": "Veille évolutions de teinte — assemblée influenceurs",
+  "motto": "Il n’y a que les imbéciles qui ne changent pas d’avis",
+  "updated": "2026-07-28",
+  "disclaimer": "Fiction pédagogique LMDPT. Documente des bascules sourcées ; jamais un score moral ni une accusation de « traîtrise ». Extraction conforme : sources publiques uniquement.",
+  "entries": [
+    {
+      "id": "tatiana-ventose",
+      "display_name": "Tatiana Ventôse",
+      "expected_family": "droite-nationale",
+      "previous_families": [
+        "gauche-radicale",
+        "autre"
+      ],
+      "priority": "high",
+      "notes": "Rupture gauche documentée (Wikipédia / PolitiWiki) ; appel MLP 2022 ; ligne souverainiste.",
+      "watch_urls": [
+        "https://fr.wikipedia.org/wiki/Tatiana_Vent%C3%B4se",
+        "https://www.youtube.com/@TatianaVentose",
+        "https://www.politiwiki.fr/wiki/Tatiana_Vent%C3%B4se"
+      ]
+    },
+    {
+      "id": "papacito-papacitooff",
+      "display_name": "Papacito",
+      "expected_family": "droite-nationale",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Surveiller bascules / polémiques publiques.",
+      "watch_urls": [
+        "https://x.com/PapacitoOff"
+      ]
+    },
+    {
+      "id": "usul-usul",
+      "display_name": "Usul",
+      "expected_family": "gauche-radicale",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Ligne gauche documentée — alerte si teinte dataset diverge.",
+      "watch_urls": [
+        "https://www.youtube.com/@Usul"
+      ]
+    },
+    {
+      "id": "hugo-decrypte",
+      "display_name": "HugoDécrypte",
+      "expected_family": "autre",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Transversal info — surveiller si ligne partisane claire émerge.",
+      "watch_urls": [
+        "https://www.youtube.com/@hugo_decrypte"
+      ]
+    },
+    {
+      "id": "casus-lady",
+      "display_name": "Casus Lady",
+      "expected_family": "droite",
+      "previous_families": [
+        "droite-nationale"
+      ],
+      "priority": "high",
+      "notes": "Évolution documentée Soral→Zemmour/Reconquête→Jack le fou / liberté d’expression. Zone ambiguë Knafo (DN) vs Lisnard (droite) — réviser si clarifie.",
+      "watch_urls": [
+        "https://www.youtube.com/@CasusLady",
+        "https://politiwiki.fr/wiki/Casus_Lady",
+        "https://x.com/CasusLady"
+      ]
+    },
+    {
+      "id": "x-raphael-glucksmann",
+      "display_name": "Raphaël Glucksmann",
+      "expected_family": "social-democrate",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://x.com/rglucks1",
+        "https://www.facebook.com/raphaelglucksmann"
+      ]
+    },
+    {
+      "id": "x-gabriel-attal",
+      "display_name": "Gabriel Attal",
+      "expected_family": "centre",
+      "previous_families": [
+        "social-democrate"
+      ],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://x.com/GabrielAttal",
+        "https://www.facebook.com/GabrielAttal"
+      ]
+    },
+    {
+      "id": "x-edouard-philippe",
+      "display_name": "Édouard Philippe",
+      "expected_family": "centre",
+      "previous_families": [
+        "droite"
+      ],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://x.com/EPhilippe_LH",
+        "https://www.facebook.com/EdouardPhilippeLH"
+      ]
+    },
+    {
+      "id": "x-bruno-retailleau",
+      "display_name": "Bruno Retailleau",
+      "expected_family": "droite",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://x.com/BrunoRetailleau",
+        "https://www.facebook.com/BrunoRetailleau"
+      ]
+    },
+    {
+      "id": "alain-soral-r-egalitereconciliation",
+      "display_name": "Alain Soral / É&R",
+      "expected_family": "droite-nationale",
+      "previous_families": [
+        "gauche-radicale"
+      ],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://www.francetvinfo.fr/internet/youtube/youtube-supprime-les-chaines-d-alain-soral_4038627.html"
+      ]
+    },
+    {
+      "id": "x-eric-zemmour",
+      "display_name": "Éric Zemmour",
+      "expected_family": "droite-nationale",
+      "previous_families": [
+        "droite"
+      ],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://x.com/ZemmourEric",
+        "https://www.facebook.com/ZemmourEric"
+      ]
+    },
+    {
+      "id": "dieudonn-dieudolive",
+      "display_name": "Dieudonné",
+      "expected_family": "autre",
+      "previous_families": [
+        "gauche-radicale"
+      ],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://www.france24.com/fr/20200630-youtube-supprime-la-chaine-de-dieudonne"
+      ]
+    },
+    {
+      "id": "hold-up-thana-tv-cosyst-me-holdupmedia",
+      "display_name": "Hold-Up / Thana TV (écosystème)",
+      "expected_family": "autre",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://www.lemonde.fr/les-decodeurs/article/2020/11/12/hold-up-un-documentaire-complotiste-sur-le-covid-19-diffuse-sur-internet_6059501_4355770.html"
+      ]
+    },
+    {
+      "id": "le-raptor-dissident",
+      "display_name": "Le Raptor Dissident",
+      "expected_family": "gauche-radicale",
+      "previous_families": [],
+      "priority": "medium",
+      "notes": "Historique stance_history présent — surveiller nouvelles bascules.",
+      "watch_urls": [
+        "https://www.youtube.com/@LeRaptorDissident",
+        "https://x.com/LeRaptorOff"
+      ]
+    },
+    {
+      "id": "nathan-keskon",
+      "display_name": "Nathan Keskon",
+      "expected_family": "autre",
+      "previous_families": [],
+      "priority": "high",
+      "notes": "Focus égal Casus Lady — écosystème débats / critique islam / liberté d’expression. Réviser si affiliation partisane sourcée.",
+      "watch_urls": [
+        "https://www.youtube.com/@nathankeskon69"
+      ]
+    },
+    {
+      "id": "ali-babal-bolb-bilal",
+      "display_name": "Ali Babal (Bolb Bilal)",
+      "expected_family": "autre",
+      "previous_families": [],
+      "priority": "high",
+      "notes": "Focus égal Casus Lady — écosystème débats / critique islam / liberté d’expression. Réviser si affiliation partisane sourcée.",
+      "watch_urls": [
+        "https://x.com/BolbBilal",
+        "https://www.youtube.com/channel/UCUjOwNF48zS5Cq3dh_nUyKA",
+        "https://alibabal.fr/"
+      ]
+    },
+    {
+      "id": "jack-le-fou",
+      "display_name": "Jack Le Fou",
+      "expected_family": "autre",
+      "previous_families": [],
+      "priority": "high",
+      "notes": "Focus égal Casus Lady — écosystème débats / critique islam / liberté d’expression. Réviser si affiliation partisane sourcée.",
+      "watch_urls": [
+        "https://x.com/JackLeFouX",
+        "https://www.youtube.com/@JackLeFouX"
+      ]
+    }
+  ]
+}
