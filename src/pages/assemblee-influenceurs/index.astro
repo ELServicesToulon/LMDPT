@@ -2,16 +2,15 @@
 /**
  * Assemblée des influenceurs — hémicycle fictif pédagogique (DOE).
  * Dataset : src/data/assemblee-influenceurs.json
+ * JSON client : public/data/assemblee-influenceurs-client.json (npm run build:assemblee-client)
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfluenceursHemicycle from '../../components/InfluenceursHemicycle.astro';
+import InfluenceursSchemaDevelop from '../../components/InfluenceursSchemaDevelop.astro';
 import InfluenceurBackers from '../../components/InfluenceurBackers.astro';
-import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
 import {
-  DEPENDENCY_KIND_LABELS,
-  STANCE_STATUS_LABELS,
   FAMILY_COLORS,
-  familyHueBadge,
+  FOREIGN_LINK_KIND_LABELS,
   getAssembleeInfluenceursView,
 } from '../../lib/assemblee-influenceurs';
 import hueEstimate from '../../data/influenceurs-network-hue-estimate.json';
@@ -23,6 +22,9 @@ const updated = new Date(view.updated).toLocaleDateString('fr-FR', {
 const nameById = Object.fromEntries(
   view.influencers.map((i) => [i.id, i.display_name]),
 );
+
+/** Généré en pré-build (sync:all) — détails fiches hors HTML */
+const clientDataUrl = '/data/assemblee-influenceurs-client.json';
 
 const NETWORK_ORDER = ['youtube', 'tiktok', 'twitch', 'x', 'facebook'] as const;
 const NETWORK_LABELS: Record<(typeof NETWORK_ORDER)[number], string> = {
@@ -48,6 +50,28 @@ const networkRows = NETWORK_ORDER.map((id) => {
     color: FAMILY_COLORS[n.top_family] ?? FAMILY_COLORS.autre,
   };
 }).filter(Boolean);
+
+/** Inventaire pédagogique — sièges avec liens d’État / étrangers documentés */
+const foreignRows = [...view.seated]
+  .filter((s) => s.foreignResolved.signal > 0)
+  .sort((a, b) => {
+    const df = b.foreignResolved.signal - a.foreignResolved.signal;
+    if (df !== 0) return df;
+    return a.display_name.localeCompare(b.display_name, 'fr', { sensitivity: 'base' });
+  })
+  .map((s) => ({
+    id: s.id,
+    name: s.display_name,
+    signal: s.foreignResolved.signal,
+    rowForeign: s.seatForeign?.row ?? s.seat.row,
+    color: s.color,
+    links: s.foreignResolved.links.map((l) => ({
+      kindLabel: FOREIGN_LINK_KIND_LABELS[l.kind],
+      entity: l.state_or_entity,
+      label: l.label,
+      sources: l.sources,
+    })),
+  }));
 ---
 
 <BaseLayout
@@ -67,17 +91,26 @@ const networkRows = NETWORK_ORDER.map((id) => {
       <h1>{view.title}</h1>
       <p class="lead">
         Chaque siège représente une <strong>figure du débat public</strong> (influenceur,
-        média, élu·e documenté·e). <strong>577 sièges</strong> — étalon Assemblée nationale.
-        Placement sur l’axe gauche–droite pédagogique du 1er tour.
+        société civile, média, élu·e documenté·e). <strong>577 sièges</strong> — étalon Assemblée nationale.
+        Corpus : <strong>cible 40&nbsp;% société civile</strong> (créateurs, ONG, syndicats, vulgarisation)
+        — le reste = influenceurs/médias et élu·e·s documenté·e·s.
+        <strong>Premier rang = plus d’abonnés</strong> (ordres de grandeur pédagogiques) ;
+        toggle <strong>rangs · liens étrangers</strong> pour placer devant les fiches avec
+        liens d’État / financement étranger documentés.
+        Au sein de chaque rangée, axe gauche–droite pédagogique du 1er tour.
         <strong>Siège plein</strong> = position déclarée/sourcée ;
         <strong>siège en pointillé</strong> = estimation documentaire.
+        Vue par défaut : <strong>Influenceurs</strong> (lisible sans zoom) — paliers Fit / Lire / Détail.
         Fiction pédagogique — <em>pas</em> la composition actuelle de l’AN.
       </p>
       <p class="meta">
         Période : {view.period.label} (depuis {view.period.from}) · mise à jour {updated} ·{' '}
-        {view.counts.total} influenceurs · {view.counts.declare} déclarée{view.counts.declare > 1 ? 's' : ''} ·{' '}
+        {view.counts.total} sièges · {view.counts.byCategory.influenceur} influenceurs ·{' '}
+        {view.counts.byCategory['societe-civile']} société civile ·{' '}
+        {view.counts.byCategory['elu-parlementaire']} élu·e·s ·{' '}
+        {view.counts.declare} déclarée{view.counts.declare > 1 ? 's' : ''} ·{' '}
         {view.counts.estime} estimée{view.counts.estime > 1 ? 's' : ''} ·{' '}
-        {view.backers.length} financeur{view.backers.length > 1 ? 's' : ''} documenté{view.backers.length > 1 ? 's' : ''}
+        {view.backers.length} financeur{view.backers.length !== 1 ? 's' : ''} documenté{view.backers.length !== 1 ? 's' : ''}
       </p>
       <p class="meta disclaimer-box">{view.disclaimer}</p>
     </header>
@@ -86,8 +119,9 @@ const networkRows = NETWORK_ORDER.map((id) => {
       <ol>
         <li><a href="#hemicycle">Hémicycle</a></li>
         <li><a href="#reseaux">Couleurs par réseau</a></li>
+        <li><a href="#ingerences-etrangeres">Liens d’État / étrangers</a></li>
         <li><a href="#methode">Méthode</a></li>
-        <li><a href="#fiches">Fiches détaillées</a></li>
+        <li><a href="#fiches">Fiches (développement)</a></li>
         <li><a href="#financeurs">Financeurs de la sphère</a></li>
         <li><a href="#droit-de-reponse">Droit de réponse</a></li>
       </ol>
@@ -99,6 +133,7 @@ const networkRows = NETWORK_ORDER.map((id) => {
         seated={view.seated}
         declareCount={view.counts.declare}
         estimeCount={view.counts.estime}
+        dataUrl={clientDataUrl}
       />
     </section>
 
@@ -136,10 +171,84 @@ const networkRows = NETWORK_ORDER.map((id) => {
       <p class="meta disclaimer-box">{hueEstimate.disclaimer}</p>
     </section>
 
+    <section class="card" id="ingerences-etrangeres" aria-labelledby="ingerences-title">
+      <h2 id="ingerences-title">Liens d’État / financement étranger documentés</h2>
+      <p>
+        Rang pédagogique parallèle aux abonnés : le toggle
+        <strong>Rangs · liens étrangers</strong> place au 1er rang les fiches avec le plus de
+        signaux sourcés (organe d’État, sanction UE, réseau média étranger, financement).
+        <em>Pas</em> un score moral ni une accusation d’« agent ». Corpus fail-closed —
+        {view.counts.foreignDocumented} fiche{view.counts.foreignDocumented > 1 ? 's' : ''} documentée{view.counts.foreignDocumented > 1 ? 's' : ''}
+        sur {view.counts.total}.
+      </p>
+      {
+        foreignRows.length === 0 ? (
+          <p class="meta">Aucun lien documenté à ce jour.</p>
+        ) : (
+          <ol class="ai-foreign-list">
+            {foreignRows.map((row, i) => (
+              <li class="ai-foreign-item" style={`border-left-color:${row.color}`}>
+                <div class="ai-foreign-head">
+                  <span class="meta">#{i + 1}</span>
+                  <strong>
+                    <a href={`#hemicycle`} data-focus-seat={row.id}>
+                      {row.name}
+                    </a>
+                  </strong>
+                  <span class="meta">
+                    · signal {row.signal} · rang hémicycle (mode liens) ≈ {row.rowForeign + 1}
+                  </span>
+                </div>
+                <ul>
+                  {row.links.map((l) => (
+                    <li>
+                      <strong>{l.kindLabel}</strong> · {l.entity} — {l.label}
+                      <ul class="meta">
+                        {l.sources.map((s) => (
+                          <li>
+                            <a href={s.url} rel="noopener noreferrer">
+                              {s.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        )
+      }
+      <p class="meta disclaimer-box">
+        Absence de fiche ≠ absence de lien. Suggestions sourcées via{' '}
+        <a href="/contribuer">/contribuer</a>. Dataset :{' '}
+        <code>assemblee-foreign-links.json</code>.
+      </p>
+    </section>
+
     <section class="card" id="methode" aria-labelledby="methode-title">
       <h2 id="methode-title">Méthode</h2>
-      <p class="meta methodology-box">{view.methodology_note}</p>
+      <p class="meta methodology-box">{view.methodology_note.replace(/\*\*([^*]+)\*\*/g, '$1')}</p>
       <ul>
+        <li>
+          <strong>Rangs par abonnés</strong> : 1er rang = audience la plus élevée (ordres de
+          grandeur pédagogiques, pas un scrape live). Au sein d’une rangée : axe gauche–droite.
+          Un député peu suivi peut être derrière un influenceur à plus forte audience (ex.
+          Jack Le Fou, Casus Lady, Ali Babal ; Nathan Keskon = focus éditorial égal malgré
+          audience plus modeste).
+        </li>
+        <li>
+          <strong>Rangs · liens étrangers</strong> : 1er rang = plus de liens d’État /
+          financement étranger documentés (<code>assemblee-foreign-links.json</code>). Kinds :
+          organe d’État, sanction UE, réseau média étranger, financement. Fail-closed — pas
+          d’invention. Pas un score d’« ingérence » moral.
+        </li>
+        <li>
+          <strong>Évolutions d’avis</strong> : champ <code>stance_history</code> (motifs + sources).
+          « Il n’y a que les imbéciles qui ne changent pas d’avis » — bascules documentées, pas un
+          score moral. Bot L0 : <code>npm run manusk:lmdpt-stance-veille</code>.
+        </li>
         <li>
           <strong>Déclaré</strong> : ≥ 1 URL de déclaration publique de position ; siège plein.
         </li>
@@ -158,100 +267,20 @@ const networkRows = NETWORK_ORDER.map((id) => {
           (aides / capital presse).
         </li>
         <li>
-          Pas de tier list, pas de score moral — ligne
-          <em>démocratie avant l’élimination</em>.
+          Pas de score moral — le classement des rangs mesure l’audience <em>ou</em> les
+          liens d’État / étrangers documentés, jamais la « valeur » politique (ligne
+          <em>démocratie avant l’élimination</em>).
         </li>
       </ul>
     </section>
 
     <section class="card" id="fiches" aria-labelledby="fiches-title">
-      <h2 id="fiches-title">Fiches détaillées</h2>
+      <h2 id="fiches-title">Fiches — développement par schéma</h2>
       <p class="meta">
-        Liste complète (accessible sans JavaScript). {view.counts.total} fiches — influenceurs,
-        médias et figures publiques documentées.
+        {view.counts.total} entrées : coquille <code>family</code> → <code>category</code>,
+        puis liste et fiche chargées à l’ouverture (évite une liste plate de 577 noms).
       </p>
-      <div class="ai-fiches">
-        {
-          view.seated.map((inf) => {
-            const hue = familyHueBadge(String(inf.stance.family), inf.stance.label);
-            return (
-              <article class="ai-fiche" id={`inf-${inf.id}`}>
-                <header class="ai-fiche-head">
-                  <h3>
-                    {inf.display_name}
-                    {inf.handle && <span class="meta"> @{inf.handle}</span>}
-                  </h3>
-                  <p class="meta">
-                    {STANCE_STATUS_LABELS[inf.stance.status]}
-                    {inf.stance.status === 'estime' &&
-                      inf.stance.confidence != null && (
-                        <> · confiance {Math.round(inf.stance.confidence * 100)}&nbsp;%</>
-                      )}
-                    {inf.verification === 'partial' && <> · vérification partielle</>}
-                  </p>
-                  <PoliticalHueBadges hues={[hue]} size="sm" />
-                </header>
-                <p>{inf.summary}</p>
-                {inf.stance.rationale && (
-                  <p class="meta">
-                    <strong>Indices :</strong> {inf.stance.rationale}
-                  </p>
-                )}
-                {inf.platforms.length > 0 && (
-                  <>
-                    <h4>Liens</h4>
-                    <ul>
-                      {inf.platforms.map((p) => (
-                        <li>
-                          <a href={p.url} rel="noopener noreferrer">
-                            {p.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                <h4>Dépendances économiques</h4>
-                {inf.dependencies.length === 0 ? (
-                  <p class="meta">Aucun flux documenté à ce jour.</p>
-                ) : (
-                  <ul>
-                    {inf.dependencies.map((d) => (
-                      <li>
-                        <strong>{DEPENDENCY_KIND_LABELS[d.kind]}</strong> — {d.label}
-                        <ul>
-                          {d.sources.map((s) => (
-                            <li>
-                              <a href={s.url} rel="noopener noreferrer">
-                                {s.label}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <h4>Sources de la teinte</h4>
-                <ul>
-                  {inf.stance.sources.map((s) => (
-                    <li>
-                      <a href={s.url} rel="noopener noreferrer">
-                        {s.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                {inf.observatoire_ref && (
-                  <p class="meta">
-                    <a href="/observatoire-censure/#influenceurs">Voir aussi l’observatoire</a>
-                  </p>
-                )}
-              </article>
-            );
-          })
-        }
-      </div>
+      <InfluenceursSchemaDevelop seated={view.seated} dataUrl={clientDataUrl} />
     </section>
 
     <section class="card" id="financeurs" aria-labelledby="financeurs-title">
@@ -300,9 +329,16 @@ const networkRows = NETWORK_ORDER.map((id) => {
     margin: 0.25rem 0 0;
     padding-left: 1.2rem;
   }
-  .ai-fiches {
-    display: grid;
-    gap: 0.85rem;
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .ai-net-list {
     list-style: none;
@@ -334,33 +370,25 @@ const networkRows = NETWORK_ORDER.map((id) => {
     display: inline-block;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-  .ai-fiche {
+  .ai-foreign-list {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .ai-foreign-item {
     border: 1px solid var(--border, #ddd);
+    border-left: 4px solid #718096;
     border-radius: 6px;
-    padding: 0.85rem 1rem;
+    padding: 0.65rem 0.85rem;
     background: var(--card, #fff);
   }
-  .ai-fiche-head h3 {
-    margin: 0 0 0.25rem;
-    font-size: 1.1rem;
+  .ai-foreign-head {
+    margin-bottom: 0.35rem;
   }
-  .ai-fiche h4 {
-    margin: 0.65rem 0 0.25rem;
-    font-size: 0.95rem;
-  }
-  .ai-fiche ul {
-    margin: 0.2rem 0;
+  .ai-foreign-item ul {
+    margin: 0.25rem 0 0;
     padding-left: 1.1rem;
-  }
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
   }
 </style>

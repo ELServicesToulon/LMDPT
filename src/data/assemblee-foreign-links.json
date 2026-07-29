@@ -1,0 +1,100 @@
+{
+  "schema": "lmdpt-assemblee-foreign-links-v1",
+  "updated": "2026-07-29",
+  "title": "Liens d’État / financement étranger — Assemblée des influenceurs",
+  "methodology": "Fail-closed : uniquement des liens publics documentés (organe d’État, réseau média d’État étranger, sanction UE, financement étranger sourcé). Sert au placement pédagogique des rangs (1er rang = plus de signaux documentés), pas à un score moral ni à une accusation d’« agent ». Corpus non exhaustif — suggestions via /contribuer.",
+  "disclaimer": "Fiction pédagogique LMDPT — pas un score d’ingérence, pas une carte d’adhésion. Synthèse documentaire à recouper sur sources primaires. Absence de fiche ≠ absence de lien ; présence = signal documenté uniquement.",
+  "weight_kinds": {
+    "organe_etat": 3,
+    "sanction_ue": 3,
+    "reseau_media_etranger": 2,
+    "financement_etranger": 2,
+    "autre": 1
+  },
+  "by_id": {
+    "rt-en-fran-ais-comptes-sociaux-rtenfrancais": {
+      "links": [
+        {
+          "id": "rt-organe-etat-ru",
+          "kind": "organe_etat",
+          "state_or_entity": "Russie",
+          "label": "RT — organe audiovisuel d’État russe (comptes sociaux FR)",
+          "sources": [
+            {
+              "label": "EUR-Lex — Règlement (UE) 2022/350 (gel diffusion RT/Sputnik)",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            },
+            {
+              "label": "Observatoire LMDPT — RT en français (comptes sociaux)",
+              "url": "https://lmdpt.iarbre.org/observatoire-censure/"
+            }
+          ]
+        },
+        {
+          "id": "rt-sanction-ue-2022-350",
+          "kind": "sanction_ue",
+          "state_or_entity": "Union européenne",
+          "label": "Mesures restrictives UE — suspension de diffusion / distribution dans l’Union",
+          "sources": [
+            {
+              "label": "EUR-Lex — CELEX 32022R0350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        }
+      ]
+    },
+    "sputnik-comptes-sociaux-fr-sputnik-fr": {
+      "links": [
+        {
+          "id": "sputnik-organe-etat-ru",
+          "kind": "organe_etat",
+          "state_or_entity": "Russie",
+          "label": "Sputnik — organe d’État russe (comptes sociaux FR)",
+          "sources": [
+            {
+              "label": "EUR-Lex — Règlement (UE) 2022/350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            },
+            {
+              "label": "Observatoire LMDPT — Sputnik (comptes sociaux FR)",
+              "url": "https://lmdpt.iarbre.org/observatoire-censure/"
+            }
+          ]
+        },
+        {
+          "id": "sputnik-sanction-ue-2022-350",
+          "kind": "sanction_ue",
+          "state_or_entity": "Union européenne",
+          "label": "Même cadre UE que RT — interdiction de diffusion / distribution dans l’Union",
+          "sources": [
+            {
+              "label": "EUR-Lex — CELEX 32022R0350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        }
+      ]
+    },
+    "aj-plus-francais": {
+      "links": [
+        {
+          "id": "aj-plus-al-jazeera-qatar",
+          "kind": "reseau_media_etranger",
+          "state_or_entity": "Qatar",
+          "label": "AJ+ français — marque du réseau Al Jazeera Media Network (financement public qatari documenté dans les sources encyclopédiques)",
+          "sources": [
+            {
+              "label": "Wikipédia FR — AJ+",
+              "url": "https://fr.wikipedia.org/wiki/AJ%2B"
+            },
+            {
+              "label": "Wikipédia FR — Al Jazeera Media Network",
+              "url": "https://fr.wikipedia.org/wiki/Al_Jazeera_Media_Network"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

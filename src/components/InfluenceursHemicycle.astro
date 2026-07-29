@@ -1,14 +1,16 @@
 ---
 /**
- * Hémicycle fictif — 1 influenceur = 1 siège.
- * Plein = position déclarée ; pointillé = estimée.
+ * Hémicycle fictif — UX 2026-07-29
+ * Preset Influenceurs (défaut) · paliers Fit/Lire/Détail · pan à seuil · deep-link · liste mobile
  */
 import type { SeatedInfluencer } from '../lib/assemblee-influenceurs';
 import {
   FAMILY_COLORS,
   FAMILY_HEMI_ORDER,
+  HEMI_ZOOM_TIERS,
   STANCE_STATUS_LABELS,
-  DEPENDENCY_KIND_LABELS,
+  formatFollowersFr,
+  normalizeAssembleeCategory,
 } from '../lib/assemblee-influenceurs';
 import { getFamilyMeta } from '../lib/program-families';
 
@@ -18,19 +20,45 @@ interface Props {
   subtitle?: string;
   declareCount: number;
   estimeCount: number;
+  dataUrl?: string;
 }
 
 const {
   seated,
   title = 'Assemblée fictive des influenceurs',
-  subtitle = 'Fiction pédagogique — pas un parlement, pas un score moral.',
+  subtitle = 'Fiction pédagogique — rangs par abonnés ou par liens d’État / étrangers documentés. Pas un parlement, pas un score moral.',
   declareCount,
   estimeCount,
+  dataUrl = '/data/assemblee-influenceurs-client.json',
 } = Astro.props;
 
 const instanceId = `inf-hemi-${Math.random().toString(36).slice(2, 10)}`;
 const viewW = 360;
 const viewH = 200;
+
+function seatInitials(name: string): string {
+  const cleaned = name
+    .replace(/[()«»""']/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const parts = cleaned
+    .split(/[\s\-–—/.]+/)
+    .filter((p) => p && !/^(de|du|des|la|le|les|et|&|diffusion|youtube)$/i.test(p));
+  if (parts.length === 0) return '?';
+  if (parts.length === 1) return parts[0]!.slice(0, 2).toUpperCase();
+  return (
+    (parts[0]![0] || '') + (parts[parts.length - 1]![0] || '')
+  ).toUpperCase();
+}
+
+function labelInk(hex: string): string {
+  const h = (hex || '#888').replace('#', '');
+  if (h.length < 6) return '#111';
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return 0.299 * r + 0.587 * g + 0.114 * b > 165 ? '#111' : '#fff';
+}
 
 const legend = FAMILY_HEMI_ORDER.map((fam) => {
   const count = seated.filter((s) => String(s.stance.family) === fam).length;
@@ -42,105 +70,238 @@ const legend = FAMILY_HEMI_ORDER.map((fam) => {
   };
 }).filter((l) => l.count > 0);
 
-const payload = seated.map((s) => ({
+const seatBoot = seated.map((s) => ({
   id: s.id,
-  display_name: s.display_name,
+  name: s.display_name,
   handle: s.handle ?? '',
-  summary: s.summary,
-  color: s.color,
   family: String(s.stance.family),
-  stance_status: s.stance.status,
-  stance_label: s.stanceLabel,
-  confidence: s.stance.confidence ?? null,
-  rationale: s.stance.rationale ?? '',
-  platforms: s.platforms,
-  dependencies: s.dependencies.map((d) => ({
-    kind: d.kind,
-    kindLabel: DEPENDENCY_KIND_LABELS[d.kind],
-    label: d.label,
-    share_note: d.share_note ?? '',
-    sources: d.sources,
-  })),
-  verification: s.verification,
-  observatoire_ref: s.observatoire_ref ?? '',
-  stance_sources: s.stance.sources,
+  status: s.stance.status,
+  followers: s.audienceResolved.followers_total,
+  followersLabel: formatFollowersFr(s.audienceResolved.followers_total),
+  foreignSignal: s.foreignResolved.signal,
+  foreignLinks: s.foreignResolved.links.length,
+  category: normalizeAssembleeCategory(s.category),
+  x: Number(s.seat.x.toFixed(2)),
+  y: Number(s.seat.y.toFixed(2)),
+  r: Number(s.seat.r.toFixed(2)),
+  row: s.seat.row,
+  xa: Number(s.seat.x.toFixed(2)),
+  ya: Number(s.seat.y.toFixed(2)),
+  ra: Number(s.seat.r.toFixed(2)),
+  rowa: s.seat.row,
+  xf: Number((s.seatForeign ?? s.seat).x.toFixed(2)),
+  yf: Number((s.seatForeign ?? s.seat).y.toFixed(2)),
+  rf: Number((s.seatForeign ?? s.seat).r.toFixed(2)),
+  rowf: (s.seatForeign ?? s.seat).row,
+  color: s.color,
+  initials: seatInitials(s.display_name),
+  ink: labelInk(s.color),
+  stanceLabel: s.stanceLabel,
 }));
+
+const foreignDocumentedCount = seatBoot.filter((s) => s.foreignSignal > 0).length;
+
+const catCounts = {
+  influenceur: seatBoot.filter((s) => s.category === 'influenceur').length,
+  'societe-civile': seatBoot.filter((s) => s.category === 'societe-civile').length,
+  'elu-parlementaire': seatBoot.filter((s) => s.category === 'elu-parlementaire').length,
+  all: seatBoot.length,
+};
+
+const topInfluencerId = [...seatBoot]
+  .filter((s) => s.category === 'influenceur')
+  .sort((a, b) => b.followers - a.followers)[0]?.id ?? '';
+
+const zoomTiers = HEMI_ZOOM_TIERS;
 ---
 
-<section class="inf-hemi" aria-labelledby={`title-${instanceId}`}>
+<section class="inf-hemi" aria-labelledby={`title-${instanceId}`} data-instance={instanceId}>
   <h2 id={`title-${instanceId}`}>{title}</h2>
   {subtitle && <p class="meta">{subtitle}</p>}
-  <p class="meta inf-counts" aria-live="polite">
-    {seated.length} sièges · {declareCount} déclarée{declareCount > 1 ? 's' : ''} ·{' '}
-    {estimeCount} estimée{estimeCount > 1 ? 's' : ''} (pointillé)
+
+  <div class="inf-guide" role="group" aria-label="À remarquer">
+    <span class="inf-guide-label">À remarquer</span>
+    <button type="button" class="inf-guide-btn" data-guide="top-inf">
+      Plus forte audience (influenceurs)
+    </button>
+    <button type="button" class="inf-guide-btn" data-guide="declare">
+      Positions déclarées seulement
+    </button>
+    <button type="button" class="inf-guide-btn" data-guide="full">
+      Corpus 577 — biais élus
+    </button>
+  </div>
+  <p class="meta inf-guide-note" id={`guide-note-${instanceId}`} hidden></p>
+
+  <div
+    class="inf-preset"
+    role="radiogroup"
+    aria-label="Corpus affiché"
+    id={`preset-${instanceId}`}
+  >
+    <button type="button" class="inf-preset-btn" role="radio" aria-checked="true" data-cat="influenceur">
+      Influenceurs ({catCounts.influenceur})
+    </button>
+    <button type="button" class="inf-preset-btn" role="radio" aria-checked="false" data-cat="societe-civile">
+      Société civile ({catCounts['societe-civile']})
+    </button>
+    <button type="button" class="inf-preset-btn" role="radio" aria-checked="false" data-cat="elu-parlementaire">
+      Élu·e·s ({catCounts['elu-parlementaire']})
+    </button>
+    <button type="button" class="inf-preset-btn" role="radio" aria-checked="false" data-cat="all">
+      Tout ({catCounts.all})
+    </button>
+  </div>
+
+  <div
+    class="inf-rank"
+    role="radiogroup"
+    aria-label="Classement des rangs"
+    id={`rank-${instanceId}`}
+  >
+    <button type="button" class="inf-rank-btn" role="radio" aria-checked="true" data-rank="audience">
+      Rangs · abonnés
+    </button>
+    <button type="button" class="inf-rank-btn" role="radio" aria-checked="false" data-rank="foreign">
+      Rangs · liens étrangers ({foreignDocumentedCount})
+    </button>
+  </div>
+
+  <p class="meta inf-counts" id={`counts-${instanceId}`} aria-live="polite">
+    {catCounts.influenceur} sièges · classement par abonnés
   </p>
+
+  <div class="inf-view-toggle" role="group" aria-label="Mode d’affichage">
+    <button type="button" class="inf-view-btn" data-view="hemi" aria-pressed="true">Hémicycle</button>
+    <button type="button" class="inf-view-btn" data-view="list" aria-pressed="false">Liste</button>
+  </div>
 
   <div class="inf-controls">
     <label class="inf-toggle">
       <input type="checkbox" id={`hide-estime-${instanceId}`} />
       Masquer les positions estimées
     </label>
+    <label class="inf-search-label">
+      <span class="visually-hidden">Filtrer les sièges</span>
+      <input
+        type="search"
+        id={`seat-search-${instanceId}`}
+        placeholder="Filtrer un siège (nom, @)…"
+        autocomplete="off"
+      />
+    </label>
   </div>
 
-  <div class="inf-hemi-layout">
-    <svg
-      viewBox={`0 0 ${viewW} ${viewH}`}
-      width="100%"
-      height="auto"
-      preserveAspectRatio="xMidYMid meet"
-      role="img"
-      aria-label={`${title} — ${seated.length} influenceurs`}
-      aria-describedby={`desc-${instanceId}`}
-      class="inf-svg"
+  <div class="inf-zoom-bar" role="group" aria-label="Zoom hémicycle">
+    <button type="button" class="inf-tier-btn" data-tier="fit" aria-pressed="true">Fit</button>
+    <button type="button" class="inf-tier-btn" data-tier="lire" aria-pressed="false">Lire</button>
+    <button type="button" class="inf-tier-btn" data-tier="detail" aria-pressed="false">Détail</button>
+    <button type="button" id={`zoom-out-${instanceId}`} aria-label="Palier précédent">−</button>
+    <button type="button" id={`zoom-in-${instanceId}`} aria-label="Palier suivant">+</button>
+    <span class="meta" id={`zoom-hint-${instanceId}`}
+      >Ctrl/⌘ + molette pour zoomer · glisser pour déplacer</span
     >
-      <desc id={`desc-${instanceId}`}>
-        Hémicycle fictif pédagogique. Chaque cercle est un influenceur. Remplissage plein =
-        position politique ouvertement déclarée et sourcée. Contour pointillé = estimation
-        documentaire. Survolez ou focalisez un siège pour le détail. Ce n’est pas un parlement
-        ni un score moral.
-      </desc>
-      <g id={`seats-${instanceId}`}>
-        {
-          seated.map((s) => {
-            const isEstime = s.stance.status === 'estime';
-            const statusLabel = STANCE_STATUS_LABELS[s.stance.status];
-            return (
-              <circle
-                cx={s.seat.x.toFixed(2)}
-                cy={s.seat.y.toFixed(2)}
-                r={s.seat.r.toFixed(2)}
-                fill={s.color}
-                fill-opacity={isEstime ? '0.45' : '1'}
-                stroke={isEstime ? s.color : '#1a1a1a'}
-                stroke-width={isEstime ? '1.4' : '0.55'}
-                stroke-dasharray={isEstime ? '2.2 1.6' : 'none'}
-                tabindex="0"
-                role="button"
-                data-id={s.id}
-                data-family={s.stance.family}
-                data-status={s.stance.status}
-                class:list={['inf-seat', isEstime && 'inf-seat--estime']}
-                aria-label={`${s.display_name} — ${s.stanceLabel} — ${statusLabel}`}
-              >
-                <title>
-                  {s.display_name}
-                  {s.handle ? ` (@${s.handle})` : ''} — {s.stanceLabel} ({statusLabel})
-                </title>
-              </circle>
-            );
-          })
-        }
-      </g>
-    </svg>
+    <span class="inf-zoom-level" id={`zoom-level-${instanceId}`} aria-live="polite">Fit</span>
+  </div>
+
+  <div class="inf-hemi-layout" id={`layout-${instanceId}`}>
+    <div class="inf-svg-wrap" id={`wrap-${instanceId}`}>
+      <svg
+        viewBox={`0 0 ${viewW} ${viewH}`}
+        width="100%"
+        height="auto"
+        preserveAspectRatio="xMidYMid meet"
+        role="group"
+        aria-label={`${title} — sièges cliquables, rangs par abonnés ou liens étrangers documentés`}
+        aria-describedby={`desc-${instanceId}`}
+        class="inf-svg"
+        id={`svg-${instanceId}`}
+      >
+        <desc id={`desc-${instanceId}`}>
+          Hémicycle fictif pédagogique. Preset Influenceurs par défaut. Paliers Fit, Lire, Détail.
+          Plein = déclaré · pointillé = estimé. Toggle rangs abonnés / liens d’État étrangers.
+        </desc>
+        <g id={`viewport-${instanceId}`}>
+          <g id={`seats-${instanceId}`}>
+            {
+              seated.map((s) => {
+                const isEstime = s.stance.status === 'estime';
+                const statusLabel = STANCE_STATUS_LABELS[s.stance.status];
+                const fol = formatFollowersFr(s.audienceResolved.followers_total);
+                const initials = seatInitials(s.display_name);
+                const ink = labelInk(s.color);
+                const fontSize = Math.max(1.05, s.seat.r * 1.15);
+                const cat = normalizeAssembleeCategory(s.category);
+                return (
+                  <g
+                    class:list={['inf-seat-g', isEstime && 'inf-seat-g--estime']}
+                    data-id={s.id}
+                    data-family={s.stance.family}
+                    data-status={s.stance.status}
+                    data-category={cat}
+                    data-name={s.display_name}
+                    data-followers={s.audienceResolved.followers_total}
+                    tabindex={cat === 'influenceur' ? 0 : -1}
+                    role="button"
+                    aria-label={`${s.display_name} — ~${fol} abonnés — ${s.stanceLabel} — ${statusLabel}`}
+                  >
+                    <circle
+                      class:list={['inf-seat', isEstime && 'inf-seat--estime']}
+                      cx={s.seat.x.toFixed(2)}
+                      cy={s.seat.y.toFixed(2)}
+                      r={s.seat.r.toFixed(2)}
+                      fill={s.color}
+                      fill-opacity={isEstime ? '0.45' : '1'}
+                      stroke={isEstime ? s.color : '#1a1a1a'}
+                      stroke-width={isEstime ? '1.4' : '0.55'}
+                      stroke-dasharray={isEstime ? '2.2 1.6' : 'none'}
+                    />
+                    <text
+                      class="inf-seat-ini"
+                      x={s.seat.x.toFixed(2)}
+                      y={s.seat.y.toFixed(2)}
+                      text-anchor="middle"
+                      dominant-baseline="central"
+                      font-size={fontSize.toFixed(2)}
+                      fill={ink}
+                      stroke="none"
+                      pointer-events="none"
+                    >
+                      {initials}
+                      <title>
+                        {s.display_name}
+                        {s.handle ? ` (@${s.handle})` : ''} — ~{fol} ab.
+                      </title>
+                    </text>
+                  </g>
+                );
+              })
+            }
+          </g>
+        </g>
+        <g id={`labels-${instanceId}`} class="inf-labels" aria-hidden="true"></g>
+      </svg>
+      <div class="inf-html-labels" id={`html-labels-${instanceId}`} aria-hidden="true"></div>
+    </div>
+
+    <div
+      class="inf-list-wrap"
+      id={`list-wrap-${instanceId}`}
+      hidden
+    >
+      <ul class="inf-list" id={`list-${instanceId}`} role="listbox" aria-label="Sièges du corpus"></ul>
+    </div>
 
     <aside
       class="inf-detail"
       id={`detail-${instanceId}`}
       aria-live="polite"
+      tabindex="-1"
       hidden
-    >
-      <p class="meta">Survolez ou sélectionnez un siège.</p>
-    </aside>
+    ></aside>
+    <p class="meta inf-detail-placeholder" id={`detail-ph-${instanceId}`}>
+      Sélectionnez un siège (hémicycle ou liste) pour ouvrir la fiche.
+    </p>
   </div>
 
   <ul class="inf-legend" role="list" aria-label="Légende des familles">
@@ -164,33 +325,64 @@ const payload = seated.map((s) => ({
     }
   </ul>
   <p class="meta inf-legend-hint">
-    Plein = déclaré · Pointillé = estimé · Clic légende = filtrer la famille
+    Plein = déclaré · Pointillé = estimé · Clic légende = filtrer famille · Preset Influenceurs par défaut
   </p>
-
-  <script
-    type="application/json"
-    id={`data-${instanceId}`}
-    set:html={JSON.stringify(payload)}
-  />
 </section>
 
-<script define:vars={{ instanceId }}>
+<script
+  define:vars={{
+    instanceId,
+    dataUrl,
+    seatBoot,
+    viewW,
+    viewH,
+    zoomTiers,
+    topInfluencerId,
+    catCounts,
+  }}
+>
   (function () {
-    const dataEl = document.getElementById(`data-${instanceId}`);
+    const root = document.querySelector(`.inf-hemi[data-instance="${instanceId}"]`);
     const detail = document.getElementById(`detail-${instanceId}`);
+    const detailPh = document.getElementById(`detail-ph-${instanceId}`);
     const hideCb = document.getElementById(`hide-estime-${instanceId}`);
     const seatsRoot = document.getElementById(`seats-${instanceId}`);
-    if (!dataEl || !detail || !seatsRoot) return;
+    const htmlLabels = document.getElementById(`html-labels-${instanceId}`);
+    const viewport = document.getElementById(`viewport-${instanceId}`);
+    const wrap = document.getElementById(`wrap-${instanceId}`);
+    const svg = document.getElementById(`svg-${instanceId}`);
+    const seatSearch = document.getElementById(`seat-search-${instanceId}`);
+    const zoomIn = document.getElementById(`zoom-in-${instanceId}`);
+    const zoomOut = document.getElementById(`zoom-out-${instanceId}`);
+    const zoomLevelEl = document.getElementById(`zoom-level-${instanceId}`);
+    const zoomHint = document.getElementById(`zoom-hint-${instanceId}`);
+    const countsEl = document.getElementById(`counts-${instanceId}`);
+    const listWrap = document.getElementById(`list-wrap-${instanceId}`);
+    const listEl = document.getElementById(`list-${instanceId}`);
+    const guideNote = document.getElementById(`guide-note-${instanceId}`);
+    if (!detail || !seatsRoot || !viewport || !wrap || !svg || !root) return;
 
-    /** @type {Array<any>} */
-    let people = [];
-    try {
-      people = JSON.parse(dataEl.textContent || '[]');
-    } catch {
-      people = [];
-    }
-    const byId = Object.fromEntries(people.map((p) => [p.id, p]));
+    /** @type {Record<string, any>} */
+    let byId = {};
     let activeFamily = null;
+    /** @type {string} */
+    let activeCategory = 'influenceur';
+    /** @type {'audience' | 'foreign'} */
+    let rankMode = 'audience';
+    let filterQ = '';
+    let loaded = false;
+    let scale = zoomTiers.fit;
+    let tx = 0;
+    let ty = 0;
+    let activeSeatId = null;
+    let viewMode = 'hemi';
+    let animating = false;
+
+    const TIER_ORDER = ['fit', 'lire', 'detail'];
+    const PAN_THRESHOLD = 6;
+    const LABEL_CAP = 40;
+    const reduceMotion =
+      typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function esc(s) {
       return String(s || '')
@@ -200,13 +392,285 @@ const payload = seated.map((s) => ({
         .replace(/"/g, '&quot;');
     }
 
+    function rankLabel() {
+      return rankMode === 'foreign'
+        ? 'classement par liens d’État / étrangers documentés'
+        : 'classement par abonnés';
+    }
+
+    function applyRankPositions() {
+      for (const s of seatBoot) {
+        if (rankMode === 'foreign') {
+          s.x = s.xf;
+          s.y = s.yf;
+          s.r = s.rf;
+          s.row = s.rowf;
+        } else {
+          s.x = s.xa;
+          s.y = s.ya;
+          s.r = s.ra;
+          s.row = s.rowa;
+        }
+        const g = seatsRoot.querySelector(`.inf-seat-g[data-id="${CSS.escape(s.id)}"]`);
+        if (!g) continue;
+        const circle = g.querySelector('circle');
+        const text = g.querySelector('text');
+        if (circle) {
+          circle.setAttribute('cx', String(s.x));
+          circle.setAttribute('cy', String(s.y));
+          circle.setAttribute('r', String(s.r));
+        }
+        if (text) {
+          text.setAttribute('x', String(s.x));
+          text.setAttribute('y', String(s.y));
+          const fontSize = Math.max(1.05, s.r * 1.15);
+          text.setAttribute('font-size', String(fontSize));
+        }
+      }
+    }
+
+    function setRankMode(mode) {
+      rankMode = mode === 'foreign' ? 'foreign' : 'audience';
+      root.querySelectorAll('.inf-rank-btn').forEach((btn) => {
+        btn.setAttribute('aria-checked', btn.getAttribute('data-rank') === rankMode ? 'true' : 'false');
+      });
+      applyRankPositions();
+      applyVisibility();
+      goTier('fit', false);
+    }
+
+    function currentTierName() {
+      if (scale < (zoomTiers.fit + zoomTiers.lire) / 2) return 'fit';
+      if (scale < (zoomTiers.lire + zoomTiers.detail) / 2) return 'lire';
+      return 'detail';
+    }
+
+    function tierIndex() {
+      return TIER_ORDER.indexOf(currentTierName());
+    }
+
+    function updateTierButtons() {
+      const name = currentTierName();
+      root.querySelectorAll('.inf-tier-btn').forEach((btn) => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-tier') === name ? 'true' : 'false');
+      });
+      if (zoomLevelEl) {
+        const label = name === 'fit' ? 'Fit' : name === 'lire' ? 'Lire' : 'Détail';
+        zoomLevelEl.textContent = `${label} · ×${scale.toFixed(1)}`;
+      }
+    }
+
+    function zoomCenter() {
+      if (activeSeatId) {
+        const s = seatBoot.find((x) => x.id === activeSeatId);
+        if (s) return { x: s.x, y: s.y };
+      }
+      return { x: viewW / 2 - tx / Math.max(scale, 0.001), y: viewH / 2 - ty / Math.max(scale, 0.001) };
+    }
+
+    function clampPan() {
+      const visible = filteredSeats();
+      if (!visible.length) {
+        tx = 0;
+        ty = 0;
+        return;
+      }
+      let minX = Infinity,
+        maxX = -Infinity,
+        minY = Infinity,
+        maxY = -Infinity;
+      for (const s of visible) {
+        minX = Math.min(minX, s.x);
+        maxX = Math.max(maxX, s.x);
+        minY = Math.min(minY, s.y);
+        maxY = Math.max(maxY, s.y);
+      }
+      const cx = ((minX + maxX) / 2) * scale + tx;
+      const cy = ((minY + maxY) / 2) * scale + ty;
+      const padX = viewW * 0.55;
+      const padY = viewH * 0.55;
+      if (cx < -padX) tx += -padX - cx;
+      if (cx > viewW + padX) tx -= cx - (viewW + padX);
+      if (cy < -padY) ty += -padY - cy;
+      if (cy > viewH + padY) ty -= cy - (viewH + padY);
+      if (scale <= 1.001) {
+        scale = 1;
+        tx = 0;
+        ty = 0;
+      }
+    }
+
+    function applyTransform() {
+      clampPan();
+      viewport.setAttribute('transform', `translate(${tx} ${ty}) scale(${scale})`);
+      const tier = currentTierName();
+      seatsRoot.querySelectorAll('.inf-seat-ini').forEach((t) => {
+        const g = t.closest('[data-id]');
+        const id = g?.getAttribute('data-id');
+        const boot = seatBoot.find((s) => s.id === id);
+        if (!boot) return;
+        t.setAttribute('font-size', String(Math.max(1.2, boot.r * 1.35)));
+        t.setAttribute('opacity', tier === 'fit' ? '1' : '0.2');
+      });
+      renderLabels();
+      updateTierButtons();
+    }
+
+    function setZoom(next, cx, cy) {
+      const prev = scale;
+      scale = Math.min(8, Math.max(1, next));
+      if (cx != null && cy != null && Math.abs(prev - scale) > 1e-6) {
+        tx = cx - (cx - tx) * (scale / prev);
+        ty = cy - (cy - ty) * (scale / prev);
+      }
+      applyTransform();
+    }
+
+    function goTier(name, animate) {
+      const target = zoomTiers[name] || zoomTiers.fit;
+      const c = zoomCenter();
+      if (!animate || reduceMotion) {
+        setZoom(target, c.x, c.y);
+        return;
+      }
+      const startS = scale;
+      const startTx = tx;
+      const startTy = ty;
+      const endS = Math.min(8, Math.max(1, target));
+      const endTx = c.x - (c.x - startTx) * (endS / Math.max(startS, 0.001));
+      const endTy = c.y - (c.y - startTy) * (endS / Math.max(startS, 0.001));
+      const t0 = performance.now();
+      const dur = 180;
+      animating = true;
+      function step(now) {
+        const t = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        scale = startS + (endS - startS) * e;
+        tx = startTx + (endTx - startTx) * e;
+        ty = startTy + (endTy - startTy) * e;
+        applyTransform();
+        if (t < 1) requestAnimationFrame(step);
+        else animating = false;
+      }
+      requestAnimationFrame(step);
+    }
+
+    function svgPoint(clientX, clientY) {
+      const pt = svg.createSVGPoint();
+      pt.x = clientX;
+      pt.y = clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return { x: viewW / 2, y: viewH / 2 };
+      return pt.matrixTransform(ctm.inverse());
+    }
+
+    function filteredSeats() {
+      const hideEstime = hideCb && hideCb.checked;
+      const q = filterQ.trim().toLowerCase();
+      return seatBoot.filter((s) => {
+        if (activeCategory !== 'all' && s.category !== activeCategory) return false;
+        if (activeFamily && s.family !== activeFamily) return false;
+        if (hideEstime && s.status !== 'declare') return false;
+        if (q) {
+          const hay = `${s.name} ${s.handle} ${s.initials}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    function shortName(name) {
+      const parts = String(name)
+        .replace(/\(.*?\)/g, '')
+        .trim()
+        .split(/\s+/);
+      if (parts.length <= 2) return name.length > 22 ? name.slice(0, 20) + '…' : name;
+      return `${parts[0]} ${parts[parts.length - 1]}`.slice(0, 22);
+    }
+
+    function updateCounts() {
+      const vis = filteredSeats();
+      const d = vis.filter((s) => s.status === 'declare').length;
+      const e = vis.length - d;
+      if (countsEl) {
+        countsEl.textContent = `${vis.length} siège${vis.length > 1 ? 's' : ''} · ${d} déclarée${d > 1 ? 's' : ''} · ${e} estimée${e > 1 ? 's' : ''} · ${rankLabel()}`;
+      }
+    }
+
+    function renderLabels() {
+      if (htmlLabels) htmlLabels.innerHTML = '';
+      const tier = currentTierName();
+      if (tier === 'fit') {
+        if (htmlLabels) htmlLabels.setAttribute('aria-hidden', 'true');
+        if (zoomHint) {
+          zoomHint.textContent = 'Ctrl/⌘ + molette pour zoomer · Fit = initiales';
+        }
+        return;
+      }
+      if (htmlLabels) htmlLabels.setAttribute('aria-hidden', 'false');
+
+      const svgRect = svg.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
+      const pxPerUnit = Math.min(svgRect.width / viewW, svgRect.height / viewH);
+      const minSeatPx = tier === 'detail' ? 5.5 : 8;
+      const showFollowers = tier === 'detail';
+      const fontPx = Math.min(13, Math.max(10, 8 + scale));
+      const cx = viewW / 2;
+      const cy = viewH / 2;
+
+      const candidates = filteredSeats()
+        .map((s) => {
+          const lx = s.x * scale + tx;
+          const ly = s.y * scale + ty;
+          const seatPx = s.r * scale * pxPerUnit;
+          const dist = Math.hypot(lx - cx, ly - cy);
+          return { s, lx, ly, seatPx, dist };
+        })
+        .filter((c) => c.seatPx >= minSeatPx && c.lx > -12 && c.lx < viewW + 12 && c.ly > -12 && c.ly < viewH + 12)
+        .sort((a, b) => a.dist - b.dist || b.s.followers - a.s.followers)
+        .slice(0, LABEL_CAP);
+
+      for (const c of candidates) {
+        const sx = svgRect.left + (c.lx / viewW) * svgRect.width;
+        const sy = svgRect.top + (c.ly / viewH) * svgRect.height;
+        const left = sx - wrapRect.left;
+        const top = sy - wrapRect.top - Math.max(12, c.seatPx + 2);
+        const label = showFollowers
+          ? `${shortName(c.s.name)} · ${c.s.followersLabel}`
+          : shortName(c.s.name);
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'inf-html-label';
+        el.dataset.id = c.s.id;
+        el.style.left = `${left}px`;
+        el.style.top = `${top}px`;
+        el.style.fontSize = `${fontPx}px`;
+        el.style.borderColor = c.s.color || '#888';
+        el.textContent = label;
+        el.title = `${c.s.name} — ~${c.s.followersLabel} abonnés`;
+        el.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          focusSeat(c.s.id);
+        });
+        htmlLabels.appendChild(el);
+      }
+      if (zoomHint) {
+        zoomHint.textContent =
+          candidates.length === 0
+            ? 'Passez en Lire ou Détail pour les noms'
+            : `${candidates.length} label${candidates.length > 1 ? 's' : ''} (cap ${LABEL_CAP})`;
+      }
+    }
+
     function renderDetail(p) {
       if (!p) {
         detail.hidden = true;
-        detail.innerHTML = '<p class="meta">Survolez ou sélectionnez un siège.</p>';
+        if (detailPh) detailPh.hidden = false;
         return;
       }
       detail.hidden = false;
+      if (detailPh) detailPh.hidden = true;
       const conf =
         p.confidence != null
           ? ` · confiance ${Math.round(p.confidence * 100)}&nbsp;%`
@@ -238,6 +702,24 @@ const payload = seated.map((s) => ({
                     .join('')}</ul></li>`,
               )
               .join('')}</ul>`;
+      const foreignLinks =
+        (p.foreign_links || []).length === 0
+          ? '<p class="meta">Aucun lien d’État / financement étranger documenté à ce jour (fail-closed).</p>'
+          : `<ul>${(p.foreign_links || [])
+              .map(
+                (l) =>
+                  `<li><strong>${esc(l.kindLabel)}</strong> · ${esc(l.state_or_entity)} — ${esc(l.label)}<ul>${(l.sources || [])
+                    .map(
+                      (s) =>
+                        `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+                    )
+                    .join('')}</ul></li>`,
+              )
+              .join('')}</ul>`;
+      const foreignBadge =
+        (p.foreign_signal || 0) > 0
+          ? `<span class="inf-foreign">Liens étrangers documentés · signal ${esc(String(p.foreign_signal))}</span>`
+          : '';
       const stanceSources = (p.stance_sources || [])
         .map(
           (s) =>
@@ -247,78 +729,533 @@ const payload = seated.map((s) => ({
       const obs = p.observatoire_ref
         ? `<p class="meta"><a href="/observatoire-censure/#influenceurs">Fiche observatoire</a> (réf. ${esc(p.observatoire_ref)})</p>`
         : '';
+      const cat =
+        p.category === 'elu-parlementaire'
+          ? 'Élu·e parlementaire'
+          : p.category === 'societe-civile'
+            ? 'Société civile'
+            : 'Influence / média';
+      const fol = p.followers_label
+        ? `<p class="inf-audience"><strong>~${esc(p.followers_label)} abonnés</strong>${
+            p.audience_platform ? ` · ${esc(p.audience_platform)}` : ''
+          }${p.audience_status === 'estimate' ? ' <span class="meta">(ordre de grandeur pédagogique)</span>' : ''}</p>`
+        : '';
       detail.innerHTML = `
         <h3>${esc(p.display_name)}${p.handle ? ` <span class="meta">@${esc(p.handle)}</span>` : ''}</h3>
+        ${fol}
         <p class="inf-badge-row">
           <span class="inf-status" data-status="${esc(p.stance_status)}">${esc(status)}${conf}</span>
           <span class="inf-hue" style="--hue:${esc(p.color)}">
             <span class="inf-swatch" aria-hidden="true"></span>${esc(p.stance_label)}
           </span>
+          <span class="inf-cat">${esc(cat)}</span>
+          ${foreignBadge}
         </p>
         <p>${esc(p.summary)}</p>
-        ${p.rationale ? `<p class="meta"><strong>Indices :</strong> ${esc(p.rationale)}</p>` : ''}
+        ${p.rationale ? `<p class="meta"><strong>Indices (teinte actuelle) :</strong> ${esc(p.rationale)}</p>` : ''}
+        ${
+          (p.stance_history || []).length
+            ? `<h4>Évolution documentée</h4>
+        <p class="meta">Bascules sourcées — pas un score moral.</p>
+        <ol class="inf-history">${(p.stance_history || [])
+          .map(
+            (h) => `<li>
+              <strong>${esc(h.as_of)}</strong> → ${esc(h.label)}
+              <ul>${(h.motifs || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>
+              ${(h.sources || []).length ? `<ul class="meta">${(h.sources || [])
+                .map(
+                  (s) =>
+                    `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+                )
+                .join('')}</ul>` : ''}
+            </li>`,
+          )
+          .join('')}</ol>`
+            : ''
+        }
         <h4>Liens</h4>
         <ul>${platforms}</ul>
         <h4>Dépendances économiques</h4>
         ${deps}
-        <h4>Sources de la teinte</h4>
+        <h4>Liens d’État / financement étranger</h4>
+        <p class="meta">Placement pédagogique des rangs — pas une accusation d’« agent ».</p>
+        ${foreignLinks}
+        <h4>Sources de la teinte actuelle</h4>
         <ul>${stanceSources}</ul>
         ${obs}
         <p class="meta">Vérification : ${esc(p.verification)} · teinte = famille pédagogique, pas carte d’adhésion.</p>
       `;
+      try {
+        detail.focus({ preventScroll: true });
+      } catch {
+        /* ignore */
+      }
+    }
+
+    function syncUrl(id) {
+      try {
+        const u = new URL(location.href);
+        if (id) u.searchParams.set('id', id);
+        else u.searchParams.delete('id');
+        if (filterQ.trim()) u.searchParams.set('q', filterQ.trim());
+        else u.searchParams.delete('q');
+        history.replaceState(null, '', u.pathname + u.search + (u.hash || '#hemicycle'));
+      } catch {
+        /* ignore */
+      }
+    }
+
+    async function ensureData() {
+      if (loaded) return;
+      try {
+        const res = await fetch(dataUrl, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(String(res.status));
+        byId = await res.json();
+        loaded = true;
+      } catch {
+        byId = {};
+        if (detail) {
+          detail.hidden = false;
+          if (detailPh) detailPh.hidden = true;
+          detail.innerHTML =
+            '<p class="meta">Impossible de charger la fiche (réseau). Réessayez.</p>';
+        }
+      }
+    }
+
+    async function focusSeat(id, opts) {
+      const boot = seatBoot.find((s) => s.id === id);
+      if (!boot) return;
+      if (activeCategory !== 'all' && boot.category !== activeCategory) {
+        setCategory(boot.category, false);
+      }
+      activeSeatId = id;
+      await ensureData();
+      seatsRoot.querySelectorAll('.inf-seat-g').forEach((c) => c.classList.remove('inf-seat--active'));
+      const el = seatsRoot.querySelector(`.inf-seat-g[data-id="${id}"]`);
+      if (el) el.classList.add('inf-seat--active');
+      listEl?.querySelectorAll('.inf-list-item').forEach((li) => {
+        li.setAttribute('aria-selected', li.getAttribute('data-id') === id ? 'true' : 'false');
+      });
+      renderDetail(byId[id]);
+      if (opts?.skipZoom) {
+        applyVisibility();
+        syncUrl(id);
+        return;
+      }
+      const startS = scale;
+      const endS = zoomTiers.detail;
+      const startTx = tx;
+      const startTy = ty;
+      const endTx = viewW / 2 - boot.x * endS;
+      const endTy = viewH / 2 - boot.y * endS;
+      if (reduceMotion) {
+        scale = endS;
+        tx = endTx;
+        ty = endTy;
+        applyTransform();
+      } else {
+        const t0 = performance.now();
+        const dur = 200;
+        animating = true;
+        await new Promise((resolve) => {
+          function step(now) {
+            const t = Math.min(1, (now - t0) / dur);
+            const e = 1 - Math.pow(1 - t, 3);
+            scale = startS + (endS - startS) * e;
+            tx = startTx + (endTx - startTx) * e;
+            ty = startTy + (endTy - startTy) * e;
+            applyTransform();
+            if (t < 1) requestAnimationFrame(step);
+            else {
+              animating = false;
+              resolve();
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+      applyVisibility();
+      syncUrl(id);
     }
 
     function applyVisibility() {
       const hideEstime = hideCb && hideCb.checked;
-      seatsRoot.querySelectorAll('.inf-seat').forEach((el) => {
+      const q = filterQ.trim().toLowerCase();
+      seatsRoot.querySelectorAll('.inf-seat-g').forEach((el) => {
         const id = el.getAttribute('data-id');
-        const p = byId[id];
-        const familyOk = !activeFamily || (p && p.family === activeFamily);
-        const statusOk = !hideEstime || (p && p.stance_status === 'declare');
-        const show = familyOk && statusOk;
+        const boot = seatBoot.find((s) => s.id === id);
+        const catOk =
+          activeCategory === 'all' || (boot?.category || el.getAttribute('data-category')) === activeCategory;
+        const familyOk =
+          !activeFamily || (boot?.family || el.getAttribute('data-family')) === activeFamily;
+        const statusOk =
+          !hideEstime || (boot?.status || el.getAttribute('data-status')) === 'declare';
+        let searchOk = true;
+        if (q) {
+          const hay =
+            `${boot?.name || el.getAttribute('data-name') || ''} ${boot?.handle || ''} ${boot?.initials || ''}`.toLowerCase();
+          searchOk = hay.includes(q);
+        }
+        const show = catOk && familyOk && statusOk && searchOk;
         el.style.display = show ? '' : 'none';
         el.setAttribute('aria-hidden', show ? 'false' : 'true');
+        el.setAttribute('tabindex', show ? '0' : '-1');
+      });
+      updateCounts();
+      renderLabels();
+      renderList();
+    }
+
+    function renderList() {
+      if (!listEl) return;
+      const items = filteredSeats().sort((a, b) => {
+        if (rankMode === 'foreign') {
+          const df = (b.foreignSignal || 0) - (a.foreignSignal || 0);
+          if (df !== 0) return df;
+        }
+        return b.followers - a.followers;
+      });
+      listEl.innerHTML = items
+        .map(
+          (s) => `<li role="option" class="inf-list-item" data-id="${esc(s.id)}" aria-selected="${
+            s.id === activeSeatId ? 'true' : 'false'
+          }" tabindex="0">
+          <span class="inf-list-swatch" style="background:${esc(s.color)}" aria-hidden="true"></span>
+          <span class="inf-list-main">
+            <strong>${esc(s.name)}</strong>
+            <span class="meta">${esc(s.stanceLabel)} · ~${esc(s.followersLabel)}${
+              (s.foreignSignal || 0) > 0
+                ? ` · liens étrangers (signal ${esc(String(s.foreignSignal))})`
+                : ''
+            } · ${s.status === 'declare' ? 'déclaré' : 'estimé'}</span>
+          </span>
+        </li>`,
+        )
+        .join('');
+      listEl.querySelectorAll('.inf-list-item').forEach((li) => {
+        const open = () => focusSeat(li.getAttribute('data-id'));
+        li.addEventListener('click', open);
+        li.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            open();
+          }
+        });
       });
     }
 
-    seatsRoot.querySelectorAll('.inf-seat').forEach((el) => {
-      const show = () => {
-        seatsRoot.querySelectorAll('.inf-seat').forEach((c) => c.classList.remove('inf-seat--active'));
-        el.classList.add('inf-seat--active');
-        renderDetail(byId[el.getAttribute('data-id')]);
-      };
-      el.addEventListener('mouseenter', show);
-      el.addEventListener('focus', show);
-      el.addEventListener('click', show);
+    function setCategory(cat, resetZoom) {
+      activeCategory = cat;
+      root.querySelectorAll('.inf-preset-btn').forEach((btn) => {
+        btn.setAttribute('aria-checked', btn.getAttribute('data-cat') === cat ? 'true' : 'false');
+      });
+      applyVisibility();
+      if (resetZoom !== false) goTier('fit', false);
+    }
+
+    function setViewMode(mode) {
+      viewMode = mode;
+      root.querySelectorAll('.inf-view-btn').forEach((btn) => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-view') === mode ? 'true' : 'false');
+      });
+      if (mode === 'list') {
+        wrap.hidden = true;
+        if (listWrap) listWrap.hidden = false;
+        root.querySelector('.inf-zoom-bar')?.setAttribute('hidden', '');
+      } else {
+        wrap.hidden = false;
+        if (listWrap) listWrap.hidden = true;
+        root.querySelector('.inf-zoom-bar')?.removeAttribute('hidden');
+        applyTransform();
+      }
+    }
+
+    // Seat interactions — click only after pan threshold handled separately
+    seatsRoot.querySelectorAll('.inf-seat-g').forEach((el) => {
+      const open = () => focusSeat(el.getAttribute('data-id'));
       el.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
-          show();
+          open();
+        }
+      });
+      el.addEventListener('focus', () => {
+        if (!animating) {
+          ensureData().then(() => {
+            const id = el.getAttribute('data-id');
+            if (byId[id]) {
+              activeSeatId = id;
+              seatsRoot.querySelectorAll('.inf-seat-g').forEach((c) => c.classList.remove('inf-seat--active'));
+              el.classList.add('inf-seat--active');
+              renderDetail(byId[id]);
+              syncUrl(id);
+            }
+          });
         }
       });
     });
 
-    if (hideCb) hideCb.addEventListener('change', applyVisibility);
+    // Pan with threshold + click-to-select
+    let pointerDown = false;
+    let dragging = false;
+    let downX = 0;
+    let downY = 0;
+    let lastX = 0;
+    let lastY = 0;
+    let downTarget = null;
+    let pinchActive = false;
+    let pinchStartDist = 1;
+    let pinchStartScale = 1;
+    let gestureStartScale = 1;
 
-    document.querySelectorAll(`#title-${instanceId}`).forEach(() => {});
-    const legendRoot = seatsRoot.closest('.inf-hemi');
-    if (legendRoot) {
-      legendRoot.querySelectorAll('.inf-legend-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const fam = btn.getAttribute('data-family');
-          const pressed = btn.getAttribute('aria-pressed') === 'true';
-          legendRoot.querySelectorAll('.inf-legend-btn').forEach((b) =>
-            b.setAttribute('aria-pressed', 'false'),
+    function touchDist(a, b) {
+      return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    }
+    function touchMid(a, b) {
+      return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
+    }
+
+    wrap.addEventListener('pointerdown', (ev) => {
+      if (ev.button !== 0 || pinchActive) return;
+      pointerDown = true;
+      dragging = false;
+      downX = lastX = ev.clientX;
+      downY = lastY = ev.clientY;
+      downTarget = ev.target?.closest?.('.inf-seat-g') || null;
+      try {
+        wrap.setPointerCapture?.(ev.pointerId);
+      } catch {
+        /* ignore */
+      }
+    });
+    wrap.addEventListener('pointermove', (ev) => {
+      if (!pointerDown || pinchActive) return;
+      const dist = Math.hypot(ev.clientX - downX, ev.clientY - downY);
+      if (!dragging && dist >= PAN_THRESHOLD) {
+        dragging = true;
+        wrap.classList.add('is-dragging');
+      }
+      if (!dragging) return;
+      const dx = ev.clientX - lastX;
+      const dy = ev.clientY - lastY;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      const rect = svg.getBoundingClientRect();
+      tx += dx * (viewW / Math.max(1, rect.width));
+      ty += dy * (viewH / Math.max(1, rect.height));
+      applyTransform();
+    });
+    const endPointer = (ev) => {
+      if (!pointerDown) return;
+      pointerDown = false;
+      wrap.classList.remove('is-dragging');
+      if (!dragging && downTarget) {
+        focusSeat(downTarget.getAttribute('data-id'));
+      }
+      dragging = false;
+      downTarget = null;
+    };
+    wrap.addEventListener('pointerup', endPointer);
+    wrap.addEventListener('pointercancel', endPointer);
+
+    // Wheel: Ctrl/⌘ only (Shift = micro)
+    wrap.addEventListener(
+      'wheel',
+      (ev) => {
+        if (!(ev.ctrlKey || ev.metaKey || ev.shiftKey)) return;
+        ev.preventDefault();
+        const pt = svgPoint(ev.clientX, ev.clientY);
+        if (ev.shiftKey && !ev.ctrlKey && !ev.metaKey) {
+          const factor = ev.deltaY < 0 ? 1.08 : 1 / 1.08;
+          setZoom(scale * factor, pt.x, pt.y);
+          return;
+        }
+        const idx = tierIndex();
+        if (ev.deltaY < 0 && idx < TIER_ORDER.length - 1) goTier(TIER_ORDER[idx + 1], true);
+        else if (ev.deltaY > 0 && idx > 0) goTier(TIER_ORDER[idx - 1], true);
+      },
+      { passive: false },
+    );
+
+    wrap.addEventListener(
+      'touchstart',
+      (ev) => {
+        if (ev.touches.length === 2) {
+          ev.preventDefault();
+          pinchActive = true;
+          dragging = false;
+          pointerDown = false;
+          pinchStartDist = touchDist(ev.touches[0], ev.touches[1]) || 1;
+          pinchStartScale = scale;
+        }
+      },
+      { passive: false },
+    );
+    wrap.addEventListener(
+      'touchmove',
+      (ev) => {
+        if (ev.touches.length === 2 && pinchActive) {
+          ev.preventDefault();
+          const d = touchDist(ev.touches[0], ev.touches[1]) || 1;
+          const mid = touchMid(ev.touches[0], ev.touches[1]);
+          const pt = svgPoint(mid.x, mid.y);
+          setZoom(pinchStartScale * (d / pinchStartDist), pt.x, pt.y);
+        }
+      },
+      { passive: false },
+    );
+    wrap.addEventListener('touchend', () => {
+      pinchActive = false;
+    });
+    wrap.addEventListener('touchcancel', () => {
+      pinchActive = false;
+    });
+
+    wrap.addEventListener(
+      'gesturestart',
+      (ev) => {
+        ev.preventDefault();
+        gestureStartScale = scale;
+      },
+      { passive: false },
+    );
+    wrap.addEventListener(
+      'gesturechange',
+      (ev) => {
+        ev.preventDefault();
+        const pt = svgPoint(
+          ev.clientX != null ? ev.clientX : wrap.getBoundingClientRect().left + wrap.clientWidth / 2,
+          ev.clientY != null ? ev.clientY : wrap.getBoundingClientRect().top + wrap.clientHeight / 2,
+        );
+        setZoom(gestureStartScale * (ev.scale || 1), pt.x, pt.y);
+      },
+      { passive: false },
+    );
+
+    zoomIn?.addEventListener('click', () => {
+      const idx = Math.min(TIER_ORDER.length - 1, tierIndex() + 1);
+      goTier(TIER_ORDER[idx], true);
+    });
+    zoomOut?.addEventListener('click', () => {
+      const idx = Math.max(0, tierIndex() - 1);
+      goTier(TIER_ORDER[idx], true);
+    });
+    root.querySelectorAll('.inf-tier-btn').forEach((btn) => {
+      btn.addEventListener('click', () => goTier(btn.getAttribute('data-tier'), true));
+    });
+
+    if (hideCb) hideCb.addEventListener('change', applyVisibility);
+    if (seatSearch) {
+      seatSearch.addEventListener('input', () => {
+        filterQ = seatSearch.value || '';
+        applyVisibility();
+        const q = filterQ.trim().toLowerCase();
+        if (q.length >= 2) {
+          const matches = filteredSeats().filter((s) =>
+            `${s.name} ${s.handle} ${s.initials}`.toLowerCase().includes(q),
           );
-          if (pressed) {
-            activeFamily = null;
-          } else {
-            activeFamily = fam;
-            btn.setAttribute('aria-pressed', 'true');
+          if (matches.length === 1) focusSeat(matches[0].id);
+        }
+      });
+    }
+
+    root.querySelectorAll('.inf-preset-btn').forEach((btn) => {
+      btn.addEventListener('click', () => setCategory(btn.getAttribute('data-cat'), true));
+    });
+
+    root.querySelectorAll('.inf-rank-btn').forEach((btn) => {
+      btn.addEventListener('click', () => setRankMode(btn.getAttribute('data-rank')));
+    });
+
+    root.querySelectorAll('.inf-view-btn').forEach((btn) => {
+      btn.addEventListener('click', () => setViewMode(btn.getAttribute('data-view')));
+    });
+
+    root.querySelectorAll('.inf-legend-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const fam = btn.getAttribute('data-family');
+        const pressed = btn.getAttribute('aria-pressed') === 'true';
+        root.querySelectorAll('.inf-legend-btn').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        if (pressed) activeFamily = null;
+        else {
+          activeFamily = fam;
+          btn.setAttribute('aria-pressed', 'true');
+        }
+        applyVisibility();
+      });
+    });
+
+    root.querySelectorAll('.inf-guide-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const g = btn.getAttribute('data-guide');
+        if (g === 'top-inf') {
+          setCategory('influenceur', true);
+          if (guideNote) {
+            guideNote.hidden = false;
+            guideNote.textContent =
+              'Preset Influenceurs — focus sur la plus forte audience pédagogique du corpus.';
+          }
+          if (topInfluencerId) focusSeat(topInfluencerId);
+        } else if (g === 'declare') {
+          if (hideCb) hideCb.checked = true;
+          setCategory(activeCategory === 'all' ? 'influenceur' : activeCategory, false);
+          goTier('lire', true);
+          if (guideNote) {
+            guideNote.hidden = false;
+            guideNote.textContent =
+              'Positions déclarées (sièges pleins) — les estimées sont masquées.';
           }
           applyVisibility();
-        });
+        } else if (g === 'full') {
+          setCategory('all', true);
+          if (guideNote) {
+            guideNote.hidden = false;
+            guideNote.textContent =
+              'Corpus 577 : les élus pèsent le centre — d’où un biais de densité. Fiction pédagogique, pas un score moral.';
+          }
+          goTier('fit', true);
+        }
       });
+    });
+
+    window.addEventListener('resize', () => {
+      if (viewMode === 'hemi') renderLabels();
+    });
+
+    // Default list on narrow screens
+    if (typeof matchMedia !== 'undefined' && matchMedia('(max-width: 640px)').matches) {
+      setViewMode('list');
+    }
+
+    // Deep-link
+    try {
+      const params = new URL(location.href).searchParams;
+      const id = params.get('id');
+      const q = params.get('q');
+      if (q && seatSearch) {
+        seatSearch.value = q;
+        filterQ = q;
+      }
+      applyVisibility();
+      if (id) {
+        focusSeat(id);
+      } else if (q && q.trim().length >= 2) {
+        const matches = filteredSeats().filter((s) =>
+          `${s.name} ${s.handle} ${s.initials}`.toLowerCase().includes(q.trim().toLowerCase()),
+        );
+        if (matches.length === 1) focusSeat(matches[0].id);
+        else if (matches.length > 1) {
+          // Keep filter; open first by audience
+          const top = [...matches].sort((a, b) => b.followers - a.followers)[0];
+          if (top) focusSeat(top.id);
+        }
+      } else {
+        applyTransform();
+      }
+    } catch {
+      applyVisibility();
+      applyTransform();
     }
   })();
 </script>
@@ -328,10 +1265,85 @@ const payload = seated.map((s) => ({
     margin: 1.25rem 0 2rem;
   }
   .inf-counts {
-    margin: 0.25rem 0 0.75rem;
+    margin: 0.35rem 0 0.75rem;
+  }
+  .inf-guide {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    align-items: center;
+    margin: 0.65rem 0 0.5rem;
+  }
+  .inf-guide-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted, #444);
+  }
+  .inf-guide-btn {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 999px;
+    background: var(--card, #fff);
+    cursor: pointer;
+  }
+  .inf-guide-btn:hover {
+    border-color: var(--fg, #111);
+  }
+  .inf-guide-note {
+    margin: 0 0 0.65rem;
+    padding: 0.45rem 0.65rem;
+    border-left: 3px solid var(--fg, #111);
+    background: color-mix(in srgb, var(--card, #fff) 80%, #e8eef3);
+  }
+  .inf-preset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.5rem 0 0.35rem;
+  }
+  .inf-rank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0 0 0.35rem;
+  }
+  .inf-preset-btn,
+  .inf-rank-btn,
+  .inf-view-btn,
+  .inf-tier-btn {
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid var(--border, #ccc);
+    border-radius: 6px;
+    background: var(--card, #fff);
+    color: var(--fg, #111);
+    cursor: pointer;
+  }
+  .inf-preset-btn[aria-checked='true'],
+  .inf-rank-btn[aria-checked='true'],
+  .inf-view-btn[aria-pressed='true'],
+  .inf-tier-btn[aria-pressed='true'] {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+  .inf-view-toggle {
+    display: flex;
+    gap: 0.35rem;
+    margin: 0 0 0.65rem;
   }
   .inf-controls {
-    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: center;
+    margin-bottom: 0.55rem;
   }
   .inf-toggle {
     display: inline-flex;
@@ -340,34 +1352,111 @@ const payload = seated.map((s) => ({
     font-size: 0.9rem;
     cursor: pointer;
   }
+  .inf-search-label input {
+    font: inherit;
+    font-size: 0.92rem;
+    padding: 0.4rem 0.65rem;
+    min-width: min(100%, 16rem);
+    border: 1px solid var(--border, #ccc);
+    border-radius: 6px;
+  }
+  .inf-zoom-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 0.65rem;
+  }
+  .inf-zoom-bar button {
+    font: inherit;
+    font-size: 0.9rem;
+    min-width: 2rem;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 6px;
+    background: var(--card, #fff);
+    cursor: pointer;
+  }
+  .inf-zoom-level {
+    font-weight: 700;
+    font-size: 0.88rem;
+    margin-left: 0.25rem;
+  }
   .inf-hemi-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 1rem;
-    align-items: start;
+    gap: 0.85rem;
+    grid-template-columns: 1fr;
   }
-  @media (max-width: 800px) {
+  @media (min-width: 900px) {
     .inf-hemi-layout {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.35fr 0.9fr;
+      align-items: start;
     }
   }
-  .inf-svg {
-    max-height: 280px;
-    background: color-mix(in srgb, var(--card, #fff) 92%, #e8eef5);
+  .inf-svg-wrap {
+    position: relative;
+    overflow: hidden;
     border: 1px solid var(--border, #ddd);
     border-radius: 8px;
+    background: #fafafa;
+    touch-action: none;
+    cursor: grab;
+    min-height: 16rem;
   }
-  .inf-seat {
+  .inf-svg-wrap.is-dragging {
+    cursor: grabbing;
+  }
+  .inf-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 16rem;
+  }
+  .inf-html-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .inf-html-label {
+    position: absolute;
+    pointer-events: auto;
+    transform: translate(-50%, -100%);
+    max-width: 12rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: system-ui, sans-serif;
+    font-weight: 650;
+    line-height: 1.2;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1.5px solid #888;
+    background: rgba(255, 255, 255, 0.94);
+    color: #111;
     cursor: pointer;
-    transition: stroke-width 0.12s ease, filter 0.12s ease;
   }
-  .inf-seat:hover,
-  .inf-seat:focus,
-  .inf-seat--active {
+  .inf-seat-g {
+    cursor: pointer;
+  }
+  .inf-seat-g:focus {
+    outline: none;
+  }
+  .inf-seat-g:focus-visible .inf-seat {
+    stroke: #000 !important;
+    stroke-width: 2.6px !important;
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 3px #000);
+  }
+  .inf-seat-g:hover .inf-seat,
+  .inf-seat-g.inf-seat--active .inf-seat {
     stroke: #111 !important;
     stroke-width: 2.2px !important;
     filter: brightness(1.08);
-    outline: none;
+  }
+  .inf-seat-ini {
+    font-family: system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
   }
   .inf-detail {
     background: var(--card, #fff);
@@ -378,9 +1467,18 @@ const payload = seated.map((s) => ({
     font-size: 0.92rem;
     line-height: 1.45;
   }
-  .inf-detail[hidden] {
-    display: block;
-    opacity: 0.7;
+  .inf-detail[hidden],
+  .inf-list-wrap[hidden],
+  .inf-detail-placeholder[hidden],
+  .inf-guide-note[hidden] {
+    display: none !important;
+  }
+  .inf-detail-placeholder {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border: 1px dashed var(--border, #ccc);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--card, #fff) 90%, #eee);
   }
   .inf-detail h3 {
     margin: 0 0 0.4rem;
@@ -391,71 +1489,150 @@ const payload = seated.map((s) => ({
     font-size: 0.92rem;
   }
   .inf-detail ul {
-    margin: 0.2rem 0 0.4rem;
+    margin: 0.25rem 0 0.5rem;
     padding-left: 1.1rem;
   }
   .inf-badge-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin: 0 0 0.55rem;
+    gap: 0.35rem 0.5rem;
+    align-items: center;
+    margin: 0.35rem 0 0.55rem;
   }
-  .inf-status {
+  .inf-status,
+  .inf-cat,
+  .inf-foreign {
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 650;
     padding: 0.15rem 0.45rem;
-    border-radius: 3px;
+    border-radius: 999px;
     border: 1px solid var(--border, #ccc);
-    background: var(--bg, #f5f5f5);
+  }
+  .inf-foreign {
+    border-color: #8a6d3b;
+    background: color-mix(in srgb, #f5e6c8 55%, transparent);
   }
   .inf-status[data-status='estime'] {
     border-style: dashed;
   }
   .inf-hue {
-    --hue: #5a6570;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 0.15rem 0.45rem 0.15rem 0.3rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--hue) 16%, var(--card, #fff));
-    border: 1px solid color-mix(in srgb, var(--hue) 45%, var(--border, #ccc));
+    font-size: 0.82rem;
+    font-weight: 650;
   }
   .inf-swatch {
-    width: 0.65rem;
-    height: 0.65rem;
+    width: 0.7rem;
+    height: 0.7rem;
     border-radius: 50%;
     background: var(--hue, var(--leg, #888));
-    border: 1px solid color-mix(in srgb, var(--hue, var(--leg, #888)) 40%, #000);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     display: inline-block;
   }
   .inf-legend {
     list-style: none;
+    margin: 0.85rem 0 0.35rem;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin: 0.85rem 0 0.25rem;
-    padding: 0;
+    gap: 0.35rem;
   }
   .inf-legend-btn {
-    --leg: #888;
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.8rem;
-    padding: 0.25rem 0.55rem;
+    font: inherit;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.55rem;
+    border: 1px solid var(--border, #ccc);
     border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--leg) 40%, var(--border, #ccc));
-    background: color-mix(in srgb, var(--leg) 12%, var(--card, #fff));
+    background: var(--card, #fff);
     cursor: pointer;
   }
   .inf-legend-btn[aria-pressed='true'] {
-    outline: 2px solid var(--leg);
+    outline: 2px solid #111;
     outline-offset: 1px;
   }
-  .inf-legend-hint {
+  .inf-legend-btn .inf-swatch {
+    background: var(--leg);
+  }
+  .inf-list-wrap {
+    max-height: min(70vh, 28rem);
+    overflow: auto;
+    border: 1px solid var(--border, #ddd);
+    border-radius: 8px;
+    background: var(--card, #fff);
+  }
+  .inf-list {
+    list-style: none;
     margin: 0;
+    padding: 0;
+  }
+  .inf-list-item {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--border, #eee);
+    cursor: pointer;
+  }
+  .inf-list-item:hover,
+  .inf-list-item[aria-selected='true'] {
+    background: color-mix(in srgb, var(--card, #fff) 70%, #e8eef3);
+  }
+  .inf-list-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .inf-list-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 640px) {
+    .inf-svg-wrap,
+    .inf-svg {
+      min-height: 52vh;
+    }
+    .inf-zoom-bar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: color-mix(in srgb, var(--card, #fff) 92%, transparent);
+      padding: 0.35rem 0;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .inf-svg-wrap {
+      background: #12151a;
+    }
+    .inf-html-label {
+      background: rgba(20, 24, 30, 0.94);
+      color: #f5f5f5;
+    }
+    .inf-preset-btn[aria-checked='true'],
+    .inf-rank-btn[aria-checked='true'],
+    .inf-view-btn[aria-pressed='true'],
+    .inf-tier-btn[aria-pressed='true'] {
+      background: #f5f5f5;
+      color: #111;
+      border-color: #f5f5f5;
+    }
   }
 </style>
