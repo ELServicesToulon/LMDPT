@@ -27,10 +27,6 @@ const dailySet = applyHeroDailyOverride(
   heroDailyOverrideJson as HeroDailyOverride,
   dailyVisual.dayKey,
 );
-const dailyBadgeLabel =
-  dailySet.gallery?.[0]?.title?.trim() ||
-  dailySet.heroAlt?.split('—')[0]?.trim() ||
-  '1er tour';
 
 /** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
 const dualHome = buildScrutinDual('2022-presidentielle');
@@ -74,126 +70,27 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} />
   <!--
-    HERO FIRST (Créateur de site · cycle 2026-07-17)
-    Pattern adapté (pas copié) des leaders news : value prop ≤ 5 s + CTA piliers above the fold.
-    Visuels quotidiens : pool curated Europe/Paris (P17).
+    Accueil sans hero média (2026-07-30) — marque + 1 titre + 1 phrase + 1 CTA.
+    Croquis / vidéo quotidiens : section #visuels-2027 plus bas, pas above the fold.
   -->
-  <section class="hero" id="top" aria-labelledby="hero-title" data-daily-visual-set={dailySet.id}>
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      <span>Média civique · données ouvertes</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <strong>{DOE_FR}</strong>
-      <span class="sep" aria-hidden="true">·</span>
-      <span id="daily-visual-badge" class="daily-visual-badge">Visuel du jour · {dailyBadgeLabel}</span>
+  <section class="home-intro" id="top" aria-labelledby="home-title">
+    <p class="home-brand">Le Média du Premier Tour</p>
+    <h1 class="home-title" id="home-title">
+      La France telle qu’elle vote — pas telle qu’on l’élimine
+    </h1>
+    <p class="home-lead">
+      Faits officiels du 1er tour. <strong>{DOE_FR}</strong> — zéro sondage «&nbsp;favori&nbsp;»,
+      zéro classement éliminatoire.
+    </p>
+    <div class="cta-row" role="group" aria-label="Action principale">
+      <a class="btn btn-primary" href="/analyses/assemblee-premier-tour"
+        >Voir l’Assemblée du 1er tour →</a
+      >
+      <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
     </div>
-
-    <div class="hero-grid">
-      <div class="hero-visual hero-visual--animated">
-        <!-- Croquis X + micro-vidéo · rotation quotidienne (poster = LCP) -->
-        <video
-          id="daily-hero-video"
-          class="hero-img hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster={dailySet.heroPosterWebp}
-          width="1280"
-          height="720"
-          aria-label={dailySet.heroAlt}
-        >
-          <source src={dailySet.heroVideo} type="video/mp4" />
-        </video>
-        <picture class="hero-static-fallback">
-          <source
-            id="daily-hero-webp"
-            type="image/webp"
-            srcset={dailySet.heroPosterWebp}
-          />
-          <img
-            id="daily-hero-img"
-            src={dailySet.heroPosterJpg}
-            alt={dailySet.heroAlt}
-            class="hero-img"
-            width="1280"
-            height="720"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
-      </div>
-
-      <div class="hero-inner">
-        <h1 class="hero-title" id="hero-title">
-          Le 1er tour&nbsp;: la France telle qu’elle vote, pas telle qu’on l’élimine
-        </h1>
-
-        <p class="hero-lead">
-          Ouvrez l’atlas, simulez l’Assemblée du 1er tour, suivez 2027.{' '}
-          <strong>Faits officiels</strong> — zéro sondage «&nbsp;favori&nbsp;», zéro classement
-          éliminatoire.
-        </p>
-
-        <div class="cta-row" role="group" aria-label="Actions principales">
-          <a class="btn btn-primary" href="/analyses/assemblee-premier-tour"
-            >Voir l’Assemblée du 1er tour →</a
-          >
-          <a class="btn btn-secondary" href="/analyses/presidentielle-2027-preparation"
-            >Dossier 2027 · 18 avril</a
-          >
-          <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
-          <a class="btn btn-secondary" href="/soutenir">Soutenir le média</a>
-        </div>
-
-        <p class="meta">
-          1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> · Sources
-          data.gouv / Ministère de l’Intérieur
-        </p>
-      </div>
-    </div>
-
-    <!-- 3 piliers éditoriaux (P15-1 / P8-7) — above the fold, WCAG focus rings -->
-    <div
-      class="hero-cards pilier-cards"
-      role="list"
-      aria-label="Trois piliers du média"
-    >
-      <a href="/sources" class="hero-card pilier-card" role="listitem" data-pilier="faits">
-        <div class="card-icon" aria-hidden="true">1</div>
-        <div>
-          <div class="pilier-kicker">Pilier 1</div>
-          <div class="card-title">Faits, pas rumeurs</div>
-          <div class="card-desc">
-            data.gouv / Ministère. Sources primaires, licences affichées.
-          </div>
-        </div>
-      </a>
-      <a href="/atlas" class="hero-card pilier-card" role="listitem" data-pilier="pluralite">
-        <div class="card-icon" aria-hidden="true">2</div>
-        <div>
-          <div class="pilier-kicker">Pilier 2</div>
-          <div class="card-title">Toute la pluralité</div>
-          <div class="card-desc">
-            Atlas + AN1T : toutes les voix visibles — pas le duel.
-          </div>
-        </div>
-      </a>
-      <a href="/charte" class="hero-card pilier-card" role="listitem" data-pilier="doe">
-        <div class="card-icon" aria-hidden="true">3</div>
-        <div>
-          <div class="pilier-kicker">Pilier 3</div>
-          <div class="card-title">Vote pour, pas contre</div>
-          <div class="card-desc">
-            {DOE_FR}. Zéro favori. Zéro classement éliminatoire.
-          </div>
-        </div>
-      </a>
-    </div>
-    <p class="hero-disclaimer meta" role="note">
-      Contenu pédagogique. Les simulations (AN1T, projections 2027) ne sont
-      <strong>ni des prédictions ni des consignes de vote</strong>.
+    <p class="home-meta meta">
+      1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> ·
+      data.gouv / Ministère de l’Intérieur
     </p>
   </section>
 
@@ -665,88 +562,49 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   }
 
   /* =====================================================
-     HERO REDESIGN — Professional, high-contrast, inclusive
-     - WCAG 2.2 AA focus (contrast + visible focus states)
-     - Mobile-first
-     - Neutral civic aesthetic
-     - Strong dark mode support (per design brief)
+     HOME INTRO — marque + titre + CTA (plus de hero vidéo/croquis)
   ===================================================== */
 
-  .hero {
+  .home-intro {
     margin: 0 0 2rem;
-    padding: 0.5rem 0 1.75rem;
-    background: transparent;
+    padding: 0.75rem 0 1.75rem;
     border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+      linear-gradient(180deg, color-mix(in srgb, var(--card) 70%, var(--bg)), transparent);
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.5rem;
-    font-size: 0.92rem; /* improved for readability across ages and vision levels */
-    font-family: system-ui, sans-serif;
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 0.35rem 0.85rem;
-    border-radius: 999px;
-    margin-bottom: 1rem;
-    color: var(--muted);
-    max-width: 100%;
-    line-height: 1.35;
-  }
-
-  .badge-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: lmdpt-pulse 1.8s ease-in-out infinite;
-  }
-
-  .hero-badge .sep { opacity: 0.4; }
-
-  .daily-visual-badge {
-    font-size: 0.78em;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--accent, #2563a8);
-  }
-
-  .hero-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 860px) {
-    .hero-grid {
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-      gap: 2rem;
-    }
-  }
-
-  .hero-inner {
-    max-width: 42rem;
-  }
-
-  .hero-title {
-    font-size: clamp(1.65rem, 4.2vw, 2.35rem);
-    line-height: 1.1;
-    margin: 0 0 0.85rem;
-    letter-spacing: -0.025em;
+  .home-brand {
+    margin: 0 0 0.65rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.85rem, 5vw, 2.85rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     font-weight: 700;
     color: var(--fg) !important;
+    max-width: 18ch;
   }
 
-  .hero-lead {
-    font-size: 1.1rem;
+  .home-title {
+    font-size: clamp(1.25rem, 3.2vw, 1.65rem);
+    line-height: 1.25;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--fg) !important;
+    max-width: 28ch;
+  }
+
+  .home-lead {
+    font-size: 1.08rem;
     line-height: 1.5;
-    margin: 0 0 1.1rem;
+    margin: 0 0 1.15rem;
     color: var(--fg) !important;
     max-width: 42ch;
+  }
+
+  .home-meta {
+    margin: 0.85rem 0 0;
   }
 
   .cta-row {
@@ -756,7 +614,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     margin: 0 0 0.75rem;
   }
   .cta-row .btn {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: min(100%, 11.5rem);
   }
 
@@ -798,124 +656,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     padding-left: 1.2rem;
   }
 
-  /* 3 piliers éditoriaux (P15-1) — grid 1→3, contrastes WCAG, focus-ring */
-  .hero-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 720px) {
-    .hero-cards {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (min-width: 520px) and (max-width: 719px) {
-    .hero-cards {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .hero-card {
-    display: flex;
-    gap: 0.75rem;
-    padding: 1rem 1rem;
-    background: var(--card) !important;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    color: var(--fg) !important;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.2, 0.64, 1);
-    animation: lmdpt-rise 0.55s ease both;
-    animation-delay: calc(0.12s * var(--card-i, 0));
-    min-height: 5.5rem;
-  }
-
-  .hero-card:nth-child(1) { --card-i: 1; }
-  .hero-card:nth-child(2) { --card-i: 2; }
-  .hero-card:nth-child(3) { --card-i: 3; }
-
-  .pilier-card[data-pilier='faits'] {
-    border-top: 3px solid #1d4ed8;
-  }
-  .pilier-card[data-pilier='pluralite'] {
-    border-top: 3px solid #059669;
-  }
-  .pilier-card[data-pilier='doe'] {
-    border-top: 3px solid var(--accent, #c2410c);
-  }
-
-  .pilier-kicker {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--muted) !important;
-    margin-bottom: 0.15rem;
-  }
-
-  .hero-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 8px 20px -4px rgb(0 0 0 / 0.12);
-    transform: translateY(-4px);
-  }
-
-  .hero-card:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 2px;
-  }
-
-  .hero-card .card-icon {
-    font-family: var(--font-sans, system-ui, sans-serif);
-    font-size: 0.85rem;
-    font-weight: 700;
-    line-height: 1;
-    margin-top: 2px;
-    flex-shrink: 0;
-    width: 1.75rem;
-    height: 1.75rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: var(--accent-soft, #eef1f6);
-    color: var(--fg);
-  }
-
-  .pilier-card[data-pilier='faits'] .card-icon {
-    background: color-mix(in srgb, #1d4ed8 14%, white);
-    color: #1d4ed8;
-  }
-  .pilier-card[data-pilier='pluralite'] .card-icon {
-    background: color-mix(in srgb, #059669 14%, white);
-    color: #047857;
-  }
-  .pilier-card[data-pilier='doe'] .card-icon {
-    background: color-mix(in srgb, var(--accent, #c2410c) 14%, white);
-    color: var(--accent, #c2410c);
-  }
-
-  .hero-card .card-title {
-    font-weight: 700;
-    font-size: 0.97rem;
-    line-height: 1.25;
-    margin-bottom: 0.25rem;
-    color: var(--fg) !important;
-  }
-
-  .hero-card .card-desc {
-    font-size: 0.88rem;
-    color: var(--muted) !important;
-    line-height: 1.45;
-  }
-
-  .hero-disclaimer {
-    margin: 0.85rem 0 0;
-    max-width: 70ch;
-    line-height: 1.45;
-  }
-
   .pilier-shortcuts {
     margin-top: 0.85rem;
     display: flex;
@@ -942,62 +682,17 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     margin: 0.35rem 0;
   }
 
-  .hero-badge {
-    background: var(--card) !important;
-    color: var(--muted) !important;
-    border-color: var(--border) !important;
+  .home-brand {
+    animation: lmdpt-rise 0.5s ease both;
   }
-
-  /* Hero visual — croquis animé */
-  .hero-visual {
-    width: 100%;
-    position: relative;
+  .home-title {
+    animation: lmdpt-rise 0.55s ease 0.06s both;
   }
-
-  .hero-visual--animated {
-    isolation: isolate;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: auto;
-    max-height: 460px;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-    display: block;
-    background: var(--card);
-  }
-
-  .hero-video {
-    position: relative;
-    z-index: 1;
-    animation: lmdpt-float 5.5s ease-in-out infinite;
-  }
-
-  /* Fallback image hidden when video can play; shown if video fails / reduced-motion */
-  .hero-static-fallback {
-    display: none;
-  }
-
-  @media (min-width: 860px) {
-    .hero-img {
-      max-height: 380px;
-    }
-  }
-
-  .hero-title {
-    animation: lmdpt-rise 0.55s ease both;
-  }
-  .hero-lead {
-    animation: lmdpt-rise 0.55s ease 0.08s both;
+  .home-lead {
+    animation: lmdpt-rise 0.55s ease 0.1s both;
   }
   .cta-row {
     animation: lmdpt-rise 0.55s ease 0.14s both;
-  }
-  .hero-badge {
-    animation: lmdpt-rise 0.45s ease both;
   }
 
   .visuals-section {
@@ -1059,26 +754,16 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .badge-dot,
-    .hero-video,
-    .hero-title,
-    .hero-lead,
+    .home-brand,
+    .home-title,
+    .home-lead,
     .cta-row,
-    .hero-badge,
-    .hero-card,
     .visual-card {
       animation: none !important;
     }
-    .hero-card:hover,
     .visual-card:hover,
     .visual-card:hover img {
       transform: none;
-    }
-    .hero-video {
-      display: none;
-    }
-    .hero-static-fallback {
-      display: block;
     }
   }
   .visual-card figcaption {
@@ -1365,16 +1050,19 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 
   /* Accueil — responsive finitions */
   @media (max-width: 640px) {
-    .hero {
+    .home-intro {
       margin-bottom: 1.35rem;
       padding-bottom: 1.25rem;
     }
-    .hero-title {
-      font-size: clamp(1.45rem, 6.2vw, 1.85rem);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+    .home-brand {
+      font-size: clamp(1.55rem, 7vw, 2.1rem);
+      max-width: none;
     }
-    .hero-lead {
+    .home-title {
+      font-size: clamp(1.15rem, 5vw, 1.4rem);
+      max-width: none;
+    }
+    .home-lead {
       font-size: 1.02rem;
       max-width: none;
     }
@@ -1392,13 +1080,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       font-size: 0.95rem;
       padding: 0.7rem 1rem;
     }
-    .hero-card {
-      min-height: 0;
-      padding: 0.9rem 0.95rem;
-    }
-    .hero-card .card-desc {
-      font-size: 0.86rem;
-    }
     .why-media {
       padding: 1rem 1rem 1.1rem;
       margin-bottom: 1.25rem;
@@ -1414,23 +1095,16 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       font-size: 0.88rem;
       gap: 0.3rem 0.45rem;
     }
-    .hero-img {
-      max-height: 280px;
-      object-fit: cover;
-    }
   }
 
   @media (min-width: 641px) and (max-width: 859px) {
-    .hero-grid {
-      gap: 1.25rem;
-    }
     .cta-row .btn {
       flex: 1 1 calc(50% - 0.4rem);
     }
   }
 
   @media (min-width: 860px) {
-    .hero {
+    .home-intro {
       padding-top: 0.75rem;
     }
     .cta-row .btn {
