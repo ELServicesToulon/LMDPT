@@ -11,6 +11,7 @@ import InfluenceurBackers from '../../components/InfluenceurBackers.astro';
 import {
   FAMILY_COLORS,
   FOREIGN_LINK_KIND_LABELS,
+  IDEOLOGY_LINK_KIND_LABELS,
   getAssembleeInfluenceursView,
 } from '../../lib/assemblee-influenceurs';
 import hueEstimate from '../../data/influenceurs-network-hue-estimate.json';
@@ -72,6 +73,28 @@ const foreignRows = [...view.seated]
       sources: l.sources,
     })),
   }));
+
+/** Sièges avec idéologie totalisante documentée (noir) */
+const ideologyRows = [...view.seated]
+  .filter((s) => s.ideologyResolved.signal > 0)
+  .sort((a, b) => {
+    const di = b.ideologyResolved.signal - a.ideologyResolved.signal;
+    if (di !== 0) return di;
+    return a.display_name.localeCompare(b.display_name, 'fr', { sensitivity: 'base' });
+  })
+  .map((s) => ({
+    id: s.id,
+    name: s.display_name,
+    signal: s.ideologyResolved.signal,
+    rowIdeology: s.seatIdeology?.row ?? s.seat.row,
+    color: s.color,
+    links: s.ideologyResolved.links.map((l) => ({
+      kindLabel: IDEOLOGY_LINK_KIND_LABELS[l.kind],
+      entity: l.entity,
+      label: l.label,
+      sources: l.sources,
+    })),
+  }));
 ---
 
 <BaseLayout
@@ -95,8 +118,8 @@ const foreignRows = [...view.seated]
         Corpus : <strong>cible 40&nbsp;% société civile</strong> (créateurs, ONG, syndicats, vulgarisation)
         — le reste = influenceurs/médias et élu·e·s documenté·e·s.
         <strong>Premier rang = plus d’abonnés</strong> (ordres de grandeur pédagogiques) ;
-        toggle <strong>rangs · liens étrangers</strong> pour placer devant les fiches avec
-        liens d’État / financement étranger documentés.
+        toggle <strong>rangs · liens étrangers</strong> ou
+        <strong>rangs · idéologie</strong> (sièges <strong>noirs</strong> si documenté).
         Au sein de chaque rangée, axe gauche–droite pédagogique du 1er tour.
         <strong>Siège plein</strong> = position déclarée/sourcée ;
         <strong>siège en pointillé</strong> = estimation documentaire.
@@ -120,6 +143,7 @@ const foreignRows = [...view.seated]
         <li><a href="#hemicycle">Hémicycle</a></li>
         <li><a href="#reseaux">Couleurs par réseau</a></li>
         <li><a href="#ingerences-etrangeres">Liens d’État / étrangers</a></li>
+        <li><a href="#ideologie-totalisante">Idéologie totalisante</a></li>
         <li><a href="#methode">Méthode</a></li>
         <li><a href="#fiches">Fiches (développement)</a></li>
         <li><a href="#financeurs">Financeurs de la sphère</a></li>
@@ -227,6 +251,60 @@ const foreignRows = [...view.seated]
       </p>
     </section>
 
+    <section class="card" id="ideologie-totalisante" aria-labelledby="ideologie-title">
+      <h2 id="ideologie-title">Idéologie totalisante / organisations documentées</h2>
+      <p>
+        Enquête staff LMDPT (fail-closed) : organisations nommées, sanctions État/UE, réseaux média
+        d’appareil. Toggle <strong>Rangs · idéologie</strong> — sièges peints en
+        <strong>noir</strong> si documentés. <em>Pas</em> une liste confessionnelle ni un score moral.
+        {view.counts.ideologyDocumented} fiche{view.counts.ideologyDocumented > 1 ? 's' : ''} documentée
+        {view.counts.ideologyDocumented > 1 ? 's' : ''} sur {view.counts.total}.
+      </p>
+      {
+        ideologyRows.length === 0 ? (
+          <p class="meta">Aucun lien documenté à ce jour.</p>
+        ) : (
+          <ol class="ai-foreign-list">
+            {ideologyRows.map((row, i) => (
+              <li class="ai-foreign-item" style={`border-left-color:${row.color}`}>
+                <div class="ai-foreign-head">
+                  <span class="meta">#{i + 1}</span>
+                  <strong>
+                    <a href={`#hemicycle`} data-focus-seat={row.id}>
+                      {row.name}
+                    </a>
+                  </strong>
+                  <span class="meta">
+                    · signal {row.signal} · rang (mode idéologie) ≈ {row.rowIdeology + 1}
+                  </span>
+                </div>
+                <ul>
+                  {row.links.map((l) => (
+                    <li>
+                      <strong>{l.kindLabel}</strong> · {l.entity} — {l.label}
+                      <ul class="meta">
+                        {l.sources.map((s) => (
+                          <li>
+                            <a href={s.url} rel="noopener noreferrer">
+                              {s.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        )
+      }
+      <p class="meta disclaimer-box">
+        Cas <code>partial</code> = notes staff uniquement (pas de siège noir). Dataset :{' '}
+        <code>assemblee-ideology-signals.json</code>.
+      </p>
+    </section>
+
     <section class="card" id="methode" aria-labelledby="methode-title">
       <h2 id="methode-title">Méthode</h2>
       <p class="meta methodology-box">{view.methodology_note.replace(/\*\*([^*]+)\*\*/g, '$1')}</p>
@@ -243,6 +321,11 @@ const foreignRows = [...view.seated]
           financement étranger documentés (<code>assemblee-foreign-links.json</code>). Kinds :
           organe d’État, sanction UE, réseau média étranger, financement. Fail-closed — pas
           d’invention. Pas un score d’« ingérence » moral.
+        </li>
+        <li>
+          <strong>Rangs · idéologie</strong> : 1er rang = plus de liens organisationnels /
+          idéologie totalisante documentés (<code>assemblee-ideology-signals.json</code>). Sièges
+          <strong>noirs</strong> si signal &gt; 0. Fail-closed — pas d’invention.
         </li>
         <li>
           <strong>Évolutions d’avis</strong> : champ <code>stance_history</code> (motifs + sources).

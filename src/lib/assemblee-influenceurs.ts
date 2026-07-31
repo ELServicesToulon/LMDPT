@@ -15,10 +15,11 @@ import {
 import raw from '../data/assemblee-influenceurs.json';
 import audienceOverrides from '../data/assemblee-audience-overrides.json';
 import foreignLinksOverrides from '../data/assemblee-foreign-links.json';
+import ideologySignalsOverrides from '../data/assemblee-ideology-signals.json';
 
 export type StanceStatus = 'declare' | 'estime';
 export type AudienceStatus = 'estimate' | 'documented';
-export type SeatRankBy = 'audience' | 'foreign';
+export type SeatRankBy = 'audience' | 'foreign' | 'ideology';
 
 export type ForeignLinkKind =
   | 'organe_etat'
@@ -26,6 +27,17 @@ export type ForeignLinkKind =
   | 'reseau_media_etranger'
   | 'financement_etranger'
   | 'autre';
+
+export type IdeologyLinkKind =
+  | 'organisation_documentee'
+  | 'sanction_etat_ue'
+  | 'financement_ideologique'
+  | 'reseau_media_ideologique'
+  | 'autre';
+
+/** Sièges documentés (idéologie totalisante) — décision Président Ω 2026-07-30. */
+export const IDEOLOGY_SIGNAL_COLOR = '#111111';
+export const IDEOLOGY_SIGNAL_COLOR_LABEL = 'Idéologie totalisante (documenté)';
 
 export type PlatformKind =
   | 'x'
@@ -114,6 +126,22 @@ export interface ForeignSignal {
   as_of: string;
 }
 
+export interface IdeologyLink {
+  id: string;
+  kind: IdeologyLinkKind;
+  entity: string;
+  label: string;
+  weight?: number;
+  sources: SourceLink[];
+}
+
+export interface IdeologySignal {
+  links: IdeologyLink[];
+  /** Somme des poids — rangs + couleur noire si > 0 — pas un score moral. */
+  signal: number;
+  as_of: string;
+}
+
 export interface InfluencerEntry {
   id: string;
   display_name: string;
@@ -132,6 +160,8 @@ export interface InfluencerEntry {
   audience?: AudienceInfo;
   /** Liens d’État / financement étranger (inline, rare — préférer overrides). */
   foreign_links?: ForeignLink[];
+  /** Liens organisationnels / idéologie totalisante (inline, rare — préférer overrides). */
+  ideology_links?: IdeologyLink[];
 }
 
 export interface BackerEntry {
@@ -172,8 +202,12 @@ export interface SeatedInfluencer extends InfluencerEntry {
   audienceResolved: AudienceInfo;
   /** Signaux liens d’État / étrangers documentés (fail-closed). */
   foreignResolved: ForeignSignal;
+  /** Signaux idéologie totalisante documentés (fail-closed) — siège noir si signal > 0. */
+  ideologyResolved: IdeologySignal;
   /** Position alternative si classement par liens étrangers. */
   seatForeign?: HemicycleSeatPos;
+  /** Position alternative si classement par idéologie documentée. */
+  seatIdeology?: HemicycleSeatPos;
 }
 
 /** Ordre pédagogique gauche → droite (familles 1er tour). « autre » en dernier (fond). */
@@ -228,6 +262,30 @@ export const FOREIGN_LINK_KIND_LABELS: Record<ForeignLinkKind, string> = {
   sanction_ue: 'Sanction / mesure UE',
   reseau_media_etranger: 'Réseau média étranger',
   financement_etranger: 'Financement étranger',
+  autre: 'Autre lien documenté',
+};
+
+export const VALID_IDEOLOGY_LINK_KINDS = new Set<IdeologyLinkKind>([
+  'organisation_documentee',
+  'sanction_etat_ue',
+  'financement_ideologique',
+  'reseau_media_ideologique',
+  'autre',
+]);
+
+export const DEFAULT_IDEOLOGY_WEIGHTS: Record<IdeologyLinkKind, number> = {
+  organisation_documentee: 3,
+  sanction_etat_ue: 3,
+  financement_ideologique: 2,
+  reseau_media_ideologique: 2,
+  autre: 1,
+};
+
+export const IDEOLOGY_LINK_KIND_LABELS: Record<IdeologyLinkKind, string> = {
+  organisation_documentee: 'Organisation documentée',
+  sanction_etat_ue: 'Sanction / mesure État ou UE',
+  financement_ideologique: 'Financement idéologique',
+  reseau_media_ideologique: 'Réseau média d’appareil',
   autre: 'Autre lien documenté',
 };
 
@@ -404,6 +462,53 @@ export function resolveForeignSignal(inf: InfluencerEntry): ForeignSignal {
   };
 }
 
+type IdeologyOverrideFile = {
+  updated?: string;
+  seat_color?: string;
+  weight_kinds?: Partial<Record<IdeologyLinkKind, number>>;
+  by_id?: Record<string, { links: IdeologyLink[] }>;
+};
+
+function ideologyLinkWeight(
+  link: IdeologyLink,
+  weights: Record<IdeologyLinkKind, number>,
+): number {
+  if (typeof link.weight === 'number' && Number.isFinite(link.weight) && link.weight > 0) {
+    return link.weight;
+  }
+  return weights[link.kind] ?? 1;
+}
+
+/**
+ * Résout les liens organisationnels / idéologie totalisante documentés (fail-closed).
+ * Override JSON > champ inline. Si signal > 0 → siège noir (IDEOLOGY_SIGNAL_COLOR).
+ */
+export function resolveIdeologySignal(inf: InfluencerEntry): IdeologySignal {
+  const file = ideologySignalsOverrides as IdeologyOverrideFile;
+  const weights: Record<IdeologyLinkKind, number> = {
+    ...DEFAULT_IDEOLOGY_WEIGHTS,
+    ...(file.weight_kinds as Partial<Record<IdeologyLinkKind, number>>),
+  };
+  const fromOverride = file.by_id?.[inf.id]?.links ?? [];
+  const fromInline = inf.ideology_links ?? [];
+  const seen = new Set<string>();
+  const links: IdeologyLink[] = [];
+  for (const link of [...fromOverride, ...fromInline]) {
+    if (!link?.id || !VALID_IDEOLOGY_LINK_KINDS.has(link.kind)) continue;
+    if (!Array.isArray(link.sources) || link.sources.length === 0) continue;
+    if (!link.sources.every((s) => /^https?:\/\//.test(s.url))) continue;
+    if (seen.has(link.id)) continue;
+    seen.add(link.id);
+    links.push(link);
+  }
+  const signal = links.reduce((acc, l) => acc + ideologyLinkWeight(l, weights), 0);
+  return {
+    links,
+    signal,
+    as_of: file.updated || '2026-07',
+  };
+}
+
 /**
  * Générateur d’arcs paramétriques (rangées concentriques).
  * Ordre de sortie = gauche → droite (angle décroissant depuis le bas).
@@ -488,7 +593,9 @@ export function layoutHemicycleSeats(
  * Place les sièges :
  * - `audience` (défaut) : **1er rang = plus d’abonnés**
  * - `foreign` : **1er rang = plus de liens d’État / étrangers documentés**
+ * - `ideology` : **1er rang = plus de liens idéologie totalisante documentés**
  * Au sein de chaque rangée : familles gauche → droite (axe pédagogique).
+ * Si ideologyResolved.signal > 0 : couleur siège = noir (override, family inchangée).
  */
 export function assignSeats(
   influencers: InfluencerEntry[],
@@ -511,12 +618,18 @@ export function assignSeats(
     inf,
     audienceResolved: resolveAudience(inf),
     foreignResolved: resolveForeignSignal(inf),
+    ideologyResolved: resolveIdeologySignal(inf),
   }));
   withMeta.sort((a, b) => {
     if (rankBy === 'foreign') {
       const df = b.foreignResolved.signal - a.foreignResolved.signal;
       if (df !== 0) return df;
-      // À signal égal : audience en départage, puis famille
+      const da =
+        b.audienceResolved.followers_total - a.audienceResolved.followers_total;
+      if (da !== 0) return da;
+    } else if (rankBy === 'ideology') {
+      const di = b.ideologyResolved.signal - a.ideologyResolved.signal;
+      if (di !== 0) return di;
       const da =
         b.audienceResolved.followers_total - a.audienceResolved.followers_total;
       if (da !== 0) return da;
@@ -548,18 +661,21 @@ export function assignSeats(
       });
     });
     for (let i = 0; i < chunk.length; i += 1) {
-      const { inf, audienceResolved, foreignResolved } = chunk[i]!;
+      const { inf, audienceResolved, foreignResolved, ideologyResolved } = chunk[i]!;
       const hue: PoliticalHueRef = {
         family: inf.stance.family,
         label: inf.stance.label,
       };
+      const baseColor = resolveHueColor(hue);
       seated.push({
         ...inf,
         seat: rowSeats[i]!,
-        color: resolveHueColor(hue),
+        color:
+          ideologyResolved.signal > 0 ? IDEOLOGY_SIGNAL_COLOR : baseColor,
         stanceLabel: resolveHueLabel(hue),
         audienceResolved,
         foreignResolved,
+        ideologyResolved,
       });
     }
   }
@@ -602,12 +718,16 @@ export function getAssembleeInfluenceursView() {
   }));
   const seatedAudience = assignSeats(influencers, { rankBy: 'audience' });
   const seatedForeign = assignSeats(influencers, { rankBy: 'foreign' });
+  const seatedIdeology = assignSeats(influencers, { rankBy: 'ideology' });
   const foreignById = new Map(seatedForeign.map((s) => [s.id, s.seat]));
+  const ideologyById = new Map(seatedIdeology.map((s) => [s.id, s.seat]));
   const seated: SeatedInfluencer[] = seatedAudience.map((s) => ({
     ...s,
     seatForeign: foreignById.get(s.id),
+    seatIdeology: ideologyById.get(s.id),
   }));
   const foreignDocumented = seated.filter((s) => s.foreignResolved.signal > 0).length;
+  const ideologyDocumented = seated.filter((s) => s.ideologyResolved.signal > 0).length;
   const byFamily: Record<string, number> = {};
   for (const f of FAMILY_HEMI_ORDER) byFamily[f] = 0;
   const byCategory: Record<AssembleeCategory, number> = {
@@ -642,6 +762,7 @@ export function getAssembleeInfluenceursView() {
       declare: declareCount,
       estime: estimeCount,
       foreignDocumented,
+      ideologyDocumented,
       byFamily,
       byCategory,
     },
@@ -700,6 +821,15 @@ export function buildClientPayload(seated: SeatedInfluencer[]) {
           label: l.label,
           sources: l.sources,
         })),
+        ideology_signal: s.ideologyResolved.signal,
+        ideology_links: s.ideologyResolved.links.map((l) => ({
+          id: l.id,
+          kind: l.kind,
+          kindLabel: IDEOLOGY_LINK_KIND_LABELS[l.kind],
+          entity: l.entity,
+          label: l.label,
+          sources: l.sources,
+        })),
         verification: s.verification,
         observatoire_ref: s.observatoire_ref ?? '',
         stance_sources: s.stance.sources,
@@ -723,6 +853,10 @@ export function buildClientPayload(seated: SeatedInfluencer[]) {
         x_foreign: s.seatForeign ? Number(s.seatForeign.x.toFixed(2)) : undefined,
         y_foreign: s.seatForeign ? Number(s.seatForeign.y.toFixed(2)) : undefined,
         r_foreign: s.seatForeign ? Number(s.seatForeign.r.toFixed(2)) : undefined,
+        row_ideology: s.seatIdeology?.row ?? s.seat.row,
+        x_ideology: s.seatIdeology ? Number(s.seatIdeology.x.toFixed(2)) : undefined,
+        y_ideology: s.seatIdeology ? Number(s.seatIdeology.y.toFixed(2)) : undefined,
+        r_ideology: s.seatIdeology ? Number(s.seatIdeology.r.toFixed(2)) : undefined,
       },
     ]),
   );

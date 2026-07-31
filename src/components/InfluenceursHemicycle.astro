@@ -8,6 +8,8 @@ import {
   FAMILY_COLORS,
   FAMILY_HEMI_ORDER,
   HEMI_ZOOM_TIERS,
+  IDEOLOGY_SIGNAL_COLOR,
+  IDEOLOGY_SIGNAL_COLOR_LABEL,
   STANCE_STATUS_LABELS,
   formatFollowersFr,
   normalizeAssembleeCategory,
@@ -26,7 +28,7 @@ interface Props {
 const {
   seated,
   title = 'Assemblée fictive des influenceurs',
-  subtitle = 'Fiction pédagogique — rangs par abonnés ou par liens d’État / étrangers documentés. Pas un parlement, pas un score moral.',
+  subtitle = 'Fiction pédagogique — rangs par abonnés, liens d’État / étrangers, ou idéologie totalisante documentée (sièges noirs). Pas un parlement, pas un score moral.',
   declareCount,
   estimeCount,
   dataUrl = '/data/assemblee-influenceurs-client.json',
@@ -61,7 +63,9 @@ function labelInk(hex: string): string {
 }
 
 const legend = FAMILY_HEMI_ORDER.map((fam) => {
-  const count = seated.filter((s) => String(s.stance.family) === fam).length;
+  const count = seated.filter(
+    (s) => String(s.stance.family) === fam && s.ideologyResolved.signal === 0,
+  ).length;
   return {
     fam,
     label: getFamilyMeta(fam).shortLabel,
@@ -69,6 +73,16 @@ const legend = FAMILY_HEMI_ORDER.map((fam) => {
     count,
   };
 }).filter((l) => l.count > 0);
+
+const ideologyLegendCount = seated.filter((s) => s.ideologyResolved.signal > 0).length;
+if (ideologyLegendCount > 0) {
+  legend.push({
+    fam: 'ideologie-totalisante',
+    label: IDEOLOGY_SIGNAL_COLOR_LABEL,
+    color: IDEOLOGY_SIGNAL_COLOR,
+    count: ideologyLegendCount,
+  });
+}
 
 const seatBoot = seated.map((s) => ({
   id: s.id,
@@ -80,6 +94,8 @@ const seatBoot = seated.map((s) => ({
   followersLabel: formatFollowersFr(s.audienceResolved.followers_total),
   foreignSignal: s.foreignResolved.signal,
   foreignLinks: s.foreignResolved.links.length,
+  ideologySignal: s.ideologyResolved.signal,
+  ideologyLinks: s.ideologyResolved.links.length,
   category: normalizeAssembleeCategory(s.category),
   x: Number(s.seat.x.toFixed(2)),
   y: Number(s.seat.y.toFixed(2)),
@@ -93,6 +109,10 @@ const seatBoot = seated.map((s) => ({
   yf: Number((s.seatForeign ?? s.seat).y.toFixed(2)),
   rf: Number((s.seatForeign ?? s.seat).r.toFixed(2)),
   rowf: (s.seatForeign ?? s.seat).row,
+  xi: Number((s.seatIdeology ?? s.seat).x.toFixed(2)),
+  yi: Number((s.seatIdeology ?? s.seat).y.toFixed(2)),
+  ri: Number((s.seatIdeology ?? s.seat).r.toFixed(2)),
+  rowi: (s.seatIdeology ?? s.seat).row,
   color: s.color,
   initials: seatInitials(s.display_name),
   ink: labelInk(s.color),
@@ -100,6 +120,7 @@ const seatBoot = seated.map((s) => ({
 }));
 
 const foreignDocumentedCount = seatBoot.filter((s) => s.foreignSignal > 0).length;
+const ideologyDocumentedCount = seatBoot.filter((s) => s.ideologySignal > 0).length;
 
 const catCounts = {
   influenceur: seatBoot.filter((s) => s.category === 'influenceur').length,
@@ -154,6 +175,45 @@ const zoomTiers = HEMI_ZOOM_TIERS;
   </div>
 
   <div
+    class="inf-civile-share"
+    role="group"
+    aria-labelledby={`civile-share-label-${instanceId}`}
+  >
+    <div class="inf-civile-share-head">
+      <label id={`civile-share-label-${instanceId}`} for={`civile-share-${instanceId}`}>
+        Part société civile
+      </label>
+      <output id={`civile-share-out-${instanceId}`} for={`civile-share-${instanceId}`}
+        >{Math.round((100 * catCounts['societe-civile']) / Math.max(1, catCounts.all))}%</output
+      >
+    </div>
+    <input
+      type="range"
+      id={`civile-share-${instanceId}`}
+      min="10"
+      max="100"
+      step="10"
+      value={String(Math.min(100, Math.max(10, Math.round((100 * catCounts['societe-civile']) / Math.max(1, catCounts.all) / 10) * 10)))}
+      list={`civile-share-ticks-${instanceId}`}
+    />
+    <datalist id={`civile-share-ticks-${instanceId}`}>
+      {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((v) => <option value={String(v)} label={`${v}%`} />)}
+    </datalist>
+    <div class="inf-civile-share-ticks" aria-hidden="true">
+      {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((v) => (
+        <button type="button" class="inf-civile-tick" data-pct={String(v)}>
+          {v}
+        </button>
+      ))}
+    </div>
+    <p class="meta inf-civile-share-note" id={`civile-share-note-${instanceId}`}>
+      Curseur pédagogique (pas à pas 10 %). Max corpus actuel&nbsp;: {
+        Math.round((100 * catCounts['societe-civile']) / Math.max(1, catCounts.all))
+      }% ({catCounts['societe-civile']} sièges documentés / placeholder). Au-delà → plafonné.
+    </p>
+  </div>
+
+  <div
     class="inf-rank"
     role="radiogroup"
     aria-label="Classement des rangs"
@@ -164,6 +224,9 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     </button>
     <button type="button" class="inf-rank-btn" role="radio" aria-checked="false" data-rank="foreign">
       Rangs · liens étrangers ({foreignDocumentedCount})
+    </button>
+    <button type="button" class="inf-rank-btn" role="radio" aria-checked="false" data-rank="ideology">
+      Rangs · idéologie ({ideologyDocumentedCount})
     </button>
   </div>
 
@@ -325,7 +388,7 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     }
   </ul>
   <p class="meta inf-legend-hint">
-    Plein = déclaré · Pointillé = estimé · Clic légende = filtrer famille · Preset Influenceurs par défaut
+    Plein = déclaré · Pointillé = estimé · Noir = idéologie totalisante documentée · Clic légende = filtrer · Preset Influenceurs par défaut
   </p>
 </section>
 
@@ -360,6 +423,9 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     const listWrap = document.getElementById(`list-wrap-${instanceId}`);
     const listEl = document.getElementById(`list-${instanceId}`);
     const guideNote = document.getElementById(`guide-note-${instanceId}`);
+    const civileSlider = document.getElementById(`civile-share-${instanceId}`);
+    const civileOut = document.getElementById(`civile-share-out-${instanceId}`);
+    const civileNote = document.getElementById(`civile-share-note-${instanceId}`);
     if (!detail || !seatsRoot || !viewport || !wrap || !svg || !root) return;
 
     /** @type {Record<string, any>} */
@@ -367,7 +433,7 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     let activeFamily = null;
     /** @type {string} */
     let activeCategory = 'influenceur';
-    /** @type {'audience' | 'foreign'} */
+    /** @type {'audience' | 'foreign' | 'ideology'} */
     let rankMode = 'audience';
     let filterQ = '';
     let loaded = false;
@@ -377,12 +443,76 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     let activeSeatId = null;
     let viewMode = 'hemi';
     let animating = false;
+    const TOTAL_SEATS = seatBoot.length || 577;
+    const maxCivileN = seatBoot.filter((s) => s.category === 'societe-civile').length;
+    const maxCivilePct = Math.max(
+      10,
+      Math.min(100, Math.round((100 * maxCivileN) / Math.max(1, TOTAL_SEATS))),
+    );
+    let civileSharePct = Math.min(
+      100,
+      Math.max(10, Math.round(maxCivilePct / 10) * 10),
+    );
+    /** @type {Set<string> | null} */
+    let civileMixIds = null;
 
     const TIER_ORDER = ['fit', 'lire', 'detail'];
     const PAN_THRESHOLD = 6;
     const LABEL_CAP = 40;
     const reduceMotion =
       typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function buildCivileMixIds(pct) {
+      const wantCivile = Math.min(maxCivileN, Math.round((TOTAL_SEATS * pct) / 100));
+      const civile = seatBoot
+        .filter((s) => s.category === 'societe-civile')
+        .slice()
+        .sort((a, b) => (b.followers || 0) - (a.followers || 0))
+        .slice(0, wantCivile);
+      const restNeed = Math.max(0, TOTAL_SEATS - wantCivile);
+      const others = seatBoot
+        .filter((s) => s.category !== 'societe-civile')
+        .slice()
+        .sort((a, b) => {
+          if (a.category !== b.category) {
+            if (a.category === 'influenceur') return -1;
+            if (b.category === 'influenceur') return 1;
+          }
+          return (b.followers || 0) - (a.followers || 0);
+        })
+        .slice(0, restNeed);
+      return new Set([...civile, ...others].map((s) => s.id));
+    }
+
+    function setCivileShare(pct, opts) {
+      const requested = Math.min(100, Math.max(10, Math.round(Number(pct) / 10) * 10));
+      const capped = Math.min(requested, Math.round(maxCivilePct / 10) * 10 || maxCivilePct);
+      civileSharePct = capped < 10 ? 10 : capped;
+      civileMixIds = buildCivileMixIds(civileSharePct);
+      if (civileSlider) civileSlider.value = String(requested);
+      if (civileOut) {
+        civileOut.textContent =
+          requested > maxCivilePct
+            ? `${civileSharePct}% (max corpus)`
+            : `${requested}%`;
+      }
+      if (civileNote) {
+        civileNote.textContent =
+          requested > maxCivilePct
+            ? `Demande ${requested}% — plafonné à ${maxCivilePct}% (${maxCivileN} sièges société civile dans le corpus). Enrichir le dataset pour monter plus haut.`
+            : `Mix pédagogique : ~${Math.round((TOTAL_SEATS * civileSharePct) / 100)} sièges société civile sur ${TOTAL_SEATS} (corpus max ${maxCivilePct}%).`;
+      }
+      root.querySelectorAll('.inf-civile-tick').forEach((btn) => {
+        const v = Number(btn.getAttribute('data-pct'));
+        btn.setAttribute('aria-pressed', v === requested ? 'true' : 'false');
+        btn.toggleAttribute('data-over-max', v > maxCivilePct);
+      });
+      if (opts?.switchAll !== false && activeCategory !== 'all') {
+        setCategory('all', false);
+      } else {
+        applyVisibility();
+      }
+    }
 
     function esc(s) {
       return String(s || '')
@@ -393,9 +523,9 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     }
 
     function rankLabel() {
-      return rankMode === 'foreign'
-        ? 'classement par liens d’État / étrangers documentés'
-        : 'classement par abonnés';
+      if (rankMode === 'foreign') return 'classement par liens d’État / étrangers documentés';
+      if (rankMode === 'ideology') return 'classement par idéologie totalisante documentée';
+      return 'classement par abonnés';
     }
 
     function applyRankPositions() {
@@ -405,6 +535,11 @@ const zoomTiers = HEMI_ZOOM_TIERS;
           s.y = s.yf;
           s.r = s.rf;
           s.row = s.rowf;
+        } else if (rankMode === 'ideology') {
+          s.x = s.xi;
+          s.y = s.yi;
+          s.r = s.ri;
+          s.row = s.rowi;
         } else {
           s.x = s.xa;
           s.y = s.ya;
@@ -430,7 +565,8 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     }
 
     function setRankMode(mode) {
-      rankMode = mode === 'foreign' ? 'foreign' : 'audience';
+      rankMode =
+        mode === 'foreign' ? 'foreign' : mode === 'ideology' ? 'ideology' : 'audience';
       root.querySelectorAll('.inf-rank-btn').forEach((btn) => {
         btn.setAttribute('aria-checked', btn.getAttribute('data-rank') === rankMode ? 'true' : 'false');
       });
@@ -567,8 +703,10 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     function filteredSeats() {
       const hideEstime = hideCb && hideCb.checked;
       const q = filterQ.trim().toLowerCase();
+      const mix = activeCategory === 'all' ? civileMixIds || buildCivileMixIds(civileSharePct) : null;
       return seatBoot.filter((s) => {
         if (activeCategory !== 'all' && s.category !== activeCategory) return false;
+        if (mix && !mix.has(s.id)) return false;
         if (activeFamily && s.family !== activeFamily) return false;
         if (hideEstime && s.status !== 'declare') return false;
         if (q) {
@@ -720,6 +858,24 @@ const zoomTiers = HEMI_ZOOM_TIERS;
         (p.foreign_signal || 0) > 0
           ? `<span class="inf-foreign">Liens étrangers documentés · signal ${esc(String(p.foreign_signal))}</span>`
           : '';
+      const ideologyLinks =
+        (p.ideology_links || []).length === 0
+          ? '<p class="meta">Aucun lien organisationnel / idéologie totalisante documenté à ce jour (fail-closed).</p>'
+          : `<ul>${(p.ideology_links || [])
+              .map(
+                (l) =>
+                  `<li><strong>${esc(l.kindLabel)}</strong> · ${esc(l.entity)} — ${esc(l.label)}<ul>${(l.sources || [])
+                    .map(
+                      (s) =>
+                        `<li><a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a></li>`,
+                    )
+                    .join('')}</ul></li>`,
+              )
+              .join('')}</ul>`;
+      const ideologyBadge =
+        (p.ideology_signal || 0) > 0
+          ? `<span class="inf-ideology">Idéologie totalisante documentée · signal ${esc(String(p.ideology_signal))}</span>`
+          : '';
       const stanceSources = (p.stance_sources || [])
         .map(
           (s) =>
@@ -746,10 +902,13 @@ const zoomTiers = HEMI_ZOOM_TIERS;
         <p class="inf-badge-row">
           <span class="inf-status" data-status="${esc(p.stance_status)}">${esc(status)}${conf}</span>
           <span class="inf-hue" style="--hue:${esc(p.color)}">
-            <span class="inf-swatch" aria-hidden="true"></span>${esc(p.stance_label)}
+            <span class="inf-swatch" aria-hidden="true"></span>${esc(
+              (p.ideology_signal || 0) > 0 ? 'Idéologie totalisante (documenté)' : p.stance_label,
+            )}
           </span>
           <span class="inf-cat">${esc(cat)}</span>
           ${foreignBadge}
+          ${ideologyBadge}
         </p>
         <p>${esc(p.summary)}</p>
         ${p.rationale ? `<p class="meta"><strong>Indices (teinte actuelle) :</strong> ${esc(p.rationale)}</p>` : ''}
@@ -780,6 +939,9 @@ const zoomTiers = HEMI_ZOOM_TIERS;
         <h4>Liens d’État / financement étranger</h4>
         <p class="meta">Placement pédagogique des rangs — pas une accusation d’« agent ».</p>
         ${foreignLinks}
+        <h4>Idéologie totalisante / organisations</h4>
+        <p class="meta">Sièges noirs si documenté — pas une liste confessionnelle ni un score moral.</p>
+        ${ideologyLinks}
         <h4>Sources de la teinte actuelle</h4>
         <ul>${stanceSources}</ul>
         ${obs}
@@ -882,13 +1044,20 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     function applyVisibility() {
       const hideEstime = hideCb && hideCb.checked;
       const q = filterQ.trim().toLowerCase();
+      const mix =
+        activeCategory === 'all' ? civileMixIds || buildCivileMixIds(civileSharePct) : null;
       seatsRoot.querySelectorAll('.inf-seat-g').forEach((el) => {
         const id = el.getAttribute('data-id');
         const boot = seatBoot.find((s) => s.id === id);
         const catOk =
           activeCategory === 'all' || (boot?.category || el.getAttribute('data-category')) === activeCategory;
-        const familyOk =
-          !activeFamily || (boot?.family || el.getAttribute('data-family')) === activeFamily;
+        const mixOk = !mix || mix.has(id);
+        const familyOk = !activeFamily
+          ? true
+          : activeFamily === 'ideologie-totalisante'
+            ? (boot?.ideologySignal || 0) > 0
+            : (boot?.family || el.getAttribute('data-family')) === activeFamily &&
+              (boot?.ideologySignal || 0) === 0;
         const statusOk =
           !hideEstime || (boot?.status || el.getAttribute('data-status')) === 'declare';
         let searchOk = true;
@@ -897,7 +1066,7 @@ const zoomTiers = HEMI_ZOOM_TIERS;
             `${boot?.name || el.getAttribute('data-name') || ''} ${boot?.handle || ''} ${boot?.initials || ''}`.toLowerCase();
           searchOk = hay.includes(q);
         }
-        const show = catOk && familyOk && statusOk && searchOk;
+        const show = catOk && mixOk && familyOk && statusOk && searchOk;
         el.style.display = show ? '' : 'none';
         el.setAttribute('aria-hidden', show ? 'false' : 'true');
         el.setAttribute('tabindex', show ? '0' : '-1');
@@ -913,6 +1082,9 @@ const zoomTiers = HEMI_ZOOM_TIERS;
         if (rankMode === 'foreign') {
           const df = (b.foreignSignal || 0) - (a.foreignSignal || 0);
           if (df !== 0) return df;
+        } else if (rankMode === 'ideology') {
+          const di = (b.ideologySignal || 0) - (a.ideologySignal || 0);
+          if (di !== 0) return di;
         }
         return b.followers - a.followers;
       });
@@ -927,6 +1099,10 @@ const zoomTiers = HEMI_ZOOM_TIERS;
             <span class="meta">${esc(s.stanceLabel)} · ~${esc(s.followersLabel)}${
               (s.foreignSignal || 0) > 0
                 ? ` · liens étrangers (signal ${esc(String(s.foreignSignal))})`
+                : ''
+            }${
+              (s.ideologySignal || 0) > 0
+                ? ` · idéologie documentée (signal ${esc(String(s.ideologySignal))})`
                 : ''
             } · ${s.status === 'declare' ? 'déclaré' : 'estimé'}</span>
           </span>
@@ -1164,6 +1340,17 @@ const zoomTiers = HEMI_ZOOM_TIERS;
       btn.addEventListener('click', () => setCategory(btn.getAttribute('data-cat'), true));
     });
 
+    if (civileSlider) {
+      civileSlider.addEventListener('input', () => setCivileShare(civileSlider.value, { switchAll: true }));
+      civileSlider.addEventListener('change', () => setCivileShare(civileSlider.value, { switchAll: true }));
+    }
+    root.querySelectorAll('.inf-civile-tick').forEach((btn) => {
+      btn.addEventListener('click', () => setCivileShare(btn.getAttribute('data-pct'), { switchAll: true }));
+    });
+    // init mix (sans forcer le preset Tant que Influenceurs reste le défaut)
+    civileMixIds = buildCivileMixIds(civileSharePct);
+    if (civileOut) civileOut.textContent = `${civileSharePct}%`;
+
     root.querySelectorAll('.inf-rank-btn').forEach((btn) => {
       btn.addEventListener('click', () => setRankMode(btn.getAttribute('data-rank')));
     });
@@ -1304,6 +1491,61 @@ const zoomTiers = HEMI_ZOOM_TIERS;
     flex-wrap: wrap;
     gap: 0.35rem;
     margin: 0.5rem 0 0.35rem;
+  }
+  .inf-civile-share {
+    margin: 0.35rem 0 0.65rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--card, #fff) 88%, #dce8f0);
+  }
+  .inf-civile-share-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+  .inf-civile-share-head output {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .inf-civile-share input[type='range'] {
+    width: 100%;
+    accent-color: #1a3a4a;
+    margin: 0.15rem 0 0.35rem;
+  }
+  .inf-civile-share-ticks {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 0.2rem;
+    margin-bottom: 0.35rem;
+  }
+  .inf-civile-tick {
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0;
+    border: 1px solid var(--border, #ccc);
+    border-radius: 4px;
+    background: var(--card, #fff);
+    color: var(--fg, #111);
+    cursor: pointer;
+  }
+  .inf-civile-tick[aria-pressed='true'] {
+    background: #1a3a4a;
+    color: #fff;
+    border-color: #1a3a4a;
+  }
+  .inf-civile-tick[data-over-max] {
+    opacity: 0.55;
+  }
+  .inf-civile-share-note {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
   }
   .inf-rank {
     display: flex;
@@ -1501,7 +1743,8 @@ const zoomTiers = HEMI_ZOOM_TIERS;
   }
   .inf-status,
   .inf-cat,
-  .inf-foreign {
+  .inf-foreign,
+  .inf-ideology {
     font-size: 0.78rem;
     font-weight: 650;
     padding: 0.15rem 0.45rem;
@@ -1511,6 +1754,11 @@ const zoomTiers = HEMI_ZOOM_TIERS;
   .inf-foreign {
     border-color: #8a6d3b;
     background: color-mix(in srgb, #f5e6c8 55%, transparent);
+  }
+  .inf-ideology {
+    border-color: #111;
+    background: color-mix(in srgb, #111 12%, transparent);
+    color: #111;
   }
   .inf-status[data-status='estime'] {
     border-style: dashed;

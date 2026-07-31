@@ -3,10 +3,12 @@ import {
   FAMILY_COLORS,
   FAMILY_HEMI_ORDER,
   HEMI_ZOOM_TIERS,
+  IDEOLOGY_SIGNAL_COLOR,
   VALID_BACKER_KINDS,
   VALID_DEPENDENCY_KINDS,
   VALID_FAMILIES,
   VALID_FOREIGN_LINK_KINDS,
+  VALID_IDEOLOGY_LINK_KINDS,
   VALID_STANCE_STATUS,
   assignSeats,
   getAssembleeInfluenceursView,
@@ -15,6 +17,7 @@ import {
   normalizeAssembleeCategory,
   resolveAudience,
   resolveForeignSignal,
+  resolveIdeologySignal,
 } from './assemblee-influenceurs';
 
 describe('assemblee-influenceurs', () => {
@@ -232,6 +235,43 @@ describe('assemblee-influenceurs', () => {
     const view = getAssembleeInfluenceursView();
     expect(view.counts.foreignDocumented).toBeGreaterThanOrEqual(3);
     expect(view.seated.find((s) => s.id === rt!.id)?.seatForeign).toBeTruthy();
+  });
+
+  it('resolveIdeologySignal fail-closed + black seats for documented RT/Sputnik', () => {
+    const data = loadAssembleeInfluenceurs();
+    const rt = data.influencers.find(
+      (i) => i.id === 'rt-en-fran-ais-comptes-sociaux-rtenfrancais',
+    );
+    const sputnik = data.influencers.find(
+      (i) => i.id === 'sputnik-comptes-sociaux-fr-sputnik-fr',
+    );
+    const aj = data.influencers.find((i) => i.id === 'aj-plus-francais');
+    const hugo = data.influencers.find((i) => i.id === 'hugo-decrypte');
+    expect(rt && sputnik && aj && hugo).toBeTruthy();
+    const rtSig = resolveIdeologySignal(rt!);
+    const sputnikSig = resolveIdeologySignal(sputnik!);
+    const ajSig = resolveIdeologySignal(aj!);
+    const hugoSig = resolveIdeologySignal(hugo!);
+    expect(rtSig.signal).toBeGreaterThanOrEqual(5);
+    expect(sputnikSig.signal).toBeGreaterThanOrEqual(5);
+    expect(ajSig.signal).toBe(0);
+    expect(hugoSig.signal).toBe(0);
+    for (const link of [...rtSig.links, ...sputnikSig.links]) {
+      expect(VALID_IDEOLOGY_LINK_KINDS.has(link.kind)).toBe(true);
+      expect(link.sources.length).toBeGreaterThan(0);
+      for (const s of link.sources) expect(s.url).toMatch(/^https?:\/\//);
+    }
+    const seated = assignSeats(data.influencers, { rankBy: 'ideology' });
+    const rtSeat = seated.find((s) => s.id === rt!.id)!;
+    const hugoSeat = seated.find((s) => s.id === hugo!.id)!;
+    expect(rtSeat.color).toBe(IDEOLOGY_SIGNAL_COLOR);
+    expect(hugoSeat.color).not.toBe(IDEOLOGY_SIGNAL_COLOR);
+    expect(rtSeat.seat.row).toBe(0);
+    expect(rtSeat.ideologyResolved.signal).toBeGreaterThan(hugoSeat.ideologyResolved.signal);
+    const view = getAssembleeInfluenceursView();
+    expect(view.counts.ideologyDocumented).toBeGreaterThanOrEqual(2);
+    expect(view.seated.find((s) => s.id === rt!.id)?.seatIdeology).toBeTruthy();
+    expect(view.seated.find((s) => s.id === rt!.id)?.color).toBe(IDEOLOGY_SIGNAL_COLOR);
   });
 
   it('resolveAudience prefers overrides for known mega-comptes', () => {
