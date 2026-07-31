@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  paragraphs: string[];
+  legalNote?: string;
+}
+
+const { title, paragraphs, legalNote } = Astro.props;
+---
+
+<aside class="note-laicite" role="note" aria-labelledby="note-laicite-title">
+  <h3 id="note-laicite-title">{title}</h3>
+  {paragraphs.map((p) => <p>{p}</p>)}
+  {
+    legalNote && (
+      <p class="meta legal">
+        <strong>Cadre légal (synthèse) :</strong> {legalNote}
+      </p>
+    )
+  }
+  <p class="meta">
+    Droit de réponse / correction : <a href="/contribuer">/contribuer</a>
+    {' · '}
+    <a href="/mentions-legales">Mentions légales</a>
+    {' · '}
+    <a href="/confidentialite">Confidentialité</a>
+  </p>
+</aside>
+
+<style>
+  .note-laicite {
+    margin: 1.25rem 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent, #1e4d6b);
+    border-radius: var(--radius-lg, 10px);
+    background: var(--card);
+  }
+  .note-laicite h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+  }
+  .note-laicite p {
+    margin: 0 0 0.65rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .note-laicite p:last-child {
+    margin-bottom: 0;
+  }
+  .note-laicite .legal {
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--border);
+  }
+</style>

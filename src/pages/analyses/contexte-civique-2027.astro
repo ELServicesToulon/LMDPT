@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoteLaicite from '../../components/NoteLaicite.astro';
+import raw from '../../data/elections/2027-contexte-civique.json';
+import {
+  sortEntriesByName,
+  type ContexteCiviqueFile,
+} from '../../lib/contexte-civique';
+
+const data = raw as ContexteCiviqueFile;
+const entries = sortEntriesByName(data.entries);
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const milLabels = data.status_labels.militantisme;
+const convLabels = data.status_labels.conviction;
+const kindLabels = data.kind_labels;
+
+const counts = {
+  milDoc: entries.filter((e) => e.militantisme.status !== 'non_renseigne').length,
+  convRenseignees: entries.filter((e) => e.conviction.status !== 'non_renseigne').length,
+};
+---
+
+<BaseLayout
+  title="Militantisme & convictions — cadre laïque 2027"
+  description="Engagement militant documenté et affinités religieuses ou athées revendiquées ou supposées — avec note de laïcité et précautions RGPD. Zéro jugement, zéro favori."
+  type="article"
+  keywords="laïcité, militantisme, religion, athéisme, présidentielle 2027, LMDPT, RGPD"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Contexte civique 2027
+  </nav>
+
+  <section class="page-intro">
+    <p class="eyebrow">Dossier vivant · cadre laïque</p>
+    <h2>{data.title}</h2>
+    <p>
+      Deux champs distincts : <strong>militantisme</strong> (engagement public) et
+      <strong>conviction</strong> (religion, athéisme, philosophie) —
+      <em>revendiquée</em> par la personne ou, exceptionnellement,
+      <em>supposée par des sources secondaires</em> clairement étiquetées.
+    </p>
+    <p class="meta">
+      {entries.length} personnalités suivies · militantisme documenté&nbsp;: {counts.milDoc}
+      {' · '}
+      convictions renseignées&nbsp;: {counts.convRenseignees}
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="news-disclaimer">{data.disclaimer}</p>
+  </section>
+
+  <NoteLaicite
+    title={data.laicite_note.title}
+    paragraphs={data.laicite_note.paragraphs}
+    legalNote={data.legal_note}
+  />
+
+  <section class="card" aria-labelledby="legende-statuts">
+    <h3 id="legende-statuts">Légende des statuts</h3>
+    <div class="legend-grid">
+      <div>
+        <h4>Militantisme</h4>
+        <ul>
+          {Object.entries(milLabels).map(([k, v]) => (
+            <li>
+              <code>{k}</code> — {v}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4>Conviction</h4>
+        <ul>
+          {Object.entries(convLabels).map(([k, v]) => (
+            <li>
+              <code>{k}</code> — {v}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <p class="meta">
+      Version 1 : les convictions restent <strong>non renseignées</strong> tant qu’aucune
+      déclaration publique sourcée n’a été validée par la rédaction (DOE). Pas d’inférence
+      onomastique ni ethnique.
+    </p>
+  </section>
+
+  <section class="civique-list" aria-label="Fiches contexte civique">
+    {
+      entries.map((e) => (
+        <article class="card civique-card" id={e.slug}>
+          <header>
+            <h3>{e.name}</h3>
+            <p class="meta">{e.affiliation}</p>
+          </header>
+
+          <div class="civique-blocks">
+            <div>
+              <h4>Militantisme</h4>
+              <p class="status-line">
+                <span class={`status-pill status-${e.militantisme.status}`}>
+                  {milLabels[e.militantisme.status] ?? e.militantisme.status}
+                </span>
+              </p>
+              {e.militantisme.summary && <p>{e.militantisme.summary}</p>}
+              {e.militantisme.sources?.length > 0 && (
+                <ul class="src-list">
+                  {e.militantisme.sources.map((s) => (
+                    <li>
+                      <a href={s.url} rel="noopener noreferrer">
+                        {s.label}
+                      </a>
+                      {s.as_of && <span class="meta"> · {s.as_of}</span>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div>
+              <h4>Religion / athéisme / conviction</h4>
+              <p class="status-line">
+                <span class={`status-pill status-${e.conviction.status}`}>
+                  {convLabels[e.conviction.status] ?? e.conviction.status}
+                </span>
+                {e.conviction.kind && (
+                  <span class="meta">
+                    {' · '}
+                    {kindLabels[e.conviction.kind] ?? e.conviction.kind}
+                    {e.conviction.label ? ` — ${e.conviction.label}` : ''}
+                  </span>
+                )}
+              </p>
+              {e.conviction.status === 'suppose_par_sources' && (
+                <p class="warn-suppose" role="status">
+                  Attention : mention <strong>supposée</strong> par des sources secondaires —
+                  ce n’est <em>pas</em> une affirmation de LMDPT.
+                </p>
+              )}
+              {e.conviction.summary && <p>{e.conviction.summary}</p>}
+              {e.conviction.editorial_note && (
+                <p class="meta">{e.conviction.editorial_note}</p>
+              )}
+              {e.conviction.sources?.length > 0 && (
+                <ul class="src-list">
+                  {e.conviction.sources.map((s) => (
+                    <li>
+                      <a href={s.url} rel="noopener noreferrer">
+                        {s.label}
+                      </a>
+                      {s.as_of && <span class="meta"> · {s.as_of}</span>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="card">
+    <h3>Sources du jeu de données</h3>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel={s.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+              {s.label}
+            </a>
+            {s.as_of && <span class="meta"> · {s.as_of}</span>}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta">
+      Voir aussi :{' '}
+      <a href="/analyses/presidentielle-2027-preparation">Dossier présidentielle 2027</a>
+      {' · '}
+      <a href="/charte">Charte</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legend-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 700px) {
+    .legend-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .legend-grid h4 {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+  }
+  .legend-grid ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .civique-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .civique-card h3 {
+    margin: 0 0 0.2rem;
+  }
+  .civique-blocks {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  @media (min-width: 800px) {
+    .civique-blocks {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .civique-blocks h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+  }
+  .status-line {
+    margin: 0 0 0.45rem;
+  }
+  .status-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg, #fff);
+  }
+  .status-engagement_partisan_public,
+  .status-association_documentee {
+    border-color: #1d4ed8;
+    color: #1d4ed8;
+  }
+  .status-revendique {
+    border-color: #059669;
+    color: #059669;
+  }
+  .status-suppose_par_sources {
+    border-color: #b45309;
+    color: #b45309;
+  }
+  .status-non_renseigne,
+  .status-refuse_de_dire {
+    color: var(--muted);
+  }
+  .warn-suppose {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.65rem;
+    border-left: 3px solid #b45309;
+    background: color-mix(in srgb, #b45309 8%, transparent);
+  }
+  .src-list {
+    margin: 0.35rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.88rem;
+  }
+</style>

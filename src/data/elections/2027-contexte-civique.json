@@ -1,0 +1,625 @@
+{
+  "schema": "lmdpt-contexte-civique-v1",
+  "title": "Contexte civique 2027 — militantisme & convictions (cadre laïque)",
+  "updated": "2026-07-31",
+  "disclaimer": "Synthèse documentaire pédagogique. Le militantisme repris ici se limite, en première version, à l’engagement partisan déjà public (affiliation déclarée). Les convictions religieuses ou l’athéisme ne sont renseignés que s’ils sont revendiqués par la personne (sources primaires) ou, à titre exceptionnel, présentés comme « supposés par des sources secondaires » — jamais comme faits établis par LMDPT. Aucun classement, aucun jugement moral, aucune discrimination.",
+  "legal_note": "Données relatives aux convictions religieuses ou philosophiques = catégories particulières (RGPD art. 9). Traitement limité aux informations rendues publiques par la personne concernée ou relevant de l’intérêt légitime journalistique (art. 85 RGPD / droit français), avec minimisation, droit de réponse et correction. La « supposition » n’est jamais une affirmation LMDPT. LMDPT n’est pas un organe de l’État ; la note de laïcité rappelle le cadre républicain sans imposer de contrôle des consciences.",
+  "laicite_note": {
+    "title": "Note de laïcité",
+    "paragraphs": [
+      "La République française assure la liberté de conscience et le libre exercice des cultes, dans le respect de l’ordre public (cadre constitutionnel et loi du 9 décembre 1905). L’État ne reconnaît, ne salarie ni ne subventionne aucun culte ; il ne hiérarchise pas les convictions.",
+      "Le Média du Premier Tour est un média civique privé, indépendant, à finalité pédagogique. Il ne confond pas : (1) une conviction personnelle (religion, athéisme, agnosticisme), (2) un engagement militant ou partisan, (3) une position programmatique sur la laïcité ou le fait religieux. Documenter une déclaration publique n’équivaut ni à un label confessionnel imposé, ni à un soupçon, ni à un critère de vote.",
+      "Précautions : pas d’enquête privée sur la foi ; pas d’inférence ethnique ou onomastique ; pas de « outing » religieux ; étiquetage obligatoire revendiqué vs supposé ; sources cliquables ; droit de réponse via /contribuer ; correction versionnée. Les mentions « non renseigné » sont la règle par défaut.",
+      "Cette note ne constitue pas un avis juridique personnalisé. En cas de litige, les textes officiels et l’autorité judiciaire font foi."
+    ]
+  },
+  "status_labels": {
+    "militantisme": {
+      "engagement_partisan_public": "Engagement partisan public",
+      "association_documentee": "Militantisme associatif documenté",
+      "non_renseigne": "Non renseigné"
+    },
+    "conviction": {
+      "revendique": "Revendiqué par la personne",
+      "suppose_par_sources": "Supposé par des sources secondaires",
+      "non_renseigne": "Non renseigné",
+      "refuse_de_dire": "Refuse de se prononcer (documenté)"
+    }
+  },
+  "kind_labels": {
+    "religion": "Religion",
+    "atheisme": "Athéisme",
+    "agnosticisme": "Agnosticisme",
+    "autre_philosophique": "Conviction philosophique"
+  },
+  "sources": [
+    {
+      "label": "Candidatures déclarées LMDPT (affiliations publiques)",
+      "url": "/analyses/presidentielle-2027-preparation",
+      "as_of": "2026-07-31"
+    },
+    {
+      "label": "CNIL — données sensibles / art. 9 RGPD (réf. documentaire)",
+      "url": "https://www.cnil.fr/fr/definition/donnee-sensible",
+      "as_of": "2026-07-31"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "philippe",
+      "name": "Édouard Philippe",
+      "affiliation": "Horizons",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Horizons.",
+        "sources": [
+          {
+            "label": "Le Point / LCP",
+            "url": "https://www.lepoint.fr/politique/exclusif-edouard-philippe-je-serai-candidat-a-la-prochaine-election-presidentielle-03-09-2024-2569359_20.php",
+            "as_of": "2024-09"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "attal",
+      "name": "Gabriel Attal",
+      "affiliation": "Renaissance",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Renaissance.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
+            "as_of": "2026-05-22"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "retailleau",
+      "name": "Bruno Retailleau",
+      "affiliation": "Les Républicains",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Les Républicains.",
+        "sources": [
+          {
+            "label": "LCP — consultation adhérents LR",
+            "url": "https://lcp.fr/actualites/presidentielle-bruno-retailleau-choisi-comme-candidat-officiel-des-republicains-435440",
+            "as_of": "2026-04-19"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "lisnard",
+      "name": "David Lisnard",
+      "affiliation": "Nouvelle Énergie",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Nouvelle Énergie.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/je-suis-candidat-david-lisnard-quitte-lr-et-relance-le-debat-sur-une-primaire-a-droite",
+            "as_of": "2026-03"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "bertrand",
+      "name": "Xavier Bertrand",
+      "affiliation": "Nous France",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Nous France.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026-02"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "le-pen",
+      "name": "Marine Le Pen",
+      "affiliation": "Rassemblement national",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Rassemblement national.",
+        "sources": [
+          {
+            "label": "TF1 20h / Les Échos",
+            "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-condamnee-mais-eligible-marine-le-pen-se-pourvoit-en-cassation-et-se-declare-candidate-2241275",
+            "as_of": "2026-07-07"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "affiliation": "La France insoumise",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : La France insoumise.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+            "as_of": "2026-05"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "batho",
+      "name": "Delphine Batho",
+      "affiliation": "Génération écologie",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Génération écologie.",
+        "sources": [
+          {
+            "label": "L'Obs / LCP",
+            "url": "https://www.nouvelobs.com/politique/20251125.OBS110076/delphine-batho-je-suis-candidate-a-l-election-presidentielle-pour-reconstruire-une-ecologie-capable-de-gouverner.html",
+            "as_of": "2025-11"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "guedj",
+      "name": "Jérôme Guedj",
+      "affiliation": "Gauche républicaine / socialiste",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Gauche républicaine / socialiste.",
+        "sources": [
+          {
+            "label": "France Inter / LCP",
+            "url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-7h50/l-invite-de-7h50-du-jeudi-05-fevrier-2026-7548548",
+            "as_of": "2026-02"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "bouamrane",
+      "name": "Karim Bouamrane",
+      "affiliation": "Parti socialiste",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Parti socialiste.",
+        "sources": [
+          {
+            "label": "LCP / X",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "arthaud",
+      "name": "Nathalie Arthaud",
+      "affiliation": "Lutte ouvrière",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Lutte ouvrière.",
+        "sources": [
+          {
+            "label": "Wikipédia / LCP",
+            "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+            "as_of": "2025-12-08"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "dupont-aignan",
+      "name": "Nicolas Dupont-Aignan",
+      "affiliation": "Debout la France",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Debout la France.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "philippot",
+      "name": "Florian Philippot",
+      "affiliation": "Les Patriotes",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Les Patriotes.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "asselineau",
+      "name": "François Asselineau",
+      "affiliation": "Union populaire républicaine",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Union populaire républicaine.",
+        "sources": [
+          {
+            "label": "LCP / Wikipédia",
+            "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "egger",
+      "name": "Clara Egger",
+      "affiliation": "Solution démocratique",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Solution démocratique.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "mikolajczak",
+      "name": "Antoine Mikolajczak",
+      "affiliation": "Équinoxe",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Équinoxe.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "tondelier",
+      "name": "Marine Tondelier",
+      "affiliation": "Les Écologistes (EELV)",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Les Écologistes (EELV).",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "ruffin",
+      "name": "François Ruffin",
+      "affiliation": "Picardie debout / indépendant",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Picardie debout / indépendant.",
+        "sources": [
+          {
+            "label": "LCP / France Inter",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-s-il-n-y-a-pas-de-primaire-moi-j-y-vais-annonce-francois-ruffin",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "zemmour",
+      "name": "Éric Zemmour",
+      "affiliation": "Reconquête",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Reconquête.",
+        "sources": [
+          {
+            "label": "RTL / LCP",
+            "url": "https://www.rtl.fr/actu/politique/s-il-n-y-a-pas-de-primaire-je-serai-candidat-eric-zemmour-affirme-sur-rtl-qu-il-se-prepare-a-la-presidentielle-2027-malgre-la-percee-magnifique-de-sarah-knafo-7900630227",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "royal",
+      "name": "Ségolène Royal",
+      "affiliation": "Parti socialiste",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Parti socialiste.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-segolene-royal-annonce-sa-candidature-a-la-primaire-socialiste",
+            "as_of": "2026-07-10"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "brun",
+      "name": "Philippe Brun",
+      "affiliation": "Parti socialiste",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Parti socialiste.",
+        "sources": [
+          {
+            "label": "Le Monde",
+            "url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
+            "as_of": "2026-06-30"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "autain",
+      "name": "Clémentine Autain",
+      "affiliation": "L'Après",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : L'Après.",
+        "sources": [
+          {
+            "label": "Le Monde",
+            "url": "https://www.lemonde.fr/politique/article/2026/07/11/presidentielle-2027-clementine-autain-prend-acte-de-l-echec-de-la-primaire-unitaire-de-la-gauche-et-renonce-a-etre-candidate_6722715_823448.html",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "lucas",
+      "name": "Benjamin Lucas",
+      "affiliation": "Génération·s",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Génération·s.",
+        "sources": [
+          {
+            "label": "LCP",
+            "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    },
+    {
+      "slug": "bardella",
+      "name": "Jordan Bardella",
+      "affiliation": "Rassemblement national",
+      "militantisme": {
+        "status": "engagement_partisan_public",
+        "summary": "Engagement partisan public documenté via l'affiliation déclarée : Rassemblement national.",
+        "sources": [
+          {
+            "label": "France 24 / presse",
+            "url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
+            "as_of": "2026"
+          }
+        ]
+      },
+      "conviction": {
+        "status": "non_renseigne",
+        "kind": null,
+        "label": null,
+        "summary": null,
+        "sources": [],
+        "editorial_note": "LMDPT n’attribue aucune religion ni athéisme sans déclaration publique sourcée (revendiqué) ou pluralité de sources secondaires clairement étiquetées (supposé)."
+      }
+    }
+  ]
+}

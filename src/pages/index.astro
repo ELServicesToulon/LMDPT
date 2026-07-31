@@ -9,6 +9,7 @@ import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
+import ScoopBand from '../components/ScoopBand.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
 import {
   applyHeroDailyOverride,
@@ -19,6 +20,7 @@ import {
 import { DOE_FR } from '../lib/doe';
 import visualDailyPool from '../../public/illustrations/2027/visual-daily-pool.json';
 import heroDailyOverrideJson from '../../public/illustrations/2027/hero-daily-override.json';
+import heroKickerEditorialJson from '../../public/illustrations/2027/hero-kicker-editorial.json';
 
 const feed = renifleur as RenifleurSnapshot;
 const dailyVisual = pickDailyVisuals(visualDailyPool as VisualDailyPool);
@@ -31,6 +33,23 @@ const dailyBadgeLabel =
   dailySet.gallery?.[0]?.title?.trim() ||
   dailySet.heroAlt?.split('—')[0]?.trim() ||
   '1er tour';
+
+type HeroKickerEntry = { date: string; text: string; href: string; cta?: string };
+const kickerFile = heroKickerEditorialJson as {
+  entries?: HeroKickerEntry[];
+  fallback?: HeroKickerEntry | null;
+};
+const todayParis = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Europe/Paris',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date());
+const heroKicker =
+  kickerFile.entries?.find((e) => e.date === todayParis) ??
+  kickerFile.entries?.[kickerFile.entries.length - 1] ??
+  kickerFile.fallback ??
+  null;
 
 /** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
 const dualHome = buildScrutinDual('2022-presidentielle');
@@ -74,23 +93,17 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} />
   <!--
-    HERO FIRST (Créateur de site · cycle 2026-07-17)
-    Pattern adapté (pas copié) des leaders news : value prop ≤ 5 s + CTA piliers above the fold.
-    Visuels quotidiens : pool curated Europe/Paris (P17).
+    HERO INK CLAQUE (2026-07-29) — full-bleed N&B, pas le vieux mème Votez ce que vous pensez.
+    Brand hero-level · 1 H1 · 1 lead · 1 CTA · plan visuel bord à bord.
   -->
-  <section class="hero" id="top" aria-labelledby="hero-title" data-daily-visual-set={dailySet.id}>
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      <span>Média civique · données ouvertes</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <strong>{DOE_FR}</strong>
-      <span class="sep" aria-hidden="true">·</span>
-      <span id="daily-visual-badge" class="daily-visual-badge">Visuel du jour · {dailyBadgeLabel}</span>
-    </div>
-
-    <div class="hero-grid">
-      <div class="hero-visual hero-visual--animated">
-        <!-- Croquis X + micro-vidéo · rotation quotidienne (poster = LCP) -->
+  <section
+    class="hero hero--ink"
+    id="top"
+    aria-labelledby="hero-title"
+    data-daily-visual-set={dailySet.id}
+  >
+    <div class="hero-stage">
+      <div class="hero-visual hero-visual--ink hero-visual--animated" aria-hidden="false">
         <video
           id="daily-hero-video"
           class="hero-img hero-video"
@@ -100,8 +113,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
           playsinline
           preload="metadata"
           poster={dailySet.heroPosterWebp}
-          width="1280"
-          height="720"
+          width="1920"
+          height="1080"
           aria-label={dailySet.heroAlt}
         >
           <source src={dailySet.heroVideo} type="video/mp4" />
@@ -117,44 +130,65 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
             src={dailySet.heroPosterJpg}
             alt={dailySet.heroAlt}
             class="hero-img"
-            width="1280"
-            height="720"
+            width="1920"
+            height="1080"
             fetchpriority="high"
             decoding="async"
           />
         </picture>
       </div>
 
-      <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-brand">Le Média du Premier Tour</p>
+        <p class="hero-kicker">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Média civique · données ouvertes · <strong>{DOE_FR}</strong>
+          <span class="sep" aria-hidden="true">·</span>
+          <span id="daily-visual-badge" class="daily-visual-badge">Encre · {dailyBadgeLabel}</span>
+          {
+            heroKicker && (
+              <>
+                <span class="sep" aria-hidden="true">
+                  ·
+                </span>
+                <a class="hero-kicker-editorial" href={heroKicker.href}>
+                  {heroKicker.text}
+                  {heroKicker.cta ? ` — ${heroKicker.cta}` : ''}
+                </a>
+              </>
+            )
+          }
+        </p>
+
         <h1 class="hero-title" id="hero-title">
-          Le 1er tour&nbsp;: la France telle qu’elle vote, pas telle qu’on l’élimine
+          La France telle qu’elle vote — pas telle qu’on l’élimine
         </h1>
 
         <p class="hero-lead">
-          Ouvrez l’atlas, simulez l’Assemblée du 1er tour, suivez 2027.{' '}
-          <strong>Faits officiels</strong> — zéro sondage «&nbsp;favori&nbsp;», zéro classement
-          éliminatoire.
+          Simulez l’Assemblée du 1er tour. <strong>Faits officiels</strong> — zéro sondage
+          «&nbsp;favori&nbsp;», zéro classement éliminatoire.
         </p>
 
-        <div class="cta-row" role="group" aria-label="Actions principales">
-          <a class="btn btn-primary" href="/analyses/assemblee-premier-tour"
+        <div class="cta-row cta-row--primary" role="group" aria-label="Action principale">
+          <a class="btn btn-ink" href="/analyses/assemblee-premier-tour"
             >Voir l’Assemblée du 1er tour →</a
           >
-          <a class="btn btn-secondary" href="/analyses/presidentielle-2027-preparation"
-            >Dossier 2027 · 18 avril</a
-          >
-          <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
-          <a class="btn btn-secondary" href="/soutenir">Soutenir le média</a>
         </div>
 
-        <p class="meta">
-          1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> · Sources
+        <p class="hero-meta meta">
+          1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> ·
           data.gouv / Ministère de l’Intérieur
         </p>
       </div>
     </div>
+  </section>
 
-    <!-- 3 piliers éditoriaux (P15-1 / P8-7) — above the fold, WCAG focus rings -->
+  <!-- P47-4 / designer 2026-07-31 — bande « À la une » sous hero (pas dans le hero) -->
+  <ScoopBand />
+
+  <!-- 3 piliers — hors first fold (P47-2 / brief Directrice 2026-07-28) -->
+  <section class="trois-piliers" id="trois-piliers" aria-labelledby="trois-piliers-title">
+    <h2 id="trois-piliers-title" class="visually-hidden">Trois piliers du média</h2>
     <div
       class="hero-cards pilier-cards"
       role="list"
@@ -195,6 +229,15 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       Contenu pédagogique. Les simulations (AN1T, projections 2027) ne sont
       <strong>ni des prédictions ni des consignes de vote</strong>.
     </p>
+    <nav class="home-secondary-links" aria-label="Chemins secondaires">
+      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027 · 18 avril</a>
+      <span aria-hidden="true">·</span>
+      <a href="/atlas">Atlas des scrutins</a>
+      <span aria-hidden="true">·</span>
+      <a href="/assemblee-influenceurs">Assemblée des influenceurs</a>
+      <span aria-hidden="true">·</span>
+      <a href="/soutenir">Soutenir le média</a>
+    </nav>
   </section>
 
   <!-- Manifeste court — renforce le 5 s test -->
@@ -207,14 +250,14 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     <p class="why-media-tagline">
       Faits officiels · Sans classement éliminatoire · Vote <strong>pour</strong>, pas contre.
     </p>
-    <nav class="pilier-shortcuts" aria-label="Raccourcis piliers">
-      <a href="/analyses/assemblee-premier-tour">Simuler l’AN1T</a>
+    <nav class="pilier-shortcuts" aria-label="Raccourcis éditoriaux">
+      <a href="/assemblee-influenceurs">Qui pèse vraiment dans le débat&nbsp;?</a>
+      <span aria-hidden="true">·</span>
+      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
       <span aria-hidden="true">·</span>
       <a href="/liberte-d-expression">Liberté d’expression</a>
       <span aria-hidden="true">·</span>
       <a href="/observatoire-censure">Observatoire de la censure</a>
-      <span aria-hidden="true">·</span>
-      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
       <span aria-hidden="true">·</span>
       <a href="/atlas/2022-presidentielle">Atlas 2022</a>
       <span aria-hidden="true">·</span>
@@ -280,7 +323,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
         <a href="/analyses/assemblee-premier-tour">Pluralité — simuler l’AN1T →</a>
       </li>
       <li>
-        <a href="/analyses/alerte-citoyenne">Liberté d’expression — alerte citoyenne →</a>
+        <a href="/liberte-d-expression#dossier-alerte">Liberté d’expression — alerte citoyenne →</a>
       </li>
       <li>
         <a href="/observatoire-censure/">Observatoire de la censure (depuis 2017) →</a>
@@ -446,16 +489,27 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="card" aria-labelledby="parcours-2027">
     <h3 id="parcours-2027">Parcours recommandé pour se préparer au 1er tour</h3>
     <ol style="margin:0.5rem 0 0; padding-left:1.3rem; font-size:0.95rem; line-height:1.6;">
-      <li><a href="/analyses/presidentielle-2027-preparation#calendrier">Consultez le calendrier officiel</a></li>
-      <li><a href="/analyses/assemblee-premier-tour">Testez le simulateur interactif d’Assemblée (1er tour)</a> — ajustez % et comparez scénarios</li>
+      <li>
+        <a href="/analyses/assemblee-premier-tour">Simulez l’Assemblée du 1er tour</a>
+        — point d’entrée principal (ajustez % et comparez scénarios)
+      </li>
+      <li>
+        <a href="/analyses/presidentielle-2027-preparation#calendrier">Consultez le calendrier officiel 2027</a>
+      </li>
       <li>
         <a href="/analyses/programmes/axes?scrutin=presidentielle-2027"
-          >Programmes par grands axes (propositions des candidats)</a
+          >Programmes par grands axes</a
         >
+        {' · '}
+        <a href="/analyses/programmes-comparateur">comparateur</a>
       </li>
-      <li><a href="/analyses/programmes-comparateur">Comparez les programmes des candidats</a></li>
-      <li><a href="/atlas/2024-legislatives">Explorez l’Atlas et les 577 circonscriptions</a> (filtre + recherche)</li>
-      <li><a href="/debats/assemblee-premier-tour">Participez au débat : une Assemblée sur le 1er tour ?</a></li>
+      <li>
+        <a href="/assemblee-influenceurs">Assemblée des influenceurs</a>
+        — qui pèse vraiment dans le débat&nbsp;?
+      </li>
+      <li><a href="/analyses/livres-candidats">Bibliographie des livres candidats</a></li>
+      <li><a href="/atlas/2024-legislatives">Atlas et les 577 circonscriptions</a></li>
+      <li><a href="/debats/assemblee-premier-tour">Débat : une Assemblée sur le 1er tour&nbsp;?</a></li>
     </ol>
     <p class="meta" style="margin-top:0.5rem;">Parcours accessible au clavier et mobile. Tout est pédagogique et sourcé.</p>
   </section>
@@ -672,92 +726,216 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
      - Strong dark mode support (per design brief)
   ===================================================== */
 
-  .hero {
+  /* —— Hero encre N&B full-bleed (2026-07-29) —— */
+  .hero--ink {
+    --ink-bg: #050505;
+    --ink-fg: #fafafa;
+    --ink-muted: #c8c8c8;
+    width: 100vw;
+    max-width: 100vw;
     margin: 0 0 2rem;
-    padding: 0.5rem 0 1.75rem;
-    background: transparent;
-    border-bottom: 1px solid var(--border);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
+    background: var(--ink-bg);
+    border-bottom: 0;
+    color: var(--ink-fg);
+    overflow: clip;
   }
 
-  .hero-badge {
-    display: inline-flex;
+  .hero-stage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  @media (min-width: 960px) {
+    .hero-stage {
+      grid-template-columns: 1.15fr 0.85fr;
+      min-height: min(72vh, 40rem);
+      align-items: stretch;
+    }
+  }
+
+  .hero-visual--ink {
+    margin: 0;
+    min-height: clamp(14rem, 42vw, 28rem);
+    background: #000;
+  }
+
+  @media (min-width: 960px) {
+    .hero-visual--ink {
+      min-height: 100%;
+    }
+  }
+
+  .hero--ink .hero-img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    min-height: clamp(14rem, 42vw, 28rem);
+    object-fit: cover;
+    object-position: left center;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+    background: #000;
+    filter: grayscale(1) contrast(1.18);
+  }
+
+  @media (min-width: 960px) {
+    .hero--ink .hero-img {
+      position: absolute;
+      inset: 0;
+      min-height: 100%;
+    }
+    .hero-visual--ink {
+      position: relative;
+    }
+  }
+
+  .hero--ink .hero-video {
+    animation: lmdpt-ink-breathe 7s ease-in-out infinite;
+  }
+
+  @keyframes lmdpt-ink-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.018); }
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: clamp(1.35rem, 3.5vw, 2.75rem) clamp(1.1rem, 4vw, 2.75rem);
+    background: var(--ink-bg);
+    max-width: none;
+  }
+
+  .hero-brand {
+    margin: 0 0 0.55rem;
+    font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink-fg) !important;
+    animation: lmdpt-rise 0.5s ease both;
+  }
+
+  .hero-kicker {
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.35rem 0.5rem;
-    font-size: 0.92rem; /* improved for readability across ages and vision levels */
-    font-family: system-ui, sans-serif;
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 0.35rem 0.85rem;
-    border-radius: 999px;
-    margin-bottom: 1rem;
-    color: var(--muted);
-    max-width: 100%;
-    line-height: 1.35;
+    margin: 0 0 1rem;
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-muted) !important;
+    line-height: 1.4;
+    animation: lmdpt-rise 0.5s ease 0.04s both;
+  }
+
+  .hero-kicker .sep { opacity: 0.45; }
+  .hero-kicker strong { color: var(--ink-fg); font-weight: 700; }
+
+  .hero-kicker-editorial {
+    color: var(--ink-fg) !important;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+  }
+  .hero-kicker-editorial:hover,
+  .hero-kicker-editorial:focus-visible {
+    opacity: 0.9;
+    outline: none;
   }
 
   .badge-dot {
     display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
+    width: 7px;
+    height: 7px;
+    background: #fff;
     border-radius: 50%;
     animation: lmdpt-pulse 1.8s ease-in-out infinite;
   }
 
-  .hero-badge .sep { opacity: 0.4; }
-
   .daily-visual-badge {
-    font-size: 0.78em;
+    font-size: 0.92em;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--accent, #2563a8);
+    letter-spacing: 0.06em;
+    color: #fff;
   }
 
-  .hero-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 860px) {
-    .hero-grid {
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-      gap: 2rem;
-    }
-  }
-
-  .hero-inner {
-    max-width: 42rem;
-  }
-
-  .hero-title {
-    font-size: clamp(1.65rem, 4.2vw, 2.35rem);
-    line-height: 1.1;
-    margin: 0 0 0.85rem;
-    letter-spacing: -0.025em;
+  .hero--ink .hero-title {
+    font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    font-size: clamp(1.85rem, 4.6vw, 3rem);
+    line-height: 1.05;
+    margin: 0 0 0.95rem;
+    letter-spacing: -0.03em;
     font-weight: 700;
-    color: var(--fg) !important;
+    color: var(--ink-fg) !important;
+    max-width: 16ch;
+    animation: lmdpt-rise 0.55s ease 0.08s both;
   }
 
-  .hero-lead {
-    font-size: 1.1rem;
+  .hero--ink .hero-lead {
+    font-size: 1.08rem;
     line-height: 1.5;
-    margin: 0 0 1.1rem;
-    color: var(--fg) !important;
-    max-width: 42ch;
+    margin: 0 0 1.25rem;
+    color: var(--ink-muted) !important;
+    max-width: 38ch;
+    animation: lmdpt-rise 0.55s ease 0.12s both;
   }
+
+  .hero--ink .hero-lead strong {
+    color: var(--ink-fg);
+  }
+
+  .hero-meta {
+    margin: 0.85rem 0 0;
+    color: var(--ink-muted) !important;
+    font-size: 0.92rem;
+  }
+  .hero-meta strong { color: var(--ink-fg); }
 
   .cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: 0.55rem;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.35rem;
+    animation: lmdpt-rise 0.55s ease 0.16s both;
+  }
+  .cta-row--primary .btn {
+    flex: 0 1 auto;
+    min-width: min(100%, 16rem);
   }
   .cta-row .btn {
     flex: 1 1 auto;
     min-width: min(100%, 11.5rem);
+  }
+
+  .btn-ink {
+    background: #fff !important;
+    color: #050505 !important;
+    border: 2px solid #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .btn-ink:hover {
+    background: transparent !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+  }
+  .btn-ink:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
   }
 
   .btn-primary {
@@ -774,6 +952,13 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     background: var(--card) !important;
     color: var(--accent) !important;
     border: 2px solid var(--accent) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero--ink .hero-video,
+    .badge-dot {
+      animation: none !important;
+    }
   }
   .highlight-card h3 {
     margin: 0.35rem 0 0.65rem;
@@ -798,12 +983,46 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     padding-left: 1.2rem;
   }
 
-  /* 3 piliers éditoriaux (P15-1) — grid 1→3, contrastes WCAG, focus-ring */
+  /* 3 piliers éditoriaux (P15-1 / P47-2) — hors first fold */
+  .trois-piliers {
+    margin: 0 0 1.5rem;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .home-secondary-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.55rem;
+    align-items: center;
+    margin: 0.85rem 0 0;
+    font-size: 0.95rem;
+  }
+  .home-secondary-links a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .home-secondary-links a:hover {
+    text-decoration: underline;
+  }
+  .home-secondary-links a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
   .hero-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.75rem;
-    margin-top: 1.5rem;
+    margin-top: 0;
   }
 
   @media (min-width: 720px) {
@@ -942,13 +1161,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     margin: 0.35rem 0;
   }
 
-  .hero-badge {
-    background: var(--card) !important;
-    color: var(--muted) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Hero visual — croquis animé */
+  /* Hero visual base — ink overrides via .hero--ink .hero-img */
   .hero-visual {
     width: 100%;
     position: relative;
@@ -958,46 +1171,13 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     isolation: isolate;
   }
 
-  .hero-img {
-    width: 100%;
-    height: auto;
-    max-height: 460px;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-    display: block;
-    background: var(--card);
-  }
-
-  .hero-video {
-    position: relative;
-    z-index: 1;
-    animation: lmdpt-float 5.5s ease-in-out infinite;
-  }
-
-  /* Fallback image hidden when video can play; shown if video fails / reduced-motion */
   .hero-static-fallback {
     display: none;
   }
 
-  @media (min-width: 860px) {
-    .hero-img {
-      max-height: 380px;
-    }
-  }
-
-  .hero-title {
-    animation: lmdpt-rise 0.55s ease both;
-  }
-  .hero-lead {
-    animation: lmdpt-rise 0.55s ease 0.08s both;
-  }
-  .cta-row {
-    animation: lmdpt-rise 0.55s ease 0.14s both;
-  }
-  .hero-badge {
-    animation: lmdpt-rise 0.45s ease both;
+  .hero--ink .hero-video {
+    position: relative;
+    z-index: 1;
   }
 
   .visuals-section {

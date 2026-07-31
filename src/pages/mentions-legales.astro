@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const siteUrl = 'https://lmdpt.iarbre.org';
+const updated = '2026-07-31';
 ---
 
 <BaseLayout
@@ -10,31 +11,43 @@ const siteUrl = 'https://lmdpt.iarbre.org';
 >
   <section>
     <h2>Mentions légales</h2>
-    <p class="meta">Dernière mise à jour : 16 juillet 2026</p>
+    <p class="meta">Dernière mise à jour : {updated}</p>
   </section>
 
   <section class="card">
     <h3>Éditeur du site</h3>
     <p>
       <strong>Le Média du Premier Tour</strong> (LMDPT) — projet média civique indépendant porté par
-      ELServices Toulon.
+      <strong>ELServices Toulon</strong>.
     </p>
     <p>
-      Contact :{' '}
+      Contact rédaction / droit de réponse :{' '}
+      <a href="mailto:elservicestoulon@gmail.com">elservicestoulon@gmail.com</a>
+      {' · '}
+      <a href="/contribuer">formulaire Contribuer</a>
+      {' · '}
       <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
-        issues GitHub du projet
+        issues GitHub
       </a>
     </p>
-    <p class="meta">
-      Directeur / directrice de la publication et rédaction en chef : à compléter après accord
-      explicite de la personne concernée (avant couverture en direct d’une campagne électorale).
+    <p>
+      <strong>Directeur de la publication</strong> : le représentant légal d’ELServices Toulon
+      (responsabilité éditoriale LCEN). Identité nominative publiée avant toute couverture en
+      direct d’une campagne électorale, après accord écrit de la personne.
     </p>
   </section>
 
   <section class="card">
     <h3>Hébergement</h3>
     <p>
-      GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
+      <strong>OVH SAS</strong> — 2 rue Kellermann, 59100 Roubaix, France.
+      Serveur dédié / VPS (KS-5-B) derrière reverse-proxy ; DNS / cache edge via Cloudflare
+      (proxied) pour <code>lmdpt.iarbre.org</code>.
+    </p>
+    <p class="meta">
+      Code source public :{' '}
+      <a href="https://github.com/ELServicesToulon/LMDPT" rel="noopener noreferrer">GitHub</a>
+      (miroir) — <strong>n’est pas</strong> l’hébergeur de production.
     </p>
     <p class="meta">URL publique : <a href={siteUrl}>{siteUrl}</a></p>
   </section>
@@ -42,23 +55,47 @@ const siteUrl = 'https://lmdpt.iarbre.org';
   <section class="card">
     <h3>Propriété intellectuelle</h3>
     <p>
-      Textes et code du site : voir licence du dépôt{' '}
+      Textes et code du site : licence du dépôt{' '}
       <a href="https://github.com/ELServicesToulon/LMDPT" rel="noopener noreferrer">GitHub</a>.
-      Données électorales : licences de données ouvertes des producteurs (Ministère de l'Intérieur, etc.) —
-      détail sur la page <a href="/sources">Sources</a>.
+      Données électorales : licences ouvertes des producteurs (Ministère de l’Intérieur, etc.) —
+      détail sur <a href="/sources">Sources</a>.
     </p>
   </section>
 
   <section class="card">
-    <h3>Responsabilité</h3>
+    <h3>Laïcité, militantisme &amp; convictions</h3>
     <p>
-      Les chiffres publiés proviennent de sources officielles identifiées. En cas d'écart constaté
-      avec une proclamation ultérieure, la page Sources et le dépôt GitHub font foi pour la
-      traçabilité des jeux importés.
+      La page{' '}
+      <a href="/analyses/contexte-civique-2027">Contexte civique 2027</a>
+      {' '}documente, avec précautions, l’engagement militant public et, le cas échéant,
+      des affinités religieuses ou un athéisme <strong>revendiqués</strong> par la personne
+      ou <strong>supposés par des sources secondaires</strong> clairement étiquetés.
+      LMDPT n’infère aucune confession (pas d’onomastique, pas d’ethnicisation). Les
+      convictions non sourcées restent « non renseignées ». Voir la note de laïcité sur
+      cette page et la{' '}
+      <a href="/confidentialite">politique de confidentialité</a> (RGPD art.&nbsp;9).
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Responsabilité &amp; anti-diffamation</h3>
+    <p>
+      Les contenus nominatifs (observatoire, assemblée pédagogique, alertes, contexte civique)
+      sont des <strong>synthèses documentaires</strong> : faits sourcés, lectures secondaires
+      étiquetées comme telles, jamais un jugement moral ni une accusation d’« agent ». En cas
+      d’erreur factuelle, le droit de réponse s’exerce via{' '}
+      <a href="/contribuer">/contribuer</a> ou le contact ci-dessus ; corrections versionnées
+      sur le dépôt et le journal Sources.
     </p>
     <p>
-      L'éditeur ne collecte pas de données personnelles via ce site (voir{' '}
-      <a href="/confidentialite">politique de confidentialité</a>).
+      Les chiffres électoraux proviennent de sources officielles identifiées. En cas d’écart avec
+      une proclamation ultérieure, la page Sources et le dépôt font foi pour la traçabilité.
+    </p>
+    <p>
+      Traitement des données personnelles : voir la{' '}
+      <a href="/confidentialite">politique de confidentialité</a>
+      (compte, contributions, logs techniques d’hébergement — pas d’analytics publicitaires par
+      défaut).
     </p>
   </section>
 </BaseLayout>

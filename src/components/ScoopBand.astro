@@ -1,0 +1,86 @@
+---
+import curatedJson from '../data/scoop/curated.json';
+import { shouldShowScoop, type ScoopCurated } from '../lib/scoop';
+
+const curated = curatedJson as ScoopCurated;
+const show = shouldShowScoop(curated);
+---
+
+{
+  show && (
+    <div class="scoop-band" role="status" aria-label="Dernière information à la une">
+      <span class="scoop-badge">
+        <span class="badge-dot" aria-hidden="true" />
+        {curated.badge || 'NOUVEAU'}
+      </span>
+      <a class="scoop-link" href={curated.url}>
+        {curated.title}
+      </a>
+      <span class="scoop-arrow" aria-hidden="true">
+        →
+      </span>
+    </div>
+  )
+}
+
+<style>
+  .scoop-band {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 1.25rem;
+    min-height: 2.75rem;
+    background: var(--accent-soft, #eef1f6);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+  .scoop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent, #1e4d6b);
+  }
+  .scoop-badge .badge-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--accent, #1e4d6b);
+    animation: scoop-pulse 1.8s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scoop-badge .badge-dot {
+      animation: none;
+    }
+  }
+  @keyframes scoop-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+  .scoop-link {
+    flex: 1;
+    min-width: 0;
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .scoop-link:hover,
+  .scoop-link:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+  .scoop-arrow {
+    flex-shrink: 0;
+    color: var(--muted);
+  }
+</style>
