@@ -463,17 +463,61 @@ function main() {
     .filter((e) => !existing.has(e.id));
 
   const need = Math.max(0, TARGET_N - countCiv());
-  const toAdd = seeds.slice(0, need);
+  const realSeeds = seeds.slice(0, need);
+  const stillAfterSeeds = Math.max(0, need - realSeeds.length);
 
-  // Remove deputies to free seats
-  const deputies = influencers.filter((i) => i.category === 'elu-parlementaire');
-  const removeIds = new Set(
-    deputies
-      .slice()
-      .reverse()
-      .slice(0, toAdd.length)
-      .map((i) => i.id),
-  );
+  /** Placeholders pédagogiques — opt-in (--allow-pedago). Préférer improve-assemblee-civile-corpus.ts. */
+  const allowPedago = args.includes('--allow-pedago');
+  const pedago: ReturnType<typeof toEntry>[] = [];
+  if (allowPedago) {
+    for (let i = 1; i <= stillAfterSeeds; i += 1) {
+      pedago.push(
+        toEntry({
+          id: `pedago-civile-${String(i).padStart(3, '0')}`,
+          name: `Place société civile à sourcer · ${i}`,
+          family: 'autre',
+          status: 'estime',
+          confidence: 0.15,
+          kind: 'site',
+          url: 'https://lmdpt.iarbre.org/assemblee-influenceurs/',
+          summary:
+            'Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle). Présence documentée dans le corpus pédagogique LMDPT — synthèse à enrichir, pas un jugement moral.',
+          rationale:
+            'Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.',
+          sourceLabel: 'LMDPT — placeholder pédagogique',
+          sourceUrl: 'https://lmdpt.iarbre.org/assemblee-influenceurs/',
+          followers: 500 + i,
+        }),
+      );
+    }
+  } else if (stillAfterSeeds > 0) {
+    console.warn(
+      `WARN: ${stillAfterSeeds} sièges manquants pour la cible — lance improve-assemblee-civile-corpus.ts ou --allow-pedago`,
+    );
+  }
+  const toAdd = [...realSeeds, ...pedago];
+
+  // Libérer des sièges : élus bas signal d'abord, puis influenceurs (jamais société civile).
+  // Garde-fous corpus : conserver un socle d'élus et d'influenceurs sauf cible extrême.
+  const MIN_ELU = TARGET_PCT >= 90 ? 0 : TARGET_PCT >= 70 ? 80 : 200;
+  const MIN_INFL = TARGET_PCT >= 90 ? 0 : TARGET_PCT >= 70 ? 15 : 30;
+  const elusAsc = influencers
+    .filter((i) => i.category === 'elu-parlementaire')
+    .slice()
+    .reverse(); // bas de liste = bas signal
+  const inflAsc = influencers
+    .filter((i) => (i.category || 'influenceur') === 'influenceur')
+    .slice()
+    .reverse();
+  const eluFree = Math.max(0, elusAsc.length - MIN_ELU);
+  const inflFree = Math.max(0, inflAsc.length - MIN_INFL);
+  const removable = [...elusAsc.slice(0, eluFree), ...inflAsc.slice(0, inflFree)];
+  if (removable.length < toAdd.length) {
+    throw new Error(
+      `Pas assez de sièges libérables (${removable.length}) pour ajouter ${toAdd.length} (min elu=${MIN_ELU}, min infl=${MIN_INFL})`,
+    );
+  }
+  const removeIds = new Set(removable.slice(0, toAdd.length).map((i) => i.id));
 
   influencers = [
     ...influencers.filter((i) => !removeIds.has(i.id)),
@@ -493,8 +537,15 @@ function main() {
 
   raw.influencers = influencers;
   raw.updated = new Date().toISOString().slice(0, 10);
+  const pedagoNote = pedago.length
+    ? ` Placeholders pédagogiques : ${pedago.length} sièges « à sourcer » (curseur 10–100 %).`
+    : '';
   if (!String(raw.methodology_note).includes('P45g')) {
-    raw.methodology_note += ` Enrichissement P45g : cible **${TARGET_PCT}% société civile** (GO Ω Président 2026-07-27) — reclass créateurs + seed ONG/vulgarisation/syndicats/think tanks ; remplacement élus bas signal ; N=577 conservé.`;
+    raw.methodology_note += ` Enrichissement P45g : cible **${TARGET_PCT}% société civile** (GO Ω Président 2026-07-27) — reclass créateurs + seed ONG/vulgarisation/syndicats/think tanks ; remplacement élus bas signal ; N=577 conservé.${pedagoNote}`;
+  } else if (pedago.length && !String(raw.methodology_note).includes('Placeholders pédagogiques')) {
+    raw.methodology_note += pedagoNote;
+  } else if (TARGET_PCT) {
+    raw.methodology_note += ` Cible curseur ${TARGET_PCT}% (${new Date().toISOString().slice(0, 10)}).`;
   }
   fs.writeFileSync(DATA, JSON.stringify(raw, null, 2) + '\n');
 

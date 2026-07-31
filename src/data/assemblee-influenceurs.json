@@ -7,7 +7,7 @@
     "label": "Depuis la présidentielle 2017"
   },
   "disclaimer": "Fiction pédagogique LMDPT — pas un parlement, pas un score moral, pas une carte d’adhésion. Synthèse documentaire à recouper sur sources primaires. Teintes = familles pédagogiques du 1er tour. Siège plein = position ouvertement déclarée et sourcée ; siège en pointillé = estimation documentaire (faisceau d’indices), jamais présentée comme fait d’adhésion. Dépendances économiques = flux sourcés uniquement (sinon « non documenté »).",
-  "methodology_note": "Inclusion : comptes / chaînes à audience significative en France, avec présence publique documentée. Placement : axe gauche–droite pédagogique (familles 1er tour), les entrées « autre / transversal » au fond. Statut declare exige ≥1 URL de déclaration publique ; statut estime exige rationale + sources et confidence ∈ [0,1]. Dépendances et financeurs : ≥1 URL par flux, sinon liste vide. Distinct de l’observatoire de la censure (sanctions) et de l’indépendance des médias (aides / capital presse). Droit de réponse : contact via le dépôt GitHub du site. Enrichissement P45b : inventaire sphère politique/civique FR sur YouTube, TikTok et Twitch (présence publique). Hors divertissement pur (gaming non politique). Corpus non exhaustif — suggestions via /contribuer. Enrichissement P45c : gros comptes X et Facebook (partis, figures politiques, médias presse) — URLs publiques uniquement. Enrichissement P45d : corpus porté à **577 sièges** (étalon Assemblée nationale). Priorité aux influenceurs/médias déjà documentés LMDPT ; complément par figures publiques Wikidata (député·e·s XVIe législature + journalistes FR avec compte X) — sources URL Wikidata. Fiction pédagogique : ce n’est pas la composition actuelle de l’AN ni un classement moral. Placement des rangs (P45e) : **1er rang = plus d’abonnés** (ordres de grandeur pédagogiques, fichier assemblee-audience-overrides.json) ; axe gauche–droite conservé au sein de chaque rangée. Fiction — pas un scrape live. Enrichissement P45f : + figures **société civile** (créateurs, ONG, vulgarisation, médias indépendants) — catégorie `societe-civile` ; remplacement d’élu·e·s Wikidata à bas signal pour conserver 577 sièges. Corpus non exhaustif. Enrichissement P45g : cible **40% société civile** (GO Ω Président 2026-07-27) — reclass créateurs + seed ONG/vulgarisation/syndicats/think tanks ; remplacement élus bas signal ; N=577 conservé. Veille évolutions (P46) : champ optionnel `stance_history` (motifs + sources) — « il n’y a que les imbéciles qui ne changent pas d’avis ». Teinte courante = `stance` ; l’historique documente les bascules sans moralisation. Enrichissement P46b : descriptions nourries pour les 577 sièges ; `stance_history` étendu aux bascules publiques documentées (Soral, Dieudonné, Zemmour, Attal, Philippe, Ventôse, etc.). Motto veille : « il n’y a que les imbéciles qui ne changent pas d’avis ». P46c : focus égal Nathan Keskon + Ali Babal (@BolbBilal) — même curation que Casus Lady (écosystème débats / apostasie / liberté d’expression). P45h : rangs liens d’État / étrangers documentés (assemblee-foreign-links.json) — toggle pédagogique, fail-closed, pas un score moral. Placeholders pédagogiques : 11 sièges « à sourcer » (curseur 10–100 %).",
+  "methodology_note": "Inclusion : comptes / chaînes à audience significative en France, avec présence publique documentée. Placement : axe gauche–droite pédagogique (familles 1er tour), les entrées « autre / transversal » au fond. Statut declare exige ≥1 URL de déclaration publique ; statut estime exige rationale + sources et confidence ∈ [0,1]. Dépendances et financeurs : ≥1 URL par flux, sinon liste vide. Distinct de l’observatoire de la censure (sanctions) et de l’indépendance des médias (aides / capital presse). Droit de réponse : contact via le dépôt GitHub du site. Enrichissement P45b : inventaire sphère politique/civique FR sur YouTube, TikTok et Twitch (présence publique). Hors divertissement pur (gaming non politique). Corpus non exhaustif — suggestions via /contribuer. Enrichissement P45c : gros comptes X et Facebook (partis, figures politiques, médias presse) — URLs publiques uniquement. Enrichissement P45d : corpus porté à **577 sièges** (étalon Assemblée nationale). Priorité aux influenceurs/médias déjà documentés LMDPT ; complément par figures publiques Wikidata (député·e·s XVIe législature + journalistes FR avec compte X) — sources URL Wikidata. Fiction pédagogique : ce n’est pas la composition actuelle de l’AN ni un classement moral. Placement des rangs (P45e) : **1er rang = plus d’abonnés** (ordres de grandeur pédagogiques, fichier assemblee-audience-overrides.json) ; axe gauche–droite conservé au sein de chaque rangée. Fiction — pas un scrape live. Enrichissement P45f : + figures **société civile** (créateurs, ONG, vulgarisation, médias indépendants) — catégorie `societe-civile` ; remplacement d’élu·e·s Wikidata à bas signal pour conserver 577 sièges. Corpus non exhaustif. Enrichissement P45g : cible **40% société civile** (GO Ω Président 2026-07-27) — reclass créateurs + seed ONG/vulgarisation/syndicats/think tanks ; remplacement élus bas signal ; N=577 conservé. Veille évolutions (P46) : champ optionnel `stance_history` (motifs + sources) — « il n’y a que les imbéciles qui ne changent pas d’avis ». Teinte courante = `stance` ; l’historique documente les bascules sans moralisation. Enrichissement P46b : descriptions nourries pour les 577 sièges ; `stance_history` étendu aux bascules publiques documentées (Soral, Dieudonné, Zemmour, Attal, Philippe, Ventôse, etc.). Motto veille : « il n’y a que les imbéciles qui ne changent pas d’avis ». P46c : focus égal Nathan Keskon + Ali Babal (@BolbBilal) — même curation que Casus Lady (écosystème débats / apostasie / liberté d’expression). P45h : rangs liens d’État / étrangers documentés (assemblee-foreign-links.json) — toggle pédagogique, fail-closed, pas un score moral. Placeholders pédagogiques : 11 sièges « à sourcer » (curseur 10–100 %). Amélioration corpus civile (2026-07-31) : remplacement placeholders pédagogiques par ONG/syndicats/think tanks/éducation populaire documentés ; résumés génériques densifiés ; overrides audience médias reclassés.",
   "influencers": [
     {
       "id": "wd-depute-q30385935",
@@ -19976,7 +19976,7 @@
           "url": "https://x.com/simplonco"
         }
       ],
-      "summary": "École inclusive du numérique. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Simplon.co — école du numérique inclusive (formations gratuites / reconversions). Acteur de société civile économique et éducative ; teinte pédagogique social-démocrate, pas une carte partisane.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20009,7 +20009,7 @@
           "url": "https://x.com/EmmausConnect"
         }
       ],
-      "summary": "Inclusion numérique. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Emmaüs Connect — inclusion numérique des personnes éloignées du digital (ateliers, matériel, médiation). Branche d’Emmaüs dédiée aux inégalités numériques.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20042,7 +20042,7 @@
           "url": "https://x.com/BanquesAlim"
         }
       ],
-      "summary": "Réseau solidarité alimentaire. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Réseau des Banques Alimentaires — collecte et redistribution alimentaire via associations locales. Solidarité alimentaire structurée, présence publique nationale.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -20075,7 +20075,7 @@
           "url": "https://x.com/PMO_grenoble"
         }
       ],
-      "summary": "Critique technocritique / industrielle. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Pièces et Main d’Œuvre (Grenoble) — collectif technocritique. Enquêtes et pamphlets publics sur industrie, surveillance et aménagement ; teinte pédagogique critique / gauche radicale.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -20108,7 +20108,7 @@
           "url": "https://x.com/technologos"
         }
       ],
-      "summary": "Débats technique et société. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Technologos — débats publics sur technique, démocratie et société. Association de réflexion ; teinte transversale / critique de la technoscience.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -20141,7 +20141,7 @@
           "url": "https://x.com/Inst_Rousseau"
         }
       ],
-      "summary": "Think tank progressiste. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Institut Rousseau — think tank progressiste (notes économiques, sociales, écologiques). Société civile d’expertise ; teinte pédagogique gauche.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -20174,7 +20174,7 @@
           "url": "https://x.com/InteretGal"
         }
       ],
-      "summary": "Think tank / notes politiques progressistes. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Intérêt Général — collectif de hauts fonctionnaires et experts produisant des notes de politiques publiques progressistes. Présence éditoriale documentée.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -20207,7 +20207,7 @@
           "url": "https://x.com/Fond_Concorde"
         }
       ],
-      "summary": "Think tank libéral. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Fondation Concorde — think tank libéral sur compétitivité et politiques publiques. Voix de société civile économique de droite libérale.",
       "stance": {
         "status": "estime",
         "family": "droite",
@@ -20240,7 +20240,7 @@
           "url": "https://x.com/GenerationLibre"
         }
       ],
-      "summary": "Think tank libéral. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Génération Libre — think tank libéral (deregulation, libertés individuelles, innovation). Notes et tribunes publiques ; teinte pédagogique droite libérale.",
       "stance": {
         "status": "estime",
         "family": "droite",
@@ -20273,7 +20273,7 @@
           "url": "https://x.com/IThomasMore"
         }
       ],
-      "summary": "Think tank conservateur. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Institut Thomas More — think tank conservateur européen. Analyses sécurité, immigration, identité ; teinte pédagogique droite.",
       "stance": {
         "status": "estime",
         "family": "droite",
@@ -20306,7 +20306,7 @@
           "url": "https://x.com/CdH_officiel"
         }
       ],
-      "summary": "Club d’idées — archives / présence publique. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Carrefour de l’Horloge — club d’idées de la droite dure (archives / présence publique documentée). Teinte pédagogique droite nationale.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20339,7 +20339,7 @@
           "url": "https://x.com/ActionFrancaise"
         }
       ],
-      "summary": "Mouvement royaliste — société civile politique. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Action Française — mouvement royaliste historique à présence publique contemporaine. Documenté comme société civile politique de droite nationale ; teinte pédagogique, pas un jugement moral.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20372,7 +20372,7 @@
           "url": "https://x.com/CocardeEtu"
         }
       ],
-      "summary": "Syndicat étudiant identitaire. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Cocarde Étudiante — organisation étudiante d’extrême droite / identitaire. Présence publique documentée (manifestations, campus) ; teinte pédagogique droite nationale.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20405,7 +20405,7 @@
           "url": "https://x.com/LaCocarde_"
         }
       ],
-      "summary": "Mouvement étudiant / idées nationales. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "La Cocarde — mouvement étudiant / idées nationales. Présence publique documentée dans le débat campus ; teinte pédagogique droite nationale.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20438,7 +20438,7 @@
           "url": "https://x.com/LesIdentitaires"
         }
       ],
-      "summary": "Mouvement identitaire — présence publique documentée. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Les Identitaires — mouvement identitaire (archives / présence documentée). Corpus pédagogique : ne confond pas mémoire documentaire et légitimation.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20471,7 +20471,7 @@
           "url": "https://x.com/GenIdentitaire"
         }
       ],
-      "summary": "Archives mouvement (dissous) — mémoire documentaire. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Génération Identitaire (dissoute) — archives documentaires d’un mouvement identitaire. Siège pédagogique de mémoire publique, pas une réactivation.",
       "stance": {
         "status": "estime",
         "family": "droite-nationale",
@@ -20504,7 +20504,7 @@
           "url": "https://x.com/CLR_Laicite"
         }
       ],
-      "summary": "Association laïque. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Comité Laïcité République — association de défense de la laïcité républicaine. Tribunes et veilles publiques ; teinte pédagogique centre / républicain.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -20537,7 +20537,7 @@
           "url": "https://x.com/UniteLaique"
         }
       ],
-      "summary": "Association laïque. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Unité Laïque — association laïque. Prises de parole sur l’école et la neutralité religieuse ; teinte pédagogique centre.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -20570,7 +20570,7 @@
           "url": "https://x.com/EGALE_asso"
         }
       ],
-      "summary": "Égalité / laïcité. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "EGALE — association pour l’égalité, la laïcité et la mixité. Plaidoyer public ; teinte pédagogique centre / républicain.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -20603,7 +20603,7 @@
           "url": "https://x.com/HES_LGBT"
         }
       ],
-      "summary": "Association LGBT progressiste. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Homosexualités et Socialisme (HES) — association LGBT liée à la gauche socialiste. Voix publique sur droits LGBT et politiques progressistes.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20636,7 +20636,7 @@
           "url": "https://x.com/InterLGBT"
         }
       ],
-      "summary": "Fédération LGBT. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Inter-LGBT — fédération d’associations LGBT organisant notamment la Marche des fiertés parisienne. Société civile LGBT structurée.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20669,7 +20669,7 @@
           "url": "https://x.com/SOShomophobie"
         }
       ],
-      "summary": "Association contre les LGBTphobies. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "SOS Homophobie — association de lutte contre les LGBTphobies (écoute, rapports annuels, plaidoyer). Présence publique documentée.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20702,7 +20702,7 @@
           "url": "https://x.com/actupparis"
         }
       ],
-      "summary": "Militantisme VIH / santé. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Act Up-Paris — militantisme historique VIH / santé et droits des personnes séropositives. Actions publiques et plaidoyer ; teinte pédagogique gauche radicale.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -20735,7 +20735,7 @@
           "url": "https://x.com/GymPolitiques"
         }
       ],
-      "summary": "Pédagogie institutions. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Les Gymnastes Politiques — pédagogie des institutions et du débat public (formats numériques). Société civile éducative transversale.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -20768,7 +20768,7 @@
           "url": "https://x.com/Laboiteadocs"
         }
       ],
-      "summary": "Documentaires et société. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "La Boîte à Docs — diffusion et médiation de documentaires de société. Acteur culturel / civique numérique.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -20801,7 +20801,7 @@
           "url": "https://x.com/SparkNews_fr"
         }
       ],
-      "summary": "Impact journalism network FR. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Spark News — réseau de journalisme à impact. Facilite la circulation d’enquêtes et solutions ; teinte centre / média société.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -20834,7 +20834,7 @@
           "url": "https://x.com/makesenseorg"
         }
       ],
-      "summary": "Communauté engagement citoyen / social business. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "makesense — communauté d’engagement citoyen et d’entrepreneuriat social. Ateliers, programmes et campagnes ; teinte social-démocrate / impact.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20867,7 +20867,7 @@
           "url": "https://x.com/TicketforChange"
         }
       ],
-      "summary": "Entrepreneuriat social. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Ticket for Change — programmes pour entrepreneurs à impact social et écologique. Société civile de l’innovation sociale.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20900,7 +20900,7 @@
           "url": "https://x.com/AshokaFrance"
         }
       ],
-      "summary": "Entrepreneurs sociaux. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Ashoka France — réseau d’entrepreneurs sociaux. Repérage et accompagnement de changemakers ; teinte social-démocrate / impact.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -20933,7 +20933,7 @@
           "url": "https://x.com/synlab_fr"
         }
       ],
-      "summary": "Innovation éducative. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "SynLab — innovation éducative et accompagnement des acteurs de l’école (enseignants, établissements). Société civile éducative à présence publique documentée ; teinte pédagogique centre / réforme scolaire.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -20966,7 +20966,7 @@
           "url": "https://x.com/reseau_canope"
         }
       ],
-      "summary": "Ressources éducatives publiques. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Réseau Canopé — opérateur public de ressources éducatives (échos société civile éducative). Présence documentée pour le débat scolaire.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -20999,7 +20999,7 @@
           "url": "https://x.com/CLEMI_officiel"
         }
       ],
-      "summary": "Éducation aux médias. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "CLEMI — Centre pour l’éducation aux médias et à l’information. Ressources publiques d’EMI ; teinte transversale / institution éducative.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -21032,7 +21032,7 @@
           "url": "https://x.com/VoxPublic_"
         }
       ],
-      "summary": "Plaidoyer sociétés civiles. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Vox Public — accompagnement de collectifs citoyens et plaidoyer. Société civile d’appui aux mobilisations ; teinte pédagogique gauche.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -21065,7 +21065,7 @@
           "url": "https://x.com/CRID_asso"
         }
       ],
-      "summary": "Solidarité internationale. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "CRID — Centre de recherche et d’information pour le développement. Solidarité internationale et plaidoyer ; teinte gauche / altermondialiste.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -21098,7 +21098,7 @@
           "url": "https://x.com/ccfd_officiel"
         }
       ],
-      "summary": "Solidarité internationale catholique. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "CCFD-Terre Solidaire — ONG catholique de solidarité internationale. Plaidoyer justice économique et climatique.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -21131,7 +21131,7 @@
           "url": "https://x.com/SIF_ONG"
         }
       ],
-      "summary": "Solidarité internationale. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Secours Islamique France — ONG de solidarité internationale d’inspiration musulmane. Actions humanitaires et collectes publiques.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -21164,7 +21164,7 @@
           "url": "https://x.com/UEJF"
         }
       ],
-      "summary": "Union des étudiants juifs de France. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "UEJF — Union des étudiants juifs de France. Représentation étudiante et plaidoyer antiraciste / mémoire ; teinte centre.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -21197,7 +21197,7 @@
           "url": "https://x.com/Licra_Jeunes"
         }
       ],
-      "summary": "Antiracisme jeunesse. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "LICRA Jeunes — branche jeunesse de la LICRA. Antiracisme et antisémitisme ; teinte centre / républicain.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -21230,7 +21230,7 @@
           "url": "https://x.com/SOSracisme"
         }
       ],
-      "summary": "Antiracisme. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "SOS Racisme — association antiraciste historique (relais jeunesse / campagnes). Présence publique documentée ; teinte gauche.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -21263,7 +21263,7 @@
           "url": "https://x.com/MaisonAlerte"
         }
       ],
-      "summary": "Protection lanceurs d’alerte. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Maison des Lanceurs d’Alerte — accompagnement juridique et médiatique des lanceurs d’alerte. Société civile de transparence.",
       "stance": {
         "status": "estime",
         "family": "autre",
@@ -21296,7 +21296,7 @@
           "url": "https://x.com/Anticor_asso"
         }
       ],
-      "summary": "Éthique publique et anticorruption. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Anticor — association de lutte contre la corruption et de défense de l’éthique publique. Actions en justice et plaidoyer ; teinte centre / civic.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -21329,7 +21329,7 @@
           "url": "https://x.com/TI_France"
         }
       ],
-      "summary": "Lutte anticorruption. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Transparency International France — chapitre français de Transparency International. Indices, notes et plaidoyer anticorruption à destination du débat public ; teinte pédagogique centre / civic.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -21362,7 +21362,7 @@
           "url": "https://x.com/asso_Sherpa"
         }
       ],
-      "summary": "Responsabilité des multinationales. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "Sherpa — association de juristes pour la responsabilité des multinationales et les droits humains. Contentieux et plaidoyer ; teinte gauche.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
@@ -21395,7 +21395,7 @@
           "url": "https://x.com/ccfdtsi"
         }
       ],
-      "summary": "Justice économique internationale. Présence documentée dans le corpus pédagogique LMDPT (assemblée des influenceurs) — synthèse à enrichir, pas un jugement moral.",
+      "summary": "CCFD / justice économique — plaidoyer lié à la solidarité internationale et à la régulation des acteurs économiques. Teinte social-démocrate.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
@@ -21418,352 +21418,351 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-001",
-      "display_name": "Place société civile à sourcer · 1",
+      "id": "sc-atd-quart-monde",
+      "display_name": "ATD Quart Monde",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.atd-quartmonde.fr/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Mouvement de lutte contre la pauvreté extrême et l’exclusion, fondé par le père Joseph Wresinski. Présence publique : plaidoyer, universités populaires et actions de terrain — teinte pédagogique social-démocrate, pas une étiquette partisane.",
       "stance": {
-        "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "status": "declare",
+        "family": "social-democrate",
+        "label": "Social-démocrate",
+        "rationale": "Objet / plaidoyer public de l’organisation — positionnement documenté.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — ATD Quart Monde",
+            "url": "https://www.atd-quartmonde.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.atd-quartmonde.fr/"
+          }
+        ]
+      },
+      "dependencies": [],
+      "verification": "documented",
+      "category": "societe-civile"
+    },
+    {
+      "id": "sc-apf-france-handicap",
+      "display_name": "APF France handicap",
+      "platforms": [
+        {
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.apf-francehandicap.org/"
+        }
+      ],
+      "summary": "Association nationale de personnes en situation de handicap et de proches aidants. Plaidoyer accessibilité, droits et inclusion — société civile organisée, teinte pédagogique social-démocrate.",
+      "stance": {
+        "status": "estime",
+        "family": "social-democrate",
+        "label": "Social-démocrate",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
+        "sources": [
+          {
+            "label": "Site — APF France handicap",
+            "url": "https://www.apf-francehandicap.org/"
+          },
+          {
+            "label": "Présence publique documentée",
+            "url": "https://www.apf-francehandicap.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.55
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-002",
-      "display_name": "Place société civile à sourcer · 2",
+      "id": "sc-unapei",
+      "display_name": "Unapei",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.unapei.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Fédération d’associations accompagnant les personnes en situation de handicap intellectuel et leurs familles. Voix publique sur l’inclusion et les politiques du handicap.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "social-democrate",
+        "label": "Social-démocrate",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Unapei",
+            "url": "https://www.unapei.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.unapei.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-003",
-      "display_name": "Place société civile à sourcer · 3",
+      "id": "sc-droit-au-logement",
+      "display_name": "Droit au logement",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.droitaulogement.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Association DAL — mobilisations et plaidoyer pour le droit au logement et contre les expulsions. Présence publique militante documentée ; teinte pédagogique gauche radicale.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Droit au logement",
+            "url": "https://www.droitaulogement.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.droitaulogement.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.65
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-004",
-      "display_name": "Place société civile à sourcer · 4",
+      "id": "sc-observatoire-des-inegalites",
+      "display_name": "Observatoire des inégalités",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.inegalites.fr/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Structure indépendante de production et diffusion de données sur les inégalités en France. Pas un parti : outils pédagogiques et notes publiques pour le débat.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Observatoire des inégalités",
+            "url": "https://www.inegalites.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.inegalites.fr/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.55
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-005",
-      "display_name": "Place société civile à sourcer · 5",
+      "id": "sc-le-shift-project",
+      "display_name": "Le Shift Project",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://theshiftproject.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Think tank de la transition carbone (théorie du shift). Rapports publics énergie-climat destinés aux décideurs et citoyens — teinte transversale / expertise.",
       "stance": {
         "status": "estime",
         "family": "autre",
         "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Le Shift Project",
+            "url": "https://theshiftproject.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://theshiftproject.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-006",
-      "display_name": "Place société civile à sourcer · 6",
+      "id": "sc-association-negawatt",
+      "display_name": "Association négaWatt",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.negawatt.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Association d’experts pour une transition énergétique sobre et renouvelable. Scénarios publics et plaidoyer sobriété — teinte pédagogique écologiste.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Association négaWatt",
+            "url": "https://www.negawatt.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.negawatt.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.55
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-007",
-      "display_name": "Place société civile à sourcer · 7",
+      "id": "sc-reseau-sortir-du-nucleaire",
+      "display_name": "Réseau Sortir du nucléaire",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://www.sortirdunucleaire.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Fédération d’associations antinucléaires. Veille, mobilisations et information publique sur le nucléaire civil — teinte pédagogique gauche radicale / écologie.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Réseau Sortir du nucléaire",
+            "url": "https://www.sortirdunucleaire.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://www.sortirdunucleaire.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.6
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-008",
-      "display_name": "Place société civile à sourcer · 8",
+      "id": "sc-youth-for-climate-france",
+      "display_name": "Youth for Climate France",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://youthforclimate.fr/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Mouvement de jeunes pour le climat (grèves et actions). Présence publique documentée ; teinte pédagogique écologiste radicale.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Youth for Climate France",
+            "url": "https://youthforclimate.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://youthforclimate.fr/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.6
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-009",
-      "display_name": "Place société civile à sourcer · 9",
+      "id": "sc-anv-cop21",
+      "display_name": "ANV-COP21",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://anv-cop21.org/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Action Non-Violente COP21 — désobéissance civile non violente pour le climat. Organisation de société civile militante.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "gauche-radicale",
+        "label": "Gauche radicale",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — ANV-COP21",
+            "url": "https://anv-cop21.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://anv-cop21.org/"
           }
         ],
-        "confidence": 0.15
+        "confidence": 0.65
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-pedago-civile-010",
-      "display_name": "Place société civile à sourcer · 10",
+      "id": "sc-time-for-the-planet",
+      "display_name": "Time for the Planet",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+          "url": "https://time-planet.com/"
         }
       ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
+      "summary": "Société à mission / communauté d’investissement citoyen pour des innovations climat open-source. Présence publique hybride associatif-entrepreneurial.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
+        "family": "centre",
+        "label": "Centre",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "label": "Site — Time for the Planet",
+            "url": "https://time-planet.com/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
+            "url": "https://time-planet.com/"
           }
         ],
-        "confidence": 0.15
-      },
-      "dependencies": [],
-      "verification": "partial",
-      "category": "societe-civile"
-    },
-    {
-      "id": "sc-pedago-civile-011",
-      "display_name": "Place société civile à sourcer · 11",
-      "platforms": [
-        {
-          "kind": "site",
-          "label": "Site",
-          "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
-        }
-      ],
-      "summary": "Siège pédagogique LMDPT — place réservée pour une organisation de société civile à documenter (pas une entité réelle).",
-      "stance": {
-        "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Placeholder pédagogique pour explorer une assemblée à forte part société civile. Ne pas citer comme source factuelle.",
-        "sources": [
-          {
-            "label": "LMDPT — placeholder pédagogique",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
-          },
-          {
-            "label": "Présence publique documentée",
-            "url": "https://lmdpt.iarbre.org/assemblee-influenceurs/"
-          }
-        ],
-        "confidence": 0.15
+        "confidence": 0.45
       },
       "dependencies": [],
       "verification": "partial",
