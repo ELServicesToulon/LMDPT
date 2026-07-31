@@ -751,11 +751,58 @@ function main() {
   }
 
   let replaced = 0;
+  let usedFresh = 0;
   for (let i = 0; i < pedagoIdx.length; i += 1) {
     const { idx } = pedagoIdx[i]!;
     influencers[idx] = fresh[i]!;
     existing.add(fresh[i]!.id);
     replaced += 1;
+    usedFresh += 1;
+  }
+
+  /** Remplacer des sièges civiles faibles / échos pour pluraliser (patronat, agri, familles…). */
+  const KEEP = new Set([
+    'nathan-keskon',
+    'ali-babal-bolb-bilal',
+    'jack-le-fou',
+    'amnesty-france',
+    'oxfam-france',
+    'fondation-abbe-pierre',
+    'greenpeace-france',
+    'thinkerview',
+    'blast-info',
+    'hugo-decrypte',
+  ]);
+  const WEAK_ID =
+    /^(sc-hadopi|sc-arcom-echos|sc-canope|sc-clemi|sc-cpj-|sc-fondation-pour-la-recherche|sc-fondation-identite|sc-police-nationale|sc-la-boite|sc-gymnastes|sc-spark|sc-synlab|sc-technologos|sc-carrefour-de-l-horloge|sc-generation-identitaire|sc-les-identitaires|sc-fondation-abbe-pierre-actu|sc-ldh-paris|sc-wwf-actu|sc-l214-enquetes|sc-greenpeace-actions)/i;
+  const remaining = fresh.slice(usedFresh);
+  // Priorité pluralité économique / familiale / agricole
+  const priority = remaining.filter((e) =>
+    /medef|cpme|u2p|fnsea|coordination-rurale|jeunes-agriculteurs|una-f|familles-rurales|cercle-des-economistes|grand-orient|ligue-de-l-enseignement|association-leo|snj|snsm|protection-civile|france-alzheimer|care-france|action-contre|human-rights|acat|hop-halte|autisme|federation-des-centres|scouts/i.test(
+      e.id,
+    ),
+  );
+  const weakSlots = influencers
+    .map((inf, idx) => ({ inf, idx }))
+    .filter(
+      ({ inf }) =>
+        inf.category === 'societe-civile' &&
+        !KEEP.has(inf.id) &&
+        !String(inf.id).startsWith('sc-pedago') &&
+        (WEAK_ID.test(inf.id) ||
+          String(inf.summary || '').length < 180 ||
+          /échos|archives|Actu$|Jeunes$/i.test(inf.display_name || '')),
+    );
+  let pluralized = 0;
+  const maxPlural = Math.min(12, priority.length, weakSlots.length);
+  for (let i = 0; i < maxPlural; i += 1) {
+    const slot = weakSlots[i]!;
+    const neu = priority[i]!;
+    if (existing.has(neu.id)) continue;
+    influencers[slot.idx] = neu;
+    existing.add(neu.id);
+    pluralized += 1;
+    usedFresh += 1;
   }
 
   let summaries = 0;
@@ -843,6 +890,7 @@ function main() {
     JSON.stringify(
       {
         replaced_pedago: replaced,
+        pluralized_weak_slots: pluralized,
         summaries_rewritten: summaries,
         overrides_added: ovAdded,
         pedago_left: pedagoLeft,
@@ -850,7 +898,7 @@ function main() {
         counts: cats,
         pct_societe_civile: +((100 * (cats['societe-civile'] || 0)) / TOTAL).toFixed(1),
         total: influencers.length,
-        unused_new_seeds: fresh.length - replaced,
+        unused_new_seeds: Math.max(0, fresh.length - usedFresh),
       },
       null,
       2,

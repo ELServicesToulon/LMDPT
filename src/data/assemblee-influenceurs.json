@@ -2173,32 +2173,34 @@
       "category": "elu-parlementaire"
     },
     {
-      "id": "le-fil-dactu",
-      "display_name": "Le Fil d’Actu",
-      "handle": "LeFilDActu",
+      "id": "sc-medef",
+      "display_name": "MEDEF",
       "platforms": [
         {
-          "kind": "youtube",
-          "label": "YouTube Le Fil d’Actu",
-          "url": "https://www.youtube.com/@LeFilDActu"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.medef.com/"
         }
       ],
-      "summary": "Le Fil d’Actu — société civile (créateur, association, syndicat, média indé ou vulgarisation). Chaîne YouTube d’actualité politique commentée (formats courts / moyens). Présence : youtube. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique gauche radicale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Mouvement des entreprises de France — organisation patronale. Voix publique sur le travail, la fiscalité et la compétitivité ; teinte pédagogique droite libérale.",
       "stance": {
-        "status": "estime",
-        "family": "gauche-radicale",
-        "label": "Gauche radicale",
-        "confidence": 0.65,
-        "rationale": "Commentaires et choix de sujets situés à gauche ; estimation pédagogique, pas carte d’adhésion.",
+        "status": "declare",
+        "family": "droite",
+        "label": "Droite",
+        "rationale": "Objet / plaidoyer public de l’organisation — positionnement documenté.",
         "sources": [
           {
-            "label": "YouTube — Le Fil d’Actu",
-            "url": "https://www.youtube.com/@LeFilDActu"
+            "label": "Site — MEDEF",
+            "url": "https://www.medef.com/"
+          },
+          {
+            "label": "Présence publique documentée",
+            "url": "https://www.medef.com/"
           }
         ]
       },
       "dependencies": [],
-      "verification": "partial",
+      "verification": "documented",
       "category": "societe-civile"
     },
     {
@@ -14319,35 +14321,29 @@
       "category": "societe-civile"
     },
     {
-      "id": "academic-media",
-      "display_name": "Académia Christiana (échos publics)",
-      "handle": "Academia_C",
+      "id": "sc-cpme",
+      "display_name": "CPME",
       "platforms": [
-        {
-          "kind": "x",
-          "label": "X @Academia_C",
-          "url": "https://x.com/Academia_C"
-        },
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://www.academia-christiana.org/"
+          "url": "https://www.cpme.fr/"
         }
       ],
-      "summary": "Académia Christiana (échos publics) — société civile (créateur, association, syndicat, média indé ou vulgarisation). Association de formation catholique traditionaliste : universités d’été et présence réseaux. Présence : x, site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique droite nationale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Confédération des PME — représentation des petites et moyennes entreprises. Plaidoyer économique public ; teinte pédagogique droite / centre-droit.",
       "stance": {
         "status": "estime",
-        "family": "droite-nationale",
-        "label": "Droite nationale",
-        "rationale": "Positionnements catholiques conservateurs documentés — lecture droite nationale / conservatrice.",
+        "family": "droite",
+        "label": "Droite",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "Site Academia Christiana",
-            "url": "https://www.academia-christiana.org/"
+            "label": "Site — CPME",
+            "url": "https://www.cpme.fr/"
           },
           {
-            "label": "Compte X public",
-            "url": "https://x.com/Academia_C"
+            "label": "Présence publique documentée",
+            "url": "https://www.cpme.fr/"
           }
         ],
         "confidence": 0.6
@@ -15245,33 +15241,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-hugodecrypte-actu",
-      "display_name": "HugoDécrypte Actu",
-      "handle": "hugo_decrypte",
+      "id": "sc-u2p",
+      "display_name": "U2P",
       "platforms": [
         {
-          "kind": "youtube",
-          "label": "YouTube",
-          "url": "https://www.youtube.com/@hugo_decrypte"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.u2p-france.fr/"
         }
       ],
-      "summary": "HugoDécrypte Actu — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) transversale / autre. Présence : youtube. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique transversale / autre. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Union des entreprises de proximité (artisans, commerçants, professions libérales). Société civile économique organisée.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Chaîne YouTube publique — teinte pédagogique documentée par le contenu éditorial.",
+        "family": "centre",
+        "label": "Centre",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "YouTube @hugo_decrypte",
-            "url": "https://www.youtube.com/@hugo_decrypte"
+            "label": "Site — U2P",
+            "url": "https://www.u2p-france.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://www.youtube.com/@hugo_decrypte"
+            "url": "https://www.u2p-france.fr/"
           }
         ],
-        "confidence": 0.4
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
@@ -17118,35 +17113,34 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-cpj-europe",
-      "display_name": "CPJ Europe",
+      "id": "sc-fnsea",
+      "display_name": "FNSEA",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://cpj.org/"
+          "url": "https://www.fnsea.fr/"
         }
       ],
-      "summary": "CPJ Europe — société civile (créateur, association, syndicat, média indé ou vulgarisation). Comité de protection des journalistes (échos FR). Présence : site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique transversale / autre. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Fédération nationale des syndicats d’exploitants agricoles — premier syndicat agricole. Présence publique forte sur les politiques agricoles.",
       "stance": {
-        "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
+        "status": "declare",
+        "family": "droite",
+        "label": "Droite",
+        "rationale": "Objet / plaidoyer public de l’organisation — positionnement documenté.",
         "sources": [
           {
-            "label": "Site — CPJ Europe",
-            "url": "https://cpj.org/"
+            "label": "Site — FNSEA",
+            "url": "https://www.fnsea.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://cpj.org/"
+            "url": "https://www.fnsea.fr/"
           }
-        ],
-        "confidence": 0.4
+        ]
       },
       "dependencies": [],
-      "verification": "partial",
+      "verification": "documented",
       "category": "societe-civile"
     },
     {
@@ -17534,32 +17528,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-fondation-pour-la-recherche-sur-les-administrati",
-      "display_name": "Fondation pour la recherche sur les administrations",
+      "id": "sc-jeunes-agriculteurs",
+      "display_name": "Jeunes Agriculteurs",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://www.ifrap.org/"
+          "url": "https://www.jeunes-agriculteurs.fr/"
         }
       ],
-      "summary": "Fondation pour la recherche sur les administrations — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) droite. Présence : site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique droite. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Syndicat des jeunes agriculteurs. Plaidoyer installation, revenu et transmission — société civile agricole.",
       "stance": {
         "status": "estime",
-        "family": "droite",
-        "label": "Droite",
+        "family": "centre",
+        "label": "Centre",
         "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "Site — Fondation pour la recherche sur les administrations",
-            "url": "https://www.ifrap.org/"
+            "label": "Site — Jeunes Agriculteurs",
+            "url": "https://www.jeunes-agriculteurs.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://www.ifrap.org/"
+            "url": "https://www.jeunes-agriculteurs.fr/"
           }
         ],
-        "confidence": 0.55
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
@@ -17598,32 +17592,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-fondation-identite-et-democratie-echos-fr",
-      "display_name": "Fondation Identité et Démocratie échos FR",
+      "id": "sc-snsm",
+      "display_name": "SNSM",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://www.id-party.eu/"
+          "url": "https://www.snsm.org/"
         }
       ],
-      "summary": "Fondation Identité et Démocratie échos FR — société civile (créateur, association, syndicat, média indé ou vulgarisation). Échos société civile liée aux débats identitaires européens. Présence : site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique droite nationale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Société nationale de sauvetage en mer — association de sauveteurs volontaires. Solidarité et sécurité maritime, présence publique transversale.",
       "stance": {
         "status": "estime",
-        "family": "droite-nationale",
-        "label": "Droite nationale",
+        "family": "autre",
+        "label": "Autre / transversal",
         "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "Site — Fondation Identité et Démocratie échos FR",
-            "url": "https://www.id-party.eu/"
+            "label": "Site — SNSM",
+            "url": "https://www.snsm.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://www.id-party.eu/"
+            "url": "https://www.snsm.org/"
           }
         ],
-        "confidence": 0.5
+        "confidence": 0.35
       },
       "dependencies": [],
       "verification": "partial",
@@ -17726,32 +17720,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-la-manif-pour-tous-archives",
-      "display_name": "La Manif Pour Tous archives",
+      "id": "sc-protection-civile",
+      "display_name": "Protection Civile",
       "platforms": [
         {
           "kind": "site",
           "label": "Site",
-          "url": "https://www.lamanifpourtous.fr/"
+          "url": "https://www.protection-civile.org/"
         }
       ],
-      "summary": "La Manif Pour Tous archives — société civile (créateur, association, syndicat, média indé ou vulgarisation). Mouvement société sur la famille (archives / présence). Présence : site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique droite. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Fédération nationale de protection civile — secourisme et actions de solidarité. Société civile de secours, teinte transversale.",
       "stance": {
         "status": "estime",
-        "family": "droite",
-        "label": "Droite",
+        "family": "autre",
+        "label": "Autre / transversal",
         "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "Site — La Manif Pour Tous archives",
-            "url": "https://www.lamanifpourtous.fr/"
+            "label": "Site — Protection Civile",
+            "url": "https://www.protection-civile.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://www.lamanifpourtous.fr/"
+            "url": "https://www.protection-civile.org/"
           }
         ],
-        "confidence": 0.65
+        "confidence": 0.35
       },
       "dependencies": [],
       "verification": "partial",
@@ -19167,33 +19161,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-police-nationale-plr-echos-citoyens",
-      "display_name": "Police Nationale PLR échos citoyens",
-      "handle": "PLR_officiel",
+      "id": "sc-snj",
+      "display_name": "SNJ",
       "platforms": [
         {
-          "kind": "x",
-          "label": "X",
-          "url": "https://x.com/PLR_officiel"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.snj.fr/"
         }
       ],
-      "summary": "Police Nationale PLR échos citoyens — société civile (créateur, association, syndicat, média indé ou vulgarisation). Échos débats sécurité (compte public suivi). Présence : x. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique transversale / autre. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Syndicat national des journalistes — défense de la profession et de la liberté de la presse. Voix publique sur le métier et l’éthique.",
       "stance": {
         "status": "estime",
         "family": "autre",
         "label": "Autre / transversal",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "X @PLR_officiel",
-            "url": "https://x.com/PLR_officiel"
+            "label": "Site — SNJ",
+            "url": "https://www.snj.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://x.com/PLR_officiel"
+            "url": "https://www.snj.fr/"
           }
         ],
-        "confidence": 0.35
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
@@ -19266,96 +19259,93 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-ldh-paris",
-      "display_name": "LDH Paris",
-      "handle": "LDH_Fr",
+      "id": "sc-cercle-des-economistes",
+      "display_name": "Cercle des économistes",
       "platforms": [
         {
-          "kind": "x",
-          "label": "X",
-          "url": "https://x.com/LDH_Fr"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.lecercledeseconomistes.fr/"
         }
       ],
-      "summary": "LDH Paris — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) gauche radicale. Présence : x. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique gauche radicale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Cercle de débat économique (rencontres d’Aix, tribunes). Expertise et discussion publique — teinte centre / pluraliste.",
       "stance": {
         "status": "estime",
-        "family": "gauche-radicale",
-        "label": "Gauche radicale",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "family": "centre",
+        "label": "Centre",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "X @LDH_Fr",
-            "url": "https://x.com/LDH_Fr"
+            "label": "Site — Cercle des économistes",
+            "url": "https://www.lecercledeseconomistes.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://x.com/LDH_Fr"
+            "url": "https://www.lecercledeseconomistes.fr/"
           }
         ],
-        "confidence": 0.65
+        "confidence": 0.45
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-greenpeace-actions",
-      "display_name": "Greenpeace Actions",
-      "handle": "GreenpeaceFR",
+      "id": "sc-human-rights-watch-france",
+      "display_name": "Human Rights Watch France",
       "platforms": [
         {
-          "kind": "x",
-          "label": "X",
-          "url": "https://x.com/GreenpeaceFR"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.hrw.org/fr"
         }
       ],
-      "summary": "Greenpeace Actions — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) gauche radicale. Présence : x. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique gauche radicale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Bureau français de Human Rights Watch — enquêtes et plaidoyer droits humains. ONG internationale à présence publique FR.",
       "stance": {
         "status": "estime",
-        "family": "gauche-radicale",
-        "label": "Gauche radicale",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "family": "centre",
+        "label": "Centre",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "X @GreenpeaceFR",
-            "url": "https://x.com/GreenpeaceFR"
+            "label": "Site — Human Rights Watch France",
+            "url": "https://www.hrw.org/fr"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://x.com/GreenpeaceFR"
+            "url": "https://www.hrw.org/fr"
           }
         ],
-        "confidence": 0.6
+        "confidence": 0.5
       },
       "dependencies": [],
       "verification": "partial",
       "category": "societe-civile"
     },
     {
-      "id": "sc-wwf-actu",
-      "display_name": "WWF Actu",
-      "handle": "WWF_France",
+      "id": "sc-acat-france",
+      "display_name": "ACAT France",
       "platforms": [
         {
-          "kind": "x",
-          "label": "X",
-          "url": "https://x.com/WWF_France"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.acatfrance.fr/"
         }
       ],
-      "summary": "WWF Actu — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) social-démocrate. Présence : x. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique social-démocrate. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Action des chrétiens pour l’abolition de la torture — plaidoyer droits humains d’inspiration confessionnelle. Société civile organisée.",
       "stance": {
         "status": "estime",
-        "family": "social-democrate",
-        "label": "Social-démocrate",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "family": "centre",
+        "label": "Centre",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "X @WWF_France",
-            "url": "https://x.com/WWF_France"
+            "label": "Site — ACAT France",
+            "url": "https://www.acatfrance.fr/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://x.com/WWF_France"
+            "url": "https://www.acatfrance.fr/"
           }
         ],
         "confidence": 0.5
@@ -19398,33 +19388,32 @@
       "category": "societe-civile"
     },
     {
-      "id": "sc-l214-enquetes",
-      "display_name": "L214 Enquêtes",
-      "handle": "L214_animaux",
+      "id": "sc-hop-halte-a-l-obsolescence-programmee",
+      "display_name": "HOP Halte à l’obsolescence programmée",
       "platforms": [
         {
-          "kind": "x",
-          "label": "X",
-          "url": "https://x.com/L214_animaux"
+          "kind": "site",
+          "label": "Site",
+          "url": "https://www.halteobsolescence.org/"
         }
       ],
-      "summary": "L214 Enquêtes — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) gauche radicale. Présence : x. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique gauche radicale. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Association pour la durée de vie des produits et contre l’obsolescence. Plaidoyer consommateurs / écologie industrielle.",
       "stance": {
         "status": "estime",
         "family": "gauche-radicale",
         "label": "Gauche radicale",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "rationale": "Organisation de société civile ; teinte pédagogique selon plaidoyer public.",
         "sources": [
           {
-            "label": "X @L214_animaux",
-            "url": "https://x.com/L214_animaux"
+            "label": "Site — HOP Halte à l’obsolescence programmée",
+            "url": "https://www.halteobsolescence.org/"
           },
           {
             "label": "Présence publique documentée",
-            "url": "https://x.com/L214_animaux"
+            "url": "https://www.halteobsolescence.org/"
           }
         ],
-        "confidence": 0.6
+        "confidence": 0.55
       },
       "dependencies": [],
       "verification": "partial",
