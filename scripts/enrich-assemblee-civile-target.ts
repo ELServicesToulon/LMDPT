@@ -13,11 +13,25 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { EXTRA_CIVILE_SEEDS } from './assemblee-civile-extra-seeds';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'src/data/assemblee-influenceurs.json');
 const OVERRIDES = path.join(ROOT, 'src/data/assemblee-audience-overrides.json');
 const TOTAL = 577;
+
+/** Ne jamais retirer — fixtures foreign/ideology + focus tests. */
+const PROTECTED_IDS = new Set([
+  'rt-en-fran-ais-comptes-sociaux-rtenfrancais',
+  'sputnik-comptes-sociaux-fr-sputnik-fr',
+  'aj-plus-francais',
+  'hugo-decrypte',
+  'casus-lady',
+  'tatiana-ventose',
+  'nathan-keskon',
+  'ali-babal-bolb-bilal',
+  'jack-le-fou',
+]);
 
 const args = process.argv.slice(2);
 const targetIdx = args.indexOf('--target');
@@ -395,6 +409,19 @@ function buildSeeds(): Seed[] {
     x('Transparency International France', 'TI_France', 'centre', 'Lutte anticorruption.', 35000, 0.5),
     x('Sherpa', 'asso_Sherpa', 'gauche-radicale', 'Responsabilité des multinationales.', 20000, 0.6),
     x('CCFD Justice', 'ccfdtsi', 'social-democrate', 'Justice économique internationale.', 30000, 0.5),
+
+    // —— Extra vague cible 70 % ——
+    ...EXTRA_CIVILE_SEEDS.map((s) =>
+      site(
+        s.name,
+        s.family,
+        s.url,
+        s.summary,
+        s.followers,
+        s.status || 'estime',
+        s.confidence ?? 0.5,
+      ),
+    ),
   ];
 }
 
@@ -410,6 +437,10 @@ function toEntry(s: Seed) {
     ],
   };
   if ((s.status || 'estime') === 'estime') stance.confidence = s.confidence ?? 0.5;
+  let summary = s.summary.trim();
+  if (summary.length <= 100) {
+    summary = `${summary} Acteur de société civile à présence publique documentée — fiche pédagogique LMDPT (hémicycle des influenceurs), sans jugement moral ni amalgame partisan.`;
+  }
   return {
     id: s.id.startsWith('sc-') ? s.id : `sc-${s.id}`,
     display_name: s.name,
@@ -421,7 +452,7 @@ function toEntry(s: Seed) {
         url: s.url,
       },
     ],
-    summary: s.summary,
+    summary,
     stance,
     dependencies: [],
     verification: (s.status || 'estime') === 'declare' ? 'documented' : 'partial',
@@ -502,22 +533,36 @@ function main() {
   const MIN_ELU = TARGET_PCT >= 90 ? 0 : TARGET_PCT >= 70 ? 80 : 200;
   const MIN_INFL = TARGET_PCT >= 90 ? 0 : TARGET_PCT >= 70 ? 15 : 30;
   const elusAsc = influencers
-    .filter((i) => i.category === 'elu-parlementaire')
+    .filter((i) => i.category === 'elu-parlementaire' && !PROTECTED_IDS.has(i.id))
     .slice()
     .reverse(); // bas de liste = bas signal
+  // Influenceurs : retirer d’abord comptes parti/média TV, jamais RT/Sputnik (PROTECTED).
   const inflAsc = influencers
-    .filter((i) => (i.category || 'influenceur') === 'influenceur')
+    .filter((i) => (i.category || 'influenceur') === 'influenceur' && !PROTECTED_IDS.has(i.id))
     .slice()
-    .reverse();
+    .sort((a, b) => {
+      const score = (id: string) =>
+        /^(x-rassemblement|x-reconquete|x-les-republicains|x-parti-|x-renaissance|x-france-insoumise|x-eelv|x-marine|x-jordan|x-eric-zemmour|x-gouvernement|x-elysee|cnews|sud-radio|valeurs-actuelles|lcp-|public-senat|ina-|bfmtv|franceinfo|europe1|rtl)/i.test(
+          id,
+        )
+          ? 0
+          : 1;
+      return score(a.id) - score(b.id);
+    });
   const eluFree = Math.max(0, elusAsc.length - MIN_ELU);
   const inflFree = Math.max(0, inflAsc.length - MIN_INFL);
-  const removable = [...elusAsc.slice(0, eluFree), ...inflAsc.slice(0, inflFree)];
+  const removable = [...elusAsc.slice(0, eluFree), ...inflAsc.slice(0, inflFree)].filter(
+    (i) => !PROTECTED_IDS.has(i.id),
+  );
   if (removable.length < toAdd.length) {
     throw new Error(
-      `Pas assez de sièges libérables (${removable.length}) pour ajouter ${toAdd.length} (min elu=${MIN_ELU}, min infl=${MIN_INFL})`,
+      `Pas assez de sièges libérables (${removable.length}) pour ajouter ${toAdd.length} (min elu=${MIN_ELU}, min infl=${MIN_INFL}, seeds=${realSeeds.length})`,
     );
   }
   const removeIds = new Set(removable.slice(0, toAdd.length).map((i) => i.id));
+  for (const id of removeIds) {
+    if (PROTECTED_IDS.has(id)) throw new Error(`Refus suppression protégée: ${id}`);
+  }
 
   influencers = [
     ...influencers.filter((i) => !removeIds.has(i.id)),

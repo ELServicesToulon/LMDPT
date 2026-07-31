@@ -293,7 +293,7 @@ describe('assemblee-influenceurs', () => {
     expect(view.counts.byFamily['droite-nationale']).toBeGreaterThan(0);
   });
 
-  it('normalizes categories and exposes byCategory (influenceurs default < 50)', () => {
+  it('normalizes categories and exposes byCategory (cible ~70% société civile)', () => {
     expect(normalizeAssembleeCategory(undefined)).toBe('influenceur');
     expect(normalizeAssembleeCategory(null)).toBe('influenceur');
     expect(normalizeAssembleeCategory('societe-civile')).toBe('societe-civile');
@@ -302,9 +302,11 @@ describe('assemblee-influenceurs', () => {
     const { influenceur, 'societe-civile': civile, 'elu-parlementaire': elus } =
       view.counts.byCategory;
     expect(influenceur + civile + elus).toBe(577);
-    expect(influenceur).toBeGreaterThan(0);
+    expect(influenceur).toBeGreaterThanOrEqual(15);
     expect(influenceur).toBeLessThan(50);
-    expect(elus).toBeGreaterThan(200);
+    expect(elus).toBeGreaterThanOrEqual(80);
+    expect(civile).toBeGreaterThanOrEqual(400); // ~70 % de 577
+    expect(civile / 577).toBeGreaterThanOrEqual(0.69);
     expect(HEMI_ZOOM_TIERS.fit).toBe(1);
     expect(HEMI_ZOOM_TIERS.lire).toBe(2);
     expect(HEMI_ZOOM_TIERS.detail).toBe(3.5);
