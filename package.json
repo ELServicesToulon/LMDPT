@@ -25,6 +25,8 @@
     "pinocmod:draft": "node ../../manusk/second-brain/scripts/lmdpt-pinocmod-social-draft.mjs",
     "sync:all": "tsx scripts/sync-all.ts",
     "sync:all:social": "LMDPT_SYNC_SOCIAL_DRAFT=1 tsx scripts/sync-all.ts",
+    "build:assemblee-client": "tsx scripts/build-assemblee-client-json.ts",
+    "build:site-search": "tsx scripts/build-site-search-index.ts",
     "import:dept-2022": "tsx scripts/import-presidentielle-2022-departements.ts",
     "import:dept-2017": "tsx scripts/import-presidentielle-2017-departements.ts",
     "import:legislatives-2024": "tsx scripts/import-legislatives-2024.ts",

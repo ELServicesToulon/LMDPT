@@ -87,10 +87,9 @@ function buildSitemap(): string {
   const entries: string[] = [];
 
   const add = (routePath: string, changefreq: string, priority: string) => {
-    const loc = abs(routePath === '/' ? '/' : routePath.replace(/\/$/, ''));
-    // normalize trailing slash: site uses /path/ for directories
+    const pathOnly = routePath.split('#')[0] || '/';
     const normalized =
-      routePath === '/' ? `${SITE}/` : `${SITE}${routePath.replace(/\/$/, '')}/`;
+      pathOnly === '/' ? `${SITE}/` : `${SITE}${pathOnly.replace(/\/$/, '')}/`;
     if (seen.has(normalized)) return;
     seen.add(normalized);
     entries.push(urlEntry(normalized, changefreq, priority));
@@ -164,7 +163,7 @@ function escapeXml(s: string): string {
 function buildNewsSitemap(): string {
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
     {
-      path: '/analyses/alerte-citoyenne',
+      path: '/liberte-d-expression',
       title: 'Alerte citoyenne — conditions du débat public',
       keywords: 'liberté d expression, débat public, premier tour',
     },

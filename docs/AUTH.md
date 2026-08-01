@@ -72,6 +72,13 @@ https://lmdpt.iarbre.org/api/auth/callback/apple
 - `/connexion` — 4 boutons + email  
 - `/compte` — pseudonyme, providers, logout  
 - `CitizenCommentModule` — CTA login si non authentifié  
+- `/debats/*` — **même** compte (pas Giscus / GitHub) ; section « Poursuivre le débat » → `#commentaires-citoyens`  
+
+## Compte unique (débats)
+
+Depuis 2026-07-31 : une seule identité lecteur site. Giscus embed OFF (`PUBLIC_GISCUS_EMBED` opt-in).  
+Providers prod : Google + X + email (Apple SKIP sans membership).  
+
 
 ## Tests
 
