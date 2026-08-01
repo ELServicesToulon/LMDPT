@@ -7,6 +7,8 @@ interface Props {
   /** article = analyses / dossiers (JSON-LD + og:type) */
   type?: 'website' | 'article';
   noindex?: boolean;
+  /** Override canonical (ex. rétrocompat → hub) */
+  canonicalPath?: string;
 }
 
 import { getPublicSocialLinks } from '../config/social';
@@ -18,11 +20,12 @@ import {
   webPageJsonLd,
 } from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import { DOE_FR } from '../lib/doe';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 
-const { title, description, ogImage, keywords, type, noindex } = Astro.props;
+const { title, description, ogImage, keywords, type, noindex, canonicalPath } = Astro.props;
 const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
@@ -36,7 +39,7 @@ const meta = pageMeta({
   description,
   ogImage,
   siteUrl,
-  pathname: Astro.url.pathname,
+  pathname: canonicalPath?.trim() || Astro.url.pathname,
   keywords,
   type: isArticle ? 'article' : 'website',
   noindex:
@@ -821,6 +824,7 @@ const commentThread =
             <p class="tagline">Pluralité, faits sourcés, vote pour — pas contre.</p>
           </div>
         </div>
+        <SiteSearch />
         <nav aria-label="Navigation principale">
           <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Accueil</a>
           <a href="/atlas" aria-current={Astro.url.pathname.startsWith('/atlas') ? 'page' : undefined}>Atlas</a>
@@ -830,6 +834,7 @@ const commentThread =
             href="/liberte-d-expression"
             aria-current={
               Astro.url.pathname.startsWith('/liberte-d-expression') ||
+              Astro.url.pathname.includes('alerte-citoyenne') ||
               Astro.url.pathname.startsWith('/observatoire-censure') ||
               Astro.url.pathname.startsWith('/assemblee-influenceurs')
                 ? 'page'
@@ -947,6 +952,8 @@ const commentThread =
 
         <p>
           <a href="/a-propos">À propos</a>
+          {' · '}
+          <a href="/liberte-d-expression">Liberté d’expression</a>
           {' · '}
           <a href="/charte">Charte</a>
           {' · '}

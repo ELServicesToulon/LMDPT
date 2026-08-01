@@ -6,14 +6,14 @@
  *   2. Liberté d’expression + Observatoire de la censure
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LiberteExpressionBody from '../components/LiberteExpressionBody.astro';
 ---
 
 <BaseLayout
-  title="Liberté d’expression"
+  title="Liberté d’expression — débat public"
   description="Dossier LMDPT : pluralité de l’Assemblée du 1er tour, liberté d’expression et observatoire de la censure — conditions d’un débat public sourcé avant 2027."
-  type="website"
-  keywords="liberté d'expression, pluralité Assemblée, AN1T, observatoire de la censure, débat public, démocratie avant l’élimination, LMDPT"
-  commentThread="liberte-d-expression"
+  type="article"
+  keywords="liberté d'expression, pluralité Assemblée, AN1T, observatoire de la censure, débat public, démocratie avant l’élimination, alerte citoyenne, LMDPT"
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/">Accueil</a> → Liberté d’expression
@@ -36,6 +36,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <nav class="liberte-jump" aria-label="Sommaire de la rubrique">
     <a href="#pilier-1">1 · Pluralité de l’Assemblée</a>
     <a href="#pilier-2">2 · Expression &amp; censure</a>
+    <a href="#dossier-alerte">3 · Alerte citoyenne (dossier)</a>
     <a href="#suite">Suite du dossier</a>
   </nav>
 
@@ -107,8 +108,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>Angle LMDPT : faits sourcés, pas de moralisation partisane</li>
           </ul>
           <p class="cta-row">
-            <a class="btn-primary-link" href="/analyses/alerte-citoyenne"
-              >Ouvrir l’alerte citoyenne →</a
+            <a class="btn-primary-link" href="#dossier-alerte"
+              >Lire l’alerte citoyenne ci-dessous →</a
             >
           </p>
         </article>
@@ -158,13 +159,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <LiberteExpressionBody breadcrumbParent="hub" />
+
   <!-- ========== Suite ========== -->
   <section class="card" id="suite" aria-labelledby="suite-title">
     <h2 id="suite-title">Suite du dossier</h2>
     <ul class="liberte-links">
       <li>
-        <a href="/analyses/alerte-citoyenne">Alerte citoyenne</a> — dossier liberté d’expression /
-        débat public
+        <a href="#dossier-alerte">Alerte citoyenne</a> — dossier liberté d’expression /
+        débat public (ci-dessous)
       </li>
       <li>
         <a href="/observatoire-censure/">Observatoire de la censure</a> — médias &amp; comptes depuis

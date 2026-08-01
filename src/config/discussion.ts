@@ -1,4 +1,5 @@
 export interface DiscussionConfig {
+  /** Embed Giscus (login GitHub) — OFF par défaut : compte LMDPT centralisé. */
   enabled: boolean;
   repo: string;
   repoId: string;
@@ -18,8 +19,15 @@ const repo = env('PUBLIC_GISCUS_REPO') || 'ELServicesToulon/LMDPT';
 const repoId = env('PUBLIC_GISCUS_REPO_ID') || 'R_kgDOTGlsIg';
 const categoryId = env('PUBLIC_GISCUS_CATEGORY_ID') || '50431033';
 
+/**
+ * Compte lecteur unique = `/connexion` + module Commentaires citoyens.
+ * Giscus (GitHub) n’est plus le canal d’identité sur `/debats` — opt-in explicite uniquement.
+ */
+const giscusEmbedOptIn =
+  env('PUBLIC_GISCUS_EMBED') === '1' || env('PUBLIC_GISCUS_EMBED') === 'true';
+
 export const discussionConfig: DiscussionConfig = {
-  enabled: Boolean(repoId && categoryId),
+  enabled: giscusEmbedOptIn && Boolean(repoId && categoryId),
   repo,
   repoId,
   categoryId,
@@ -30,7 +38,7 @@ export const discussionConfig: DiscussionConfig = {
   discussionsUrl: `https://github.com/${repo}/discussions`,
 };
 
-/** Fils GitHub Discussions créés juil. 2026 — mapping Giscus `specific`. */
+/** Fils GitHub Discussions créés juil. 2026 — mapping Giscus `specific` (legacy / opt-in). */
 const DISCUSSION_THREAD_URLS: Record<string, string> = {
   'assemblee-premier-tour': 'https://github.com/ELServicesToulon/LMDPT/discussions/1',
   'vote-utile-pluralite': 'https://github.com/ELServicesToulon/LMDPT/discussions/3',
@@ -45,7 +53,10 @@ export function getDiscussionUrl(discussionId: string): string {
 }
 
 /** Mapping Giscus : numéro de fil si connu (fiable), sinon terme `specific`. */
-export function getGiscusEmbed(discussionId: string): { mapping: DiscussionConfig['mapping']; term: string } {
+export function getGiscusEmbed(discussionId: string): {
+  mapping: DiscussionConfig['mapping'];
+  term: string;
+} {
   const threadUrl = DISCUSSION_THREAD_URLS[discussionId];
   const number = threadUrl?.match(/\/discussions\/(\d+)$/)?.[1];
   if (number) {

@@ -10,25 +10,37 @@ const { discussionId, question } = Astro.props;
 const showEmbed = discussionConfig.enabled && discussionId;
 const discussionUrl = discussionId ? getDiscussionUrl(discussionId) : discussionConfig.discussionsUrl;
 const giscus = discussionId ? getGiscusEmbed(discussionId) : null;
+const nextPath = Astro.url.pathname.replace(/\/+$/, '') || '/debats';
+const nextQ = encodeURIComponent(`${nextPath}#commentaires-citoyens`);
 ---
 
-<section class="discussion-section">
-  <h3>Poursuivre le débat</h3>
+<section class="discussion-section" aria-labelledby="discussion-title">
+  <h3 id="discussion-title">Poursuivre le débat</h3>
   <p>
-    Utilisez le module <strong>Commentaires citoyens</strong> en bas de page (reformulation IA,
-    teinte d’idées du 1er tour, validation, modération). Charte :{' '}
-    <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md" rel="noopener noreferrer">
-      éditorial LMDPT
-    </a>.
+    Identifiez-vous avec votre <strong>compte lecteur LMDPT</strong> (Google, X ou email) — un seul
+    compte pour commenter sur le site. Teinte politique liée au <em>message</em>, pas à votre
+    identité de compte.
+  </p>
+  <p class="discussion-cta">
+    <a class="btn" href={`/connexion?next=${nextQ}`}>Se connecter</a>
+    <a class="btn btn-secondary" href="#commentaires-citoyens">Commentaires citoyens ↓</a>
   </p>
   <p class="meta">
-    Option GitHub Discussions :
-    <a href={discussionUrl} rel="noopener noreferrer">ouvrir « {question} » →</a>
+    Charte :{' '}
+    <a href="/charte">participation</a>
+    {' '}·{' '}
+    <a href="/compte">Mon compte</a>
+    {' '}· archive technique GitHub (hors identité site) :{' '}
+    <a href={discussionUrl} rel="noopener noreferrer">« {question} » →</a>
   </p>
 
   {
     showEmbed ? (
       <div class="giscus-wrap">
+        <p class="meta">
+          Embed Giscus activé (opt-in <code>PUBLIC_GISCUS_EMBED=1</code>) — login GitHub distinct du
+          compte LMDPT.
+        </p>
         <script
           is:inline
           src="https://giscus.app/client.js"
@@ -62,15 +74,15 @@ const giscus = discussionId ? getGiscusEmbed(discussionId) : null;
   .discussion-section h3 {
     margin: 0 0 0.75rem;
   }
+  .discussion-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
   .giscus-wrap {
     margin-top: 1.25rem;
     min-height: 8rem;
-  }
-  .discussion-fallback {
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    border: 1px dashed var(--border);
-    border-radius: 6px;
   }
   .btn {
     display: inline-block;

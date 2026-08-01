@@ -12,7 +12,13 @@ const { threadId, title = 'Commentaires citoyens' } = Astro.props;
 const apiBase = '/api/comments';
 ---
 
-<section class="ccm" data-thread={threadId} data-api={apiBase} aria-labelledby={`ccm-title-${threadId}`}>
+<section
+  id="commentaires-citoyens"
+  class="ccm"
+  data-thread={threadId}
+  data-api={apiBase}
+  aria-labelledby={`ccm-title-${threadId}`}
+>
   <h3 id={`ccm-title-${threadId}`}>{title}</h3>
   <p class="ccm-disclaimer meta">
     Chaque message est reformulé par la <strong>modératrice IA</strong>, avec une

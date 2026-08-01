@@ -23,40 +23,40 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
   description="Traçabilité éditoriale — jeux de données data.gouv.fr utilisés pour le premier tour."
 >
   <section>
-    <h2>Sources en données ouvertes</h2>
+    <h2>D’où viennent les chiffres</h2>
     <p class="meta">
-      Dernière synchronisation : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
-      (fuseau Europe/Paris). Régénérer : <code>npm run sync:data</code>.
+      Mise à jour : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
+      (Europe/Paris).
     </p>
-    <p class="meta">
-      <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire : blocage immédiat. (sauf direct YouTube)
+    <p class="lead-punch">
+      On expose des idées, pas des idéologies. Preuve d’abord. Pas de favori.
     </p>
   </section>
 
   <section class="card" id="mises-a-jour">
-    <h3>Journal des jeux intégrés au site</h3>
+    <h3>Ce qu’on a branché sur le site</h3>
     <p class="meta">
-      {dataJournal.length} entrée{dataJournal.length > 1 ? 's' : ''} versionnée{dataJournal.length > 1 ? 's' : ''}
+      {dataJournal.length} mise{dataJournal.length > 1 ? 's' : ''} à jour
       {journalLastLabel && (
         <>
-          {' '}· dernière intégration : <time datetime={journalLastUpdate}>{journalLastLabel}</time>
+          {' '}· dernière : <time datetime={journalLastUpdate}>{journalLastLabel}</time>
         </>
       )}
-      . Fichier source : <code>src/data/data-journal.json</code>.
+      .
     </p>
-    <div class="journal-table-wrap" role="region" aria-label="Journal des jeux de données" tabindex="0">
+    <div class="journal-table-wrap" role="region" aria-label="Journal des mises à jour" tabindex="0">
       <table class="journal-table">
         <caption class="table-caption">
-          Journal des jeux de données ouvertes intégrés au site (date, pages, source, licence, commande de sync).
+          Date, titre, pages, source, licence — et la commande technique si besoin.
         </caption>
         <thead>
           <tr>
             <th scope="col">Date</th>
-            <th scope="col">Jeu intégré</th>
-            <th scope="col">Page(s)</th>
+            <th scope="col">Quoi</th>
+            <th scope="col">Où</th>
             <th scope="col">Source</th>
             <th scope="col">Licence</th>
-            <th scope="col">Commande</th>
+            <th scope="col">Sync</th>
           </tr>
         </thead>
         <tbody>
@@ -393,5 +393,12 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
   .note {
     margin: 0.35rem 0 0;
     font-size: 0.8rem;
+  }
+  .lead-punch {
+    max-width: 40rem;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    font-weight: 650;
+    margin: 0.75rem 0 0;
   }
 </style>

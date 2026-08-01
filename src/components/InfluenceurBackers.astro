@@ -21,8 +21,9 @@ const { backers, influencerNames = {} } = Astro.props;
   backers.length === 0 ? (
     <p class="meta backers-empty">
       Aucun financeur de la sphère influence n’est documenté à ce jour (règle anti-invention :
-      pas de flux sans URL). Les dépendances économiques apparaîtront ici dès qu’une source
-      primaire ou secondaire datée sera recoupée.
+      pas de flux sans URL). Contributions factuelles via
+      <a href="/contribuer">/contribuer</a> ou une issue GitHub — dès qu’une source primaire
+      ou secondaire datée est recoupée, la fiche apparaîtra ici.
     </p>
   ) : (
     <ul class="backers-list">
