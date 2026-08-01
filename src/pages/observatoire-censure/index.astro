@@ -110,7 +110,7 @@ function resolveObsHue(entry: {
       {' · '}
       <a href="/assemblee-influenceurs">Assemblée des influenceurs</a>
       {' · '}
-      <a href="/analyses/alerte-citoyenne">Alerte citoyenne</a>
+      <a href="/liberte-d-expression#dossier-alerte">Alerte citoyenne</a>
       {' · '}
       <a href="/analyses/assemblee-premier-tour">Pluralité AN1T</a>
     </p>
@@ -154,10 +154,23 @@ function resolveObsHue(entry: {
                       <strong>Motif officiel.</strong> {m.motif_officiel || '—'}
                     </p>
                     {
-                      m.motif_officieux && (
+                      m.motif_officieux && (m.sources?.length ?? 0) > 0 && (
                         <p class="obs-unofficial">
                           <strong>Motif officieux</strong> (lecture secondaire). {m.motif_officieux}
                         </p>
+                      )
+                    }
+                    {
+                      (m.sources?.length ?? 0) > 0 && (
+                        <ul class="obs-sources meta">
+                          {m.sources.map((s) => (
+                            <li>
+                              <a href={s.url} rel="noopener noreferrer">
+                                {s.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
                       )
                     }
                   </div>
@@ -204,12 +217,28 @@ function resolveObsHue(entry: {
               <strong>Motif officiel / plateforme.</strong> {inf.motif_officiel || '—'}
             </p>
             {
-              inf.motif_officieux && (
+              inf.motif_officieux && (inf.sources?.length ?? 0) > 0 && (
                 <p class="obs-unofficial">
                   <strong>Lecture secondaire.</strong> {inf.motif_officieux}
                 </p>
               )
             }
+            {
+              (inf.sources?.length ?? 0) > 0 && (
+                <ul class="obs-sources meta">
+                  {inf.sources.map((s) => (
+                    <li>
+                      <a href={s.url} rel="noopener noreferrer">
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+            <p class="meta">
+              {inf.verification === 'documented' ? 'Documenté' : 'Partiel — à recouper'}
+            </p>
           </article>
           );
         })
@@ -226,8 +255,8 @@ function resolveObsHue(entry: {
         <em>vérification partielle</em>.
       </li>
       <li>
-        Motif <strong>officieux</strong> toujours étiqueté lecture secondaire — jamais comme
-        fait LMDPT.
+        Motif <strong>officieux</strong> uniquement si sources https présentes — jamais comme
+        fait LMDPT. Droit de réponse : <a href="/contribuer">/contribuer</a>.
       </li>
       <li>
         Teintes politiques : familles pédagogiques du 1er tour — mêmes couleurs que
