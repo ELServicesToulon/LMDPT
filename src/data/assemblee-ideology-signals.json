@@ -1,0 +1,74 @@
+{
+  "schema": "lmdpt-assemblee-ideology-signals-v1",
+  "updated": "2026-07-30",
+  "title": "Liens organisationnels / idéologie totalisante — Assemblée des influenceurs",
+  "methodology": "Fail-closed : uniquement des liens publics documentés (organisation nommée, sanction État/UE, financement idéologique sourcé, réseau média d’appareil). Sert au placement pédagogique des rangs et à la couleur noire des sièges documentés — pas un score moral ni une liste confessionnelle. Corpus non exhaustif — suggestions via /contribuer.",
+  "disclaimer": "Fiction pédagogique LMDPT — pas une accusation d’« islam radical » générique, pas une carte d’adhésion. Synthèse documentaire à recouper sur sources primaires. Absence de fiche ≠ absence de lien ; présence = signal documenté uniquement. Sièges documentés peints en noir (#111111).",
+  "seat_color": "#111111",
+  "seat_color_label": "Idéologie totalisante (documenté)",
+  "weight_kinds": {
+    "organisation_documentee": 3,
+    "sanction_etat_ue": 3,
+    "financement_ideologique": 2,
+    "reseau_media_ideologique": 2,
+    "autre": 1
+  },
+  "by_id": {
+    "rt-en-fran-ais-comptes-sociaux-rtenfrancais": {
+      "links": [
+        {
+          "id": "rt-media-appareil-ru",
+          "kind": "reseau_media_ideologique",
+          "entity": "Russie / RT",
+          "label": "RT — média d’appareil d’État russe (comptes sociaux FR) ; diffusion gelée dans l’UE",
+          "sources": [
+            {
+              "label": "EUR-Lex — Règlement (UE) 2022/350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        },
+        {
+          "id": "rt-sanction-ue-ideology",
+          "kind": "sanction_etat_ue",
+          "entity": "Union européenne",
+          "label": "Mesures restrictives UE — suspension de diffusion / distribution dans l’Union",
+          "sources": [
+            {
+              "label": "EUR-Lex — CELEX 32022R0350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        }
+      ]
+    },
+    "sputnik-comptes-sociaux-fr-sputnik-fr": {
+      "links": [
+        {
+          "id": "sputnik-media-appareil-ru",
+          "kind": "reseau_media_ideologique",
+          "entity": "Russie / Sputnik",
+          "label": "Sputnik — média d’appareil d’État russe (comptes sociaux FR)",
+          "sources": [
+            {
+              "label": "EUR-Lex — Règlement (UE) 2022/350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        },
+        {
+          "id": "sputnik-sanction-ue-ideology",
+          "kind": "sanction_etat_ue",
+          "entity": "Union européenne",
+          "label": "Même cadre UE que RT — interdiction de diffusion / distribution dans l’Union",
+          "sources": [
+            {
+              "label": "EUR-Lex — CELEX 32022R0350",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R0350"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

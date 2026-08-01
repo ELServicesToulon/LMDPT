@@ -1,0 +1,280 @@
+{
+  "schema": "lmdpt-sondage-alerts-ge10-v1",
+  "as_of": "2026-07-29T16:15:22.620Z",
+  "threshold": 10,
+  "count": 34,
+  "alerts": [
+    {
+      "slug": "bardella",
+      "pct": 38,
+      "wave_id": "manual-elabe-20260325-knafo-bardella",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 37,
+      "wave_id": "manual-verian-20260710",
+      "firm": "Verian",
+      "metric": "intentions_vote",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 36,
+      "wave_id": "manual-ifop-20260708-h1",
+      "firm": "Ifop",
+      "metric": "intentions_vote",
+      "source_url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 35,
+      "wave_id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 35,
+      "wave_id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "metric": "intentions_vote",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 35,
+      "wave_id": "manual-opinionway-20260709",
+      "firm": "OpinionWay",
+      "metric": "intentions_vote",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 34.5,
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "slug": "bardella",
+      "pct": 34,
+      "wave_id": "manual-odoxa-20260325-knafo",
+      "firm": "Odoxa",
+      "metric": "intentions_vote",
+      "source_url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 34,
+      "wave_id": "manual-elabe-20260325-knafo-lepen",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027"
+    },
+    {
+      "slug": "le-pen",
+      "pct": 34,
+      "wave_id": "manual-elabe-2026-knafo-peak",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027"
+    },
+    {
+      "slug": "gregoire",
+      "pct": 33,
+      "wave_id": "manual-cluster17-paris-mun-20260202",
+      "firm": "Cluster17",
+      "metric": "intentions_vote_municipales",
+      "source_url": "https://www.lefigaro.fr/politique/municipales-a-paris-pour-la-premiere-fois-un-sondage-donne-sarah-knafo-en-mesure-de-se-qualifier-au-second-tour-20260202"
+    },
+    {
+      "slug": "dati",
+      "pct": 26,
+      "wave_id": "manual-cluster17-paris-mun-20260202",
+      "firm": "Cluster17",
+      "metric": "intentions_vote_municipales",
+      "source_url": "https://www.lefigaro.fr/politique/municipales-a-paris-pour-la-premiere-fois-un-sondage-donne-sarah-knafo-en-mesure-de-se-qualifier-au-second-tour-20260202"
+    },
+    {
+      "slug": "aucun",
+      "pct": 25,
+      "wave_id": "manual-csa-jdd-prox-202607",
+      "firm": "CSA",
+      "metric": "proximite_partisane",
+      "source_url": "https://x.com/S_Bonenfant/status/2081790139576053835"
+    },
+    {
+      "slug": "rn-udr",
+      "pct": 22.5,
+      "wave_id": "manual-csa-jdd-prox-202607",
+      "firm": "CSA",
+      "metric": "proximite_partisane",
+      "source_url": "https://x.com/S_Bonenfant/status/2081790139576053835"
+    },
+    {
+      "slug": "philippe",
+      "pct": 19,
+      "wave_id": "manual-ifop-20260708-h1",
+      "firm": "Ifop",
+      "metric": "intentions_vote",
+      "source_url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen"
+    },
+    {
+      "slug": "philippe",
+      "pct": 18,
+      "wave_id": "manual-opinionway-20260709",
+      "firm": "OpinionWay",
+      "metric": "intentions_vote",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680"
+    },
+    {
+      "slug": "philippe",
+      "pct": 18,
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "slug": "philippe",
+      "pct": 17,
+      "wave_id": "manual-verian-20260710",
+      "firm": "Verian",
+      "metric": "intentions_vote",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/"
+    },
+    {
+      "slug": "philippe",
+      "pct": 16.5,
+      "wave_id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 16,
+      "wave_id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 16,
+      "wave_id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "metric": "intentions_vote",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723"
+    },
+    {
+      "slug": "attal",
+      "pct": 15.5,
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 15,
+      "wave_id": "manual-ifop-20260708-h1",
+      "firm": "Ifop",
+      "metric": "intentions_vote",
+      "source_url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 15,
+      "wave_id": "manual-verian-20260710",
+      "firm": "Verian",
+      "metric": "intentions_vote",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 15,
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "slug": "bournazel",
+      "pct": 14,
+      "wave_id": "manual-cluster17-paris-mun-20260202",
+      "firm": "Cluster17",
+      "metric": "intentions_vote_municipales",
+      "source_url": "https://www.lefigaro.fr/politique/municipales-a-paris-pour-la-premiere-fois-un-sondage-donne-sarah-knafo-en-mesure-de-se-qualifier-au-second-tour-20260202"
+    },
+    {
+      "slug": "philippe",
+      "pct": 14,
+      "wave_id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "metric": "intentions_vote",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723"
+    },
+    {
+      "slug": "melenchon",
+      "pct": 13,
+      "wave_id": "manual-opinionway-20260709",
+      "firm": "OpinionWay",
+      "metric": "intentions_vote",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680"
+    },
+    {
+      "slug": "chikirou",
+      "pct": 12,
+      "wave_id": "manual-cluster17-paris-mun-20260202",
+      "firm": "Cluster17",
+      "metric": "intentions_vote_municipales",
+      "source_url": "https://www.lefigaro.fr/politique/municipales-a-paris-pour-la-premiere-fois-un-sondage-donne-sarah-knafo-en-mesure-de-se-qualifier-au-second-tour-20260202"
+    },
+    {
+      "slug": "glucksmann",
+      "pct": 11,
+      "wave_id": "manual-verian-20260710",
+      "firm": "Verian",
+      "metric": "intentions_vote",
+      "source_url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/"
+    },
+    {
+      "slug": "glucksmann",
+      "pct": 11,
+      "wave_id": "epoc-elabe-12072026",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "slug": "glucksmann",
+      "pct": 10.5,
+      "wave_id": "manual-elabe-20260712-h1",
+      "firm": "Elabe",
+      "metric": "intentions_vote",
+      "source_url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse"
+    },
+    {
+      "slug": "glucksmann",
+      "pct": 10,
+      "wave_id": "manual-harris-20260708",
+      "firm": "Harris Interactive",
+      "metric": "intentions_vote",
+      "source_url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723"
+    },
+    {
+      "slug": "knafo",
+      "pct": 10,
+      "wave_id": "manual-cluster17-paris-mun-20260202",
+      "firm": "Cluster17",
+      "metric": "intentions_vote_municipales",
+      "source_url": "https://www.lefigaro.fr/politique/municipales-a-paris-pour-la-premiere-fois-un-sondage-donne-sarah-knafo-en-mesure-de-se-qualifier-au-second-tour-20260202"
+    }
+  ]
+}

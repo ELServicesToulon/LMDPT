@@ -1,9 +1,9 @@
 {
-  "fetched_at": "2026-07-26T16:18:08.345Z",
-  "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.",
+  "fetched_at": "2026-08-01T04:48:55.602Z",
+  "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
-  "sources_ok": 11,
-  "sources_error": 1,
+  "sources_ok": 10,
+  "sources_error": 2,
   "waves": [
     {
       "id": "manual-cluster17-lepoint-20260710",
@@ -315,6 +315,18 @@
       "metric": "intentions_vote"
     },
     {
+      "id": "commission-harris-31juillet",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "31 juillet",
+      "published_hint": "31 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre TOLUNA HARRIS INTERACTIVE LCI (31 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
       "id": "commission-verian-23juillet",
       "firm": "Verian (ex-Kantar Public)",
       "firm_id": "verian",
@@ -433,18 +445,6 @@
       "scores": {},
       "raw_snippet": "En 2017, le hold-up d’Emmanuel Macron et de ses fidèles « prêts à le suivre jusqu’en enfer »",
       "metric": "intentions_vote"
-    },
-    {
-      "id": "rss-le-figaro-j9zbxz",
-      "firm": "Media",
-      "firm_id": null,
-      "fieldwork": null,
-      "published_hint": null,
-      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-melenchon-le-pen-derniere-bataille-apres-un-quart-de-siecle-d-affrontement-20260719",
-      "source_id": "le-figaro",
-      "scores": {},
-      "raw_snippet": "Présidentielle 2027 : Mélenchon-Le Pen, dernière bataille après un quart de siècle d’affrontement",
-      "metric": "intentions_vote"
     }
   ],
   "head_by_wave": [
@@ -485,11 +485,24 @@
       "pct": 34.5
     }
   ],
-  "movements": [],
+  "movements": [
+    {
+      "at": "2026-08-01T04:48:55.602Z",
+      "kind": "new_wave",
+      "firm": "Harris Interactive / Toluna Harris",
+      "comment": "Harris Interactive / Toluna Harris signalé (31 juillet) — scores non extraits automatiquement ; vérifier la source.",
+      "wave_id": "commission-harris-31juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/"
+    }
+  ],
   "brief": [
-    "Scan 2026-07-26T16:18 — aucun mouvement détecté (31 vague(s) en mémoire, 11 source(s) OK)."
+    "Harris Interactive / Toluna Harris signalé (31 juillet) — scores non extraits automatiquement ; vérifier la source."
   ],
   "errors": [
+    {
+      "source_id": "2027presidentielle",
+      "error": "HTTP 404"
+    },
     {
       "source_id": "politico-pop",
       "error": "HTTP 403"

@@ -1,11 +1,155 @@
 {
-  "fetched_at": "2026-07-26T13:28:33.464Z",
+  "fetched_at": "2026-08-01T05:41:23.004Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "Afflux de migrants à Ceuta : la droite et l’extrême droite françaises mettent en cause le gouvernement de Pedro Sanchez, la gauche dénonce « des mensonges »",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/31/afflux-de-migrants-a-ceuta-la-droite-et-l-extreme-droite-francaises-mettent-en-cause-le-gouvernement-de-pedro-sanchez-la-gauche-denonce-des-mensonges_6737156_823448.html",
+      "published": "2026-07-31",
+      "summary": "L’exécutif a annoncé avoir « renforcé » les contrôles à la frontière avec l’Espagne vendredi, après l’afflux de dizaines de milliers de personnes du Maroc vers l’enclave européenne depuis la veille.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "barrot",
+        "label": "Barrot / centre",
+        "color": "#ff9900",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : europe"
+      }
+    },
+    {
+      "title": "Un responsable de la FNSEA présente ses excuses à Marine Tondelier, après l’avoir insultée",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/31/un-responsable-de-la-fnsea-presente-ses-excuses-a-marine-tondelier-apres-l-avoir-insultee_6737126_823449.html",
+      "published": "2026-07-31",
+      "summary": "Ce responsable agricole de l’Oise l’avait traitée de « grosse salope » sur sa page privée après l’adoption de la loi d’urgence agricole. La candidate écologiste avait exigé des excuses, menaçant le responsable syndical de « poursuites judiciaires ».",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : tondelier"
+      }
+    },
+    {
+      "title": "Les régions vent debout contre les coupes budgétaires dans l’apprentissage et la formation",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/31/les-regions-vent-debout-contre-les-coupes-budgetaires-dans-l-apprentissage-et-la-formation_6737113_823448.html",
+      "published": "2026-07-31",
+      "summary": "Dans le cadre de la préparation du budget 2027, le gouvernement entend supprimer les financements accordés aux centres de formation des apprentis (CFA) et mettre un terme aux pactes d’investissement de compétences destinés à former des demandeurs d’emploi et des personnes peu qua",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "« Les moyens des pompiers sont à bout de souffle » : pour augmenter le financement de la sécurité civile, les collectivités locales appellent à trouver de nouvelles ressources",
+      "url": "https://www.lemonde.fr/politique/article/2026/07/31/les-moyens-des-pompiers-sont-a-bout-de-souffle-le-financement-de-la-securite-civile-en-question_6737107_823448.html",
+      "published": "2026-07-31",
+      "summary": "Face aux besoins croissants des sapeurs-pompiers, et alors que les départements, premiers financeurs de ces derniers, sont en mauvaise posture financière, l’association d’élus Départements de France prévient : « Nous avons atteint un point de rupture. »",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
+      }
+    },
+    {
+      "title": "Le tribunal de Paris rejette la demande de Gabriel Attal visant à interdire au RN d’utiliser le terme « renaissance » pendant la campagne présidentielle",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/30/le-tribunal-de-paris-rejette-la-demande-de-gabriel-attal-visant-a-interdire-au-rn-d-utiliser-le-mot-renaissance_6737022_6205049.html",
+      "published": "2026-07-30",
+      "summary": "Les juges ont statué après la saisine du parti Renaissance, qui contestait la validité d’une affiche de Marine Le Pen dévoilée début juillet et proclamant « Pour la France, la renaissance ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Attal / Renaissance · Le Pen / RN) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "\"Pas d'atteinte à la liberté d'expression\" : Nuñez répond à la polémique Xenia Fedorova",
+      "url": "https://www.france24.com/fr/france/20260730-censure-ou-bonne-d%C3%A9cision-arr%C3%AAt%C3%A9-expulsion-visant-xenia-fedorova-division-extr%C3%AAme-droite-propagande-russie",
+      "published": "2026-07-30",
+      "summary": "L'arrêté d'expulsion visant la chroniqueuse prorusse Xenia Fedorova, accusée d'être la voix du Kremlin dans des médias français, n'est \"pas une atteinte à la liberté d'expression\", a affirmé jeudi le ministre de l'Intérieur français Laurent Nuñez. Une partie du Rassemblement nati",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "L’Inde adopte une loi contre les fraudes aux examens, dénoncées par les étudiants",
+      "url": "https://www.lemonde.fr/international/article/2026/07/30/l-inde-adopte-une-loi-contre-les-fraudes-aux-examens-denoncees-par-les-etudiants_6737067_3210.html",
+      "published": "2026-07-30",
+      "summary": "La colère étudiante est née de fraudes massives lors d’un concours national d’entrée en médecine organisé en mai, auquel plus de 2 millions de candidats s’étaient présentés.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "« La sécurité civile doit être une grande priorité nationale » : l’appel de 150 élus",
+      "url": "https://www.lemonde.fr/idees/article/2026/07/30/la-securite-civile-doit-etre-une-grande-priorite-nationale-l-appel-de-150-elus_6737058_3232.html",
+      "published": "2026-07-30",
+      "summary": "Emmené par le maire Les Républicains de Mions (Rhône), Mickaël Paccaud, un collectif de plus de 150 élus et membres de services départementaux d’incendie et de secours estime dans une tribune au « Monde » que le Beauvau de la sécurité civile qui s’est achevé en septembre 2025 doi",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les républicains, les republicains, républicains"
+      }
+    },
+    {
+      "title": "Thomas Chevallier, sociologue : « Les associations sont poussées à faire le plus possible avec le moins de moyens possible »",
+      "url": "https://www.lemonde.fr/societe/article/2026/07/30/thomas-chevallier-sociologue-les-associations-sont-poussees-a-faire-le-plus-possible-avec-le-moins-de-moyens-possible_6737012_3224.html",
+      "published": "2026-07-30",
+      "summary": "Le chercheur de l’université catholique de Louvain, en Belgique, analyse, dans un entretien au « Monde », la fragilisation des financements des associations et ses effets en France.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
     {
       "title": "Présidentielle 2027 : les « insoumis » et leurs caravanes populaires à la conquête des abstentionnistes",
       "url": "https://www.lemonde.fr/politique/article/2026/07/26/presidentielle-2027-les-insoumis-et-leurs-caravanes-populaires-a-la-conquete-des-abstentionnistes_6732763_823448.html",
@@ -87,22 +231,6 @@
       }
     },
     {
-      "title": "Loi d’urgence agricole : le Conseil constitutionnel saisi par des députés « insoumis » et écologistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/loi-d-urgence-agricole-le-conseil-constitutionnel-saisi-par-des-deputes-insoumis-et-ecologistes_6731496_823448.html",
-      "published": "2026-07-24",
-      "summary": "Les députés requérants arguent notamment que la réintroduction sous conditions de certains pesticides interdits n’a pas de lien avec le projet de loi initial, et devrait donc être censurée comme cavalier législatif.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : insoumis"
-      }
-    },
-    {
       "title": "Présidentielle 2027 : comment Matignon négocie avec les banques françaises pour qu’elles acceptent de financer la campagne de Marine Le Pen",
       "url": "https://www.lemonde.fr/politique/article/2026/07/23/presidentielle-2027-comment-matignon-negocie-avec-les-banques-francaises-pour-qu-elles-acceptent-de-financer-la-campagne-de-marine-le-pen_6730921_823448.html",
       "published": "2026-07-23",
@@ -116,54 +244,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : le pen, marine le pen"
-      }
-    },
-    {
-      "title": "La Chine n’a pas lancé un programme de charité pour offrir des climatiseurs aux Français",
-      "url": "https://www.france24.com/fr/france/20260723-la-chine-n-a-pas-lanc%C3%A9-un-programme-de-charit%C3%A9-pour-offrir-des-climatiseurs-aux-fran%C3%A7ais",
-      "published": "2026-07-23",
-      "summary": "Des internautes affirment que la Chine se moquerait du manque de climatisation en France. Ils partagent une vidéo humoristique en chinois annonçant la création d'une association destinée à offrir des climatiseurs recyclés aux Français. En réalité, il s'agit d'une vidéo parodique ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : climat"
-      }
-    },
-    {
-      "title": "Réforme de la justice : le Conseil constitutionnel censure le recours à la généalogie génétique de la loi portée par Gérald Darmanin",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/23/reforme-de-la-justice-le-conseil-constitutionnel-censure-le-recours-a-la-genealogie-genetique-de-la-loi-portee-par-gerald-darmanin_6731175_3224.html",
-      "published": "2026-07-23",
-      "summary": "Les sages ont jugé le dispositif contraire à la Constitution faute de garanties suffisantes pour concilier recherche des auteurs d’infractions et respect de la vie privée, tout en validant les principales mesures contestées de la loi portée par Gérald Darmanin.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : réforme, reforme"
-      }
-    },
-    {
-      "title": "Interdiction des réseaux sociaux aux moins de 15 ans : LFI dépose un recours devant le Conseil constitutionnel",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/23/interdiction-des-reseaux-sociaux-aux-moins-de-15-ans-lfi-depose-un-recours-devant-le-conseil-constitutionnel_6731174_823448.html",
-      "published": "2026-07-23",
-      "summary": "Les députés « insoumis » à l’origine de ce recours considèrent que l’interdiction et le contrôle de l’âge constituent une atteinte à la liberté d’expression et de communication, mais aussi au droit au respect de la vie privée.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : insoumis, lfi"
       }
     },
     {
@@ -340,38 +420,6 @@
         "color": "#00c000",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : les écologistes, les ecologistes, tondelier"
-      }
-    },
-    {
-      "title": "« Chacun joue le coup d’après » : ce que dit la multiplication des candidatures pour la présidentielle 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/13/chacun-joue-le-coup-d-apres-ce-que-dit-la-multiplication-des-candidatures-pour-la-presidentielle-2027_6723092_823448.html",
-      "published": "2026-07-13",
-      "summary": "Avec une trentaine de candidats sur la ligne de départ, la campagne pour l’élection suprême démarre en rangs dispersés, pointant la faiblesse de certains camps, notamment à gauche.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Marine Tondelier dévoile le programme des Ecologistes",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/13/presidentielle-2027-marine-tondelier-devoile-le-programme-des-ecologistes_6723085_6205049.html",
-      "published": "2026-07-13",
-      "summary": "Porté par dix mois de consultations et 50 000 propositions, le programme promet la proposition de créer une « Première République écologique et citoyenne », une transformation profonde des institutions et de la fiscalité pour 2027.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
       }
     }
   ]

@@ -42,6 +42,15 @@ describe('pageMeta', () => {
     });
     expect(meta.robots).toContain('noindex');
   });
+
+  it('canonicalPath override points alerte rétrocompat to hub', () => {
+    const meta = pageMeta({
+      title: 'Alerte citoyenne — débat public',
+      siteUrl: 'https://lmdpt.iarbre.org',
+      pathname: '/liberte-d-expression/',
+    });
+    expect(meta.canonical).toBe('https://lmdpt.iarbre.org/liberte-d-expression/');
+  });
 });
 
 describe('JSON-LD', () => {
@@ -63,11 +72,11 @@ describe('JSON-LD', () => {
       siteUrl: 'https://lmdpt.iarbre.org',
       title: 'Alerte citoyenne',
       description: DEFAULT_DESCRIPTION,
-      canonical: 'https://lmdpt.iarbre.org/analyses/alerte-citoyenne/',
+      canonical: 'https://lmdpt.iarbre.org/liberte-d-expression/',
       ogImage: 'https://lmdpt.iarbre.org/brand/og-default.png',
       type: 'article',
     });
     expect(page['@type']).toBe('Article');
-    expect(page.url).toContain('alerte-citoyenne');
+    expect(page.url).toContain('liberte-d-expression');
   });
 });
