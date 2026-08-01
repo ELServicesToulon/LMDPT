@@ -1,0 +1,75 @@
+{
+  "schema": "lmdpt-livres-candidats-v1",
+  "title": "Livres des candidats — présidentielle 2027",
+  "updated": "2026-07-28",
+  "disclaimer": "Bibliographie documentaire des ouvrages publiés ou annoncés par des personnalités suivies pour 2027. Pas de classement, pas d’endorsement, pas de conseil d’achat. Liens éditeur en source primaire ; miroirs libraires sans tag d’affiliation.",
+  "legal_note": "Faits publics (éditeur, ISBN, date de parution). LMDPT ne monétise pas ces liens (pas d’Amazon Associates). Synthèse à recouper.",
+  "sources": [
+    {
+      "label": "Fayard — Le Casse du siècle (Sarah Knafo)",
+      "url": "https://www.fayard.fr/livre/le-casse-du-siecle-9782213733135/",
+      "as_of": "2026-07-28"
+    },
+    {
+      "label": "Fayard — 2027 La liberté ou la mort (Jordan Bardella)",
+      "url": "https://www.fayard.fr/livre/2027-la-liberte-ou-la-mort-9782213731704/",
+      "as_of": "2026-07-28"
+    },
+    {
+      "label": "Amazon FR — fiche Kindle (miroir, ASIN)",
+      "url": "https://www.amazon.fr/dp/B0H8KTYM81",
+      "as_of": "2026-07-28"
+    }
+  ],
+  "entries": [
+    {
+      "id": "knafo-casse-du-siecle-2026",
+      "candidate_slug": "knafo",
+      "candidate_name": "Sarah Knafo",
+      "affiliation": "Reconquête",
+      "title": "Le Casse du siècle",
+      "authors": ["Sarah Knafo"],
+      "publisher": "Fayard",
+      "isbn13": "9782213733135",
+      "asin_kindle": "B0H8KTYM81",
+      "published_on": "2026-09-02",
+      "pages": 384,
+      "price_eur": 19.9,
+      "format_notes": "Papier annoncé + Kindle (précommande / à paraître)",
+      "status": "a_paraitre",
+      "primary_url": "https://www.fayard.fr/livre/le-casse-du-siecle-9782213733135/",
+      "mirrors": [
+        {
+          "label": "Amazon FR (Kindle)",
+          "url": "https://www.amazon.fr/dp/B0H8KTYM81"
+        },
+        {
+          "label": "Short Amazon (entrée signal)",
+          "url": "https://amzn.eu/d/07Y70QXF"
+        }
+      ],
+      "blurb_public": "Ils vous ont tout volé. Ils ont tout détruit. Et ils tiennent tout le système. Ils ont réussi le casse du siècle.",
+      "note": "Signal utilisateur amzn.eu/d/07Y70QXF (2026-07-28). Canon = fiche Fayard ISBN 9782213733135."
+    },
+    {
+      "id": "bardella-2027-liberte-ou-mort",
+      "candidate_slug": "bardella",
+      "candidate_name": "Jordan Bardella",
+      "affiliation": "Rassemblement national",
+      "title": "2027 La liberté ou la mort",
+      "authors": ["Jordan Bardella"],
+      "publisher": "Fayard",
+      "isbn13": "9782213731704",
+      "asin_kindle": null,
+      "published_on": "2026-04-22",
+      "pages": 288,
+      "price_eur": 21.9,
+      "format_notes": "Papier (Fayard)",
+      "status": "paru",
+      "primary_url": "https://www.fayard.fr/livre/2027-la-liberte-ou-la-mort-9782213731704/",
+      "mirrors": [],
+      "blurb_public": null,
+      "note": "Cité publiquement par l’auteur (projet de relocalisation). Canon = fiche Fayard."
+    }
+  ]
+}

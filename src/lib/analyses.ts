@@ -64,7 +64,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     description:
       'Tour d’horizon documenté (France / UE) des textes et projets cités comme encadrant la liberté d’expression avant le premier tour 2027.',
     date: '2026-07-16',
-    href: '/analyses/alerte-citoyenne',
+    href: '/liberte-d-expression#dossier-alerte',
   },
   {
     slug: 'temps-parole-equite',

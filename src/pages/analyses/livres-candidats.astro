@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import raw from '../../data/elections/2027-livres-candidats.json';
+import {
+  STATUS_LABELS,
+  sortLivresByDateDesc,
+  type LivresCandidatsFile,
+} from '../../lib/livres-candidats';
+
+const data = raw as LivresCandidatsFile;
+const entries = sortLivresByDateDesc(data.entries);
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+function formatPrice(n: number | null | undefined): string | null {
+  if (n == null || Number.isNaN(n)) return null;
+  return n.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+}
+
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+}
+---
+
+<BaseLayout
+  title="Livres des candidats — présidentielle 2027"
+  description="Bibliographie documentaire des ouvrages publiés ou annoncés par des personnalités suivies pour 2027 — sources éditeur, pas de classement ni d’affiliation."
+  type="article"
+  keywords="livres candidats, présidentielle 2027, bibliographie, Fayard, LMDPT, Sarah Knafo, Jordan Bardella"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a> → Livres des candidats
+  </nav>
+
+  <section class="page-intro">
+    <p class="eyebrow">Bibliographie · 1er tour 2027</p>
+    <h2>{data.title}</h2>
+    <p>
+      Ouvrages <strong>publiés ou annoncés</strong> par des personnalités suivies pour 2027.
+      Source primaire = <strong>éditeur / ISBN</strong> ; miroirs libraires sans tag d’affiliation.
+      Pas de classement, pas d’endorsement — ligne <em>La démocratie avant l’élimination</em>.
+    </p>
+    <p class="meta">
+      {entries.length} ouvrage(s) · Mise à jour <time datetime={data.updated}>{updated}</time>
+      {' · '}
+      machine <code>2027-livres-candidats.json</code>
+    </p>
+    <p class="news-disclaimer">{data.disclaimer}</p>
+    {data.legal_note && <p class="meta">{data.legal_note}</p>}
+  </section>
+
+  <section class="books-list" aria-label="Ouvrages recensés">
+    {
+      entries.map((book) => (
+        <article class="card book-card" id={book.id}>
+          <header class="book-head">
+            <p class="meta book-status">
+              <span class={`status-pill status-${book.status}`}>
+                {STATUS_LABELS[book.status] ?? book.status}
+              </span>
+              {book.affiliation && <> · {book.affiliation}</>}
+            </p>
+            <h3>
+              <a href={book.primary_url} rel="noopener noreferrer">
+                {book.title}
+              </a>
+            </h3>
+            <p class="book-by">
+              {book.authors.join(', ')}
+              {book.candidate_name && book.authors[0] !== book.candidate_name && (
+                <> · fiche candidat&nbsp;: {book.candidate_name}</>
+              )}
+            </p>
+          </header>
+
+          <dl class="book-meta">
+            <div>
+              <dt>Éditeur</dt>
+              <dd>{book.publisher}</dd>
+            </div>
+            <div>
+              <dt>Parution</dt>
+              <dd>
+                <time datetime={book.published_on}>{formatDate(book.published_on)}</time>
+              </dd>
+            </div>
+            <div>
+              <dt>ISBN-13</dt>
+              <dd>
+                <code>{book.isbn13}</code>
+              </dd>
+            </div>
+            {book.pages != null && (
+              <div>
+                <dt>Pages</dt>
+                <dd>{book.pages}</dd>
+              </div>
+            )}
+            {formatPrice(book.price_eur) && (
+              <div>
+                <dt>Prix indicatif</dt>
+                <dd>{formatPrice(book.price_eur)} (éditeur)</dd>
+              </div>
+            )}
+            {book.asin_kindle && (
+              <div>
+                <dt>ASIN Kindle</dt>
+                <dd>
+                  <code>{book.asin_kindle}</code>
+                </dd>
+              </div>
+            )}
+          </dl>
+
+          {book.blurb_public && <blockquote class="book-blurb">{book.blurb_public}</blockquote>}
+          {book.format_notes && <p class="meta">{book.format_notes}</p>}
+          {book.note && <p class="meta">{book.note}</p>}
+
+          <p class="book-links">
+            <a class="btn-primary-link" href={book.primary_url} rel="noopener noreferrer">
+              Fiche éditeur →
+            </a>
+            {(book.mirrors ?? []).map((m) => (
+              <>
+                {' · '}
+                <a href={m.url} rel="noopener noreferrer">
+                  {m.label}
+                </a>
+              </>
+            ))}
+          </p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="card">
+    <h3>Sources</h3>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+            {s.as_of && <span class="meta"> · {s.as_of}</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h3>Méthode</h3>
+    <ul>
+      <li>Entrée minimale : candidat, titre, éditeur, ISBN-13, URL éditeur, date de parution.</li>
+      <li>Amazon / Fnac = miroirs optionnels, <strong>sans</strong> paramètre <code>tag=</code>.</li>
+      <li>Compléter le registry : éditer <code>src/data/elections/2027-livres-candidats.json</code>.</li>
+    </ul>
+    <p class="meta">
+      Voir aussi :{' '}
+      <a href="/analyses/programmes/presidentielle-2027">programmes 2027</a>
+      {' · '}
+      <a href="/#candidatures-declarees-2027">candidatures déclarées</a>
+      {' · '}
+      <a href="/analyses/declarations-x-candidats">déclarations X</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .books-list {
+    display: grid;
+    gap: 1.25rem;
+    margin: 1.25rem 0 2rem;
+  }
+  .book-card h3 {
+    margin: 0.25rem 0 0.35rem;
+    font-size: 1.25rem;
+  }
+  .book-by {
+    margin: 0 0 0.75rem;
+    color: var(--muted, #666);
+  }
+  .book-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.65rem 1rem;
+    margin: 0 0 0.75rem;
+  }
+  .book-meta dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted, #666);
+    margin: 0;
+  }
+  .book-meta dd {
+    margin: 0.1rem 0 0;
+  }
+  .book-blurb {
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-left: 3px solid var(--border, #ccc);
+    font-style: italic;
+    color: var(--text, inherit);
+  }
+  .book-links {
+    margin: 0.75rem 0 0;
+  }
+  .btn-primary-link {
+    font-weight: 600;
+  }
+  .status-pill {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: color-mix(in srgb, var(--border, #ccc) 35%, transparent);
+  }
+  .status-a_paraitre {
+    background: color-mix(in srgb, #b08900 22%, transparent);
+  }
+  .status-paru {
+    background: color-mix(in srgb, #2a7a4b 22%, transparent);
+  }
+</style>

@@ -29,6 +29,7 @@ describe('analyses', () => {
       '/analyses/legislatives-2024-desistements',
     );
     expect(getAnalysis('presidentielle-2027-preparation')?.preparation).toBe(true);
+    expect(getAnalysis('alerte-citoyenne')?.href).toBe('/liberte-d-expression#dossier-alerte');
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {
