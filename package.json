@@ -34,7 +34,9 @@
     "import:elections": "npm run import:dept-2022 && npm run import:dept-2017 && npm run build:geo",
     "dns:iarbre": "node scripts/setup-dns-iarbre.mjs",
     "brand:png": "rsvg-convert -w 400 -h 400 public/brand/lmdpt-avatar-x.svg -o public/brand/lmdpt-avatar-x.png && rsvg-convert -w 1500 -h 500 public/brand/lmdpt-banner-x.svg -o public/brand/lmdpt-banner-x.png && rsvg-convert -w 1200 -h 630 public/brand/og-default.svg -o public/brand/og-default.png",
-    "giscus:setup": "node scripts/setup-giscus.mjs"
+    "giscus:setup": "node scripts/setup-giscus.mjs",
+    "qualite:scan-drafts": "tsx scripts/qualite-scan-drafts.ts",
+    "qualite:check": "tsx -e \"import { reviewQualiteRedaction } from './src/lib/qualite-redaction.ts'; const t=process.argv.slice(1).join(' ')||''; const r=reviewQualiteRedaction(t); console.log(JSON.stringify(r,null,2);\""
   },
   "dependencies": {
     "astro": "^7.0.3"

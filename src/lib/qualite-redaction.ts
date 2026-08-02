@@ -100,6 +100,26 @@ const GLUE_DENYLIST = new Set(
     'assemblee',
     'legislatives',
     'presidentielles',
+    // faux positifs fréquents (préposition interne)
+    'manuellement',
+    'naturellement',
+    'reellement',
+    'actuellement',
+    'personnellement',
+    'officiellement',
+    'probablement',
+    'simplement',
+    'completement',
+    'totalement',
+    'finalement',
+    'generalement',
+    'particulierement',
+    'certainement',
+    'evidemment',
+    'assembleedupremiertour',
+    'findesbaudruches',
+    'democracyoverelimination',
+    'premiertour',
   ].map((w) => w.normalize('NFD').replace(/\p{M}/gu, '')),
 );
 
@@ -147,7 +167,11 @@ function applyWordMap(text: string, anomalies: QualiteAnomaly[]): string {
 
 function applyGlueHeuristic(text: string, anomalies: QualiteAnomaly[]): string {
   return text.replace(GLUE_PREP, (match, a: string, prep: string, b: string) => {
-    if (match.length < 12) return match;
+    if (match.length < 14) return match;
+    // Hashtags / CamelCase / sigles mixtes → ne jamais découper
+    if (/[A-ZÀÂÄÉÈÊËÏÎÔÙÛÜÇ]/.test(match.slice(1))) return match;
+    // Adverbes -ment : « manuellement » = manuel+le+ment (faux positif)
+    if (/ment$/i.test(match)) return match;
     const key = match
       .toLowerCase()
       .normalize('NFD')
@@ -155,6 +179,8 @@ function applyGlueHeuristic(text: string, anomalies: QualiteAnomaly[]): string {
     if (GLUE_DENYLIST.has(key)) return match;
     // Prépositions au milieu d'un mot déjà corrigé par dico → skip
     if (WORD_MAP[key] || WORD_MAP[match.toLowerCase()]) return match;
+    // Prépositions trop courtes en milieu de mot courant → skip (le/la/un)
+    if (prep.length <= 2 && match.length < 18) return match;
     const after = `${a} ${prep} ${b}`;
     anomalies.push({
       type: 'glue',
@@ -167,6 +193,77 @@ function applyGlueHeuristic(text: string, anomalies: QualiteAnomaly[]): string {
 }
 
 /**
+ * Annule les faux positifs glue historiques (hashtags, adverbes).
+ * Idempotent — L0 recovery drafts.
+ */
+export function repairFalsePositiveGlue(text: string): string {
+  let s = text;
+  const fixes: Array<[RegExp, string]> = [
+    [/\bmanuel le ment\b/gi, 'manuellement'],
+    [/\bnaturel le ment\b/gi, 'naturellement'],
+    [/\br[eé]el le ment\b/gi, 'réellement'],
+    [/\bactuel le ment\b/gi, 'actuellement'],
+    [/\bpersonnel le ment\b/gi, 'personnellement'],
+    [/\bofficiel le ment\b/gi, 'officiellement'],
+    [/\bprobable ment\b/gi, 'probablement'], // unlikely path
+    [/#Assembl[eé]e Du PremierTour\b/g, '#AssembléeDuPremierTour'],
+    [/\bAssembl[eé]e Du PremierTour\b/g, 'AssembléeDuPremierTour'],
+    [/#FinDesB au druches\b/g, '#FinDesBaudruches'],
+    [/\bFinDesB au druches\b/g, 'FinDesBaudruches'],
+    // slug URL accentué par ancienne passe ortho
+    [/(\/analyses\/)pr[eé]sidentielle(-2027-preparation)/gi, '$1presidentielle$2'],
+  ];
+  for (const [re, rep] of fixes) s = s.replace(re, rep);
+  return s;
+}
+
+/**
+ * Répare les URLs déjà cassées par une ancienne passe ponctuation
+ * (`https: //…`, `? utm_`, `& utm_`) avant toute autre transform.
+ * Les espaces après `?` / `&` ne sont collés que s'ils ressemblent à un param (`key=`).
+ */
+function repairBrokenUrls(text: string, anomalies: QualiteAnomaly[]): string {
+  let s = text;
+  const before = s;
+  // https: //host → https://host
+  s = s.replace(/https?:\s*\/\//gi, (m) => m.replace(/\s+/g, ''));
+  // ? utm_source=… / & medium=… (évite « quoi ? » en prose FR)
+  s = s.replace(/\?\s+(?=[A-Za-z0-9_~.-]+=)/g, '?');
+  s = s.replace(/&\s+(?=[A-Za-z0-9_~.-]+=)/g, '&');
+  s = s.replace(/#\s+(?=[A-Za-z0-9_~.-]+)/g, '#');
+  if (s !== before) {
+    anomalies.push({
+      type: 'punct',
+      before: 'URL espacée',
+      after: 'URL compacte',
+      confidence: 'high',
+    });
+  }
+  return s;
+}
+
+/** Tokens privés — hors alphabet FR / WORD_MAP. */
+const URL_PH = (i: number) => `\uE000U${i}\uE001`;
+
+/**
+ * Protège les URLs http(s) pour que ponctuation / ortho / glue
+ * ne les altèrent jamais (slugs non accentués, query strings).
+ */
+function protectUrls(text: string): { text: string; urls: string[] } {
+  const urls: string[] = [];
+  const next = text.replace(/https?:\/\/[^\s<>\]\)'"]+/gi, (m) => {
+    const i = urls.length;
+    urls.push(m);
+    return URL_PH(i);
+  });
+  return { text: next, urls };
+}
+
+function restoreUrls(text: string, urls: string[]): string {
+  return text.replace(/\uE000U(\d+)\uE001/g, (_m, idx) => urls[Number(idx)] ?? _m);
+}
+
+/**
  * Corrige et rapporte les anomalies (sens politique non modifié volontairement).
  */
 export function reviewQualiteRedaction(input: string): QualiteReport {
@@ -174,7 +271,32 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   const anomalies: QualiteAnomaly[] = [];
   let s = original.replace(/\r\n/g, '\n');
 
-  // Espaces
+  // Recovery faux positifs glue (hashtags / adverbes) avant scan
+  s = repairFalsePositiveGlue(s);
+
+  // URLs d'abord : réparer puis masquer (évite https: // et accents dans slugs)
+  s = repairBrokenUrls(s, anomalies);
+  const protected_ = protectUrls(s);
+  s = protected_.text;
+  const urls = protected_.urls;
+  // Normaliser slugs LMDPT connus (sans accent) une fois l'URL capturée
+  for (let i = 0; i < urls.length; i++) {
+    const fixed = urls[i]!.replace(
+      /\/analyses\/pr[eé]sidentielle-2027-preparation/gi,
+      '/analyses/presidentielle-2027-preparation',
+    );
+    if (fixed !== urls[i]) {
+      anomalies.push({
+        type: 'ortho',
+        before: 'slug URL accentué',
+        after: 'slug ASCII',
+        confidence: 'high',
+      });
+      urls[i] = fixed;
+    }
+  }
+
+  // Espaces (hors URL protégées)
   const multi = s.replace(/[ \t]{2,}/g, ' ');
   if (multi !== s) {
     anomalies.push({ type: 'space', before: 'espaces multiples', after: 'espace unique', confidence: 'high' });
@@ -188,7 +310,7 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
     s = apo;
   }
 
-  // Ponctuation
+  // Ponctuation FR — ne touche plus les URLs (placeholders)
   let punct = s.replace(/\s+([,;:!?…])/g, '$1');
   punct = punct.replace(/([,;:!?])(?=[^\s\n])/g, '$1 ');
   punct = punct.replace(/\s+\./g, '.');
@@ -200,6 +322,9 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   s = applyPhraseFixes(s, anomalies);
   s = applyGlueHeuristic(s, anomalies);
   s = applyWordMap(s, anomalies);
+
+  // Restaurer URLs intactes
+  s = restoreUrls(s, urls);
 
   // Trim lignes
   s = s

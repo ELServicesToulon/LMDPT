@@ -398,6 +398,17 @@ function lightReformulate(text) {
   // Apostrophes typographiques → '
   s = s.replace(/[’‘‛′]/g, "'");
 
+  // URLs : réparer + protéger avant ponctuation (évite https: // et ? utm_)
+  s = s.replace(/https?:\s*\/\//gi, (m) => m.replace(/\s+/g, ''));
+  s = s.replace(/\?\s+(?=[A-Za-z0-9_~.-]+=)/g, '?');
+  s = s.replace(/&\s+(?=[A-Za-z0-9_~.-]+=)/g, '&');
+  const urls = [];
+  s = s.replace(/https?:\/\/[^\s<>\]\)'"]+/gi, (m) => {
+    const i = urls.length;
+    urls.push(m);
+    return `\uE000U${i}\uE001`;
+  });
+
   // Espaces autour ponctuation
   s = s.replace(/\s+([,;:!?…])/g, '$1');
   s = s.replace(/([,;:!?])(?=[^\s])/g, '$1 ');
@@ -577,6 +588,9 @@ function lightReformulate(text) {
 
   // Espaces doubles
   s = s.replace(/\s{2,}/g, ' ').replace(/\s+([.!?…,;:])/g, '$1');
+
+  // Restaurer URLs protégées (inchangées)
+  s = s.replace(/\uE000U(\d+)\uE001/g, (_m, idx) => urls[Number(idx)] ?? _m);
 
   return s.trim();
 }
