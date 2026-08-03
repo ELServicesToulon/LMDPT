@@ -77,6 +77,33 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
         Élu·e·s
       </button>
     </div>
+    <div class="ai-dev-sort" role="radiogroup" aria-label="Trier les fiches">
+      <span class="ai-dev-sort-label">Trier</span>
+      <button
+        type="button"
+        class="ai-dev-sort-btn"
+        role="radio"
+        aria-checked="true"
+        data-sort="views"
+        title="Vues cumulées pédagogiques — distinctes des abonnés"
+      >
+        Vues ↓
+      </button>
+      <button
+        type="button"
+        class="ai-dev-sort-btn"
+        role="radio"
+        aria-checked="false"
+        data-sort="audience"
+        title="Abonnés — distinct des vues"
+      >
+        Abonnés ↓
+      </button>
+      <button type="button" class="ai-dev-sort-btn" role="radio" aria-checked="false" data-sort="name">
+        Nom A→Z
+      </button>
+    </div>
+    <p class="meta ai-dev-sort-note">Vues ≠ abonnés (contenu cumulé vs taille de compte).</p>
     <div class="ai-dev-actions">
       <button type="button" class="ai-dev-btn" data-action="collapse-all">Tout replier</button>
     </div>
@@ -124,6 +151,8 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
     /** @type {Record<string, any>|null} */
     let data = null;
     let loading = null;
+    /** @type {'views' | 'audience' | 'name'} */
+    let listSort = 'views';
 
     function esc(s) {
       return String(s || '')
@@ -131,6 +160,37 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
+    }
+
+    function sortItems(items) {
+      const copy = items.slice();
+      if (listSort === 'name') {
+        copy.sort((a, b) =>
+          String(a.display_name).localeCompare(String(b.display_name), 'fr', {
+            sensitivity: 'base',
+          }),
+        );
+      } else if (listSort === 'audience') {
+        copy.sort((a, b) => {
+          const da = Number(b.followers_total || 0) - Number(a.followers_total || 0);
+          if (da !== 0) return da;
+          return String(a.display_name).localeCompare(String(b.display_name), 'fr', {
+            sensitivity: 'base',
+          });
+        });
+      } else {
+        // views
+        copy.sort((a, b) => {
+          const dv = Number(b.views_total || 0) - Number(a.views_total || 0);
+          if (dv !== 0) return dv;
+          const da = Number(b.followers_total || 0) - Number(a.followers_total || 0);
+          if (da !== 0) return da;
+          return String(a.display_name).localeCompare(String(b.display_name), 'fr', {
+            sensitivity: 'base',
+          });
+        });
+      }
+      return copy;
     }
 
     function ensureData() {
@@ -168,6 +228,21 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
         p.confidence != null
           ? ` · confiance ${Math.round(p.confidence * 100)}&nbsp;%`
           : '';
+      const viewsBit =
+        p.views_label || p.views_total != null
+          ? `<strong>~${esc(p.views_label || String(p.views_total))} vues</strong>`
+          : '';
+      const folBit =
+        p.followers_label || p.followers_total != null
+          ? `<strong>~${esc(p.followers_label || String(p.followers_total))} abonnés</strong>${
+              p.audience_platform ? ` · ${esc(p.audience_platform)}` : ''
+            }`
+          : '';
+      const audienceLine =
+        viewsBit || folBit
+          ? `<p class="ai-dev-audience">${viewsBit}${viewsBit && folBit ? ' · ' : ''}${folBit}
+            <span class="meta"> — vues ≠ abonnés</span></p>`
+          : '';
       const platforms =
         (p.platforms || [])
           .map(
@@ -202,6 +277,7 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
         <p class="meta">${esc(p.statusLabel)}${conf} · ${esc(p.verification)}
           <span class="ai-dev-hue" style="--hue:${esc(p.color)}"><span class="ai-dev-swatch"></span>${esc(p.stance_label)}</span>
         </p>
+        ${audienceLine}
         <p>${esc(p.summary)}</p>
         ${p.rationale ? `<p class="meta"><strong>Indices (teinte actuelle) :</strong> ${esc(p.rationale)}</p>` : ''}
         ${
@@ -236,33 +312,43 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
       });
     }
 
-    async function fillCategory(catEl) {
-      if (catEl.getAttribute('data-list-loaded') === '1') return;
+    async function fillCategory(catEl, force) {
+      if (!force && catEl.getAttribute('data-list-loaded') === '1') return;
       const fam = catEl.getAttribute('data-family');
       const cat = catEl.getAttribute('data-category');
       const list = catEl.querySelector('.ai-dev-list');
       if (!list) return;
       list.innerHTML = '<li class="meta">Chargement de la liste…</li>';
       const map = await ensureData();
-      const items = Object.values(map)
-        .filter((p) => p.family === fam && (p.category || 'influenceur') === cat)
-        .sort((a, b) =>
-          String(a.display_name).localeCompare(String(b.display_name), 'fr', {
-            sensitivity: 'base',
-          }),
-        );
+      const items = sortItems(
+        Object.values(map).filter(
+          (p) => p.family === fam && (p.category || 'influenceur') === cat,
+        ),
+      );
       if (!items.length) {
         list.innerHTML = '<li class="meta">Aucune entrée.</li>';
         catEl.setAttribute('data-list-loaded', '1');
         return;
       }
       list.innerHTML = items
-        .map((inf) => {
+        .map((inf, idx) => {
           const plats = platformKinds(inf);
+          const views =
+            inf.views_label ||
+            (inf.views_total != null ? String(inf.views_total) : '');
+          const fol =
+            inf.followers_label ||
+            (inf.followers_total != null ? String(inf.followers_total) : '');
+          const rank =
+            listSort === 'views' || listSort === 'audience'
+              ? `<span class="ai-dev-rank">${idx + 1}.</span> `
+              : '';
           return `<li><details class="ai-dev-fiche" id="inf-${esc(inf.id)}" data-id="${esc(inf.id)}" data-category="${esc(cat)}">
             <summary>
-              <span class="ai-dev-name">${esc(inf.display_name)}</span>
+              ${rank}<span class="ai-dev-name">${esc(inf.display_name)}</span>
               ${inf.handle ? `<span class="meta"> @${esc(inf.handle)}</span>` : ''}
+              ${views ? `<span class="meta ai-dev-fol"> · ~${esc(views)} vues</span>` : ''}
+              ${fol ? `<span class="meta"> · ~${esc(fol)} ab.</span>` : ''}
               ${plats ? `<span class="meta ai-dev-plats"> — ${esc(plats)}</span>` : ''}
             </summary>
             <div class="ai-dev-fiche-body" data-body-for="${esc(inf.id)}"><p class="meta">Ouverture…</p></div>
@@ -273,12 +359,35 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
       catEl.setAttribute('data-list-loaded', '1');
     }
 
+    function setListSort(mode) {
+      if (mode === 'name') listSort = 'name';
+      else if (mode === 'audience') listSort = 'audience';
+      else listSort = 'views';
+      section.querySelectorAll('.ai-dev-sort-btn').forEach((btn) => {
+        btn.setAttribute(
+          'aria-checked',
+          btn.getAttribute('data-sort') === listSort ? 'true' : 'false',
+        );
+      });
+      // Recharger les listes déjà ouvertes
+      root.querySelectorAll('.ai-dev-cat').forEach((catEl) => {
+        if (catEl.getAttribute('data-list-loaded') === '1' || catEl.open) {
+          catEl.removeAttribute('data-list-loaded');
+          if (catEl.open) fillCategory(catEl, true);
+        }
+      });
+    }
+
     root.querySelectorAll('.ai-dev-cat').forEach((catEl) => {
       const maybeFill = () => {
         if (catEl.open) fillCategory(catEl);
       };
       catEl.addEventListener('toggle', maybeFill);
       maybeFill();
+    });
+
+    section.querySelectorAll('.ai-dev-sort-btn').forEach((btn) => {
+      btn.addEventListener('click', () => setListSort(btn.getAttribute('data-sort')));
     });
 
     section.querySelectorAll('.ai-dev-filter').forEach((btn) => {
@@ -317,13 +426,20 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
     margin-bottom: 0.85rem;
   }
   .ai-dev-filters,
+  .ai-dev-sort,
   .ai-dev-actions {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.4rem;
   }
+  .ai-dev-sort-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
   .ai-dev-filter,
-  .ai-dev-btn {
+  .ai-dev-btn,
+  .ai-dev-sort-btn {
     font: inherit;
     font-size: 0.9rem;
     padding: 0.35rem 0.65rem;
@@ -332,9 +448,21 @@ const instanceId = `ai-dev-${Math.random().toString(36).slice(2, 9)}`;
     background: var(--card, #fff);
     cursor: pointer;
   }
-  .ai-dev-filter[aria-pressed='true'] {
+  .ai-dev-filter[aria-pressed='true'],
+  .ai-dev-sort-btn[aria-checked='true'] {
     border-color: var(--accent, #1a5f7a);
     background: color-mix(in srgb, var(--accent, #1a5f7a) 12%, #fff);
+  }
+  .ai-dev-rank {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted, #555);
+  }
+  .ai-dev-fol {
+    font-variant-numeric: tabular-nums;
+  }
+  .ai-dev-audience {
+    margin: 0.35rem 0;
   }
   .ai-dev-tree {
     display: grid;

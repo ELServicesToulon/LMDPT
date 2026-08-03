@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-08-01T04:48:55.602Z
+**Scan** : 2026-08-03T16:16:05.649Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Harris Interactive / Toluna Harris signalé (31 juillet) — scores non extraits automatiquement ; vérifier la source.
+- Scan 2026-08-03T16:16 — aucun mouvement détecté (31 vague(s) en mémoire, 10 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 

@@ -1,11 +1,43 @@
 {
-  "fetched_at": "2026-08-01T05:41:23.004Z",
+  "fetched_at": "2026-08-03T16:22:09.765Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "Elections sénatoriales : dans les Bouches-du-Rhône, Renaud Muselier pris dans une campagne agitée",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/03/elections-senatoriales-dans-les-bouches-du-rhone-renaud-muselier-pris-dans-une-campagne-agitee_6737325_823448.html",
+      "published": "2026-08-03",
+      "summary": "A moins de deux mois du scrutin, le président du conseil régional de PACA se débat contre trois candidatures rivales et des accusations à répétition.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Zitata TV, une petite chaîne dynamique au plus près des Martiniquais",
+      "url": "https://www.lemonde.fr/series-d-ete/article/2026/08/03/zitata-tv-une-petite-chaine-dynamique-au-plus-pres-des-martiniquais_6737319_3451060.html",
+      "published": "2026-08-02",
+      "summary": "« Echos locaux » (4/6). Née en 2021, la station antillaise, située en périphérie de Fort-de-France, a trouvé son audience grâce à des programmes alliant ancrage local, exigence de qualité et volonté de visibiliser les différentes communautés de l’île.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
     {
       "title": "Afflux de migrants à Ceuta : la droite et l’extrême droite françaises mettent en cause le gouvernement de Pedro Sanchez, la gauche dénonce « des mensonges »",
       "url": "https://www.lemonde.fr/politique/article/2026/07/31/afflux-de-migrants-a-ceuta-la-droite-et-l-extreme-droite-francaises-mettent-en-cause-le-gouvernement-de-pedro-sanchez-la-gauche-denonce-des-mensonges_6737156_823448.html",
@@ -132,22 +164,6 @@
         "color": "#0066cc",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : les républicains, les republicains, républicains"
-      }
-    },
-    {
-      "title": "Thomas Chevallier, sociologue : « Les associations sont poussées à faire le plus possible avec le moins de moyens possible »",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/30/thomas-chevallier-sociologue-les-associations-sont-poussees-a-faire-le-plus-possible-avec-le-moins-de-moyens-possible_6737012_3224.html",
-      "published": "2026-07-30",
-      "summary": "Le chercheur de l’université catholique de Louvain, en Belgique, analyse, dans un entretien au « Monde », la fragilisation des financements des associations et ses effets en France.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {

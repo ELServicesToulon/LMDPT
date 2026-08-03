@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-01T04:48:55.602Z",
+  "fetched_at": "2026-08-03T16:16:05.649Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 10,
@@ -485,18 +485,9 @@
       "pct": 34.5
     }
   ],
-  "movements": [
-    {
-      "at": "2026-08-01T04:48:55.602Z",
-      "kind": "new_wave",
-      "firm": "Harris Interactive / Toluna Harris",
-      "comment": "Harris Interactive / Toluna Harris signalé (31 juillet) — scores non extraits automatiquement ; vérifier la source.",
-      "wave_id": "commission-harris-31juillet",
-      "source_url": "https://www.commission-des-sondages.fr/notices/"
-    }
-  ],
+  "movements": [],
   "brief": [
-    "Harris Interactive / Toluna Harris signalé (31 juillet) — scores non extraits automatiquement ; vérifier la source."
+    "Scan 2026-08-03T16:16 — aucun mouvement détecté (31 vague(s) en mémoire, 10 source(s) OK)."
   ],
   "errors": [
     {
