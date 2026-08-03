@@ -12,7 +12,18 @@
       "text": "Militantisme & convictions : cadre laïque 2027 publié",
       "href": "/analyses/contexte-civique-2027/?utm_source=homepage&utm_medium=scoop_band&utm_campaign=p47",
       "cta": "Lire →"
+    },
+    {
+      "date": "2026-08-03",
+      "text": "Quatremer quitte Libération pour Marianne — reconfiguration documentée",
+      "href": "/analyses/quatremer-marianne/?utm_source=homepage&utm_medium=scoop_band&utm_campaign=quatremer_marianne_20260803",
+      "cta": "Lire →"
     }
   ],
-  "fallback": null
+  "fallback": {
+    "date": "2026-08-03",
+    "text": "Quatremer × Marianne — reconfiguration documentée",
+    "href": "/analyses/quatremer-marianne/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=quatremer_marianne_20260803",
+    "cta": "Lire →"
+  }
 }

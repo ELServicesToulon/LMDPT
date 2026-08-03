@@ -1,7 +1,7 @@
 {
   "schema": "lmdpt-assemblee-influenceurs-v1",
   "title": "Assemblée des influenceurs",
-  "updated": "2026-07-31",
+  "updated": "2026-08-03",
   "period": {
     "from": "2017-05-07",
     "label": "Depuis la présidentielle 2017"
@@ -4927,22 +4927,49 @@
           "url": "https://www.liberation.fr/"
         }
       ],
-      "summary": "Libération — figure du débat public numérique / médiatique. teinte estimée (faisceau d’indices) social-démocrate. Présence : x, facebook, site. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique social-démocrate. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Libération — figure du débat public numérique / médiatique. Teinte estimée (faisceau d’indices) social-démocrate / centre-gauche (conf. 0,65, 2026). Présence : x, facebook, site. Pas un score moral — synthèse documentaire à recouper. Fiction LMDPT — pas une carte d’adhésion.",
       "stance": {
         "status": "estime",
         "family": "social-democrate",
         "label": "Social-démocrate",
-        "confidence": 0.6,
-        "rationale": "Ligne éditoriale de gauche ; estimation social-démocrate / gauche modérée.",
+        "confidence": 0.65,
+        "rationale": "Ligne éditoriale de gauche / centre-gauche documentée. Estimation social-démocrate (2026) : le départ de Jean Quatremer (juil. 2026) réduit la tension interne avec une voix europhile/anti-LFI très exposée, sans changer le positionnement institutionnel du titre. Pas une carte d’adhésion.",
         "sources": [
           {
             "label": "X — @libe",
             "url": "https://x.com/libe"
+          },
+          {
+            "label": "Libération — Qui sommes-nous",
+            "url": "https://www.liberation.fr/liberation-et-vous/qui-sommes-nous/"
+          },
+          {
+            "label": "Le Monde / AFP — départ Quatremer (29 juil. 2026)",
+            "url": "https://www.lemonde.fr/actualite-medias/article/2026/07/29/le-journaliste-jean-quatremer-quitte-liberation-et-rejoint-marianne_6736401_3236.html"
           }
         ]
       },
       "dependencies": [],
-      "verification": "partial"
+      "verification": "partial",
+      "stance_history": [
+        {
+          "as_of": "jusqu’à juil. 2026",
+          "family": "social-democrate",
+          "label": "Social-démocrate",
+          "status": "estime",
+          "confidence": 0.6,
+          "motifs": [
+            "Estimation antérieure : ligne de gauche ; social-démocrate / gauche modérée.",
+            "Période de tensions internes documentées autour de plumes d’opinion (dont Quatremer)."
+          ],
+          "sources": [
+            {
+              "label": "X — @libe",
+              "url": "https://x.com/libe"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wd-depute-q3292159",
@@ -8338,23 +8365,70 @@
           "url": "https://www.facebook.com/Marianne"
         }
       ],
-      "summary": "Marianne — société civile (créateur, association, syndicat, média indé ou vulgarisation). teinte estimée (faisceau d’indices) transversale / autre. Présence : x, facebook. Pas un score moral — synthèse documentaire à recouper. Teinte estimée (faisceau d’indices) : famille pédagogique transversale / autre. Fiction LMDPT — pas une carte d’adhésion.",
+      "summary": "Marianne — hebdomadaire d’actualité (CMI). Teinte estimée (2026-08) centre / républicain (conf. 0,55) : capital CMI + recomposition éditoriale post-Polony + signature Quatremer. Présence : x, facebook. Pas un score moral — synthèse documentaire à recouper. Fiction LMDPT — pas une carte d’adhésion.",
       "stance": {
         "status": "estime",
-        "family": "autre",
-        "label": "Autre / transversal",
-        "confidence": 0.5,
-        "rationale": "Ligne républicaine / souverainiste variable selon périodes — classement transversal prudent.",
+        "family": "centre",
+        "label": "Centre / républicain",
+        "confidence": 0.55,
+        "rationale": "Repositionnement pédagogique 2026-08-03 : capital CMI/Křetínský (europhile industriel) + direction Szeftel (2025, recomposition post-Polony) + recrutement Quatremer (europhile, juil. 2026). Hors droite nationale ; hors gauche radicale. L’ère souverainiste Polony reste en historique. Confiance moyenne — ligne encore en mouvement. Pas une carte d’adhésion.",
         "sources": [
           {
             "label": "X — @MarianneleMag",
             "url": "https://x.com/MarianneleMag"
+          },
+          {
+            "label": "Wikipedia FR — Marianne (magazine)",
+            "url": "https://fr.wikipedia.org/wiki/Marianne_(magazine)"
+          },
+          {
+            "label": "Le Monde / AFP — Quatremer rejoint Marianne",
+            "url": "https://www.lemonde.fr/actualite-medias/article/2026/07/29/le-journaliste-jean-quatremer-quitte-liberation-et-rejoint-marianne_6736401_3236.html"
           }
         ]
       },
       "dependencies": [],
       "verification": "partial",
-      "category": "societe-civile"
+      "category": "societe-civile",
+      "stance_history": [
+        {
+          "as_of": "2018-2024",
+          "family": "autre",
+          "label": "Autre / transversal (souverainiste variable)",
+          "status": "estime",
+          "confidence": 0.5,
+          "motifs": [
+            "Ère Natacha Polony : ligne souvent lue souverainiste / républicaine dure.",
+            "Classement transversal prudent (ni pure droite nationale ni social-démocrate classique)."
+          ],
+          "sources": [
+            {
+              "label": "X — @MarianneleMag",
+              "url": "https://x.com/MarianneleMag"
+            },
+            {
+              "label": "Wikipedia FR — Marianne (magazine)",
+              "url": "https://fr.wikipedia.org/wiki/Marianne_(magazine)"
+            }
+          ]
+        },
+        {
+          "as_of": "jusqu’à août 2026 (corpus LMDPT)",
+          "family": "autre",
+          "label": "Autre / transversal",
+          "status": "estime",
+          "confidence": 0.5,
+          "motifs": [
+            "Ligne républicaine / souverainiste variable selon périodes — classement transversal prudent."
+          ],
+          "sources": [
+            {
+              "label": "X — @MarianneleMag",
+              "url": "https://x.com/MarianneleMag"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "public-senat-yt",
