@@ -15,7 +15,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="card" id="compte-guest" hidden>
     <p>Vous n’êtes pas connecté.</p>
-    <p><a class="btn btn-primary" href="/connexion?next=/compte">Se connecter</a></p>
+    <h2 class="compte-oauth-title">Continuer avec</h2>
+    <div class="auth-providers" id="compte-auth-providers">
+      <a
+        class="btn btn-primary auth-btn"
+        href="/api/auth/start/google?next=%2Fcompte"
+        data-provider="google"
+      >
+        Google
+      </a>
+      <a
+        class="btn btn-primary auth-btn"
+        href="/api/auth/start/x?next=%2Fcompte"
+        data-provider="x"
+      >
+        X
+      </a>
+    </div>
+    <p class="meta" id="compte-providers-status" role="status">Vérification des providers…</p>
+    <p class="meta">
+      <a href="/connexion?next=/compte">Email ou autres options</a>
+    </p>
   </section>
 
   <section class="card" id="compte-user" hidden>
@@ -49,6 +69,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const loading = document.getElementById('compte-loading');
     const guest = document.getElementById('compte-guest');
     const userBox = document.getElementById('compte-user');
+    const providersStatus = document.getElementById('compte-providers-status');
+
+    async function refreshProviders() {
+      try {
+        const res = await fetch('/api/auth/providers', { credentials: 'include' });
+        const data = await res.json();
+        const map = Object.fromEntries((data.providers || []).map((p: { id: string; enabled: boolean }) => [p.id, p.enabled]));
+        document.querySelectorAll<HTMLAnchorElement>('#compte-auth-providers [data-provider]').forEach((a) => {
+          const id = a.dataset.provider!;
+          if (!map[id]) {
+            a.classList.add('is-disabled');
+            a.setAttribute('aria-disabled', 'true');
+            a.href = '#';
+            a.title = 'Provider non configuré (secrets manquants)';
+          }
+        });
+        if (providersStatus) {
+          providersStatus.textContent = data.authEnabled
+            ? 'Google et X renvoient vers /compte après autorisation.'
+            : 'Auth serveur encore désactivée (LMDPT_AUTH_ENABLED).';
+        }
+      } catch {
+        if (providersStatus) providersStatus.textContent = 'Impossible de joindre l’API auth.';
+      }
+    }
 
     async function refresh() {
       const res = await fetch('/api/auth/me', { credentials: 'include' });
@@ -57,6 +102,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if (!data.authenticated || !data.user) {
         guest!.hidden = false;
         userBox!.hidden = true;
+        await refreshProviders();
         return;
       }
       guest!.hidden = true;
@@ -94,14 +140,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         if (!res.ok) throw new Error(data.error || 'Échec');
         if (status) status.textContent = 'Enregistré.';
         await refresh();
-      } catch (err: any) {
-        if (status) status.textContent = err.message || 'Erreur';
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Erreur';
+        if (status) status.textContent = message;
       }
     });
   })();
 </script>
 
 <style>
+  .compte-oauth-title {
+    font-size: 1.05rem;
+    margin: 0.85rem 0 0.35rem;
+  }
+  .auth-providers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+  }
+  .auth-btn.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+  }
   #profile-form label {
     display: block;
     margin: 0.75rem 0;

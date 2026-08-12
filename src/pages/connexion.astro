@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const next = Astro.url.searchParams.get('next') || '/';
+// Page statique (pas d'adapter SSR) : `next` est résolu côté client depuis ?next=
 const err = Astro.url.searchParams.get('error') || '';
-const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
 ---
 
 <BaseLayout
@@ -36,13 +35,13 @@ const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
   <section class="card auth-card" aria-labelledby="oauth-title">
     <h2 id="oauth-title">Continuer avec</h2>
     <div class="auth-providers" id="auth-providers">
-      <a class="btn btn-primary auth-btn" href={`/api/auth/start/google?next=${nextQ}`} data-provider="google">
+      <a class="btn btn-primary auth-btn" href="/api/auth/start/google?next=%2F" data-provider="google" data-auth-next>
         Google
       </a>
-      <a class="btn btn-primary auth-btn" href={`/api/auth/start/x?next=${nextQ}`} data-provider="x">
+      <a class="btn btn-primary auth-btn" href="/api/auth/start/x?next=%2F" data-provider="x" data-auth-next>
         X
       </a>
-      <a class="btn btn-primary auth-btn" href={`/api/auth/start/apple?next=${nextQ}`} data-provider="apple">
+      <a class="btn btn-primary auth-btn" href="/api/auth/start/apple?next=%2F" data-provider="apple" data-auth-next>
         Apple
       </a>
     </div>
@@ -56,7 +55,7 @@ const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
         <span class="meta">Adresse email</span>
         <input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="vous@exemple.fr" />
       </label>
-      <input type="hidden" name="next" value={next.startsWith('/') ? next : '/'} />
+      <input type="hidden" name="next" id="email-next" value="/" />
       <button type="submit" class="btn btn-primary">Recevoir le lien</button>
       <p class="meta" id="email-status" role="status"></p>
     </form>
@@ -69,11 +68,27 @@ const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
 
 <script>
   (async () => {
+    function sanitizeNext(raw: string | null): string {
+      const v = String(raw || '/').trim();
+      if (!v.startsWith('/') || v.startsWith('//')) return '/';
+      return v.slice(0, 200);
+    }
+
+    const next = sanitizeNext(new URLSearchParams(location.search).get('next'));
+    const nextQ = encodeURIComponent(next);
+    document.querySelectorAll<HTMLAnchorElement>('[data-auth-next]').forEach((a) => {
+      const id = a.dataset.provider;
+      if (!id) return;
+      a.href = `/api/auth/start/${id}?next=${nextQ}`;
+    });
+    const emailNext = document.getElementById('email-next') as HTMLInputElement | null;
+    if (emailNext) emailNext.value = next;
+
     const status = document.getElementById('providers-status');
     try {
       const res = await fetch('/api/auth/providers', { credentials: 'include' });
       const data = await res.json();
-      const map = Object.fromEntries((data.providers || []).map((p: any) => [p.id, p.enabled]));
+      const map = Object.fromEntries((data.providers || []).map((p: { id: string; enabled: boolean }) => [p.id, p.enabled]));
       document.querySelectorAll<HTMLAnchorElement>('[data-provider]').forEach((a) => {
         const id = a.dataset.provider!;
         if (!map[id]) {
@@ -116,8 +131,9 @@ const nextQ = encodeURIComponent(next.startsWith('/') ? next : '/');
             emailStatus.innerHTML += ` <a href="${data.devVerifyUrl}">Lien dev</a>`;
           }
         }
-      } catch (err: any) {
-        if (emailStatus) emailStatus.textContent = err.message || 'Erreur';
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Erreur';
+        if (emailStatus) emailStatus.textContent = message;
       }
     });
   })();
