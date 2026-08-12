@@ -16816,10 +16816,10 @@
       ],
       "summary": "Anticor — association (2002) de lutte contre la corruption et de défense de l’éthique publique, agrément Justice, financement dons/cotisations (0 subvention revendiqué). Actions en justice et plaidoyer ; teinte centre / civic. Site : https://www.anticor.org/.",
       "stance": {
-        "status": "estime",
+        "status": "declare",
         "family": "centre",
         "label": "Centre",
-        "rationale": "Compte public X — prises de position / plaidoyer documentés.",
+        "rationale": "Site public anticor.org (À propos) : association 2002, agrément Justice, financement dons/cotisations (0 subvention revendiqué) + présence X.",
         "sources": [
           {
             "label": "X @Anticor_asso",
@@ -16832,12 +16832,16 @@
           {
             "label": "anticor.org",
             "url": "https://www.anticor.org/"
+          },
+          {
+            "label": "Anticor À propos",
+            "url": "https://www.anticor.org/a-propos/"
           }
         ],
         "confidence": 0.55
       },
       "dependencies": [],
-      "verification": "partial",
+      "verification": "documented",
       "category": "societe-civile"
     },
     {
