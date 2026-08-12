@@ -16807,9 +16807,14 @@
           "kind": "x",
           "label": "X",
           "url": "https://x.com/Anticor_asso"
+        },
+        {
+          "kind": "site",
+          "label": "Site Anticor",
+          "url": "https://www.anticor.org/"
         }
       ],
-      "summary": "Anticor — association de lutte contre la corruption et de défense de l’éthique publique. Actions en justice et plaidoyer ; teinte centre / civic.",
+      "summary": "Anticor — association (2002) de lutte contre la corruption et de défense de l’éthique publique, agrément Justice, financement dons/cotisations (0 subvention revendiqué). Actions en justice et plaidoyer ; teinte centre / civic. Site : https://www.anticor.org/.",
       "stance": {
         "status": "estime",
         "family": "centre",
@@ -16823,6 +16828,10 @@
           {
             "label": "Présence publique documentée",
             "url": "https://x.com/Anticor_asso"
+          },
+          {
+            "label": "anticor.org",
+            "url": "https://www.anticor.org/"
           }
         ],
         "confidence": 0.55
