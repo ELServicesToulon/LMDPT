@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+// xlsx 0.18.5 = last public npm build (SheetJS). Known CVEs; import-only, never in `astro build`.
+// See docs/DEPENDENCIES.md. Do not add this package to runtime/Docker.
 import * as XLSX from 'xlsx';
 import {
   buildCirconscriptionDataset,

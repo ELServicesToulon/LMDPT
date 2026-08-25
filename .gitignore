@@ -19,3 +19,8 @@ data/cache/*.json
 Thumbs.db
 *.log
 comments-api/data/
+comments-api/node_modules/
+
+# millésimes hero daily (le live.* versionné reste suivi)
+public/illustrations/2027/hero-daily-20[0-9][0-9]-*.jpg
+public/videos/2027/daily/
