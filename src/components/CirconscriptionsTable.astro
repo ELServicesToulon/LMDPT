@@ -6,9 +6,24 @@ import { legendForNuances, nuanceColor, nuanceLabel } from '../lib/circonscripti
 interface Props {
   circonscriptions: CirconscriptionResult[];
   electionSlug: string;
+  /** true = élus (T1/T2) plutôt que leaders du 1er tour */
+  seatMode?: boolean;
 }
 
-const { circonscriptions } = Astro.props;
+const { circonscriptions, seatMode = false } = Astro.props;
+const hasEluTour = seatMode || circonscriptions.some((c) => c.elu_tour != null);
+const titleText = hasEluTour
+  ? '577 circonscriptions — élus (2nd tour réel)'
+  : '577 circonscriptions — leader au 1er tour';
+const descText = hasEluTour
+  ? 'Une ligne par siège : député élu, nuance et part des exprimés. 501 élus au 2nd tour, 76 dès le 1er. Données officielles Intérieur / data.gouv.fr.'
+  : 'Une ligne par circonscription : candidat en tête, nuance et part des suffrages exprimés. Données officielles agrégées depuis data.gouv.fr. Utilisez les filtres pour explorer (clavier et lecteur d\'écran compatibles).';
+const statsLabel = hasEluTour
+  ? 'Répartition rapide des élus par circonscription'
+  : 'Répartition rapide des leaders au 1er tour';
+const captionText = hasEluTour
+  ? `${circonscriptions.length} sièges — élu (nuance officielle, % exprimés, tour de pourvoi). Défilement horizontal disponible ; filtres département et recherche au-dessus.`
+  : `${circonscriptions.length} circonscriptions — leader au 1er tour (nuance officielle, % exprimés, qualification T2). Défilement horizontal disponible ; filtres département et recherche au-dessus.`;
 
 const nuanceCodes = [...new Set(circonscriptions.map((c) => c.leader_nuance_code))];
 const legend = legendForNuances(nuanceCodes);
@@ -23,14 +38,13 @@ const departements = [...byDept.keys()].sort();
 ---
 
 <section class="card circo-block" aria-labelledby="circo-title">
-  <h3 id="circo-title">577 circonscriptions — leader au 1er tour</h3>
+  <h3 id="circo-title">{titleText}</h3>
   <p class="meta" id="circo-desc">
-    Une ligne par circonscription : candidat en tête, nuance et part des suffrages exprimés. Données
-    officielles agrégées depuis data.gouv.fr. Utilisez les filtres pour explorer (clavier et lecteur d'écran compatibles).
+    {descText}
   </p>
 
   <!-- Stats rapides pédagogiques pour lisibilité -->
-  <div class="circo-stats" aria-label="Répartition rapide des leaders au 1er tour">
+  <div class="circo-stats" aria-label={statsLabel}>
     <span class="stat">Total circonscriptions : <strong>{circonscriptions.length}</strong></span>
     <span class="stat">Départements : <strong>{departements.length}</strong></span>
   </div>
@@ -82,17 +96,16 @@ const departements = [...byDept.keys()].sort();
   >
     <table id="circo-table" aria-describedby="circo-desc">
       <caption class="table-caption">
-        {circonscriptions.length} circonscriptions — leader au 1er tour (nuance officielle, % exprimés, qualification T2).
-        Défilement horizontal disponible ; filtres département et recherche au-dessus.
+        {captionText}
       </caption>
       <thead>
         <tr>
           <th scope="col">Circonscription</th>
           <th scope="col">Dépt.</th>
-          <th scope="col">Leader</th>
+          <th scope="col">{hasEluTour ? 'Élu' : 'Leader'}</th>
           <th scope="col">Nuance</th>
           <th scope="col">%</th>
-          <th scope="col">T2</th>
+          <th scope="col">{hasEluTour ? 'Tour' : 'T2'}</th>
         </tr>
       </thead>
       <tbody>
@@ -113,7 +126,15 @@ const departements = [...byDept.keys()].sort();
                 </span>
               </td>
               <td class="num">{formatPct(c.leader_pct)}</td>
-              <td>{c.qualifie_t2 ? 'Oui' : '—'}</td>
+              <td>
+                {hasEluTour
+                  ? c.elu_tour === 1
+                    ? 'Élu T1'
+                    : 'Élu T2'
+                  : c.qualifie_t2
+                    ? 'Oui'
+                    : '—'}
+              </td>
             </tr>
           ))
         }

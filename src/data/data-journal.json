@@ -62,6 +62,26 @@
     "script": null
   },
   {
+    "date": "2026-08-26",
+    "label": "Législatives 2024 — résultats nationaux 2nd tour (17 nuances)",
+    "source": "resultats-definitifs-france-entiere.csv (Ministère de l'Intérieur)",
+    "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/",
+    "pages": ["/atlas/2024-legislatives-t2"],
+    "license": "lov2",
+    "licenseNote": "Voix du 2nd tour uniquement (501 circonscriptions encore en lice). Licence Ouverte 2.0.",
+    "script": "npm run import:legislatives-2024-t2"
+  },
+  {
+    "date": "2026-08-26",
+    "label": "Législatives 2024 — 577 élus par circonscription (2nd tour + élus T1)",
+    "source": "resultats-definitifs-par-circonscription.csv + élus dès le 1er tour",
+    "datasetUrl": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/",
+    "pages": ["/atlas/2024-legislatives-t2"],
+    "license": "lov2",
+    "licenseNote": "501 élus T2 + 76 élus T1 = 577 sièges. Licence Ouverte 2.0.",
+    "script": "npm run import:legislatives-2024-t2"
+  },
+  {
     "date": "2026-06-29",
     "label": "Législatives 2024 — résultats nationaux (22 nuances)",
     "source": "resultats-definitifs-france-entiere.xlsx (Ministère de l'Intérieur)",

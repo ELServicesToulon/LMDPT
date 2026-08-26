@@ -63,6 +63,8 @@ export interface CirconscriptionResult {
   leader_voix: number;
   leader_pct: number;
   qualifie_t2: boolean;
+  /** Tour auquel le siège a été pourvu (atlas T2 réel). Absent sur le jeu T1. */
+  elu_tour?: 1 | 2;
 }
 
 export interface CirconscriptionElectionDataset {

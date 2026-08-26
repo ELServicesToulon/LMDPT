@@ -86,7 +86,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Analyse `/analyses/assemblee-premier-tour` + comparatif sièges
 - [x] Carte départements T1 (toggle nuances / blocs) → `An1tComparatorMap.astro`
 - [x] Débat lié `/debats/assemblee-premier-tour`
-- [ ] Carte 2nd tour réel par circonscription (import données T2 à prévoir)
+- [x] Carte 2nd tour réel par circonscription → `/atlas/2024-legislatives-t2` · `npm run import:legislatives-2024-t2`
 
 ---
 

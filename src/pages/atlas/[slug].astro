@@ -22,6 +22,7 @@ export function getStaticPaths() {
   return [
     { params: { slug: '2027-presidentielle' } },
     { params: { slug: '2024-legislatives' } },
+    { params: { slug: '2024-legislatives-t2' } },
     { params: { slug: '2022-presidentielle' } },
     { params: { slug: '2017-presidentielle' } },
   ];
@@ -34,7 +35,13 @@ const deptData = slug ? getDepartmentResults(slug) : undefined;
 const deptReadiness = slug ? getDepartmentMapReadiness(slug) : null;
 const circoData = slug ? getCirconscriptionResults(slug) : undefined;
 const isLegislatives = Boolean(circoData);
+const isLegislativesT2 = slug === '2024-legislatives-t2';
 const is2027 = slug === '2027-presidentielle';
+const pageDescription = is2027
+  ? 'Projection pédagogique 2027 — pluralité du premier tour (hypothèses sondages). Données officielles à venir.'
+  : isLegislativesT2
+    ? 'Élus législatives 2024 par circonscription — 501 au 2nd tour + 76 dès le 1er tour. Données officielles Intérieur.'
+    : `Résultats officiels du premier tour — ${summary?.title ?? slug}. Pluralité nationale documentée.`;
 const dual = slug ? buildScrutinDual(slug) : null;
 const circoReadiness = slug ? getCircoMapReadiness(slug) : null;
 const geoIndex = getCirconscriptionGeoIndex();
@@ -73,7 +80,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
 <BaseLayout
   title={summary.title}
-  description={is2027 ? `Projection pédagogique 2027 — pluralité du premier tour (hypothèses sondages). Données officielles à venir.` : `Résultats officiels du premier tour — ${summary.title}. Pluralité nationale documentée.`}
+  description={pageDescription}
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/atlas">Atlas</a> → {summary.title}
@@ -99,13 +106,29 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <time datetime={dataset.date}>{dateLabel}</time> · Source :{' '}
       <a href={dataset.source} rel="noopener noreferrer">{dataset.source_label}</a>
     </p>
-    <p class="fil-directeur-tag">
-      <strong>Fil directeur LMDPT</strong> — Assemblée du 1er tour (gauche) vs Assemblée des législatives
-      qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.
-    </p>
+    {
+      dual && (
+        <p class="fil-directeur-tag">
+          <strong>Fil directeur LMDPT</strong> — Assemblée du 1er tour (gauche) vs Assemblée des législatives
+          qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.
+        </p>
+      )
+    }
     <p>
       {
-        isLegislatives ? (
+        isLegislativesT2 ? (
+          <>
+            Suffrages du 2nd tour (501 circonscriptions encore en lice) : les trois premières nuances (
+            {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des exprimés. Sur les{' '}
+            <strong>577 sièges</strong> (76 élus dès le 1er tour + 501 au 2nd), les nuances les plus
+            représentées sont{' '}
+            {circoLeaders
+              .map((entry) => `${nuanceLabel(entry.code)} (${entry.count})`)
+              .join(', ')}
+            .{' '}
+            <a href="/atlas/2024-legislatives">Comparer avec le 1er tour (leaders, pas élus)</a>.
+          </>
+        ) : isLegislatives ? (
           <>
             {dataset.national.candidats.length} nuances au premier tour : les trois premières (
             {top3Names}) totalisent <strong>{formatPct(top3)}</strong> des suffrages exprimés. En
@@ -113,7 +136,8 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
             {circoLeaders
               .map((entry) => `${nuanceLabel(entry.code)} (${entry.count})`)
               .join(', ')}
-            .
+            .{' '}
+            <a href="/atlas/2024-legislatives-t2">Voir les élus réels (2nd tour + élus T1)</a>.
           </>
         ) : is2027 ? (
           <>
@@ -165,7 +189,13 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
   <ResultsBarChart
     candidats={dataset.national.candidats}
-    title={isLegislatives ? 'Résultats nationaux par nuance (suffrages exprimés)' : undefined}
+    title={
+      isLegislativesT2
+        ? 'Suffrages du 2nd tour par nuance (501 circonscriptions encore en lice)'
+        : isLegislatives
+          ? 'Résultats nationaux par nuance (suffrages exprimés)'
+          : undefined
+    }
   />
 
   {is2027 && (
@@ -260,8 +290,16 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
   {circoData && (
     <>
-      <LegislativeDepartmentMap dataset={circoData} electionSlug={slug} />
-      <CirconscriptionsTable circonscriptions={circoData.circonscriptions} electionSlug={slug} />
+      <LegislativeDepartmentMap
+        dataset={circoData}
+        electionSlug={slug}
+        tourLabel={isLegislativesT2 ? 'élus 2024 (T1+T2)' : '1er tour 2024'}
+      />
+      <CirconscriptionsTable
+        circonscriptions={circoData.circonscriptions}
+        electionSlug={slug}
+        seatMode={isLegislativesT2}
+      />
     </>
   )}
 
@@ -320,7 +358,9 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
                   <a href={circoData?.source} rel="noopener noreferrer">
                     source data.gouv.fr
                   </a>
-                  .
+                  {isLegislativesT2
+                    ? ' (élus T2) ; les 76 sièges pourvus dès le 1er tour sont repris du jeu T1.'
+                    : '.'}
                 </li>
               </>
             ) : (

@@ -38,3 +38,30 @@ describe('legislatives 2024', () => {
     expect(ain?.breakdown[0]?.count).toBeGreaterThan(0);
   });
 });
+
+describe('legislatives 2024 T2 (élus réels)', () => {
+  it('loads national T2 dataset with RN leading in votes', () => {
+    const data = getElection('2024-legislatives-t2');
+    expect(data).toBeDefined();
+    expect(data?.tour).toBe(2);
+    expect(data?.national.candidats[0]?.nom).toBe('RN');
+    expect(data?.national.abstention_pct).toBeCloseTo(33.37, 1);
+  });
+
+  it('loads 577 seats: 501 T2 + 76 T1', () => {
+    const circo = getCirconscriptionResults('2024-legislatives-t2');
+    expect(circo?.circonscriptions).toHaveLength(577);
+    expect(circo?.circonscriptions.filter((c) => c.elu_tour === 2)).toHaveLength(501);
+    expect(circo?.circonscriptions.filter((c) => c.elu_tour === 1)).toHaveLength(76);
+    expect(circo?.source).toContain('data.gouv.fr');
+  });
+
+  it('counts UG as the largest seat bloc', () => {
+    const circo = getCirconscriptionResults('2024-legislatives-t2');
+    const leaders = countLeadersByNuance(circo!);
+    expect(leaders[0]?.code).toBe('UG');
+    expect(leaders[0]?.count).toBe(178);
+    expect(leaders.find((l) => l.code === 'ENS')?.count).toBe(150);
+    expect(leaders.find((l) => l.code === 'RN')?.count).toBe(125);
+  });
+});

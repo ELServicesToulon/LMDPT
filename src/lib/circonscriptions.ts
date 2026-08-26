@@ -5,10 +5,12 @@ import type {
   ElectionDataset,
 } from './election-types';
 import circo2024 from '../data/elections/2024-legislatives-1er-tour-circonscriptions.json';
+import circo2024t2 from '../data/elections/2024-legislatives-2nd-tour-circonscriptions.json';
 import circoGeoIndex from '../data/geo/circonscriptions-index-2024.json';
 
 const CIRCO_REGISTRY: Record<string, CirconscriptionElectionDataset> = {
   '2024-legislatives': circo2024 as CirconscriptionElectionDataset,
+  '2024-legislatives-t2': circo2024t2 as CirconscriptionElectionDataset,
 };
 
 export { legendForNuances, nuanceColor, nuanceLabel } from './legislative-style';

@@ -28,6 +28,7 @@
     "import:dept-2022": "tsx scripts/import-presidentielle-2022-departements.ts",
     "import:dept-2017": "tsx scripts/import-presidentielle-2017-departements.ts",
     "import:legislatives-2024": "tsx scripts/import-legislatives-2024.ts",
+    "import:legislatives-2024-t2": "tsx scripts/import-legislatives-2024-t2.ts",
     "build:geo": "tsx scripts/build-dept-svg.ts",
     "import:elections": "npm run import:dept-2022 && npm run import:dept-2017 && npm run build:geo",
     "dns:iarbre": "node scripts/setup-dns-iarbre.mjs",

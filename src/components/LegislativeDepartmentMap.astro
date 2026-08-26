@@ -11,9 +11,11 @@ import {
 interface Props {
   dataset: CirconscriptionElectionDataset;
   electionSlug: string;
+  /** Légende pédagogique (ex. « 1er tour 2024 » ou « élus 2024 (T1+T2) »). */
+  tourLabel?: string;
 }
 
-const { dataset, electionSlug } = Astro.props;
+const { dataset, electionSlug, tourLabel = '1er tour 2024' } = Astro.props;
 
 const departmentNames = new Map(deptPaths.departements.map((d) => [d.code, d.nom]));
 const departements = aggregateDepartmentLeadersFromCircos(dataset, departmentNames);
@@ -65,7 +67,7 @@ const overseas = departements.filter(
 <section class="dept-map" aria-labelledby="leg-dept-map-title">
   <h3 id="leg-dept-map-title">Carte — nuances en tête par département</h3>
   <p class="meta">
-    Couleur = nuance en tête dans le plus de circonscriptions du département (1er tour 2024).
+    Couleur = nuance en tête dans le plus de circonscriptions du département ({tourLabel}).
     Survolez ou cliquez pour le détail par circonscription. Traçabilité : {deptPaths.source_label}.
   </p>
 
@@ -94,7 +96,7 @@ const overseas = departements.filter(
     <svg
       viewBox={deptPaths.viewBox}
       role="img"
-      aria-label="Carte de France par département, colorée selon la nuance en tête au premier tour des législatives 2024"
+      aria-label={`Carte de France par département, colorée selon la nuance en tête (${tourLabel})`}
       class="france-map"
       id={`leg-france-map-${electionSlug}`}
     >

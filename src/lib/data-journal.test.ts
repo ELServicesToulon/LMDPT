@@ -41,4 +41,11 @@ describe('data journal (/sources#mises-a-jour)', () => {
     expect(legislatives.some((e) => /nationaux?/i.test(e.label))).toBe(true);
     expect(legislatives.some((e) => /circonscription/i.test(e.label))).toBe(true);
   });
+
+  it('legislatives 2024 T2 has national and circonscription entries', () => {
+    const t2 = getSortedJournal().filter((e) => e.pages?.includes('/atlas/2024-legislatives-t2'));
+    expect(t2.length).toBeGreaterThanOrEqual(2);
+    expect(t2.some((e) => /nationaux?/i.test(e.label))).toBe(true);
+    expect(t2.some((e) => /circonscription|élus/i.test(e.label))).toBe(true);
+  });
 });

@@ -37,10 +37,11 @@ describe('elections', () => {
     expect(sum).toBe(data!.national.exprimes);
   });
 
-  it('catalog lists 2017, 2022, 2024 and 2027 presidential projection', () => {
-    expect(ELECTION_CATALOG.length).toBe(4);
+  it('catalog lists 2017, 2022, 2024 T1/T2 and 2027 presidential projection', () => {
+    expect(ELECTION_CATALOG.length).toBe(5);
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2017-presidentielle');
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2024-legislatives');
+    expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2024-legislatives-t2');
     expect(ELECTION_CATALOG.map((e) => e.slug)).toContain('2027-presidentielle');
   });
 

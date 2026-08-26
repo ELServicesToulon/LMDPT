@@ -15,14 +15,23 @@ export const LEGISLATIVES_2024_DATASET_PAGE =
 export const LEGISLATIVES_2024_CIRCO_DATASET_PAGE =
   'https://www.data.gouv.fr/fr/datasets/resultats-du-1er-tour-des-elections-legislatives-2024-par-circonscription/';
 
-function parseCsv(content: string): Record<string, string>[] {
+export const LEGISLATIVES_2024_T2_DATASET_PAGE =
+  'https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/';
+
+export const LEGISLATIVES_2024_T2_CIRCO_SOURCE_URL =
+  'https://static.data.gouv.fr/resources/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/20240710-170728/resultats-definitifs-par-circonscription.csv';
+
+export const LEGISLATIVES_2024_T2_NATIONAL_SOURCE_URL =
+  'https://static.data.gouv.fr/resources/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/20240710-170713/resultats-definitifs-france-entiere.csv';
+
+function parseCsv(content: string, delimiter = ','): Record<string, string>[] {
   const rows: Record<string, string>[] = [];
   const lines = content.split(/\r?\n/).filter((line) => line.length > 0);
   if (lines.length < 2) return rows;
 
-  const headers = parseCsvLine(lines[0]!);
+  const headers = parseCsvLine(lines[0]!, delimiter);
   for (let i = 1; i < lines.length; i += 1) {
-    const cols = parseCsvLine(lines[i]!);
+    const cols = parseCsvLine(lines[i]!, delimiter);
     const row: Record<string, string> = {};
     for (let j = 0; j < headers.length; j += 1) {
       row[headers[j]!] = cols[j] ?? '';
@@ -32,7 +41,7 @@ function parseCsv(content: string): Record<string, string>[] {
   return rows;
 }
 
-function parseCsvLine(line: string): string[] {
+function parseCsvLine(line: string, delimiter = ','): string[] {
   const cols: string[] = [];
   let current = '';
   let inQuotes = false;
@@ -43,7 +52,7 @@ function parseCsvLine(line: string): string[] {
       inQuotes = !inQuotes;
       continue;
     }
-    if (ch === ',' && !inQuotes) {
+    if (ch === delimiter && !inQuotes) {
       cols.push(current);
       current = '';
       continue;
@@ -183,5 +192,124 @@ export function buildCirconscriptionDataset(rows: CirconscriptionResult[]): Circ
     source_label:
       "Ministère de l'Intérieur — résultats par circonscription (data.gouv.fr, une ligne par circonscription)",
     circonscriptions: rows,
+  };
+}
+
+function isEluCell(value: string | undefined): boolean {
+  const n = String(value ?? '')
+    .trim()
+    .toLowerCase();
+  return n === 'élu' || n === 'elu';
+}
+
+/** CSV officiel T2 (séparateur `;`, une ligne par circonscription du 7 juillet). */
+export function parseT2CirconscriptionsCsv(content: string): CirconscriptionResult[] {
+  const rows = parseCsv(content, ';');
+  const results: CirconscriptionResult[] = [];
+
+  for (const row of rows) {
+    const departement = normalizeDept(row['Code département'] ?? '');
+    const code = String(row['Code circonscription législative'] ?? '').trim();
+    if (!code) continue;
+
+    let winner: CirconscriptionResult | undefined;
+    let nbCandidats = 0;
+
+    for (let i = 1; i <= 8; i += 1) {
+      const nom = row[`Nom candidat ${i}`];
+      if (!nom) continue;
+      nbCandidats += 1;
+      const candidate = {
+        code,
+        departement,
+        nom: row['Libellé circonscription législative'] ?? code,
+        inscrits: Number(row.Inscrits ?? 0),
+        exprimes: Number(row.Exprimés ?? row.Exprimes ?? 0),
+        nb_candidats: 0,
+        leader_nom: nom,
+        leader_prenom: row[`Prénom candidat ${i}`] ?? '',
+        leader_nuance_code: row[`Nuance candidat ${i}`] ?? '',
+        leader_nuance: row[`Nuance candidat ${i}`] ?? '',
+        leader_voix: Number(row[`Voix ${i}`] ?? 0),
+        leader_pct: pctExprimes(row[`% Voix/exprimés ${i}`] ?? '0'),
+        qualifie_t2: false,
+        elu_tour: 2 as const,
+      };
+      if (isEluCell(row[`Elu ${i}`])) {
+        winner = candidate;
+      }
+    }
+
+    if (!winner) continue;
+    winner.nb_candidats = nbCandidats;
+    results.push(winner);
+  }
+
+  return results.sort((a, b) => a.code.localeCompare(b.code));
+}
+
+export function parseT2NationalCsv(content: string): ElectionDataset {
+  const rows = parseCsv(content, ';');
+  const row = rows[0];
+  if (!row) throw new Error('France entière T2 : ligne absente');
+
+  const inscrits = Number(row.Inscrits ?? 0);
+  const votants = Number(row.Votants ?? 0);
+  const exprimes = Number(row.Exprimés ?? row.Exprimes ?? 0);
+  const blancs = Number(row.Blancs ?? 0);
+  const nuls = Number(row.Nuls ?? 0);
+  const abstention_pct = pctExprimes(row['% Abstentions'] ?? '0');
+
+  const candidats: ElectionDataset['national']['candidats'] = [];
+  for (let i = 1; i <= 24; i += 1) {
+    const label = row[`Nuance candidat ${i}`];
+    if (!label) continue;
+    const voix = Number(row[`Voix ${i}`] ?? 0);
+    candidats.push({
+      nom: label,
+      nuance: label,
+      voix,
+      pourcentage_exprimes: pctExprimes(row[`% Voix/exprimés ${i}`] ?? '0'),
+      pourcentage_inscrits: pctExprimes(row[`% Voix/inscrits ${i}`] ?? '0'),
+    });
+  }
+  candidats.sort((a, b) => b.voix - a.voix);
+
+  return {
+    election: 'Législatives 2024 — 2nd tour',
+    date: '2024-07-07',
+    tour: 2,
+    source: LEGISLATIVES_2024_T2_DATASET_PAGE,
+    source_label: "Ministère de l'Intérieur — résultats définitifs 2nd tour (data.gouv.fr)",
+    national: {
+      inscrits,
+      abstention_pct,
+      votants,
+      blancs,
+      nuls,
+      exprimes,
+      candidats,
+    },
+  };
+}
+
+/** 577 sièges = élus T2 + élus dès le T1 (absents du CSV T2). */
+export function mergeLegislatives2024RealSeats(
+  t2: CirconscriptionResult[],
+  t1: CirconscriptionElectionDataset,
+): CirconscriptionElectionDataset {
+  const t2Codes = new Set(t2.map((c) => c.code));
+  const t1Elus: CirconscriptionResult[] = t1.circonscriptions
+    .filter((c) => !t2Codes.has(c.code))
+    .map((c) => ({ ...c, elu_tour: 1 as const, qualifie_t2: false }));
+
+  const merged = [...t2, ...t1Elus].sort((a, b) => a.code.localeCompare(b.code));
+  return {
+    election: 'Législatives 2024 — sièges réels (T1 élus + T2)',
+    date: '2024-07-07',
+    source: LEGISLATIVES_2024_T2_CIRCO_SOURCE_URL,
+    source_label:
+      "Ministère de l'Intérieur — T2 par circonscription + élus T1 (data.gouv.fr)",
+    circonscriptions: merged,
   };
 }

@@ -28,6 +28,7 @@ export function getJournalLastUpdate(): string | undefined {
 export const ATLAS_PAGES = [
   '/atlas/2027-presidentielle',
   '/atlas/2024-legislatives',
+  '/atlas/2024-legislatives-t2',
   '/atlas/2022-presidentielle',
   '/atlas/2017-presidentielle',
 ] as const;

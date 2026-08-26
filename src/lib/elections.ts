@@ -3,12 +3,14 @@ import presidentielle2017 from '../data/elections/2017-presidentielle-1er-tour-n
 import presidentielle2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
 import presidentielle2027 from '../data/elections/2027-presidentielle-1er-tour-national.json';
 import legislatives2024 from '../data/elections/2024-legislatives-1er-tour-national.json';
+import legislatives2024t2 from '../data/elections/2024-legislatives-2nd-tour-national.json';
 
 const REGISTRY: Record<string, ElectionDataset> = {
   '2027-presidentielle': presidentielle2027 as ElectionDataset,
   '2017-presidentielle': presidentielle2017 as ElectionDataset,
   '2022-presidentielle': presidentielle2022 as ElectionDataset,
   '2024-legislatives': legislatives2024 as ElectionDataset,
+  '2024-legislatives-t2': legislatives2024t2 as ElectionDataset,
 };
 
 export interface ElectionSummary {
@@ -36,6 +38,14 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     tour: 1,
     distorsion_note:
       'Assemblée 100 % T1 législatif vs composition réelle juil. 2024 (désistements, uninominal).',
+  },
+  {
+    slug: '2024-legislatives-t2',
+    title: 'Législatives 2024 — élus (2nd tour réel)',
+    date: '2024-07-07',
+    tour: 2,
+    distorsion_note:
+      '577 sièges : 501 élus au 2nd tour + 76 élus dès le 1er tour. Carte par circonscription (Intérieur / data.gouv). Les voix T2 ne portent que sur les 501 circonscriptions encore en lice.',
   },
   {
     slug: '2022-presidentielle',

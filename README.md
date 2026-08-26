@@ -45,6 +45,8 @@ Node **≥ 22.12**.
 | `/atlas` | Sélecteur d'élections |
 | `/atlas/2027-presidentielle` | Projection 2027 1er tour (placeholder + pluralité + liens AN1T) |
 | `/atlas/2017-presidentielle` | Résultats 1er tour 2017 + carte départements |
+| `/atlas/2024-legislatives` | Législatives 2024 — 1er tour, 577 circonscriptions |
+| `/atlas/2024-legislatives-t2` | Législatives 2024 — élus réels (501 T2 + 76 T1) |
 | `/atlas/2022-presidentielle` | Résultats 1er tour 2022 + distorsion 2nd tour + carte |
 | `/analyses` | Index des dossiers thématiques |
 | `/analyses/presidentielle-distorsion` | Distorsion 1er / 2nd tour (2017, 2022) |

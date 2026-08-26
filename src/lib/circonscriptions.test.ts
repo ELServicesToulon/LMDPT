@@ -27,6 +27,12 @@ describe('circonscriptions geo index (P8-4)', () => {
     expect(circo?.circonscriptions).toHaveLength(577);
   });
 
+  it('exposes official 2024 T2 seat results via registry', () => {
+    const circo = getCirconscriptionResults('2024-legislatives-t2');
+    expect(circo?.circonscriptions).toHaveLength(577);
+    expect(getCircoMapReadiness('2024-legislatives-t2').has_official_circo).toBe(true);
+  });
+
   it('reports 2027 readiness without official circo yet', () => {
     const r = getCircoMapReadiness('2027-presidentielle');
     expect(r.geo_count).toBe(577);

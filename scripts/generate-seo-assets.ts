@@ -25,6 +25,7 @@ const CORE_ROUTES: { path: string; changefreq: string; priority: string }[] = [
   { path: '/atlas/2017-presidentielle', changefreq: 'monthly', priority: '0.75' },
   { path: '/atlas/2022-presidentielle', changefreq: 'monthly', priority: '0.8' },
   { path: '/atlas/2024-legislatives', changefreq: 'monthly', priority: '0.8' },
+  { path: '/atlas/2024-legislatives-t2', changefreq: 'monthly', priority: '0.8' },
   { path: '/atlas/2027-presidentielle', changefreq: 'weekly', priority: '0.85' },
   { path: '/debats', changefreq: 'weekly', priority: '0.8' },
   { path: '/liberte-d-expression', changefreq: 'weekly', priority: '0.95' },

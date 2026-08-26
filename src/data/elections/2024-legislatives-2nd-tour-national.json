@@ -1,0 +1,136 @@
+{
+  "election": "Législatives 2024 — 2nd tour",
+  "date": "2024-07-07",
+  "tour": 2,
+  "source": "https://www.data.gouv.fr/fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/",
+  "source_label": "Ministère de l'Intérieur — résultats définitifs 2nd tour (data.gouv.fr)",
+  "national": {
+    "inscrits": 43328508,
+    "abstention_pct": 33.37,
+    "votants": 28867759,
+    "blancs": 1195089,
+    "nuls": 392957,
+    "exprimes": 27279713,
+    "candidats": [
+      {
+        "nom": "RN",
+        "nuance": "RN",
+        "voix": 8744080,
+        "pourcentage_exprimes": 32.05,
+        "pourcentage_inscrits": 20.18
+      },
+      {
+        "nom": "UG",
+        "nuance": "UG",
+        "voix": 7004725,
+        "pourcentage_exprimes": 25.68,
+        "pourcentage_inscrits": 16.17
+      },
+      {
+        "nom": "ENS",
+        "nuance": "ENS",
+        "voix": 6313808,
+        "pourcentage_exprimes": 23.14,
+        "pourcentage_inscrits": 14.57
+      },
+      {
+        "nom": "LR",
+        "nuance": "LR",
+        "voix": 1474650,
+        "pourcentage_exprimes": 5.41,
+        "pourcentage_inscrits": 3.4
+      },
+      {
+        "nom": "UXD",
+        "nuance": "UXD",
+        "voix": 1364964,
+        "pourcentage_exprimes": 5,
+        "pourcentage_inscrits": 3.15
+      },
+      {
+        "nom": "DVD",
+        "nuance": "DVD",
+        "voix": 980818,
+        "pourcentage_exprimes": 3.6,
+        "pourcentage_inscrits": 2.26
+      },
+      {
+        "nom": "DVG",
+        "nuance": "DVG",
+        "voix": 401063,
+        "pourcentage_exprimes": 1.47,
+        "pourcentage_inscrits": 0.93
+      },
+      {
+        "nom": "REG",
+        "nuance": "REG",
+        "voix": 288202,
+        "pourcentage_exprimes": 1.06,
+        "pourcentage_inscrits": 0.67
+      },
+      {
+        "nom": "HOR",
+        "nuance": "HOR",
+        "voix": 258139,
+        "pourcentage_exprimes": 0.95,
+        "pourcentage_inscrits": 0.6
+      },
+      {
+        "nom": "DVC",
+        "nuance": "DVC",
+        "voix": 177167,
+        "pourcentage_exprimes": 0.65,
+        "pourcentage_inscrits": 0.41
+      },
+      {
+        "nom": "UDI",
+        "nuance": "UDI",
+        "voix": 119672,
+        "pourcentage_exprimes": 0.44,
+        "pourcentage_inscrits": 0.28
+      },
+      {
+        "nom": "DIV",
+        "nuance": "DIV",
+        "voix": 38025,
+        "pourcentage_exprimes": 0.14,
+        "pourcentage_inscrits": 0.09
+      },
+      {
+        "nom": "ECO",
+        "nuance": "ECO",
+        "voix": 37808,
+        "pourcentage_exprimes": 0.14,
+        "pourcentage_inscrits": 0.09
+      },
+      {
+        "nom": "SOC",
+        "nuance": "SOC",
+        "voix": 26343,
+        "pourcentage_exprimes": 0.1,
+        "pourcentage_inscrits": 0.06
+      },
+      {
+        "nom": "EXD",
+        "nuance": "EXD",
+        "voix": 23217,
+        "pourcentage_exprimes": 0.09,
+        "pourcentage_inscrits": 0.05
+      },
+      {
+        "nom": "DSV",
+        "nuance": "DSV",
+        "voix": 18672,
+        "pourcentage_exprimes": 0.07,
+        "pourcentage_inscrits": 0.04
+      },
+      {
+        "nom": "FI",
+        "nuance": "FI",
+        "voix": 8361,
+        "pourcentage_exprimes": 0.03,
+        "pourcentage_inscrits": 0.02
+      }
+    ]
+  }
+}
