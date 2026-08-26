@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-26T13:28:33.464Z",
+  "fetched_at": "2026-08-26T06:11:36.000Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,218 +7,10 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "Présidentielle 2027 : les « insoumis » et leurs caravanes populaires à la conquête des abstentionnistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/26/presidentielle-2027-les-insoumis-et-leurs-caravanes-populaires-a-la-conquete-des-abstentionnistes_6732763_823448.html",
-      "published": "2026-07-26",
-      "summary": "Tout au long de l’été, les militants de La France insoumise sillonnent la France, privilégiant les quartiers populaires pour encourager les habitants à s’inscrire sur les listes électorales. Mais aussi pour mieux faire connaître la candidature de Jean-Luc Mélenchon.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
-      }
-    },
-    {
-      "title": "Pierre Lefébure, politiste : « Le suractivisme d’un candidat à la présidentielle est risqué, tout ce qu’il dit peut lui être renvoyé au visage plus tard »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/pierre-lefebure-politiste-le-suractivisme-d-un-candidat-a-la-presidentielle-est-risque-tout-ce-qu-il-dit-peut-lui-etre-renvoye-au-visage-plus-tard_6731504_823448.html",
-      "published": "2026-07-24",
-      "summary": "L’été 2026 s’annonce moins riche en campagnes politiques que d’autres étés précédant le scrutin, mais il promet de donner à voir tout l’éventail des usages en communication et déambulation publique, observe, dans un entretien au « Monde », le maître de conférences en science poli",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : l’écologiste Marine Tondelier poursuit sa campagne malgré la pression de l’union",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-l-ecologiste-marine-tondelier-poursuit-sa-campagne-malgre-la-pression-de-l-union_6731501_823448.html",
-      "published": "2026-07-24",
-      "summary": "Sillonnant le pays à bord d’un van électrique, la secrétaire nationale des Ecologistes continue de porter ses idées pendant que les appels à l’union continuent de diviser le parti.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : en Bretagne, Gabriel Attal mène campagne pour faire décoller sa candidature",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-en-bretagne-gabriel-attal-mene-campagne-pour-faire-decoller-sa-candidature_6731467_823448.html",
-      "published": "2026-07-24",
-      "summary": "Arpentant durant trois jours la région, le candidat à l’Elysée s’est affiché, jeudi, aux côtés du patron Michel-Edouard Leclerc et a martelé sa volonté de « réduire l’écart entre le [salaire] net et le brut ». La trêve estivale est l’occasion pour lui de multiplier les déplacemen",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : l’été, une période de précampagne difficile à ignorer pour les candidats",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-pendant-l-ete-une-periode-de-precampagne-difficile-a-ignorer-pour-les-candidats_6731416_823448.html",
-      "published": "2026-07-24",
-      "summary": "A quelques mois de l’élection, la période estivale est un moment privilégié pour certains candidats de se montrer sur le terrain et pour les partis de consolider leur base.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Loi d’urgence agricole : le Conseil constitutionnel saisi par des députés « insoumis » et écologistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/loi-d-urgence-agricole-le-conseil-constitutionnel-saisi-par-des-deputes-insoumis-et-ecologistes_6731496_823448.html",
-      "published": "2026-07-24",
-      "summary": "Les députés requérants arguent notamment que la réintroduction sous conditions de certains pesticides interdits n’a pas de lien avec le projet de loi initial, et devrait donc être censurée comme cavalier législatif.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : insoumis"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : comment Matignon négocie avec les banques françaises pour qu’elles acceptent de financer la campagne de Marine Le Pen",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/23/presidentielle-2027-comment-matignon-negocie-avec-les-banques-francaises-pour-qu-elles-acceptent-de-financer-la-campagne-de-marine-le-pen_6730921_823448.html",
-      "published": "2026-07-23",
-      "summary": "Un consortium de banques devrait permettre à la candidate d’extrême droite d’obtenir un emprunt en France. Le premier ministre est disposé à ce que ce prêt soit partiellement garanti par l’Etat, par le biais de la prochaine loi de finances.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen"
-      }
-    },
-    {
-      "title": "La Chine n’a pas lancé un programme de charité pour offrir des climatiseurs aux Français",
-      "url": "https://www.france24.com/fr/france/20260723-la-chine-n-a-pas-lanc%C3%A9-un-programme-de-charit%C3%A9-pour-offrir-des-climatiseurs-aux-fran%C3%A7ais",
-      "published": "2026-07-23",
-      "summary": "Des internautes affirment que la Chine se moquerait du manque de climatisation en France. Ils partagent une vidéo humoristique en chinois annonçant la création d'une association destinée à offrir des climatiseurs recyclés aux Français. En réalité, il s'agit d'une vidéo parodique ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : climat"
-      }
-    },
-    {
-      "title": "Réforme de la justice : le Conseil constitutionnel censure le recours à la généalogie génétique de la loi portée par Gérald Darmanin",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/23/reforme-de-la-justice-le-conseil-constitutionnel-censure-le-recours-a-la-genealogie-genetique-de-la-loi-portee-par-gerald-darmanin_6731175_3224.html",
-      "published": "2026-07-23",
-      "summary": "Les sages ont jugé le dispositif contraire à la Constitution faute de garanties suffisantes pour concilier recherche des auteurs d’infractions et respect de la vie privée, tout en validant les principales mesures contestées de la loi portée par Gérald Darmanin.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : réforme, reforme"
-      }
-    },
-    {
-      "title": "Interdiction des réseaux sociaux aux moins de 15 ans : LFI dépose un recours devant le Conseil constitutionnel",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/23/interdiction-des-reseaux-sociaux-aux-moins-de-15-ans-lfi-depose-un-recours-devant-le-conseil-constitutionnel_6731174_823448.html",
-      "published": "2026-07-23",
-      "summary": "Les députés « insoumis » à l’origine de ce recours considèrent que l’interdiction et le contrôle de l’âge constituent une atteinte à la liberté d’expression et de communication, mais aussi au droit au respect de la vie privée.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : insoumis, lfi"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Jean-Luc Mélenchon tend une nouvelle fois la main aux Ecologistes en leur proposant un accord « global »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/22/presidentielle-2027-jean-luc-melenchon-propose-un-accord-global-aux-ecologistes-pour-unir-la-gauche_6730025_823448.html",
-      "published": "2026-07-22",
-      "summary": "« Nous ne renonçons pas à une stratégie unitaire. Notre main tendue, c’est la “Nouvelle alliance populaire” », a expliqué le candidat « insoumis » dans une interview au média écologiste en ligne « Reporterre ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
-      }
-    },
-    {
-      "title": "Le géographe Frédéric Giraut réagit aux « écorégions » promues par Jean-Luc Mélenchon : « Le biorégionalisme ne peut penser la question urbaine et migratoire autrement qu’en termes négatifs »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/22/le-geographe-frederic-giraut-reagit-aux-ecoregions-promues-par-jean-luc-melenchon-le-bioregionalisme-ne-peut-penser-la-question-urbaine-et-migratoire-autrement-qu-en-termes-negatifs_6729986_3232.html",
-      "published": "2026-07-22",
-      "summary": "La proposition du candidat « insoumis » à l’élection présidentielle de redessiner la carte de France autour de 13 nouvelles zones s’inscrit dans une tradition de pensée qui fait primer les données naturelles et de supposés héritages culturels sur les réalités sociales et économiq",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
-      "published": "2026-07-18",
-      "summary": "Des élus macronistes et des centristes peu convaincus par Gabriel Attal et Edouard Philippe entretiennent le dialogue notamment avec Bernard Cazeneuve. Ils seraient prêts à soutenir dès le premier tour un candidat de la gauche réformiste dans le cadre d’une coalition.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal, macron"
-      }
-    },
-    {
-      "title": "Pour l’élection présidentielle 2027, la gauche sociale-démocrate cherche toujours son candidat",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/18/hollande-cazeneuve-glucksmann-la-gauche-sociale-democrate-cherche-toujours-son-candidat_6724309_823448.html",
-      "published": "2026-07-18",
-      "summary": "Le 9 juillet, les militants socialistes ont opté pour une primaire interne qui doit se tenir en octobre, mais ce choix n’a pas fait disparaître les profondes tensions au sein du PS. La multiplication de prétendants officieux brouille les cartes.",
+      "title": "Le PS et Place publique se mettent d’accord sur les modalités de leur primaire",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/le-ps-et-place-publique-ratifient-se-mettent-d-accord-sur-les-modalites-de-leur-primaire_6756875_823448.html",
+      "published": "2026-08-26",
+      "summary": "La primaire de la gauche socialiste et démocratique, qui se tiendra en octobre, sera ouverte à de nouveaux adhérents grâce à une structure ad hoc, avec un tarif d’inscription de 15 euros.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -231,44 +23,156 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
-      "published": "2026-07-17",
-      "summary": "Suspendus depuis octobre 2025, les six membres Les Républicains du gouvernement Lecornu incarnent pour leur président, Bruno Retailleau, une page révolue : celle d’une droite alliée avec la Macronie. Les bannis estiment ne pas avoir trahi leur famille politique et plaident pour u",
+      "title": "Raphaël Glucksmann : « L’Europe est cruciale pour mener à bien la transformation écologique »",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/raphael-glucksmann-l-europe-est-cruciale-pour-mener-a-bien-la-transformation-ecologique_6756834_823448.html",
+      "published": "2026-08-26",
+      "summary": "Le candidat à la présidentielle de 2027 revient dans un entretien au « Monde » sur la « République écologique » qu’il propose et les raisons qui devraient inciter Les Ecologistes à le rejoindre. Il souhaite aussi taxer les « méga-héritages » pour financer une augmentation des sal",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes"
       }
     },
     {
-      "title": "Présidentielle 2027 : Bernard Cazeneuve se déclare candidat dans un entretien au « Parisien » et décline la primaire socialiste",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/16/presidentielle-2027-bernard-cazeneuve-se-declare-candidat-dans-un-entretien-au-parisien-et-decline-la-primaire-socialiste_6723827_823448.html",
-      "published": "2026-07-16",
-      "summary": "Celui qui se présente comme « un républicain de gauche » et un « social-démocrate » esquisse dans cette interview ses premières propositions en vue de la course à l’Elysée.",
+      "title": "Dans l’éducation nationale, une drôle de rentrée politique, coincée entre une fin de quinquennat atone et une élection présidentielle majeure",
+      "url": "https://www.lemonde.fr/societe/article/2026/08/26/dans-l-education-nationale-une-drole-de-rentree-politique-coincee-entre-une-fin-de-quinquennat-atone-et-une-election-presidentielle-majeure_6756831_3224.html",
+      "published": "2026-08-26",
+      "summary": "Alors que les candidats au scrutin présidentiel rivalisent déjà d’annonces sur l’école, le ministre de l’éducation nationale, Edouard Geffray, a tenu sa conférence de rentrée, mardi.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : cazeneuve, socialiste, social-democrate"
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : école, ecole"
       }
     },
     {
-      "title": "Dominique de Villepin dit que les candidats qui promettent de ne pas augmenter les impôts sont des « menteurs »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/dominique-de-villepin-dit-que-les-candidats-qui-promettent-de-ne-pas-augmenter-les-impots-sont-des-menteurs_6723620_823448.html",
-      "published": "2026-07-15",
-      "summary": "Le probable candidat à la présidentielle s’exprimait au siège parisien de son jeune parti, La France humaniste, devant une poignée de journalistes ainsi qu’une dizaine d’influenceurs et de représentants des nouveaux médias.",
+      "title": "Présidentielle 2027 : le duo Raphaël Glucksmann-Yannick Jadot se pose en défenseur de l’écologie lors d’un déplacement en Charente-Maritime",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-en-charente-maritime-le-duo-glucksmann-jadot-se-pose-en-defenseur-de-l-ecologie_6756624_823448.html",
+      "published": "2026-08-25",
+      "summary": "Sortie des énergies fossiles, électrification de la société, rénovation des bâtiments, etc. Le fondateur de Place publique a égrené mardi 25 août ses objectifs pour l’écologie accompagné de l’ancien candidat des Verts Yannick Jadot.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Aux obsèques de François Patriat, Emmanuel Macron rend hommage à un fidèle « grognard » et met en garde Edouard Philippe et Gabriel Attal",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/25/aux-obseques-de-francois-patriat-emmanuel-macron-rend-hommage-a-un-fidele-grognard-et-met-en-garde-edouard-philippe-et-gabriel-attal_6756622_823448.html",
+      "published": "2026-08-25",
+      "summary": "Les macronistes de la première heure étaient présents en nombre aux funérailles du sénateur, mort le 19 août. Dans l’oraison funèbre qu’il a prononcée, le président de la République a salué un élu « qui assumait bravement » et défendait son bilan, une critique en creux des candid",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal, macron"
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann promet une « révolution écologique » en cent jours s’il est élu président de la République",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/25/raphael-glucksmann-promet-une-revolution-ecologique-en-cent-jours-s-il-est-elu-president-de-la-republique_6756579_6205049.html",
+      "published": "2026-08-25",
+      "summary": "Pour son premier déplacement de campagne, le cofondateur du parti Place publique a choisi le thème de l’éolien. Aux côtés du sénateur Yannick Jadot, il a promis d’engager, dès sa victoire, cent jours de transformation pour « libérer la France » de « son addiction au gaz et au pét",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : le bilan d’Emmanuel Macron, un lourd héritage à porter pour Gabriel Attal et Edouard Philippe",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-le-bilan-d-emmanuel-macron-un-lourd-heritage-a-porter-pour-gabriel-attal-et-edouard-philippe_6756575_823448.html",
+      "published": "2026-08-25",
+      "summary": "Si l’ancien secrétaire général de l’Elysée, Alexis Kohler, s’est exprimé pour défendre le chef de l’Etat, les candidats issus du bloc central critiquent sa pratique du pouvoir tout en essayant de ne pas froisser son électorat.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal, macron"
+      }
+    },
+    {
+      "title": "David Lisnard, président du parti Nouvelle Energie : « Sans une grande primaire ouverte à tous, la droite et le centre ne seront pas en mesure de l’emporter »",
+      "url": "https://www.lemonde.fr/idees/article/2026/08/25/david-lisnard-pour-la-presidentielle-2027-sans-une-grande-primaire-ouverte-a-tous-la-droite-et-le-centre-ne-seront-pas-en-mesure-de-l-emporter_6756156_3232.html",
+      "published": "2026-08-25",
+      "summary": "Pour éviter la division, la compromission programmatique et la multiplication des candidatures, le maire de Cannes, ex-LR et candidat à la présidentielle, appelle, dans une tribune au « Monde », ses concurrents de la droite et du centre à accepter l’organisation d’une primaire.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : lisnard, cannes, nouvelle énergie"
+      }
+    },
+    {
+      "title": "Gabriel Attal : « Je souhaite une loi de programmation pour l’école et un ministre de l’éducation qui restera en poste cinq ans »",
+      "url": "https://www.lemonde.fr/societe/article/2026/08/25/gabriel-attal-je-souhaite-une-loi-de-programmation-pour-l-ecole-et-un-ministre-de-l-education-qui-restera-en-poste-cinq-ans_6756157_3224.html",
+      "published": "2026-08-25",
+      "summary": "Rétablissement du certificat d’études, fermeture de « collèges ghettos », augmentations salariales… A quelques jours de la rentrée des classes, le candidat de Renaissance à la présidentielle dévoile ses mesures pour l’éducation, dans un entretien au « Monde ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal, renaissance"
+      }
+    },
+    {
+      "title": "Mélenchon, Glucksmann, Tondelier et les autres : combien de candidats à la présidentielle à gauche ?",
+      "url": "https://www.france24.com/fr/france/20260825-france-presidentielle-2027-melenchon-glucksmann-tondelier-et-les-autres-combien-de-candidats-a-gauche",
+      "published": "2026-08-25",
+      "summary": "L’entrée dans la course à l’Élysée de Raphaël Glucksmann dans le cadre de la primaire socialiste, peut-être bientôt suivie par celles d’Olivier Faure et de Boris Vallaud, et par la candidature hors primaire du communiste Fabien Roussel illustrent la difficulté de s’y retrouver fa",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Mélenchon / LFI) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Le patronat et les syndicats tentent de relancer le dialogue pour faire avancer leur « agenda social autonome »",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/25/le-patronat-et-les-syndicats-tentent-de-relancer-le-dialogue-pour-faire-avancer-leur-agenda-social-autonome_6756592_823448.html",
+      "published": "2026-08-25",
+      "summary": "Les organisations d’employeurs et de salariés se sont réunies lundi pour essayer de définir leur propre programme de négociations, sans directives gouvernementales. Alors qu’ils ne s’étaient pas revus dans une telle configuration depuis la fin janvier, les différents partenaires ",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -279,26 +183,42 @@
       }
     },
     {
-      "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
-      "published": "2026-07-15",
-      "summary": "Son éligibilité à peine recouvrée, le 7 juillet, Marine Le Pen a dévoilé une affiche exaltant le thème de « la renaissance » : celle de la France autant que celle de la candidate. L’audience se tiendra en référé le 27 juillet au tribunal de Paris.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Pourquoi le gouvernement veut exclure certains fonds du PEA",
+      "url": "https://www.lemonde.fr/argent/article/2026/08/25/pourquoi-le-gouvernement-veut-exclure-certains-fonds-du-pea_6756588_1657007.html",
+      "published": "2026-08-25",
+      "summary": "Le ministère des finances pourrait profiter du budget 2027 pour suspendre l’éligibilité de certains ETF, des fonds indiciels cotés, au plan d’épargne en actions. Des fonds auxquels on reproche de contourner les règles du dispositif.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Le Pen / RN) — teinte pluraliste."
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
-      "title": "Présidentielle 2027 : Jean-Luc Mélenchon, en meeting en Bretagne, s’adresse aux « enfants » des Jacobins pour défendre ses « écorégions »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-bretagne-jean-luc-melenchon-s-adresse-aux-enfants-des-jacobins-pour-defendre-ses-ecoregions_6723503_823448.html",
-      "published": "2026-07-15",
-      "summary": "Attendu sur les questions de ruralité et d’agriculture, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué, mardi, son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantiqu",
+      "title": "Présidentielle 2027 : Edouard Philippe veut augmenter de « 20 % la rémunération moyenne des enseignants » sur un quinquennat",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/24/presidentielle-2027-edouard-philippe-veut-augmenter-de-20-la-remuneration-moyenne-des-enseignants-sur-un-quinquennat_6755790_6205049.html",
+      "published": "2026-08-24",
+      "summary": "L’ancien premier ministre et candidat Horizons à l’élection présidentielle souhaite par ailleurs instaurer une « amende de responsabilisation scolaire, sur le modèle de ce qui existe au Royaume-Uni », pour les « parents d’enfants harceleurs, perturbateurs ou absentéistes et les p",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "philippe",
+        "label": "Philippe / Horizons",
+        "color": "#0001b8",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : L’Après saisit la main tendue de l’écologiste Marine Tondelier pour une union de la gauche",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/24/presidentielle-2027-l-apres-saisit-la-main-tendue-de-l-ecologiste-marine-tondelier-pour-une-union-de-la-gauche_6755585_823448.html",
+      "published": "2026-08-24",
+      "summary": "La secrétaire nationale des Ecologistes avait de nouveau appelé vendredi à des rencontres bilatérales avec les partis de gauche. Si le parti des ex-élus de La France insoumise a répondu favorablement, la formation mélenchoniste a rejeté la proposition.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -307,14 +227,126 @@
         "label": "Mélenchon / LFI",
         "color": "#cc2443",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, lfi"
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
       }
     },
     {
-      "title": "Armel Le Divellec, professeur de droit public : « L’élection présidentielle est un mirage : à elle seule, elle ne livre pas la maîtrise du pouvoir »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/14/armel-le-divellec-professeur-de-droit-public-l-election-presidentielle-est-un-mirage-a-elle-seule-elle-ne-livre-pas-la-maitrise-du-pouvoir_6723310_3232.html",
-      "published": "2026-07-14",
-      "summary": "Les responsables politiques devraient se préoccuper autant des probables élections législatives anticipées que du scrutin présidentiel de 2027 avertit, dans une tribune au « Monde », le directeur adjoint du Centre d’études constitutionnelles et politiques.",
+      "title": "Présidentielle 2027 : la transition écologique, combat commun de la gauche",
+      "url": "https://www.lemonde.fr/idees/article/2026/08/24/presidentielle-2027-la-transition-ecologique-combat-commun-de-la-gauche_6755229_3232.html",
+      "published": "2026-08-24",
+      "summary": "Même s’il demeure des divergences profondes sur certains sujets, comme celui du nucléaire, toutes les formations de gauche considèrent, à raison, ce sujet comme une urgence.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : transition écologique"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Yannick Jadot se range derrière Raphaël Glucksmann et sera chargé de préparer « la mise en place d’un état d’urgence écologique »",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/24/presidentielle-2027-yannick-jadot-apporte-son-soutien-a-raphael-glucksmann_6755022_823448.html",
+      "published": "2026-08-24",
+      "summary": "« Je suis convaincu que Raphaël Glucksmann est le candidat le mieux placé (…) et qu’il peut gagner cette élection présidentielle », a affirmé le sénateur écologiste sur France Inter.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : la bataille des gauches est lancée",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/24/presidentielle-2027-la-bataille-des-gauches-irreconciliables-est-lancee_6754812_823448.html",
+      "published": "2026-08-24",
+      "summary": "Lors de l’université d’été de La France insoumise, où il a prononcé un discours très centré sur la planification écologique, Jean-Luc Mélenchon a multiplié les appels du pied pour attirer Les Ecologistes. Son rival à gauche, Raphaël Glucksmann a, lui, annoncé sa candidature au « ",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Raphaël Glucksmann veut remporter la primaire socialiste sur une ligne anti-LFI",
+      "url": "https://www.france24.com/fr/france/20260824-france-presidentielle-2027-raphael-glucksman-veut-remporter-primaire-socialiste-sur-une-ligne-anti-lfi",
+      "published": "2026-08-24",
+      "summary": "Raphaël Glucksmann, désormais candidat à la primaire socialiste, a fait du rapport de la gauche à Jean-Luc Mélenchon et de la question d’une éventuelle alliance avec La France insoumise aux législatives de 2027 un élément central de son projet politique en vue des débats à venir ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Dernière rentrée politique pour Emmanuel Macron, qui alerte sur les \"tensions budgétaires\"",
+      "url": "https://www.france24.com/fr/france/20260824-l-heure-de-la-derni%C3%A8re-rentr%C3%A9e-politique-pour-emmanuel-macron-et-ses-ministres",
+      "published": "2026-08-24",
+      "summary": "Emmanuel Macron a réuni le gouvernement lundi matin à l'Élysée pour sa dernière rentrée politique en tant que chef de l'État. Un Conseil des ministres qui a lieu après un été caniculaire marqué par de nombreux incendies mais aussi, sur le plan politique, par les premières secouss",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Léa Salamé se retire du « 20 heures » de France 2 après la déclaration officielle de candidature de Raphaël Glucksmann",
+      "url": "https://www.lemonde.fr/economie/article/2026/08/23/lea-salame-se-retire-du-20-heures-de-france-2-apres-la-declaration-officielle-de-candidature-de-raphael-glucksmann_6754541_3234.html",
+      "published": "2026-08-23",
+      "summary": "« J’en avais pris l’engagement dès le premier jour et je m’y tiens (...) Cette décision, prise en accord avec ma direction, est évidente et difficile », a écrit la journaliste, après l’officialisation de la candidature de son compagnon.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann annonce être candidat à l’élection présidentielle de 2027 dans le cadre de la primaire organisée avec le PS",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/23/raphael-glucksmann-annonce-etre-candidat-a-l-election-presidentielle-dans-le-cadre-de-la-primaire-organisee-avec-le-parti-socialiste_6754507_823448.html",
+      "published": "2026-08-23",
+      "summary": "L’essayiste et fondateur de Place publique a annoncé sa candidature au journal de 20 heures, sur TF1, dimanche. En attendant de participer à une primaire organisée avec le PS, il espère créer une dynamique dans les semaines à venir.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Bruno Le Maire publie un manifeste « pour une autre France »",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-bruno-le-maire-publie-un-manifeste-pour-une-autre-france_6754301_823448.html",
+      "published": "2026-08-23",
+      "summary": "En retrait de la vie politique depuis deux ans, l’ancien ministre de l’économie a exposé ses trois priorités pour le pays, à quelques mois de l’élection présidentielle, alors qu’il laisse planer le doute sur une éventuelle candidature.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -327,10 +359,10 @@
       }
     },
     {
-      "title": "« Première République écologique et citoyenne » : le programme des Ecologistes pour peser en 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/13/premiere-republique-ecologique-et-citoyenne-le-programme-des-ecologistes-pour-peser-en-2027_6723128_823448.html",
-      "published": "2026-07-13",
-      "summary": "Changement de Constitution, sortie du nucléaire, retraite… Le parti Les Ecologistes a présenté, lundi 13 juillet, ses propositions pour l’élection présidentielle, après avoir conforté la candidature de sa secrétaire nationale, Marine Tondelier.",
+      "title": "Présidentielle 2027 : la transition écologique, élément de convergence et de rivalité entre LFI et Les Ecologistes",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-la-transition-ecologique-element-de-convergence-et-de-rivalite-entre-lfi-et-les-ecologistes_6754268_823448.html",
+      "published": "2026-08-23",
+      "summary": "Alors que le pays a vécu un été de crises liées au dérèglement climatique, l’écologie a été le thème central des universités de La France insoumise et des Ecologistes, le week-end des 22 et 23 août. Les « insoumis » espèrent convaincre les seconds de soutenir la candidature de Je",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -339,14 +371,14 @@
         "label": "Écologiste",
         "color": "#00c000",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes, tondelier"
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes, écologie"
       }
     },
     {
-      "title": "« Chacun joue le coup d’après » : ce que dit la multiplication des candidatures pour la présidentielle 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/13/chacun-joue-le-coup-d-apres-ce-que-dit-la-multiplication-des-candidatures-pour-la-presidentielle-2027_6723092_823448.html",
-      "published": "2026-07-13",
-      "summary": "Avec une trentaine de candidats sur la ligne de départ, la campagne pour l’élection suprême démarre en rangs dispersés, pointant la faiblesse de certains camps, notamment à gauche.",
+      "title": "Présidentielle 2027 : la surenchère sur l’immigration des candidats du bloc central",
+      "url": "https://www.lemonde.fr/societe/article/2026/08/23/presidentielle-la-surenchere-des-candidats-du-bloc-central-sur-l-immigration_6754133_3224.html",
+      "published": "2026-08-23",
+      "summary": "En visite à Mayotte, Edouard Philippe a évoqué la suspension des demandes d’asile ou de regroupement familial. Son rival au centre, Gabriel Attal, évoque une modification constitutionnelle pour instaurer des quotas limitatifs de migrants.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -354,24 +386,72 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
       }
     },
     {
-      "title": "Présidentielle 2027 : Marine Tondelier dévoile le programme des Ecologistes",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/13/presidentielle-2027-marine-tondelier-devoile-le-programme-des-ecologistes_6723085_6205049.html",
-      "published": "2026-07-13",
-      "summary": "Porté par dix mois de consultations et 50 000 propositions, le programme promet la proposition de créer une « Première République écologique et citoyenne », une transformation profonde des institutions et de la fiscalité pour 2027.",
+      "title": "Le communiste Fabien Roussel lance sa campagne pour la présidentielle 2027 sur une ligne autonome",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-le-communiste-fabien-roussel-lance-sa-campagne-sur-une-ligne-autonome_6754061_823448.html",
+      "published": "2026-08-23",
+      "summary": "Le projet, proposé par la direction sortante, a d’ores et déjà été approuvé par les délégués lors du 40ᵉ congrès du PCF, au début de juillet, à Lille. Mais les adhérents doivent encore approuver la désignation de Fabien Roussel.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
+        "slug": "roussel",
+        "label": "Roussel / PCF",
+        "color": "#dd0000",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : pcf, roussel, communiste"
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann annonce sa candidature à la présidentielle de 2027",
+      "url": "https://www.france24.com/fr/france/20260823-rapha%C3%ABl-glucksmann-annonce-sa-candidature-%C3%A0-la-pr%C3%A9sidentielle-de-2027",
+      "published": "2026-08-23",
+      "summary": "L'eurodéputé Raphaël Glucksmann a annoncé dimanche sa candidature à la présidentielle de 2027, en passant par la primaire sociale-démocrate organisée en octobre. Sa compagne, la journaliste Léa Salamé, a déclaré lundi se mettre en retrait du journal de 20 h de France 2, tandis qu",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "La loi sur l'aide à mourir promulguée par le président Emmanuel Macron",
+      "url": "https://www.france24.com/fr/france/20260819-loi-aide-mourir-promulguee-journal-officiel-president-emmanuel-macron-soignants-euthanasie",
+      "published": "2026-08-19",
+      "summary": "Le texte de loi créant un droit à l'aide à mourir, validé par le Conseil constitutionnel avec quelques réserves, a été promulgué par Emmanuel Macron et publié mercredi au Journal officiel. Avant que les soignants ne soient en mesure de le mettre en pratique, le gouvernement doit ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Mégafeu en Gironde : Sébastien Lecornu promet des aides massives et la transparence aux sinistrés",
+      "url": "https://www.france24.com/fr/france/20260816-lecornu-en-gironde-pour-la-reconstruction-apr%C3%A8s-le-m%C3%A9gafeu-le-porge-r%C3%A9clame-un-plan-marshall",
+      "published": "2026-08-16",
+      "summary": "Chahuté par des dizaines d'habitants lors de son arrivée en Gironde, touché par un incendie historique au mois de juillet, le Premier ministre Sébastien Lecornu a annoncé lundi de nouvelles mesures de soutien aux entreprises, dont le coût total pourrait dépasser 100 millions d'eu",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     }
   ]

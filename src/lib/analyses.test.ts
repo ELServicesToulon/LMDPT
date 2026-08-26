@@ -14,6 +14,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('programmes-comparateur');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('alerte-citoyenne');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('declarations-x-candidats');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('dgfip-fuites-2026');
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {

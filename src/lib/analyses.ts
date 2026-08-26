@@ -59,6 +59,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/gouvernance-an1t-droit',
   },
   {
+    slug: 'dgfip-fuites-2026',
+    title: 'Fuites DGFiP 2026 — chiffres officiels et revendications',
+    description:
+      'Enquête : 678 000 comptes (impôts) et environ 200 000 comptes cadastraux selon la DGFiP, face à une revendication de 2 041 778 propriétaires. Sources signalées, zéro donnée personnelle.',
+    date: '2026-08-15',
+    href: '/analyses/dgfip-fuites-2026',
+  },
+  {
     slug: 'alerte-citoyenne',
     title: 'Alerte citoyenne — débat public',
     description:

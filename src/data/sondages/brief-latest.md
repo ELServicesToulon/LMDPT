@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-07-26T16:18:08.345Z
+**Scan** : 2026-08-24T16:17:28.188Z
 
-> Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.
+> Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Scan 2026-07-26T16:18 — aucun mouvement détecté (31 vague(s) en mémoire, 11 source(s) OK).
+- Harris Interactive / Toluna Harris (24/08/2026) : le pen en tête à 38 % (intentions de vote).
 
 ## Têtes de vague (scores extraits)
 
@@ -15,12 +15,13 @@
 - **Verian** : le pen — 37 %
 - **Harris Interactive** : le pen — 35 %
 - **OpinionWay** : le pen — 35 %
-- **Elabe** : le pen — 34.5 %
+- **Harris Interactive / Toluna Harris** : le pen — 38 %
 
 ## Sources
 
-- OK : 11
-- Erreurs : 1
+- OK : 10
+- Erreurs : 2
+  - `2027presidentielle` : HTTP 404
   - `politico-pop` : HTTP 403
 
 ## Le Point / Cluster17

@@ -117,20 +117,22 @@ export function programProximityColor(blocId: string | undefined, fallback = '#9
  * Ordre de placement dans l’hémicycle — convention Assemblée nationale :
  * **gauche** (écran gauche) → **centre** → **droite** (écran droite).
  * Vue face à l’hémicycle (président d’assemblée en bas).
+ *
+ * Aligné sur `BLOC_SPECTRUM_AXIS` (méthodo LMDPT) : Autres = REG/DIV au **centre** (0.5),
+ * pas après le RN. L’ordre du tableau `/sources#methodologie-blocs` n’est pas un ordre de sièges.
  */
-export const SPECTRUM_SEAT_ORDER = ['nfp', 'ensemble', 'lr', 'rn', 'autres'] as const;
+export const SPECTRUM_SEAT_ORDER = ['nfp', 'ensemble', 'autres', 'lr', 'rn'] as const;
 
 export function spectrumSortKey(blocId: string): number {
-  // Candidats & sous-blocs : ordre continu sur l’axe 0 (gauche) → 1 (droite)
-  if (BLOC_SPECTRUM_AXIS[blocId] != null && !(SPECTRUM_SEAT_ORDER as readonly string[]).includes(blocId)) {
+  // Axe de proximité = source de vérité (blocs + candidats). Autres = 0.5, pas 1.0.
+  if (BLOC_SPECTRUM_AXIS[blocId] != null) {
     return BLOC_SPECTRUM_AXIS[blocId];
   }
   const i = SPECTRUM_SEAT_ORDER.indexOf(blocId as (typeof SPECTRUM_SEAT_ORDER)[number]);
   if (i >= 0) {
-    // indices 0..4 mappés sur 0..1 pour rester comparable aux axes candidats
     return i / Math.max(1, SPECTRUM_SEAT_ORDER.length - 1);
   }
-  return BLOC_SPECTRUM_AXIS[blocId] ?? 0.5;
+  return 0.5;
 }
 
 export type HemiPos = { x: number; y: number };

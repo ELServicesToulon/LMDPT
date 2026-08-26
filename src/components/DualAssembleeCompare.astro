@@ -89,7 +89,7 @@ function buildDots(
   alloc: SeatRow[],
   colorFn: (id: string, fallback?: string) => string,
 ): Array<{ x: number; y: number; color: string; label: string; id: string }> {
-  // Remplir l’arc de gauche à droite : nfp → ensemble → lr → rn → autres
+  // Remplir l’arc de gauche à droite (axe proximité) : nfp → ensemble → autres → lr → rn
   const sorted = [...alloc]
     .filter((a) => (a.seats ?? 0) > 0)
     .sort((a, b) => spectrumSortKey(a.id) - spectrumSortKey(b.id));
@@ -163,7 +163,9 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
             couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée{' '}
             <strong>réelle des législatives</strong> qui ont suivi. <strong>Convention hémicycle</strong> :
             partis de <em>gauche à gauche</em>, <em>centre au centre</em>, partis de <em>droite à droite</em>{' '}
-            (vue face à l’hémicycle).
+            (vue face à l’hémicycle). Le bloc <em>Autres</em> (régionalistes &amp; divers) est au{' '}
+            <strong>centre de l’arc</strong>, pas à l’extrême droite —{' '}
+            <a href="/sources#methodologie-blocs">méthodo</a>.
           </>
         )
       }
@@ -330,7 +332,8 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
               >
                 <desc>
                   Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue). Même géométrie
-                  Wikimedia ; couleurs institutionnelles.
+                  Wikimedia ; couleurs institutionnelles. Autres (régionalistes et divers) au centre de l’arc,
+                  pas après le RN — méthodo LMDPT.
                 </desc>
                 {
                   realDots.map((d) => (
@@ -441,7 +444,9 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
       <aside class="dual-footnote" aria-label="Lecture">
         <p>
           <strong>Lecture</strong> — Gauche : pluralité du 1er tour (Sainte-Laguë). Droite : Assemblée
-          élue ensuite. Pas de prédiction sur le mode de scrutin.
+          élue ensuite. Autres = régionalistes et divers, placés au centre de l’arc (axe de proximité),
+          pas une famille d’extrême droite.{' '}
+          <a href="/sources#methodologie-blocs">Méthodo des blocs</a>. Pas de prédiction sur le mode de scrutin.
         </p>
         <p class="spectrum-key" aria-hidden="true">
           <span class="sk-label">Proximité programmes</span>

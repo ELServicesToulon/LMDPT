@@ -1,9 +1,9 @@
 {
-  "fetched_at": "2026-07-26T16:18:08.345Z",
-  "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.",
+  "fetched_at": "2026-08-24T16:17:28.188Z",
+  "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
-  "sources_ok": 11,
-  "sources_error": 1,
+  "sources_ok": 10,
+  "sources_error": 2,
   "waves": [
     {
       "id": "manual-cluster17-lepoint-20260710",
@@ -132,30 +132,88 @@
       "metric": "intentions_vote"
     },
     {
-      "id": "epoc-elabe-12072026",
-      "firm": "Elabe",
-      "firm_id": "elabe",
-      "fieldwork": "12/07/2026",
-      "published_hint": "12/07/2026",
+      "id": "epoc-harris-24082026",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {
-        "le-pen": 34.5,
-        "philippe": 18,
-        "attal": 15.5,
-        "melenchon": 15,
+        "le-pen": 38,
+        "philippe": 19,
+        "attal": 14,
+        "melenchon": 17,
         "glucksmann": 11,
-        "retailleau": 8,
-        "zemmour": 3.5,
-        "tondelier": 3.5,
-        "roussel": 2.5,
+        "retailleau": 9,
+        "zemmour": 4,
+        "tondelier": 4,
+        "roussel": 3,
         "hollande": 8,
-        "ruffin": 6,
-        "villepin": 3.5,
-        "dupont-aignan": 1.5,
-        "arthaud": 1.5
+        "dupont-aignan": 2,
+        "arthaud": 1
       },
-      "raw_snippet": "Dernier sondage ELABE 12/07/2026 1er Tour · Hypothèse N°1 35% LE PEN 16.5% PHILIPPE 16% MÉLENCHON 10.5% GLUCKSMANN 8% RETAILLEAU 3.5% TONDELIER 3% ZEMMOUR 2.5% ROUSSEL 2.5% VILLEPIN 1.5% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 34% LE PEN 14.5% MÉLENCHON 13.5% ATTAL 11% ",
+      "raw_snippet": "Dernier sondage HARRIS INTERACTIVE 24/08/2026 1er Tour · Hypothèse N°1 35% LE PEN 16% MÉLENCHON 14% PHILIPPE 10% GLUCKSMANN 8% ATTAL 6% RETAILLEAU 3% ZEMMOUR 3% TONDELIER 2% ROUSSEL 2% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 35% LE PEN 17% PHILIPPE 17% MÉLENCHON 10% GLU",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-24082026-h1",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/08/2026 HARRIS INTERACTIVE 1 — 35% 14% 8% 16% 10% 6% — — — — — — — — 3% 3% — 2% — 2% — 1% 24/08/2026 HARRIS INTERACTIVE 2 — 35% 17% — 17% 10% 7% — — — — — — — — 4% 3% — 3% — 3% — 1% 24/08/2026 HARR",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-24082026-h2",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/08/2026 HARRIS INTERACTIVE 2 — 35% 17% — 17% 10% 7% — — — — — — — — 4% 3% — 3% — 3% — 1% 24/08/2026 HARRIS INTERACTIVE 3 — 37% — 15% 17% 11% 9% — — — — — — — — 3% 3% — 2% — 2% — 1% 24/08/2026 HARRI",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-24082026-h3",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/08/2026 HARRIS INTERACTIVE 3 — 37% — 15% 17% 11% 9% — — — — — — — — 3% 3% — 2% — 2% — 1% 24/08/2026 HARRIS INTERACTIVE 4 — 35% 19% — 17% — 7% — 8% — — — — — — 4% 4% — 3% — 2% — 1% 24/08/2026 HARRIS",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-24082026-h4",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/08/2026 HARRIS INTERACTIVE 4 — 35% 19% — 17% — 7% — 8% — — — — — — 4% 4% — 3% — 2% — 1% 24/08/2026 HARRIS INTERACTIVE 5 — 38% — 14% 17% — 9% — 8% — — — — — — 4% 4% — 3% — 2% — 1% 12/07/2026 ELABE 1",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-24082026-h5",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "24/08/2026",
+      "published_hint": "24/08/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/08/2026 HARRIS INTERACTIVE 5 — 38% — 14% 17% — 9% — 8% — — — — — — 4% 4% — 3% — 2% — 1% 12/07/2026 ELABE 1 — 35% 16.5% — 16% 10.5% 8% — — — — — — — — 3% 3.5% 2.5% 2.5% — 1.5% — 1% 12/07/2026 ELABE ",
       "metric": "intentions_vote"
     },
     {
@@ -231,66 +289,6 @@
       "metric": "intentions_vote"
     },
     {
-      "id": "epoc-row-harris-09072026-h2",
-      "firm": "Harris Interactive / Toluna Harris",
-      "firm_id": "harris",
-      "fieldwork": "09/07/2026",
-      "published_hint": "09/07/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 2 — 34% 20% — 16% 11% 8% — — — — — — — — 4% 3% — 2% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 3 — 36% — 16% 16% 11% 9% — — — — — — — — 4% 3% — 3% — 1% — 1% 09/07/2026 HARRI",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-harris-09072026-h3",
-      "firm": "Harris Interactive / Toluna Harris",
-      "firm_id": "harris",
-      "fieldwork": "09/07/2026",
-      "published_hint": "09/07/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 3 — 36% — 16% 16% 11% 9% — — — — — — — — 4% 3% — 3% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 4 — 35% 20% — 16% — 8% — 8% — — — — — — 4% 4% — 3% — 1% — 1% 09/07/2026 HARRIS",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-harris-09072026-h4",
-      "firm": "Harris Interactive / Toluna Harris",
-      "firm_id": "harris",
-      "fieldwork": "09/07/2026",
-      "published_hint": "09/07/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 4 — 35% 20% — 16% — 8% — 8% — — — — — — 4% 4% — 3% — 1% — 1% 09/07/2026 HARRIS INTERACTIVE 5 — 36% — 16% 16% — 8% — 8% — — — — — — 5% 5% — 3% — 2% — 1% 08/07/2026 IFOP 1 ",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-harris-09072026-h5",
-      "firm": "Harris Interactive / Toluna Harris",
-      "firm_id": "harris",
-      "fieldwork": "09/07/2026",
-      "published_hint": "09/07/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "09/07/2026 HARRIS INTERACTIVE 5 — 36% — 16% 16% — 8% — 8% — — — — — — 5% 5% — 3% — 2% — 1% 08/07/2026 IFOP 1 — 36% 19% — 15% 9% 8% — — — — — — — — 4% 3.5% — 3% — 2% — 0.5% 08/07/2026 IFOP 2 — 36% — 15",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-ifop-08072026-h1",
-      "firm": "Ifop",
-      "firm_id": "ifop",
-      "fieldwork": "08/07/2026",
-      "published_hint": "08/07/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "08/07/2026 IFOP 1 — 36% 19% — 15% 9% 8% — — — — — — — — 4% 3.5% — 3% — 2% — 0.5% 08/07/2026 IFOP 2 — 36% — 15% 15% 12% 10% — — — — — — — — 3.5% 4% — 2% — 2% — 0.5% 25/06/2026 IFOP 1 36% — 14% 8% 13% 9",
-      "metric": "intentions_vote"
-    },
-    {
       "id": "wikipedia-fr-elabe-na-glsy0c",
       "firm": "Elabe",
       "firm_id": "elabe",
@@ -312,6 +310,18 @@
       "source_id": "elyseescope",
       "scores": {},
       "raw_snippet": "ÉlyséeScope 2027 | Candidats, sondages et programmes présidentielle 2027 Top Actu Sondages Thèmes Candidats Newsletter Événements Vidéos Carte Temps réel Comprendre Chiffres Voter Sources FAQ Vue d'ensemble Présidentielle 2027 🔴 Top Actu 📊 Sondages Candidats Candidats déclarés ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-harris-31juillet",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "31 juillet",
+      "published_hint": "31 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre TOLUNA HARRIS INTERACTIVE LCI (31 juillet) — PDF notice, scores non extraits auto.",
       "metric": "intentions_vote"
     },
     {
@@ -421,30 +431,6 @@
       "scores": {},
       "raw_snippet": "Notice Commission : Barometre politique YOUGOV Huffpost (3 juillet) — PDF notice, scores non extraits auto.",
       "metric": "intentions_vote"
-    },
-    {
-      "id": "rss-le-figaro-y2dco8",
-      "firm": "Media",
-      "firm_id": null,
-      "fieldwork": null,
-      "published_hint": null,
-      "source_url": "https://www.lefigaro.fr/elections/presidentielles/en-2017-le-hold-up-d-emmanuel-macron-et-de-ses-fideles-prets-a-le-suivre-jusqu-en-enfer-20260726",
-      "source_id": "le-figaro",
-      "scores": {},
-      "raw_snippet": "En 2017, le hold-up d’Emmanuel Macron et de ses fidèles « prêts à le suivre jusqu’en enfer »",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "rss-le-figaro-j9zbxz",
-      "firm": "Media",
-      "firm_id": null,
-      "fieldwork": null,
-      "published_hint": null,
-      "source_url": "https://www.lefigaro.fr/politique/presidentielle-2027-melenchon-le-pen-derniere-bataille-apres-un-quart-de-siecle-d-affrontement-20260719",
-      "source_id": "le-figaro",
-      "scores": {},
-      "raw_snippet": "Présidentielle 2027 : Mélenchon-Le Pen, dernière bataille après un quart de siècle d’affrontement",
-      "metric": "intentions_vote"
     }
   ],
   "head_by_wave": [
@@ -479,17 +465,30 @@
       "pct": 35
     },
     {
-      "wave_id": "epoc-elabe-12072026",
-      "firm": "Elabe",
+      "wave_id": "epoc-harris-24082026",
+      "firm": "Harris Interactive / Toluna Harris",
       "head": "le-pen",
-      "pct": 34.5
+      "pct": 38
     }
   ],
-  "movements": [],
+  "movements": [
+    {
+      "at": "2026-08-24T16:17:28.188Z",
+      "kind": "new_wave",
+      "firm": "Harris Interactive / Toluna Harris",
+      "comment": "Harris Interactive / Toluna Harris (24/08/2026) : le pen en tête à 38 % (intentions de vote).",
+      "wave_id": "epoc-harris-24082026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    }
+  ],
   "brief": [
-    "Scan 2026-07-26T16:18 — aucun mouvement détecté (31 vague(s) en mémoire, 11 source(s) OK)."
+    "Harris Interactive / Toluna Harris (24/08/2026) : le pen en tête à 38 % (intentions de vote)."
   ],
   "errors": [
+    {
+      "source_id": "2027presidentielle",
+      "error": "HTTP 404"
+    },
     {
       "source_id": "politico-pop",
       "error": "HTTP 403"

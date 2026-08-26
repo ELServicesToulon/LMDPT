@@ -166,6 +166,49 @@ function applyGlueHeuristic(text: string, anomalies: QualiteAnomaly[]): string {
   });
 }
 
+const URL_TOKEN = (i: number) => `\uE000URL${i}\uE001`;
+const URL_TOKEN_RE = /\uE000URL(\d+)\uE001/g;
+/** http(s) éventuellement déjà cassé par la punct (`https: //`, `? utm_`). */
+const URL_SPAN_RE = /https?:\s*\/\/\S+(?:\s+(?:utm_|[&#])[^\s]*)*/gi;
+
+/** Répare les espaces injectés dans un URL (scheme, query, hash). */
+export function repairBrokenUrl(url: string): string {
+  return url
+    .replace(/^(https?):\s*\/\//i, '$1://')
+    .replace(/\?\s+/g, '?')
+    .replace(/&\s+/g, '&')
+    .replace(/#\s+/g, '#')
+    .replace(/présidentielle-2027-preparation/gi, 'presidentielle-2027-preparation');
+}
+
+function protectUrls(
+  text: string,
+  anomalies: QualiteAnomaly[],
+): { text: string; urls: string[] } {
+  const urls: string[] = [];
+  const next = text.replace(URL_SPAN_RE, (match) => {
+    const repaired = repairBrokenUrl(match);
+    if (
+      repaired !== match &&
+      !anomalies.some((a) => a.after === 'URL UTM intacte')
+    ) {
+      anomalies.push({
+        type: 'punct',
+        before: 'https: // / ? utm_',
+        after: 'URL UTM intacte',
+        confidence: 'high',
+      });
+    }
+    urls.push(repaired);
+    return URL_TOKEN(urls.length - 1);
+  });
+  return { text: next, urls };
+}
+
+function restoreUrls(text: string, urls: string[]): string {
+  return text.replace(URL_TOKEN_RE, (_m, idx: string) => urls[Number(idx)] ?? '');
+}
+
 /**
  * Corrige et rapporte les anomalies (sens politique non modifié volontairement).
  */
@@ -173,6 +216,9 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   const original = String(input ?? '');
   const anomalies: QualiteAnomaly[] = [];
   let s = original.replace(/\r\n/g, '\n');
+
+  const protectedUrls = protectUrls(s, anomalies);
+  s = protectedUrls.text;
 
   // Espaces
   const multi = s.replace(/[ \t]{2,}/g, ' ');
@@ -200,6 +246,7 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   s = applyPhraseFixes(s, anomalies);
   s = applyGlueHeuristic(s, anomalies);
   s = applyWordMap(s, anomalies);
+  s = restoreUrls(s, protectedUrls.urls);
 
   // Trim lignes
   s = s

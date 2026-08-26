@@ -71,6 +71,11 @@ describe('renifleur-social', () => {
     expect(md).toContain('Qualité rédaction');
     expect(md).toContain('Couleurs d’idées');
     expect(md).toContain('Badge(s) couleurs d’idées');
+    expect(md).toContain(
+      'https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=renifleur_20260702',
+    );
+    expect(md).not.toMatch(/https:\s\/\//);
+    expect(md).not.toMatch(/\?\s+utm_/);
   });
 
   it('cleans glued words in post copy', () => {

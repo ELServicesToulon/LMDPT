@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-07-26",
+  "updated": "2026-08-26",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -13,16 +13,16 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : en Bretagne, Gabriel Attal mène campagne pour faire décoller sa candidature",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-en-bretagne-gabriel-attal-mene-campagne-pour-faire-decoller-sa-candidature_6731467_823448.html",
-          "published": "2026-07-24",
-          "detected_at": "2026-07-26"
+          "title": "Présidentielle 2027 : le bilan d’Emmanuel Macron, un lourd héritage à porter pour Gabriel Attal et Edouard Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-le-bilan-d-emmanuel-macron-un-lourd-heritage-a-porter-pour-gabriel-attal-et-edouard-philippe_6756575_823448.html",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
         },
         {
-          "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
-          "published": "2026-07-18",
-          "detected_at": "2026-07-26"
+          "title": "Gabriel Attal : « Je souhaite une loi de programmation pour l’école et un ministre de l’éducation qui restera en poste cinq ans »",
+          "url": "https://www.lemonde.fr/societe/article/2026/08/25/gabriel-attal-je-souhaite-une-loi-de-programmation-pour-l-ecole-et-un-ministre-de-l-education-qui-restera-en-poste-cinq-ans_6756157_3224.html",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
         }
       ]
     },
@@ -33,15 +33,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
-          "published": "2026-07-17",
-          "detected_at": "2026-07-26"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
     },
     {
       "slug": "philippe",
@@ -53,16 +45,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
-          "published": "2026-07-18",
-          "detected_at": "2026-07-26"
+          "title": "Présidentielle 2027 : le bilan d’Emmanuel Macron, un lourd héritage à porter pour Gabriel Attal et Edouard Philippe",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-le-bilan-d-emmanuel-macron-un-lourd-heritage-a-porter-pour-gabriel-attal-et-edouard-philippe_6756575_823448.html",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
         },
         {
-          "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
-          "published": "2026-07-17",
-          "detected_at": "2026-07-26"
+          "title": "Présidentielle 2027 : Edouard Philippe veut augmenter de « 20 % la rémunération moyenne des enseignants » sur un quinquennat",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/24/presidentielle-2027-edouard-philippe-veut-augmenter-de-20-la-remuneration-moyenne-des-enseignants-sur-un-quinquennat_6755790_6205049.html",
+          "published": "2026-08-24",
+          "detected_at": "2026-08-26"
         }
       ]
     },
@@ -89,7 +81,21 @@
       "name": "Fabien Roussel",
       "affiliation": "Parti communiste français",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Mélenchon, Glucksmann, Tondelier et les autres : combien de candidats à la présidentielle à gauche ?",
+          "url": "https://www.france24.com/fr/france/20260825-france-presidentielle-2027-melenchon-glucksmann-tondelier-et-les-autres-combien-de-candidats-a-gauche",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
+        },
+        {
+          "title": "Le communiste Fabien Roussel lance sa campagne pour la présidentielle 2027 sur une ligne autonome",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-le-communiste-fabien-roussel-lance-sa-campagne-sur-une-ligne-autonome_6754061_823448.html",
+          "published": "2026-08-23",
+          "detected_at": "2026-08-26"
+        }
+      ]
     },
     {
       "slug": "hollande",
@@ -123,21 +129,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : comment Matignon négocie avec les banques françaises pour qu’elles acceptent de financer la campagne de Marine Le Pen",
-          "url": "https://www.lemonde.fr/politique/article/2026/07/23/presidentielle-2027-comment-matignon-negocie-avec-les-banques-francaises-pour-qu-elles-acceptent-de-financer-la-campagne-de-marine-le-pen_6730921_823448.html",
-          "published": "2026-07-23",
-          "detected_at": "2026-07-26"
-        },
-        {
-          "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
-          "published": "2026-07-15",
-          "detected_at": "2026-07-26"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
     },
     {
       "slug": "barrot",
@@ -162,7 +154,21 @@
       "name": "Raphaël Glucksmann",
       "affiliation": "Place publique",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : le duo Raphaël Glucksmann-Yannick Jadot se pose en défenseur de l’écologie lors d’un déplacement en Charente-Maritime",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-en-charente-maritime-le-duo-glucksmann-jadot-se-pose-en-defenseur-de-l-ecologie_6756624_823448.html",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
+        },
+        {
+          "title": "Mélenchon, Glucksmann, Tondelier et les autres : combien de candidats à la présidentielle à gauche ?",
+          "url": "https://www.france24.com/fr/france/20260825-france-presidentielle-2027-melenchon-glucksmann-tondelier-et-les-autres-combien-de-candidats-a-gauche",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
+        }
+      ]
     },
     {
       "slug": "lisnard",
@@ -171,9 +177,17 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-10",
       "chiffrage_available": false,
-      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "press_signals": [
+        {
+          "title": "David Lisnard, président du parti Nouvelle Energie : « Sans une grande primaire ouverte à tous, la droite et le centre ne seront pas en mesure de l’emporter »",
+          "url": "https://www.lemonde.fr/idees/article/2026/08/25/david-lisnard-pour-la-presidentielle-2027-sans-une-grande-primaire-ouverte-a-tous-la-droite-et-le-centre-ne-seront-pas-en-mesure-de-l-emporter_6756156_3232.html",
+          "published": "2026-08-25",
+          "detected_at": "2026-08-26"
+        }
+      ]
     }
   ],
-  "veille_scan_at": "2026-07-26T13:28:33.464Z",
-  "program_press_hits": 18
+  "veille_scan_at": "2026-08-26T06:11:36.000Z",
+  "program_press_hits": 21
 }

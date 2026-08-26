@@ -1,0 +1,94 @@
+{
+  "slug": "dgfip-fuites-2026",
+  "title": "Fuites DGFiP 2026 — chiffres officiels et revendications",
+  "eyebrow": "Enquête documentaire · alerte citoyenne",
+  "updated": "2026-08-15",
+  "status": "à recouper",
+  "lead": "Deux couches de faits : ce que l’administration a dit (via AFP / point presse du 14 août 2026) et ce qu’une revendication publique avance (dont 2 041 778 propriétaires). On les sépare. On ne republie aucune donnée personnelle.",
+  "lmdpt_angle": "La démocratie avant l’élimination des faits : le premier chiffre qui circule n’est pas forcément le chiffre institutionnel. Documenter l’écart, pas l’amplifier.",
+  "disclaimer": "Synthèse documentaire — à vérifier. Pas un avis juridique. Pas une confirmation CNIL. Aucun extrait de fichier, aucun nom, aucune parcelle.",
+  "doe": "Sources secondaires (presse, X) signalées comme telles. Communiqué HTML Bercy d’août 2026 non localisé à l’ingest — à recouper sur presse.economie.gouv.fr.",
+  "incidents": [
+    {
+      "id": "impots-juin",
+      "label": "Portail impôts (fin juin 2026)",
+      "official_count": "Au moins 678 000 comptes (particuliers et professionnels)",
+      "official_status": "partial",
+      "official_note": "Attribué à la DGFiP par dépêche AFP du 14 août 2026 (point presse). Bercy avait reconnu un « accès illégitime » le 13 août.",
+      "claim_count": "Environ 680 000 lignes (revendication pirate, via presse)",
+      "data_kinds_official": [
+        "Noms et prénoms (particuliers)",
+        "Quotient familial",
+        "Revenu fiscal de référence",
+        "Taux de prélèvement à la source",
+        "Professionnels : données souvent déjà publiques (Siren, adresses)"
+      ]
+    },
+    {
+      "id": "cadastre-juillet",
+      "label": "Données cadastrales (fin juillet 2026)",
+      "official_count": "Environ 200 000 comptes (DGFiP — « approfondissements » encore en cours)",
+      "official_status": "partial",
+      "official_note": "Chiffre institutionnel cité par l’AFP le 14 août 2026.",
+      "claim_count": "252 149 lignes / 2 041 778 titulaires (revendication ; plusieurs personnes par parcelle)",
+      "data_kinds_claim": [
+        "Identité et adresse des titulaires de droits",
+        "Identifiants fonciers et parcelles (revendication X / presse spécialisée)"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-18",
+      "text": "Communiqué Bercy : accès illégitimes à FICOBA (≈ 1,2 million de comptes). Incident distinct, source primaire.",
+      "href": "https://presse.economie.gouv.fr/acces-illegitimes-au-fichier-national-des-comptes-bancaires-ficoba/",
+      "kind": "officiel"
+    },
+    {
+      "date": "2026-06",
+      "text": "Première intrusion visée : portail impots.gouv.fr (fin juin), selon DGFiP / AFP.",
+      "kind": "officiel-cite"
+    },
+    {
+      "date": "2026-07",
+      "text": "Seconde intrusion visée : serveur professionnel de données cadastrales (fin juillet).",
+      "kind": "officiel-cite"
+    },
+    {
+      "date": "2026-08-13",
+      "text": "Bercy reconnaît un « accès illégitime » (fin juin) — communiqué cité par la presse ; HTML ministériel non retrouvé ici.",
+      "kind": "officiel-cite"
+    },
+    {
+      "date": "2026-08-14",
+      "text": "Point presse DGFiP : deux vols, 678 000 comptes (impôts) et ≈ 200 000 comptes (cadastre). CNIL notifiée. Information individuelle annoncée pour la semaine suivante.",
+      "kind": "officiel-cite"
+    },
+    {
+      "date": "2026-08-14",
+      "text": "Signal X @seblatombe : revendication 2 041 778 propriétaires (catégories cadastrales). Source secondaire.",
+      "href": "https://x.com/seblatombe/status/2088167589390250485",
+      "kind": "secondaire"
+    }
+  ],
+  "sources": [
+    {
+      "label": "AFP / France 24 — 14 août 2026",
+      "href": "https://www.france24.com/fr/info-en-continu/20260814-fisc-pirat%C3%A9-ce-que-l-on-sait-des-donn%C3%A9es-d%C3%A9rob%C3%A9es",
+      "role": "secondaire",
+      "note": "Dépêche AFP attribuant les chiffres au point presse DGFiP."
+    },
+    {
+      "label": "Bercy — FICOBA, 18 février 2026",
+      "href": "https://presse.economie.gouv.fr/acces-illegitimes-au-fichier-national-des-comptes-bancaires-ficoba/",
+      "role": "primaire",
+      "note": "Incident antérieur, distinct. Seul communiqué HTML ministériel localisé."
+    },
+    {
+      "label": "X @seblatombe — 14 août 2026",
+      "href": "https://x.com/seblatombe/status/2088167589390250485",
+      "role": "secondaire",
+      "note": "Revendication 2 041 778 propriétaires. Pas un constat officiel."
+    }
+  ]
+}

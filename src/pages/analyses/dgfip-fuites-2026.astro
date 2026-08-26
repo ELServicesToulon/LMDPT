@@ -1,0 +1,196 @@
+---
+/**
+ * Enquête LMDPT — fuites DGFiP 2026 (officiel vs revendication).
+ * Aucune donnée nominative. Synthèse documentaire — à vérifier.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import data from '../../data/analyses/dgfip-fuites-2026.json';
+
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+
+const statusLabel: Record<string, string> = {
+  partial: 'Partiel — à recouper',
+  confirmed: 'Confirmé (texte officiel)',
+  unconfirmed_signal: 'À recouper (signal secondaire)',
+};
+
+const kindLabel: Record<string, string> = {
+  officiel: 'officiel',
+  'officiel-cite': 'officiel (cité)',
+  secondaire: 'secondaire',
+};
+---
+
+<BaseLayout
+  title="Fuites DGFiP 2026 — chiffres officiels et revendications"
+  description="Enquête LMDPT : 678 000 comptes (impôts) et environ 200 000 comptes cadastraux selon la DGFiP, face à une revendication de 2 041 778 propriétaires. Sources signalées. Pas de données personnelles."
+  type="article"
+  keywords="DGFiP, fuite de données, cadastre, impôts, CNIL, enquête, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    Fuites DGFiP 2026
+  </nav>
+
+  <section class="page-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      Mise à jour : <time datetime={data.updated}>{updated}</time>
+      {' · '}
+      Statut : {data.status}
+    </p>
+    <p>{data.lead}</p>
+    <p><strong>Angle LMDPT.</strong> {data.lmdpt_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{data.doe}</p>
+  </section>
+
+  <nav class="tpe-toc" aria-label="Sommaire">
+    <a href="#ecart">L’écart</a>
+    <a href="#incidents">Deux incidents</a>
+    <a href="#chrono">Chronologie</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+  <section class="card" id="ecart" aria-labelledby="ecart-title">
+    <h2 id="ecart-title">L’écart en un coup d’œil</h2>
+    <p>
+      Le chiffre qui circule le plus fort sur X (« plus de deux millions de propriétaires »)
+      n’est <strong>pas</strong> le chiffre que la DGFiP a donné pour le cadastre
+      (<strong>environ 200&nbsp;000 comptes</strong>). Plusieurs titulaires peuvent être
+      associés à une même parcelle : la revendication convertit des <em>lignes</em>
+      en <em>personnes</em>. On documente les deux, on ne les fusionne pas.
+    </p>
+    <div class="journal-table-wrap" role="region" aria-label="Écart officiel / revendication" tabindex="0">
+      <table class="journal-table">
+        <caption class="table-caption">
+          Impôts et cadastre : décompte institutionnel (cité par l’AFP) face à la revendication publique.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Couche</th>
+            <th scope="col">Impôts (fin juin)</th>
+            <th scope="col">Cadastre (fin juillet)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DGFiP (via AFP, 14 août)</strong></td>
+            <td>Au moins 678&nbsp;000 comptes</td>
+            <td>Environ 200&nbsp;000 comptes</td>
+          </tr>
+          <tr>
+            <td><strong>Revendication</strong></td>
+            <td>≈ 680&nbsp;000 lignes</td>
+            <td>252&nbsp;149 lignes / 2&nbsp;041&nbsp;778 titulaires</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="incidents" aria-labelledby="incidents-title">
+    <h2 id="incidents-title">Deux incidents, pas un seul tas</h2>
+    {
+      data.incidents.map((inc) => (
+        <article class="card" aria-labelledby={`inc-${inc.id}`}>
+          <h3 id={`inc-${inc.id}`}>{inc.label}</h3>
+          <p class="meta">{statusLabel[inc.official_status] ?? inc.official_status}</p>
+          <p>
+            <strong>Chiffre institutionnel.</strong> {inc.official_count}
+          </p>
+          <p class="meta">{inc.official_note}</p>
+          <p>
+            <strong>Revendication.</strong> {inc.claim_count}
+          </p>
+          {
+            inc.data_kinds_official && (
+              <ul>
+                {inc.data_kinds_official.map((k) => (
+                  <li>{k}</li>
+                ))}
+              </ul>
+            )
+          }
+          {
+            inc.data_kinds_claim && (
+              <ul>
+                {inc.data_kinds_claim.map((k) => (
+                  <li>{k}</li>
+                ))}
+              </ul>
+            )
+          }
+        </article>
+      ))
+    }
+    <p class="meta">
+      La DGFiP, citée par l’AFP, indique que les données cadastrales détaillées sont
+      déjà accessibles sur demande motivée — cela n’efface pas l’incident,
+      cela change le niveau de sensibilité allégué.
+    </p>
+  </section>
+
+  <section class="card" id="chrono" aria-labelledby="chrono-title">
+    <h2 id="chrono-title">Chronologie (faits datés)</h2>
+    <ol>
+      {
+        data.timeline.map((t) => (
+          <li>
+            <time datetime={t.date}>{t.date}</time>
+            {' — '}
+            {t.text}
+            {t.href && (
+              <>
+                {' '}
+                <a href={t.href} rel="noopener noreferrer">
+                  Source
+                </a>
+              </>
+            )}
+            <span class="meta"> · {kindLabel[t.kind] ?? t.kind}</span>
+          </li>
+        ))
+      }
+    </ol>
+    <p>
+      Information individuelle des usagers concernés : annoncée par la DGFiP pour
+      « le début de la semaine » suivant le 14 août 2026 (semaine du 17 août).
+    </p>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources et recoupement</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.href} rel="noopener noreferrer">
+              {s.label}
+            </a>
+            {' — '}
+            <strong>{s.role}</strong>
+            {'. '}
+            {s.note}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta">
+      Signal X de départ :{' '}
+      <a href="https://x.com/seblatombe/status/2088167589390250485" rel="noopener noreferrer">
+        @seblatombe, 14 août 2026
+      </a>
+      . Pas de lien vers un jeu de données. Pas de reprise de fichier.
+    </p>
+    <p>
+      <a href="/analyses/alerte-citoyenne">Alerte citoyenne</a>
+      {' · '}
+      <a href="/sources#methodologie-blocs">Méthodo LMDPT</a>
+    </p>
+  </section>
+</BaseLayout>

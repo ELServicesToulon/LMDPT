@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  BLOC_SPECTRUM_AXIS,
   colorFromSpectrumAxis,
   programProximityColor,
   realAssemblyColor,
@@ -12,6 +13,14 @@ describe('program-proximity', () => {
     expect(spectrumSortKey('nfp')).toBeLessThan(spectrumSortKey('ensemble'));
     expect(spectrumSortKey('ensemble')).toBeLessThan(spectrumSortKey('lr'));
     expect(spectrumSortKey('lr')).toBeLessThan(spectrumSortKey('rn'));
+  });
+
+  it('places Autres on the proximity axis (centre), not after RN', () => {
+    expect(spectrumSortKey('autres')).toBe(BLOC_SPECTRUM_AXIS.autres);
+    expect(spectrumSortKey('autres')).toBe(0.5);
+    expect(spectrumSortKey('ensemble')).toBeLessThan(spectrumSortKey('autres'));
+    expect(spectrumSortKey('autres')).toBeLessThan(spectrumSortKey('lr'));
+    expect(spectrumSortKey('autres')).toBeLessThan(spectrumSortKey('rn'));
   });
 
   it('sorts hemicycle seats left (low x) to right (high x)', () => {
