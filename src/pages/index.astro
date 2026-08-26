@@ -9,6 +9,7 @@ import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
+import ScoopBand from '../components/ScoopBand.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
 import {
   applyHeroDailyOverride,
@@ -93,6 +94,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       data.gouv / Ministère de l’Intérieur
     </p>
   </section>
+
+  <ScoopBand />
 
   <!-- Manifeste court — renforce le 5 s test -->
   <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">

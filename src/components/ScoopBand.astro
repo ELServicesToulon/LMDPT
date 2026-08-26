@@ -1,0 +1,86 @@
+---
+/**
+ * Bande « À la une » — post-fold 1, pas dans le hero.
+ * 0 JS. Invisible si curated inactif ou URL hors site.
+ */
+import curated from '../data/scoop/curated.json';
+import { scoopIsLive, type ScoopCurated } from '../lib/scoop';
+
+const scoop = curated as ScoopCurated;
+const show = scoopIsLive(scoop);
+const badge = (scoop.badge || 'À LA UNE').trim();
+---
+
+{
+  show && (
+    <aside class="scoop-band" role="status" aria-label="Dernière information à la une">
+      <span class="scoop-badge">
+        <span class="scoop-dot" aria-hidden="true"></span>
+        {badge}
+      </span>
+      <a class="scoop-link" href={scoop.url}>
+        {scoop.title}
+      </a>
+      <span class="scoop-arrow" aria-hidden="true">
+        →
+      </span>
+    </aside>
+  )
+}
+
+<style>
+  .scoop-band {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 1.25rem;
+    padding: 0.65rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+    border-left: 4px solid var(--accent, #2563a8);
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+  .scoop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent, #2563a8);
+    flex-shrink: 0;
+  }
+  .scoop-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--accent, #2563a8);
+  }
+  .scoop-link {
+    font-weight: 650;
+    color: var(--fg);
+    text-decoration: none;
+    min-width: 0;
+  }
+  .scoop-link:hover {
+    text-decoration: underline;
+  }
+  .scoop-link:focus-visible {
+    outline: 3px solid var(--accent, #2563a8);
+    outline-offset: 2px;
+  }
+  .scoop-arrow {
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    .scoop-band {
+      flex-wrap: wrap;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
