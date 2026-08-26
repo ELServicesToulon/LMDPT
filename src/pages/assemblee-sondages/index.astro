@@ -1,0 +1,296 @@
+---
+/**
+ * Assemblée des sondages — hémicycle pédagogique 577 sièges (DOE).
+ * Données : 2027-sondages-candidats.json + providers.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AssembleeHemicycle from '../../components/AssembleeHemicycle.astro';
+import SondagesWavesGallery from '../../components/SondagesWavesGallery.astro';
+import sondages2027 from '../../data/elections/2027-sondages-candidats.json';
+import providersRaw from '../../data/sondages/providers.json';
+import {
+  allocToHemiRows,
+  buildPollAn1tBundle,
+  buildWaveAn1tBundles,
+  findWaveForInstitute,
+} from '../../lib/poll-to-an1t';
+
+interface ProviderInstitute {
+  id: string;
+  label: string;
+  type?: string;
+  tier?: string;
+  website?: string;
+  active?: boolean;
+  note?: string;
+  typical_clients?: string[];
+}
+
+const pollBundle = buildPollAn1tBundle(sondages2027, 577, 3);
+const sondagesBase = allocToHemiRows(pollBundle.baseAlloc);
+const sondagesUnie = allocToHemiRows(pollBundle.unieAlloc);
+const sondagesDivisee = allocToHemiRows(pollBundle.diviseeAlloc);
+const waveGallery = buildWaveAn1tBundles(sondages2027, 577, 3);
+
+const institutes = (providersRaw.institutes as ProviderInstitute[]).filter(
+  (i) => i.tier === 'principal' && i.type === 'institut' && i.active !== false,
+);
+
+const nonIvSources = (sondages2027.sources ?? []).filter(
+  (s: { metric?: string }) => s.metric && s.metric !== 'intentions_vote',
+);
+
+const updated = new Date(pollBundle.updated).toLocaleDateString('fr-FR', {
+  dateStyle: 'long',
+});
+---
+
+<BaseLayout
+  title="Assemblée des sondages"
+  description="Hémicycle pédagogique 577 sièges à partir d’intentions de vote (Sainte-Laguë). Illustration, pas une prédiction ni un classement de favoris. Notices Commission des sondages."
+  type="website"
+  keywords="assemblée sondages, hémicycle, intentions de vote, Sainte-Laguë, LMDPT, pluralité, Commission des sondages"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    Assemblée des sondages
+  </nav>
+
+  <article class="as-page">
+    <header class="card as-hero">
+      <p class="eyebrow">Fiction pédagogique · Democracy Over Elimination</p>
+      <h1>Assemblée des sondages</h1>
+      <p class="lead">
+        Projection <strong>illustrative</strong> de 577 sièges (Sainte-Laguë, seuil 3&nbsp;%) à
+        partir d’<strong>intentions de vote</strong> du 1er tour présidentiel — pas des résultats
+        officiels, pas une prédiction, pas un classement de «&nbsp;favoris&nbsp;». Les instituts
+        ne sont <strong>pas</strong> colorés sur un axe politique.
+      </p>
+      <p class="meta">
+        Vague de référence : <strong>{pollBundle.waveLabel}</strong>
+        {' · '}mise à jour {updated}
+        {' · '}
+        {waveGallery.included.length} vague{waveGallery.included.length > 1 ? 's' : ''} IV
+        {' · '}
+        {institutes.length} instituts principaux
+      </p>
+      <p class="meta disclaimer-box">{pollBundle.disclaimer}</p>
+      <p class="meta">
+        Notices :
+        <a href="https://www.commission-des-sondages.fr/notices/" rel="noopener noreferrer"
+          >Commission des sondages</a
+        >
+        {' · '}
+        Seuls le Conseil constitutionnel et le ministère de l’Intérieur feront foi.
+      </p>
+    </header>
+
+    <nav class="card as-toc" aria-label="Sommaire assemblée sondages">
+      <ol>
+        <li><a href="#hemicycle">Hémicycle 577</a></li>
+        <li><a href="#galeries">Galerie des vagues</a></li>
+        <li><a href="#instituts">Fiches instituts</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#suite">Suite</a></li>
+      </ol>
+    </nav>
+
+    <section class="card" id="hemicycle" aria-labelledby="hemicycle-title">
+      <h2 id="hemicycle-title">Hémicycle 577 sièges</h2>
+      <p class="meta">
+        Agrégat pédagogique de la vague primaire. Fond = groupes actuels de l’Assemblée · plein =
+        projection sondages. Légende cliquable.
+      </p>
+      <AssembleeHemicycle
+        title="Projection pédagogique — intentions de vote"
+        allocations={sondagesBase}
+        totalSeats={sondagesBase.reduce((s, a) => s + a.seats, 0)}
+        subtitle="Illustration Sainte-Laguë — pas une prédiction."
+        sourceNote={`Vague ${pollBundle.waveLabel}. MAJ ${pollBundle.updated}.`}
+      />
+      <h3>Scénarios de regroupement (gauche)</h3>
+      <p class="meta">
+        Hypothèses pédagogiques de listes — ni un appel au rassemblement, ni un pronostic.
+      </p>
+      <div class="as-scenarios">
+        <AssembleeHemicycle
+          title="Hypothèse gauche unie"
+          allocations={sondagesUnie}
+          totalSeats={sondagesUnie.reduce((s, a) => s + a.seats, 0)}
+          subtitle="NFP agrégé."
+          showControls={false}
+        />
+        <AssembleeHemicycle
+          title="Hypothèse gauche divisée"
+          allocations={sondagesDivisee}
+          totalSeats={sondagesDivisee.reduce((s, a) => s + a.seats, 0)}
+          subtitle="LFI distincte du reste de la gauche."
+          showControls={false}
+        />
+      </div>
+    </section>
+
+    <section class="card" id="galeries" aria-labelledby="galeries-title">
+      <h2 id="galeries-title">Galerie des vagues (intentions de vote)</h2>
+      <p class="meta">
+        Une barre par institut / hypothèse scorée. Baromètres et souhaits de victoire n’ont pas
+        d’hémicycle.
+      </p>
+      <SondagesWavesGallery waves={waveGallery.included} skipped={waveGallery.skipped} />
+    </section>
+
+    <section class="card" id="instituts" aria-labelledby="instituts-title">
+      <h2 id="instituts-title">Fiches instituts</h2>
+      <p class="meta">
+        Index <code>providers.json</code> — tier principal, type institut. Pas de teinte politique.
+      </p>
+      <div class="as-fiches">
+        {
+          institutes.map((inst) => {
+            const wave = findWaveForInstitute(inst.label, waveGallery.included);
+            const horsIv = nonIvSources.find((s: { label: string }) =>
+              s.label.toLowerCase().includes(inst.label.split(' ')[0].toLowerCase()),
+            );
+            return (
+              <article class="as-fiche" id={`inst-${inst.id}`}>
+                <h3>{inst.label}</h3>
+                <p class="meta">
+                  {wave ? (
+                    <>
+                      Dernière vague IV : {wave.fieldwork}
+                      {wave.n ? ` · n=${wave.n}` : ''}
+                      {wave.hypothesis ? ` · ${wave.hypothesis}` : ''}
+                    </>
+                  ) : horsIv ? (
+                    <>
+                      Hors IV — {(horsIv as { metric?: string }).metric ?? 'métrique non IV'}
+                      {(horsIv as { note?: string }).note
+                        ? ` · ${(horsIv as { note?: string }).note}`
+                        : ''}
+                    </>
+                  ) : (
+                    <>Pas de vague IV scorée dans le snapshot courant.</>
+                  )}
+                </p>
+                {inst.note && <p class="meta">{inst.note}</p>}
+                {inst.typical_clients && inst.typical_clients.length > 0 && (
+                  <p class="meta">Commanditaires typiques : {inst.typical_clients.join(', ')}</p>
+                )}
+                {inst.website && (
+                  <p>
+                    <a href={inst.website} rel="noopener noreferrer">
+                      Site de l’institut
+                    </a>
+                  </p>
+                )}
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="card" id="methode" aria-labelledby="methode-title">
+      <h2 id="methode-title">Méthode</h2>
+      <ul>
+        <li>
+          <strong>Moteur</strong> : Sainte-Laguë, 577 sièges, seuil indicatif 3&nbsp;% — identique au
+          simulateur AN1T.
+        </li>
+        <li>
+          <strong>Blocs</strong> : agrégat pédagogique RN / NFP / Ensemble / LR / Autres. Exclusion
+          mutuelle Le Pen / Bardella (hypothèses exclusives).
+        </li>
+        <li>
+          <strong>Périmètre IV</strong> : seules les vagues d’intentions de vote scorées. Baromètres,
+          observatoires et souhaits de victoire restent en fiche, sans sièges.
+        </li>
+        <li>
+          <strong>Veille</strong> : <code>npm run sondage:veille</code> (2×/jour) ·
+          <code>2027-sondages-candidats.json</code>.
+        </li>
+      </ul>
+      <p class="meta">
+        Sources machine :
+        {
+          pollBundle.sources.slice(0, 6).map((s, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={s.url} rel="noopener noreferrer">
+                {s.label}
+              </a>
+            </>
+          ))
+        }
+      </p>
+    </section>
+
+    <section class="card" id="suite" aria-labelledby="suite-title">
+      <h2 id="suite-title">Suite</h2>
+      <ul>
+        <li>
+          <a href="/analyses/assemblee-premier-tour">Assemblée du Premier Tour (AN1T)</a> — simulateur
+          sur données officielles + projection sondages.
+        </li>
+        <li>
+          <a href="/analyses/temps-parole-equite">Temps de parole</a> — le sondage y est un
+          <strong>dénominateur</strong> d’équité, jamais une prédiction.
+        </li>
+        <li>
+          <a href="/atlas/2027-presidentielle">Atlas 2027</a> — calendrier et cartes (données
+          officielles à venir).
+        </li>
+        <li>
+          <a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes AN1T</a> — seuils, dose
+          proportionnelle.
+        </li>
+      </ul>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .as-page {
+    display: grid;
+    gap: 1rem;
+  }
+  .as-hero .lead {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .disclaimer-box {
+    padding: 0.65rem 0.75rem;
+    border-left: 3px solid var(--border, #ccc);
+    background: color-mix(in srgb, var(--card, #fff) 85%, #f0f4f8);
+  }
+  .as-toc ol {
+    margin: 0.25rem 0 0;
+    padding-left: 1.2rem;
+  }
+  .as-scenarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .as-fiches {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .as-fiche {
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    background: var(--card, #fff);
+  }
+  .as-fiche h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 820px) {
+    .as-scenarios {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -19,7 +19,10 @@ export interface PollWave {
   firm?: string;
   fieldwork?: string;
   hypothesis?: string;
-  scores: Record<string, number>;
+  n?: number;
+  /** `intentions_vote` (défaut) · `souhait_victoire` · `barometre` · etc. */
+  metric?: string;
+  scores?: Record<string, number>;
 }
 
 export interface PollSondagesFile {
@@ -27,7 +30,55 @@ export interface PollSondagesFile {
   disclaimer?: string;
   waves_latest?: PollWave[];
   candidates?: PollCandidateMeta[];
-  sources?: Array<{ label: string; url: string; as_of?: string }>;
+  sources?: Array<{
+    label: string;
+    url: string;
+    as_of?: string;
+    metric?: string;
+    note?: string;
+  }>;
+}
+
+const IV_METRICS = new Set(['intentions_vote', 'intentions', 'iv', '']);
+const NON_IV_METRIC = /souhait|barom[eè]tre|observatoire|stature|popularit/i;
+
+export type SkippedWaveReason = 'no_scores' | 'too_few_scores' | 'not_iv';
+
+export interface SkippedWave {
+  firm?: string;
+  fieldwork?: string;
+  hypothesis?: string;
+  metric?: string;
+  reason: SkippedWaveReason;
+}
+
+export interface WaveAn1tBundle {
+  firm: string;
+  fieldwork: string;
+  hypothesis: string;
+  n?: number;
+  metric: 'intentions_vote';
+  label: string;
+  shares: HypotheticalShare[];
+  alloc: SeatAllocation[];
+  hemiRows: Array<{
+    id: string;
+    label: string;
+    color: string;
+    seats: number;
+    pct: number;
+    pollPct: number;
+  }>;
+}
+
+/** Vague d’intentions de vote 1er tour (pas baromètre / souhait). */
+export function isIntentionsVoteWave(wave: PollWave): boolean {
+  const metric = (wave.metric ?? '').trim().toLowerCase();
+  if (metric && !IV_METRICS.has(metric)) return false;
+  if (metric && NON_IV_METRIC.test(metric)) return false;
+  const scores = wave.scores ?? {};
+  const scored = Object.values(scores).filter((pct) => pct != null && !Number.isNaN(pct) && pct > 0);
+  return scored.length >= 4;
 }
 
 /** Couleurs hémicycle LMDPT (alignées page assemblee-premier-tour). */
@@ -148,7 +199,7 @@ export function pickPrimaryWaveScores(data: PollSondagesFile): {
 } {
   const waves = data.waves_latest ?? [];
   for (const w of waves) {
-    if (w.scores && Object.keys(w.scores).length >= 4) {
+    if (isIntentionsVoteWave(w) && w.scores) {
       return {
         scores: w.scores,
         label: [w.firm, w.fieldwork, w.hypothesis].filter(Boolean).join(' · '),
@@ -257,4 +308,79 @@ export function allocToHemiRows(
     pct: Math.round(a.pctExprimes * 10) / 10,
     pollPct: Math.round(a.pctExprimes * 10) / 10,
   }));
+}
+
+function skipReason(wave: PollWave): SkippedWaveReason {
+  const scores = wave.scores ?? {};
+  const keys = Object.keys(scores);
+  if (keys.length === 0) return 'no_scores';
+  if (!isIntentionsVoteWave(wave)) {
+    const metric = (wave.metric ?? '').trim().toLowerCase();
+    if (metric && !IV_METRICS.has(metric)) return 'not_iv';
+    if (metric && NON_IV_METRIC.test(metric)) return 'not_iv';
+    return 'too_few_scores';
+  }
+  return 'too_few_scores';
+}
+
+/**
+ * Une allocation 577 sièges par vague IV scorée.
+ * Skip baromètres / souhaits / vagues sans scores.
+ */
+export function buildWaveAn1tBundles(
+  data: PollSondagesFile,
+  totalSeats = 577,
+  thresholdPct = 3,
+): { included: WaveAn1tBundle[]; skipped: SkippedWave[] } {
+  const included: WaveAn1tBundle[] = [];
+  const skipped: SkippedWave[] = [];
+
+  for (const w of data.waves_latest ?? []) {
+    if (!isIntentionsVoteWave(w)) {
+      skipped.push({
+        firm: w.firm,
+        fieldwork: w.fieldwork,
+        hypothesis: w.hypothesis,
+        metric: w.metric,
+        reason: skipReason(w),
+      });
+      continue;
+    }
+
+    const scores = w.scores ?? {};
+    const shares = aggregateScoresToBlocShares(scores, {
+      candidateMeta: data.candidates,
+    });
+    const alloc = simulateFromVoteShares(shares, totalSeats, thresholdPct);
+    included.push({
+      firm: w.firm ?? 'Institut',
+      fieldwork: w.fieldwork ?? '',
+      hypothesis: w.hypothesis ?? '',
+      n: w.n,
+      metric: 'intentions_vote',
+      label: [w.firm, w.fieldwork, w.hypothesis].filter(Boolean).join(' · '),
+      shares,
+      alloc,
+      hemiRows: allocToHemiRows(alloc),
+    });
+  }
+
+  return { included, skipped };
+}
+
+function normalizeFirmKey(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/** Relie un libellé d’institut (providers) à une vague IV déjà bundlée. */
+export function findWaveForInstitute(
+  instituteLabel: string,
+  waves: WaveAn1tBundle[],
+): WaveAn1tBundle | undefined {
+  const key = normalizeFirmKey(instituteLabel);
+  if (!key) return undefined;
+  return waves.find((w) => {
+    const firm = normalizeFirmKey(w.firm);
+    return firm.includes(key) || key.includes(firm);
+  });
 }

@@ -31,6 +31,7 @@ const CORE_ROUTES: { path: string; changefreq: string; priority: string }[] = [
   { path: '/liberte-d-expression', changefreq: 'weekly', priority: '0.95' },
   { path: '/observatoire-censure', changefreq: 'weekly', priority: '0.92' },
   { path: '/assemblee-influenceurs', changefreq: 'weekly', priority: '0.9' },
+  { path: '/assemblee-sondages', changefreq: 'weekly', priority: '0.9' },
   { path: '/debats/assemblee-premier-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/desistements-second-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/vote-utile-pluralite', changefreq: 'monthly', priority: '0.7' },
@@ -178,6 +179,11 @@ function buildNewsSitemap(): string {
       path: '/assemblee-influenceurs',
       title: 'Assemblée des influenceurs — hémicycle pédagogique',
       keywords: 'influenceurs, hémicycle, teinte politique, dépendances économiques',
+    },
+    {
+      path: '/assemblee-sondages',
+      title: 'Assemblée des sondages — hémicycle pédagogique',
+      keywords: 'sondages, hémicycle, intentions de vote, Sainte-Laguë, pluralité',
     },
     {
       path: '/analyses/temps-parole-equite',

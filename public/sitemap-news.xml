@@ -8,7 +8,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Alerte citoyenne — conditions du débat public</news:title>
       <news:keywords>liberté d expression, débat public, premier tour</news:keywords>
     </news:news>
@@ -20,7 +20,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Observatoire de la censure en France depuis 2017</news:title>
       <news:keywords>censure, médias, liberté d expression</news:keywords>
     </news:news>
@@ -32,9 +32,21 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Assemblée des influenceurs — hémicycle pédagogique</news:title>
       <news:keywords>influenceurs, hémicycle, teinte politique, dépendances économiques</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://lmdpt.iarbre.org/assemblee-sondages/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Le Média du Premier Tour</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
+      <news:title>Assemblée des sondages — hémicycle pédagogique</news:title>
+      <news:keywords>sondages, hémicycle, intentions de vote, Sainte-Laguë, pluralité</news:keywords>
     </news:news>
   </url>
   <url>
@@ -44,7 +56,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Temps de parole et équité d exposition</news:title>
       <news:keywords>Arcom, temps de parole, pluralisme</news:keywords>
     </news:news>
@@ -56,7 +68,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Présidentielle 2027 — dossier de préparation</news:title>
       <news:keywords>présidentielle 2027, premier tour, candidatures</news:keywords>
     </news:news>
@@ -68,7 +80,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Liberté d expression — hub LMDPT</news:title>
       <news:keywords>liberté d expression, démocratie, premier tour</news:keywords>
     </news:news>
@@ -80,7 +92,7 @@
         <news:name>Le Média du Premier Tour</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-27T08:00:00+02:00</news:publication_date>
+      <news:publication_date>2026-08-26T08:00:00+02:00</news:publication_date>
       <news:title>Assemblée du premier tour — simulation 2024</news:title>
       <news:keywords>AN1T, pluralité, législatives</news:keywords>
     </news:news>

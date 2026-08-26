@@ -1,0 +1,158 @@
+---
+/**
+ * Galerie légère des vagues IV — barres empilées (pas N× AssembleeHemicycle).
+ * DOE : illustration Sainte-Laguë, pas de classement d’instituts.
+ */
+import type { WaveAn1tBundle, SkippedWave } from '../lib/poll-to-an1t';
+
+interface Props {
+  waves: WaveAn1tBundle[];
+  skipped?: SkippedWave[];
+}
+
+const { waves, skipped = [] } = Astro.props;
+
+const SKIP_LABEL: Record<SkippedWave['reason'], string> = {
+  not_iv: 'hors intentions de vote (baromètre / souhait)',
+  no_scores: 'scores non extraits',
+  too_few_scores: 'trop peu de scores IV',
+};
+---
+
+<div class="sw-gallery">
+  {
+    waves.map((wave) => {
+      const seats = wave.hemiRows.reduce((s, r) => s + r.seats, 0);
+      return (
+        <article class="sw-card">
+          <header>
+            <h3>{wave.firm}</h3>
+            <p class="meta">
+              {wave.fieldwork}
+              {wave.n ? ` · n=${wave.n}` : ''}
+              {wave.hypothesis ? ` · ${wave.hypothesis}` : ''}
+            </p>
+          </header>
+          <div
+            class="sw-bar"
+            role="img"
+            aria-label={`${wave.label} — ${seats} sièges Sainte-Laguë`}
+          >
+            <div class="sw-bar-track">
+              {
+                wave.hemiRows.map((row) => (
+                  <span
+                    class="sw-seg"
+                    style={`flex:${row.seats};background:${row.color}`}
+                    title={`${row.label} : ${row.seats} sièges`}
+                  />
+                ))
+              }
+            </div>
+            <p class="sw-cap">{seats} sièges (Sainte-Laguë, seuil 3 %)</p>
+          </div>
+          <ul class="sw-legend">
+            {
+              wave.hemiRows.map((row) => (
+                <li>
+                  <span class="swatch" style={`background:${row.color}`} />
+                  <span>{row.label}</span>
+                  <span class="num">{row.seats}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+      );
+    })
+  }
+</div>
+
+{
+  skipped.length > 0 && (
+    <div class="sw-skipped">
+      <h3>Vagues hors IV (pas d’hémicycle)</h3>
+      <ul>
+        {
+          skipped.map((s) => (
+            <li>
+              {[s.firm, s.fieldwork, s.hypothesis].filter(Boolean).join(' · ') || 'Vague'}
+              {' — '}
+              {SKIP_LABEL[s.reason]}
+              {s.metric ? ` · métrique ${s.metric}` : ''}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  )
+}
+
+<style>
+  .sw-gallery {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .sw-card {
+    border: 1px solid var(--border, #ddd);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    background: var(--card, #fff);
+  }
+  .sw-card h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+  }
+  .sw-bar {
+    margin: 0.55rem 0 0.4rem;
+  }
+  .sw-bar-track {
+    display: flex;
+    height: 22px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border, #ddd);
+  }
+  .sw-seg {
+    min-width: 2px;
+    height: 100%;
+  }
+  .sw-cap {
+    margin: 0.3rem 0 0;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+  .sw-legend {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.84rem;
+  }
+  .sw-legend li {
+    display: grid;
+    grid-template-columns: 12px 1fr auto;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  .sw-skipped {
+    margin-top: 1rem;
+  }
+  .sw-skipped h3 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+  }
+</style>

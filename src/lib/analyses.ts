@@ -43,6 +43,14 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/assemblee-premier-tour',
   },
   {
+    slug: 'assemblee-sondages',
+    title: 'Assemblée des sondages',
+    description:
+      'Hémicycle pédagogique 577 sièges à partir d’intentions de vote (Sainte-Laguë). Illustration, pas une prédiction ni un classement de favoris.',
+    date: '2026-08-26',
+    href: '/assemblee-sondages',
+  },
+  {
     slug: 'assemblee-premier-tour-mecanismes',
     title: 'Mécanismes pour une Assemblée du Premier Tour',
     description:

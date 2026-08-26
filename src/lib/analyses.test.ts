@@ -8,6 +8,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.length).toBeGreaterThanOrEqual(5);
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('legislatives-2024-desistements');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('assemblee-premier-tour');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('assemblee-sondages');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-distorsion');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-2022-legislatives');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('presidentielle-2027-preparation');
