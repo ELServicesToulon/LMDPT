@@ -41,8 +41,8 @@ async function main(): Promise<void> {
 
   console.log('Téléchargement T2 circonscriptions…');
   const t2Rows = parseT2CirconscriptionsCsv(await fetchText(LEGISLATIVES_2024_T2_CIRCO_SOURCE_URL));
-  if (t2Rows.length < 400) {
-    throw new Error(`Circonscriptions T2 insuffisantes : ${t2Rows.length}`);
+  if (t2Rows.length !== 501) {
+    throw new Error(`Circonscriptions T2 attendues 501, obtenu ${t2Rows.length}`);
   }
 
   const t1 = JSON.parse(fs.readFileSync(t1Path, 'utf8')) as CirconscriptionElectionDataset;

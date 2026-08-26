@@ -79,4 +79,37 @@ describe('legislatives T2 parser', () => {
     expect(merged.circonscriptions.find((c) => c.code === '0101')?.leader_nom).toBe('BRETON');
     expect(merged.circonscriptions.find((c) => c.code === '9999')?.elu_tour).toBe(1);
   });
+
+  it('refuses a T2 row with candidates but no elu cell', () => {
+    const broken = T2_CIRCO_FIXTURE.replace(';élu', ';');
+    expect(() => parseT2CirconscriptionsCsv(broken)).toThrow(/aucun élu/);
+  });
+
+  it('refuses T1-qualified circos missing from T2', () => {
+    const t2 = parseT2CirconscriptionsCsv(T2_CIRCO_FIXTURE);
+    const t1: CirconscriptionElectionDataset = {
+      election: 't1',
+      date: '2024-06-30',
+      source: 'test',
+      source_label: 'test',
+      circonscriptions: [
+        {
+          code: '8888',
+          departement: '88',
+          nom: 'missing T2',
+          inscrits: 1,
+          exprimes: 1,
+          nb_candidats: 2,
+          leader_nom: 'FAUX',
+          leader_prenom: '',
+          leader_nuance_code: 'RN',
+          leader_nuance: 'RN',
+          leader_voix: 1,
+          leader_pct: 40,
+          qualifie_t2: true,
+        },
+      ],
+    };
+    expect(() => mergeLegislatives2024RealSeats(t2, t1)).toThrow(/CSV T2 incomplet/);
+  });
 });

@@ -240,7 +240,11 @@ export function parseT2CirconscriptionsCsv(content: string): CirconscriptionResu
       }
     }
 
-    if (!winner) continue;
+    if (!winner) {
+      throw new Error(
+        `T2 circo ${code} : aucun élu détecté (refuser le merge T1 pour éviter un faux élu T1)`,
+      );
+    }
     winner.nb_candidats = nbCandidats;
     results.push(winner);
   }
@@ -299,9 +303,18 @@ export function mergeLegislatives2024RealSeats(
   t1: CirconscriptionElectionDataset,
 ): CirconscriptionElectionDataset {
   const t2Codes = new Set(t2.map((c) => c.code));
-  const t1Elus: CirconscriptionResult[] = t1.circonscriptions
-    .filter((c) => !t2Codes.has(c.code))
-    .map((c) => ({ ...c, elu_tour: 1 as const, qualifie_t2: false }));
+  const missingFromT2 = t1.circonscriptions.filter((c) => !t2Codes.has(c.code));
+  const leakedT2 = missingFromT2.filter((c) => c.qualifie_t2);
+  if (leakedT2.length > 0) {
+    throw new Error(
+      `Merge T2 : ${leakedT2.length} circo absentes du T2 mais qualifiées T1 (${leakedT2[0]?.code}) — CSV T2 incomplet`,
+    );
+  }
+  const t1Elus: CirconscriptionResult[] = missingFromT2.map((c) => ({
+    ...c,
+    elu_tour: 1 as const,
+    qualifie_t2: false,
+  }));
 
   const merged = [...t2, ...t1Elus].sort((a, b) => a.code.localeCompare(b.code));
   return {
