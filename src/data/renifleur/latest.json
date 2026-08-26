@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-26T11:00:28.459Z",
+  "fetched_at": "2026-08-26T19:22:51.050Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,10 +7,58 @@
   "feeds_error": 0,
   "items": [
     {
+      "title": "Présidentielle 2027 : Les Ecologistes proposent de taxer davantage les héritages les plus fortunés pour financer la transition écologique",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/presidentielle-2027-les-ecologistes-proposent-de-taxer-davantage-les-heritages-les-plus-fortunes-pour-financer-la-transition-ecologique_6757417_823448.html",
+      "published": "2026-08-26",
+      "summary": "Pour financer la transition écologique, le parti propose d’instaurer une contribution de 10 % sur les héritages de plus de 4 millions d’euros, de 10 % supplémentaires sur ceux dépassant les 13 millions d’euros, et de supprimer certaines niches et avantages fiscaux.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes, transition écologique"
+      }
+    },
+    {
+      "title": "Le Medef réclame un « programme présidentiel de libertés » à l’ouverture de la Rencontre des entrepreneurs de France",
+      "url": "https://www.lemonde.fr/economie/article/2026/08/26/le-medef-reclame-un-programme-presidentiel-de-libertes-a-l-ouverture-de-la-rencontre-des-entrepreneurs-de-france_6757392_3234.html",
+      "published": "2026-08-26",
+      "summary": "A huit mois de la présidentielle, le rendez-vous annuel de l’organisation patronale prend une dimension particulièrement politique. Jeudi, un débat avec les sept principaux candidats à l’élection, qui évoqueront leurs idées pour l’économie, doit clôturer la rencontre.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : le parti du député Emmanuel Maurel participera à la primaire du PS et de Place publique",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/presidentielle-2027-le-parti-du-depute-emmanuel-maurel-participera-a-la-primaire-du-ps-et-de-place-publique_6757377_823448.html",
+      "published": "2026-08-26",
+      "summary": "A ce stade, quatre candidats ont déjà annoncé qu’ils souhaitaient participer à cette primaire : le leader de Place publique, Raphaël Glucksmann, et trois socialistes, les députés Philippe Brun et Jérôme Guedj, ainsi que l’ex-candidate à la présidentielle Ségolène Royal.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : philippe brun, ségolène royal, segolene royal"
+      }
+    },
+    {
       "title": "Présidentielle 2027 : Edouard Philippe, en campagne à La Réunion, met au point sa « mécanique de rassemblement » de la droite et du centre",
       "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/26/presidentielle-2027-a-la-reunion-edouard-philippe-met-au-point-sa-mecanique-de-rassemblement-de-la-droite-et-du-centre_6757179_6205049.html",
       "published": "2026-08-26",
-      "summary": "Le candidat Horizons, en visite sur l’île pendant trois jours, a longuement rencontré les différents acteurs politiques du centre et de la droite, espérant fédérer autour de lui. La majorité des élus est cependant restée attentiste, entretenant le flou sur son éventuel soutien.",
+      "summary": "Le candidat Horizons, en visite sur l’île pendant trois jours, a longuement rencontré les différents acteurs politiques du centre et de la droite, espérant les fédérer autour de lui. La majorité des élus est cependant restée attentiste, entretenant le flou sur son éventuel soutie",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -119,7 +167,7 @@
       }
     },
     {
-      "title": "Budget 2027 : Bruno Le Maire se dit favorable à une taxation des « plus grosses fortunes »",
+      "title": "Budget 2027 : Bruno Le Maire, ex-ministre de l’économie, se dit favorable à une taxation des « plus grosses fortunes »",
       "url": "https://www.lemonde.fr/politique/article/2026/08/26/budget-2027-bruno-lemaire-se-dit-favorable-a-une-taxation-des-plus-grosses-fortunes_6757357_823448.html",
       "published": "2026-08-26",
       "summary": "Interrogé sur BFM-TV à propos de la situation économique du pays, l’ancien ministre de l’économie d’Emmanuel Macron a réclamé « de l’efficacité pour lutter contre la dérive des comptes ». Il a aussi estimé nécessaire de désindexer de l’inflation les pensions de retraite, le barèm",
@@ -263,38 +311,6 @@
       }
     },
     {
-      "title": "Le patronat et les syndicats tentent de relancer le dialogue pour faire avancer leur « agenda social autonome »",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/25/le-patronat-et-les-syndicats-tentent-de-relancer-le-dialogue-pour-faire-avancer-leur-agenda-social-autonome_6756592_823448.html",
-      "published": "2026-08-25",
-      "summary": "Les organisations d’employeurs et de salariés se sont réunies lundi pour essayer de définir leur propre programme de négociations, sans directives gouvernementales. Alors qu’ils ne s’étaient pas revus dans une telle configuration depuis la fin janvier, les différents partenaires ",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Pourquoi le gouvernement veut exclure certains fonds du PEA",
-      "url": "https://www.lemonde.fr/argent/article/2026/08/25/pourquoi-le-gouvernement-veut-exclure-certains-fonds-du-pea_6756588_1657007.html",
-      "published": "2026-08-25",
-      "summary": "Le ministère des finances pourrait profiter du budget 2027 pour suspendre l’éligibilité de certains ETF, des fonds indiciels cotés, au plan d’épargne en actions. Des fonds auxquels on reproche de contourner les règles du dispositif.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
       "title": "Présidentielle 2027 : Edouard Philippe veut augmenter de « 20 % la rémunération moyenne des enseignants » sur un quinquennat",
       "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/24/presidentielle-2027-edouard-philippe-veut-augmenter-de-20-la-remuneration-moyenne-des-enseignants-sur-un-quinquennat_6755790_6205049.html",
       "published": "2026-08-24",
@@ -359,22 +375,6 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : la bataille des gauches est lancée",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/24/presidentielle-2027-la-bataille-des-gauches-irreconciliables-est-lancee_6754812_823448.html",
-      "published": "2026-08-24",
-      "summary": "Lors de l’université d’été de La France insoumise, où il a prononcé un discours très centré sur la planification écologique, Jean-Luc Mélenchon a multiplié les appels du pied pour attirer Les Ecologistes. Son rival à gauche, Raphaël Glucksmann a, lui, annoncé sa candidature au « ",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
-      }
-    },
-    {
       "title": "Présidentielle 2027 : Raphaël Glucksmann veut remporter la primaire socialiste sur une ligne anti-LFI",
       "url": "https://www.france24.com/fr/france/20260824-france-presidentielle-2027-raphael-glucksman-veut-remporter-primaire-socialiste-sur-une-ligne-anti-lfi",
       "published": "2026-08-24",
@@ -404,70 +404,6 @@
         "color": "#ffeb00",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Léa Salamé se retire du « 20 heures » de France 2 après la déclaration officielle de candidature de Raphaël Glucksmann",
-      "url": "https://www.lemonde.fr/economie/article/2026/08/23/lea-salame-se-retire-du-20-heures-de-france-2-apres-la-declaration-officielle-de-candidature-de-raphael-glucksmann_6754541_3234.html",
-      "published": "2026-08-23",
-      "summary": "« J’en avais pris l’engagement dès le premier jour et je m’y tiens (...) Cette décision, prise en accord avec ma direction, est évidente et difficile », a écrit la journaliste, après l’officialisation de la candidature de son compagnon.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Raphaël Glucksmann annonce être candidat à l’élection présidentielle de 2027 dans le cadre de la primaire organisée avec le PS",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/23/raphael-glucksmann-annonce-etre-candidat-a-l-election-presidentielle-dans-le-cadre-de-la-primaire-organisee-avec-le-parti-socialiste_6754507_823448.html",
-      "published": "2026-08-23",
-      "summary": "L’essayiste et fondateur de Place publique a annoncé sa candidature au journal de 20 heures, sur TF1, dimanche. En attendant de participer à une primaire organisée avec le PS, il espère créer une dynamique dans les semaines à venir.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Bruno Le Maire publie un manifeste « pour une autre France »",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-bruno-le-maire-publie-un-manifeste-pour-une-autre-france_6754301_823448.html",
-      "published": "2026-08-23",
-      "summary": "En retrait de la vie politique depuis deux ans, l’ancien ministre de l’économie a exposé ses trois priorités pour le pays, à quelques mois de l’élection présidentielle, alors qu’il laisse planer le doute sur une éventuelle candidature.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : la transition écologique, élément de convergence et de rivalité entre LFI et Les Ecologistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-la-transition-ecologique-element-de-convergence-et-de-rivalite-entre-lfi-et-les-ecologistes_6754268_823448.html",
-      "published": "2026-08-23",
-      "summary": "Alors que le pays a vécu un été de crises liées au dérèglement climatique, l’écologie a été le thème central des universités de La France insoumise et des Ecologistes, le week-end des 22 et 23 août. Les « insoumis » espèrent convaincre les seconds de soutenir la candidature de Je",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes, écologie"
       }
     },
     {
