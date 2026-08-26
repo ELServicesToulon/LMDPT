@@ -1,11 +1,43 @@
 {
-  "fetched_at": "2026-08-26T06:11:36.000Z",
+  "fetched_at": "2026-08-26T11:00:28.459Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 3,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "Présidentielle 2027 : Edouard Philippe, en campagne à La Réunion, met au point sa « mécanique de rassemblement » de la droite et du centre",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/26/presidentielle-2027-a-la-reunion-edouard-philippe-met-au-point-sa-mecanique-de-rassemblement-de-la-droite-et-du-centre_6757179_6205049.html",
+      "published": "2026-08-26",
+      "summary": "Le candidat Horizons, en visite sur l’île pendant trois jours, a longuement rencontré les différents acteurs politiques du centre et de la droite, espérant fédérer autour de lui. La majorité des élus est cependant restée attentiste, entretenant le flou sur son éventuel soutien.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "philippe",
+        "label": "Philippe / Horizons",
+        "color": "#0001b8",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
+      }
+    },
+    {
+      "title": "Jean-Marc Jancovici lance une assemblée citoyenne pour « donner de la voix aux citoyens » sur le réchauffement climatique en 2027",
+      "url": "https://www.lemonde.fr/planete/article/2026/08/26/climat-l-expert-jean-marc-jancovici-lance-une-assemblee-citoyenne-pour-peser-sur-la-presidentielle-2027_6757079_3244.html",
+      "published": "2026-08-26",
+      "summary": "Soutenue par des personnalités, l’initiative « Un commun accord » veut replacer les citoyens au cœur du débat climatique à travers une assemblée tirée au sort et une plateforme participative.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : climat"
+      }
+    },
     {
       "title": "Le PS et Place publique se mettent d’accord sur les modalités de leur primaire",
       "url": "https://www.lemonde.fr/politique/article/2026/08/26/le-ps-et-place-publique-ratifient-se-mettent-d-accord-sur-les-modalites-de-leur-primaire_6756875_823448.html",
@@ -23,10 +55,10 @@
       }
     },
     {
-      "title": "Raphaël Glucksmann : « L’Europe est cruciale pour mener à bien la transformation écologique »",
+      "title": "Raphaël Glucksmann : « La cohérence écologique, nous la portons »",
       "url": "https://www.lemonde.fr/politique/article/2026/08/26/raphael-glucksmann-l-europe-est-cruciale-pour-mener-a-bien-la-transformation-ecologique_6756834_823448.html",
       "published": "2026-08-26",
-      "summary": "Le candidat à la présidentielle de 2027 revient dans un entretien au « Monde » sur la « République écologique » qu’il propose et les raisons qui devraient inciter Les Ecologistes à le rejoindre. Il souhaite aussi taxer les « méga-héritages » pour financer une augmentation des sal",
+      "summary": "Le candidat à la présidentielle de 2027 revient, dans un entretien au « Monde », sur la « République écologique » qu’il propose et sur les raisons qui devraient inciter Les Ecologistes à le rejoindre. Il souhaite aussi taxer les « méga-héritages » pour financer une augmentation d",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -39,10 +71,10 @@
       }
     },
     {
-      "title": "Dans l’éducation nationale, une drôle de rentrée politique, coincée entre une fin de quinquennat atone et une élection présidentielle majeure",
+      "title": "Le ministre de l’éducation promet de terminer les réformes engagées, face à la surenchère d’annonces sur l’école par les candidats à la présidentielle",
       "url": "https://www.lemonde.fr/societe/article/2026/08/26/dans-l-education-nationale-une-drole-de-rentree-politique-coincee-entre-une-fin-de-quinquennat-atone-et-une-election-presidentielle-majeure_6756831_3224.html",
       "published": "2026-08-26",
-      "summary": "Alors que les candidats au scrutin présidentiel rivalisent déjà d’annonces sur l’école, le ministre de l’éducation nationale, Edouard Geffray, a tenu sa conférence de rentrée, mardi.",
+      "summary": "Alors que les personnels éducatifs oscillent entre attentes et inquiétudes, Edouard Geffray a tenu sa conférence de rentrée, mardi 25 août. Face aux échéances électorales limitant la capacité d’action du ministre, les syndicats espèrent qu’il saura « préserver le budget de l’éduc",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -52,6 +84,70 @@
         "color": "#ffeb00",
         "confidence": 0.7,
         "rationale": "Proximité lexicale : école, ecole"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : de Mélenchon à Le Pen, le Medef s'offre le premier grand débat",
+      "url": "https://www.france24.com/fr/france/20260826-france-premier-debat-candidats-presidentielle-2027-economie-medef",
+      "published": "2026-08-26",
+      "summary": "La Rencontre des entrepreneurs de France (REF) du Medef, qui a pour thème cette année \"le courage\", prend un tour exceptionnel à huit mois de la présidentielle de 2027 en accueillant jeudi un débat économique entre sept candidats lancés dans la course à l'Élysée, de Marine Le Pen",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Le Pen / RN) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "« Il n’y aura pas d’économies faites sur le dos de la lutte contre les violences faites aux femmes ou aux enfants », assure la ministre Aurore Bergé",
+      "url": "https://www.lemonde.fr/societe/article/2026/08/26/il-n-y-aura-pas-d-economies-faites-sur-le-dos-de-la-lutte-contre-les-violences-faites-aux-femmes-ou-aux-enfants-assure-aurore-berge_6757360_3224.html",
+      "published": "2026-08-26",
+      "summary": "Au lendemain du lancement d’une campagne contre les violences sexistes et sexuelles sur les aires d’autoroute, Aurore Bergé a assuré mercredi que les moyens consacrés à cette lutte continueraient d’augmenter. Au micro de Franceinfo, la ministre a notamment promis qu’il n’y aurait",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : Bruno Le Maire se dit favorable à une taxation des « plus grosses fortunes »",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/budget-2027-bruno-lemaire-se-dit-favorable-a-une-taxation-des-plus-grosses-fortunes_6757357_823448.html",
+      "published": "2026-08-26",
+      "summary": "Interrogé sur BFM-TV à propos de la situation économique du pays, l’ancien ministre de l’économie d’Emmanuel Macron a réclamé « de l’efficacité pour lutter contre la dérive des comptes ». Il a aussi estimé nécessaire de désindexer de l’inflation les pensions de retraite, le barèm",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Le gouvernement de Sébastien Lecornu aborde la rentrée sans aucune marge de manœuvre",
+      "url": "https://www.lemonde.fr/politique/article/2026/08/26/le-gouvernement-lecornu-aborde-la-rentree-sans-aucune-marge-de-man-uvre_6757180_823448.html",
+      "published": "2026-08-26",
+      "summary": "Sans majorité pour adopter le budget et confronté à des oppositions lancées dans la campagne présidentielle, le premier ministre n’a aucune garantie d’avancer sur d’autres chantiers importants. Il craint qu’une crise politique donne du carburant à La France insoumise et au Rassem",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : france insoumise, insoumis"
       }
     },
     {
@@ -119,22 +215,6 @@
       }
     },
     {
-      "title": "David Lisnard, président du parti Nouvelle Energie : « Sans une grande primaire ouverte à tous, la droite et le centre ne seront pas en mesure de l’emporter »",
-      "url": "https://www.lemonde.fr/idees/article/2026/08/25/david-lisnard-pour-la-presidentielle-2027-sans-une-grande-primaire-ouverte-a-tous-la-droite-et-le-centre-ne-seront-pas-en-mesure-de-l-emporter_6756156_3232.html",
-      "published": "2026-08-25",
-      "summary": "Pour éviter la division, la compromission programmatique et la multiplication des candidatures, le maire de Cannes, ex-LR et candidat à la présidentielle, appelle, dans une tribune au « Monde », ses concurrents de la droite et du centre à accepter l’organisation d’une primaire.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "lisnard",
-        "label": "Lisnard / droite locale",
-        "color": "#162561",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : lisnard, cannes, nouvelle énergie"
-      }
-    },
-    {
       "title": "Gabriel Attal : « Je souhaite une loi de programmation pour l’école et un ministre de l’éducation qui restera en poste cinq ans »",
       "url": "https://www.lemonde.fr/societe/article/2026/08/25/gabriel-attal-je-souhaite-une-loi-de-programmation-pour-l-ecole-et-un-ministre-de-l-education-qui-restera-en-poste-cinq-ans_6756157_3224.html",
       "published": "2026-08-25",
@@ -148,6 +228,22 @@
         "color": "#ffeb00",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : attal, gabriel attal, renaissance"
+      }
+    },
+    {
+      "title": "David Lisnard, président du parti Nouvelle Energie : « Sans une grande primaire ouverte à tous, la droite et le centre ne seront pas en mesure de l’emporter »",
+      "url": "https://www.lemonde.fr/idees/article/2026/08/25/david-lisnard-pour-la-presidentielle-2027-sans-une-grande-primaire-ouverte-a-tous-la-droite-et-le-centre-ne-seront-pas-en-mesure-de-l-emporter_6756156_3232.html",
+      "published": "2026-08-25",
+      "summary": "Pour éviter la division, la compromission programmatique et la multiplication des candidatures, le maire de Cannes, ex-LR et candidat à la présidentielle, appelle, dans une tribune au « Monde », ses concurrents de la droite et du centre à accepter l’organisation d’une primaire.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : lisnard, cannes, nouvelle énergie"
       }
     },
     {
@@ -375,38 +471,6 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : la surenchère sur l’immigration des candidats du bloc central",
-      "url": "https://www.lemonde.fr/societe/article/2026/08/23/presidentielle-la-surenchere-des-candidats-du-bloc-central-sur-l-immigration_6754133_3224.html",
-      "published": "2026-08-23",
-      "summary": "En visite à Mayotte, Edouard Philippe a évoqué la suspension des demandes d’asile ou de regroupement familial. Son rival au centre, Gabriel Attal, évoque une modification constitutionnelle pour instaurer des quotas limitatifs de migrants.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Le communiste Fabien Roussel lance sa campagne pour la présidentielle 2027 sur une ligne autonome",
-      "url": "https://www.lemonde.fr/politique/article/2026/08/23/presidentielle-2027-le-communiste-fabien-roussel-lance-sa-campagne-sur-une-ligne-autonome_6754061_823448.html",
-      "published": "2026-08-23",
-      "summary": "Le projet, proposé par la direction sortante, a d’ores et déjà été approuvé par les délégués lors du 40ᵉ congrès du PCF, au début de juillet, à Lille. Mais les adhérents doivent encore approuver la désignation de Fabien Roussel.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "roussel",
-        "label": "Roussel / PCF",
-        "color": "#dd0000",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : pcf, roussel, communiste"
-      }
-    },
-    {
       "title": "Raphaël Glucksmann annonce sa candidature à la présidentielle de 2027",
       "url": "https://www.france24.com/fr/france/20260823-rapha%C3%ABl-glucksmann-annonce-sa-candidature-%C3%A0-la-pr%C3%A9sidentielle-de-2027",
       "published": "2026-08-23",
@@ -436,22 +500,6 @@
         "color": "#ffeb00",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Mégafeu en Gironde : Sébastien Lecornu promet des aides massives et la transparence aux sinistrés",
-      "url": "https://www.france24.com/fr/france/20260816-lecornu-en-gironde-pour-la-reconstruction-apr%C3%A8s-le-m%C3%A9gafeu-le-porge-r%C3%A9clame-un-plan-marshall",
-      "published": "2026-08-16",
-      "summary": "Chahuté par des dizaines d'habitants lors de son arrivée en Gironde, touché par un incendie historique au mois de juillet, le Premier ministre Sébastien Lecornu a annoncé lundi de nouvelles mesures de soutien aux entreprises, dont le coût total pourrait dépasser 100 millions d'eu",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     }
   ]
