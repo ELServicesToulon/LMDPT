@@ -123,13 +123,13 @@ Puis `docker exec` / reload nginx conteneur LMDPT.
 |----------|---------|--------------|-------------------------------|
 | Email | ✅ | `CONTACT_MEDICONVOI_MAIL_PASSWORD` → SMTP contact@ | — |
 | Google | ✅ | `iarbre_GOOGLE_OAUTH_CLIENT_*` | `https://lmdpt.iarbre.org/api/auth/callback/google` |
-| X | ✅ | `LEMEDIA-DPT-X-API-v2` (`oauth2_client_*`) | `https://lmdpt.iarbre.org/api/auth/callback/x` |
+| X | ✅ | `LEMEDIA-DPT-X-API-v2` (`oauth2_client_*` **PostXLMDPT** `33317015`) | `https://lmdpt.iarbre.org/api/auth/callback/x` |
 | Apple | ❌ **SKIP** (2026-07-26) | pas de membership Developer | pack `P41-O3` · rouvrir si membership |
 
 Env prod : `/etc/lmdpt-comments.env` (root 600) · restart `lmdpt-comments.service`.
 
 **Google Cloud Console** (client iarbre `1008470530429-…`) : Authorized redirect URIs → ajouter le callback LMDPT.  
-**X Developer Portal** (app LeMediaDPT Bridge, client `VURQNG9O…`) : User authentication → Callback URI / Redirect URL → callback X LMDPT.
+**X Developer Portal** (app **PostXLMDPT** `33317015`) : User authentication → Callback URI / Redirect URL → callback X LMDPT (+ iarbre / rapplike / mediconvoi).
 
 Sans ces URIs, le bouton redirige vers IdP puis erreur `redirect_uri_mismatch`.
 
@@ -141,6 +141,6 @@ Sans ces URIs, le bouton redirige vers IdP puis erreur `redirect_uri_mismatch`.
 | | |
 |--|--|
 | Google client (prod) | `748914516227-tgrop94cvom5u9v74b1eqoe4dig6fg3p…` (projet **mediconvoi**) |
-| X client | `VURQNG9O…` (**LeMediaDPT Bridge** — pas app Pay Per Use) |
+| X client | OAuth 2.0 **PostXLMDPT** `33317015` (plus Bridge / LMDuPremier) |
 | Callbacks | `…/callback/google` · `…/callback/x` |
 | Probe | Google headless OK · X nav OK (headless bot = faux négatif fréquent) |

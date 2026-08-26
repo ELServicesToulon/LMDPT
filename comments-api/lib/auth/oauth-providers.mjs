@@ -1,10 +1,18 @@
 /**
  * Flux OAuth2 / OIDC pour Google, X (PKCE), Apple.
+ * Google + X : @ks5b/auth-idp · Apple reste local (hors package v1).
  */
-import { createSign, createHash, randomBytes } from 'node:crypto';
-import { providerConfig, callbackUrl } from './config.mjs';
+import { createSign } from 'node:crypto';
+import { providerConfig, callbackUrl, publicUrl } from './config.mjs';
 import { createOAuthState, consumeOAuthState } from './oauth-state.mjs';
 import { upsertFromProvider } from './users.mjs';
+import { idp } from './load-idp.mjs';
+
+const {
+  resolveAuthConfig,
+  buildAuthorizeRedirect: idpBuildAuthorize,
+  handleOAuthCallback: idpHandleCallback,
+} = idp;
 
 function b64url(buf) {
   return Buffer.from(buf)
@@ -14,10 +22,19 @@ function b64url(buf) {
     .replace(/=+$/, '');
 }
 
-function pkcePair() {
-  const verifier = b64url(randomBytes(32));
-  const challenge = b64url(createHash('sha256').update(verifier).digest());
-  return { verifier, challenge };
+function idpConfig() {
+  return resolveAuthConfig({
+    envPrefix: 'LMDPT',
+    publicUrl: publicUrl(),
+    env: process.env,
+    brand: {
+      appName: 'LMDPT',
+      fromName: 'LMDPT',
+      footerUrl: 'https://lmdpt.iarbre.org',
+      ehloHost: 'lmdpt.iarbre.org',
+      logTag: 'lmdpt-auth',
+    },
+  });
 }
 
 export function buildAuthorizeRedirect(dataDir, providerId, { next = '/' } = {}) {
@@ -28,31 +45,13 @@ export function buildAuthorizeRedirect(dataDir, providerId, { next = '/' } = {})
     throw err;
   }
 
-  if (providerId === 'x') {
-    const { verifier, challenge } = pkcePair();
-    const st = createOAuthState(dataDir, { provider: 'x', next, codeVerifier: verifier });
-    const u = new URL(cfg.authUrl);
-    u.searchParams.set('response_type', 'code');
-    u.searchParams.set('client_id', cfg.clientId);
-    u.searchParams.set('redirect_uri', callbackUrl('x'));
-    u.searchParams.set('scope', cfg.scopes);
-    u.searchParams.set('state', st.state);
-    u.searchParams.set('code_challenge', challenge);
-    u.searchParams.set('code_challenge_method', 'S256');
-    return u.toString();
-  }
-
-  if (providerId === 'google') {
-    const st = createOAuthState(dataDir, { provider: 'google', next });
-    const u = new URL(cfg.authUrl);
-    u.searchParams.set('response_type', 'code');
-    u.searchParams.set('client_id', cfg.clientId);
-    u.searchParams.set('redirect_uri', callbackUrl('google'));
-    u.searchParams.set('scope', cfg.scopes);
-    u.searchParams.set('state', st.state);
-    u.searchParams.set('access_type', 'online');
-    u.searchParams.set('prompt', 'select_account');
-    return u.toString();
+  if (providerId === 'google' || providerId === 'x') {
+    return idpBuildAuthorize({
+      config: idpConfig(),
+      dataDir,
+      providerId,
+      next,
+    });
   }
 
   if (providerId === 'apple') {
@@ -70,71 +69,6 @@ export function buildAuthorizeRedirect(dataDir, providerId, { next = '/' } = {})
   const err = new Error(`Provider inconnu: ${providerId}`);
   err.status = 400;
   throw err;
-}
-
-async function exchangeGoogle(code) {
-  const cfg = providerConfig().google;
-  const body = new URLSearchParams({
-    code,
-    client_id: cfg.clientId,
-    client_secret: cfg.clientSecret,
-    redirect_uri: callbackUrl('google'),
-    grant_type: 'authorization_code',
-  });
-  const tokRes = await fetch(cfg.tokenUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body,
-  });
-  const tok = await tokRes.json();
-  if (!tokRes.ok) throw new Error(tok.error || `Google token HTTP ${tokRes.status}`);
-  const uiRes = await fetch(cfg.userInfoUrl, {
-    headers: { Authorization: `Bearer ${tok.access_token}` },
-  });
-  const ui = await uiRes.json();
-  if (!uiRes.ok) throw new Error(ui.error || `Google userinfo HTTP ${uiRes.status}`);
-  return {
-    provider: 'google',
-    providerUserId: ui.sub,
-    email: ui.email || null,
-    emailVerified: Boolean(ui.email_verified),
-    displayName: ui.name || ui.given_name || null,
-  };
-}
-
-async function exchangeX(code, codeVerifier) {
-  const cfg = providerConfig().x;
-  const basic = Buffer.from(`${cfg.clientId}:${cfg.clientSecret}`).toString('base64');
-  const body = new URLSearchParams({
-    code,
-    grant_type: 'authorization_code',
-    client_id: cfg.clientId,
-    redirect_uri: callbackUrl('x'),
-    code_verifier: codeVerifier || '',
-  });
-  const tokRes = await fetch(cfg.tokenUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: `Basic ${basic}`,
-    },
-    body,
-  });
-  const tok = await tokRes.json();
-  if (!tokRes.ok) throw new Error(tok.error_description || tok.error || `X token HTTP ${tokRes.status}`);
-  const uiRes = await fetch(`${cfg.userInfoUrl}?user.fields=id,name,username`, {
-    headers: { Authorization: `Bearer ${tok.access_token}` },
-  });
-  const ui = await uiRes.json();
-  if (!uiRes.ok) throw new Error(ui.detail || `X users/me HTTP ${uiRes.status}`);
-  const d = ui.data || {};
-  return {
-    provider: 'x',
-    providerUserId: d.id,
-    email: null,
-    emailVerified: false,
-    displayName: d.name || d.username || null,
-  };
 }
 
 /** Client secret Apple = JWT ES256 (5–15 min) */
@@ -156,14 +90,11 @@ function appleClientSecret() {
   sign.update(data);
   sign.end();
   const sig = sign.sign(cfg.privateKey);
-  // Apple expects ECDSA sig in IEEE P1363 / raw; Node sign gives DER — convert if needed.
-  // For many Node versions, convert DER to raw JOSE:
   const rawSig = derToJose(sig, 32);
   return `${data}.${b64url(rawSig)}`;
 }
 
 function derToJose(der, size) {
-  // Minimal DER SEQUENCE (r,s) → r||s fixed size
   let offset = 2;
   if (der[1] & 0x80) offset += der[1] & 0x7f;
   if (der[offset] !== 0x02) throw new Error('Apple JWT: bad DER');
@@ -223,6 +154,17 @@ async function exchangeApple(code, idToken) {
  * Callback unifié → user record
  */
 export async function handleOAuthCallback(dataDir, providerId, { code, state, idToken }) {
+  if (providerId === 'google' || providerId === 'x') {
+    return idpHandleCallback({
+      config: idpConfig(),
+      dataDir,
+      providerId,
+      code,
+      state,
+      upsertFromProvider: (identity) => upsertFromProvider(dataDir, identity),
+    });
+  }
+
   const st = consumeOAuthState(dataDir, state);
   if (!st || st.provider !== providerId) {
     const err = new Error('State OAuth invalide ou expiré');
@@ -236,9 +178,7 @@ export async function handleOAuthCallback(dataDir, providerId, { code, state, id
   }
 
   let identity;
-  if (providerId === 'google') identity = await exchangeGoogle(code);
-  else if (providerId === 'x') identity = await exchangeX(code, st.codeVerifier);
-  else if (providerId === 'apple') identity = await exchangeApple(code, idToken);
+  if (providerId === 'apple') identity = await exchangeApple(code, idToken);
   else {
     const err = new Error('Provider inconnu');
     err.status = 400;

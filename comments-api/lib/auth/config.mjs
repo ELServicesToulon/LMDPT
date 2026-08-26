@@ -49,9 +49,9 @@ export function providerConfig() {
     ),
     clientId: process.env.LMDPT_X_OAUTH_CLIENT_ID || '',
     clientSecret: process.env.LMDPT_X_OAUTH_CLIENT_SECRET || '',
-    authUrl: 'https://twitter.com/i/oauth2/authorize',
-    tokenUrl: 'https://api.twitter.com/2/oauth2/token',
-    userInfoUrl: 'https://api.twitter.com/2/users/me',
+    authUrl: 'https://x.com/i/oauth2/authorize',
+    tokenUrl: 'https://api.x.com/2/oauth2/token',
+    userInfoUrl: 'https://api.x.com/2/users/me',
     scopes: 'users.read tweet.read offline.access',
   };
 

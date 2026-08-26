@@ -146,7 +146,16 @@ function main() {
   const overridePath = join(PUBLIC, 'illustrations/2027/hero-daily-override.json');
   const prev = readJson(overridePath);
 
-  if (!FORCE && prev?.dayKey === dayKey && prev?.motif === scoop.motif && existsSync(join(PUBLIC, prev.heroVideo?.replace(/^\//, '') || ''))) {
+  const prevVideoRel = String(prev?.heroVideoFile || prev?.heroVideo || '')
+    .replace(/^\//, '')
+    .split(/[?#]/)[0];
+  if (
+    !FORCE &&
+    prev?.dayKey === dayKey &&
+    prev?.motif === scoop.motif &&
+    prevVideoRel &&
+    existsSync(join(PUBLIC, prevVideoRel))
+  ) {
     console.log(`[hero-daily] already fresh for ${dayKey} motif=${scoop.motif} (use --force to regen)`);
     console.log(JSON.stringify({ dayKey, ...scoop, skipped: true }, null, 2));
     return;
