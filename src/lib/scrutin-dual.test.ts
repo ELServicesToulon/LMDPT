@@ -70,4 +70,16 @@ describe('scrutin-dual — présidentielle → législatives', () => {
     expect(f.pending).toBe(false);
     expect(f.rows.reduce((s, r) => s + r.seats, 0)).toBe(577);
   });
+
+  it('2024 T2: Sainte-Laguë voix T2 vs 577 élus circo', () => {
+    const d = buildScrutinDual('2024-legislatives-t2')!;
+    expect(d.realPending).toBe(false);
+    expect(d.firstRound.reduce((s, r) => s + r.seats, 0)).toBe(577);
+    expect(d.real.reduce((s, r) => s + r.seats, 0)).toBe(577);
+    expect(d.real.find((r) => r.id === 'nfp')?.seats).toBe(193);
+    expect(d.real.find((r) => r.id === 'ensemble')?.seats).toBe(165);
+    expect(d.real.find((r) => r.id === 'rn')?.seats).toBe(170);
+    expect(d.real.find((r) => r.id === 'lr')?.seats).toBe(39);
+    expect(d.differential?.length).toBeGreaterThanOrEqual(4);
+  });
 });

@@ -109,8 +109,10 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     {
       dual && (
         <p class="fil-directeur-tag">
-          <strong>Fil directeur LMDPT</strong> — Assemblée du 1er tour (gauche) vs Assemblée des législatives
-          qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.
+          <strong>Fil directeur LMDPT</strong> —{' '}
+          {isLegislativesT2
+            ? 'Gauche : Sainte-Laguë sur les voix du 2nd tour (501 circonscriptions). Droite : 577 élus réels (T1+T2). Tableau Δ sièges inclus.'
+            : 'Assemblée du 1er tour (gauche) vs Assemblée des législatives qui ont suivi (droite). Couleurs T1 = proximité de programmes. Tableau Δ sièges inclus.'}
         </p>
       )
     }

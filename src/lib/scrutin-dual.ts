@@ -9,9 +9,10 @@
  *   Gauche = Sainte-Laguë sur nuances T1
  *   Droite = composition post-T2
  */
-import type { ElectionDataset } from './election-types';
-import { simulateAn1tSeats, simulateFromVoteShares, type SeatAllocation } from './an1t';
+import type { CirconscriptionElectionDataset, ElectionDataset } from './election-types';
+import { AN1T_BLOCS, nuanceToBlocId, simulateAn1tSeats, simulateFromVoteShares, type SeatAllocation } from './an1t';
 import { candidateSlug } from './candidate-style';
+import { getCirconscriptionResults } from './circonscriptions';
 import { getElection, ELECTION_CATALOG } from './elections';
 import {
   BLOC_SPECTRUM_AXIS,
@@ -209,6 +210,25 @@ export function realFromLegislatives2024(): DualSeatRow[] {
   }));
 }
 
+/** Sièges réels agrégés depuis le jeu circonscription (élus T1+T2). */
+export function realFromCircoSeats(dataset: CirconscriptionElectionDataset): DualSeatRow[] {
+  const counts = new Map<string, number>();
+  for (const c of dataset.circonscriptions) {
+    const id = nuanceToBlocId(c.leader_nuance_code);
+    counts.set(id, (counts.get(id) ?? 0) + 1);
+  }
+  return AN1T_BLOCS.map((b) => {
+    const seats = counts.get(b.id) ?? 0;
+    return {
+      id: b.id,
+      label: b.label,
+      seats,
+      color: realAssemblyColor(b.id, b.color),
+      pctSeats: TOTAL > 0 ? (seats / TOTAL) * 100 : 0,
+    };
+  }).filter((r) => r.seats > 0);
+}
+
 /** Assemblée réelle des législatives suivant une présidentielle. */
 export function realFromFollowingLegislatives(presSlug: string): {
   rows: DualSeatRow[];
@@ -297,6 +317,33 @@ export function buildScrutinDual(slug: string): ScrutinDualPair | null {
       firstRoundMeta:
         'Sainte-Laguë nationale sur les nuances T1 (seuil 3 %). Couleurs = proximité de programmes.',
       realMeta: leg2024Real.an_reelle.source_note,
+      firstRound: first,
+      real,
+      realPending: false,
+      totalSeats: TOTAL,
+      thresholdPct: 3,
+      distorsionNote: summary.distorsion_note,
+      differential: computeDifferential(first, real),
+    };
+  }
+
+  if (slug === '2024-legislatives-t2') {
+    const circo = getCirconscriptionResults(slug);
+    if (!circo) return null;
+    const first = firstRoundFromLegislatives(dataset);
+    const real = realFromCircoSeats(circo);
+    return {
+      slug,
+      kind: 'legislatives',
+      title: summary.title,
+      t1Label: 'Suffrages 2nd tour (501 circo)',
+      realLabel: '577 élus (T1+T2)',
+      firstRoundTitle: 'Assemblée proportionnelle des voix T2',
+      realTitle: 'Assemblée réelle (carte par circonscription)',
+      firstRoundMeta:
+        'Sainte-Laguë sur les voix du 2nd tour uniquement (501 circonscriptions encore en lice, seuil 3 %). Les 76 élus dès le T1 n’y figurent pas.',
+      realMeta:
+        'Sièges officiels Intérieur : 501 élus au 2nd tour + 76 élus dès le 1er tour. Blocs AN1T (UG→NFP, ENS→Ensemble, RN+UXD+DVD→RN…).',
       firstRound: first,
       real,
       realPending: false,
