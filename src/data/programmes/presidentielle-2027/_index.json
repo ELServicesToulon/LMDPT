@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-08-26",
+  "updated": "2026-08-28",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -13,16 +13,10 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : le bilan d’Emmanuel Macron, un lourd héritage à porter pour Gabriel Attal et Edouard Philippe",
-          "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-le-bilan-d-emmanuel-macron-un-lourd-heritage-a-porter-pour-gabriel-attal-et-edouard-philippe_6756575_823448.html",
-          "published": "2026-08-25",
-          "detected_at": "2026-08-26"
-        },
-        {
-          "title": "Gabriel Attal : « Je souhaite une loi de programmation pour l’école et un ministre de l’éducation qui restera en poste cinq ans »",
-          "url": "https://www.lemonde.fr/societe/article/2026/08/25/gabriel-attal-je-souhaite-une-loi-de-programmation-pour-l-ecole-et-un-ministre-de-l-education-qui-restera-en-poste-cinq-ans_6756157_3224.html",
-          "published": "2026-08-25",
-          "detected_at": "2026-08-26"
+          "title": "Premier débat de la présidentielle 2027 : les principales propositions des candidats",
+          "url": "https://www.france24.com/fr/france/20260827-premier-d%C3%A9bat-de-la-pr%C3%A9sidentielle-2027-les-principales-propositions-des-candidats",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -33,7 +27,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Premier débat de la présidentielle 2027 : les principales propositions des candidats",
+          "url": "https://www.france24.com/fr/france/20260827-premier-d%C3%A9bat-de-la-pr%C3%A9sidentielle-2027-les-principales-propositions-des-candidats",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -45,16 +47,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
+          "title": "Premier débat de la présidentielle 2027 : les principales propositions des candidats",
+          "url": "https://www.france24.com/fr/france/20260827-premier-d%C3%A9bat-de-la-pr%C3%A9sidentielle-2027-les-principales-propositions-des-candidats",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
+        },
+        {
           "title": "Présidentielle 2027 : le parti du député Emmanuel Maurel participera à la primaire du PS et de Place publique",
           "url": "https://www.lemonde.fr/politique/article/2026/08/26/presidentielle-2027-le-parti-du-depute-emmanuel-maurel-participera-a-la-primaire-du-ps-et-de-place-publique_6757377_823448.html",
           "published": "2026-08-26",
-          "detected_at": "2026-08-26"
-        },
-        {
-          "title": "Présidentielle 2027 : Edouard Philippe, en campagne à La Réunion, met au point sa « mécanique de rassemblement » de la droite et du centre",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/08/26/presidentielle-2027-a-la-reunion-edouard-philippe-met-au-point-sa-mecanique-de-rassemblement-de-la-droite-et-du-centre_6757179_6205049.html",
-          "published": "2026-08-26",
-          "detected_at": "2026-08-26"
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -80,7 +82,7 @@
           "title": "Présidentielle 2027 : le parti du député Emmanuel Maurel participera à la primaire du PS et de Place publique",
           "url": "https://www.lemonde.fr/politique/article/2026/08/26/presidentielle-2027-le-parti-du-depute-emmanuel-maurel-participera-a-la-primaire-du-ps-et-de-place-publique_6757377_823448.html",
           "published": "2026-08-26",
-          "detected_at": "2026-08-26"
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -95,7 +97,7 @@
           "title": "Mélenchon, Glucksmann, Tondelier et les autres : combien de candidats à la présidentielle à gauche ?",
           "url": "https://www.france24.com/fr/france/20260825-france-presidentielle-2027-melenchon-glucksmann-tondelier-et-les-autres-combien-de-candidats-a-gauche",
           "published": "2026-08-25",
-          "detected_at": "2026-08-26"
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -104,7 +106,15 @@
       "name": "François Hollande",
       "affiliation": "Sans étiquette",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Pierre Jouvet appelle François Hollande à se présenter à la primaire de la gauche « s’il a vraiment envie de jouer les premiers rôles »",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/28/pierre-jouvet-appelle-francois-hollande-a-se-presenter-a-la-primaire-de-la-gauche-s-il-a-vraiment-envie-de-jouer-les-premiers-roles_6758977_823448.html",
+          "published": "2026-08-28",
+          "detected_at": "2026-08-28"
+        }
+      ]
     },
     {
       "slug": "melenchon",
@@ -134,10 +144,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
+          "title": "Premier débat de la présidentielle 2027 : les principales propositions des candidats",
+          "url": "https://www.france24.com/fr/france/20260827-premier-d%C3%A9bat-de-la-pr%C3%A9sidentielle-2027-les-principales-propositions-des-candidats",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
+        },
+        {
           "title": "Présidentielle 2027 : de Mélenchon à Le Pen, le Medef s'offre le premier grand débat",
           "url": "https://www.france24.com/fr/france/20260826-france-premier-debat-candidats-presidentielle-2027-economie-medef",
           "published": "2026-08-26",
-          "detected_at": "2026-08-26"
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -167,16 +183,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : le parti du député Emmanuel Maurel participera à la primaire du PS et de Place publique",
-          "url": "https://www.lemonde.fr/politique/article/2026/08/26/presidentielle-2027-le-parti-du-depute-emmanuel-maurel-participera-a-la-primaire-du-ps-et-de-place-publique_6757377_823448.html",
-          "published": "2026-08-26",
-          "detected_at": "2026-08-26"
+          "title": "Présidentielle 2027 : Boris Vallaud, chef du PS à l’Assemblée nationale, annonce son soutien à Raphaël Glucksmann",
+          "url": "https://www.lemonde.fr/politique/article/2026/08/27/presidentielle-boris-vallaud-chef-du-ps-a-l-assemblee-nationale-annonce-son-soutien-a-raphael-glucksmann_6758454_823448.html",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
         },
         {
-          "title": "Présidentielle 2027 : le duo Raphaël Glucksmann-Yannick Jadot se pose en défenseur de l’écologie lors d’un déplacement en Charente-Maritime",
-          "url": "https://www.lemonde.fr/politique/article/2026/08/25/presidentielle-2027-en-charente-maritime-le-duo-glucksmann-jadot-se-pose-en-defenseur-de-l-ecologie_6756624_823448.html",
-          "published": "2026-08-25",
-          "detected_at": "2026-08-26"
+          "title": "Premier débat de la présidentielle 2027 : les principales propositions des candidats",
+          "url": "https://www.france24.com/fr/france/20260827-premier-d%C3%A9bat-de-la-pr%C3%A9sidentielle-2027-les-principales-propositions-des-candidats",
+          "published": "2026-08-27",
+          "detected_at": "2026-08-28"
         }
       ]
     },
@@ -187,17 +203,9 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-10",
       "chiffrage_available": false,
-      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
-      "press_signals": [
-        {
-          "title": "David Lisnard, président du parti Nouvelle Energie : « Sans une grande primaire ouverte à tous, la droite et le centre ne seront pas en mesure de l’emporter »",
-          "url": "https://www.lemonde.fr/idees/article/2026/08/25/david-lisnard-pour-la-presidentielle-2027-sans-une-grande-primaire-ouverte-a-tous-la-droite-et-le-centre-ne-seront-pas-en-mesure-de-l-emporter_6756156_3232.html",
-          "published": "2026-08-25",
-          "detected_at": "2026-08-26"
-        }
-      ]
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-08-26T19:22:51.050Z",
-  "program_press_hits": 17
+  "veille_scan_at": "2026-08-28T16:33:59.707Z",
+  "program_press_hits": 18
 }
