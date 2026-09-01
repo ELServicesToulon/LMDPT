@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
@@ -76,6 +78,22 @@ describe('editorial covers', () => {
     const empty = resolveCover({ src: '  ', alt: '' });
     expect(empty.src).toBe(MISSING_COVER_SRC);
     expect(empty.missing).toBe(true);
+  });
+
+  it('homepage hero is the une, not the below-the-fold gallery', () => {
+    const src = readFileSync(path.join(process.cwd(), 'src/pages/index.astro'), 'utf8');
+    const hero = src.indexOf('<UneDuJour variant="hero"');
+    const intro = src.indexOf('home-intro--after-une');
+    const gallery = src.indexOf('id="visuels-2027"');
+    expect(hero).toBeGreaterThan(-1);
+    expect(hero).toBeLessThan(intro);
+    expect(intro).toBeLessThan(gallery);
+  });
+
+  it('analyses index lists dossier cards with covers before the press feed', () => {
+    const src = readFileSync(path.join(process.cwd(), 'src/pages/analyses/index.astro'), 'utf8');
+    expect(src.indexOf('<EditorialCard')).toBeGreaterThan(-1);
+    expect(src.indexOf('<EditorialCard')).toBeLessThan(src.indexOf('<NewsFeed'));
   });
 
   it('audit fails loudly on duplicate or missing field', () => {

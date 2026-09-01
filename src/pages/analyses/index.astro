@@ -30,14 +30,6 @@ const feed = renifleur as RenifleurSnapshot;
     </p>
   </section>
 
-  <AlerteCitoyenne previewLimit={3} />
-
-  {
-    feed.enabled && feed.items.length > 0 && (
-      <NewsFeed items={feed.items} limit={4} disclaimer={feed.disclaimer} fetchedAt={feed.fetched_at} feedsOk={feed.feeds_ok} />
-    )
-  }
-
   <section>
     <p class="meta" style="margin-bottom:0.75rem;"><strong>Pour la préparation 2027</strong> : commencez par le <a href="/analyses/assemblee-premier-tour">simulateur d’Assemblée du Premier Tour</a> (nouveau) et le <a href="/analyses/presidentielle-2027-preparation">dossier calendrier & programmes</a>.</p>
     <h3 class="section-title">Tous les dossiers</h3>
@@ -54,4 +46,12 @@ const feed = renifleur as RenifleurSnapshot;
       }
     </ul>
   </section>
+
+  <AlerteCitoyenne previewLimit={3} />
+
+  {
+    feed.enabled && feed.items.length > 0 && (
+      <NewsFeed items={feed.items} limit={4} disclaimer={feed.disclaimer} fetchedAt={feed.fetched_at} feedsOk={feed.feeds_ok} />
+    )
+  }
 </BaseLayout>

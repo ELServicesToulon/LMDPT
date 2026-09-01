@@ -64,11 +64,13 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} applyOverride={false} />
   <!--
-    Accueil sans hero média (2026-07-30) — marque + 1 titre + 1 phrase + 1 CTA.
-    Croquis / vidéo quotidiens : section #visuels-2027 plus bas, pas above the fold.
+    Hero = une du dernier texte publié (croquis unique), pas le bloc texte-seul
+    ni la galerie #visuels-2027 sous la ligne de flottaison.
   -->
-  <section class="home-intro" id="top" aria-labelledby="home-title">
-    <p class="home-brand">Le Média du Premier Tour</p>
+  <div id="top">
+    <UneDuJour variant="hero" />
+  </div>
+  <section class="home-intro home-intro--after-une" aria-labelledby="home-title">
     <h1 class="home-title" id="home-title">
       La France telle qu’elle vote — pas telle qu’on l’élimine
     </h1>
@@ -76,9 +78,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       Faits officiels du 1er tour. <strong>{DOE_FR}</strong> — zéro sondage «&nbsp;favori&nbsp;»,
       zéro classement éliminatoire.
     </p>
-    <div class="cta-row" role="group" aria-label="Action principale">
-      <a class="btn btn-primary" href="/analyses/assemblee-premier-tour"
-        >Voir l’Assemblée du 1er tour →</a
+    <div class="cta-row" role="group" aria-label="Parcours site">
+      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour"
+        >Assemblée du 1er tour →</a
       >
       <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
     </div>
@@ -112,8 +114,6 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <a href="/sources">Sources</a>
     </nav>
   </section>
-
-  <UneDuJour />
 
   <!-- Fil directeur + dual hémicycle (profondeur, après value prop) -->
   <section class="card fil-directeur" id="fil-directeur" aria-labelledby="fil-directeur-title">
@@ -555,26 +555,20 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
       linear-gradient(180deg, color-mix(in srgb, var(--card) 70%, var(--bg)), transparent);
   }
-
-  .home-brand {
-    margin: 0 0 0.65rem;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(1.85rem, 5vw, 2.85rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    font-weight: 700;
-    color: var(--fg) !important;
-    max-width: 18ch;
+  .home-intro--after-une {
+    margin-top: 0;
+    padding-top: 0.35rem;
+    background: none;
   }
 
   .home-title {
-    font-size: clamp(1.25rem, 3.2vw, 1.65rem);
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
     line-height: 1.25;
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.55rem;
     letter-spacing: -0.02em;
     font-weight: 600;
     color: var(--fg) !important;
-    max-width: 28ch;
+    max-width: 32ch;
   }
 
   .home-lead {

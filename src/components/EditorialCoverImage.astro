@@ -43,6 +43,14 @@ const resolved = resolveCover(cover);
     aspect-ratio: 16 / 9;
     object-fit: cover;
   }
+  /* Hero accueil : assez grand pour être la une, assez bas pour rester above the fold. */
+  .editorial-cover--hero {
+    margin-bottom: 0.65rem;
+  }
+  .editorial-cover--hero img {
+    max-height: min(38vh, 22rem);
+    height: auto;
+  }
   .editorial-cover-missing {
     margin: 0;
     padding: 0.35rem 0.7rem 0.5rem;
