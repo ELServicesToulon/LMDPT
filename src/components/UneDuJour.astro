@@ -1,0 +1,114 @@
+---
+/**
+ * Une du jour = couverture du texte éditorial le plus récemment publié.
+ * Pas de rotation 7 jours, pas de scoop cairo.
+ */
+import EditorialCoverImage from './EditorialCoverImage.astro';
+import {
+  editorialKindLabel,
+  getUneDuJour,
+  resolveCover,
+} from '../lib/editorial';
+
+const une = getUneDuJour();
+const cover = une ? resolveCover(une.cover) : null;
+const kindLabel = une ? editorialKindLabel(une.kind) : '';
+const dateLabel = une
+  ? new Date(une.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })
+  : '';
+---
+
+{
+  une && cover && (
+    <article class="une-du-jour" aria-labelledby="une-du-jour-title" data-une-slug={une.slug} data-une-kind={une.kind}>
+      <p class="une-kicker">
+        <span class="une-dot" aria-hidden="true"></span>
+        À la une
+        <span class="une-kicker-kind">{kindLabel}</span>
+      </p>
+      <a class="une-media" href={une.href}>
+        <EditorialCoverImage cover={une.cover} eager />
+      </a>
+      <div class="une-body">
+        <h2 id="une-du-jour-title">
+          <a href={une.href}>{une.title}</a>
+        </h2>
+        <p class="une-lead">{une.description}</p>
+        <p class="meta">
+          <time datetime={une.date}>{dateLabel}</time>
+          {' · '}
+          <a href={une.href}>Lire →</a>
+        </p>
+        {cover.missing && (
+          <p class="une-missing">Illustration manquante — croquis unique requis, ne pas réutiliser une autre une</p>
+        )}
+      </div>
+    </article>
+  )
+}
+
+<style>
+  .une-du-jour {
+    margin: 0 0 1.75rem;
+    padding: 0.85rem 0.85rem 1.15rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+  }
+  .une-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.65rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .une-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .une-kicker-kind {
+    margin-left: 0.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    color: var(--muted);
+  }
+  .une-media {
+    display: block;
+    text-decoration: none;
+  }
+  .une-media :global(.editorial-cover) {
+    margin-bottom: 0.85rem;
+  }
+  .une-body h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
+    line-height: 1.25;
+  }
+  .une-body h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .une-body h2 a:hover {
+    color: var(--accent);
+  }
+  .une-lead {
+    margin: 0 0 0.65rem;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+  .une-missing {
+    margin: 0.5rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+</style>

@@ -9,24 +9,18 @@ import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
+import UneDuJour from '../components/UneDuJour.astro';
+import EditorialCard from '../components/EditorialCard.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
-import {
-  applyHeroDailyOverride,
-  pickDailyVisuals,
-  type HeroDailyOverride,
-  type VisualDailyPool,
-} from '../lib/visual-daily';
+import { pickDailyVisuals, type VisualDailyPool } from '../lib/visual-daily';
 import { DOE_FR } from '../lib/doe';
+import { listEditorialPosts } from '../lib/editorial';
 import visualDailyPool from '../../public/illustrations/2027/visual-daily-pool.json';
-import heroDailyOverrideJson from '../../public/illustrations/2027/hero-daily-override.json';
 
 const feed = renifleur as RenifleurSnapshot;
 const dailyVisual = pickDailyVisuals(visualDailyPool as VisualDailyPool);
-const dailySet = applyHeroDailyOverride(
-  dailyVisual.set,
-  heroDailyOverrideJson as HeroDailyOverride,
-  dailyVisual.dayKey,
-);
+const dailySet = dailyVisual.set;
+const editorialByHref = new Map(listEditorialPosts().map((p) => [p.href, p]));
 
 /** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
 const dualHome = buildScrutinDual('2022-presidentielle');
@@ -68,7 +62,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   description="Le 1er tour est la photo réelle de la France politique. Atlas en données ouvertes, Assemblée AN1T, dossier 2027 (18 avril) — la démocratie avant l’élimination : faits sourcés, zéro sondage « favori », zéro classement éliminatoire."
   keywords="premier tour, présidentielle 2027, LMDPT, données ouvertes électorales, pluralité, démocratie avant élimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
-  <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} />
+  <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} applyOverride={false} />
   <!--
     Accueil sans hero média (2026-07-30) — marque + 1 titre + 1 phrase + 1 CTA.
     Croquis / vidéo quotidiens : section #visuels-2027 plus bas, pas above the fold.
@@ -118,6 +112,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <a href="/sources">Sources</a>
     </nav>
   </section>
+
+  <UneDuJour />
 
   <!-- Fil directeur + dual hémicycle (profondeur, après value prop) -->
   <section class="card fil-directeur" id="fil-directeur" aria-labelledby="fil-directeur-title">
@@ -373,64 +369,50 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="content-section">
     <h3 class="section-title">Débats ouverts</h3>
     <ul class="card-grid">
-      <li>
-        <article class="card">
-          <h3>
-            <a href="/debats/assemblee-premier-tour">Faut-il une chambre élue sur le seul premier tour ?</a>
-            <span class="status-badge status-badge--open">nouveau</span>
-          </h3>
-          <p>
-            Simulation 2024 : hémicycle virtuel AN1T vs Assemblée réelle — carte et comparatif chiffré.
-          </p>
-        </article>
-      </li>
-      <li>
-        <article class="card">
-          <h3>
-            <a href="/debats/vote-utile-pluralite">Le vote utile respecte-t-il la pluralité démocratique ?</a>
-          </h3>
-          <p>
-            Positions sourcées des deux côtés — discussion modérée sur GitHub. Pas de classement
-            éliminatoire.
-          </p>
-          <p class="meta">
-            <a href="/debats">Voir tous les débats →</a>
-          </p>
-        </article>
-      </li>
+      {
+        ['/debats/assemblee-premier-tour', '/debats/vote-utile-pluralite'].map((href) => {
+          const post = editorialByHref.get(href);
+          return post ? (
+            <li>
+              <EditorialCard post={post} badge={href.includes('assemblee') ? 'nouveau' : undefined} />
+            </li>
+          ) : null;
+        })
+      }
     </ul>
   </section>
 
   <section class="content-section">
     <h3 class="section-title">Atlas & analyses</h3>
     <ul class="card-grid">
-      <li>
-        <article class="card">
-          <h3>
-            <a href="/analyses/assemblee-premier-tour">Assemblée du premier tour — simulation 2024</a>
-            <span class="status-badge status-badge--open">nouveau</span>
-          </h3>
-          <p>Hémicycle virtuel AN1T (577 sièges) vs Assemblée élue — comparatif chiffré.</p>
-        </article>
-      </li>
+      {
+        ['/analyses/assemblee-premier-tour'].map((href) => {
+          const post = editorialByHref.get(href);
+          return post ? (
+            <li>
+              <EditorialCard post={post} badge="nouveau" />
+            </li>
+          ) : null;
+        })
+      }
       <li>
         <article class="card">
           <h3><a href="/atlas/2024-legislatives">Législatives 2024 — 1er tour</a></h3>
           <p>RN 29,26 % · UG 27,99 % · ENS 20,04 % — 577 circonscriptions, data.gouv.fr.</p>
         </article>
       </li>
-      <li>
-        <article class="card">
-          <h3><a href="/analyses/presidentielle-distorsion">Distorsion 1er / 2nd tour</a></h3>
-          <p>Pluralité au premier tour, duel binaire au second — 2017 et 2022.</p>
-        </article>
-      </li>
-      <li>
-        <article class="card">
-          <h3><a href="/analyses/legislatives-2024-desistements">Législatives 2024 — désistements</a></h3>
-          <p>306 triangulaires potentielles → 89 après 215 désistements officiels.</p>
-        </article>
-      </li>
+      {
+        ['/analyses/presidentielle-distorsion', '/analyses/legislatives-2024-desistements'].map(
+          (href) => {
+            const post = editorialByHref.get(href);
+            return post ? (
+              <li>
+                <EditorialCard post={post} />
+              </li>
+            ) : null;
+          },
+        )
+      }
       <li>
         <article class="card">
           <h3><a href="/atlas/2022-presidentielle">Présidentielle 2022 — 1er tour</a></h3>
@@ -467,12 +449,12 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </ul>
   </section>
 
-  <!-- Visuels 2027 — rotation quotidienne (pool curated · Europe/Paris) -->
+  <!-- Galerie de croquis (pas la une) — pool curated, sans scoop cairo -->
   <section class="visuals-section" id="visuels-2027" aria-labelledby="visuels-2027-title">
-    <h3 class="section-title" id="visuels-2027-title">Croquis du jour &amp; animations — Élection 2027</h3>
+    <h3 class="section-title" id="visuels-2027-title">Galerie de croquis — Élection 2027</h3>
     <p class="lead" style="max-width: 52rem;">
-      Chaque jour, un autre regard sur le 1er tour : pluralité, mécanismes, données ouvertes.{' '}
-      <strong>Croquis encre + aquarelle</strong> façon fil X — légers sur les <em>mécanismes</em>, jamais sur les personnes.
+      La <strong>une du jour</strong> est la couverture du dernier texte publié, plus haut sur cette page.
+      Ici : galerie de croquis encre + aquarelle — légers sur les <em>mécanismes</em>, jamais sur les personnes.
       Zéro signe religieux, zéro logo de parti, zéro caricature de camp.
     </p>
 

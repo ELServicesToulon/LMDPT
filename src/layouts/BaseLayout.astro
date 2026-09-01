@@ -18,11 +18,15 @@ import {
   webPageJsonLd,
 } from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
+import EditorialCoverImage from '../components/EditorialCoverImage.astro';
 import { DOE_FR } from '../lib/doe';
+import { findEditorialByPath } from '../lib/editorial';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 
 const { title, description, ogImage, keywords, type, noindex } = Astro.props;
+const editorialPost = findEditorialByPath(Astro.url.pathname);
+const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
@@ -34,7 +38,7 @@ const isArticle =
 const meta = pageMeta({
   title,
   description,
-  ogImage,
+  ogImage: resolvedOgImage,
   siteUrl,
   pathname: Astro.url.pathname,
   keywords,
@@ -887,6 +891,11 @@ const commentThread =
         </div>
       </header>
       <main id="main-content">
+        {
+          editorialPost && (
+            <EditorialCoverImage cover={editorialPost.cover} eager class="editorial-cover--article" />
+          )
+        }
         <slot />
         {
           showComments && (

@@ -2,9 +2,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsFeed from '../../components/NewsFeed.astro';
 import AlerteCitoyenne from '../../components/AlerteCitoyenne.astro';
+import EditorialCard from '../../components/EditorialCard.astro';
 import { ANALYSIS_CATALOG } from '../../lib/analyses';
+import { listEditorialPosts } from '../../lib/editorial';
 import renifleur from '../../data/renifleur/latest.json';
 import type { RenifleurSnapshot } from '../../lib/renifleur';
+
+const analysisPosts = listEditorialPosts().filter((p) => p.kind === 'analyse');
+const bySlug = new Map(analysisPosts.map((p) => [p.slug, p]));
 
 const feed = renifleur as RenifleurSnapshot;
 ---
@@ -38,22 +43,14 @@ const feed = renifleur as RenifleurSnapshot;
     <h3 class="section-title">Tous les dossiers</h3>
     <ul class="card-grid">
       {
-        ANALYSIS_CATALOG.map((a) => (
-          <li>
-            <article class="card">
-              <h3>
-                <a href={a.href}>{a.title}</a>
-                {a.preparation && <span class="status-badge">En préparation</span>}
-              </h3>
-              <p>{a.description}</p>
-              <p class="meta">
-                <time datetime={a.date}>
-                  {new Date(a.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-                </time>
-              </p>
-            </article>
-          </li>
-        ))
+        ANALYSIS_CATALOG.map((a) => {
+          const post = bySlug.get(a.slug);
+          return post ? (
+            <li>
+              <EditorialCard post={post} badge={a.preparation ? 'En préparation' : undefined} />
+            </li>
+          ) : null;
+        })
       }
     </ul>
   </section>

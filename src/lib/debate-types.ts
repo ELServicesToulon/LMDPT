@@ -1,3 +1,5 @@
+import type { EditorialCover } from './editorial-types';
+
 export interface DebateSource {
   label: string;
   url: string;
@@ -37,4 +39,6 @@ export interface DebateSummary {
   date: string;
   status: DebateStatus;
   href: string;
+  /** Croquis dédié — fichier unique, jamais partagé avec un autre texte. */
+  cover: EditorialCover | null;
 }
