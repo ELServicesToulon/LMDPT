@@ -65,7 +65,8 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 
 - [ ] Lier au Director bridge `mediconvoi` si missions partagées
 - [ ] Capability Manusk `local_files_read` sur ce workspace
-- [ ] Ingest second-brain / Graphiti si veille long terme
+- [x] Ingest second-brain atlas T2 (2026-09-02) → `knowledge/lmdpt/atlas-2024-legislatives-t2.md` · capture `npm run manusk:capture:lmdpt -- --live`
+- [ ] Graphiti si veille long terme (optionnel, hors vault knowledge/)
 
 ---
 
