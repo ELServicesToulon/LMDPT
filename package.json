@@ -35,7 +35,8 @@
     "brand:png": "rsvg-convert -w 400 -h 400 public/brand/lmdpt-avatar-x.svg -o public/brand/lmdpt-avatar-x.png && rsvg-convert -w 1500 -h 500 public/brand/lmdpt-banner-x.svg -o public/brand/lmdpt-banner-x.png && rsvg-convert -w 1200 -h 630 public/brand/og-default.svg -o public/brand/og-default.png",
     "giscus:setup": "node scripts/setup-giscus.mjs",
     "hero:daily": "node scripts/hero-daily-video.mjs",
-    "hero:daily:force": "node scripts/hero-daily-video.mjs --force"
+    "hero:daily:force": "node scripts/hero-daily-video.mjs --force",
+    "qualite:scan-drafts": "tsx scripts/qualite-scan-drafts.ts"
   },
   "dependencies": {
     "astro": "^7.2.7"

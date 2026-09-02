@@ -171,6 +171,29 @@ const URL_TOKEN_RE = /\uE000URL(\d+)\uE001/g;
 /** http(s) éventuellement déjà cassé par la punct (`https: //`, `? utm_`). */
 const URL_SPAN_RE = /https?:\s*\/\/\S+(?:\s+(?:utm_|[&#])[^\s]*)*/gi;
 
+/**
+ * Annule les faux positifs glue historiques (hashtags, adverbes).
+ * Idempotent — recovery drafts L0.
+ */
+export function repairFalsePositiveGlue(text: string): string {
+  let s = text;
+  const fixes: Array<[RegExp, string]> = [
+    [/\bmanuel le ment\b/gi, 'manuellement'],
+    [/\bnaturel le ment\b/gi, 'naturellement'],
+    [/\br[eé]el le ment\b/gi, 'réellement'],
+    [/\bactuel le ment\b/gi, 'actuellement'],
+    [/\bpersonnel le ment\b/gi, 'personnellement'],
+    [/\bofficiel le ment\b/gi, 'officiellement'],
+    [/#Assembl[eé]e Du PremierTour\b/g, '#AssembléeDuPremierTour'],
+    [/\bAssembl[eé]e Du PremierTour\b/g, 'AssembléeDuPremierTour'],
+    [/#FinDesB au druches\b/g, '#FinDesBaudruches'],
+    [/\bFinDesB au druches\b/g, 'FinDesBaudruches'],
+    [/(\/analyses\/)pr[eé]sidentielle(-2027-preparation)/gi, '$1presidentielle$2'],
+  ];
+  for (const [re, rep] of fixes) s = s.replace(re, rep);
+  return s;
+}
+
 /** Répare les espaces injectés dans un URL (scheme, query, hash). */
 export function repairBrokenUrl(url: string): string {
   return url
@@ -217,6 +240,8 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   const anomalies: QualiteAnomaly[] = [];
   let s = original.replace(/\r\n/g, '\n');
 
+  s = repairFalsePositiveGlue(s);
+
   const protectedUrls = protectUrls(s, anomalies);
   s = protectedUrls.text;
 
@@ -246,6 +271,7 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   s = applyPhraseFixes(s, anomalies);
   s = applyGlueHeuristic(s, anomalies);
   s = applyWordMap(s, anomalies);
+  s = repairFalsePositiveGlue(s);
   s = restoreUrls(s, protectedUrls.urls);
 
   // Trim lignes

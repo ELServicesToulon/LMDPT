@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyQualiteToDraftMarkdown,
+  repairFalsePositiveGlue,
   reviewQualiteRedaction,
 } from './qualite-redaction';
 
@@ -72,5 +73,13 @@ describe('qualite-redaction', () => {
     expect(markdown).toContain('Gate qualité rédaction');
     expect(markdown).toContain('Qualité rédaction');
     expect(reports[0]!.stats.glue).toBeGreaterThanOrEqual(1);
+  });
+
+  it('recovers false-positive glue on hashtags and adverbs', () => {
+    const raw = '#Assemblée Du PremierTour naturel le ment';
+    expect(repairFalsePositiveGlue(raw)).toBe('#AssembléeDuPremierTour naturellement');
+    const r = reviewQualiteRedaction(raw);
+    expect(r.corrected).toContain('#AssembléeDuPremierTour');
+    expect(r.corrected).toContain('naturellement');
   });
 });
