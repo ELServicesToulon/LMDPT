@@ -4,9 +4,10 @@
  *   npx tsx scripts/qualite-scan-drafts.ts
  *   npx tsx scripts/qualite-scan-drafts.ts --write
  *   npx tsx scripts/qualite-scan-drafts.ts --dir /path/to/drafts --json
+ *   npx tsx scripts/qualite-scan-drafts.ts --write --day 2026-09-02
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
-import { join, relative, resolve } from 'node:path';
+import { basename, join, relative, resolve } from 'node:path';
 import {
   applyQualiteToDraftMarkdown,
   reviewQualiteRedaction,
@@ -19,6 +20,13 @@ const args = process.argv.slice(2);
 const WRITE = args.includes('--write');
 const JSON_OUT = args.includes('--json');
 const dirIdx = args.indexOf('--dir');
+const dayIdx = args.indexOf('--day');
+const DAY_RAW = dayIdx >= 0 && args[dayIdx + 1] ? args[dayIdx + 1] : '';
+const DAY = DAY_RAW && DAY_RAW !== 'all' ? DAY_RAW : '';
+if (DAY && !/^\d{4}-\d{2}-\d{2}$/.test(DAY)) {
+  console.error(`FIX-FIRST — --day attendu YYYY-MM-DD ou all (reçu: ${DAY_RAW})`);
+  process.exit(1);
+}
 const DIR =
   dirIdx >= 0 && args[dirIdx + 1]
     ? resolve(args[dirIdx + 1]!)
@@ -143,7 +151,7 @@ function rewriteDraft(md: string): {
   return { markdown: next, reports: [aggregate, ...reports], changed: next !== md };
 }
 
-const files = walkMd(DIR);
+const files = walkMd(DIR).filter((f) => (DAY ? basename(f).includes(DAY) : true));
 const rows: Array<{
   file: string;
   decision: string;
@@ -179,6 +187,7 @@ for (const file of files) {
 
 const summary = {
   dir: DIR,
+  day: DAY || null,
   write: WRITE,
   files: files.length,
   writeCount,
