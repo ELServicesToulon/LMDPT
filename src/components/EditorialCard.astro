@@ -1,0 +1,43 @@
+---
+import EditorialCoverImage from './EditorialCoverImage.astro';
+import { editorialKindLabel, resolveCover, type EditorialPost } from '../lib/editorial';
+
+interface Props {
+  post: EditorialPost;
+  badge?: string;
+}
+
+const { post, badge } = Astro.props;
+const cover = resolveCover(post.cover);
+const kindLabel = editorialKindLabel(post.kind);
+const dateLabel = new Date(post.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+---
+
+<article class="card editorial-card" data-editorial-kind={post.kind} data-editorial-slug={post.slug}>
+  <a class="editorial-card-media" href={post.href} tabindex="-1" aria-hidden="true">
+    <EditorialCoverImage cover={post.cover} />
+  </a>
+  <p class="eyebrow">{kindLabel}</p>
+  <h3>
+    <a href={post.href}>{post.title}</a>
+    {badge && <span class="status-badge status-badge--open">{badge}</span>}
+  </h3>
+  <p>{post.description}</p>
+  <p class="meta">
+    <time datetime={post.date}>{dateLabel}</time>
+  </p>
+  {cover.missing && <p class="meta editorial-card-missing">Illustration manquante — croquis unique requis</p>}
+</article>
+
+<style>
+  .editorial-card-media {
+    display: block;
+    text-decoration: none;
+  }
+  .editorial-card-media :global(.editorial-cover) {
+    margin-bottom: 0.75rem;
+  }
+  .editorial-card-missing {
+    font-weight: 700;
+  }
+</style>

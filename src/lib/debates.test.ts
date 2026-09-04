@@ -28,6 +28,12 @@ function assertDebateShape(debate: DebateDataset) {
 }
 
 describe('debates', () => {
+  it('each debate has its own cover path', () => {
+    const srcs = DEBATE_CATALOG.map((d) => d.cover?.src);
+    expect(srcs.every(Boolean)).toBe(true);
+    expect(new Set(srcs).size).toBe(srcs.length);
+  });
+
   it('lists pilot debates with unique slugs', () => {
     expect(DEBATE_CATALOG.length).toBeGreaterThanOrEqual(3);
     const slugs = DEBATE_CATALOG.map((d) => d.slug);

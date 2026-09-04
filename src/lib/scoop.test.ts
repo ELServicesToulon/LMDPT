@@ -1,13 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import curated from '../data/scoop/curated.json';
+import { getUneDuJour } from './editorial';
 import { scoopIsLive, type ScoopCurated } from './scoop';
 
 describe('scoop', () => {
-  it('montre la une du jour si curated est actif et interne', () => {
-    expect(scoopIsLive(curated as ScoopCurated)).toBe(true);
-    expect(curated.url.startsWith('/')).toBe(true);
-    expect(curated.url).not.toMatch(/^https?:\/\//i);
-    expect(String(curated.title ?? '').trim().length).toBeGreaterThan(0);
+  it('la une du jour est un texte interne publié, pas une URL externe', () => {
+    const une = getUneDuJour();
+    expect(une).not.toBeNull();
+    expect(une?.href.startsWith('/')).toBe(true);
+    expect(une?.href).not.toMatch(/^https?:\/\//i);
+    expect(String(une?.title ?? '').trim().length).toBeGreaterThan(0);
+    expect(scoopIsLive({ active: true, title: une!.title, url: une!.href })).toBe(true);
   });
 
   it('masque une URL externe ou inactive', () => {
@@ -17,7 +19,7 @@ describe('scoop', () => {
         active: true,
         title: 'x',
         url: 'https://example.com/leak',
-      }),
+      } as ScoopCurated),
     ).toBe(false);
   });
 });

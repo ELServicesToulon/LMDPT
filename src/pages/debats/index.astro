@@ -1,7 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
+import EditorialCard from '../../components/EditorialCard.astro';
 import { DEBATE_CATALOG } from '../../lib/debates';
+import { listEditorialPosts } from '../../lib/editorial';
+
+const debatePosts = new Map(
+  listEditorialPosts()
+    .filter((p) => p.kind === 'debat')
+    .map((p) => [p.slug, p]),
+);
 ---
 
 <BaseLayout
@@ -26,23 +34,17 @@ import { DEBATE_CATALOG } from '../../lib/debates';
     <h3 class="section-title">Fils ouverts</h3>
     <ul class="card-grid">
       {
-        DEBATE_CATALOG.map((d) => (
-          <li>
-            <article class="card">
-              <h3>
-                <a href={d.href}>{d.question}</a>
-                {d.status === 'ouvert' && <span class="status-badge status-badge--open">Ouvert</span>}
-                {d.status === 'clos' && <span class="status-badge">Clos</span>}
-              </h3>
-              <p>{d.description}</p>
-              <p class="meta">
-                <time datetime={d.date}>
-                  {new Date(d.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-                </time>
-              </p>
-            </article>
-          </li>
-        ))
+        DEBATE_CATALOG.map((d) => {
+          const post = debatePosts.get(d.slug);
+          return post ? (
+            <li>
+              <EditorialCard
+                post={post}
+                badge={d.status === 'ouvert' ? 'Ouvert' : d.status === 'clos' ? 'Clos' : undefined}
+              />
+            </li>
+          ) : null;
+        })
       }
     </ul>
   </section>

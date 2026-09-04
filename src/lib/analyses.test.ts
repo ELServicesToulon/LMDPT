@@ -31,6 +31,12 @@ describe('analyses', () => {
     expect(getAnalysis('presidentielle-2027-preparation')?.preparation).toBe(true);
   });
 
+  it('each analysis has its own cover path', () => {
+    const srcs = ANALYSIS_CATALOG.map((a) => a.cover?.src);
+    expect(srcs.every(Boolean)).toBe(true);
+    expect(new Set(srcs).size).toBe(srcs.length);
+  });
+
   it('2027 preparation stub lists official sources and calendar', () => {
     expect(preparation.status).toBe('preparation');
     expect(preparation.sources.length).toBeGreaterThanOrEqual(7);

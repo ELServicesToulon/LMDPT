@@ -1,0 +1,63 @@
+---
+import { resolveCover, type EditorialCover } from '../lib/editorial';
+
+interface Props {
+  cover: EditorialCover | null | undefined;
+  eager?: boolean;
+  class?: string;
+}
+
+const { cover, eager = false, class: className } = Astro.props;
+const resolved = resolveCover(cover);
+---
+
+<figure class:list={['editorial-cover', className, { 'editorial-cover--missing': resolved.missing }]}>
+  <img
+    src={resolved.src}
+    alt={resolved.alt}
+    width="1600"
+    height="900"
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'async' : 'async'}
+    fetchpriority={eager ? 'high' : undefined}
+  />
+  {
+    resolved.missing && (
+      <figcaption class="editorial-cover-missing">Illustration manquante — croquis unique requis</figcaption>
+    )
+  }
+</figure>
+
+<style>
+  .editorial-cover {
+    margin: 0 0 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+    overflow: hidden;
+    background: #f3ead8;
+  }
+  .editorial-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  /* Hero accueil : assez grand pour être la une, assez bas pour rester above the fold. */
+  .editorial-cover--hero {
+    margin-bottom: 0.65rem;
+  }
+  .editorial-cover--hero img {
+    max-height: min(38vh, 22rem);
+    height: auto;
+  }
+  .editorial-cover-missing {
+    margin: 0;
+    padding: 0.35rem 0.7rem 0.5rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--fg);
+    background: #f3ead8;
+  }
+</style>

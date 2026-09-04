@@ -1,0 +1,154 @@
+---
+/**
+ * Une du jour = couverture du texte éditorial le plus récemment publié.
+ * variant=hero : bloc au-dessus de la ligne de flottaison (accueil).
+ */
+import EditorialCoverImage from './EditorialCoverImage.astro';
+import {
+  editorialKindLabel,
+  getUneDuJour,
+  resolveCover,
+} from '../lib/editorial';
+
+interface Props {
+  variant?: 'hero' | 'card';
+}
+
+const { variant = 'card' } = Astro.props;
+const une = getUneDuJour();
+const cover = une ? resolveCover(une.cover) : null;
+const kindLabel = une ? editorialKindLabel(une.kind) : '';
+const dateLabel = une
+  ? new Date(une.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })
+  : '';
+const isHero = variant === 'hero';
+---
+
+{
+  une && cover && (
+    <article
+      class:list={['une-du-jour', { 'une-du-jour--hero': isHero }]}
+      aria-labelledby="une-du-jour-title"
+      data-une-slug={une.slug}
+      data-une-kind={une.kind}
+      data-une-variant={variant}
+    >
+      <p class="une-kicker">
+        <span class="une-dot" aria-hidden="true"></span>
+        À la une
+        <span class="une-kicker-kind">{kindLabel}</span>
+      </p>
+      <a class="une-media" href={une.href}>
+        <EditorialCoverImage cover={une.cover} eager class={isHero ? 'editorial-cover--hero' : undefined} />
+      </a>
+      <div class="une-body">
+        <h2 id="une-du-jour-title">
+          <a href={une.href}>{une.title}</a>
+        </h2>
+        <p class="une-lead">{une.description}</p>
+        <p class="une-cta">
+          <a class="btn une-btn" href={une.href}>Lire {kindLabel === 'Débat' ? 'le débat' : 'l’analyse'} →</a>
+          <time class="meta" datetime={une.date}>{dateLabel}</time>
+        </p>
+        {cover.missing && (
+          <p class="une-missing">Illustration manquante — croquis unique requis, ne pas réutiliser une autre une</p>
+        )}
+      </div>
+    </article>
+  )
+}
+
+<style>
+  .une-du-jour {
+    margin: 0 0 1.75rem;
+    padding: 0.85rem 0.85rem 1.15rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 12px);
+  }
+  .une-du-jour--hero {
+    margin: 0 0 1.25rem;
+    padding: 0.7rem 0.75rem 1rem;
+  }
+  .une-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.55rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .une-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .une-kicker-kind {
+    margin-left: 0.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    color: var(--muted);
+  }
+  .une-media {
+    display: block;
+    text-decoration: none;
+  }
+  .une-media :global(.editorial-cover) {
+    margin-bottom: 0.75rem;
+  }
+  .une-body h2 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
+    line-height: 1.25;
+  }
+  .une-du-jour--hero .une-body h2 {
+    font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+  }
+  .une-body h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .une-body h2 a:hover {
+    color: var(--accent);
+  }
+  .une-lead {
+    margin: 0 0 0.7rem;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+  .une-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 1rem;
+    margin: 0;
+  }
+  .une-btn {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    background: var(--accent);
+    color: var(--on-accent) !important;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .une-btn:hover {
+    filter: brightness(1.08);
+  }
+  .une-missing {
+    margin: 0.5rem 0 0;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+</style>

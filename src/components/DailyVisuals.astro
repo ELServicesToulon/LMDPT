@@ -8,6 +8,8 @@
 interface Props {
   poolUrl?: string;
   overrideUrl?: string;
+  /** La une n’utilise plus le scoop cairo — désactivé par défaut. */
+  applyOverride?: boolean;
   initialDayKey: string;
   initialIndex: number;
 }
@@ -15,6 +17,7 @@ interface Props {
 const {
   poolUrl = '/illustrations/2027/visual-daily-pool.json',
   overrideUrl = '/illustrations/2027/hero-daily-override.json',
+  applyOverride = false,
   initialDayKey,
   initialIndex,
 } = Astro.props;
@@ -22,7 +25,7 @@ const {
 
 <script
   is:inline
-  define:vars={{ poolUrl, overrideUrl, initialDayKey, initialIndex }}
+  define:vars={{ poolUrl, overrideUrl, applyOverride, initialDayKey, initialIndex }}
 >
   (function () {
     function parisDayKey(date) {
@@ -156,13 +159,15 @@ const {
           if (!r.ok) throw new Error('pool ' + r.status);
           return r.json();
         }),
-        fetch(overrideUrl + '?d=' + today, { credentials: 'same-origin' })
-          .then(function (r) {
-            return r.ok ? r.json() : null;
-          })
-          .catch(function () {
-            return null;
-          }),
+        applyOverride
+          ? fetch(overrideUrl + '?d=' + today, { credentials: 'same-origin' })
+              .then(function (r) {
+                return r.ok ? r.json() : null;
+              })
+              .catch(function () {
+                return null;
+              })
+          : Promise.resolve(null),
       ]).then(function (pair) {
         var pool = pair[0];
         var ov = pair[1];
