@@ -4,11 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Confidentialité"
-  description="Politique de confidentialité — Le Média du Premier Tour. Analytics Google optionnels (désactivés par défaut)."
+  description="Politique de confidentialité — Le Média du Premier Tour. Analytics Google optionnels (désactivés par défaut). Cloudflare Web Analytics cookieless."
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 27 juillet 2026</p>
+    <p class="meta">Dernière mise à jour : 4 septembre 2026</p>
   </section>
 
   <section class="card">
@@ -118,6 +118,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       n’est configuré au build. S’ils sont activés un jour, le site utilisera le Consent Mode v2
       (stockage analytics refusé par défaut) et cette page sera mise à jour avec la base légale
       (consentement) et le sous-traitant Google Ireland. Voir <code>docs/GOOGLE-SEO.md</code>.
+    </p>
+    <p>
+      <strong>Cloudflare Web Analytics</strong> : mesure d’audience et de performance
+      {' '}
+      <em>sans cookie</em> et sans stockage navigateur (pas de <code>localStorage</code>
+      {' / '}
+      <code>sessionStorage</code>). Le jeton du beacon est public par conception. Ce script
+      n’attend pas le Consent Mode Google (hors publicité). Désactivation au build :
+      {' '}
+      <code>PUBLIC_CF_WEB_ANALYTICS_TOKEN=off</code>. Sous-traitant : Cloudflare, Inc.
+      Politique :
+      {' '}
+      <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer"
+        >cloudflare.com/privacypolicy</a
+      >.
     </p>
   </section>
 

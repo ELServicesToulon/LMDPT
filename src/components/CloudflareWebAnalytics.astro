@@ -1,0 +1,24 @@
+---
+/**
+ * Cloudflare Web Analytics — beacon cookieless (privacy-first).
+ * Chargé sans attendre le Consent Mode GA4/GTM : pas de cookie, pas de stockage ads.
+ * Désactiver : PUBLIC_CF_WEB_ANALYTICS_TOKEN=off
+ */
+import {
+  CF_WEB_ANALYTICS_BEACON_SRC,
+  cfBeaconPayload,
+  getCfWebAnalyticsToken,
+} from '../lib/cf-web-analytics';
+
+const token = getCfWebAnalyticsToken();
+const beacon = token ? cfBeaconPayload(token) : null;
+---
+
+{beacon && (
+  <script
+    is:inline
+    type="module"
+    src={CF_WEB_ANALYTICS_BEACON_SRC}
+    data-cf-beacon={beacon}
+  />
+)}

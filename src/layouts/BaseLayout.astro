@@ -27,6 +27,7 @@ import { findEditorialByPath } from '../lib/editorial';
 import { shouldShowArticleShareBar } from '../lib/share';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
+import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro';
 
 const { title, description, ogImage, keywords, type, noindex, share } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
@@ -1078,5 +1079,6 @@ const shareTitle = editorialPost?.title ?? title;
         document.head.appendChild(s);
       }
     </script>
+    <CloudflareWebAnalytics />
   </body>
 </html>
