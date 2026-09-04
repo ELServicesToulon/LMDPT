@@ -114,6 +114,7 @@ curl -s https://lmdpt.iarbre.org/sitemap-news.xml | head -20
 - Pas de black-hat, pas de keyword stuffing partisan.
 - **GA4 / GTM / Ads** : consentement requis en FR avant `analytics_storage=granted` — bannière cookies = chantier séparé L1+.
 - Tant que Consent Mode = `denied`, les hits utiles GA4 restent limités (modèle consentement).
+- **Cloudflare Web Analytics** (`PUBLIC_CF_WEB_ANALYTICS_TOKEN`) est **indépendant** de ce Consent Mode : beacon cookieless, chargé sans attendre le consentement pubs. Voir `docs/SYNC-OPS.md` (OVH KS-5-B).
 - Confidentialité (`/confidentialite`) doit refléter l’activation réelle des IDs.
 
 ---

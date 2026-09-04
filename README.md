@@ -82,6 +82,8 @@ npm run dns:iarbre    # crée/met à jour le CNAME (jeton IARBE_CLOUDFLARE_API_T
 
 Variables build CI : `ASTRO_SITE=https://lmdpt.iarbre.org`, `ASTRO_BASE=/`.
 
+**Cloudflare Web Analytics** (beacon cookieless) : `PUBLIC_CF_WEB_ANALYTICS_TOKEN` — jeton public documenté dans `.env.example`. Prod OVH KS-5-B : l’ajouter au `.env` Mediconvoi/backend puis `npm run deploy-lmdpt-ovh` (détail : `docs/SYNC-OPS.md`). `off` pour désactiver.
+
 ## Principes éditoriaux (résumé)
 
 - Traçabilité : source + date pour chaque donnée

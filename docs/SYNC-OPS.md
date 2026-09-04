@@ -49,6 +49,37 @@ Variables optionnelles pour le **build** OVH / local (voir `docs/GISCUS.md`) :
 
 Sans ces variables, les pages `/debats/*` affichent le lien GitHub Discussions uniquement.
 
+## Cloudflare Web Analytics (beacon cookieless)
+
+Mesure d’audience **sans cookie** (RUM Cloudflare). Hors Consent Mode GA4/GTM — ne pas attendre une bannière pubs.
+
+Jeton **public** (dashboard Cloudflare → Web Analytics → JS snippet) :
+
+```bash
+# Mediconvoi/backend/.env  (lu par deploy-lmdpt-ovh sur KS-5-B)
+PUBLIC_CF_WEB_ANALYTICS_TOKEN=72ab49a17241420da6d8a97cee1f62e2
+```
+
+Puis rebuild + deploy :
+
+```bash
+cd ~/iarbre/le-media-du-premier-tour   # ou le checkout LMDPT du VPS
+# s’assurer que l’env est exporté dans le shell / .env backend
+cd ~/Mediconvoi/backend && npm run deploy-lmdpt-ovh
+```
+
+| Valeur | Effet au `astro build` |
+|--------|------------------------|
+| unset / vide | fallback jeton public LMDPT (comme les IDs Giscus) |
+| `72ab49a1…1f62e2` (ou autre hex 32) | beacon émis dans `BaseLayout` avant `</body>` |
+| `off` / `false` / `0` | aucun script |
+
+Vérif HTML (après deploy + `docker restart lmdpt-website` si bind-mount) :
+
+```bash
+curl -sS https://lmdpt.iarbre.org/ | grep -F 'cloudflareinsights.com/beacon.min.js'
+```
+
 Activation Discussions sur le repo GitHub :
 
 ```bash
