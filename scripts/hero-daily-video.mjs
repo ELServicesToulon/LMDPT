@@ -253,12 +253,12 @@ function main() {
     heroPosterWebp: `/illustrations/2027/hero-daily-live.webp?d=${dayKey}`,
     heroPosterJpg: `/illustrations/2027/hero-daily-live.jpg?d=${dayKey}`,
     heroAlt:
-      'Croquis encre noir et blanc du jour (sans texte) — illustration civique laïque liée au scoop du jour.',
+      'Encre épique du jour (sans texte) : parchemin d’orage, silhouettes à capuche, coffre ferré — illustration civique laïque.',
     id: `scoop-${dayKey}-${scoop.motif}`,
     galleryVideo: {
       src: `/videos/2027/hero-daily-live.mp4?d=${dayKey}`,
       poster: `/illustrations/2027/hero-daily-live.webp?d=${dayKey}`,
-      caption: 'Vidéo hero du jour — croquis N&B, mise à jour quotidienne.',
+      caption: 'Vidéo hero du jour — encre épique, mise à jour quotidienne.',
     },
     engine: 'local-cairo+ffmpeg',
     note: 'API Imagine video bloquée ZDR (upload_url) — pipeline local serveur.',
