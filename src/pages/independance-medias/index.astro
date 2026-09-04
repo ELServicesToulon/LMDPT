@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IndependanceMediaCard from '../../components/IndependanceMediaCard.astro';
+import ShareBar from '../../components/ShareBar.astro';
 import {
   FUNDING_KIND_LABELS,
   MEDIA_TYPE_LABELS,
@@ -50,6 +51,7 @@ const mediaByType = (['television', 'radio', 'presse', 'agence', 'autre'] as Med
       </p>
       <p class="meta disclaimer-box">{data.disclaimer}</p>
       <p class="meta methodology-box">{data.methodology_note}</p>
+      <ShareBar title="Indépendance des médias" />
     </header>
 
     <nav class="card ind-toc" aria-label="Sommaire indépendance médias">

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
 import DebatePositions from '../../components/DebatePositions.astro';
 import DiscussionSection from '../../components/DiscussionSection.astro';
+import ShareBar from '../../components/ShareBar.astro';
 import { DEBATE_CATALOG, getDebate } from '../../lib/debates';
 
 export function getStaticPaths() {
@@ -17,7 +18,7 @@ if (!debate) {
 }
 ---
 
-<BaseLayout title="Débat" description={debate.context.slice(0, 160)}>
+<BaseLayout title="Débat" description={debate.context.slice(0, 160)} share={false}>
   <DebateLiveBanner campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
   {
     debate.live_url?.trim() ? (
@@ -42,6 +43,7 @@ if (!debate) {
       {debate.status === 'ouvert' ? 'Débat ouvert' : 'Débat clos'}
     </p>
     <p>{debate.context}</p>
+    <ShareBar title={debate.question} />
   </section>
 
   <section>

@@ -7,6 +7,8 @@ interface Props {
   /** article = analyses / dossiers (JSON-LD + og:type) */
   type?: 'website' | 'article';
   noindex?: boolean;
+  /** false = masquer la barre ; true = forcer. Défaut : articles / débats (hors hubs). */
+  share?: boolean;
 }
 
 import { getPublicSocialLinks } from '../config/social';
@@ -19,12 +21,14 @@ import {
 } from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 import EditorialCoverImage from '../components/EditorialCoverImage.astro';
+import ShareBar from '../components/ShareBar.astro';
 import { DOE_FR } from '../lib/doe';
 import { findEditorialByPath } from '../lib/editorial';
+import { shouldShowArticleShareBar } from '../lib/share';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 
-const { title, description, ogImage, keywords, type, noindex } = Astro.props;
+const { title, description, ogImage, keywords, type, noindex, share } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
 const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
@@ -69,6 +73,11 @@ const showComments =
   !Astro.url.pathname.startsWith('/compte');
 const commentThread =
   Astro.url.pathname.replace(/\/+$/, '') || 'accueil';
+const showShareBar =
+  share === true ||
+  (share !== false &&
+    shouldShowArticleShareBar(Astro.url.pathname, Boolean(editorialPost)));
+const shareTitle = editorialPost?.title ?? title;
 ---
 
 <!doctype html>
@@ -894,6 +903,11 @@ const commentThread =
         {
           editorialPost && (
             <EditorialCoverImage cover={editorialPost.cover} eager class="editorial-cover--article" />
+          )
+        }
+        {
+          showShareBar && (
+            <ShareBar title={shareTitle} url={meta.canonical} />
           )
         }
         <slot />

@@ -4,11 +4,13 @@
  * variant=hero : bloc au-dessus de la ligne de flottaison (accueil).
  */
 import EditorialCoverImage from './EditorialCoverImage.astro';
+import ShareBar from './ShareBar.astro';
 import {
   editorialKindLabel,
   getUneDuJour,
   resolveCover,
 } from '../lib/editorial';
+import { pageMeta } from '../lib/seo';
 
 interface Props {
   variant?: 'hero' | 'card';
@@ -22,6 +24,10 @@ const dateLabel = une
   ? new Date(une.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })
   : '';
 const isHero = variant === 'hero';
+const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const uneShareUrl = une
+  ? pageMeta({ title: une.title, siteUrl, pathname: une.href }).canonical
+  : '';
 ---
 
 {
@@ -50,6 +56,7 @@ const isHero = variant === 'hero';
           <a class="btn une-btn" href={une.href}>Lire {kindLabel === 'Débat' ? 'le débat' : 'l’analyse'} →</a>
           <time class="meta" datetime={une.date}>{dateLabel}</time>
         </p>
+        <ShareBar title={une.title} url={uneShareUrl} compact />
         {cover.missing && (
           <p class="une-missing">Illustration manquante — croquis unique requis, ne pas réutiliser une autre une</p>
         )}
