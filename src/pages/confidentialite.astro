@@ -121,11 +121,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
     <p>
       <strong>Cloudflare Web Analytics</strong> : mesure d’audience et de performance
-      <em>sans cookie</em> et sans stockage navigateur (pas de <code>localStorage</code> /
+      {' '}
+      <em>sans cookie</em> et sans stockage navigateur (pas de <code>localStorage</code>
+      {' / '}
       <code>sessionStorage</code>). Le jeton du beacon est public par conception. Ce script
       n’attend pas le Consent Mode Google (hors publicité). Désactivation au build :
+      {' '}
       <code>PUBLIC_CF_WEB_ANALYTICS_TOKEN=off</code>. Sous-traitant : Cloudflare, Inc.
       Politique :
+      {' '}
       <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer"
         >cloudflare.com/privacypolicy</a
       >.
