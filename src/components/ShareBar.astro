@@ -1,0 +1,268 @@
+---
+/**
+ * Barre de partage lecteur — liens réseaux sans JS ; copie + Web Share en progressive enhancement.
+ */
+import { pageMeta } from '../lib/seo';
+import {
+  buildShareLinks,
+  shareNetworkAriaLabel,
+  shareNetworkLabel,
+  type ShareNetwork,
+} from '../lib/share';
+
+interface Props {
+  title: string;
+  url?: string;
+  compact?: boolean;
+}
+
+const { title, url: urlProp, compact = false } = Astro.props;
+const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const url =
+  urlProp ??
+  pageMeta({
+    title,
+    siteUrl,
+    pathname: Astro.url.pathname,
+  }).canonical;
+const links = buildShareLinks({ title, url });
+const networks = ['x', 'facebook', 'linkedin'] as const satisfies readonly ShareNetwork[];
+
+function networkHref(network: ShareNetwork): string {
+  switch (network) {
+    case 'x':
+      return links.x;
+    case 'facebook':
+      return links.facebook;
+    case 'linkedin':
+      return links.linkedin;
+    default: {
+      const _exhaustive: never = network;
+      return _exhaustive;
+    }
+  }
+}
+---
+
+<nav
+  class:list={['share-bar', { 'share-bar--compact': compact }]}
+  data-share-bar
+  data-share-url={links.url}
+  data-share-title={links.text}
+  aria-label="Partager cette page"
+>
+  <p class="share-bar-label">Partager</p>
+  <ul class="share-bar-list">
+    {
+      networks.map((network) => (
+        <li>
+          <a
+            class="share-action"
+            href={networkHref(network)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={shareNetworkAriaLabel(network)}
+          >
+            {network === 'x' && (
+              <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M14.2 10.3 22 1.5h-1.9l-6.7 7.6L8 1.5H1.5l8.2 11.7L1.5 22H3.4l7.2-8.2 6.1 8.2H23l-8.8-11.7Zm-2.5 2.9-.8-1.2L4.1 2.9h2.9l5.3 7.6.8 1.2 7 10h-2.9l-5.5-7.5Z"
+                />
+              </svg>
+            )}
+            {network === 'facebook' && (
+              <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M14.5 8.5V6.6c0-.7.1-1.1 1.2-1.1h1.3V3h-2.1C12.2 3 11 4.4 11 6.4v2.1H9v2.7h2V21h3.5V11.2h2.3l.4-2.7h-2.7Z"
+                />
+              </svg>
+            )}
+            {network === 'linkedin' && (
+              <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M6.5 9.2H3.8V21h2.7V9.2ZM5.1 3.5C4.2 3.5 3.5 4.3 3.5 5.2s.7 1.7 1.6 1.7 1.6-.7 1.6-1.7-.7-1.7-1.6-1.7ZM20.5 21h-2.7v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H11V9.2h2.6v1.6h.1c.4-.7 1.3-1.9 3.2-1.9 3.4 0 4 2.2 4 5.1V21Z"
+                />
+              </svg>
+            )}
+            <span>{shareNetworkLabel(network)}</span>
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <button
+        type="button"
+        class="share-action"
+        data-share-copy
+        aria-label="Copier le lien"
+      >
+        <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M9.5 7.5h8A1.5 1.5 0 0 1 19 9v10a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 8 19V9A1.5 1.5 0 0 1 9.5 7.5Zm0 1.5V19h8V9h-8Zm-3-4h8A1.5 1.5 0 0 1 16 6.5V7h-1.5v-.5h-8V17H7V6.5A1.5 1.5 0 0 1 8.5 5Z"
+          />
+        </svg>
+        <span data-share-copy-label>Copier le lien</span>
+      </button>
+    </li>
+    <li class="share-native-item" hidden>
+      <button
+        type="button"
+        class="share-action share-native"
+        data-share-native
+        aria-label="Partager via le menu du système"
+      >
+        <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M18 8.2a2.2 2.2 0 1 0-1.9-1.1l-6.2 3.2a2.2 2.2 0 0 0 0 2.4l6.2 3.2a2.2 2.2 0 1 0 .7-1.3l-6.2-3.2a2.3 2.3 0 0 0 0-.2l6.2-3.2c.4.4.9.6 1.4.6Z"
+          />
+        </svg>
+        <span>Partager</span>
+      </button>
+    </li>
+  </ul>
+  <p class="share-feedback" data-share-feedback aria-live="polite"></p>
+</nav>
+
+<script>
+  function enhanceShareBar(bar: Element) {
+    const url = bar.getAttribute('data-share-url') || window.location.href;
+    const title = bar.getAttribute('data-share-title') || document.title;
+    const feedback = bar.querySelector('[data-share-feedback]');
+    const copyBtn = bar.querySelector('[data-share-copy]');
+    const copyLabel = bar.querySelector('[data-share-copy-label]');
+    const nativeItem = bar.querySelector('.share-native-item');
+    const nativeBtn = bar.querySelector('[data-share-native]');
+
+    const setFeedback = (message: string) => {
+      if (feedback instanceof HTMLElement) feedback.textContent = message;
+    };
+
+    const copyLink = async () => {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          input.setAttribute('readonly', '');
+          input.style.position = 'fixed';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          input.remove();
+        }
+        if (copyLabel) copyLabel.textContent = 'Copié';
+        setFeedback('Lien copié');
+        window.setTimeout(() => {
+          if (copyLabel) copyLabel.textContent = 'Copier le lien';
+          setFeedback('');
+        }, 2000);
+      } catch {
+        setFeedback('Copie impossible — sélectionnez l’adresse dans la barre du navigateur.');
+      }
+    };
+
+    copyBtn?.addEventListener('click', () => {
+      void copyLink();
+    });
+
+    if (nativeItem instanceof HTMLElement && nativeBtn && typeof navigator.share === 'function') {
+      nativeItem.hidden = false;
+      nativeBtn.addEventListener('click', () => {
+        void navigator
+          .share({ title, text: title, url })
+          .then(() => setFeedback('Partage ouvert'))
+          .catch(() => {
+            /* Annulation utilisateur : pas de message d’erreur. */
+          });
+      });
+    }
+  }
+
+  document.querySelectorAll('[data-share-bar]').forEach((bar) => enhanceShareBar(bar));
+</script>
+
+<style>
+  .share-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 0.75rem;
+    margin: 0 0 1.15rem;
+    padding: 0.45rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-family: system-ui, sans-serif;
+  }
+  .share-bar--compact {
+    margin: 0.55rem 0 0;
+    padding: 0.35rem 0 0;
+    border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    border-bottom: none;
+  }
+  .share-bar-label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .share-bar-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .share-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 44px;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--fg) !important;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .share-action:hover {
+    background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    color: var(--accent) !important;
+  }
+  .share-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+  .share-feedback {
+    margin: 0;
+    min-height: 1.1em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  @media (max-width: 640px) {
+    .share-bar {
+      align-items: flex-start;
+    }
+    .share-action {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.6rem;
+    }
+  }
+</style>

@@ -6,6 +6,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import ShareBar from '../../components/ShareBar.astro';
 import { hueBadgesForText, type HueBadge } from '../../lib/comment-politics';
 import { FAMILY_COLORS } from '../../lib/independance-medias';
 import data from '../../data/observatoire-censure.json';
@@ -114,6 +115,7 @@ function resolveObsHue(entry: {
       {' · '}
       <a href="/analyses/assemblee-premier-tour">Pluralité AN1T</a>
     </p>
+    <ShareBar title="Observatoire de la censure" />
   </section>
 
   <nav class="obs-toc" aria-label="Sommaire observatoire">
