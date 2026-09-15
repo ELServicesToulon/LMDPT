@@ -29,7 +29,8 @@ intentions de vote restent hors fil (`exclude_patterns`).
 
 ## Cible v1 (blocs sondages → teintes)
 
-Source : `src/data/elections/2027-sondages-candidats.json`.
+Source : `src/data/elections/2027-sondages-candidats.json` (rafraîchi après
+chaque `npm run sondage:veille` — champ `updated`).
 
 1. Pour chaque `bloc`, garder **un** score : `latest_pct` si présent, sinon
    `avg_pct` — le meilleur candidat du bloc (RN : Le Pen plutôt que Bardella

@@ -2,6 +2,7 @@
 
 **Mise à jour** : 2026-07-17 · Source machine : [`providers.json`](./providers.json)  
 **Veille** : `npm run sondage:veille` (2×/jour · 06:45 + 18:15 Europe/Paris · timer `lmdpt-sondage-veille`)  
+Après chaque persist réussi, `2027-sondages-candidats.json` est recalculé depuis les vagues d'**intentions de vote** scorées (`latest_pct` / `avg_pct` / `updated`).  
 **X officiels** : [`../elections/2027-x-officiels.json`](../elections/2027-x-officiels.json)
 
 > Intentions de vote = **illustration pédagogique**. Pas de prédiction. Notices : [Commission des sondages](https://www.commission-des-sondages.fr/).
@@ -65,7 +66,27 @@ TNS Sofres → Kantar/Verian · LH2 · GfK — gardés en registre `active: fals
 |---------|--------|
 | `providers.json` | Index machine (scan + keywords) |
 | `sondage-veille.ts` | Matching firmes + scan agrégateurs |
-| `2027-sondages-candidats.json` | Agrégat pédagogique scoré |
+| `sondage-candidats-refresh.ts` | Recalcul `avg_pct` / `latest_pct` / `updated` après persist |
+| `2027-sondages-candidats.json` | Agrégat pédagogique scoré (écrit par la veille) |
 | `latest.json` / `movements.jsonl` | Snapshot + journal des mouvements |
+
+### Chemin auto
+
+1. `npm run sondage:veille` (ou le timer systemd) scanne les agrégateurs.
+2. `persistSnapshot` écrit `latest.json`, `waves-registry.json`, `movements.jsonl`.
+3. Puis `rebuildCandidatsFromWaves` : uniquement les vagues `intentions_vote` dont la somme des % est entre 70 et 115 (une hypothèse de 1er tour, pas un collage multi-scénarios). `souhait_victoire` reste en source, **non fusionné**.
+4. `updated` = date du scan (`YYYY-MM-DD`). Identité candidats (nom, bloc, note) conservée. Slug absent des IV → scores historiques inchangés (ex. Bardella hors vagues post-7 juil.).
+
+`npm run sondage:veille -- --dry-run` ne touche pas au disque.
+
+### Chemin manuel (paywall, PDF Commission, hypothèse manquante)
+
+Si l'extracteur rate une vague scorée :
+
+1. Ajouter la vague dans `seedKnownWaves()` (`src/lib/sondage-veille.ts`) avec `metric: 'intentions_vote'` et les `scores`.
+2. Relancer `npm run sondage:veille` (le seed est fusionné aux vagues live). Éviter `--seed-only` sur un `latest.json` déjà peuplé : ce mode réécrit le snapshot à partir des seuls seeds.
+3. Contrôle : `updated` du JSON candidats = jour du scan ; `waves_latest` contient la firme.
+
+Ne pas coller à la main un `latest_pct` issu d'un **souhait de victoire**. Ne pas rédiger de prédiction dans `method` / `disclaimer`.
 
 **Commanditaires médias** ne sont pas des instituts : ils **commandent** (Figaro×Ifop, Point×Cluster17, etc.).
