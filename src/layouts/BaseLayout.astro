@@ -12,7 +12,7 @@ interface Props {
 }
 
 import { getPublicSocialLinks } from '../config/social';
-import { getPublicEcosystemLinks } from '../config/ecosystem';
+import { getPublicEcosystemLinks, IARBRE_HUB } from '../config/ecosystem';
 import {
   pageMeta,
   organizationJsonLd,
@@ -986,6 +986,8 @@ const shareTitle = editorialPost?.title ?? title;
           <a href="/mentions-legales">Mentions légales</a>
           {' · '}
           <a href="/confidentialite">Confidentialité</a>
+          {' · '}
+          <a href={IARBRE_HUB.url} rel="noopener noreferrer">{IARBRE_HUB.label}</a>
           {
             socialLinks.map((link) => (
               <>
