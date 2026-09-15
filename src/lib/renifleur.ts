@@ -1,5 +1,6 @@
 import config from '../data/renifleur/config.json';
 import { resolvePoliticalHue, type ResolvedPoliticalHue } from './comment-politics';
+import { selectItemsWithMixReport, type RenifleurMixReport } from './renifleur-mix';
 
 export interface RenifleurFeed {
   id: string;
@@ -46,6 +47,11 @@ export interface RenifleurSnapshot {
   feeds_ok: number;
   feeds_error: number;
   items: RenifleurItem[];
+}
+
+export interface RenifleurBundle {
+  snapshot: RenifleurSnapshot;
+  mixReport: RenifleurMixReport | null;
 }
 
 export function getRenifleurConfig(): RenifleurConfig {
@@ -229,18 +235,32 @@ export function ensureItemPoliticalHue(item: RenifleurItem): RenifleurItem {
 export async function fetchRenifleurSnapshot(
   fetchImpl: typeof fetch = fetch,
 ): Promise<RenifleurSnapshot> {
+  const { snapshot } = await fetchRenifleurBundle(fetchImpl);
+  return snapshot;
+}
+
+/**
+ * Fetch RSS + filtres (mots-clés / excludes) puis mix teinte (étape 2).
+ * Le rapport de mix est séparé du snapshot servi au site.
+ */
+export async function fetchRenifleurBundle(
+  fetchImpl: typeof fetch = fetch,
+): Promise<RenifleurBundle> {
   const cfg = getRenifleurConfig();
   const fetchedAt = new Date().toISOString();
 
   if (!cfg.enabled) {
     return {
-      fetched_at: fetchedAt,
-      enabled: false,
-      traditional_media: cfg.traditional_media,
-      disclaimer: cfg.disclaimer,
-      feeds_ok: 0,
-      feeds_error: 0,
-      items: [],
+      snapshot: {
+        fetched_at: fetchedAt,
+        enabled: false,
+        traditional_media: cfg.traditional_media,
+        disclaimer: cfg.disclaimer,
+        feeds_ok: 0,
+        feeds_error: 0,
+        items: [],
+      },
+      mixReport: null,
     };
   }
 
@@ -279,13 +299,23 @@ export async function fetchRenifleurSnapshot(
 
   collected.sort((a, b) => b.published.localeCompare(a.published));
 
+  // Étape 2 : rééquilibrage par bloc sondage / teinte, sous plafond hôte.
+  const { items, report } = selectItemsWithMixReport(collected, {
+    maxTotal: cfg.max_total_items,
+    maxSharePerHost: cfg.max_share_per_host,
+    generatedAt: fetchedAt,
+  });
+
   return {
-    fetched_at: fetchedAt,
-    enabled: true,
-    traditional_media: cfg.traditional_media,
-    disclaimer: cfg.disclaimer,
-    feeds_ok: feedsOk,
-    feeds_error: feedsError,
-    items: capItemsByHostShare(collected, cfg.max_share_per_host, cfg.max_total_items),
+    snapshot: {
+      fetched_at: fetchedAt,
+      enabled: true,
+      traditional_media: cfg.traditional_media,
+      disclaimer: cfg.disclaimer,
+      feeds_ok: feedsOk,
+      feeds_error: feedsError,
+      items,
+    },
+    mixReport: report,
   };
 }

@@ -1,32 +1,16 @@
 {
-  "fetched_at": "2026-07-26T13:28:33.464Z",
+  "fetched_at": "2026-09-15T18:33:33.049Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
-  "feeds_ok": 3,
+  "feeds_ok": 9,
   "feeds_error": 0,
   "items": [
     {
-      "title": "Présidentielle 2027 : les « insoumis » et leurs caravanes populaires à la conquête des abstentionnistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/26/presidentielle-2027-les-insoumis-et-leurs-caravanes-populaires-a-la-conquete-des-abstentionnistes_6732763_823448.html",
-      "published": "2026-07-26",
-      "summary": "Tout au long de l’été, les militants de La France insoumise sillonnent la France, privilégiant les quartiers populaires pour encourager les habitants à s’inscrire sur les listes électorales. Mais aussi pour mieux faire connaître la candidature de Jean-Luc Mélenchon.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
-      }
-    },
-    {
-      "title": "Pierre Lefébure, politiste : « Le suractivisme d’un candidat à la présidentielle est risqué, tout ce qu’il dit peut lui être renvoyé au visage plus tard »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/pierre-lefebure-politiste-le-suractivisme-d-un-candidat-a-la-presidentielle-est-risque-tout-ce-qu-il-dit-peut-lui-etre-renvoye-au-visage-plus-tard_6731504_823448.html",
-      "published": "2026-07-24",
-      "summary": "L’été 2026 s’annonce moins riche en campagnes politiques que d’autres étés précédant le scrutin, mais il promet de donner à voir tout l’éventail des usages en communication et déambulation publique, observe, dans un entretien au « Monde », le maître de conférences en science poli",
+      "title": "Présidentielle 2027 : Edouard Philippe, Gabriel Attal et Bruno Retailleau pris au piège de la dispersion",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/presidentielle-2027-face-a-marine-le-pen-et-jean-luc-melenchon-les-candidats-de-la-droite-et-du-centre-persistent-dans-la-fragmentation_6774332_823448.html",
+      "published": "2026-09-15",
+      "summary": "Les trois prétendants à l’Elysée sont engagés dans une guerre de position à droite et au centre. La fragmentation inquiète les cadres et les élus de leurs formations politiques, alors que plane la menace d’un second tour entre Marine Le Pen et Jean-Luc Mélenchon.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -34,79 +18,15 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Attal / Renaissance) — teinte pluraliste."
       }
     },
     {
-      "title": "Présidentielle 2027 : l’écologiste Marine Tondelier poursuit sa campagne malgré la pression de l’union",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-l-ecologiste-marine-tondelier-poursuit-sa-campagne-malgre-la-pression-de-l-union_6731501_823448.html",
-      "published": "2026-07-24",
-      "summary": "Sillonnant le pays à bord d’un van électrique, la secrétaire nationale des Ecologistes continue de porter ses idées pendant que les appels à l’union continuent de diviser le parti.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : en Bretagne, Gabriel Attal mène campagne pour faire décoller sa candidature",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-en-bretagne-gabriel-attal-mene-campagne-pour-faire-decoller-sa-candidature_6731467_823448.html",
-      "published": "2026-07-24",
-      "summary": "Arpentant durant trois jours la région, le candidat à l’Elysée s’est affiché, jeudi, aux côtés du patron Michel-Edouard Leclerc et a martelé sa volonté de « réduire l’écart entre le [salaire] net et le brut ». La trêve estivale est l’occasion pour lui de multiplier les déplacemen",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : l’été, une période de précampagne difficile à ignorer pour les candidats",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/presidentielle-2027-pendant-l-ete-une-periode-de-precampagne-difficile-a-ignorer-pour-les-candidats_6731416_823448.html",
-      "published": "2026-07-24",
-      "summary": "A quelques mois de l’élection, la période estivale est un moment privilégié pour certains candidats de se montrer sur le terrain et pour les partis de consolider leur base.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Loi d’urgence agricole : le Conseil constitutionnel saisi par des députés « insoumis » et écologistes",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/24/loi-d-urgence-agricole-le-conseil-constitutionnel-saisi-par-des-deputes-insoumis-et-ecologistes_6731496_823448.html",
-      "published": "2026-07-24",
-      "summary": "Les députés requérants arguent notamment que la réintroduction sous conditions de certains pesticides interdits n’a pas de lien avec le projet de loi initial, et devrait donc être censurée comme cavalier législatif.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : insoumis"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : comment Matignon négocie avec les banques françaises pour qu’elles acceptent de financer la campagne de Marine Le Pen",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/23/presidentielle-2027-comment-matignon-negocie-avec-les-banques-francaises-pour-qu-elles-acceptent-de-financer-la-campagne-de-marine-le-pen_6730921_823448.html",
-      "published": "2026-07-23",
-      "summary": "Un consortium de banques devrait permettre à la candidate d’extrême droite d’obtenir un emprunt en France. Le premier ministre est disposé à ce que ce prêt soit partiellement garanti par l’Etat, par le biais de la prochaine loi de finances.",
+      "title": "Logement social : la loi SRU, déjà fragilisée, dans le viseur de Marine Le Pen",
+      "url": "https://www.lemonde.fr/societe/article/2026/09/15/logement-social-la-loi-sru-deja-fragilisee-dans-le-viseur-de-marine-le-pen_6774436_3224.html",
+      "published": "2026-09-15",
+      "summary": "La loi solidarité et renouvellement urbain, qui fixe des quotas de logements sociaux dans deux milliers de communes urbaines, a été assouplie et attaquée ces dernières années. La candidate du Rassemblement national à la présidentielle de 2027 va plus loin, promettant de l’abroger",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -115,32 +35,128 @@
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
       }
     },
     {
-      "title": "La Chine n’a pas lancé un programme de charité pour offrir des climatiseurs aux Français",
-      "url": "https://www.france24.com/fr/france/20260723-la-chine-n-a-pas-lanc%C3%A9-un-programme-de-charit%C3%A9-pour-offrir-des-climatiseurs-aux-fran%C3%A7ais",
-      "published": "2026-07-23",
-      "summary": "Des internautes affirment que la Chine se moquerait du manque de climatisation en France. Ils partagent une vidéo humoristique en chinois annonçant la création d'une association destinée à offrir des climatiseurs recyclés aux Français. En réalité, il s'agit d'une vidéo parodique ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : climat"
-      }
-    },
-    {
-      "title": "Réforme de la justice : le Conseil constitutionnel censure le recours à la généalogie génétique de la loi portée par Gérald Darmanin",
-      "url": "https://www.lemonde.fr/societe/article/2026/07/23/reforme-de-la-justice-le-conseil-constitutionnel-censure-le-recours-a-la-genealogie-genetique-de-la-loi-portee-par-gerald-darmanin_6731175_3224.html",
-      "published": "2026-07-23",
-      "summary": "Les sages ont jugé le dispositif contraire à la Constitution faute de garanties suffisantes pour concilier recherche des auteurs d’infractions et respect de la vie privée, tout en validant les principales mesures contestées de la loi portée par Gérald Darmanin.",
+      "title": "Sénatoriales 2026 : une augmentation notable du nombre de députés candidats",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/senatoriales-2026-une-augmentation-notable-du-nombre-de-deputes-candidats_6774448_823448.html",
+      "published": "2026-09-15",
+      "summary": "Trente-trois députés figurent parmi les quelque 1 600 candidats aux élections qui se tiendront le 27 septembre. Un nombre en forte hausse, dans la lignée d’une tendance déjà observée aux élections municipales de mars.",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Gérald Darmanin, en se ralliant à Edouard Philippe pour la présidentielle, ménage son propre avenir politique",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/presidentielle-2027-en-se-ralliant-a-edouard-philippe-gerald-darmanin-menage-son-propre-avenir-politique_6774342_823448.html",
+      "published": "2026-09-15",
+      "summary": "Le ministre de la justice, qui a longtemps laissé planer le doute sur sa candidature à l’Elysée, veut incarner la « droite sociale » auprès du candidat Horizons. Mais il prépare aussi la suite, quel que soit le destin de l’ancien premier ministre en mai 2027.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "philippe",
+        "label": "Philippe / Horizons",
+        "color": "#0001b8",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
+      }
+    },
+    {
+      "title": "« L’automne s’annonce comme un triangle des Bermudes, où plus d’une ambition présidentielle pourrait se perdre »",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/l-automne-s-annonce-comme-un-triangle-des-bermudes-ou-plus-d-une-ambition-presidentielle-pourrait-se-perdre_6774397_823448.html",
+      "published": "2026-09-15",
+      "summary": "Xavier Bertrand, Jean-Louis Borloo, François Hollande, Thierry Breton ou encore Bernard Cazeneuve… Nombre de candidats tournent autour du ring sans y monter. Chacun attend qu’une place se libère, écrit, dans sa chronique, Solenn de Royer, journaliste au « Monde ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : hollande, cazeneuve"
+      }
+    },
+    {
+      "title": "« La rentrée de Marine Le Pen, sous le regard crispé de son numéro deux, marque sa volonté d’assurer seule le show »",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/15/la-rentree-de-marine-le-pen-sous-le-regard-crispe-de-son-numero-deux-marque-sa-volonte-d-assurer-seule-le-show_6774348_3232.html",
+      "published": "2026-09-15",
+      "summary": "La vive réaction de la candidate à l’élection présidentielle et de son clan aux ambitions affichées par Jordan Bardella, porté par sa popularité, a eu raison du mythe d’un parti normalisé, rappelle dans sa chronique Françoise Fressoz, éditorialiste au « Monde ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
+      }
+    },
+    {
+      "title": "Emmanuel Macron lance le nouveau service militaire national avec une première cohorte de 3 000 jeunes",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/emmanuel-macron-lance-le-nouveau-service-militaire-national-avec-une-premiere-cohorte-de-3-000-jeunes_6774464_823448.html",
+      "published": "2026-09-15",
+      "summary": "Le nouveau format, qui succède au service national universel, devra faire ses preuves. Notamment sur son financement et sur l’emploi des jeunes volontaires, qui pourront remplacer des militaires d’active sur des missions annexes.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Budget 2027 : Sébastien Lecornu demande à ses ministres de ne pas augmenter les dépenses de l’Etat pour l’année à venir",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/15/budget-2027-sebastien-lecornu-demande-a-ses-ministres-de-ne-pas-augmenter-les-depenses-de-l-etat-pour-l-annee-a-venir_6774460_823448.html",
+      "published": "2026-09-15",
+      "summary": "Dans une lettre envoyée aux différents membres de son gouvernement, le premier ministre explique cette décision par « un nouveau choc » sur les prix de l’énergie, qui « pèse » sur les entreprises et « sur le pouvoir d’achat des Français ».",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "bardella",
+        "label": "Bardella / RN",
+        "color": "#0d378a",
+        "confidence": 0.61,
+        "rationale": "Proximité lexicale : pouvoir d’achat"
+      }
+    },
+    {
+      "title": "A Mayotte, l’échec de la « méthode Notre-Dame » choisie par l’Etat pour la reconstruction",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/15/a-mayotte-l-echec-de-la-methode-notre-dame-choisie-par-l-etat-pour-la-reconstruction_6774428_3232.html",
+      "published": "2026-09-15",
+      "summary": "Inspirée par le chantier réussi de la cathédrale parisienne, la méthode suivie par l’Etat pour reconstruire le département ne fonctionne pas. Pourtant conscient des lacunes des collectivités dans le territoire, le gouvernement se tourne vers les élus locaux. Une façon de partager",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : collectivités, collectivites"
+      }
+    },
+    {
+      "title": "Dette : « Nous approchons à grand pas d’un accident financier majeur », alerte Bruno Le Maire",
+      "url": "https://www.publicsenat.fr/actualites/politique/dette-nous-approchons-a-grand-pas-dun-accident-financier-majeur-alerte-bruno-le-maire",
+      "published": "2026-09-15",
+      "summary": "Invité de la matinale de Public Sénat, l’ancien ministre de l’Economie a tiré la sonnette d’alarme sur la situation financière de la France. Bruno Le Maire met sur la table plusieurs mesures d’économies sur les retraités et les fonctionnaires - tout en proposant une réforme insti",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "philippe",
@@ -151,58 +167,218 @@
       }
     },
     {
-      "title": "Interdiction des réseaux sociaux aux moins de 15 ans : LFI dépose un recours devant le Conseil constitutionnel",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/23/interdiction-des-reseaux-sociaux-aux-moins-de-15-ans-lfi-depose-un-recours-devant-le-conseil-constitutionnel_6731174_823448.html",
-      "published": "2026-07-23",
-      "summary": "Les députés « insoumis » à l’origine de ce recours considèrent que l’interdiction et le contrôle de l’âge constituent une atteinte à la liberté d’expression et de communication, mais aussi au droit au respect de la vie privée.",
+      "title": "Budget 2027 : pour Sébastien Lecornu, le danger d’un RN en fourbe-fête",
+      "url": "https://www.liberation.fr/politique/budget-2027-pour-sebastien-lecornu-le-danger-dun-rn-en-fourbe-fete-20260915_4PQMKPPACNCX7OIBXTGPQAZG3U/",
+      "published": "2026-09-15",
+      "summary": "Alors que Marine Le Pen souhaite «un budget imparfait opérationnel avant les élections», l’hypothèse d’une non-censure du Rassemblement national se dessine. Un cadeau empoisonné pour le gouvernement qui répète ne pas vouloir négocier avec l’extrême droite.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : dans les coulisses du nouveau QG politique de François Hollande, en campagne sans être candidat",
+      "url": "https://www.lefigaro.fr/politique/presidentielle-2027-dans-les-coulisses-du-nouveau-qg-politique-de-francois-hollande-en-campagne-sans-etre-candidat-20260915",
+      "published": "2026-09-15",
+      "summary": "EXCLUSIF - À sept mois du scrutin élyséen, celui qui assume de s’y «préparer» a investi un local de 90 mètres carrés dans le XIe arrondissement de Paris où ses équipes sont déjà à pied d’œuvre. Le Figaro s’est rendu sur place.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : hollande"
+      }
+    },
+    {
+      "title": "Sébastien Lecornu, premier ministre : « La mort de Lyhanna nous oblige. Nous proposerons une trajectoire pluriannuelle avec un socle de départ de 1,5 milliard d’euros contre les violences sexistes et sexuelles en 2027 »",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/15/sebastien-lecornu-premier-ministre-la-mort-de-lyhanna-nous-oblige-nous-proposerons-une-trajectoire-pluriannuelle-avec-1-5-milliard-d-euros-contre-les-violences-sexistes-et-sexuelles-des-2027_6774429_3232.html",
+      "published": "2026-09-15",
+      "summary": "Dans une tribune au « Monde », le premier ministre annonce pour la première fois les montants qu’il entend associer à la « loi intégrale » contre les violences sexistes et sexuelles, qui sera discutée au Parlement à l’automne 2026.",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : insoumis, lfi"
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
-      "title": "Présidentielle 2027 : Jean-Luc Mélenchon tend une nouvelle fois la main aux Ecologistes en leur proposant un accord « global »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/22/presidentielle-2027-jean-luc-melenchon-propose-un-accord-global-aux-ecologistes-pour-unir-la-gauche_6730025_823448.html",
-      "published": "2026-07-22",
-      "summary": "« Nous ne renonçons pas à une stratégie unitaire. Notre main tendue, c’est la “Nouvelle alliance populaire” », a expliqué le candidat « insoumis » dans une interview au média écologiste en ligne « Reporterre ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Logement social : Marine Le Pen n’aime pas la loi qui vise à créer de la mixité sociale… logique",
+      "url": "https://www.liberation.fr/politique/logement-social-marine-le-pen-naime-pas-la-loi-qui-vise-a-creer-de-la-mixite-sociale-logique-20260915_XL7GPTZFMVDVBPM3JGMPYVJGXQ/",
+      "published": "2026-09-15",
+      "summary": "En s’attaquant à la loi SRU, la candidate d’extrême droite nourrit ce qu’elle dénonce à longueur de discours : «l’archipélisation» de la société française. Pas étonnant, le mélange social étant l’un des meilleurs remèdes aux recroquevillements identitaires dont le RN tire profit.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "La conseillère de Paris Rania Kissi nommée porte-parole de Marine Tondelier",
+      "url": "https://www.liberation.fr/politique/la-conseillere-de-paris-rania-kissi-nommee-porte-parole-de-marine-tondelier-20260915_OSDRRWHN25D45NKKLCXGZF2B6Y/",
+      "published": "2026-09-15",
+      "summary": "Enfant de l’ASE et très investie sur le thème de la protection de l’enfance, l’élue parisienne rejoint l’équipe de la candidate écolo à la présidentielle 2027.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : tondelier"
+      }
+    },
+    {
+      "title": "\"Nous censurerons quoi qu'il arrive et nous n'avons rien à discuter\", tranche Mathilde Panot, alors que le Premier ministre lance des consultations sur le budget 2027",
+      "url": "https://www.franceinfo.fr/economie/budget/nous-censurerons-quoi-qu-il-arrive-et-nous-n-avons-rien-a-discuter-tranche-mathilde-panot-alors-que-le-premier-ministre-lance-des-consultations-sur-le-budget-2027_8193188.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-15",
+      "summary": "\"Nos propositions sont connues. Nous faisons chaque année un contre-budget et le débat doit normalement avoir lieu à l'Assemblée nationale\", rappelle la présidente du groupe LFI à l'Assemblée, mardi sur franceinfo.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "melenchon",
         "label": "Mélenchon / LFI",
         "color": "#cc2443",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+        "rationale": "Proximité lexicale : panot, lfi"
       }
     },
     {
-      "title": "Le géographe Frédéric Giraut réagit aux « écorégions » promues par Jean-Luc Mélenchon : « Le biorégionalisme ne peut penser la question urbaine et migratoire autrement qu’en termes négatifs »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/22/le-geographe-frederic-giraut-reagit-aux-ecoregions-promues-par-jean-luc-melenchon-le-bioregionalisme-ne-peut-penser-la-question-urbaine-et-migratoire-autrement-qu-en-termes-negatifs_6729986_3232.html",
-      "published": "2026-07-22",
-      "summary": "La proposition du candidat « insoumis » à l’élection présidentielle de redessiner la carte de France autour de 13 nouvelles zones s’inscrit dans une tradition de pensée qui fait primer les données naturelles et de supposés héritages culturels sur les réalités sociales et économiq",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Bruno Retailleau s’affiche encore avec le syndicat policier d’extrême droite Alliance",
+      "url": "https://www.liberation.fr/politique/bruno-retailleau-saffiche-encore-avec-le-syndicat-policier-dextreme-droite-alliance-20260915_SWSE3EXYCZFNBAGBQI5NFKOMLY/",
+      "published": "2026-09-15",
+      "summary": "Le candidat des Républicains à la présidentielle participera à la manifestation prévue ce mardi 15 septembre par le syndicat habitué à défiler avec les personnalités d’extrême droite.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+        "rationale": "Proximité lexicale : retailleau, républicains, republicains"
       }
     },
     {
-      "title": "Présidentielle 2027 : cette partie du bloc central qui lorgne la gauche sociale-démocrate",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/18/presidentielle-2027-cette-partie-du-bloc-central-qui-lorgne-la-gauche-sociale-democrate_6724465_823448.html",
-      "published": "2026-07-18",
-      "summary": "Des élus macronistes et des centristes peu convaincus par Gabriel Attal et Edouard Philippe entretiennent le dialogue notamment avec Bernard Cazeneuve. Ils seraient prêts à soutenir dès le premier tour un candidat de la gauche réformiste dans le cadre d’une coalition.",
+      "title": "Budget 2027 : « Il ne faut ni raboter ni sanctuariser le pacte Dutreil sur la transmission d’entreprises familiales »",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/15/budget-2027-il-ne-faut-ni-raboter-ni-sanctuariser-le-pacte-dutreil-sur-la-transmission-d-entreprises-familiales_6774403_3232.html",
+      "published": "2026-09-15",
+      "summary": "Avant la présentation du projet de loi de finances pour 2027, prévue le 30 septembre, l’ancien député Gilles Carrez et l’avocat François Ouairy proposent, dans une tribune au « Monde », d’enlever de l’assiette fiscale la trésorerie de placement et l’immobilier et de maintenir le ",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : Lecornu dévoile les montants pour la lutte contre les violences sexistes et sexuelles",
+      "url": "http://www.france24.com/fr/france/20260915-budget-2027-lecornu-gouvernement-montants-lutte-contre-les-violences-sexistes-et-sexuelles",
+      "published": "2026-09-15",
+      "summary": "Le Premier ministre Sébastien Lecornu a annoncé mardi les budgets qu’il entend allouer à la \"loi intégrale\" contre les violences sexistes et sexuelles, qui sera discutée au Parlement à l’automne 2026. Le gouvernement proposera de consacrer environ 1,5 milliard d'euros à la lutte ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : Sébastien Lecornu ne veut pas augmenter les dépenses de l’Etat, excepté pour la défense",
+      "url": "https://www.liberation.fr/economie/budget-2027-sebastien-lecornu-ne-veut-pas-augmenter-les-depenses-de-letat-excepte-pour-la-defense-20260915_5P2GSFRNHJC4LPGFL6CBRYQUXY/",
+      "published": "2026-09-15",
+      "summary": "Au cœur d’une journée rythmée par les annonces, le Premier ministre a défendu une stratégie qui, il l’espère, apaisera les marchés financiers et ses opposants politiques.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : Lecornu annonce 1,5 milliard d’euros contre les violences sexistes et sexuelles et 2,6 milliards pour la protection de l’enfance",
+      "url": "https://www.liberation.fr/politique/budget-2027-lecornu-annonce-15-milliard-deuros-contre-les-violences-sexistes-et-sexuelles-et-26-milliards-pour-la-protection-de-lenfance-20260915_3TKFJ4WFYZCGRIPP3QFY5LQN5Y/",
+      "published": "2026-09-15",
+      "summary": "Dans une tribune publiée dans «le Monde», mardi 15 septembre, le Premier ministre annonce pour la première fois le montant qu’il entend mettre en face du projet de loi intégrale contre les violences sexistes et sexuelles.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "«C’est hanounesque !» : remous chez les avocats après l’invitation du député d’extrême droite Charles Alloncle à une conférence mythique",
+      "url": "https://www.liberation.fr/societe/police-justice/cest-hanounesque-remous-chez-les-avocats-apres-linvitation-du-depute-dextreme-droite-charles-alloncle-a-une-conference-mythique-20260915_IKBWFD7WFVEMFLVRLIQRMEPDGY/",
+      "published": "2026-09-15",
+      "summary": "La conférence Berryer, exercice d’art oratoire déjanté organisé à la Maison du barreau de Paris qui a vu passer de nombreux invités depuis plus de cent ans, accueille ce mardi 15 septembre le député membre de l’UDR. Une tribune d’avocats s’indigne de ce qui est vu, à quelques moi",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Logement : Bruno Retailleau propose de déduire de l’impôt, les intérêts d’emprunt pour un prêt immobilier, en fonction du nombre d’enfants",
+      "url": "https://www.publicsenat.fr/actualites/politique/logement-bruno-retailleau-propose-de-deduire-de-l-imot-les-interets-d-emprunt-pour-un-pret-immobilier-en-fonction-du-nombre-d-enfants",
+      "published": "2026-09-15",
+      "summary": "Face à la hausse des prix, notamment de l’énergie, et aux appels à la mobilisation contre la vie chère, le thème du pouvoir d’achat s’impose dans cette précampagne présidentielle. Lors d’une conférence de presse, mardi après-midi, Bruno Retailleau a rappelé ses principales mesure",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : retailleau"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : un profond désir de changement",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/14/presidentielle-2027-un-profond-desir-de-changement_6773605_3232.html",
+      "published": "2026-09-14",
+      "summary": "Une envie de tourner la page après les deux mandats d’Emmanuel Macron et des préoccupations majoritairement tournées vers les questions économiques, tels sont les enseignements de la troisième vague de l’enquête électorale réalisée par Ipsos pour « Le Monde » auprès d’un échantil",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -211,167 +387,183 @@
         "label": "Attal / Renaissance",
         "color": "#ffeb00",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal, macron"
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
       }
     },
     {
-      "title": "Pour l’élection présidentielle 2027, la gauche sociale-démocrate cherche toujours son candidat",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/18/hollande-cazeneuve-glucksmann-la-gauche-sociale-democrate-cherche-toujours-son-candidat_6724309_823448.html",
-      "published": "2026-07-18",
-      "summary": "Le 9 juillet, les militants socialistes ont opté pour une primaire interne qui doit se tenir en octobre, mais ce choix n’a pas fait disparaître les profondes tensions au sein du PS. La multiplication de prétendants officieux brouille les cartes.",
+      "title": "Marine Le Pen consolide son ancrage chez les retraités, son obsession en vue de la présidentielle de 2027",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/14/marine-le-pen-consolide-son-ancrage-chez-les-retraites-son-obsession-en-vue-de-la-presidentielle-de-2027_6773875_823448.html",
+      "published": "2026-09-14",
+      "summary": "Le RN s’oppose aux pistes d’économie du gouvernement pour marquer son soutien aux retraités, qui lui ont jusqu’ici barré l’accès à l’Elysée. Cette défense de leur pouvoir d’achat va de pair avec la volonté de se présenter comme sérieux et rassurant.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : entre une fidélité contrariée à leur parti et la tentation Edouard Philippe, les ministres LR cherchent leur place",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/17/presidentielle-2027-entre-une-fidelite-contrariee-a-leur-parti-et-la-tentation-edouard-philippe-les-ministres-lr-cherchent-leur-place_6724083_823448.html",
-      "published": "2026-07-17",
-      "summary": "Suspendus depuis octobre 2025, les six membres Les Républicains du gouvernement Lecornu incarnent pour leur président, Bruno Retailleau, une page révolue : celle d’une droite alliée avec la Macronie. Les bannis estiment ne pas avoir trahi leur famille politique et plaident pour u",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
-      "title": "Présidentielle 2027 : Bernard Cazeneuve se déclare candidat dans un entretien au « Parisien » et décline la primaire socialiste",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/16/presidentielle-2027-bernard-cazeneuve-se-declare-candidat-dans-un-entretien-au-parisien-et-decline-la-primaire-socialiste_6723827_823448.html",
-      "published": "2026-07-16",
-      "summary": "Celui qui se présente comme « un républicain de gauche » et un « social-démocrate » esquisse dans cette interview ses premières propositions en vue de la course à l’Elysée.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Présidentielle 2027 : le logement sera \"un des grands chantiers du quinquennat\", selon Marine Le Pen",
+      "url": "http://www.france24.com/fr/vid%C3%A9o/20260914-pr%C3%A9sidentielle-2027-le-logement-sera-un-des-grands-chantiers-du-quinquennat-selon-marine-le-pen",
+      "published": "2026-09-14",
+      "summary": "La \"priorité nationale\" est \"un droit naturel et juste\", a affirmé Marine Le Pen dans son discours de rentrée, en promettant d'appliquer ce principe controversé au logement social, alors que le logement sera, à priori, \"un des grand chantiers\" de son quinquennat. Des détails avec",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : cazeneuve, socialiste, social-democrate"
+        "rationale": "Proximité lexicale : le pen, marine le pen, priorité nationale"
       }
     },
     {
-      "title": "Dominique de Villepin dit que les candidats qui promettent de ne pas augmenter les impôts sont des « menteurs »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/dominique-de-villepin-dit-que-les-candidats-qui-promettent-de-ne-pas-augmenter-les-impots-sont-des-menteurs_6723620_823448.html",
-      "published": "2026-07-15",
-      "summary": "Le probable candidat à la présidentielle s’exprimait au siège parisien de son jeune parti, La France humaniste, devant une poignée de journalistes ainsi qu’une dizaine d’influenceurs et de représentants des nouveaux médias.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Guillaume Tabard : « Budget 2027, et à la fin, Marine Le Pen décidera »",
+      "url": "https://www.lefigaro.fr/politique/guillaume-tabard-budget-2027-et-a-la-fin-marine-le-pen-decidera-20260914",
+      "published": "2026-09-14",
+      "summary": "CONTRE-POINT - Sébastien Lecornu ne tiendra et, ce faisant, ne fera passer son budget au 49.3, qu’en étant épargné par le groupe dont il voulait le moins dépendre : le Rassemblement national.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
       }
     },
     {
-      "title": "Gabriel Attal assigne Marine Le Pen pour « contrefaçon » sur l’utilisation du terme « renaissance » dans son affiche de campagne",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/15/gabriel-attal-assigne-marine-le-pen-pour-contrefacon-sur-l-utilisation-du-terme-renaissance-dans-son-affiche-de-campagne_6723546_6205049.html",
-      "published": "2026-07-15",
-      "summary": "Son éligibilité à peine recouvrée, le 7 juillet, Marine Le Pen a dévoilé une affiche exaltant le thème de « la renaissance » : celle de la France autant que celle de la candidate. L’audience se tiendra en référé le 27 juillet au tribunal de Paris.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Interdiction des réseaux sociaux aux ados : ce que l'on sait du nouveau projet de loi de Macron",
+      "url": "http://www.france24.com/fr/france/20260914-interdiction-des-r%C3%A9seaux-sociaux-aux-ados-ce-que-l-on-sait-du-nouveau-projet-de-loi-de-macron",
+      "published": "2026-09-14",
+      "summary": "Un mois après la censure du Conseil constitutionnel, Emmanuel Macron espère avoir trouvé une \"voie de passage\" pour faire adopter l'interdiction des réseaux sociaux aux moins de 15 ans, dont une nouvelle version doit être soumise lundi à Bruxelles.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Le Pen / RN) — teinte pluraliste."
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
       }
     },
     {
-      "title": "Présidentielle 2027 : Jean-Luc Mélenchon, en meeting en Bretagne, s’adresse aux « enfants » des Jacobins pour défendre ses « écorégions »",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/15/en-bretagne-jean-luc-melenchon-s-adresse-aux-enfants-des-jacobins-pour-defendre-ses-ecoregions_6723503_823448.html",
-      "published": "2026-07-15",
-      "summary": "Attendu sur les questions de ruralité et d’agriculture, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué, mardi, son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantiqu",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Sénatoriales 2026 : la candidature dissidente de l’écologiste Bruno Bernard va-t-elle changer la donne dans le Rhône ?",
+      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-2026-la-candidature-dissidente-de-lecologiste-bruno-bernard-va-t-elle-changer-la-donne-dans-le-rhone",
+      "published": "2026-09-14",
+      "summary": "Bruno Bernard, ancien président de la métropole de Lyon, a finalement décidé de déposer sa propre liste aux sénatoriales dans le Rhône, faisant ainsi concurrence à la liste d'union de la gauche (écologistes, PS, PCF) menée par le sénateur sortant, Thomas Dossus. En 2020, la liste",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "roussel",
+        "label": "Roussel / PCF",
+        "color": "#dd0000",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : pcf"
+      }
+    },
+    {
+      "title": "Est-il vrai que «70 % des Français sont éligibles au parc social», mais «seulement 11 % en bénéficient», comme le dit Marine Le Pen ?",
+      "url": "https://www.liberation.fr/checknews/est-il-vrai-que-70-des-francais-sont-eligibles-au-parc-social-mais-seulement-11-en-beneficient-comme-le-dit-marine-le-pen-20260914_SXW5FDHVGFEAFBZA5BO5J34LJU/",
+      "published": "2026-09-14",
+      "summary": "Pour défendre sa «priorité nationale» dans le logement social, la candidate d’extrême droite s’appuie sur des chiffres sans rapport avec sa revendication.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, priorité nationale"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : qu’est ce que la « priorité nationale » sur le logement de Marine Le Pen ?",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-qu-est-ce-que-la-priorite-nationale-sur-le-logement-de-marine-le-pen-20260914",
+      "published": "2026-09-14",
+      "summary": "Dimanche 13 septembre, la candidate du Rassemblement national Marine Le Pen a fait du logement un des thèmes prioritaires de sa campagne. Elle souhaite notamment donner aux Français la priorité d’accès au logement social.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
+      }
+    },
+    {
+      "title": "Interdiction des réseaux sociaux aux moins de 15 ans : « On a perdu du temps en ne partant pas du texte du Sénat », déplore la sénatrice Catherine Morin-Desailly",
+      "url": "https://www.publicsenat.fr/actualites/societe/interdiction-des-reseaux-sociaux-aux-moins-de-15-ans-on-a-perdu-du-temps-en-ne-partant-pas-du-texte-du-senat-deplore-la-senatrice-catherine-morin-desailly",
+      "published": "2026-09-14",
+      "summary": "Après la censure du Conseil constitutionnel il y a un mois jour pour jour de la proposition de loi portée par la députée Renaissance Laure Miller, Emmanuel Macron a soumis une nouvelle version de l’interdiction des réseaux sociaux aux moins de 15 ans ce lundi 14 septembre. Du côt",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : renaissance, macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "«Levez-vous !» : face aux «destructeurs» Mélenchon et Le Pen, Retailleau appelle la «jeunesse de France» à choisir le parti de la «reconstruction»",
+      "url": "https://www.lefigaro.fr/politique/levez-vous-face-aux-destructeurs-melenchon-et-le-pen-retailleau-appelle-la-jeunesse-de-france-a-choisir-le-parti-de-la-reconstruction-20260912",
+      "published": "2026-09-13",
+      "summary": "REPORTAGE - Devant les jeunes LR, le candidat à la présidentielle promet la «rupture» dès son arrivée à l’Élysée, en visant, sans le nommer, la poursuite du «en même temps macroniste» de ses adversaires.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "melenchon",
         "label": "Mélenchon / LFI",
         "color": "#cc2443",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, lfi"
+        "rationale": "Proximité lexicale : mélenchon, melenchon"
       }
     },
     {
-      "title": "Armel Le Divellec, professeur de droit public : « L’élection présidentielle est un mirage : à elle seule, elle ne livre pas la maîtrise du pouvoir »",
-      "url": "https://www.lemonde.fr/idees/article/2026/07/14/armel-le-divellec-professeur-de-droit-public-l-election-presidentielle-est-un-mirage-a-elle-seule-elle-ne-livre-pas-la-maitrise-du-pouvoir_6723310_3232.html",
-      "published": "2026-07-14",
-      "summary": "Les responsables politiques devraient se préoccuper autant des probables élections législatives anticipées que du scrutin présidentiel de 2027 avertit, dans une tribune au « Monde », le directeur adjoint du Centre d’études constitutionnelles et politiques.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Présidentielle 2027 : pour sa rentrée, Marine Le Pen assume son ADN populiste",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-pour-sa-rentree-marine-le-pen-martele-son-adn-populiste-20260913",
+      "published": "2026-09-13",
+      "summary": "Lors de son meeting de rentrée organisé dimanche 13 septembre à Hénin-Beaumont (Pas-de-Calais), Marine Le Pen a tout misé sur la préférence nationale et le pouvoir d’achat des Français.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "« Première République écologique et citoyenne » : le programme des Ecologistes pour peser en 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/13/premiere-republique-ecologique-et-citoyenne-le-programme-des-ecologistes-pour-peser-en-2027_6723128_823448.html",
-      "published": "2026-07-13",
-      "summary": "Changement de Constitution, sortie du nucléaire, retraite… Le parti Les Ecologistes a présenté, lundi 13 juillet, ses propositions pour l’élection présidentielle, après avoir conforté la candidature de sa secrétaire nationale, Marine Tondelier.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes, tondelier"
+        "rationale": "Proximité lexicale : le pen, marine le pen"
       }
     },
     {
-      "title": "« Chacun joue le coup d’après » : ce que dit la multiplication des candidatures pour la présidentielle 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/07/13/chacun-joue-le-coup-d-apres-ce-que-dit-la-multiplication-des-candidatures-pour-la-presidentielle-2027_6723092_823448.html",
-      "published": "2026-07-13",
-      "summary": "Avec une trentaine de candidats sur la ligne de départ, la campagne pour l’élection suprême démarre en rangs dispersés, pointant la faiblesse de certains camps, notamment à gauche.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Présidentielle 2027 : pour Bruno Retailleau, l’indépendance de la droite « jusqu’au bout »",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-pour-bruno-retailleau-l-independance-de-la-droite-jusquau-bout-20260911",
+      "published": "2026-09-12",
+      "summary": "Alors que plusieurs cadres de son parti regardent vers Édouard Philippe, Bruno Retailleau fait de sa candidature à l’élection présidentielle une question de survie pour sa famille politique, convaincu qu’un espace politique subsiste entre le centre macroniste et l’extrême droite ",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Marine Tondelier dévoile le programme des Ecologistes",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/13/presidentielle-2027-marine-tondelier-devoile-le-programme-des-ecologistes_6723085_6205049.html",
-      "published": "2026-07-13",
-      "summary": "Porté par dix mois de consultations et 50 000 propositions, le programme promet la proposition de créer une « Première République écologique et citoyenne », une transformation profonde des institutions et de la fiscalité pour 2027.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
+        "slug": "philippe",
+        "label": "Philippe / Horizons",
+        "color": "#0001b8",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : édouard philippe, edouard philippe"
       }
     }
   ]
