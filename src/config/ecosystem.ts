@@ -1,3 +1,10 @@
+/** Lien discret vers le hub iarbre (chrome pied de page, pas une bannière). */
+export const IARBRE_HUB = {
+  id: 'hub',
+  label: 'Hub iarbre',
+  url: 'https://iarbre.org/hub',
+} as const;
+
 /** Liens écosystème iArbre — hors contenu éditorial LMDPT. */
 export const ECOSYSTEM_LINKS = [
   {
