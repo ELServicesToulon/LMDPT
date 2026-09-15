@@ -8,12 +8,17 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import providersConfig from '../data/sondages/providers.json';
+import {
+  rebuildCandidatsFromWaves,
+  type CandidatsFile,
+} from './sondage-candidats-refresh';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA_DIR = join(ROOT, 'src/data/sondages');
 const LATEST_PATH = join(DATA_DIR, 'latest.json');
 const MOVEMENTS_PATH = join(DATA_DIR, 'movements.jsonl');
 const WAVES_PATH = join(DATA_DIR, 'waves-registry.json');
+const CANDIDATS_PATH = join(ROOT, 'src/data/elections/2027-sondages-candidats.json');
 
 export interface ProviderRegistry {
   institutes: Array<{
@@ -788,7 +793,7 @@ export async function loadPreviousSnapshot(): Promise<SondageVeilleSnapshot | nu
   }
 }
 
-export async function persistSnapshot(snapshot: SondageVeilleSnapshot): Promise<void> {
+export async function persistSnapshot(snapshot: SondageVeilleSnapshot): Promise<CandidatsFile> {
   await mkdir(DATA_DIR, { recursive: true });
   await writeFile(LATEST_PATH, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
   for (const m of snapshot.movements) {
@@ -814,6 +819,20 @@ export async function persistSnapshot(snapshot: SondageVeilleSnapshot): Promise<
     (b.fieldwork ?? '').localeCompare(a.fieldwork ?? ''),
   );
   await writeFile(WAVES_PATH, `${JSON.stringify(registry, null, 2)}\n`, 'utf8');
+
+  return persistCandidatsFromWaves(snapshot.waves, snapshot.fetched_at);
+}
+
+/** Refresh pedagogical candidate averages from scored intentions_vote waves. */
+export async function persistCandidatsFromWaves(
+  waves: DetectedWave[],
+  fetchedAt: string,
+): Promise<CandidatsFile> {
+  const raw = await readFile(CANDIDATS_PATH, 'utf8');
+  const existing = JSON.parse(raw) as CandidatsFile;
+  const next = rebuildCandidatsFromWaves(existing, waves, fetchedAt);
+  await writeFile(CANDIDATS_PATH, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+  return next;
 }
 
 /** Seed known waves (manual / paywalled) — Cluster17 Le Point + post-Le Pen pack. */

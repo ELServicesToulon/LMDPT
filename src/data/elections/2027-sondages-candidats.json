@@ -1,65 +1,65 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-07-17",
+  "updated": "2026-09-15",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
-  "method": "Dernière fourchette post-déclaration de candidature de Marine Le Pen (7 juil. 2026) : vagues Elabe 9–12 juil., Verian 8–10 juil., OpinionWay 8–9 juil., Harris 7–8 juil., Ifop 7–8 juil. (confirmé EPOC + Wikipedia EN 17/07/2026 — pas de nouvelle vague d'intentions scorable entre le 12 et le 17). Notices Commission 14/07 = baromètre Cluster17 / tableau de bord Ifop Paris-Match (pas IV 1er tour scorable auto). Moyenne « avg_pct » = repère EPOC multi-vagues.",
+  "method": "Veille auto 2026-09-15 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
+    {
+      "label": "Elabe — 2026-07-09/12",
+      "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse",
+      "as_of": "2026-07-12"
+    },
+    {
+      "label": "Verian — 2026-07-08/10",
+      "url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/",
+      "as_of": "2026-07-10"
+    },
+    {
+      "label": "OpinionWay — 2026-07-08/09",
+      "url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680",
+      "as_of": "2026-07-09"
+    },
+    {
+      "label": "Harris Interactive — 2026-07-07/08",
+      "url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723",
+      "as_of": "2026-07-08"
+    },
+    {
+      "label": "Ifop — 2026-07-07/08",
+      "url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen",
+      "as_of": "2026-07-08"
+    },
+    {
+      "label": "Cluster17 — souhait de victoire",
+      "url": "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/",
+      "as_of": "2026-07-11",
+      "metric": "souhait_victoire",
+      "note": "Paywall / métrique distincte — pas fusionné dans latest_pct intentions."
+    },
     {
       "label": "EPOC — dernier sondage ELABE 12/07/2026",
       "url": "https://www.epocinfo.fr/ep2027.php",
       "as_of": "2026-07-12"
     },
     {
-      "label": "Elabe — 9–12 juil. 2026 (hyp. Le Pen)",
-      "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse",
-      "as_of": "2026-07-12"
-    },
-    {
-      "label": "Verian — 8–10 juil. 2026",
-      "url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/",
-      "as_of": "2026-07-10"
-    },
-    {
-      "label": "OpinionWay — 8–9 juil. 2026",
-      "url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680",
-      "as_of": "2026-07-09"
-    },
-    {
-      "label": "Ifop — 7–8 juil. 2026 (post-candidature Le Pen)",
-      "url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen",
-      "as_of": "2026-07-08"
-    },
-    {
-      "label": "Harris Interactive / Toluna — 7–8 juil. 2026",
-      "url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723",
-      "as_of": "2026-07-08"
-    },
-    {
       "label": "Wikipedia — Opinion polling 2027 (section Since July 2026)",
       "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
       "as_of": "2026-07-16"
-    },
-    {
-      "label": "Cluster17 / Le Point — souhaits de victoire (exclusif)",
-      "url": "https://www.lepoint.fr/politique/le-pen-aux-avant-postes-melenchon-en-embuscade-notre-sondage-exclusif-sur-la-presidentielle-BG2OJRSOURAELJ5VYKDLTEFBVE/",
-      "as_of": "2026-07-11",
-      "metric": "souhait_victoire",
-      "note": "Le Pen en tête des souhaits de victoire, Mélenchon en embuscade, Philippe 3e. 56 % jugent la candidature Le Pen « injustifiée ». Paywall — pas fusionné dans latest_pct intentions."
     }
   ],
   "notes": [
     "Les % « moyenne » combinent des hypothèses exclusives (candidat A ou B) : ne pas les additionner.",
     "RN : Marine Le Pen (candidature déclarée 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti) — jamais dans la même hypothèse de 1er tour.",
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
-    "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille.",
-    "Mise à jour LMDPT : 2026-07-17 (re-scan EPOC/Commission/Wikipedia — IV encore 7–12 juil. ; X officiels candidats/partis → 2027-x-officiels.json)."
+    "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
+    "Mise à jour LMDPT : 2026-09-15 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
   ],
   "waves_latest": [
     {
       "firm": "Elabe",
       "fieldwork": "2026-07-09/12",
       "n": 1503,
-      "hypothesis": "Le Pen + Philippe (hyp.1)",
+      "hypothesis": "Le Pen + Philippe",
       "scores": {
         "le-pen": 35,
         "philippe": 16.5,
@@ -111,7 +111,7 @@
       "firm": "Harris Interactive",
       "fieldwork": "2026-07-07/08",
       "n": 1582,
-      "hypothesis": "Le Pen + Attal (hyp. principale RTL)",
+      "hypothesis": "Le Pen + Philippe + Attal",
       "scores": {
         "le-pen": 35,
         "melenchon": 16,
@@ -130,16 +130,16 @@
       "firm": "Ifop",
       "fieldwork": "2026-07-07/08",
       "n": 984,
-      "hypothesis": "Le Pen + Attal (sans Philippe)",
+      "hypothesis": "Le Pen + Philippe",
       "scores": {
         "le-pen": 36,
+        "philippe": 19,
         "melenchon": 15,
-        "attal": 15,
-        "glucksmann": 12,
-        "retailleau": 10,
-        "tondelier": 4,
-        "zemmour": 3.5,
-        "roussel": 2,
+        "glucksmann": 9,
+        "retailleau": 8,
+        "zemmour": 4,
+        "tondelier": 3.5,
+        "roussel": 3,
         "dupont-aignan": 2,
         "arthaud": 0.5
       }
@@ -152,10 +152,10 @@
       "affiliation": "Rassemblement national",
       "bloc": "rn",
       "status": "candidature_declaree",
-      "avg_pct": 34.5,
-      "latest_pct": 35.5,
-      "latest_range": "34–37 %",
-      "latest_source": "Elabe 12/07 · Verian 10/07 · OpinionWay 09/07 · Harris 08/07 · Ifop 08/07",
+      "avg_pct": 35.6,
+      "latest_pct": 35.6,
+      "latest_range": "35–37 %",
+      "latest_source": "Elabe 12/07 35 % · Verian 10/07 37 % · OpinionWay 09/07 35 % · Harris Interactive 08/07 35 % · Ifop 08/07 36 %",
       "note": "Candidature annoncée le 7 juil. 2026. Tête de toutes les hypothèses post-annonce dans les instituts listés."
     },
     {
@@ -176,10 +176,10 @@
       "affiliation": "Horizons",
       "bloc": "centre-droit",
       "status": "intention_declaree",
-      "avg_pct": 17.5,
-      "latest_pct": 16.5,
-      "latest_range": "14–19 % (hyp. avec Le Pen)",
-      "latest_source": "Elabe hyp.1 16,5 % · Verian 17 % · OpinionWay 18 % · Harris 14–20 %",
+      "avg_pct": 16.9,
+      "latest_pct": 16.9,
+      "latest_range": "14–19 %",
+      "latest_source": "Elabe 12/07 16,5 % · Verian 10/07 17 % · OpinionWay 09/07 18 % · Harris Interactive 08/07 14 % · Ifop 08/07 19 %",
       "note": "Souvent 2e dans les hyp. où il est seul candidat du centre/centre-droit face à Le Pen."
     },
     {
@@ -188,10 +188,10 @@
       "affiliation": "La France insoumise",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 14.0,
-      "latest_pct": 15.5,
+      "avg_pct": 15,
+      "latest_pct": 15,
       "latest_range": "13–16 %",
-      "latest_source": "Elabe 16 % · Harris 16 % · Verian 15 % · Ifop 15 % · OpinionWay 13 %",
+      "latest_source": "Elabe 12/07 16 % · Verian 10/07 15 % · OpinionWay 09/07 13 % · Harris Interactive 08/07 16 % · Ifop 08/07 15 %",
       "note": "Progression relative dans plusieurs vagues juil. 2026."
     },
     {
@@ -200,10 +200,10 @@
       "affiliation": "Renaissance",
       "bloc": "centre",
       "status": "candidature_declaree",
-      "avg_pct": 13.5,
-      "latest_pct": 12.0,
-      "latest_range": "7–16 % (selon hyp. double centre vs tête unique)",
-      "latest_source": "Ifop hyp. Attal 15 % · Elabe hyp.2/4 13,5–15,5 % · Verian/OW 7–8 % avec Philippe",
+      "avg_pct": 7.7,
+      "latest_pct": 7.7,
+      "latest_range": "7–8 %",
+      "latest_source": "Verian 10/07 8 % · OpinionWay 09/07 7 % · Harris Interactive 08/07 8 %",
       "note": "Candidature annoncée le 22 mai 2026. Score très dépendant de la présence d'Édouard Philippe dans l'hypothèse."
     },
     {
@@ -212,10 +212,10 @@
       "affiliation": "Place publique",
       "bloc": "gauche-sociale-democrate",
       "status": "intention_declaree",
-      "avg_pct": 11.0,
-      "latest_pct": 10.5,
-      "latest_range": "9–12 %",
-      "latest_source": "Elabe 10,5 % · Verian 11 % · Ifop 12 % · Harris 10 % · OpinionWay 9 %",
+      "avg_pct": 9.9,
+      "latest_pct": 9.9,
+      "latest_range": "9–11 %",
+      "latest_source": "Elabe 12/07 10,5 % · Verian 10/07 11 % · OpinionWay 09/07 9 % · Harris Interactive 08/07 10 % · Ifop 08/07 9 %",
       "note": null
     },
     {
@@ -224,10 +224,10 @@
       "affiliation": "Les Républicains",
       "bloc": "droite",
       "status": "candidat_declare",
-      "avg_pct": 9.5,
-      "latest_pct": 8.0,
-      "latest_range": "7–11 %",
-      "latest_source": "Elabe 8 % · OpinionWay 8 % · Verian 7 % · Ifop 10 % · Harris 7 %",
+      "avg_pct": 7.6,
+      "latest_pct": 7.6,
+      "latest_range": "7–8 %",
+      "latest_source": "Elabe 12/07 8 % · Verian 10/07 7 % · OpinionWay 09/07 8 % · Harris Interactive 08/07 7 % · Ifop 08/07 8 %",
       "note": null
     },
     {
@@ -248,7 +248,7 @@
       "affiliation": "Sans étiquette (ex-PS)",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 8.0,
+      "avg_pct": 8,
       "latest_pct": 8.5,
       "latest_range": "8–9 % (hyp. Elabe 3–5)",
       "latest_source": "Elabe 12/07 hyp.3–5",
@@ -273,7 +273,7 @@
       "bloc": "gauche",
       "status": "intention_declaree",
       "avg_pct": 5.8,
-      "latest_pct": 6.0,
+      "latest_pct": 6,
       "latest_range": "6 % (hyp. Elabe avec Ruffin)",
       "latest_source": "Elabe 12/07 hyp.3–4",
       "note": null
@@ -320,10 +320,10 @@
       "affiliation": "Les Écologistes (EELV)",
       "bloc": "ecologie",
       "status": "intention_declaree",
-      "avg_pct": 4.0,
+      "avg_pct": 3.5,
       "latest_pct": 3.5,
       "latest_range": "2–5 %",
-      "latest_source": "Elabe 3,5 % · OpinionWay 5 % · Ifop 4 % · Harris 2 %",
+      "latest_source": "Elabe 12/07 3,5 % · OpinionWay 09/07 5 % · Harris Interactive 08/07 2 % · Ifop 08/07 3,5 %",
       "note": null
     },
     {
@@ -332,10 +332,10 @@
       "affiliation": "Reconquête",
       "bloc": "extreme-droite",
       "status": "intention_declaree",
-      "avg_pct": 3.8,
-      "latest_pct": 3.5,
+      "avg_pct": 3.4,
+      "latest_pct": 3.4,
       "latest_range": "3–4 %",
-      "latest_source": "Elabe / Verian / OW 3 % · Harris 4 % · Ifop 3,5 %",
+      "latest_source": "Elabe 12/07 3 % · Verian 10/07 3 % · OpinionWay 09/07 3 % · Harris Interactive 08/07 4 % · Ifop 08/07 4 %",
       "note": null
     },
     {
@@ -344,10 +344,10 @@
       "affiliation": "Sans étiquette",
       "bloc": "centre",
       "status": "hypothese_sondage",
-      "avg_pct": 3.5,
+      "avg_pct": 2.5,
       "latest_pct": 2.5,
-      "latest_range": "2,5–3,5 %",
-      "latest_source": "Elabe 12/07 hyp.1",
+      "latest_range": "2,5 %",
+      "latest_source": "Elabe 12/07 2,5 %",
       "note": null
     },
     {
@@ -356,10 +356,10 @@
       "affiliation": "Parti communiste français",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 2.8,
-      "latest_pct": 2.5,
+      "avg_pct": 2.3,
+      "latest_pct": 2.3,
       "latest_range": "2–3 %",
-      "latest_source": "Elabe 2,5 % · Harris / Verian / OW / Ifop ≈2 %",
+      "latest_source": "Elabe 12/07 2,5 % · Verian 10/07 2 % · OpinionWay 09/07 2 % · Harris Interactive 08/07 2 % · Ifop 08/07 3 %",
       "note": null
     },
     {
@@ -368,7 +368,7 @@
       "affiliation": "MoDem",
       "bloc": "centre",
       "status": "hypothese_sondage",
-      "avg_pct": 3.0,
+      "avg_pct": 3,
       "latest_pct": null,
       "latest_range": "≈3 % (vagues 2025)",
       "latest_source": "EPOC moyenne",
@@ -380,10 +380,10 @@
       "affiliation": "Debout la France",
       "bloc": "droite-souverainiste",
       "status": "intention_declaree",
-      "avg_pct": 1.8,
+      "avg_pct": 1.5,
       "latest_pct": 1.5,
       "latest_range": "1–2 %",
-      "latest_source": "Elabe 1,5 % · Ifop 2 % · Harris 1 %",
+      "latest_source": "Elabe 12/07 1,5 % · Harris Interactive 08/07 1 % · Ifop 08/07 2 %",
       "note": null
     },
     {
@@ -392,7 +392,7 @@
       "affiliation": "Nouvelle Énergie",
       "bloc": "droite",
       "status": "intention_declaree",
-      "avg_pct": 2.0,
+      "avg_pct": 2,
       "latest_pct": null,
       "latest_range": "≈2 % (Ifop 25/06 hyp.8)",
       "latest_source": "EPOC moyenne · Ifop juin 2026",
@@ -404,10 +404,10 @@
       "affiliation": "Lutte ouvrière",
       "bloc": "extreme-gauche",
       "status": "intention_declaree",
-      "avg_pct": 1.0,
-      "latest_pct": 1.0,
-      "latest_range": "0,5–1,5 %",
-      "latest_source": "Elabe 1 % · Harris 1 % · Ifop 0,5 %",
+      "avg_pct": 0.8,
+      "latest_pct": 0.8,
+      "latest_range": "0,5–1 %",
+      "latest_source": "Elabe 12/07 1 % · Harris Interactive 08/07 1 % · Ifop 08/07 0,5 %",
       "note": null
     },
     {

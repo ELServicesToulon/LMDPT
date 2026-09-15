@@ -67,7 +67,7 @@ async function main(): Promise<void> {
     return;
   }
 
-  await persistSnapshot(snapshot);
+  const candidats = await persistSnapshot(snapshot);
 
   const md = [
     `# Veille sondages — brief`,
@@ -105,6 +105,11 @@ async function main(): Promise<void> {
   await mkdir(dirname(BRIEF_PATH), { recursive: true });
   await writeFile(BRIEF_PATH, md, 'utf8');
   console.log(`Écrit : src/data/sondages/latest.json + movements.jsonl + brief-latest.md`);
+  if (candidats) {
+    console.log(
+      `Écrit : src/data/elections/2027-sondages-candidats.json (updated ${candidats.updated})`,
+    );
+  }
 }
 
 main().catch((err: unknown) => {
