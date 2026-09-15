@@ -15,6 +15,8 @@ export interface RenifleurConfig {
   user_agent: string;
   max_items_per_feed: number;
   max_total_items: number;
+  /** Plafond de part d’un même hôte dans le snapshot (0–1). Ex. 0.4 = 40 %. */
+  max_share_per_host: number;
   exclude_patterns: string[];
   topic_keywords: string[];
   feeds: RenifleurFeed[];
@@ -59,6 +61,8 @@ export function decodeXmlText(value: string): string {
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -116,6 +120,59 @@ export function toIsoDate(pubDate: string): string {
   const parsed = Date.parse(pubDate);
   if (Number.isNaN(parsed)) return pubDate.slice(0, 10) || new Date().toISOString().slice(0, 10);
   return new Date(parsed).toISOString().slice(0, 10);
+}
+
+/** Hôte canonique (sans www) pour le plafond de part par source. */
+export function hostFromUrl(url: string): string {
+  try {
+    return new URL(url).hostname.toLowerCase().replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Mixe les hôtes en round-robin (files déjà triées par date) tout en plafonnant
+ * la part d’un même hôte. Le résultat est retrié par date pour l’affichage.
+ * Si maxShare est hors ]0, 1[, le plafond par hôte vaut maxTotal.
+ */
+export function capItemsByHostShare(
+  items: RenifleurItem[],
+  maxShare: number,
+  maxTotal: number,
+): RenifleurItem[] {
+  if (maxTotal <= 0) return [];
+  const applyShare = maxShare > 0 && maxShare < 1;
+  const maxPerHost = applyShare ? Math.max(1, Math.floor(maxTotal * maxShare)) : maxTotal;
+
+  const queues = new Map<string, RenifleurItem[]>();
+  for (const entry of items) {
+    const host = hostFromUrl(entry.url) || entry.source_id;
+    const queue = queues.get(host);
+    if (queue) queue.push(entry);
+    else queues.set(host, [entry]);
+  }
+
+  const counts = new Map<string, number>();
+  const selected: RenifleurItem[] = [];
+  const hostOrder = [...queues.keys()];
+  let added = true;
+  while (selected.length < maxTotal && added) {
+    added = false;
+    for (const host of hostOrder) {
+      if (selected.length >= maxTotal) break;
+      const n = counts.get(host) ?? 0;
+      if (n >= maxPerHost) continue;
+      const next = queues.get(host)?.shift();
+      if (!next) continue;
+      selected.push(next);
+      counts.set(host, n + 1);
+      added = true;
+    }
+  }
+
+  selected.sort((a, b) => b.published.localeCompare(a.published));
+  return selected;
 }
 
 export function filterFeedItems(
@@ -229,6 +286,6 @@ export async function fetchRenifleurSnapshot(
     disclaimer: cfg.disclaimer,
     feeds_ok: feedsOk,
     feeds_error: feedsError,
-    items: collected.slice(0, cfg.max_total_items),
+    items: capItemsByHostShare(collected, cfg.max_share_per_host, cfg.max_total_items),
   };
 }
