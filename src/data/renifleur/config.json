@@ -2,8 +2,9 @@
   "enabled": true,
   "traditional_media": true,
   "user_agent": "LMDPT-Renifleur/1.0 (civique; +https://lmdpt.iarbre.org)",
-  "max_items_per_feed": 25,
+  "max_items_per_feed": 8,
   "max_total_items": 35,
+  "max_share_per_host": 0.4,
   "exclude_patterns": [
     "sondage",
     "baromètre",
@@ -41,6 +42,13 @@
       "filter": "none"
     },
     {
+      "id": "lemonde-politique",
+      "label": "Le Monde — Politique",
+      "url": "https://www.lemonde.fr/politique/rss_full.xml",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
       "id": "france24-france",
       "label": "France 24 — France",
       "url": "https://www.france24.com/fr/france/rss",
@@ -48,9 +56,44 @@
       "filter": "keywords"
     },
     {
-      "id": "lemonde-politique",
-      "label": "Le Monde — Politique",
-      "url": "https://www.lemonde.fr/politique/rss_full.xml",
+      "id": "lefigaro-politique",
+      "label": "Le Figaro — Politique",
+      "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "liberation-politique",
+      "label": "Libération — Politique",
+      "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/politique/?outputType=xml",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "lacroix-politique",
+      "label": "La Croix — Politique",
+      "url": "https://www.la-croix.com/feeds/rss/politique.xml",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "publicsenat",
+      "label": "Public Sénat — Actualités",
+      "url": "https://www.publicsenat.fr/feed",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "assemblee-communiques",
+      "label": "Assemblée nationale — Communiqués",
+      "url": "https://www.assemblee-nationale.fr/dyn/rss/communiques-de-presse.xml",
+      "type": "traditional",
+      "filter": "keywords"
+    },
+    {
+      "id": "franceinfo-politique",
+      "label": "franceinfo — Politique",
+      "url": "https://www.francetvinfo.fr/politique.rss",
       "type": "traditional",
       "filter": "keywords"
     }
