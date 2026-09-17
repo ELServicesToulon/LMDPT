@@ -45,6 +45,8 @@ describe('analyses', () => {
 
   it('LFI / BFMTV enquête keeps dual narratives and primary sources', () => {
     expect(lfiBfmtv.date).toBe('2026-09-17');
+    expect(lfiBfmtv.updated).toBe('2026-09-17');
+    expect(getAnalysis('lfi-bfmtv-exigence-pluralisme')?.title).toBe(lfiBfmtv.title);
     expect(lfiBfmtv.engagements_lfi).toHaveLength(4);
     expect(lfiBfmtv.point_attention).toMatch(/affirmés par LFI/i);
     expect(lfiBfmtv.point_attention).toMatch(/deux récits/i);
@@ -59,6 +61,10 @@ describe('analyses', () => {
 
   it('Ukraine energy enquête cites iarbre seed and HI-strict A–E over UI web', () => {
     expect(ukraineEnergie.seed).toBe('seed_lmdpt_ukraine_energie_triangle_ae');
+    expect(ukraineEnergie.updated).toBe('2026-09-17');
+    expect(getAnalysis('ukraine-energie-triangle-europe-algerie-russie')?.title).toBe(
+      ukraineEnergie.title,
+    );
     expect(ukraineEnergie.oracle_url).toBe('https://iarbre.org');
     expect(ukraineEnergie.oracle_citation).toMatch(/définition HI stricte/);
     expect(ukraineEnergie.hi_definition).toMatch(/Affrontement armé/);
