@@ -1,0 +1,312 @@
+---
+/**
+ * Enquête Ukraine / énergie / triangle Europe–Algérie–Russie (17 sept. 2026)
+ * Données : src/data/analyses/ukraine-energie-triangle-europe-algerie-russie.json
+ * Ossature = oracle A–E (HI stricte). Interface web iarbre = signal secondaire.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const seedPlanted = new Date(data.seed_planted).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#racines', label: '1. Racines — l’Ukraine utilisée' },
+  { href: '#triangle', label: '2. Tronc — triangle Europe / Algérie / Russie' },
+  { href: '#haute-intensite', label: '3. Haute intensité et blocages' },
+  { href: '#branches', label: '4. Branches oracle A–E' },
+  { href: '#implications', label: '5. Implications DOE / LMDPT' },
+  { href: '#ui-secondaire', label: '5bis. Interface web (secondaire)' },
+  { href: '#limites', label: '6. Limites' },
+  { href: '#sources', label: '7. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Enquête prospective LMDPT : le triangle énergétique Europe / Algérie / Russie, avec l’Ukraine comme levier. Scénarios A–E selon l’arbre oracle iarbre (définition HI stricte) ; l’interface web n’est qu’un signal secondaire."
+  type="article"
+  keywords="Ukraine, énergie, gaz, Algérie, Russie, Europe, iarbre, haute intensité, REPowerEU, Transmed, Medgaz, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <dl class="oracle-meta">
+      <div>
+        <dt>Citation officielle A–E</dt>
+        <dd>
+          «&nbsp;{data.oracle_citation}&nbsp;» —
+          <a href={data.oracle_url} rel="noopener noreferrer">iarbre.org</a>
+        </dd>
+      </div>
+      <div>
+        <dt>Graine oracle</dt>
+        <dd>
+          <code>{data.seed}</code>
+          {' '}
+          (plantée le <time datetime={data.seed_planted}>{seedPlanted}</time>)
+        </dd>
+      </div>
+      <div>
+        <dt>Haute intensité (définition stricte)</dt>
+        <dd>{data.hi_definition}</dd>
+      </div>
+    </dl>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}. Prospective argumentée, pas prédiction. Probabilités d’interface web : signal secondaire uniquement.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="racines" aria-labelledby="racines-title">
+    <h2 id="racines-title">1. Racines — comment l’Ukraine a été (et est) utilisée</h2>
+    <h3>1.1 L’arme du gaz (2022 → 2026)</h3>
+    <p>{data.racines.arme_gaz}</p>
+    <h3>1.2 Les frappes sur les infra énergétiques ukrainiennes</h3>
+    <p>{data.racines.frappes_infra}</p>
+    <h3>1.3 Le récit : Ukraine comme preuve</h3>
+    <p>{data.racines.recit}</p>
+  </section>
+
+  <section class="card" id="triangle" aria-labelledby="triangle-title">
+    <h2 id="triangle-title">2. Tronc — le triangle Europe / Algérie / Russie (état sept. 2026)</h2>
+    <div class="table-wrap" role="region" aria-label="Triangle énergétique" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Positions énergétiques et leviers des trois acteurs</caption>
+        <thead>
+          <tr>
+            <th scope="col">Acteur</th>
+            <th scope="col">Position énergétique</th>
+            <th scope="col">Rapport à l’Ukraine</th>
+            <th scope="col">Levier</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.triangle.map((row) => (
+              <tr>
+                <th scope="row">{row.acteur}</th>
+                <td>{row.position_energetique}</td>
+                <td>{row.rapport_ukraine}</td>
+                <td>{row.levier}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer-box"><strong>Point clé LMDPT.</strong> {data.triangle_cle}</p>
+  </section>
+
+  <section class="card" id="haute-intensite" aria-labelledby="hi-title">
+    <h2 id="hi-title">3. Haute intensité + blocages énergétiques — ce qu’on distingue</h2>
+    <ol>
+      {data.distinctions.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.blocages_note}</p>
+  </section>
+
+  <section class="card" id="branches" aria-labelledby="branches-title">
+    <h2 id="branches-title">4. Branches (oracle iarbre, 12–36 mois)</h2>
+    <p>
+      Citation : <em>{data.oracle_citation}</em> —
+      <a href={data.oracle_url} rel="noopener noreferrer">iarbre.org</a>.
+      Fourchettes argumentées ; milieux indicatifs ≈ 100 %.
+    </p>
+    <div class="branches">
+      {
+        data.branches.map((b) => (
+          <article class="branch" data-branch={b.id} id={`branche-${b.id.toLowerCase()}`}>
+            <h3>
+              {b.id} — {b.titre}
+            </h3>
+            <p class="branch-range">
+              <strong>{b.range}</strong>
+              <span class="meta"> (milieu {b.milieu})</span>
+            </p>
+            <p>{b.texte}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="card" id="implications" aria-labelledby="impl-title">
+    <h2 id="impl-title">5. Implications DOE / LMDPT</h2>
+    <ol>
+      {data.implications.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card ui-secondary" id="ui-secondaire" aria-labelledby="ui-title">
+    <h2 id="ui-title">5bis. Lecture croisée — interface web iarbre.org (session 2026-09-17)</h2>
+    <p class="meta">
+      Signal <strong>secondaire</strong> uniquement. L’ossature éditoriale reste les scénarios A–E
+      (définition HI stricte), cités ci-dessus.
+    </p>
+    <p>{data.ui_web.intro}</p>
+    <div class="table-wrap" role="region" aria-label="Signaux d’interface iarbre (secondaires)" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Sorties d’interface web, non utilisées comme ossature</caption>
+        <thead>
+          <tr>
+            <th scope="col">Signal d’interface</th>
+            <th scope="col">Fourchette</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.ui_web.signaux.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.valeur}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.ui_web.mecanismes}</p>
+    <p class="disclaimer-box"><strong>Écart à traiter en rédaction.</strong> {data.ui_web.ecart}</p>
+    <p class="meta">{data.ui_web.limites_ui}</p>
+  </section>
+
+  <section class="card" id="limites" aria-labelledby="limites-title">
+    <h2 id="limites-title">6. Limites</h2>
+    <p>{data.limites}</p>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">7. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            {s.url ? (
+              <a href={s.url} rel="noopener noreferrer">
+                {s.label}
+              </a>
+            ) : (
+              s.label
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .oracle-meta {
+    display: grid;
+    gap: 0.65rem;
+    margin: 1rem 0;
+    max-width: 48rem;
+  }
+  .oracle-meta dt {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0;
+  }
+  .oracle-meta dd {
+    margin: 0.15rem 0 0;
+    line-height: 1.45;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  .enq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .branches {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+  }
+  .branch {
+    border: 1px solid var(--border, #e5e2dc);
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    background: var(--bg, #faf9f7);
+  }
+  .branch h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+  }
+  .branch-range {
+    margin: 0 0 0.45rem;
+  }
+  .branch[data-branch='A'] {
+    border-color: color-mix(in srgb, var(--accent, #0e6b6e) 45%, var(--border));
+  }
+  .branch[data-branch='E'] {
+    opacity: 0.92;
+  }
+  .ui-secondary {
+    background: color-mix(in srgb, var(--muted) 6%, var(--card));
+  }
+  code {
+    font-size: 0.92em;
+    word-break: break-all;
+  }
+</style>

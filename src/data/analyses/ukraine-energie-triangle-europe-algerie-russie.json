@@ -1,0 +1,174 @@
+{
+  "slug": "ukraine-energie-triangle-europe-algerie-russie",
+  "title": "Ukraine, énergie, haute intensité — le triangle Europe / Algérie / Russie",
+  "eyebrow": "Enquête prospective · énergie · iarbre",
+  "type_label": "Enquête prospective",
+  "date": "2026-09-17",
+  "updated": "2026-09-17",
+  "doe_angle": "Qui tient les vannes — et qui tient le récit — quand la guerre d’Ukraine est utilisée comme levier énergétique ?",
+  "disclaimer": "Enquête prospective LMDPT (ligne La démocratie avant l’élimination). Les pourcentages sont des jugements argumentés de l’arbre oracle iarbre (horizon 12–36 mois, scénarios A–E ; définition HI stricte), pas des fréquences historiques ni une prédiction. L’ossature éditoriale est A–E ; les sorties de l’interface web iarbre.org sont un signal secondaire. Pas de renseignement en temps réel.",
+  "oracle_citation": "selon l’arbre oracle iarbre (horizon 12–36 mois, scénarios A–E ; définition HI stricte)",
+  "oracle_url": "https://iarbre.org",
+  "seed": "seed_lmdpt_ukraine_energie_triangle_ae",
+  "seed_planted": "2026-09-17",
+  "hi_definition": "Affrontement armé direct/quasi-direct UE/OTAN↔Russie et/ou escalade militaire impliquant l’Algérie (pas la seule guerre hybride).",
+  "tldr": "Le conflit ukrainien n’est plus seulement un théâtre militaire : c’est un modèle d’instrumentalisation (coercition gazière, frappes sur les infra énergétiques, narratif « hiver / dépendance ») que Moscou a déjà testé sur l’Europe, et que Bruxelles a partiellement contourné en se tournant vers la Norvège, le GNL américain… et l’Algérie (~19–20 % du gaz UE en 2025, 2ᵉ fournisseur). Sur 12–36 mois, l’oracle iarbre place le cœur de probabilité sur une guerre hybride prolongée sans guerre ouverte UE–Russie ni clash armé avec l’Algérie (≈ 45–55 %). Une crise énergétique / chantage logistique sans haute intensité militaire suit (≈ 20–25 %). Une escalade haute intensité UE/OTAN–Russie avec l’Algérie hors combat reste possible mais minoritaire (≈ 12–18 %). Un conflit « triangulaire » armé Europe–Algérie–Russie est une queue de distribution (≈ 2–5 %).",
+  "racines": {
+    "arme_gaz": "Dès 2022, Moscou a combiné réduction de flux (Yamal, Nord Stream) et saturation narrative (« hiver polaire », « mort de l’industrie allemande ») pour pousser les opinions européennes à lâcher Kiev en échange d’une sécurité énergétique immédiate (analyse EGE, manœuvre de coercition 2022–2026). L’objectif n’était pas seulement commercial : saturer l’espace décisionnel. Résultat contrasté : l’UE a absorbé le choc (REPowerEU), ramenant le gaz russe d’environ 45 % des imports (2021) à environ 12–13 % (2025), avec une sortie progressive ciblée 2027 (Conseil UE, janv. 2026). La coercition a échoué à faire basculer le soutien à l’Ukraine — mais elle a déplacé la dépendance (GNL US, Norvège, Algérie) plutôt que de l’éliminer.",
+    "frappes_infra": "Depuis plusieurs hivers, la Russie intensifie les frappes sur le réseau électrique et énergétique ukrainien (attrition population + économie + effort de guerre). Ce n’est pas un détail tactique : c’est un modèle exportable — démontrer qu’on peut geler, obscurcir, désorganiser un pays via l’énergie. Pour les opinions sud-européennes, le message implicite est : « ce qui arrive là-bas peut arriver sous une autre forme ici » (prix, pénurie, sabotage).",
+    "recit": "Deux cadrages concurrents circulent : côté russe / alliés narratifs, l’Ukraine prouve que « l’Occident déstabilise » et que la multipolarité justifie la résistance ; côté européen, l’Ukraine prouve le coût de la dépendance énergétique à un adversaire. L’Algérie, mémoire anti-coloniale et non-alignement, est une cible discursive des deux camps — sans être belligérante dans la guerre d’Ukraine."
+  },
+  "triangle": [
+    {
+      "acteur": "UE",
+      "position_energetique": "Dépendance fossile encore élevée (~90 % gaz importé) ; Norvège ~52 %, Algérie ~19–20 %, Russie ~10–11 % (2025)",
+      "rapport_ukraine": "Soutien à Kiev + sortie gaz russe 2027",
+      "levier": "Diversification, stocks, GNL, diplomatie Maghreb"
+    },
+    {
+      "acteur": "Algérie",
+      "position_energetique": "2ᵉ fournisseur gaz UE ; Transmed (Italie ~31 %), Medgaz (Espagne ~34 %) ; ~95 % du GNL algérien vers l’Europe",
+      "rapport_ukraine": "Non-alignement (abstention ONU hist.) ; concurrent et partenaire de Moscou sur les hydrocarbures",
+      "levier": "Volumes + contrats LT ; crédibilité = stabilité + absence de chantage trop visible"
+    },
+    {
+      "acteur": "Russie (Poutine)",
+      "position_energetique": "Moins de volume UE qu’en 2021 ; TurkStream / GNL / prix / narratif",
+      "rapport_ukraine": "Guerre haute intensité déjà en cours en Ukraine",
+      "levier": "Disruption, prix, info ops, pression flanc sud-est"
+    }
+  ],
+  "triangle_cle": "L’Algérie n’est pas un « belligérant » au sens Russie–Ukraine. C’est un levier du système énergétique européen post-2022 — ami commercial de l’UE, partenaire militaire/diplomatique historique de Moscou, et concurrent gazier de la Russie sur le marché européen. Les trois postures (substitut fiable / levier concurrent Russie / non-alignement) coexistent ; le non-alignement reste la plus probable selon l’oracle.",
+  "distinctions": [
+    "Guerre RU–UA (déjà haute intensité) + spillover hybride vers l’UE.",
+    "Choc énergie sans guerre Europe–Algérie–Russie (maintenance, prix, sabotage, autre nœud mondial).",
+    "Rupture / chantage sur corridors sud (Transmed, Medgaz, GNL) — crise, pas forcément guerre.",
+    "Escalade militaire impliquant l’Algérie — très improbable comme guerre ouverte Europe–Algérie ; plutôt crise diplomatique, gel de flux, ou conflit régional Maghreb/Sahel à effets de bord."
+  ],
+  "blocages_note": "« Blocage énergétique induit » ≠ embargo magique. Ce sont des mécanismes : sabotage pipeline/GNL, restriction export, pic de prix, saturation des terminaux, pression TurkStream, narratif de panique.",
+  "branches": [
+    {
+      "id": "A",
+      "titre": "Guerre hybride prolongée + pression énergétique sans guerre ouverte UE–RU ni clash armé Algérie",
+      "range": "≈ 45–55 %",
+      "milieu": "~50 %",
+      "texte": "Ukraine reste le théâtre principal. Instrumentalisation narrative continue. Algérie : non-alignement actif, volumes sous contrats, pas de rupture stratégique avec Moscou. Blocages ponctuels (maintenance, prix, incidents), pas d’embargo géopolitique structurant."
+    },
+    {
+      "id": "B",
+      "titre": "Crise énergétique / chantage logistique sans haute intensité militaire",
+      "range": "≈ 20–25 %",
+      "milieu": "~22 %",
+      "texte": "Sabotages ou menaces d’infra (pipelines, GNL, câbles), restrictions export, pics de prix. Russie pousse le narratif « Europe dépendante / Ukraine cause ». Algérie arbitrée comme substitut partiel vs levier concurrent. Pas de frappes croisées UE–RU hors Ukraine ; pas d’intervention militaire algérienne."
+    },
+    {
+      "id": "C",
+      "titre": "Escalade haute intensité UE/OTAN–Russie (Ukraine élargie), Algérie hors champ militaire",
+      "range": "≈ 12–18 %",
+      "milieu": "~15 %",
+      "texte": "Frappes infra UA intensifiées, incidents OTAN, risque Article 5 périphérique. Rush GNL + Transmed/Medgaz + stockages ; levier russe sur flanc sud/est (TurkStream). Algérie = fournisseur d’urgence UE, sous pression diplomatique des deux camps, reste hors combat."
+    },
+    {
+      "id": "D",
+      "titre": "Conflit régional Maghreb / Sahel qui tire l’Algérie + effets de bord énergie UE",
+      "range": "≈ 8–12 %",
+      "milieu": "~10 %",
+      "texte": "Pas forcément « Russie vs Europe » frontal. Moscou comme facteur (armements, diplomatie). UE exposée via gaz algérien et sécurité/migration. Instrumentalisation Ukraine plutôt en template (« souveraineté vs ingérence »)."
+    },
+    {
+      "id": "E",
+      "titre": "Guerre haute intensité triangulaire Europe–Algérie–Russie",
+      "range": "≈ 2–5 %",
+      "milieu": "~3 %",
+      "texte": "Queue de stress-test. Pas d’intérêt algérien clair à une guerre ouverte avec l’Europe ; coût existentiel pour Alger ; la Russie n’a pas besoin d’un second front maghrébin majeur tant que l’Ukraine absorbe."
+    }
+  ],
+  "implications": [
+    "Ne pas fusionner les menaces — le triangle est d’abord énergétique et narratif ; rare comme guerre à trois (E).",
+    "L’Ukraine comme manuel — frappes infra + coercition gaz + info ops = boîte à outils ; la question 2026–2028 est la réplicabilité (branche B) plus que l’ouverture d’un front maghrébin.",
+    "Algérie = pivot, pas proxy — non-alignement (A/B) maximise rente + autonomie ; un chantage trop visible casserait la crédibilité de « substitut fiable ».",
+    "Signaux (+) sabotage pipelines/GNL ; rupture contrats algériens ; déploiement russe ostensible Maghreb ; incident OTAN–RU hors UA. (−) nouveaux contrats UE–Algérie ; médiation algérienne ; désescalade UA."
+  ],
+  "ui_web": {
+    "titre": "Lecture croisée — interface web iarbre.org (session 2026-09-17)",
+    "intro": "En parallèle du livrable structuré IArbre (branches A–E), consultation directe de l’interface oracle sur iarbre.org (sans compte). Sorties d’interface (cartographie spéculative, non renseignement). Signal secondaire uniquement — l’ossature éditoriale reste A–E.",
+    "signaux": [
+      {
+        "label": "« Conflit haute intensité » Europe–Algérie–Russie (agrégat 12–36 mois)",
+        "valeur": "35–45 %"
+      },
+      {
+        "label": "Pic de tension",
+        "valeur": "2025–2026 ; escalade 2027 si blocages persistent"
+      },
+      {
+        "label": "Crise algérienne → baisse offre gaz UE",
+        "valeur": "−20–30 %"
+      },
+      {
+        "label": "Coupures gaz algérien si escalade militaire",
+        "valeur": "~60 % (risque d’escalade mil. évoqué ~40 %)"
+      },
+      {
+        "label": "Sanctions UE contre l’Algérie",
+        "valeur": "~25 %"
+      },
+      {
+        "label": "Frappes / sabotages russes sur infra algériennes",
+        "valeur": "~30 %"
+      },
+      {
+        "label": "Succès diversification énergétique UE",
+        "valeur": "~70 %"
+      },
+      {
+        "label": "Plateforme de dialogue UE–Algérie–Russie",
+        "valeur": "~40 %"
+      },
+      {
+        "label": "Résilience locale / ENR / réseaux intelligents (impact + à 2030)",
+        "valeur": "~80 %"
+      }
+    ],
+    "mecanismes": "Mécanismes d’interface : triangle gaz (instrumentalisation russe / pression UE sur Alger / vulnérabilité infra) ; Ukraine comme multiplicateur (coupures transit, test résilience, menace sur corridors Maghreb) ; blocages induits (Moldavie, Gibraltar/drones — scénarios évoqués, non établis).",
+    "ecart": "L’interface agrège un « conflit HI triangulaire » à 35–45 %, alors que la branche E du livrable IArbre (guerre triangulaire armée) est à 2–5 %, et le scénario central A (hybride sans guerre ouverte) à 45–55 %. Hypothèse LMDPT : l’interface élargit « conflit » (crise + coercition + risque d’escalade) ; A–E sépare intensité militaire et pression énergétique. Ossature éditoriale = A–E (confirmé IArbre 2026-09-17) ; interface = signal secondaire + fourchettes sectorielles (gaz −20–30 %, diversification 70 %).",
+    "limites_ui": "Spéculatif ; citations AIE / REPowerEU / IFRI / ECFR / Diplo non revalidées ici. Captures de session : drafts/assets/oracle-iarbre-*.webp (archives de rédaction, non publiées sur ce site)."
+  },
+  "limites": "Pas d’intel temps réel ; % = jugements argumentés oracle iarbre, pas fréquences historiques. « Haute intensité » cadrée = affrontement armé direct/quasi-direct UE/OTAN↔Russie et/ou escalade militaire impliquant l’Algérie (pas seule guerre hybride).",
+  "sources": [
+    {
+      "label": "Oracle iarbre — livrable 2026-09-17 (branches A–E)",
+      "url": "https://iarbre.org"
+    },
+    {
+      "label": "EGE — coercition gazière russe 2022–2026",
+      "url": null
+    },
+    {
+      "label": "Touteleurope.eu — REPowerEU / sortie gaz russe 2027",
+      "url": null
+    },
+    {
+      "label": "Crédit Agricole Études — fournisseurs gaz UE 2025",
+      "url": null
+    },
+    {
+      "label": "ObservAlgérie / APA / TSA — parts Algérie Italie/Espagne, GNL Europe",
+      "url": null
+    },
+    {
+      "label": "Horizons.dz / Le Point — axe Alger–Moscou vs concurrence gazière",
+      "url": null
+    }
+  ],
+  "liens_internes": [
+    {
+      "href": "/analyses/alerte-citoyenne",
+      "label": "Alerte citoyenne — débat public"
+    },
+    {
+      "href": "/analyses/temps-parole-equite",
+      "label": "Temps de parole — équité d’exposition"
+    }
+  ]
+}
