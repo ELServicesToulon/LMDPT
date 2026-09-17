@@ -1,4 +1,6 @@
 import type { EditorialCover } from './editorial-types';
+import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
+import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -19,11 +21,11 @@ function uneCover(slug: string, alt: string): EditorialCover {
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
-    slug: 'lfi-bfmtv-exigence-pluralisme',
-    title: 'Exigence LFI / BFMTV — pluralisme',
+    slug: lfiBfmtv.slug,
+    title: lfiBfmtv.title,
     description:
-      'Entre le 9 et le 16 septembre 2026, LFI suspend puis conditionne sa présence sur BFMTV. Deux récits, boycott sélectif, et ce que cela fait au pluralisme hors Arcom.',
-    date: '2026-09-17',
+      'Du 9 au 16 septembre 2026, La France insoumise a d’abord suspendu toute présence sur BFMTV, puis annoncé un retour conditionnel. Deux récits, boycott sélectif, et ce que ces bilatérales font au pluralisme hors Arcom.',
+    date: lfiBfmtv.date,
     href: '/analyses/lfi-bfmtv-exigence-pluralisme',
     cover: uneCover(
       'lfi-bfmtv-exigence-pluralisme',
@@ -31,11 +33,11 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     ),
   },
   {
-    slug: 'ukraine-energie-triangle-europe-algerie-russie',
-    title: 'Ukraine, énergie — triangle Europe / Algérie / Russie',
+    slug: ukraineEnergie.slug,
+    title: ukraineEnergie.title,
     description:
-      'Enquête prospective : l’Ukraine comme levier énergétique. Scénarios A–E selon l’arbre oracle iarbre (HI stricte) ; l’interface web n’est qu’un signal secondaire.',
-    date: '2026-09-17',
+      'Enquête prospective : le triangle énergétique Europe–Algérie–Russie, à l’horizon de la haute intensité. Scénarios A–E selon l’arbre oracle iarbre (HI stricte) ; l’interface web n’est qu’un signal secondaire.',
+    date: ukraineEnergie.date,
     href: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
     cover: uneCover(
       'ukraine-energie-triangle-europe-algerie-russie',

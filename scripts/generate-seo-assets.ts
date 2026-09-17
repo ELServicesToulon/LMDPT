@@ -162,6 +162,13 @@ function escapeXml(s: string): string {
  * Publication_date = lastmod ; éligibilité News Publisher = démarche manuelle GSC/Publisher Center.
  */
 function buildNewsSitemap(): string {
+  const lfiTitle =
+    ANALYSIS_CATALOG.find((a) => a.slug === 'lfi-bfmtv-exigence-pluralisme')?.title ??
+    'LFI et BFMTV : boycott, conditions de retour et pluralisme en pré-campagne';
+  const ukraineTitle =
+    ANALYSIS_CATALOG.find((a) => a.slug === 'ukraine-energie-triangle-europe-algerie-russie')
+      ?.title ??
+    'Ukraine et énergie : le triangle Europe–Algérie–Russie, à l’horizon de la haute intensité';
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
     {
       path: '/analyses/alerte-citoyenne',
@@ -200,12 +207,12 @@ function buildNewsSitemap(): string {
     },
     {
       path: '/analyses/lfi-bfmtv-exigence-pluralisme',
-      title: 'Exigence LFI / BFMTV — point précis et implications pour le pluralisme',
+      title: lfiTitle,
       keywords: 'pluralisme, LFI, BFMTV, Arcom, pré-campagne',
     },
     {
       path: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
-      title: 'Ukraine, énergie, haute intensité — le triangle Europe / Algérie / Russie',
+      title: ukraineTitle,
       keywords: 'Ukraine, énergie, Algérie, Russie, iarbre',
     },
   ];
