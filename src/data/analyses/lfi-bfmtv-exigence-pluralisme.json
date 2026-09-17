@@ -1,0 +1,142 @@
+{
+  "slug": "lfi-bfmtv-exigence-pluralisme",
+  "title": "Exigence LFI / BFMTV — point précis et implications pour le pluralisme",
+  "eyebrow": "Enquête · pluralisme médiatique",
+  "type_label": "Enquête courte / point de situation",
+  "date": "2026-09-17",
+  "updated": "2026-09-17",
+  "doe_angle": "Qui fixe les conditions d’accès au débat public — parti, média, ou régulateur ?",
+  "disclaimer": "Enquête documentaire LMDPT (ligne La démocratie avant l’élimination). Synthèse à partir de communiqués LFI et de relais presse. Les « engagements » sont affirmés par LFI ; BFMTV, dans les relais du 16 septembre 2026, ne les endosse pas comme un contrat public. Ce n’est ni un avis juridique Arcom ni un arbitrage sur « qui a raison ».",
+  "tldr": "Entre le 9 et le 16 septembre 2026, LFI a suspendu toute présence sur BFMTV, puis annoncé un retour conditionnel après quatre « engagements » attribués à la direction de la chaîne, tout en maintenant un boycott sélectif (émission Sonia Mabrouk ; formats avec Raphaël Enthoven ou Robert Ménard). BFMTV et sa SDJ invoquent le pluralisme et la liberté de programmation ; LFI invoque le respect des orateurs, la correction d’erreurs et une dérive éditoriale. Le nœud n’est pas « qui a raison », mais qui négocie quoi hors Arcom — et ce que cela fait au pluralisme en campagne.",
+  "chronologie": [
+    {
+      "date": "2026-09-09",
+      "date_label": "9 sept. 2026",
+      "fait": "LFI annonce ne répondre à aucune invitation BFMTV « cette semaine » (Panot / Bompard cités). Griefs : déprogrammations de dernière minute, thèmes changés, « débats surprises », temps de parole utilisé en commentaire « à chaud », traitement de la garde à vue de Rima Hassan sans correctif visible.",
+      "source_label": "Communiqué LFI 09/09",
+      "source_url": "https://lafranceinsoumise.fr/2026/09/09/pourquoi-nous-ne-repondrons-a-aucune-invitation-de-bfmtv-cette-semaine/"
+    },
+    {
+      "date": "2026-09-10",
+      "date_label": "10 sept. 2026",
+      "fait": "BFMTV (AFP) se dit « surprise », déplore une remise en cause du pluralisme ; rappelle l’adaptation permanente d’une chaîne d’info ; SDJ : boycott « nuit au pluralisme » et « contrevient à la liberté de la presse ».",
+      "source_label": "HuffPost / AFP",
+      "source_url": "https://www.huffingtonpost.fr/medias/article/boycotte-par-la-france-insoumise-bfmtv-deplore-la-mise-en-cause-de-son-pluralisme_322017.html"
+    },
+    {
+      "date": "2026-09-16",
+      "date_label": "16 sept. 2026",
+      "fait": "LFI publie la fin du boycott général : « échanges » avec la direction ; quatre engagements listés ; retour à l’antenne sous observation ; boycott maintenu sur Mabrouk / Enthoven / Ménard.",
+      "source_label": "Communiqué LFI 16/09",
+      "source_url": "https://lafranceinsoumise.fr/2026/09/16/a-propos-de-la-presence-de-la-france-insoumise-sur-bfmtv/"
+    },
+    {
+      "date": "2026-09-16",
+      "date_label": "16 sept. 2026",
+      "fait": "Relais presse : 20 Minutes — BFMTV rejette l’idée de conditions imposées, se dit libre de sa programmation, cite pluralisme et règles Arcom ; syndicats SNJ/CGT avaient déjà critiqué « 100 % Mabrouk ».",
+      "source_label": "20 Minutes",
+      "source_url": "https://www.20minutes.fr/politique/4245993-20260916-insoumis-reviennent-bfmtv-boycotteront-emission-sonia-mabrouk"
+    }
+  ],
+  "engagements_lfi": [
+    "Transparence totale sur la liste des invités et des thèmes prévus pour les invitations.",
+    "Fin des annulations de dernière minute des oratrices / orateurs LFI.",
+    "Procédure d’invitation respectueuse.",
+    "Rigueur + correctifs visibles en cas de fausse information diffusée à l’encontre de LFI (exemple cité : garde à vue de Rima Hassan)."
+  ],
+  "engagements_note": "LFI précise que certains points avaient déjà été « communiqués » sans effets — d’où la semaine de boycott comme levier.",
+  "boycott_selectif": [
+    "pas d’émission Sonia Mabrouk (« 100 % Mabrouk ») ;",
+    "pas de formats avec Raphaël Enthoven ou Robert Ménard ;",
+    "motif affiché : « dérive » éditoriale vers l’extrême droite, aussi dénoncée selon LFI par des voix internes / syndicats."
+  ],
+  "position_chaine": [
+    "Le boycott remet en cause le pluralisme dont la chaîne se dit garante.",
+    "Programmation = liberté éditoriale ; une info continue s’adapte (horaires, formats, composition des plateaux).",
+    "Au retour : refus de « conditions » qui porteraient atteinte à la liberté de programmation ; rappel du pluralisme et des règles Arcom (selon 20 Minutes).",
+    "SDJ (10/09) : boycott = nuisance au débat démocratique + atteinte à la liberté de la presse."
+  ],
+  "point_attention": "Les « engagements » sont affirmés par LFI. BFMTV, dans les relais presse du 16/09, ne les endosse pas comme un contrat public — elle rejette plutôt l’idée d’une programmation négociée. Tant qu’aucun texte conjoint n’est publié, on a deux récits : accord bilatéral (LFI) vs indépendance réaffirmée (chaîne).",
+  "pluralisme_lectures": [
+    {
+      "notion": "Accès",
+      "lecture_lfi": "Orateurs politiques = pas des « variables d’ajustement » ; invitation stable, thème clair, pas de débat surprise.",
+      "lecture_bfmtv": "Présence de toutes les sensibilités ; boycott d’une force = trou dans le débat."
+    },
+    {
+      "notion": "Ligne",
+      "lecture_lfi": "Certaines émissions / interlocuteurs = hors débat digne (Mabrouk, Enthoven, Ménard).",
+      "lecture_bfmtv": "Liberté de programmer ces formats ; critique interne ≠ veto externe."
+    },
+    {
+      "notion": "Correction",
+      "lecture_lfi": "Fausse info → correctif visible (exigence de réparation).",
+      "lecture_bfmtv": "Cadre Arcom / déontologie interne, pas de « garantie » négociée publiquement avec un parti."
+    }
+  ],
+  "pluralisme_reglementaire": "Le pluralisme réglementaire (Arcom) porte surtout sur l’équilibre des temps de parole et le respect d’un cadre d’équité en période électorale. Il ne force pas un parti à accepter un format, ni une chaîne à geler sa grille sur demande d’un parti. D’où le conflit : pluralisme par présence vs pluralisme par conditions d’échange.",
+  "veto_soft_etapes": [
+    "Sanction (absence)",
+    "Négociation (engagements)",
+    "Surveillance (menace de nouveau retrait)"
+  ],
+  "veto_soft_pour": "Un acteur politique peut refuser d’être instrumentalisé (audience, piège, erreur non corrigée). C’est une forme d’agency dans un marché médiatique asymétrique.",
+  "veto_soft_contre": "Si chaque formation majeure conditionne sa présence à des garanties bilatérales, le pluralisme devient une somme de contrats privés plutôt qu’un cadre public. Les médias les plus dépendants de la « présence des politiques » (info continue) sont les plus exposés à ce chantage soft — et les formations les plus médiatiques les mieux placées pour l’exercer.",
+  "boycott_selectif_defense": "Refuser un format jugé hostile ou « sans contradiction » n’est pas refuser le pluralisme global — c’est choisir où s’exprimer (les syndicats SNJ/CGT ont eux-mêmes critiqué « 100 % Mabrouk », selon 20 Minutes).",
+  "boycott_selectif_risque": "Le public n’entend plus le contradictoire dans ces émissions ; le débat se déplace hors plateau (réseaux, meetings). Le pluralisme d’antenne baisse localement même si le pluralisme « global » (toutes chaînes) se maintient.",
+  "campagne_note": "Pour une campagne présidentielle qui s’ouvre (argument LFI du 09/09), ce n’est pas anecdotique : les plateaux d’info continue restent un filtre d’agenda. Qui boycotte quoi redessine qui débat avec qui, avant même les règles Arcom de campagne officielle.",
+  "correctifs": "L’exigence de correctifs (cas Hassan) touche un autre registre que le temps de parole : la réparation d’une erreur. Ici le pluralisme rejoint la déontologie (droit de réponse, rectificatif). Si la chaîne a effectivement diffusé une accusation grave erronée sans correctif d’ampleur, le grief est factuel et indépendant du clivage gauche/droite. Si la « garantie » devient un engagement spécifique à LFI, on glisse vers un statut privilégié — ce que le pluralisme égalitaire tolère mal, sauf s’il est généralisé à tous les acteurs.",
+  "poles": [
+    {
+      "nom": "Parti",
+      "legitime": "Maîtrise de sa parole et de sa présence."
+    },
+    {
+      "nom": "Média",
+      "legitime": "Liberté éditoriale et programmation."
+    },
+    {
+      "nom": "Arcom",
+      "legitime": "Cadre public du pluralisme audiovisuel."
+    }
+  ],
+  "court_circuit": "L’épisode LFI/BFMTV montre un court-circuit : négociation bilatérale hors régulateur, récits divergents sur ce qui a été « engagé », boycott sélectif qui contourne le débat dans certaines cases horaires. Ce n’est ni illégal ni inédit — mais en pré-campagne, c’est un stress-test du pluralisme : le débat public se règle-t-il par règles communes ou par rapports de force médiatiques ?",
+  "retenues": [
+    "Séparer les plans : (a) pratiques d’invitation (forme) ; (b) ligne éditoriale / choix d’invités (fond) ; (c) correction d’erreurs (déontologie). Mélanger les trois dans un seul « boycott » obscurcit le débat.",
+    "Vérifier le contrat : sans texte conjoint BFMTV, les « engagements » restent une revendication unilatérale de LFI — à suivre sur les 2–4 prochaines semaines (présence réelle, annulations, correctifs).",
+    "Pluralisme : le vrai enjeu n’est pas « LFI a-t-elle le droit de boycotter » (oui) ni « BFMTV a-t-elle le droit de programmer Mabrouk » (oui), mais si le pluralisme de campagne se construit par négociation privée, qui représente les citoyens absents de la table ?",
+    "Lien DSA / enquêtes LMDPT : même famille de questions que W38 — qui tranche quand la parole politique est restreinte ou conditionnée — sauf que ici le frein n’est pas une plateforme tech, mais un média d’info continue et un parti."
+  ],
+  "sources": [
+    {
+      "label": "LFI, 9 sept. 2026 — Pourquoi nous ne répondrons…",
+      "url": "https://lafranceinsoumise.fr/2026/09/09/pourquoi-nous-ne-repondrons-a-aucune-invitation-de-bfmtv-cette-semaine/"
+    },
+    {
+      "label": "LFI, 16 sept. 2026 — À propos de la présence…",
+      "url": "https://lafranceinsoumise.fr/2026/09/16/a-propos-de-la-presence-de-la-france-insoumise-sur-bfmtv/"
+    },
+    {
+      "label": "HuffPost / AFP, 10 sept. 2026 — réaction BFMTV + SDJ",
+      "url": "https://www.huffingtonpost.fr/medias/article/boycotte-par-la-france-insoumise-bfmtv-deplore-la-mise-en-cause-de-son-pluralisme_322017.html"
+    },
+    {
+      "label": "20 Minutes, 16 sept. 2026 — retour + boycott sélectif + position chaîne / syndicats",
+      "url": "https://www.20minutes.fr/politique/4245993-20260916-insoumis-reviennent-bfmtv-boycotteront-emission-sonia-mabrouk"
+    }
+  ],
+  "liens_internes": [
+    {
+      "href": "/analyses/temps-parole-equite",
+      "label": "Temps de parole — équité d’exposition (données Arcom)"
+    },
+    {
+      "href": "/liberte-d-expression",
+      "label": "Liberté d’expression"
+    },
+    {
+      "href": "/observatoire-censure",
+      "label": "Observatoire de la censure"
+    }
+  ]
+}

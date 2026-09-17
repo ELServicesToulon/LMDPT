@@ -19,6 +19,30 @@ function uneCover(slug: string, alt: string): EditorialCover {
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
+    slug: 'lfi-bfmtv-exigence-pluralisme',
+    title: 'Exigence LFI / BFMTV — pluralisme',
+    description:
+      'Entre le 9 et le 16 septembre 2026, LFI suspend puis conditionne sa présence sur BFMTV. Deux récits, boycott sélectif, et ce que cela fait au pluralisme hors Arcom.',
+    date: '2026-09-17',
+    href: '/analyses/lfi-bfmtv-exigence-pluralisme',
+    cover: uneCover(
+      'lfi-bfmtv-exigence-pluralisme',
+      'Croquis encre et aquarelle : plateau d’info, chaise vide et micro face à une urne transparente',
+    ),
+  },
+  {
+    slug: 'ukraine-energie-triangle-europe-algerie-russie',
+    title: 'Ukraine, énergie — triangle Europe / Algérie / Russie',
+    description:
+      'Enquête prospective : l’Ukraine comme levier énergétique. Scénarios A–E selon l’arbre oracle iarbre (HI stricte) ; l’interface web n’est qu’un signal secondaire.',
+    date: '2026-09-17',
+    href: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
+    cover: uneCover(
+      'ukraine-energie-triangle-europe-algerie-russie',
+      'Croquis encre et aquarelle : triangle de vannes et de gazoducs entre l’Europe, l’Algérie et la Russie',
+    ),
+  },
+  {
     slug: 'presidentielle-distorsion',
     title: 'Présidentielle — distorsion 1er / 2nd tour',
     description:

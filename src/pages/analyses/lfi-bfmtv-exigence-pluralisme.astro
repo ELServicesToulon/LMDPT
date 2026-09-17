@@ -1,0 +1,244 @@
+---
+/**
+ * Enquête LFI / BFMTV — pluralisme (17 sept. 2026)
+ * Données : src/data/analyses/lfi-bfmtv-exigence-pluralisme.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#chronologie', label: '1. Chronologie (faits datés)' },
+  { href: '#point-precis', label: '2. Point précis — ce que LFI exige' },
+  { href: '#implications', label: '3. Implications pour le pluralisme' },
+  { href: '#retenues', label: '4. Ce que LMDPT en retient' },
+  { href: '#sources', label: '5. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Entre le 9 et le 16 septembre 2026, LFI suspend puis conditionne sa présence sur BFMTV. Enquête sourcée : deux récits, boycott sélectif, et ce que cela fait au pluralisme hors Arcom."
+  type="article"
+  keywords="LFI, BFMTV, pluralisme, Arcom, boycott médiatique, Sonia Mabrouk, temps de parole, pré-campagne 2027, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="chronologie" aria-labelledby="chrono-title">
+    <h2 id="chrono-title">1. Chronologie (faits datés)</h2>
+    <div class="table-wrap" role="region" aria-label="Chronologie LFI / BFMTV" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Faits datés et sources, 9–16 septembre 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Fait</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.chronologie.map((row) => (
+              <tr>
+                <th scope="row">
+                  <time datetime={row.date}>{row.date_label}</time>
+                </th>
+                <td>{row.fait}</td>
+                <td>
+                  <a href={row.source_url} rel="noopener noreferrer">
+                    {row.source_label}
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="point-precis" aria-labelledby="precis-title">
+    <h2 id="precis-title">2. Point précis — ce que LFI exige (et ce qu’elle garde)</h2>
+
+    <h3>2.1 Les quatre engagements (selon LFI, 16/09)</h3>
+    <ol>
+      {data.engagements_lfi.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.engagements_note}</p>
+
+    <h3>2.2 Ce qui reste hors table (boycott sélectif)</h3>
+    <p>Même après retour :</p>
+    <ul>
+      {data.boycott_selectif.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <h3>2.3 Ce que BFMTV oppose (version chaîne / SDJ)</h3>
+    <ul>
+      {data.position_chaine.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class="disclaimer-box">
+      <strong>Point d’attention factuel.</strong> {data.point_attention}
+    </p>
+  </section>
+
+  <section class="card" id="implications" aria-labelledby="impl-title">
+    <h2 id="impl-title">3. Implications pour le pluralisme</h2>
+    <p>Le mot « pluralisme » est brandi des deux côtés. Il ne désigne pas la même chose.</p>
+
+    <h3>3.1 Pluralisme d’accès ≠ pluralisme de ligne</h3>
+    <div class="table-wrap" role="region" aria-label="Lectures du pluralisme" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Lecture LFI versus lecture BFMTV / SDJ</caption>
+        <thead>
+          <tr>
+            <th scope="col">Notion</th>
+            <th scope="col">Lecture LFI</th>
+            <th scope="col">Lecture BFMTV / SDJ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.pluralisme_lectures.map((row) => (
+              <tr>
+                <th scope="row">{row.notion}</th>
+                <td>{row.lecture_lfi}</td>
+                <td>{row.lecture_bfmtv}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.pluralisme_reglementaire}</p>
+
+    <h3>3.2 Le boycott comme pouvoir de veto soft</h3>
+    <p>Une semaine hors antenne + retour sous « observation » crée un mécanisme de fait :</p>
+    <ol>
+      {data.veto_soft_etapes.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>Effet démocratique ambivalent :</p>
+    <ul>
+      <li><strong>Pour :</strong> {data.veto_soft_pour}</li>
+      <li><strong>Contre :</strong> {data.veto_soft_contre}</li>
+    </ul>
+
+    <h3>3.3 Boycott sélectif : pluralisme à géométrie variable</h3>
+    <p>Refuser Mabrouk / Enthoven / Ménard tout en revenant ailleurs :</p>
+    <ul>
+      <li><strong>Défense :</strong> {data.boycott_selectif_defense}</li>
+      <li><strong>Risque :</strong> {data.boycott_selectif_risque}</li>
+    </ul>
+    <p>{data.campagne_note}</p>
+
+    <h3>3.4 Correctifs visibles : pluralisme et vérité procédurale</h3>
+    <p>{data.correctifs}</p>
+
+    <h3>3.5 Qui tranche ? Parti, média, Arcom</h3>
+    <p>Trois pôles, trois légitimités :</p>
+    <ol>
+      {
+        data.poles.map((p) => (
+          <li>
+            <strong>{p.nom}</strong> — {p.legitime}
+          </li>
+        ))
+      }
+    </ol>
+    <p>{data.court_circuit}</p>
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">4. Ce que LMDPT en retient (angle enquête / nuance)</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">5. Sources (primaires + relais)</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  .enq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+</style>

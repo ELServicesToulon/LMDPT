@@ -43,8 +43,8 @@ describe('editorial covers', () => {
     expect(une?.kind).toBe(latest?.kind);
     expect(une?.slug).toBe(latest?.slug);
     expect(une?.href).toBe(latest?.href);
-    expect(une?.date).toBe('2026-07-26');
-    expect(une?.slug).toBe('temps-parole-equite');
+    expect(une?.date).toBe('2026-09-17');
+    expect(une?.slug).toBe('lfi-bfmtv-exigence-pluralisme');
   });
 
   it('publishing a newer post changes the une automatically', () => {
@@ -54,7 +54,7 @@ describe('editorial covers', () => {
       slug: 'nouvelle-analyse-test',
       title: 'Nouvelle analyse',
       description: 'Texte de test',
-      date: '2026-09-01',
+      date: '2026-10-01',
       href: '/analyses/nouvelle-analyse-test',
       cover: {
         src: '/illustrations/unes/analyses/nouvelle-analyse-test.jpg',

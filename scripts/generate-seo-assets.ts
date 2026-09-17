@@ -198,6 +198,16 @@ function buildNewsSitemap(): string {
       title: 'Assemblée du premier tour — simulation 2024',
       keywords: 'AN1T, pluralité, législatives',
     },
+    {
+      path: '/analyses/lfi-bfmtv-exigence-pluralisme',
+      title: 'Exigence LFI / BFMTV — point précis et implications pour le pluralisme',
+      keywords: 'pluralisme, LFI, BFMTV, Arcom, pré-campagne',
+    },
+    {
+      path: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
+      title: 'Ukraine, énergie, haute intensité — le triangle Europe / Algérie / Russie',
+      keywords: 'Ukraine, énergie, Algérie, Russie, iarbre',
+    },
   ];
 
   // Google News attend une date ISO récente ; on utilise aujourd’hui (refresh build quotidien).
