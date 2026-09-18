@@ -1,0 +1,4 @@
+# Keep watercolor une covers as raw binaries (no CRLF / re-encoding).
+*.jpg binary
+*.jpeg binary
+*.svg text
