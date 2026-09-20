@@ -3,6 +3,7 @@ import preparation from '../data/analyses/presidentielle-2027-preparation.json';
 import alertes from '../data/alertes-citoyennes.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
+import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import { ANALYSIS_CATALOG, getAnalysis } from './analyses';
 
 describe('analyses', () => {
@@ -20,6 +21,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'ukraine-energie-triangle-europe-algerie-russie',
     );
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {
@@ -73,6 +75,18 @@ describe('analyses', () => {
     expect(ukraineEnergie.ui_web.intro).toMatch(/Signal secondaire/i);
     expect(ukraineEnergie.branches[0]?.range).toMatch(/45–55/);
     expect(ukraineEnergie.branches[4]?.range).toMatch(/2–5/);
+  });
+
+  it('Trump IA enquête anchors Truth Social primary source and dual narratives', () => {
+    expect(trumpIa.slug).toBe('trump-ia-guardrails-anthropic');
+    expect(trumpIa.date).toBe('2026-09-18');
+    expect(trumpIa.updated).toBe('2026-09-20');
+    expect(getAnalysis('trump-ia-guardrails-anthropic')?.title).toBe(trumpIa.title);
+    expect(trumpIa.truth_social.status_id).toBe('117269745153543631');
+    expect(trumpIa.point_attention).toMatch(/deux lectures/i);
+    const urls = trumpIa.sources.map((s) => s.url);
+    expect(urls).toContain('https://truthsocial.com/@realDonaldTrump/posts/117269745153543631');
+    expect(urls.some((u) => u.includes('trumpstruth.org'))).toBe(true);
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {
