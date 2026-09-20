@@ -1,0 +1,153 @@
+---
+/**
+ * Enquête Trump / IA / Anthropic (18–20 sept. 2026)
+ * Données : src/data/analyses/trump-ia-guardrails-anthropic.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/trump-ia-guardrails-anthropic.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#post', label: '1. Ce que dit le post' },
+  { href: '#contexte', label: '2. Ce qui a précédé' },
+  { href: '#lectures', label: '3. Deux lectures du garde-fou' },
+  { href: '#implications', label: '4. Implications pour le débat' },
+  { href: '#retenues', label: '5. Ce que LMDPT en retient' },
+  { href: '#sources', label: '6. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Le 14 septembre 2026, Trump réduit les garde-fous de l’IA à la personne du président et cible Anthropic / Dario Amodei. Enquête sourcée : qui tient le frein — une personne, ou une règle ?"
+  type="article"
+  keywords="Trump, IA, Anthropic, Dario Amodei, guardrails, Truth Social, AI Act, LMDPT, débat public"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="post" aria-labelledby="post-title">
+    <h2 id="post-title">1. Ce que dit le post (faits)</h2>
+    <p class="meta">
+      Archive Truth Social · status <code>{data.truth_status_id}</code> ·
+      <a href={data.truth_url} rel="noopener noreferrer">lien original</a>
+    </p>
+    <ol>
+      {data.post_faits.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.post_note}</p>
+  </section>
+
+  <section class="card" id="contexte" aria-labelledby="contexte-title">
+    <h2 id="contexte-title">2. Ce qui a précédé (selon la presse)</h2>
+    {data.contexte.map((p) => <p>{p}</p>)}
+    <p class="disclaimer-box">{data.contexte_resume}</p>
+  </section>
+
+  <section class="card" id="lectures" aria-labelledby="lectures-title">
+    <h2 id="lectures-title">3. Deux lectures du « garde-fou »</h2>
+    <h3>3.1 Lecture A — {data.lecture_a_titre}</h3>
+    {data.lecture_a.map((p) => <p>{p}</p>)}
+    <h3>3.2 Lecture B — {data.lecture_b_titre}</h3>
+    {data.lecture_b.map((p) => <p>{p}</p>)}
+    <p class="disclaimer-box">{data.lecture_note}</p>
+  </section>
+
+  <section class="card" id="implications" aria-labelledby="impl-title">
+    <h2 id="impl-title">4. Implications pour le débat public (miroir prudent)</h2>
+    <ol>
+      {data.implications.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.doe_close}</p>
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">5. Ce que LMDPT en retient</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">6. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            {s.url ? (
+              <a href={s.url} rel="noopener noreferrer">
+                {s.label}
+              </a>
+            ) : (
+              s.label
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+  code {
+    font-size: 0.92em;
+    word-break: break-all;
+  }
+</style>

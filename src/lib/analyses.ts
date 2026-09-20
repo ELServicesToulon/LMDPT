@@ -1,6 +1,7 @@
 import type { EditorialCover } from './editorial-types';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
+import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -20,6 +21,18 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: trumpIa.slug,
+    title: trumpIa.title,
+    description:
+      'Le 14 septembre 2026, Trump réduit les garde-fous de l’IA à la personne du président et cible Anthropic / Dario Amodei. Qui tient le frein : une personne, ou une règle ?',
+    date: trumpIa.updated,
+    href: '/analyses/trump-ia-guardrails-anthropic',
+    cover: uneCover(
+      'trump-ia-guardrails-anthropic',
+      'Croquis encre et aquarelle : frein de locomotive et circuit de puces, une main seule sur le levier',
+    ),
+  },
   {
     slug: lfiBfmtv.slug,
     title: lfiBfmtv.title,
