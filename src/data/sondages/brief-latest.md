@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-07-26T16:18:08.345Z
+**Scan** : 2026-09-22T04:48:07.794Z
 
-> Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de tier list. Croiser avec les notices Commission des sondages.
+> Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Scan 2026-07-26T16:18 — aucun mouvement détecté (31 vague(s) en mémoire, 11 source(s) OK).
+- Scan 2026-09-22T04:48 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 
@@ -15,7 +15,7 @@
 - **Verian** : le pen — 37 %
 - **Harris Interactive** : le pen — 35 %
 - **OpinionWay** : le pen — 35 %
-- **Elabe** : le pen — 34.5 %
+- **Harris Interactive / Toluna Harris** : le pen — 36 %
 
 ## Sources
 

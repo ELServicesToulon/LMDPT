@@ -1,8 +1,8 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-09-15",
+  "updated": "2026-09-22",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
-  "method": "Veille auto 2026-09-15 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
+  "method": "Veille auto 2026-09-22 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
     {
       "label": "Elabe — 2026-07-09/12",
@@ -52,7 +52,7 @@
     "RN : Marine Le Pen (candidature déclarée 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti) — jamais dans la même hypothèse de 1er tour.",
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
     "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
-    "Mise à jour LMDPT : 2026-09-15 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
+    "Mise à jour LMDPT : 2026-09-22 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
   ],
   "waves_latest": [
     {

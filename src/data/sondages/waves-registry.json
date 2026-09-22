@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T16:18:08.345Z",
+  "updated": "2026-09-22T04:48:07.794Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -59,6 +59,18 @@
       "source_id": "commission-sondages",
       "scores": {},
       "raw_snippet": "Notice Commission : Barometre politique YOUGOV Huffpost (7 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "commission-harris-31juillet",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "31 juillet",
+      "published_hint": "31 juillet",
+      "source_url": "https://www.commission-des-sondages.fr/notices/",
+      "source_id": "commission-sondages",
+      "scores": {},
+      "raw_snippet": "Notice Commission : Barometre TOLUNA HARRIS INTERACTIVE LCI (31 juillet) — PDF notice, scores non extraits auto.",
       "metric": "intentions_vote"
     },
     {
@@ -495,6 +507,91 @@
       "metric": "intentions_vote"
     },
     {
+      "id": "epoc-harris-14092026",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "philippe": 19,
+        "attal": 15,
+        "melenchon": 17,
+        "glucksmann": 12,
+        "retailleau": 10,
+        "zemmour": 5,
+        "tondelier": 4,
+        "roussel": 3,
+        "hollande": 7,
+        "dupont-aignan": 2,
+        "arthaud": 1
+      },
+      "raw_snippet": "Dernier sondage HARRIS INTERACTIVE 14/09/2026 1er Tour · Hypothèse N°1 33% LE PEN 16% MÉLENCHON 14% PHILIPPE 9% GLUCKSMANN 8% ATTAL 7% RETAILLEAU 5% ZEMMOUR 3% TONDELIER 2% ROUSSEL 2% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 34% LE PEN 17% PHILIPPE 17% MÉLENCHON 10% GLUC",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-14092026-h1",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "14/09/2026 HARRIS INTERACTIVE 1 — 33% 14% 16% 8% 9% 7% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 14/09/2026 HARRIS INTERACTIVE 2 — 34% 17% 17% — 10% 7% — — — — — — — — — 5% 3% — 3% — — — 3% 1% — 14/0",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-14092026-h2",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "14/09/2026 HARRIS INTERACTIVE 2 — 34% 17% 17% — 10% 7% — — — — — — — — — 5% 3% — 3% — — — 3% 1% — 14/09/2026 HARRIS INTERACTIVE 3 — 35% — 17% 14% 12% 9% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 14/0",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-14092026-h3",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "14/09/2026 HARRIS INTERACTIVE 3 — 35% — 17% 14% 12% 9% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 14/09/2026 HARRIS INTERACTIVE 4 — 33% 19% 17% — — 9% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 14/09",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-14092026-h4",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "14/09/2026 HARRIS INTERACTIVE 4 — 33% 19% 17% — — 9% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 14/09/2026 HARRIS INTERACTIVE 5 — 36% — 17% 15% — 10% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 13/09",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-14092026-h5",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "14/09/2026",
+      "published_hint": "14/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "14/09/2026 HARRIS INTERACTIVE 5 — 36% — 17% 15% — 10% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 13/09/2026 IPSOS-BVA 1 — 33% 14% 15.5% 6% 11.5% 7% — — — — — — — — — 4% 4% — 2.5% — — — 2% 0.5% — 13/0",
+      "metric": "intentions_vote"
+    },
+    {
       "id": "commission-cluster17-14juillet",
       "firm": "Cluster17",
       "firm_id": "cluster17",
@@ -516,6 +613,78 @@
       "source_id": "commission-sondages",
       "scores": {},
       "raw_snippet": "Notice Commission : Tableau de bord IFOP Paris match (14 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h1",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 1 — 33% 14% 15.5% 6% 11.5% 7% — — — — — — — — — 4% 4% — 2.5% — — — 2% 0.5% — 13/09/2026 IPSOS-BVA 2 — 33.5% 17.5% 15.5% — 12.5% 8% — — — — — — — — — 4% 4% — 2.5% — — — 2% 0.5% — 1",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h2",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 2 — 33.5% 17.5% 15.5% — 12.5% 8% — — — — — — — — — 4% 4% — 2.5% — — — 2% 0.5% — 13/09/2026 IPSOS-BVA 3 — 34% — 15.5% 13% 13.5% 10% — — — — — — — — — 4.5% 4.5% — 2.5% — — — 2% 0.5%",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h3",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 3 — 34% — 15.5% 13% 13.5% 10% — — — — — — — — — 4.5% 4.5% — 2.5% — — — 2% 0.5% — 13/09/2026 IPSOS-BVA 4 — 34% 16% 16.5% — — 7% — — — — — — — — 4.5% 4% 5% — 3% — — — 2% 0.5% — 13/0",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h4",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 4 — 34% 16% 16.5% — — 7% — — — — — — — — 4.5% 4% 5% — 3% — — — 2% 0.5% — 13/09/2026 IPSOS-BVA 5 — 34.5% 21% 16.5% 7.5% — 7.5% — — — — — — — — 5% 4% 5.5% — 3.5% — — — 2% 0.5% — 13/",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h5",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 5 — 34.5% 21% 16.5% 7.5% — 7.5% — — — — — — — — 5% 4% 5.5% — 3.5% — — — 2% 0.5% — 13/09/2026 IPSOS-BVA 6 — 35% — 17% 15.5% — 10.5% — — — — — — — — 5.5% 4.5% 5.5% — 3.5% — — — 2.5%",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ipsos-13092026-h6",
+      "firm": "Ipsos (France)",
+      "firm_id": "ipsos",
+      "fieldwork": "13/09/2026",
+      "published_hint": "13/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "13/09/2026 IPSOS-BVA 6 — 35% — 17% 15.5% — 10.5% — — — — — — — — 5.5% 4.5% 5.5% — 3.5% — — — 2.5% 0.5% — 11/09/2026 OPINIONWAY 1 — 32% 16% 16% 8% — 7% — 7% — — — — — — — 2% 3% — 3% — — 2% 2% 1% 1% 11/",
       "metric": "intentions_vote"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-17T20:26:38.383Z",
+  "fetched_at": "2026-09-21T06:51:47.254Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,42 +7,10 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "EN DIRECT, présidentielle 2027 : ce qu’il faut retenir des déclarations de Sébastien Lecornu sur le budget 2027",
-      "url": "https://www.lemonde.fr/politique/live/2026/09/17/en-direct-presidentielle-2027-sebastien-lecornu-vise-un-deficit-public-a-5-et-annonce-un-effort-budgetaire-d-environ-54-milliards-d-euros_6776151_823448.html",
-      "published": "2026-09-17",
-      "summary": "Le premier ministre a présenté les grandes lignes de sa copie pour le budget jeudi après-midi. « L’Etat doit être exemplaire, et donc commencer par lui-même », a-t-il affirmé.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Budget 2027 : la gauche promet la censure à un gouvernement Lecornu dépendant de la stratégie de Marine Le Pen",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/budget-2027-la-gauche-promet-la-censure-a-un-gouvernement-lecornu-dependant-de-la-strategie-de-marine-le-pen_6776470_823448.html",
-      "published": "2026-09-17",
-      "summary": "De l’avis général des députés, la bataille du budget s’annonce ardue à partir du mois d’octobre au Parlement, alors que le premier ministre, Sébastien Lecornu, doit envoyer sa copie budgétaire au Haut Conseil pour les finances d’ici au 18 septembre.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : les candidats promettent aux acteurs du grand âge de s’attaquer à l’enjeu du vieillissement de la population",
-      "url": "https://www.lemonde.fr/societe/article/2026/09/17/presidentielle-2027-en-grand-oral-devant-le-secteur-du-grand-age-les-candidats-promettent-de-s-attaquer-a-l-enjeu-du-vieillissement-de-la-population_6776445_3224.html",
-      "published": "2026-09-17",
-      "summary": "Aux Assises nationales des Ehpad et au congrès de la fédération des acteurs du service à la personne, des postulants à l’Elysée, ou leurs émissaires, ont tenté de convaincre qu’ils seront au rendez-vous des propositions, alors que la promesse d’une loi « grand âge » n’a pas été t",
+      "title": "« Populaire. Toutes nos histoires », la riposte de la Seine-Saint-Denis à la bataille culturelle menée par la droite identitaire",
+      "url": "https://www.lemonde.fr/culture/article/2026/09/21/populaire-toutes-nos-histoires-la-riposte-de-la-seine-saint-denis-a-la-bataille-culturelle-menee-par-la-droite-identitaire_6778692_3246.html",
+      "published": "2026-09-21",
+      "summary": "Le département francilien lance, à l’été 2027, trois spectacles coordonnés par les historiens Patrick Boucheron et Guillaume Mazeau.",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
       "source_type": "traditional",
@@ -55,76 +23,12 @@
       }
     },
     {
-      "title": "«Politique de sécurité climatique» : sur les bords de Loire, Edouard Philippe tente d’inventer une écologie de droite",
-      "url": "https://www.liberation.fr/politique/elections/politique-de-securite-climatique-sur-les-bords-de-loire-edouard-philippe-tente-dinventer-une-ecologie-de-droite-20260917_3RGBC2FIUZECLI4WGBAFVCK6YY/",
-      "published": "2026-09-17",
-      "summary": "Dans un discours présenté par son équipe comme «fondateur», le candidat d’Horizons à la présidentielle a détaillé, jeudi 17 septembre aux Ponts-de-Cé, son programme de lutte contre le réchauffement climatique, mettant l’accent sur la diffusion d’une culture de l’adaptation dans l",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
-      }
-    },
-    {
-      "title": "Après Kylian Mbappé, Teddy Riner à son tour ciblé par le RN, pour avoir exprimé son « angoisse » d’une victoire de Marine Le Pen en 2027",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/apres-kylian-mbappe-teddy-riner-a-son-tour-cible-par-le-rn-pour-avoir-exprime-son-angoisse-d-une-victoire-de-marine-le-pen-en-2027_6776430_823448.html",
-      "published": "2026-09-17",
-      "summary": "Dans l’émission « Stade 2 » diffusée mercredi soir, le judoka a dit « flipper » de voir la « montée de l’extrême droite » dans le pays. A l’image du capitaine de l’équipe de France de football, il a fait l’objet de vives critiques de la part de députés RN.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
-      }
-    },
-    {
-      "title": "Geler une partie de la dette : le projet de Jean-Luc Mélenchon est-il faisable et quel serait son intérêt économique ?",
-      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/09/17/geler-une-partie-de-la-dette-le-projet-de-jean-luc-melenchon-est-il-faisable-et-quel-serait-son-interet-economique_6776441_4355770.html",
-      "published": "2026-09-17",
-      "summary": "« 2027 : les propositions à la loupe ». Quand le candidat « insoumis » à la présidentielle de 2027 défend une opération indolore, ses opposants la qualifient d’illégale et dangereuse pour l’économie. Les clés pour comprendre le débat.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : les candidats désormais interdits de campagne dans les écoles, annonce le ministre de l’éducation nationale",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/presidentielle-2027-les-candidats-desormais-interdits-de-campagne-dans-les-ecoles-annonce-le-ministre-de-l-education-nationale_6776416_823448.html",
-      "published": "2026-09-17",
-      "summary": "La nouvelle circulaire impose aussi aux personnels de l’éducation nationale un rappel strict au devoir de réserve et le secret professionnel.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : école, ecole"
-      }
-    },
-    {
-      "title": "Municipales 2026 : l’annulation de la victoire du RN à Montargis préconisée devant le tribunal administratif",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/municipales-2026-l-annulation-de-la-victoire-du-rn-a-montargis-preconisee-devant-le-tribunal-administratif_6776414_823448.html",
-      "published": "2026-09-17",
-      "summary": "Lors des municipales de mars, le candidat du Rassemblement national, Côme Dunis, l’avait emporté de 59 voix dans cette ville de 15 000 habitants dirigée par la droite depuis 2001.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "title": "\"L'objectif, c'est d'avoir un groupe\" : le Rassemblement national rêve de franchir une nouvelle étape aux sénatoriales",
+      "url": "https://www.franceinfo.fr/elections/senatoriales/l-objectif-c-est-d-avoir-un-groupe-le-rassemblement-national-reve-de-franchir-une-nouvelle-etape-aux-senatoriales_8186003.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-21",
+      "summary": "A sept mois de l'élection présidentielle, le RN espère décrocher de nouveaux sièges de sénateurs pour pouvoir former un groupe à la chambre haute, grâce à une campagne axée sur la ruralité, à son accord avec Eric Ciotti et à d'éventuels ralliements.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "le-pen",
@@ -135,10 +39,394 @@
       }
     },
     {
-      "title": "Entre sa loyauté à Retailleau et la crainte d’une déroute, le dilemme de Valérie Pécresse",
-      "url": "https://www.liberation.fr/politique/entre-sa-loyaute-a-retailleau-et-la-crainte-dune-deroute-le-dilemme-de-valerie-pecresse-20260917_45IPO7GRRVEB3MKJNQDTDRI5LI/",
-      "published": "2026-09-17",
-      "summary": "L’ex-candidate à la présidentielle estime avoir une «dette d’honneur» envers le sénateur de Vendée, fidèle soutien en 2022. Elle observe pourtant sa campagne amorphe et s’inquiète des mains tendues à l’extrême droite.",
+      "title": "Présidentielle 2027 : LFI et Jean-Luc Mélenchon précisent leur vision de l’appareil d’Etat",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/21/presidentielle-2027-fonction-publique-services-publics-impartialite-l-etat-que-veulent-lfi-et-jean-luc-melenchon_6778651_6205049.html",
+      "published": "2026-09-21",
+      "summary": "Le candidat de La France insoumise a exposé ses pistes de réforme lors d’une conférence organisée mercredi 16 septembre, à Saint-Denis (Seine-Saint-Denis), par l’Institut La Boétie. S’il veut renforcer les moyens du secteur public, sa volonté d’un « Etat impartial » soulève la qu",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Eric Ciotti appelle Bruno Retailleau à le rejoindre « dans une maison de droite forte »",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/eric-ciotti-appelle-bruno-retailleau-a-le-rejoindre-dans-une-maison-de-droite-forte_6778379_823448.html",
+      "published": "2026-09-20",
+      "summary": "Le président de l’Union des droites pour la République (UDR) plaide pour l’union « des droites », soit de la droite et de l’extrême droite. Il dit redouter la pression qui amènerait le patron des Républicains à aller « à la soupe » d’Edouard Philippe.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Retailleau / LR · Philippe / Horizons) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Au RN, l’autre campagne « présidentielle » de Jordan Bardella",
+      "url": "https://www.lefigaro.fr/politique/au-rn-l-autre-campagne-presidentielle-de-jordan-bardella-20260920",
+      "published": "2026-09-20",
+      "summary": "RÉCIT - Seul candidat à la tête du parti à la flamme, le patron du Rassemblement national se prépare à être reconduit à la faveur d’un congrès prévu fin octobre.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, bardella, rassemblement national"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : François Bayrou défend une primaire nébuleuse du « grand fleuve central »",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/francois-bayrou-defend-une-primaire-nebuleuse-du-grand-fleuve-central-pour-la-presidentielle_6778405_823448.html",
+      "published": "2026-09-20",
+      "summary": "L’ancien premier ministre a proposé, lors de l’université de rentrée de son parti, un calendrier pour organiser un scrutin ouvert afin de désigner un candidat unique allant de la gauche à la droite modérée d’ici à début 2027. Mais peu de ses invités du week-end comme des cadres d",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "barrot",
+        "label": "Barrot / centre",
+        "color": "#ff9900",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : bayrou"
+      }
+    },
+    {
+      "title": "Budget 2027 : Sébastien Lecornu promet 5 milliards d’euros de plus aux collectivités locales",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/budget-2027-sebastien-lecornu-promet-5-milliards-d-euros-de-plus-aux-collectivites-locales_6778406_823448.html",
+      "published": "2026-09-20",
+      "summary": "Dans un courrier au Sénat, le premier ministre s’engage à ce que les dépenses des villes, départements et régions évoluent au même niveau que l’inflation, alors que celles de l’Etat seront « inférieures ». Mais l’engagement est jugé « flou » par certains élus.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : collectivités, collectivites"
+      }
+    },
+    {
+      "title": "François Bayrou détaille les conditions de sa primaire en clôture de la rentrée du MoDem",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/francois-bayrou-detaille-les-conditions-de-sa-primaire-en-cloture-de-la-rentree-du-modem_6778378_823448.html",
+      "published": "2026-09-20",
+      "summary": "« On ne peut pas se permettre le luxe de la division au premier tour », a insisté dimanche l’ancien premier ministre, en clôture de la rentrée du MoDem à L’Isle-sur-la-Sorgue (Vaucluse), craignant un face-à-face entre Marine Le Pen et Jean-Luc Mélenchon au second tour de la prési",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Barrot / centre) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Primaire à gauche : Ségolène Royal critique le manque d’expérience de Raphaël Glucksmann",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/primaire-a-gauche-segolene-royal-critique-le-manque-d-experience-de-raphael-glucksmann_6778390_823448.html",
+      "published": "2026-09-20",
+      "summary": "Interrogée sur ce qui la distingue de l’eurodéputé, l’ancienne candidate à la présidentielle a dit avoir fait ses « preuves dans l’exercice difficile du commandement démocratique local, national et international ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : ségolène royal, segolene royal, glucksmann"
+      }
+    },
+    {
+      "title": "«En cédant aux syndicats sur Charles Sapin, la direction est extrêmement affaiblie» : le récit d’un bras de fer qui replonge Radio France dans la tourmente",
+      "url": "https://www.lefigaro.fr/politique/en-cedant-aux-syndicats-sur-charles-sapin-la-direction-est-extremement-affaiblie-le-recit-d-un-bras-de-fer-qui-replonge-radio-france-dans-la-tourmente-20260920",
+      "published": "2026-09-20",
+      "summary": "À sept mois de la présidentielle, la suppression de l’édito confié au journaliste de Valeurs actuelles relance le débat sur le manque de pluralisme dans l’audiovisuel public.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "François Bayrou poursuit son plaidoyer solitaire pour une primaire «des sociaux-démocrates aux gaullistes»",
+      "url": "https://www.liberation.fr/politique/elections/francois-bayrou-poursuit-son-plaidoyer-solitaire-pour-une-primaire-des-sociaux-democrates-aux-gaullistes-20260920_A4J4S4GPDFD45BLKNE5ZJ2BBQY/",
+      "published": "2026-09-20",
+      "summary": "Le président du Modem continue de prêcher pour la désignation d’un candidat commun qui rallierait les nombreux prétendants à l’Elysée situés entre Jean-Luc Mélenchon et Marine Le Pen. Sans grand soutien à ce stade.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Barrot / centre · Mélenchon / LFI) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : chez les Ecologistes, un malaise nourri par les doutes sur leur stratégie et un audit interne",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/presidentielle-2027-chez-les-ecologistes-un-malaise-nourri-par-les-doutes-sur-leur-strategie-et-un-audit-interne_6778377_823448.html",
+      "published": "2026-09-20",
+      "summary": "Alors que le parti écologiste devrait acter ce dimanche l’organisation d’un référendum en décembre pour décider du maintien ou non d’une candidature autonome, une étude interne porte un regard critique sur sa sociologie et dénonce des défaillances en matière de violences et de di",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes"
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann en campagne dans un territoire rural pour tenter de casser son image de Parisien",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/20/raphael-glucksmann-en-campagne-dans-un-territoire-rural-pour-tenter-de-casser-son-image-de-parisien_6778389_823448.html",
+      "published": "2026-09-20",
+      "summary": "Le candidat à la primaire du Parti socialiste pour l’élection présidentielle de 2027 était l’invité des Rencontres de la gauche, orchestrées par Carole Delga, à Bram, dans sa région d’Occitanie. Alors que nombre d’opposants à Olivier Faure étaient présents, l’objectif était de mi",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : parti socialiste, faure, glucksmann"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : \"J'ai le sentiment que bien des programmes sont un peu courts sur pattes\", estime Dominique de Villepin, ancien Premier ministre",
+      "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-j-ai-le-sentiment-que-bien-des-programmes-sont-un-peu-courts-sur-pattes-estime-dominique-de-villepin-ancien-premier-ministre_8202191.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-20",
+      "summary": "Dominique de Villepin, ancien Premier ministre, était l’invité du Grand Enjeu sur franceinfo ce dimanche 20 septembre. Il a, au cours de l’entretien, évoqué les candidats à la présidentielle 2027 et leur programme.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Léo Cohen-Paperman : Les présidents sont aussi le reflet de notre société",
+      "url": "https://www.franceinfo.fr/replay-radio/l-invite-culture/leo-cohen-paperman-les-presidents-sont-aussi-le-reflet-de-notre-societe_8177681.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-20",
+      "summary": "Jusqu'à la présidentielle, Léo Cohen-Paperman met en scène ceux qui ont occupé l'Elysée sous la 5e République. \"Huit Rois\" utilise tous les registres de la comédie, sans être jamais dans la caricature et en laissant le spectateur se faire sa propre idée.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Saint-Pierre-et-Miquelon est \"français\" déclare Emmanuel Macron à son arrivée dans l'archipel en réponse à Donald Trump",
+      "url": "https://www.franceinfo.fr/politique/emmanuel-macron/saint-pierre-et-miquelon-est-francais-repond-emmanuel-macron-a-donald-trump-a-son-arrivee-dans-l-archipel_8201387.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-20",
+      "summary": "Face au président américain, le locataire de l'Elysée a tenu à réaffirmer que la France est une puissance régionale.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Un député de Côte-d'Or se verrait bien ministre de la Ruralité et adresse une candidature spontanée à Sébastien Lecornu",
+      "url": "https://www.franceinfo.fr/politique/gouvernement-de-sebastien-lecornu/un-depute-de-cote-d-or-se-verrait-bien-ministre-de-la-ruralite-et-adresse-une-candidature-spontanee-a-sebastien-lecornu_8201540.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-20",
+      "summary": "Cette annonce intervient après le départ du gouvernement du précédent titulaire du poste, Michel Fournier.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Jérôme Guedj dénonce la suspension « brutale » de Philippe Brun",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/20/presidentielle-2027-jerome-guedj-denonce-la-suspension-brutale-de-philippe-brun_6778194_6205049.html",
+      "published": "2026-09-20",
+      "summary": "Jérôme Guedj critique la brutalité de la décision prise par la direction du PS et s’étonne que celle-ci n’ait pas agi plus tôt, alors que la presse fait état « d’alertes » remontant « au début de l’été ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : philippe brun, guedj"
+      }
+    },
+    {
+      "title": "Philippe Brun réclame d’être réintégré dans la primaire de la gauche, Jérôme Guedj juge que le PS est allé «vite en besogne»",
+      "url": "https://www.liberation.fr/politique/philippe-brun-reclame-detre-reintegre-dans-la-primaire-de-la-gauche-jerome-guedj-juge-que-le-ps-est-alle-vite-en-besogne-20260920_RPAO7HE73ZBR7KBXVPH26JG4IU/",
+      "published": "2026-09-20",
+      "summary": "Le député de l’Eure, accusé par une militante, affirme que «le bureau national du PS a été trompé» et que «rien ne justifie» sa suspension du parti et du processus en vue de la présidentielle.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : philippe brun, guedj"
+      }
+    },
+    {
+      "title": "La dette publique de la France frôlera les 122 % du PIB en 2027, un record",
+      "url": "https://www.france24.com/fr/france/20260919-dette-publique-2026-france-budget-pib-endettement-record",
+      "published": "2026-09-19",
+      "summary": "Le ministère de l'Économie et des Finances a annoncé, samedi, que le niveau d'endettement de la France continuerait de se creuser pour atteindre les 119,3% du produit intérieur brut en 2026 et 121,7% en 2027.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Dans le monde rouge de Twitch, Sardoche, le streamer français «libertarien» qui rêve d’union des droites entre Knafo et Lisnard",
+      "url": "https://www.lefigaro.fr/politique/dans-le-monde-rouge-de-twitch-sardoche-le-streamer-francais-libertarien-qui-reve-d-union-des-droites-entre-knafo-et-lisnard-20260919",
+      "published": "2026-09-19",
+      "summary": "PORTRAIT - Poids lourd de la plateforme web de diffusion de vidéos en direct, Sardoche était à un meeting de Nouvelle Énergie puis aux universités d’été de Reconquête. Aussi populaire que contesté pour ses propos, il compte bien faire peser son million d’abonnés dans la balance d",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Lisnard / droite locale · Zemmour / Reconquête) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Budget 2027 : le gouvernement envisage un plafond de 3 000 euros pour l’abattement fiscal des retraités",
+      "url": "https://www.liberation.fr/economie/budget-2027-le-gouvernement-envisage-un-plafond-de-3-000-euros-pour-labattement-fiscal-des-retraites-20260919_2OHQTMIPDFE5HM7KFXQ7RBEJS4/",
+      "published": "2026-09-19",
+      "summary": "Au sein de l’exécutif, on table sur une rentrée d’argent supplémentaire à hauteur de 1,4 milliard d’euros avec cette mesure, qui n’en est pour l’instant qu’au stade de la proposition et reste inflammable politiquement.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : comment Jean-Marc Jancovici veut peser sur les débats de l’élection",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-comment-jean-marc-jancovici-veut-peser-sur-les-debats-de-l-election-20260918",
+      "published": "2026-09-19",
+      "summary": "Pour tenter d’élever les débats animant la course à l’Élysée, l’ingénieur Jean-Marc Jancovici invite 150 personnes tirées au sort à se pencher sur les grands « dilemmes » politiques qui agitent la société. Ils ont rendez-vous ce samedi 19 septembre 2026 à Paris.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Au MoDem, l’après-Bayrou reste un interdit, malgré un début de « guerre des chefs »",
+      "url": "https://www.lefigaro.fr/politique/au-modem-l-apres-bayrou-reste-un-interdit-malgre-un-debut-de-guerre-des-chefs-20260918",
+      "published": "2026-09-19",
+      "summary": "DÉCRYPTAGE - Pas candidat à la présidentielle, le dirigeant centriste n’entend toujours pas laisser la main à la tête de son parti, soucieux de retarder la compétition sourde entre ses fidèles Marc Fesneau, chef des députés MoDem, et Jean-Noël Barrot, ministre des Affaires étrang",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "barrot",
+        "label": "Barrot / centre",
+        "color": "#ff9900",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : barrot, modem, bayrou"
+      }
+    },
+    {
+      "title": "Ambiguïtés du RN, pression des marchés… Après ses annonces sur le budget, Sébastien Lecornu face à un casse-tête politique et financier",
+      "url": "https://www.lefigaro.fr/politique/ambiguites-du-rn-pression-des-marches-apres-ses-annonces-sur-le-budget-sebastien-lecornu-face-a-un-casse-tete-politique-et-financier-20260918",
+      "published": "2026-09-18",
+      "summary": "DÉCRYPTAGE - Le premier ministre doit composer avec une Assemblée nationale éclatée, des oppositions entrées en campagne présidentielle et la dégradation de la situation financière française.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : rn"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Éric Zemmour confirme qu’il sera candidat",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-eric-zemmour-confirme-qu-il-sera-candidat-20260918",
+      "published": "2026-09-18",
+      "summary": "Éric Zemmour (Reconquête) a confirmé jeudi 17 septembre sa candidature à la présidentielle. Il ne s’agit cependant pas d’une déclaration formelle qui, selon son entourage, devrait intervenir au cours de cet automne.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "zemmour",
+        "label": "Zemmour / Reconquête",
+        "color": "#000080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : zemmour, reconquete, reconquête"
+      }
+    },
+    {
+      "title": "Budget 2027 : le gouvernement de Lecornu veut raboter les dépenses sociales",
+      "url": "https://www.liberation.fr/economie/budget-2027-le-gouvernement-veut-raboter-les-depenses-sociales-20260918_JPRKCBPPTFCQ7GL4ZHYMLYTOUU/",
+      "published": "2026-09-18",
+      "summary": "Arrêts maladies, allocations, retraités… Matignon entend réduire d’un tiers le déficit de la Sécurité sociale dans le budget 2027. Les entreprises, elles, seront largement épargnées par les efforts.",
       "source_id": "liberation-politique",
       "source_label": "Libération — Politique",
       "source_type": "traditional",
@@ -146,8 +434,104 @@
         "slug": "retailleau",
         "label": "Retailleau / LR",
         "color": "#0066cc",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : retailleau"
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
+      }
+    },
+    {
+      "title": "France : les candidats à la présidentielle réclament des aides massives",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260918-france-les-candidats-%C3%A0-la-pr%C3%A9sidentielle-r%C3%A9clament-des-aides-massives",
+      "published": "2026-09-18",
+      "summary": "La plupart des candidats à la présidentielle du Printemps prochain ont répondu à l'appel du président Français pour une réunion de crise autour de la « dégradation rapide » de la situation géopolitique et les prix des carburants qui battent des records. Un G7 de l'énergie sera pr",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "France : une réunion des partis \"nécessaire pour la qualité du débat démocratique\"",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260918-france-une-r%C3%A9union-des-partis-n%C3%A9cessaire-pour-la-qualit%C3%A9-du-d%C3%A9bat-d%C3%A9mocratique",
+      "published": "2026-09-18",
+      "summary": "Le président de la République, qui a reçu dans la matinée du 18 septembre, les candidats à sa succession ou leurs bras droits pour une réunion sur les crises qui menacent la France, a estimé qu'il était de son \"devoir\" de procéder à ce type \"d'exercice de transparence\" pour que l",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Pourquoi le budget 2027 de Sébastien Lecornu ressemble à une partie de poker menteur",
+      "url": "https://www.france24.com/fr/france/20260918-france-budget-2027-lecornu-budget-economies-mission-impossible-avant-presidentielle",
+      "published": "2026-09-18",
+      "summary": "Le Premier ministre Sébastien Lecornu a dévoilé jeudi soir un budget 2027 avec 54 milliards d’euros d’économies. Mais avec l’élection présidentielle dans sept mois et un contexte social explosif, difficile d’imaginer les oppositions prendre le risque de décevoir leurs électeurs e",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 en France : 54 milliards d'économie prévus, un objectif \"ambitieux mais réalisable\"",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260918-budget-2027-en-france-54-milliards-d-%C3%A9conomie-pr%C3%A9vus-un-objectif-ambitieux-mais-r%C3%A9alisable",
+      "published": "2026-09-18",
+      "summary": "En France, les discussions autour du budget 2027 prennent place. Le gouvernement annonce \"54 milliards d'efforts sur les dépenses qui amènent, du coup, le déficit public à 5 % l'année prochaine\", a-t-il ajouté, après des annonces en ce sens du Premier ministre Sébastien Lecornu. ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : ce que Sébastien Lecornu emprunte vraiment au « plan Pompidou » de 1963",
+      "url": "https://www.la-croix.com/politique/budget-2027-ce-que-sebastien-lecornu-emprunte-vraiment-au-plan-pompidou-de-1963-20260918",
+      "published": "2026-09-18",
+      "summary": "Pour justifier son projet d’économies de 54 milliards d’euros dévoilé jeudi 17 septembre 2026, Sébastien Lecornu invoque le plan Pompidou de 1963. Retour sur une référence historique dont le premier ministre dit s’inspirer.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "CARTE. Elections sénatoriales : découvrez les candidats dans votre département",
+      "url": "https://www.publicsenat.fr/actualites/politique/carte-elections-senatoriales-decouvrez-les-candidats-dans-votre-departement",
+      "published": "2026-09-18",
+      "summary": "Les élections sénatoriales auront lieu dimanche 27 septembre. 178 sénateurs sur 348 que compte la chambre haute, vont être élus ou réélus dans 63 départements et dans la circonscription représentant les Français établis hors de France. Découvrez les noms et les listes des candida",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
@@ -180,390 +564,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : le pen, marine le pen, rn"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : le PS cherche à éviter que l’affaire Philippe Brun entache la primaire",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/presidentielle-2027-le-ps-cherche-a-eviter-que-l-affaire-philippe-brun-entache-sa-primaire_6775900_823448.html",
-      "published": "2026-09-17",
-      "summary": "Suspendu par le Parti socialiste et écarté de la primaire après des accusations d’une ancienne collaboratrice, le député de l’Eure a dénoncé, mercredi, lors d’une conférence de presse, une manipulation visant à le « tuer politiquement ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : parti socialiste, philippe brun, socialiste"
-      }
-    },
-    {
-      "title": "Référendum contre l’immigration : le «plan B» du RN pour contourner le Conseil constitutionnel",
-      "url": "https://www.liberation.fr/politique/referendum-contre-limmigration-le-plan-b-du-rn-pour-contourner-le-conseil-constitutionnel-20260917_PECY3O4NGBA33OTMSPLFAHDAVI/",
-      "published": "2026-09-17",
-      "summary": "Obsédée par sa marotte xénophobe, Marine Le Pen envisage de consulter les Français avec l’article 11 de la loi suprême pour élargir le champ du référendum inscrit à… l’article 11. Une manœuvre inconstitutionnelle, tranchent les juristes interrogés par «Libération».",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
-      }
-    },
-    {
-      "title": "Guillaume Tabard : « Budget 2027, intentions courageuses, réalisation périlleuse »",
-      "url": "https://www.lefigaro.fr/politique/guillaume-tabard-budget-2027-intentions-courageuses-realisation-perilleuse-20260917",
-      "published": "2026-09-17",
-      "summary": "CONTRE-POINT - Donner acte au premier ministre de ses intentions n’empêche cependant pas d’être lucide sur le contenu et la pérennité de sa copie.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Le militant Amine Kessaci est candidat pour devenir porte-parole des Ecologistes",
-      "url": "https://www.liberation.fr/politique/le-militant-amine-kessaci-est-candidat-pour-devenir-porte-parole-des-ecologistes-20260917_2OFUIODKJVGHTKKLLMDLUHLN5E/",
-      "published": "2026-09-17",
-      "summary": "Le Marseillais, devenu figure de la lutte contre le narcotrafic, se positionne pour succéder à Éric Piolle, a confirmé à «Libération» l’entourage de Marine Tondelier. Le vote interne est prévu du 23 au 26 octobre.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
-      }
-    },
-    {
-      "title": "Édouard Philippe souhaite doter la France d'une \"véritable politique de sécurité climatique\"",
-      "url": "https://www.franceinfo.fr/elections/presidentielle/edouard-philippe-souhaite-doter-la-france-d-une-veritable-politique-de-securite-climatique_8197976.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-17",
-      "summary": "Le candidat Horizons à la présidentielle a présenté les mesures de la \"politique de sécurité climatique\" qu'il entend mettre en place depuis l'Élysée, s'il est élu.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Olivier Faure veut remporter la primaire avec un programme ancré à gauche",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-olivier-faure-veut-remporter-la-primaire-avec-un-programme-ancre-a-gauche-20260917",
-      "published": "2026-09-17",
-      "summary": "À quelques semaines de la primaire sociale-démocrate, Olivier Faure aborde la compétition en challenger. Dans La Loi du plus juste, publié ce jeudi 17 septembre, le patron du PS défend une ligne « à gauche toute » dans l’espoir de concurrencer son rival, Raphaël Glucksmann.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : faure, glucksmann"
-      }
-    },
-    {
-      "title": "Emmanuel Macron convie les chefs de parti et les candidats à la présidentielle à une réunion vendredi à l’Elysée sur la « dégradation rapide » de la situation internationale",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/17/emmanuel-macron-convie-les-chefs-des-partis-ou-leurs-candidats-a-la-presidentielle-pour-une-reunion-vendredi-a-l-elysee-sur-la-degradation-rapide-de-la-situation-internationale_6776355_823448.html",
-      "published": "2026-09-17",
-      "summary": "Le président veut impliquer les futurs candidats et candidates à la présidentielle dans la gestion des enjeux de sécurité et d’énergie.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : les ministres participant «activement» à la campagne devront quitter le gouvernement",
-      "url": "https://www.liberation.fr/politique/presidentielle-2027-les-ministres-participant-activement-a-la-campagne-devront-quitter-le-gouvernement-20260917_VKFOKYXJJRGHVIASQO34OWHVVU/",
-      "published": "2026-09-17",
-      "summary": "S’ils s’impliquent «dans l’opérationnalité d’une campagne», les ministres devront partir, a prévenu le Premier ministre Sébastien Lecornu, dans un entretien au «Figaro», publié ce jeudi 17 septembre.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Budget 2027 : Sébastien Lecornu ne veut pas se laisser « enfermer » par les oppositions",
-      "url": "https://www.la-croix.com/politique/budget-2027-sebastien-lecornu-ne-veut-pas-se-laisser-enfermer-par-les-oppositions-20260917",
-      "published": "2026-09-17",
-      "summary": "Alors que les socialistes ont le regard tourné vers la primaire de la gauche, le premier ministre, qui réunit jeudi 17 septembre le gouvernement en séminaire, cherche « les voies d’un accord » pour faire adopter le budget 2027 à l’Assemblée nationale.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
-      }
-    },
-    {
-      "title": "Gel du point d’indice des fonctionnaires, contribution des retraités… Ce qu’il faut retenir de l’interview de Sébastien Lecornu sur le budget dans «le Figaro»",
-      "url": "https://www.liberation.fr/politique/budget-2027-sebastien-lecornu-table-finalement-sur-environ-54-milliards-deuros-deconomies-20260917_JGHHJ6JQBRAYTOO4JS6WCRLBCA/",
-      "published": "2026-09-17",
-      "summary": "A quelques jours de la présentation du projet de loi de finances 2027, le Premier ministre annonce un «effort budgétaire» de 54 milliards d’euros au lieu des 30 milliards envisagés. Revue de détails des différentes mesures d’économies.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Budget 2027 : ce qu’il faut retenir des annonces de Sébastien Lecornu",
-      "url": "https://www.la-croix.com/politique/budget-2027-sebastien-lecornu-mise-sur-54-milliards-d-euros-deconomies-20260917",
-      "published": "2026-09-17",
-      "summary": "Gel du point d’indice, retraites, surtaxe allégée sur les entreprises… Jeudi 17 septembre, Sébastien Lecornu a détaillé les grandes lignes d’un budget 2027 visant 54 milliards d’économies.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Carburants : ce que proposent les candidats à la présidentielle pour endiguer la flambée de prix",
-      "url": "https://www.la-croix.com/politique/carburants-ce-que-proposent-les-candidats-a-la-presidentielle-pour-endiguer-la-flambee-de-prix-20260917",
-      "published": "2026-09-17",
-      "summary": "Alors que le gazole frôle son record historique à 2,37 € le litre et que des pêcheurs ont à nouveau bloqué des ports de l’Hérault jeudi 17 septembre, les candidats à la présidentielle 2027 rivalisent de propositions pour endiguer la flambée des prix. Tour d’horizon.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "« La crise de la modernité induit un retour du ”bien commun” dans le débat public »",
-      "url": "https://www.la-croix.com/a-vif/la-crise-de-la-modernite-induit-un-retour-du-bien-commun-dans-le-debat-public-20260917",
-      "published": "2026-09-17",
-      "summary": "En 2022, neuf candidats sur dix à la présidentielle française invoquaient le bien commun, contre zéro en 1965. Lino Castex, doctorant en science politique, analyse ce retour d’un concept chrétien médiéval au cœur du débat contemporain, symptôme d’une modernité inquiète en recherc",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Retraites, gel du point d'indice des fonctionnaires, \"carence\" pour les étrangers… Les pistes du gouvernement pour réaliser 54 milliards d'euros d'économies sur le budget 2027",
-      "url": "https://www.franceinfo.fr/economie/budget/retraites-gel-du-point-d-indice-des-fonctionnaires-carence-pour-les-etrangers-les-principales-pistes-du-gouvernement-pour-realiser-54-milliards-d-euros-d-economies-sur-le-budget-2027_8197454.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-17",
-      "summary": "Dans les colonnes du \"Figaro\" jeudi, le Premier ministre présente ses principaux arbitrages concernant le budget de l'Etat pour 2027, dans un contexte d'objectif de réduction des déficits et de recherche de compromis politique.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Pour le budget 2027, Sébastien Lecornu propose \"un effort\" d'environ 54 milliards d'euros",
-      "url": "https://www.franceinfo.fr/economie/budget/pour-le-budget-2027-sebastien-lecornu-propose-un-effort-d-environ-54-milliards-d-euros_8197535.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-17",
-      "summary": "Dans un entretien au \"Figaro\", le Premier ministre affirme jeudi que \"la charge de la dette pèse de plus en plus lourd sur l'équation budgétaire\".",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Immigration : À quoi correspond la proposition d’Olivier Faure de régulariser 400 000 travailleurs sans-papiers ?",
-      "url": "https://www.publicsenat.fr/actualites/politique/immigration-a-quoi-correspond-la-proposition-dolivier-faure-de-regulariser-400-000-travailleurs-sans-papiers",
-      "published": "2026-09-17",
-      "summary": "Candidat à la primaire PS/Place Publique, le Premier secrétaire socialiste a avancé la proposition de régulariser 400 000 travailleurs sans-papiers présents sur le territoire national, suivant l'exemple espagnol. La France applique, elle, depuis de nombreuses années, la méthode d",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : faure, socialiste, primaire ps"
-      }
-    },
-    {
-      "title": "Budget 2027 et loi intégrale contre les violences sexistes et sexuelles",
-      "url": "https://www.franceinfo.fr/politique/budegt-2027-et-loi-integrale-contre-les-violences-sexistes-et-sexuelles_8197343.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-17",
-      "summary": "Budget 2027 : Sébastien Lecornu promet 1,5 milliard d'euros contre les violences sexistes et sexuelles, dans le cadre de la loi intégrale contre les violences sexistes et sexuelles, qui sera examinée début octobre à l'Assemblée nationale. \"Un point de départ\" pour Aurore Bergé, l",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "La colère des pêcheurs enfle en France : blocage du port de Nice",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260917-la-col%C3%A8re-des-p%C3%AAcheurs-enfle-en-france-blocage-du-port-de-nice",
-      "published": "2026-09-17",
-      "summary": "Emmanuel Macron recevra vendredi 18 septembre les chefs de parti politiques, un échange à l'Élysée qui se concentrera sur la \"dégradation rapide\" de la situation internationale et ses \"conséquences en France\", notamment autour des prix à la pompe. Les marins pêcheurs se mobilisen",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Bruno Retailleau repart sur le terrain du pouvoir d’achat pour se démarquer des « bonimenteurs » dans la campagne",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/16/bruno-retailleau-repart-sur-le-terrain-du-pouvoir-d-achat-pour-se-demarquer-des-bonimenteurs-dans-la-campagne-presidentielle_6775182_823448.html",
-      "published": "2026-09-16",
-      "summary": "Le candidat Les Républicains (LR) a rappelé mardi ses principales mesures pour augmenter les salaires mais aussi faire baisser les prix de l’énergie et de l’essence. Sur ce point sensible, il a renvoyé dos à dos les propositions de Jean-Luc Mélenchon et Marine Le Pen.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
-      }
-    },
-    {
-      "title": "Budget : Bruno Retailleau demande au gouvernement le retour de la réforme des retraites",
-      "url": "https://www.publicsenat.fr/actualites/politique/budget-bruno-retailleau-demande-au-gouvernement-le-retour-de-la-reforme-des-retraites",
-      "published": "2026-09-16",
-      "summary": "Sur franceinfo, le candidat LR à la présidentielle, Bruno Retailleau a développé un peu plus la ligne de responsabilité qu'il entend incarner en indiquant que sa famille politique allait demander le retour de la réforme des retraites dans le prochain budget. Une réforme que le go",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : retailleau"
-      }
-    },
-    {
-      "title": "La conférence sur le travail, l’emploi et les retraites livre des pistes pour nourrir les débats à l’élection présidentielle et le dialogue social",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/16/la-conference-sur-le-travail-l-emploi-et-les-retraites-livre-des-pistes-pour-nourrir-les-debats-a-la-presidentielle-et-le-dialogue-social_6775463_823448.html",
-      "published": "2026-09-16",
-      "summary": "Capitalisation, âge de départ, 35 heures… La conférence voulue par le premier ministre, Sébastien Lecornu, et coordonnée pendant des mois par le haut fonctionnaire Jean-Denis Combrexelle, a livré, mercredi, un « cadre de réflexion » de plus de 180 pages sur des sujets clivants.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : le logement sera \"un des grands chantiers du quinquennat\", selon Marine Le Pen",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260914-pr%C3%A9sidentielle-2027-le-logement-sera-un-des-grands-chantiers-du-quinquennat-selon-marine-le-pen",
-      "published": "2026-09-14",
-      "summary": "La \"priorité nationale\" est \"un droit naturel et juste\", a affirmé Marine Le Pen dans son discours de rentrée, en promettant d'appliquer ce principe controversé au logement social, alors que le logement sera, à priori, \"un des grand chantiers\" de son quinquennat. Des détails avec",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, priorité nationale"
-      }
-    },
-    {
-      "title": "Guillaume Tabard : « Budget 2027, et à la fin, Marine Le Pen décidera »",
-      "url": "https://www.lefigaro.fr/politique/guillaume-tabard-budget-2027-et-a-la-fin-marine-le-pen-decidera-20260914",
-      "published": "2026-09-14",
-      "summary": "CONTRE-POINT - Sébastien Lecornu ne tiendra et, ce faisant, ne fera passer son budget au 49.3, qu’en étant épargné par le groupe dont il voulait le moins dépendre : le Rassemblement national.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : qu’est-ce que la « priorité nationale » sur le logement de Marine Le Pen ?",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-qu-est-ce-que-la-priorite-nationale-sur-le-logement-de-marine-le-pen-20260914",
-      "published": "2026-09-14",
-      "summary": "Dimanche 13 septembre, la candidate du Rassemblement national Marine Le Pen a fait du logement un des thèmes prioritaires de sa campagne. Elle souhaite notamment donner aux Français la priorité d’accès au logement social.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
       }
     }
   ]
