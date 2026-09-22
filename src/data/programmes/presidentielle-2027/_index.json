@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -10,7 +10,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html"
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : dans « Le Crépuscule des princes », Edouard Philippe multiplie les coups de griffe à l’égard de Gabriel Attal",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-dans-le-crepuscule-des-princes-edouard-philippe-multiplie-les-coups-de-griffe-a-l-egard-de-gabriel-attal_6780090_823448.html",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
+        }
+      ]
     },
     {
       "slug": "retailleau",
@@ -31,16 +39,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Jérôme Guedj dénonce la suspension « brutale » de Philippe Brun",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/20/presidentielle-2027-jerome-guedj-denonce-la-suspension-brutale-de-philippe-brun_6778194_6205049.html",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Présidentielle 2027 : dans « Le Crépuscule des princes », Edouard Philippe multiplie les coups de griffe à l’égard de Gabriel Attal",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-dans-le-crepuscule-des-princes-edouard-philippe-multiplie-les-coups-de-griffe-a-l-egard-de-gabriel-attal_6780090_823448.html",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         },
         {
-          "title": "Philippe Brun réclame d’être réintégré dans la primaire de la gauche, Jérôme Guedj juge que le PS est allé «vite en besogne»",
-          "url": "https://www.liberation.fr/politique/philippe-brun-reclame-detre-reintegre-dans-la-primaire-de-la-gauche-jerome-guedj-juge-que-le-ps-est-alle-vite-en-besogne-20260920_RPAO7HE73ZBR7KBXVPH26JG4IU/",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Présidentielle 2027 : Philippe Brun a déposé un référé pour être réintégré au PS et à la primaire de la gauche",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/22/presidentielle-2027-philippe-brun-depose-un-refere-pour-etre-reintegre-au-ps-et-a-la-primaire-a-gauche_6780079_6205049.html",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         }
       ]
     },
@@ -63,16 +71,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Jérôme Guedj dénonce la suspension « brutale » de Philippe Brun",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/20/presidentielle-2027-jerome-guedj-denonce-la-suspension-brutale-de-philippe-brun_6778194_6205049.html",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Présidentielle 2027 : Philippe Brun a déposé un référé pour être réintégré au PS et à la primaire de la gauche",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/22/presidentielle-2027-philippe-brun-depose-un-refere-pour-etre-reintegre-au-ps-et-a-la-primaire-a-gauche_6780079_6205049.html",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         },
         {
-          "title": "Philippe Brun réclame d’être réintégré dans la primaire de la gauche, Jérôme Guedj juge que le PS est allé «vite en besogne»",
-          "url": "https://www.liberation.fr/politique/philippe-brun-reclame-detre-reintegre-dans-la-primaire-de-la-gauche-jerome-guedj-juge-que-le-ps-est-alle-vite-en-besogne-20260920_RPAO7HE73ZBR7KBXVPH26JG4IU/",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Primaire socialiste : Philippe Brun «croit encore» pouvoir être candidat, malgré les accusations de violences",
+          "url": "https://www.liberation.fr/politique/primaire-socialiste-philippe-brun-annonce-que-son-refere-depose-contre-le-ps-pour-reintegrer-le-parti-sera-examine-ce-matin-par-le-tribunal-judiciaire-20260922_T7BSCCGZAJD2ZBEX3FRWNJBLWQ/",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         }
       ]
     },
@@ -118,16 +126,10 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "François Bayrou détaille les conditions de sa primaire en clôture de la rentrée du MoDem",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/20/francois-bayrou-detaille-les-conditions-de-sa-primaire-en-cloture-de-la-rentree-du-modem_6778378_823448.html",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
-        },
-        {
-          "title": "François Bayrou poursuit son plaidoyer solitaire pour une primaire «des sociaux-démocrates aux gaullistes»",
-          "url": "https://www.liberation.fr/politique/elections/francois-bayrou-poursuit-son-plaidoyer-solitaire-pour-une-primaire-des-sociaux-democrates-aux-gaullistes-20260920_A4J4S4GPDFD45BLKNE5ZJ2BBQY/",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Présidentielle 2027 : une campagne marathon, mais pour certains déjà un sprint décisif",
+          "url": "https://www.liberation.fr/politique/presidentielle-2027-une-campagne-marathon-mais-pour-certains-deja-un-sprint-decisif-20260922_SAKRGSPEPFDTLGYEGKIRD6YWCI/",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         }
       ]
     },
@@ -157,16 +159,10 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Primaire à gauche : Ségolène Royal critique le manque d’expérience de Raphaël Glucksmann",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/20/primaire-a-gauche-segolene-royal-critique-le-manque-d-experience-de-raphael-glucksmann_6778390_823448.html",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
-        },
-        {
-          "title": "Raphaël Glucksmann en campagne dans un territoire rural pour tenter de casser son image de Parisien",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/20/raphael-glucksmann-en-campagne-dans-un-territoire-rural-pour-tenter-de-casser-son-image-de-parisien_6778389_823448.html",
-          "published": "2026-09-20",
-          "detected_at": "2026-09-21"
+          "title": "Présidentielle 2027 : Ségolène Royal, trublion de la primaire à gauche",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-segolene-royal-trublion-de-la-primaire-a-gauche_6779746_823448.html",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
         }
       ]
     },
@@ -180,6 +176,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-21T06:51:47.254Z",
-  "program_press_hits": 14
+  "veille_scan_at": "2026-09-22T11:42:05.372Z",
+  "program_press_hits": 15
 }
