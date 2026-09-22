@@ -43,8 +43,8 @@ describe('editorial covers', () => {
     expect(une?.kind).toBe(latest?.kind);
     expect(une?.slug).toBe(latest?.slug);
     expect(une?.href).toBe(latest?.href);
-    expect(une?.date).toBe('2026-09-17');
-    expect(une?.slug).toBe('lfi-bfmtv-exigence-pluralisme');
+    expect(une?.date).toBe(latest?.date);
+    expect(une?.cover?.src).toBe(latest?.cover?.src);
   });
 
   it('publishing a newer post changes the une automatically', () => {
