@@ -26,7 +26,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: ecolesJournalisme.slug,
     title: ecolesJournalisme.title,
     description:
-      'Assemblée virtuelle des courants à la sortie des écoles de journalisme : 16 cursus reconnus, trois écoles entendues le 11 décembre 2025, aucun scrutin de diplômés. Les sièges restent vides.',
+      'Assemblée virtuelle des courants à la sortie des écoles de journalisme. Volet facultés : neuf composantes universitaires chiffrées en 2023 (292 places), une seule entendue en décembre 2025. Les sièges des courants restent vides.',
     date: ecolesJournalisme.date,
     href: '/analyses/ecoles-journalisme-pluralite',
     cover: uneCover(

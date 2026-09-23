@@ -15,11 +15,12 @@ const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 
 const tocItems = [
   { href: '#methode', label: '1. L’assemblée virtuelle, et pourquoi elle est vide' },
   { href: '#cursus', label: '2. Seize cursus reconnus, trois écoles entendues' },
-  { href: '#audition', label: '3. Ce que dit l’audition du 11 décembre 2025' },
-  { href: '#lectures', label: '4. Deux lectures du pluralisme' },
-  { href: '#limites', label: '5. Ce qui ne se laisse pas compter' },
-  { href: '#retenues', label: '6. Ce que LMDPT en retient' },
-  { href: '#sources', label: '7. Sources' },
+  { href: '#facultes', label: '3. Dans les facultés' },
+  { href: '#audition', label: '4. Ce que dit l’audition du 11 décembre 2025' },
+  { href: '#lectures', label: '5. Deux lectures du pluralisme' },
+  { href: '#limites', label: '6. Ce qui ne se laisse pas compter' },
+  { href: '#retenues', label: '7. Ce que LMDPT en retient' },
+  { href: '#sources', label: '8. Sources' },
 ];
 ---
 
@@ -142,8 +143,45 @@ const tocItems = [
     </div>
   </section>
 
+  <section class="card" id="facultes" aria-labelledby="facultes-title">
+    <h2 id="facultes-title">3. Dans les facultés</h2>
+    {data.facultes_intro.map((p) => <p>{p}</p>)}
+    <p>{data.facultes_droit}</p>
+    <p>{data.facultes_critere}</p>
+    <div class="table-wrap" role="region" aria-label="Cursus universitaires reconnus" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Composantes universitaires reconnues, places du livre blanc 2023, présence à l’audition
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Cursus</th>
+            <th scope="col">Université</th>
+            <th scope="col">Agrément</th>
+            <th scope="col">Places 2023</th>
+            <th scope="col">Audition</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.facultes.map((row) => (
+              <tr>
+                <th scope="row">{row.nom}</th>
+                <td>{row.universite}</td>
+                <td>{row.agrement}</td>
+                <td>{row.places_2023 ?? 'Non chiffrées dans le livre blanc'}</td>
+                <td>{row.audition}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.facultes_note}</p>
+  </section>
+
   <section class="card" id="audition" aria-labelledby="audition-title">
-    <h2 id="audition-title">3. Ce que dit l’audition du 11 décembre 2025</h2>
+    <h2 id="audition-title">4. Ce que dit l’audition du 11 décembre 2025</h2>
     <p>{data.audition_intro}</p>
     <div class="table-wrap" role="region" aria-label="Faits de l'audition" tabindex="0">
       <table class="enq-table">
@@ -173,7 +211,7 @@ const tocItems = [
   </section>
 
   <section class="card" id="lectures" aria-labelledby="lectures-title">
-    <h2 id="lectures-title">4. Deux lectures du pluralisme</h2>
+    <h2 id="lectures-title">5. Deux lectures du pluralisme</h2>
     <p>{data.lectures_intro}</p>
     <div class="table-wrap" role="region" aria-label="Lectures du pluralisme" tabindex="0">
       <table class="enq-table">
@@ -201,19 +239,19 @@ const tocItems = [
   </section>
 
   <section class="card" id="limites" aria-labelledby="limites-title">
-    <h2 id="limites-title">5. Ce qui ne se laisse pas compter</h2>
+    <h2 id="limites-title">6. Ce qui ne se laisse pas compter</h2>
     {data.non_mesurable.map((p) => <p>{p}</p>)}
   </section>
 
   <section class="card" id="retenues" aria-labelledby="retenues-title">
-    <h2 id="retenues-title">6. Ce que LMDPT en retient</h2>
+    <h2 id="retenues-title">7. Ce que LMDPT en retient</h2>
     <ol>
       {data.retenues.map((item) => <li>{item}</li>)}
     </ol>
   </section>
 
   <section class="card" id="sources" aria-labelledby="sources-title">
-    <h2 id="sources-title">7. Sources</h2>
+    <h2 id="sources-title">8. Sources</h2>
     <ul>
       {
         data.sources.map((s) => (

@@ -105,6 +105,18 @@ describe('analyses', () => {
     expect(urls).toContain(
       'https://www.assemblee-nationale.fr/dyn/opendata/CRCANR5L17S2026PO874480N007.html',
     );
+    expect(ecolesJournalisme.facultes).toHaveLength(11);
+    const places = ecolesJournalisme.facultes
+      .map((f) => f.places_2023)
+      .filter((n): n is number => typeof n === 'number');
+    expect(places.reduce((s, n) => s + n, 0)).toBe(ecolesJournalisme.facultes_somme);
+    expect(ecolesJournalisme.facultes_somme).toBe(292);
+    expect(
+      ecolesJournalisme.facultes.filter((f) => f.audition.startsWith('Entendue')).map((f) => f.nom),
+    ).toEqual(['IJBA']);
+    expect(ecolesJournalisme.facultes_critere).toMatch(/diversité de la société/);
+    expect(ecolesJournalisme.facultes_critere).not.toMatch(/quota/);
+    expect(urls).toContain('https://cej.education/wp-content/uploads/2023/06/CEJ_2023_Livre_Blanc_Web.pdf');
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {
