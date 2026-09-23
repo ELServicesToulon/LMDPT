@@ -4,6 +4,7 @@ import alertes from '../data/alertes-citoyennes.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
+import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import { ANALYSIS_CATALOG, getAnalysis } from './analyses';
 
 describe('analyses', () => {
@@ -22,6 +23,7 @@ describe('analyses', () => {
       'ukraine-energie-triangle-europe-algerie-russie',
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {
@@ -87,6 +89,22 @@ describe('analyses', () => {
     const urls = trumpIa.sources.map((s) => s.url);
     expect(urls).toContain('https://truthsocial.com/@realDonaldTrump/posts/117269745153543631');
     expect(urls.some((u) => u.includes('trumpstruth.org'))).toBe(true);
+  });
+
+  it('enquête écoles de journalisme laisse les sièges vides et cite la CPNEJ', () => {
+    expect(ecolesJournalisme.date).toBe('2026-09-23');
+    expect(getAnalysis('ecoles-journalisme-pluralite')?.title).toBe(ecolesJournalisme.title);
+    expect(ecolesJournalisme.cursus).toHaveLength(16);
+    expect(ecolesJournalisme.cursus.filter((c) => c.audition.startsWith('Entendue'))).toHaveLength(3);
+    expect(ecolesJournalisme.assemblee.every((row) => row.statut === 'Siège vide')).toBe(true);
+    expect(ecolesJournalisme.disclaimer).toMatch(/ni un vote fictif/i);
+    expect(JSON.stringify(ecolesJournalisme)).not.toMatch(/74\s*%/);
+    expect(JSON.stringify(ecolesJournalisme)).not.toMatch(/100\s*%/);
+    const urls = ecolesJournalisme.sources.map((s) => s.url);
+    expect(urls).toContain('https://cpnej.fr/les-cursus-de-journalisme-reconnus-par-le-cpnej/');
+    expect(urls).toContain(
+      'https://www.assemblee-nationale.fr/dyn/opendata/CRCANR5L17S2026PO874480N007.html',
+    );
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {

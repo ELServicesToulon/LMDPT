@@ -1,4 +1,5 @@
 import type { EditorialCover } from './editorial-types';
+import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
@@ -21,6 +22,18 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: ecolesJournalisme.slug,
+    title: ecolesJournalisme.title,
+    description:
+      'Assemblée virtuelle des courants à la sortie des écoles de journalisme : 16 cursus reconnus, trois écoles entendues le 11 décembre 2025, aucun scrutin de diplômés. Les sièges restent vides.',
+    date: ecolesJournalisme.date,
+    href: '/analyses/ecoles-journalisme-pluralite',
+    cover: uneCover(
+      'ecoles-journalisme-pluralite',
+      'Croquis encre et aquarelle : porte d’école, hémicycle de bancs presque vides et urne transparente',
+    ),
+  },
   {
     slug: trumpIa.slug,
     title: trumpIa.title,

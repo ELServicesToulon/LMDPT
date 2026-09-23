@@ -1,0 +1,276 @@
+---
+/**
+ * Enquête — pluralité des écoles de journalisme (23 sept. 2026)
+ * Données : src/data/analyses/ecoles-journalisme-pluralite.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/ecoles-journalisme-pluralite.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#methode', label: '1. L’assemblée virtuelle, et pourquoi elle est vide' },
+  { href: '#cursus', label: '2. Seize cursus reconnus, trois écoles entendues' },
+  { href: '#audition', label: '3. Ce que dit l’audition du 11 décembre 2025' },
+  { href: '#lectures', label: '4. Deux lectures du pluralisme' },
+  { href: '#limites', label: '5. Ce qui ne se laisse pas compter' },
+  { href: '#retenues', label: '6. Ce que LMDPT en retient' },
+  { href: '#sources', label: '7. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Assemblée virtuelle des courants à la sortie des écoles de journalisme : 16 cursus reconnus, trois écoles entendues le 11 décembre 2025, aucun scrutin de diplômés. Les sièges restent vides."
+  type="article"
+  keywords="écoles de journalisme, CPNEJ, pluralisme, ESJ Lille, Sciences Po, IJBA, Assemblée nationale, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <PoliticalHueBadges hues={data.hues} showMeta />
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="methode" aria-labelledby="methode-title">
+    <h2 id="methode-title">1. L’assemblée virtuelle, et pourquoi elle est vide</h2>
+    {data.methode.map((p) => <p>{p}</p>)}
+    <div class="table-wrap" role="region" aria-label="Assemblée virtuelle des courants" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Courants politiques à la sortie des écoles : statut des sièges
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Courant</th>
+            <th scope="col">Siège</th>
+            <th scope="col">Motif</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.assemblee.map((row) => (
+              <tr>
+                <th scope="row">{row.courant}</th>
+                <td>{row.statut}</td>
+                <td>{row.motif}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="cursus" aria-labelledby="cursus-title">
+    <h2 id="cursus-title">2. Seize cursus reconnus, trois écoles entendues</h2>
+    <p>{data.cursus_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Cursus reconnus par la CPNEJ" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Inventaire des 16 cursus reconnus et présence à l’audition du 11 décembre 2025
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Cursus</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Forme</th>
+            <th scope="col">Audition</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.cursus.map((row) => (
+              <tr>
+                <th scope="row">{row.nom}</th>
+                <td>{row.lieu}</td>
+                <td>{row.forme}</td>
+                <td>{row.audition}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.cursus_note}</p>
+    <div class="table-wrap" role="region" aria-label="Chiffres publics et leurs limites" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Chiffres publics mobilisés, et ce qu’ils ne mesurent pas</caption>
+        <thead>
+          <tr>
+            <th scope="col">Indicateur</th>
+            <th scope="col">Chiffre</th>
+            <th scope="col">Source</th>
+            <th scope="col">Limite</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.chiffres.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.valeur}</td>
+                <td>{row.source}</td>
+                <td>{row.limite}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="audition" aria-labelledby="audition-title">
+    <h2 id="audition-title">3. Ce que dit l’audition du 11 décembre 2025</h2>
+    <p>{data.audition_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Faits de l'audition" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Faits tirés du compte rendu, avec renvoi à la source</caption>
+        <thead>
+          <tr>
+            <th scope="col">Fait</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.audition.map((row) => (
+              <tr>
+                <td>{row.fait}</td>
+                <td>
+                  <a href={row.source_url} rel="noopener noreferrer">
+                    {row.source_label}
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="lectures" aria-labelledby="lectures-title">
+    <h2 id="lectures-title">4. Deux lectures du pluralisme</h2>
+    <p>{data.lectures_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Lectures du pluralisme" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Lecture du rapporteur et lecture des écoles, même structure</caption>
+        <thead>
+          <tr>
+            <th scope="col">Notion</th>
+            <th scope="col">Lecture du rapporteur</th>
+            <th scope="col">Lecture des écoles</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.lectures.map((row) => (
+              <tr>
+                <th scope="row">{row.notion}</th>
+                <td>{row.lecture_rapporteur}</td>
+                <td>{row.lecture_ecoles}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="limites" aria-labelledby="limites-title">
+    <h2 id="limites-title">5. Ce qui ne se laisse pas compter</h2>
+    {data.non_mesurable.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">6. Ce que LMDPT en retient</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">7. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  .enq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+</style>
