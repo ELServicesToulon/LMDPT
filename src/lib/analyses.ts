@@ -26,7 +26,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: ecolesJournalisme.slug,
     title: ecolesJournalisme.title,
     description:
-      'Assemblée virtuelle des courants à la sortie des écoles de journalisme. Facultés veut dire universités : neuf d’entre elles chiffrées en 2023 (292 places), une seule entendue en décembre 2025. Les sièges des courants restent vides.',
+      'Assemblée virtuelle des courants à la sortie des écoles de journalisme. Facultés veut dire universités : neuf d’entre elles chiffrées en 2023 (292 places), une seule entendue en décembre 2025. Les sièges des courants restent vides. L’affaire Sapin, en septembre 2026, montre qu’un article ne donne pas la couleur de son auteur.',
     date: ecolesJournalisme.date,
     href: '/analyses/ecoles-journalisme-pluralite',
     cover: uneCover(

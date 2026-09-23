@@ -6,8 +6,8 @@
   "date": "2026-09-23",
   "updated": "2026-09-23",
   "doe_angle": "Peut-on asseoir les courants politiques à la sortie des écoles sans scrutin, ou faut-il laisser les sièges vides ?",
-  "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne : la démocratie avant l’élimination). Synthèse de sources publiques : liste CPNEJ, inventaire Onisep, livre blanc de la Conférence des écoles de journalisme (2023), avis du collège de déontologie de l’enseignement supérieur (21 mai 2021), chiffres CCIJP, portrait Afdas, compte rendu d’audition de l’Assemblée nationale du 11 décembre 2025, entretien de Dominique Marchetti dans Sciences Humaines. Aucune donnée personnelle d’étudiant n’est traitée. Ce texte n’est ni un classement des écoles, ni un vote fictif de leurs diplômés, ni un avis sur la ligne d’un média.",
-  "tldr": "Le Média du Premier Tour ouvre une assemblée virtuelle des courants politiques à la sortie des écoles de journalisme. Elle ne peut pas être remplie. Aucun scrutin public ne dit pour qui votent les diplômés. En janvier 2026, la CPNEJ reconnaît 16 cursus : cette reconnaissance certifie un parcours, pas une teinte. Onze de ces cursus sont portés par une université. Le livre blanc de 2023 en chiffrait neuf, pour 292 places annoncées, et le critère officiel de « diversité » vise la société, pas les camps. Le 11 décembre 2025, la commission d’enquête n’a entendu qu’une de ces universités, l’IJBA, à côté de l’ESJ Lille et de Sciences Po. Les sièges des courants restent vides, dans les universités comme ailleurs. La carte de presse ne les remplit pas : en 2025, elle sépare les pigistes des contrats courts, et elle n’inscrit un média que sur la carte des contrats à durée indéterminée.",
+  "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne : la démocratie avant l’élimination). Synthèse de sources publiques : liste CPNEJ, inventaire Onisep, livre blanc de la Conférence des écoles de journalisme (2023), avis du collège de déontologie de l’enseignement supérieur (21 mai 2021), chiffres CCIJP, portrait Afdas, compte rendu d’audition de l’Assemblée nationale du 11 décembre 2025, entretien de Dominique Marchetti dans Sciences Humaines, communiqué de l’Arcom du 11 juin 2026, décision de cassation rapportée par franceinfo le 17 janvier 2024, chroniques RFI et de la médiatrice de Radio France, dépêche France 24 du 19 septembre 2026. Aucune donnée personnelle d’étudiant n’est traitée. Aucune couleur politique n’est attribuée à un journaliste nommé. Ce texte n’est ni un classement des écoles, ni un vote fictif de leurs diplômés, ni un avis sur la ligne d’un média.",
+  "tldr": "Le Média du Premier Tour ouvre une assemblée virtuelle des courants politiques à la sortie des écoles de journalisme. Elle ne peut pas être remplie. Aucun scrutin public ne dit pour qui votent les diplômés. En janvier 2026, la CPNEJ reconnaît 16 cursus : cette reconnaissance certifie un parcours, pas une teinte. Onze de ces cursus sont portés par une université. Le livre blanc de 2023 en chiffrait neuf, pour 292 places annoncées, et le critère officiel de « diversité » vise la société, pas les camps. Le 11 décembre 2025, la commission d’enquête n’a entendu qu’une de ces universités, l’IJBA, à côté de l’ESJ Lille et de Sciences Po. Les sièges des courants restent vides, dans les universités comme ailleurs. La carte de presse ne les remplit pas : en 2025, elle sépare les pigistes des contrats courts, et elle n’inscrit un média que sur la carte des contrats à durée indéterminée. L’affaire Sapin, en septembre 2026, montre la limite : on a disputé une couleur avant d’avoir un corpus d’articles à lire.",
   "hues": [
     {
       "slug": "pluraliste",
@@ -25,13 +25,13 @@
       "slug": "droite",
       "label": "Droite (débat)",
       "color": "#0066cc",
-      "rationale": "Lecture du rapporteur sur les médias d’appartenance des intervenants."
+      "rationale": "Lecture du rapporteur sur les médias d’appartenance des intervenants, et créneau « droite républicaine » que France Inter dit avoir ouvert en 2026. Le créneau n’est pas la couleur d’une personne."
     },
     {
       "slug": "le-pen",
       "label": "Le Pen / RN",
       "color": "#0d378a",
-      "rationale": "Le Rassemblement national est nommé dans l’audition du 11 décembre 2025."
+      "rationale": "Nommé dans l’audition du 11 décembre 2025. L’Arcom, le 10 juin 2026, en mesure le temps de parole sur Radio France. Ce temps n’est pas la teneur d’un édito."
     }
   ],
   "methode": [
@@ -265,7 +265,87 @@
     "La rédaction, ici, est la charte : faits sourcés, pastilles d’idées sur ce qui est cité, pas sur l’auteur. Cette enquête n’est pas une pige. Elle n’ouvre pas droit à une carte de presse. Son auteur n’est pas un siège dans l’assemblée des journalistes.",
     "Garde-fou interne : ne pas se décrire comme une rédaction de plus, avec une couleur à deviner. Le travail est de montrer les trous des autres décomptes, y compris le nôtre."
   ],
+  "sapin_reponse": "On peut décrire la teneur d’un texte : les faits choisis, les mots, les gens cités, ce qui manque. Cette teneur est une couleur du texte, estimée, à recouper. Elle n’est pas la couleur de la personne qui signe. Un article ne dit pas pour qui son auteur vote. L’affaire Charles Sapin, à France Inter en septembre 2026, met cette limite au premier plan : le conflit a porté sur le journal qui l’emploie, et sur ce qu’il pourrait dire, plus que sur la lecture de ses éditos déjà diffusés.",
+  "sapin_methode": [
+    "Ce qu’un article permet. Repérer une ligne dans un texte public : qui est nommé, qui ne l’est pas, quel mot revient. Le Média du Premier Tour peut alors poser une pastille sur les idées citées dans ce texte. La pastille est une transparence pour le lecteur. Elle n’est pas une carte d’adhésion.",
+    "Ce qu’un article ne permet pas. Transporter cette pastille sur le journaliste, puis sur ses collègues, puis sur l’école qui l’a formé. Le texte d’un autre, écrit des années plus tôt dans le même journal, ne colore pas le nouveau venu. L’employeur non plus : une rédaction emploie des gens qui n’en partagent pas la une.",
+    "Garde-fou. Nommer la couleur politique d’une personne à partir de ses papiers, ce serait constituer un fichier d’opinions. C’est hors charte. On documente le débat public. On ne distribue pas les sièges."
+  ],
+  "sapin_chrono": [
+    {
+      "date": "2024-01-16",
+      "date_label": "16 janv. 2024",
+      "fait": "La Cour de cassation rejette le pourvoi d’Erik Monjalous, directeur de la publication de Valeurs actuelles, et de Laurent Jullien, rédacteur de « Obono l’Africaine » (août 2020). La condamnation pour injure publique à caractère raciste, et complicité, devient définitive. Charles Sapin n’est pas dans cette procédure. Il rejoindra l’hebdomadaire deux ans et demi plus tard.",
+      "source_label": "franceinfo, 17 janv. 2024",
+      "source_url": "https://www.franceinfo.fr/societe/justice/daniele-obono-depeinte-en-esclave-le-directeur-et-un-journaliste-de-valeurs-actuelles-definitivement-condamnes_6309954.html"
+    },
+    {
+      "date": "2026-06-10",
+      "date_label": "10 juin 2026",
+      "fait": "L’Arcom met en demeure Radio France. De janvier à mars 2026, près de 60 % du temps de parole du Rassemblement national sur France Inter, et plus de 70 % sur France Info, ont été diffusés entre minuit et 5 h 59. L’objet mesuré est le temps de parole de personnalités politiques, pas la teneur des articles d’un chroniqueur.",
+      "source_label": "Arcom, communiqué du 11 juin 2026",
+      "source_url": "https://www.arcom.fr/presse/temps-de-parole-politique-mise-en-demeure-de-radio-france"
+    },
+    {
+      "date": "2026-09-04",
+      "date_label": "4 sept. 2026",
+      "fait": "RFI décrit une levée de boucliers à France Inter : Charles Sapin, venu du Figaro et du Point, tout récent directeur adjoint de Valeurs actuelles, tient l’édito politique du dimanche matin. Une partie de la rédaction menace de grève. RFI note que ce n’est pas l’ancien journaliste du Point qui est visé en tant que tel, mais son journal. Selon la même chronique, la direction y voit un signe de pluralisme, et rappelle que d’autres chroniqueurs viennent de titres classés à gauche.",
+      "source_label": "RFI, 4 sept. 2026",
+      "source_url": "https://www.rfi.fr/fr/podcasts/chronique-des-m%C3%A9dias/20260904-l-arriv%C3%A9e-de-charles-sapin-de-valeurs-actuelle-%C3%A0-france-inter-fait-pol%C3%A9mique"
+    },
+    {
+      "date": "2026-09-04",
+      "date_label": "Sept. 2026",
+      "fait": "Céline Pigalle, directrice de France Inter, dit à la médiatrice de Radio France avoir voulu un édito porteur des « idées et valeurs de la droite républicaine ». Elle dit avoir pensé à Charles Sapin lorsqu’il était encore au Point, puis avoir appris son départ vers Valeurs actuelles. Elle rapporte ses mots : il aurait été appelé pour changer la ligne, tourner la page des provocations, rendre le titre « honorable ». Elle dit ne pas s’être arrêtée au symbole.",
+      "source_label": "La Médiatrice, Radio France",
+      "source_url": "https://mediateur.radiofrance.com/rendez-vous/le-rendez-vous-de-la-mediatrice-larrivee-de-charles-sapin-sur-france-inter/"
+    },
+    {
+      "date": "2026-09-19",
+      "date_label": "19 sept. 2026",
+      "fait": "Après deux éditos diffusés et deux journées de grève, Charles Sapin annonce que France Inter supprime le rendez-vous. Il a refusé de le transformer en débat. Sur X, il parle de « censure préventive » : s’indigner de ce qu’un chroniqueur n’a pas prononcé. La direction confirme avoir proposé un débat, qu’il a décliné. Manuel Bompard (La France insoumise) répond que le directeur adjoint d’un journal qu’il présente comme condamné pour haine raciale n’a pas sa place sur le service public. La décision de 2024 vise deux personnes du titre, pas Charles Sapin.",
+      "source_label": "France 24 / AFP, 19 sept. 2026",
+      "source_url": "https://www.france24.com/fr/info-en-continu/20260919-charles-sapin-ne-sera-plus-sur-france-inter-pour-son-%C3%A9dito-contest%C3%A9"
+    }
+  ],
+  "sapin_lectures": [
+    {
+      "notion": "D’où vient la couleur",
+      "lecture_a": "La direction a créé un créneau pour la droite républicaine, et elle a nommé un journaliste qu’elle jugeait sérieux. La couleur est un choix de grille, pas le résultat d’une lecture de corpus.",
+      "lecture_b": "La couleur vient du titre : Valeurs actuelles, sa condamnation définitive de 2024, et, selon RFI, un actionnaire qui veut peser sur 2027. Le nom sur la porte suffit."
+    },
+    {
+      "notion": "Ce qui a été lu",
+      "lecture_a": "Deux éditos ont été diffusés. Charles Sapin dit que le troisième a été empêché avant qu’il parle. On juge une parole qui n’a pas eu lieu.",
+      "lecture_b": "Le personnel et une partie de la gauche disent que le problème n’est pas une phrase du dimanche matin. C’est l’employeur, et une condamnation qui ne le concerne pas personnellement mais qui marque le journal."
+    },
+    {
+      "notion": "Ce que LMDPT en fait",
+      "lecture_a": "Pastilles sur les idées disputées dans l’affaire : droite, service public, Rassemblement national lorsque l’Arcom en mesure le temps de parole.",
+      "lecture_b": "Pas de pastille « Charles Sapin ». Aucun siège à son nom. Ses deux éditos ne sont pas notés ici : le dossier n’en a pas fait le corpus."
+    }
+  ],
   "sources": [
+    {
+      "label": "Arcom — mise en demeure de Radio France, 10 juin 2026",
+      "url": "https://www.arcom.fr/presse/temps-de-parole-politique-mise-en-demeure-de-radio-france"
+    },
+    {
+      "label": "franceinfo — condamnation définitive Valeurs actuelles, 17 janvier 2024",
+      "url": "https://www.franceinfo.fr/societe/justice/daniele-obono-depeinte-en-esclave-le-directeur-et-un-journaliste-de-valeurs-actuelles-definitivement-condamnes_6309954.html"
+    },
+    {
+      "label": "RFI — arrivée de Charles Sapin à France Inter, 4 septembre 2026",
+      "url": "https://www.rfi.fr/fr/podcasts/chronique-des-m%C3%A9dias/20260904-l-arriv%C3%A9e-de-charles-sapin-de-valeurs-actuelle-%C3%A0-france-inter-fait-pol%C3%A9mique"
+    },
+    {
+      "label": "Radio France, la Médiatrice — Céline Pigalle sur Charles Sapin",
+      "url": "https://mediateur.radiofrance.com/rendez-vous/le-rendez-vous-de-la-mediatrice-larrivee-de-charles-sapin-sur-france-inter/"
+    },
+    {
+      "label": "France 24 / AFP — fin de l’édito, 19 septembre 2026",
+      "url": "https://www.france24.com/fr/info-en-continu/20260919-charles-sapin-ne-sera-plus-sur-france-inter-pour-son-%C3%A9dito-contest%C3%A9"
+    },
     {
       "label": "CPNEJ — cursus reconnus (16 en janvier 2026)",
       "url": "https://cpnej.fr/les-cursus-de-journalisme-reconnus-par-le-cpnej/"

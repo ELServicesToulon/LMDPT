@@ -23,15 +23,16 @@ const tocItems = [
   { href: '#consequences', label: '8. Conséquences' },
   { href: '#pistes', label: '9. Trois durées' },
   { href: '#metier', label: '10. Pigistes et rédacteurs' },
-  { href: '#sources', label: '11. Sources' },
+  { href: '#sapin', label: '11. La teneur d’un article ne donne pas une couleur' },
+  { href: '#sources', label: '12. Sources' },
 ];
 ---
 
 <BaseLayout
   title={data.title}
-  description="Assemblée virtuelle des courants à la sortie des écoles de journalisme : 16 cursus reconnus, trois écoles entendues le 11 décembre 2025, aucun scrutin de diplômés. Les sièges restent vides."
+  description="Assemblée virtuelle des courants à la sortie des écoles de journalisme : 16 cursus reconnus, trois écoles entendues le 11 décembre 2025, aucun scrutin de diplômés. Les sièges restent vides. L’affaire Sapin montre qu’un article ne donne pas la couleur de son auteur."
   type="article"
-  keywords="écoles de journalisme, CPNEJ, pluralisme, ESJ Lille, Sciences Po, IJBA, Assemblée nationale, LMDPT"
+  keywords="écoles de journalisme, CPNEJ, pluralisme, Charles Sapin, France Inter, ESJ Lille, Sciences Po, IJBA, Assemblée nationale, LMDPT"
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/analyses">Analyses</a>
@@ -321,8 +322,72 @@ const tocItems = [
     {data.redaction_lmdpt.map((p) => <p>{p}</p>)}
   </section>
 
+  <section class="card" id="sapin" aria-labelledby="sapin-title">
+    <h2 id="sapin-title">11. La teneur d’un article ne donne pas la couleur d’un journaliste</h2>
+    <p>{data.sapin_reponse}</p>
+    {data.sapin_methode.map((p) => <p>{p}</p>)}
+    <h3>Ce que l’affaire Sapin établit</h3>
+    <div class="table-wrap" role="region" aria-label="Chronologie de l’affaire Sapin" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Faits publics de l’affaire Charles Sapin, de la cassation de 2024 à la fin de l’édito en septembre 2026
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Fait</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.sapin_chrono.map((row) => (
+              <tr>
+                <th scope="row">
+                  <time datetime={row.date}>{row.date_label}</time>
+                </th>
+                <td>{row.fait}</td>
+                <td>
+                  <a href={row.source_url} rel="noopener noreferrer">
+                    {row.source_label}
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <h3>Deux lectures, côte à côte</h3>
+    <div class="table-wrap" role="region" aria-label="Lectures de l’affaire Sapin" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Deux lectures de la couleur disputée dans l’affaire Sapin, sans siège attribué
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Notion</th>
+            <th scope="col">Première lecture</th>
+            <th scope="col">Seconde lecture</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.sapin_lectures.map((row) => (
+              <tr>
+                <th scope="row">{row.notion}</th>
+                <td>{row.lecture_a}</td>
+                <td>{row.lecture_b}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="card" id="sources" aria-labelledby="sources-title">
-    <h2 id="sources-title">11. Sources</h2>
+    <h2 id="sources-title">12. Sources</h2>
     <ul>
       {
         data.sources.map((s) => (

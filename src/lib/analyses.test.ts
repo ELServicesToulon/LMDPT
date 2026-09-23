@@ -124,6 +124,25 @@ describe('analyses', () => {
     expect(ecolesJournalisme.redaction_lmdpt.join(' ')).toMatch(/ne publie pas de liste de pigistes/);
     expect(ecolesJournalisme.pistes[2]?.garde_fou).toMatch(/donnée sensible/);
     expect(urls).toContain('https://ccijp.fr/notre-faq/');
+    expect(ecolesJournalisme.sapin_reponse).toMatch(/n’est pas la couleur de la personne/);
+    expect(ecolesJournalisme.sapin_chrono.map((row) => row.date)).toEqual([
+      '2024-01-16',
+      '2026-06-10',
+      '2026-09-04',
+      '2026-09-04',
+      '2026-09-19',
+    ]);
+    expect(ecolesJournalisme.sapin_chrono[0]?.fait).toMatch(/Charles Sapin n’est pas dans cette procédure/);
+    expect(ecolesJournalisme.sapin_chrono[4]?.fait).toMatch(/pas Charles Sapin/);
+    expect(ecolesJournalisme.sapin_lectures[2]?.lecture_b).toMatch(/Pas de pastille/);
+    expect(ecolesJournalisme.sapin_lectures[2]?.lecture_b).toMatch(/Aucun siège à son nom/);
+    expect(urls).toContain(
+      'https://www.arcom.fr/presse/temps-de-parole-politique-mise-en-demeure-de-radio-france',
+    );
+    expect(urls).toContain(
+      'https://www.france24.com/fr/info-en-continu/20260919-charles-sapin-ne-sera-plus-sur-france-inter-pour-son-%C3%A9dito-contest%C3%A9',
+    );
+    expect(getAnalysis('ecoles-journalisme-pluralite')?.description).toMatch(/affaire Sapin/);
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {
