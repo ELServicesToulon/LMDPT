@@ -1,4 +1,5 @@
 import type { EditorialCover } from './editorial-types';
+import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
@@ -21,6 +22,18 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: ecolesJournalisme.slug,
+    title: ecolesJournalisme.title,
+    description:
+      'Aucun scrutin ne dit pour qui votent les diplômés des écoles de journalisme. Seize cursus reconnus, onze dans des universités, 292 places chiffrées en 2023, une seule université entendue en décembre 2025. Les sièges restent vides. L’affaire Sapin rappelle qu’un article ne donne pas la couleur de son auteur.',
+    date: ecolesJournalisme.date,
+    href: '/analyses/ecoles-journalisme-pluralite',
+    cover: uneCover(
+      'ecoles-journalisme-pluralite',
+      'Croquis encre et aquarelle : porte d’école, hémicycle de bancs presque vides et urne transparente',
+    ),
+  },
   {
     slug: trumpIa.slug,
     title: trumpIa.title,

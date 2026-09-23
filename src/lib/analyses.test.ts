@@ -4,6 +4,7 @@ import alertes from '../data/alertes-citoyennes.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
+import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import { ANALYSIS_CATALOG, getAnalysis } from './analyses';
 
 describe('analyses', () => {
@@ -22,6 +23,7 @@ describe('analyses', () => {
       'ukraine-energie-triangle-europe-algerie-russie',
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {
@@ -87,6 +89,60 @@ describe('analyses', () => {
     const urls = trumpIa.sources.map((s) => s.url);
     expect(urls).toContain('https://truthsocial.com/@realDonaldTrump/posts/117269745153543631');
     expect(urls.some((u) => u.includes('trumpstruth.org'))).toBe(true);
+  });
+
+  it('enquête écoles de journalisme laisse les sièges vides et cite la CPNEJ', () => {
+    expect(ecolesJournalisme.date).toBe('2026-09-23');
+    expect(getAnalysis('ecoles-journalisme-pluralite')?.title).toBe(ecolesJournalisme.title);
+    expect(ecolesJournalisme.cursus).toHaveLength(16);
+    expect(ecolesJournalisme.cursus.filter((c) => c.audition.startsWith('Entendue'))).toHaveLength(3);
+    expect(ecolesJournalisme.assemblee.every((row) => row.statut === 'Siège vide')).toBe(true);
+    expect(ecolesJournalisme.disclaimer).toMatch(/ni un vote fictif/i);
+    expect(JSON.stringify(ecolesJournalisme)).not.toMatch(/74\s*%/);
+    expect(JSON.stringify(ecolesJournalisme)).not.toMatch(/100\s*%/);
+    const urls = ecolesJournalisme.sources.map((s) => s.url);
+    expect(urls).toContain('https://cpnej.fr/les-cursus-de-journalisme-reconnus-par-le-cpnej/');
+    expect(urls).toContain(
+      'https://www.assemblee-nationale.fr/dyn/opendata/CRCANR5L17S2026PO874480N007.html',
+    );
+    expect(ecolesJournalisme.facultes).toHaveLength(11);
+    const places = ecolesJournalisme.facultes
+      .map((f) => f.places_2023)
+      .filter((n): n is number => typeof n === 'number');
+    expect(places.reduce((s, n) => s + n, 0)).toBe(ecolesJournalisme.facultes_somme);
+    expect(ecolesJournalisme.facultes_somme).toBe(292);
+    expect(
+      ecolesJournalisme.facultes.filter((f) => f.audition.startsWith('Entendue')).map((f) => f.nom),
+    ).toEqual(['IJBA']);
+    expect(ecolesJournalisme.facultes_intro[0]).toMatch(/faculté veut dire université/);
+    expect(ecolesJournalisme.facultes_critere).toMatch(/diversité de la société/);
+    expect(ecolesJournalisme.facultes_critere).not.toMatch(/quota/);
+    expect(urls).toContain('https://cej.education/wp-content/uploads/2023/06/CEJ_2023_Livre_Blanc_Web.pdf');
+    expect(ecolesJournalisme.pistes.map((p) => p.horizon)).toEqual(['Court', 'Moyen', 'Long']);
+    expect(ecolesJournalisme.pistes.every((p) => p.garde_fou.length > 20)).toBe(true);
+    expect(ecolesJournalisme.pigistes_chiffres[0]?.valeur).toMatch(/4 282/);
+    expect(ecolesJournalisme.redaction_lmdpt.join(' ')).toMatch(/ne publie pas de liste de pigistes/);
+    expect(ecolesJournalisme.pistes[2]?.garde_fou).toMatch(/donnée sensible/);
+    expect(urls).toContain('https://ccijp.fr/notre-faq/');
+    expect(ecolesJournalisme.sapin_reponse).toMatch(/n’est pas la couleur de la personne/);
+    expect(ecolesJournalisme.sapin_chrono.map((row) => row.date)).toEqual([
+      '2024-01-16',
+      '2026-06-10',
+      '2026-09-04',
+      '2026-09-04',
+      '2026-09-19',
+    ]);
+    expect(ecolesJournalisme.sapin_chrono[0]?.fait).toMatch(/Charles Sapin n’est pas dans cette procédure/);
+    expect(ecolesJournalisme.sapin_chrono[4]?.fait).toMatch(/pas Charles Sapin/);
+    expect(ecolesJournalisme.sapin_lectures[2]?.lecture_b).toMatch(/Pas de pastille/);
+    expect(ecolesJournalisme.sapin_lectures[2]?.lecture_b).toMatch(/Aucun siège à son nom/);
+    expect(urls).toContain(
+      'https://www.arcom.fr/presse/temps-de-parole-politique-mise-en-demeure-de-radio-france',
+    );
+    expect(urls).toContain(
+      'https://www.france24.com/fr/info-en-continu/20260919-charles-sapin-ne-sera-plus-sur-france-inter-pour-son-%C3%A9dito-contest%C3%A9',
+    );
+    expect(getAnalysis('ecoles-journalisme-pluralite')?.description).toMatch(/affaire Sapin/);
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {

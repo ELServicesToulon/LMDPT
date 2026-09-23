@@ -50,6 +50,30 @@ describe('programme-veille', () => {
     ).toBe(true);
   });
 
+  it('does not treat Philippe Brun as Édouard Philippe', () => {
+    const brun = item(
+      'Présidentielle 2027 : Philippe Brun a déposé un référé',
+      'Primaire socialiste : accusations de violences',
+    );
+    expect(articleMentionsCandidate(brun, { slug: 'philippe', name: 'Édouard Philippe' })).toBe(false);
+    expect(articleMentionsCandidate(brun, { slug: 'philippe-brun', name: 'Philippe Brun' })).toBe(true);
+    expect(
+      articleMentionsCandidate(item('Édouard Philippe présente son programme'), {
+        slug: 'philippe',
+        name: 'Édouard Philippe',
+      }),
+    ).toBe(true);
+    expect(
+      articleMentionsCandidate(item('Philippe veut une règle d or budgétaire'), {
+        slug: 'philippe',
+        name: 'Édouard Philippe',
+      }),
+    ).toBe(true);
+    const both = item('Édouard Philippe répond à Philippe Brun');
+    expect(articleMentionsCandidate(both, { slug: 'philippe', name: 'Édouard Philippe' })).toBe(true);
+    expect(articleMentionsCandidate(both, { slug: 'philippe-brun', name: 'Philippe Brun' })).toBe(true);
+  });
+
   it('builds press signals per candidate', () => {
     const items = [
       item('Attal présente son programme économique', 'propositions'),

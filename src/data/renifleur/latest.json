@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-22T11:42:05.372Z",
+  "fetched_at": "2026-09-22T19:15:50.925Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,7 +7,7 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "Présidentielle 2027 : dans « Le Crépuscule des princes », Edouard Philippe multiplie les coups de griffe à l’égard de Gabriel Attal",
+      "title": "« Amusant, mais aussi très, très immature » : les répliques cinglantes d’Edouard Philippe sur Gabriel Attal dans le livre « Le Crépuscule des princes »",
       "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-dans-le-crepuscule-des-princes-edouard-philippe-multiplie-les-coups-de-griffe-a-l-egard-de-gabriel-attal_6780090_823448.html",
       "published": "2026-09-22",
       "summary": "Depuis plusieurs mois, le camp du patron de Renaissance distille auprès de la presse une comparaison peu flatteuse, caricaturant Edouard Philippe en un autre Edouard, Balladur. Le maire du Havre réplique dans un ouvrage des journalistes Jérémy Marot (AFP) et Pauline Théveniaud (R",
@@ -71,26 +71,26 @@
       }
     },
     {
-      "title": "Crises géopolitiques, prix des carburants, budget 2027... Le \"8h30 franceinfo\" de Thomas Ménagé",
-      "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/crises-geopolitiques-prix-des-carburants-budget-2027-le-8h30-franceinfo-de-thomas-menage_8182028.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Baisse des taxes sur le carburant : comment Marine Le Pen en a fait sa mesure phare",
+      "url": "https://www.liberation.fr/politique/elections/baisse-des-taxes-sur-le-carburant-comment-marine-le-pen-en-a-fait-sa-mesure-phare-20260922_GDPNIP3CTVHLPIFZWAKJQ7Y344/",
       "published": "2026-09-22",
-      "summary": "Le député RN du Loiret et porte-parole du parti, est l'invité du \"8h30 franceinfo\", mardi 22 septembre 2026.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
+      "summary": "Brandie par la candidate du RN, la promesse, simple mais fort coûteuse pour l’Etat, a intégré le programme du parti en 2021, malgré des réserves au sein comme hors de l’appareil.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "le-pen",
         "label": "Le Pen / RN",
         "color": "#0d378a",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : rn"
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
       "title": "Nicolas Mayer-Rossignol, le maire de Rouen atteint d’un cancer, a fait le choix de la transparence : « Ça m’a libéré, c’est difficile de garder ça pour soi »",
       "url": "https://www.lemonde.fr/politique/article/2026/09/22/face-au-cancer-le-maire-de-rouen-nicolas-mayer-rossignol-a-fait-le-choix-de-la-transparence_6779752_823448.html",
       "published": "2026-09-22",
-      "summary": "Le maire socialiste de Rouen a décidé de rendre publique sa maladie, rompant avec la figure infaillible de l’homme politique. A 49 ans, il assume de maintenir ses fonctions, et s’est engagé dans la campagne de Raphaël Glucksmann pour la prochaine élection présidentielle.",
+      "summary": "A 49 ans, l’élu socialiste de Rouen, rompant avec la figure infaillible de l’homme politique, assume de maintenir ses fonctions. Il s’est engagé dans la campagne de Raphaël Glucksmann pour l’élection présidentielle de 2027.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -103,12 +103,12 @@
       }
     },
     {
-      "title": "Carburants : Emmanuel Macron demande un assouplissement des normes européennes sur la production et l’import",
-      "url": "https://www.lemonde.fr/international/article/2026/09/22/carburants-emmanuel-macron-demande-un-assouplissement-des-normes-europeennes-sur-la-production-et-l-import_6780080_3210.html",
+      "title": "« Emmanuel Macron, plus qu’aucun autre de ses prédécesseurs, est confronté au défi de ne pas laisser les clés de l’Elysée à l’extrême droite »",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/22/emmanuel-macron-plus-qu-aucun-autre-de-ses-predecesseurs-est-confronte-au-defi-de-ne-pas-laisser-les-cles-de-l-elysee-a-l-extreme-droite_6780093_3232.html",
       "published": "2026-09-22",
-      "summary": "Le président français demande à la Commission européenne des mesures d’urgence en raison de l’explosion des prix à la pompe liée à la guerre au Moyen-Orient. Mais elles ne doivent pas interférer avec les actions de long terme de l’UE, comme l’électrification ou la diversification",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "summary": "Tous les présidents sortants ont vécu une phase de dévitalisation qui, à chaque fois, a conduit le pays à douter fortement de lui-même. Jamais cependant le RN n’a été en situation aussi favorable pour tenter de récupérer le malaise ambiant, observe dans sa chronique Françoise Fre",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "attal",
@@ -119,26 +119,42 @@
       }
     },
     {
-      "title": "Carburant : \"Les raffineurs profitent de la crise\", estime le rapporteur LR du budget à l'Assemblée, Philippe Juvin",
-      "url": "https://www.franceinfo.fr/replay-magazine/franceinfo/l-invite-politique/l-invite-politique-du-mardi-22-septembre-2026_8182142.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
       "published": "2026-09-22",
-      "summary": "Invité politique de \"La Matinale\" mardi 22 septembre, le député Les Républicains des Hauts-de-Seine et rapporteur général du budget à l'Assemblée nationale détaille les mesures qui, selon lui, permettraient de \"ne pas dépasser les deux euros\" à la pompe. Il souhaite notamment sup",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
+      "summary": "L’achoppement d’un mécanisme de prêt garanti par l’État à destination des candidats à la présidentielle est une mauvaise nouvelle pour Marine Le Pen, qui peine toujours à financer sa campagne.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
+      }
+    },
+    {
+      "title": "Six mois après sa victoire aux municipales, Éric Ciotti impose sa méthode à Nice",
+      "url": "https://www.la-croix.com/politique/six-mois-apres-sa-victoire-aux-municipales-eric-ciotti-impose-sa-methode-a-nice-20260922",
+      "published": "2026-09-22",
+      "summary": "Depuis l’élection de mars 2026, Éric Ciotti a pris de nombreuses mesures pour « remettre de l’ordre dans la rue et dans les comptes » de Nice. Si certaines mesures suscitent l’approbation, ses opposants déplorent surtout des annonces populistes.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "retailleau",
         "label": "Retailleau / LR",
         "color": "#0066cc",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : les républicains, les republicains, républicains"
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : ciotti"
       }
     },
     {
-      "title": "Carburants : Sébastien Lecornu propose d’inscrire une « règle d’or » dans le budget 2027 pour « restituer » les surplus de TVA aux Français",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/22/carburants-sebastien-lecornu-propose-d-inscrire-une-regle-d-or-dans-le-budget-2027-pour-restituer-les-surplus-de-tva-aux-francais_6780071_823448.html",
+      "title": "Le gel annoncé des APL, un énième coup de rabot qui fragilisera les locataires les plus pauvres",
+      "url": "https://www.lemonde.fr/societe/article/2026/09/22/le-gel-annonce-des-apl-un-enieme-coup-de-rabot-qui-fragilisera-les-locataires-les-plus-modestes_6780280_3224.html",
       "published": "2026-09-22",
-      "summary": "« Concrètement, si les prix devaient encore augmenter et alimenter un surplus de TVA, la hausse de TVA sera[it] neutralisée pour être restituée aux Français à la pompe », affirme l’entourage du premier ministre, sans donner plus de détail sur le mécanisme de cette restitution.",
+      "summary": "Le gel des APL en 2027, un « petit effort » selon le ministre du logement, aura un impact certain sur les budgets déjà contraints des foyers les plus paupérisés, estiment économistes et acteurs du logement social, qui rappellent que les allocations logement ont déjà connu une sér",
       "source_id": "lemonde-politique",
       "source_label": "Le Monde — Politique",
       "source_type": "traditional",
@@ -148,6 +164,22 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget : si la copie ne change pas, \"on censurera\"",
+      "url": "https://www.franceinfo.fr/politique/front-national/budget-2027-si-le-gouvernement-ne-change-pas-sa-copie-on-censure-declare-thomas-menage_8204645.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-22",
+      "summary": "Budget 2027, Thomas Ménagé, député RN du Loiret et porte-parole du groupe RN à l'assemblée met en garde le gouvernement. S'il ne revoit pas sa copie du budget concernant les petites retraites que l'exécutif souhaite sous-indexer ou désindexer, alors il risque la censure du RN.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : rn"
       }
     },
     {
@@ -167,54 +199,6 @@
       }
     },
     {
-      "title": "Budget 2027 : LR avance avec prudence, entre un appel aux ordonnances et le refus de la censure",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/22/budget-2027-entre-un-appel-aux-ordonnances-et-le-refus-de-la-censure-lr-avance-avec-prudence_6779831_823448.html",
-      "published": "2026-09-22",
-      "summary": "En 2025, l’exercice budgétaire avait révélé les divisions du parti. Dans l’attente de la copie initiale de Matignon, la droite reste attentive à l’effort demandé aux retraités. Mais les premières mesures de Sébastien Lecornu ne seraient pas de nature à « provoquer une levée de bo",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Primaire socialiste : Philippe Brun «croit encore» pouvoir être candidat, malgré les accusations de violences",
-      "url": "https://www.liberation.fr/politique/primaire-socialiste-philippe-brun-annonce-que-son-refere-depose-contre-le-ps-pour-reintegrer-le-parti-sera-examine-ce-matin-par-le-tribunal-judiciaire-20260922_T7BSCCGZAJD2ZBEX3FRWNJBLWQ/",
-      "published": "2026-09-22",
-      "summary": "Invité ce mardi au micro de RTL, le député de l’Eure, a asséné n’avoir «jamais violenté personne». Alors que le référé contre son éviction est examiné ce mardi matin par la justice, il estime qu’il va pouvoir «prouver son innocence».",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : philippe brun, socialiste, primaire socialiste"
-      }
-    },
-    {
-      "title": "Voyage du pape en France : Macron n’assistera à aucune des messes célébrées par Léon XIV",
-      "url": "https://www.la-croix.com/religion/voyage-du-pape-en-france-macron-n-assistera-a-aucune-des-messes-celebrees-par-leon-xiv-20260922",
-      "published": "2026-09-22",
-      "summary": "Emmanuel Macron ne participera à aucune célébration religieuse lors de la visite de Léon XIV en France, a annoncé l’Élysée mardi 22 septembre. Son épouse et le premier ministre Sébastien Lecornu seront présents place de la Concorde.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
       "title": "«Être de gauche, ce n’est pas faire vœu de pauvreté», se justifie Matthieu Pigasse, pointé du doigt pour ses vacances sur l’île Moustique",
       "url": "https://www.lefigaro.fr/politique/etre-de-gauche-ce-n-est-pas-faire-voeu-de-pauvrete-se-justifie-matthieu-pigasse-pointe-du-doigt-pour-ses-vacances-sur-l-ile-moustique-20260922",
       "published": "2026-09-22",
@@ -228,6 +212,86 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "HEC Débats – Public Sénat : suivez en direct l’entretien avec Jean-Marc Jancovici",
+      "url": "https://www.publicsenat.fr/actualites/environnement/hec-debats-public-senat-suivez-en-direct-la-rencontre-avec-jean-marc-jancovici",
+      "published": "2026-09-22",
+      "summary": "Cofondateur de Carbone 4 et président du Shift Project, Jean-Marc Jancovici est l'invité d'HEC Débats ce mardi 22 septembre, à partir de 19H45, en partenariat avec Public Sénat. Climat, présidentielle 2027, nucléaire, sobriété : autant de thèmes abordés lors d'une rencontre animé",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : climat"
+      }
+    },
+    {
+      "title": "Eric Zemmour veut expulser les étrangers en se basant sur une loi de 1945, une approximation historique et juridique",
+      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/09/22/eric-zemmour-veut-expulser-les-etrangers-en-se-basant-sur-une-loi-de-1945-une-approximation-historique-et-juridique_6780244_4355770.html",
+      "published": "2026-09-22",
+      "summary": "Le candidat Reconquête ! à l’élection présidentielle de 2027 veut expulser les étrangers en situation régulière qui « vivent des aides sociales ». Mais le texte juridique qu’il prend pour modèle combattait tout autre chose : les attaques contre la crédibilité financière de la Fra",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "zemmour",
+        "label": "Zemmour / Reconquête",
+        "color": "#000080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : zemmour, reconquete, reconquête"
+      }
+    },
+    {
+      "title": "Budget 2027 : Sébastien Lecornu appelle les socialistes à renouer avec « l’esprit de responsabilité »",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/22/budget-2027-sebastien-lecornu-appelle-les-socialistes-a-renouer-avec-l-esprit-de-responsabilite_6780249_823448.html",
+      "published": "2026-09-22",
+      "summary": "Dans une lettre adressée aux députés et sénateurs socialistes, le premier ministre a dit vouloir poursuivre « la démarche » de compromis, « dans le respect des convictions de chacun ».",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : socialiste"
+      }
+    },
+    {
+      "title": "Visite de Léon XIV : Emmanuel Macron a invité tous les dirigeants de l’UE au discours du pape sur l’Europe à Metz",
+      "url": "https://www.lemonde.fr/international/article/2026/09/22/visite-de-leon-xiv-emmanuel-macron-a-invite-tous-les-dirigeants-de-l-ue-au-discours-du-pape-sur-l-europe-a-metz_6780092_3210.html",
+      "published": "2026-09-22",
+      "summary": "Pour cet événement prévu lundi, au quatrième jour de la visite apostolique du pape Léon XIV en France, un « format européen » a été privilégié, limité aux représentants des institutions de l’Union européenne et aux dirigeants des pays membres, selon l’Elysée.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Budget 2027 des collectivités locales : l’Association des maires de France redoute des mauvaises nouvelles après les sénatoriales",
+      "url": "https://www.publicsenat.fr/actualites/territoires/budget-2027-des-collectivites-locales-lassociation-des-maires-de-france-redoute-des-mauvaises-nouvelles-apres-les-senatoriales",
+      "published": "2026-09-22",
+      "summary": "Échaudée par les précédents exercices budgétaires, l’AMF peine à souscrire au discours rassurant du gouvernement sur la façon dont les collectivités seront traitées dans les textes budgétaires de l’automne. « C'est après les sénatoriales qu'on va découvrir la douloureuse », a rep",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : collectivités, collectivites"
       }
     },
     {
@@ -247,10 +311,10 @@
       }
     },
     {
-      "title": "Ce n’est pas parce que Matthieu Pigasse est resté à la porte de la primaire PS qu’il ne tentera pas de rentrer par la fenêtre pour la présidentielle",
-      "url": "https://www.liberation.fr/politique/elections/ce-nest-pas-parce-que-matthieu-pigasse-est-reste-a-la-porte-de-la-primaire-ps-quil-ne-tentera-pas-de-rentrer-par-la-fenetre-pour-la-presidentielle-20260922_4752NK2EAJH27LFXNLSACYBJHQ/",
+      "title": "Primaire socialiste : Philippe Brun «croit encore» pouvoir être candidat, malgré les accusations de violences",
+      "url": "https://www.liberation.fr/politique/primaire-socialiste-philippe-brun-annonce-que-son-refere-depose-contre-le-ps-pour-reintegrer-le-parti-sera-examine-ce-matin-par-le-tribunal-judiciaire-20260922_T7BSCCGZAJD2ZBEX3FRWNJBLWQ/",
       "published": "2026-09-22",
-      "summary": "A huit mois du scrutin, le banquier d’affaires a continué de se présenter en recours possible pour une candidature unique à gauche, mardi matin sur France Inter.",
+      "summary": "Invité ce mardi au micro de RTL, le député de l’Eure, a asséné n’avoir «jamais violenté personne». Alors que le référé contre son éviction est examiné ce mardi matin par la justice, il estime qu’il va pouvoir «prouver son innocence».",
       "source_id": "liberation-politique",
       "source_label": "Libération — Politique",
       "source_type": "traditional",
@@ -258,8 +322,8 @@
         "slug": "parti-socialiste",
         "label": "Socialiste / social-démocrate",
         "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : primaire ps"
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : philippe brun, socialiste, primaire socialiste"
       }
     },
     {
@@ -311,6 +375,38 @@
       }
     },
     {
+      "title": "Annonces du gouvernement sur les aides au carburant : qui touchera quoi ?",
+      "url": "https://www.publicsenat.fr/actualites/economie/annonce-du-gouvernement-sur-les-aides-au-carburant-qui-touchera-quoi",
+      "published": "2026-09-22",
+      "summary": "Face à la persistance de la crise du détroit d'Ormuz et à la flambée des prix à la pompe, l'exécutif a annoncé ce mardi 22 septembre un paquet de mesures avec un coût total de 450 millions d'euros, articulé autour d'une « règle d'or » sur la fiscalité des carburants et d'un doubl",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Carburants : que cache la « règle d’or » promise par Sébastien Lecornu ?",
+      "url": "https://www.publicsenat.fr/actualites/economie/carburants-que-cache-la-regle-dor-promise-par-sebastien-lecornu",
+      "published": "2026-09-22",
+      "summary": "Face à la flambée des prix des carburants et à la grogne sociale, Sébastien Lecornu propose d'inscrire dans le budget 2027 un mécanisme destiné à neutraliser d’éventuels surplus de TVA liés à la hausse des carburants. Mais derrière le terme de « règle d’or », le dispositif reste ",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
       "title": "Sénatoriales 2026 : Face à LR, l’UDR pourrait remporter la majorité des sièges dans les Alpes-Maritimes",
       "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-2026-face-a-lr-ludr-pourrait-remporter-la-majorite-des-sieges-dans-les-alpes-maritimes",
       "published": "2026-09-22",
@@ -324,6 +420,22 @@
         "color": "#5a6570",
         "confidence": 0.75,
         "rationale": "Plusieurs camps cités (Retailleau / LR · Le Pen / RN) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Ce n’est pas parce que Matthieu Pigasse est resté à la porte de la primaire PS qu’il ne tentera pas de rentrer par la fenêtre pour la présidentielle",
+      "url": "https://www.liberation.fr/politique/elections/ce-nest-pas-parce-que-matthieu-pigasse-est-reste-a-la-porte-de-la-primaire-ps-quil-ne-tentera-pas-de-rentrer-par-la-fenetre-pour-la-presidentielle-20260922_4752NK2EAJH27LFXNLSACYBJHQ/",
+      "published": "2026-09-22",
+      "summary": "A huit mois du scrutin, le banquier d’affaires a continué de se présenter en recours possible pour une candidature unique à gauche, mardi matin sur France Inter.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : primaire ps"
       }
     },
     {
@@ -343,51 +455,35 @@
       }
     },
     {
-      "title": "Budget 2027 : les pensions retraites de plus de 2 000 euros dans le viseur du gouvernement",
-      "url": "https://www.franceinfo.fr/replay-radio/le-decryptage-eco/budget-2027-les-pensions-retraites-de-plus-de-2-000-euros-dans-le-viseur-du-gouvernement_8181968.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Carburants : Emmanuel Macron demande un assouplissement des normes européennes sur la production et l’import",
+      "url": "https://www.lemonde.fr/international/article/2026/09/22/carburants-emmanuel-macron-demande-un-assouplissement-des-normes-europeennes-sur-la-production-et-l-import_6780080_3210.html",
       "published": "2026-09-22",
-      "summary": "L'exécutif souhaite geler la pension de base des retraités qui touchent exactement plus de 2 034 euros par mois. Cette mesure devrait concerner plus de la moitié des retraites.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
+      "summary": "Le président français demande à la Commission européenne des mesures d’urgence en raison de l’explosion des prix à la pompe liée à la guerre au Moyen-Orient. Mais elles ne doivent pas interférer avec les actions de long terme de l’UE, comme l’électrification ou la diversification",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : pourquoi le retour de Ségolène Royal pourrait secouer la primaire socialiste",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-pourquoi-le-retour-de-segolene-royal-pourrait-secouer-la-primaire-socialiste-20260921",
-      "published": "2026-09-22",
-      "summary": "Candidate à la primaire sociale-démocrate, Ségolène Royal est de retour. L’ancienne candidate à la présidentielle de 2007, qui veut encore croire à ses chances de victoire, tiendra, ce mardi 22 septembre 2026, sa première réunion publique à Alfortville (Val-de-Marne).",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : ségolène royal, segolene royal, socialiste"
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
       }
     },
     {
-      "title": "Hausse du prix des carburants : le gouvernement va proposer une \"règle d'or\", dans le budget 2027, pour redistribuer le surplus de TVA",
-      "url": "https://www.franceinfo.fr/economie/automobile/essence/prix-des-carburants-le-gouvernement-va-proposer-une-regle-d-or-dans-le-budget-2027-pour-redistribuer-le-surplus-de-tva_8204171.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Carburant : \"Les raffineurs profitent de la crise\", estime le rapporteur LR du budget à l'Assemblée, Philippe Juvin",
+      "url": "https://www.franceinfo.fr/replay-magazine/franceinfo/l-invite-politique/l-invite-politique-du-mardi-22-septembre-2026_8182142.html#xtor=RSS-3-%5Bgeneral%5D",
       "published": "2026-09-22",
-      "summary": "L'idée de cette mesure est de garantir le fait \"qu’il n'y aura pas de gain pour les comptes publics\" avec la hausse du prix des carburants, indique Matignon à franceinfo.",
+      "summary": "Invité politique de \"La Matinale\" mardi 22 septembre, le député Les Républicains des Hauts-de-Seine et rapporteur général du budget à l'Assemblée nationale détaille les mesures qui, selon lui, permettraient de \"ne pas dépasser les deux euros\" à la pompe. Il souhaite notamment sup",
       "source_id": "franceinfo-politique",
       "source_label": "franceinfo — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les républicains, les republicains, républicains"
       }
     },
     {
@@ -423,92 +519,12 @@
       }
     },
     {
-      "title": "Sénatoriales : face au RN, le Parti socialiste parviendra-t-il à conserver ses deux sièges dans l’Aude ?",
-      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-face-au-rn-le-parti-socialiste-parviendra-t-il-a-conserver-ses-deux-sieges-dans-laude",
+      "title": "Prix des carburants : la crise dans le détroit d'Ormuz rattrape la France",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260921-prix-des-carburants-la-crise-dans-le-d%C3%A9troit-d-ormuz-rattrape-la-france",
       "published": "2026-09-21",
-      "summary": "Si le sénateur sortant Sébastien Pla se représente, ce n’est pas le cas de Gisèle Jourda. Huit candidats sont en lice pour remporter les deux sièges à pourvoir. Député Rassemblement national de la 3è circonscription de l’Aude, Julien Rancoule brigue un mandat de sénateur, dans un",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Candidature de Marine Tondelier à la présidentielle : Les Ecologistes trancheront en décembre",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/21/presidentielle-2027-les-ecologistes-trancheront-en-decembre-sur-l-avenir-de-la-candidature-de-marine-tondelier_6779300_823448.html",
-      "published": "2026-09-21",
-      "summary": "Le conseil fédéral du parti a maintenu la candidature de la secrétaire nationale des Verts, lundi, tout en programmant un référendum interne, du 10 au 13 décembre, afin de trancher sur leur stratégie à l’élection suprême. Dans les rangs du mouvements, rares sont ceux qui croient ",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes, tondelier"
-      }
-    },
-    {
-      "title": "«Une stratégie de reconquête» : Les Républicains ouvrent déjà le chantier des législatives de 2027",
-      "url": "https://www.lefigaro.fr/politique/une-strategie-de-reconquete-les-republicains-ouvrent-deja-le-chantier-des-legislatives-de-2027-20260921",
-      "published": "2026-09-21",
-      "summary": "DÉCRYPTAGE - Stratégie, calendrier, ligne politique… Sous l’impulsion de Bruno Retailleau, le parti LR lance un « travail de fourmi, circo par circo » et assume l’ambition de prendre des sièges à la concurrence, d’Horizons au RN.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
-      }
-    },
-    {
-      "title": "Crise des carburants : Edouard Philippe et Gabriel Attal ne veulent pas se faire rouler dessus",
-      "url": "https://www.liberation.fr/politique/crise-des-carburants-edouard-philippe-et-gabriel-attal-ne-veulent-pas-se-faire-rouler-dessus-20260921_3IUYWSIXK5C7VGLEZUBPDYGKXU/",
-      "published": "2026-09-21",
-      "summary": "Les candidats Renaissance et Horizons à la présidentielle voient leur campagne percutée par l’envolée des prix de l’essence. Et l’absence de marge de manœuvre budgétaire ramène les deux ex-Premiers ministres au bilan des quinquennats d’Emmanuel Macron.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal, renaissance"
-      }
-    },
-    {
-      "title": "« Il nous faut des sommes considérables en termes d’économies » : le chemin difficile du budget 2027 de la Sécurité sociale",
-      "url": "https://www.publicsenat.fr/actualites/sante/il-nous-faut-des-sommes-considerables-en-termes-deconomies-le-chemin-difficile-du-budget-2027-de-la-securite-sociale",
-      "published": "2026-09-21",
-      "summary": "Le gouvernement affiche un objectif ambitieux pour les comptes sociaux l’an prochain, celui de diminuer d’un tiers le déficit. Pour y parvenir, les leviers à sa disposition pour y parvenir sont très risqués politiquement. La rapporteure générale de la commission des affaires soci",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : sécurité, securite"
-      }
-    },
-    {
-      "title": "France Télévisions mise sur « L’Heure de vérité » pour relancer les grandes émissions présidentielles",
-      "url": "https://www.lemonde.fr/economie/article/2026/09/21/france-televisions-mise-sur-l-heure-de-verite-pour-relancer-les-grandes-emissions-presidentielles_6779252_3234.html",
-      "published": "2026-09-21",
-      "summary": "Alors que le programme emblématique des années 1980 fait son retour, jeudi 8 octobre, les chaînes de télévision cherchent de nouveaux concepts pour recevoir les prétendants à l’Elysée.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "summary": "Les conflits au Moyen-Orient pèsent sur l'économie mondiale. La crise des carburants touche de nombreux pays, dont la France. À sept mois des présidentielles, l'exécutif se déploie pour tenter de calmer la grogne sociale qui monte en raison de la flambée des prix à la pompe. Le P",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -532,22 +548,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : rn, bardella, rassemblement national"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Éric Zemmour confirme qu’il sera candidat",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-eric-zemmour-confirme-qu-il-sera-candidat-20260918",
-      "published": "2026-09-18",
-      "summary": "Éric Zemmour (Reconquête) a confirmé jeudi 17 septembre sa candidature à la présidentielle. Il ne s’agit cependant pas d’une déclaration formelle qui, selon son entourage, devrait intervenir au cours de cet automne.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "zemmour",
-        "label": "Zemmour / Reconquête",
-        "color": "#000080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : zemmour, reconquete, reconquête"
       }
     },
     {

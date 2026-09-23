@@ -1,0 +1,450 @@
+---
+/**
+ * Enquête — pluralité des écoles de journalisme (23 sept. 2026)
+ * Données : src/data/analyses/ecoles-journalisme-pluralite.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/ecoles-journalisme-pluralite.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#methode', label: '1. L’assemblée virtuelle, et pourquoi elle est vide' },
+  { href: '#cursus', label: '2. Seize cursus reconnus, trois écoles entendues' },
+  { href: '#facultes', label: '3. Dans les universités' },
+  { href: '#audition', label: '4. Ce que dit l’audition du 11 décembre 2025' },
+  { href: '#lectures', label: '5. Deux lectures du pluralisme' },
+  { href: '#limites', label: '6. Ce qui ne se laisse pas compter' },
+  { href: '#retenues', label: '7. Ce que LMDPT en retient' },
+  { href: '#consequences', label: '8. Conséquences' },
+  { href: '#pistes', label: '9. Trois durées' },
+  { href: '#metier', label: '10. Pigistes et rédacteurs' },
+  { href: '#sapin', label: '11. La teneur d’un article ne donne pas une couleur' },
+  { href: '#sources', label: '12. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Aucun scrutin ne dit pour qui votent les diplômés des écoles de journalisme. Seize cursus reconnus, trois écoles entendues le 11 décembre 2025, sièges vides. L’affaire Sapin rappelle qu’un article ne donne pas la couleur de son auteur."
+  type="article"
+  keywords="écoles de journalisme, CPNEJ, pluralisme, Charles Sapin, France Inter, ESJ Lille, Sciences Po, IJBA, Assemblée nationale, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <PoliticalHueBadges hues={data.hues} showMeta />
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="methode" aria-labelledby="methode-title">
+    <h2 id="methode-title">1. L’assemblée virtuelle, et pourquoi elle est vide</h2>
+    {data.methode.map((p) => <p>{p}</p>)}
+    <div class="table-wrap" role="region" aria-label="Assemblée virtuelle des courants" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Courants politiques à la sortie des écoles : statut des sièges
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Courant</th>
+            <th scope="col">Siège</th>
+            <th scope="col">Motif</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.assemblee.map((row) => (
+              <tr>
+                <th scope="row">{row.courant}</th>
+                <td>{row.statut}</td>
+                <td>{row.motif}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="cursus" aria-labelledby="cursus-title">
+    <h2 id="cursus-title">2. Seize cursus reconnus, trois écoles entendues</h2>
+    <p>{data.cursus_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Cursus reconnus par la CPNEJ" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Inventaire des 16 cursus reconnus et présence à l’audition du 11 décembre 2025
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Cursus</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Forme</th>
+            <th scope="col">Audition</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.cursus.map((row) => (
+              <tr>
+                <th scope="row">{row.nom}</th>
+                <td>{row.lieu}</td>
+                <td>{row.forme}</td>
+                <td>{row.audition}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.cursus_note}</p>
+    <div class="table-wrap" role="region" aria-label="Chiffres publics et leurs limites" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Chiffres publics mobilisés, et ce qu’ils ne mesurent pas</caption>
+        <thead>
+          <tr>
+            <th scope="col">Indicateur</th>
+            <th scope="col">Chiffre</th>
+            <th scope="col">Source</th>
+            <th scope="col">Limite</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.chiffres.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.valeur}</td>
+                <td>{row.source}</td>
+                <td>{row.limite}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="facultes" aria-labelledby="facultes-title">
+    <h2 id="facultes-title">3. Dans les universités</h2>
+    {data.facultes_intro.map((p) => <p>{p}</p>)}
+    <p>{data.facultes_droit}</p>
+    <p>{data.facultes_critere}</p>
+    <div class="table-wrap" role="region" aria-label="Universités dont le cursus de journalisme est reconnu" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Universités reconnues, places du livre blanc 2023, présence à l’audition
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Cursus</th>
+            <th scope="col">Université</th>
+            <th scope="col">Agrément</th>
+            <th scope="col">Places 2023</th>
+            <th scope="col">Audition</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.facultes.map((row) => (
+              <tr>
+                <th scope="row">{row.nom}</th>
+                <td>{row.universite}</td>
+                <td>{row.agrement}</td>
+                <td>{row.places_2023 ?? 'Non chiffrées dans le livre blanc'}</td>
+                <td>{row.audition}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.facultes_note}</p>
+  </section>
+
+  <section class="card" id="audition" aria-labelledby="audition-title">
+    <h2 id="audition-title">4. Ce que dit l’audition du 11 décembre 2025</h2>
+    <p>{data.audition_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Faits de l'audition" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Faits tirés du compte rendu, avec renvoi à la source</caption>
+        <thead>
+          <tr>
+            <th scope="col">Fait</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.audition.map((row) => (
+              <tr>
+                <td>{row.fait}</td>
+                <td>
+                  <a href={row.source_url} rel="noopener noreferrer">
+                    {row.source_label}
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="lectures" aria-labelledby="lectures-title">
+    <h2 id="lectures-title">5. Deux lectures du pluralisme</h2>
+    <p>{data.lectures_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Lectures du pluralisme" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Lecture du rapporteur et lecture des écoles, même structure</caption>
+        <thead>
+          <tr>
+            <th scope="col">Notion</th>
+            <th scope="col">Lecture du rapporteur</th>
+            <th scope="col">Lecture des écoles</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.lectures.map((row) => (
+              <tr>
+                <th scope="row">{row.notion}</th>
+                <td>{row.lecture_rapporteur}</td>
+                <td>{row.lecture_ecoles}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="limites" aria-labelledby="limites-title">
+    <h2 id="limites-title">6. Ce qui ne se laisse pas compter</h2>
+    {data.non_mesurable.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">7. Ce que LMDPT en retient</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="consequences" aria-labelledby="consequences-title">
+    <h2 id="consequences-title">8. Conséquences</h2>
+    {data.consequences.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="pistes" aria-labelledby="pistes-title">
+    <h2 id="pistes-title">9. Trois durées</h2>
+    <p>
+      Chaque piste a son garde-fou. Sans lui, le dossier glisse vers un classement d’écoles ou un fichier d’opinions.
+    </p>
+    <div class="table-wrap" role="region" aria-label="Pistes et garde-fous" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Pistes de court, moyen et long terme, avec le garde-fou de chacune</caption>
+        <thead>
+          <tr>
+            <th scope="col">Durée</th>
+            <th scope="col">Horizon</th>
+            <th scope="col">Piste</th>
+            <th scope="col">Garde-fou</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.pistes.map((row) => (
+              <tr>
+                <th scope="row">{row.horizon}</th>
+                <td>{row.duree}</td>
+                <td>{row.piste}</td>
+                <td>{row.garde_fou}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="metier" aria-labelledby="metier-title">
+    <h2 id="metier-title">10. Pigistes et rédacteurs</h2>
+    <p>{data.pigistes_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Pigistes et contrats courts" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Chiffres 2025 des pigistes et des contrats courts, avec leur limite</caption>
+        <thead>
+          <tr>
+            <th scope="col">Indicateur</th>
+            <th scope="col">Chiffre</th>
+            <th scope="col">Limite</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.pigistes_chiffres.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.valeur}</td>
+                <td>{row.limite}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    {data.pigistes_lecture.map((p) => <p>{p}</p>)}
+    <h3>La rédaction du Média du Premier Tour</h3>
+    {data.redaction_lmdpt.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="sapin" aria-labelledby="sapin-title">
+    <h2 id="sapin-title">11. La teneur d’un article ne donne pas la couleur d’un journaliste</h2>
+    <p>{data.sapin_reponse}</p>
+    {data.sapin_methode.map((p) => <p>{p}</p>)}
+    <h3>Ce que l’affaire Sapin établit</h3>
+    <div class="table-wrap" role="region" aria-label="Chronologie de l’affaire Sapin" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Faits publics de l’affaire Charles Sapin, de la cassation de 2024 à la fin de l’édito en septembre 2026
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Fait</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.sapin_chrono.map((row) => (
+              <tr>
+                <th scope="row">
+                  <time datetime={row.date}>{row.date_label}</time>
+                </th>
+                <td>{row.fait}</td>
+                <td>
+                  <a href={row.source_url} rel="noopener noreferrer">
+                    {row.source_label}
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <h3>Deux lectures, côte à côte</h3>
+    <div class="table-wrap" role="region" aria-label="Lectures de l’affaire Sapin" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Deux lectures de la couleur disputée dans l’affaire Sapin, sans siège attribué
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Notion</th>
+            <th scope="col">Première lecture</th>
+            <th scope="col">Seconde lecture</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.sapin_lectures.map((row) => (
+              <tr>
+                <th scope="row">{row.notion}</th>
+                <td>{row.lecture_a}</td>
+                <td>{row.lecture_b}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">12. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  .enq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+</style>
