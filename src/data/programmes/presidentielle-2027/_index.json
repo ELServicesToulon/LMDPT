@@ -10,15 +10,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : dans « Le Crépuscule des princes », Edouard Philippe multiplie les coups de griffe à l’égard de Gabriel Attal",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-dans-le-crepuscule-des-princes-edouard-philippe-multiplie-les-coups-de-griffe-a-l-egard-de-gabriel-attal_6780090_823448.html",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-22"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html"
     },
     {
       "slug": "retailleau",
@@ -39,14 +31,14 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : dans « Le Crépuscule des princes », Edouard Philippe multiplie les coups de griffe à l’égard de Gabriel Attal",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-dans-le-crepuscule-des-princes-edouard-philippe-multiplie-les-coups-de-griffe-a-l-egard-de-gabriel-attal_6780090_823448.html",
+          "title": "Présidentielle 2027 : Philippe Brun a déposé un référé pour être réintégré au PS et à la primaire de la gauche",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/22/presidentielle-2027-philippe-brun-depose-un-refere-pour-etre-reintegre-au-ps-et-a-la-primaire-a-gauche_6780079_6205049.html",
           "published": "2026-09-22",
           "detected_at": "2026-09-22"
         },
         {
-          "title": "Présidentielle 2027 : Philippe Brun a déposé un référé pour être réintégré au PS et à la primaire de la gauche",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/22/presidentielle-2027-philippe-brun-depose-un-refere-pour-etre-reintegre-au-ps-et-a-la-primaire-a-gauche_6780079_6205049.html",
+          "title": "Primaire socialiste : Philippe Brun «croit encore» pouvoir être candidat, malgré les accusations de violences",
+          "url": "https://www.liberation.fr/politique/primaire-socialiste-philippe-brun-annonce-que-son-refere-depose-contre-le-ps-pour-reintegrer-le-parti-sera-examine-ce-matin-par-le-tribunal-judiciaire-20260922_T7BSCCGZAJD2ZBEX3FRWNJBLWQ/",
           "published": "2026-09-22",
           "detected_at": "2026-09-22"
         }
@@ -126,8 +118,14 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : une campagne marathon, mais pour certains déjà un sprint décisif",
-          "url": "https://www.liberation.fr/politique/presidentielle-2027-une-campagne-marathon-mais-pour-certains-deja-un-sprint-decisif-20260922_SAKRGSPEPFDTLGYEGKIRD6YWCI/",
+          "title": "Baisse des taxes sur le carburant : comment Marine Le Pen en a fait sa mesure phare",
+          "url": "https://www.liberation.fr/politique/elections/baisse-des-taxes-sur-le-carburant-comment-marine-le-pen-en-a-fait-sa-mesure-phare-20260922_GDPNIP3CTVHLPIFZWAKJQ7Y344/",
+          "published": "2026-09-22",
+          "detected_at": "2026-09-22"
+        },
+        {
+          "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
+          "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
           "published": "2026-09-22",
           "detected_at": "2026-09-22"
         }
@@ -176,6 +174,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-22T11:42:05.372Z",
+  "veille_scan_at": "2026-09-22T19:15:50.925Z",
   "program_press_hits": 15
 }
