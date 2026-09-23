@@ -15,7 +15,7 @@ const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 
 const tocItems = [
   { href: '#methode', label: '1. L’assemblée virtuelle, et pourquoi elle est vide' },
   { href: '#cursus', label: '2. Seize cursus reconnus, trois écoles entendues' },
-  { href: '#facultes', label: '3. Dans les facultés' },
+  { href: '#facultes', label: '3. Dans les universités' },
   { href: '#audition', label: '4. Ce que dit l’audition du 11 décembre 2025' },
   { href: '#lectures', label: '5. Deux lectures du pluralisme' },
   { href: '#limites', label: '6. Ce qui ne se laisse pas compter' },
@@ -147,14 +147,14 @@ const tocItems = [
   </section>
 
   <section class="card" id="facultes" aria-labelledby="facultes-title">
-    <h2 id="facultes-title">3. Dans les facultés</h2>
+    <h2 id="facultes-title">3. Dans les universités</h2>
     {data.facultes_intro.map((p) => <p>{p}</p>)}
     <p>{data.facultes_droit}</p>
     <p>{data.facultes_critere}</p>
-    <div class="table-wrap" role="region" aria-label="Cursus universitaires reconnus" tabindex="0">
+    <div class="table-wrap" role="region" aria-label="Universités dont le cursus de journalisme est reconnu" tabindex="0">
       <table class="enq-table">
         <caption class="visually-hidden">
-          Composantes universitaires reconnues, places du livre blanc 2023, présence à l’audition
+          Universités reconnues, places du livre blanc 2023, présence à l’audition
         </caption>
         <thead>
           <tr>

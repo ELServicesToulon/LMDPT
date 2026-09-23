@@ -114,6 +114,7 @@ describe('analyses', () => {
     expect(
       ecolesJournalisme.facultes.filter((f) => f.audition.startsWith('Entendue')).map((f) => f.nom),
     ).toEqual(['IJBA']);
+    expect(ecolesJournalisme.facultes_intro[0]).toMatch(/faculté veut dire université/);
     expect(ecolesJournalisme.facultes_critere).toMatch(/diversité de la société/);
     expect(ecolesJournalisme.facultes_critere).not.toMatch(/quota/);
     expect(urls).toContain('https://cej.education/wp-content/uploads/2023/06/CEJ_2023_Livre_Blanc_Web.pdf');
