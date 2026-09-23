@@ -30,28 +30,43 @@ export function matchesProgramNews(text: string, keywords: readonly string[] = P
   return keywords.some((k) => lower.includes(k.toLowerCase()));
 }
 
-function candidateNameTokens(name: string): string[] {
-  const parts = name
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .toLowerCase()
-    .split(/\s+/)
-    .filter(Boolean);
-  const last = parts[parts.length - 1];
-  return last ? [last] : [];
+function foldAccents(value: string): string {
+  return value.normalize('NFD').replace(/\p{M}/gu, '');
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function nameParts(name: string): string[] {
+  return foldAccents(name).toLowerCase().split(/\s+/).filter(Boolean);
+}
+
+/** Every hit is "{FamilyName} {OtherName}" — the family name is used as a given name. */
+function lastNameOnlyAsGivenName(text: string, last: string): boolean {
+  const re = new RegExp(`\\b${escapeRegExp(last)}\\b`, 'gi');
+  let saw = false;
+  for (let match = re.exec(text); match; match = re.exec(text)) {
+    saw = true;
+    const after = text.slice(match.index + match[0].length);
+    if (!/^\s+\p{Lu}\p{Ll}/u.test(after)) return false;
+  }
+  return saw;
 }
 
 export function articleMentionsCandidate(
   item: Pick<RenifleurItem, 'title' | 'summary'>,
   candidate: VeilleCandidateInput,
 ): boolean {
-  const blob = `${item.title} ${item.summary ?? ''}`.toLowerCase();
-  const tokens = candidateNameTokens(candidate.name);
-  if (tokens.length === 0) return false;
-  return tokens.some((token) => {
-    const re = new RegExp(`\\b${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-    return re.test(blob);
-  });
+  const text = foldAccents(`${item.title} ${item.summary ?? ''}`);
+  const parts = nameParts(candidate.name);
+  const last = parts[parts.length - 1];
+  if (!last) return false;
+  if (!new RegExp(`\\b${escapeRegExp(last)}\\b`, 'i').test(text)) return false;
+  if (parts.length < 2) return true;
+  const fullName = new RegExp(`\\b${parts.map(escapeRegExp).join('\\s+')}\\b`, 'i');
+  if (fullName.test(text)) return true;
+  return !lastNameOnlyAsGivenName(text, last);
 }
 
 /** Articles renifleur liés aux programmes (mots-clés), triés par date desc. */
