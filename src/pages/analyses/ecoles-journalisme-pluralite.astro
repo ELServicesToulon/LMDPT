@@ -20,7 +20,10 @@ const tocItems = [
   { href: '#lectures', label: '5. Deux lectures du pluralisme' },
   { href: '#limites', label: '6. Ce qui ne se laisse pas compter' },
   { href: '#retenues', label: '7. Ce que LMDPT en retient' },
-  { href: '#sources', label: '8. Sources' },
+  { href: '#consequences', label: '8. Conséquences' },
+  { href: '#pistes', label: '9. Trois durées' },
+  { href: '#metier', label: '10. Pigistes et rédacteurs' },
+  { href: '#sources', label: '11. Sources' },
 ];
 ---
 
@@ -250,8 +253,76 @@ const tocItems = [
     </ol>
   </section>
 
+  <section class="card" id="consequences" aria-labelledby="consequences-title">
+    <h2 id="consequences-title">8. Conséquences</h2>
+    {data.consequences.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="pistes" aria-labelledby="pistes-title">
+    <h2 id="pistes-title">9. Trois durées</h2>
+    <p>
+      Chaque piste a son garde-fou. Sans lui, le dossier glisse vers un classement d’écoles ou un fichier d’opinions.
+    </p>
+    <div class="table-wrap" role="region" aria-label="Pistes et garde-fous" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Pistes de court, moyen et long terme, avec le garde-fou de chacune</caption>
+        <thead>
+          <tr>
+            <th scope="col">Durée</th>
+            <th scope="col">Horizon</th>
+            <th scope="col">Piste</th>
+            <th scope="col">Garde-fou</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.pistes.map((row) => (
+              <tr>
+                <th scope="row">{row.horizon}</th>
+                <td>{row.duree}</td>
+                <td>{row.piste}</td>
+                <td>{row.garde_fou}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="metier" aria-labelledby="metier-title">
+    <h2 id="metier-title">10. Pigistes et rédacteurs</h2>
+    <p>{data.pigistes_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Pigistes et contrats courts" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">Chiffres 2025 des pigistes et des contrats courts, avec leur limite</caption>
+        <thead>
+          <tr>
+            <th scope="col">Indicateur</th>
+            <th scope="col">Chiffre</th>
+            <th scope="col">Limite</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.pigistes_chiffres.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.valeur}</td>
+                <td>{row.limite}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    {data.pigistes_lecture.map((p) => <p>{p}</p>)}
+    <h3>La rédaction du Média du Premier Tour</h3>
+    {data.redaction_lmdpt.map((p) => <p>{p}</p>)}
+  </section>
+
   <section class="card" id="sources" aria-labelledby="sources-title">
-    <h2 id="sources-title">8. Sources</h2>
+    <h2 id="sources-title">11. Sources</h2>
     <ul>
       {
         data.sources.map((s) => (

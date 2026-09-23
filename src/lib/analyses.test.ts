@@ -117,6 +117,12 @@ describe('analyses', () => {
     expect(ecolesJournalisme.facultes_critere).toMatch(/diversité de la société/);
     expect(ecolesJournalisme.facultes_critere).not.toMatch(/quota/);
     expect(urls).toContain('https://cej.education/wp-content/uploads/2023/06/CEJ_2023_Livre_Blanc_Web.pdf');
+    expect(ecolesJournalisme.pistes.map((p) => p.horizon)).toEqual(['Court', 'Moyen', 'Long']);
+    expect(ecolesJournalisme.pistes.every((p) => p.garde_fou.length > 20)).toBe(true);
+    expect(ecolesJournalisme.pigistes_chiffres[0]?.valeur).toMatch(/4 282/);
+    expect(ecolesJournalisme.redaction_lmdpt.join(' ')).toMatch(/ne publie pas de liste de pigistes/);
+    expect(ecolesJournalisme.pistes[2]?.garde_fou).toMatch(/donnée sensible/);
+    expect(urls).toContain('https://ccijp.fr/notre-faq/');
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {

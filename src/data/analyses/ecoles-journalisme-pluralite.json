@@ -7,7 +7,7 @@
   "updated": "2026-09-23",
   "doe_angle": "Peut-on asseoir les courants politiques à la sortie des écoles sans scrutin, ou faut-il laisser les sièges vides ?",
   "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne : la démocratie avant l’élimination). Synthèse de sources publiques : liste CPNEJ, inventaire Onisep, livre blanc de la Conférence des écoles de journalisme (2023), avis du collège de déontologie de l’enseignement supérieur (21 mai 2021), chiffres CCIJP, portrait Afdas, compte rendu d’audition de l’Assemblée nationale du 11 décembre 2025, entretien de Dominique Marchetti dans Sciences Humaines. Aucune donnée personnelle d’étudiant n’est traitée. Ce texte n’est ni un classement des écoles, ni un vote fictif de leurs diplômés, ni un avis sur la ligne d’un média.",
-  "tldr": "Le Média du Premier Tour ouvre une assemblée virtuelle des courants politiques à la sortie des écoles de journalisme. Elle ne peut pas être remplie. Aucun scrutin public ne dit pour qui votent les diplômés. En janvier 2026, la CPNEJ reconnaît 16 cursus : cette reconnaissance certifie un parcours, pas une teinte. Onze de ces cursus sont portés par une université. Le livre blanc de 2023 en chiffrait neuf, pour 292 places annoncées, et le critère officiel de « diversité » vise la société, pas les camps. Le 11 décembre 2025, la commission d’enquête n’a entendu qu’une de ces composantes, l’IJBA, à côté de l’ESJ Lille et de Sciences Po. Les sièges des courants restent vides, dans les facultés comme ailleurs.",
+  "tldr": "Le Média du Premier Tour ouvre une assemblée virtuelle des courants politiques à la sortie des écoles de journalisme. Elle ne peut pas être remplie. Aucun scrutin public ne dit pour qui votent les diplômés. En janvier 2026, la CPNEJ reconnaît 16 cursus : cette reconnaissance certifie un parcours, pas une teinte. Onze de ces cursus sont portés par une université. Le livre blanc de 2023 en chiffrait neuf, pour 292 places annoncées, et le critère officiel de « diversité » vise la société, pas les camps. Le 11 décembre 2025, la commission d’enquête n’a entendu qu’une de ces composantes, l’IJBA, à côté de l’ESJ Lille et de Sciences Po. Les sièges des courants restent vides, dans les facultés comme ailleurs. La carte de presse ne les remplit pas : en 2025, elle sépare les pigistes des contrats courts, et elle n’inscrit un média que sur la carte des contrats à durée indéterminée.",
   "hues": [
     {
       "slug": "pluraliste",
@@ -210,6 +210,61 @@
     "La part croissante des cursus reconnus dans les cartes de presse (12,2 % en 2000, 30 % dans le portrait 2023) dit le poids de ces écoles dans le métier. Elle ne dit pas pour qui leurs anciens votent. La CCIJP, en 2025, ne publie toujours pas cette variable.",
     "Prochaine marche utile, si les écoles ou la CPNEJ publient un jour une méthode : déclarer ce qui est mesuré (intervenants, stages, chartes) et ce qui ne l’est pas (vote). Jusque-là, attribuer des sièges sans scrutin serait prendre parti."
   ],
+  "consequences": [
+    "On ne peut pas dire de quelle couleur sort une promotion. Ni à Lille, ni à Bordeaux, ni à Strasbourg. Le dire quand même, c’est prendre une rumeur pour un scrutin.",
+    "La carte de presse ne répare pas ce trou. La formation n’est pas un critère d’attribution. Un diplôme reconnu raccourcit un stage. Il ne crée pas une opinion.",
+    "Les premières cartes de 2025 sont surtout des contrats courts. Beaucoup sont encore des alternances. La sortie d’école et l’entrée dans le métier se chevauchent. Un climat de rédaction n’est pas la photo d’une promotion.",
+    "La méthode du rapporteur, lire le camp dans l’employeur, s’arrête devant la pige. La carte des pigistes et des contrats à durée déterminée ne porte pas le nom du média. On ne peut pas y compter des Figaro ni des CNews.",
+    "Si ce dossier peignait les sièges malgré tout, il changerait un argument de bataille en fait établi. Dominique Marchetti a déjà situé cet argument. Le siège reste vide. Le dossier ne désigne pas un camp à la place des personnes concernées."
+  ],
+  "pistes": [
+    {
+      "horizon": "Court",
+      "duree": "Cette saison, jusqu’à la fin 2026",
+      "piste": "Tenir le dossier à jour : liste de la CPNEJ, nouvelle audition, chiffre de la carte de presse. Publier le vide. Demander aux écoles, par écrit public, ce qu’elles comptent déjà (insertion, diversité sociale) et ce qu’elles ne comptent pas (vote).",
+      "garde_fou": "Pas de palmarès d’écoles. Pas de nom d’étudiant. Une non-réponse reste une non-réponse."
+    },
+    {
+      "horizon": "Moyen",
+      "duree": "D’ici le premier tour de 2027",
+      "piste": "Étendre aux onze cursus universitaires le seul tableau déjà donné sous serment par deux écoles : part d’intervenants au public, au privé, en indépendant. Rien d’autre.",
+      "garde_fou": "L’employeur n’est pas un camp. Les pigistes ont plusieurs donneurs d’ordre. Le décompte du rapporteur sur le Figaro ou CNews reste sa lecture, pas la nôtre."
+    },
+    {
+      "horizon": "Long",
+      "duree": "Au rythme des agréments, quatre ans, et après 2027",
+      "piste": "Garder l’assemblée des courants vide, sauf si une statistique agrégée et déjà publique paraît un jour. Le Média du Premier Tour ne lancera pas d’enquête d’opinion auprès des étudiants, des pigistes ou des rédacteurs.",
+      "garde_fou": "L’opinion politique est une donnée sensible. Constituer un fichier de votes, même pour documenter la pluralité, est hors charte. Le siège vide est la règle, pas une attente."
+    }
+  ],
+  "pigistes_intro": "Pigiste et rédacteur ne sont pas deux camps. Ce sont deux façons d’être salarié. Le code du travail définit le journaliste professionnel par une activité principale, régulière et rétribuée, dans une ou plusieurs entreprises de presse, dont il tire le principal de ses ressources. La Commission paritaire des publications et des agences de presse en tire la conséquence : ce journaliste est mensualisé ou pigiste. Une facture ne suffit pas. La carte de presse n’exige pas d’avoir suivi une école.",
+  "pigistes_chiffres": [
+    {
+      "label": "Pigistes, effectifs 2025",
+      "valeur": "4 282 cartes, soit 12,3 % des effectifs",
+      "limite": "Catégorie statistique séparée des contrats à durée déterminée pour la première fois cette année-là."
+    },
+    {
+      "label": "Contrats à durée déterminée, effectifs 2025",
+      "valeur": "3 228 cartes, soit 9,3 %",
+      "limite": "La mention « pigiste » imprimée sur la carte couvre, elle, la pige et le contrat court. Seul le contrat à durée indéterminée y fait figurer le nom du média."
+    },
+    {
+      "label": "Premières cartes 2025",
+      "valeur": "1 858, dont 63 % en contrat à durée déterminée",
+      "limite": "Parmi ces contrats courts, 693 personnes, soit 59,2 %, déclarent une alternance ou un contrat de professionnalisation. Les pigistes proprement dits sont 14,3 % des premières cartes. Les mensualisés en contrat à durée indéterminée sont 22,7 %."
+    }
+  ],
+  "pigistes_lecture": [
+    "La pige est un salariat à plusieurs employeurs possibles. La foire aux questions de la Commission le dit pour les frais de dossier : l’employeur principal, ou les deux principaux. Une personne peut donc traverser des rédactions que le débat classe à des bouts opposés, sans que sa carte le raconte.",
+    "Le rédacteur, au sens du métier, est celui qui écrit dans la rédaction, souvent mensualisé, parfois avec un titre. Le droit y assimile aussi des collaborateurs directs : rédacteur-traducteur, rédacteur-réviseur, reporter-dessinateur, reporter-photographe. Aucune de ces catégories n’est publiée avec une teinte. Le mot « rédacteur » ne donne pas un siège.",
+    "Conséquence pour l’assemblée virtuelle. Le seul groupe dont la carte nomme un média, les contrats à durée indéterminée, est aussi celui dont on ne connaît pas le vote. Le groupe dont on connaît le moins l’employeur, les pigistes et les contrats courts, est celui par où passe une grande part des premières cartes, donc des sorties d’école. Aux deux bouts, aucune couleur politique n’est publiée."
+  ],
+  "redaction_lmdpt": [
+    "Le site du Média du Premier Tour ne publie pas de liste de pigistes, ni de rédacteurs salariés, ni de masse salariale. Il n’y a donc rien à asseoir de ce côté-là non plus.",
+    "La rédaction, ici, est la charte : faits sourcés, pastilles d’idées sur ce qui est cité, pas sur l’auteur. Cette enquête n’est pas une pige. Elle n’ouvre pas droit à une carte de presse. Son auteur n’est pas un siège dans l’assemblée des journalistes.",
+    "Garde-fou interne : ne pas se décrire comme une rédaction de plus, avec une couleur à deviner. Le travail est de montrer les trous des autres décomptes, y compris le nôtre."
+  ],
   "sources": [
     {
       "label": "CPNEJ — cursus reconnus (16 en janvier 2026)",
@@ -238,6 +293,22 @@
     {
       "label": "CCIJP — chiffres clés du millésime 2025 (7 janvier 2026)",
       "url": "https://ccijp.fr/les-chiffres-cles-du-millesime-2025/"
+    },
+    {
+      "label": "CCIJP — conditions d’attribution de la carte",
+      "url": "https://ccijp.fr/la-carte-de-presse/les-conditions-dattribution/"
+    },
+    {
+      "label": "CCIJP — foire aux questions (mention « pigiste », formation non exigée)",
+      "url": "https://ccijp.fr/notre-faq/"
+    },
+    {
+      "label": "Service-public.fr — carte de presse (mensualisé ou pigiste)",
+      "url": "https://sites.service-information-publique.fr/vias/guide-professionnels/F22389.html"
+    },
+    {
+      "label": "CPPAP — critère de l’emploi de journaliste",
+      "url": "https://www.cppap.fr/critere-de-lemploi-de-journaliste/"
     },
     {
       "label": "Afdas, Observatoire des métiers de la presse — portrait des journalistes (19 mars 2025, données 2023)",
