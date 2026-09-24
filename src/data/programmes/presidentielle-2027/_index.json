@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -19,7 +19,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : Bruno Retailleau veut instaurer un âge minimal de départ à la retraite à 63 ans et un taux plein à 65 ans",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/23/presidentielle-2027-bruno-retailleau-veut-instaurer-un-age-minimal-de-depart-a-la-retraite-a-63-ans-et-un-taux-plein-a-65-ans_6780796_823448.html",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-23"
+        },
+        {
+          "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
+          "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-23"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -49,16 +63,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Philippe Brun a déposé un référé pour être réintégré au PS et à la primaire de la gauche",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/22/presidentielle-2027-philippe-brun-depose-un-refere-pour-etre-reintegre-au-ps-et-a-la-primaire-a-gauche_6780079_6205049.html",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-22"
+          "title": "Présidentielle 2027 : la justice rejette la demande de réintégration de Philippe Brun au PS et à la primaire à gauche ; le député annonce faire appel",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/23/presidentielle-2027-philippe-brun-sera-ne-sera-pas-reintegre-au-ps-et-a-la-primaire-de-la-gauche-tranche-la-justice_6780868_823448.html",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-23"
         },
         {
-          "title": "Primaire socialiste : Philippe Brun «croit encore» pouvoir être candidat, malgré les accusations de violences",
-          "url": "https://www.liberation.fr/politique/primaire-socialiste-philippe-brun-annonce-que-son-refere-depose-contre-le-ps-pour-reintegrer-le-parti-sera-examine-ce-matin-par-le-tribunal-judiciaire-20260922_T7BSCCGZAJD2ZBEX3FRWNJBLWQ/",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-22"
+          "title": "Présidentielle en France : premier débat télévisé entre les cinq candidats socialistes",
+          "url": "https://www.france24.com/fr/vid%C3%A9o/20260923-pr%C3%A9sidentielle-en-france-premier-d%C3%A9bat-t%C3%A9l%C3%A9vis%C3%A9-entre-les-cinq-candidats-socialistes",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-23"
         }
       ]
     },
@@ -104,16 +118,10 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Baisse des taxes sur le carburant : comment Marine Le Pen en a fait sa mesure phare",
-          "url": "https://www.liberation.fr/politique/elections/baisse-des-taxes-sur-le-carburant-comment-marine-le-pen-en-a-fait-sa-mesure-phare-20260922_GDPNIP3CTVHLPIFZWAKJQ7Y344/",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-22"
-        },
-        {
           "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
           "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
           "published": "2026-09-22",
-          "detected_at": "2026-09-22"
+          "detected_at": "2026-09-23"
         }
       ]
     },
@@ -143,10 +151,10 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Ségolène Royal, trublion de la primaire à gauche",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/22/presidentielle-2027-segolene-royal-trublion-de-la-primaire-a-gauche_6779746_823448.html",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-22"
+          "title": "EN DIRECT, débat de la primaire à gauche : le premier débat entre Glucksmann, Royal, Faure, Guedj et Maurel a commencé, suivez les échanges et posez vos questions",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/live/2026/09/23/en-direct-debat-de-la-primaire-a-gauche-raphael-glucksmann-segolene-royal-suivez-les-propositions-des-candidats_6780940_6205049.html",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-23"
         }
       ]
     },
@@ -160,6 +168,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-22T19:15:50.925Z",
-  "program_press_hits": 15
+  "veille_scan_at": "2026-09-23T19:18:38.191Z",
+  "program_press_hits": 17
 }

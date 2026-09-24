@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T16:16:00.325Z",
+  "updated": "2026-09-24T16:16:44.135Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -260,6 +260,60 @@
       "source_id": "commission-sondages",
       "scores": {},
       "raw_snippet": "Notice Commission : IV IFOP Le Figaro (25 juin) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-cluster17-24092026",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "24/09/2026",
+      "published_hint": "24/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 35,
+        "bardella": 35,
+        "philippe": 33.8,
+        "attal": 14.4,
+        "melenchon": 18,
+        "glucksmann": 12.8,
+        "retailleau": 12.1,
+        "zemmour": 5.2,
+        "tondelier": 4.1,
+        "roussel": 3.8,
+        "hollande": 8.8,
+        "ruffin": 6,
+        "villepin": 4,
+        "dupont-aignan": 2.6,
+        "arthaud": 2.2,
+        "darmanin": 9.2,
+        "wauquiez": 5.5
+      },
+      "raw_snippet": "Dernier sondage CLUSTER17 24/09/2026 1er Tour · Hypothèse N°1 31% LE PEN 19% PHILIPPE 19% MÉLENCHON 12% GLUCKSMANN 7.5% RETAILLEAU 3.5% ZEMMOUR 3% DUPONT-AIGNAN 2.5% TONDELIER 2% ROUSSEL 0.5% ARTHAUD 1er Tour · Hypothèse N°2 31% LE PEN 20% MÉLENCHON 14% GLUCKSMANN 13.5% ATTAL 9.5",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-cluster17-24092026-h1",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "24/09/2026",
+      "published_hint": "24/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/09/2026 CLUSTER17 1 — 31% 19% 19% — 12% 7.5% — — — — — — — — — 3.5% 2.5% — 2% — — — 3% 0.5% — 24/09/2026 CLUSTER17 2 — 31% — 20% 13.5% 14% 9.5% — — — — — — — — — 3.5% 2.5% — 2.5% — — — 3% 0.5% — 14",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-cluster17-24092026-h2",
+      "firm": "Cluster17",
+      "firm_id": "cluster17",
+      "fieldwork": "24/09/2026",
+      "published_hint": "24/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "24/09/2026 CLUSTER17 2 — 31% — 20% 13.5% 14% 9.5% — — — — — — — — — 3.5% 2.5% — 2.5% — — — 3% 0.5% — 14/09/2026 HARRIS INTERACTIVE 1 — 33% 14% 16% 8% 9% 7% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 1",
       "metric": "intentions_vote"
     },
     {

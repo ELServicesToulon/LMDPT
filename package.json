@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run sync:all && astro build",
+    "build": "npm run sync:all && npm run seo:assets && astro build",
+    "seo:assets": "tsx scripts/generate-seo-assets.ts",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",

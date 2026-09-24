@@ -13,7 +13,6 @@ import {
   reviewQualiteRedaction,
   formatQualiteGateSection,
   repairFalsePositiveGlue,
-  repairBrokenUrl,
   type QualiteReport,
 } from '../src/lib/qualite-redaction';
 

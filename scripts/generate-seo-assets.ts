@@ -58,6 +58,8 @@ const PROGRAMME_PATHS = [
   '/analyses/programmes/presidentielle-2027/attal',
   '/analyses/programmes/presidentielle-2027/bardella',
   '/analyses/programmes/presidentielle-2027/barrot',
+  '/analyses/programmes/presidentielle-2027/glucksmann',
+  '/analyses/programmes/presidentielle-2027/hollande',
   '/analyses/programmes/presidentielle-2027/le-pen',
   '/analyses/programmes/presidentielle-2027/lisnard',
   '/analyses/programmes/presidentielle-2027/melenchon',
@@ -65,6 +67,7 @@ const PROGRAMME_PATHS = [
   '/analyses/programmes/presidentielle-2027/philippe',
   '/analyses/programmes/presidentielle-2027/philippe-brun',
   '/analyses/programmes/presidentielle-2027/retailleau',
+  '/analyses/programmes/presidentielle-2027/roussel',
   '/analyses/programmes/presidentielle-2027/ruffin',
 ];
 

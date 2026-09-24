@@ -77,6 +77,42 @@ const WORD_MAP: Record<string, string> = {
 };
 
 /**
+ * Annule les faux positifs glue historiques (hashtags, adverbes).
+ * Idempotent — L0 recovery drafts.
+ */
+export function repairFalsePositiveGlue(text: string): string {
+  let s = text;
+  const fixes: Array<[RegExp, string]> = [
+    [/\bmanuel le ment\b/gi, 'manuellement'],
+    [/\bnaturel le ment\b/gi, 'naturellement'],
+    [/\br[eé]el le ment\b/gi, 'réellement'],
+    [/\bactuel le ment\b/gi, 'actuellement'],
+    [/\bpersonnel le ment\b/gi, 'personnellement'],
+    [/\bofficiel le ment\b/gi, 'officiellement'],
+    [/\bprobable ment\b/gi, 'probablement'],
+    [/#Assembl[eé]e Du PremierTour\b/g, '#AssembléeDuPremierTour'],
+    [/\bAssembl[eé]e Du PremierTour\b/g, 'AssembléeDuPremierTour'],
+    [/#FinDesB au druches\b/g, '#FinDesBaudruches'],
+    [/\bFinDesB au druches\b/g, 'FinDesBaudruches'],
+    [/(\/analyses\/)pr[eé]sidentielle(-2027-preparation)/gi, '$1presidentielle$2'],
+  ];
+  for (const [re, rep] of fixes) s = s.replace(re, rep);
+  return s;
+}
+
+/**
+ * Répare les espaces injectés dans un URL (scheme, query, hash).
+ */
+export function repairBrokenUrl(url: string): string {
+  return url
+    .replace(/^(https?):\s*\/\//i, '$1://')
+    .replace(/\?\s+/g, '?')
+    .replace(/&\s+/g, '&')
+    .replace(/#\s+/g, '#')
+    .replace(/présidentielle-2027-preparation/gi, 'presidentielle-2027-preparation');
+}
+
+/**
  * Heuristique conservative : uniquement prépositions « pleines » (pas en/d)
  * et segments assez longs pour limiter les faux positifs (calendrier, présidentielle…).
  */
