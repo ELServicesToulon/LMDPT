@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-23T19:18:38.191Z",
+  "generated_at": "2026-09-24T22:01:57.119Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
-  "poll_updated": "2026-09-23",
+  "poll_updated": "2026-09-24",
   "mapping": {
     "rn": [
       "le-pen",
@@ -146,7 +146,7 @@
   "max_share_per_host": 0.4,
   "before": {
     "item_count": 35,
-    "l1_deviation": 71.7,
+    "l1_deviation": 83.3,
     "observed": [
       {
         "bloc": "rn",
@@ -155,9 +155,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 8.6,
-        "count": 3,
-        "delta_pct": -26.3
+        "observed_pct": 5.7,
+        "count": 2,
+        "delta_pct": -29.2
       },
       {
         "bloc": "centre-droit",
@@ -199,9 +199,9 @@
           "barrot"
         ],
         "target_pct": 7.6,
-        "observed_pct": 5.7,
-        "count": 2,
-        "delta_pct": -1.9
+        "observed_pct": 17.1,
+        "count": 6,
+        "delta_pct": 9.5
       },
       {
         "bloc": "droite",
@@ -220,9 +220,9 @@
           "ecolo"
         ],
         "target_pct": 3.4,
-        "observed_pct": 5.7,
-        "count": 2,
-        "delta_pct": 2.3
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -0.5
       },
       {
         "bloc": "extreme-droite",
@@ -230,9 +230,9 @@
           "zemmour"
         ],
         "target_pct": 3.3,
-        "observed_pct": 2.9,
-        "count": 1,
-        "delta_pct": -0.4
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -3.3
       },
       {
         "bloc": "droite-souverainiste",
@@ -252,11 +252,11 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 15
+      "pluraliste": 14
     },
     "top_hosts": [
       {
-        "host": "lefigaro.fr",
+        "host": "france24.com",
         "count": 5,
         "share_pct": 14.3
       },
@@ -276,17 +276,17 @@
         "share_pct": 11.4
       },
       {
-        "host": "france24.com",
-        "count": 4,
-        "share_pct": 11.4
-      },
-      {
         "host": "franceinfo.fr",
         "count": 4,
         "share_pct": 11.4
       },
       {
         "host": "la-croix.com",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
+        "host": "lefigaro.fr",
         "count": 4,
         "share_pct": 11.4
       },
@@ -299,7 +299,7 @@
   },
   "after": {
     "item_count": 35,
-    "l1_deviation": 49.8,
+    "l1_deviation": 55.5,
     "observed": [
       {
         "bloc": "rn",
@@ -308,9 +308,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 17.1,
-        "count": 6,
-        "delta_pct": -17.8
+        "observed_pct": 14.3,
+        "count": 5,
+        "delta_pct": -20.6
       },
       {
         "bloc": "centre-droit",
@@ -383,9 +383,9 @@
           "zemmour"
         ],
         "target_pct": 3.3,
-        "observed_pct": 2.9,
-        "count": 1,
-        "delta_pct": -0.4
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -3.3
       },
       {
         "bloc": "droite-souverainiste",
@@ -405,13 +405,13 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 16
+      "pluraliste": 18
     },
     "top_hosts": [
       {
         "host": "lemonde.fr",
-        "count": 10,
-        "share_pct": 28.6
+        "count": 9,
+        "share_pct": 25.7
       },
       {
         "host": "lefigaro.fr",
@@ -424,12 +424,12 @@
         "share_pct": 14.3
       },
       {
-        "host": "franceinfo.fr",
-        "count": 4,
-        "share_pct": 11.4
+        "host": "liberation.fr",
+        "count": 5,
+        "share_pct": 14.3
       },
       {
-        "host": "liberation.fr",
+        "host": "publicsenat.fr",
         "count": 4,
         "share_pct": 11.4
       },
@@ -439,9 +439,14 @@
         "share_pct": 8.6
       },
       {
-        "host": "publicsenat.fr",
-        "count": 3,
-        "share_pct": 8.6
+        "host": "assemblee-nationale.fr",
+        "count": 2,
+        "share_pct": 5.7
+      },
+      {
+        "host": "franceinfo.fr",
+        "count": 1,
+        "share_pct": 2.9
       }
     ]
   }

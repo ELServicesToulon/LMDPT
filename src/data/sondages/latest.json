@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-24T16:16:44.135Z",
+  "fetched_at": "2026-09-25T04:45:56.543Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 11,
@@ -476,18 +476,9 @@
       "pct": 35
     }
   ],
-  "movements": [
-    {
-      "at": "2026-09-24T16:16:44.135Z",
-      "kind": "new_wave",
-      "firm": "Cluster17",
-      "comment": "Cluster17 (24/09/2026) : le pen en tête à 35 % (intentions de vote).",
-      "wave_id": "epoc-cluster17-24092026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php"
-    }
-  ],
+  "movements": [],
   "brief": [
-    "Cluster17 (24/09/2026) : le pen en tête à 35 % (intentions de vote)."
+    "Scan 2026-09-25T04:45 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK)."
   ],
   "errors": [
     {

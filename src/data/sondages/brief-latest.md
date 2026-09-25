@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-09-24T16:16:44.135Z
+**Scan** : 2026-09-25T04:45:56.543Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Cluster17 (24/09/2026) : le pen en tête à 35 % (intentions de vote).
+- Scan 2026-09-25T04:45 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 

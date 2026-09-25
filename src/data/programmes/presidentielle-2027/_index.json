@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -10,7 +10,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html"
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        },
+        {
+          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        }
+      ]
     },
     {
       "slug": "retailleau",
@@ -22,16 +36,10 @@
       "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Bruno Retailleau veut instaurer un âge minimal de départ à la retraite à 63 ans et un taux plein à 65 ans",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/23/presidentielle-2027-bruno-retailleau-veut-instaurer-un-age-minimal-de-depart-a-la-retraite-a-63-ans-et-un-taux-plein-a-65-ans_6780796_823448.html",
-          "published": "2026-09-23",
-          "detected_at": "2026-09-23"
-        },
-        {
           "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
           "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
           "published": "2026-09-23",
-          "detected_at": "2026-09-23"
+          "detected_at": "2026-09-24"
         }
       ]
     },
@@ -42,7 +50,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html"
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        }
+      ]
     },
     {
       "slug": "parti-socialiste",
@@ -60,21 +76,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": false,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : la justice rejette la demande de réintégration de Philippe Brun au PS et à la primaire à gauche ; le député annonce faire appel",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/23/presidentielle-2027-philippe-brun-sera-ne-sera-pas-reintegre-au-ps-et-a-la-primaire-de-la-gauche-tranche-la-justice_6780868_823448.html",
-          "published": "2026-09-23",
-          "detected_at": "2026-09-23"
-        },
-        {
-          "title": "Présidentielle en France : premier débat télévisé entre les cinq candidats socialistes",
-          "url": "https://www.france24.com/fr/vid%C3%A9o/20260923-pr%C3%A9sidentielle-en-france-premier-d%C3%A9bat-t%C3%A9l%C3%A9vis%C3%A9-entre-les-cinq-candidats-socialistes",
-          "published": "2026-09-23",
-          "detected_at": "2026-09-23"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/politique/article/2026/06/30/presidentielle-2027-je-serai-candidat-a-la-primaire-interne-du-ps-annonce-le-depute-philippe-brun_6717234_823448.html"
     },
     {
       "slug": "roussel",
@@ -97,7 +99,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html"
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : « Sans être là, Jean-Luc Mélenchon a parasité le premier débat de la primaire sociale-démocrate »",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-sans-etre-la-jean-luc-melenchon-a-parasite-le-premier-debat-de-la-primaire-sociale-democrate_6781568_823448.html",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        },
+        {
+          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        }
+      ]
     },
     {
       "slug": "bardella",
@@ -118,10 +134,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
+          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        },
+        {
           "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
           "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
           "published": "2026-09-22",
-          "detected_at": "2026-09-23"
+          "detected_at": "2026-09-24"
         }
       ]
     },
@@ -151,10 +173,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "EN DIRECT, débat de la primaire à gauche : le premier débat entre Glucksmann, Royal, Faure, Guedj et Maurel a commencé, suivez les échanges et posez vos questions",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/live/2026/09/23/en-direct-debat-de-la-primaire-a-gauche-raphael-glucksmann-segolene-royal-suivez-les-propositions-des-candidats_6780940_6205049.html",
+          "title": "Primaire à gauche : la situation à Gaza et l’alliance avec LFI électrisent le premier débat télévisé",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+          "published": "2026-09-24",
+          "detected_at": "2026-09-24"
+        },
+        {
+          "title": "«Ce n’est pas quelqu’un à l’extérieur du PS qui va définir la refondation de la gauche» : Glucksmann endure les attaques de Royal lors du premier débat de la primaire socialiste",
+          "url": "https://www.liberation.fr/politique/elections/ce-nest-pas-quelquun-a-lexterieur-du-ps-qui-va-definir-la-refondation-de-la-gauche-glucksmann-endure-les-attaques-de-royal-lors-du-premier-debat-de-la-primaire-socialiste-20260924_JIY2E2WYJBF7TK5BZ4WGY4XPII/",
           "published": "2026-09-23",
-          "detected_at": "2026-09-23"
+          "detected_at": "2026-09-24"
         }
       ]
     },
@@ -168,6 +196,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-23T19:18:38.191Z",
-  "program_press_hits": 17
+  "veille_scan_at": "2026-09-24T22:01:57.119Z",
+  "program_press_hits": 16
 }
