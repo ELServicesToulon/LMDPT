@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-24T22:01:57.119Z",
+  "fetched_at": "2026-09-25T10:12:19.873Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,10 +7,10 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "Olivier Becht, ancien ministre du commerce extérieur, candidat à l’élection présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
-      "published": "2026-09-24",
-      "summary": "Ancien maire d’une ville du Haut-Rhin, il est député depuis 2017 et assure qu’il n’a pas « de camp politique », même s’il se revendique à « l’extrême centre ».",
+      "title": "EN DIRECT, Artificial Intelligence Marseille : suivez le débat entre plusieurs candidats à la présidentielle et chefs de parti",
+      "url": "https://www.lemonde.fr/politique/live/2026/09/25/en-direct-artificial-intelligence-marseille-suivez-le-debat-entre-plusieurs-candidats-a-la-presidentielle-et-chefs-de-partis_6782350_823448.html",
+      "published": "2026-09-25",
+      "summary": "Raphaël Glucksmann, Manuel Bompard, Jordan Bardella et Xavier Bertrand débattront sur le thème de l’intelligence artificielle, vendredi 25 septembre, à Marseille.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -18,8 +18,104 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "De Paris à Metz, en passant par Saint-Denis et Lourdes : le programme du pape Léon XIV en France",
+      "url": "https://www.france24.com/fr/france/20260925-de-paris-%C3%A0-metz-en-passant-par-saint-denis-et-lourdes-le-programme-du-pape-leon-xiv-en-france",
+      "published": "2026-09-25",
+      "summary": "Attendu par des fidèles enthousiastes, le pape Léon XIV s'est envolé vendredi pour Paris, pour une visite de quatre jours en France durant laquelle il abordera de multiples thèmes, dont l'intelligence artificielle, la question migratoire ou la lutte contre les violences sexuelles",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Sénatoriales : RN, LR, Horizons, PS, LFI… On vous résume les enjeux du scrutin",
+      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-rn-lr-horizons-ps-lfi-on-vous-resume-les-enjeux-du-scrutin",
+      "published": "2026-09-25",
+      "summary": "La moitié des sièges du Sénat sont remis en jeu dimanche. Recul des LR, rapports de force au sein de la majorité sénatoriale, possible groupe RN, PS et écologistes qui veulent limiter la casse et recomposition après 2027… Les enjeux sont multiples pour le dernier scrutin avant la",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Philippe / Horizons · Le Pen / RN) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : une IA « souveraine », unique consensus de candidats aux visions opposées",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-une-ia-souveraine-unique-consensus-de-candidats-aux-visions-opposees_6781933_823448.html",
+      "published": "2026-09-25",
+      "summary": "Un grand débat sur le thème de l’intelligence artificielle entre les représentants des candidats à l’élection présidentielle aura lieu vendredi 25 septembre à Marseille. Du rôle de l’école aux risques qui pèsent sur l’emploi en passant par la régulation, les postulants à l’Elysée",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : école, ecole"
+      }
+    },
+    {
+      "title": "Dans les enquêtes sur les violences sexuelles, l’avocat n'est \"pas un obstacle\" à la parole de l’enfant, défendent les bâtonniers",
+      "url": "https://www.franceinfo.fr/societe/harcelement-sexuel/dans-les-enquetes-sur-les-violences-sexuelles-l-avocat-n-est-pas-un-obstacle-a-la-parole-de-l-enfant-defendent-les-batonniers_8209007.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-25",
+      "summary": "C'est une des propositions de la loi intégrale sur les violences sexuelles. Le ministre de l'Intérieur, Laurent Nuñez, parle de \"frein à la libération de la parole de l'enfant\". Au contraire, répondent les avocats : \"C'est l'une des conditions à la manifestation de la vérité\".",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Emmanuel Macron engage des « moyens militaires » face aux crises internationales et à la flambée des prix des carburants",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/emmanuel-macron-s-affiche-a-la-man-uvre-face-aux-crises-internationales-et-a-la-flambee-des-prix-des-carburants_6781856_823448.html",
+      "published": "2026-09-25",
+      "summary": "Le chef de l’Etat a annoncé jeudi soir, lors d’un entretien diffusé sur TF1 et sur France 2, « tout faire pour rouvrir le détroit d’Ormuz » et a assuré ne pas exclure de baisser les taxes si les prix à la pompe devaient continuer de s’envoler.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "Sénatoriales 2026 : la chambre du contrôle au défi de trouver sa place avant l’alternance présidentielle",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/senatoriales-2026-la-chambre-du-controle-au-defi-de-trouver-sa-place-avant-l-alternance-presidentielle_6781930_823448.html",
+      "published": "2026-09-25",
+      "summary": "Après deux quinquennats d’Emmanuel Macron, où il a joué des rôles différents, le Sénat devrait encore évoluer après les élections du dimanche 27 septembre et la possible arrivée d’un groupe d’extrême droite.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
       }
     },
     {
@@ -36,22 +132,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
-      "published": "2026-09-24",
-      "summary": "Alors que les deux candidats du bloc central s’égratignent frontalement, sans remettre en cause leur volonté de rassemblement d’ici au premier tour du scrutin, une étude de la Fondation Jean Jaurès souligne que le report de voix entre leurs électorats n’a rien d’évident.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
       }
     },
     {
@@ -87,6 +167,70 @@
       }
     },
     {
+      "title": "J-1 avant l'arrivée du Pape en France : plus d'un million de visiteurs attendus",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260924-j-1-avant-l-arriv%C3%A9e-du-pape-en-france-plus-d-un-million-de-visiteurs-attendus",
+      "published": "2026-09-24",
+      "summary": "Le pape Léon XIV doit atterrir vendredi 25 septembre à Orly. Quatre jours de visite qui attire les foules : plus d'un million de visiteurs attendus entre Paris, le Stade de France, Lourdes et Metz. Le dispositif de sécurité s'annonce totalement hors norme, notamment sur les Champ",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : la primaire socialiste et sociale-démocrate devrait dépasser les 90 000 inscrits",
+      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-la-primaire-socialiste-et-sociale-democrate-devrait-depasser-les-90-000-inscrits-20260924_2QHMTPQ6GFACHLH5PTG27NJSPA/",
+      "published": "2026-09-24",
+      "summary": "Patrick Mennucci, président de la Commission d’organisation du scrutin prévu les 9-10 et 16 au 17 octobre, a annoncé ce jeudi 24 septembre que la plateforme dédiée «a enregistré sa plus importante journée» au lendemain du premier débat entre les candidats.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
+      }
+    },
+    {
+      "title": "Olivier Becht, ancien ministre du commerce extérieur, candidat à l’élection présidentielle",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
+      "published": "2026-09-24",
+      "summary": "Ancien maire d’une ville du Haut-Rhin, il est député depuis 2017 et assure qu’il n’a pas « de camp politique », même s’il se revendique à « l’extrême centre ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
+      "published": "2026-09-24",
+      "summary": "Alors que les deux candidats du bloc central s’égratignent frontalement, sans remettre en cause leur volonté de rassemblement d’ici au premier tour du scrutin, une étude de la Fondation Jean Jaurès souligne que le report de voix entre leurs électorats n’a rien d’évident.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
+      }
+    },
+    {
       "title": "Budget 2027 : la « taxe au tonnage », la niche fiscale des armateurs, de nouveau sur la sellette",
       "url": "https://www.lemonde.fr/politique/article/2026/09/24/budget-2027-la-taxe-au-tonnage-la-niche-fiscale-des-armateurs-de-nouveau-sur-la-sellette_6781573_823448.html",
       "published": "2026-09-24",
@@ -103,35 +247,19 @@
       }
     },
     {
-      "title": "Interview d’Emmanuel Macron : ce qu’il faut retenir du passage du chef de l’Etat sur TF1 et France 2",
-      "url": "https://www.lemonde.fr/politique/live/2026/09/24/en-direct-interview-d-emmanuel-macron-c-est-normal-qu-il-y-ait-de-la-colere-a-propos-de-la-situation-economique-en-france-reconnait-le-chef-de-l-etat_6781553_823448.html",
+      "title": "Primaire socialiste : un premier débat intéressant, mais des impasses qui étonnent",
+      "url": "https://www.liberation.fr/politique/primaire-socialiste-un-premier-debat-interessant-mais-des-impasses-qui-etonnent-20260924_EQIXATZTB5B6PI7CWGRCQB4Q3Y/",
       "published": "2026-09-24",
-      "summary": "Emmanuel Macron a notamment annoncé, jeudi, l’envoi de « moyens militaires » pour « protéger » le site de Yanbou, un maillon stratégique du réseau d’installations énergétiques de l’Arabie saoudite.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "summary": "Si les échanges ont été globalement de qualité, mercredi soir sur LCI, difficile de se convaincre que le futur vainqueur de la présidentielle se trouvait sur le plateau.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "J-1 avant l'arrivée du Pape en France : plus d'un million de visiteurs attendus",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260924-j-1-avant-l-arriv%C3%A9e-du-pape-en-france-plus-d-un-million-de-visiteurs-attendus",
-      "published": "2026-09-24",
-      "summary": "Le pape Léon XIV doit atterrir vendredi 25 septembre à Orly. Quatre jours de visite qui attire les foules : plus d'un million de visiteurs attendus entre Paris, le Stade de France, Lourdes et Metz. Le dispositif de sécurité s'annonce totalement hors norme, notamment sur les Champ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
         "confidence": 0.7,
-        "rationale": "Proximité lexicale : sécurité, securite"
+        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
       }
     },
     {
@@ -151,28 +279,12 @@
       }
     },
     {
-      "title": "Primaire à gauche : la situation à Gaza et l’alliance avec LFI électrisent le premier débat télévisé",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+      "title": "Dix-huit ans sans pape à Paris : pourquoi ?",
+      "url": "https://www.france24.com/fr/%C3%A9missions/les-cl%C3%A9s-de-l-info/20260924-18-ans-sans-pape-%C3%A0-paris-pourquoi",
       "published": "2026-09-24",
-      "summary": "Raphaël Glucksmann, Emmanuel Maurel, Ségolène Royal, Olivier Faure et Jérôme Guedj se sont affrontés pour la première fois, mercredi 23 septembre, sur le plateau de LCI. Si un consensus a émergé sur les questions économiques et sociales, l’emploi du terme « génocide » pour évoque",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : ségolène royal, segolene royal, faure"
-      }
-    },
-    {
-      "title": "Un calendrier parlementaire étriqué condamne le destin de plusieurs projets de loi avant la présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/un-calendrier-parlementaire-etrique-condamne-le-destin-de-plusieurs-projets-de-loi-avant-la-presidentielle_6781486_823448.html",
-      "published": "2026-09-24",
-      "summary": "Alors que la session parlementaire, d’ici à la fin du mois de février, devrait laisser une large place à l’examen des textes budgétaires, seules la proposition de loi intégrale contre les violences sexistes et sexuelles, et celle sur le fonctionnement du titre-restaurant, ainsi q",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "summary": "Léon XIV arrive en France, vendredi, pour quatre jours de visite. Première étape : Paris avec un passage à l'Élysée. Puis le pape se rendra à Lourdes et à Metz. Trois villes, trois messages forts dans une France où le poids du catholicisme a fortement reculé.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -199,6 +311,22 @@
       }
     },
     {
+      "title": "Présidentielle 2027 : Emmanuel Maurel, le « Petit Poucet » de la primaire socialiste",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-emmanuel-maurel-le-petit-poucet-de-la-primaire-socialiste-20260924",
+      "published": "2026-09-24",
+      "summary": "Inconnu du grand public, Emmanuel Maurel a profité du premier débat de la primaire entre candidats de gauche à l’élection présidentielle, mercredi 23 septembre 2026, pour se faire remarquer. À 53 ans, le député du Val-d’Oise prône la « démondialisation » et une réindustrialisatio",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
+      }
+    },
+    {
       "title": "Candidat à la présidentielle, Olivier Becht mise sur un malentendu : «Quand on n’a aucune chance, il faut la saisir !»",
       "url": "https://www.liberation.fr/politique/candidat-a-la-presidentielle-olivier-becht-mise-sur-un-malentendu-quand-on-na-aucune-chance-il-faut-la-saisir-20260924_XLVV2APCOBAETK6YXBJROMFZGM/",
       "published": "2026-09-24",
@@ -212,22 +340,6 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : la primaire socialiste et sociale-démocrate devrait dépasser les 90 000 inscrits",
-      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-la-primaire-socialiste-et-sociale-democrate-devrait-depasser-les-90-000-inscrits-20260924_2QHMTPQ6GFACHLH5PTG27NJSPA/",
-      "published": "2026-09-24",
-      "summary": "Patrick Mennucci, président de la Commission d’organisation du scrutin prévu les 9-10 et 16 au 17 octobre, a annoncé ce jeudi 24 septembre que la plateforme dédiée «a enregistré sa plus importante journée» au lendemain du premier débat entre les candidats.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
       }
     },
     {
@@ -247,22 +359,6 @@
       }
     },
     {
-      "title": "Emmanuel Macron bouscule la campagne présidentielle pour 2027 en introduisant les tensions géopolitiques au cœur du débat politique",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/emmanuel-macron-bouscule-la-campagne-presidentielle-en-introduisant-la-crise-internationale-dans-le-debat-politique_6781516_823448.html",
-      "published": "2026-09-24",
-      "summary": "Le chef de l’Etat, qui a dressé vendredi un inquiétant tableau de la menace hybride russe et de la crise des prix du carburant liée au conflit au Moyen-Orient, sera interviewé jeudi, à 20 heures, par TF1 et France 2.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
       "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
       "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
       "published": "2026-09-24",
@@ -279,67 +375,35 @@
       }
     },
     {
-      "title": "Primaire socialiste : un premier débat intéressant, mais des impasses qui étonnent",
-      "url": "https://www.liberation.fr/politique/primaire-socialiste-un-premier-debat-interessant-mais-des-impasses-qui-etonnent-20260924_EQIXATZTB5B6PI7CWGRCQB4Q3Y/",
+      "title": "Primaire de la gauche : souvent d’accord, les candidats s’écharpent sur Gaza et LFI",
+      "url": "https://www.la-croix.com/politique/primaire-de-la-gauche-malgre-plusieurs-accords-des-divergences-toujours-profondes-20260924",
       "published": "2026-09-24",
-      "summary": "Si les échanges ont été globalement de qualité, mercredi soir sur LCI, difficile de se convaincre que le futur vainqueur de la présidentielle se trouvait sur le plateau.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Emmanuel Maurel, le « Petit Poucet » de la primaire socialiste",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-emmanuel-maurel-le-petit-poucet-de-la-primaire-socialiste-20260924",
-      "published": "2026-09-24",
-      "summary": "Inconnu du grand public, Emmanuel Maurel a profité du premier débat de la primaire entre candidats de gauche à l’élection présidentielle, mercredi 23 septembre 2026, pour se faire remarquer. À 53 ans, le député du Val-d’Oise prône la « démondialisation » et une réindustrialisatio",
+      "summary": "Un temps courtois, le premier débat de la primaire sociale-démocrate, mercredi 23 septembre, a finalement laissé apparaître les fractures entre les cinq candidats. Ukraine, Gaza et surtout la question d’une alliance avec LFI ont ravivé les tensions, après plusieurs heures de rela",
       "source_id": "lacroix-politique",
       "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : lfi"
       }
     },
     {
-      "title": "Crise des carburants, tête-à- tête avec Trump, menace russe au menu de l’interview d’Emmanuel Macron ce jeudi soir",
-      "url": "https://www.publicsenat.fr/actualites/politique/crise-des-carburants-tete-a-tete-avec-trump-menace-russe-au-menu-de-linterview-demmanuel-macron-ce-jeudi-soir",
-      "published": "2026-09-24",
-      "summary": "La flambée des prix à la pompe, la menace russe et le Moyen-Orient devraient occuper l'essentiel de l'interview d'Emmanuel Macron jeudi à 20 heures sur TF1 et France 2. L'occasion pour le chef de l'Etat de rester dans le jeu tout en se posant en « garant » de la présidentielle.",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Présidentielle : la candidate des Écologistes Marine Tondelier a donné naissance à un garçon",
-      "url": "https://www.france24.com/fr/france/20260923-pr%C3%A9sidentielle-candidate-%C3%A9cologistes-marine-tondelier-donn%C3%A9-naissance-gar%C3%A7on-l%C3%A9on",
+      "title": "Crise des carburants : entre fin du monde et fin du mois, les insoumis et les Ecologistes divergent",
+      "url": "https://www.liberation.fr/politique/crise-des-carburants-entre-fin-du-monde-et-fin-du-mois-les-insoumis-et-les-ecologistes-divergent-20260923_FDYV4OTJMBBJTFU7Y5WMZLBMBY/",
       "published": "2026-09-23",
-      "summary": "La première prétendante à l'Élysée à avoir fait campagne enceinte, Marine Tondelier, a annoncé mercredi avoir donné naissance à un garçon prénommé Léon. La cheffe des Écologistes avait dit ces dernières semaines que même en campagne présidentielle, ce bébé serait sa priorité, tou",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
+      "summary": "Alors que des négociations pourraient s’ouvrir dans les prochaines semaines pour aboutir à un potentiel accord entre les deux formations pour 2027, leurs solutions face à la hausse du prix de l’essence ne sont pas tout à fait les mêmes.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "ecolo",
         "label": "Écologiste",
         "color": "#00c000",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : tondelier"
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes"
       }
     },
     {
@@ -439,22 +503,6 @@
       }
     },
     {
-      "title": "«Être de gauche, ce n’est pas faire vœu de pauvreté», se justifie Matthieu Pigasse, pointé du doigt pour ses vacances sur l’île Moustique",
-      "url": "https://www.lefigaro.fr/politique/etre-de-gauche-ce-n-est-pas-faire-voeu-de-pauvrete-se-justifie-matthieu-pigasse-pointe-du-doigt-pour-ses-vacances-sur-l-ile-moustique-20260922",
-      "published": "2026-09-22",
-      "summary": "Le banquier d’affaires, qui n’exclut pas une candidature à la présidentielle, dit vouloir être jugé sur son engagement et ses convictions plutôt que sur son compte en banque.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
       "title": "Six mois après sa victoire aux municipales, Éric Ciotti impose sa méthode à Nice",
       "url": "https://www.la-croix.com/politique/six-mois-apres-sa-victoire-aux-municipales-eric-ciotti-impose-sa-methode-a-nice-20260922",
       "published": "2026-09-22",
@@ -471,10 +519,10 @@
       }
     },
     {
-      "title": "«En cédant aux syndicats sur Charles Sapin, la direction est extrêmement affaiblie» : le récit d’un bras de fer qui replonge Radio France dans la tourmente",
-      "url": "https://www.lefigaro.fr/politique/en-cedant-aux-syndicats-sur-charles-sapin-la-direction-est-extremement-affaiblie-le-recit-d-un-bras-de-fer-qui-replonge-radio-france-dans-la-tourmente-20260920",
-      "published": "2026-09-21",
-      "summary": "À sept mois de la présidentielle, la suppression de l’édito confié au journaliste de Valeurs actuelles relance le débat sur le manque de pluralisme dans l’audiovisuel public.",
+      "title": "«Être de gauche, ce n’est pas faire vœu de pauvreté», se justifie Matthieu Pigasse, pointé du doigt pour ses vacances sur l’île Moustique",
+      "url": "https://www.lefigaro.fr/politique/etre-de-gauche-ce-n-est-pas-faire-voeu-de-pauvrete-se-justifie-matthieu-pigasse-pointe-du-doigt-pour-ses-vacances-sur-l-ile-moustique-20260922",
+      "published": "2026-09-22",
+      "summary": "Le banquier d’affaires, qui n’exclut pas une candidature à la présidentielle, dit vouloir être jugé sur son engagement et ses convictions plutôt que sur son compte en banque.",
       "source_id": "lefigaro-politique",
       "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
@@ -503,22 +551,6 @@
       }
     },
     {
-      "title": "Dans le monde rouge de Twitch, Sardoche, le streamer français «libertarien» qui rêve d’union des droites entre Knafo et Lisnard",
-      "url": "https://www.lefigaro.fr/politique/dans-le-monde-rouge-de-twitch-sardoche-le-streamer-francais-libertarien-qui-reve-d-union-des-droites-entre-knafo-et-lisnard-20260919",
-      "published": "2026-09-19",
-      "summary": "PORTRAIT - Poids lourd de la plateforme web de diffusion de vidéos en direct, Sardoche était à un meeting de Nouvelle Énergie puis aux universités d’été de Reconquête. Aussi populaire que contesté pour ses propos, il compte bien faire peser son million d’abonnés dans la balance d",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Lisnard / droite locale · Zemmour / Reconquête) — teinte pluraliste."
-      }
-    },
-    {
       "title": "Ambiguïtés du RN, pression des marchés… Après ses annonces sur le budget, Sébastien Lecornu face à un casse-tête politique et financier",
       "url": "https://www.lefigaro.fr/politique/ambiguites-du-rn-pression-des-marches-apres-ses-annonces-sur-le-budget-sebastien-lecornu-face-a-un-casse-tete-politique-et-financier-20260918",
       "published": "2026-09-18",
@@ -532,38 +564,6 @@
         "color": "#0d378a",
         "confidence": 0.77,
         "rationale": "Proximité lexicale : rn"
-      }
-    },
-    {
-      "title": "Commission des affaires économiques - Nomination des rapporteurs pour avis sur le projet de loi de finances pour 2027",
-      "url": "https://www.assemblee-nationale.fr/dyn/espace-presse/communiques-de-presse/2026/commission-des-affaires-economiques-nomination-des-rapporteurs-pour-avis-sur-le-projet-de-loi-de-finances-pour-2027",
-      "published": "2026-06-24",
-      "summary": "La commission des affaires économiques, présidée par M. Stéphane Travert (apparenté au groupe EPR, Manche) a désigné ce mercredi 24 juin les rapporteurs pour avis sur le projet de loi de finances pour 2027. Intitulé de l’avis budgétaireGroupe du rapporteur pour avisNom du rapport",
-      "source_id": "assemblee-communiques",
-      "source_label": "Assemblée nationale — Communiqués",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Commission du développement durable - Nomination des rapporteurs pour avis sur le projet de loi de finances pour 2027",
-      "url": "https://www.assemblee-nationale.fr/dyn/espace-presse/communiques-de-presse/2026/commission-du-developpement-durable-nomination-des-rapporteurs-pour-avis-sur-le-projet-de-loi-de-finances-pour-2027",
-      "published": "2026-06-24",
-      "summary": "La commission du développement durable et de l’aménagement du territoire, présidée par Sandrine Le Feur (EPR, Finistère) a achevé, ce mercredi 2 juillet, de désigner les rapporteurs pour avis sur le projet de loi de finances pour 2027. Objet de l’avis budgétaireGroupe du rapporte",
-      "source_id": "assemblee-communiques",
-      "source_label": "Assemblée nationale — Communiqués",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     }
   ]
