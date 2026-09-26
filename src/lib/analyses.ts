@@ -133,6 +133,15 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     ),
   },
   {
+    slug: 'assemblee-sujets',
+    title: 'Assemblée des sujets de campagne',
+    description:
+      'Sur les 7 derniers jours de presse collectée : quels sujets dominent, et quels candidats y sont le plus associés. Part de presse, pas intention de vote.',
+    date: '2026-09-26',
+    href: '/analyses/assemblee-sujets',
+    cover: null,
+  },
+  {
     slug: 'assemblee-premier-tour',
     title: 'L\'Assemblée du Premier Tour 2027',
     description:

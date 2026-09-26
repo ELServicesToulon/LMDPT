@@ -1,0 +1,146 @@
+---
+/**
+ * Assemblée des sujets de campagne — qui occupe quel thème dans la presse (7 j).
+ * Données : src/data/renifleur/assemblee-sujets.json (généré après renifleur).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AssembleeSujets from '../../components/AssembleeSujets.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/renifleur/assemblee-sujets.json';
+
+const generated = new Date(data.generated_at).toLocaleString('fr-FR', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+});
+
+/** Teintes candidats présentes dans les bancs (légende). */
+const hueLegend = (() => {
+  const map = new Map<string, { slug: string; label: string; color: string }>();
+  for (const banc of data.bancs) {
+    for (const seat of banc.seats) {
+      if (seat.candidate_slug && seat.candidate_label && seat.candidate_color) {
+        map.set(seat.candidate_slug, {
+          slug: seat.candidate_slug,
+          label: seat.candidate_label,
+          color: seat.candidate_color,
+        });
+      }
+    }
+  }
+  return [...map.values()];
+})();
+---
+
+<BaseLayout
+  title="Assemblée des sujets de campagne"
+  description="Sur les 7 derniers jours de presse collectée par le renifleur LMDPT : quels sujets dominent, et quels candidats y sont le plus associés. Part de presse, pas intention de vote."
+  type="article"
+  keywords="assemblée des sujets, renifleur, presse, campagne 2027, thèmes, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    Assemblée des sujets
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="as-title">
+    <p class="eyebrow">Radar presse · 7 jours</p>
+    <h1 id="as-title">Assemblée des sujets de campagne</h1>
+    <p class="meta">
+      Synthèse automatique
+      {' · '}
+      Générée le <time datetime={data.generated_at}>{generated}</time>
+      {' · '}
+      Fenêtre {data.window_from} → {data.window_to}
+    </p>
+    <p class="lead">{data.lead}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <section class="card" aria-labelledby="as-viz-title">
+    <h2 id="as-viz-title">Bancs par sujet</h2>
+    <p>
+      Chaque rangée est un thème. La couleur du siège est celle du thème. Le liséré
+      reprend la teinte candidat quand le renifleur l’attribue avec confiance ≥{' '}
+      {data.min_confidence}. Le banc du haut est le sujet le plus cité dans la
+      fenêtre. Les pourcentages sont une part des {data.articles_in_window} articles
+      collectés — jamais une intention de vote.
+    </p>
+    {data.bancs.length > 0 ? (
+      <AssembleeSujets bancs={data.bancs} />
+    ) : (
+      <p role="status">Aucun article dans la fenêtre courante.</p>
+    )}
+  </section>
+
+  <section class="card" aria-labelledby="as-legend-title">
+    <h2 id="as-legend-title">Légende</h2>
+    <h3>Couleurs des thèmes</h3>
+    <ul class="as-theme-legend">
+      {
+        data.bancs.map((b) => (
+          <li>
+            <span class="swatch" style={`background:${b.theme_color}`} aria-hidden="true" />
+            {b.theme_label}
+            <span class="meta">
+              — {b.articles} · {b.pct_of_window}&nbsp;%
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    {
+      hueLegend.length > 0 && (
+        <>
+          <h3>Teintes candidats (liséré)</h3>
+          <PoliticalHueBadges hues={hueLegend} />
+        </>
+      )
+    }
+  </section>
+
+  <section class="card" aria-labelledby="as-method-title">
+    <h2 id="as-method-title">Méthode</h2>
+    <ul>
+      <li>
+        Source : flux RSS du renifleur LMDPT (<code>latest.json</code>), fenêtre glissante
+        de {data.window_days} jours.
+      </li>
+      <li>
+        Thème : lexique fermé sur titre + résumé (IA, Ukraine, laïcité, école, emploi,
+        retraites, immigration, pouvoir d’achat, santé, sécurité, climat, institutions).
+        Sans mot du lexique → « Non classé ».
+      </li>
+      <li>
+        Candidat nommé seulement si teinte politique avec confiance ≥ {data.min_confidence}{' '}
+        et hors pluraliste.
+      </li>
+      <li>
+        Classement : thèmes par nombre d’articles ; dans chaque thème, candidats par
+        nombre d’articles.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .as-theme-legend {
+    list-style: none;
+    margin: 0.5rem 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .as-theme-legend .swatch {
+    display: inline-block;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+</style>

@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-09-26T11:11:50.606Z",
+  "source": "src/data/renifleur/latest.json",
+  "window_days": 7,
+  "window_from": "2026-09-20",
+  "window_to": "2026-09-26",
+  "min_confidence": 0.6,
+  "articles_in_window": 35,
+  "lead": "Sur 35 articles de presse du 2026-09-20 au 2026-09-26, le sujet le plus cité est Institutions / élections (14 articles).",
+  "disclaimer": "Source secondaire (RSS presse). Part de la presse collectée, pas une intention de vote. Ce n’est pas un classement de candidats ni un sondage.",
+  "doe": "La démocratie avant l’élimination — on montre qui occupe quel sujet dans la presse, pas qui gagne.",
+  "bancs": [
+    {
+      "theme_id": "institutions",
+      "theme_label": "Institutions / élections",
+      "theme_color": "#495057",
+      "articles": 14,
+      "pct_of_window": 40,
+      "seats": [
+        {
+          "candidate_slug": "le-pen",
+          "candidate_label": "Le Pen / RN",
+          "candidate_color": "#0d378a",
+          "articles": 4
+        },
+        {
+          "candidate_slug": "melenchon",
+          "candidate_label": "Mélenchon / LFI",
+          "candidate_color": "#cc2443",
+          "articles": 1
+        },
+        {
+          "candidate_slug": "parti-socialiste",
+          "candidate_label": "Socialiste / social-démocrate",
+          "candidate_color": "#ff8080",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 8
+    },
+    {
+      "theme_id": "laicite",
+      "theme_label": "Laïcité / religion",
+      "theme_color": "#6b5b8c",
+      "articles": 7,
+      "pct_of_window": 20,
+      "seats": [
+        {
+          "candidate_slug": "retailleau",
+          "candidate_label": "Retailleau / LR",
+          "candidate_color": "#0066cc",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 6
+    },
+    {
+      "theme_id": "ia",
+      "theme_label": "Intelligence artificielle",
+      "theme_color": "#2a6f7a",
+      "articles": 4,
+      "pct_of_window": 11.4,
+      "seats": [
+        {
+          "candidate_slug": "attal",
+          "candidate_label": "Attal / Renaissance",
+          "candidate_color": "#ffeb00",
+          "articles": 1
+        },
+        {
+          "candidate_slug": "parti-socialiste",
+          "candidate_label": "Socialiste / social-démocrate",
+          "candidate_color": "#ff8080",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 2
+    },
+    {
+      "theme_id": "non-classe",
+      "theme_label": "Non classé",
+      "theme_color": "#9aa0a6",
+      "articles": 4,
+      "pct_of_window": 11.4,
+      "seats": [
+        {
+          "candidate_slug": "bardella",
+          "candidate_label": "Bardella / RN",
+          "candidate_color": "#0d378a",
+          "articles": 1
+        },
+        {
+          "candidate_slug": "le-pen",
+          "candidate_label": "Le Pen / RN",
+          "candidate_color": "#0d378a",
+          "articles": 1
+        },
+        {
+          "candidate_slug": "retailleau",
+          "candidate_label": "Retailleau / LR",
+          "candidate_color": "#0066cc",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 1
+    },
+    {
+      "theme_id": "ukraine",
+      "theme_label": "Ukraine / Europe",
+      "theme_color": "#3d5a80",
+      "articles": 2,
+      "pct_of_window": 5.7,
+      "seats": [
+        {
+          "candidate_slug": "melenchon",
+          "candidate_label": "Mélenchon / LFI",
+          "candidate_color": "#cc2443",
+          "articles": 1
+        },
+        {
+          "candidate_slug": "parti-socialiste",
+          "candidate_label": "Socialiste / social-démocrate",
+          "candidate_color": "#ff8080",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 0
+    },
+    {
+      "theme_id": "climat",
+      "theme_label": "Climat / énergie",
+      "theme_color": "#2d6a4f",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [],
+      "unnamed_articles": 1
+    },
+    {
+      "theme_id": "emploi",
+      "theme_label": "Emploi / travail",
+      "theme_color": "#8b6914",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [],
+      "unnamed_articles": 1
+    },
+    {
+      "theme_id": "pouvoir-achat",
+      "theme_label": "Pouvoir d’achat",
+      "theme_color": "#c45c26",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [
+        {
+          "candidate_slug": "attal",
+          "candidate_label": "Attal / Renaissance",
+          "candidate_color": "#ffeb00",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 0
+    },
+    {
+      "theme_id": "retraites",
+      "theme_label": "Retraites",
+      "theme_color": "#a0522d",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [
+        {
+          "candidate_slug": "retailleau",
+          "candidate_label": "Retailleau / LR",
+          "candidate_color": "#0066cc",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 0
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+---
+/**
+ * Arc de bancs — assemblée des sujets (presse 7 j).
+ * Couleur du siège = thème ; liséré = teinte candidat si nommé.
+ */
+interface Seat {
+  candidate_slug: string | null;
+  candidate_label: string | null;
+  candidate_color: string | null;
+  articles: number;
+}
+
+interface Banc {
+  theme_id: string;
+  theme_label: string;
+  theme_color: string;
+  articles: number;
+  pct_of_window: number;
+  seats: Seat[];
+  unnamed_articles: number;
+}
+
+interface Props {
+  bancs: Banc[];
+}
+
+const { bancs } = Astro.props;
+
+/** Sièges visibles : candidats nommés + un siège gris par paquet d’articles non attribués (max 8 anonymes). */
+function seatsForBanc(b: Banc): Array<{
+  label: string;
+  themeColor: string;
+  rimColor: string | null;
+  articles: number;
+  named: boolean;
+}> {
+  const named = b.seats.map((s) => ({
+    label: s.candidate_label || '—',
+    themeColor: b.theme_color,
+    rimColor: s.candidate_color,
+    articles: s.articles,
+    named: true,
+  }));
+  const anonSlots = Math.min(8, b.unnamed_articles);
+  const anon = Array.from({ length: anonSlots }, (_, i) => ({
+    label: i === 0 && b.unnamed_articles > 0 ? `non attribué (${b.unnamed_articles})` : '',
+    themeColor: b.theme_color,
+    rimColor: null as string | null,
+    articles: i === 0 ? b.unnamed_articles : 0,
+    named: false,
+  }));
+  return [...named, ...anon];
+}
+---
+
+<figure class="assemblee-sujets" aria-label="Assemblée des sujets de campagne">
+  <ol class="as-bancs">
+    {
+      bancs.map((banc, row) => {
+        const seats = seatsForBanc(banc);
+        return (
+          <li class="as-banc" style={`--theme: ${banc.theme_color}; --row: ${row};`}>
+            <div class="as-banc-meta">
+              <span class="as-swatch" style={`background:${banc.theme_color}`} aria-hidden="true" />
+              <strong class="as-theme">{banc.theme_label}</strong>
+              <span class="as-count">
+                {banc.articles} article{banc.articles > 1 ? 's' : ''}
+                {' · '}
+                {banc.pct_of_window}&nbsp;% de la presse collectée
+              </span>
+            </div>
+            <ul class="as-seats" role="list">
+              {
+                seats.map((seat) => (
+                  <li
+                    class:list={['as-seat', { named: seat.named, anon: !seat.named }]}
+                    style={`--fill: ${seat.themeColor}; --rim: ${seat.rimColor || 'transparent'};`}
+                    title={
+                      seat.named
+                        ? `${seat.label} — ${seat.articles} article${seat.articles > 1 ? 's' : ''}`
+                        : seat.label || 'Article sans teinte candidat fiable'
+                    }
+                  >
+                    {seat.named ? (
+                      <span class="as-seat-label">
+                        {seat.label}
+                        <span class="as-seat-n">{seat.articles}</span>
+                      </span>
+                    ) : seat.label ? (
+                      <span class="as-seat-label muted">{seat.label}</span>
+                    ) : null}
+                  </li>
+                ))
+              }
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ol>
+</figure>
+
+<style>
+  .assemblee-sujets {
+    margin: 1.5rem 0;
+    padding: 0;
+    border: none;
+  }
+  .as-bancs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .as-banc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--theme) 8%, var(--surface, #fff));
+    border: 1px solid color-mix(in srgb, var(--theme) 28%, transparent);
+  }
+  .as-banc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.75rem;
+  }
+  .as-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .as-theme {
+    font-size: 1rem;
+  }
+  .as-count {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+  .as-seats {
+    list-style: none;
+    margin: 0;
+    padding: 0.35rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    /* léger arc : décalage croissant vers le bas de la rangée */
+    transform: perspective(800px) rotateX(2deg);
+  }
+  .as-seat {
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: 8px 8px 4px 4px;
+    background: var(--fill);
+    border: 2px solid var(--rim);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--fill) 40%, #000);
+    color: #fff;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .as-seat.anon {
+    opacity: 0.45;
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--fill) 50%, #fff);
+  }
+  .as-seat-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    max-width: 5.5rem;
+  }
+  .as-seat-label.muted {
+    font-size: 0.65rem;
+    opacity: 0.95;
+  }
+  .as-seat-n {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 640px) {
+    .as-seat {
+      min-width: 2rem;
+      font-size: 0.65rem;
+    }
+  }
+</style>
