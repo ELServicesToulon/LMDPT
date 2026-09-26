@@ -1,0 +1,218 @@
+---
+/**
+ * Enquête AIM Marseille / IA / métiers (26 sept. 2026)
+ * Données : src/data/analyses/aim-marseille-2026-metiers.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/aim-marseille-2026-metiers.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#cadre', label: '1. Cadre du débat' },
+  { href: '#contexte', label: '2. Ce qui a précédé' },
+  { href: '#matrice', label: '3. Matrice des huit camps' },
+  { href: '#lectures', label: '4. Deux lectures' },
+  { href: '#implications', label: '5. Implications métiers' },
+  { href: '#retenues', label: '6. Ce que LMDPT en retient' },
+  { href: '#sources', label: '7. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="Vendredi 25 septembre 2026, huit porte-parole parlent d’IA au Vélodrome. Le mot commun est souveraineté. L’emploi, l’école et les data centers divergent."
+  type="article"
+  keywords="AIM Marseille, IA, métiers, emploi, école, data centers, présidentielle 2027, LMDPT, débat public"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="cadre" aria-labelledby="cadre-title">
+    <h2 id="cadre-title">1. Cadre du débat (faits)</h2>
+    <ol>
+      {data.cadre_faits.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.cadre_note}</p>
+  </section>
+
+  <section class="card" id="contexte" aria-labelledby="contexte-title">
+    <h2 id="contexte-title">2. Ce qui a précédé (selon la presse)</h2>
+    {data.contexte.map((p) => <p>{p}</p>)}
+    <p class="disclaimer-box">{data.contexte_resume}</p>
+  </section>
+
+  <section class="card" id="matrice" aria-labelledby="matrice-title">
+    <h2 id="matrice-title">3. Matrice des huit camps (métiers)</h2>
+    <p class="meta">
+      Chaque cellule est étiquetée <strong>Presse</strong> (attribution média) ou
+      <strong>Non établi</strong> (absence dans les comptes rendus consultés). Pas d’invention.
+    </p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th scope="col">Porte-parole</th>
+            <th scope="col">Souveraineté</th>
+            <th scope="col">Data centers</th>
+            <th scope="col">Régulation</th>
+            <th scope="col">École</th>
+            <th scope="col">Emploi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.matrice.map((row) => (
+              <tr>
+                <th scope="row">
+                  {row.nom}
+                  <span class="camp">{row.camp}</span>
+                </th>
+                <td>{row.souverainete}</td>
+                <td>{row.data_centers}</td>
+                <td>{row.regulation}</td>
+                <td>{row.ecole}</td>
+                <td>{row.emploi}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer-box">{data.point_attention}</p>
+  </section>
+
+  <section class="card" id="lectures" aria-labelledby="lectures-title">
+    <h2 id="lectures-title">4. Deux lectures du débat</h2>
+    <h3>4.1 Lecture A — {data.lecture_a_titre}</h3>
+    {data.lecture_a.map((p) => <p>{p}</p>)}
+    <h3>4.2 Lecture B — {data.lecture_b_titre}</h3>
+    {data.lecture_b.map((p) => <p>{p}</p>)}
+    <p class="disclaimer-box">{data.lecture_note}</p>
+  </section>
+
+  <section class="card" id="implications" aria-labelledby="impl-title">
+    <h2 id="impl-title">5. Implications pour le débat public (métiers)</h2>
+    <ol>
+      {data.implications.map((item) => <li>{item}</li>)}
+    </ol>
+    <p>{data.doe_close}</p>
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">6. Ce que LMDPT en retient</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">7. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            {s.url ? (
+              <a href={s.url} rel="noopener noreferrer">
+                {s.label}
+              </a>
+            ) : (
+              s.label
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .matrix-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+  .matrix th,
+  .matrix td {
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    padding: 0.55rem 0.65rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .matrix thead th {
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 12%, transparent);
+    font-weight: 600;
+  }
+  .matrix tbody th {
+    min-width: 9rem;
+    font-weight: 600;
+  }
+  .camp {
+    display: block;
+    font-weight: 400;
+    font-size: 0.82em;
+    opacity: 0.85;
+    margin-top: 0.2rem;
+  }
+</style>

@@ -1,0 +1,170 @@
+{
+  "slug": "aim-marseille-2026-metiers",
+  "title": "AIM Marseille 2026 : l’IA face aux métiers, à l’école et à l’emploi",
+  "eyebrow": "Enquête · IA · présidentielle 2027 · métiers",
+  "type_label": "Enquête courte / point de situation",
+  "date": "2026-09-26",
+  "updated": "2026-09-26",
+  "doe_angle": "Qui parle pour un métier quand l’IA arrive dans une école ou sur un poste. On distingue le fait (qui était assis), la phrase rapportée par la presse, et notre lecture.",
+  "disclaimer": "Enquête documentaire (La démocratie avant l’élimination). Le cadre vient de la page AIM et des comptes rendus BFM, Le Monde et Frandroid. Les positions sont des propos rapportés, pas des verbatim enregistrés par nous. Pas de verdict technique. Pas de classement de candidats.",
+  "tldr": "Vendredi 25 septembre 2026, de midi à 14 h, huit porte-parole parlent d’intelligence artificielle au Vélodrome de Marseille. Le salon AIM y tient sa quatrième édition, les 24 et 25. BFM Business, La Tribune, Brut et La Provence tiennent le micro. Selon Le Monde, Olivier Faure est le principal candidat présent : les autres camps envoient un lieutenant. Presque tout le monde dit « souveraineté ». Dès qu’on parle d’un emploi, d’une classe ou d’un data center, les phrases ne se recouvrent plus.",
+  "cadre_faits": [
+    "Événement. Quatrième édition d’AIM, 24 et 25 septembre 2026, CEPAC Vélodrome, Marseille (page officielle aim-marseille.com).",
+    "Débat. Vendredi 25 septembre, environ 12 h–14 h, format scindé en deux tables, durée d’environ deux heures (Le Monde, Frandroid, replay BFM).",
+    "Organisateurs du débat. BFM Business / BFMTV, La Tribune, Brut, La Provence (pages BFM et Frandroid).",
+    "Huit porte-parole. Sarah Knafo (Reconquête), Manuel Bompard (LFI), Olivier Faure (PS), Alexandre Loubet (RN), Xavier Bertrand (Nous France / LR), David Cormand (Les Écologistes), Paul Midy (Renaissance), Laurent Marcangeli (Horizons) — liste BFM replay.",
+    "Absences annoncées. Selon Le Monde : Glucksmann, Bardella et de Villepin annoncés, absents le jour J ; la plupart des camps délèguent.",
+    "Composition des tables (Le Monde / Frandroid). Table 1 : Knafo, Loubet, Bertrand, Bompard, Faure. Table 2 : Midy, Marcangeli, Cormand."
+  ],
+  "cadre_note": "AIM est un salon privé. BFM cite CMA Media parmi les organisateurs. Ce n’est pas une assemblée élue. C’est un fait de pré-campagne : des porte-parole, deux tables, deux heures.",
+  "contexte": [
+    "Le Monde, le 25 septembre, traite déjà l’IA comme un thème de campagne. Le mot commun est « souveraine ». Les mesures, elles, restent floues sur l’école comme sur l’emploi.",
+    "La page du salon annonce un basculement des métiers, une course aux puces, et un coût en électricité, en sécurité et en géopolitique.",
+    "BFM et Frandroid racontent le même nœud : des data centers « souverains », ou un rythme qu’on refuse de freiner.",
+    "Frandroid et BFM citent le Cloud Act américain. Cette loi peut obliger une entreprise américaine à remettre des données hébergées en France. C’est un fait juridique rapporté. Nous ne tranchons pas son application à Orange."
+  ],
+  "contexte_resume": "Le salon promet un grand basculement des métiers. Sur scène, la question devient concrète : qui pose les serveurs, qui forme, qui paie si des postes sautent.",
+  "matrice": [
+    {
+      "nom": "Manuel Bompard",
+      "camp": "La France insoumise",
+      "souverainete": "Presse — Moratoire sur les centres de données non souverains ; données publiques sur des centres souverains (BFM).",
+      "data_centers": "Presse — Développement de centres souverains contrôlés ; opposition aux non souverains (BFM, Frandroid).",
+      "regulation": "Presse — Régulation défendue ; refuse d’opposer régulation et développement ; modèle type GIEC pour l’IA approuvé avec Faure (Frandroid).",
+      "ecole": "Non établi dans les comptes rendus consultés.",
+      "emploi": "Presse — Risques d’automatisation et de dépendance ; « soit nous maîtrisons l’IA, soit nous la subissons » (BFM). Équilibre contre catastrophisme et enthousiasme aveugle (Frandroid)."
+    },
+    {
+      "nom": "Olivier Faure",
+      "camp": "Parti socialiste",
+      "souverainete": "Presse — Cadre prudent : atouts et menaces ; IA au service de l’humain (BFM).",
+      "data_centers": "Presse — Critique écologique chiffrée du projet de Fouju (Seine-et-Marne) : investissement, surface, électricité, eau, polluants (Frandroid).",
+      "regulation": "Presse — « La régulation n’est pas un retour au Moyen Âge » ; équivalent d’un GIEC pour l’IA (BFM, Frandroid).",
+      "ecole": "Non établi comme proposition scolaire dédiée dans les comptes rendus consultés.",
+      "emploi": "Presse — Scénario 10 comptables → 1 + IA ; coût social reporté sur le contribuable ; idée d’un « dividende IA » pour les perdants d’emploi (Frandroid)."
+    },
+    {
+      "nom": "David Cormand",
+      "camp": "Les Écologistes",
+      "souverainete": "Presse — Critique de la place même de l’IA : innovation ≠ progrès (exemple bombe atomique) (Frandroid).",
+      "data_centers": "Non établi en détail dans les extraits consultés.",
+      "regulation": "Presse — Règles européennes déjà là mais non respectées ; « fermer le robinet » et interdire l’accès au marché européen (Frandroid).",
+      "ecole": "Non établi dans les comptes rendus consultés.",
+      "emploi": "Presse — Réserver l’IA aux tâches maîtrisables ; garder le savoir-faire à l’humain (Frandroid)."
+    },
+    {
+      "nom": "Xavier Bertrand",
+      "camp": "Nous France / LR",
+      "souverainete": "Presse — Solutions « souveraines » via Orange où les règles FR/UE s’appliquent ; « on impose nos conditions » (BFM). Réserve presse sur le Cloud Act si partenaire américain.",
+      "data_centers": "Presse — Contre le 100 % français qui ferait « prendre du retard » ; ambition de « vallée européenne des data centers » en Hauts-de-France (BFM, Frandroid).",
+      "regulation": "Presse — Critique d’une prudence écologique jugée excessive (avec Loubet, selon Frandroid).",
+      "ecole": "Presse — Financer un « brevet IA » en région ; former élèves et enseignants ; formation dès le plus jeune âge (BFM, Frandroid).",
+      "emploi": "Presse — Formation comme réponse principale (Frandroid)."
+    },
+    {
+      "nom": "Paul Midy",
+      "camp": "Renaissance (Attal)",
+      "souverainete": "Non établi en citation directe dans les comptes rendus consultés.",
+      "data_centers": "Non établi en citation directe dans les comptes rendus consultés.",
+      "regulation": "Non établi en citation directe dans les comptes rendus consultés.",
+      "ecole": "Presse — Formation des actifs à l’IA (Frandroid).",
+      "emploi": "Presse — « Il n’y a jamais eu de chômage créé par l’innovation » ; formation pour travailler moins à l’avenir (Frandroid). Frandroid note la tension avec un recul de l’âge de la retraite défendu par ailleurs."
+    },
+    {
+      "nom": "Laurent Marcangeli",
+      "camp": "Horizons (Philippe)",
+      "souverainete": "Presse — Meilleure protection : réseaux sociaux et IA français et européens (Frandroid).",
+      "data_centers": "Non établi en détail dans les extraits consultés.",
+      "regulation": "Presse — Régulation insuffisante seule ; loi 2023 majorité numérique citée comme antécédent (Frandroid).",
+      "ecole": "Presse — Compte formation dédié à l’IA (Frandroid).",
+      "emploi": "Presse — Formation comme axe (Frandroid)."
+    },
+    {
+      "nom": "Alexandre Loubet",
+      "camp": "Rassemblement national",
+      "souverainete": "Presse — Filière technologique nationale ; former plus d’ingénieurs ; réduire les normes ; moderniser l’administration ; pousser les entreprises vers des technos françaises (BFM).",
+      "data_centers": "Presse — Critique d’une prudence écologique jugée excessive (avec Bertrand, Frandroid).",
+      "regulation": "Presse — Maîtrise plutôt que frein fort : « soit nous la maîtrisons, soit nous la subirons » (Frandroid ; BFM attribue une formule proche à Bompard aussi — à ne pas confondre : LMDPT garde la formulation Frandroid pour Loubet).",
+      "ecole": "Presse — Former plus d’ingénieurs (BFM).",
+      "emploi": "Presse — Administration et entreprises sur filière française (BFM). Fonds souverain volontaire pour flécher l’épargne vers innovation (Frandroid)."
+    },
+    {
+      "nom": "Sarah Knafo",
+      "camp": "Reconquête",
+      "souverainete": "Presse — Menaces et opportunités ; l’avenir dépend de ce qu’on en fait (Frandroid).",
+      "data_centers": "Non établi en détail dans les extraits consultés.",
+      "regulation": "Presse — Le code pénal français suffit ; moquerie d’une charte mondiale illisible à Pékin et Washington (Frandroid).",
+      "ecole": "Presse — Refus d’« apprendre aux enfants à prompter » ; retour aux fondamentaux (BFM, Frandroid).",
+      "emploi": "Presse — Gain de productivité dans l’administration ; robots / fauteuils connectés pour l’aide à la personne, sans remplacer le lien humain (BFM). BFM relie et corrige une rhétorique Zemmour sur les robots humanoïdes en Ehpad."
+    }
+  ],
+  "lecture_a_titre": "Moratoire et freins publics",
+  "lecture_a": [
+    "Ici, l’IA touche d’abord des gens au travail. Bompard, selon BFM, veut un moratoire sur les data centers qui ne sont pas souverains. Faure, selon Frandroid, imagine dix comptables dont neuf partent, et un « dividende IA » pour ceux qui restent sans poste. Cormand, selon le même article, veut garder le savoir-faire humain et limiter l’IA aux tâches qu’on maîtrise.",
+    "Cette lecture nomme des perdants avant la course : un métier, un territoire, une facture d’électricité. Bertrand et Loubet, toujours selon Frandroid, répondent que ce frein fait perdre du temps."
+  ],
+  "lecture_b_titre": "Maîtrise, formation et accélération",
+  "lecture_b": [
+    "Ici, le risque principal est d’arriver trop tard. On forme. On héberge. Bertrand finance un brevet IA et veut des enseignants formés (BFM, Frandroid). Marcangeli propose un compte formation (Frandroid). Loubet veut plus d’ingénieurs et une filière française (BFM). Knafo voit un gain dans l’administration, et refuse d’apprendre aux enfants à « prompter » (BFM).",
+    "Midy, selon Frandroid, dit qu’aucune innovation n’a créé de chômage. La phrase est rapportée. Elle ne dit pas qui paie la transition pendant que les actifs se forment."
+  ],
+  "lecture_note": "Les deux lectures restent côte à côte. L’une nomme des postes qui disparaissent. L’autre mise sur la formation et les serveurs. Nous ne choisissons pas un camp.",
+  "implications": [
+    "Sur scène, ce sont des porte-parole, dans un salon privé, repris par des médias partenaires de l’événement. Un cabinet, une classe ou un atelier n’y ont pas la parole directe.",
+    "À l’école, la presse oppose deux phrases. Bertrand veut former tôt. Knafo refuse le « prompt » et revient aux fondamentaux. Aucun programme scolaire national n’est adopté ce jour-là.",
+    "Sur l’emploi, trois phrases tiennent dans le même après-midi. Faure parle de licenciements et d’un dividende. Cormand veut garder le geste humain. Midy et Marcangeli misent sur la formation.",
+    "Les data centers sont le désaccord le plus net, d’après BFM et Frandroid. Le mot « souverain » est partagé. Bompard parle de moratoire. Bertrand parle d’une vallée européenne dans les Hauts-de-France."
+  ],
+  "doe_close": "Le 25 septembre montre trois règles possibles : un moratoire, des serveurs qu’on accélère, une formation. On peut les lire sans désigner un favori.",
+  "retenues": [
+    "Le salon (24–25 septembre, Vélodrome) et le débat du 25 (huit porte-parole, deux tables) sont établis par la page AIM, BFM, Le Monde et Frandroid.",
+    "La presse relève un mot commun, « souveraine », et des désaccords nets sur les serveurs, la règle, l’école et l’emploi.",
+    "La question utile porte sur qui encaisse le risque : le salarié, le contribuable, l’élève, ou celui qui finance le serveur.",
+    "Le Monde note l’absence de plusieurs têtes d’affiche. Cette page ne comble pas le trou. Elle range ce qui a été dit."
+  ],
+  "point_attention": "Deux lectures du même après-midi : freiner par la règle publique, ou accélérer par la formation et les serveurs. Les cellules « non établi » restent vides. Nous n’inventons pas la phrase manquante.",
+  "sources": [
+    {
+      "label": "AIM Marseille — page officielle 2026 (24–25 septembre, CEPAC Vélodrome)",
+      "url": "https://aim-marseille.com/fr"
+    },
+    {
+      "label": "BFM — Moratoire et souveraineté vs opportunité (25 sept. 2026)",
+      "url": "https://www.bfmtv.com/tech/intelligence-artificielle/moratoire-et-souverainete-contre-opportunite-et-maitrise-du-developpement-en-marge-de-l-aim-l-ia-cristallise-les-divergences-politiques-lors-d-un-debat-a-marseille_AV-202609250616.html"
+    },
+    {
+      "label": "BFM — Replay « Le grand débat IA de la présidentielle » (liste des huit invités)",
+      "url": "https://www.bfmtv.com/economie/replay-emissions/les-editions-speciales/video-le-grand-debat-ia-de-la-presidentielle_VN-202609250657.html"
+    },
+    {
+      "label": "Le Monde — Débat IA sans grande surprise, peu de candidats (25 sept. 2026)",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-a-marseille-un-grand-debat-sur-l-ia-sans-grande-surprise-et-avec-peu-de-candidats_6782611_823448.html"
+    },
+    {
+      "label": "Le Monde — IA souveraine, unique consensus (25 sept. 2026 ; amorce libre + paywall)",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-une-ia-souveraine-unique-consensus-de-candidats-aux-visions-opposees_6781933_823448.html"
+    },
+    {
+      "label": "Frandroid — Compte rendu du débat IA (25 sept. 2026)",
+      "url": "https://www.frandroid.com/culture-tech/3261129_on-a-suivi-le-debat-ia-de-la-presidentielle-sur-beaucoup-de-position-de-principe-peu-de-concret"
+    },
+    {
+      "label": "La Tribune — titre / amorce paywall (25 sept. 2026) ; non utilisé au-delà du titre",
+      "url": "https://www.latribune.fr/article/tech/77439708406159/presidentielle-l-ia-ce-sujet-qui-divise-les-candidats"
+    }
+  ],
+  "liens_internes": [
+    {
+      "href": "/analyses/trump-ia-guardrails-anthropic",
+      "label": "Trump / Anthropic — qui tient le frein ?"
+    },
+    {
+      "href": "/analyses/presidentielle-2027-preparation",
+      "label": "Présidentielle 2027 — dossier de préparation"
+    },
+    {
+      "href": "/analyses/alerte-citoyenne",
+      "label": "Alerte citoyenne — débat public"
+    }
+  ]
+}

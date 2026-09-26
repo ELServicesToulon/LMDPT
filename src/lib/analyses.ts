@@ -1,4 +1,6 @@
 import type { EditorialCover } from './editorial-types';
+import visitePape from '../data/analyses/visite-pape-appel-popularite.json';
+import aimMarseille from '../data/analyses/aim-marseille-2026-metiers.json';
 import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
@@ -22,6 +24,30 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: visitePape.slug,
+    title: visitePape.title,
+    description:
+      '600 000 inscrits à la messe du 26 septembre 2026 ne sont pas un scrutin. L’enquête sépare le compte de la foule, les annonces des politiques, et le sophisme qui voudrait qu’un grand nombre tranche un débat.',
+    date: visitePape.date,
+    href: '/analyses/visite-pape-appel-popularite',
+    cover: uneCover(
+      'visite-pape-appel-popularite',
+      'Croquis encre et aquarelle : balance à l’horizontale, foule de petits traits d’un côté, urne transparente vide de l’autre',
+    ),
+  },
+  {
+    slug: aimMarseille.slug,
+    title: aimMarseille.title,
+    description:
+      'Vendredi 25 septembre 2026, huit porte-parole parlent d’IA au Vélodrome. Le mot commun est souveraineté. L’emploi, l’école et les data centers ne se recouvrent plus.',
+    date: aimMarseille.updated,
+    href: '/analyses/aim-marseille-2026-metiers',
+    cover: uneCover(
+      'aim-marseille-2026-metiers',
+      'Croquis encre et aquarelle : table vide, pupitre d’écolier et levier face à une rangée de serveurs',
+    ),
+  },
   {
     slug: ecolesJournalisme.slug,
     title: ecolesJournalisme.title,
