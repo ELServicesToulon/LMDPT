@@ -172,7 +172,15 @@ function buildNewsSitemap(): string {
     ANALYSIS_CATALOG.find((a) => a.slug === 'ukraine-energie-triangle-europe-algerie-russie')
       ?.title ??
     'Ukraine et énergie : le triangle Europe–Algérie–Russie, à l’horizon de la haute intensité';
+  const visitePapeTitle =
+    ANALYSIS_CATALOG.find((a) => a.slug === 'visite-pape-appel-popularite')?.title ??
+    'Visite de Léon XIV : la foule ne fait pas un scrutin';
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
+    {
+      path: '/analyses/visite-pape-appel-popularite',
+      title: visitePapeTitle,
+      keywords: 'appel à la popularité, Léon XIV, premier tour, foule, scrutin',
+    },
     {
       path: '/analyses/alerte-citoyenne',
       title: 'Alerte citoyenne — conditions du débat public',

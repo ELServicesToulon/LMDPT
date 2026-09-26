@@ -33,7 +33,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/visite-pape-appel-popularite',
     cover: uneCover(
       'visite-pape-appel-popularite',
-      'Croquis encre et aquarelle : balance à l’horizontale, foule de petits traits d’un côté, urne transparente vide de l’autre',
+      'Croquis encre et aquarelle : balance de bois à l’horizontale, foule sans visage dans un plateau, urne de verre vide dans l’autre',
     ),
   },
   {
