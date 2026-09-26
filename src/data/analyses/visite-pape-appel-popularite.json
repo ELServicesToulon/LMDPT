@@ -1,0 +1,293 @@
+{
+  "slug": "visite-pape-appel-popularite",
+  "title": "Visite de Léon XIV : la foule ne fait pas un scrutin",
+  "eyebrow": "Enquête · appel à la popularité",
+  "type_label": "Enquête documentaire",
+  "date": "2026-09-26",
+  "updated": "2026-09-26",
+  "doe_angle": "Un grand rassemblement remplace-t-il un bulletin de premier tour, ou reste-t-il un fait social sans voix comptée ?",
+  "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne : la démocratie avant l’élimination). Synthèse d’articles publics consultés le 26 septembre 2026, avant la messe de 15 h place de la Concorde (France 24, RFI, Le Temps, TF1 Info, Public Sénat, CNews, BFMTV, Nouvel Obs, Europe 1, RMC). Les paroles citées sont celles des personnes et des rédactions, pas une norme du média. Aucune thèse religieuse n’est reprise comme argument. Aucune présence annoncée n’est un sondage. Les chiffres de foule restent attribués à celui qui les énonce. 600 000 désigne ici une inscription, pas un comptage de sortie.",
+  "tldr": "Le 25 septembre 2026, le Vatican compte 300 000 personnes sur le parcours de Léon XIV à Paris. France 24 ajoute 8 000 fidèles à Notre-Dame et 80 000 jeunes au Stade de France. Pour la messe du samedi, la même rédaction écrit que 600 000 personnes se sont inscrites. Ce dernier chiffre circule avant 15 h. Il décrit une liste d’inscriptions. Aucun bulletin n’y figure. Plusieurs candidats annoncent qu’ils seront dans l’assistance. D’autres annoncent qu’ils n’y seront pas. Jean-Luc Mélenchon fait l’objet de titres contraires. L’appel à la popularité consiste à conclure qu’une thèse est juste parce que beaucoup de gens s’y pressent. Ici, le nombre ne tranche ni la fin de vie, ni la laïcité, ni une candidature de 2027.",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "Le texte documente plusieurs courants annoncés à la messe, ou absents, sans en désigner un vainqueur."
+    },
+    {
+      "slug": "attal",
+      "label": "Attal / Renaissance",
+      "color": "#ffeb00",
+      "rationale": "Gabriel Attal est annoncé présent. Emmanuel Macron s’abstient des messes et se fait représenter."
+    },
+    {
+      "slug": "philippe",
+      "label": "Philippe / Horizons",
+      "color": "#0001b8",
+      "rationale": "Édouard Philippe est annoncé présent, selon TF1 et Public Sénat."
+    },
+    {
+      "slug": "retailleau",
+      "label": "Retailleau / LR",
+      "color": "#0066cc",
+      "rationale": "Bruno Retailleau est annoncé présent. Nicolas Sarkozy commente la laïcité sans figurer sur les listes du samedi."
+    },
+    {
+      "slug": "le-pen",
+      "label": "Le Pen / RN",
+      "color": "#0d378a",
+      "rationale": "Marine Le Pen et Jordan Bardella sont annoncés présents."
+    },
+    {
+      "slug": "zemmour",
+      "label": "Zemmour / Reconquête",
+      "color": "#000080",
+      "rationale": "Éric Zemmour et Sarah Knafo sont annoncés présents. Le statut de candidature diverge selon les rédactions."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Socialiste / social-démocrate",
+      "color": "#ff8080",
+      "rationale": "Olivier Faure annonce son absence et parle de « pêche aux voix ». Ségolène Royal est citée à l’Unesco, pas à la messe."
+    },
+    {
+      "slug": "melenchon",
+      "label": "Mélenchon / LFI",
+      "color": "#cc2443",
+      "rationale": "BFMTV et CNews titrent l’absence de Jean-Luc Mélenchon. Europe 1 titre l’inverse. Bally Bagayoko accueille la veillée de vendredi."
+    },
+    {
+      "slug": "ecolo",
+      "label": "Écologiste",
+      "color": "#00c000",
+      "rationale": "Marine Tondelier est annoncée absente, selon TF1 et Public Sénat."
+    }
+  ],
+  "sophisme": [
+    "L’appel à la popularité est un sophisme. Il consiste à tenir une idée pour vraie, ou un choix pour juste, parce qu’un grand nombre de personnes l’approuvent, s’y pressent ou l’acclament. En logique, ce pas s’appelle argumentum ad populum. Le nombre décrit un rassemblement. La proposition en débat demande une raison distincte de ce nombre.",
+    "Du 25 au 28 septembre 2026, Léon XIV est en France. France 24 parle d’une visite de quatre jours : Paris, Lourdes, Metz. La visite produit des comptes. Elle produit aussi des phrases politiques, à l’Élysée puis à l’Unesco. Le glissement commence quand ces comptes sont traités comme une preuve des phrases. Il continue quand la chaise d’un candidat dans l’assistance est lue comme une avance de premier tour.",
+    "Le test utilisé ici est étroit. Le nombre remplace-t-il une raison, un texte, ou un bulletin ? Si le récit public répond oui, le sophisme est là. Aller ou non place de la Concorde reste un choix personnel."
+  ],
+  "comptes_intro": "Trois comptes de vendredi et un chiffre de samedi circulent dans la presse. Ils n’ont pas le même auteur, ni le même statut.",
+  "comptes": [
+    {
+      "quoi": "Parcours jusqu’à Notre-Dame, vendredi",
+      "chiffre": "300 000",
+      "qui_compte": "Le Vatican, repris par France 24 et Le Temps",
+      "statut": "Estimation d’un parcours d’environ 2,5 km, sans bulletin."
+    },
+    {
+      "quoi": "Vêpres à Notre-Dame, vendredi",
+      "chiffre": "8 000",
+      "qui_compte": "France 24",
+      "statut": "Public de la cérémonie dans la cathédrale."
+    },
+    {
+      "quoi": "Veillée au Stade de France, vendredi",
+      "chiffre": "80 000",
+      "qui_compte": "France 24 et Le Temps",
+      "statut": "Jeunes réunis à Saint-Denis. Le Temps parle d’une foule « survoltée »."
+    },
+    {
+      "quoi": "Messe place de la Concorde, samedi 15 h",
+      "chiffre": "600 000",
+      "qui_compte": "France 24 (« se sont inscrites ») et RFI (« officiellement inscrites »)",
+      "statut": "Inscription annoncée avant la célébration. Une dépêche AFP reprise par France 24 le samedi matin dit aussi « attendus ». Pas un comptage de sortie."
+    }
+  ],
+  "comptes_note": "Additionner 300 000, 8 000, 80 000 et 600 000 pour obtenir « le peuple » mélange quatre scènes et deux statuts. Le dispositif décrit par Le Temps (17 000 bénévoles, 15 000 policiers et gendarmes, 2 500 journalistes accrédités, budget de 27 millions d’euros) mesure une organisation. Il ne mesure pas une opinion.",
+  "presences_intro": "La presse du 23 au 26 septembre dresse des listes. Ce tableau reprend des annonces, pas des présences constatées après 15 h. L’ordre est alphabétique.",
+  "presences": [
+    {
+      "personne": "Gabriel Attal",
+      "annonce": "Présent annoncé à la messe",
+      "source": "TF1, Public Sénat, RMC, CNews"
+    },
+    {
+      "personne": "Bally Bagayoko",
+      "annonce": "Accueil de la veillée de vendredi au Stade de France, au titre du protocole municipal. Pas la messe du samedi.",
+      "source": "TF1, RMC"
+    },
+    {
+      "personne": "Jordan Bardella",
+      "annonce": "Présent annoncé à la messe",
+      "source": "TF1, Public Sénat, RMC"
+    },
+    {
+      "personne": "Michel Barnier",
+      "annonce": "Présent annoncé à la messe",
+      "source": "TF1, Public Sénat"
+    },
+    {
+      "personne": "Yaël Braun-Pivet",
+      "annonce": "Présente annoncée à la messe",
+      "source": "RMC, CNews"
+    },
+    {
+      "personne": "Olivier Faure",
+      "annonce": "Absent annoncé. Sur X : « plutôt que d’aller à la pêche aux voix »",
+      "source": "TF1, Public Sénat"
+    },
+    {
+      "personne": "Sarah Knafo",
+      "annonce": "Présente annoncée à la messe",
+      "source": "TF1, Public Sénat, RMC"
+    },
+    {
+      "personne": "Marine Le Pen",
+      "annonce": "Présente annoncée à la messe",
+      "source": "TF1, Public Sénat, France 24, CNews"
+    },
+    {
+      "personne": "Sébastien Lecornu",
+      "annonce": "Présent annoncé. Il représente aussi l’exécutif, avec Brigitte Macron.",
+      "source": "TF1, Nouvel Obs, RMC"
+    },
+    {
+      "personne": "Brigitte Macron",
+      "annonce": "Représente le président à la messe",
+      "source": "TF1, Public Sénat, RMC"
+    },
+    {
+      "personne": "Emmanuel Macron",
+      "annonce": "Absent des messes. Présent à l’accueil d’Orly et à l’Élysée.",
+      "source": "TF1, France 24, RMC"
+    },
+    {
+      "personne": "Marion Maréchal",
+      "annonce": "Présente annoncée à la messe. TF1 la rattache à Identité-Libertés.",
+      "source": "TF1, RMC"
+    },
+    {
+      "personne": "Jean-Luc Mélenchon",
+      "annonce": "Divergence. BFMTV (24 sept.) et CNews (26 sept.) titrent l’absence. Europe 1 (26 sept.) titre la présence.",
+      "source": "BFMTV, CNews, Europe 1"
+    },
+    {
+      "personne": "Édouard Philippe",
+      "annonce": "Présent annoncé à la messe",
+      "source": "TF1, Public Sénat, RMC, CNews"
+    },
+    {
+      "personne": "Bruno Retailleau",
+      "annonce": "Présent annoncé à la messe",
+      "source": "TF1, Public Sénat, RMC"
+    },
+    {
+      "personne": "Ségolène Royal",
+      "annonce": "Rencontre citée à l’Unesco, vendredi. Pas la messe du samedi.",
+      "source": "RMC"
+    },
+    {
+      "personne": "Nicolas Sarkozy",
+      "annonce": "Présent à l’Élysée vendredi, selon France 24. Absent des listes de la messe du samedi consultées. Sur CNews, il dit qu’il y aurait assisté s’il était président.",
+      "source": "France 24, RMC"
+    },
+    {
+      "personne": "Marine Tondelier",
+      "annonce": "Absente annoncée",
+      "source": "TF1, Public Sénat"
+    },
+    {
+      "personne": "Dominique de Villepin",
+      "annonce": "Présent annoncé à la messe",
+      "source": "Nouvel Obs, RMC"
+    },
+    {
+      "personne": "Éric Zemmour",
+      "annonce": "Présent annoncé à la messe. TF1 (23 sept.) le dit encore non officialisé comme candidat. RMC (25 sept.) écrit qu’il a confirmé sa participation à la présidentielle.",
+      "source": "TF1, Public Sénat, RMC, CNews"
+    }
+  ],
+  "presences_note": "Le Nouvel Obs écrit, le 26 septembre, qu’aucune personnalité de gauche ne se déplace à la cérémonie religieuse. RMC place pourtant Bally Bagayoko à la veillée de vendredi et Ségolène Royal à l’Unesco. L’accueil d’un maire et une séquence à l’Unesco ne sont pas la messe du samedi. Ils empêchent le raccourci « la gauche entière est absente de la visite ».",
+  "lecture_a_titre": "La foule est un fait public",
+  "lecture_a": [
+    "Compter les inscrits, décrire le parcours et publier la liste des élus annoncés, c’est du reportage. Une personne peut venir par foi, par curiosité ou par calcul. Une autre peut rester chez elle au nom de la laïcité, d’un agenda, ou d’un refus d’être vue.",
+    "Nicolas Sarkozy, sur CNews, selon RMC : « La laïcité ce n’est pas une interdiction, c’est un droit. […] Si j’avais été président de la République, j’aurais assisté à la messe du pape. » RMC rappelle qu’en 2008, alors qu’il était président, il ne s’était pas rendu à une messe de Benoît XVI. Emmanuel Macron, lui, s’abstient des messes de 2026. TF1 date de 2023 la polémique sur sa présence à Marseille auprès de François. Public Sénat écrit 2024. Les deux rédactions ne donnent pas la même année.",
+    "Matthieu Rougé, évêque de Nanterre, dit le 25 septembre sur RMC que les élus attendus sont « très variés » et que « ce Pape ne peut pas être instrumentalisé ». La phrase est une mise en garde prononcée en public. Elle ne vaut pas règlement électoral."
+  ],
+  "lecture_b_titre": "Le nombre devient une preuve",
+  "lecture_b": [
+    "Le sophisme apparaît dès qu’un récit traite 600 000 inscriptions comme un arbitrage. La thèse discutée à l’Élysée deviendrait juste parce que l’avenue est pleine. Ou bien le candidat assis dans les tribunes emprunterait la légitimité de la foule. Les deux récits utilisent le même ressort.",
+    "Olivier Faure nomme le second, le 23 septembre, dans une phrase reprise par TF1 : « J’aurais volontiers rencontré le pape mais plutôt que d’aller à la pêche aux voix, je crois plus important de l’entendre aussi bien sur l’IA que sur Gaza. » Il décrit son motif. Il ne démontre pas le motif de chaque présent.",
+    "Le sophisme existe aussi à l’envers. Conclure, du petit nombre d’élus de gauche annoncés à la messe, que ce courant serait hors du pays, remplace encore un bulletin par une impression. Le titre d’Europe 1 qui place Jean-Luc Mélenchon dans l’assistance, le jour où BFMTV et CNews titrent l’absence, montre qu’une foule politique se fabrique aussi par le choix du titre. CNews rapporte cette phrase, tenue selon lui sur BFMTV : « Le pape est le bienvenu en France et j’exprime du respect pour lui, mais je ne sais pas si cela lui ferait plaisir de voir des mécréants à côté de lui. »"
+  ],
+  "lecture_note": "LMDPT ne choisit pas entre aller à la Concorde et n’y pas aller. LMDPT sépare trois objets : le compte, le choix public d’un élu, et la thèse qu’on voudrait faire gagner par le nombre.",
+  "non_preuves": [
+    "La fin de vie. France 24 écrit qu’à l’Élysée, deux mois après l’adoption d’une loi sur la fin de vie, Léon XIV s’est dit « préoccupé par ces tendances de la société qui risquent de détourner la science et la technologie en entreprises lucratives, promouvant les manipulations génétiques, la gestation pour autrui, l’achat d’organes ou l’offre de mort programmée ». Le Temps présente les mêmes formules comme des « dérives » et parle d’un droit à l’aide à mourir. Ces phrases sont des paroles publiques. L’inscription de 600 000 personnes ne les confirme pas et ne les annule pas.",
+    "La laïcité. Le Temps cite, en français, dans la salle des fêtes : « La juste laïcité ne consiste pas à exclure la religion de l’espace public. » La phrase ouvre un débat déjà ancien. Une avenue pleine ne le clôt pas. Sarkozy et Macron en donnent deux usages politiques opposés, rapportés plus haut.",
+    "L’intelligence artificielle. Le même jour, France 24 retient une autre phrase de l’Élysée : ne pas « perdre notre humanité au milieu du paradis des machines ». Faure dit vouloir entendre le pape sur l’IA. Un seul chiffre d’inscription ne peut pas valider à la fois la fin de vie, la laïcité et cette mise en garde.",
+    "La campagne de 2027. Être annoncé dans l’assistance ne donne pas de voix. En être absent n’en retire pas. Macron, à l’Élysée, parle selon France 24 d’une « espérance » ressentie par « beaucoup de nos compatriotes ». Un sentiment partagé par beaucoup reste un sentiment. LMDPT ne le convertit pas en intention de vote."
+  ],
+  "retenues": [
+    "Avant 15 h le 26 septembre 2026, 600 000 est un chiffre d’inscription (France 24, RFI), pas un décompte de sortie et pas un corps électoral.",
+    "300 000, 8 000 et 80 000 sont des comptes de vendredi. On ne les additionne pas aux inscriptions du samedi pour fabriquer « le peuple ».",
+    "La liste des politiques est une liste d’annonces. Elle contient une divergence explicite sur Jean-Luc Mélenchon, et un décalage de date sur la messe de Marseille.",
+    "Aucune de ces annonces ne tranche la fin de vie, la laïcité ou une candidature. Le premier tour, lui, a des bulletins."
+  ],
+  "sources": [
+    {
+      "label": "France 24, 25 sept. 2026 — première journée, comptes, fin de vie, IA",
+      "url": "https://www.france24.com/fr/europe/20260925-intelligence-artificielle-fin-de-vie-paix-l-intense-premi%C3%A8re-journ%C3%A9e-du-pape-l%C3%A9on-xiv-%C3%A0-paris"
+    },
+    {
+      "label": "France 24 / AFP, 26 sept. 2026 — 600 000 attendus, politiques cités",
+      "url": "https://www.france24.com/fr/info-en-continu/20260926-a-paris-des-foules-attendues-sur-les-champs-elys%C3%A9es-pour-la-messe-g%C3%A9ante-du-pape"
+    },
+    {
+      "label": "RFI, 26 sept. 2026 — 600 000 officiellement inscrites",
+      "url": "https://www.rfi.fr/fr/france/20260926-l%C3%A9on-xiv-en-france-le-pape-attendu-pour-une-messe-g%C3%A9ante-devant-des-centaines-de-milliers-de-fid%C3%A8les-%C3%A0-paris"
+    },
+    {
+      "label": "Le Temps / AFP, 25–26 sept. 2026 — laïcité, foule, dispositif",
+      "url": "https://www.letemps.ch/monde/france/accueilli-comme-une-rock-star-a-paris-le-pape-leon-xiv-defie-la-france-sur-la-fin-de-vie-et-la-laicite"
+    },
+    {
+      "label": "TF1 Info / AFP, 23 sept. 2026 — liste des candidats et citation d’Olivier Faure",
+      "url": "https://www.tf1info.fr/politique/marine-le-pen-gabriel-attal-edouard-philippe-la-messe-du-pape-leon-xiv-attire-les-candidats-a-l-election-presidentielle-2027-2465872.html"
+    },
+    {
+      "label": "Public Sénat / AFP, 23 sept. 2026 — présents et absents",
+      "url": "https://www.publicsenat.fr/actualites/politique/visite-du-pape-leon-xiv-quelles-personnalites-politiques-assisteront-a-la-messe-samedi-place-de-la-concorde"
+    },
+    {
+      "label": "RMC, 25 sept. 2026 — Sarkozy, Rougé, liste élargie",
+      "url": "https://rmc.bfmtv.com/actualites/politique/qui-sont-les-politiques-qui-vont-assister-aux-messes-de-leon-xiv-c-est-tres-varie-mais-le-pape-ne-peut-pas-etre-instrumentalise-assure-un-eveque_AV-202609250438.html"
+    },
+    {
+      "label": "CNews, 26 sept. 2026 — absence de Mélenchon, citation rapportée",
+      "url": "https://www.cnews.fr/france/2026-09-26/leon-xiv-en-france-emmanuel-macron-et-jean-luc-melenchon-nassisteront-pas-la"
+    },
+    {
+      "label": "BFMTV, 24 sept. 2026 — titre : Mélenchon ne participera pas",
+      "url": "https://www.bfmtv.com/politique/elections/presidentielle/video-jean-luc-melenchon-ne-participera-pas-a-la-messe-de-leon-xiv-ce-samedi-a-paris_VN-202609240691.html"
+    },
+    {
+      "label": "Europe 1, 26 sept. 2026 — titre contraire sur Mélenchon",
+      "url": "https://www.europe1.fr/societe/messe-de-leon-xiv-a-paris-les-responsables-politiques-se-pressent-place-de-la-concorde-1103819"
+    },
+    {
+      "label": "Le Nouvel Obs, 26 sept. 2026 — gauche et cérémonie",
+      "url": "https://www.nouvelobs.com/politique/20260926.OBS118616/sarkozy-est-pour-faure-critique-macron-s-abstient-quels-politiques-vont-assister-ou-non-a-la-messe-du-pape-a-la-concorde.html"
+    }
+  ],
+  "liens_internes": [
+    {
+      "href": "/analyses/assemblee-premier-tour",
+      "label": "L’Assemblée du Premier Tour — des sièges, pas une foule"
+    },
+    {
+      "href": "/analyses/alerte-citoyenne",
+      "label": "Alerte citoyenne — conditions du débat public"
+    },
+    {
+      "href": "/analyses/presidentielle-2027-preparation",
+      "label": "Présidentielle 2027 — calendrier, sans prédiction"
+    },
+    {
+      "href": "/analyses/temps-parole-equite",
+      "label": "Temps de parole — l’exposition n’est pas un sondage"
+    }
+  ]
+}

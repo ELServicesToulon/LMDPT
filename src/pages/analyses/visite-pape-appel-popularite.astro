@@ -1,0 +1,226 @@
+---
+/**
+ * Enquête — visite de Léon XIV et appel à la popularité (26 sept. 2026)
+ * Données : src/data/analyses/visite-pape-appel-popularite.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import { DOE_FR } from '../../lib/doe';
+import data from '../../data/analyses/visite-pape-appel-popularite.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const tocItems = [
+  { href: '#sophisme', label: '1. Nommer le sophisme' },
+  { href: '#comptes', label: '2. Les comptes, et qui les tient' },
+  { href: '#presences', label: '3. Qui annonce venir, qui annonce rester' },
+  { href: '#lectures', label: '4. Deux lectures de la même foule' },
+  { href: '#preuves', label: '5. Ce que le nombre ne prouve pas' },
+  { href: '#retenues', label: '6. Ce que LMDPT en retient' },
+  { href: '#sources', label: '7. Sources' },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description="600 000 inscrits à la messe du 26 septembre 2026 ne sont pas un scrutin. Enquête sur l’appel à la popularité pendant la visite de Léon XIV."
+  type="article"
+  keywords="Léon XIV, appel à la popularité, sophisme, place de la Concorde, présidentielle 2027, laïcité, fin de vie, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <PoliticalHueBadges hues={data.hues} showMeta />
+    <p class="lead">{data.tldr}</p>
+    <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
+    <p class="disclaimer-box">{data.disclaimer}</p>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  <section class="card" id="sophisme" aria-labelledby="sophisme-title">
+    <h2 id="sophisme-title">1. Nommer le sophisme</h2>
+    {data.sophisme.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="card" id="comptes" aria-labelledby="comptes-title">
+    <h2 id="comptes-title">2. Les comptes, et qui les tient</h2>
+    <p>{data.comptes_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Chiffres de foule cités par la presse" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Comptes de foule du 25 et du 26 septembre 2026, avec l’auteur du chiffre
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Scène</th>
+            <th scope="col">Chiffre</th>
+            <th scope="col">Qui le donne</th>
+            <th scope="col">Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.comptes.map((row) => (
+              <tr>
+                <th scope="row">{row.quoi}</th>
+                <td>{row.chiffre}</td>
+                <td>{row.qui_compte}</td>
+                <td>{row.statut}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer-box">{data.comptes_note}</p>
+  </section>
+
+  <section class="card" id="presences" aria-labelledby="presences-title">
+    <h2 id="presences-title">3. Qui annonce venir, qui annonce rester</h2>
+    <p>{data.presences_intro}</p>
+    <div class="table-wrap" role="region" aria-label="Annonces de présence ou d’absence" tabindex="0">
+      <table class="enq-table">
+        <caption class="visually-hidden">
+          Personnalités politiques : annonce rapportée par la presse, et source
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Personne</th>
+            <th scope="col">Annonce</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.presences.map((row) => (
+              <tr>
+                <th scope="row">{row.personne}</th>
+                <td>{row.annonce}</td>
+                <td>{row.source}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p>{data.presences_note}</p>
+  </section>
+
+  <section class="card" id="lectures" aria-labelledby="lectures-title">
+    <h2 id="lectures-title">4. Deux lectures de la même foule</h2>
+    <h3>4.1 {data.lecture_a_titre}</h3>
+    {data.lecture_a.map((p) => <p>{p}</p>)}
+    <h3>4.2 {data.lecture_b_titre}</h3>
+    {data.lecture_b.map((p) => <p>{p}</p>)}
+    <p class="disclaimer-box">{data.lecture_note}</p>
+  </section>
+
+  <section class="card" id="preuves" aria-labelledby="preuves-title">
+    <h2 id="preuves-title">5. Ce que le nombre ne prouve pas</h2>
+    <ol>
+      {data.non_preuves.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="retenues" aria-labelledby="retenues-title">
+    <h2 id="retenues-title">6. Ce que LMDPT en retient</h2>
+    <ol>
+      {data.retenues.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">7. Sources</h2>
+    <ul>
+      {
+        data.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="meta disclaimer-box">{data.disclaimer}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0.75rem 0 1rem;
+  }
+  .enq-table {
+    width: 100%;
+    min-width: 40rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
