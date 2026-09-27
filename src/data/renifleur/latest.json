@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-25T10:12:19.873Z",
+  "fetched_at": "2026-09-27T10:45:14.206Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,10 +7,250 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "EN DIRECT, Artificial Intelligence Marseille : suivez le débat entre plusieurs candidats à la présidentielle et chefs de parti",
-      "url": "https://www.lemonde.fr/politique/live/2026/09/25/en-direct-artificial-intelligence-marseille-suivez-le-debat-entre-plusieurs-candidats-a-la-presidentielle-et-chefs-de-partis_6782350_823448.html",
+      "title": "«Il est obsédé par l’avenir de la France» : Maria Carolina de Bourbon des Deux-Siciles, compagne de Jordan Bardella, se confie au Figaro Magazine",
+      "url": "https://www.lefigaro.fr/politique/il-est-obsede-par-l-avenir-de-la-france-maria-carolina-de-bourbon-des-deux-siciles-compagne-de-jordan-bardella-se-confie-au-figaro-magazine-20260927",
+      "published": "2026-09-27",
+      "summary": "EXCLUSIF - Pour la première fois, la jeune compagne du président du Rassemblement national s’exprime sur ses liens avec celui qui a dû renoncer à la course présidentielle au profit de Marine Le Pen.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
+      }
+    },
+    {
+      "title": "\"On vient de deux univers différents\" : Maria Carolina de Bourbon des Deux-Siciles se confie pour la première fois sur sa relation avec Jordan Bardella",
+      "url": "https://www.franceinfo.fr/politique/jordan-bardella/on-vient-de-deux-univers-differents-maria-carolina-de-bourbon-des-deux-siciles-se-confie-pour-la-premiere-fois-sur-sa-relation-avec-jordan-bardella_8211857.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-27",
+      "summary": "La descendante d'une richissime lignée aristocratique italienne a donné un entretien au \"Figaro Magazine\", dans lequel elle revient sur le retrait de la course à l'Elysée du président du RN.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, bardella"
+      }
+    },
+    {
+      "title": "\"Tout est ouvert\" : en \"n'excluant rien\", Emmanuel Macron se positionne-t-il déjà pour la présidentielle de 2032 ?",
+      "url": "https://www.franceinfo.fr/politique/emmanuel-macron/tout-est-ouvert-en-n-excluant-rien-emmanuel-macron-se-positionne-t-il-deja-pour-la-presidentielle-de-2032_8211044.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-27",
+      "summary": "\"Il est assez inhabituel de revenir, mais nous verrons\", a lâché Emmanuel Macron devant des journalistes américains. Le chef de l'Etat, qui ne peut pas se représenter, pose-t-il déjà le premier jalon d'un retour en politique après le prochain quinquennat ? Dans son camp, certains",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : macron, emmanuel macron"
+      }
+    },
+    {
+      "title": "En Martinique, la collectivité adopte un plan de redressement de près de 69 millions d’euros face à une dette record",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/26/en-martinique-la-collectivite-adopte-un-plan-de-redressement-de-pres-de-69-millions-d-euros-face-a-une-dette-record_6783101_823448.html",
+      "published": "2026-09-26",
+      "summary": "Porté par Serge Letchimy et étalé sur 2027 et 2028, ce programme mêlant coupes budgétaires, cessions d’actifs et nouvelle taxe patronale est dénoncé par l’opposition comme une cure d’austérité déguisée.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "\"Vivre un moment ensemble\" : À Paris, les catholiques à l'unisson pour la messe de Léon XIV",
+      "url": "https://www.france24.com/fr/france/20260926-vivre-un-moment-ensemble-%C3%A0-paris-les-catholiques-%C3%A0-l-unisson-pour-la-messe-de-l%C3%A9on-xiv",
+      "published": "2026-09-26",
+      "summary": "Plus de 800 000 personnes étaient réunies samedi sur la célèbre avenue des Champs-Élysées, à Paris, pour assister à la messe du pape Léon XIV. Dans la foule, une grande majorité de catholiques pratiquants, présents pour vivre \"un moment ensemble\" et \"entendre le message\" du souve",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : le chemin de crête de Jean-Luc Mélenchon sur l’Ukraine",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/26/presidentielle-2027-le-chemin-de-crete-de-jean-luc-melenchon-sur-l-ukraine_6783102_823448.html",
+      "published": "2026-09-26",
+      "summary": "Les propos récents du candidat de La France insoumise sur le conflit ukrainien ont réactivé les suspicions de complaisance avec le régime de Poutine. A L’Assemblée nationale et au Parlement européen, les parlementaires « insoumis » ont régulièrement changé de ligne.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Messe du pape à Paris : ces candidats à la présidentielle de 2027 qui y assisteront samedi",
+      "url": "https://www.la-croix.com/politique/voyage-du-pape-quels-candidats-a-la-presidentielle-seront-presents-a-la-messe-20260923",
+      "published": "2026-09-26",
+      "summary": "Le pape Léon XIV va célébrer une messe géante, samedi 26 septembre 2026, place de la Concorde à Paris, en présence de plusieurs figures politiques de premier plan. Vendredi, le pape a célébré les vêpres à Notre-Dame de Paris et une veillée au stade de France, à Saint-Denis.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "La Collectivité territoriale de Martinique, lourdement endettée, cherche à redresser ses comptes",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/26/la-collectivite-territoriale-de-martinique-lourdement-endettee-cherche-a-redresser-ses-comptes_6783124_823448.html",
+      "published": "2026-09-26",
+      "summary": "L’exécutif veut faire adopter une série de mesures de réduction des dépenses. L’opposition dénonce un « plan d’austérité » qui affecte principalement la jeunesse.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "bardella",
+        "label": "Bardella / RN",
+        "color": "#0d378a",
+        "confidence": 0.61,
+        "rationale": "Proximité lexicale : jeunesse"
+      }
+    },
+    {
+      "title": "Le pape à Paris : les propos de Léon XIV sur la laïcité divisent les politiques",
+      "url": "https://www.la-croix.com/politique/le-pape-a-paris-les-propos-de-leon-xiv-sur-la-laicite-divisent-les-politiques-20260926",
+      "published": "2026-09-26",
+      "summary": "Lors de son premier discours « politique », tenu vendredi 25 septembre à l’Élysée, Léon XIV est revenu sur la conception de la « laïcité juste » qui implique une participation des religions, au côté du politique, à la recherche du bien commun.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Marche pour le climat : des milliers de personnes mobilisées partout en France",
+      "url": "https://www.france24.com/fr/france/20260926-marche-pour-le-climat-des-milliers-de-personnes-mobilis%C3%A9es-partout-en-france",
+      "published": "2026-09-26",
+      "summary": "Des milliers de personnes ont participé, samedi, à des marches pour le climat partout en France, après un été marqué par des records de chaleur et une série d'incendies. Environ 260 mobilisations étaient annoncées à travers le pays pour réclamer des mesures d’urgence en faveur du",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : climat"
+      }
+    },
+    {
+      "title": "À droite et au centre, l’embouteillage des candidats et des \"presque candidats\" pour 2027",
+      "url": "https://www.franceinfo.fr/replay-radio/le-brief-politique/a-droite-et-au-centre-l-embouteillage-des-candidats-et-des-presque-candidats-pour-2027_8189123.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-26",
+      "summary": "À sept mois de la présidentielle, on parle beaucoup des candidats favoris du bloc central et de la droite, mais d'autres aspirants espèrent tirer leur épingle du jeu.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : bloc central"
+      }
+    },
+    {
+      "title": "Léon XIV à Parix : 2,5 kilomètres de déambulation sous haute sécurité",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260925-l%C3%A9on-xiv-%C3%A0-parix-2-5-kilom%C3%A8tres-de-d%C3%A9ambulation-sous-haute-s%C3%A9curit%C3%A9",
       "published": "2026-09-25",
-      "summary": "Raphaël Glucksmann, Manuel Bompard, Jordan Bardella et Xavier Bertrand débattront sur le thème de l’intelligence artificielle, vendredi 25 septembre, à Marseille.",
+      "summary": "Après sa venue à l'Élysée en fin de matinée, vendredi 25 septembre, le pape Léon XIV s'apprête à faire un discours à l'UNESCO avant de déambuler sur environ 2,5 kilomètres vers la place Saint-Michel. Les explications de Johan Bodin, journaliste à France 24.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
+      }
+    },
+    {
+      "title": "Sénatoriales : l’insubmersible Gérard Larcher, rempart à l’extrême droite ?",
+      "url": "https://www.liberation.fr/politique/senatoriales-linsubmersible-gerard-larcher-rempart-a-lextreme-droite-20260925_C3OJVEKEGNHSREDDKSEA245LCI/",
+      "published": "2026-09-25",
+      "summary": "Le sénateur brigue un sixième mandat à la tête du palais du Luxembourg, renouvelé pour moitié dimanche 27 septembre, et s’inquiète de l’arrivée entre ses murs d’un groupe RN comme d’une possible élection de Marine Le Pen à la présidentielle.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : à Marseille, un « grand débat » sur l’IA sans grande surprise et avec peu de candidats",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-a-marseille-un-grand-debat-sur-l-ia-sans-grande-surprise-et-avec-peu-de-candidats_6782611_823448.html",
+      "published": "2026-09-25",
+      "summary": "A part Olivier Faure, aucun candidat n’avait fait le déplacement dans la cité phocéenne pour cette discussion sur un sujet pourtant présenté comme « central » par plusieurs partis",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : faure"
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
+      "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
+      "published": "2026-09-25",
+      "summary": "En déplacement ce vendredi 25 septembre dans les Hauts-de-France, le candidat à la primaire de gauche a joué la carte sociale pour contester l’hégémonie de Marine Le Pen dans le territoire.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Yannick Jadot suspendu à titre conservatoire par Les Ecologistes en raison de son soutien à la candidature de Raphaël Glucksmann",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
+      "published": "2026-09-25",
+      "summary": "Les Verts reprochent au sénateur de Paris son soutien officiel au député européen pour 2027, et sa participation annoncée à un débat, prévu le 10 octobre, sous les couleurs de Place publique, face aux Ecologistes.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -18,17 +258,129 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Écologiste · Glucksmann / Place publique) — teinte pluraliste."
       }
     },
     {
-      "title": "De Paris à Metz, en passant par Saint-Denis et Lourdes : le programme du pape Léon XIV en France",
-      "url": "https://www.france24.com/fr/france/20260925-de-paris-%C3%A0-metz-en-passant-par-saint-denis-et-lourdes-le-programme-du-pape-leon-xiv-en-france",
+      "title": "Artificial Intelligence Marseille : retrouvez le débat entre les candidats et leurs représentants sur l’IA",
+      "url": "https://www.lemonde.fr/politique/live/2026/09/25/en-direct-artificial-intelligence-marseille-suivez-le-debat-entre-plusieurs-candidats-a-la-presidentielle-et-chefs-de-partis_6782350_823448.html",
       "published": "2026-09-25",
-      "summary": "Attendu par des fidèles enthousiastes, le pape Léon XIV s'est envolé vendredi pour Paris, pour une visite de quatre jours en France durant laquelle il abordera de multiples thèmes, dont l'intelligence artificielle, la question migratoire ou la lutte contre les violences sexuelles",
+      "summary": "Souveraineté numérique, utilisation de l’IA dans le monde du travail, data centers… plusieurs politiques ont détaillé leurs propositions lors d’un débat à l’occasion du salon de l’IA organisé au Stade-Vélodrome.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Ségolène Royal et Raphaël Glucksmann, suivez l’exemple de Pedro Sánchez",
+      "url": "https://www.liberation.fr/politique/segolene-royal-et-raphael-glucksmann-suivez-lexemple-de-pedro-sanchez-20260925_SWGFISDOMVHJ5J5TOFVMXFISGU/",
+      "published": "2026-09-25",
+      "summary": "Que ce soit sur la question du «génocide» à Gaza ou celle de «la paix» en Ukraine, les deux prétendants à l’investiture socialiste pour la présidentielle devraient rééquilibrer leurs positions respectives.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : ségolène royal, segolene royal, glucksmann"
+      }
+    },
+    {
+      "title": "Au Brésil, Lula interdit les paris sportifs en ligne à quelques jours de la présidentielle, dénonçant une « maladie » qui gagne les foyers",
+      "url": "https://www.lemonde.fr/international/article/2026/09/26/au-bresil-lula-interdit-les-paris-sportifs-en-ligne-a-quelques-jours-de-la-presidentielle-denoncant-une-maladie-qui-gagne-les-foyers_6782740_3210.html",
+      "published": "2026-09-25",
+      "summary": "Alors que la campagne entre dans sa dernière ligne droite avant le premier tour du 4 octobre, le sujet des paris en ligne est devenu un enjeu pour le président sortant, qui dénonce une source d’endettement massif pour les familles.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Sénatoriales 2026 : au Salon des maires des Bouches-du-Rhône, les candidats s’attendent à un scrutin « très serré »",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/senatoriales-2026-au-salon-des-maires-des-bouches-du-rhone-les-candidats-s-attendent-a-un-scrutin-tres-serre_6782619_823448.html",
+      "published": "2026-09-25",
+      "summary": "Les déchirures à droite, la division à gauche au sujet de la Métropole Aix-Marseille-Provence et la guerre fratricide à l’extrême droite ont entraîné une multiplication des listes qui rend d’autant plus incertain le résultat du scrutin, à deux jours du vote.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Agences de l’Etat : le Sénat relance le chantier de la rationalisation, le gouvernement aussi",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/agences-de-l-etat-le-senat-relance-le-chantier-de-la-rationalisation-le-gouvernement-aussi_6782615_823448.html",
+      "published": "2026-09-25",
+      "summary": "Alors que le Sénat travaille à la suppression de plusieurs agences de l’Etat, avec une proposition de loi qui pourrait être examinée début 2027, le gouvernement s’apprête, lui, à lancer une revue des missions des différents opérateurs.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Le pape Léon XIV déambule en papamobile dans les rues de Paris",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260925-le-pape-l%C3%A9on-xiv-d%C3%A9ambule-en-papamobile-dans-les-rues-de-paris",
+      "published": "2026-09-25",
+      "summary": "Après des réceptions officielles à l'Elysée puis à l'Unesco, le pape Léon XIV a déambulé dans les rues de Paris à bord de sa papamobile. \"Il est extraordinaire\" a confié au micro de France 24 un homme venu assister à ce moment.",
       "source_id": "france24-france",
       "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Rapporteur du budget, présidences de commission : qui est candidat aux postes clefs du Sénat ?",
+      "url": "https://www.publicsenat.fr/actualites/politique/rapporteur-du-budget-presidences-de-commission-qui-est-candidat-aux-postes-clefs-du-senat",
+      "published": "2026-09-25",
+      "summary": "Avec le renouvellement sénatorial ce dimanche, c’est aussi tous les postes à responsabilité de la Haute assemblée qui sont remis en jeu. On fait le point sur les noms qui circulent.",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Discours du pape Léon XIV à l’Élysée : « Il a émis une critique très diplomatique de la loi sur la fin de vie », retient la sénatrice Laure Darcos",
+      "url": "https://www.publicsenat.fr/actualites/politique/discours-du-pape-leon-xiv-a-lelysee-il-a-emis-une-critique-tres-diplomatique-de-la-loi-sur-la-fin-de-vie-retient-la-senatrice-laure-darcos",
+      "published": "2026-09-25",
+      "summary": "À l'Élysée, devant le Président de la République, des membres de la société civile, religieuse, des élus et du corps diplomatique, le pape Léon XIV a dénoncé le « risque » et « les dérives » de « l'offre d'une mort programmée ». De quoi satisfaire la petite dizaine de sénateurs p",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -55,6 +407,22 @@
       }
     },
     {
+      "title": "Yannick Jadot suspendu temporairement des Ecologistes après avoir soutenu Raphaël Glucksmann pour la présidentielle",
+      "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/yannick-jadot-suspendu-temporairement-des-ecologistes-pour-son-soutien-a-raphael-glucksmann_8209919.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-25",
+      "summary": "Le sénateur écologiste avait estimé à la fin de l'été que le leader de Place publique était \"le mieux placé\", aux dépends de Marine Tondelier, la candidate officielle de son parti.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
       "title": "Présidentielle 2027 : une IA « souveraine », unique consensus de candidats aux visions opposées",
       "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-une-ia-souveraine-unique-consensus-de-candidats-aux-visions-opposees_6781933_823448.html",
       "published": "2026-09-25",
@@ -71,10 +439,10 @@
       }
     },
     {
-      "title": "Dans les enquêtes sur les violences sexuelles, l’avocat n'est \"pas un obstacle\" à la parole de l’enfant, défendent les bâtonniers",
-      "url": "https://www.franceinfo.fr/societe/harcelement-sexuel/dans-les-enquetes-sur-les-violences-sexuelles-l-avocat-n-est-pas-un-obstacle-a-la-parole-de-l-enfant-defendent-les-batonniers_8209007.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "La mise en garde du pape Léon XIV sur l'IA",
+      "url": "https://www.franceinfo.fr/monde/vatican/pape-leon-xiv/leon-xiv-en-france-retrouvez-l-essentiel/la-mise-en-garde-du-pape-leon-xiv-sur-l-ia_8209553.html#xtor=RSS-3-%5Bgeneral%5D",
       "published": "2026-09-25",
-      "summary": "C'est une des propositions de la loi intégrale sur les violences sexuelles. Le ministre de l'Intérieur, Laurent Nuñez, parle de \"frein à la libération de la parole de l'enfant\". Au contraire, répondent les avocats : \"C'est l'une des conditions à la manifestation de la vérité\".",
+      "summary": "Lors de son discours au Palais de l'Elysée, vendredi 25 septembre, Léon XIV est revenu sur le dossier épineux de l'intelligence artificielle. Il met en garde contre un \"paradis de machines\".",
       "source_id": "franceinfo-politique",
       "source_label": "franceinfo — Politique",
       "source_type": "traditional",
@@ -84,38 +452,6 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Emmanuel Macron engage des « moyens militaires » face aux crises internationales et à la flambée des prix des carburants",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/25/emmanuel-macron-s-affiche-a-la-man-uvre-face-aux-crises-internationales-et-a-la-flambee-des-prix-des-carburants_6781856_823448.html",
-      "published": "2026-09-25",
-      "summary": "Le chef de l’Etat a annoncé jeudi soir, lors d’un entretien diffusé sur TF1 et sur France 2, « tout faire pour rouvrir le détroit d’Ormuz » et a assuré ne pas exclure de baisser les taxes si les prix à la pompe devaient continuer de s’envoler.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "Sénatoriales 2026 : la chambre du contrôle au défi de trouver sa place avant l’alternance présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/25/senatoriales-2026-la-chambre-du-controle-au-defi-de-trouver-sa-place-avant-l-alternance-presidentielle_6781930_823448.html",
-      "published": "2026-09-25",
-      "summary": "Après deux quinquennats d’Emmanuel Macron, où il a joué des rôles différents, le Sénat devrait encore évoluer après les élections du dimanche 27 septembre et la possible arrivée d’un groupe d’extrême droite.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
       }
     },
     {
@@ -151,38 +487,6 @@
       }
     },
     {
-      "title": "Pouvoir d'achat, conflit au Moyen-Orient, guerre en Ukraine… Les dossiers brûlants de l'Élysée",
-      "url": "https://www.franceinfo.fr/politique/emmanuel-macron/pouvoir-d-achat-conflit-au-moyen-orient-guerre-en-ukraine-les-dossiers-brulants-de-l-elysee_8208593.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-24",
-      "summary": "Comment protéger les Français face aux menaces russes ? Quels moyens pour contenir les prix des carburants et répondre à la colère ? Des guerres en Ukraine et au Moyen-Orient à leurs conséquences dans notre quotidien, les réponses du chef de l’État étaient très attendues, jeudi 2",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "bardella",
-        "label": "Bardella / RN",
-        "color": "#0d378a",
-        "confidence": 0.61,
-        "rationale": "Proximité lexicale : pouvoir d'achat"
-      }
-    },
-    {
-      "title": "J-1 avant l'arrivée du Pape en France : plus d'un million de visiteurs attendus",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260924-j-1-avant-l-arriv%C3%A9e-du-pape-en-france-plus-d-un-million-de-visiteurs-attendus",
-      "published": "2026-09-24",
-      "summary": "Le pape Léon XIV doit atterrir vendredi 25 septembre à Orly. Quatre jours de visite qui attire les foules : plus d'un million de visiteurs attendus entre Paris, le Stade de France, Lourdes et Metz. Le dispositif de sécurité s'annonce totalement hors norme, notamment sur les Champ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : sécurité, securite"
-      }
-    },
-    {
       "title": "Présidentielle 2027 : la primaire socialiste et sociale-démocrate devrait dépasser les 90 000 inscrits",
       "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-la-primaire-socialiste-et-sociale-democrate-devrait-depasser-les-90-000-inscrits-20260924_2QHMTPQ6GFACHLH5PTG27NJSPA/",
       "published": "2026-09-24",
@@ -199,214 +503,6 @@
       }
     },
     {
-      "title": "Olivier Becht, ancien ministre du commerce extérieur, candidat à l’élection présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
-      "published": "2026-09-24",
-      "summary": "Ancien maire d’une ville du Haut-Rhin, il est député depuis 2017 et assure qu’il n’a pas « de camp politique », même s’il se revendique à « l’extrême centre ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
-      "published": "2026-09-24",
-      "summary": "Alors que les deux candidats du bloc central s’égratignent frontalement, sans remettre en cause leur volonté de rassemblement d’ici au premier tour du scrutin, une étude de la Fondation Jean Jaurès souligne que le report de voix entre leurs électorats n’a rien d’évident.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Budget 2027 : la « taxe au tonnage », la niche fiscale des armateurs, de nouveau sur la sellette",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/budget-2027-la-taxe-au-tonnage-la-niche-fiscale-des-armateurs-de-nouveau-sur-la-sellette_6781573_823448.html",
-      "published": "2026-09-24",
-      "summary": "Depuis la guerre en Iran, les tarifs du transport maritime s’envolent et les profits de CMA CGM bondissent. De quoi relancer le débat sur le dispositif fiscal dont bénéficient les armateurs et son « coût croissant pour les finances publiques » que souligne un nouveau rapport parl",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Primaire socialiste : un premier débat intéressant, mais des impasses qui étonnent",
-      "url": "https://www.liberation.fr/politique/primaire-socialiste-un-premier-debat-interessant-mais-des-impasses-qui-etonnent-20260924_EQIXATZTB5B6PI7CWGRCQB4Q3Y/",
-      "published": "2026-09-24",
-      "summary": "Si les échanges ont été globalement de qualité, mercredi soir sur LCI, difficile de se convaincre que le futur vainqueur de la présidentielle se trouvait sur le plateau.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
-      }
-    },
-    {
-      "title": "Sénatoriales 2026 : Françoise Gatel, ministre et candidate au pas de charge en Ille-et-Vilaine",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/senatoriales-2026-francoise-gatel-ministre-et-candidate-au-pas-de-charge-en-ille-et-vilaine_6781535_823448.html",
-      "published": "2026-09-24",
-      "summary": "Seule membre du gouvernement à être en campagne pour le scrutin du 27 septembre, la ministre de l’aménagement du territoire et de la décentralisation doit affronter une deuxième liste centriste dans le département breton.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Dix-huit ans sans pape à Paris : pourquoi ?",
-      "url": "https://www.france24.com/fr/%C3%A9missions/les-cl%C3%A9s-de-l-info/20260924-18-ans-sans-pape-%C3%A0-paris-pourquoi",
-      "published": "2026-09-24",
-      "summary": "Léon XIV arrive en France, vendredi, pour quatre jours de visite. Première étape : Paris avec un passage à l'Élysée. Puis le pape se rendra à Lourdes et à Metz. Trois villes, trois messages forts dans une France où le poids du catholicisme a fortement reculé.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "France : La capitale se met à l'heure du Pape",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260924-france-la-capitale-se-met-%C3%A0-l-heure-du-pape",
-      "published": "2026-09-24",
-      "summary": "Il s'agira, vendredi 25 septembre, de la première visite d'État officielle d'un Pape en France depuis 18 ans : Léon XIV sera à Paris. Le chef de l'Église catholique est attendu par des millions de fidèles, mais aussi beaucoup de curieux. Le programme de ces quatre jours de tourné",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Emmanuel Maurel, le « Petit Poucet » de la primaire socialiste",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-emmanuel-maurel-le-petit-poucet-de-la-primaire-socialiste-20260924",
-      "published": "2026-09-24",
-      "summary": "Inconnu du grand public, Emmanuel Maurel a profité du premier débat de la primaire entre candidats de gauche à l’élection présidentielle, mercredi 23 septembre 2026, pour se faire remarquer. À 53 ans, le député du Val-d’Oise prône la « démondialisation » et une réindustrialisatio",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
-      }
-    },
-    {
-      "title": "Candidat à la présidentielle, Olivier Becht mise sur un malentendu : «Quand on n’a aucune chance, il faut la saisir !»",
-      "url": "https://www.liberation.fr/politique/candidat-a-la-presidentielle-olivier-becht-mise-sur-un-malentendu-quand-on-na-aucune-chance-il-faut-la-saisir-20260924_XLVV2APCOBAETK6YXBJROMFZGM/",
-      "published": "2026-09-24",
-      "summary": "Indiscrétions piquantes, maladresses vaches ou douces confessions : chaque jour, retrouvez les brèves qui auscultent le monde politique.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Ces diplomates derrière les prétendants à l’Elysée",
-      "url": "https://www.liberation.fr/politique/ces-diplomates-derriere-les-pretendants-a-lelysee-20260924_FHQ7RRFSGNAV7M3OYRZK4BC7CM/",
-      "published": "2026-09-24",
-      "summary": "Dans la course à la présidence, chacun cherche à peser sur le plan de l’international. Enarques, ambassadeurs et conseillers sont consultés par les candidats.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
-      "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
-      "published": "2026-09-24",
-      "summary": "Reçus successivement ce jeudi 24 septembre lors du Playbook Paris de Politico, l'ex-Premier ministre, la candidate du RN et le leader insoumis ont dessiné, sur l'Ukraine, les carburants et le budget, trois visions très éloignées de la campagne présidentielle qui s'ouvre.",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Le Pen / RN) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Primaire de la gauche : souvent d’accord, les candidats s’écharpent sur Gaza et LFI",
-      "url": "https://www.la-croix.com/politique/primaire-de-la-gauche-malgre-plusieurs-accords-des-divergences-toujours-profondes-20260924",
-      "published": "2026-09-24",
-      "summary": "Un temps courtois, le premier débat de la primaire sociale-démocrate, mercredi 23 septembre, a finalement laissé apparaître les fractures entre les cinq candidats. Ukraine, Gaza et surtout la question d’une alliance avec LFI ont ravivé les tensions, après plusieurs heures de rela",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : lfi"
-      }
-    },
-    {
-      "title": "Crise des carburants : entre fin du monde et fin du mois, les insoumis et les Ecologistes divergent",
-      "url": "https://www.liberation.fr/politique/crise-des-carburants-entre-fin-du-monde-et-fin-du-mois-les-insoumis-et-les-ecologistes-divergent-20260923_FDYV4OTJMBBJTFU7Y5WMZLBMBY/",
-      "published": "2026-09-23",
-      "summary": "Alors que des négociations pourraient s’ouvrir dans les prochaines semaines pour aboutir à un potentiel accord entre les deux formations pour 2027, leurs solutions face à la hausse du prix de l’essence ne sont pas tout à fait les mêmes.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes"
-      }
-    },
-    {
       "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
       "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
       "published": "2026-09-23",
@@ -420,70 +516,6 @@
         "color": "#0066cc",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
-      }
-    },
-    {
-      "title": "«Ce n’est pas quelqu’un à l’extérieur du PS qui va définir la refondation de la gauche» : Glucksmann endure les attaques de Royal lors du premier débat de la primaire socialiste",
-      "url": "https://www.liberation.fr/politique/elections/ce-nest-pas-quelquun-a-lexterieur-du-ps-qui-va-definir-la-refondation-de-la-gauche-glucksmann-endure-les-attaques-de-royal-lors-du-premier-debat-de-la-primaire-socialiste-20260924_JIY2E2WYJBF7TK5BZ4WGY4XPII/",
-      "published": "2026-09-23",
-      "summary": "Réunis en plateau sur LCI mercredi 23 septem bre, les cinq candidats à la primaire, outre quelques accrochages sur l’international, se sont surtout opposés sur la question stratégique du rapport à LFI. Attendu au tournant, l’eurodéputé Place publique a tenté de donner des gages à",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Voyage du pape : quels candidats à la présidentielle seront présents à la messe de Léon XIV ?",
-      "url": "https://www.la-croix.com/politique/voyage-du-pape-quels-candidats-a-la-presidentielle-seront-presents-a-la-messe-20260923",
-      "published": "2026-09-23",
-      "summary": "Plusieurs figures politiques de premier plan ont prévu d’assister à la messe célébrée par le pape Léon XIV samedi 26 septembre 2026, place de la Concorde à Paris. Arrivé vendredi pour sa première visite en France depuis son élection, le pape passera quatre jours à Paris, Lourdes ",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "[Info Public Sénat] Gérard Larcher officialise sa candidature à la présidence du Sénat dans une lettre aux sénateurs",
-      "url": "https://www.publicsenat.fr/actualites/politique/info-public-senat-gerard-larcher-officialise-sa-candidature-a-la-presidence-du-senat-dans-une-lettre-aux-senateurs",
-      "published": "2026-09-23",
-      "summary": "Sans surprise, le président LR du Sénat officialise sa candidature à sa propre succession, dans un courrier envoyé aux sénateurs. Dans son projet intitulé « le Sénat, acteur de la vie politique française », il souligne que la Haute assemblée doit « assurer un contre-pouvoir indis",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Compte personnel de formation, France Travail : dans le viseur du budget 2027, le ministère du Travail est à la veille de nouvelles économies drastiques",
-      "url": "https://www.publicsenat.fr/actualites/politique/compte-personnel-de-formation-france-travail-dans-le-viseur-du-budget-2027-le-ministere-du-travail-est-a-la-veille-de-nouvelles-economies-drastiques",
-      "published": "2026-09-23",
-      "summary": "La mission « Travail, emploi et administration des ministères sociaux » sera fortement mise à contribution l’an prochain, avec une proposition de réduction de ses moyens de 2,5 milliards d’euros dans le budget. Cette fois, l’apprentissage ne devrait pas subir de coupes, ce qui pr",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
@@ -519,22 +551,6 @@
       }
     },
     {
-      "title": "«Être de gauche, ce n’est pas faire vœu de pauvreté», se justifie Matthieu Pigasse, pointé du doigt pour ses vacances sur l’île Moustique",
-      "url": "https://www.lefigaro.fr/politique/etre-de-gauche-ce-n-est-pas-faire-voeu-de-pauvrete-se-justifie-matthieu-pigasse-pointe-du-doigt-pour-ses-vacances-sur-l-ile-moustique-20260922",
-      "published": "2026-09-22",
-      "summary": "Le banquier d’affaires, qui n’exclut pas une candidature à la présidentielle, dit vouloir être jugé sur son engagement et ses convictions plutôt que sur son compte en banque.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
       "title": "Au RN, l’autre campagne « présidentielle » de Jordan Bardella",
       "url": "https://www.lefigaro.fr/politique/au-rn-l-autre-campagne-presidentielle-de-jordan-bardella-20260920",
       "published": "2026-09-20",
@@ -548,22 +564,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : rn, bardella, rassemblement national"
-      }
-    },
-    {
-      "title": "Ambiguïtés du RN, pression des marchés… Après ses annonces sur le budget, Sébastien Lecornu face à un casse-tête politique et financier",
-      "url": "https://www.lefigaro.fr/politique/ambiguites-du-rn-pression-des-marches-apres-ses-annonces-sur-le-budget-sebastien-lecornu-face-a-un-casse-tete-politique-et-financier-20260918",
-      "published": "2026-09-18",
-      "summary": "DÉCRYPTAGE - Le premier ministre doit composer avec une Assemblée nationale éclatée, des oppositions entrées en campagne présidentielle et la dégradation de la situation financière française.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : rn"
       }
     }
   ]

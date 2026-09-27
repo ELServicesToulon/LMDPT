@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-09-25",
+  "updated": "2026-09-27",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -10,21 +10,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-02",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-25"
-        },
-        {
-          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
-          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-25"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html"
     },
     {
       "slug": "retailleau",
@@ -39,7 +25,7 @@
           "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
           "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
           "published": "2026-09-23",
-          "detected_at": "2026-09-25"
+          "detected_at": "2026-09-27"
         }
       ]
     },
@@ -50,15 +36,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : derrière le duel de plus en plus acerbe entre Edouard Philippe et Gabriel Attal, des électorats loin d’être solubles",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-derriere-le-duel-de-plus-en-plus-acerbe-entre-edouard-philippe-et-gabriel-attal-des-electorats-loin-d-etre-fongibles_6781447_823448.html",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-25"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html"
     },
     {
       "slug": "parti-socialiste",
@@ -102,16 +80,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
       "press_signals": [
         {
+          "title": "Présidentielle 2027 : le chemin de crête de Jean-Luc Mélenchon sur l’Ukraine",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/26/presidentielle-2027-le-chemin-de-crete-de-jean-luc-melenchon-sur-l-ukraine_6783102_823448.html",
+          "published": "2026-09-26",
+          "detected_at": "2026-09-27"
+        },
+        {
           "title": "Présidentielle 2027 : « Sans être là, Jean-Luc Mélenchon a parasité le premier débat de la primaire sociale-démocrate »",
           "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-sans-etre-la-jean-luc-melenchon-a-parasite-le-premier-debat-de-la-primaire-sociale-democrate_6781568_823448.html",
           "published": "2026-09-24",
-          "detected_at": "2026-09-25"
-        },
-        {
-          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
-          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-25"
+          "detected_at": "2026-09-27"
         }
       ]
     },
@@ -134,16 +112,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
-          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-25"
+          "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
+          "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
+          "published": "2026-09-25",
+          "detected_at": "2026-09-27"
         },
         {
           "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
           "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
           "published": "2026-09-22",
-          "detected_at": "2026-09-25"
+          "detected_at": "2026-09-27"
         }
       ]
     },
@@ -173,10 +151,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "«Ce n’est pas quelqu’un à l’extérieur du PS qui va définir la refondation de la gauche» : Glucksmann endure les attaques de Royal lors du premier débat de la primaire socialiste",
-          "url": "https://www.liberation.fr/politique/elections/ce-nest-pas-quelquun-a-lexterieur-du-ps-qui-va-definir-la-refondation-de-la-gauche-glucksmann-endure-les-attaques-de-royal-lors-du-premier-debat-de-la-primaire-socialiste-20260924_JIY2E2WYJBF7TK5BZ4WGY4XPII/",
-          "published": "2026-09-23",
-          "detected_at": "2026-09-25"
+          "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
+          "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
+          "published": "2026-09-25",
+          "detected_at": "2026-09-27"
+        },
+        {
+          "title": "Présidentielle 2027 : Yannick Jadot suspendu à titre conservatoire par Les Ecologistes en raison de son soutien à la candidature de Raphaël Glucksmann",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
+          "published": "2026-09-25",
+          "detected_at": "2026-09-27"
         }
       ]
     },
@@ -190,6 +174,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-25T10:12:19.873Z",
-  "program_press_hits": 16
+  "veille_scan_at": "2026-09-27T10:45:14.206Z",
+  "program_press_hits": 14
 }
