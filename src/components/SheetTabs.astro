@@ -1,0 +1,99 @@
+---
+export interface SheetTab {
+  id: string;
+  label: string;
+  count?: number;
+}
+
+interface Props {
+  /** Nom unique du groupe radio (une page peut avoir plusieurs jeux d’onglets). */
+  name: string;
+  tabs: SheetTab[];
+  label: string;
+  defaultId?: string;
+}
+
+const { name, tabs, label, defaultId } = Astro.props;
+const safe = (value: string) => value.replace(/[^a-z0-9-]/gi, '');
+const safeName = safe(name);
+const active =
+  defaultId && tabs.some((tab) => tab.id === defaultId) ? defaultId : tabs[0]?.id;
+
+const hideRules = tabs
+  .map((tab) => {
+    const id = safe(tab.id);
+    return `.sheet-tabs[data-sheet="${safeName}"]:has(input[value="${id}"]:checked) [data-sheet-panel="${id}"]{display:block}`;
+  })
+  .join('');
+---
+
+<div class="sheet-tabs" data-sheet={safeName}>
+  <div class="sheet-tablist" role="radiogroup" aria-label={label}>
+    {
+      tabs.map((tab) => (
+        <label class="sheet-tab">
+          <input type="radio" name={safeName} value={safe(tab.id)} checked={tab.id === active} />
+          <span>
+            {tab.label}
+            {tab.count != null && <span class="sheet-count">{tab.count}</span>}
+          </span>
+        </label>
+      ))
+    }
+  </div>
+  <div class="sheet-panels">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .sheet-tablist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.65rem 0 0.85rem;
+  }
+  .sheet-tab {
+    cursor: pointer;
+  }
+  .sheet-tab input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .sheet-tab span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.28rem 0.72rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.86rem;
+    font-weight: 650;
+    line-height: 1.3;
+    color: var(--fg);
+    background: var(--bg);
+  }
+  .sheet-tab input:focus-visible + span {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .sheet-tab input:checked + span {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-color: var(--accent);
+  }
+  .sheet-count {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+</style>
+
+<style is:inline set:html={`.sheet-tabs[data-sheet="${safeName}"] [data-sheet-panel]{display:none}${hideRules}@supports not selector(:has(*)){.sheet-tabs[data-sheet="${safeName}"] [data-sheet-panel]{display:block}}`}></style>
