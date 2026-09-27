@@ -139,7 +139,10 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
       'Sur les 7 derniers jours de presse collectée : quels sujets dominent, et quels candidats y sont le plus associés. Part de presse, pas intention de vote.',
     date: '2026-09-26',
     href: '/analyses/assemblee-sujets',
-    cover: null,
+    cover: uneCover(
+      'assemblee-sujets',
+      'Croquis encre et aquarelle : journaux pliés et cartes de sujets vierges sur une table de rédaction',
+    ),
   },
   {
     slug: 'assemblee-premier-tour',
