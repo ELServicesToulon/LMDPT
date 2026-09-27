@@ -92,6 +92,10 @@ const AFFILIATION_RULES: Array<{ test: RegExp; logo: PartyLogo }> = [
     test: /g[ée]n[ée]ration[·.]?s/i,
     logo: { id: 'generations', shortLabel: 'Génération·s', color: '#c2185b', monogram: 'G·s' },
   },
+  {
+    test: /place\s*publique/i,
+    logo: { id: 'place-publique', shortLabel: 'Place publique', color: '#b42318', monogram: 'PP' },
+  },
 ];
 
 const FALLBACK: PartyLogo = {

@@ -1,6 +1,6 @@
 {
   "title": "Comptes X officiels — candidats & partis (Présidentielle 2027)",
-  "updated": "2026-07-17",
+  "updated": "2026-09-27",
   "disclaimer": "Liens vers des comptes X publics documentés (personnalités politiques / formations). Ce n'est pas un classement, ni une liste du Conseil constitutionnel. Vérifier le badge / la bio sur X en cas de doute. Comptes non trouvés ou ambigus : null.",
   "method": "Résolution HTTP des handles connus + titre de page X (2026-07-17). Handles en casse URL canonique https://x.com/{handle}.",
   "candidates": [
@@ -58,7 +58,7 @@
       "handle": "rglucks1",
       "url": "https://x.com/rglucks1",
       "verified_http": 200,
-      "note": "Place publique — non encore ticket unique 2027."
+      "note": "Place publique — primaire à gauche (débat 23 sept. 2026), pas ticket unique."
     },
     {
       "slug": "tondelier",
@@ -203,6 +203,30 @@
       "url": null,
       "verified_http": null,
       "note": "Pas de compte X public clairement identifiable au scan 2026-07-17."
+    },
+    {
+      "slug": "becht",
+      "name": "Olivier Becht",
+      "handle": "becht_olivier",
+      "url": "https://x.com/becht_olivier",
+      "verified_http": null,
+      "note": "Handle déjà documenté dans l'inventaire influenceurs LMDPT. Non re-vérifié HTTP le 2026-09-27."
+    },
+    {
+      "slug": "faure",
+      "name": "Olivier Faure",
+      "handle": "faureolivier",
+      "url": "https://x.com/faureolivier",
+      "verified_http": null,
+      "note": "Handle déjà documenté dans l'inventaire influenceurs LMDPT. Non re-vérifié HTTP le 2026-09-27."
+    },
+    {
+      "slug": "maurel",
+      "name": "Emmanuel Maurel",
+      "handle": null,
+      "url": null,
+      "verified_http": null,
+      "note": "Pas de compte X public clairement identifié dans l'inventaire local au 2026-09-27."
     }
   ],
   "parties": [

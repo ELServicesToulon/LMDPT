@@ -1,6 +1,6 @@
 {
   "title": "Candidatures déclarées — Présidentielle 2027",
-  "updated": "2026-07-17",
+  "updated": "2026-09-27",
   "disclaimer": "Liste des personnalités ayant publicisé une candidature à l'élection présidentielle de 2027 (annonces politiques, désignations de parti). Ce n'est pas la liste officielle du Conseil constitutionnel — celle-ci ne sera publiée qu'après dépôt des 500 parrainages d'élus (au plus tard le 4e vendredi précédant le 1er tour, indicatif 26 mars 2027). Aucun classement, aucun sondage.",
   "legal_note": "Seuls les candidats retenus par le Conseil constitutionnel figureront sur les bulletins. Voir art. 6 Constitution, code électoral (présentations / parrainages).",
   "sources": [
@@ -23,6 +23,21 @@
       "label": "LCP — Attal officialise (22 mai 2026)",
       "url": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
       "as_of": "2026-05-22"
+    },
+    {
+      "label": "Le Monde — Olivier Becht candidat (24 sept. 2026)",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
+      "as_of": "2026-09-24"
+    },
+    {
+      "label": "Le Monde — premier débat de la primaire à gauche (24 sept. 2026)",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+      "as_of": "2026-09-24"
+    },
+    {
+      "label": "Le Monde — Jadot suspendu, Tondelier candidate des Écologistes (25 sept. 2026)",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
+      "as_of": "2026-09-25"
     }
   ],
   "categories": [
@@ -145,7 +160,7 @@
       "declared_at": "2026-02",
       "source_label": "France Inter / LCP",
       "source_url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-7h50/l-invite-de-7h50-du-jeudi-05-fevrier-2026-7548548",
-      "note": "Ligne « gauche républicaine, universaliste et laïque »."
+      "note": "Ligne « gauche républicaine, universaliste et laïque ». Aussi présent au premier débat de la primaire à gauche (LCI, 23 sept. 2026) — presse secondaire."
     },
     {
       "slug": "bouamrane",
@@ -179,6 +194,17 @@
       "source_label": "LCP",
       "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
       "note": null
+    },
+    {
+      "slug": "becht",
+      "name": "Olivier Becht",
+      "affiliation": "Sans étiquette",
+      "status": "candidature_declaree",
+      "category": "declarees",
+      "declared_at": "2026-09-24",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
+      "note": "Ancien ministre du commerce extérieur. Se dit sans camp, « extrême centre » selon ses propos rapportés. Source secondaire (presse)."
     },
     {
       "slug": "philippot",
@@ -228,12 +254,12 @@
       "slug": "tondelier",
       "name": "Marine Tondelier",
       "affiliation": "Les Écologistes (EELV)",
-      "status": "conditionnelle",
-      "category": "conditionnelle",
-      "declared_at": "2026",
-      "source_label": "LCP",
-      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
-      "note": "Investie dans le cadre d'une primaire unitaire de gauche devenue caduque après le vote PS du 9 juil. 2026 ; stratégie à redéfinir."
+      "status": "designe_parti",
+      "category": "parti_designe",
+      "declared_at": "2026-09-25",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
+      "note": "Qualifiée de candidate officielle des Écologistes par Le Monde (25 sept. 2026), au moment de la suspension de Yannick Jadot pour soutien à Glucksmann. La primaire unitaire de juillet 2026 reste caduque. Source secondaire."
     },
     {
       "slug": "ruffin",
@@ -266,7 +292,40 @@
       "declared_at": "2026-07-10",
       "source_label": "LCP",
       "source_url": "https://lcp.fr/actualites/presidentielle-2027-segolene-royal-annonce-sa-candidature-a-la-primaire-socialiste",
-      "note": "Candidature à la primaire fermée PS (pas encore ticket présidentiel unique)."
+      "note": "Candidature à la primaire fermée PS (pas encore ticket présidentiel unique). Présente au premier débat télévisé du 23 sept. 2026 (Le Monde)."
+    },
+    {
+      "slug": "faure",
+      "name": "Olivier Faure",
+      "affiliation": "Parti socialiste",
+      "status": "primaire",
+      "category": "conditionnelle",
+      "declared_at": "2026-09-23",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+      "note": "Participant au premier débat de la primaire à gauche (LCI, 23 sept. 2026). Pas un ticket présidentiel unique. Source secondaire."
+    },
+    {
+      "slug": "maurel",
+      "name": "Emmanuel Maurel",
+      "affiliation": "Gauche républicaine et socialiste",
+      "status": "primaire",
+      "category": "conditionnelle",
+      "declared_at": "2026-09-23",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+      "note": "Participant au premier débat de la primaire à gauche (LCI, 23 sept. 2026). Pas un ticket présidentiel unique. Source secondaire."
+    },
+    {
+      "slug": "glucksmann",
+      "name": "Raphaël Glucksmann",
+      "affiliation": "Place publique",
+      "status": "primaire",
+      "category": "conditionnelle",
+      "declared_at": "2026-09-23",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
+      "note": "Candidat à la primaire à gauche (débat LCI, 23 sept. 2026), pas ticket unique. Jadot suspendu des Écologistes pour l'avoir soutenu (Le Monde, 25 sept.). Source secondaire."
     },
     {
       "slug": "brun",

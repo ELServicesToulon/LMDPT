@@ -11,6 +11,7 @@ import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
 import UneDuJour from '../components/UneDuJour.astro';
 import EditorialCard from '../components/EditorialCard.astro';
+import SheetTabs from '../components/SheetTabs.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
 import { pickDailyVisuals, type VisualDailyPool } from '../lib/visual-daily';
 import { DOE_FR } from '../lib/doe';
@@ -37,6 +38,13 @@ const statusDeclareLabels: Record<string, string> = {
 };
 
 const categoryOrder = ['declarees', 'parti_designe', 'conditionnelle', 'retrait'] as const;
+
+const categoryTabLabel: Record<(typeof categoryOrder)[number], string> = {
+  declarees: 'En lice',
+  parti_designe: 'Désignation parti',
+  conditionnelle: 'Primaire et conditions',
+  retrait: 'Retraits',
+};
 
 const declaredUpdated = new Date(candidaturesDeclarees.updated).toLocaleDateString('fr-FR', {
   dateStyle: 'long',
@@ -224,16 +232,27 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       · Mise à jour <time datetime={candidaturesDeclarees.updated}>{declaredUpdated}</time>
     </p>
     <p class="meta declared-legal">{candidaturesDeclarees.legal_note}</p>
+    <p class="meta">Une catégorie à la fois. Les autres listes restent dans les onglets.</p>
 
-    {
-      declaredByCategory.map((group) => (
-        <div class="declared-group">
-          <h4 class="declared-group-title">
-            {group.meta?.label ?? group.id}
-            <span class="declared-count">{group.entries.length}</span>
-          </h4>
-          {group.meta?.description && <p class="meta declared-group-desc">{group.meta.description}</p>}
-          <div class="declared-table-wrap" role="region" aria-label={group.meta?.label ?? group.id} tabindex="0">
+    <SheetTabs
+      name="candidatures-2027"
+      label="Catégories de candidatures 2027"
+      defaultId="declarees"
+      tabs={declaredByCategory.map((group) => ({
+        id: group.id,
+        label: categoryTabLabel[group.id] ?? group.meta?.label ?? group.id,
+        count: group.entries.length,
+      }))}
+    >
+      {
+        declaredByCategory.map((group) => (
+          <div class="declared-group" data-sheet-panel={group.id}>
+            <h4 class="declared-group-title">
+              {group.meta?.label ?? group.id}
+              <span class="declared-count">{group.entries.length}</span>
+            </h4>
+            {group.meta?.description && <p class="meta declared-group-desc">{group.meta.description}</p>}
+            <div class="declared-table-wrap" role="region" aria-label={group.meta?.label ?? group.id} tabindex="0">
             <table class="declared-table">
               <thead>
                 <tr>
@@ -313,10 +332,11 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
                 })}
               </tbody>
             </table>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </SheetTabs>
 
     <p class="meta" style="margin-top:1rem;">
       Sources :{' '}
@@ -335,6 +355,17 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </p>
   </section>
 
+  <SheetTabs
+    name="accueil-suite"
+    label="Suite de l'accueil"
+    defaultId="preparer"
+    tabs={[
+      { id: 'preparer', label: 'Préparer 2027' },
+      { id: 'explorer', label: 'Débats et atlas' },
+      { id: 'galerie', label: 'Ligne et galerie' },
+    ]}
+  >
+  <div data-sheet-panel="preparer">
   <!-- Parcours utilisateur clair pour préparation 2027 -->
   <section class="card" aria-labelledby="parcours-2027">
     <h3 id="parcours-2027">Parcours recommandé pour se préparer au 1er tour</h3>
@@ -365,7 +396,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <a href="/analyses/assemblee-premier-tour">Explorer la simulation 2027 →</a>
     </p>
   </section>
+  </div>
 
+  <div data-sheet-panel="explorer">
   <section class="content-section">
     <h3 class="section-title">Débats ouverts</h3>
     <ul class="card-grid">
@@ -427,7 +460,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       </li>
     </ul>
   </section>
+  </div>
 
+  <div data-sheet-panel="galerie">
   <!-- 
     PRINCIPE DE BASE (intégralité du site, sauf live YouTube) :
     - On expose des idées, pas des idéologies.
@@ -496,6 +531,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       </p>
     </div>
   </section>
+  </div>
+  </SheetTabs>
 </BaseLayout>
 
 <style>

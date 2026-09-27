@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SheetTabs from '../../../components/SheetTabs.astro';
 import { listScrutins, listCandidates, getVeille2027 } from '../../../lib/programs';
 import {
   getCandidateFamily,
@@ -49,8 +50,19 @@ const dataGouvLinks = programRelatedDataGouvLinks();
     </p>
   </section>
 
+  <SheetTabs
+    name="programmes-scrutins"
+    label="Scrutins des programmes"
+    defaultId="presidentielle-2027"
+    tabs={scrutins.map((s) => ({
+      id: s.id,
+      label: s.id === 'presidentielle-2027' ? 'Préparation 2027' : s.label.replace(' — 1er tour', ''),
+      count: listCandidates(s.id).length,
+    }))}
+  >
   {
     scrutins.map((s) => (
+      <div data-sheet-panel={s.id}>
       <section class="card">
         <h3>{s.label}</h3>
         {s.id === 'presidentielle-2027' ? (
@@ -145,8 +157,10 @@ const dataGouvLinks = programRelatedDataGouvLinks();
           </ul>
         )}
       </section>
+      </div>
     ))
   }
+  </SheetTabs>
 
   <section class="card">
     <h3>Évolution 2017 → 2022</h3>
