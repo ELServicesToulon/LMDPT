@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -25,7 +25,7 @@
           "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
           "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
           "published": "2026-09-23",
-          "detected_at": "2026-09-27"
+          "detected_at": "2026-09-28"
         }
       ]
     },
@@ -83,13 +83,7 @@
           "title": "Présidentielle 2027 : le chemin de crête de Jean-Luc Mélenchon sur l’Ukraine",
           "url": "https://www.lemonde.fr/politique/article/2026/09/26/presidentielle-2027-le-chemin-de-crete-de-jean-luc-melenchon-sur-l-ukraine_6783102_823448.html",
           "published": "2026-09-26",
-          "detected_at": "2026-09-27"
-        },
-        {
-          "title": "Présidentielle 2027 : « Sans être là, Jean-Luc Mélenchon a parasité le premier débat de la primaire sociale-démocrate »",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-sans-etre-la-jean-luc-melenchon-a-parasite-le-premier-debat-de-la-primaire-sociale-democrate_6781568_823448.html",
-          "published": "2026-09-24",
-          "detected_at": "2026-09-27"
+          "detected_at": "2026-09-28"
         }
       ]
     },
@@ -115,13 +109,7 @@
           "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
           "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
           "published": "2026-09-25",
-          "detected_at": "2026-09-27"
-        },
-        {
-          "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
-          "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
-          "published": "2026-09-22",
-          "detected_at": "2026-09-27"
+          "detected_at": "2026-09-28"
         }
       ]
     },
@@ -151,16 +139,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
-          "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
-          "published": "2026-09-25",
-          "detected_at": "2026-09-27"
-        },
-        {
           "title": "Présidentielle 2027 : Yannick Jadot suspendu à titre conservatoire par Les Ecologistes en raison de son soutien à la candidature de Raphaël Glucksmann",
           "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
           "published": "2026-09-25",
-          "detected_at": "2026-09-27"
+          "detected_at": "2026-09-28"
+        },
+        {
+          "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
+          "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
+          "published": "2026-09-25",
+          "detected_at": "2026-09-28"
         }
       ]
     },
@@ -174,6 +162,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-27T10:45:14.206Z",
-  "program_press_hits": 14
+  "veille_scan_at": "2026-09-28T04:11:22.782Z",
+  "program_press_hits": 11
 }

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-27T10:45:14.206Z",
+  "fetched_at": "2026-09-28T04:11:22.782Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,26 +7,26 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "«Il est obsédé par l’avenir de la France» : Maria Carolina de Bourbon des Deux-Siciles, compagne de Jordan Bardella, se confie au Figaro Magazine",
-      "url": "https://www.lefigaro.fr/politique/il-est-obsede-par-l-avenir-de-la-france-maria-carolina-de-bourbon-des-deux-siciles-compagne-de-jordan-bardella-se-confie-au-figaro-magazine-20260927",
-      "published": "2026-09-27",
-      "summary": "EXCLUSIF - Pour la première fois, la jeune compagne du président du Rassemblement national s’exprime sur ses liens avec celui qui a dû renoncer à la course présidentielle au profit de Marine Le Pen.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
+      "title": "Comment le gouvernement veut augmenter les impôts dans le budget 2027, mais sans le faire de manière généralisée",
+      "url": "https://www.franceinfo.fr/economie/budget/comment-le-gouvernement-veut-augmenter-les-impots-dans-le-budget-2027-mais-sans-le-faire-de-maniere-generalisee_8211842.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-28",
+      "summary": "A quelques jours de la présentation du projet de budget, franceinfo vous explique comment l'exécutif entend réaliser un effort de 54 milliards d'euros, sans pour autant augmenter les impôts pour tout le monde.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
-      "title": "\"On vient de deux univers différents\" : Maria Carolina de Bourbon des Deux-Siciles se confie pour la première fois sur sa relation avec Jordan Bardella",
-      "url": "https://www.franceinfo.fr/politique/jordan-bardella/on-vient-de-deux-univers-differents-maria-carolina-de-bourbon-des-deux-siciles-se-confie-pour-la-premiere-fois-sur-sa-relation-avec-jordan-bardella_8211857.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-27",
-      "summary": "La descendante d'une richissime lignée aristocratique italienne a donné un entretien au \"Figaro Magazine\", dans lequel elle revient sur le retrait de la course à l'Elysée du président du RN.",
+      "title": "\"Cela va nous permettre de rentrer dans le jeu institutionnel\" : ce que change l'obtention historique par le RN d'un groupe parlementaire au Sénat",
+      "url": "https://www.franceinfo.fr/elections/senatoriales/cela-va-nous-permettre-de-rentrer-dans-le-jeu-institutionnel-ce-que-change-l-obtention-historique-par-le-rn-d-un-groupe-parlementaire-au-senat_8211950.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-28",
+      "summary": "Avec 11 nouveaux élus, l'alliance entre le Rassemblement national et l'UDR d'Eric Ciotti réalise une percée au Sénat, censée aider Marine Le Pen pour sa campagne présidentielle.",
       "source_id": "franceinfo-politique",
       "source_label": "franceinfo — Politique",
       "source_type": "traditional",
@@ -35,7 +35,55 @@
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, bardella"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Sénatoriales 2026 : 37 sénateurs ont été élus ou réélus au premier tour",
+      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-2026-37-senateurs-ont-ete-elus-ou-reelus-au-premier-tour",
+      "published": "2026-09-27",
+      "summary": "Plus de la moitié des mandats remis en jeu dans les départements au scrutin majoritaire – les moins peuplés – a déjà été renouvelée à l’issue du premier tour ce 27 septembre. Il s’agit pour la plus grande partie d’entre eux de sortants, notamment de la majorité LR-centristes.",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Sénatoriales 2027 : stables, les socialistes restent le deuxième groupe du Sénat",
+      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-2027-stables-les-socialistes-restent-le-deuxieme-groupe-du-senat",
+      "published": "2026-09-27",
+      "summary": "Le PS, qui compte 64 élus au Sénat, maintient son rang à l’issue des sénatoriales, ce dimanche 27 septembre. Le parti à la rose se félicite même de quelques victoires, notamment dans le Doubs et le Bas-Rhin.",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : socialiste"
+      }
+    },
+    {
+      "title": "Sénatoriales : pour le RN, une dernière marche symbolique avant l'Elysée",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20260927-s%C3%A9natoriales-pour-le-rn-une-derni%C3%A8re-marche-symbolique-avant-l-elys%C3%A9e",
+      "published": "2026-09-27",
+      "summary": "Porté par ses gains aux dernières municipales, le Rassemblement national est assuré de progresser au Sénat après le scrutin du 27 septembre. Tout l'enjeu sera de pouvoir constituer un groupe, afin de parachever l'institutionnalisation du parti à six mois de la présidentielle.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
       }
     },
     {
@@ -55,12 +103,156 @@
       }
     },
     {
-      "title": "En Martinique, la collectivité adopte un plan de redressement de près de 69 millions d’euros face à une dette record",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/26/en-martinique-la-collectivite-adopte-un-plan-de-redressement-de-pres-de-69-millions-d-euros-face-a-une-dette-record_6783101_823448.html",
+      "title": "Sénatoriales : le RN va former un groupe parlementaire au Sénat, une première",
+      "url": "https://www.france24.com/fr/france/20260927-%C3%A9lections-s%C3%A9natoriales-la-droite-sous-presse-le-rn-en-qu%C3%AAte-d-un-groupe",
+      "published": "2026-09-27",
+      "summary": "Le Rassemblement national va pouvoir créer un groupe au Sénat a annoncé dimanche Jordan Bardella, alors qu'au moins 14 candidats ont été élus à la chambre haute du Parlement avec ses alliés de l'UDR. De son côté, LFI a annoncé son entrée au Sénat, avec l'élection de Gabriel Amard",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, bardella, rassemblement national"
+      }
+    },
+    {
+      "title": "Sénatoriales 2026 : le RN s’offre un groupe et rêve de percer son plafond de verre en 2027",
+      "url": "https://www.lefigaro.fr/politique/senatoriales-2026-le-rn-s-offre-un-groupe-et-reve-de-percer-son-plafond-de-verre-en-2027-20260927",
+      "published": "2026-09-27",
+      "summary": "Jordan Bardella et Marine Le Pen se sont tous les deux félicités d’un résultat « historique » pour le parti à la flamme.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Résultats des élections sénatoriales 2026 : dix ans après sa création, La France insoumise fait son entrée au Sénat",
+      "url": "https://www.franceinfo.fr/elections/senatoriales/resultats-des-elections-senatoriales-2026-la-france-insoumise-fait-son-entree-au-senat-dix-ans-apres-sa-creation_8212526.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-27",
+      "summary": "Gabriel Amard, gendre de Jean-Luc Mélenchon, n'a pas pâti des divisions de la gauche dans le Rhône. \"Heureux augure pour 2027\", a salué le candidat LFI à l'élection présidentielle.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "«Il est obsédé par l’avenir de la France» : Maria Carolina de Bourbon des Deux-Siciles, compagne de Jordan Bardella, se confie au Figaro Magazine",
+      "url": "https://www.lefigaro.fr/politique/il-est-obsede-par-l-avenir-de-la-france-maria-carolina-de-bourbon-des-deux-siciles-compagne-de-jordan-bardella-se-confie-au-figaro-magazine-20260927",
+      "published": "2026-09-27",
+      "summary": "EXCLUSIF - Pour la première fois, la jeune compagne du président du Rassemblement national s’exprime sur ses liens avec celui qui a dû renoncer à la course présidentielle au profit de Marine Le Pen.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
+      }
+    },
+    {
+      "title": "Suspendu par Les Ecologistes, Yannick Jadot riposte et reçoit le soutien de… Sandrine Rousseau",
+      "url": "https://www.liberation.fr/politique/elections/suspendu-par-les-ecologistes-yannick-jadot-riposte-et-recoit-le-soutien-de-sandrine-rousseau-20260927_2XJYRPOPMRBO5DA5JFVPXIV2LU/",
+      "published": "2026-09-27",
+      "summary": "Les deux finalistes de la primaire écolo pour la présidentielle de 2022 poursuivent leurs tirs croisés contre la direction des verts. L’un dénonce un «verrouillage», l’autre une «bunkerisation» de leur parti.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : les écologistes, les ecologistes"
+      }
+    },
+    {
+      "title": "« Une étape supplémentaire pour la présidentielle » : Jordan Bardella « ravi » de l’arrivée d’un groupe RN au Sénat, « tend la main aux patriotes sincères des LR »",
+      "url": "https://www.publicsenat.fr/actualites/politique/une-etape-supplementaire-pour-la-presidentielle-jordan-bardella-ravi-de-larrivee-dun-groupe-rn-au-senat-tend-la-main-au",
+      "published": "2026-09-27",
+      "summary": "« Le RN a vocation à être le grand parti des territoires de demain », réagit le président du RN au soir des élections sénatoriales, qui voient l’arrivée du premier groupe RN du Sénat. Il « souhaite qu’on puisse tendre la main aux patriotes sincères des LR » et vise, en cas de vic",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, bardella"
+      }
+    },
+    {
+      "title": "Sénatoriales : le RN réussit son pari et crée un groupe, « un coup d’accélérateur pour la présidentielle »",
+      "url": "https://www.publicsenat.fr/actualites/politique/senatoriales-le-rn-reussit-son-pari-et-cree-un-groupe-un-coup-daccelerateur-pour-la-presidentielle",
+      "published": "2026-09-27",
+      "summary": "C’était l’un des principaux enjeux des sénatoriales. Avec 11 nouveaux sénateurs au soir du scrutin, le RN est assuré de créer un groupe au Sénat, avec 14 membres. Une première historique de bon augure pour le parti d’extrême droite et Marine Le Pen, à sept mois de la présidentiel",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "La droite conserve sa majorité, le RN obtient un groupe, un premier élu LFI… Ce qu'il faut retenir des résultats des élections sénatoriales 2026",
+      "url": "https://www.franceinfo.fr/elections/senatoriales/la-droite-conserve-sa-majorite-le-rn-obtient-un-groupe-un-premier-elu-lfi-ce-qu-il-faut-retenir-des-resultats-des-elections-senatoriales-2026_8212337.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-27",
+      "summary": "Environ la moitié des sièges étaient renouvelés dimanche. Les équilibres politiques n'ont pas été bouleversés, mais le RN dépasse la barre des dix sénateurs, tandis que LFI parvient à faire élire l'un de ses candidats.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : rn"
+      }
+    },
+    {
+      "title": "\"On vient de deux univers différents\" : Maria Carolina de Bourbon des Deux-Siciles se confie pour la première fois sur sa relation avec Jordan Bardella",
+      "url": "https://www.franceinfo.fr/politique/jordan-bardella/on-vient-de-deux-univers-differents-maria-carolina-de-bourbon-des-deux-siciles-se-confie-pour-la-premiere-fois-sur-sa-relation-avec-jordan-bardella_8211857.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-09-27",
+      "summary": "La descendante d'une richissime lignée aristocratique italienne a donné un entretien au \"Figaro Magazine\", dans lequel elle revient sur le retrait de la course à l'Elysée du président du RN.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rn, bardella"
+      }
+    },
+    {
+      "title": "\"Vivre un moment ensemble\" : À Paris, les catholiques à l'unisson pour la messe de Léon XIV",
+      "url": "https://www.france24.com/fr/france/20260926-vivre-un-moment-ensemble-%C3%A0-paris-les-catholiques-%C3%A0-l-unisson-pour-la-messe-de-l%C3%A9on-xiv",
       "published": "2026-09-26",
-      "summary": "Porté par Serge Letchimy et étalé sur 2027 et 2028, ce programme mêlant coupes budgétaires, cessions d’actifs et nouvelle taxe patronale est dénoncé par l’opposition comme une cure d’austérité déguisée.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "summary": "Plus de 800 000 personnes étaient réunies samedi sur la célèbre avenue des Champs-Élysées, à Paris, pour assister à la messe du pape Léon XIV. Dans la foule, une grande majorité de catholiques pratiquants, présents pour vivre \"un moment ensemble\" et \"entendre le message\" du souve",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -71,12 +263,28 @@
       }
     },
     {
-      "title": "\"Vivre un moment ensemble\" : À Paris, les catholiques à l'unisson pour la messe de Léon XIV",
-      "url": "https://www.france24.com/fr/france/20260926-vivre-un-moment-ensemble-%C3%A0-paris-les-catholiques-%C3%A0-l-unisson-pour-la-messe-de-l%C3%A9on-xiv",
+      "title": "Messe du pape à Paris : ces candidats à la présidentielle de 2027 qui y assisteront samedi",
+      "url": "https://www.la-croix.com/politique/voyage-du-pape-quels-candidats-a-la-presidentielle-seront-presents-a-la-messe-20260923",
       "published": "2026-09-26",
-      "summary": "Plus de 800 000 personnes étaient réunies samedi sur la célèbre avenue des Champs-Élysées, à Paris, pour assister à la messe du pape Léon XIV. Dans la foule, une grande majorité de catholiques pratiquants, présents pour vivre \"un moment ensemble\" et \"entendre le message\" du souve",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
+      "summary": "Le pape Léon XIV va célébrer une messe géante, samedi 26 septembre 2026, place de la Concorde à Paris, en présence de plusieurs figures politiques de premier plan. Vendredi, le pape a célébré les vêpres à Notre-Dame de Paris et une veillée au stade de France, à Saint-Denis.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Le pape à Paris : les propos de Léon XIV sur la laïcité divisent les politiques",
+      "url": "https://www.la-croix.com/politique/le-pape-a-paris-les-propos-de-leon-xiv-sur-la-laicite-divisent-les-politiques-20260926",
+      "published": "2026-09-26",
+      "summary": "Lors de son premier discours « politique », tenu vendredi 25 septembre à l’Élysée, Léon XIV est revenu sur la conception de la « laïcité juste » qui implique une participation des religions, au côté du politique, à la recherche du bien commun.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -103,70 +311,6 @@
       }
     },
     {
-      "title": "Messe du pape à Paris : ces candidats à la présidentielle de 2027 qui y assisteront samedi",
-      "url": "https://www.la-croix.com/politique/voyage-du-pape-quels-candidats-a-la-presidentielle-seront-presents-a-la-messe-20260923",
-      "published": "2026-09-26",
-      "summary": "Le pape Léon XIV va célébrer une messe géante, samedi 26 septembre 2026, place de la Concorde à Paris, en présence de plusieurs figures politiques de premier plan. Vendredi, le pape a célébré les vêpres à Notre-Dame de Paris et une veillée au stade de France, à Saint-Denis.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "La Collectivité territoriale de Martinique, lourdement endettée, cherche à redresser ses comptes",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/26/la-collectivite-territoriale-de-martinique-lourdement-endettee-cherche-a-redresser-ses-comptes_6783124_823448.html",
-      "published": "2026-09-26",
-      "summary": "L’exécutif veut faire adopter une série de mesures de réduction des dépenses. L’opposition dénonce un « plan d’austérité » qui affecte principalement la jeunesse.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "bardella",
-        "label": "Bardella / RN",
-        "color": "#0d378a",
-        "confidence": 0.61,
-        "rationale": "Proximité lexicale : jeunesse"
-      }
-    },
-    {
-      "title": "Le pape à Paris : les propos de Léon XIV sur la laïcité divisent les politiques",
-      "url": "https://www.la-croix.com/politique/le-pape-a-paris-les-propos-de-leon-xiv-sur-la-laicite-divisent-les-politiques-20260926",
-      "published": "2026-09-26",
-      "summary": "Lors de son premier discours « politique », tenu vendredi 25 septembre à l’Élysée, Léon XIV est revenu sur la conception de la « laïcité juste » qui implique une participation des religions, au côté du politique, à la recherche du bien commun.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Marche pour le climat : des milliers de personnes mobilisées partout en France",
-      "url": "https://www.france24.com/fr/france/20260926-marche-pour-le-climat-des-milliers-de-personnes-mobilis%C3%A9es-partout-en-france",
-      "published": "2026-09-26",
-      "summary": "Des milliers de personnes ont participé, samedi, à des marches pour le climat partout en France, après un été marqué par des records de chaleur et une série d'incendies. Environ 260 mobilisations étaient annoncées à travers le pays pour réclamer des mesures d’urgence en faveur du",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : climat"
-      }
-    },
-    {
       "title": "À droite et au centre, l’embouteillage des candidats et des \"presque candidats\" pour 2027",
       "url": "https://www.franceinfo.fr/replay-radio/le-brief-politique/a-droite-et-au-centre-l-embouteillage-des-candidats-et-des-presque-candidats-pour-2027_8189123.html#xtor=RSS-3-%5Bgeneral%5D",
       "published": "2026-09-26",
@@ -183,67 +327,19 @@
       }
     },
     {
-      "title": "Léon XIV à Parix : 2,5 kilomètres de déambulation sous haute sécurité",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20260925-l%C3%A9on-xiv-%C3%A0-parix-2-5-kilom%C3%A8tres-de-d%C3%A9ambulation-sous-haute-s%C3%A9curit%C3%A9",
-      "published": "2026-09-25",
-      "summary": "Après sa venue à l'Élysée en fin de matinée, vendredi 25 septembre, le pape Léon XIV s'apprête à faire un discours à l'UNESCO avant de déambuler sur environ 2,5 kilomètres vers la place Saint-Michel. Les explications de Johan Bodin, journaliste à France 24.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
+      "title": "La Collectivité territoriale de Martinique, lourdement endettée, cherche à redresser ses comptes",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/26/la-collectivite-territoriale-de-martinique-lourdement-endettee-cherche-a-redresser-ses-comptes_6783124_823448.html",
+      "published": "2026-09-26",
+      "summary": "L’exécutif veut faire adopter une série de mesures de réduction des dépenses. L’opposition dénonce un « plan d’austérité » qui affecte principalement la jeunesse.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : sécurité, securite"
-      }
-    },
-    {
-      "title": "Sénatoriales : l’insubmersible Gérard Larcher, rempart à l’extrême droite ?",
-      "url": "https://www.liberation.fr/politique/senatoriales-linsubmersible-gerard-larcher-rempart-a-lextreme-droite-20260925_C3OJVEKEGNHSREDDKSEA245LCI/",
-      "published": "2026-09-25",
-      "summary": "Le sénateur brigue un sixième mandat à la tête du palais du Luxembourg, renouvelé pour moitié dimanche 27 septembre, et s’inquiète de l’arrivée entre ses murs d’un groupe RN comme d’une possible élection de Marine Le Pen à la présidentielle.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
+        "slug": "bardella",
+        "label": "Bardella / RN",
         "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : à Marseille, un « grand débat » sur l’IA sans grande surprise et avec peu de candidats",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-a-marseille-un-grand-debat-sur-l-ia-sans-grande-surprise-et-avec-peu-de-candidats_6782611_823448.html",
-      "published": "2026-09-25",
-      "summary": "A part Olivier Faure, aucun candidat n’avait fait le déplacement dans la cité phocéenne pour cette discussion sur un sujet pourtant présenté comme « central » par plusieurs partis",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : faure"
-      }
-    },
-    {
-      "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
-      "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
-      "published": "2026-09-25",
-      "summary": "En déplacement ce vendredi 25 septembre dans les Hauts-de-France, le candidat à la primaire de gauche a joué la carte sociale pour contester l’hégémonie de Marine Le Pen dans le territoire.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+        "confidence": 0.61,
+        "rationale": "Proximité lexicale : jeunesse"
       }
     },
     {
@@ -279,67 +375,19 @@
       }
     },
     {
-      "title": "Ségolène Royal et Raphaël Glucksmann, suivez l’exemple de Pedro Sánchez",
-      "url": "https://www.liberation.fr/politique/segolene-royal-et-raphael-glucksmann-suivez-lexemple-de-pedro-sanchez-20260925_SWGFISDOMVHJ5J5TOFVMXFISGU/",
+      "title": "Présidentielle 2027 : à Marseille, un « grand débat » sur l’IA sans grande surprise et avec peu de candidats",
+      "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-a-marseille-un-grand-debat-sur-l-ia-sans-grande-surprise-et-avec-peu-de-candidats_6782611_823448.html",
       "published": "2026-09-25",
-      "summary": "Que ce soit sur la question du «génocide» à Gaza ou celle de «la paix» en Ukraine, les deux prétendants à l’investiture socialiste pour la présidentielle devraient rééquilibrer leurs positions respectives.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
+      "summary": "A part Olivier Faure, aucun candidat n’avait fait le déplacement dans la cité phocéenne pour cette discussion sur un sujet pourtant présenté comme « central » par plusieurs partis",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "parti-socialiste",
         "label": "Socialiste / social-démocrate",
         "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : ségolène royal, segolene royal, glucksmann"
-      }
-    },
-    {
-      "title": "Au Brésil, Lula interdit les paris sportifs en ligne à quelques jours de la présidentielle, dénonçant une « maladie » qui gagne les foyers",
-      "url": "https://www.lemonde.fr/international/article/2026/09/26/au-bresil-lula-interdit-les-paris-sportifs-en-ligne-a-quelques-jours-de-la-presidentielle-denoncant-une-maladie-qui-gagne-les-foyers_6782740_3210.html",
-      "published": "2026-09-25",
-      "summary": "Alors que la campagne entre dans sa dernière ligne droite avant le premier tour du 4 octobre, le sujet des paris en ligne est devenu un enjeu pour le président sortant, qui dénonce une source d’endettement massif pour les familles.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Sénatoriales 2026 : au Salon des maires des Bouches-du-Rhône, les candidats s’attendent à un scrutin « très serré »",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/25/senatoriales-2026-au-salon-des-maires-des-bouches-du-rhone-les-candidats-s-attendent-a-un-scrutin-tres-serre_6782619_823448.html",
-      "published": "2026-09-25",
-      "summary": "Les déchirures à droite, la division à gauche au sujet de la Métropole Aix-Marseille-Provence et la guerre fratricide à l’extrême droite ont entraîné une multiplication des listes qui rend d’autant plus incertain le résultat du scrutin, à deux jours du vote.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Agences de l’Etat : le Sénat relance le chantier de la rationalisation, le gouvernement aussi",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/25/agences-de-l-etat-le-senat-relance-le-chantier-de-la-rationalisation-le-gouvernement-aussi_6782615_823448.html",
-      "published": "2026-09-25",
-      "summary": "Alors que le Sénat travaille à la suppression de plusieurs agences de l’Etat, avec une proposition de loi qui pourrait être examinée début 2027, le gouvernement s’apprête, lui, à lancer une revue des missions des différents opérateurs.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : faure"
       }
     },
     {
@@ -407,19 +455,35 @@
       }
     },
     {
-      "title": "Yannick Jadot suspendu temporairement des Ecologistes après avoir soutenu Raphaël Glucksmann pour la présidentielle",
-      "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/yannick-jadot-suspendu-temporairement-des-ecologistes-pour-son-soutien-a-raphael-glucksmann_8209919.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Sénatoriales : l’insubmersible Gérard Larcher, rempart à l’extrême droite ?",
+      "url": "https://www.liberation.fr/politique/senatoriales-linsubmersible-gerard-larcher-rempart-a-lextreme-droite-20260925_C3OJVEKEGNHSREDDKSEA245LCI/",
       "published": "2026-09-25",
-      "summary": "Le sénateur écologiste avait estimé à la fin de l'été que le leader de Place publique était \"le mieux placé\", aux dépends de Marine Tondelier, la candidate officielle de son parti.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
+      "summary": "Le sénateur brigue un sixième mandat à la tête du palais du Luxembourg, renouvelé pour moitié dimanche 27 septembre, et s’inquiète de l’arrivée entre ses murs d’un groupe RN comme d’une possible élection de Marine Le Pen à la présidentielle.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+      }
+    },
+    {
+      "title": "Ségolène Royal et Raphaël Glucksmann, suivez l’exemple de Pedro Sánchez",
+      "url": "https://www.liberation.fr/politique/segolene-royal-et-raphael-glucksmann-suivez-lexemple-de-pedro-sanchez-20260925_SWGFISDOMVHJ5J5TOFVMXFISGU/",
+      "published": "2026-09-25",
+      "summary": "Que ce soit sur la question du «génocide» à Gaza ou celle de «la paix» en Ukraine, les deux prétendants à l’investiture socialiste pour la présidentielle devraient rééquilibrer leurs positions respectives.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : ségolène royal, segolene royal, glucksmann"
       }
     },
     {
@@ -439,67 +503,19 @@
       }
     },
     {
-      "title": "La mise en garde du pape Léon XIV sur l'IA",
-      "url": "https://www.franceinfo.fr/monde/vatican/pape-leon-xiv/leon-xiv-en-france-retrouvez-l-essentiel/la-mise-en-garde-du-pape-leon-xiv-sur-l-ia_8209553.html#xtor=RSS-3-%5Bgeneral%5D",
+      "title": "Raphaël Glucksmann en campagne dans le Nord et le Pas-de-Calais : «On n’abandonnera aucune terre au RN»",
+      "url": "https://www.liberation.fr/politique/raphael-glucksmann-en-campagne-dans-le-nord-et-le-pas-de-calais-on-nabandonnera-aucune-terre-au-rn-20260925_QDA3TTNOQBGEPJZES7E3V4KQMQ/",
       "published": "2026-09-25",
-      "summary": "Lors de son discours au Palais de l'Elysée, vendredi 25 septembre, Léon XIV est revenu sur le dossier épineux de l'intelligence artificielle. Il met en garde contre un \"paradis de machines\".",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Municipales : le tribunal administratif annule la victoire du RN à Montargis",
-      "url": "https://www.la-croix.com/politique/municipales-le-tribunal-administratif-annule-la-victoire-du-rn-a-montargis-20260924",
-      "published": "2026-09-24",
-      "summary": "Le tribunal administratif d’Orléans a annulé, jeudi 24 septembre, la victoire du Rassemblement national aux élections municipales de Montargis, en raison de la diffusion d’une vidéo jugée diffamatoire quelques jours avant le second tour.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
+      "summary": "En déplacement ce vendredi 25 septembre dans les Hauts-de-France, le candidat à la primaire de gauche a joué la carte sociale pour contester l’hégémonie de Marine Le Pen dans le territoire.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "le-pen",
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : « Sans être là, Jean-Luc Mélenchon a parasité le premier débat de la primaire sociale-démocrate »",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/24/presidentielle-2027-sans-etre-la-jean-luc-melenchon-a-parasite-le-premier-debat-de-la-primaire-sociale-democrate_6781568_823448.html",
-      "published": "2026-09-24",
-      "summary": "La question des alliances futures entre le Parti socialiste et La France insoumise a largement accentué les divisions entre les candidats de la primaire à gauche lors de leur premier débat télévisé, analyse Abel Mestre, éditorialiste au « Monde ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : la primaire socialiste et sociale-démocrate devrait dépasser les 90 000 inscrits",
-      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-la-primaire-socialiste-et-sociale-democrate-devrait-depasser-les-90-000-inscrits-20260924_2QHMTPQ6GFACHLH5PTG27NJSPA/",
-      "published": "2026-09-24",
-      "summary": "Patrick Mennucci, président de la Commission d’organisation du scrutin prévu les 9-10 et 16 au 17 octobre, a annoncé ce jeudi 24 septembre que la plateforme dédiée «a enregistré sa plus importante journée» au lendemain du premier débat entre les candidats.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
@@ -519,22 +535,6 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : le Rassemblement national toujours en quête d’un prêt bancaire",
-      "url": "https://www.la-croix.com/politique/presidentielle-2027-le-rassemblement-national-toujours-en-quete-d-un-pret-bancaire-20260922",
-      "published": "2026-09-22",
-      "summary": "L’achoppement d’un mécanisme de prêt garanti par l’État à destination des candidats à la présidentielle est une mauvaise nouvelle pour Marine Le Pen, qui peine toujours à financer sa campagne.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
-      }
-    },
-    {
       "title": "Six mois après sa victoire aux municipales, Éric Ciotti impose sa méthode à Nice",
       "url": "https://www.la-croix.com/politique/six-mois-apres-sa-victoire-aux-municipales-eric-ciotti-impose-sa-methode-a-nice-20260922",
       "published": "2026-09-22",
@@ -551,19 +551,19 @@
       }
     },
     {
-      "title": "Au RN, l’autre campagne « présidentielle » de Jordan Bardella",
-      "url": "https://www.lefigaro.fr/politique/au-rn-l-autre-campagne-presidentielle-de-jordan-bardella-20260920",
-      "published": "2026-09-20",
-      "summary": "RÉCIT - Seul candidat à la tête du parti à la flamme, le patron du Rassemblement national se prépare à être reconduit à la faveur d’un congrès prévu fin octobre.",
+      "title": "«Une stratégie de reconquête» : Les Républicains ouvrent déjà le chantier des législatives de 2027",
+      "url": "https://www.lefigaro.fr/politique/une-strategie-de-reconquete-les-republicains-ouvrent-deja-le-chantier-des-legislatives-de-2027-20260921",
+      "published": "2026-09-21",
+      "summary": "DÉCRYPTAGE - Stratégie, calendrier, ligne politique… Sous l’impulsion de Bruno Retailleau, le parti LR lance un « travail de fourmi, circo par circo » et assume l’ambition de prendre des sièges à la concurrence, d’Horizons au RN.",
       "source_id": "lefigaro-politique",
       "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, bardella, rassemblement national"
+        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
       }
     }
   ]
