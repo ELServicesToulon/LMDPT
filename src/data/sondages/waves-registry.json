@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T04:47:14.628Z",
+  "updated": "2026-09-28T16:18:54.339Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -131,6 +131,91 @@
       "source_id": "commission-sondages",
       "scores": {},
       "raw_snippet": "Notice Commission : TOLUNA HARRIS INTERACTIVE (29 mai) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-harris-28092026",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "philippe": 16,
+        "attal": 13,
+        "melenchon": 17,
+        "glucksmann": 11,
+        "retailleau": 10,
+        "zemmour": 5,
+        "tondelier": 5,
+        "roussel": 3,
+        "hollande": 8,
+        "dupont-aignan": 2,
+        "arthaud": 1
+      },
+      "raw_snippet": "Dernier sondage HARRIS INTERACTIVE 28/09/2026 1er Tour · Hypothèse N°1 35% LE PEN 17% MÉLENCHON 13% PHILIPPE 10% GLUCKSMANN 7% RETAILLEAU 5% ZEMMOUR 5% ATTAL 3% TONDELIER 2% ROUSSEL 2% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 35% LE PEN 18% MÉLENCHON 16% PHILIPPE 10% GLU",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-28092026-h1",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 1 — 35% 13% 17% 5% 10% 7% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-28092026-h2",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 3 — 36% — 17% 12% 11% 10% — — — — — — — — — 6% 3% — 2% — — — 2% 1% — 28/",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-28092026-h3",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 3 — 36% — 17% 12% 11% 10% — — — — — — — — — 6% 3% — 2% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 4 — 35% 16% 18% — — 9% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 28/0",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-28092026-h4",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 4 — 35% 16% 18% — — 9% — 7% — — — — — — — 5% 4% — 3% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 5 — 36% — 17% 13% — 10% — 8% — — — — — — — 5% 5% — 3% — — — 2% 1% — 24/09",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-harris-28092026-h5",
+      "firm": "Harris Interactive / Toluna Harris",
+      "firm_id": "harris",
+      "fieldwork": "28/09/2026",
+      "published_hint": "28/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 5 — 36% — 17% 13% — 10% — 8% — — — — — — — 5% 5% — 3% — — — 2% 1% — 24/09/2026 CLUSTER17 1 — 31% 19% 19% — 12% 7.5% — — — — — — — — — 3.5% 2.5% — 2% — — — 3% 0.5% — 24/09",
       "metric": "intentions_vote"
     },
     {
