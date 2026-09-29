@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-28T16:18:54.339Z",
+  "fetched_at": "2026-09-29T16:16:02.680Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 11,
@@ -471,18 +471,9 @@
       "pct": 36
     }
   ],
-  "movements": [
-    {
-      "at": "2026-09-28T16:18:54.339Z",
-      "kind": "new_wave",
-      "firm": "Harris Interactive / Toluna Harris",
-      "comment": "Harris Interactive / Toluna Harris (28/09/2026) : le pen en tête à 36 % (intentions de vote).",
-      "wave_id": "epoc-harris-28092026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php"
-    }
-  ],
+  "movements": [],
   "brief": [
-    "Harris Interactive / Toluna Harris (28/09/2026) : le pen en tête à 36 % (intentions de vote)."
+    "Scan 2026-09-29T16:16 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK)."
   ],
   "errors": [
     {
