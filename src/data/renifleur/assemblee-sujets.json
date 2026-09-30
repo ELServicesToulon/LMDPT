@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-29T04:11:03.127Z",
+  "generated_at": "2026-09-30T04:11:09.861Z",
   "source": "src/data/renifleur/latest.json",
   "window_days": 7,
-  "window_from": "2026-09-23",
-  "window_to": "2026-09-29",
+  "window_from": "2026-09-24",
+  "window_to": "2026-09-30",
   "min_confidence": 0.6,
-  "articles_in_window": 33,
-  "lead": "Sur 33 articles de presse du 2026-09-23 au 2026-09-29, le sujet le plus cité est Institutions / élections (18 articles).",
+  "articles_in_window": 34,
+  "lead": "Sur 34 articles de presse du 2026-09-24 au 2026-09-30, le sujet le plus cité est Institutions / élections (17 articles).",
   "disclaimer": "Source secondaire (RSS presse). Part de la presse collectée, pas une intention de vote. Ce n’est pas un classement de candidats ni un sondage.",
   "doe": "La démocratie avant l’élimination — on montre qui occupe quel sujet dans la presse, pas qui gagne.",
   "bancs": [
@@ -14,26 +14,20 @@
       "theme_id": "institutions",
       "theme_label": "Institutions / élections",
       "theme_color": "#495057",
-      "articles": 18,
-      "pct_of_window": 54.5,
+      "articles": 17,
+      "pct_of_window": 50,
       "seats": [
         {
           "candidate_slug": "le-pen",
           "candidate_label": "Le Pen / RN",
           "candidate_color": "#0d378a",
-          "articles": 12
+          "articles": 10
         },
         {
-          "candidate_slug": "ecolo",
-          "candidate_label": "Écologiste",
-          "candidate_color": "#00c000",
-          "articles": 1
-        },
-        {
-          "candidate_slug": "melenchon",
-          "candidate_label": "Mélenchon / LFI",
-          "candidate_color": "#cc2443",
-          "articles": 1
+          "candidate_slug": "retailleau",
+          "candidate_label": "Retailleau / LR",
+          "candidate_color": "#0066cc",
+          "articles": 2
         },
         {
           "candidate_slug": "parti-socialiste",
@@ -42,86 +36,79 @@
           "articles": 1
         }
       ],
-      "unnamed_articles": 3
+      "unnamed_articles": 4
     },
     {
       "theme_id": "non-classe",
       "theme_label": "Non classé",
       "theme_color": "#9aa0a6",
       "articles": 7,
-      "pct_of_window": 21.2,
+      "pct_of_window": 20.6,
       "seats": [
         {
           "candidate_slug": "barrot",
           "candidate_label": "Barrot / centre",
           "candidate_color": "#ff9900",
           "articles": 1
+        },
+        {
+          "candidate_slug": "le-pen",
+          "candidate_label": "Le Pen / RN",
+          "candidate_color": "#0d378a",
+          "articles": 1
         }
       ],
-      "unnamed_articles": 6
+      "unnamed_articles": 5
     },
     {
       "theme_id": "retraites",
       "theme_label": "Retraites",
       "theme_color": "#a0522d",
-      "articles": 3,
-      "pct_of_window": 9.1,
+      "articles": 6,
+      "pct_of_window": 17.6,
       "seats": [
         {
           "candidate_slug": "philippe",
           "candidate_label": "Philippe / Horizons",
           "candidate_color": "#0001b8",
-          "articles": 1
-        },
-        {
-          "candidate_slug": "retailleau",
-          "candidate_label": "Retailleau / LR",
-          "candidate_color": "#0066cc",
-          "articles": 1
+          "articles": 6
         }
       ],
+      "unnamed_articles": 0
+    },
+    {
+      "theme_id": "climat",
+      "theme_label": "Climat / énergie",
+      "theme_color": "#2d6a4f",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [],
+      "unnamed_articles": 1
+    },
+    {
+      "theme_id": "emploi",
+      "theme_label": "Emploi / travail",
+      "theme_color": "#8b6914",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [],
       "unnamed_articles": 1
     },
     {
       "theme_id": "laicite",
       "theme_label": "Laïcité / religion",
       "theme_color": "#6b5b8c",
-      "articles": 2,
-      "pct_of_window": 6.1,
-      "seats": [],
-      "unnamed_articles": 2
-    },
-    {
-      "theme_id": "ia",
-      "theme_label": "Intelligence artificielle",
-      "theme_color": "#2a6f7a",
       "articles": 1,
-      "pct_of_window": 3,
-      "seats": [
-        {
-          "candidate_slug": "parti-socialiste",
-          "candidate_label": "Socialiste / social-démocrate",
-          "candidate_color": "#ff8080",
-          "articles": 1
-        }
-      ],
-      "unnamed_articles": 0
-    },
-    {
-      "theme_id": "pouvoir-achat",
-      "theme_label": "Pouvoir d’achat",
-      "theme_color": "#c45c26",
-      "articles": 1,
-      "pct_of_window": 3,
+      "pct_of_window": 2.9,
       "seats": [],
       "unnamed_articles": 1
     },
     {
-      "theme_id": "ukraine",
-      "theme_label": "Ukraine / Europe",
-      "theme_color": "#3d5a80",
+      "theme_id": "securite",
+      "theme_label": "Sécurité",
+      "theme_color": "#1e3a5f",
       "articles": 1,
-      "pct_of_window": 3,
+      "pct_of_window": 2.9,
       "seats": [
         {
           "candidate_slug": "parti-socialiste",
