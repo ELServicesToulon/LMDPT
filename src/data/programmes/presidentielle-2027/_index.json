@@ -13,15 +13,15 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
-          "title": "Crise du logement : Marine Le Pen, Gabriel Attal et Jean-Luc Mélenchon détaillent leurs propositions à Batimat, le salon de la construction",
-          "url": "https://www.lemonde.fr/societe/article/2026/09/29/crise-du-logement-marine-le-pen-gabriel-attal-et-jean-luc-melenchon-detaillent-leurs-propositions-a-batimat-le-salon-de-la-construction_6785568_3224.html",
-          "published": "2026-09-29",
+          "title": "Présidentielle 2027 : Gabriel Attal critique le projet de réforme des retraites d’Edouard Philippe, jugeant qu’il s’agit de « mesures de soins palliatifs »",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/30/presidentielle-2027-gabriel-attal-critique-le-projet-de-reforme-des-retraites-d-edouard-philippe-jugeant-qu-il-s-agit-de-mesures-de-soins-palliatifs_6786037_823448.html",
+          "published": "2026-09-30",
           "detected_at": "2026-09-30"
         },
         {
-          "title": "Crise du logement : ces candidats à la présidentielle qui promettent de renverser la table",
-          "url": "https://www.la-croix.com/politique/crise-du-logement-ces-candidats-a-la-presidentielle-qui-promettent-de-renverser-la-table-20260929",
-          "published": "2026-09-29",
+          "title": "Retraites : Gabriel Attal trouve que la réforme proposée par Edouard Philippe relève «des soins palliatifs»",
+          "url": "https://www.liberation.fr/politique/retraites-gabriel-attal-trouve-que-la-reforme-proposee-par-edouard-philippe-releve-des-soins-palliatifs-20260930_PBMULG7UX5HWJHGQ5GJ2HXN5RU/",
+          "published": "2026-09-30",
           "detected_at": "2026-09-30"
         }
       ]
@@ -33,7 +33,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Bruno Retailleau : « Le problème de l’Europe, c’est qu’elle a donné le sentiment aux peuples de contourner la démocratie »",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/30/bruno-retailleau-le-probleme-de-l-europe-c-est-qu-elle-a-donne-le-sentiment-aux-peuples-de-contourner-la-democratie_6785971_823448.html",
+          "published": "2026-09-30",
+          "detected_at": "2026-09-30"
+        },
+        {
+          "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
+          "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
+          "published": "2026-09-23",
+          "detected_at": "2026-09-30"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -45,15 +59,15 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Edouard Philippe dévoile son projet de retraite à 65 ans et 45 annuités",
-          "url": "https://www.lemonde.fr/politique/article/2026/09/29/presidentielle-2027-edouard-philippe-devoile-son-projet-de-retraite-a-65-ans-et-45-annuites_6785692_823448.html",
-          "published": "2026-09-29",
+          "title": "Présidentielle 2027 : Gabriel Attal critique le projet de réforme des retraites d’Edouard Philippe, jugeant qu’il s’agit de « mesures de soins palliatifs »",
+          "url": "https://www.lemonde.fr/politique/article/2026/09/30/presidentielle-2027-gabriel-attal-critique-le-projet-de-reforme-des-retraites-d-edouard-philippe-jugeant-qu-il-s-agit-de-mesures-de-soins-palliatifs_6786037_823448.html",
+          "published": "2026-09-30",
           "detected_at": "2026-09-30"
         },
         {
-          "title": "Présidentielle 2027 : 67 ans et 80 km/h, les deux nombres maudits dont Édouard Philippe veut se débarrasser",
-          "url": "https://www.lefigaro.fr/politique/presidentielle-2027-67-ans-et-80-km-h-les-deux-nombres-maudits-dont-edouard-philippe-veut-se-debarrasser-20260928",
-          "published": "2026-09-29",
+          "title": "Retraites : Gabriel Attal trouve que la réforme proposée par Edouard Philippe relève «des soins palliatifs»",
+          "url": "https://www.liberation.fr/politique/retraites-gabriel-attal-trouve-que-la-reforme-proposee-par-edouard-philippe-releve-des-soins-palliatifs-20260930_PBMULG7UX5HWJHGQ5GJ2HXN5RU/",
+          "published": "2026-09-30",
           "detected_at": "2026-09-30"
         }
       ]
@@ -97,21 +111,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
-      "press_signals": [
-        {
-          "title": "Crise du logement : Marine Le Pen, Gabriel Attal et Jean-Luc Mélenchon détaillent leurs propositions à Batimat, le salon de la construction",
-          "url": "https://www.lemonde.fr/societe/article/2026/09/29/crise-du-logement-marine-le-pen-gabriel-attal-et-jean-luc-melenchon-detaillent-leurs-propositions-a-batimat-le-salon-de-la-construction_6785568_3224.html",
-          "published": "2026-09-29",
-          "detected_at": "2026-09-30"
-        },
-        {
-          "title": "Crise du logement : ces candidats à la présidentielle qui promettent de renverser la table",
-          "url": "https://www.la-croix.com/politique/crise-du-logement-ces-candidats-a-la-presidentielle-qui-promettent-de-renverser-la-table-20260929",
-          "published": "2026-09-29",
-          "detected_at": "2026-09-30"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html"
     },
     {
       "slug": "bardella",
@@ -129,21 +129,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "press_signals": [
-        {
-          "title": "Crise du logement : Marine Le Pen, Gabriel Attal et Jean-Luc Mélenchon détaillent leurs propositions à Batimat, le salon de la construction",
-          "url": "https://www.lemonde.fr/societe/article/2026/09/29/crise-du-logement-marine-le-pen-gabriel-attal-et-jean-luc-melenchon-detaillent-leurs-propositions-a-batimat-le-salon-de-la-construction_6785568_3224.html",
-          "published": "2026-09-29",
-          "detected_at": "2026-09-30"
-        },
-        {
-          "title": "Crise du logement : ces candidats à la présidentielle qui promettent de renverser la table",
-          "url": "https://www.la-croix.com/politique/crise-du-logement-ces-candidats-a-la-presidentielle-qui-promettent-de-renverser-la-table-20260929",
-          "published": "2026-09-29",
-          "detected_at": "2026-09-30"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
     },
     {
       "slug": "barrot",
@@ -168,7 +154,15 @@
       "name": "Raphaël Glucksmann",
       "affiliation": "Place publique",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : « Vous président », suivez dimanche soir la dernière rencontre des candidats avant le vote à la primaire de la gauche sociale-démocrate",
+          "url": "https://www.liberation.fr/forums/presidentielle-2027-vous-president-suivez-dimanche-soir-la-derniere-rencontre-des-candidats-avant-le-vote-a-la-primaire-de-la-gauche-sociale-democrate-20260930_JCEUJCTVN5C7FO4OAKERG6XTUQ/",
+          "published": "2026-09-30",
+          "detected_at": "2026-09-30"
+        }
+      ]
     },
     {
       "slug": "lisnard",
@@ -180,6 +174,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-09-30T04:11:08.434Z",
+  "veille_scan_at": "2026-09-30T18:50:12.648Z",
   "program_press_hits": 14
 }
