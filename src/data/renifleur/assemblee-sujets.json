@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:59:13.227Z",
+  "generated_at": "2026-10-02T19:14:40.834Z",
   "source": "src/data/renifleur/latest.json",
   "window_days": 7,
   "window_from": "2026-09-26",
@@ -21,7 +21,7 @@
           "candidate_slug": "le-pen",
           "candidate_label": "Le Pen / RN",
           "candidate_color": "#0d378a",
-          "articles": 6
+          "articles": 7
         },
         {
           "candidate_slug": "retailleau",
@@ -34,9 +34,15 @@
           "candidate_label": "Mélenchon / LFI",
           "candidate_color": "#cc2443",
           "articles": 1
+        },
+        {
+          "candidate_slug": "parti-socialiste",
+          "candidate_label": "Socialiste / social-démocrate",
+          "candidate_color": "#ff8080",
+          "articles": 1
         }
       ],
-      "unnamed_articles": 9
+      "unnamed_articles": 7
     },
     {
       "theme_id": "ecole",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:59:11.383Z",
+  "generated_at": "2026-10-02T19:14:39.244Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
@@ -155,9 +155,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 8.6,
-        "count": 3,
-        "delta_pct": -26.3
+        "observed_pct": 11.4,
+        "count": 4,
+        "delta_pct": -23.5
       },
       {
         "bloc": "centre-droit",
@@ -178,9 +178,9 @@
           "parti-socialiste"
         ],
         "target_pct": 14.7,
-        "observed_pct": 20,
-        "count": 7,
-        "delta_pct": 5.3
+        "observed_pct": 22.9,
+        "count": 8,
+        "delta_pct": 8.2
       },
       {
         "bloc": "gauche-sociale-democrate",
@@ -252,7 +252,7 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 18
+      "pluraliste": 16
     },
     "top_hosts": [
       {
@@ -299,7 +299,7 @@
   },
   "after": {
     "item_count": 35,
-    "l1_deviation": 47.9,
+    "l1_deviation": 45,
     "observed": [
       {
         "bloc": "rn",
@@ -308,9 +308,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 17.1,
-        "count": 6,
-        "delta_pct": -17.8
+        "observed_pct": 20,
+        "count": 7,
+        "delta_pct": -14.9
       },
       {
         "bloc": "centre-droit",
@@ -405,7 +405,7 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 16
+      "pluraliste": 15
     },
     "top_hosts": [
       {
@@ -414,24 +414,24 @@
         "share_pct": 31.4
       },
       {
-        "host": "liberation.fr",
-        "count": 6,
-        "share_pct": 17.1
-      },
-      {
         "host": "lefigaro.fr",
         "count": 5,
         "share_pct": 14.3
       },
       {
-        "host": "la-croix.com",
+        "host": "liberation.fr",
+        "count": 5,
+        "share_pct": 14.3
+      },
+      {
+        "host": "france24.com",
         "count": 4,
         "share_pct": 11.4
       },
       {
-        "host": "france24.com",
-        "count": 3,
-        "share_pct": 8.6
+        "host": "la-croix.com",
+        "count": 4,
+        "share_pct": 11.4
       },
       {
         "host": "franceinfo.fr",

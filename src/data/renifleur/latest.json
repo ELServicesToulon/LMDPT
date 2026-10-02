@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-02T18:59:11.383Z",
+  "fetched_at": "2026-10-02T19:14:39.244Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -71,10 +71,10 @@
       }
     },
     {
-      "title": "L'actu en dessin : Jordan Bardella accusé d'écrits antisémites, Marine Le Pen menace Mediapart",
-      "url": "https://www.france24.com/fr/france/20261002-l-actu-en-dessin-jordan-bardella-accus%C3%A9-d-%C3%A9crits-antis%C3%A9mites-marine-le-pen-menace-mediapart",
+      "title": "Vincent Duclert: \"la dédiabolisation du RN a littéralement volé en éclats\"",
+      "url": "https://www.france24.com/fr/%C3%A9missions/au-c%C5%93ur-de-l-info-l-invit%C3%A9/20261002-vincent-duclert-la-d%C3%A9diabolisation-du-rn-a-litt%C3%A9ralement-vol%C3%A9-en-%C3%A9clats",
       "published": "2026-10-02",
-      "summary": "À quelques mois de la présidentielle, l'affaire Bardella et la virulente riposte du RN contre Mediapart fragilisent l'image de normalisation cultivée par le parti d’extrême droite, et ravivent les inquiétudes sur son rapport à la presse.",
+      "summary": "La question de l'antisémitisme a percuté la campagne à la présidentielle, avec les révélations de Mediapart au sujet des écrits passés de Jordan Bardella. La dédiabolisation de l'extrême droite française n'était-elle qu'un leurre? Pourquoi cette persistance de l'antisémitisme au ",
       "source_id": "france24-france",
       "source_label": "France 24 — France",
       "source_type": "traditional",
@@ -83,7 +83,7 @@
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+        "rationale": "Proximité lexicale : rn, bardella"
       }
     },
     {
@@ -116,6 +116,22 @@
         "color": "#ffeb00",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : attal, gabriel attal"
+      }
+    },
+    {
+      "title": "L'actu en dessin : Jordan Bardella accusé d'écrits antisémites, Marine Le Pen menace Mediapart",
+      "url": "https://www.france24.com/fr/france/20261002-l-actu-en-dessin-jordan-bardella-accus%C3%A9-d-%C3%A9crits-antis%C3%A9mites-marine-le-pen-menace-mediapart",
+      "published": "2026-10-02",
+      "summary": "À quelques mois de la présidentielle, l'affaire Bardella et la virulente riposte du RN contre Mediapart fragilisent l'image de normalisation cultivée par le parti d’extrême droite, et ravivent les inquiétudes sur son rapport à la presse.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
@@ -199,19 +215,19 @@
       }
     },
     {
-      "title": "Dernier débat pour la primaire socialiste : quelle vie en rose ?",
-      "url": "https://www.liberation.fr/idees-et-debats/editorial/dernier-debat-pour-la-primaire-socialiste-quelle-vie-en-rose-20261002_PDXTOL4ZVRCCHGDLPZ54EFW2PE/",
+      "title": "Primaire socialiste et sociale-démocrate : le débat sur la refondation de la gauche s’invite dans la campagne",
+      "url": "https://www.liberation.fr/politique/primaire-socialiste-et-sociale-democrate-le-debat-sur-la-refondation-de-la-gauche-sinvite-dans-la-campagne-20261002_7VHE77FRNFAYPLQ6OP4NJYC74U/",
       "published": "2026-10-02",
-      "summary": "Les cinq candidats à l’investiture pour la présidentielle se retrouvent dimanche soir sur BFM, en partenariat avec «Libé». Avec une question, derrière les propositions et les divisions : qui pourra concurrencer Mélenchon ?",
+      "summary": "Le troisième et dernier débat télévisé avant la primaire est attendu dimanche 4 octobre lors d’une émission spéciale sur BFM TV, en partenariat avec «Libération». Au-delà de l’enjeu présidentiel, les candidats divergent sur la manière de refonder le camp socialiste et sur ses all",
       "source_id": "liberation-politique",
       "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon"
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : socialiste, primaire socialiste"
       }
     },
     {
@@ -247,6 +263,22 @@
       }
     },
     {
+      "title": "Dernier débat pour la primaire socialiste : quelle vie en rose ?",
+      "url": "https://www.liberation.fr/idees-et-debats/editorial/dernier-debat-pour-la-primaire-socialiste-quelle-vie-en-rose-20261002_PDXTOL4ZVRCCHGDLPZ54EFW2PE/",
+      "published": "2026-10-02",
+      "summary": "Les cinq candidats à l’investiture pour la présidentielle se retrouvent dimanche soir sur BFM, en partenariat avec «Libé». Avec une question, derrière les propositions et les divisions : qui pourra concurrencer Mélenchon ?",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon"
+      }
+    },
+    {
       "title": "Lycées bloqués : quand la colère étudiante change de nature",
       "url": "https://www.france24.com/fr/vid%C3%A9o/20261002-lyc%C3%A9es-bloqu%C3%A9s-quand-la-col%C3%A8re-%C3%A9tudiante-change-de-nature",
       "published": "2026-10-02",
@@ -260,22 +292,6 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "A gauche, une primaire qui ressemble de plus en plus à un congrès du PS",
-      "url": "https://www.liberation.fr/politique/elections/a-gauche-une-primaire-qui-ressemble-de-plus-en-plus-a-un-congres-du-ps-20261002_GH7YNGBNIZCGNNRQ2GLLHEV4RA/",
-      "published": "2026-10-02",
-      "summary": "En faisant du rapport à LFI le sujet central de leurs débats, dont celui du jeudi 1er octobre, les candidats à l’investiture socialiste semblent moins concernés par l’Elysée que par les futurs contours de leur camp.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : lfi"
       }
     },
     {
@@ -327,22 +343,6 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : vive le populisme électoral ! par Denis Pingaud",
-      "url": "https://www.liberation.fr/idees-et-debats/tribunes/presidentielle-2027-vive-le-populisme-electoral-par-denis-pingaud-20261002_SO7XJM74WVFZPNNUXRKE3DSHGY/",
-      "published": "2026-10-02",
-      "summary": "Que ce soit le maire de New York, la nouvelle édile de Berlin Elif Eralp ou le Premier ministre hongrois, tous ont su incarner leur campagne de façon moins idéologique, moins verticale, en lien avec les besoins quotidiens des électeurs. Qu’attendent nos candidats pour s’en inspir",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
       "title": "Blocage des lycées : le gouvernement pris au piège d’un mouvement aux aspirations multiples",
       "url": "https://www.la-croix.com/politique/blocage-des-lycees-le-gouvernement-pris-au-piege-d-un-mouvement-aux-aspirations-multiples-20261002",
       "published": "2026-10-02",
@@ -375,10 +375,10 @@
       }
     },
     {
-      "title": "Primaire sociale-démocrate : des candidats irréconciliables… et ce n’est peut-être pas un drame",
-      "url": "https://www.liberation.fr/politique/primaire-sociale-democrate-des-candidats-irreconciliables-et-ce-nest-peut-etre-pas-un-drame-20261002_42GMG5FUDJFRNCXBX7WPTLJ5UY/",
+      "title": "A gauche, une primaire qui ressemble de plus en plus à un congrès du PS",
+      "url": "https://www.liberation.fr/politique/elections/a-gauche-une-primaire-qui-ressemble-de-plus-en-plus-a-un-congres-du-ps-20261002_GH7YNGBNIZCGNNRQ2GLLHEV4RA/",
       "published": "2026-10-02",
-      "summary": "Le second débat des candidats, jeudi, a à nouveau souligné les profonds clivages autour du rapport à LFI. Si ce scrutin interne peine encore à emballer, on peut au moins se réjouir de voir le sujet clairement sur la table, et les électeurs appelés à le trancher.",
+      "summary": "En faisant du rapport à LFI le sujet central de leurs débats, dont celui du jeudi 1er octobre, les candidats à l’investiture socialiste semblent moins concernés par l’Elysée que par les futurs contours de leur camp.",
       "source_id": "liberation-politique",
       "source_label": "Libération — Politique",
       "source_type": "traditional",
