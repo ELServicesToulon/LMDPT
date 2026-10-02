@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
 import DebatePositions from '../../components/DebatePositions.astro';
 import DiscussionSection from '../../components/DiscussionSection.astro';
-import ShareBar from '../../components/ShareBar.astro';
 import { DEBATE_CATALOG, getDebate } from '../../lib/debates';
 
 export function getStaticPaths() {
@@ -18,33 +17,34 @@ if (!debate) {
 }
 ---
 
-<BaseLayout title="Débat" description={debate.context.slice(0, 160)} share={false}>
-  <DebateLiveBanner slot="lede" campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
-  {
-    debate.live_url?.trim() ? (
-      <p class="meta" slot="lede" style="margin-top: -1rem; margin-bottom: 1rem;">
-        <strong>Direct en cours :</strong>{' '}
-        <a href={debate.live_url} target="_blank" rel="noopener noreferrer">Rejoindre le direct YouTube →</a>
+<BaseLayout title={debate.question} description={debate.context.slice(0, 160)}>
+  <div slot="lede">
+    <DebateLiveBanner campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
+    {
+      debate.live_url?.trim() ? (
+        <p class="meta" style="margin-top: -1rem; margin-bottom: 1rem;">
+          <strong>Direct en cours :</strong>{' '}
+          <a href={debate.live_url} target="_blank" rel="noopener noreferrer">Rejoindre le direct YouTube →</a>
+        </p>
+      ) : null
+    }
+
+    <nav class="meta" aria-label="Fil d'Ariane">
+      <a href="/debats">Débats</a> → {debate.slug}
+    </nav>
+
+    <section>
+      <h1>{debate.question}</h1>
+      <p class="meta">
+        <time datetime={debate.date}>
+          {new Date(debate.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+        </time>
+        {' '}·{' '}
+        {debate.status === 'ouvert' ? 'Débat ouvert' : 'Débat clos'}
       </p>
-    ) : null
-  }
-
-  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/debats">Débats</a> → {debate.slug}
-  </nav>
-
-  <section slot="lede">
-    <h1>{debate.question}</h1>
-    <p class="meta">
-      <time datetime={debate.date}>
-        {new Date(debate.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
-      </time>
-      {' '}·{' '}
-      {debate.status === 'ouvert' ? 'Débat ouvert' : 'Débat clos'}
-    </p>
-    <p>{debate.context}</p>
-    <ShareBar title={debate.question} />
-  </section>
+      <p>{debate.context}</p>
+    </section>
+  </div>
 
   <section>
     <h3>Positions</h3>
