@@ -8,7 +8,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import StickyToc from '../../components/StickyToc.astro';
 import { DOE_FR } from '../../lib/doe';
 import data from '../../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
+import { getAnalysis } from '../../lib/analyses';
 
+const shareDescription =
+  getAnalysis(data.slug)?.description ??
+  'Enquête : le triangle énergétique entre l’Europe, l’Algérie et la Russie, dans le prolongement de la guerre en Ukraine.';
 const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 const seedPlanted = new Date(data.seed_planted).toLocaleDateString('fr-FR', { dateStyle: 'long' });
@@ -27,17 +31,17 @@ const tocItems = [
 
 <BaseLayout
   title={data.title}
-  description="Enquête prospective : le triangle énergétique Europe–Algérie–Russie, à l’horizon de la haute intensité. Scénarios A–E selon l’arbre oracle iarbre (définition HI stricte) ; l’interface web n’est qu’un signal secondaire."
+  description={shareDescription}
   type="article"
   keywords="Ukraine, énergie, gaz, Algérie, Russie, Europe, iarbre, haute intensité, REPowerEU, Transmed, Medgaz, LMDPT"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
     {' → '}
     {data.title}
   </nav>
 
-  <section class="enq-intro" aria-labelledby="enq-title">
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
     <p class="eyebrow">{data.eyebrow}</p>
     <h1 id="enq-title">{data.title}</h1>
     <p class="meta">

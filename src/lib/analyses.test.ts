@@ -69,6 +69,9 @@ describe('analyses', () => {
     expect(getAnalysis('ukraine-energie-triangle-europe-algerie-russie')?.title).toBe(
       ukraineEnergie.title,
     );
+    const ukraineShare = getAnalysis('ukraine-energie-triangle-europe-algerie-russie')?.description ?? '';
+    expect(ukraineShare).toMatch(/hypothèses/);
+    expect(ukraineShare).not.toMatch(/oracle|iarbre|HI stricte|signal secondaire/i);
     expect(ukraineEnergie.oracle_url).toBe('https://iarbre.org');
     expect(ukraineEnergie.oracle_citation).toMatch(/définition HI stricte/);
     expect(ukraineEnergie.hi_definition).toMatch(/Affrontement armé/);

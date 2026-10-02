@@ -55,6 +55,8 @@ describe('editorial covers', () => {
       title: 'Nouvelle analyse',
       description: 'Texte de test',
       date: '2026-10-01',
+      published: '2026-10-01',
+      updated: '2026-10-01',
       href: '/analyses/nouvelle-analyse-test',
       cover: {
         src: '/illustrations/unes/analyses/nouvelle-analyse-test.jpg',

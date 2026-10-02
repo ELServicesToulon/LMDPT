@@ -4,8 +4,11 @@ import {
   organizationJsonLd,
   websiteJsonLd,
   webPageJsonLd,
+  socialTitleFrom,
+  SOCIAL_TITLE_MAX,
   DEFAULT_DESCRIPTION,
 } from './seo';
+import { ANALYSIS_CATALOG } from './analyses';
 
 describe('pageMeta', () => {
   it('builds canonical and og image URLs', () => {
@@ -18,6 +21,9 @@ describe('pageMeta', () => {
     expect(meta.canonical).toBe('https://lmdpt.iarbre.org/atlas/');
     expect(meta.ogImage).toBe('https://lmdpt.iarbre.org/brand/og-default.png');
     expect(meta.fullTitle).toContain('Atlas');
+    expect(meta.fullTitle).toContain('Le Média du Premier Tour');
+    expect(meta.socialTitle).toBe('Atlas');
+    expect(meta.socialTitle).not.toContain('—');
     expect(meta.description).toBe('Résultats 1er tour');
     expect(meta.robots).toContain('index');
     expect(meta.keywords).toContain('premier tour');
@@ -31,6 +37,27 @@ describe('pageMeta', () => {
     });
     expect(meta.description).toContain('démocratie avant l’élimination');
     expect(meta.fullTitle).toContain('Le Média du Premier Tour');
+    expect(meta.socialTitle).toBe('Le Média du Premier Tour');
+    expect(meta.socialTitle.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
+  });
+
+  it('raccourcit les titres sociaux sans le suffixe du site', () => {
+    const long = 'Trump, garde-fous de l’IA et Anthropic : quand le président se dit la seule règle';
+    const meta = pageMeta({
+      title: long,
+      siteUrl: 'https://lmdpt.iarbre.org',
+      pathname: '/analyses/trump-ia-guardrails-anthropic',
+      type: 'article',
+    });
+    expect(meta.fullTitle).toContain('— Le Média du Premier Tour');
+    expect(meta.socialTitle).not.toContain('Le Média du Premier Tour');
+    expect(meta.socialTitle.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
+    expect(socialTitleFrom(long).endsWith('…')).toBe(true);
+    for (const analysis of ANALYSIS_CATALOG) {
+      const social = socialTitleFrom(analysis.title);
+      expect(social.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
+      expect(social).not.toMatch(/— Le Média du Premier Tour/);
+    }
   });
 
   it('noindex when requested', () => {
@@ -69,5 +96,27 @@ describe('JSON-LD', () => {
     });
     expect(page['@type']).toBe('Article');
     expect(page.url).toContain('alerte-citoyenne');
+    expect(page.author).toEqual({
+      '@type': 'Organization',
+      name: 'Le Média du Premier Tour',
+      url: 'https://lmdpt.iarbre.org/',
+    });
+  });
+
+  it('ajoute les dates d’article sans inventer une personne', () => {
+    const page = webPageJsonLd({
+      siteUrl: 'https://lmdpt.iarbre.org',
+      title: 'Trump, garde-fous de l’IA',
+      description: DEFAULT_DESCRIPTION,
+      canonical: 'https://lmdpt.iarbre.org/analyses/trump-ia-guardrails-anthropic/',
+      ogImage: 'https://lmdpt.iarbre.org/illustrations/unes/analyses/trump-ia-guardrails-anthropic.jpg',
+      type: 'article',
+      datePublished: '2026-09-18',
+      dateModified: '2026-09-20',
+    });
+    expect(page.datePublished).toBe('2026-09-18');
+    expect(page.dateModified).toBe('2026-09-20');
+    expect(page.author?.['@type']).toBe('Organization');
+    expect(JSON.stringify(page.author)).not.toMatch(/Person/);
   });
 });

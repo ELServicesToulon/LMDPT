@@ -11,6 +11,10 @@ export interface AnalysisSummary {
   title: string;
   description: string;
   date: string;
+  /** Rédaction (ISO). Défaut : `date`. */
+  published?: string;
+  /** Mise à jour (ISO). Défaut : `date`. */
+  updated?: string;
   /** Route Astro sans slash final */
   href: string;
   /** Croquis dédié — fichier unique, jamais partagé avec un autre texte. */
@@ -66,6 +70,8 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     description:
       'Le 14 septembre 2026, Trump réduit les garde-fous de l’IA à la personne du président et cible Anthropic / Dario Amodei. Qui tient le frein : une personne, ou une règle ?',
     date: trumpIa.updated,
+    published: trumpIa.date,
+    updated: trumpIa.updated,
     href: '/analyses/trump-ia-guardrails-anthropic',
     cover: uneCover(
       'trump-ia-guardrails-anthropic',
@@ -88,8 +94,10 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: ukraineEnergie.slug,
     title: ukraineEnergie.title,
     description:
-      'Enquête prospective : le triangle énergétique Europe–Algérie–Russie, à l’horizon de la haute intensité. Scénarios A–E selon l’arbre oracle iarbre (HI stricte) ; l’interface web n’est qu’un signal secondaire.',
+      'Enquête : le triangle énergétique entre l’Europe, l’Algérie et la Russie, dans le prolongement de la guerre en Ukraine. Cinq scénarios sur douze à trente-six mois, présentés comme des hypothèses, pas comme une prévision.',
     date: ukraineEnergie.date,
+    published: ukraineEnergie.date,
+    updated: ukraineEnergie.updated,
     href: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
     cover: uneCover(
       'ukraine-energie-triangle-europe-algerie-russie',

@@ -34,13 +34,13 @@ const tocItems = [
   type="article"
   keywords="écoles de journalisme, CPNEJ, pluralisme, Charles Sapin, France Inter, ESJ Lille, Sciences Po, IJBA, Assemblée nationale, LMDPT"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
     {' → '}
     {data.title}
   </nav>
 
-  <section class="enq-intro" aria-labelledby="enq-title">
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
     <p class="eyebrow">{data.eyebrow}</p>
     <h1 id="enq-title">{data.title}</h1>
     <p class="meta">

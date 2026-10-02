@@ -75,6 +75,16 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   title={summary.title}
   description={is2027 ? `Projection pédagogique 2027 — pluralité du premier tour (hypothèses sondages). Données officielles à venir.` : `Résultats officiels du premier tour — ${summary.title}. Pluralité nationale documentée.`}
 >
+  {
+    is2027 && (
+      <p class="hypothesis-banner" role="note">
+        <strong>Hypothèse issue de sondages, pas une prévision.</strong> Les parts et les sièges
+        affichés ici viennent d’un agrégat de sondages publiés (Elabe, Verian, OpinionWay, Harris,
+        Ifop). Ce ne sont pas des voix officielles, ni un résultat du scrutin.
+      </p>
+    )
+  }
+
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/atlas">Atlas</a> → {summary.title}
   </nav>
@@ -348,6 +358,16 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 </BaseLayout>
 
 <style>
+  .hypothesis-banner {
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius, 8px);
+    background: var(--accent-soft);
+    font-size: 1.05rem;
+    line-height: 1.45;
+    max-width: 65ch;
+  }
   .plurality-note {
     margin: 0.75rem 0;
     padding: 0.5rem 0.75rem;

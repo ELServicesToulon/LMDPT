@@ -1,0 +1,59 @@
+---
+/**
+ * Fin d’article — relayer la page et suivre le compte du média.
+ */
+import { buildXIntentUrl } from '../lib/share';
+
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const shareOnX = buildXIntentUrl({ title, url });
+const followUrl = 'https://x.com/LMDuPremierTour';
+---
+
+<section class="share-follow" aria-labelledby="share-follow-title">
+  <h2 id="share-follow-title">Suivre et partager</h2>
+  <ul>
+    <li>
+      <a href={shareOnX} target="_blank" rel="noopener noreferrer">Partager sur X</a>
+    </li>
+    <li>
+      <a href={followUrl} target="_blank" rel="noopener noreferrer">Suivre @LMDuPremierTour</a>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .share-follow {
+    margin: 1.75rem 0 0.5rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    background: var(--accent-soft);
+    font-family: system-ui, sans-serif;
+    max-width: 65ch;
+  }
+  .share-follow h2 {
+    margin: 0 0 0.45rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-weight: 650;
+  }
+  .share-follow ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+  .share-follow a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 650;
+  }
+</style>

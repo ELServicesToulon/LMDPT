@@ -26,13 +26,13 @@ const tocItems = [
   type="article"
   keywords="LFI, BFMTV, pluralisme, Arcom, boycott médiatique, Sonia Mabrouk, temps de parole, pré-campagne 2027, LMDPT"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
     {' → '}
     {data.title}
   </nav>
 
-  <section class="enq-intro" aria-labelledby="enq-title">
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
     <p class="eyebrow">{data.eyebrow}</p>
     <h1 id="enq-title">{data.title}</h1>
     <p class="meta">

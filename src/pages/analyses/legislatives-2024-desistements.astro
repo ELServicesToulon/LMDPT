@@ -10,12 +10,12 @@ const t2 = new Date(analysis.date_second_tour).toLocaleDateString('fr-FR', { dat
   title="Législatives 2024 — désistements"
   description="Impact des désistements sur la distorsion entre premier et second tour — législatives 2024."
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → Législatives 2024
   </nav>
 
-  <section>
-    <h2>{analysis.title}</h2>
+  <section slot="lede">
+    <h1>{analysis.title}</h1>
     <p>
       Les législatives anticipées de 2024 illustrent à grande échelle le mécanisme que ce média
       documente : une pluralité massive au premier tour, puis une reconfiguration du second tour par

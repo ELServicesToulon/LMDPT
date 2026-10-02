@@ -49,13 +49,13 @@ const renifleurUpdated = renifleur.fetched_at
   title="Présidentielle 2027 — 18 avril, le prochain miroir"
   description="1er tour le 18 avril 2027. Calendrier officiel, veille factuelle, atlas et AN1T — zéro prédiction, zéro favori. La démocratie avant l’élimination."
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → Présidentielle 2027
   </nav>
 
-  <section>
+  <section slot="lede">
     <p class="eyebrow">Dossier vivant · 1er tour 18 avril 2027</p>
-    <h2>{analysis.title}</h2>
+    <h1>{analysis.title}</h1>
 
     <p>
       <strong>18 avril 2027</strong> : prochain miroir du pays. Ici : sources officielles,

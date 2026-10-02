@@ -63,7 +63,7 @@ const packPath = PACK_DATA.path;
             </p>
             <p class="tier-blurb">{t.blurb}</p>
             {
-              ready ? (
+              ready && (
                 <a
                   class="btn btn-primary"
                   href={donateUrl}
@@ -71,10 +71,6 @@ const packPath = PACK_DATA.path;
                   target="_blank"
                 >
                   Soutenir à {t.amountEur}&nbsp;€ →
-                </a>
-              ) : (
-                <a class="btn btn-secondary" href="#config-don">
-                  Lien de don en configuration
                 </a>
               )
             }
@@ -99,20 +95,7 @@ const packPath = PACK_DATA.path;
           }
         </p>
       ) : (
-        <div class="card config-card" id="config-don">
-          <h4>Configuration du lien de don</h4>
-          <p>
-            La page est en ligne ; le <strong>paiement externe</strong> (HelloAsso ou lien de paiement Stripe) n’est pas encore branché. Dès qu’une URL HTTPS est fournie au build :
-          </p>
-          <pre class="code-block"><code>PUBLIC_LMDPT_DONATE_URL=https://www.helloasso.com/…</code></pre>
-          <p class="meta">
-            Puis reconstruction et mise en ligne. En attendant, vous pouvez nous écrire via{' '}
-            <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
-              GitHub Issues
-            </a>{' '}
-            (soutien institutionnel, mécénat, partenariat data).
-          </p>
-        </div>
+        <p>Les dons en ligne ne sont pas ouverts.</p>
       )
     }
   </section>

@@ -124,12 +124,12 @@ const themeOptions: Array<{ id: ProgramThemeId | ''; label: string }> = [
   title="Comparateur de programmes"
   description="Tableau différentiel, chiffrages prévisionnels et granularité par famille politique — programmes présidentiels sourcés."
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Comparateur
   </nav>
 
-  <section>
-    <h2>Comparateur de programmes</h2>
+  <section slot="lede">
+    <h1>Comparateur de programmes</h1>
     <p>
       Sélection factuelle — ordre alphabétique des candidats, familles politiques en granularité
       pédagogique (gauche → droite). Cellule vide = non précisé dans le programme intégré.
