@@ -193,10 +193,11 @@ export function buildProgramIntegrationReport(
 ): ProgramIntegrationReport {
   const candidates = listCandidates(scrutinId);
   const matrix = buildThemeCoverageMatrix(candidates, scrutinId);
-  const counts = candidates.map((c) => c.measures.length);
+  const integrated = candidates.filter((c) => c.program?.status !== 'awaiting_program');
+  const counts = integrated.map((c) => c.measures.length);
   const minMeasures = counts.length ? Math.min(...counts) : 0;
   const thin = candidates
-    .filter((c) => c.measures.length < 3)
+    .filter((c) => c.program?.status !== 'awaiting_program' && c.measures.length < 3)
     .map((c) => c.candidate.slug);
   const links = programRelatedDataGouvLinks();
   const notes: string[] = [];

@@ -40,7 +40,7 @@ describe('programs', () => {
   });
 
   it('loads 2027 partial programmes', () => {
-    expect(listCandidates('presidentielle-2027')).toHaveLength(11);
+    expect(listCandidates('presidentielle-2027')).toHaveLength(14);
     const ps = getCandidateProgram('presidentielle-2027', 'parti-socialiste');
     expect(ps?.measures.length).toBeGreaterThanOrEqual(7);
     expect(ps?.chiffrages.some((c) => c.auteur === 'lmdpt')).toBe(true);
@@ -118,13 +118,13 @@ describe('program-compare', () => {
   it('builds theme coverage matrix and P10-4 integration gate', () => {
     const files = listCandidates('presidentielle-2027');
     const matrix = buildThemeCoverageMatrix(files, 'presidentielle-2027');
-    expect(matrix.rows).toHaveLength(11);
+    expect(matrix.rows).toHaveLength(14);
     expect(matrix.subthemeRate).toBe(1);
     expect(matrix.totalMeasures).toBeGreaterThanOrEqual(70);
     expect(matrix.fillRate).toBeGreaterThan(0.1);
     const report = buildProgramIntegrationReport('presidentielle-2027');
     expect(report.allMeasuresHaveSubtheme).toBe(true);
-    expect(report.candidateCount).toBe(11);
+    expect(report.candidateCount).toBe(14);
     expect(report.dataGouvLinks).toBeGreaterThanOrEqual(4);
     expect(report.gateOk).toBe(true);
     expect(programRelatedDataGouvLinks().some((l) => l.href === '/sources')).toBe(true);

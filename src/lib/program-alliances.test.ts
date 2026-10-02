@@ -42,7 +42,7 @@ describe('program-alliances', () => {
       'presidentielle-2022',
       'presidentielle-2027',
     ]);
-    expect(multi['presidentielle-2027']!.candidates.length).toBe(11);
+    expect(multi['presidentielle-2027']!.candidates.length).toBe(14);
   });
 
   it('marks fracture europe/retraites when opposite axes', () => {

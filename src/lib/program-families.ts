@@ -80,6 +80,9 @@ export const CANDIDATE_FAMILY: Record<string, PoliticalFamilyId> = {
   lisnard: 'droite',
   'le-pen': 'droite-nationale',
   bardella: 'droite-nationale',
+  glucksmann: 'social-democrate',
+  hollande: 'social-democrate',
+  roussel: 'gauche-radicale',
   // 2022
   macron: 'centre',
   pecresse: 'droite',
