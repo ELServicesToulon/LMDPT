@@ -18,7 +18,7 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
   title={`Programmes — ${scrutin.label}`}
   description={`Fiches programmes ${scrutin.label} — comparaison factuelle, sans classement éliminatoire.`}
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
     {' → '}
     <a href="/analyses/programmes">Programmes</a>
@@ -26,8 +26,8 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
     {scrutin.label}
   </nav>
 
-  <section>
-    <h2>{scrutin.label}</h2>
+  <section slot="lede">
+    <h1>{scrutin.label}</h1>
     <p>
       Fiches candidats / listes. Présentation équivalente — faits sourcés, pas de classement
       éliminatoire.

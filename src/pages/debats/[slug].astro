@@ -19,22 +19,22 @@ if (!debate) {
 ---
 
 <BaseLayout title="Débat" description={debate.context.slice(0, 160)} share={false}>
-  <DebateLiveBanner campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
+  <DebateLiveBanner slot="lede" campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
   {
     debate.live_url?.trim() ? (
-      <p class="meta" style="margin-top: -1rem; margin-bottom: 1rem;">
+      <p class="meta" slot="lede" style="margin-top: -1rem; margin-bottom: 1rem;">
         <strong>Direct en cours :</strong>{' '}
         <a href={debate.live_url} target="_blank" rel="noopener noreferrer">Rejoindre le direct YouTube →</a>
       </p>
     ) : null
   }
 
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/debats">Débats</a> → {debate.slug}
   </nav>
 
-  <section>
-    <h2>{debate.question}</h2>
+  <section slot="lede">
+    <h1>{debate.question}</h1>
     <p class="meta">
       <time datetime={debate.date}>
         {new Date(debate.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}

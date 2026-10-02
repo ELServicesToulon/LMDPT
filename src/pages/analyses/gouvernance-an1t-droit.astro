@@ -15,13 +15,13 @@ const updated = new Date(study.updated).toLocaleDateString('fr-FR', { dateStyle:
   title={study.title}
   description="Chemins de droit pour une Assemblée 100 % 1er tour ou une dose proportionnelle ; études de cas 2017–2022–2024 ; gouvernance non bloquée sans 49.3 ni décrets de contournement. Synthèse documentaire (démocratie avant l’élimination)."
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → Droit électoral & gouvernance AN1T
   </nav>
 
-  <header class="hero-study">
+  <header class="hero-study" slot="lede">
     <p class="eyebrow">Fil directeur · droit · cas pratiques</p>
-    <h2>{study.title}</h2>
+    <h1>{study.title}</h1>
     <p class="lead">{study.disclaimer}</p>
     <p class="meta">Mise à jour <time datetime={study.updated}>{updated}</time></p>
   </header>

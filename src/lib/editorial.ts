@@ -12,7 +12,12 @@ export interface EditorialPost {
   slug: string;
   title: string;
   description: string;
+  /** Date utilisée pour l’ordre de la une (souvent la dernière mise à jour). */
   date: string;
+  /** Date de rédaction, pour le JSON-LD et article:published_time. */
+  published: string;
+  /** Dernière mise à jour, pour article:modified_time. */
+  updated: string;
   href: string;
   cover: EditorialCover | null;
 }
@@ -68,6 +73,8 @@ function analysisToPost(a: AnalysisSummary): EditorialPost {
     title: a.title,
     description: a.description,
     date: a.date,
+    published: a.published ?? a.date,
+    updated: a.updated ?? a.date,
     href: a.href,
     cover: a.cover,
   };
@@ -80,6 +87,8 @@ function debateToPost(d: DebateSummary): EditorialPost {
     title: d.question,
     description: d.description,
     date: d.date,
+    published: d.date,
+    updated: d.date,
     href: d.href,
     cover: d.cover,
   };

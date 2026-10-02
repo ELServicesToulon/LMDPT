@@ -156,11 +156,12 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
   description="Même 1er tour, deux hémicycles : AN1T (Sainte-Laguë) vs Assemblée réelle. Pluralité visible, export CSV/JSON/PNG — pédagogie, pas prédiction."
   keywords="Assemblée du Premier Tour, AN1T, Sainte-Laguë, hémicycle, pluralité, premier tour, simulation pédagogique, LMDPT"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → L'Assemblée du Premier Tour 2027
   </nav>
 
   <StickyToc
+    slot="lede"
     title="Sommaire AN1T"
     items={[
       { href: '#dual-compare', label: 'Deux hémicycles (T1 vs réelle)' },
@@ -179,7 +180,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     ]}
   />
 
-  <nav class="meta parcours-pilier" aria-label="Parcours du pilier AN1T">
+  <nav class="meta parcours-pilier" aria-label="Parcours du pilier AN1T" slot="lede">
     Hub :
     <a href="/analyses/assemblee-premier-tour-mecanismes">mécanismes (seuil, blocs, gouvernance)</a>
     ·
@@ -192,8 +193,8 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <a href="/analyses/presidentielle-2027-preparation">dossier Présidentielle 2027</a>
   </nav>
 
-  <section id="dual-compare">
-    <h2>L'Assemblée du Premier Tour : un même 1er tour, deux traductions en sièges</h2>
+  <section id="dual-compare" slot="lede">
+    <h1>L'Assemblée du Premier Tour : un même 1er tour, deux traductions en sièges</h1>
     <p class="lead">
       <strong>Même urne, deux Assemblées.</strong> À gauche : sièges 100&nbsp;% 1er tour (Sainte-Laguë).
       À droite : Assemblée réelle après second tour et désistements. L’écart, en un coup d’œil.
@@ -222,6 +223,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <div class="strong-disclaimer" role="note" aria-label="Avertissement éditorial renforcé">
       <strong>⚠ Avertissement renforcé — Neutralité &amp; pédagogie :</strong> Ces deux hémicycles documentent un écart mesurable entre la pluralité du 1er tour et l’Assemblée élue. <strong>Aucune prédiction, aucune recommandation de réforme, aucun jugement sur le mode de scrutin actuel.</strong> Conformément à la ligne « La démocratie avant l’élimination ».
     </div>
+  </section>
 
     <!-- ===== VISUEL PRINCIPAL : 100% T1 vs Assemblée réelle ===== -->
     <DualAssembleeCompare
@@ -298,7 +300,6 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
         Modèle officiel utilisé : Assemblée nationale réelle (source : <a href="https://fr.wikipedia.org/wiki/Fichier:XVII%C3%A8me_l%C3%A9gislature_de_l%27Assembl%C3%A9e_nationale_en_France_au_14-10-2025.svg" target="_blank" rel="noopener">Wikimedia Commons</a>). Les « quartiers » colorés correspondent aux groupes parlementaires actuels.
       </figcaption>
     </figure>
-  </section>
 
   <!-- SECTION PÉDAGOGIQUE AMÉLIORÉE : Comment lire l'hémicycle hybride (deux couches) -->
   <section class="card" aria-labelledby="comment-lire-title">

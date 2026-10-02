@@ -6,6 +6,27 @@ const DEFAULT_DESCRIPTION =
 const DEFAULT_OG_IMAGE = '/brand/og-default.png';
 
 const SITE_NAME = 'Le Média du Premier Tour';
+
+/** Titre social (X / Facebook) : au-delà, la carte tronque. */
+export const SOCIAL_TITLE_MAX = 70;
+
+export const DEFAULT_OG_ALT =
+  'Le Média du Premier Tour — pluralité, faits sourcés, vote pour, pas contre.';
+
+/**
+ * Titre pour og:title / twitter:title.
+ * Le suffixe du site reste dans `<title>` ; ici on le retire, puis on coupe si besoin.
+ */
+export function socialTitleFrom(pageTitle: string): string {
+  const trimmed = pageTitle.replace(/\s+/g, ' ').trim();
+  const bare = trimmed === 'Accueil' || trimmed === SITE_NAME ? SITE_NAME : trimmed;
+  if (bare.length <= SOCIAL_TITLE_MAX) return bare;
+  const slice = bare.slice(0, SOCIAL_TITLE_MAX - 1);
+  const space = slice.lastIndexOf(' ');
+  const cut = (space >= 40 ? slice.slice(0, space) : slice).trimEnd();
+  return `${cut}…`;
+}
+
 const DEFAULT_KEYWORDS = [
   'premier tour',
   'élection présidentielle 2027',
@@ -52,6 +73,7 @@ export function pageMeta(input: {
     canonical: canonical.href,
     ogImage: ogImage.href,
     fullTitle,
+    socialTitle: socialTitleFrom(input.title),
     keywords: input.keywords?.trim() || DEFAULT_KEYWORDS,
     type: input.type || 'website',
     robots: input.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large',
@@ -119,11 +141,14 @@ export function webPageJsonLd(input: {
   canonical: string;
   ogImage: string;
   type?: 'website' | 'article';
+  datePublished?: string;
+  dateModified?: string;
 }) {
   const base = input.siteUrl.replace(/\/$/, '');
+  const isArticle = input.type === 'article';
   return {
     '@context': 'https://schema.org',
-    '@type': input.type === 'article' ? 'Article' : 'WebPage',
+    '@type': isArticle ? 'Article' : 'WebPage',
     '@id': `${input.canonical}#webpage`,
     url: input.canonical,
     name: input.title,
@@ -132,6 +157,17 @@ export function webPageJsonLd(input: {
     inLanguage: 'fr-FR',
     isPartOf: { '@id': `${base}/#website` },
     publisher: { '@id': `${base}/#organization` },
+    ...(isArticle
+      ? {
+          author: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: `${base}/`,
+          },
+          ...(input.datePublished ? { datePublished: input.datePublished } : {}),
+          ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+        }
+      : {}),
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: input.ogImage,

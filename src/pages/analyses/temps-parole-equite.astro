@@ -27,7 +27,7 @@ const periodLabel =
   keywords="temps de parole, Arcom, pluralisme, équité médiatique, exposition, LMDPT, municipales 2026"
   commentThread="temps-parole-equite"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/liberte-d-expression">Liberté d’expression</a>
     {' → '}
     <a href="/analyses">Analyses</a>
@@ -35,7 +35,7 @@ const periodLabel =
     Temps de parole
   </nav>
 
-  <section class="tpe-intro" aria-labelledby="tpe-title">
+  <section class="tpe-intro" aria-labelledby="tpe-title" slot="lede">
     <p class="eyebrow">Pluralisme médiatique · données ouvertes Arcom</p>
     <h1 id="tpe-title">{data.title}</h1>
     <p class="meta">

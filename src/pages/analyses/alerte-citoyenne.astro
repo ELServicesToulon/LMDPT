@@ -40,13 +40,13 @@ type AlerteItem = (typeof alertes.items)[number];
   type="article"
   keywords="alerte citoyenne, liberté d'expression, débat public, présidentielle 2027, Chat Control, ingérence intérieure, LMDPT"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → Alerte citoyenne
   </nav>
 
-  <section class="alerte-page-intro">
+  <section class="alerte-page-intro" slot="lede">
     <p class="eyebrow">{alertes.eyebrow}</p>
-    <h2>{alertes.title}</h2>
+    <h1>{alertes.title}</h1>
     <p class="meta">
       Mise à jour : <time datetime={alertes.updated}>{updated}</time>
       · Statut : {alertes.status}

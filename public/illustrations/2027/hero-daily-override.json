@@ -23,6 +23,5 @@
     "poster": "/illustrations/2027/hero-daily-live.webp?d=2026-07-26",
     "caption": "Vidéo hero du jour — croquis N&B, mise à jour quotidienne."
   },
-  "engine": "local-cairo+ffmpeg",
-  "note": "API Imagine video bloquée ZDR (upload_url) — pipeline local serveur."
+  "engine": "local-cairo+ffmpeg"
 }

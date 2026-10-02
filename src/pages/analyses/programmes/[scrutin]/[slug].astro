@@ -36,15 +36,15 @@ const updated = file.updated
   title={`${file.candidate.name} — programme ${scrutin?.replace('presidentielle-', '')}`}
   description={`Mesures phares et chiffrages — ${file.candidate.name}, ${meta?.label ?? scrutin}.`}
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> →
     <a href="/analyses/programmes">Programmes</a> →
     {file.candidate.name}
   </nav>
 
-  <section>
+  <section slot="lede">
     <p class="eyebrow">Fiche programme · synthèse documentaire</p>
-    <h2>{file.candidate.name}</h2>
+    <h1>{file.candidate.name}</h1>
     <p class="lead-programme">
       Mesures et chiffrages issus de sources documentées (campagne, Institut Montaigne ou
       estimation LMDPT — étiquetés ci-dessous). Ce n’est ni un classement ni une consigne de vote.

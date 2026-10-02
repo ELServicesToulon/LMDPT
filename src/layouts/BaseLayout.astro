@@ -22,8 +22,11 @@ import {
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 import EditorialCoverImage from '../components/EditorialCoverImage.astro';
 import ShareBar from '../components/ShareBar.astro';
+import ShareFollow from '../components/ShareFollow.astro';
 import { DOE_FR } from '../lib/doe';
 import { findEditorialByPath } from '../lib/editorial';
+import { publicImageSize } from '../lib/image-size';
+import { DEFAULT_OG_ALT } from '../lib/seo';
 import { shouldShowArticleShareBar } from '../lib/share';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
@@ -36,10 +39,24 @@ const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
 const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const cleanPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const isArticle =
   type === 'article' ||
-  Astro.url.pathname.startsWith('/analyses/') ||
-  Astro.url.pathname.startsWith('/debats/');
+  cleanPath.startsWith('/analyses/') ||
+  cleanPath.startsWith('/debats/');
+const isArticleDetail =
+  (cleanPath.startsWith('/analyses/') || cleanPath.startsWith('/debats/')) &&
+  cleanPath !== '/analyses' &&
+  cleanPath !== '/debats';
+const ogImagePath = (resolvedOgImage || '/brand/og-default.png').split('?')[0] ?? '/brand/og-default.png';
+const ogSize = publicImageSize(ogImagePath);
+const coverSrc = editorialPost?.cover?.src?.split('?')[0];
+const ogImageAlt =
+  coverSrc && coverSrc === ogImagePath && editorialPost?.cover?.alt
+    ? editorialPost.cover.alt
+    : DEFAULT_OG_ALT;
+const articlePublished = editorialPost?.published;
+const articleModified = editorialPost?.updated ?? editorialPost?.published;
 const meta = pageMeta({
   title,
   description,
@@ -56,11 +73,13 @@ const jsonLdOrg = organizationJsonLd(siteUrl);
 const jsonLdSite = websiteJsonLd(siteUrl);
 const jsonLdPage = webPageJsonLd({
   siteUrl,
-  title: meta.fullTitle,
+  title: meta.type === 'article' ? title : meta.fullTitle,
   description: meta.description,
   canonical: meta.canonical,
   ogImage: meta.ogImage,
   type: meta.type,
+  datePublished: meta.type === 'article' ? articlePublished : undefined,
+  dateModified: meta.type === 'article' ? articleModified : undefined,
 });
 const showComments =
   !Astro.url.pathname.startsWith('/moderation') &&
@@ -111,18 +130,31 @@ const shareTitle = editorialPost?.title ?? title;
     <GoogleSeoTools />
     <meta property="og:type" content={meta.type === 'article' ? 'article' : 'website'} />
     <meta property="og:site_name" content={meta.siteName} />
-    <meta property="og:title" content={meta.fullTitle} />
+    <meta property="og:title" content={meta.socialTitle} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={meta.canonical} />
     <meta property="og:image" content={meta.ogImage} />
-    <meta property="og:image:alt" content={meta.fullTitle} />
+    {ogSize && <meta property="og:image:width" content={String(ogSize.width)} />}
+    {ogSize && <meta property="og:image:height" content={String(ogSize.height)} />}
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content="fr_FR" />
+    {
+      meta.type === 'article' && articlePublished && (
+        <meta property="article:published_time" content={articlePublished} />
+      )
+    }
+    {
+      meta.type === 'article' && articleModified && (
+        <meta property="article:modified_time" content={articleModified} />
+      )
+    }
     {xLink && <meta name="twitter:site" content={xLink.handle} />}
     {xLink && <meta name="twitter:creator" content={xLink.handle} />}
     {xLink && <meta name="twitter:card" content="summary_large_image" />}
-    <meta name="twitter:title" content={meta.fullTitle} />
+    <meta name="twitter:title" content={meta.socialTitle} />
     <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={meta.ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdOrg)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdSite)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPage)} />
@@ -255,6 +287,7 @@ const shareTitle = editorialPost?.title ?? title;
       .news-summary,
       .page-intro p,
       header h1,
+      header .site-title,
       .highlight-card,
       .highlight-card p,
       .highlight-card h3 {
@@ -314,7 +347,8 @@ const shareTitle = editorialPost?.title ?? title;
           margin-bottom: 1.1rem;
           padding-bottom: 0.85rem;
         }
-        header h1 {
+        header h1,
+        header .site-title {
           font-size: 1.12rem;
           line-height: 1.25;
         }
@@ -354,11 +388,43 @@ const shareTitle = editorialPost?.title ?? title;
         line-height: 1;
         box-shadow: var(--shadow);
       }
-      header h1 {
+      header h1,
+      header .site-title {
         font-size: 1.28rem;
         margin: 0 0 0.2rem;
         font-weight: 600;
         letter-spacing: -0.01em;
+      }
+      body.article-detail main h1 {
+        font-size: clamp(1.55rem, 2.5vw, 2rem);
+        line-height: 1.28;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        margin: 0.15rem 0 0.55rem;
+        max-width: 65ch;
+      }
+      body.article-detail #main-content p,
+      body.article-detail #main-content li {
+        max-width: 65ch;
+      }
+      body.article-detail #main-content table p,
+      body.article-detail #main-content table li,
+      body.article-detail #main-content figure p,
+      body.article-detail #main-content figure li,
+      body.article-detail #main-content figcaption,
+      body.article-detail #main-content .matrix p,
+      body.article-detail #main-content .matrix li,
+      body.article-detail #main-content .matrix-wrap p,
+      body.article-detail #main-content .matrix-wrap li,
+      body.article-detail #main-content .share-bar p,
+      body.article-detail #main-content .share-bar li,
+      body.article-detail #main-content .share-follow p,
+      body.article-detail #main-content .share-follow li,
+      body.article-detail #main-content .hemicycle p,
+      body.article-detail #main-content .hemicycle li,
+      body.article-detail #main-content svg p,
+      body.article-detail #main-content svg li {
+        max-width: none;
       }
       .tagline {
         font-size: 0.92rem;
@@ -710,7 +776,10 @@ const shareTitle = editorialPost?.title ?? title;
         align-items: center;
         gap: 0.4rem 0.75rem;
       }
-      .parcours-bar.collapsed .parcours-steps { display: none; }
+      html[data-parcours='closed'] .parcours-steps { display: none; }
+      @media (max-width: 767px) {
+        html:not([data-parcours='open']) .parcours-steps { display: none; }
+      }
       .parcours-label {
         font-weight: 600;
         color: var(--accent);
@@ -739,28 +808,32 @@ const shareTitle = editorialPost?.title ?? title;
         color: var(--accent);
       }
       .parcours-btn {
-        font-size: 0.72rem;
-        padding: 0.15rem 0.4rem;
+        font-size: 0.78rem;
+        padding: 0.35rem 0.7rem;
         border: 1px solid var(--border);
         background: var(--card);
+        color: var(--fg);
         border-radius: 3px;
         cursor: pointer;
         font-family: inherit;
-        min-height: 28px;
+        min-height: 44px;
       }
       .parcours-link { font-weight: 500; }
 
       /* Mobile for parcours */
-      @media (max-width: 640px) {
+      @media (max-width: 767px) {
         .parcours-bar {
           font-size: 0.76rem;
           padding: 0.35rem 0.5rem;
         }
         .parcours-steps {
+          flex-direction: column;
+          align-items: flex-start;
           width: 100%;
           order: 3;
           margin-top: 0.25rem;
         }
+        .parcours-steps li { width: 100%; }
         .parcours-steps li a { font-size: 0.74rem; padding: 0.15rem 0.3rem; }
       }
 
@@ -823,8 +896,19 @@ const shareTitle = editorialPost?.title ?? title;
         }
       }
     </style>
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('lmdpt-parcours-expanded');
+        } catch (e) {}
+        var wide = window.matchMedia('(min-width: 768px)').matches;
+        var open = stored === '1' ? true : stored === '0' ? false : wide;
+        document.documentElement.setAttribute('data-parcours', open ? 'open' : 'closed');
+      })();
+    </script>
   </head>
-  <body>
+  <body class={isArticleDetail ? 'article-detail' : undefined}>
     <GoogleSeoBody />
     <!-- Skip link for keyboard and screen reader users (WCAG 2.2) -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -834,7 +918,13 @@ const shareTitle = editorialPost?.title ?? title;
         <div class="site-brand">
           <div class="site-mark" aria-hidden="true">1er</div>
           <div>
-            <h1>Le Média du Premier Tour</h1>
+            {
+              isArticleDetail ? (
+                <p class="site-title">Le Média du Premier Tour</p>
+              ) : (
+                <h1>Le Média du Premier Tour</h1>
+              )
+            }
             <p class="tagline">Pluralité, faits sourcés, vote pour — pas contre.</p>
           </div>
         </div>
@@ -885,7 +975,7 @@ const shareTitle = editorialPost?.title ?? title;
         <!-- Parcours Citoyen : navigation guidée / guided tour (site-wide, focus AN1T + analyses) -->
         <div id="parcours-citoyen" class="parcours-bar" role="navigation" aria-label="Parcours citoyen guidé">
           <span class="parcours-label">Parcours citoyen :</span>
-          <ol class="parcours-steps">
+          <ol id="parcours-steps" class="parcours-steps">
             <li><a href="/">1. Découvrir le 1er tour</a></li>
             <li><a href="/atlas">2. Explorer l’Atlas</a></li>
             <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T (pluralité)</a></li>
@@ -897,12 +987,67 @@ const shareTitle = editorialPost?.title ?? title;
             <li><a href="/contribuer">9. Suggestions &amp; alertes</a></li>
             <li><a href="/sources">10. Vérifier les sources</a></li>
           </ol>
-          <button type="button" class="parcours-btn" onclick="document.getElementById('parcours-citoyen').classList.toggle('collapsed')">Masquer / Montrer</button>
+          <button
+            type="button"
+            class="parcours-btn"
+            id="parcours-toggle"
+            aria-expanded="false"
+            aria-controls="parcours-steps"
+          >
+            Afficher
+          </button>
         </div>
+        <script is:inline>
+          (function () {
+            var KEY = 'lmdpt-parcours-expanded';
+            var btn = document.getElementById('parcours-toggle');
+            function isWide() {
+              return window.matchMedia('(min-width: 768px)').matches;
+            }
+            function read() {
+              try {
+                return localStorage.getItem(KEY);
+              } catch (e) {
+                return null;
+              }
+            }
+            function write(open) {
+              try {
+                localStorage.setItem(KEY, open ? '1' : '0');
+              } catch (e) {}
+            }
+            function apply(open) {
+              document.documentElement.setAttribute('data-parcours', open ? 'open' : 'closed');
+              if (!btn) return;
+              btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+              btn.textContent = open ? 'Masquer' : 'Afficher';
+              btn.setAttribute(
+                'aria-label',
+                open ? 'Masquer le parcours citoyen' : 'Afficher le parcours citoyen',
+              );
+            }
+            var stored = read();
+            apply(stored === '1' ? true : stored === '0' ? false : isWide());
+            if (btn) {
+              btn.addEventListener('click', function () {
+                var open = document.documentElement.getAttribute('data-parcours') === 'open';
+                write(!open);
+                apply(!open);
+              });
+            }
+            var mq = window.matchMedia('(min-width: 768px)');
+            if (mq.addEventListener) {
+              mq.addEventListener('change', function () {
+                if (read() === null) apply(mq.matches);
+              });
+            }
+          })();
+        </script>
       </header>
       <main id="main-content">
+        <slot name="lede" />
         {
-          editorialPost && (
+          editorialPost && isArticleDetail && (
             <EditorialCoverImage cover={editorialPost.cover} eager class="editorial-cover--article" />
           )
         }
@@ -912,6 +1057,11 @@ const shareTitle = editorialPost?.title ?? title;
           )
         }
         <slot />
+        {
+          isArticleDetail && (
+            <ShareFollow title={shareTitle} url={meta.canonical} />
+          )
+        }
         {
           showComments && (
             <CitizenCommentModule

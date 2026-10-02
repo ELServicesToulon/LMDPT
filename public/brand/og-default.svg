@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Le Média du Premier Tour">
-  <rect width="1200" height="630" fill="#1e4d6b"/>
-  <text x="64" y="260" fill="#f7f5f0" font-family="Georgia, serif" font-size="52" font-weight="600">Le Média du Premier Tour</text>
-  <text x="64" y="330" fill="#a8c4d4" font-family="system-ui, sans-serif" font-size="30">Pluralité du 1er tour · open data officielles</text>
-  <text x="64" y="400" fill="#7eb8d8" font-family="system-ui, sans-serif" font-size="26">La démocratie avant l’élimination — lmdpt.iarbre.org</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Le Média du Premier Tour">
+  <rect width="1200" height="630" fill="#f4ede4"/>
+  <rect width="16" height="630" fill="#061825"/>
+  <rect x="72" y="196" width="104" height="104" rx="12" fill="#061825"/>
+  <text x="124" y="262" text-anchor="middle" fill="#f7f4ef" font-family="Tinos, Liberation Serif, Georgia, serif" font-size="40" font-weight="700">1er</text>
+  <text x="204" y="248" fill="#061825" font-family="Tinos, Liberation Serif, Georgia, serif" font-size="48" font-weight="700">Le Média du Premier Tour</text>
+  <text x="72" y="390" fill="#1c1c1c" font-family="Tinos, Liberation Serif, Georgia, serif" font-size="30">Pluralité, faits sourcés, vote pour — pas contre.</text>
+  <text x="72" y="470" fill="#3d4a55" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="22">lmdpt.iarbre.org</text>
 </svg>

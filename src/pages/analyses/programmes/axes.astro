@@ -20,11 +20,11 @@ const description = `Propositions des candidats regroupées par grands axes (fis
 ---
 
 <BaseLayout title={title} description={description}>
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Grands axes
   </nav>
 
-  <header class="page-intro">
+  <header class="page-intro" slot="lede">
     <h1>Programmes par grands axes</h1>
     <p class="lead">
       Pour chaque grand thème politique, les <strong>propositions documentées</strong> des candidats

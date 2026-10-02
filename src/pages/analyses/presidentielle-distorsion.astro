@@ -17,12 +17,12 @@ const elections = ELECTION_CATALOG.map((summary) => {
   title="Présidentielle — distorsion 1er / 2nd tour"
   description="Pluralité au premier tour, reconfiguration binaire au second — présidentielles 2017 et 2022, données officielles."
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a> → Présidentielle — distorsion
   </nav>
 
-  <section>
-    <h2>Présidentielle : pluralité puis duel</h2>
+  <section slot="lede">
+    <h1>Présidentielle : pluralité puis duel</h1>
     <p>
       Au premier tour présidentiel, chaque citoyen peut exprimer une préférence sur l'ensemble du
       spectre des candidats qualifiés. Au second tour, seuls deux noms restent — tous les autres

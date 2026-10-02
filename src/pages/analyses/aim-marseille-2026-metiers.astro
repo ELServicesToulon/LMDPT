@@ -28,13 +28,13 @@ const tocItems = [
   type="article"
   keywords="AIM Marseille, IA, métiers, emploi, école, data centers, présidentielle 2027, LMDPT, débat public"
 >
-  <nav class="meta" aria-label="Fil d'Ariane">
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
     {' → '}
     {data.title}
   </nav>
 
-  <section class="enq-intro" aria-labelledby="enq-title">
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
     <p class="eyebrow">{data.eyebrow}</p>
     <h1 id="enq-title">{data.title}</h1>
     <p class="meta">
