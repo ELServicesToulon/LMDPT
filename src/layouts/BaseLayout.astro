@@ -18,6 +18,8 @@ import {
   organizationJsonLd,
   websiteJsonLd,
   webPageJsonLd,
+  DEFAULT_OG_ALT,
+  DEFAULT_OG_IMAGE,
 } from '../lib/seo';
 import CitizenCommentModule from '../components/CitizenCommentModule.astro';
 import EditorialCoverImage from '../components/EditorialCoverImage.astro';
@@ -26,7 +28,6 @@ import ShareFollow from '../components/ShareFollow.astro';
 import { DOE_FR } from '../lib/doe';
 import { findEditorialByPath } from '../lib/editorial';
 import { publicImageSize } from '../lib/image-size';
-import { DEFAULT_OG_ALT } from '../lib/seo';
 import { shouldShowArticleShareBar } from '../lib/share';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
@@ -48,7 +49,7 @@ const isArticleDetail =
   (cleanPath.startsWith('/analyses/') || cleanPath.startsWith('/debats/')) &&
   cleanPath !== '/analyses' &&
   cleanPath !== '/debats';
-const ogImagePath = (resolvedOgImage || '/brand/og-default.png').split('?')[0] ?? '/brand/og-default.png';
+const ogImagePath = (resolvedOgImage || DEFAULT_OG_IMAGE).split('?')[0] ?? DEFAULT_OG_IMAGE;
 const ogSize = publicImageSize(ogImagePath);
 const coverSrc = editorialPost?.cover?.src?.split('?')[0];
 const ogImageAlt =
@@ -105,7 +106,7 @@ const shareTitle = editorialPost?.title ?? title;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/brand/og-default.png" />
+    <link rel="apple-touch-icon" href={DEFAULT_OG_IMAGE} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Empêche le « Auto Dark » Chrome/Android d’inverser la page en fond noir + texte noir -->
     <meta name="color-scheme" content="light dark" />

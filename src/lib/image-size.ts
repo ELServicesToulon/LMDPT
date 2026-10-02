@@ -48,7 +48,7 @@ export function readImageSize(buf: Buffer): ImageSize | null {
   return pngSize(buf) ?? jpegSize(buf) ?? svgSize(buf);
 }
 
-/** Dimensions d’un fichier servi depuis `public/` (chemin site, ex. `/brand/og-default.png`). */
+/** Dimensions d’un fichier servi depuis `public/` (chemin site, ex. `/brand/og-default-fr-2026-10.png`). */
 export function publicImageSize(src: string): ImageSize | null {
   const rel = src.replace(/^\//, '').split('?')[0] ?? '';
   if (!rel || rel.includes('..')) return null;

@@ -3,7 +3,8 @@
 const DEFAULT_DESCRIPTION =
   'Média civique du premier tour : pluralité des voix, données ouvertes officielles, la démocratie avant l’élimination. Présidentielle 2027, atlas électoral, programmes sourcés — sans sondages ni classement éliminatoire.';
 
-const DEFAULT_OG_IMAGE = '/brand/og-default.png';
+/** Carte par défaut. Nouveau chemin : l’URL historique reste en cache Cloudflare / X. */
+const DEFAULT_OG_IMAGE = '/brand/og-default-fr-2026-10.png';
 
 const SITE_NAME = 'Le Média du Premier Tour';
 
@@ -92,7 +93,7 @@ export function organizationJsonLd(siteUrl: string) {
     url: `${base}/`,
     logo: {
       '@type': 'ImageObject',
-      url: `${base}/brand/og-default.png`,
+      url: `${base}${DEFAULT_OG_IMAGE}`,
     },
     description: DEFAULT_DESCRIPTION,
     foundingDate: '2026',

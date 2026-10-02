@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANALYSIS_CATALOG } from '../src/lib/analyses';
+import { DEFAULT_OG_IMAGE } from '../src/lib/seo';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -116,7 +117,7 @@ ${entries.join('\n')}
 
 function buildImageSitemap(): string {
   const images = [
-    { page: '/', img: '/brand/og-default.png', title: 'Le Média du Premier Tour' },
+    { page: '/', img: DEFAULT_OG_IMAGE, title: 'Le Média du Premier Tour' },
     {
       page: '/',
       img: '/illustrations/2027/hero-premier-tour-2027.jpg',

@@ -7,6 +7,7 @@ import {
   socialTitleFrom,
   SOCIAL_TITLE_MAX,
   DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
 } from './seo';
 import { ANALYSIS_CATALOG } from './analyses';
 
@@ -19,7 +20,8 @@ describe('pageMeta', () => {
       pathname: '/atlas',
     });
     expect(meta.canonical).toBe('https://lmdpt.iarbre.org/atlas/');
-    expect(meta.ogImage).toBe('https://lmdpt.iarbre.org/brand/og-default.png');
+    expect(meta.ogImage).toBe(`https://lmdpt.iarbre.org${DEFAULT_OG_IMAGE}`);
+    expect(DEFAULT_OG_IMAGE).toBe('/brand/og-default-fr-2026-10.png');
     expect(meta.fullTitle).toContain('Atlas');
     expect(meta.fullTitle).toContain('Le Média du Premier Tour');
     expect(meta.socialTitle).toBe('Atlas');
@@ -77,6 +79,7 @@ describe('JSON-LD', () => {
     expect(org['@type']).toBe('NewsMediaOrganization');
     expect(org.sameAs).toContain('https://x.com/LMDuPremierTour');
     expect(org.publishingPrinciples).toContain('/charte');
+    expect(org.logo.url).toBe(`https://lmdpt.iarbre.org${DEFAULT_OG_IMAGE}`);
   });
 
   it('emits WebSite linked to organization', () => {
@@ -91,7 +94,7 @@ describe('JSON-LD', () => {
       title: 'Alerte citoyenne',
       description: DEFAULT_DESCRIPTION,
       canonical: 'https://lmdpt.iarbre.org/analyses/alerte-citoyenne/',
-      ogImage: 'https://lmdpt.iarbre.org/brand/og-default.png',
+      ogImage: `https://lmdpt.iarbre.org${DEFAULT_OG_IMAGE}`,
       type: 'article',
     });
     expect(page['@type']).toBe('Article');
