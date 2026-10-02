@@ -2,11 +2,13 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { publicImageSize, readImageSize } from './image-size';
+import { DEFAULT_OG_IMAGE } from './seo';
 
 describe('publicImageSize', () => {
   it('sert la carte par défaut en 1200×630', () => {
-    const size = publicImageSize('/brand/og-default.png');
+    const size = publicImageSize(DEFAULT_OG_IMAGE);
     expect(size).toEqual({ width: 1200, height: 630 });
+    expect(publicImageSize('/brand/og-default.png')).toEqual({ width: 1200, height: 630 });
   });
 
   it('lit les illustrations d’analyse sans les recadrer', () => {
