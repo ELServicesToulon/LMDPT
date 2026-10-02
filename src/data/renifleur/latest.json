@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-30T18:50:12.648Z",
+  "fetched_at": "2026-10-02T18:59:11.383Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,10 +7,10 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "Budget 2027 : Sébastien Lecornu alerte sur les risques d’une crise financière en France à la veille de présenter un projet de « redressement »",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/30/sebastien-lecornu-alerte-sur-les-risques-d-une-crise-financiere-avant-de-proposer-un-budget-de-redressement_6786052_823448.html",
-      "published": "2026-09-30",
-      "summary": "Les taux d’intérêt à dix ans auxquels la France refinance sa dette sur les marchés ont dépassé, mardi, 4,8 %, pour la première fois depuis 2008.",
+      "title": "Présidentielle 2027 : le Parti animaliste annonce la candidature de Mira Markovic",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/presidentielle-2027-le-parti-animaliste-annonce-la-candidature-de-mira-markovic_6787208_823448.html",
+      "published": "2026-10-02",
+      "summary": "Mira Markovic succède à Hélène Thouy, qui n’avait pas obtenu assez de parrainages pour être sur la ligne de départ en 2022.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -23,10 +23,10 @@
       }
     },
     {
-      "title": "Baisser la TVA sur les carburants : la proposition de Marine Le Pen est-elle réaliste ?",
-      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/09/30/baisser-la-tva-sur-les-carburants-la-proposition-de-marine-le-pen-est-elle-realiste_6786069_4355770.html",
-      "published": "2026-09-30",
-      "summary": "Illégale, chère, non ciblée, anti-écolo… Passage en revue des principales critiques à propos de la promesse phare du Rassemblement national pour faire baisser les prix à la pompe.",
+      "title": "Marine Le Pen propose une « règle d’or » pour rassurer les marchés sur son sérieux budgétaire",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/marine-le-pen-propose-une-regle-d-or-sophistiquee-pour-rassurer-les-marches-sur-son-serieux-budgetaire_6787178_823448.html",
+      "published": "2026-10-02",
+      "summary": "Le projet de la candidate du RN à la présidentielle, qui serait soumis à référendum, viserait à faire revenir progressivement la dette à 60 % du produit intérieur brut, par l’intermédiaire d’un seuil à respecter évoluant chaque année.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -35,14 +35,14 @@
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
-      "title": "Présidentielle 2027 : Gabriel Attal critique le projet de réforme des retraites d’Edouard Philippe, jugeant qu’il s’agit de « mesures de soins palliatifs »",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/30/presidentielle-2027-gabriel-attal-critique-le-projet-de-reforme-des-retraites-d-edouard-philippe-jugeant-qu-il-s-agit-de-mesures-de-soins-palliatifs_6786037_823448.html",
-      "published": "2026-09-30",
-      "summary": "La proposition d’Edouard Philippe, parvenir progressivement à un âge légal de départ à 65 ans avec 45 annuités de cotisation, c’est « la proposition Macron de 2022 », selon Gabriel Attal, qui propose, lui, une suppression de l’âge légal de départ.",
+      "title": "Présidentielle 2027 : les soubresauts des campagnes électorales, où rien ne se passe jamais comme prévu",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/presidentielle-2027-les-soubresauts-des-campagnes-electorales-ou-rien-ne-se-passe-jamais-comme-prevu_6787174_823448.html",
+      "published": "2026-10-02",
+      "summary": "Avec les révélations de « Mediapart » sur Jordan Bardella, cette semaine politique a offert un parfait résumé de l’imprévisibilité d’une course électorale, analyse Matthieu Goar, l’un des chefs du service Politique du « Monde ».",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -50,31 +50,31 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Le Pen / RN · Bardella / RN) — teinte pluraliste."
       }
     },
     {
-      "title": "Edouard Philippe veut la retraite à 65 ans",
-      "url": "https://www.franceinfo.fr/economie/retraite/edouard-philippe-veut-la-retraite-a-65-ans_8216293.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-30",
-      "summary": "La question de la réforme retraites s’impose comme un sujet incontournable de la future campagne présidentielle. Chacun à sa proposition. Edouard Philippe, lui, propose de repousser progressivement l’âge de départ à la retraite à 65 ans. Une proposition qui suscite l’opposition d",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
+      "title": "Présidentielle 2027 : Édouard Philippe, une campagne sans cesse bousculée par l’actualité",
+      "url": "https://www.lefigaro.fr/politique/presidentielle-2027-edouard-philippe-une-campagne-sans-cesse-bousculee-par-l-actualite-20261002",
+      "published": "2026-10-02",
+      "summary": "REPORTAGE - Déplacements écourtés, prises de parole reportées… Le candidat d’Horizons, qui a axé cette semaine sa campagne sur la retraite à 65 ans et la lutte contre le narcotrafic, fait face à la difficulté de tenir un agenda mis à mal par les crises.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "philippe",
         "label": "Philippe / Horizons",
         "color": "#0001b8",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, réforme"
+        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
       }
     },
     {
-      "title": "Julien Aubert (LR) : les propos antisémites attribués à J. Bardella sont \"un risque\" pour M. Le Pen",
-      "url": "https://www.france24.com/fr/%C3%A9missions/mardi-politique/20260930-julien-aubert-lr-les-propos-antis%C3%A9mites-attribu%C3%A9s-%C3%A0-bardella-sont-un-risque-pour-marine-le-pen",
-      "published": "2026-09-30",
-      "summary": "Julien Aubert, vice-président des Républicains et président d'Osez la France réagit aux accusations d'antisémitisme portées par Mediapart à l'encontre de Jordan Bardella, président du Rassemblement national. Il pense que \"ces accusations viennent de l'intérieur\" du parti et estim",
+      "title": "L'actu en dessin : Jordan Bardella accusé d'écrits antisémites, Marine Le Pen menace Mediapart",
+      "url": "https://www.france24.com/fr/france/20261002-l-actu-en-dessin-jordan-bardella-accus%C3%A9-d-%C3%A9crits-antis%C3%A9mites-marine-le-pen-menace-mediapart",
+      "published": "2026-10-02",
+      "summary": "À quelques mois de la présidentielle, l'affaire Bardella et la virulente riposte du RN contre Mediapart fragilisent l'image de normalisation cultivée par le parti d’extrême droite, et ravivent les inquiétudes sur son rapport à la presse.",
       "source_id": "france24-france",
       "source_label": "France 24 — France",
       "source_type": "traditional",
@@ -83,14 +83,14 @@
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, bardella, rassemblement national"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
-      "title": "Présidentielle 2027 : les Jeunes socialistes veulent peser dans la primaire à gauche",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/09/30/presidentielle-2027-les-jeunes-socialistes-veulent-peser-dans-la-primaire-a-gauche_6786108_6205049.html",
-      "published": "2026-09-30",
-      "summary": "A la veille du deuxième débat de la primaire, jeudi 1ᵉʳ octobre, l’organisation de jeunesse soumet aux candidats un manifeste proposant des mesures telles que l’instauration d’un « revenu jeune ». Et espère obtenir, d’ici au premier tour de la primaire, des engagements sur des th",
+      "title": "Primaire à gauche : sur France 2, les cinq candidats maintiennent leurs lignes de convergence et de fracture",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/primaire-a-gauche-sur-france-2-les-cinq-candidats-maintiennent-leurs-lignes-de-convergence-et-de-fracture_6786826_823448.html",
+      "published": "2026-10-02",
+      "summary": "Des mobilisations lycéennes au budget 2027, de Gaza aux relations avec LFI, Olivier Faure, Raphaël Glucksmann, Jérôme Guedj, Emmanuel Maurel et Ségolène Royal ont confronté leurs points de vue lors d’un deuxième débat, jeudi soir.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -98,62 +98,366 @@
         "slug": "parti-socialiste",
         "label": "Socialiste / social-démocrate",
         "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : ségolène royal, segolene royal, faure"
       }
     },
     {
-      "title": "Prix des énergies : l’UE s’attend à un « hiver difficile »",
-      "url": "https://www.publicsenat.fr/actualites/politique/prix-des-energies-lue-sattend-a-un-hiver-difficile",
-      "published": "2026-09-30",
-      "summary": "Les factures d’énergie bondissent. À cause de la guerre au Moyen-Orient et de la fermeture du détroit d’Ormuz, les importations d’hydrocarbures ont coûté plus de 100 milliards d’euros supplémentaires à l’Union européenne depuis la fin février. Et l’hiver s’annonce « difficile » d",
+      "title": "« À l’EHPAD ! » : Gabriel Attal face aux questions sans filtre de nos aînés",
+      "url": "https://www.publicsenat.fr/actualites/politique/a-lehpad-gabriel-attal-face-aux-questions-sans-filtre-de-nos-aines",
+      "published": "2026-10-02",
+      "summary": "Pour le lancement de « À l'EHPAD ! », le nouveau programme d'Au Tableau Productions, des résidents de maisons de retraite interrogent les candidats à la présidentielle 2027. Premier sur le grill : Gabriel Attal, venu à Suresnes à la rencontre des aînés. Un échange spontané et san",
       "source_id": "publicsenat",
       "source_label": "Public Sénat — Actualités",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "barrot",
-        "label": "Barrot / centre",
-        "color": "#ff9900",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : europe"
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal"
       }
     },
     {
-      "title": "Le RN face aux révélations sur Jordan Bardella : \"Dinguerie\", \"barbouzerie\", \"manip\"",
-      "url": "https://www.france24.com/fr/%C3%A9missions/dans-la-presse/20260930-le-rn-face-aux-r%C3%A9v%C3%A9lations-sur-bardella-dinguerie-barbouzerie-manip",
-      "published": "2026-09-30",
-      "summary": "À la Une de la presse : une manifestation d'étudiants contre le régime iranien à Téhéran, malgré la répression en cours ; la désignation de Fatima Ezzahra El Mansouri au poste de Première ministre du Maroc après la victoire de son parti aux législatives ; l'onde de choc, en Franc",
+      "title": "Budget de la Sécurité sociale : 18 organisations, dont Amnesty international et le Secours catholique, dénoncent une \"préférence nationale déguisée\"",
+      "url": "https://www.franceinfo.fr/economie/budget/budget-de-la-securite-sociale-18-organisations-dont-amnesty-international-et-le-secours-catholique-denoncent-une-preference-nationale-deguisee_8220316.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-02",
+      "summary": "L'article 37 du projet de loi de financement de la sécurité sociale (PLFSS) pour 2027 vise à restreindre l'accès aux prestations familiales pour les personnes étrangères en exigeant une condition d'un an de résidence régulière en France.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : Jean-Luc Mélenchon cherche à attiser la fureur lycéenne",
+      "url": "https://www.lefigaro.fr/politique/presidentielle-2027-jean-luc-melenchon-cherche-a-attiser-la-fureur-lyceenne-20261002",
+      "published": "2026-10-02",
+      "summary": "DÉCRYPTAGE - Le quadruple candidat, jusque-là soucieux de se montrer plus fédérateur, renoue avec sa stratégie de conflictualisation et assume de mener une campagne « à coups de marteau ».",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon"
+      }
+    },
+    {
+      "title": "Les aéroports français, « sidérés » par leur niveau de taxation prévu dans le budget 2027, alertent sur un risque de « décrochage »",
+      "url": "https://www.lemonde.fr/economie/article/2026/10/02/les-aeroports-francais-sideres-par-leur-niveau-de-taxation-alertent-sur-un-risque-de-decrochage_6787204_3234.html",
+      "published": "2026-10-02",
+      "summary": "Le président de l’Union des aéroports français, Thomas Juin, réagit aux nouvelles taxes pesant sur les plateformes aéroportuaires dans le projet de loi de finances, présenté jeudi. Il craint la suppression de nouvelles lignes dans les territoires.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget : le fonds vert est-il vraiment en hausse comme l’a affirmé la ministre de la transition écologique ?",
+      "url": "https://www.lemonde.fr/planete/article/2026/10/02/budget-le-fonds-vert-pour-la-transition-ecologique-est-il-vraiment-en-hausse-comme-l-a-affirme-la-ministre-monique-barbut_6787184_3244.html",
+      "published": "2026-10-02",
+      "summary": "Jeudi, Monique Barbut s’est félicitée de voir l’enveloppe du fonds vert, qui soutient les collectivités locales, passer à « 1 milliard d’euros » en 2027. Selon l’Institut de l’économie pour le climat, il s’agit cependant d’un « tour de passe-passe ».",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "ecolo",
+        "label": "Écologiste",
+        "color": "#00c000",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : climat, transition écologique"
+      }
+    },
+    {
+      "title": "Budget 2027 : la défiance des marchés financiers envers le projet de Lecornu",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/budget-2027-la-defiance-des-marches-financiers-envers-le-projet-de-lecornu_6787200_823448.html",
+      "published": "2026-10-02",
+      "summary": "L’écart de taux avec l’Allemagne s’est envolé, vendredi 2 octobre. Les investisseurs ne croient guère à l’adoption du budget pour 2027, ni à une vraie baisse du déficit. « On est dans un début de crise de la dette », s’alarme l’économiste Anthony Morlet-Lavidalie.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Dernier débat pour la primaire socialiste : quelle vie en rose ?",
+      "url": "https://www.liberation.fr/idees-et-debats/editorial/dernier-debat-pour-la-primaire-socialiste-quelle-vie-en-rose-20261002_PDXTOL4ZVRCCHGDLPZ54EFW2PE/",
+      "published": "2026-10-02",
+      "summary": "Les cinq candidats à l’investiture pour la présidentielle se retrouvent dimanche soir sur BFM, en partenariat avec «Libé». Avec une question, derrière les propositions et les divisions : qui pourra concurrencer Mélenchon ?",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon"
+      }
+    },
+    {
+      "title": "Budget 2027 : ce que propose le gouvernement pour mettre à contribution les retraités",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/budget-2027-ce-que-propose-le-gouvernement-pour-mettre-a-contribution-les-retraites_6787192_823448.html",
+      "published": "2026-10-02",
+      "summary": "Le gouvernement veut réaliser 5,5 milliards d’euros d’économies sur les pensionnés, mais se dit ouvert à la discussion avec les parlementaires pour définir les modalités du tour de vis.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Budget 2027 : une hausse des crédits en trompe-l’œil pour l’outre-mer",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/02/budget-2027-une-hausse-des-credits-en-trompe-l-il-pour-l-outre-mer_6787167_823448.html",
+      "published": "2026-10-02",
+      "summary": "Le projet de loi de finances affiche une augmentation de 10 % de l’enveloppe allouée aux territoires ultramarins. Mais, pour Christian Baptiste, rapporteur du texte à l’Assemblée nationale, la modification du périmètre budgétaire laisse entrevoir une baisse des moyens.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Lycées bloqués : quand la colère étudiante change de nature",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20261002-lyc%C3%A9es-bloqu%C3%A9s-quand-la-col%C3%A8re-%C3%A9tudiante-change-de-nature",
+      "published": "2026-10-02",
+      "summary": "Le mouvement lycéen se poursuit depuis plusieurs jours, avec des blocages dans plusieurs établissements en France. Pour Philippe Moreau-Chevrolet, professeur de communication politique à Sciences Po et invité de France 24, les revendications des lycéens sont légitimes, mais la mo",
       "source_id": "france24-france",
       "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "A gauche, une primaire qui ressemble de plus en plus à un congrès du PS",
+      "url": "https://www.liberation.fr/politique/elections/a-gauche-une-primaire-qui-ressemble-de-plus-en-plus-a-un-congres-du-ps-20261002_GH7YNGBNIZCGNNRQ2GLLHEV4RA/",
+      "published": "2026-10-02",
+      "summary": "En faisant du rapport à LFI le sujet central de leurs débats, dont celui du jeudi 1er octobre, les candidats à l’investiture socialiste semblent moins concernés par l’Elysée que par les futurs contours de leur camp.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : lfi"
+      }
+    },
+    {
+      "title": "Faute de \"mesures concrètes\", les organisations lycéennes et étudiantes poursuivent la mobilisation",
+      "url": "https://www.france24.com/fr/france/20261002-en-direct-live-mouvement-blocage-des-lycees-rejoint-par-les-etudiants-vendredi-nunez-lfi",
+      "published": "2026-10-02",
+      "summary": "Après une réunion avec le ministre de l'Éducation nationale Édouard Geffray, les organisations lycéennes et étudiantes ont appelé vendredi à poursuivre la mobilisation, alors que 735 établissements scolaires ont fait l'objet d'actions ou de perturbations, selon le gouvernement. U",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Primaire socialiste et sociale-démocrate : les partisans de Raphaël Glucksmann ultra-optimistes",
+      "url": "https://www.liberation.fr/politique/primaire-socialiste-et-sociale-democrate-les-partisans-de-raphael-glucksmann-ultra-optimistes-20261002_ALQMVDBUVVGZLCJOEFMFNGKJ2Y/",
+      "published": "2026-10-02",
+      "summary": "Avec l’incertitude planant sur la composition du corps électoral appelé à voter à la primaire socialiste et sociale-démocrate, dont le second débat a eu lieu jeudi 1er octobre, les candidats sont incapables de prédire les rapports de force. Mais Place publique rêve d’un «exploit»",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Primaire PS : le SAV-qui-peut du camp Glucksmann en plein débat",
+      "url": "https://www.liberation.fr/politique/primaire-ps-le-sav-qui-peut-du-camp-glucksmann-en-plein-debat-20261002_JFRBRSPUQRGYHCCHO6LCG3SVHE/",
+      "published": "2026-10-02",
+      "summary": "Les partisans du boss de Place publique ont formé un conciliabule en urgence en pleine joute télévisée, jeudi 1er octobre, après que leur candidat a proposé de rapprocher le net du brut en baissant la CSG.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : vive le populisme électoral ! par Denis Pingaud",
+      "url": "https://www.liberation.fr/idees-et-debats/tribunes/presidentielle-2027-vive-le-populisme-electoral-par-denis-pingaud-20261002_SO7XJM74WVFZPNNUXRKE3DSHGY/",
+      "published": "2026-10-02",
+      "summary": "Que ce soit le maire de New York, la nouvelle édile de Berlin Elif Eralp ou le Premier ministre hongrois, tous ont su incarner leur campagne de façon moins idéologique, moins verticale, en lien avec les besoins quotidiens des électeurs. Qu’attendent nos candidats pour s’en inspir",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Blocage des lycées : le gouvernement pris au piège d’un mouvement aux aspirations multiples",
+      "url": "https://www.la-croix.com/politique/blocage-des-lycees-le-gouvernement-pris-au-piege-d-un-mouvement-aux-aspirations-multiples-20261002",
+      "published": "2026-10-02",
+      "summary": "Le ministre de l’éducation nationale Édouard Geffray a reçu vendredi 2 octobre les associations lycéennes, qui veulent poursuivre la mobilisation faute de « mesures concrètes ». Entre fermeté contre les violences et recherche d’une solution politique, le gouvernement tente de rep",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Mobilisation des lycéens et des étudiants : ce que prévoit le budget 2027 sur l’Education",
+      "url": "https://www.publicsenat.fr/actualites/economie/mobilisation-des-lyceens-et-des-etudiants-ce-que-prevoit-le-budget-2027-sur-leducation",
+      "published": "2026-10-02",
+      "summary": "En pleine grogne des lycéens et des étudiants sur la dégradation des conditions d’enseignement, le gouvernement a levé le voile sur un budget 2027 qui alloue une hausse de crédits – pour un total de 65,5 milliards d’euros – à l’Education nationale, essentiellement pour financer d",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Primaire sociale-démocrate : des candidats irréconciliables… et ce n’est peut-être pas un drame",
+      "url": "https://www.liberation.fr/politique/primaire-sociale-democrate-des-candidats-irreconciliables-et-ce-nest-peut-etre-pas-un-drame-20261002_42GMG5FUDJFRNCXBX7WPTLJ5UY/",
+      "published": "2026-10-02",
+      "summary": "Le second débat des candidats, jeudi, a à nouveau souligné les profonds clivages autour du rapport à LFI. Si ce scrutin interne peine encore à emballer, on peut au moins se réjouir de voir le sujet clairement sur la table, et les électeurs appelés à le trancher.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.56,
+        "rationale": "Proximité lexicale : lfi"
+      }
+    },
+    {
+      "title": "\"Le contexte mondial est défavorable et nous coûte\", prévient le gouvernement au sujet des conséquences d'une absence de budget en 2027",
+      "url": "https://www.franceinfo.fr/economie/budget/le-contexte-mondial-est-defavorable-et-nous-coute-previent-le-gouvernement-au-sujet-des-consequences-d-une-absence-de-budget-en-2027_8220277.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-02",
+      "summary": "Matignon s'est inquiété vendredi des conséquences de l'absence de budget pour 2027. L'entourage du Premier ministre pointe notamment la hausse des taux auxquels la France emprunte et appelle les parlementaires à faire \"avancer le texte budgétaire\".",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Le Médiateur vous répond : Mouvement lycéen : Quelle place pour les images de violences ?",
+      "url": "https://www.franceinfo.fr/monde/vatican/pape-leon-xiv/le-mediateur-vous-repond-trop-de-pape-sur-france-televisions_8219680.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-02",
+      "summary": "Le médiateur réagit à l'actualité immédiate : France Télévisions a-t-elle accordé trop de place aux violences liées au mouvement lycéen ? Egalement au programme : Trop de pape sur nos écrans ? La médiation a reçu des critiques, mais aussi des félicitations. L'émission se penche a",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Gérard Larcher réélu président du Sénat, prêt à activer le « verrou » constitutionnel en cas de victoire du RN en 2027",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/01/gerard-larcher-reelu-president-du-senat-pret-a-activer-le-verrou-constitutionnel-en-cas-de-victoire-du-rn-en-2027_6786545_823448.html",
+      "published": "2026-10-01",
+      "summary": "Le sénateur des Yvelines a été réélu, sans surprise, jeudi 1ᵉʳ octobre, pour un sixième mandat à la présidence du Palais du Luxembourg, une institution dont le rôle pourrait être très important à l’issue de l’élection présidentielle.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : rn"
+      }
+    },
+    {
+      "title": "Budget : avec 2027 en tête, le RN veut éviter la politique de la terre brûlée",
+      "url": "https://www.lefigaro.fr/politique/budget-avec-2027-en-tete-le-rn-veut-eviter-la-politique-de-la-terre-brulee-20261001",
+      "published": "2026-10-01",
+      "summary": "DÉCRYPTAGE - Marine Le Pen et Jordan Bardella doivent présenter le contre-budget nationaliste la semaine prochaine, et se projeter sur les cinq premières années du quinquennat, si jamais la candidate RN arrivait à conquérir l’Élysée.",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "le-pen",
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, bardella"
-      }
-    },
-    {
-      "title": "Bruno Retailleau : « Le problème de l’Europe, c’est qu’elle a donné le sentiment aux peuples de contourner la démocratie »",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/30/bruno-retailleau-le-probleme-de-l-europe-c-est-qu-elle-a-donne-le-sentiment-aux-peuples-de-contourner-la-democratie_6785971_823448.html",
-      "published": "2026-09-30",
-      "summary": "Issu de la droite souverainiste, le candidat Les Républicains à la présidentielle de 2027 défend, dans un entretien au « Monde », sa vision de la construction européenne et explique son projet de revenir sur la primauté du droit européen. Celui-ci diffère, d’après lui, de celui d",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
       }
     },
     {
       "title": "Guillaume Tabard : «La bascule politique de l’“affaire” Bardella»",
       "url": "https://www.lefigaro.fr/politique/guillaume-tabard-la-bascule-politique-de-l-affaire-bardella-20260930",
-      "published": "2026-09-30",
+      "published": "2026-10-01",
       "summary": "CONTRE-POINT - Est-ce le début d’un séisme qui provoquera la chute de celui qui a failli être candidat ? Ou, comme le proclament l’intéressé et le RN, la certitude d’une « dinguerie » qui conduira ce scandale à faire « pschitt »",
       "source_id": "lefigaro-politique",
       "source_label": "Le Figaro — Politique",
@@ -167,42 +471,42 @@
       }
     },
     {
-      "title": "Budget 2027 : les députés socialistes ont le doigt sur le bouton de la censure",
-      "url": "https://www.lefigaro.fr/politique/budget-2027-les-deputes-socialistes-ont-le-doigt-sur-le-bouton-de-la-censure-20260930",
-      "published": "2026-09-30",
-      "summary": "ANALYSE - À moins d’une volte-face du premier ministre sur les arbitrages budgétaires, les troupes de Boris Vallaud s’apprêtent à faire barrage au projet de loi de finances.",
+      "title": "« Vigilance sans excès de zèle » : comment Bruno Retailleau aborde les débats budgétaires",
+      "url": "https://www.lefigaro.fr/politique/vigilance-sans-exces-de-zele-comment-bruno-retailleau-aborde-les-debats-budgetaires-20260930",
+      "published": "2026-10-01",
+      "summary": "DÉCRYPTAGE - Alors que Sébastien Lecornu présente son budget ce jeudi, les soutiens du candidat LR à la présidentielle identifient des « intentions » budgétaires « plutôt bonnes ».",
       "source_id": "lefigaro-politique",
       "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : retailleau"
       }
     },
     {
-      "title": "RN : de la GUD connection aux amis de Brasillach, ces antisémites que Marine Le Pen ne saurait voir",
-      "url": "https://www.liberation.fr/politique/rn-de-la-gud-connection-aux-amis-de-brasillach-ces-antisemites-que-marine-le-pen-ne-saurait-voir-20260930_Q2S22FABLZHJNDFR4KXEQCVTJU/",
-      "published": "2026-09-30",
-      "summary": "La candidate du parti d’extrême droite a pris la défense de Jordan Bardella, accusé d’avoir commis des écrits antijuifs. Par le passé, elle a déjà fermé les yeux sur l’antisémitisme bien documenté de plusieurs figures du parti ou de son propre entourage.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
+      "title": "Gérard Larcher réélu à la tête du Sénat : « Il a un réel respect de l’opposition »",
+      "url": "https://www.la-croix.com/politique/il-a-un-reel-respect-de-l-opposition-gerard-larcher-le-consensus-sans-renoncer-a-la-droite-20261001",
+      "published": "2026-10-01",
+      "summary": "À 77 ans, Gérard Larcher a été réélu à la présidence du Sénat jeudi 1er octobre dès le premier tour, avec 203 voix sur 348. Entre présidence consensuelle et ancrage à droite, le sénateur Les Républicains des Yvelines défend une alliance avec le centre et le refus de tout rapproch",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
+        "rationale": "Proximité lexicale : les républicains, les republicains, républicains"
       }
     },
     {
-      "title": "Présidentielle 2027 : sortir du déni sur la dette",
-      "url": "https://www.lemonde.fr/idees/article/2026/09/30/presidentielle-2027-sortir-du-deni-sur-la-dette_6786031_3232.html",
-      "published": "2026-09-30",
-      "summary": "A quelques mois du scrutin, le rétablissement de nos finances publiques devrait être une priorité pour chacun des candidats. Sans un minimum de franchise et de transparence, les frustrations pourraient se transformer en colère.",
+      "title": "Présidentielle 2027 : l’inquiétude des militants écologistes et communistes partisans d’une union à gauche",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/01/presidentielle-2027-l-inquietude-des-militants-ecologistes-et-communistes-partisans-d-une-union-a-gauche_6786440_823448.html",
+      "published": "2026-10-01",
+      "summary": "Du Cher au Finistère, les candidatures autonomes de Marine Tondelier et Fabien Roussel ne font pas l’unanimité chez des adhérents qui cherchent la meilleure manière de s’opposer à l’extrême droite.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -210,56 +514,8 @@
         "slug": "pluraliste",
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Héritage, superprofits, plan climat… Les Ecologistes dégainent leur contre-budget 2027",
-      "url": "https://www.liberation.fr/politique/heritage-superprofits-plan-climat-les-ecologistes-degainent-leur-contre-budget-2027-20260930_VJMRFQJSNVEFDLABLF3AAIKKNY/",
-      "published": "2026-09-30",
-      "summary": "A la veille de la présentation du projet de loi de finances par le gouvernement, les verts ont exposé, ce mercredi 30 septembre, leurs mesures phares pour «remettre au cœur» des débats «l’impératif écologique et la justice sociale», en s’attaquant aux avantages fiscaux des ultra-",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : les écologistes, les ecologistes, climat"
-      }
-    },
-    {
-      "title": "Affaire Bardella : après des propos de Marine Le Pen contre «Mediapart», une députée écologiste dénonce une «incitation à la violence» et saisit la justice",
-      "url": "https://www.liberation.fr/politique/affaire-bardella-apres-des-propos-de-marine-le-pen-contre-mediapart-une-deputee-ecologiste-denonce-une-incitation-a-la-violence-et-saisit-la-justice-20260930_CPHFFB7Y3RGWTEB4RF5ET4Z6CM/",
-      "published": "2026-09-30",
-      "summary": "Le discours tenu mardi 29 septembre par la candidate RN à la présidentielle, avertissant le média «d’enfiler son costard en Kevlar», a été signalé au procureur de la République par Léa Balage El Mariky. Il s’apparente à des «menaces de mort», selon l’élue, qui regrette l’absence ",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rn"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : « Vous président », suivez dimanche soir la dernière rencontre des candidats avant le vote à la primaire de la gauche sociale-démocrate",
-      "url": "https://www.liberation.fr/forums/presidentielle-2027-vous-president-suivez-dimanche-soir-la-derniere-rencontre-des-candidats-avant-le-vote-a-la-primaire-de-la-gauche-sociale-democrate-20260930_JCEUJCTVN5C7FO4OAKERG6XTUQ/",
-      "published": "2026-09-30",
-      "summary": "«Libération» vous donne rendez-vous ce dimanche 4 octobre à 20h45 pour une soirée de débat organisé par BFM TV « Vous président », primaire de la gauche : le débat décisif avec Olivier Faure, Raphaël Glucksmann, Jérôme Guedj, Emmanuel Maurel, Ségolène Royal.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : ségolène royal, segolene royal, faure"
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Roussel / PCF · Écologiste) — teinte pluraliste."
       }
     },
     {
@@ -279,166 +535,6 @@
       }
     },
     {
-      "title": "VIDEO. Ecrits antisémites attribués à Jordan Bardella : Emmanuel Macron juge \"gravissimes et inacceptables\" les propos rapportés par Mediapart",
-      "url": "https://www.franceinfo.fr/politique/jordan-bardella/video-ecrits-antisemites-attribues-a-jordan-bardella-emmanuel-macron-juge-gravissimes-et-inacceptables-les-propos-rapportes-par-mediapart_8216548.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-30",
-      "summary": "Le chef de l'Etat a aussi déploré \"la violence\" dans la campagne présidentielle, qui peut favoriser une \"escalade\".",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : macron, emmanuel macron"
-      }
-    },
-    {
-      "title": "« Vigilance sans excès de zèle » : comment Bruno Retailleau aborde les débats budgétaires",
-      "url": "https://www.lefigaro.fr/politique/vigilance-sans-exces-de-zele-comment-bruno-retailleau-aborde-les-debats-budgetaires-20260930",
-      "published": "2026-09-30",
-      "summary": "DÉCRYPTAGE - Alors que Sébastien Lecornu présente son budget ce jeudi, les soutiens du candidat LR à la présidentielle identifient des « intentions » budgétaires « plutôt bonnes ».",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : retailleau"
-      }
-    },
-    {
-      "title": "Noisy-le-Sec : le tribunal administratif annule les élections municipales à cause de déclarations de candidatures non conformes",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/30/noisy-le-sec-le-tribunal-administratif-annule-les-elections-municipales-a-cause-de-declarations-de-candidatures-non-conformes_6786065_823448.html",
-      "published": "2026-09-30",
-      "summary": "Les parties ont jusqu’au 30 octobre pour faire appel devant le Conseil d’Etat. En cas d’annulation définitive, une nouvelle élection devra être organisée dans les trois mois.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Budget 2027 : la taxe sur les produits sucrés revient «sur la table» au nom de la lutte contre l’obésité",
-      "url": "https://www.liberation.fr/economie/conso/budget-2027-la-taxe-sur-les-produits-sucres-revient-sur-la-table-au-nom-de-la-lutte-contre-lobesite-20260930_RNZGMNY2P5A25ONKI765UVXA2Y/",
-      "published": "2026-09-30",
-      "summary": "L’idée d’une telle taxe, qui avait fait chou blanc en 2024, est de nouveau évoquée par le gouvernement, qui cherche des recettes. C’est aussi une façon de s’attaquer à la racine à l’obésité et au diabète, dont la prise en charge coûte cher.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Retraites : Gabriel Attal trouve que la réforme proposée par Edouard Philippe relève «des soins palliatifs»",
-      "url": "https://www.liberation.fr/politique/retraites-gabriel-attal-trouve-que-la-reforme-proposee-par-edouard-philippe-releve-des-soins-palliatifs-20260930_PBMULG7UX5HWJHGQ5GJ2HXN5RU/",
-      "published": "2026-09-30",
-      "summary": "Sur le plateau de la chaîne bolloréenne CNews ce mercredi, le candidat de Renaissance a vivement critiqué le projet présenté la veille par son concurrent d’Horizons, qui veut reculer l’âge légal de départ à la retraite à 65 ans.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Philippe / Horizons · Attal / Renaissance) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Retraites : le gouvernement tranche finalement pour une sous-indexation et une baisse de l’abattement",
-      "url": "https://www.liberation.fr/economie/securite-sociale-le-gouvernement-veut-diviser-de-moitie-le-deficit-en-economisant-5-milliards-sur-les-retraites-20260930_HNVDBO4MO5EHJKO5FX2JO6T3GY/",
-      "published": "2026-09-30",
-      "summary": "Le ministre du Travail, Jean-Pierre Farandou, a fixé l’objectif d’une division quasiment de moitié du déficit de la Sécu en 2027, en économisant notamment 5,5 milliards sur les retraites.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
-      "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-09-30",
-      "summary": "A quelques mois du premier tour de la présidentielle, les candidats se positionnent sur le dossier des retraites. A gauche, tout le monde s'accorde sur une suppression de la réforme Borne. A droite, la majorité souhaite une réforme paramétrique avec souvent une dose de capitalisa",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : borne"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Edouard Philippe dévoile son projet de retraite à 65 ans et 45 annuités",
-      "url": "https://www.lemonde.fr/politique/article/2026/09/29/presidentielle-2027-edouard-philippe-devoile-son-projet-de-retraite-a-65-ans-et-45-annuites_6785692_823448.html",
-      "published": "2026-09-29",
-      "summary": "Dévoilant les grandes lignes de la réforme qu’il entend mener mardi 29 septembre, l’ancien premier ministre promet des mesures de justice sociale, en permettant notamment à « un Français sur trois » de continuer à partir entre 60 et 64 ans.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, réforme"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : 67 ans et 80 km/h, les deux nombres maudits dont Édouard Philippe veut se débarrasser",
-      "url": "https://www.lefigaro.fr/politique/presidentielle-2027-67-ans-et-80-km-h-les-deux-nombres-maudits-dont-edouard-philippe-veut-se-debarrasser-20260928",
-      "published": "2026-09-29",
-      "summary": "DÉCRYPTAGE - Le candidat d’Horizons à la présidentielle, qui a proposé mardi de reporter à 65 ans l’âge légal de départ à la retraite, veut cesser d’apparaître comme l’«homme des 67 ans», tout comme il a ajusté son discours sur la limitation de vitesse à 80 km/h.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
-      }
-    },
-    {
-      "title": "Accusations d'antisémitisme : le Rassemblement national lance sa contre-attaque",
-      "url": "https://www.france24.com/fr/france/20260929-france-accusations-antisemitisme-rassemblement-national-lance-contre-attaque-jordan-bardella-marine-le-pen",
-      "published": "2026-09-29",
-      "summary": "Le président du Rassemblement national, Jordan Bardella, et la candidate du parti à l'élection présidentielle, Marine Le Pen, ont lancé leur contre-attaque au lendemain des révélations de Mediapart faisant état de propos antisémites tenus par l'eurodéputé il y a plus de dix ans. ",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
-      }
-    },
-    {
       "title": "Présidentielle 2027 : Édouard Philippe assume le risque de porter l’âge de la retraite à 65 ans",
       "url": "https://www.la-croix.com/politique/presidentielle-2027-edouard-philippe-assume-le-risque-de-porter-l-age-de-la-retraite-a-65-ans-20260929",
       "published": "2026-09-29",
@@ -455,115 +551,19 @@
       }
     },
     {
-      "title": "Publication du rapport d’information sur la répartition des dépenses entre l’assurance maladie obligatoire et l’assurance maladie complémentaire",
-      "url": "https://www.assemblee-nationale.fr/dyn/espace-presse/communiques-de-presse/2026/publication-du-rapport-d-information-sur-la-repartition-des-depenses-entre-l-assurance-maladie-obligatoire-et-l-assurance-maladie-complementaire",
-      "published": "2026-09-29",
-      "summary": "Ce mardi 29 septembre 2026, la mission d’évaluation et de contrôle des lois de financement de la sécurité sociale (Mecss), co-présidée par MM. Cyrille Isaac-Sibille (Dem, Rhône) et Jérôme Guedj (Soc, Essonne), a adopté le rapport d’information de MM. Thibault Bazin (DR, Meurthe-e",
+      "title": "Parlement des enfants - annonce des deux classes lauréates",
+      "url": "https://www.assemblee-nationale.fr/dyn/espace-presse/communiques-de-presse/2026/parlement-des-enfants-annonce-des-deux-classes-laureates",
+      "published": "2026-06-08",
+      "summary": "Lundi 8 juin, les classes de CM2 de l'école primaire Jean Dion de Château-Porcien, dans l'académie de Reims, et de 6ème du collège Gisèle Halimi de Lyon, dans l'académie de Lyon, ont été désignées lauréate de l'édition 2026 du Parlement des enfants. Pour cette 29ème édition du Pa",
       "source_id": "assemblee-communiques",
       "source_label": "Assemblée nationale — Communiqués",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : guedj"
-      }
-    },
-    {
-      "title": "Accusations d’antisémitisme : « La défense de Jordan Bardella est assez classique. C’est celle de Fillon en 2017 », selon le communicant Philippe Moreau-Chevrolet",
-      "url": "https://www.publicsenat.fr/actualites/politique/propos-antisemites-reveles-par-mediapart-la-defense-de-jordan-bardella-est-assez-classique-cest-celle-de-fillon-en-2017-selon-le-communicant-philippe-moreau-chevrolet",
-      "published": "2026-09-29",
-      "summary": "Dans la tourmente depuis lundi et l’article de Mediapart qui a révélé des écrits antisémites datant de 2013, le président du RN, Jordan Bardella, a annoncé dans la foulée le dépôt d’une plainte pour diffamation et dénonce une opération destinée à le « tuer politiquement ». Cette ",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, bardella"
-      }
-    },
-    {
-      "title": "Retraites : Édouard Philippe sort du bois et propose un âge de départ à 65 ans",
-      "url": "https://www.publicsenat.fr/actualites/politique/retraites-edouard-philippe-sort-du-bois-et-propose-un-age-de-depart-a-65-ans",
-      "published": "2026-09-29",
-      "summary": "Après des mois de suspense, le candidat Horizons à la présidentielle a dévoilé mardi 29 septembre sa réforme des retraites dans une vidéo d'une vingtaine de minutes. Il propose de reprendre le calendrier de 2023, puis de relever l'âge légal à 65 ans en moins de dix ans, avec un v",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
-      }
-    },
-    {
-      "title": "«Il est obsédé par l’avenir de la France» : Maria Carolina de Bourbon des Deux-Siciles, compagne de Jordan Bardella, se confie au Figaro Magazine",
-      "url": "https://www.lefigaro.fr/politique/il-est-obsede-par-l-avenir-de-la-france-maria-carolina-de-bourbon-des-deux-siciles-compagne-de-jordan-bardella-se-confie-au-figaro-magazine-20260927",
-      "published": "2026-09-28",
-      "summary": "EXCLUSIF - Pour la première fois, la jeune compagne du président du Rassemblement national s’exprime sur ses liens avec celui qui a dû renoncer à la course présidentielle au profit de Marine Le Pen.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, bardella"
-      }
-    },
-    {
-      "title": "Élections sénatoriales 2026 : le RN investit le Sénat, et veut y voir une étape vers la présidentielle",
-      "url": "https://www.la-croix.com/politique/elections-senatoriales-2026-le-rn-investit-le-senat-et-veut-y-voir-une-etape-vers-la-presidentielle-20260928",
-      "published": "2026-09-28",
-      "summary": "Si les résultats aux élections sénatoriales du 27 septembre n’ont pas bouleversé les équilibres en vigueur à la chambre haute, le Rassemblement national y est en mesure de constituer un groupe, pour la première fois.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Sens Public — Sénatoriales : quel contre-pouvoir pour 2027 ?",
-      "url": "https://www.publicsenat.fr/emission/sens-public/senatoriales-quel-contre-pouvoir-pour-2027-e0",
-      "published": "2026-09-28",
-      "summary": "Ce dimanche 27 septembre, 178 sièges ont été renouvelés au Sénat et le groupe RN sort renforcé de ces élections sénatoriales. Gérard Larcher, président du Sénat, a tenu à rappeler dans la soirée le rôle indispensable de la Chambre haute comme contre-pouvoir, anticipant une possib",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : rn"
-      }
-    },
-    {
-      "title": "Retraites : avec la proposition de réforme de Bruno Retailleau, qui partirait à quel âge ?",
-      "url": "https://www.lefigaro.fr/politique/retraites-avec-la-proposition-de-reforme-de-bruno-retailleau-qui-partirait-a-quel-age-20260923",
-      "published": "2026-09-23",
-      "summary": "DÉCRYPTAGE - Le candidat Les Républicains propose plusieurs mesures chocs s’il est élu en 2027, avec un âge de départ à taux plein à 65 ans, ainsi que de la capitalisation.",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : école, ecole"
       }
     }
   ]
