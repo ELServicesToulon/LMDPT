@@ -176,7 +176,15 @@ function buildNewsSitemap(): string {
   const visitePapeTitle =
     ANALYSIS_CATALOG.find((a) => a.slug === 'visite-pape-appel-popularite')?.title ??
     'Visite de Léon XIV : la foule ne fait pas un scrutin';
+  const dsaTitle =
+    ANALYSIS_CATALOG.find((a) => a.slug === 'dsa-qui-decide')?.title ??
+    'Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?';
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
+    {
+      path: '/analyses/dsa-qui-decide',
+      title: dsaTitle,
+      keywords: 'DSA, Commission européenne, Arcom, liberté d expression, modération',
+    },
     {
       path: '/analyses/visite-pape-appel-popularite',
       title: visitePapeTitle,
