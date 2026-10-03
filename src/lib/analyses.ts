@@ -5,6 +5,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
+import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -28,6 +29,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: dsaQuiDecide.slug,
+    title: dsaQuiDecide.title,
+    description: dsaQuiDecide.chapo,
+    date: dsaQuiDecide.date,
+    published: dsaQuiDecide.date,
+    updated: dsaQuiDecide.updated,
+    href: '/analyses/dsa-qui-decide',
+    cover: uneCover(
+      'dsa-qui-decide',
+      'Illustration à l’encre et à l’aquarelle : une bulle de parole vide posée au centre d’un carrefour, d’où partent trois chemins. Le premier mène à un écran de téléphone, le deuxième à un bâtiment à colonnes surmonté d’un cercle d’étoiles, le troisième à un marteau de juge posé sur un livre. Tons bleu ardoise, ocre et gris chaud.',
+    ),
+  },
   {
     slug: visitePape.slug,
     title: visitePape.title,

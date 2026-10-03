@@ -5,6 +5,10 @@ import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
+import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
+import { renderAnalysisInline } from './analysis-inline';
+import { getUneDuJour } from './editorial';
+import { socialTitleFrom, SOCIAL_TITLE_MAX } from './seo';
 import { ANALYSIS_CATALOG, getAnalysis } from './analyses';
 
 describe('analyses', () => {
@@ -23,6 +27,7 @@ describe('analyses', () => {
       'ukraine-energie-triangle-europe-algerie-russie',
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('dsa-qui-decide');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
   });
 
@@ -92,6 +97,53 @@ describe('analyses', () => {
     const urls = trumpIa.sources.map((s) => s.url);
     expect(urls).toContain('https://truthsocial.com/@realDonaldTrump/posts/117269745153543631');
     expect(urls.some((u) => u.includes('trumpstruth.org'))).toBe(true);
+  });
+
+  it('enquête DSA distingue plateforme, loi et juge et cite les sources', () => {
+    expect(dsaQuiDecide.slug).toBe('dsa-qui-decide');
+    expect(dsaQuiDecide.date).toBe('2026-10-03');
+    expect(dsaQuiDecide.updated).toBe('2026-10-03');
+    expect(dsaQuiDecide.title).toBe(
+      'Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?',
+    );
+    const entry = getAnalysis('dsa-qui-decide');
+    expect(entry?.title).toBe(dsaQuiDecide.title);
+    expect(entry?.href).toBe('/analyses/dsa-qui-decide');
+    expect(entry?.date).toBe('2026-10-03');
+    expect(entry?.published).toBe('2026-10-03');
+    expect(entry?.updated).toBe('2026-10-03');
+    expect(entry?.description).toBe(dsaQuiDecide.chapo);
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/dsa-qui-decide.jpg');
+    expect(entry?.cover?.alt.startsWith('Illustration à l’encre et à l’aquarelle :')).toBe(true);
+    expect(getUneDuJour()?.slug).toBe('dsa-qui-decide');
+    expect(getUneDuJour()?.published).toBe('2026-10-03');
+    expect(getUneDuJour()?.updated).toBe('2026-10-03');
+    expect(dsaQuiDecide.disclaimer).toMatch(/traduites par LMDPT/);
+    expect(JSON.stringify(dsaQuiDecide.sections)).toMatch(/Note de méthode : la consultation directe d’EUR-Lex/);
+    expect(dsaQuiDecide.title.length).toBeGreaterThan(SOCIAL_TITLE_MAX);
+    expect(socialTitleFrom(dsaQuiDecide.title).length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
+    expect(socialTitleFrom(dsaQuiDecide.title).endsWith('…')).toBe(true);
+    const urls = dsaQuiDecide.sources_groups.flatMap((group) =>
+      group.items.map((item) => item.url).filter(Boolean),
+    );
+    expect(urls).toHaveLength(31);
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls).toContain('https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065');
+    expect(urls).toContain(
+      'https://www.justice.gov/opa/pr/united-states-files-request-intervene-case-brought-x-corp-and-elon-musk-seeking-annul',
+    );
+    expect(urls).toContain('https://juricaf.org/arret/FRANCE-TRIBUNALJUDICIAIREDEPARIS-20240605-2100726');
+    expect(urls).toContain(
+      'https://www.arcom.fr/sites/default/files/2026-08/Arcom-releve-d-activite-2024-2025-du-coordinateur-pour-les-services-numeriques-au-titre-de-l-article-55-du-Reglement-sur-les-services-numeriques-rsn.pdf',
+    );
+    const raw = dsaQuiDecide.sources_groups.find((group) => group.title.startsWith('Raw hub'));
+    expect(raw?.items.every((item) => item.url === '' && item.label.endsWith('.md'))).toBe(true);
+    expect(renderAnalysisInline('le DSA (*Digital Services Act*)')).toBe(
+      'le DSA (<em>Digital Services Act</em>)',
+    );
+    expect(renderAnalysisInline('un contenu **illicite**')).toBe('un contenu <strong>illicite</strong>');
+    expect(renderAnalysisInline('*Note de méthode : EUR-Lex*')).toBe('<em>Note de méthode : EUR-Lex</em>');
+    expect(renderAnalysisInline('<script>')).toBe('&lt;script&gt;');
   });
 
   it('enquête écoles de journalisme laisse les sièges vides et cite la CPNEJ', () => {

@@ -1,0 +1,201 @@
+---
+/**
+ * Enquête DSA — plateforme, État, juge (3 octobre 2026)
+ * Données : src/data/analyses/dsa-qui-decide.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import { renderAnalysisInline, type AnalysisBlock } from '../../lib/analysis-inline';
+import data from '../../data/analyses/dsa-qui-decide.json';
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+
+const sections = data.sections as Array<{
+  id: string;
+  title: string;
+  blocks: AnalysisBlock[];
+}>;
+
+const tocItems = sections.map((section) => ({
+  href: `#${section.id}`,
+  label: section.title,
+})).concat([{ href: '#sources', label: 'Sources' }]);
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.chapo}
+  type="article"
+  keywords="DSA, Commission européenne, Arcom, liberté d’expression, modération, X, Meta, Tribunal de l’Union, LMDPT"
+>
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
+    <a href="/analyses">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta kicker"><em>{data.kicker}</em></p>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.chapo}</p>
+    <p class="enq-angle"><strong>Angle DOE.</strong> {data.doe_angle}</p>
+    <blockquote class="disclaimer-box">{data.disclaimer}</blockquote>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  {
+    sections.map((section) => (
+      <section class="card" id={section.id} aria-labelledby={`${section.id}-title`}>
+        <h2 id={`${section.id}-title`}>{section.title}</h2>
+        {section.blocks.map((block) => {
+          if (block.type === 'p') {
+            return <p set:html={renderAnalysisInline(block.text)} />;
+          }
+          if (block.type === 'h3') {
+            return <h3 set:html={renderAnalysisInline(block.text)} />;
+          }
+          if (block.type === 'ul') {
+            return (
+              <ul>
+                {block.items.map((item) => (
+                  <li set:html={renderAnalysisInline(item)} />
+                ))}
+              </ul>
+            );
+          }
+          if (block.type === 'ol') {
+            return (
+              <ol>
+                {block.items.map((item) => (
+                  <li set:html={renderAnalysisInline(item)} />
+                ))}
+              </ol>
+            );
+          }
+          if (block.type === 'table') {
+            return (
+              <div class="table-wrap" role="region" aria-label={block.caption} tabindex="0">
+                <table class="enq-table">
+                  <caption class="visually-hidden">{block.caption}</caption>
+                  <thead>
+                    <tr>
+                      {block.headers.map((header) => (
+                        <th scope="col" set:html={renderAnalysisInline(header)} />
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.map((row) => (
+                      <tr>
+                        {row.map((cell, index) =>
+                          index === 0 ? (
+                            <th scope="row" set:html={renderAnalysisInline(cell)} />
+                          ) : (
+                            <td set:html={renderAnalysisInline(cell)} />
+                          ),
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+          const _exhaustive: never = block;
+          return _exhaustive;
+        })}
+      </section>
+    ))
+  }
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources</h2>
+    <p>{data.sources_intro}</p>
+    {
+      data.sources_groups.map((group) => (
+        <div>
+          <h3>{group.title}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li>
+                {item.url ? (
+                  <a href={item.url} rel="noopener noreferrer">
+                    {item.label}
+                  </a>
+                ) : (
+                  <code>{item.label}</code>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+    <h3>Liens LMDPT</h3>
+    <ul>
+      {
+        data.liens_internes.map((lien) => (
+          <li>
+            <a href={lien.href}>{lien.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .enq-intro {
+    margin-bottom: 1.25rem;
+  }
+  .enq-intro .lead {
+    max-width: 48rem;
+    line-height: 1.55;
+    font-size: 1.02rem;
+  }
+  .enq-angle {
+    max-width: 48rem;
+  }
+  .kicker {
+    margin-bottom: 0.35rem;
+  }
+  .disclaimer-box {
+    border-left: 3px solid var(--accent, #0e6b6e);
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 8%, transparent);
+    line-height: 1.5;
+    margin: 0.75rem 0;
+  }
+  .enq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .enq-table th,
+  .enq-table td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    text-align: left;
+    vertical-align: top;
+  }
+  h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
+  code {
+    font-size: 0.92em;
+    word-break: break-all;
+  }
+</style>

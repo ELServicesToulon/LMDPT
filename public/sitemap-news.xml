@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lmdpt.iarbre.org/analyses/dsa-qui-decide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Le Média du Premier Tour</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-03T08:00:00+02:00</news:publication_date>
+      <news:title>Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?</news:title>
+      <news:keywords>DSA, Commission européenne, Arcom, liberté d expression, modération</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lmdpt.iarbre.org/analyses/visite-pape-appel-popularite/</loc>
     <news:news>
       <news:publication>
