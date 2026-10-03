@@ -118,31 +118,64 @@ describe('analyses', () => {
     expect(getUneDuJour()?.slug).toBe('dsa-qui-decide');
     expect(getUneDuJour()?.published).toBe('2026-10-03');
     expect(getUneDuJour()?.updated).toBe('2026-10-03');
+    expect(dsaQuiDecide.chapo.startsWith('Une amende pour des coches bleues')).toBe(true);
+    expect(dsaQuiDecide.x_hook).toBe(dsaQuiDecide.title);
+    expect(dsaQuiDecide.tags).toContain('presidentielle-2027');
     expect(dsaQuiDecide.disclaimer).toMatch(/traduites par LMDPT/);
-    expect(JSON.stringify(dsaQuiDecide.sections)).toMatch(/Note de méthode : la consultation directe d’EUR-Lex/);
+    expect(dsaQuiDecide.disclaimer).toMatch(/ne vaut pas consigne de vote/);
+    const encadre = dsaQuiDecide.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.cards).toHaveLength(8);
+      expect(encadre.cards.map((card) => card.name)).toEqual([
+        'Jean-Luc Mélenchon (La France insoumise)',
+        'Marine Tondelier (Les Écologistes)',
+        'Raphaël Glucksmann (Place publique)',
+        'Gabriel Attal (Renaissance)',
+        'Édouard Philippe (Horizons)',
+        'Bruno Retailleau (Les Républicains)',
+        'Marine Le Pen (Rassemblement national, en « binôme » avec Jordan Bardella)',
+        'Éric Zemmour (Reconquête)',
+      ]);
+      expect(encadre.cards.every((card) => card.frotte.startsWith('Le point qui frotte'))).toBe(true);
+      expect(encadre.intro).toMatch(/ne classe personne/);
+    }
+    expect(JSON.stringify(dsaQuiDecide.sections)).toMatch(
+      /Note de méthode : la consultation directe d’EUR-Lex, en échec le 15 septembre puis dans la journée du 3 octobre, a abouti le 3 octobre au soir/,
+    );
     expect(dsaQuiDecide.title.length).toBeGreaterThan(SOCIAL_TITLE_MAX);
     expect(socialTitleFrom(dsaQuiDecide.title).length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
     expect(socialTitleFrom(dsaQuiDecide.title).endsWith('…')).toBe(true);
-    const urls = dsaQuiDecide.sources_groups.flatMap((group) =>
-      group.items.map((item) => item.url).filter(Boolean),
+    const sourceUrls = dsaQuiDecide.sources_groups.flatMap((group) =>
+      group.items.flatMap((item) => item.links.map((link) => link.url)),
     );
-    expect(urls).toHaveLength(31);
-    expect(new Set(urls).size).toBe(urls.length);
+    const cardUrls =
+      encadre?.kind === 'candidats'
+        ? encadre.cards.flatMap((card) => [...card.sources.matchAll(/\((https?:\/\/[^)]+)\)/g)].map((m) => m[1]))
+        : [];
+    const urls = [...sourceUrls, ...cardUrls];
+    expect(new Set(urls).size).toBe(62);
     expect(urls).toContain('https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065');
     expect(urls).toContain(
       'https://www.justice.gov/opa/pr/united-states-files-request-intervene-case-brought-x-corp-and-elon-musk-seeking-annul',
     );
     expect(urls).toContain('https://juricaf.org/arret/FRANCE-TRIBUNALJUDICIAIREDEPARIS-20240605-2100726');
     expect(urls).toContain(
-      'https://www.arcom.fr/sites/default/files/2026-08/Arcom-releve-d-activite-2024-2025-du-coordinateur-pour-les-services-numeriques-au-titre-de-l-article-55-du-Reglement-sur-les-services-numeriques-rsn.pdf',
+      'https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049563368',
     );
+    expect(urls).toContain('https://howtheyvote.eu/votes/146649');
+    expect(urls).toContain('https://x.com/ZemmourEric/status/2076997030849683893');
+    expect(urls).toContain('http://bbc.com/news/articles/cp39kngz008o');
     const raw = dsaQuiDecide.sources_groups.find((group) => group.title.startsWith('Raw hub'));
-    expect(raw?.items.every((item) => item.url === '' && item.label.endsWith('.md'))).toBe(true);
+    expect(raw?.items.every((item) => item.links.length === 0 && item.label.endsWith('.md'))).toBe(true);
     expect(renderAnalysisInline('le DSA (*Digital Services Act*)')).toBe(
       'le DSA (<em>Digital Services Act</em>)',
     );
     expect(renderAnalysisInline('un contenu **illicite**')).toBe('un contenu <strong>illicite</strong>');
     expect(renderAnalysisInline('*Note de méthode : EUR-Lex*')).toBe('<em>Note de méthode : EUR-Lex</em>');
+    expect(renderAnalysisInline('[EUR-Lex](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065)')).toBe(
+      '<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065" rel="noopener noreferrer">EUR-Lex</a>',
+    );
     expect(renderAnalysisInline('<script>')).toBe('&lt;script&gt;');
   });
 

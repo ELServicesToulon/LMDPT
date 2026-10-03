@@ -9,26 +9,53 @@ import { DOE_FR } from '../../lib/doe';
 import { renderAnalysisInline, type AnalysisBlock } from '../../lib/analysis-inline';
 import data from '../../data/analyses/dsa-qui-decide.json';
 
+interface CandidatCard {
+  name: string;
+  dit: string;
+  frotte: string;
+  niveau: string;
+  sources: string;
+}
+
+type AnalysisSection =
+  | { kind: 'prose'; id: string; title: string; blocks: AnalysisBlock[] }
+  | {
+      kind: 'candidats';
+      id: string;
+      title: string;
+      intro: string;
+      cards: CandidatCard[];
+      conclusion: string;
+    };
+
 const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 
-const sections = data.sections as Array<{
-  id: string;
-  title: string;
-  blocks: AnalysisBlock[];
-}>;
+const sections = data.sections as AnalysisSection[];
 
-const tocItems = sections.map((section) => ({
-  href: `#${section.id}`,
-  label: section.title,
-})).concat([{ href: '#sources', label: 'Sources' }]);
+const tocItems = sections
+  .map((section) => ({
+    href: `#${section.id}`,
+    label: section.title,
+  }))
+  .concat([{ href: '#sources', label: 'Sources' }]);
+
+const keywords = [
+  ...data.tags,
+  'présidentielle 2027',
+  'DSA',
+  'Commission européenne',
+  'Arcom',
+  'liberté d’expression',
+  'modération',
+].join(', ');
 ---
 
 <BaseLayout
   title={data.title}
   description={data.chapo}
   type="article"
-  keywords="DSA, Commission européenne, Arcom, liberté d’expression, modération, X, Meta, Tribunal de l’Union, LMDPT"
+  keywords={keywords}
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses">Analyses</a>
@@ -48,7 +75,6 @@ const tocItems = sections.map((section) => ({
       Mise à jour <time datetime={data.updated}>{updated}</time>
     </p>
     <p class="lead">{data.chapo}</p>
-    <p class="enq-angle"><strong>Angle DOE.</strong> {data.doe_angle}</p>
     <blockquote class="disclaimer-box">{data.disclaimer}</blockquote>
     <p class="meta">{DOE_FR}.</p>
   </section>
@@ -56,7 +82,31 @@ const tocItems = sections.map((section) => ({
   <StickyToc title="Sommaire" items={tocItems} />
 
   {
-    sections.map((section) => (
+    sections.map((section) => {
+      if (section.kind === 'candidats') {
+        return (
+          <aside class="card candidats" id={section.id} aria-labelledby={`${section.id}-title`}>
+            <h2 id={`${section.id}-title`}>{section.title}</h2>
+            <p class="candidats-intro" set:html={renderAnalysisInline(section.intro)} />
+            <ul class="candidat-list">
+              {section.cards.map((card, index) => (
+                <li>
+                  <article class="candidat-card" aria-labelledby={`candidat-${index}`}>
+                    <h3 id={`candidat-${index}`}>{card.name}</h3>
+                    <p set:html={renderAnalysisInline(card.dit)} />
+                    <p set:html={renderAnalysisInline(card.frotte)} />
+                    <p set:html={renderAnalysisInline(card.niveau)} />
+                    <p class="candidat-sources" set:html={renderAnalysisInline(card.sources)} />
+                  </article>
+                </li>
+              ))}
+            </ul>
+            <p set:html={renderAnalysisInline(section.conclusion)} />
+          </aside>
+        );
+      }
+      if (section.kind === 'prose') {
+        return (
       <section class="card" id={section.id} aria-labelledby={`${section.id}-title`}>
         <h2 id={`${section.id}-title`}>{section.title}</h2>
         {section.blocks.map((block) => {
@@ -117,7 +167,11 @@ const tocItems = sections.map((section) => ({
           return _exhaustive;
         })}
       </section>
-    ))
+        );
+      }
+      const _unknown: never = section;
+      return _unknown;
+    })
   }
 
   <section class="card" id="sources" aria-labelledby="sources-title">
@@ -130,10 +184,15 @@ const tocItems = sections.map((section) => ({
           <ul>
             {group.items.map((item) => (
               <li>
-                {item.url ? (
-                  <a href={item.url} rel="noopener noreferrer">
-                    {item.label}
-                  </a>
+                {item.links.length > 0 ? (
+                  item.links.map((link, index) => (
+                    <>
+                      {index > 0 && ' · '}
+                      <a href={link.url} rel="noopener noreferrer">
+                        {link.label}
+                      </a>
+                    </>
+                  ))
                 ) : (
                   <code>{item.label}</code>
                 )}
@@ -165,9 +224,6 @@ const tocItems = sections.map((section) => ({
     line-height: 1.55;
     font-size: 1.02rem;
   }
-  .enq-angle {
-    max-width: 48rem;
-  }
   .kicker {
     margin-bottom: 0.35rem;
   }
@@ -197,5 +253,36 @@ const tocItems = sections.map((section) => ({
   code {
     font-size: 0.92em;
     word-break: break-all;
+  }
+  .candidats {
+    border-left: 3px solid var(--accent, #0e6b6e);
+  }
+  .candidats-intro {
+    font-size: 0.98rem;
+  }
+  .candidat-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .candidat-card {
+    margin: 0;
+    padding: 0.85rem 1rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--accent, #0e6b6e) 6%, var(--card));
+  }
+  .candidat-card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+  .candidat-card p {
+    margin: 0.55rem 0 0;
+  }
+  .candidat-sources {
+    font-size: 0.95rem;
   }
 </style>
