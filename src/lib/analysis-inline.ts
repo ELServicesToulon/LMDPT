@@ -15,9 +15,13 @@ function escapeHtml(src: string): string {
     .replace(/"/g, '&quot;');
 }
 
-/** `**gras**` et `*italique*` du markdown d’enquête. Le reste est échappé. */
+/** `**gras**`, `*italique*` et liens `[libellé](https://…)` du markdown d’enquête. Le reste est échappé. */
 export function renderAnalysisInline(src: string): string {
   const escaped = escapeHtml(src);
   const withStrong = escaped.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  return withStrong.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  const withLinks = withStrong.replace(
+    /\[([^\]]+)\]\((https?:[^)]+)\)/g,
+    '<a href="$2" rel="noopener noreferrer">$1</a>',
+  );
+  return withLinks.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }

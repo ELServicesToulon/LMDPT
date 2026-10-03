@@ -5,34 +5,48 @@
   "type_label": "Enquête documentaire",
   "date": "2026-10-03",
   "updated": "2026-10-03",
-  "chapo": "Le 24 septembre 2026, le gouvernement américain a demandé à soutenir X devant la justice européenne contre la première amende prononcée au titre du règlement sur les services numériques (DSA). Ce bras de fer remet en lumière une confusion tenace : la modération d’une plateforme, l’application d’une loi et la décision d’un juge ne relèvent ni des mêmes acteurs, ni des mêmes règles, ni des mêmes recours. Trois affaires, les premiers chiffres de recours publiés en France et l’état des procédures européennes au 3 octobre 2026.",
-  "doe_angle": "Qui fixe les règles de la parole en ligne, et devant qui peut-on les contester ?",
-  "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne éditoriale : la démocratie avant l’élimination). Elle s’appuie sur des textes et communiqués officiels (Commission européenne, Arcom, parquet de Paris, département de la Justice américain), sur un jugement du tribunal judiciaire de Paris et sur des articles de presse cités en fin de texte. Les citations d’origine anglaise sont traduites par LMDPT. Ce texte n’est ni un avis juridique, ni une prise de position pour ou contre une plateforme, la Commission ou un gouvernement. Faits arrêtés au 3 octobre 2026.",
+  "chapo": "Une amende pour des coches bleues, et voilà la liberté d’expression convoquée des deux côtés de l’Atlantique. Le 24 septembre 2026, Washington a demandé à soutenir X devant la justice européenne contre la première sanction du règlement sur les services numériques (DSA), qui ne vise pourtant aucun message retiré. Modération d’une plateforme, application d’une loi, décision d’un juge : trois pouvoirs que le mot « censure » confond. Trois affaires, les premiers chiffres de recours publiés en France et en Europe, l’état des procédures au 3 octobre 2026, et ce que disent les candidats à 2027.",
+  "disclaimer": "Enquête documentaire du Média du Premier Tour (ligne éditoriale : la démocratie avant l’élimination). Elle s’appuie sur des textes et communiqués officiels (Commission européenne, Arcom, parquet de Paris, département de la Justice américain), sur un jugement du tribunal judiciaire de Paris et sur des articles de presse cités en fin de texte. Les citations d’origine anglaise sont traduites par LMDPT. Ce texte n’est ni un avis juridique, ni une prise de position pour ou contre une plateforme, la Commission ou un gouvernement. Faits arrêtés au 3 octobre 2026. L’encadré « Ce que disent les candidats » rapporte des déclarations et des votes publics, sourcés et datés : il ne classe personne et ne vaut pas consigne de vote.",
   "kicker": "Enquête · libertés numériques et régulation · 3 octobre 2026",
+  "tags": [
+    "lmdpt",
+    "dsa",
+    "liberte-d-expression",
+    "moderation",
+    "commission-europeenne",
+    "arcom",
+    "x",
+    "meta",
+    "doe",
+    "presidentielle-2027"
+  ],
+  "x_hook": "Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?",
   "sections": [
     {
+      "kind": "prose",
       "id": "bref",
       "title": "En bref",
       "blocks": [
         {
           "type": "p",
-          "text": "Le 24 septembre 2026, le département de la Justice des États-Unis a demandé à intervenir devant le Tribunal de l’Union européenne, à Luxembourg. Il veut soutenir X et Elon Musk, qui contestent la première amende prononcée au titre du règlement européen sur les services numériques, le DSA (*Digital Services Act*). Cette amende de 120 millions d’euros a été infligée au réseau social par la Commission européenne le 5 décembre 2025. Selon le communiqué américain, c’est la première contestation d’une sanction DSA à arriver devant ce tribunal."
+          "text": "Sur le papier, c’est une affaire de coches bleues. Dans les discours, c’est une affaire de « censure ». Le 24 septembre 2026, le département de la Justice des États-Unis a demandé à intervenir devant le Tribunal de l’Union européenne, à Luxembourg, pour soutenir X et Elon Musk. Tous deux contestent la première amende prononcée au titre du règlement européen sur les services numériques, le DSA (*Digital Services Act*) : 120 millions d’euros, infligés au réseau social par la Commission européenne le 5 décembre 2025. Selon le communiqué américain, c’est la première contestation d’une sanction DSA à arriver devant ce tribunal."
         },
         {
           "type": "p",
-          "text": "La Commission a répondu par la voix de son porte-parole, Thomas Regnier. « Nous appliquons notre législation de manière objective, transparente et avec un dossier solide », a-t-il déclaré à la presse, selon France 24 et l’agence AP. Le Tribunal doit encore dire s’il accepte l’intervention américaine."
+          "text": "Ce que Bruxelles reproche à X tient en trois lignes, et aucune ne parle d’un message supprimé. Un statut « vérifié » que n’importe qui peut acheter sans que l’entreprise vérifie sérieusement qui se trouve derrière le compte, selon la Commission. Un registre publicitaire défaillant. Des chercheurs privés d’accès aux données. Dans son communiqué, Washington ne plaide pas davantage la liberté de parole : il conteste la façon dont Bruxelles a désigné le « fournisseur » du service, jusqu’à viser Elon Musk « en tant que particulier » et des sociétés américaines qu’il possède."
         },
         {
           "type": "p",
-          "text": "Le fond de l’amende, lui, ne porte pas sur un message retiré. La Commission reproche à X trois manquements de transparence : des « coches bleues » trompeuses, un registre publicitaire défaillant et un accès refusé aux chercheurs. L’objection américaine ne porte pas non plus sur la parole. Elle conteste la façon dont Bruxelles a désigné le responsable de la plateforme, jusqu’à viser Elon Musk à titre personnel."
+          "text": "La Commission a répondu par la voix de son porte-parole, Thomas Regnier. « Nous appliquons notre législation de manière objective, transparente et avec un dossier solide », a-t-il déclaré à la presse, selon France 24 et l’agence AP. Le Tribunal doit encore dire s’il accepte l’intervention américaine. Washington a pris là deux décisions distinctes. En décembre 2025, le département d’État frappait cinq Européens d’interdictions de visa au nom de la lutte contre la « censure » des Américains, selon Reuters et l’agence AP. Le 24 septembre 2026, le ministère de la Justice a pris une autre voie : il demande à soutenir devant un juge européen l’annulation de l’amende, en contestant son calcul et son imputation à Elon Musk et à des sociétés qu’il possède. L’ironie est là : pour contester une règle européenne, Washington frappe à la porte d’un tribunal européen. Le recours de X et d’Elon Musk, lui, suit le circuit normal d’une décision publique : écrite, motivée, contestable devant un juge."
         },
         {
           "type": "p",
-          "text": "Pourtant, dans le débat public, un mot revient des deux côtés de l’Atlantique : « censure ». Il mélange trois choses que le droit sépare. Une plateforme applique son contrat. Une autorité publique applique une loi. Un juge tranche un litige. L’effet peut se ressembler (un message n’est plus visible, un compte est coupé). La légitimité, les contrôles et les recours, eux, n’ont rien à voir. Cette enquête remet chaque décision à sa place."
+          "text": "Reste le mot « censure », qui mélange trois choses que le droit sépare. Une plateforme applique son contrat. Une autorité publique applique une loi. Un juge tranche un litige. Vu de l’écran, l’effet se ressemble : un message disparaît, un compte se ferme. Derrière, la légitimité, les contrôles et les recours n’ont rien à voir. Cette enquête remet chaque décision à sa place. En fin de parcours, un encadré regarde ce qu’en disent les candidats à la présidentielle de 2027, quand ils en disent quelque chose."
         }
       ]
     },
     {
+      "kind": "prose",
       "id": "acteurs",
       "title": "1. Trois acteurs, trois règles",
       "blocks": [
@@ -42,7 +56,7 @@
         },
         {
           "type": "p",
-          "text": "Une **autorité publique** applique une loi. Ici, surtout le règlement (UE) 2022/2065, le DSA, en vigueur pour les très grandes plateformes depuis août 2023 et pour tous les services intermédiaires depuis le 17 février 2024. La Commission européenne surveille les plus grands services. En France, l’Arcom est le coordinateur national, aux côtés de la CNIL et de la DGCCRF, depuis la loi SREN du 21 mai 2024."
+          "text": "Une **autorité publique** applique une loi. Ici, surtout le règlement (UE) 2022/2065, le DSA, en vigueur pour les très grandes plateformes depuis août 2023 et pour tous les services intermédiaires depuis le 17 février 2024. La Commission européenne surveille les plus grands services. En France, l’Arcom est le coordinateur national, aux côtés de la CNIL et de la DGCCRF, depuis la loi SREN du 21 mai 2024 (loi n° 2024-449)."
         },
         {
           "type": "p",
@@ -93,6 +107,7 @@
       ]
     },
     {
+      "kind": "prose",
       "id": "dsa",
       "title": "2. Ce que le DSA impose, article par article",
       "blocks": [
@@ -122,7 +137,7 @@
             ],
             [
               "20",
-              "Une réclamation interne gratuite, ouverte au moins six mois après la décision"
+              "Une réclamation interne gratuite, accessible pendant au moins six mois suivant la décision"
             ],
             [
               "21",
@@ -145,6 +160,26 @@
               "Un registre public des publicités et un accès aux données pour les chercheurs"
             ],
             [
+              "51, paragraphe 3, premier alinéa, a)",
+              "Dernier recours du coordinateur national, quand tous ses autres pouvoirs ont été épuisés et que l’infraction persiste en causant un préjudice grave : exiger de la direction du fournisseur un plan d’action"
+            ],
+            [
+              "51, paragraphe 3, premier alinéa, b)",
+              "Si ce plan ne suffit pas et que l’infraction constitue une infraction pénale menaçant la vie ou la sécurité des personnes : demander à l’autorité judiciaire de son État d’ordonner une restriction temporaire de l’accès au service"
+            ],
+            [
+              "51, paragraphe 3, alinéas suivants",
+              "Observations écrites des parties intéressées (deux semaines au moins), droit de participer à la procédure devant le juge, mesure proportionnée qui ne restreint pas indûment l’accès aux informations légales, durée de quatre semaines, prolongeable dans les limites fixées par le juge"
+            ],
+            [
+              "82, paragraphe 1",
+              "Pour une très grande plateforme : la Commission, une fois ses propres pouvoirs épuisés et si l’infraction persiste en causant un préjudice grave, peut demander au coordinateur de l’État d’établissement d’agir au titre de l’article 51, paragraphe 3"
+            ],
+            [
+              "82, paragraphe 2",
+              "La Commission peut présenter des observations écrites, et orales avec l’autorisation du juge, à l’autorité judiciaire saisie"
+            ],
+            [
               "53 et 54",
               "Une plainte auprès du coordinateur national et une possible indemnisation"
             ]
@@ -152,25 +187,26 @@
         },
         {
           "type": "p",
-          "text": "La chaîne de recours décrite par la Commission suit cet ordre : signalement (article 16), réclamation interne (article 20), organisme extrajudiciaire (article 21), plainte au coordinateur (article 53). La voie judiciaire reste ouverte à chaque étape."
+          "text": "Le signalement (article 16) n’est pas un recours : c’est l’outil de la personne qui dénonce un contenu qu’elle juge illicite. Celle dont le contenu est retiré, ou dont le compte est suspendu, reçoit d’abord une motivation (article 17). Ensuite, la chaîne de recours est la même pour l’une et l’autre, puisque l’article 20 ouvre la réclamation interne aussi à l’auteur du signalement : réclamation interne (article 20), organisme extrajudiciaire (article 21), plainte au coordinateur (article 53). La voie judiciaire reste ouverte à chaque étape."
         },
         {
           "type": "p",
-          "text": "*Note de méthode : la consultation directe d’EUR-Lex a échoué le 15 septembre puis le 3 octobre (blocage technique). Les numéros d’articles sont repris des pages de la Commission et de l’Arcom. Ils restent à relire sur le texte officiel avant toute citation mot pour mot.*"
+          "text": "*Note de méthode : la consultation directe d’EUR-Lex, en échec le 15 septembre puis dans la journée du 3 octobre, a abouti le 3 octobre au soir. Les numéros et intitulés des articles de ce tableau, y compris la répartition des articles 51 et 82 paragraphe par paragraphe, ont été vérifiés sur la version française du texte officiel ; les descriptions restent des résumés LMDPT, pas des citations.*"
         }
       ]
     },
     {
+      "kind": "prose",
       "id": "plateforme",
       "title": "3. Premier chemin : la plateforme applique son contrat",
       "blocks": [
         {
           "type": "p",
-          "text": "Le 1er décembre 2019, une historienne et essayiste publie sur sa page Facebook un texte intitulé « Daesh en Algérie ». C’est une analyse politique, illustrée d’un communiqué de l’organisation terroriste, reproduit pour le dénoncer. Deux jours plus tard, Facebook désactive son compte. Le message envoyé est générique : non-respect des conditions de service, perte définitive du compte."
+          "text": "Le 1er décembre 2019, une femme qui se présente comme historienne et essayiste publie sur sa page Facebook un texte intitulé « Daesh en Algérie ». C’est une analyse politique, illustrée d’un communiqué de l’organisation terroriste, reproduit pour le dénoncer. Deux jours plus tard, Facebook désactive son compte. Le message envoyé est générique : non-respect des conditions de service, perte définitive du compte."
         },
         {
           "type": "p",
-          "text": "Ces faits sont connus par le jugement rendu le 5 juin 2024 par la 17e chambre du tribunal judiciaire de Paris (RG 21/00726), publié par les bases CERCLAB et Juricaf. Le tribunal y estime que la publication était une dénonciation contextualisée, et non une approbation. Elle n’entrait dans aucun des cas qui permettaient à Meta de résilier le compte. Le juge retient une faute contractuelle."
+          "text": "Ces faits sont connus par le jugement rendu le 5 juin 2024 par la 17e chambre du tribunal judiciaire de Paris (RG 21/00726), publié par les bases CERCLAB et Juricaf. Le tribunal y estime que la publication était une dénonciation contextualisée, et non une approbation. Elle n’entrait dans aucun des cas qui permettaient à Meta de résilier le compte. Le juge retient une faute contractuelle. Il s’agit d’un jugement de première instance : au 3 octobre 2026, nous n’avons trouvé aucune trace publique d’un appel (bases CERCLAB et Juricaf, presse), sans pouvoir l’exclure."
         },
         {
           "type": "p",
@@ -183,6 +219,7 @@
       ]
     },
     {
+      "kind": "prose",
       "id": "commission",
       "title": "4. Deuxième chemin : la Commission applique la loi",
       "blocks": [
@@ -199,7 +236,7 @@
           "items": [
             "**Article 25, conception trompeuse.** « Sur X, n’importe qui peut payer pour obtenir le statut “vérifié” sans que l’entreprise vérifie de manière significative qui se trouve derrière le compte », écrivait la Commission.",
             "**Article 39, registre publicitaire** jugé non conforme.",
-            "**Article 40, accès des chercheurs** aux données publiques jugé insuffisant."
+            "**Article 40 (paragraphe 12), accès des chercheurs** aux données publiques jugé insuffisant."
           ]
         },
         {
@@ -208,15 +245,15 @@
         },
         {
           "type": "p",
-          "text": "Depuis, l’affaire a avancé sur deux fronts. Sur le front de la conformité, X a transmis à la mi-mars 2026 ses propositions pour corriger les coches bleues, selon Euractiv, et la Commission indiquait alors les examiner. Le 16 juillet 2026, la Commission a accepté le plan d’action de X sur le registre publicitaire et l’accès des chercheurs. Au programme : une recherche améliorée et un accès par interface de programmation (API) pour le registre, un accès gratuit aux données pour les chercheurs éligibles, et des CGU qui ne leur interdisent plus de collecter les données publiques. X dispose de six mois pour l’appliquer, sous audit indépendant. Le comité européen des services numériques, qui réunit les régulateurs nationaux, avait pourtant jugé ce plan insuffisant dans son ensemble, en raison surtout des mesures d’audit. La Commission dit avoir précisé ses exigences et placer X sous surveillance renforcée."
+          "text": "Depuis, l’affaire a avancé sur deux fronts. Sur le front de la conformité, X a transmis à la mi-mars 2026 ses propositions pour corriger les coches bleues, selon Euractiv. Toujours selon Euractiv, la Commission indiquait alors les examiner. Le 16 juillet 2026, la Commission a accepté le plan d’action de X sur le registre publicitaire et l’accès des chercheurs. Au programme : une recherche améliorée et un accès par interface de programmation (API) pour le registre, un accès gratuit aux données pour les chercheurs éligibles, et des CGU qui ne leur interdisent plus de collecter les données publiques. X dispose de six mois pour l’appliquer, sous audit indépendant. Selon le communiqué de la Commission, le comité européen des services numériques, qui réunit les régulateurs nationaux, avait pourtant jugé ce plan insuffisant dans son ensemble, dans un avis du 15 juin 2026, en raison des mesures d’audit. Cet avis n’est connu que par ce résumé de la Commission : nous n’en avons pas trouvé le texte publié. La Commission dit avoir précisé ses exigences et suivre de près la mise en œuvre."
         },
         {
           "type": "p",
-          "text": "Sur le front judiciaire, X Internet et X Holdings (affaire T-114/26) et Elon Musk à titre personnel (affaire T-121/26) ont demandé en février 2026 l’annulation de la décision devant le Tribunal de l’Union. C’est dans ces deux affaires que Washington veut intervenir."
+          "text": "Sur le front judiciaire, X Internet et X Holdings (affaire T-114/26, selon l’intitulé donné par le département de la Justice) et Elon Musk à titre personnel (affaire T-121/26) ont demandé en février 2026 l’annulation de la décision devant le Tribunal de l’Union. C’est dans ces deux affaires que Washington veut intervenir."
         },
         {
           "type": "p",
-          "text": "Un point reste à ne pas confondre. La procédure ouverte contre X en décembre 2023 ne se limitait pas aux trois griefs sanctionnés. Elle porte aussi sur le mécanisme de signalement de X, ses mesures contre les contenus illicites (contenus terroristes par exemple) et les risques liés à ses systèmes de recommandation. Ce volet reste ouvert. Le 26 janvier 2026, la Commission l’a étendu au passage annoncé de X à un système de recommandation fondé sur Grok, l’outil d’intelligence artificielle développé par le fournisseur de X. Le même jour, elle a ouvert une nouvelle enquête sur l’intégration de Grok dans la plateforme. Elle y examine si X a évalué et réduit les risques liés aux images sexuelles truquées, y compris celles pouvant constituer des contenus pédocriminels. Selon la Commission, ces risques « semblent s’être matérialisés ». À la date du 3 octobre 2026, nous n’avons trouvé ni conclusions préliminaires ni décision publiques dans ce dossier."
+          "text": "Un point reste à ne pas confondre. La procédure ouverte contre X en décembre 2023 ne se limitait pas aux trois griefs sanctionnés. Elle porte aussi sur le mécanisme de signalement de X, ses mesures contre les contenus illicites (contenus terroristes par exemple) et les risques liés à ses systèmes de recommandation. Ce volet reste ouvert. Le 26 janvier 2026, la Commission l’a étendu au passage annoncé de X à un système de recommandation fondé sur Grok, l’outil d’intelligence artificielle développé par xAI et intégré à X. Le même jour, elle a ouvert une nouvelle enquête sur l’intégration de Grok dans la plateforme. Elle y examine si X a évalué et réduit les risques liés aux images sexuelles truquées, y compris celles pouvant constituer des contenus pédocriminels. Selon la Commission, ces risques « semblent s’être matérialisés ». À la date du 3 octobre 2026, nous n’avons trouvé ni conclusions préliminaires ni décision publiques dans ce dossier."
         },
         {
           "type": "h3",
@@ -230,7 +267,7 @@
           "type": "ul",
           "items": [
             "**6 février 2026, TikTok.** Conclusions préliminaires : la conception de l’application (défilement infini, lecture automatique, notifications, recommandations très ciblées) serait addictive et ses outils de contrôle du temps d’écran inefficaces.",
-            "**28 mai 2026, Temu.** Amende de 200 millions d’euros : l’évaluation des risques de produits illégaux vendus sur la plateforme est jugée insuffisante. Un test d’achats mandaté par la Commission a montré qu’une part très élevée des chargeurs testés échouait aux contrôles de sécurité de base.",
+            "**28 mai 2026, Temu.** Amende de 200 millions d’euros : l’évaluation des risques de produits illégaux vendus sur la plateforme est jugée insuffisante. Un test d’achats mandaté par la Commission a montré, selon son communiqué, qu’« un pourcentage très élevé » des chargeurs testés échouait aux contrôles de sécurité de base (le communiqué ne donne pas le chiffre).",
             "**10 juillet 2026, Meta.** Conclusions préliminaires sur la conception jugée addictive d’Instagram et de Facebook.",
             "**20 juillet 2026, AliExpress.** Amende de 550 millions d’euros, pour des manquements de même nature que Temu sur les produits illégaux, dangereux ou contrefaits.",
             "**31 août 2026, nouvelles désignations.** ChatGPT devient un « très grand moteur de recherche », Reddit et Roblox de « très grandes plateformes ». Ils ont jusqu’en janvier 2027 pour se conformer aux obligations renforcées. La Commission compte désormais 28 services ainsi désignés.",
@@ -244,11 +281,12 @@
         },
         {
           "type": "p",
-          "text": "Cette chronologie appelle une lecture précise. Les deux plus lourdes amendes visent des places de marché et des produits dangereux, pas des opinions. Les dossiers TikTok et Meta portent sur la conception des services et la protection des mineurs. Le seul volet qui touche de près l’expression politique, celui de la désinformation, passe par un code de conduite et des « dialogues ». C’est sans doute là que le débat sur la frontière entre régulation et pression sur la parole mérite le plus d’attention, parce que le mécanisme est moins formel qu’une décision motivée et contestable en justice."
+          "text": "Cette chronologie appelle une lecture précise. Les deux plus lourdes amendes visent des places de marché et des produits dangereux, pas des opinions. Les dossiers TikTok et Meta portent sur la conception des services et la protection des mineurs. Le seul volet qui touche de près l’expression politique, celui de la désinformation, ne passe pas par une décision de sanction : il repose sur un code de conduite, intégré au cadre du DSA depuis le 1er juillet 2025, et sur les « dialogues » annoncés le 24 septembre 2026 avec chaque très grande plateforme signataire."
         }
       ]
     },
     {
+      "kind": "prose",
       "id": "juge",
       "title": "5. Troisième chemin : le juge",
       "blocks": [
@@ -258,11 +296,11 @@
         },
         {
           "type": "p",
-          "text": "Revenons à l’historienne de 2019. Dans le même jugement du 5 juin 2024, le tribunal judiciaire de Paris déclare **abusive**, et donc réputée non écrite, la clause 4.2 des CGU de Facebook (version du 31 juillet 2019) sur la suspension et la résiliation des comptes. Motif : elle ne prévoyait pas de préavis d’une durée raisonnable, ce que le code de la consommation présume abusif (article R. 212-2, 4°). Un « examen » mené après la coupure ne vaut pas préavis."
+          "text": "Revenons à l’utilisatrice de 2019. Dans le même jugement du 5 juin 2024, le tribunal judiciaire de Paris déclare **abusive**, et répute non écrite, la clause 4.2 des CGU de Facebook (version du 31 juillet 2019) sur la suspension et la résiliation des comptes. Motif : elle ne prévoyait pas de préavis d’une durée raisonnable, ce que le code de la consommation présume abusif (article R. 212-2, 4°). Un « examen » mené après la coupure ne vaut pas préavis."
         },
         {
           "type": "p",
-          "text": "Meta est condamnée à des dommages et intérêts : 4 008 euros au titre de la publicité, 1 000 euros pour les œuvres, 2 000 euros pour la privation d’un moyen de communication, plus 2 000 euros de frais de justice. Le compte avait été réactivé le 9 juin 2023."
+          "text": "Meta est condamnée à des dommages et intérêts : 4 008 euros au titre de la publicité, 1 000 euros pour les œuvres, 2 000 euros pour la privation d’un moyen de communication, plus 2 000 euros au titre de l’article 700 du code de procédure civile (frais de procédure), et les dépens. Le compte avait été réactivé le 9 juin 2023."
         },
         {
           "type": "p",
@@ -274,7 +312,7 @@
         },
         {
           "type": "p",
-          "text": "Une autre voie judiciaire, pénale cette fois, vise X en France. Selon le communiqué de la procureure de la République de Paris, Laure Beccuau, du 7 mai 2026, le parquet a ouvert le 6 mai une information judiciaire sur le fonctionnement de la plateforme. La liste des chefs visés est longue. Elle comprend la complicité de diffusion d’images pédopornographiques en bande organisée, la diffusion de montages sexuels non consentis, la falsification d’un système de traitement automatisé de données et la contestation de crime contre l’humanité « facilitée par l’intelligence artificielle Grok ». Le parquet demande aux juges d’instruction la mise en examen des sociétés X.AI Holdings Corp, X Corp et X AI, d’Elon Musk et de Linda Yaccarino. Ces personnes sont présumées innocentes. Elon Musk ne s’était pas présenté à une convocation du parquet le 20 avril 2026, selon BFMTV."
+          "text": "Une autre voie judiciaire, pénale cette fois, vise X en France. Selon le communiqué de la procureure de la République de Paris, Laure Beccuau, du 7 mai 2026, le parquet a ouvert le 6 mai une information judiciaire sur le fonctionnement de la plateforme. La liste des chefs visés est longue. Elle comprend la complicité de diffusion d’images pédopornographiques en bande organisée, la diffusion de montages sexuels non consentis, la falsification d’un système de traitement automatisé de données et la contestation de crime contre l’humanité « facilitée par l’intelligence artificielle Grok ». Le parquet demande aux juges d’instruction la mise en examen des sociétés X.AI Holdings Corp, X Corp et X AI, d’Elon Musk et de Linda Yaccarino. Ces personnes sont présumées innocentes. Le 20 avril 2026, Elon Musk ne s’était pas présenté à sa convocation en audition libre, selon BFMTV, franceinfo et Reuters ; le parquet avait alors « pris acte de l’absence des premières personnes convoquées », sans le nommer, selon l’AFP."
         },
         {
           "type": "p",
@@ -283,6 +321,7 @@
       ]
     },
     {
+      "kind": "prose",
       "id": "recours",
       "title": "6. Les recours, en pratique",
       "blocks": [
@@ -300,7 +339,7 @@
         },
         {
           "type": "p",
-          "text": "**Les médiateurs de l’article 21.** L’Arcom n’a certifié aucun organisme de règlement extrajudiciaire en 2024 ni en 2025, faute de candidature recevable. Un guichet de candidature doit ouvrir en 2026. Les utilisateurs français peuvent déjà s’adresser à un organisme certifié dans un autre État membre. L’un d’eux, Appeals Centre Europe, a publié le 28 mai 2026 son rapport de transparence. Entre avril 2025 et mars 2026, il a reçu plus de 24 000 litiges. Quand il a pu examiner le contenu en cause, il a donné tort à la plateforme dans 59 % des cas : 52 % pour des contenus retirés, 63 % pour des contenus signalés mais laissés en ligne. Il relève aussi que, dans la grande majorité des litiges sur des suspensions de compte, les plateformes ne fournissent pas le contenu qui permettrait un examen indépendant. Ses décisions ne sont pas contraignantes."
+          "text": "**Les médiateurs de l’article 21.** L’Arcom n’a certifié aucun organisme de règlement extrajudiciaire en 2024 ni en 2025, faute de candidature recevable. Un guichet de candidature doit ouvrir en 2026. Les utilisateurs français peuvent déjà s’adresser à un organisme certifié dans un autre État membre. L’un d’eux, Appeals Centre Europe, a publié le 28 mai 2026 son rapport de transparence. Ses chiffres sont européens, pas français : entre avril 2025 et mars 2026, il a reçu plus de 24 000 litiges venus de toute l’Union, selon son communiqué, qui ne donne pas la part de la France. Quand il a pu examiner le contenu en cause, il a donné tort à la plateforme dans 59 % des cas : 52 % pour des contenus retirés, 63 % pour des contenus signalés mais laissés en ligne. Il relève aussi que, dans « la vaste majorité » des litiges sur des suspensions de compte, les plateformes ne fournissent pas le contenu qui permettrait un examen indépendant. Ses décisions ne sont pas contraignantes."
         },
         {
           "type": "p",
@@ -309,28 +348,95 @@
       ]
     },
     {
+      "kind": "prose",
       "id": "transatlantique",
       "title": "7. Le différend transatlantique : ce qui se plaide, ce qui se dit",
       "blocks": [
         {
           "type": "p",
-          "text": "Devant le Tribunal de l’Union, la question posée par Washington est juridique et étroite. Selon le communiqué du département de la Justice, la Commission a calculé l’amende sur le chiffre d’affaires mondial de « l’unité économique unique » contrôlée par Elon Musk ou de X Holdings. Les États-Unis y voient une atteinte au principe qui protège les actionnaires des dettes d’une société, et une extension de compétence vers des entreprises américaines « ni présentes ni actives » dans l’Union, selon les mots de Brett Shumate, chef de la division civile du ministère. La société irlandaise X Internet Unlimited Company figure pourtant dans le registre de la Commission comme fournisseur du service, relève Brussels Signal."
+          "text": "Devant le Tribunal de l’Union, la question posée par Washington est juridique et étroite. Selon le communiqué du département de la Justice, la Commission a calculé l’amende sur le chiffre d’affaires mondial de « l’unité économique unique » contrôlée par Elon Musk ou de X Holdings. Les États-Unis y voient une atteinte au principe qui protège les actionnaires des dettes d’une société, et une extension de compétence vers des entreprises américaines « ni présentes ni actives » dans l’Union, selon les mots de Brett Shumate, chef de la division civile du ministère. La liste officielle des très grandes plateformes tenue par la Commission désigne pourtant la société irlandaise X Internet Unlimited Company comme établissement principal du fournisseur de X dans l’Union, comme le relève aussi Brussels Signal."
         },
         {
           "type": "p",
-          "text": "Autour de ce débat technique, les récits s’opposent. ADF International, l’organisation qui accompagne X dans la procédure, qualifie le DSA de loi de censure. Selon Brussels Signal, sa directrice européenne, Adina Portaru, reproche à la Commission d’écrire les règles, d’enquêter, de sanctionner et de calculer les amendes sans véritable contre-pouvoir. La Commission répond qu’elle exerce un droit souverain de légiférer pour protéger ses citoyens, et que la question sera tranchée par le juge. « De notre point de vue, rien ne changera à cause d’une affaire DSA », a dit Thomas Regnier à propos des relations avec Washington."
+          "text": "Autour de ce débat technique, les récits s’opposent. ADF International accompagne X dans la procédure depuis le dépôt du recours en février, selon Brussels Signal ; l’organisation l’annonçait elle-même dans un communiqué du 20 février 2026, où elle qualifie le DSA de loi de censure. Toujours selon Brussels Signal, sa directrice européenne, Adina Portaru, reproche à la Commission d’écrire les règles, d’enquêter, de sanctionner et de calculer les amendes sans véritable contre-pouvoir. Pour la Commission, son porte-parole Thomas Regnier a invoqué le « droit souverain » de l’Union de légiférer pour protéger ses citoyens, et ajouté que ce serait « au tribunal de trancher, comme toujours », selon l’agence AP. « De notre point de vue, rien ne changera à cause d’une affaire DSA », a dit Thomas Regnier à propos des relations avec Washington."
         },
         {
           "type": "p",
-          "text": "Le contexte est tendu depuis l’amende. En décembre 2025, le département d’État a révoqué le visa de cinq personnes au nom de la lutte contre la « censure » des Américains. Parmi elles, l’ancien commissaire européen Thierry Breton et Imran Ahmed, fondateur du Center for Countering Digital Hate. En juillet 2026, un juge fédéral de Washington, James E. Boasberg, a suspendu cette politique de restrictions de visas en attendant une décision au fond, estimant qu’elle portait probablement atteinte au premier amendement, selon Politico."
+          "text": "Le contexte est tendu depuis l’amende. En décembre 2025, le département d’État a frappé cinq Européens d’interdictions de visa au nom de la lutte contre la « censure » des Américains, selon Reuters et l’agence AP. Parmi eux, selon AP et la BBC, l’ancien commissaire européen Thierry Breton et Imran Ahmed, directeur général du Center for Countering Digital Hate. En juillet 2026, un juge fédéral de Washington, James E. Boasberg, a suspendu cette politique de restrictions de visas en attendant une décision au fond, estimant qu’elle portait probablement atteinte au premier amendement, selon Politico."
         },
         {
           "type": "p",
-          "text": "Le juge européen dira si la Commission pouvait viser Elon Musk et ses sociétés américaines. Il ne dira pas si le DSA est une « loi de censure » : ce n’est pas la question posée. Pour le lecteur, l’enjeu démocratique est ailleurs. Une règle publique a un avantage sur une décision privée : elle est écrite, motivée et contestable devant un juge. C’est exactement ce qui se passe à Luxembourg."
+          "text": "Le juge européen dira si la Commission pouvait viser Elon Musk et ses sociétés américaines. Il ne dira pas si le DSA est une « loi de censure » : ce n’est pas la question posée. Pour le lecteur, l’enjeu démocratique est ailleurs. Une décision de la Commission est écrite, motivée et contestable devant un juge : c’est exactement ce qui se passe à Luxembourg. Une décision de plateforme peut aussi finir devant un juge, on l’a vu avec Meta, mais seulement si l’utilisateur saisit lui-même le juge."
         }
       ]
     },
     {
+      "kind": "candidats",
+      "id": "candidats",
+      "title": "Encadré · Ce que disent les candidats",
+      "intro": "*Qui doit décider de la parole en ligne : la plateforme, l’État ou le juge ? Nous avons posé la question du titre aux traces publiques des principaux prétendants à l’Élysée : déclarations, votes, textes portés. Huit noms, retenus selon une règle simple appliquée à trois enquêtes d’intentions de vote publiées en septembre 2026 (OpinionWay pour le JDD ; Toluna Harris Interactive pour M6 et RTL, enquête du 22 au 24 septembre ; Cluster17 pour Politico, enquête des 15 et 16 septembre) : être testé dans les trois, et y être crédité d’au moins 3 % dans au moins une hypothèse de chacune (résultats redressés). Ils sont classés ici de la gauche vers la droite. Trois niveaux : **déclaré** (propos publics), **voté** (scrutin du candidat ou de ses élus), **déduit** (action passée, sans déclaration récente sur le sujet). Aucune citation n’est reconstituée : chacune renvoie à sa source. « Le point qui frotte » relève une tension factuelle quand nous en avons trouvé une. Ne passent pas cette règle : François Hollande, Nicolas Dupont-Aignan et David Lisnard, non testés par OpinionWay ; Fabien Roussel, à 2,9 % au mieux chez Cluster17 ; Nathalie Arthaud, sous 1 % partout. Cet encadré ne classe personne et ne vaut pas consigne de vote.*",
+      "cards": [
+        {
+          "name": "Jean-Luc Mélenchon (La France insoumise)",
+          "dit": "Ce qu’il dit : il a qualifié de « victoire majeure pour nos libertés fondamentales » la décision du Conseil constitutionnel qui a censuré la loi interdisant les réseaux sociaux aux moins de 15 ans (X, 15 août 2026, selon l’AFP). Il y voyait une loi de « contrôle général de l’identité sur Internet » et présente LFI comme « un rempart face au flicage numérique du peuple ».",
+          "frotte": "Le point qui frotte : nous n’en avons pas trouvé de net sur ce dossier. À noter : les deux eurodéputés insoumis qui ont pris part au vote final du DSA, le 5 juillet 2022 (Manon Aubry, Younous Omarjee), ont voté pour. Pas de position publique trouvée de Jean-Luc Mélenchon sur l’amende contre X ni sur l’intervention américaine.",
+          "niveau": "Niveau : déclaré (2026) ; voté (eurodéputés LFI, 2022) ; pas de position publique trouvée sur l’affaire X.",
+          "sources": "Sources : [AFP, via Notre Temps, 15 août 2026](https://www.notretemps.com/depeches/reseaux-sociaux-melenchon-salue-une-victoire-majeure-pour-les-libertes-137027) · [HowTheyVote.eu, vote final du DSA, 5 juillet 2022](https://howtheyvote.eu/votes/146649)"
+        },
+        {
+          "name": "Marine Tondelier (Les Écologistes)",
+          "dit": "Ce qu’elle dit : « Menacer des plateformes comme X d’une interdiction pendant les élections me semble nécessaire. Et il faut appliquer cette sanction en cas d’ingérences constatées en amont », a-t-elle déclaré dans un entretien à *Libération*, selon l’AFP. Elle veut aussi « imposer le cadre légal européen » et sanctionner les plateformes qui tardent à retirer des contenus ou à transmettre des informations.",
+          "frotte": "Le point qui frotte : le DSA ne prévoit pas d’interdiction le temps d’une élection. Son article 51, paragraphe 3, permet au plus une restriction temporaire de l’accès, pour quatre semaines prolongeables, ordonnée par l’autorité judiciaire nationale à la demande du coordinateur national. Il faut pour cela que tous les autres pouvoirs aient été épuisés et que l’infraction persiste en causant un préjudice grave (début du paragraphe 3), qu’un plan d’action exigé de la direction du fournisseur n’ait pas suffi (point a), et que l’infraction constitue une infraction pénale menaçant la vie ou la sécurité des personnes (point b). Pour une très grande plateforme comme X, l’article 82, paragraphe 1, permet seulement à la Commission de demander au coordinateur du pays d’établissement, l’Irlande pour X, d’engager cette procédure. Nous n’en connaissons aucun usage.",
+          "niveau": "Niveau : déclaré (2026) ; voté (les eurodéputés écologistes français présents ont voté pour le DSA en 2022).",
+          "sources": "Sources : [France 24 / AFP, 5 août 2026](https://www.france24.com/fr/info-en-continu/20260805-ing%C3%A9rences-dans-la-pr%C3%A9sidentielle-il-ne-faut-pas-avoir-la-main-qui-tremble-face-%C3%A0-tiktok-et-x-exhorte-glucksmann) · [franceinfo / AFP, 5 août 2026](https://www.franceinfo.fr/internet/reseaux-sociaux/raphael-glucksmann-et-marine-tondelier-pointent-le-role-des-plateformes-sociales-apres-des-cas-d-ingerences-etrangeres_8136401.html) · [Règlement (UE) 2022/2065, articles 51 et 82, EUR-Lex](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065) · [HowTheyVote.eu, 5 juillet 2022](https://howtheyvote.eu/votes/146649)"
+        },
+        {
+          "name": "Raphaël Glucksmann (Place publique)",
+          "dit": "Ce qu’il dit : eurodéputé, il a voté pour le DSA le 5 juillet 2022. Visé en août par une campagne de désinformation d’origine russe, selon l’AFP, il demande que X et TikTok « soient obligées de respecter les règles européennes », et sanctionnées sinon : « Ce que je demande, c’est qu’on n’ait pas la main qui tremble face à Elon Musk et X », a-t-il déclaré sur RTL le 5 août 2026, selon l’AFP.",
+          "frotte": "Le point qui frotte : la seule amende DSA prononcée contre X à ce jour porte sur la transparence (coches, publicité, chercheurs). Le volet le plus proche de ses griefs, sur les contenus illicites et les systèmes de recommandation, est ouvert depuis décembre 2023 et n’a encore produit aucune décision publique.",
+          "niveau": "Niveau : voté (2022) ; déclaré (2026).",
+          "sources": "Sources : [HowTheyVote.eu, 5 juillet 2022](https://howtheyvote.eu/votes/146649) · [BFMTV / AFP, 5 août 2026](https://www.bfmtv.com/tech/actualites/reseaux-sociaux/cible-d-une-campagne-de-desinformation-russe-sur-x-et-tiktok-raphael-glucksmann-appelle-a-ne-pas-avoir-la-main-qui-tremble-face-a-elon-musk-et-au-parti-communiste-chinois_AD-202608050251.html) · [Commission, 5 décembre 2025](https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act)"
+        },
+        {
+          "name": "Gabriel Attal (Renaissance)",
+          "dit": "Ce qu’il dit : il « s’est fortement impliqué dans les travaux parlementaires » ayant abouti à la loi qui interdisait les réseaux sociaux aux moins de 15 ans, selon franceinfo et l’AFP, et il demande depuis sa censure un référendum sur une nouvelle version : « Une course contre la montre a démarré », écrit-il dans *La Tribune dimanche* du 15 août 2026, selon franceinfo et l’AFP.",
+          "frotte": "Le point qui frotte : deux mesures sur les réseaux sociaux qu’il a décidées ou soutenues sont tombées devant deux juges différents. Le Conseil d’État a admis qu’un tel blocage peut être légal sous conditions, mais a jugé illégal, le 1er avril 2025, celui de TikTok en Nouvelle-Calédonie décidé en mai 2024 par le Premier ministre, alors Gabriel Attal : coupure totale, sans durée limitée, « atteinte disproportionnée » aux libertés. Le Conseil constitutionnel a censuré le 14 août 2026 l’article 1er de la loi sur les moins de 15 ans, pour une atteinte à la liberté d’expression « qui n’est pas adaptée, nécessaire et proportionnée ».",
+          "niveau": "Niveau : déclaré (2026) ; déduit de sa décision de Premier ministre (2024) et de son soutien à la loi (2026).",
+          "sources": "Sources : [franceinfo / AFP, 16 août 2026](https://www.franceinfo.fr/internet/reseaux-sociaux/une-course-contre-la-montre-a-demarre-gabriel-attal-appelle-a-un-referendum-sur-l-interdiction-des-reseaux-aux-moins-de-15-ans_8149565.html) · [Conseil d’État, 1er avril 2025](https://www.conseil-etat.fr/actualites/en-cas-de-circonstances-exceptionnelles-le-gouvernement-peut-interrompre-provisoirement-l-acces-a-un-reseau-social-mais-sous-conditions) · [Conseil constitutionnel, décision 2026-911 DC, 14 août 2026](https://www.conseil-constitutionnel.fr/actualites/la-decision-en-bref-decision-n-2026-911-dc-du-14-aout-2026)"
+        },
+        {
+          "name": "Édouard Philippe (Horizons)",
+          "dit": "Ce qu’il dit : l’Europe a créé « un maquis de normes (AI Act, DSA, DMA, RGPD, Data Act…) » qui avantage les grands acteurs installés, et elle reste « en retard » sur la pédocriminalité en ligne et les ingérences étrangères. Il propose de simplifier, en précisant que « simplification ne veut pas dire absence totale de régulation » (Maddyness, 16 juin 2026).",
+          "frotte": "Le point qui frotte : il était Premier ministre quand sa majorité a adopté, le 13 mai 2020, la loi Avia contre les contenus haineux en ligne, une proposition de loi défendue dans l’hémicycle par le gouvernement (Nicole Belloubet, Cédric O), selon LCP. Le Conseil constitutionnel en a censuré l’essentiel le 18 juin 2020 : un retrait en 24 heures, « pas subordonné à l’intervention préalable d’un juge », ne pouvait selon lui « qu’inciter » les plateformes à retirer les contenus signalés, « qu’ils soient ou non manifestement illicites ».",
+          "niveau": "Niveau : déclaré (2026) ; déduit du soutien de son gouvernement à la loi Avia (2020), sans déclaration personnelle retrouvée.",
+          "sources": "Sources : [Maddyness, 16 juin 2026](https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/) · [LCP, 13 mai 2020](https://lcp.fr/actualites/lutte-contre-la-haine-sur-internet-lassemblee-adopte-definitivement-la-proposition-de-loi) · [Conseil constitutionnel, décision 2020-801 DC, 18 juin 2020](https://www.conseil-constitutionnel.fr/decision/2020/2020801DC.htm)"
+        },
+        {
+          "name": "Bruno Retailleau (Les Républicains)",
+          "dit": "Ce qu’il dit : en 2021, après l’exclusion de Donald Trump de Twitter, il dénonçait « un pouvoir de censure » des grandes plateformes : « Je pense que c’est aux États de reprendre la main », en abandonnant « l’autorégulation ». En mai 2020, il était le premier signataire de la saisine du Conseil constitutionnel par plus de soixante sénateurs contre la loi Avia. En décembre 2025, son parti lançait une pétition contre l’idée d’un label des médias avancée par Emmanuel Macron (« oui à la liberté, non à la labellisation »).",
+          "frotte": "Le point qui frotte : entre l’État qui doit « reprendre la main » sur les plateformes (2021) et le refus d’un label des médias (2025), la frontière est exactement la question de cette enquête : qui décide ? En juillet 2026, le rapport sénatorial sur la désinformation, à l’origine d’une polémique que décrit Public Sénat, a été adopté à l’unanimité par la commission de la culture dont il est membre, selon ce même média ; nous n’avons pas trouvé de position publique de sa part sur ce rapport.",
+          "niveau": "Niveau : déclaré (2021, 2025) ; voté (saisine contre la loi Avia, 2020 ; les eurodéputés LR présents ont voté pour le DSA en 2022) ; position personnelle sur le DSA non trouvée.",
+          "sources": "Sources : [franceinfo, 14 janvier 2021](https://www.franceinfo.fr/monde/usa/presidentielle/donald-trump/video-donald-trump-exclu-des-reseaux-sociaux-bruno-retailleau-denonce-le-pouvoir-de-censure-des-gafam-des-puissances-quasi-etatiques_4257181.html) · [Conseil constitutionnel, décision 2020-801 DC (saisine), 18 juin 2020](https://www.conseil-constitutionnel.fr/decision/2020/2020801DC.htm) · [BFMTV, 2 décembre 2025](https://www.bfmtv.com/politique/elysee/labellisation-des-medias-la-proposition-d-emmanuel-macron-suscite-l-ire-de-la-droite-et-l-extreme-droite-lr-lance-une-petition_AV-202512020510.html) · [Public Sénat, 16 juillet 2026](https://www.publicsenat.fr/actualites/parlementaire/ingerences-interieures-au-senat-un-rapport-sur-la-desinformation-cree-la-polemique) · [HowTheyVote.eu, 5 juillet 2022](https://howtheyvote.eu/votes/146649)"
+        },
+        {
+          "name": "Marine Le Pen (Rassemblement national, en « binôme » avec Jordan Bardella)",
+          "dit": "Ce qu’elle dit : l’observatoire de la désinformation proposé par le rapport sénatorial serait « un tribunal de la parole, sans juge et sans mandat », et le Sénat inventerait « le délit d’opinion à la française » (communiqué du 15 juillet 2026). En décembre 2025, elle jugeait « extrêmement dangereuse » l’idée d’un label des médias et estimait que l’Arcom ne devrait pas surveiller des télévisions privées qui ont « le droit de ne pas être neutres ».",
+          "frotte": "Le point qui frotte : dans une pétition en ligne non datée (consultée le 3 octobre 2026), la délégation RN au Parlement européen écrit que l’application du DSA « confirme les craintes » de ses députés lors de son adoption. Le jour du vote final, le 5 juillet 2022, tous les eurodéputés RN qui ont pris part au scrutin, Jordan Bardella compris, se sont abstenus. Aucun n’a voté contre.",
+          "niveau": "Niveau : déclaré (2025, 2026) ; voté (abstention des eurodéputés RN, 2022).",
+          "sources": "Sources : [Public Sénat, 16 juillet 2026](https://www.publicsenat.fr/actualites/parlementaire/ingerences-interieures-au-senat-un-rapport-sur-la-desinformation-cree-la-polemique) · [JDD, 15 juillet 2026](https://www.lejdd.fr/politique/pravda-delit-dopinion-un-rapport-senatorial-sur-la-regulation-des-reseaux-sociaux-souleve-de-vives-craintes-179097) · [BFMTV, 2 décembre 2025](https://www.bfmtv.com/politique/elysee/labellisation-des-medias-la-proposition-d-emmanuel-macron-suscite-l-ire-de-la-droite-et-l-extreme-droite-lr-lance-une-petition_AV-202512020510.html) · [HowTheyVote.eu, 5 juillet 2022](https://howtheyvote.eu/votes/146649) · [Délégation RN, pétition « DSA : la liberté d’expression menacée par Bruxelles ! », non datée, consultée le 3 octobre 2026](https://www.vudeurope.eu/petition/dsa-la-liberte-dexpression-menacee-par-bruxelles)"
+        },
+        {
+          "name": "Éric Zemmour (Reconquête)",
+          "dit": "Ce qu’il dit : « Main dans la main, LR, PS et En Marche ressuscitent la Pravda ! », a-t-il écrit sur X le 14 juillet 2026, à propos du même rapport sénatorial, en affirmant que ces partis « viennent de déposer au Sénat une loi liberticide ».",
+          "frotte": "Le point qui frotte : aucune proposition de loi n’était alors « rédigée ni déposée », a précisé la co-rapporteure LR, Agnès Evren, selon Public Sénat. Dans son camp, l’eurodéputée Sarah Knafo demandait dès 2024 de réviser le DSA pour « interdire la censure politique » : « Si l’Union doit contraindre les plateformes, ce doit être pour leur interdire la censure, pas pour les y contraindre. » Moins un DSA en moins qu’un DSA à l’envers.",
+          "niveau": "Niveau : déclaré (2026) ; déduit de la ligne de Reconquête au Parlement européen (2024).",
+          "sources": "Sources : [post X d’Éric Zemmour, 14 juillet 2026](https://x.com/ZemmourEric/status/2076997030849683893) · [Public Sénat, 16 juillet 2026](https://www.publicsenat.fr/actualites/parlementaire/ingerences-interieures-au-senat-un-rapport-sur-la-desinformation-cree-la-polemique) · [Parlement européen, question E-001546/2024, 23 août 2024](https://www.europarl.europa.eu/doceo/document/E-10-2024-001546_FR.html)"
+        }
+      ],
+      "conclusion": "**Ce que montre l’encadré.** Le clivage ne passe pas entre partisans et adversaires de toute règle. Il passe par la question du titre : qui décide ? Les uns veulent que Bruxelles frappe plus fort, d’autres que l’État reprenne la main, d’autres encore refusent qu’un observatoire, un label ou l’Arcom trient l’information. Les juges, eux, n’ont pas attendu la campagne. Le Conseil d’État a jugé illégal, le 1er avril 2025, le blocage de TikTok en Nouvelle-Calédonie décidé par le gouvernement. Le Conseil constitutionnel a censuré, le 14 août 2026, l’interdiction des réseaux sociaux aux moins de 15 ans votée par le Parlement. Deux juridictions, deux contrôles : la légalité d’un acte du gouvernement pour l’une, la conformité d’une loi à la Constitution pour l’autre."
+    },
+    {
+      "kind": "prose",
       "id": "verifier",
       "title": "8. Ce que chacun peut vérifier",
       "blocks": [
@@ -342,7 +448,7 @@
           "type": "ol",
           "items": [
             "**Lire la motivation** de la décision de modération (article 17). Distinguer « contenu illicite » et « violation des conditions » : un libellé flou est un indice à noter, pas une preuve.",
-            "**Faire une réclamation interne** (article 20) dans le délai indiqué, au moins six mois.",
+            "**Faire une réclamation interne** (article 20) : le système doit rester accessible pendant au moins six mois suivant la décision.",
             "**Saisir un organisme extrajudiciaire certifié** (article 21). La liste est tenue par la Commission ; certains traitent les litiges en français.",
             "**Porter plainte auprès de l’Arcom** (article 53) si la plateforme ne respecte pas ses obligations de procédure. Pas pour contester le fond d’une modération : ce n’est pas son rôle.",
             "**Saisir le juge** (contrat, consommation, référé). Le cas Meta montre que la voie existe, avec ses délais et ses coûts.",
@@ -356,6 +462,7 @@
       ]
     },
     {
+      "kind": "prose",
       "id": "inconnues",
       "title": "9. Ce que nous ne savons pas encore",
       "blocks": [
@@ -367,7 +474,8 @@
             "**Grok.** Aucune conclusion préliminaire publique à ce jour dans l’enquête ouverte le 26 janvier 2026.",
             "**Meta.** Les conclusions préliminaires d’octobre 2025 sur les outils de signalement et d’appel n’ont pas, à notre connaissance, débouché sur une décision définitive.",
             "**L’expérience utilisateur en France.** Aucune donnée publique ne permet encore de savoir si les utilisateurs distinguent, dans les interfaces, le signalement d’un contenu illicite et celui d’une violation des CGU.",
-            "**Le jugement Meta de 2024.** Nous n’avons pas vérifié s’il a été frappé d’appel."
+            "**Le jugement Meta de 2024.** C’est une décision de première instance. Nous n’avons trouvé aucune trace publique d’un appel, mais l’absence d’appel n’est pas confirmée.",
+            "**Les candidats.** Nous n’avons pas trouvé de réaction publique de la plupart d’entre eux à l’intervention américaine du 24 septembre. La proposition de loi annoncée en juillet par le président de la commission de la culture du Sénat, Laurent Lafon, et le projet de loi du gouvernement sur les ingérences étrangères attendu au Sénat cet automne pourraient les obliger à préciser leur position."
           ]
         }
       ]
@@ -379,20 +487,49 @@
       "title": "Texte et cadre",
       "items": [
         {
-          "label": "Règlement (UE) 2022/2065 (DSA), EUR-Lex",
-          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065"
+          "label": "Règlement (UE) 2022/2065 (DSA), EUR-Lex : https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065",
+          "links": [
+            {
+              "label": "Règlement (UE) 2022/2065 (DSA), EUR-Lex",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065"
+            }
+          ]
         },
         {
-          "label": "Commission, droits des utilisateurs sous le DSA",
-          "url": "https://digital-strategy.ec.europa.eu/en/factpages/user-rights-under-digital-services-act"
+          "label": "Commission, droits des utilisateurs sous le DSA : https://digital-strategy.ec.europa.eu/en/factpages/user-rights-under-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, droits des utilisateurs sous le DSA",
+              "url": "https://digital-strategy.ec.europa.eu/en/factpages/user-rights-under-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Arcom, obligations DSA et services concernés",
-          "url": "https://www.arcom.fr/espace-professionnel/reglement-sur-les-services-numeriques-ou-dsa-obligations-et-services-concernes"
+          "label": "Loi n° 2024-449 du 21 mai 2024 visant à sécuriser et à réguler l’espace numérique (SREN), Légifrance : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049563368",
+          "links": [
+            {
+              "label": "Loi n° 2024-449 du 21 mai 2024 visant à sécuriser et à réguler l’espace numérique (SREN), Légifrance",
+              "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049563368"
+            }
+          ]
         },
         {
-          "label": "Arcom, relevé d’activité 2024-2025 du coordinateur pour les services numériques (août 2026)",
-          "url": "https://www.arcom.fr/sites/default/files/2026-08/Arcom-releve-d-activite-2024-2025-du-coordinateur-pour-les-services-numeriques-au-titre-de-l-article-55-du-Reglement-sur-les-services-numeriques-rsn.pdf"
+          "label": "Arcom, obligations DSA et services concernés : https://www.arcom.fr/espace-professionnel/reglement-sur-les-services-numeriques-ou-dsa-obligations-et-services-concernes",
+          "links": [
+            {
+              "label": "Arcom, obligations DSA et services concernés",
+              "url": "https://www.arcom.fr/espace-professionnel/reglement-sur-les-services-numeriques-ou-dsa-obligations-et-services-concernes"
+            }
+          ]
+        },
+        {
+          "label": "Arcom, relevé d’activité 2024-2025 du coordinateur pour les services numériques (août 2026) : https://www.arcom.fr/sites/default/files/2026-08/Arcom-releve-d-activite-2024-2025-du-coordinateur-pour-les-services-numeriques-au-titre-de-l-article-55-du-Reglement-sur-les-services-numeriques-rsn.pdf",
+          "links": [
+            {
+              "label": "Arcom, relevé d’activité 2024-2025 du coordinateur pour les services numériques (août 2026)",
+              "url": "https://www.arcom.fr/sites/default/files/2026-08/Arcom-releve-d-activite-2024-2025-du-coordinateur-pour-les-services-numeriques-au-titre-de-l-article-55-du-Reglement-sur-les-services-numeriques-rsn.pdf"
+            }
+          ]
         }
       ]
     },
@@ -400,52 +537,130 @@
       "title": "Affaire X (Commission, Tribunal de l’Union)",
       "items": [
         {
-          "label": "Commission, amende de 120 M€ (5 déc. 2025)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act"
+          "label": "Commission, amende de 120 M€ (5 déc. 2025) : https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, amende de 120 M€ (5 déc. 2025)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Commission, communiqué IP/25/2934",
-          "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2934/IP_25_2934_EN.pdf"
+          "label": "Commission, communiqué IP/25/2934 : https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2934/IP_25_2934_EN.pdf",
+          "links": [
+            {
+              "label": "Commission, communiqué IP/25/2934",
+              "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2934/IP_25_2934_EN.pdf"
+            }
+          ]
         },
         {
-          "label": "Commission, conclusions préliminaires (12 juil. 2024)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-sends-preliminary-findings-x-breach-digital-services-act"
+          "label": "Commission, conclusions préliminaires (12 juil. 2024) : https://digital-strategy.ec.europa.eu/en/news/commission-sends-preliminary-findings-x-breach-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, conclusions préliminaires (12 juil. 2024)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-sends-preliminary-findings-x-breach-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Arcom, communiqué du 5 déc. 2025",
-          "url": "https://www.arcom.fr/presse/sanction-de-la-plateforme-x-larcom-salue-laction-determinee-de-la-commission-europeenne-pour-faire-respecter-le-reglement-sur-les-services-numeriques"
+          "label": "Arcom, communiqué du 5 déc. 2025 : https://www.arcom.fr/presse/sanction-de-la-plateforme-x-larcom-salue-laction-determinee-de-la-commission-europeenne-pour-faire-respecter-le-reglement-sur-les-services-numeriques",
+          "links": [
+            {
+              "label": "Arcom, communiqué du 5 déc. 2025",
+              "url": "https://www.arcom.fr/presse/sanction-de-la-plateforme-x-larcom-salue-laction-determinee-de-la-commission-europeenne-pour-faire-respecter-le-reglement-sur-les-services-numeriques"
+            }
+          ]
         },
         {
-          "label": "Euractiv, plan « coches bleues » (mars 2026)",
-          "url": "https://www.euractiv.com/news/x-meets-eus-deadline-for-sending-in-blue-check-compliance-plan/"
+          "label": "Euractiv, plan « coches bleues » (mars 2026) : https://www.euractiv.com/news/x-meets-eus-deadline-for-sending-in-blue-check-compliance-plan/",
+          "links": [
+            {
+              "label": "Euractiv, plan « coches bleues » (mars 2026)",
+              "url": "https://www.euractiv.com/news/x-meets-eus-deadline-for-sending-in-blue-check-compliance-plan/"
+            }
+          ]
         },
         {
-          "label": "Commission, acceptation du plan d’action de X (16 juil. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-action-plan-comply-digital-services-act"
+          "label": "Commission, acceptation du plan d’action de X (16 juil. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-action-plan-comply-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, acceptation du plan d’action de X (16 juil. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-action-plan-comply-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Commission, détail des mesures correctives (15 juil. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-corrective-measures-terminate-breaches-dsa"
+          "label": "Commission, détail des mesures correctives (15 juil. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-corrective-measures-terminate-breaches-dsa",
+          "links": [
+            {
+              "label": "Commission, détail des mesures correctives (15 juil. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-corrective-measures-terminate-breaches-dsa"
+            }
+          ]
         },
         {
-          "label": "Commission, enquête Grok (26 janv. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act"
+          "label": "Commission, enquête Grok (26 janv. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, enquête Grok (26 janv. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Département de la Justice des États-Unis, demande d’intervention (24 sept. 2026)",
-          "url": "https://www.justice.gov/opa/pr/united-states-files-request-intervene-case-brought-x-corp-and-elon-musk-seeking-annul"
+          "label": "Département de la Justice des États-Unis, demande d’intervention (24 sept. 2026) : https://www.justice.gov/opa/pr/united-states-files-request-intervene-case-brought-x-corp-and-elon-musk-seeking-annul",
+          "links": [
+            {
+              "label": "Département de la Justice des États-Unis, demande d’intervention (24 sept. 2026)",
+              "url": "https://www.justice.gov/opa/pr/united-states-files-request-intervene-case-brought-x-corp-and-elon-musk-seeking-annul"
+            }
+          ]
         },
         {
-          "label": "France 24 / AP, réponse de la Commission (25 sept. 2026)",
-          "url": "https://www.france24.com/en/europe/20260925-eu-vows-to-pursue-%E2%82%AC120-million-fine-on-x-after-us-backs-musk-s-court-challenge"
+          "label": "France 24 / AP, réponse de la Commission (25 sept. 2026) : https://www.france24.com/en/europe/20260925-eu-vows-to-pursue-%E2%82%AC120-million-fine-on-x-after-us-backs-musk-s-court-challenge",
+          "links": [
+            {
+              "label": "France 24 / AP, réponse de la Commission (25 sept. 2026)",
+              "url": "https://www.france24.com/en/europe/20260925-eu-vows-to-pursue-%E2%82%AC120-million-fine-on-x-after-us-backs-musk-s-court-challenge"
+            }
+          ]
         },
         {
-          "label": "Brussels Signal (28 sept. 2026)",
-          "url": "https://brusselssignal.eu/2026/09/us-seeks-to-join-musks-court-challenge-to-eu-digital-fine/"
+          "label": "AP, même dépêche, via WTOP (25 sept. 2026) : https://wtop.com/world/2026/09/eu-vows-to-defend-its-fine-against-x-after-the-us-backs-a-court-challenge-from-elon-musk/",
+          "links": [
+            {
+              "label": "AP, même dépêche, via WTOP (25 sept. 2026)",
+              "url": "https://wtop.com/world/2026/09/eu-vows-to-defend-its-fine-against-x-after-the-us-backs-a-court-challenge-from-elon-musk/"
+            }
+          ]
         },
         {
-          "label": "EU Perspectives (25 sept. 2026)",
-          "url": "https://euperspectives.eu/2026/09/us-challenges-brussels-reach-into-musks-empire-over-e120m-x-fine/"
+          "label": "Commission, liste des très grandes plateformes et moteurs désignés (fournisseur de X : X Internet Unlimited Company) : https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses",
+          "links": [
+            {
+              "label": "Commission, liste des très grandes plateformes et moteurs désignés (fournisseur de X : X Internet Unlimited Company)",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses"
+            }
+          ]
+        },
+        {
+          "label": "Brussels Signal (28 sept. 2026) : https://brusselssignal.eu/2026/09/us-seeks-to-join-musks-court-challenge-to-eu-digital-fine/",
+          "links": [
+            {
+              "label": "Brussels Signal (28 sept. 2026)",
+              "url": "https://brusselssignal.eu/2026/09/us-seeks-to-join-musks-court-challenge-to-eu-digital-fine/"
+            }
+          ]
+        },
+        {
+          "label": "ADF International, communiqué sur le recours de X (20 fév. 2026) : https://adfinternational.org/news/x-challenges-e120m-fine-under-eu-censorship-law/",
+          "links": [
+            {
+              "label": "ADF International, communiqué sur le recours de X (20 fév. 2026)",
+              "url": "https://adfinternational.org/news/x-challenges-e120m-fine-under-eu-censorship-law/"
+            }
+          ]
         }
       ]
     },
@@ -453,36 +668,76 @@
       "title": "Autres procédures DSA",
       "items": [
         {
-          "label": "Commission, TikTok conception addictive (6 fév. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act"
+          "label": "Commission, TikTok conception addictive (6 fév. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, TikTok conception addictive (6 fév. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Commission, amende Temu (28 mai 2026), IP/26/1178",
-          "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1178/IP_26_1178_EN.pdf"
+          "label": "Commission, amende Temu (28 mai 2026), IP/26/1178 : https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1178/IP_26_1178_EN.pdf",
+          "links": [
+            {
+              "label": "Commission, amende Temu (28 mai 2026), IP/26/1178",
+              "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1178/IP_26_1178_EN.pdf"
+            }
+          ]
         },
         {
-          "label": "Commission, Meta conception addictive (10 juil. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
+          "label": "Commission, Meta conception addictive (10 juil. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, Meta conception addictive (10 juil. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Commission, amende AliExpress (20 juil. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+          "label": "Commission, amende AliExpress (20 juil. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act",
+          "links": [
+            {
+              "label": "Commission, amende AliExpress (20 juil. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+            }
+          ]
         },
         {
-          "label": "Commission, désignation de ChatGPT, Reddit, Roblox (31 août 2026), IP/26/1772",
-          "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1772/IP_26_1772_EN.pdf"
+          "label": "Commission, désignation de ChatGPT, Reddit, Roblox (31 août 2026), IP/26/1772 : https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1772/IP_26_1772_EN.pdf",
+          "links": [
+            {
+              "label": "Commission, désignation de ChatGPT, Reddit, Roblox (31 août 2026), IP/26/1772",
+              "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1772/IP_26_1772_EN.pdf"
+            }
+          ]
         },
         {
-          "label": "Commission, code de conduite sur la désinformation (24 sept. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/platform-signatories-publish-latest-reports-under-code-conduct-disinformation"
+          "label": "Commission, code de conduite sur la désinformation (24 sept. 2026) : https://digital-strategy.ec.europa.eu/en/news/platform-signatories-publish-latest-reports-under-code-conduct-disinformation",
+          "links": [
+            {
+              "label": "Commission, code de conduite sur la désinformation (24 sept. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/platform-signatories-publish-latest-reports-under-code-conduct-disinformation"
+            }
+          ]
         },
         {
-          "label": "Commission, mise en demeure de la Bulgarie (1er oct. 2026)",
-          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-asks-bulgaria-comply-digital-services-act-and-empower-national-authorities-enforce-it"
+          "label": "Commission, mise en demeure de la Bulgarie (1er oct. 2026) : https://digital-strategy.ec.europa.eu/en/news/commission-asks-bulgaria-comply-digital-services-act-and-empower-national-authorities-enforce-it",
+          "links": [
+            {
+              "label": "Commission, mise en demeure de la Bulgarie (1er oct. 2026)",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-asks-bulgaria-comply-digital-services-act-and-empower-national-authorities-enforce-it"
+            }
+          ]
         },
         {
-          "label": "Commission, Meta et TikTok, conclusions préliminaires (24 oct. 2025), IP/25/2503",
-          "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2503/IP_25_2503_EN.pdf"
+          "label": "Commission, Meta et TikTok, conclusions préliminaires (24 oct. 2025), IP/25/2503 : https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2503/IP_25_2503_EN.pdf",
+          "links": [
+            {
+              "label": "Commission, Meta et TikTok, conclusions préliminaires (24 oct. 2025), IP/25/2503",
+              "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_2503/IP_25_2503_EN.pdf"
+            }
+          ]
         }
       ]
     },
@@ -490,20 +745,67 @@
       "title": "Justice française",
       "items": [
         {
-          "label": "TJ Paris, 17e ch., 5 juin 2024, RG 21/00726 (CERCLAB)",
-          "url": "https://cerclab.univ-lorraine.fr/s/cerclab/item/23175"
+          "label": "TJ Paris, 17e ch., 5 juin 2024, RG 21/00726 (CERCLAB) : https://cerclab.univ-lorraine.fr/s/cerclab/item/23175",
+          "links": [
+            {
+              "label": "TJ Paris, 17e ch., 5 juin 2024, RG 21/00726 (CERCLAB)",
+              "url": "https://cerclab.univ-lorraine.fr/s/cerclab/item/23175"
+            }
+          ]
         },
         {
-          "label": "Même décision (Juricaf)",
-          "url": "https://juricaf.org/arret/FRANCE-TRIBUNALJUDICIAIREDEPARIS-20240605-2100726"
+          "label": "Même décision (Juricaf) : https://juricaf.org/arret/FRANCE-TRIBUNALJUDICIAIREDEPARIS-20240605-2100726",
+          "links": [
+            {
+              "label": "Même décision (Juricaf)",
+              "url": "https://juricaf.org/arret/FRANCE-TRIBUNALJUDICIAIREDEPARIS-20240605-2100726"
+            }
+          ]
         },
         {
-          "label": "Parquet de Paris, ouverture d’information sur X (7 mai 2026)",
-          "url": "https://www.tribunal-de-paris.justice.fr/sites/default/files/2026-05/2026-05-07%20-%20CP%20ouverture%20d'information%20sur%20X.pdf"
+          "label": "Parquet de Paris, ouverture d’information sur X (7 mai 2026) : https://www.tribunal-de-paris.justice.fr/sites/default/files/2026-05/2026-05-07%20-%20CP%20ouverture%20d'information%20sur%20X.pdf",
+          "links": [
+            {
+              "label": "Parquet de Paris, ouverture d’information sur X (7 mai 2026)",
+              "url": "https://www.tribunal-de-paris.justice.fr/sites/default/files/2026-05/2026-05-07%20-%20CP%20ouverture%20d'information%20sur%20X.pdf"
+            }
+          ]
         },
         {
-          "label": "BFMTV, convocation d’Elon Musk (20 avril 2026)",
-          "url": "https://www.bfmtv.com/tech/actualites/reseaux-sociaux/attendu-aujourd-hui-par-le-parquet-de-paris-elon-musk-ne-s-est-pas-presente-a-sa-convocation-devant-la-justice-francaise_AN-202604200592.html"
+          "label": "BFMTV, convocation d’Elon Musk (20 avril 2026) : https://www.bfmtv.com/tech/actualites/reseaux-sociaux/attendu-aujourd-hui-par-le-parquet-de-paris-elon-musk-ne-s-est-pas-presente-a-sa-convocation-devant-la-justice-francaise_AN-202604200592.html",
+          "links": [
+            {
+              "label": "BFMTV, convocation d’Elon Musk (20 avril 2026)",
+              "url": "https://www.bfmtv.com/tech/actualites/reseaux-sociaux/attendu-aujourd-hui-par-le-parquet-de-paris-elon-musk-ne-s-est-pas-presente-a-sa-convocation-devant-la-justice-francaise_AN-202604200592.html"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo, même fait (20 avril 2026) : https://www.franceinfo.fr/internet/elon-musk/elon-musk-ne-s-est-pas-presente-a-sa-convocation-devant-la-justice-francaise-dans-le-cadre-de-l-enquete-sur-les-derives-de-son-reseau-social-x_7951808.html",
+          "links": [
+            {
+              "label": "franceinfo, même fait (20 avril 2026)",
+              "url": "https://www.franceinfo.fr/internet/elon-musk/elon-musk-ne-s-est-pas-presente-a-sa-convocation-devant-la-justice-francaise-dans-le-cadre-de-l-enquete-sur-les-derives-de-son-reseau-social-x_7951808.html"
+            }
+          ]
+        },
+        {
+          "label": "Reuters, même fait, via Boursier.com (20 avril 2026) : https://www.boursier.com/actualites/reuters/elon-musk-ne-s-est-pas-presente-a-sa-convocation-par-la-justice-416358.html",
+          "links": [
+            {
+              "label": "Reuters, même fait, via Boursier.com (20 avril 2026)",
+              "url": "https://www.boursier.com/actualites/reuters/elon-musk-ne-s-est-pas-presente-a-sa-convocation-par-la-justice-416358.html"
+            }
+          ]
+        },
+        {
+          "label": "AFP, réaction du parquet, via Notre Temps (20 avril 2026) : https://www.notretemps.com/depeches/enquete-sur-x-elon-musk-n-est-pas-venu-le-parquet-de-paris-prend-acte-131769",
+          "links": [
+            {
+              "label": "AFP, réaction du parquet, via Notre Temps (20 avril 2026)",
+              "url": "https://www.notretemps.com/depeches/enquete-sur-x-elon-musk-n-est-pas-venu-le-parquet-de-paris-prend-acte-131769"
+            }
+          ]
         }
       ]
     },
@@ -511,16 +813,260 @@
       "title": "Recours et contexte transatlantique",
       "items": [
         {
-          "label": "Appeals Centre Europe, rapport de transparence (28 mai 2026)",
-          "url": "https://www.appealscentre.eu/transparency-report-shows-big-increase-in-users-challenging-social-media-decisions/"
+          "label": "Appeals Centre Europe, rapport de transparence (28 mai 2026) : https://www.appealscentre.eu/transparency-report-shows-big-increase-in-users-challenging-social-media-decisions/",
+          "links": [
+            {
+              "label": "Appeals Centre Europe, rapport de transparence (28 mai 2026)",
+              "url": "https://www.appealscentre.eu/transparency-report-shows-big-increase-in-users-challenging-social-media-decisions/"
+            }
+          ]
         },
         {
-          "label": "Politico Europe, suspension de la politique de visas (16 juil. 2026)",
-          "url": "https://www.politico.eu/article/us-judge-pauses-visa-restrictions-thierry-breton-disinformation-researchers/"
+          "label": "Politico Europe, suspension de la politique de visas (16 juil. 2026) : https://www.politico.eu/article/us-judge-pauses-visa-restrictions-thierry-breton-disinformation-researchers/",
+          "links": [
+            {
+              "label": "Politico Europe, suspension de la politique de visas (16 juil. 2026)",
+              "url": "https://www.politico.eu/article/us-judge-pauses-visa-restrictions-thierry-breton-disinformation-researchers/"
+            }
+          ]
         },
         {
-          "label": "Reuters, restrictions de visas (23 déc. 2025)",
-          "url": "https://www.reuters.com/legal/government/us-targets-former-eu-commissioner-activists-with-visa-bans-over-alleged-2025-12-23/"
+          "label": "Reuters, restrictions de visas (23 déc. 2025) : https://www.reuters.com/legal/government/us-targets-former-eu-commissioner-activists-with-visa-bans-over-alleged-2025-12-23/",
+          "links": [
+            {
+              "label": "Reuters, restrictions de visas (23 déc. 2025)",
+              "url": "https://www.reuters.com/legal/government/us-targets-former-eu-commissioner-activists-with-visa-bans-over-alleged-2025-12-23/"
+            }
+          ]
+        },
+        {
+          "label": "AP, mêmes restrictions (23 déc. 2025) : https://apnews.com/article/state-department-trump-immigration-rubio-visas-87c8a4692f3184e4f83fdd8ed5093886",
+          "links": [
+            {
+              "label": "AP, mêmes restrictions (23 déc. 2025)",
+              "url": "https://apnews.com/article/state-department-trump-immigration-rubio-visas-87c8a4692f3184e4f83fdd8ed5093886"
+            }
+          ]
+        },
+        {
+          "label": "BBC, mêmes restrictions (24 déc. 2025) : http://bbc.com/news/articles/cp39kngz008o",
+          "links": [
+            {
+              "label": "BBC, mêmes restrictions (24 déc. 2025)",
+              "url": "http://bbc.com/news/articles/cp39kngz008o"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Candidats 2027 (encadré, consultations du 3 octobre 2026)",
+      "items": [
+        {
+          "label": "Sondages : OpinionWay pour le JDD, septembre 2026 : https://www.opinion-way.com/wp-content/uploads/2026/09/OpinionWay-pour-le-JDD-Intentions-de-vote-a-lelection-presidentielle-2027-Septembre-2026.pdf · Toluna Harris Interactive pour M6-RTL, vague 6 (22-24 sept. 2026) : https://tolunacorporate.com/fr/intentions-de-vote-a-lelection-presidentielle-2027-septembre-2026-2/ · Cluster17 pour Politico (notice Commission des sondages, sept. 2026) : https://www.commission-des-sondages.fr/notices/files/notices/2026/septembre/10273-pres-iv-cluster17-politico-24-septembre.pdf",
+          "links": [
+            {
+              "label": "Sondages : OpinionWay pour le JDD, septembre 2026",
+              "url": "https://www.opinion-way.com/wp-content/uploads/2026/09/OpinionWay-pour-le-JDD-Intentions-de-vote-a-lelection-presidentielle-2027-Septembre-2026.pdf"
+            },
+            {
+              "label": "Toluna Harris Interactive pour M6-RTL, vague 6 (22-24 sept. 2026)",
+              "url": "https://tolunacorporate.com/fr/intentions-de-vote-a-lelection-presidentielle-2027-septembre-2026-2/"
+            },
+            {
+              "label": "Cluster17 pour Politico (notice Commission des sondages, sept. 2026)",
+              "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/septembre/10273-pres-iv-cluster17-politico-24-septembre.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Candidature de Marine Le Pen et « binôme » avec Jordan Bardella, Public Sénat (7 juil. 2026) : https://www.publicsenat.fr/actualites/politique/presidentielle-marine-le-pen-est-candidate-et-se-pourvoit-en-cassation",
+          "links": [
+            {
+              "label": "Candidature de Marine Le Pen et « binôme » avec Jordan Bardella, Public Sénat (7 juil. 2026)",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-marine-le-pen-est-candidate-et-se-pourvoit-en-cassation"
+            }
+          ]
+        },
+        {
+          "label": "HowTheyVote.eu, vote final du DSA au Parlement européen (5 juil. 2022, 539 pour, 54 contre, 30 abstentions) : https://howtheyvote.eu/votes/146649",
+          "links": [
+            {
+              "label": "HowTheyVote.eu, vote final du DSA au Parlement européen (5 juil. 2022, 539 pour, 54 contre, 30 abstentions)",
+              "url": "https://howtheyvote.eu/votes/146649"
+            }
+          ]
+        },
+        {
+          "label": "AFP via Notre Temps, Mélenchon (15 août 2026) : https://www.notretemps.com/depeches/reseaux-sociaux-melenchon-salue-une-victoire-majeure-pour-les-libertes-137027",
+          "links": [
+            {
+              "label": "AFP via Notre Temps, Mélenchon (15 août 2026)",
+              "url": "https://www.notretemps.com/depeches/reseaux-sociaux-melenchon-salue-une-victoire-majeure-pour-les-libertes-137027"
+            }
+          ]
+        },
+        {
+          "label": "France 24 / AFP, Glucksmann et Tondelier (5 août 2026) : https://www.france24.com/fr/info-en-continu/20260805-ing%C3%A9rences-dans-la-pr%C3%A9sidentielle-il-ne-faut-pas-avoir-la-main-qui-tremble-face-%C3%A0-tiktok-et-x-exhorte-glucksmann",
+          "links": [
+            {
+              "label": "France 24 / AFP, Glucksmann et Tondelier (5 août 2026)",
+              "url": "https://www.france24.com/fr/info-en-continu/20260805-ing%C3%A9rences-dans-la-pr%C3%A9sidentielle-il-ne-faut-pas-avoir-la-main-qui-tremble-face-%C3%A0-tiktok-et-x-exhorte-glucksmann"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo / AFP, Glucksmann et Tondelier (5 août 2026) : https://www.franceinfo.fr/internet/reseaux-sociaux/raphael-glucksmann-et-marine-tondelier-pointent-le-role-des-plateformes-sociales-apres-des-cas-d-ingerences-etrangeres_8136401.html",
+          "links": [
+            {
+              "label": "franceinfo / AFP, Glucksmann et Tondelier (5 août 2026)",
+              "url": "https://www.franceinfo.fr/internet/reseaux-sociaux/raphael-glucksmann-et-marine-tondelier-pointent-le-role-des-plateformes-sociales-apres-des-cas-d-ingerences-etrangeres_8136401.html"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV / AFP, Glucksmann (5 août 2026) : https://www.bfmtv.com/tech/actualites/reseaux-sociaux/cible-d-une-campagne-de-desinformation-russe-sur-x-et-tiktok-raphael-glucksmann-appelle-a-ne-pas-avoir-la-main-qui-tremble-face-a-elon-musk-et-au-parti-communiste-chinois_AD-202608050251.html",
+          "links": [
+            {
+              "label": "BFMTV / AFP, Glucksmann (5 août 2026)",
+              "url": "https://www.bfmtv.com/tech/actualites/reseaux-sociaux/cible-d-une-campagne-de-desinformation-russe-sur-x-et-tiktok-raphael-glucksmann-appelle-a-ne-pas-avoir-la-main-qui-tremble-face-a-elon-musk-et-au-parti-communiste-chinois_AD-202608050251.html"
+            }
+          ]
+        },
+        {
+          "label": "Règlement (UE) 2022/2065, article 51, paragraphe 3 (restriction temporaire d’accès), et article 82, paragraphes 1 et 2 (demandes de restrictions d’accès et coopération avec les juridictions nationales), EUR-Lex, consulté le 3 oct. 2026 : https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065",
+          "links": [
+            {
+              "label": "Règlement (UE) 2022/2065, article 51, paragraphe 3 (restriction temporaire d’accès), et article 82, paragraphes 1 et 2 (demandes de restrictions d’accès et coopération avec les juridictions nationales), EUR-Lex, consulté le 3 oct. 2026",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo / AFP, Attal et le référendum (16 août 2026) : https://www.franceinfo.fr/internet/reseaux-sociaux/une-course-contre-la-montre-a-demarre-gabriel-attal-appelle-a-un-referendum-sur-l-interdiction-des-reseaux-aux-moins-de-15-ans_8149565.html",
+          "links": [
+            {
+              "label": "franceinfo / AFP, Attal et le référendum (16 août 2026)",
+              "url": "https://www.franceinfo.fr/internet/reseaux-sociaux/une-course-contre-la-montre-a-demarre-gabriel-attal-appelle-a-un-referendum-sur-l-interdiction-des-reseaux-aux-moins-de-15-ans_8149565.html"
+            }
+          ]
+        },
+        {
+          "label": "Assemblée nationale, proposition de loi n° 2107 (déposée le 18 nov. 2025) : https://www.assemblee-nationale.fr/dyn/17/textes/l17b2107_proposition-loi",
+          "links": [
+            {
+              "label": "Assemblée nationale, proposition de loi n° 2107 (déposée le 18 nov. 2025)",
+              "url": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2107_proposition-loi"
+            }
+          ]
+        },
+        {
+          "label": "Conseil constitutionnel, décision 2026-911 DC (14 août 2026) : https://www.conseil-constitutionnel.fr/actualites/la-decision-en-bref-decision-n-2026-911-dc-du-14-aout-2026",
+          "links": [
+            {
+              "label": "Conseil constitutionnel, décision 2026-911 DC (14 août 2026)",
+              "url": "https://www.conseil-constitutionnel.fr/actualites/la-decision-en-bref-decision-n-2026-911-dc-du-14-aout-2026"
+            }
+          ]
+        },
+        {
+          "label": "Conseil d’État, blocage de TikTok en Nouvelle-Calédonie (1er avril 2025, n° 494511) : https://www.conseil-etat.fr/actualites/en-cas-de-circonstances-exceptionnelles-le-gouvernement-peut-interrompre-provisoirement-l-acces-a-un-reseau-social-mais-sous-conditions",
+          "links": [
+            {
+              "label": "Conseil d’État, blocage de TikTok en Nouvelle-Calédonie (1er avril 2025, n° 494511)",
+              "url": "https://www.conseil-etat.fr/actualites/en-cas-de-circonstances-exceptionnelles-le-gouvernement-peut-interrompre-provisoirement-l-acces-a-un-reseau-social-mais-sous-conditions"
+            }
+          ]
+        },
+        {
+          "label": "Maddyness, entretien avec Édouard Philippe (16 juin 2026) : https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/",
+          "links": [
+            {
+              "label": "Maddyness, entretien avec Édouard Philippe (16 juin 2026)",
+              "url": "https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/"
+            }
+          ]
+        },
+        {
+          "label": "LCP, adoption définitive de la loi Avia et position du gouvernement (13 mai 2020) : https://lcp.fr/actualites/lutte-contre-la-haine-sur-internet-lassemblee-adopte-definitivement-la-proposition-de-loi",
+          "links": [
+            {
+              "label": "LCP, adoption définitive de la loi Avia et position du gouvernement (13 mai 2020)",
+              "url": "https://lcp.fr/actualites/lutte-contre-la-haine-sur-internet-lassemblee-adopte-definitivement-la-proposition-de-loi"
+            }
+          ]
+        },
+        {
+          "label": "Conseil constitutionnel, décision 2020-801 DC, loi Avia, saisine conduite par Bruno Retailleau (18 juin 2020) : https://www.conseil-constitutionnel.fr/decision/2020/2020801DC.htm",
+          "links": [
+            {
+              "label": "Conseil constitutionnel, décision 2020-801 DC, loi Avia, saisine conduite par Bruno Retailleau (18 juin 2020)",
+              "url": "https://www.conseil-constitutionnel.fr/decision/2020/2020801DC.htm"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo, Retailleau (14 janv. 2021) : https://www.franceinfo.fr/monde/usa/presidentielle/donald-trump/video-donald-trump-exclu-des-reseaux-sociaux-bruno-retailleau-denonce-le-pouvoir-de-censure-des-gafam-des-puissances-quasi-etatiques_4257181.html",
+          "links": [
+            {
+              "label": "franceinfo, Retailleau (14 janv. 2021)",
+              "url": "https://www.franceinfo.fr/monde/usa/presidentielle/donald-trump/video-donald-trump-exclu-des-reseaux-sociaux-bruno-retailleau-denonce-le-pouvoir-de-censure-des-gafam-des-puissances-quasi-etatiques_4257181.html"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV, labellisation des médias, Le Pen, Bardella, Retailleau (2 déc. 2025) : https://www.bfmtv.com/politique/elysee/labellisation-des-medias-la-proposition-d-emmanuel-macron-suscite-l-ire-de-la-droite-et-l-extreme-droite-lr-lance-une-petition_AV-202512020510.html",
+          "links": [
+            {
+              "label": "BFMTV, labellisation des médias, Le Pen, Bardella, Retailleau (2 déc. 2025)",
+              "url": "https://www.bfmtv.com/politique/elysee/labellisation-des-medias-la-proposition-d-emmanuel-macron-suscite-l-ire-de-la-droite-et-l-extreme-droite-lr-lance-une-petition_AV-202512020510.html"
+            }
+          ]
+        },
+        {
+          "label": "Public Sénat, rapport « zones grises de l’information » et polémique (16 juil. 2026) : https://www.publicsenat.fr/actualites/parlementaire/ingerences-interieures-au-senat-un-rapport-sur-la-desinformation-cree-la-polemique",
+          "links": [
+            {
+              "label": "Public Sénat, rapport « zones grises de l’information » et polémique (16 juil. 2026)",
+              "url": "https://www.publicsenat.fr/actualites/parlementaire/ingerences-interieures-au-senat-un-rapport-sur-la-desinformation-cree-la-polemique"
+            }
+          ]
+        },
+        {
+          "label": "JDD, réactions RN, Reconquête, UDR (15 juil. 2026) : https://www.lejdd.fr/politique/pravda-delit-dopinion-un-rapport-senatorial-sur-la-regulation-des-reseaux-sociaux-souleve-de-vives-craintes-179097",
+          "links": [
+            {
+              "label": "JDD, réactions RN, Reconquête, UDR (15 juil. 2026)",
+              "url": "https://www.lejdd.fr/politique/pravda-delit-dopinion-un-rapport-senatorial-sur-la-regulation-des-reseaux-sociaux-souleve-de-vives-craintes-179097"
+            }
+          ]
+        },
+        {
+          "label": "Délégation RN au Parlement européen, pétition DSA (non datée, consultée le 3 oct. 2026) : https://www.vudeurope.eu/petition/dsa-la-liberte-dexpression-menacee-par-bruxelles",
+          "links": [
+            {
+              "label": "Délégation RN au Parlement européen, pétition DSA (non datée, consultée le 3 oct. 2026)",
+              "url": "https://www.vudeurope.eu/petition/dsa-la-liberte-dexpression-menacee-par-bruxelles"
+            }
+          ]
+        },
+        {
+          "label": "Éric Zemmour, post X (14 juil. 2026, 13 h 47 heure de Paris) : https://x.com/ZemmourEric/status/2076997030849683893",
+          "links": [
+            {
+              "label": "Éric Zemmour, post X (14 juil. 2026, 13 h 47 heure de Paris)",
+              "url": "https://x.com/ZemmourEric/status/2076997030849683893"
+            }
+          ]
+        },
+        {
+          "label": "Parlement européen, question écrite de Sarah Knafo E-001546/2024 (23 août 2024) : https://www.europarl.europa.eu/doceo/document/E-10-2024-001546_FR.html",
+          "links": [
+            {
+              "label": "Parlement européen, question écrite de Sarah Knafo E-001546/2024 (23 août 2024)",
+              "url": "https://www.europarl.europa.eu/doceo/document/E-10-2024-001546_FR.html"
+            }
+          ]
         }
       ]
     },
@@ -529,23 +1075,23 @@
       "items": [
         {
           "label": "publication-director/raw/2026-09-15-raw-dsa-texte-officiel.md",
-          "url": ""
+          "links": []
         },
         {
           "label": "publication-director/raw/2026-09-15-raw-dsa-cas1-meta-cgu-discours.md",
-          "url": ""
+          "links": []
         },
         {
           "label": "publication-director/raw/2026-09-15-raw-dsa-cas2-commission-amende-x.md",
-          "url": ""
+          "links": []
         },
         {
           "label": "publication-director/raw/2026-09-15-raw-dsa-cas3-tj-paris-clause-abusive.md",
-          "url": ""
+          "links": []
         },
         {
           "label": "publication-director/raw/2026-09-15-raw-dsa-index.md",
-          "url": ""
+          "links": []
         }
       ]
     }
