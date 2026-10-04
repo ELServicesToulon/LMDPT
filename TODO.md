@@ -106,7 +106,7 @@ Réf. API : [guides.data.gouv.fr](https://guides.data.gouv.fr/api-de-data.gouv.f
 - [x] Repo GitHub public [ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
 - [x] Workflow GitHub Pages (`.github/workflows/deploy.yml`) — push `Main` → build + deploy
 - [x] Prod OVH KS-5-B (`npm run deploy-lmdpt-ovh` depuis Mediconvoi/backend)
-- [x] DNS Cloudflare : A `lmdpt` → `37.187.159.93` proxied
+- [x] DNS Cloudflare : A `lmdpt` → IP du serveur : voir Bitwarden (proxied)
 - [ ] Domaine `.fr` dédié — décision L1+ (optionnel)
 
 ## Prochaine action recommandée

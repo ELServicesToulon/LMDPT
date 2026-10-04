@@ -5,6 +5,7 @@ import DebatePositions from '../../components/DebatePositions.astro';
 import DiscussionSection from '../../components/DiscussionSection.astro';
 import ShareBar from '../../components/ShareBar.astro';
 import { DEBATE_CATALOG, getDebate } from '../../lib/debates';
+import { withTrailingSlash } from '../../lib/internal-path';
 
 export function getStaticPaths() {
   return DEBATE_CATALOG.map((d) => ({ params: { slug: d.slug } }));
@@ -18,7 +19,7 @@ if (!debate) {
 }
 ---
 
-<BaseLayout title="Débat" description={debate.context.slice(0, 160)} share={false}>
+<BaseLayout title={debate.question} description={debate.context.slice(0, 160)} share={false}>
   <DebateLiveBanner slot="lede" campaign={`debats_${debate.slug}`} directUrl={debate.live_url} />
   {
     debate.live_url?.trim() ? (
@@ -30,7 +31,7 @@ if (!debate) {
   }
 
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/debats">Débats</a> → {debate.slug}
+    <a href="/debats/">Débats</a> → {debate.slug}
   </nav>
 
   <section slot="lede">
@@ -62,7 +63,7 @@ if (!debate) {
           {
             debate.related.map((href) => (
               <li>
-                <a href={href}>{href}</a>
+                <a href={withTrailingSlash(href)}>{withTrailingSlash(href)}</a>
               </li>
             ))
           }

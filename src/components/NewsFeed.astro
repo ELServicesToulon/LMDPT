@@ -19,7 +19,7 @@ const {
   disclaimer,
   fetchedAt,
   feedsOk,
-  moreHref = '/analyses/presidentielle-2027-preparation#renifleur-presse',
+  moreHref = '/analyses/presidentielle-2027-preparation/#renifleur-presse',
 } = Astro.props;
 
 function huesForItem(item: RenifleurItem): HueBadge[] {
@@ -132,9 +132,9 @@ const [featured, ...rest] = visible;
   <p class="news-more">
     <a href={moreHref}>Toute la veille 2027 →</a>
     {' '}·{' '}
-    <a href="/analyses/presidentielle-2027-preparation">Dossier présidentielle</a>
+    <a href="/analyses/presidentielle-2027-preparation/">Dossier présidentielle</a>
     {' '}·{' '}
-    <a href="/charte">Charte des couleurs</a>
+    <a href="/charte/">Charte des couleurs</a>
   </p>
 </section>
 

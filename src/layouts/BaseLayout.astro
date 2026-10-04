@@ -9,6 +9,8 @@ interface Props {
   noindex?: boolean;
   /** false = masquer la barre ; true = forcer. Défaut : articles / débats (hors hubs). */
   share?: boolean;
+  /** La page fournit déjà son H1 : le nom du site reste un paragraphe. */
+  pageHeading?: boolean;
 }
 
 import { getPublicSocialLinks } from '../config/social';
@@ -33,7 +35,7 @@ import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro';
 
-const { title, description, ogImage, keywords, type, noindex, share } = Astro.props;
+const { title, description, ogImage, keywords, type, noindex, share, pageHeading } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
 const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
@@ -49,6 +51,7 @@ const isArticleDetail =
   (cleanPath.startsWith('/analyses/') || cleanPath.startsWith('/debats/')) &&
   cleanPath !== '/analyses' &&
   cleanPath !== '/debats';
+const brandIsHeading = !isArticleDetail && !pageHeading;
 const ogImagePath = (resolvedOgImage || DEFAULT_OG_IMAGE).split('?')[0] ?? DEFAULT_OG_IMAGE;
 const ogSize = publicImageSize(ogImagePath);
 const coverSrc = editorialPost?.cover?.src?.split('?')[0];
@@ -920,10 +923,10 @@ const shareTitle = editorialPost?.title ?? title;
           <div class="site-mark" aria-hidden="true">1er</div>
           <div>
             {
-              isArticleDetail ? (
-                <p class="site-title">Le Média du Premier Tour</p>
-              ) : (
+              brandIsHeading ? (
                 <h1>Le Média du Premier Tour</h1>
+              ) : (
+                <p class="site-title">Le Média du Premier Tour</p>
               )
             }
             <p class="tagline">Pluralité, faits sourcés, vote pour — pas contre.</p>
@@ -931,11 +934,11 @@ const shareTitle = editorialPost?.title ?? title;
         </div>
         <nav aria-label="Navigation principale">
           <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Accueil</a>
-          <a href="/atlas" aria-current={Astro.url.pathname.startsWith('/atlas') ? 'page' : undefined}>Atlas</a>
-          <a href="/analyses" aria-current={Astro.url.pathname.startsWith('/analyses') ? 'page' : undefined}>Analyses</a>
-          <a href="/debats" aria-current={Astro.url.pathname.startsWith('/debats') ? 'page' : undefined}>Débats</a>
+          <a href="/atlas/" aria-current={Astro.url.pathname.startsWith('/atlas') ? 'page' : undefined}>Atlas</a>
+          <a href="/analyses/" aria-current={Astro.url.pathname.startsWith('/analyses') ? 'page' : undefined}>Analyses</a>
+          <a href="/debats/" aria-current={Astro.url.pathname.startsWith('/debats') ? 'page' : undefined}>Débats</a>
           <a
-            href="/liberte-d-expression"
+            href="/liberte-d-expression/"
             aria-current={
               Astro.url.pathname.startsWith('/liberte-d-expression') ||
               Astro.url.pathname.startsWith('/observatoire-censure') ||
@@ -946,22 +949,22 @@ const shareTitle = editorialPost?.title ?? title;
             >Liberté d’expression</a
           >
           <a
-            href="/observatoire-censure"
+            href="/observatoire-censure/"
             aria-current={Astro.url.pathname.startsWith('/observatoire-censure') ? 'page' : undefined}
             >Observatoire de la censure</a
           >
           <a
-            href="/assemblee-influenceurs"
+            href="/assemblee-influenceurs/"
             aria-current={Astro.url.pathname.startsWith('/assemblee-influenceurs') ? 'page' : undefined}
             >Assemblée des influenceurs</a
           >
-          <a href="/contribuer" aria-current={Astro.url.pathname.startsWith('/contribuer') ? 'page' : undefined}>Contribuer</a>
-          <a href="/charte" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
-          <a href="/a-propos" aria-current={Astro.url.pathname === '/a-propos' ? 'page' : undefined}>À propos</a>
-          <a href="/sources" aria-current={Astro.url.pathname === '/sources' ? 'page' : undefined}>Sources</a>
-          <a href="/soutenir" aria-current={Astro.url.pathname.startsWith('/soutenir') ? 'page' : undefined}>Soutenir</a>
+          <a href="/contribuer/" aria-current={Astro.url.pathname.startsWith('/contribuer') ? 'page' : undefined}>Contribuer</a>
+          <a href="/charte/" aria-current={Astro.url.pathname.startsWith('/charte') ? 'page' : undefined}>Charte</a>
+          <a href="/a-propos/" aria-current={Astro.url.pathname === '/a-propos' ? 'page' : undefined}>À propos</a>
+          <a href="/sources/" aria-current={Astro.url.pathname === '/sources' ? 'page' : undefined}>Sources</a>
+          <a href="/soutenir/" aria-current={Astro.url.pathname.startsWith('/soutenir') ? 'page' : undefined}>Soutenir</a>
           <a
-            href="/connexion"
+            href="/connexion/"
             id="nav-auth"
             aria-current={
               Astro.url.pathname === '/connexion' || Astro.url.pathname === '/compte'
@@ -978,15 +981,15 @@ const shareTitle = editorialPost?.title ?? title;
           <span class="parcours-label">Parcours citoyen :</span>
           <ol id="parcours-steps" class="parcours-steps">
             <li><a href="/">1. Découvrir le 1er tour</a></li>
-            <li><a href="/atlas">2. Explorer l’Atlas</a></li>
-            <li><a href="/analyses/assemblee-premier-tour">3. Simuler l’AN1T (pluralité)</a></li>
-            <li><a href="/liberte-d-expression">4. Liberté d’expression</a></li>
-            <li><a href="/observatoire-censure">5. Observatoire de la censure</a></li>
-            <li><a href="/assemblee-influenceurs">6. Assemblée des influenceurs</a></li>
-            <li><a href="/analyses/assemblee-premier-tour-mecanismes">7. Mécanismes Assemblée 1er tour</a></li>
-            <li><a href="/debats">8. Participer aux débats</a></li>
-            <li><a href="/contribuer">9. Suggestions &amp; alertes</a></li>
-            <li><a href="/sources">10. Vérifier les sources</a></li>
+            <li><a href="/atlas/">2. Explorer l’Atlas</a></li>
+            <li><a href="/analyses/assemblee-premier-tour/">3. Simuler l’AN1T (pluralité)</a></li>
+            <li><a href="/liberte-d-expression/">4. Liberté d’expression</a></li>
+            <li><a href="/observatoire-censure/">5. Observatoire de la censure</a></li>
+            <li><a href="/assemblee-influenceurs/">6. Assemblée des influenceurs</a></li>
+            <li><a href="/analyses/assemblee-premier-tour-mecanismes/">7. Mécanismes Assemblée 1er tour</a></li>
+            <li><a href="/debats/">8. Participer aux débats</a></li>
+            <li><a href="/contribuer/">9. Suggestions &amp; alertes</a></li>
+            <li><a href="/sources/">10. Vérifier les sources</a></li>
           </ol>
           <button
             type="button"
@@ -1075,14 +1078,14 @@ const shareTitle = editorialPost?.title ?? title;
       <footer>
         <p>
           Transparence des couleurs politiques des posts et intervenants.
-          Ligne <em>{DOE_FR}</em> — <a href="/charte">charte</a>.
+          Ligne <em>{DOE_FR}</em> — <a href="/charte/">charte</a>.
         </p>
         <p>
           Données publiques via <a href="https://www.data.gouv.fr">data.gouv.fr</a> — faits sourcés, pas de classement éliminatoire.
           {' · '}
-          <a href="/sources#methodologie-blocs">Méthodo blocs</a>
+          <a href="/sources/#methodologie-blocs">Méthodo blocs</a>
           {' · '}
-          <a href="/a-propos">À propos</a>
+          <a href="/a-propos/">À propos</a>
         </p>
 
         <!-- Feedback → file suggestions (validation rédaction avant publication site) -->
@@ -1090,7 +1093,7 @@ const shareTitle = editorialPost?.title ?? title;
           <h4 id="feedback-title" style="font-size:0.95rem; margin:0.6rem 0 0.25rem;">Votre retour citoyen</h4>
           <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">
             Suggestion rapide (site / clarté). Pour une <strong>alerte citoyenne</strong> sourcée :
-            <a href="/contribuer">espace Contribuer</a>. Rien n’est publié sans validation éditoriale.
+            <a href="/contribuer/">espace Contribuer</a>. Rien n’est publié sans validation éditoriale.
           </p>
           <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
             <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.75rem; align-items:flex-end;">
@@ -1124,19 +1127,19 @@ const shareTitle = editorialPost?.title ?? title;
         </div>
 
         <p>
-          <a href="/a-propos">À propos</a>
+          <a href="/a-propos/">À propos</a>
           {' · '}
-          <a href="/charte">Charte</a>
+          <a href="/charte/">Charte</a>
           {' · '}
-          <a href="/sources">Sources</a>
+          <a href="/sources/">Sources</a>
           {' · '}
-          <a href="/sources#methodologie-blocs">Méthodo</a>
+          <a href="/sources/#methodologie-blocs">Méthodo</a>
           {' · '}
-          <a href="/soutenir">Soutenir</a>
+          <a href="/soutenir/">Soutenir</a>
           {' · '}
-          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/mentions-legales/">Mentions légales</a>
           {' · '}
-          <a href="/confidentialite">Confidentialité</a>
+          <a href="/confidentialite/">Confidentialité</a>
           {' · '}
           <a href={IARBRE_HUB.url} rel="noopener noreferrer">{IARBRE_HUB.label}</a>
           {

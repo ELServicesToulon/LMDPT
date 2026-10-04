@@ -41,7 +41,7 @@ type AlerteItem = (typeof alertes.items)[number];
   keywords="alerte citoyenne, liberté d'expression, débat public, présidentielle 2027, Chat Control, ingérence intérieure, LMDPT"
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> → Alerte citoyenne
+    <a href="/analyses/">Analyses</a> → Alerte citoyenne
   </nav>
 
   <section class="alerte-page-intro" slot="lede">
@@ -281,7 +281,7 @@ type AlerteItem = (typeof alertes.items)[number];
   <section class="card" aria-labelledby="lecteurs-title">
     <h3 id="lecteurs-title">Signalements lecteurs validés</h3>
     <p class="meta">
-      Les alertes proposées via <a href="/contribuer">/contribuer</a> n’apparaissent ici qu’après
+      Les alertes proposées via <a href="/contribuer/">/contribuer</a> n’apparaissent ici qu’après
       validation rédactionnelle.
     </p>
     <div id="lecteur-alertes" class="lecteur-alertes">
@@ -290,13 +290,13 @@ type AlerteItem = (typeof alertes.items)[number];
   </section>
 
   <p class="meta">
-    <a href="/analyses/presidentielle-2027-preparation">← Dossier présidentielle 2027</a>
+    <a href="/analyses/presidentielle-2027-preparation/">← Dossier présidentielle 2027</a>
     {' · '}
-    <a href="/contribuer">Proposer une alerte</a>
+    <a href="/contribuer/">Proposer une alerte</a>
     {' · '}
-    <a href="/charte">Charte éditoriale</a>
+    <a href="/charte/">Charte éditoriale</a>
     {' · '}
-    <a href="/sources#methodologie-blocs">Méthodo données</a>
+    <a href="/sources/#methodologie-blocs">Méthodo données</a>
     {' · '}
     <a href="/">Accueil</a>
   </p>
@@ -330,7 +330,7 @@ type AlerteItem = (typeof alertes.items)[number];
       const tips = data.tips || [];
       if (!tips.length) {
         el.innerHTML =
-          '<p class="meta">Pas encore de signalement lecteur validé. <a href="/contribuer">Proposer une alerte</a>.</p>';
+          '<p class="meta">Pas encore de signalement lecteur validé. <a href="/contribuer/">Proposer une alerte</a>.</p>';
         return;
       }
       el.innerHTML = tips

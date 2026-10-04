@@ -16,7 +16,7 @@ interface Props {
 
 const {
   previewLimit = 4,
-  moreHref = '/analyses/alerte-citoyenne',
+  moreHref = '/analyses/alerte-citoyenne/',
   showSignal = true,
 } = Astro.props;
 
@@ -80,9 +80,9 @@ const regionLabel = (id: string) =>
   <p class="alerte-more">
     <a class="btn-alerte" href={moreHref}>Lire l’alerte complète ({alertes.items.length} points) →</a>
     {' '}
-    <a href="/contribuer">Proposer une alerte</a>
+    <a href="/contribuer/">Proposer une alerte</a>
     {' '}
-    <a href="/analyses/presidentielle-2027-preparation#veille">Veille 2027</a>
+    <a href="/analyses/presidentielle-2027-preparation/#veille">Veille 2027</a>
   </p>
 </section>
 

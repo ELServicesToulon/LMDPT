@@ -15,6 +15,12 @@ import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
 import { handleAuthRoutes, resolveSessionUser } from './lib/auth/router.mjs';
 import { authEnabled, authRequired } from './lib/auth/config.mjs';
+import {
+  findModeratorAccount,
+  moderationConfigured,
+  moderationStartupWarning,
+  resolveModeratorAccounts,
+} from './lib/moderators.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = process.env.LMDPT_COMMENTS_DATA || join(__dirname, 'data');
@@ -174,16 +180,12 @@ function ensureData() {
     );
   }
   if (!existsSync(modsPath)) {
-    // Tokens en clair uniquement en local data (hors git) — à remplacer en prod
     const seed = {
       version: 1,
-      accounts: [
-        { id: 'redaction-1', display: 'Rédaction LMDPT', role: 'redaction', token: 'lmdpt-redaction-change-me' },
-        { id: 'modo-senior-1', display: 'Modo senior', role: 'modo-senior', token: 'lmdpt-modo-senior-change-me' },
-        { id: 'modo-1', display: 'Modérateur', role: 'modo', token: 'lmdpt-modo-change-me' },
-      ],
+      accounts: [],
       hierarchy: ['lecteur', 'contributeur', 'modo', 'modo-senior', 'redaction'],
-      note: 'Le posteur anonyme agit en contributeur (niveau 1). Les modos gèrent file d’attente et masquage.',
+      note:
+        'Aucun jeton par défaut. Renseigner LMDPT_MOD_TOKEN_REDACTION, LMDPT_MOD_TOKEN_MODO_SENIOR et LMDPT_MOD_TOKEN_MODO, ou des jetons propres dans ce fichier (hors git). Les anciens jetons publiés sont refusés.',
     };
     writeFileSync(modsPath, JSON.stringify(seed, null, 2));
   }
@@ -282,15 +284,38 @@ function sanitizeTipInput(body) {
   return { type, title, text, displayName, sourceUrl, contactEmail };
 }
 
-function loadMods() {
+function currentModeratorAccounts() {
   ensureData();
-  return JSON.parse(readFileSync(join(DATA_DIR, 'moderators.json'), 'utf8'));
+  let fileAccounts = [];
+  try {
+    const raw = JSON.parse(readFileSync(join(DATA_DIR, 'moderators.json'), 'utf8'));
+    fileAccounts = Array.isArray(raw.accounts) ? raw.accounts : [];
+  } catch {
+    fileAccounts = [];
+  }
+  return resolveModeratorAccounts({ env: process.env, fileAccounts });
 }
 
-function findMod(token) {
-  if (!token) return null;
-  const mods = loadMods();
-  return mods.accounts.find((a) => a.token === token) || null;
+/**
+ * Refus explicite si aucun jeton n'est configuré, ou si le jeton ne correspond pas.
+ * @returns {{ mod: object } | { status: number, body: { error: string } }}
+ */
+function moderationDenial(token, minRole = 'modo') {
+  const accounts = currentModeratorAccounts();
+  if (!moderationConfigured(accounts)) {
+    return {
+      status: 503,
+      body: {
+        error:
+          'Modération non configurée : aucun jeton valide (fichier data/moderators.json ou variables LMDPT_MOD_TOKEN_*).',
+      },
+    };
+  }
+  const mod = findModeratorAccount(accounts, token);
+  if (!mod || (ROLE_LEVEL[mod.role] ?? 0) < (ROLE_LEVEL[minRole] ?? 99)) {
+    return { status: 403, body: { error: 'Modo requis' } };
+  }
+  return { mod };
 }
 
 function corsHeaders(extra = {}) {
@@ -866,12 +891,17 @@ const server = createServer(async (req, res) => {
         moderation: { history: [] },
       };
 
-      // contributeurs : pending ; si token modo+ avec auto-publish option
-      const mod = findMod(req.headers['x-mod-token'] || body.modToken);
-      if (mod && ROLE_LEVEL[mod.role] >= ROLE_LEVEL.modo && body.forcePublish) {
+      // Édition privilégiée : publication forcée. Refusée sans jeton configuré et valide.
+      if (body.forcePublish) {
+        const decision = moderationDenial(req.headers['x-mod-token'] || body.modToken, 'modo');
+        if (decision.status) return json(res, decision.status, decision.body);
         comment.status = 'published';
         comment.publishedAt = new Date().toISOString();
-        comment.moderation.history.push({ at: comment.publishedAt, by: mod.id, action: 'force-publish' });
+        comment.moderation.history.push({
+          at: comment.publishedAt,
+          by: decision.mod.id,
+          action: 'force-publish',
+        });
       }
 
       const db = loadComments();
@@ -892,8 +922,9 @@ const server = createServer(async (req, res) => {
 
     // --- Moderation ---
     if (req.method === 'GET' && path === '/api/comments/mod/queue') {
-      const mod = findMod(req.headers['x-mod-token']);
-      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
       const db = loadComments();
       const queue = db.comments.filter((c) => c.status === 'pending');
       return json(res, 200, { role: mod.role, queue });
@@ -912,8 +943,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && path === '/api/comments/mod/action') {
-      const mod = findMod(req.headers['x-mod-token']);
-      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
       const body = await readBody(req);
       const { commentId, action, slug } = body;
       const db = loadComments();
@@ -998,8 +1030,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'GET' && path === '/api/comments/mod/tips-queue') {
-      const mod = findMod(req.headers['x-mod-token']);
-      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
       const db = loadTips();
       const queue = db.tips
         .filter((t) => t.status === 'pending')
@@ -1015,8 +1048,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && path === '/api/comments/mod/tips-action') {
-      const mod = findMod(req.headers['x-mod-token']);
-      if (!mod || ROLE_LEVEL[mod.role] < ROLE_LEVEL.modo) return json(res, 403, { error: 'Modo requis' });
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
       const body = await readBody(req);
       const { tipId, action } = body;
       const db = loadTips();
@@ -1068,6 +1102,9 @@ function publicComment(c) {
 }
 
 ensureData();
+if (!moderationConfigured(currentModeratorAccounts())) {
+  console.warn(moderationStartupWarning());
+}
 server.listen(PORT, HOST, () => {
   console.log(`lmdpt-comments listening on http://${HOST}:${PORT}`);
   console.log(`data: ${DATA_DIR}`);

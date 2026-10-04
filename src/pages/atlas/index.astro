@@ -9,7 +9,7 @@ const duals = listScrutinDuals();
 const tocItems = [
   { href: '#scrutins', label: 'Liste des scrutins' },
   ...duals.map((d) => ({ href: `#${d.slug}`, label: d.title })),
-  { href: '/sources#methodologie-blocs', label: 'Méthodo : nuances → blocs' },
+  { href: '/sources/#methodologie-blocs', label: 'Méthodo : nuances → blocs' },
 ];
 ---
 
@@ -28,7 +28,7 @@ const tocItems = [
       Documenter le 1er tour, pas le transformer en classement. Illustration pédagogique, pas de prédiction.
       {' · '}
       Agrégation nuances → blocs :
-      <a href="/sources#methodologie-blocs">méthodologie</a>.
+      <a href="/sources/#methodologie-blocs">méthodologie</a>.
     </p>
   </section>
 
@@ -41,7 +41,7 @@ const tocItems = [
         ELECTION_CATALOG.map((e) => (
           <li class="card">
             <h4>
-              <a href={`/atlas/${e.slug}`}>{e.title}</a>
+              <a href={`/atlas/${e.slug}/`}>{e.title}</a>
             </h4>
             <p class="meta">
               <time datetime={e.date}>
@@ -60,7 +60,7 @@ const tocItems = [
     duals.map((dual) => (
       <section class="scrutin-block" id={dual.slug} aria-labelledby={`h-${dual.slug}`}>
         <h3 id={`h-${dual.slug}`}>
-          <a href={`/atlas/${dual.slug}`}>{dual.title}</a>
+          <a href={`/atlas/${dual.slug}/`}>{dual.title}</a>
         </h3>
         {dual.distorsionNote && <p class="meta">{dual.distorsionNote}</p>}
         <DualAssembleeCompare

@@ -305,13 +305,27 @@ function buildRobotsTxt(): string {
     'AdsBot-Google-Mobile',
     'Mediapartners-Google',
   ];
-  const googleBlock = googleBots
-    .map(
-      (bot) => `User-agent: ${bot}
+  const privateDisallows = `Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte`;
+  const aiBots = [
+    'GPTBot',
+    'ChatGPT-User',
+    'anthropic-ai',
+    'ClaudeBot',
+    'Claude-Web',
+    'PerplexityBot',
+    'Bytespider',
+    'cohere-ai',
+    'meta-externalagent',
+    'Applebot-Extended',
+  ];
+  const botBlock = (bot: string) => `User-agent: ${bot}
 Allow: /
-`,
-    )
-    .join('\n');
+${privateDisallows}
+`;
+  const googleBlock = googleBots.map(botBlock).join('\n');
+  const aiBlock = aiBots.map(botBlock).join('\n');
 
   return `# Le Média du Premier Tour — ${SITE}
 # Crawlers moteurs + Google (Search / News / Discover / Inspection) bienvenus.
@@ -319,10 +333,8 @@ Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /moderation
 Disallow: /api/
-Disallow: /connexion
-Disallow: /compte
+${privateDisallows}
 
 # Sitemaps (Search Console — soumettre l’index en priorité)
 Sitemap: ${SITE}/sitemap-index.xml
@@ -333,35 +345,7 @@ Sitemap: ${SITE}/sitemap-news.xml
 # --- Google (outils gratuits de référencement) ---
 ${googleBlock}
 # AI / LLM crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
+${aiBlock}
 
 # Aide IA
 # ${SITE}/llms.txt

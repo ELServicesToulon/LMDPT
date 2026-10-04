@@ -37,8 +37,8 @@ const updated = file.updated
   description={`Mesures phares et chiffrages — ${file.candidate.name}, ${meta?.label ?? scrutin}.`}
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> →
-    <a href="/analyses/programmes">Programmes</a> →
+    <a href="/analyses/">Analyses</a> →
+    <a href="/analyses/programmes/">Programmes</a> →
     {file.candidate.name}
   </nav>
 
@@ -60,7 +60,7 @@ const updated = file.updated
     </p>
     <p class="meta">
       <a
-        href={`/analyses/programmes-comparateur?scrutin=${scrutin}&family=${family.id}&view=family`}
+        href={`/analyses/programmes-comparateur/?scrutin=${scrutin}&family=${family.id}&view=family`}
       >
         Comparer au sein de la famille « {family.shortLabel} »
       </a>
@@ -75,7 +75,7 @@ const updated = file.updated
     {file.evolution_from && (
       <p class="meta">
         Évolution documentée depuis {file.evolution_from.replace('presidentielle-', '')} —{' '}
-        <a href="/analyses/programmes-comparateur?evolution=1">voir la matrice</a>
+        <a href="/analyses/programmes-comparateur/?evolution=1">voir la matrice</a>
       </p>
     )}
   </section>
@@ -128,7 +128,7 @@ const updated = file.updated
       <p class="meta" role="status">
         Aucun chiffrage agrégé intégré pour ce dossier (programme partiel ou mesures non
         quantifiables). Voir le{' '}
-        <a href={`/analyses/programmes-comparateur?scrutin=${scrutin}&family=${family.id}&view=family`}>
+        <a href={`/analyses/programmes-comparateur/?scrutin=${scrutin}&family=${family.id}&view=family`}>
           comparateur famille
         </a>
         .
@@ -186,7 +186,7 @@ const updated = file.updated
   </section>
 
   <p>
-    <a href={`/analyses/programmes-comparateur?scrutin=${scrutin}&candidates=${slug}`}>
+    <a href={`/analyses/programmes-comparateur/?scrutin=${scrutin}&candidates=${slug}`}>
       Comparer avec d'autres candidats
     </a>
   </p>

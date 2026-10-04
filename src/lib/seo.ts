@@ -1,7 +1,9 @@
 /** Métadonnées Open Graph / Twitter / JSON-LD — SEO moteurs + IA. */
 
+import { SONDAGES_LIGNE } from './sondages-ligne';
+
 const DEFAULT_DESCRIPTION =
-  'Média civique du premier tour : pluralité des voix, données ouvertes officielles, la démocratie avant l’élimination. Présidentielle 2027, atlas électoral, programmes sourcés — sans sondages ni classement éliminatoire.';
+  `Média civique du premier tour : pluralité des voix, données ouvertes officielles, la démocratie avant l’élimination. Présidentielle 2027, atlas électoral, programmes sourcés. ${SONDAGES_LIGNE} Pas de classement éliminatoire.`;
 
 /** Carte par défaut. Nouveau chemin : l’URL historique reste en cache Cloudflare / X. */
 const DEFAULT_OG_IMAGE = '/brand/og-default-fr-2026-10.png';

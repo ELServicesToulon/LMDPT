@@ -21,7 +21,7 @@ const description = `Propositions des candidats regroupées par grands axes (fis
 
 <BaseLayout title={title} description={description}>
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> → <a href="/analyses/programmes">Programmes</a> → Grands axes
+    <a href="/analyses/">Analyses</a> → <a href="/analyses/programmes/">Programmes</a> → Grands axes
   </nav>
 
   <header class="page-intro" slot="lede">
@@ -53,13 +53,13 @@ const description = `Propositions des candidats regroupées par grands axes (fis
       <button type="submit">Afficher</button>
     </noscript>
     <p class="meta">
-      <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}`}>Comparateur tableau</a>
+      <a href={`/analyses/programmes-comparateur/?scrutin=${scrutinId}`}>Comparateur tableau</a>
       {' · '}
-      <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}&view=coverage`}>
+      <a href={`/analyses/programmes-comparateur/?scrutin=${scrutinId}&view=coverage`}>
         Couverture thématique
       </a>
       {' · '}
-      <a href="/analyses/programmes">Index fiches</a>
+      <a href="/analyses/programmes/">Index fiches</a>
     </p>
   </form>
 
@@ -67,7 +67,7 @@ const description = `Propositions des candidats regroupées par grands axes (fis
     <strong>Méthode.</strong> Taxonomie LMDPT (15 axes). Données issues des fiches programmes
     intégrées (mesures + sources). Statuts « partiel » = programme incomplet ou continuité d’un
     scrutin antérieur. Chiffrages en Md€/an lorsque disponibles (auteur indiqué). Voir{' '}
-    <a href="/sources">Sources</a> et la <a href="/charte">charte éditoriale</a>.
+    <a href="/sources/">Sources</a> et la <a href="/charte/">charte éditoriale</a>.
   </p>
 
   <ProgramAxesBoard data={data} scrutinId={scrutinId} />

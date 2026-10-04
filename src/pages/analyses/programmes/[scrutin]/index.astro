@@ -19,9 +19,9 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
   description={`Fiches programmes ${scrutin.label} — comparaison factuelle, sans classement éliminatoire.`}
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a>
+    <a href="/analyses/">Analyses</a>
     {' → '}
-    <a href="/analyses/programmes">Programmes</a>
+    <a href="/analyses/programmes/">Programmes</a>
     {' → '}
     {scrutin.label}
   </nav>
@@ -41,7 +41,7 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
       {
         candidates.map((f) => (
           <li>
-            <a href={`/analyses/programmes/${scrutin.id}/${f.candidate.slug}`}>
+            <a href={`/analyses/programmes/${scrutin.id}/${f.candidate.slug}/`}>
               {f.candidate.name}
             </a>
             {' '}
@@ -74,14 +74,14 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
       )
     }
     <p class="meta">
-      <a href="/analyses/programmes">← Tous les scrutins</a>
+      <a href="/analyses/programmes/">← Tous les scrutins</a>
       {' · '}
-      <a href={`/analyses/programmes-comparateur?scrutin=${scrutin.id}`}>Comparateur</a>
+      <a href={`/analyses/programmes-comparateur/?scrutin=${scrutin.id}`}>Comparateur</a>
       {
         scrutin.id === 'presidentielle-2027' && (
           <>
             {' · '}
-            <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+            <a href="/analyses/presidentielle-2027-preparation/">Dossier 2027</a>
           </>
         )
       }

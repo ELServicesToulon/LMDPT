@@ -6,6 +6,7 @@ import {
   getDonateUrl,
   donateReady,
 } from '../config/soutenir';
+import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 
 const ready = donateReady();
 const donateUrl = getDonateUrl();
@@ -36,7 +37,7 @@ const packPath = PACK_DATA.path;
   <section>
     <h2>Soutenir le miroir du 1er tour</h2>
     <p class="lead">
-      Sans pub politique, sans sondage «&nbsp;favori&nbsp;». Votre don paie l’hébergement,
+      Sans pub politique. {SONDAGES_LIGNE} Votre don paie l’hébergement,
       la synchronisation data.gouv et les simulateurs — pour que la pluralité reste lisible.
     </p>
     <p class="meta disclaimer">
@@ -132,17 +133,17 @@ const packPath = PACK_DATA.path;
     </ul>
     <p class="meta">
       Nous n’acceptons pas de publicité politique ni de sponsoring partisan. Voir la{' '}
-      <a href="/charte">charte</a>.
+      <a href="/charte/">charte</a>.
     </p>
   </section>
 
   <section class="card links-card">
     <h3>Continuer la lecture</h3>
     <ul>
-      <li><a href="/analyses/assemblee-premier-tour-mecanismes">Mécanismes AN1T</a> — seuils, doses, pluralité</li>
-      <li><a href="/analyses/assemblee-premier-tour">Simulateur</a></li>
-      <li><a href="/sources">Sources & licences</a></li>
-      <li><a href="/charte">Charte — la démocratie avant l’élimination</a></li>
+      <li><a href="/analyses/assemblee-premier-tour-mecanismes/">Mécanismes AN1T</a> — seuils, doses, pluralité</li>
+      <li><a href="/analyses/assemblee-premier-tour/">Simulateur</a></li>
+      <li><a href="/sources/">Sources & licences</a></li>
+      <li><a href="/charte/">Charte — la démocratie avant l’élimination</a></li>
     </ul>
   </section>
 

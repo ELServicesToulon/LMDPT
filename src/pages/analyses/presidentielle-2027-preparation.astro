@@ -50,7 +50,7 @@ const renifleurUpdated = renifleur.fetched_at
   description="1er tour le 18 avril 2027. Calendrier officiel, veille factuelle, atlas et AN1T — zéro prédiction, zéro favori. La démocratie avant l’élimination."
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> → Présidentielle 2027
+    <a href="/analyses/">Analyses</a> → Présidentielle 2027
   </nav>
 
   <section slot="lede">
@@ -65,17 +65,17 @@ const renifleurUpdated = renifleur.fetched_at
 
     <!-- 3 piliers (P15-1 / P8-7) — focus 2027 -->
     <div class="piliers-2027" role="list" aria-label="Trois piliers appliqués au dossier 2027">
-      <a class="pilier-2027" role="listitem" href="/sources">
+      <a class="pilier-2027" role="listitem" href="/sources/">
         <span class="p-kicker">Pilier 1</span>
         <strong>Sécurité &amp; faits</strong>
         <span class="p-desc">Calendrier officiel, data.gouv, licences — zéro prédiction.</span>
       </a>
-      <a class="pilier-2027" role="listitem" href="/atlas/2027-presidentielle">
+      <a class="pilier-2027" role="listitem" href="/atlas/2027-presidentielle/">
         <span class="p-kicker">Pilier 2</span>
         <strong>Pluralité réelle</strong>
         <span class="p-desc">Atlas 2027 + AN1T : spectre complet du 1er tour, pas le duel.</span>
       </a>
-      <a class="pilier-2027" role="listitem" href="/charte">
+      <a class="pilier-2027" role="listitem" href="/charte/">
         <span class="p-kicker">Pilier 3</span>
         <strong>La démocratie avant l’élimination</strong>
         <span class="p-desc">Pas de classement éliminatoire, pas de favori — vote pour, pas contre.</span>
@@ -87,16 +87,16 @@ const renifleurUpdated = renifleur.fetched_at
     </p>
 
     <p>
-      <strong>Nouveau :</strong> <a href="/atlas/2027-presidentielle">Atlas Présidentielle 2027</a> — placeholder national avec projection de pluralité 1er tour + lien vers scénarios AN1T (en attendant données réelles).
+      <strong>Nouveau :</strong> <a href="/atlas/2027-presidentielle/">Atlas Présidentielle 2027</a> — projection nationale de pluralité du 1er tour, avec lien vers les scénarios AN1T (en attendant les données réelles).
     </p>
     <p>
       <strong>Projection Assemblée :</strong>{' '}
-      <a href="/analyses/assemblee-premier-tour">L’Assemblée du Premier Tour (AN1T)</a>
+      <a href="/analyses/assemblee-premier-tour/">L’Assemblée du Premier Tour (AN1T)</a>
       — même urne, deux hémicycles (Sainte-Laguë vs réelle) · pédagogie, pas prédiction.
     </p>
     <p>
       <strong>Déclarations X :</strong>
-      <a href="/analyses/declarations-x-candidats">fil chronologique</a>
+      <a href="/analyses/declarations-x-candidats/">fil chronologique</a>
       des posts publics des comptes officiels candidats (registre X + collecte auto).
     </p>
     <p class="meta">
@@ -200,7 +200,7 @@ const renifleurUpdated = renifleur.fetched_at
   <section class="card" id="veille">
     <h3>Veille factuelle</h3>
     <p class="meta">
-      <a href="/analyses/alerte-citoyenne">Alerte citoyenne — débat public (11 points FR/UE) →</a>
+      <a href="/analyses/alerte-citoyenne/">Alerte citoyenne — débat public (11 points FR/UE) →</a>
     </p>
     <ul class="veille-list">
       {
@@ -360,7 +360,6 @@ const renifleurUpdated = renifleur.fetched_at
         analysis.milestones.map((step) => (
           <li>
             <strong>{step.phase}</strong> — {step.label}
-            <span class="meta"> (gate : {step.gate})</span>
           </li>
         ))
       }
@@ -371,8 +370,8 @@ const renifleurUpdated = renifleur.fetched_at
     <h3>Programmes — veille 2027</h3>
     <p class="meta">{veilleProgrammes.disclaimer}</p>
     <p>
-      <a href="/analyses/programmes">Index programmes</a> ·{' '}
-      <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2022">
+      <a href="/analyses/programmes/">Index programmes</a> ·{' '}
+      <a href="/analyses/programmes-comparateur/?scrutin=presidentielle-2022">
         Comparateur (référence 2022)
       </a>
       {veilleProgrammes.program_press_hits != null && (
@@ -456,8 +455,8 @@ const renifleurUpdated = renifleur.fetched_at
       }
     </ul>
     <p class="meta">
-      Voir aussi le <a href="/sources">catalogue de données ouvertes</a> synchronisé et le journal{' '}
-      <a href="/sources#mises-a-jour">mises à jour</a>.
+      Voir aussi le <a href="/sources/">catalogue de données ouvertes</a> synchronisé et le journal{' '}
+      <a href="/sources/#mises-a-jour">mises à jour</a>.
     </p>
   </section>
 </BaseLayout>

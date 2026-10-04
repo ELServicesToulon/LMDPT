@@ -18,7 +18,7 @@ const elections = ELECTION_CATALOG.map((summary) => {
   description="Pluralité au premier tour, reconfiguration binaire au second — présidentielles 2017 et 2022, données officielles."
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> → Présidentielle — distorsion
+    <a href="/analyses/">Analyses</a> → Présidentielle — distorsion
   </nav>
 
   <section slot="lede">
@@ -58,7 +58,7 @@ const elections = ELECTION_CATALOG.map((summary) => {
       entry ? (
         <section class="card">
           <h3>
-            <a href={`/atlas/${entry.summary.slug}`}>{entry.summary.title}</a>
+            <a href={`/atlas/${entry.summary.slug}/`}>{entry.summary.title}</a>
           </h3>
           <p class="meta">
             <time datetime={entry.summary.date}>
@@ -68,7 +68,7 @@ const elections = ELECTION_CATALOG.map((summary) => {
           </p>
           {entry.summary.distorsion_note && <p>{entry.summary.distorsion_note}</p>}
           <p>
-            <a href={`/atlas/${entry.summary.slug}`}>Atlas complet + carte départements →</a>
+            <a href={`/atlas/${entry.summary.slug}/`}>Atlas complet + carte départements →</a>
           </p>
         </section>
       ) : null,
@@ -83,11 +83,11 @@ const elections = ELECTION_CATALOG.map((summary) => {
     </p>
     <ul>
       <li>
-        <a href="/analyses/presidentielle-2022-legislatives">Présidentielle 2022 → législatives</a>
+        <a href="/analyses/presidentielle-2022-legislatives/">Présidentielle 2022 → législatives</a>
         — sondages, 1er tour présidentiel et législatives de juin (comparaison chiffrée)
       </li>
       <li>
-        <a href="/analyses/legislatives-2024-desistements">Législatives 2024 — désistements</a>
+        <a href="/analyses/legislatives-2024-desistements/">Législatives 2024 — désistements</a>
       </li>
     </ul>
   </section>
@@ -97,10 +97,10 @@ const elections = ELECTION_CATALOG.map((summary) => {
     <ul>
       <li>
         Résultats officiels :{' '}
-        <a href="/atlas">Atlas présidentielles 2017 et 2022</a>
+        <a href="/atlas/">Atlas présidentielles 2017 et 2022</a>
       </li>
       <li>
-        Jeux bruts et licences : <a href="/sources">page Sources</a>
+        Jeux bruts et licences : <a href="/sources/">page Sources</a>
       </li>
       <li>Conseil constitutionnel / Ministère de l'Intérieur via data.gouv.fr</li>
     </ul>

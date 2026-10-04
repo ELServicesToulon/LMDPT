@@ -11,6 +11,7 @@ import {
   formatPct,
   programRelatedDataGouvLinks,
 } from '../../../lib/program-coverage';
+import { withTrailingSlash } from '../../../lib/internal-path';
 
 const scrutins = listScrutins();
 const veille = getVeille2027();
@@ -24,7 +25,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
   description="Fiches programmes, comparaison factuelle et chiffrages sourcés — présidentielles 2017, 2022 et veille 2027."
 >
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
-    <a href="/analyses">Analyses</a> → Programmes
+    <a href="/analyses/">Analyses</a> → Programmes
   </nav>
 
   <section slot="lede">
@@ -34,10 +35,10 @@ const dataGouvLinks = programRelatedDataGouvLinks();
       LMDPT documentées). Présentation équivalente par candidat — sans classement éliminatoire.
     </p>
     <p>
-      <a href="/analyses/programmes/axes?scrutin=presidentielle-2027"><strong>Grands axes</strong></a>
+      <a href="/analyses/programmes/axes/?scrutin=presidentielle-2027"><strong>Grands axes</strong></a>
       — propositions des candidats par thème (fiscalité, retraites, Europe…) ·{' '}
-      <a href="/analyses/programmes-comparateur">Comparateur tableau</a> ·{' '}
-      <a href="/analyses/programmes-comparateur?view=coverage">couverture thématique</a>.
+      <a href="/analyses/programmes-comparateur/">Comparateur tableau</a> ·{' '}
+      <a href="/analyses/programmes-comparateur/?view=coverage">couverture thématique</a>.
     </p>
     <p class="meta" role="status">
       Intégration 2027 (P10-4)&nbsp;: {integration2027.candidateCount} fiches ·{' '}
@@ -73,7 +74,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
               {families2027.map((g) => (
                 <li>
                   <a
-                    href={`/analyses/programmes-comparateur?scrutin=presidentielle-2027&family=${g.family.id}&view=family`}
+                    href={`/analyses/programmes-comparateur/?scrutin=presidentielle-2027&family=${g.family.id}&view=family`}
                   >
                     {g.family.label}
                   </a>
@@ -90,7 +91,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
                 const fam = getCandidateFamily(f.candidate.slug);
                 return (
                   <li>
-                    <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
+                    <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}/`}>
                       {f.candidate.name}
                     </a>
                     {' '}
@@ -112,28 +113,28 @@ const dataGouvLinks = programRelatedDataGouvLinks();
                 ))}
             </ul>
             <p>
-              <a href="/analyses/programmes/axes?scrutin=presidentielle-2027">Grands axes 2027</a>
+              <a href="/analyses/programmes/axes/?scrutin=presidentielle-2027">Grands axes 2027</a>
               {' · '}
-              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027">
+              <a href="/analyses/programmes-comparateur/?scrutin=presidentielle-2027">
                 Comparateur 2027
               </a>
               {' · '}
-              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027&view=family">
+              <a href="/analyses/programmes-comparateur/?scrutin=presidentielle-2027&view=family">
                 Vue familles
               </a>
               {' · '}
-              <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2027&view=coverage">
+              <a href="/analyses/programmes-comparateur/?scrutin=presidentielle-2027&view=coverage">
                 Couverture thématique
               </a>
               {' · '}
-              <a href="/analyses/presidentielle-2027-preparation">Dossier préparation 2027</a>
+              <a href="/analyses/presidentielle-2027-preparation/">Dossier préparation 2027</a>
             </p>
             <h4>Granularité data.gouv (pluralité 1er tour)</h4>
             <ul>
               {dataGouvLinks.map((l) => (
                 <li>
                   <a
-                    href={l.href}
+                    href={withTrailingSlash(l.href)}
                     rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   >
                     {l.label}
@@ -147,7 +148,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
           <ul>
             {listCandidates(s.id).map((f) => (
               <li>
-                <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}`}>
+                <a href={`/analyses/programmes/${s.id}/${f.candidate.slug}/`}>
                   {f.candidate.name}
                 </a>
                 {' '}
@@ -165,7 +166,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
   <section class="card">
     <h3>Évolution 2017 → 2022</h3>
     <p>
-      <a href="/analyses/programmes-comparateur?scrutin=presidentielle-2022&evolution=1">
+      <a href="/analyses/programmes-comparateur/?scrutin=presidentielle-2022&evolution=1">
         Voir les évolutions par famille politique
       </a>
     </p>
