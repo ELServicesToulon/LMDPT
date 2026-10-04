@@ -6,6 +6,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
+import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
 import { socialTitleFrom, SOCIAL_TITLE_MAX } from './seo';
@@ -28,6 +29,7 @@ describe('analyses', () => {
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('dsa-qui-decide');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
   });
 
@@ -115,9 +117,7 @@ describe('analyses', () => {
     expect(entry?.description).toBe(dsaQuiDecide.chapo);
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/dsa-qui-decide.jpg');
     expect(entry?.cover?.alt.startsWith('Illustration à l’encre et à l’aquarelle :')).toBe(true);
-    expect(getUneDuJour()?.slug).toBe('dsa-qui-decide');
-    expect(getUneDuJour()?.published).toBe('2026-10-03');
-    expect(getUneDuJour()?.updated).toBe('2026-10-03');
+    expect(getAnalysis('dsa-qui-decide')?.href).toBe('/analyses/dsa-qui-decide');
     expect(dsaQuiDecide.chapo.startsWith('Une amende pour des coches bleues')).toBe(true);
     expect(dsaQuiDecide.x_hook).toBe(dsaQuiDecide.title);
     expect(dsaQuiDecide.tags).toContain('presidentielle-2027');
@@ -177,6 +177,48 @@ describe('analyses', () => {
       '<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2065" rel="noopener noreferrer">EUR-Lex</a>',
     );
     expect(renderAnalysisInline('<script>')).toBe('&lt;script&gt;');
+  });
+
+  it('enquête Lisnard est la une du 4 octobre, sans cote ni lien Polymarket', () => {
+    expect(lisnardAbonnes.slug).toBe('lisnard-abonnes-electeurs');
+    expect(lisnardAbonnes.date).toBe('2026-10-04');
+    expect(lisnardAbonnes.updated).toBe('2026-10-04');
+    expect(lisnardAbonnes.title).toBe(
+      "Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?",
+    );
+    expect(lisnardAbonnes.x_hook).toBe(lisnardAbonnes.title);
+    expect(lisnardAbonnes.title.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
+    expect(socialTitleFrom(lisnardAbonnes.title)).toBe(lisnardAbonnes.title);
+    const entry = getAnalysis('lisnard-abonnes-electeurs');
+    expect(entry?.title).toBe(lisnardAbonnes.title);
+    expect(entry?.href).toBe('/analyses/lisnard-abonnes-electeurs');
+    expect(entry?.date).toBe('2026-10-04');
+    expect(entry?.published).toBe('2026-10-04');
+    expect(entry?.updated).toBe('2026-10-04');
+    expect(entry?.description).toBe(lisnardAbonnes.description);
+    expect(entry?.description.startsWith('Cent mille abonnés de plus en sept jours')).toBe(true);
+    expect(entry?.description).toMatch(/100 700 abonnés/);
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/lisnard-abonnes-electeurs.jpg');
+    expect(entry?.cover?.alt.startsWith('Illustration à l’encre et à l’aquarelle :')).toBe(true);
+    expect(getUneDuJour()?.slug).toBe('lisnard-abonnes-electeurs');
+    expect(getUneDuJour()?.href).toBe('/analyses/lisnard-abonnes-electeurs');
+    expect(getUneDuJour()?.published).toBe('2026-10-04');
+    expect(getUneDuJour()?.updated).toBe('2026-10-04');
+    expect(getUneDuJour()?.date).toBe('2026-10-04');
+    const encadre = lisnardAbonnes.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.title).toBe('Encadré · Ce que disent les candidats');
+      expect(encadre.table.rows).toHaveLength(11);
+      expect(encadre.intro).toMatch(/ne classe personne/);
+      expect(encadre.conclusion).toMatch(/Ce que montre l'encadré/);
+    }
+    const raw = JSON.stringify(lisnardAbonnes);
+    expect(raw).not.toMatch(/polymarket\.com/i);
+    expect(raw).not.toMatch(/https?:[^"]*mileistesfr/i);
+    expect(raw).not.toMatch(/gate_publish|DecisionTag|relecture/);
+    expect(raw).toMatch(/@Mileistesfr/);
+    expect(getAnalysis('dsa-qui-decide')?.date).toBe('2026-10-03');
   });
 
   it('enquête écoles de journalisme laisse les sièges vides et cite la CPNEJ', () => {

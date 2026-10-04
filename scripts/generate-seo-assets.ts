@@ -179,7 +179,15 @@ function buildNewsSitemap(): string {
   const dsaTitle =
     ANALYSIS_CATALOG.find((a) => a.slug === 'dsa-qui-decide')?.title ??
     'Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?';
+  const lisnardTitle =
+    ANALYSIS_CATALOG.find((a) => a.slug === 'lisnard-abonnes-electeurs')?.title ??
+    "Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?";
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
+    {
+      path: '/analyses/lisnard-abonnes-electeurs',
+      title: lisnardTitle,
+      keywords: 'David Lisnard, abonnés, sondages, La Loupe Politique, présidentielle 2027',
+    },
     {
       path: '/analyses/dsa-qui-decide',
       title: dsaTitle,

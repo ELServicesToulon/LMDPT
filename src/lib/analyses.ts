@@ -6,6 +6,7 @@ import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
+import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -29,6 +30,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: lisnardAbonnes.slug,
+    title: lisnardAbonnes.title,
+    description: lisnardAbonnes.description,
+    date: lisnardAbonnes.date,
+    published: lisnardAbonnes.date,
+    updated: lisnardAbonnes.updated,
+    href: '/analyses/lisnard-abonnes-electeurs',
+    cover: uneCover(
+      'lisnard-abonnes-electeurs',
+      'Illustration à l’encre et à l’aquarelle : un tamis à manche bleu retient des cœurs dans sa grille, des croix passent au travers, et trois enveloppes descendent vers une urne.',
+    ),
+  },
   {
     slug: dsaQuiDecide.slug,
     title: dsaQuiDecide.title,
