@@ -113,6 +113,77 @@ export function repairBrokenUrl(url: string): string {
 }
 
 /**
+ * Masque URLs et code inline avant glue/ortho/punct/space.
+ * Placeholders PUA (\uE000…) : aucune règle ne les réécrit.
+ * Le point (ou autre ponctuation) qui suit une URL n’est pas avalé.
+ */
+const PUA_MARK = '\uE000';
+const PUA_SLOT0 = 0xe001;
+
+function peelUrlTrail(raw: string): { core: string; trail: string } {
+  let core = raw;
+  let trail = '';
+  const wrap = new Set('.!,;:?*');
+  while (core.length > 0) {
+    const last = core[core.length - 1]!;
+    if (wrap.has(last)) {
+      trail = last + trail;
+      core = core.slice(0, -1);
+      continue;
+    }
+    const pair: Record<string, string> = { ')': '(', ']': '[', '}': '{' };
+    const open = pair[last];
+    if (open) {
+      const opens = core.split(open).length - 1;
+      const closes = core.split(last).length - 1;
+      if (closes > opens) {
+        trail = last + trail;
+        core = core.slice(0, -1);
+        continue;
+      }
+    }
+    break;
+  }
+  return { core, trail };
+}
+
+function protectUrlsAndInlineCode(text: string): {
+  text: string;
+  restore: (s: string) => string;
+} {
+  const fragments: string[] = [];
+  const tokens: string[] = [];
+
+  const placeholder = (fragment: string): string => {
+    const i = fragments.length;
+    fragments.push(fragment);
+    const token = `${PUA_MARK}${String.fromCharCode(PUA_SLOT0 + i)}${PUA_MARK}`;
+    tokens.push(token);
+    return token;
+  };
+
+  let s = text;
+  s = s.replace(/`[^`\n]+`/g, (m) => placeholder(m));
+  s = s.replace(/\]\(((?:https?:\/\/|www\.)[^)\s]+)\)/gi, (_m, url: string) => `](${placeholder(url)})`);
+  s = s.replace(/\b(?:https?:\/\/|www\.)[^\s<>"'`]+/gi, (raw) => {
+    const { core, trail } = peelUrlTrail(raw);
+    if (!core) return raw;
+    return placeholder(core) + trail;
+  });
+
+  return {
+    text: s,
+    restore: (out: string) => {
+      let r = out;
+      for (let i = tokens.length - 1; i >= 0; i--) {
+        r = r.split(tokens[i]!).join(fragments[i]!);
+      }
+      return r;
+    },
+  };
+}
+
+/**
  * Heuristique conservative : uniquement prépositions « pleines » (pas en/d)
  * et segments assez longs pour limiter les faux positifs (calendrier, présidentielle…).
  */
@@ -209,6 +280,8 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
   const original = String(input ?? '');
   const anomalies: QualiteAnomaly[] = [];
   let s = original.replace(/\r\n/g, '\n');
+  const protectedSpans = protectUrlsAndInlineCode(s);
+  s = protectedSpans.text;
 
   // Espaces
   const multi = s.replace(/[ \t]{2,}/g, ' ');
@@ -244,6 +317,8 @@ export function reviewQualiteRedaction(input: string): QualiteReport {
     .join('\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+
+  s = protectedSpans.restore(s);
 
   const stats = {
     total: anomalies.length,
