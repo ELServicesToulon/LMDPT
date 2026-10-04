@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lmdpt.iarbre.org/analyses/lisnard-abonnes-electeurs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Le Média du Premier Tour</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-04T08:00:00+02:00</news:publication_date>
+      <news:title>Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?</news:title>
+      <news:keywords>David Lisnard, abonnés, sondages, La Loupe Politique, présidentielle 2027</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lmdpt.iarbre.org/analyses/dsa-qui-decide/</loc>
     <news:news>
       <news:publication>
