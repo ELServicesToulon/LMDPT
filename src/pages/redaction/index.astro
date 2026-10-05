@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import RedactionOutils from '../../components/RedactionOutils.astro';
 
 const editorialDoc =
   'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/EDITORIAL.md';
@@ -75,21 +76,7 @@ const redactionDoc =
     </ul>
   </section>
 
-  <section class="card">
-    <h3>Outils (première version, statique)</h3>
-    <ul>
-      <li>
-        <strong>Espace de travail (Drive)</strong> : lien privé à renseigner hors dépôt.
-        Rien n’est branché sur cette page.
-      </li>
-      <li>
-        <strong>Boîte pigistes</strong> : à brancher. Les textes externes passent par la relecture.
-      </li>
-      <li>
-        <strong>File de relecture</strong> : vide. Aucune file n’est connectée dans cette version.
-      </li>
-    </ul>
-  </section>
+  <RedactionOutils />
 </BaseLayout>
 
 <style>
