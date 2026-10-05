@@ -13,6 +13,7 @@ La version actuelle est statique : elle n’authentifie pas les visiteurs.
 ## Rôles
 
 - Directeur de la publication (LCEN) : personne physique indiquée dans les mentions légales. Inchangé.
+- Espace du directeur (god mode) : `/redaction/god/` — mode d’emploi dans `docs/REDACTION-GOD.md`.
 - Directrice de la publication adjointe : ligne, calendrier, relecture.
 
 ## Identité affichée
