@@ -1,0 +1,35 @@
+# Espace rédaction
+
+Page interne : `/redaction/`
+
+Ce n’est pas une page de présentation. Elle n’est pas dans la navigation du site. L’adresse et ce document suffisent pour la retrouver.
+
+## Accès
+
+En production, Cloudflare Access (liste d’adresses autorisées) fermera la route. Le dépôt ne contient ni jeton, ni liste d’adresses. La page envoie `noindex` et `robots.txt` interdit l’exploration de `/redaction`.
+
+La version actuelle est statique : elle n’authentifie pas les visiteurs.
+
+## Rôles
+
+- Directeur de la publication (LCEN) : personne physique indiquée dans les mentions légales. Inchangé.
+- Directrice de la publication adjointe (DPA) : autorité éditoriale pleine (ligne, calendrier, relecture). Le site public indique le titre de fonction, sans nom.
+
+Les coordonnées opérationnelles restent hors du site (espace de travail privé).
+
+## Repères
+
+- Charte publique : `/charte/` (ne pas la modifier depuis cet espace)
+- Ligne : `docs/EDITORIAL.md`
+- Revue : `docs/REVIEW.md`
+- Mentions : `/mentions-legales/`
+
+## Avant publication
+
+Reprendre la revue de `docs/REVIEW.md` : sources, neutralité, français, build, revue humaine.
+
+## Première version
+
+- Espace Drive : lien à poser hors dépôt
+- Boîte pigistes : non branchée
+- File de relecture : non branchée

@@ -71,7 +71,8 @@ const meta = pageMeta({
   type: isArticle ? 'article' : 'website',
   noindex:
     noindex ||
-    Astro.url.pathname.startsWith('/moderation'),
+    Astro.url.pathname.startsWith('/moderation') ||
+    Astro.url.pathname.startsWith('/redaction'),
 });
 const jsonLdOrg = organizationJsonLd(siteUrl);
 const jsonLdSite = websiteJsonLd(siteUrl);
@@ -87,6 +88,7 @@ const jsonLdPage = webPageJsonLd({
 });
 const showComments =
   !Astro.url.pathname.startsWith('/moderation') &&
+  !Astro.url.pathname.startsWith('/redaction') &&
   !Astro.url.pathname.startsWith('/contribuer') &&
   !Astro.url.pathname.startsWith('/mentions-legales') &&
   !Astro.url.pathname.startsWith('/confidentialite') &&
