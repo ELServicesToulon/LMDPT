@@ -1,0 +1,38 @@
+---
+import { getPigistesDriveUrl, getRedactionDriveUrl } from '../config/redaction-outils';
+
+const driveUrl = getRedactionDriveUrl();
+const pigistesUrl = getPigistesDriveUrl();
+---
+
+<section class="card">
+  <h3>Outils (première version, statique)</h3>
+  <ul>
+    <li>
+      <strong>Espace de travail (Drive)</strong>
+      {driveUrl ? (
+        <>
+          {' : '}
+          <a href={driveUrl} rel="noopener noreferrer">Ouvrir l’espace Drive</a>
+        </>
+      ) : (
+        <> : lien privé à renseigner hors dépôt.</>
+      )}
+    </li>
+    <li>
+      <strong>Boîte pigistes</strong>
+      {pigistesUrl ? (
+        <>
+          {' : '}
+          <a href={pigistesUrl} rel="noopener noreferrer">Ouvrir la boîte pigistes</a>
+          . Les textes externes passent par la relecture.
+        </>
+      ) : (
+        <> : à brancher. Les textes externes passent par la relecture.</>
+      )}
+    </li>
+    <li>
+      <strong>File de relecture</strong> : vide. Aucune file n’est connectée dans cette version.
+    </li>
+  </ul>
+</section>

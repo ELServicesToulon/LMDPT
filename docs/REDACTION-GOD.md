@@ -40,6 +40,10 @@ En plus, pour le directeur :
 - Déploiement : ManuskBot, après fusion sur Main.
 - Texte neuf : relecture KS-5 `lmdpt-relecture.sh` avant un GO site.
 
+## Outils partagés
+
+Le bloc « Outils » est le même que sur `/redaction/` : espace Drive et boîte pigistes via `PUBLIC_LMDPT_REDACTION_DRIVE_URL` et `PUBLIC_LMDPT_PIGISTES_DRIVE_URL` (build KS-5, voir `docs/REDACTION.md`). File de relecture : non branchée.
+
 ## Leviers (non branchés)
 
 Liste statique. Aucun secret dans le dépôt.
