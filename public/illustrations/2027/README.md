@@ -50,7 +50,7 @@ Pas d’API Recraft / Midjourney dans le dépôt (pas de clé).
 |---------|--------|
 | `../unes/analyses/*.jpg` | Couverture dédiée de chaque analyse |
 | `../unes/debats/*.jpg` | Couverture dédiée de chaque débat |
-| `../unes/placeholder-manquante.svg` | Placeholder libellé (jamais l’art d’un autre texte) |
+| `../unes/placeholder-manquante.svg` | Illustration de remplacement libellée (jamais l’art d’un autre texte) |
 | `hero-premier-tour-2027.jpg` / `.webp` | Galerie (souvent poster webp LCP) |
 | `democracy-over-elimination.jpg` | Flèches du 2e tour cassées (galerie / archives) |
 | `pluralite-1er-tour.jpg` | Urne / confettis de bulletins |

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { FIRST_ROUND_HUES } from '../lib/comment-politics';
 import { MODERATOR_CHIEF_POLICY } from '../lib/moderation-gate';
+import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 
 const hues = FIRST_ROUND_HUES;
 const updated = '2026-07-27';
@@ -9,6 +10,7 @@ const updated = '2026-07-27';
 
 <BaseLayout
   title="Charte"
+  pageHeading
   description="Charte complète LMDPT — zéro biais, transparence des couleurs politiques, modératrice IA, démocratie avant l’élimination."
 >
   <article class="charte">
@@ -248,7 +250,7 @@ const updated = '2026-07-27';
         <li>File modération humaine (contributeur → modo → modo-senior → rédaction)</li>
       </ol>
       <p>
-        Voir aussi : <a href="/debats">Débats</a> · <a href="/moderation">Espace modération</a> (équipes
+        Voir aussi : <a href="/debats/">Débats</a> · <a href="/moderation/">Espace modération</a> (équipes
         habilitées).
       </p>
     </section>
@@ -310,10 +312,10 @@ const updated = '2026-07-27';
     <section id="engagements" class="card">
       <h2>9. Engagements de conformité</h2>
       <ul>
-        <li>Licences de données ouvertes respectées par ressource (page <a href="/sources">Sources</a>).</li>
+        <li>Licences de données ouvertes respectées par ressource (page <a href="/sources/">Sources</a>).</li>
         <li>
-          <a href="/mentions-legales">Mentions légales</a> et
-          <a href="/confidentialite"> politique de confidentialité</a>.
+          <a href="/mentions-legales/">Mentions légales</a> et
+          <a href="/confidentialite/"> politique de confidentialité</a>.
         </li>
         <li>Pas de données personnelles traitées sans base légale documentée.</li>
         <li>Accessibilité : contraste et lisibilité (WCAG 2.2 AA+ ciblés).</li>
@@ -322,8 +324,9 @@ const updated = '2026-07-27';
 
     <section id="refus" class="card">
       <h2>10. Ce que nous ne faisons pas</h2>
+      <p>{SONDAGES_LIGNE}</p>
       <ul>
-        <li>Sondages présentés comme prédictions</li>
+        <li>Présenter un sondage comme une prédiction</li>
         <li>Propagande partisane ou prise de position déguisée en fait</li>
         <li>Classements éliminatoires, favoris, « vainqueurs » annoncés</li>
         <li>Laisser passer une autorité religieuse ou idéologique totalisante</li>
@@ -343,8 +346,8 @@ const updated = '2026-07-27';
         dépôt.
       </p>
       <p>
-        <a class="btn btn-primary" href="/a-propos">À propos du média</a>{' '}
-        <a class="btn btn-secondary" href="/sources">Vérifier les sources</a>
+        <a class="btn btn-primary" href="/a-propos/">À propos du média</a>{' '}
+        <a class="btn btn-secondary" href="/sources/">Vérifier les sources</a>
       </p>
     </footer>
   </article>

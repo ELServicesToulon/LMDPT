@@ -89,7 +89,8 @@ Snippet à ajouter :
 
 ```nginx
   location /api/auth/ {
-    proxy_pass http://172.18.0.1:8796/api/auth/;
+    # IP du serveur : voir Bitwarden
+    proxy_pass http://host.docker.internal:8796/api/auth/;
     proxy_http_version 1.1;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
@@ -107,7 +108,7 @@ Puis `docker exec` / reload nginx conteneur LMDPT.
 
 - Email IdP **jamais** dans `publicComment` / UI publique  
 - Teinte = **message**, pas identité de compte  
-- Rôles modo (jetons) **inchangés**
+- Rôles modo : jetons **hors dépôt**. Variables `LMDPT_MOD_TOKEN_*` ou `data/moderators.json`. Aucun jeton par défaut. Voir `comments-api/README.md`. Le service de production doit avoir ses jetons configurés avant le déploiement.
 
 ## Go-live L1+
 

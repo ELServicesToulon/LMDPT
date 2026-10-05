@@ -4,8 +4,8 @@
 
 User-agent: *
 Allow: /
-Disallow: /moderation
 Disallow: /api/
+Disallow: /moderation
 Disallow: /connexion
 Disallow: /compte
 
@@ -18,67 +18,131 @@ Sitemap: https://lmdpt.iarbre.org/sitemap-news.xml
 # --- Google (outils gratuits de référencement) ---
 User-agent: Googlebot
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Googlebot-Image
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Googlebot-News
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Googlebot-Video
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Storebot-Google
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Google-InspectionTool
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: GoogleOther
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: AdsBot-Google
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: AdsBot-Google-Mobile
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Mediapartners-Google
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 # AI / LLM crawlers
 User-agent: GPTBot
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Bytespider
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /moderation
+Disallow: /connexion
+Disallow: /compte
+
 
 # Aide IA
 # https://lmdpt.iarbre.org/llms.txt

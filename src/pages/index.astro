@@ -15,6 +15,7 @@ import SheetTabs from '../components/SheetTabs.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
 import { pickDailyVisuals, type VisualDailyPool } from '../lib/visual-daily';
 import { DOE_FR } from '../lib/doe';
+import { HOME_META_DESCRIPTION, SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import { listEditorialPosts } from '../lib/editorial';
 import visualDailyPool from '../../public/illustrations/2027/visual-daily-pool.json';
 
@@ -67,7 +68,8 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
 
 <BaseLayout
   title="Accueil"
-  description="Le 1er tour est la photo réelle de la France politique. Atlas en données ouvertes, Assemblée AN1T, dossier 2027 (18 avril) — la démocratie avant l’élimination : faits sourcés, zéro sondage « favori », zéro classement éliminatoire."
+  pageHeading
+  description={HOME_META_DESCRIPTION}
   keywords="premier tour, présidentielle 2027, LMDPT, données ouvertes électorales, pluralité, démocratie avant élimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} applyOverride={false} />
@@ -83,14 +85,14 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       La France telle qu’elle vote — pas telle qu’on l’élimine
     </h1>
     <p class="home-lead">
-      Faits officiels du 1er tour. <strong>{DOE_FR}</strong> — zéro sondage «&nbsp;favori&nbsp;»,
-      zéro classement éliminatoire.
+      Faits officiels du 1er tour. <strong>{DOE_FR}</strong> — zéro classement éliminatoire.
+      {SONDAGES_LIGNE}
     </p>
     <div class="cta-row" role="group" aria-label="Parcours site">
-      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour"
+      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour/"
         >Assemblée du 1er tour →</a
       >
-      <a class="btn btn-secondary" href="/atlas">Atlas des scrutins</a>
+      <a class="btn btn-secondary" href="/atlas/">Atlas des scrutins</a>
     </div>
     <p class="home-meta meta">
       1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> ·
@@ -109,17 +111,17 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       Faits officiels · Sans classement éliminatoire · Vote <strong>pour</strong>, pas contre.
     </p>
     <nav class="pilier-shortcuts" aria-label="Raccourcis piliers">
-      <a href="/analyses/assemblee-premier-tour">Simuler l’AN1T</a>
+      <a href="/analyses/assemblee-premier-tour/">Simuler l’AN1T</a>
       <span aria-hidden="true">·</span>
-      <a href="/liberte-d-expression">Liberté d’expression</a>
+      <a href="/liberte-d-expression/">Liberté d’expression</a>
       <span aria-hidden="true">·</span>
-      <a href="/observatoire-censure">Observatoire de la censure</a>
+      <a href="/observatoire-censure/">Observatoire de la censure</a>
       <span aria-hidden="true">·</span>
-      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+      <a href="/analyses/presidentielle-2027-preparation/">Dossier 2027</a>
       <span aria-hidden="true">·</span>
-      <a href="/atlas/2022-presidentielle">Atlas 2022</a>
+      <a href="/atlas/2022-presidentielle/">Atlas 2022</a>
       <span aria-hidden="true">·</span>
-      <a href="/sources">Sources</a>
+      <a href="/sources/">Sources</a>
     </nav>
   </section>
 
@@ -133,15 +135,15 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       l’Assemblée réelle des <strong>législatives qui ont suivi</strong>. Tableau Δ sièges.
     </p>
     <p class="meta">
-      <a href="/analyses/assemblee-premier-tour">Ouvrir le simulateur AN1T →</a>
+      <a href="/analyses/assemblee-premier-tour/">Ouvrir le simulateur AN1T →</a>
       {' · '}
-      <a href="/atlas">Tous les scrutins</a>
+      <a href="/atlas/">Tous les scrutins</a>
       {' · '}
-      <a href="/atlas/2022-presidentielle">2022</a>
+      <a href="/atlas/2022-presidentielle/">2022</a>
       {' · '}
-      <a href="/atlas/2024-legislatives">Législatives 2024</a>
+      <a href="/atlas/2024-legislatives/">Législatives 2024</a>
       {' · '}
-      <a href="/analyses/gouvernance-an1t-droit">Droit &amp; gouvernance</a>
+      <a href="/analyses/gouvernance-an1t-droit/">Droit &amp; gouvernance</a>
     </p>
     {
       dualHome && (
@@ -169,7 +171,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="card liberte-home-card" id="liberte-expression" aria-labelledby="liberte-home-title">
     <p class="eyebrow">Rubrique prioritaire</p>
     <h2 id="liberte-home-title">
-      <a href="/liberte-d-expression">Liberté d’expression</a>
+      <a href="/liberte-d-expression/">Liberté d’expression</a>
     </h2>
     <p>
       Deux piliers pour un débat public digne du premier tour :
@@ -178,17 +180,17 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </p>
     <ul class="liberte-home-links">
       <li>
-        <a href="/analyses/assemblee-premier-tour">Pluralité — simuler l’AN1T →</a>
+        <a href="/analyses/assemblee-premier-tour/">Pluralité — simuler l’AN1T →</a>
       </li>
       <li>
-        <a href="/analyses/alerte-citoyenne">Liberté d’expression — alerte citoyenne →</a>
+        <a href="/analyses/alerte-citoyenne/">Liberté d’expression — alerte citoyenne →</a>
       </li>
       <li>
         <a href="/observatoire-censure/">Observatoire de la censure (depuis 2017) →</a>
       </li>
     </ul>
     <p class="meta">
-      <a href="/liberte-d-expression">Ouvrir le hub Liberté d’expression →</a>
+      <a href="/liberte-d-expression/">Ouvrir le hub Liberté d’expression →</a>
     </p>
   </section>
 
@@ -210,14 +212,14 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="card highlight-card">
     <p class="eyebrow">Focus 2027 — Principal</p>
     <h3>
-      <a href="/analyses/presidentielle-2027-preparation">Présidentielle 2027 : calendrier officiel & veille</a>
+      <a href="/analyses/presidentielle-2027-preparation/">Présidentielle 2027 : calendrier officiel & veille</a>
     </h3>
     <p>
       1er tour le <strong>18 avril 2027</strong>. Calendrier validé, candidatures en cours, programmes partiels intégrés (Attal, Bardella, Le Pen, Mélenchon, PS...).
     </p>
     <p class="meta">
-      <a href="/analyses/presidentielle-2027-preparation">Lire le dossier complet 2027 →</a> · 
-      <a href="/analyses/programmes/presidentielle-2027">Comparer les programmes →</a>
+      <a href="/analyses/presidentielle-2027-preparation/">Lire le dossier complet 2027 →</a> · 
+      <a href="/analyses/programmes/presidentielle-2027/">Comparer les programmes →</a>
     </p>
   </section>
 
@@ -349,9 +351,9 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
         </>
       ))}
       {' · '}
-      <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+      <a href="/analyses/presidentielle-2027-preparation/">Dossier 2027</a>
       {' · '}
-      <a href="/analyses/programmes/presidentielle-2027">Programmes</a>
+      <a href="/analyses/programmes/presidentielle-2027/">Programmes</a>
     </p>
   </section>
 
@@ -370,16 +372,16 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="card" aria-labelledby="parcours-2027">
     <h3 id="parcours-2027">Parcours recommandé pour se préparer au 1er tour</h3>
     <ol style="margin:0.5rem 0 0; padding-left:1.3rem; font-size:0.95rem; line-height:1.6;">
-      <li><a href="/analyses/presidentielle-2027-preparation#calendrier">Consultez le calendrier officiel</a></li>
-      <li><a href="/analyses/assemblee-premier-tour">Testez le simulateur interactif d’Assemblée (1er tour)</a> — ajustez % et comparez scénarios</li>
+      <li><a href="/analyses/presidentielle-2027-preparation/#calendrier">Consultez le calendrier officiel</a></li>
+      <li><a href="/analyses/assemblee-premier-tour/">Testez le simulateur interactif d’Assemblée (1er tour)</a> — ajustez % et comparez scénarios</li>
       <li>
-        <a href="/analyses/programmes/axes?scrutin=presidentielle-2027"
+        <a href="/analyses/programmes/axes/?scrutin=presidentielle-2027"
           >Programmes par grands axes (propositions des candidats)</a
         >
       </li>
-      <li><a href="/analyses/programmes-comparateur">Comparez les programmes des candidats</a></li>
-      <li><a href="/atlas/2024-legislatives">Explorez l’Atlas et les 577 circonscriptions</a> (filtre + recherche)</li>
-      <li><a href="/debats/assemblee-premier-tour">Participez au débat : une Assemblée sur le 1er tour ?</a></li>
+      <li><a href="/analyses/programmes-comparateur/">Comparez les programmes des candidats</a></li>
+      <li><a href="/atlas/2024-legislatives/">Explorez l’Atlas et les 577 circonscriptions</a> (filtre + recherche)</li>
+      <li><a href="/debats/assemblee-premier-tour/">Participez au débat : une Assemblée sur le 1er tour ?</a></li>
     </ol>
     <p class="meta" style="margin-top:0.5rem;">Parcours accessible au clavier et mobile. Tout est pédagogique et sourcé.</p>
   </section>
@@ -387,13 +389,13 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   <section class="card">
     <p class="eyebrow">Outil clé 2027</p>
     <h3>
-      <a href="/analyses/assemblee-premier-tour">Assemblée du Premier Tour 2027 — simulation interactive</a>
+      <a href="/analyses/assemblee-premier-tour/">Assemblée du Premier Tour 2027 — simulation interactive</a>
     </h3>
     <p>
       Hémicycle AN1T, projections de sièges à partir du 1er tour, scénarios et programmes candidats.
     </p>
     <p class="meta">
-      <a href="/analyses/assemblee-premier-tour">Explorer la simulation 2027 →</a>
+      <a href="/analyses/assemblee-premier-tour/">Explorer la simulation 2027 →</a>
     </p>
   </section>
   </div>
@@ -430,7 +432,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       }
       <li>
         <article class="card">
-          <h3><a href="/atlas/2024-legislatives">Législatives 2024 — 1er tour</a></h3>
+          <h3><a href="/atlas/2024-legislatives/">Législatives 2024 — 1er tour</a></h3>
           <p>RN 29,26 % · UG 27,99 % · ENS 20,04 % — 577 circonscriptions, data.gouv.fr.</p>
         </article>
       </li>
@@ -448,13 +450,13 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       }
       <li>
         <article class="card">
-          <h3><a href="/atlas/2022-presidentielle">Présidentielle 2022 — 1er tour</a></h3>
+          <h3><a href="/atlas/2022-presidentielle/">Présidentielle 2022 — 1er tour</a></h3>
           <p>Macron 27,85 % · Le Pen 23,15 % · Mélenchon 21,95 %.</p>
         </article>
       </li>
       <li>
         <article class="card">
-          <h3><a href="/atlas/2017-presidentielle">Présidentielle 2017 — 1er tour</a></h3>
+          <h3><a href="/atlas/2017-presidentielle/">Présidentielle 2017 — 1er tour</a></h3>
           <p>Macron 24,01 % · Le Pen 21,30 % · quadruple polarisation.</p>
         </article>
       </li>
@@ -476,11 +478,11 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       <li><strong>Zéro biais · zéro parti pris</strong> — le média ne soutient aucun camp.</li>
       <li><strong>Transparence des couleurs politiques</strong> — posts et intervenants affichés avec teinte d’idées 1er tour (pas une carte d’adhésion).</li>
       <li><strong>Modératrice IA</strong> — aucune autorité religieuse ou idéologique ne passe les fourches caudines ; les idées politiques du débat restent bienvenues.</li>
-      <li>Sources officielles traçables (<a href="/sources">data.gouv.fr</a>)</li>
+      <li>Sources officielles traçables (<a href="/sources/">data.gouv.fr</a>)</li>
       <li>Comparaisons factuelles, sans classement éliminatoire</li>
       <li><strong>{DOE_FR}</strong> — pluralité du 1er tour, sans classement ni favori.</li>
       <li>Lisibilité maximale (WCAG 2.2 AA+), revue humaine après filtre IA.</li>
-      <li>Document complet : <a href="/charte"><strong>Charte publique</strong></a>.</li>
+      <li>Document complet : <a href="/charte/"><strong>Charte publique</strong></a>.</li>
     </ul>
   </section>
 

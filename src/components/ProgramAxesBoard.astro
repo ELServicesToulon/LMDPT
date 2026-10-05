@@ -48,7 +48,7 @@ const nameBySlug = Object.fromEntries(data.candidates.map((c) => [c.slug, c.name
             : ''}
         </p>
         <p class="axis-links">
-          <a href={`/analyses/programmes-comparateur?scrutin=${scrutinId}&theme=${axis.themeId}`}>
+          <a href={`/analyses/programmes-comparateur/?scrutin=${scrutinId}&theme=${axis.themeId}`}>
             Comparateur · {axis.themeLabel}
           </a>
         </p>
@@ -67,7 +67,7 @@ const nameBySlug = Object.fromEntries(data.candidates.map((c) => [c.slug, c.name
             <header class="proposal-head">
               <div class="proposal-head-row">
                 <h3>
-                  <a href={`/analyses/programmes/${scrutinId}/${p.slug}`}>{p.name}</a>
+                  <a href={`/analyses/programmes/${scrutinId}/${p.slug}/`}>{p.name}</a>
                 </h3>
                 <PoliticalHueBadges hues={[hue]} size="sm" />
               </div>

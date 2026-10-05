@@ -46,11 +46,12 @@ Stockage : `./data/tips.json`
 | modo-senior | 3 | + recolorer la teinte |
 | redaction | 4 | supervision |
 
-Jetons seed (à changer) dans `data/moderators.json` :
+Jetons : **aucun défaut dans le code**. Configurer avant tout déploiement, soit :
 
-- `lmdpt-modo-change-me`
-- `lmdpt-modo-senior-change-me`
-- `lmdpt-redaction-change-me`
+- variables `LMDPT_MOD_TOKEN_REDACTION`, `LMDPT_MOD_TOKEN_MODO_SENIOR`, `LMDPT_MOD_TOKEN_MODO`
+- soit `data/moderators.json` (hors git) avec des jetons propres
+
+Les placeholders `__REMPLACER_JETON_*__` de `.env.example` sont refusés. Sans jeton utilisable, le processus journalise un avertissement au démarrage et répond **503** aux actions de modération et d’édition (`/api/comments/mod/*`, publication forcée).
 
 UI : `/moderation/`
 

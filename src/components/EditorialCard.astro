@@ -1,6 +1,7 @@
 ---
 import EditorialCoverImage from './EditorialCoverImage.astro';
 import { editorialKindLabel, resolveCover, type EditorialPost } from '../lib/editorial';
+import { withTrailingSlash } from '../lib/internal-path';
 
 interface Props {
   post: EditorialPost;
@@ -14,12 +15,12 @@ const dateLabel = new Date(post.date).toLocaleDateString('fr-FR', { dateStyle: '
 ---
 
 <article class="card editorial-card" data-editorial-kind={post.kind} data-editorial-slug={post.slug}>
-  <a class="editorial-card-media" href={post.href} tabindex="-1" aria-hidden="true">
+  <a class="editorial-card-media" href={withTrailingSlash(post.href)} tabindex="-1" aria-hidden="true">
     <EditorialCoverImage cover={post.cover} />
   </a>
   <p class="eyebrow">{kindLabel}</p>
   <h3>
-    <a href={post.href}>{post.title}</a>
+    <a href={withTrailingSlash(post.href)}>{post.title}</a>
     {badge && <span class="status-badge status-badge--open">{badge}</span>}
   </h3>
   <p>{post.description}</p>

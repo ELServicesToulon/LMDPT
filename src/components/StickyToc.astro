@@ -2,6 +2,7 @@
 /**
  * Sommaire collant (pages longues) — accessibilité clavier + skip.
  */
+import { withTrailingSlash } from '../lib/internal-path';
 interface TocItem {
   href: string;
   label: string;
@@ -27,7 +28,7 @@ const { title = 'Sommaire', items, id = 'page-toc' } = Astro.props;
         <ol class="sticky-toc-list">
           {items.map((item) => (
             <li>
-              <a href={item.href}>{item.label}</a>
+              <a href={withTrailingSlash(item.href)}>{item.label}</a>
             </li>
           ))}
         </ol>

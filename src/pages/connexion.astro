@@ -7,6 +7,7 @@ const err = Astro.url.searchParams.get('error') || '';
 
 <BaseLayout
   title="Connexion"
+  pageHeading
   description="Identifiez-vous sur Le Média du Premier Tour — Google, X, Apple ou email. Requis pour commenter."
   noindex={true}
 >
@@ -19,8 +20,8 @@ const err = Astro.url.searchParams.get('error') || '';
       <strong>jamais</strong> affiché publiquement.
     </p>
     <p class="meta">
-      Service non destiné aux moins de 15 ans · <a href="/confidentialite">Confidentialité</a> ·
-      <a href="/charte">Charte</a>
+      Service non destiné aux moins de 15 ans · <a href="/confidentialite/">Confidentialité</a> ·
+      <a href="/charte/">Charte</a>
     </p>
   </section>
 
@@ -62,7 +63,7 @@ const err = Astro.url.searchParams.get('error') || '';
   </section>
 
   <p class="meta">
-    Déjà connecté ? <a href="/compte">Voir mon compte</a>
+    Déjà connecté ? <a href="/compte/">Voir mon compte</a>
   </p>
 </BaseLayout>
 

@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Mon compte"
+  pageHeading
   description="Compte lecteur LMDPT — pseudonyme, providers liés, déconnexion."
   noindex={true}
 >
@@ -34,7 +35,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <p class="meta" id="compte-providers-status" role="status">Vérification des providers…</p>
     <p class="meta">
-      <a href="/connexion?next=/compte">Email ou autres options</a>
+      <a href="/connexion/?next=/compte">Email ou autres options</a>
     </p>
   </section>
 

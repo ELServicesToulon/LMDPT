@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getJournalLastUpdate, getSortedJournal } from '../lib/data-journal';
 import { formatLicenseLabel } from '../lib/license-labels';
 import { loadSourcesManifest } from '../lib/sources';
+import { withTrailingSlash } from '../lib/internal-path';
+import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 
 const manifest = await loadSourcesManifest();
 const dataJournal = getSortedJournal();
@@ -30,6 +32,9 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     </p>
     <p class="meta">
       <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire : blocage immédiat. (sauf direct YouTube)
+    </p>
+    <p>
+      {SONDAGES_LIGNE} Les agrégats affichés pour 2027 s’appuient notamment sur des sondages publics Ifop, Harris et Ipsos.
     </p>
   </section>
 
@@ -76,7 +81,7 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
                   <ul class="page-links">
                     {entry.pages?.map((page) => (
                       <li>
-                        <a href={page}>{page}</a>
+                        <a href={withTrailingSlash(page)}>{withTrailingSlash(page)}</a>
                       </li>
                     ))}
                   </ul>
@@ -136,7 +141,7 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     </p>
     <p class="meta">
       Ce regroupement est <strong>éditorial et transparent</strong> : ce n’est ni une affiliation partisane,
-      ni une prédiction de second tour. Le détail nuance par nuance reste dans l’<a href="/atlas">Atlas</a>.
+      ni une prédiction de second tour. Le détail nuance par nuance reste dans l’<a href="/atlas/">Atlas</a>.
       Source de vérité code : <code>src/lib/an1t.ts</code> (<code>AN1T_BLOCS</code>, <code>allocateSainteLague</code>).
     </p>
 
@@ -163,7 +168,7 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
             <td><strong>Blocs civiques LMDPT</strong></td>
             <td>Lisibilité, simulations AN1T, comparaisons 1er tour</td>
             <td>
-              <a href="/analyses/assemblee-premier-tour">Assemblée du Premier Tour</a>,
+              <a href="/analyses/assemblee-premier-tour/">Assemblée du Premier Tour</a>,
               hémicycles « 5 grands blocs »
             </td>
           </tr>
@@ -245,13 +250,13 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
       <li>Ne constitue pas un avis juridique ou un conseil de vote.</li>
     </ul>
     <p class="meta">
-      Voir aussi : <a href="/charte">Charte</a>
+      Voir aussi : <a href="/charte/">Charte</a>
       {' · '}
-      <a href="/a-propos">À propos</a>
+      <a href="/a-propos/">À propos</a>
       {' · '}
-      <a href="/analyses/assemblee-premier-tour">AN1T</a>
+      <a href="/analyses/assemblee-premier-tour/">AN1T</a>
       {' · '}
-      <a href="/atlas">Atlas</a>
+      <a href="/atlas/">Atlas</a>
     </p>
   </section>
 
@@ -265,7 +270,7 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
         {manifest.datasets.map((dataset) => (
           <article class="card">
             <h3>
-              <a href={dataset.page} rel="noopener noreferrer">{dataset.title}</a>
+              <a href={withTrailingSlash(dataset.page)} rel="noopener noreferrer">{dataset.title}</a>
             </h3>
             {dataset.organization && <p class="meta">Producteur : {dataset.organization}</p>}
             {dataset.license && (

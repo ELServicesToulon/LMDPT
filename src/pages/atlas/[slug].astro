@@ -86,19 +86,19 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
   }
 
   <nav class="meta" aria-label="Fil d'Ariane">
-    <a href="/atlas">Atlas</a> → {summary.title}
+    <a href="/atlas/">Atlas</a> → {summary.title}
   </nav>
 
   {
     is2027 && (
       <nav class="meta" aria-label="Piliers du dossier 2027" style="display:flex;flex-wrap:wrap;gap:0.35rem 0.75rem;margin:0.5rem 0 0.75rem;">
-        <a href="/sources">🔒 Sécurité &amp; faits</a>
+        <a href="/sources/">🔒 Sécurité &amp; faits</a>
         <span aria-hidden="true">·</span>
-        <a href="/analyses/assemblee-premier-tour">🌈 Pluralité (AN1T)</a>
+        <a href="/analyses/assemblee-premier-tour/">🌈 Pluralité (AN1T)</a>
         <span aria-hidden="true">·</span>
-        <a href="/charte">🗳️ La démocratie avant l’élimination</a>
+        <a href="/charte/">🗳️ La démocratie avant l’élimination</a>
         <span aria-hidden="true">·</span>
-        <a href="/analyses/presidentielle-2027-preparation">Dossier 2027</a>
+        <a href="/analyses/presidentielle-2027-preparation/">Dossier 2027</a>
       </nav>
     )
   }
@@ -136,7 +136,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
                 : 'national + départements si disponibles.'}{' '}
               National projection uniquement pour l’instant.{' '}
               <strong> Géographie circo :</strong> index {geoIndex.count} circonscriptions prêt
-              (base <a href="/atlas/2024-legislatives">législatives 2024</a>) — mapping post-scrutin.
+              (base <a href="/atlas/2024-legislatives/">législatives 2024</a>) — mapping post-scrutin.
             </span>
           </>
         ) : (
@@ -185,7 +185,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         <strong>Projection pédagogique uniquement</strong> — pas de données officielles du scrutin 2027.
         Aucune prédiction de résultat. Voir les piliers
         <a href="/">Sécurité &amp; faits</a> ·
-        <a href="/charte">La démocratie avant l’élimination</a>.
+        <a href="/charte/">La démocratie avant l’élimination</a>.
       </p>
       <p>
         Ce graphique expose la <strong>pluralité complète</strong> des préférences au premier tour (projection 2026 agrégée). 
@@ -233,7 +233,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <h4 style="margin-top:1.25rem;" id="granularite-circo">Granularité circonscriptions / départements (P8-4)</h4>
       <p>
         Index géographique : <strong>{geoIndex.count} circonscriptions</strong> (découpage
-        <a href="/atlas/2024-legislatives">législatives 2024</a>).
+        <a href="/atlas/2024-legislatives/">législatives 2024</a>).
         {circoReadiness && (
           <>
             {' '}
@@ -253,14 +253,14 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
         </li>
         <li>
           Atlas de référence circonscriptions en ligne :{' '}
-          <a href="/atlas/2024-legislatives">577 leaders 1er tour législatives 2024</a>.
+          <a href="/atlas/2024-legislatives/">577 leaders 1er tour législatives 2024</a>.
         </li>
       </ul>
 
       <h4 style="margin-top:1rem;">Lien vers scénarios AN1T (Assemblée du 1er tour)</h4>
       <p>
         Utilisez ces parts de voix projetées comme base pour explorer l'impact d'une répartition proportionnelle des voix du premier tour sur l'Assemblée nationale.
-        <a href="/analyses/assemblee-premier-tour">Ouvrir le simulateur AN1T et l'hémicycle interactif</a> — ajustez les sliders pour simuler un scénario « présidentiel 2027 » (ex. RN 33-35 %, gauche unie ~23-28 %, etc.).
+        <a href="/analyses/assemblee-premier-tour/">Ouvrir le simulateur AN1T et l'hémicycle interactif</a> — ajustez les sliders pour simuler un scénario « présidentiel 2027 » (ex. RN 33-35 %, gauche unie ~23-28 %, etc.).
       </p>
       <p class="meta">
         Voir aussi le comparateur de sièges et les cartes pluralité T1 législatives. Ces projections ne sont pas des prédictions : outil pédagogique uniquement.
@@ -296,7 +296,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <p>{summary.distorsion_note}</p>
       <p class="meta">
         Analyse pédagogique — pas de prédiction ni de moralisation du vote tactique. Voir aussi{' '}
-        <a href="/analyses/legislatives-2024-desistements">législatives 2024 (désistements)</a>.
+        <a href="/analyses/legislatives-2024-desistements/">législatives 2024 (désistements)</a>.
       </p>
     </section>
   )}
@@ -339,7 +339,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
           }
         </>
       )}
-      <li>Téléchargement des jeux bruts : page <a href="/sources">Sources</a>.</li>
+      <li>Téléchargement des jeux bruts : page <a href="/sources/">Sources</a>.</li>
     </ul>
   </section>
 
@@ -347,11 +347,11 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
     <section class="card">
       <h3>Référence historique</h3>
       <p class="meta">
-        Comparez avec les atlas réels : <a href="/atlas/2022-presidentielle">2022</a> et <a href="/atlas/2017-presidentielle">2017</a>. 
+        Comparez avec les atlas réels : <a href="/atlas/2022-presidentielle/">2022</a> et <a href="/atlas/2017-presidentielle/">2017</a>. 
         Les projections 2027 illustrent l'évolution potentielle de la fragmentation du premier tour.
       </p>
       <p>
-        Une fois les résultats officiels disponibles, ce placeholder sera remplacé par les données réelles importées (script similaire aux précédents).
+        Une fois les résultats officiels disponibles, cette projection sera remplacée par les données réelles.
       </p>
     </section>
   )}

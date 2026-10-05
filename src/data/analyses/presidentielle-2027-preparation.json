@@ -204,7 +204,7 @@
     },
     {
       "phase": "Intégration",
-      "label": "Import JSON statique + page Atlas /atlas/2027-presidentielle (placeholder + pluralité + liens AN1T)",
+      "label": "Import JSON statique + page Atlas /atlas/2027-presidentielle (pluralité + liens AN1T)",
       "gate": "Réalisé — données placeholder + focus pluralité (audit rec. implémentée)"
     },
     {
@@ -222,7 +222,7 @@
     {
       "label": "Archives résultats — Ministère de l'Intérieur",
       "url": "https://www.archives-resultats-elections.interieur.gouv.fr/",
-      "role": "Résultats officiels par scrutin (à compléter pour 2027)"
+      "role": "Résultats officiels par scrutin (publication 2027 à venir)"
     },
     {
       "label": "data.gouv.fr — recherche « élection présidentielle 2027 »",

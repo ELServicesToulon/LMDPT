@@ -1,156 +1,191 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactEmail = 'lemediadupremiertour@gmail.com';
 ---
 
 <BaseLayout
   title="Confidentialité"
-  description="Politique de confidentialité — Le Média du Premier Tour. Analytics Google optionnels (désactivés par défaut). Cloudflare Web Analytics cookieless."
+  description="Politique de confidentialité — Le Média du Premier Tour. Formulaires, compte lecteur, Cloudflare Insights."
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 4 septembre 2026</p>
-  </section>
-
-  <section class="card">
-    <h3>Données collectées</h3>
+    <p class="meta">Dernière mise à jour : 4 octobre 2026</p>
     <p>
-      Ce site est principalement un site statique (HTML/CSS/JS). Lors d’une visite normale des pages
-      Atlas, Analyses ou Sources <strong>sans compte</strong>, aucune donnée personnelle n’est
-      collectée par l’éditeur (hors logs techniques d’hébergement).
+      Responsable du traitement : Emmanuel Lecourt, éditeur non professionnel du site Le Média du
+      Premier Tour (voir <a href="/mentions-legales/">mentions légales</a>).
+    </p>
+    <p>
+      Contact : <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
     </p>
   </section>
 
   <section class="card">
-    <h3>Compte lecteur (connexion Google, X, Apple, email)</h3>
+    <h3>Formulaires (pied de page et <a href="/contribuer/">/contribuer/</a>)</h3>
     <p>
-      L’espace <a href="/connexion">Connexion</a> permet de s’identifier pour
-      <strong>publier un commentaire citoyen</strong>. Providers : Google, X (Twitter), Apple, ou
-      lien magique email. Sous-traitants techniques d’authentification : les fournisseurs d’identité
-      choisis. LMDPT stocke un identifiant technique, les providers liés, un pseudonyme, et (si
-      fourni) un email <strong>non public</strong>. Cookie de session HttpOnly
-      (<code>lmdpt_session</code>), durée max. 30 jours.
+      Le formulaire de retour en pied de page et l’espace Contribuer envoient une suggestion ou une
+      alerte. Le code enregistre : le type (suggestion ou alerte), le titre, le texte, un pseudonyme,
+      une URL source facultative, et un e-mail facultatif.
     </p>
     <p>
-      Base légale : intérêt légitime (modération et intégrité des commentaires) et/ou consentement
-      (création de compte). Finalité : authentifier l’auteur d’un commentaire ; pas de publicité, pas
-      de revente. La teinte politique affichée sur un message n’est <strong>pas</strong> une
-      adhésion partisane de compte.
+      L’e-mail n’est stocké que si la case de consentement est cochée. Sans cette case, le serveur
+      refuse l’envoi dès qu’un e-mail est présent. L’e-mail n’est pas renvoyé dans la vue publique
+      des propositions publiées.
     </p>
     <p>
-      Droits d’accès / effacement : via
-      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer"
-        >issue GitHub</a
+      Le serveur conserve aussi une empreinte courte (hash) d’une clé créée dans le navigateur
+      (<code>lmdpt-author-key</code>, stockage local) ou, à défaut, du user-agent. Le code de
+      l’application n’écrit pas l’adresse IP.
+    </p>
+    <p>
+      <strong>Finalité</strong> : file d’attente de la rédaction. Une proposition n’est visible sur
+      le site qu’après validation humaine.
+    </p>
+    <p>
+      <strong>Base légale</strong> : consentement (article 6.1.a du RGPD) pour l’e-mail de contact ;
+      intérêt légitime (article 6.1.f) pour le texte de la proposition, afin de modérer et de tenir
+      la ligne éditoriale.
+    </p>
+    <p>
+      <strong>Durée</strong> : durée à préciser. Le code ne supprime pas automatiquement les
+      propositions, qu’elles soient en attente, publiées ou rejetées.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Connexion (<a href="/connexion/">/connexion/</a>) et compte (<a href="/compte/">/compte/</a>)</h3>
+    <p>
+      L’identification sert à publier un commentaire citoyen. Le code propose Google, X, Apple, ou un
+      lien magique par e-mail. Il enregistre un identifiant technique, les fournisseurs liés
+      (identifiant chez le fournisseur, e-mail transmis par lui, date de lien), l’e-mail, le fait
+      qu’il soit vérifié, le pseudonyme, une teinte préférée si elle est un jour renseignée, le rôle,
+      la date de création et la date de dernière connexion.
+    </p>
+    <p>
+      La réponse publique du compte ne contient pas l’e-mail. Le pseudonyme est modifiable depuis
+      /compte/.
+    </p>
+    <p>
+      Un cookie de session <code>lmdpt_session</code> est déposé à la connexion : HttpOnly,
+      SameSite=Lax, Secure lorsque le site est servi en HTTPS. Sa durée maximale est de 30 jours.
+      Chaque visite authentifiée prolonge cette fenêtre. Les sessions expirées sont retirées à ce
+      moment-là. Le lien magique e-mail expire au bout de 15 minutes. L’état technique OAuth expire
+      aussi au bout de 15 minutes.
+    </p>
+    <p>
+      <strong>Finalité</strong> : authentifier la personne qui commente et afficher son pseudonyme.
+    </p>
+    <p>
+      <strong>Base légale</strong> : exécution du service de compte demandé par la personne
+      (article 6.1.b). Le cookie de session est nécessaire à cette connexion.
+    </p>
+    <p>
+      <strong>Durée</strong> : session et cookie, 30 jours glissants, tels que définis dans le code.
+      Lien magique et état OAuth : 15 minutes. Le dossier de compte lui-même n’a pas de durée de
+      conservation dans le code : durée à préciser.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Commentaires citoyens</h3>
+    <p>
+      Publier un commentaire passe par l’API du site. Le code enregistre le texte, le pseudonyme,
+      l’identifiant de compte s’il y en a un, l’empreinte de clé d’auteur, la teinte politique
+      calculée sur le message, le statut de modération et les dates. Une prévisualisation est
+      conservée en mémoire 30 minutes, puis écartée.
+    </p>
+    <p>
+      <strong>Finalité</strong> : publier un commentaire après modération.
+    </p>
+    <p>
+      <strong>Base légale</strong> : exécution du service de commentaire demandé (article 6.1.b) et
+      intérêt légitime de modération (article 6.1.f).
+    </p>
+    <p>
+      <strong>Durée</strong> : la prévisualisation expire à 30 minutes. Les commentaires enregistrés
+      ne sont pas purgés par le code : durée à préciser.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Cloudflare Insights</h3>
+    <p>
+      Le site charge le beacon Cloudflare Web Analytics
+      (<code>static.cloudflareinsights.com/beacon.min.js</code>), sauf si le build est fait avec
+      <code>PUBLIC_CF_WEB_ANALYTICS_TOKEN=off</code>. Ce script est décrit dans le code comme une
+      mesure d’audience et de performance sans cookie et sans <code>localStorage</code> ni
+      <code>sessionStorage</code> pour le beacon. Le jeton du beacon est public.
+    </p>
+    <p>
+      <strong>Finalité</strong> : mesure d’audience et de performance.
+    </p>
+    <p>
+      <strong>Base légale</strong> : intérêt légitime (article 6.1.f), au titre de cette mesure sans
+      cookie telle que le script est intégré. Le code n’affiche pas de bandeau de consentement pour
+      ce beacon.
+    </p>
+    <p>
+      <strong>Sous-traitant</strong> : Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107,
+      USA. Politique :
+      <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">
+        cloudflare.com/privacypolicy
+      </a>.
+    </p>
+    <p>
+      <strong>Durée</strong> : durée à préciser. Le code du site ne fixe pas la conservation chez
+      Cloudflare.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Discussions de la rubrique Débats</h3>
+    <p>
+      Les pages de débat peuvent charger Giscus (<a href="https://giscus.app" rel="noopener noreferrer">giscus.app</a>),
+      qui s’appuie sur GitHub Discussions. Commenter exige un compte GitHub. Le texte, l’identifiant
+      GitHub et l’horodatage sont traités par GitHub, pas stockés dans l’API LMDPT. Giscus peut
+      mémoriser des préférences d’affichage dans le navigateur.
+    </p>
+    <p>
+      Politique GitHub :
+      <a
+        href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+        rel="noopener noreferrer"
       >
-      ou contact rédaction, en indiquant le pseudonyme et le provider utilisé. Voir aussi
-      <a href="/docs" hidden></a><code>docs/AUTH.md</code> côté dépôt.
-    </p>
-  </section>
-
-  <section class="card">
-    <h3>Suggestions &amp; alertes lecteurs (<a href="/contribuer">/contribuer</a>)</h3>
-    <p>
-      L’espace Contribuer et le formulaire de retour en pied de page permettent d’envoyer une
-      <strong>suggestion</strong> ou une <strong>alerte</strong>. Les données traitées : titre, texte,
-      pseudonyme, lien source optionnel, et <strong>email optionnel</strong> uniquement si vous
-      cochez le consentement de contact. L’email n’est <strong>jamais publié</strong> sur le site.
-    </p>
-    <p>
-      Base légale : intérêt légitime éditorial (art. 6.1.f RGPD) pour la modération de contenus
-      publics, et consentement pour l’email de contact. Finalité : file d’attente rédactionnelle ;
-      publication sur le site uniquement après validation humaine. Durée : propositions rejetées
-      purgées périodiquement ; publiées conservées tant que visibles.
-    </p>
-    <p>
-      Droit d’accès / effacement :{' '}
-      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
-        ouvrir une issue GitHub
-      </a>
-      en précisant le pseudonyme et la date approximative.
-    </p>
-  </section>
-
-  <section class="card">
-    <h3>Commentaires citoyens (module pages)</h3>
-    <p>
-      Le module commentaires utilise l’API locale LMDPT (<code>/api/comments</code>) : texte,
-      pseudonyme, teinte politique calculée, file modération. La publication nécessite une
-      <a href="/connexion">connexion</a> lorsque l’auth est activée en production. Lecture publique
-      sans compte.
-    </p>
-  </section>
-
-  <section class="card">
-    <h3>Discussion (rubrique Débats)</h3>
-    <p>
-      La rubrique <a href="/debats">Débats</a> permet de commenter via{' '}
-      <a href="https://giscus.app" rel="noopener noreferrer">Giscus</a>, qui s'appuie sur{' '}
-      <a href="https://github.com/ELServicesToulon/LMDPT/discussions" rel="noopener noreferrer">
-        GitHub Discussions
+        GitHub Privacy Statement
       </a>.
-      Pour commenter, un <strong>compte GitHub</strong> est requis.
-    </p>
-    <p>
-      Les données de commentaire (identifiant GitHub, texte, horodatage) sont traitées par{' '}
-      <strong>GitHub</strong>, pas par LMDPT. Consultez la{' '}
-      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">
-        politique de confidentialité GitHub
-      </a>.
-      Giscus peut utiliser le stockage local du navigateur pour mémoriser vos préférences d'affichage.
+      Durée de ces données : durée à préciser (définie par GitHub, pas par le code LMDPT).
     </p>
   </section>
 
   <section class="card">
-    <h3>Cookies et traceurs</h3>
+    <h3>Autres traces</h3>
     <p>
-      <strong>Par défaut</strong>, LMDPT ne dépose pas de cookies analytics ou publicitaires.
-      Cookie de session <code>lmdpt_session</code> uniquement si vous vous connectez (HttpOnly,
-      Secure en HTTPS). L’hébergeur (OVH / reverse-proxy) peut enregistrer des logs techniques
-      (adresses IP, horodatage). Le widget Giscus (rubrique Débats) est soumis à la politique GitHub
-      ci-dessus.
+      Le menu « parcours citoyen » mémorise un choix ouvert/fermé dans
+      <code>localStorage</code> (<code>lmdpt-parcours-expanded</code>). Ce n’est pas un compte.
     </p>
     <p>
-      <strong>Outils Google de référencement</strong> (Search Console) : la vérification de
-      propriété n’installe pas de cookie lecteur. Les sitemaps et données structurées sont des
-      fichiers publics sans traceur.
+      Google Analytics et Google Tag Manager ne sont pas chargés tant qu’aucun identifiant
+      n’est fourni au build. Dans cet état, le code ne transmet rien à Google Analytics.
     </p>
     <p>
-      <strong>Google Analytics 4 / Tag Manager</strong> : désactivés tant qu’aucun identifiant
-      n’est configuré au build. S’ils sont activés un jour, le site utilisera le Consent Mode v2
-      (stockage analytics refusé par défaut) et cette page sera mise à jour avec la base légale
-      (consentement) et le sous-traitant Google Ireland. Voir <code>docs/GOOGLE-SEO.md</code>.
-    </p>
-    <p>
-      <strong>Cloudflare Web Analytics</strong> : mesure d’audience et de performance
-      {' '}
-      <em>sans cookie</em> et sans stockage navigateur (pas de <code>localStorage</code>
-      {' / '}
-      <code>sessionStorage</code>). Le jeton du beacon est public par conception. Ce script
-      n’attend pas le Consent Mode Google (hors publicité). Désactivation au build :
-      {' '}
-      <code>PUBLIC_CF_WEB_ANALYTICS_TOKEN=off</code>. Sous-traitant : Cloudflare, Inc.
-      Politique :
-      {' '}
-      <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer"
-        >cloudflare.com/privacypolicy</a
-      >.
+      Le code de l’application n’enregistre pas l’adresse IP des visites. L’hébergeur (OVHcloud) et
+      le proxy (Cloudflare) peuvent conserver des journaux techniques de connexion. Durée de ces
+      journaux : durée à préciser (elle n’est pas définie dans le code du site).
     </p>
   </section>
 
   <section class="card">
-    <h3>Liens externes</h3>
+    <h3>Droits</h3>
     <p>
-      Les liens vers data.gouv.fr, le Ministère de l'Intérieur ou d'autres sites tiers sont soumis
-      aux politiques de ces sites.
+      Vous pouvez demander l’accès, la rectification, l’effacement, la limitation, l’opposition et
+      la portabilité des données vous concernant, et définir des directives sur leur sort après
+      votre décès. Pour exercer ces droits :{' '}
+      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>, en indiquant le pseudonyme, le mode de
+      connexion et une date approximative.
     </p>
-  </section>
-
-  <section>
-    <h3>Contact</h3>
     <p>
-      Question relative à vos données :{' '}
-      <a href="https://github.com/ELServicesToulon/LMDPT/issues" rel="noopener noreferrer">
-        ouvrir une issue GitHub
-      </a>.
+      Vous pouvez aussi introduire une réclamation auprès de la CNIL :
+      <a href="https://www.cnil.fr" rel="noopener noreferrer">www.cnil.fr</a>.
     </p>
   </section>
 </BaseLayout>
