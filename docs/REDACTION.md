@@ -13,7 +13,15 @@ La version actuelle est statique : elle n’authentifie pas les visiteurs.
 ## Rôles
 
 - Directeur de la publication (LCEN) : personne physique indiquée dans les mentions légales. Inchangé.
-- Directrice de la publication adjointe (DPA) : autorité éditoriale pleine (ligne, calendrier, relecture). Le site public indique le titre de fonction, sans nom.
+- Directrice de la publication adjointe : ligne, calendrier, relecture.
+
+## Identité affichée
+
+La directrice de la publication adjointe choisit elle-même son pseudonyme. Elle décide aussi si ses coordonnées sont affichées.
+
+Tant que cette décision n’est pas prise, les mentions légales et `/redaction/` portent uniquement le titre « Directrice de la publication adjointe » : pas de nom, pas de courriel personnel, pas de pseudonyme inventé.
+
+Placeholder interne : (pseudonyme à définir par la DPA)
 
 Les coordonnées opérationnelles restent hors du site (espace de travail privé).
 
