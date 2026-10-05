@@ -1,8 +1,15 @@
 # Ligne éditoriale — Le Média du Premier Tour
 
-> **La démocratie avant l’élimination** — la démocratie avant le spectacle.
+> **La démocratie avant l’élimination** — la démocratie avant le spectacle du duel.
 
 **Tagline** : Le premier tour : le miroir le plus fidèle de la France politique. Pour une démocratie où l'on vote pour, et non contre.
+
+## Statut des textes
+
+- **Page publique** `/charte/` (`src/pages/charte.astro`) : profession de foi. Pourquoi le premier tour, promesse, trois refus, deux exemples. Français, vouvoiement. Pas de mode d’emploi.
+- **Ce document** : source versionnée. Il conserve le détail d’exploitation retiré de la page publique le 5 octobre 2026 (Phase 3, file de relecture, clés de palette, cible d’accessibilité).
+
+La doctrine ne change pas. La page publique la dit. Ce fichier la tient, avec le circuit technique.
 
 ## Vision
 
@@ -66,10 +73,23 @@ Implémentation : `src/lib/moderation-gate.ts` · `comments-api/server.mjs` (pre
 
 ## Principes — La démocratie avant l’élimination
 
+Trois refus publics, non négociables (page `/charte/`) :
+
+1. Aucun classement qui élimine à la place du lecteur.
+2. Aucun sondage présenté comme une prédiction.
+3. Aucune autorité religieuse ou idéologique totalisante, ni haine, ni appel à la violence.
+
+Application :
+
 1. **Aucun candidat n’est « éliminé »** par le média avant le scrutin — tous les candidats officiellement déclarés ont une fiche équivalente si les données existent.
 2. **Pas de « tier list »** ni de notation subjective présentée comme objective.
 3. **Les absences de données** sont affichées clairement (pas de silence qui suggère un désaveu).
-4. **Revue humaine** avant toute publication automatique (Phase 3) — après le filtre IA.
+4. **Revue humaine** avant toute publication automatique (Phase 3) — après le filtre IA. La page publique dit seulement qu’une relecture humaine précède la publication.
+
+### Exemples tenus sur la page publique (5 octobre 2026)
+
+- **Fiches égales.** Jean-Luc Mélenchon (La France insoumise) et Marine Le Pen (Rassemblement national), préparation 2027 : mêmes rubriques (identité, affiliation, document, mesures par thème, source, date, état du dossier). Les deux dossiers sont partiels. La fiche Le Pen écrit l’absence de programme 2027 distinct à l’intégration. La longueur suit les documents disponibles ; la structure ne change pas.
+- **Sondage cité, sans palmarès.** Ifop pour LCI et *Le Figaro*, questionnaire en ligne du 7 au 8 juillet 2026, échantillon de 984 personnes inscrites sur les listes électorales (extrait d’un échantillon de 1 075), hypothèse Édouard Philippe. Source Ifop du 8 juillet 2026. Renvoi aux notices de la Commission des sondages. La page publique ne recopie pas les scores : les aligner serait déjà un ordre d’arrivée. Phrase canonique : `SONDAGES_LIGNE` dans `src/lib/sondages-ligne.ts`.
 
 ## Rubrique Débats
 
@@ -92,11 +112,31 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 
 ## Page publique
 
-La charte complète est publiée sur le site : **`/charte`** (`src/pages/charte.astro`).
+La profession de foi est publiée sur **`/charte/`** (`src/pages/charte.astro`).
+
+Elle ne reproduit pas le mode d’emploi. Elle renvoie à ce document par la phrase « le détail technique est dans le dépôt ».
+
+### Détail technique conservé ici (hors page publique)
+
+| Sujet | Tenue |
+|-------|--------|
+| Phase 3 | Revue humaine avant toute publication automatique, après le filtre IA. Gate : `docs/REVIEW.md`. |
+| File de relecture | contributeur → modo → modo-senior → rédaction. Rôles : `CommentRole` dans `src/lib/comment-politics.ts`. |
+| Clés de palette | `FIRST_ROUND_HUES` (`slug`, ex. `melenchon`). Non affichées sur `/charte/`. API : `/api/comments/hues`. |
+| Pastilles | `PoliticalHueBadges` / `hueBadgesForPublication`. Plusieurs camps cités : plusieurs pastilles. |
+| Filtre | `src/lib/moderation-gate.ts` · `comments-api/server.mjs` (preview / publish). |
+| Accessibilité | Cible WCAG 2.2 AA+ (contraste, lisibilité, focus clavier). La page publique dit seulement que le site vise un contraste et une lisibilité suffisants. |
+
+## Qui est lié
+
+La charte de pluralisme s’applique telle quelle à la rédaction, aux contributeurs et à la directrice de la publication adjointe. Elle ne s’assouplit pas selon la fonction.
+
+Aucun nom et aucun courriel de la directrice adjointe ne sont publiés tant qu’elle ne l’a pas décidé (`docs/REDACTION.md`). La page publique peut porter le titre de fonction seul.
 
 ## Validation
 
 - [x] Ligne DOE posée (2026-06-27)
 - [x] Page `/charte` publique (2026-07-16)
 - [x] Impératif langue FR correct uniquement (2026-07-27 · Président)
-- [ ] Validation humaine Président / rédaction (reste : deploy charte L1+)
+- [x] Profession de foi publique (2026-10-05) : doctrine inchangée, jargon d’exploitation retiré de `/charte/`
+- [ ] Validation humaine Président / rédaction (pas de déploiement dans cette révision)
