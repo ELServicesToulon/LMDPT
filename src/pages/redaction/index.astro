@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const editorialDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/EDITORIAL.md';
+const reviewDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/REVIEW.md';
+const redactionDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/REDACTION.md';
+---
+
+<BaseLayout
+  title="Espace rédaction"
+  description="Espace rédaction interne, accès restreint. En production, Cloudflare Access (liste d’adresses autorisées) fermera cette route."
+  noindex={true}
+  share={false}
+>
+  <p class="redaction-banner" role="status">espace rédaction · accès restreint</p>
+
+  <section>
+    <h2>Rédaction</h2>
+    <p class="meta">
+      Accueil interne, par convention. Ce n’est pas une page de présentation.
+      En production, Cloudflare Access (liste d’adresses autorisées) fermera{' '}
+      <code>/redaction/</code>. Cette version statique n’authentifie personne.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Rôle</h3>
+    <p>Directrice de la publication adjointe.</p>
+    <p>
+      Ce rôle couvre la ligne, le calendrier et la relecture avant publication.
+    </p>
+    <p>
+      Le directeur de la publication reste la personne physique responsable au titre de la LCEN.
+      Il est nommé dans les <a href="/mentions-legales/">mentions légales</a>.
+    </p>
+    <p>
+      La charte de pluralisme s’applique telle quelle.{' '}
+      <a href="/charte/">Charte</a>.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Repères</h3>
+    <ul>
+      <li><a href="/charte/">Charte publique</a></li>
+      <li><a href="/mentions-legales/">Mentions légales</a></li>
+      <li>
+        Ligne éditoriale (dépôt) :{' '}
+        <a href={editorialDoc} rel="noopener noreferrer">docs/EDITORIAL.md</a>
+      </li>
+      <li>
+        Revue avant publication (dépôt) :{' '}
+        <a href={reviewDoc} rel="noopener noreferrer">docs/REVIEW.md</a>
+      </li>
+      <li>
+        Mode d’emploi de cet espace :{' '}
+        <a href={redactionDoc} rel="noopener noreferrer">docs/REDACTION.md</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>Avant de publier</h3>
+    <p>Résumé de la revue. Le détail est dans docs/REVIEW.md.</p>
+    <ul>
+      <li>Chaque chiffre a une source identifiable, une date et une licence.</li>
+      <li>Aucun classement éliminatoire. Le fait reste distinct de l’interprétation.</li>
+      <li>Un débat présente au moins deux positions, de même structure.</li>
+      <li>Le texte public est en français correct.</li>
+      <li>Le build local est vert. Les mentions légales suivent si le type de contenu change.</li>
+      <li>Une revue humaine précède la mise en ligne.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>Outils (première version, statique)</h3>
+    <ul>
+      <li>
+        <strong>Espace de travail (Drive)</strong> : lien privé à renseigner hors dépôt.
+        Rien n’est branché sur cette page.
+      </li>
+      <li>
+        <strong>Boîte pigistes</strong> : à brancher. Les textes externes passent par la relecture.
+      </li>
+      <li>
+        <strong>File de relecture</strong> : vide. Aucune file n’est connectée dans cette version.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .redaction-banner {
+    margin: 0 0 1rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+    color: var(--fg);
+    font-weight: 650;
+  }
+</style>

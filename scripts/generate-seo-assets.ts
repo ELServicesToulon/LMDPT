@@ -306,6 +306,7 @@ function buildRobotsTxt(): string {
     'Mediapartners-Google',
   ];
   const privateDisallows = `Disallow: /moderation
+Disallow: /redaction
 Disallow: /connexion
 Disallow: /compte`;
   const aiBots = [
