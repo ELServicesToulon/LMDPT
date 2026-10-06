@@ -39,10 +39,10 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     published: revolutionRevolte.date,
     updated: revolutionRevolte.updated,
     href: '/analyses/on-a-vole-la-revolution-puis-la-revolte',
-    cover: {
-      src: '/illustrations/unes/placeholder-manquante.svg',
-      alt: 'Illustration manquante — ajouter un croquis unique pour cette tribune, ne pas réutiliser une autre une',
-    },
+    cover: uneCover(
+      'on-a-vole-la-revolution-puis-la-revolte',
+      'Illustration à l’encre et à l’aquarelle : une cocarde tricolore défraîchie, rubans effilochés, posée sur un vieux pupitre d’école à côté d’un cahier ouvert aux pages blanches et d’un encrier. Au fond, une grille fermée par une chaîne et un cadenas, où restent accrochées des feuilles vierges. Tons bleu ardoise, ocre et gris chaud.',
+    ),
   },
   {
     slug: lisnardAbonnes.slug,

@@ -230,7 +230,8 @@ describe('analyses', () => {
     const entry = getAnalysis('on-a-vole-la-revolution-puis-la-revolte');
     expect(entry?.href).toBe('/analyses/on-a-vole-la-revolution-puis-la-revolte');
     expect(entry?.description).toBe(revolutionRevolte.chapo);
-    expect(entry?.cover?.src).toBe('/illustrations/unes/placeholder-manquante.svg');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/on-a-vole-la-revolution-puis-la-revolte.jpg');
+    expect(entry?.cover?.alt).toMatch(/^Illustration à l’encre et à l’aquarelle/);
     expect(getUneDuJour()?.slug).toBe('on-a-vole-la-revolution-puis-la-revolte');
     expect(getUneDuJour()?.href).toBe('/analyses/on-a-vole-la-revolution-puis-la-revolte');
     expect(getUneDuJour()?.date).toBe('2026-10-05');
