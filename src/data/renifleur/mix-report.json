@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-06T16:08:10.551Z",
+  "generated_at": "2026-10-06T17:14:12.419Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
-  "poll_updated": "2026-10-01",
+  "poll_updated": "2026-10-06",
   "mapping": {
     "rn": [
       "le-pen",
@@ -410,8 +410,8 @@
     "top_hosts": [
       {
         "host": "lemonde.fr",
-        "count": 8,
-        "share_pct": 22.9
+        "count": 7,
+        "share_pct": 20
       },
       {
         "host": "liberation.fr",
@@ -429,17 +429,17 @@
         "share_pct": 14.3
       },
       {
+        "host": "publicsenat.fr",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
         "host": "france24.com",
         "count": 3,
         "share_pct": 8.6
       },
       {
         "host": "franceinfo.fr",
-        "count": 3,
-        "share_pct": 8.6
-      },
-      {
-        "host": "publicsenat.fr",
         "count": 3,
         "share_pct": 8.6
       },

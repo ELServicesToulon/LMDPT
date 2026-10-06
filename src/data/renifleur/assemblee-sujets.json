@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T16:08:12.504Z",
+  "generated_at": "2026-10-06T17:14:13.976Z",
   "source": "src/data/renifleur/latest.json",
   "window_days": 7,
   "window_from": "2026-09-30",
@@ -27,13 +27,19 @@
           "candidate_slug": "parti-socialiste",
           "candidate_label": "Socialiste / social-démocrate",
           "candidate_color": "#ff8080",
-          "articles": 4
+          "articles": 3
         },
         {
           "candidate_slug": "philippe",
           "candidate_label": "Philippe / Horizons",
           "candidate_color": "#0001b8",
           "articles": 2
+        },
+        {
+          "candidate_slug": "melenchon",
+          "candidate_label": "Mélenchon / LFI",
+          "candidate_color": "#cc2443",
+          "articles": 1
         },
         {
           "candidate_slug": "retailleau",
