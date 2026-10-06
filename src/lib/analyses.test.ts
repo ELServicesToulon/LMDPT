@@ -245,6 +245,8 @@ describe('analyses', () => {
     expect(published).toMatch(/dix enquêtes ouvertes/);
     expect(published).not.toMatch(/plus de 5 000 interpellations sur la semaine/);
     expect(published).not.toMatch(/\bLens\b/);
+    expect(published).not.toMatch(/amput|ramassé la grenade|Je ne suis pas en mesure|mutilation|RTL/i);
+    expect(published).toMatch(/seuls les parquets et l’IGPN/);
     expect(published).not.toMatch(/Saint-Ouen-l’Aumône|Sevran|parquet de Tours|Béthune|Pas-de-Calais|Val-d’Oise|Indre-et-Loire/);
     expect(published).not.toMatch(/lycée de Lens|école de Lens/i);
     expect(published).not.toMatch(/gate_publish|DecisionTag|relecture|GO ELS|GO-L1/);
