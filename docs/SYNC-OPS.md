@@ -49,6 +49,18 @@ Variables optionnelles pour le **build** OVH / local (voir `docs/GISCUS.md`) :
 
 Sans ces variables, les pages `/debats/*` affichent le lien GitHub Discussions uniquement.
 
+## Espace rédaction — dossiers Drive
+
+Liens privés du bloc Outils (`/redaction/` et `/redaction/god/`). Absents du dépôt. ManuskBot les ajoute au `.env` lu par le build, puis redéploie.
+
+```bash
+# Mediconvoi/backend/.env  (lu par deploy-lmdpt-ovh sur KS-5-B)
+PUBLIC_LMDPT_REDACTION_DRIVE_URL=https://drive.google.com/drive/folders/…
+PUBLIC_LMDPT_PIGISTES_DRIVE_URL=https://drive.google.com/drive/folders/…
+```
+
+Détail : `docs/REDACTION.md`. Sans ces variables, les deux lignes restent des libellés hors dépôt.
+
 ## Cloudflare Web Analytics (beacon cookieless)
 
 Mesure d’audience **sans cookie** (RUM Cloudflare). Hors Consent Mode GA4/GTM — ne pas attendre une bannière pubs.

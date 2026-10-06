@@ -1,8 +1,15 @@
 # Ligne éditoriale — Le Média du Premier Tour
 
-> **La démocratie avant l’élimination** — la démocratie avant le spectacle.
+> **La démocratie avant l’élimination** — la démocratie avant le spectacle du duel.
 
 **Tagline** : Le premier tour : le miroir le plus fidèle de la France politique. Pour une démocratie où l'on vote pour, et non contre.
+
+## Statut des textes
+
+- **Page publique** `/charte/` (`src/pages/charte.astro`) : profession de foi. Pourquoi le premier tour, promesse, trois refus, deux repères sur chaque texte, deux exemples. Français, vouvoiement. Pas de mode d’emploi.
+- **Ce document** : source versionnée. Il conserve le détail d’exploitation retiré de la page publique le 5 octobre 2026 (Phase 3, file de relecture, clés de palette, cible d’accessibilité).
+
+La doctrine ne change pas. La page publique la dit. Ce fichier la tient, avec le circuit technique.
 
 ## Vision
 
@@ -66,10 +73,36 @@ Implémentation : `src/lib/moderation-gate.ts` · `comments-api/server.mjs` (pre
 
 ## Principes — La démocratie avant l’élimination
 
+Trois refus publics, non négociables (page `/charte/`) :
+
+1. Aucun classement qui élimine à la place du lecteur.
+2. Aucun sondage présenté comme une prédiction.
+3. Aucune autorité religieuse ou idéologique totalisante, ni haine, ni appel à la violence.
+
+Application :
+
 1. **Aucun candidat n’est « éliminé »** par le média avant le scrutin — tous les candidats officiellement déclarés ont une fiche équivalente si les données existent.
 2. **Pas de « tier list »** ni de notation subjective présentée comme objective.
 3. **Les absences de données** sont affichées clairement (pas de silence qui suggère un désaveu).
-4. **Revue humaine** avant toute publication automatique (Phase 3) — après le filtre IA.
+4. **Revue humaine** avant toute publication automatique (Phase 3) — après le filtre IA. La page publique dit seulement qu’une relecture humaine précède la publication.
+
+### Deux repères sur chaque article et chaque chronique (5 octobre 2026)
+
+Engagement public, dans la promesse de `/charte/` (`#reperes`). La doctrine ne change pas.
+
+La page nomme les deux repères. Elle ne dit pas comment les noms sont retenus, ni les clés de palette.
+
+| Repère | Ce que le lecteur voit | Tenue ici |
+|--------|------------------------|-----------|
+| **Encadré DOE des candidats 2027** | Positions potentielles des candidats à la présidentielle de 2027 **sur le sujet du texte**. Traces publiques (déclaration, vote, texte porté). Absence écrite. Noms côte à côte. | Section `kind: 'candidats'` (enquêtes `dsa-qui-decide`, `lisnard-abonnes-electeurs`). Titre usuel : « Encadré · Ce que disent les candidats ». Même gabarit pour chaque nom. L’intro du texte dit que l’encadré ne classe personne et ne vaut pas consigne de vote. Une règle d’inclusion, si le texte en a une, reste dans cette intro. Les scores de sondage n’ordonnent pas les noms. |
+| **Badge des courants en phase** | Courants politiques **en phase avec la thèse** du texte. Il situe la thèse. Il n’est pas un soutien de la rédaction. | Palette `FIRST_ROUND_HUES` (`src/lib/comment-politics.ts`), affichage `PoliticalHueBadges`. Libellé de groupe : « Courants en phase avec la thèse ». Plusieurs courants : plusieurs badges, sans ordre et sans note. Distinct des pastilles de citation (tableau « Zéro biais », couleurs d’idées), qui disent d’où parle une phrase citée. Le composant fixe aujourd’hui son `aria-label` sur ces pastilles : le badge de thèse porte un libellé de groupe à part. |
+
+Les pastilles de citation restent obligatoires sur toute publication (tableau « Zéro biais »). Le badge de thèse s’y ajoute sur l’article et la chronique. Il ne les remplace pas.
+
+### Exemples tenus sur la page publique (5 octobre 2026)
+
+- **Fiches égales.** Jean-Luc Mélenchon (La France insoumise) et Marine Le Pen (Rassemblement national), préparation 2027 : mêmes rubriques (identité, affiliation, document, mesures par thème, source, date, état du dossier). Les deux dossiers sont partiels. La fiche Le Pen écrit l’absence de programme 2027 distinct à l’intégration. La longueur suit les documents disponibles ; la structure ne change pas.
+- **Sondage cité, sans palmarès.** Ifop pour LCI et *Le Figaro*, questionnaire en ligne du 7 au 8 juillet 2026, échantillon de 984 personnes inscrites sur les listes électorales (extrait d’un échantillon de 1 075), hypothèse Édouard Philippe. Source Ifop du 8 juillet 2026. Renvoi aux notices de la Commission des sondages. La page publique ne recopie pas les scores : les aligner serait déjà un ordre d’arrivée. Phrase canonique : `SONDAGES_LIGNE` dans `src/lib/sondages-ligne.ts`.
 
 ## Rubrique Débats
 
@@ -92,11 +125,34 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 
 ## Page publique
 
-La charte complète est publiée sur le site : **`/charte`** (`src/pages/charte.astro`).
+La profession de foi est publiée sur **`/charte/`** (`src/pages/charte.astro`).
+
+Elle ne reproduit pas le mode d’emploi. Elle renvoie à ce document par la phrase « le détail technique est dans le dépôt ».
+
+### Détail technique conservé ici (hors page publique)
+
+| Sujet | Tenue |
+|-------|--------|
+| Phase 3 | Revue humaine avant toute publication automatique, après le filtre IA. Gate : `docs/REVIEW.md`. |
+| File de relecture | contributeur → modo → modo-senior → rédaction. Rôles : `CommentRole` dans `src/lib/comment-politics.ts`. |
+| Clés de palette | `FIRST_ROUND_HUES` (`slug`, ex. `melenchon`). Non affichées sur `/charte/`. API : `/api/comments/hues`. |
+| Pastilles | `PoliticalHueBadges` / `hueBadgesForPublication`. Plusieurs camps cités : plusieurs pastilles. Proximité des idées citées, pas la thèse du texte. |
+| Encadré candidats 2027 | `kind: 'candidats'`. Positions potentielles, traces publiques, absence écrite, pas de classement, pas de sondage ordonné en palmarès. |
+| Badge courants en phase | Même palette et même composant que les pastilles, libellé de groupe « Courants en phase avec la thèse ». Slugs non montrés sur `/charte/`. |
+| Filtre | `src/lib/moderation-gate.ts` · `comments-api/server.mjs` (preview / publish). |
+| Accessibilité | Cible WCAG 2.2 AA+ (contraste, lisibilité, focus clavier). La page publique dit seulement que le site vise un contraste et une lisibilité suffisants. |
+
+## Qui est lié
+
+La charte de pluralisme s’applique telle quelle à la rédaction, aux contributeurs et à la directrice de la publication adjointe. Elle ne s’assouplit pas selon la fonction.
+
+Aucun nom et aucun courriel de la directrice adjointe ne sont publiés tant qu’elle ne l’a pas décidé (`docs/REDACTION.md`). La page publique peut porter le titre de fonction seul.
 
 ## Validation
 
 - [x] Ligne DOE posée (2026-06-27)
 - [x] Page `/charte` publique (2026-07-16)
 - [x] Impératif langue FR correct uniquement (2026-07-27 · Président)
-- [ ] Validation humaine Président / rédaction (reste : deploy charte L1+)
+- [x] Profession de foi publique (2026-10-05) : doctrine inchangée, jargon d’exploitation retiré de `/charte/`
+- [x] Engagement public (2026-10-05) : chaque article et chaque chronique portent l’encadré des positions potentielles des candidats 2027 et le badge des courants en phase avec la thèse. Doctrine inchangée. Pas de déploiement dans cette révision.
+- [ ] Validation humaine Président / rédaction (pas de déploiement dans cette révision)

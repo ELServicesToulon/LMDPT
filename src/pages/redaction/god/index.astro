@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RedactionOutils from '../../../components/RedactionOutils.astro';
+
+const editorialDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/EDITORIAL.md';
+const reviewDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/REVIEW.md';
+const redactionDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/REDACTION.md';
+const godDoc =
+  'https://raw.githubusercontent.com/ELServicesToulon/LMDPT/Main/docs/REDACTION-GOD.md';
+const repoUrl = 'https://github.com/ELServicesToulon/LMDPT';
+---
+
+<BaseLayout
+  title="Espace directeur"
+  description="Espace interne du directeur de la publication, accès restreint. En production, Cloudflare Access (liste d’adresses autorisées) fermera cette route."
+  noindex={true}
+  share={false}
+>
+  <p class="redaction-banner" role="status">espace rédaction · god mode · accès restreint</p>
+
+  <section>
+    <h2>Directeur de la publication</h2>
+    <p class="meta">
+      Accueil interne, par convention. Ce n’est pas une page de présentation.
+      En production, Cloudflare Access (liste d’adresses autorisées) fermera{' '}
+      <code>/redaction/god/</code>. Cette version statique n’authentifie personne.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Rôle</h3>
+    <p>
+      Directeur de la publication (LCEN) : Emmanuel Lecourt, nommé dans les{' '}
+      <a href="/mentions-legales/">mentions légales</a>.
+    </p>
+    <p>
+      God mode : veto LCEN, GO-L1 X, fusion et déploiement, infrastructure, accès,
+      invitations, secrets hors dépôt.
+    </p>
+    <p>
+      La directrice de la publication adjointe conserve l’entière autorité éditoriale
+      au quotidien. Cet espace n’affiche pas son nom. Son accueil est{' '}
+      <a href="/redaction/">l’espace rédaction</a>.
+    </p>
+    <p>
+      La charte de pluralisme s’applique telle quelle.{' '}
+      <a href="/charte/">Charte</a>.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Repères</h3>
+    <ul>
+      <li><a href="/charte/">Charte publique</a></li>
+      <li><a href="/mentions-legales/">Mentions légales</a></li>
+      <li>
+        Ligne éditoriale (dépôt) :{' '}
+        <a href={editorialDoc} rel="noopener noreferrer">docs/EDITORIAL.md</a>
+      </li>
+      <li>
+        Revue avant publication (dépôt) :{' '}
+        <a href={reviewDoc} rel="noopener noreferrer">docs/REVIEW.md</a>
+      </li>
+      <li>
+        Mode d’emploi de l’espace rédaction :{' '}
+        <a href={redactionDoc} rel="noopener noreferrer">docs/REDACTION.md</a>
+      </li>
+      <li>
+        Espace de la directrice de la publication adjointe :{' '}
+        <a href="/redaction/">/redaction/</a>
+      </li>
+      <li>
+        Mode d’emploi de cet espace :{' '}
+        <a href={godDoc} rel="noopener noreferrer">docs/REDACTION-GOD.md</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>Avant de publier</h3>
+    <p>Résumé de la revue. Le détail est dans docs/REVIEW.md.</p>
+    <ul>
+      <li>Chaque chiffre a une source identifiable, une date et une licence.</li>
+      <li>Aucun classement éliminatoire. Le fait reste distinct de l’interprétation.</li>
+      <li>Un débat présente au moins deux positions, de même structure.</li>
+      <li>Le texte public est en français correct.</li>
+      <li>Le build local est vert. Les mentions légales suivent si le type de contenu change.</li>
+      <li>Une revue humaine précède la mise en ligne.</li>
+      <li>
+        Gate X : un post par jour au maximum sur @LMDuPremierTour, uniquement avec un GO-L1 explicite.
+      </li>
+      <li>Déploiement : ManuskBot, après fusion sur Main.</li>
+      <li>
+        Relecture KS-5 : <code>lmdpt-relecture.sh</code> avant un GO site si le texte est neuf.
+      </li>
+    </ul>
+  </section>
+
+  <RedactionOutils />
+
+  <section class="card">
+    <h3>Outils god mode (statique)</h3>
+    <p>Leviers du directeur. Aucun secret, aucun jeton, aucune adresse personnelle dans le dépôt.</p>
+    <ul>
+      <li>
+        <strong>Drive racine LMDPT</strong> : lien à confirmer hors dépôt.
+        Rien n’est branché sur cette page.
+      </li>
+      <li>
+        <strong>Hub KS-5</strong> : répertoire <code>publication-director/</code>, hors dépôt du site.
+      </li>
+      <li>
+        <strong>Dépôt GitHub</strong> :{' '}
+        <a href={repoUrl} rel="noopener noreferrer">ELServicesToulon/LMDPT</a>
+        {' '}(administration et écriture).
+      </li>
+      <li>
+        <strong>Déploiement et retour arrière</strong> : ManuskBot. Les releases sont sous{' '}
+        <code>~/lmdpt-website/releases/</code>.
+      </li>
+      <li>
+        <strong>Cloudflare Access</strong> : fermer <code>/redaction/</code> et{' '}
+        <code>/redaction/god/</code>. Les adresses autorisées restent hors dépôt.
+      </li>
+      <li>
+        <strong>Traefik et filtre d’adresses IP Cloudflare</strong> : déjà en place.
+        Ne pas les modifier depuis cet espace.
+      </li>
+      <li>
+        <strong>Secrets et clés</strong> : Bitwarden Secrets Manager, via Manusk.
+        Jamais dans le dépôt.
+      </li>
+      <li>
+        <strong>File GO-L1 / un post X</strong> : vide. Aucune file n’est connectée dans cette version.
+      </li>
+      <li>
+        <strong>Escalade</strong> : Manusk, en cas de collision ou de blocage.
+        Pour information : boîte KS-5, adresse hors dépôt.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .redaction-banner {
+    margin: 0 0 1rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+    color: var(--fg);
+    font-weight: 650;
+  }
+</style>

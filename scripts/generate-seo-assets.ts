@@ -313,7 +313,10 @@ function buildRobotsTxt(): string {
     'AdsBot-Google-Mobile',
     'Mediapartners-Google',
   ];
+  // Disallow: /redaction est un préfixe (RFC 9309) : /redaction/god/ est couvert.
+  // Pas de ligne dédiée dans robots.txt : le sous-chemin n’y est pas nommé.
   const privateDisallows = `Disallow: /moderation
+Disallow: /redaction
 Disallow: /connexion
 Disallow: /compte`;
   const aiBots = [
