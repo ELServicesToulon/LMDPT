@@ -222,7 +222,7 @@ describe('analyses', () => {
   it('tribune Manusk du 5 octobre est la une, sans enquête DOE ni encadré candidats', () => {
     expect(revolutionRevolte.slug).toBe('on-a-vole-la-revolution-puis-la-revolte');
     expect(revolutionRevolte.date).toBe('2026-10-05');
-    expect(revolutionRevolte.updated).toBe('2026-10-05');
+    expect(revolutionRevolte.updated).toBe('2026-10-06');
     expect(revolutionRevolte.title).toBe('On a volé la révolution, puis la révolte');
     expect(revolutionRevolte.eyebrow).toBe('Tribune · Manusk');
     expect(revolutionRevolte.title.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
@@ -237,14 +237,14 @@ describe('analyses', () => {
     expect(revolutionRevolte.sections.every((section) => section.kind === 'prose')).toBe(true);
     const published = JSON.stringify(revolutionRevolte).replace(/\u00a0/g, ' ');
     expect(published).toMatch(/n’engage pas la rédaction comme enquête DOE/);
-    expect(published).toMatch(
-      /le « plus de 5 000 » d’interpellations couvre la semaine du 28 septembre au 2 octobre \(Nuñez, TF1\), et non « depuis le début du mouvement »/,
-    );
-    expect(published).toMatch(
-      /plus de 5 000 interpellations sur la semaine du 28 septembre au 2 octobre \(déclaration de Laurent Nuñez sur TF1 le 2 octobre au soir\)/,
-    );
-    expect(published).toMatch(/Ne pas lire comme un cumul « depuis le début »/);
-    expect(published).toMatch(/périmètre \*\*28\/09 → 2\/10\*\*/);
+    expect(published).toMatch(/6 059 interpellations et 715 policiers et gendarmes blessés/);
+    expect(published).toMatch(/arrêté au 5 octobre au soir et compté depuis le 28 septembre/);
+    expect(published).toMatch(/chiffres de mi-journée, provisoires/);
+    expect(published).toMatch(/891 lycées/);
+    expect(published).toMatch(/en compte 589/);
+    expect(published).toMatch(/dix enquêtes ouvertes/);
+    expect(published).not.toMatch(/plus de 5 000 interpellations sur la semaine/);
+    expect(published).not.toMatch(/\bLens\b/);
     expect(published).not.toMatch(/lycée de Lens|école de Lens/i);
     expect(published).not.toMatch(/gate_publish|DecisionTag|relecture|GO ELS|GO-L1/);
   });
