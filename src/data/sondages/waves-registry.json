@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T04:48:32.674Z",
+  "updated": "2026-10-06T16:16:13.081Z",
   "waves": [
     {
       "id": "commission-ipsos-9mai",
@@ -71,6 +71,138 @@
       "source_id": "commission-sondages",
       "scores": {},
       "raw_snippet": "Notice Commission : Barometre TOLUNA HARRIS INTERACTIVE LCI (31 juillet) — PDF notice, scores non extraits auto.",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-ifop-30092026",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "philippe": 23,
+        "attal": 17,
+        "melenchon": 17,
+        "glucksmann": 13,
+        "retailleau": 11,
+        "zemmour": 4.5,
+        "tondelier": 5.5,
+        "roussel": 3,
+        "dupont-aignan": 1.5,
+        "arthaud": 1
+      },
+      "raw_snippet": "Dernier sondage IFOP 30/09/2026 1er Tour · Hypothèse N°1 32% LE PEN 16% PHILIPPE 15% MÉLENCHON 11% GLUCKSMANN 8% ATTAL 7% RETAILLEAU 4% ZEMMOUR 3% TONDELIER 2.5% ROUSSEL 1% DUPONT-AIGNAN 0.5% ARTHAUD 1er Tour · Hypothèse N°2 33% LE PEN 21% PHILIPPE 16% MÉLENCHON 11% GLUCKSMANN 8%",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h1",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 1 — 32% 16% 15% 8% 11% 7% — — — — — — — — — 4% 3% — 2.5% — — — — 1% 0.5% — — 30/09/2026 IFOP 2 — 33% 21% 16% — 11% 8% — — — — — — — — — 3.5% 3% — 2.5% — — — — 1.5% 0.5% — — 30/09/2026 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h2",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 2 — 33% 21% 16% — 11% 8% — — — — — — — — — 3.5% 3% — 2.5% — — — — 1.5% 0.5% — — 30/09/2026 IFOP 3 — 34% — 15% 15% 13% 10% — — — — — — — — — 3.5% 4% — 2.5% — — — — 2% 1% — — 30/09/2026 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h3",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 3 — 34% — 15% 15% 13% 10% — — — — — — — — — 3.5% 4% — 2.5% — — — — 2% 1% — — 30/09/2026 IFOP 4 — 35% 23% 16% — — 8% — — — — — — — — 3% 4% 5% — 3.5% — — — — 1.5% 1% — — 30/09/2026 IFOP ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h4",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 4 — 35% 23% 16% — — 8% — — — — — — — — 3% 4% 5% — 3.5% — — — — 1.5% 1% — — 30/09/2026 IFOP 5 — 36% — 17% 17% — 11% — — — — — — — — 4% 4.5% 5.5% — 3% — — — — 1% 1% — — 30/09/2026 IFOP 6",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h5",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 5 — 36% — 17% 17% — 11% — — — — — — — — 4% 4.5% 5.5% — 3% — — — — 1% 1% — — 30/09/2026 IFOP 6 — 31% 15% 14% 7% 9% 5% — — — — — — — 3% — 4% 3% 2% 2% — — — 3.5% 1% 0.5% — — 30/09/2026 IF",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h6",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 6 — 31% 15% 14% 7% 9% 5% — — — — — — — 3% — 4% 3% 2% 2% — — — 3.5% 1% 0.5% — — 30/09/2026 IFOP 7 — 35% 24% 15% — — 8% — — — — — — — — — 4% 6% — 3% 3% — — — 1.5% 0.5% — — 30/09/2026 IFO",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h7",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 7 — 35% 24% 15% — — 8% — — — — — — — — — 4% 6% — 3% 3% — — — 1.5% 0.5% — — 30/09/2026 IFOP 8 — 35% 23% 17% — — 8% — — — — — — — — — 3% 5.5% — 3.5% — 3% — — 1% 1% — — 30/09/2026 IFOP 9 ",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h8",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 8 — 35% 23% 17% — — 8% — — — — — — — — — 3% 5.5% — 3.5% — 3% — — 1% 1% — — 30/09/2026 IFOP 9 — 35% 23% 17% — — 9% — — — — — — — — — 3% 6% — 3.5% — — — — 1.5% 1% 1% — 30/09/2026 IFOP 10",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-ifop-30092026-h9",
+      "firm": "Ifop",
+      "firm_id": "ifop",
+      "fieldwork": "30/09/2026",
+      "published_hint": "30/09/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "30/09/2026 IFOP 9 — 35% 23% 17% — — 9% — — — — — — — — — 3% 6% — 3.5% — — — — 1.5% 1% 1% — 30/09/2026 IFOP 10 — 34% 22% 16% — — 7% — 8% — — — — — — — 4% 5% — 2.5% — — — — 1% 0.5% — — 28/09/2026 HARRIS",
       "metric": "intentions_vote"
     },
     {
@@ -167,7 +299,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 1 — 35% 13% 17% 5% 10% 7% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/",
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 1 — 35% 13% 17% 5% 10% 7% — — — — — — — — — 5% 3% — 2% — — — — 2% 1% — — 28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — — 2% 1%",
       "metric": "intentions_vote"
     },
     {
@@ -179,7 +311,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — 2% 1% — 28/09/2026 HARRIS INTERACTIVE 3 — 36% — 17% 12% 11% 10% — — — — — — — — — 6% 3% — 2% — — — 2% 1% — 28/",
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — — 2% 1% — — 28/09/2026 HARRIS INTERACTIVE 3 — 36% — 17% 12% 11% 10% — — — — — — — — — 6% 3% — 2% — — — — 2% 1%",
       "metric": "intentions_vote"
     },
     {

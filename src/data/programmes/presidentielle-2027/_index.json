@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-10-02",
+  "updated": "2026-10-06",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -13,10 +13,10 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
-          "title": "« À l’EHPAD ! » : Gabriel Attal face aux questions sans filtre de nos aînés",
-          "url": "https://www.publicsenat.fr/actualites/politique/a-lehpad-gabriel-attal-face-aux-questions-sans-filtre-de-nos-aines",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
+          "title": "Présidentielle 2027 : Edouard Philippe et Gabriel Attal jouent à rassemble-moi si tu peux",
+          "url": "https://www.liberation.fr/politique/presidentielle-2027-edouard-philippe-et-gabriel-attal-jouent-a-rassemble-moi-si-tu-peux-20261005_RIBLAXBATZFE3GCI5FVM224GGQ/",
+          "published": "2026-10-05",
+          "detected_at": "2026-10-06"
         }
       ]
     },
@@ -39,16 +39,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
       "press_signals": [
         {
+          "title": "Présidentielle 2027 : Edouard Philippe et Gabriel Attal jouent à rassemble-moi si tu peux",
+          "url": "https://www.liberation.fr/politique/presidentielle-2027-edouard-philippe-et-gabriel-attal-jouent-a-rassemble-moi-si-tu-peux-20261005_RIBLAXBATZFE3GCI5FVM224GGQ/",
+          "published": "2026-10-05",
+          "detected_at": "2026-10-06"
+        },
+        {
           "title": "Présidentielle 2027 : Édouard Philippe, une campagne sans cesse bousculée par l’actualité",
           "url": "https://www.lefigaro.fr/politique/presidentielle-2027-edouard-philippe-une-campagne-sans-cesse-bousculee-par-l-actualite-20261002",
           "published": "2026-10-02",
-          "detected_at": "2026-10-02"
-        },
-        {
-          "title": "Présidentielle 2027 : Édouard Philippe assume le risque de porter l’âge de la retraite à 65 ans",
-          "url": "https://www.la-croix.com/politique/presidentielle-2027-edouard-philippe-assume-le-risque-de-porter-l-age-de-la-retraite-a-65-ans-20260929",
-          "published": "2026-09-29",
-          "detected_at": "2026-10-02"
+          "detected_at": "2026-10-06"
         }
       ]
     },
@@ -75,22 +75,22 @@
       "name": "Fabien Roussel",
       "affiliation": "Parti communiste français",
       "program_status": "awaiting_program",
-      "chiffrage_available": false,
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : l’inquiétude des militants écologistes et communistes partisans d’une union à gauche",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/01/presidentielle-2027-l-inquietude-des-militants-ecologistes-et-communistes-partisans-d-une-union-a-gauche_6786440_823448.html",
-          "published": "2026-10-01",
-          "detected_at": "2026-10-02"
-        }
-      ]
+      "chiffrage_available": false
     },
     {
       "slug": "hollande",
       "name": "François Hollande",
       "affiliation": "Sans étiquette",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "« Primaires, une machine à perdre ? », sur LCP : une mise en perspective qui tombe à pic",
+          "url": "https://www.lemonde.fr/culture/article/2026/10/05/primaires-une-machine-a-perdre-sur-lcp-une-mise-en-perspective-qui-tombe-a-pic_6788548_3246.html",
+          "published": "2026-10-05",
+          "detected_at": "2026-10-06"
+        }
+      ]
     },
     {
       "slug": "melenchon",
@@ -99,21 +99,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : Jean-Luc Mélenchon cherche à attiser la fureur lycéenne",
-          "url": "https://www.lefigaro.fr/politique/presidentielle-2027-jean-luc-melenchon-cherche-a-attiser-la-fureur-lyceenne-20261002",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
-        },
-        {
-          "title": "Dernier débat pour la primaire socialiste : quelle vie en rose ?",
-          "url": "https://www.liberation.fr/idees-et-debats/editorial/dernier-debat-pour-la-primaire-socialiste-quelle-vie-en-rose-20261002_PDXTOL4ZVRCCHGDLPZ54EFW2PE/",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
-        }
-      ]
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html"
     },
     {
       "slug": "bardella",
@@ -125,16 +111,10 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : les soubresauts des campagnes électorales, où rien ne se passe jamais comme prévu",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/02/presidentielle-2027-les-soubresauts-des-campagnes-electorales-ou-rien-ne-se-passe-jamais-comme-prevu_6787174_823448.html",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
-        },
-        {
-          "title": "Budget : avec 2027 en tête, le RN veut éviter la politique de la terre brûlée",
-          "url": "https://www.lefigaro.fr/politique/budget-avec-2027-en-tete-le-rn-veut-eviter-la-politique-de-la-terre-brulee-20261001",
-          "published": "2026-10-01",
-          "detected_at": "2026-10-02"
+          "title": "Accusations d’antisémitisme : Jordan Bardella conteste à nouveau « formellement » les éléments d’authentification de Mediapart",
+          "url": "https://www.publicsenat.fr/actualites/politique/accusation-dantisemitisme-jordan-bardella-conteste-a-nouveau-formellement-les-elements-dauthentification-de-mediapart",
+          "published": "2026-10-06",
+          "detected_at": "2026-10-06"
         }
       ]
     },
@@ -148,16 +128,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "Marine Le Pen propose une « règle d’or » pour rassurer les marchés sur son sérieux budgétaire",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/02/marine-le-pen-propose-une-regle-d-or-sophistiquee-pour-rassurer-les-marches-sur-son-serieux-budgetaire_6787178_823448.html",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
+          "title": "Présidentielle 2027 : Marine Le Pen et le RN présentent leur contre-budget, avec « 140 milliards d’euros nets d’économies » en cinq ans",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/06/presidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-economies-d-ici-2032_6788959_823448.html",
+          "published": "2026-10-06",
+          "detected_at": "2026-10-06"
         },
         {
-          "title": "Budget : avec 2027 en tête, le RN veut éviter la politique de la terre brûlée",
-          "url": "https://www.lefigaro.fr/politique/budget-avec-2027-en-tete-le-rn-veut-eviter-la-politique-de-la-terre-brulee-20261001",
-          "published": "2026-10-01",
-          "detected_at": "2026-10-02"
+          "title": "Présidentielle 2027 : Marine Le Pen promet \"140 milliards d'euros nets d'économies\" d'ici 5 ans",
+          "url": "https://www.france24.com/fr/france/20261006-pr%C3%A9sidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-%C3%A9conomies-d-ici-5-ans",
+          "published": "2026-10-06",
+          "detected_at": "2026-10-06"
         }
       ]
     },
@@ -187,16 +167,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Primaire à gauche : sur France 2, les cinq candidats maintiennent leurs lignes de convergence et de fracture",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/02/primaire-a-gauche-sur-france-2-les-cinq-candidats-maintiennent-leurs-lignes-de-convergence-et-de-fracture_6786826_823448.html",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
+          "title": "Primaire à gauche : plus de 140 000 personnes se sont inscrites pour désigner leur candidat à la présidentielle",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/06/primaire-a-gauche-plus-de-140-000-inscrits-appeles-a-designer-leur-candidat-a-la-presidentielle_6788654_823448.html",
+          "published": "2026-10-06",
+          "detected_at": "2026-10-06"
         },
         {
-          "title": "Primaire socialiste et sociale-démocrate : les partisans de Raphaël Glucksmann ultra-optimistes",
-          "url": "https://www.liberation.fr/politique/primaire-socialiste-et-sociale-democrate-les-partisans-de-raphael-glucksmann-ultra-optimistes-20261002_ALQMVDBUVVGZLCJOEFMFNGKJ2Y/",
-          "published": "2026-10-02",
-          "detected_at": "2026-10-02"
+          "title": "Primaire à gauche : les accusations de « brutalisation » et la divergence sur les alliances provoquent un débat heurté",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/05/avant-la-primaire-a-gauche-un-dernier-debat-televise-sous-tension-le-spectacle-qu-on-a-donne-pendant-vingt-minutes-etait-honteux_6788468_823448.html",
+          "published": "2026-10-05",
+          "detected_at": "2026-10-06"
         }
       ]
     },
@@ -210,6 +190,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-10-02T19:19:54.332Z",
-  "program_press_hits": 23
+  "veille_scan_at": "2026-10-06T16:08:10.551Z",
+  "program_press_hits": 20
 }

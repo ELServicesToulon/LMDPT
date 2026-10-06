@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-10-01T04:48:32.674Z
+**Scan** : 2026-10-06T16:16:13.081Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Scan 2026-10-01T04:48 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
+- Ifop (30/09/2026) : le pen en tête à 36 % (intentions de vote).
 
 ## Têtes de vague (scores extraits)
 
@@ -15,7 +15,7 @@
 - **Verian** : le pen — 37 %
 - **Harris Interactive** : le pen — 35 %
 - **OpinionWay** : le pen — 35 %
-- **Harris Interactive / Toluna Harris** : le pen — 36 %
+- **Ifop** : le pen — 36 %
 
 ## Sources
 
