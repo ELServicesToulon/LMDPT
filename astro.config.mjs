@@ -43,5 +43,6 @@ export default defineConfig({
   redirects: {
     '/analyses/quatremer-marianne': ANALYSIS_INDEX_REDIRECT,
     '/analyses/livres-candidats': ANALYSIS_INDEX_REDIRECT,
+    '/analyses/on-a-vole-la-revolution-puis-la-revolte': ANALYSIS_INDEX_REDIRECT,
   },
 });

@@ -31,8 +31,8 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trump-ia-guardrails-anthropic');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('dsa-qui-decide');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
-    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('on-a-vole-la-revolution-puis-la-revolte');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('on-a-vole-la-revolution-puis-la-revolte');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
   });
 
@@ -219,38 +219,13 @@ describe('analyses', () => {
     expect(raw).toMatch(/@Mileistesfr/);
   });
 
-  it('tribune Manusk du 5 octobre est la une, sans enquête DOE ni encadré candidats', () => {
+  it('tribune Manusk du 5 octobre est retirée du catalogue public (masquée ELS 19:12)', () => {
+    expect(getAnalysis('on-a-vole-la-revolution-puis-la-revolte')).toBeUndefined();
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
+    expect(getUneDuJour()?.slug).not.toBe('on-a-vole-la-revolution-puis-la-revolte');
+    // Données conservées hors catalogue (brouillon / archive repo), non servies.
     expect(revolutionRevolte.slug).toBe('on-a-vole-la-revolution-puis-la-revolte');
-    expect(revolutionRevolte.date).toBe('2026-10-05');
-    expect(revolutionRevolte.updated).toBe('2026-10-06');
     expect(revolutionRevolte.title).toBe('On a volé la révolution, puis la révolte');
-    expect(revolutionRevolte.eyebrow).toBe('Tribune · Manusk');
-    expect(revolutionRevolte.title.length).toBeLessThanOrEqual(SOCIAL_TITLE_MAX);
-    expect(socialTitleFrom(revolutionRevolte.title)).toBe(revolutionRevolte.title);
-    const entry = getAnalysis('on-a-vole-la-revolution-puis-la-revolte');
-    expect(entry?.href).toBe('/analyses/on-a-vole-la-revolution-puis-la-revolte');
-    expect(entry?.description).toBe(revolutionRevolte.chapo);
-    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/on-a-vole-la-revolution-puis-la-revolte.jpg');
-    expect(entry?.cover?.alt).toMatch(/^Illustration à l’encre et à l’aquarelle/);
-    expect(getUneDuJour()?.slug).toBe('on-a-vole-la-revolution-puis-la-revolte');
-    expect(getUneDuJour()?.href).toBe('/analyses/on-a-vole-la-revolution-puis-la-revolte');
-    expect(getUneDuJour()?.date).toBe('2026-10-05');
-    expect(revolutionRevolte.sections.every((section) => section.kind === 'prose')).toBe(true);
-    const published = JSON.stringify(revolutionRevolte).replace(/\u00a0/g, ' ');
-    expect(published).toMatch(/n’engage pas la rédaction comme enquête DOE/);
-    expect(published).toMatch(/6 059 interpellations et 715 policiers et gendarmes blessés/);
-    expect(published).toMatch(/arrêté au 5 octobre au soir et compté depuis le 28 septembre/);
-    expect(published).toMatch(/chiffres de mi-journée, provisoires/);
-    expect(published).toMatch(/891 lycées/);
-    expect(published).toMatch(/en compte 589/);
-    expect(published).toMatch(/dix enquêtes ouvertes/);
-    expect(published).not.toMatch(/plus de 5 000 interpellations sur la semaine/);
-    expect(published).not.toMatch(/\bLens\b/);
-    expect(published).not.toMatch(/amput|ramassé la grenade|Je ne suis pas en mesure|mutilation|RTL/i);
-    expect(published).toMatch(/seuls les parquets et l’IGPN/);
-    expect(published).not.toMatch(/Saint-Ouen-l’Aumône|Sevran|parquet de Tours|Béthune|Pas-de-Calais|Val-d’Oise|Indre-et-Loire/);
-    expect(published).not.toMatch(/lycée de Lens|école de Lens/i);
-    expect(published).not.toMatch(/gate_publish|DecisionTag|relecture|GO ELS|GO-L1/);
   });
 
   it('enquête écoles de journalisme laisse les sièges vides et cite la CPNEJ', () => {

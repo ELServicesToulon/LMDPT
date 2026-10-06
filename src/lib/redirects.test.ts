@@ -8,5 +8,6 @@ describe('legacy analysis redirects', () => {
 
     expect(redirects['/analyses/quatremer-marianne']).toEqual(expected);
     expect(redirects['/analyses/livres-candidats']).toEqual(expected);
+    expect(redirects['/analyses/on-a-vole-la-revolution-puis-la-revolte']).toEqual(expected);
   });
 });

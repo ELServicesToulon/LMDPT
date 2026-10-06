@@ -182,15 +182,7 @@ function buildNewsSitemap(): string {
   const lisnardTitle =
     ANALYSIS_CATALOG.find((a) => a.slug === 'lisnard-abonnes-electeurs')?.title ??
     "Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?";
-  const revolutionTitle =
-    ANALYSIS_CATALOG.find((a) => a.slug === 'on-a-vole-la-revolution-puis-la-revolte')?.title ??
-    'On a volé la révolution, puis la révolte';
   const newsRoutes: { path: string; title: string; keywords: string }[] = [
-    {
-      path: '/analyses/on-a-vole-la-revolution-puis-la-revolte',
-      title: revolutionTitle,
-      keywords: 'tribune, Manusk, lycéens, 1789, Gilets jaunes, démocratie',
-    },
     {
       path: '/analyses/lisnard-abonnes-electeurs',
       title: lisnardTitle,

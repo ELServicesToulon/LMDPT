@@ -7,7 +7,6 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
-import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -31,19 +30,6 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
-  {
-    slug: revolutionRevolte.slug,
-    title: revolutionRevolte.title,
-    description: revolutionRevolte.description,
-    date: revolutionRevolte.date,
-    published: revolutionRevolte.date,
-    updated: revolutionRevolte.updated,
-    href: '/analyses/on-a-vole-la-revolution-puis-la-revolte',
-    cover: uneCover(
-      'on-a-vole-la-revolution-puis-la-revolte',
-      'Illustration à l’encre et à l’aquarelle : une cocarde tricolore défraîchie, rubans effilochés, posée sur un vieux pupitre d’école à côté d’un cahier ouvert aux pages blanches et d’un encrier. Au fond, une grille fermée par une chaîne et un cadenas, où restent accrochées des feuilles vierges. Tons bleu ardoise, ocre et gris chaud.',
-    ),
-  },
   {
     slug: lisnardAbonnes.slug,
     title: lisnardAbonnes.title,
