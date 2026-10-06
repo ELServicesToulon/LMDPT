@@ -70,10 +70,13 @@ describe('editorial covers', () => {
   });
 
   it('missing cover uses the labeled placeholder, never another post art', () => {
-    const other = listEditorialPosts()[0];
+    const other = listEditorialPosts().find(
+      (post) => post.cover?.src && post.cover.src !== MISSING_COVER_SRC,
+    );
     const resolved = resolveCover(null);
     expect(resolved.missing).toBe(true);
     expect(resolved.src).toBe(MISSING_COVER_SRC);
+    expect(other?.cover?.src).toBeTruthy();
     expect(resolved.src).not.toBe(other?.cover?.src);
     expect(resolved.alt.toLowerCase()).toContain('manquante');
 

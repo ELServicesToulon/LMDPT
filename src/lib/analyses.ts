@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
+import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -30,6 +31,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: revolutionRevolte.slug,
+    title: revolutionRevolte.title,
+    description: revolutionRevolte.description,
+    date: revolutionRevolte.date,
+    published: revolutionRevolte.date,
+    updated: revolutionRevolte.updated,
+    href: '/analyses/on-a-vole-la-revolution-puis-la-revolte',
+    cover: {
+      src: '/illustrations/unes/placeholder-manquante.svg',
+      alt: 'Illustration manquante — ajouter un croquis unique pour cette tribune, ne pas réutiliser une autre une',
+    },
+  },
   {
     slug: lisnardAbonnes.slug,
     title: lisnardAbonnes.title,
