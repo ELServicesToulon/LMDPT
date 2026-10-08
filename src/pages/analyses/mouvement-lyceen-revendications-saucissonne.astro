@@ -1,0 +1,79 @@
+---
+/**
+ * Tribune Manusk — mouvement lycéen (8 octobre 2026)
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StickyToc from '../../components/StickyToc.astro';
+import { DOE_FR } from '../../lib/doe';
+import { renderAnalysisInline, type AnalysisBlock } from '../../lib/analysis-inline';
+import data from '../../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
+
+type ProseSection = {
+  kind: 'prose';
+  id: string;
+  title: string;
+  blocks: AnalysisBlock[];
+};
+
+const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const sections = data.sections as ProseSection[];
+const tocItems = sections
+  .map((section) => ({ href: `#${section.id}`, label: section.title }))
+  .concat([{ href: '#sources', label: 'Sources' }]);
+---
+
+<BaseLayout title={data.title} description={data.chapo} type="article" keywords={data.tags.join(', ')}>
+  <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
+    <a href="/analyses/">Analyses</a>
+    {' → '}
+    {data.title}
+  </nav>
+
+  <section class="enq-intro" aria-labelledby="enq-title" slot="lede">
+    <p class="eyebrow">{data.eyebrow}</p>
+    <h1 id="enq-title">{data.title}</h1>
+    <p class="meta kicker"><em>{data.kicker}</em></p>
+    <p class="meta">
+      {data.type_label}
+      {' · '}
+      Rédigé le <time datetime={data.date}>{published}</time>
+      {' · '}
+      Mise à jour <time datetime={data.updated}>{updated}</time>
+    </p>
+    <p class="lead">{data.chapo}</p>
+    <blockquote class="disclaimer-box">{data.disclaimer}</blockquote>
+    <p class="meta">{DOE_FR}.</p>
+  </section>
+
+  <StickyToc title="Sommaire" items={tocItems} />
+
+  {
+    sections.map((section) => (
+      <section class="card" id={section.id} aria-labelledby={`${section.id}-title`}>
+        <h2 id={`${section.id}-title`}>{section.title}</h2>
+        {section.blocks.map((block) => {
+          if (block.type === 'p') {
+            return <p set:html={renderAnalysisInline(block.text)} />;
+          }
+          return null;
+        })}
+      </section>
+    ))
+  }
+
+  <section class="card" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources</h2>
+    <ul>
+      {
+        data.sources.map((source) => (
+          <li>
+            <a href={source.url} rel="noopener noreferrer">
+              {source.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

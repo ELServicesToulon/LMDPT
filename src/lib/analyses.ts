@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
+import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -41,6 +42,19 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     cover: uneCover(
       'lisnard-abonnes-electeurs',
       'Illustration à l’encre et à l’aquarelle : un tamis à manche bleu retient des cœurs dans sa grille, des croix passent au travers, et trois enveloppes descendent vers une urne.',
+    ),
+  },
+  {
+    slug: lyceensSaucissonne.slug,
+    title: lyceensSaucissonne.title,
+    description: lyceensSaucissonne.description,
+    date: lyceensSaucissonne.date,
+    published: lyceensSaucissonne.date,
+    updated: lyceensSaucissonne.updated,
+    href: '/analyses/mouvement-lyceen-revendications-saucissonne',
+    cover: uneCover(
+      'mouvement-lyceen-revendications-saucissonne',
+      'Croquis encre et aquarelle : porte de lycée, banderoles fragmentées et urne transparente au premier plan',
     ),
   },
   {
