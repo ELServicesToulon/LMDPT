@@ -6,6 +6,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import StickyToc from '../../components/StickyToc.astro';
 import { DOE_FR } from '../../lib/doe';
 import { renderAnalysisInline, type AnalysisBlock } from '../../lib/analysis-inline';
+import ChroniqueursArenaTeaser from '../../components/ChroniqueursArenaTeaser.astro';
 import data from '../../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
 
 type ProseSection = {
@@ -61,6 +62,8 @@ const tocItems = sections
       </section>
     ))
   }
+
+  <ChroniqueursArenaTeaser slug={data.slug} />
 
   <section class="card" id="sources" aria-labelledby="sources-title">
     <h2 id="sources-title">Sources</h2>

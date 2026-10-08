@@ -1,0 +1,34 @@
+---
+import { teaserForChronique } from '../lib/chroniqueurs-arena';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const teaser = teaserForChronique(slug);
+---
+
+{
+  teaser && teaser.catalog === 'public' && (
+    <aside class="arena-teaser card" aria-labelledby={`arena-teaser-${slug}`}>
+      <h2 id={`arena-teaser-${slug}`}>Dans l’arène des chroniqueurs</h2>
+      <p>
+        {teaser.checkCount} affirmation{teaser.checkCount > 1 ? 's' : ''} de cette tribune
+        {teaser.pullingCount > 0
+          ? `, dont ${teaser.pullingCount} tirent la corde.`
+          : '. Aucune ne tire encore la corde.'}
+      </p>
+      <p>
+        <a href="/chroniqueurs/">Voir le tir à la corde fact-checké</a>
+        {' · '}
+        ce nœud n’est pas un palmarès.
+      </p>
+    </aside>
+  )
+}
+
+<style>
+  .arena-teaser h2 { font-size: 1.05rem; margin: 0 0 0.4rem; }
+  .arena-teaser p { margin: 0 0 0.4rem; }
+</style>
