@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-10-06T16:16:13.081Z
+**Scan** : 2026-10-08T04:47:13.083Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Ifop (30/09/2026) : le pen en tête à 36 % (intentions de vote).
+- Scan 2026-10-08T04:47 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 

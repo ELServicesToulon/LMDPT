@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-06T16:16:13.081Z",
+  "fetched_at": "2026-10-08T04:47:13.083Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 11,
@@ -164,7 +164,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 1 — 32% 16% 15% 8% 11% 7% — — — — — — — — — 4% 3% — 2.5% — — — — 1% 0.5% — — 30/09/2026 IFOP 2 — 33% 21% 16% — 11% 8% — — — — — — — — — 3.5% 3% — 2.5% — — — — 1.5% 0.5% — — 30/09/2026 ",
+      "raw_snippet": "30/09/2026 IFOP 1 32% 16% 15% 8% 11% 7% — 3% 4% — — — — — 2.5% — 1% — 0.5% — — — — — — — — — 30/09/2026 IFOP 2 33% 21% 16% — 11% 8% — 3% 3.5% — — — — — 2.5% — 1.5% — 0.5% — — — — — — — — — 30/09/2026 ",
       "metric": "intentions_vote"
     },
     {
@@ -176,7 +176,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 2 — 33% 21% 16% — 11% 8% — — — — — — — — — 3.5% 3% — 2.5% — — — — 1.5% 0.5% — — 30/09/2026 IFOP 3 — 34% — 15% 15% 13% 10% — — — — — — — — — 3.5% 4% — 2.5% — — — — 2% 1% — — 30/09/2026 ",
+      "raw_snippet": "30/09/2026 IFOP 2 33% 21% 16% — 11% 8% — 3% 3.5% — — — — — 2.5% — 1.5% — 0.5% — — — — — — — — — 30/09/2026 IFOP 3 34% — 15% 15% 13% 10% — 4% 3.5% — — — — — 2.5% — 2% — 1% — — — — — — — — — 30/09/2026 ",
       "metric": "intentions_vote"
     },
     {
@@ -188,7 +188,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 3 — 34% — 15% 15% 13% 10% — — — — — — — — — 3.5% 4% — 2.5% — — — — 2% 1% — — 30/09/2026 IFOP 4 — 35% 23% 16% — — 8% — — — — — — — — 3% 4% 5% — 3.5% — — — — 1.5% 1% — — 30/09/2026 IFOP ",
+      "raw_snippet": "30/09/2026 IFOP 3 34% — 15% 15% 13% 10% — 4% 3.5% — — — — — 2.5% — 2% — 1% — — — — — — — — — 30/09/2026 IFOP 4 35% 23% 16% — — 8% — 5% 4% 3% — — — — 3.5% — 1.5% — 1% — — — — — — — — — 30/09/2026 IFOP ",
       "metric": "intentions_vote"
     },
     {
@@ -200,7 +200,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 4 — 35% 23% 16% — — 8% — — — — — — — — 3% 4% 5% — 3.5% — — — — 1.5% 1% — — 30/09/2026 IFOP 5 — 36% — 17% 17% — 11% — — — — — — — — 4% 4.5% 5.5% — 3% — — — — 1% 1% — — 30/09/2026 IFOP 6",
+      "raw_snippet": "30/09/2026 IFOP 4 35% 23% 16% — — 8% — 5% 4% 3% — — — — 3.5% — 1.5% — 1% — — — — — — — — — 30/09/2026 IFOP 5 36% — 17% 17% — 11% — 5.5% 4.5% 4% — — — — 3% — 1% — 1% — — — — — — — — — 30/09/2026 IFOP 6",
       "metric": "intentions_vote"
     },
     {
@@ -212,7 +212,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 5 — 36% — 17% 17% — 11% — — — — — — — — 4% 4.5% 5.5% — 3% — — — — 1% 1% — — 30/09/2026 IFOP 6 — 31% 15% 14% 7% 9% 5% — — — — — — — 3% — 4% 3% 2% 2% — — — 3.5% 1% 0.5% — — 30/09/2026 IF",
+      "raw_snippet": "30/09/2026 IFOP 5 36% — 17% 17% — 11% — 5.5% 4.5% 4% — — — — 3% — 1% — 1% — — — — — — — — — 30/09/2026 IFOP 6 31% 15% 14% 7% 9% 5% — 3% 4% — 3.5% 3% — — 2% 2% 1% — 0.5% — — — — — — — — — 30/09/2026 IF",
       "metric": "intentions_vote"
     },
     {
@@ -224,7 +224,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 6 — 31% 15% 14% 7% 9% 5% — — — — — — — 3% — 4% 3% 2% 2% — — — 3.5% 1% 0.5% — — 30/09/2026 IFOP 7 — 35% 24% 15% — — 8% — — — — — — — — — 4% 6% — 3% 3% — — — 1.5% 0.5% — — 30/09/2026 IFO",
+      "raw_snippet": "30/09/2026 IFOP 6 31% 15% 14% 7% 9% 5% — 3% 4% — 3.5% 3% — — 2% 2% 1% — 0.5% — — — — — — — — — 30/09/2026 IFOP 7 35% 24% 15% — — 8% — 6% 4% — — — 3% — 3% — 1.5% — 0.5% — — — — — — — — — 30/09/2026 IFO",
       "metric": "intentions_vote"
     },
     {
@@ -236,7 +236,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 7 — 35% 24% 15% — — 8% — — — — — — — — — 4% 6% — 3% 3% — — — 1.5% 0.5% — — 30/09/2026 IFOP 8 — 35% 23% 17% — — 8% — — — — — — — — — 3% 5.5% — 3.5% — 3% — — 1% 1% — — 30/09/2026 IFOP 9 ",
+      "raw_snippet": "30/09/2026 IFOP 7 35% 24% 15% — — 8% — 6% 4% — — — 3% — 3% — 1.5% — 0.5% — — — — — — — — — 30/09/2026 IFOP 8 35% 23% 17% — — 8% — 5.5% 3% — — — — 3% 3.5% — 1% — 1% — — — — — — — — — 30/09/2026 IFOP 9 ",
       "metric": "intentions_vote"
     },
     {
@@ -248,7 +248,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 8 — 35% 23% 17% — — 8% — — — — — — — — — 3% 5.5% — 3.5% — 3% — — 1% 1% — — 30/09/2026 IFOP 9 — 35% 23% 17% — — 9% — — — — — — — — — 3% 6% — 3.5% — — — — 1.5% 1% 1% — 30/09/2026 IFOP 10",
+      "raw_snippet": "30/09/2026 IFOP 8 35% 23% 17% — — 8% — 5.5% 3% — — — — 3% 3.5% — 1% — 1% — — — — — — — — — 30/09/2026 IFOP 9 35% 23% 17% — — 9% — 6% 3% — — — — — 3.5% — 1.5% 1% 1% — — — — — — — — — 30/09/2026 IFOP 10",
       "metric": "intentions_vote"
     },
     {
@@ -260,7 +260,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 9 — 35% 23% 17% — — 9% — — — — — — — — — 3% 6% — 3.5% — — — — 1.5% 1% 1% — 30/09/2026 IFOP 10 — 34% 22% 16% — — 7% — 8% — — — — — — — 4% 5% — 2.5% — — — — 1% 0.5% — — 28/09/2026 HARRIS",
+      "raw_snippet": "30/09/2026 IFOP 9 35% 23% 17% — — 9% — 6% 3% — — — — — 3.5% — 1.5% 1% 1% — — — — — — — — — 30/09/2026 IFOP 10 34% 22% 16% — — 7% 8% 5% 4% — — — — — 2.5% — 1% — 0.5% — — — — — — — — — 28/09/2026 HARRIS",
       "metric": "intentions_vote"
     },
     {
@@ -272,7 +272,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 1 — 35% 13% 17% 5% 10% 7% — — — — — — — — — 5% 3% — 2% — — — — 2% 1% — — 28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — — 2% 1%",
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 1 35% 13% 17% 5% 10% 7% — 3% 5% — — — — — 2% — 2% — 1% — — — — — — — — — 28/09/2026 HARRIS INTERACTIVE 2 35% 16% 18% — 10% 8% — 3% 5% — — — — — 2% — 2% — 1% — — — — — — —",
       "metric": "intentions_vote"
     },
     {
@@ -284,7 +284,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 2 — 35% 16% 18% — 10% 8% — — — — — — — — — 5% 3% — 2% — — — — 2% 1% — — 28/09/2026 HARRIS INTERACTIVE 3 — 36% — 17% 12% 11% 10% — — — — — — — — — 6% 3% — 2% — — — — 2% 1%",
+      "raw_snippet": "28/09/2026 HARRIS INTERACTIVE 2 35% 16% 18% — 10% 8% — 3% 5% — — — — — 2% — 2% — 1% — — — — — — — — — 28/09/2026 HARRIS INTERACTIVE 3 36% — 17% 12% 11% 10% — 3% 6% — — — — — 2% — 2% — 1% — — — — — — —",
       "metric": "intentions_vote"
     },
     {
@@ -470,18 +470,9 @@
       "pct": 36
     }
   ],
-  "movements": [
-    {
-      "at": "2026-10-06T16:16:13.081Z",
-      "kind": "new_wave",
-      "firm": "Ifop",
-      "comment": "Ifop (30/09/2026) : le pen en tête à 36 % (intentions de vote).",
-      "wave_id": "epoc-ifop-30092026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php"
-    }
-  ],
+  "movements": [],
   "brief": [
-    "Ifop (30/09/2026) : le pen en tête à 36 % (intentions de vote)."
+    "Scan 2026-10-08T04:47 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK)."
   ],
   "errors": [
     {
