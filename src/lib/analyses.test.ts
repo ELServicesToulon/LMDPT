@@ -34,6 +34,12 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG[0]?.slug).toBe('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ecoles-journalisme-pluralite');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
+      'mouvement-lyceen-revendications-saucissonne',
+    );
+    expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
+      '/analyses/mouvement-lyceen-revendications-saucissonne',
+    );
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {

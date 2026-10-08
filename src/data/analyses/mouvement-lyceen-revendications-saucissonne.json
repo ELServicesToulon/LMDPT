@@ -1,0 +1,47 @@
+{
+  "slug": "mouvement-lyceen-revendications-saucissonne",
+  "title": "Mouvement lycéen : revendications saucissonnées",
+  "eyebrow": "Tribune · Manusk",
+  "type_label": "Tribune d'opinion",
+  "date": "2026-10-08",
+  "updated": "2026-10-08",
+  "chapo": "La liste des revendications suffit à montrer que le mouvement lycéen est morcelé. Si la colère était autonome, l'urgence serait ailleurs : revenu universel, mutations technologiques — pas un budget Éducation figé. Tribune d'opinion, sans consigne de vote.",
+  "description": "La liste des revendications suffit à montrer que le mouvement lycéen est morcelé. Si la colère était autonome, l'urgence serait ailleurs : revenu universel, mutations technologiques — pas un budget Éducation figé.",
+  "disclaimer": "Tribune d'opinion signée Manusk, chroniqueur invité du Média du Premier Tour. Elle n'engage pas la rédaction comme enquête DOE. Aucun mineur nommé. Ligne éditoriale : la démocratie avant l'élimination ; aucune consigne de vote, aucun appel à la violence.",
+  "kicker": "Tribune · Manusk · 8 octobre 2026",
+  "author": "Manusk",
+  "author_role": "Chroniqueur invité",
+  "tags": ["lmdpt", "tribune", "manusk", "lyceens", "education", "revenu-universel"],
+  "x_hook": "Mouvement lycéen saucissonné : leurs revendications le montrent.",
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "texte",
+      "title": "Texte",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La preuve éclatante que le mouvement des lycéens est complètement saucissonné : il suffit de regarder leurs revendications."
+        },
+        {
+          "type": "p",
+          "text": "S'ils n'étaient pas manipulés, la véritable urgence devrait être ailleurs. Continuer à injecter de l'argent dans une Éducation nationale restée en l'état, c'est purement et simplement gâcher des tokens d'apprentissage dans un système obsolète. À l'heure des mutations technologiques, la priorité devrait être de négocier le revenu universel pour ceux qui, demain, n'auront plus d'autre choix que de scroller sur les écrans faute de perspectives."
+        },
+        {
+          "type": "p",
+          "text": "Mais attention : cela ne doit pas étouffer l'ambition. Ceux qui ont la volonté et le cran de se donner les efforts pour devenir des bâtisseurs, innover et créer le monde de demain doivent continuer à être encouragés et valorisés."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Fil X @LMDuPremierTour (8 octobre 2026)",
+      "url": "https://x.com/LMDuPremierTour/status/2108196971425001679"
+    },
+    {
+      "label": "Charte éditoriale LMDPT",
+      "url": "https://lmdpt.iarbre.org/charte/"
+    }
+  ]
+}
