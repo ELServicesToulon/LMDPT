@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -19,7 +19,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Présidentielle 2027 : François Baroin assure que Bruno Retailleau a « toutes les qualités pour créer les conditions de la surprise du premier tour »",
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-francois-baroin-assure-que-bruno-retailleau-a-toutes-les-qualites-pour-creer-les-conditions-de-la-surprise-du-premier-tour",
+          "published": "2026-10-08",
+          "detected_at": "2026-10-09"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -28,7 +36,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html"
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "press_signals": [
+        {
+          "title": "Défiscalisation des heures sup' et allocation familiale unique de 350 euros dès le premier enfant : Edouard Philippe ouvre (un peu) le carnet de chèque",
+          "url": "https://www.liberation.fr/politique/elections/defiscalisation-des-heures-sup-et-allocation-familiale-unique-de-350-euros-des-le-premier-enfant-edouard-philippe-ouvre-un-peu-le-carnet-de-cheque-20261008_BBNCC4756JFTPG7P3HBE7WIE5E/",
+          "published": "2026-10-08",
+          "detected_at": "2026-10-09"
+        },
+        {
+          "title": "Edouard Philippe veut aider les familles avec le versement d'une allocation familiale \"dès le premier enfant\" et via une réduction d'impôt",
+          "url": "https://www.franceinfo.fr/elections/presidentielle/edouard-philippe-veut-aider-les-familles-des-le-premier-enfant-et-via-une-reduction-d-impot_8229028.html#xtor=RSS-3-%5Bgeneral%5D",
+          "published": "2026-10-08",
+          "detected_at": "2026-10-09"
+        }
+      ]
     },
     {
       "slug": "parti-socialiste",
@@ -78,15 +100,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : au RN, antisémitisme et sionisme font bon mirage",
-          "url": "https://www.liberation.fr/politique/presidentielle-2027-au-rn-antisemitisme-et-sionisme-font-bon-mirage-20261007_POOK4QB2OZCVVLFZP3UYZBKI7M/",
-          "published": "2026-10-07",
-          "detected_at": "2026-10-08"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
     },
     {
       "slug": "le-pen",
@@ -98,16 +112,16 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "\"Ce n'est pas du tout crédible\" : le budget de Marine Le Pen et ses 140 milliards d'économies sous le feu des critiques",
-          "url": "https://www.franceinfo.fr/politique/front-national/ce-n-est-pas-du-tout-credible-le-budget-de-marine-le-pen-et-ses-140-milliards-d-economies-sous-le-feu-des-critiques_8227204.html#xtor=RSS-3-%5Bgeneral%5D",
+          "title": "Marine Le Pen espère financer sa campagne pour la présidentielle 2027 grâce aux prêts de particuliers",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/08/marine-le-pen-espere-financer-sa-campagne-pour-la-presidentielle-2027-grace-aux-prets-de-particuliers_6790273_823448.html",
           "published": "2026-10-08",
-          "detected_at": "2026-10-08"
+          "detected_at": "2026-10-09"
         },
         {
-          "title": "Présidentielle 2027 : le RN veut supprimer les intercommunalités",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/07/presidentielle-2027-le-rassemblement-national-veut-supprimer-les-intercommunalites_6789595_823448.html",
-          "published": "2026-10-07",
-          "detected_at": "2026-10-08"
+          "title": "Présidentielle 2027 : les propositions radicales et les chiffres flous de Marine Le Pen sur le budget de l’UE",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/08/presidentielle-2027-les-propositions-radicales-et-les-chiffres-flous-de-marine-le-pen-sur-le-budget-de-l-union-europeenne_6790175_823448.html",
+          "published": "2026-10-08",
+          "detected_at": "2026-10-09"
         }
       ]
     },
@@ -137,10 +151,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Primaire à gauche : plus de 140 000 personnes se sont inscrites pour désigner leur candidat à la présidentielle",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/06/primaire-a-gauche-plus-de-140-000-inscrits-appeles-a-designer-leur-candidat-a-la-presidentielle_6788654_823448.html",
-          "published": "2026-10-06",
-          "detected_at": "2026-10-08"
+          "title": "Primaire de la gauche sociale-démocrate : « génocide » à Gaza, ce mot qui crée une fracture entre les candidats",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/09/primaire-de-la-gauche-sociale-democrate-genocide-a-gaza-ce-mot-qui-cree-une-fracture-entre-les-candidats_6790502_823448.html",
+          "published": "2026-10-09",
+          "detected_at": "2026-10-09"
+        },
+        {
+          "title": "Primaire de la gauche sociale-démocrate : avec plus de 140 000 votants, une élection plus incertaine que prévu",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/09/primaire-a-gauche-avec-plus-de-140-000-votants-pour-designer-leur-candidat-a-la-presidentielle-une-election-plus-incertaine-que-prevu_6790500_823448.html",
+          "published": "2026-10-09",
+          "detected_at": "2026-10-09"
         }
       ]
     },
@@ -154,6 +174,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-10-08T05:16:21.972Z",
-  "program_press_hits": 21
+  "veille_scan_at": "2026-10-09T05:16:33.738Z",
+  "program_press_hits": 24
 }
