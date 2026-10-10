@@ -6,8 +6,7 @@ import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
-import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
-import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
+import generation68 from '../data/analyses/generation-68-ne-lache-rien.json';
 
 export interface AnalysisSummary {
   slug: string;
@@ -32,29 +31,16 @@ function uneCover(slug: string, alt: string): EditorialCover {
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
-    slug: lisnardAbonnes.slug,
-    title: lisnardAbonnes.title,
-    description: lisnardAbonnes.description,
-    date: lisnardAbonnes.date,
-    published: lisnardAbonnes.date,
-    updated: lisnardAbonnes.updated,
-    href: '/analyses/lisnard-abonnes-electeurs',
+    slug: generation68.slug,
+    title: generation68.title,
+    description: generation68.description,
+    date: generation68.date,
+    published: generation68.date,
+    updated: generation68.updated,
+    href: '/analyses/generation-68-ne-lache-rien',
     cover: uneCover(
-      'lisnard-abonnes-electeurs',
-      'Illustration à l’encre et à l’aquarelle : un tamis à manche bleu retient des cœurs dans sa grille, des croix passent au travers, et trois enveloppes descendent vers une urne.',
-    ),
-  },
-  {
-    slug: lyceensSaucissonne.slug,
-    title: lyceensSaucissonne.title,
-    description: lyceensSaucissonne.description,
-    date: lyceensSaucissonne.date,
-    published: lyceensSaucissonne.date,
-    updated: lyceensSaucissonne.updated,
-    href: '/analyses/mouvement-lyceen-revendications-saucissonne',
-    cover: uneCover(
-      'mouvement-lyceen-revendications-saucissonne',
-      'Croquis encre et aquarelle : porte de lycée, banderoles fragmentées et urne transparente au premier plan',
+      'generation-68-ne-lache-rien',
+      'Croquis encre et aquarelle : deux silhouettes de générations différentes sur un même banc de lycée, barricade en arrière-plan et fauteuils de pouvoir au second plan',
     ),
   },
   {

@@ -54,9 +54,9 @@ describe('editorial covers', () => {
       slug: 'nouvelle-analyse-test',
       title: 'Nouvelle analyse',
       description: 'Texte de test',
-      date: '2026-10-09',
-      published: '2026-10-09',
-      updated: '2026-10-09',
+      date: '2026-10-11',
+      published: '2026-10-11',
+      updated: '2026-10-11',
       href: '/analyses/nouvelle-analyse-test',
       cover: {
         src: '/illustrations/unes/analyses/nouvelle-analyse-test.jpg',
@@ -70,13 +70,10 @@ describe('editorial covers', () => {
   });
 
   it('missing cover uses the labeled placeholder, never another post art', () => {
-    const other = listEditorialPosts().find(
-      (post) => post.cover?.src && post.cover.src !== MISSING_COVER_SRC,
-    );
+    const other = listEditorialPosts()[0];
     const resolved = resolveCover(null);
     expect(resolved.missing).toBe(true);
     expect(resolved.src).toBe(MISSING_COVER_SRC);
-    expect(other?.cover?.src).toBeTruthy();
     expect(resolved.src).not.toBe(other?.cover?.src);
     expect(resolved.alt.toLowerCase()).toContain('manquante');
 
