@@ -4,7 +4,7 @@
  * Simulateur interactif pour l'Assemblée du Premier Tour (AN1T).
  * - Sliders % par bloc civique (basé sur AN1T_BLOCS)
  * - Slider seuil d'éligibilité (0-10%)
- * - Calcul live via impl JS miroir de allocateSainteLague + simulateFromVoteShares (lib/an1t.ts)
+ * - Calcul live via simulateFromVoteShares (lib/an1t.ts), mêmes blocs que AN1T_BLOCS
  * - Affichage tableau sièges + % 
  * - Comparaison vs Assemblée réelle 2024 (delta)
  * Neutre, pédagogique, accessible, mobile-first. Aucune prédiction.
@@ -57,6 +57,16 @@ const REELLE_SEATS: Record<string, number> = {
   lr: 47,
   autres: 124,
 };
+
+const an1tBootJson = JSON.stringify({
+  preset2022: PRESET_T1_2022,
+  preset2017: PRESET_T1_2017,
+  multi: MULTI_SCRUTIN,
+  blocs: BLOCS,
+  defaultPcts: DEFAULT_PCTS,
+  reelle: REELLE_SEATS,
+  totalSeats,
+}).replaceAll('<', '\\u003c');
 ---
 
 <section class="an1t-simulator card" aria-labelledby="an1t-sim-title">
@@ -589,100 +599,19 @@ const REELLE_SEATS: Record<string, number> = {
   }
 </style>
 
-<script
-  define:vars={{
-    PRESET_T1_2022_CLIENT: PRESET_T1_2022,
-    PRESET_T1_2017_CLIENT: PRESET_T1_2017,
-    MULTI_SCRUTIN_CLIENT: MULTI_SCRUTIN,
-  }}
->
-  // === Miroir exact des fonctions de lib/an1t.ts pour le client (live calc) ===
-  // allocateSainteLague + simulateFromVoteShares (sans dépendances, pur JS)
-  function allocateSainteLagueClient(
-    items: Array<{ id: string; votes: number }>,
-    totalSeats: number,
-    thresholdPct = 3
-  ): Map<string, number> {
-    const totalVotes = items.reduce((sum, i) => sum + i.votes, 0);
-    if (totalVotes === 0 || totalSeats <= 0) return new Map();
+<script type="application/json" id="an1t-sim-boot" set:html={an1tBootJson} />
+<script>
+  import { simulateFromVoteShares } from '../lib/an1t';
 
-    const minVotes = (totalVotes * thresholdPct) / 100;
-    const eligible = items.filter((i) => i.votes >= minVotes);
-    if (eligible.length === 0) return new Map();
+  const boot = JSON.parse(document.getElementById('an1t-sim-boot')?.textContent || '{}');
+  const BLOCS = boot.blocs;
+  const DEFAULT_PCTS = boot.defaultPcts;
+  let REELLE: Record<string, number> = { ...boot.reelle };
+  const TOTAL_SEATS = boot.totalSeats;
+  const PRESET_T1_2022_CLIENT = boot.preset2022;
+  const PRESET_T1_2017_CLIENT = boot.preset2017;
+  const MULTI_SCRUTIN_CLIENT = boot.multi;
 
-    const seats = new Map<string, number>(eligible.map((i) => [i.id, 0]));
-
-    for (let assigned = 0; assigned < totalSeats; assigned += 1) {
-      let bestId: string | null = null;
-      let bestQ = -1;
-      for (const item of eligible) {
-        const current = seats.get(item.id) ?? 0;
-        const q = item.votes / (2 * current + 1);
-        if (q > bestQ) {
-          bestQ = q;
-          bestId = item.id;
-        }
-      }
-      if (!bestId) break;
-      seats.set(bestId, (seats.get(bestId) ?? 0) + 1);
-    }
-    return seats;
-  }
-
-  function simulateFromVoteSharesClient(
-    shares: Array<{ id: string; label: string; color: string; pct: number }>,
-    totalSeats = 577,
-    thresholdPct = 3
-  ) {
-    if (!shares || shares.length === 0) return [];
-
-    const totalPct = shares.reduce((sum, s) => sum + Math.max(0, s.pct), 0) || 100;
-    const items = shares.map((sh) => ({
-      id: sh.id,
-      votes: Math.round((sh.pct / totalPct) * 100000000),
-    }));
-
-    const seatMap = allocateSainteLagueClient(items, totalSeats, thresholdPct);
-
-    return shares
-      .map((sh) => {
-        const seats = seatMap.get(sh.id) ?? 0;
-        return {
-          id: sh.id,
-          label: sh.label,
-          color: sh.color,
-          pctExprimes: sh.pct,
-          seats,
-          pctSeats: totalSeats > 0 ? (seats / totalSeats) * 100 : 0,
-        };
-      })
-      .sort((a, b) => b.seats - a.seats || b.pctExprimes - a.pctExprimes);
-  }
-
-  // Blocs (doivent rester synchrones avec AN1T_BLOCS côté serveur)
-  const BLOCS = [
-    { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443' },
-    { id: 'ensemble', label: 'Ensemble / centre présidentiel', color: '#ffeb00' },
-    { id: 'rn', label: 'Rassemblement national & alliés droite', color: '#0d378a' },
-    { id: 'lr', label: 'Droite républicaine', color: '#0066cc' },
-    { id: 'autres', label: 'Régionalistes & divers', color: '#dddddd' },
-  ];
-
-  const DEFAULT_PCTS: Record<string, number> = {
-    rn: 33.0,
-    nfp: 28.0,
-    ensemble: 20.0,
-    lr: 6.5,
-    autres: 12.5,
-  };
-
-  let REELLE: Record<string, number> = {
-    nfp: 182,
-    ensemble: 99,
-    rn: 125,
-    lr: 47,
-    autres: 124,
-  };
   let realPending = false;
 
   const PRESETS: Record<string, Record<string, number>> = {
@@ -753,8 +682,6 @@ const REELLE_SEATS: Record<string, number> = {
     const presetKey = MODE_TO_PRESET[modeId] || 'reset';
     applyPreset(presetKey);
   }
-
-  const TOTAL_SEATS = 577;
 
   function normalizePcts(pcts: Record<string, number>): Record<string, number> {
     const sum = Object.values(pcts).reduce((a, b) => a + Math.max(0, b), 0);
@@ -951,7 +878,7 @@ const REELLE_SEATS: Record<string, number> = {
   function runLiveSimulation() {
     const threshold = getThreshold();
     const shares = getCurrentShares(threshold);
-    const results = simulateFromVoteSharesClient(shares, TOTAL_SEATS, threshold);
+    const results = simulateFromVoteShares(shares, TOTAL_SEATS, threshold);
 
     renderTable(results, threshold);
     renderComparison(results);
@@ -1170,7 +1097,7 @@ const REELLE_SEATS: Record<string, number> = {
   function getExportRows() {
     const th = parseFloat((document.getElementById('an1t-threshold') as HTMLInputElement)?.value || '3') || 3;
     const shares = getCurrentShares(th);
-    const results = simulateFromVoteSharesClient(shares, TOTAL_SEATS, th);
+    const results = simulateFromVoteShares(shares, TOTAL_SEATS, th);
     return { th, shares, results };
   }
 

@@ -169,7 +169,10 @@ const rows: Array<{
 let writeCount = 0;
 for (const file of files) {
   const raw = readFileSync(file, 'utf8');
-  const brokenUrl = /https?:\s+\/\//.test(raw) || /\?\s+utm_/.test(raw);
+  const brokenUrl =
+    /https?:\s+\/\//.test(raw) ||
+    /\?\s+utm_/.test(raw) ||
+    /https?:\/\/lmdpt\.iarbre\.org[^\s?#]*[À-ÿ]/.test(raw);
   const { markdown, reports, changed } = rewriteDraft(raw);
   const agg = reports[0]!;
   rows.push({

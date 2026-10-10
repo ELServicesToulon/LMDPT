@@ -1,11 +1,43 @@
 {
-  "fetched_at": "2026-10-09T18:27:21.792Z",
+  "fetched_at": "2026-10-10T05:30:13.251Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
   "feeds_ok": 9,
   "feeds_error": 0,
   "items": [
+    {
+      "title": "Présidentielle 2027 : en plein mouvement lycéen, Gabriel Attal mise sur l’affrontement avec Jean-Luc Mélenchon pour relancer sa campagne",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/10/presidentielle-2027-en-plein-mouvement-lyceen-gabriel-attal-mise-sur-l-affrontement-avec-jean-luc-melenchon-pour-relancer-sa-campagne_6790958_6205049.html",
+      "published": "2026-10-10",
+      "summary": "Le candidat Renaissance tient un meeting à Lyon, samedi, où il compte mettre en scène une rivalité avec le leader de La France insoumise. Un moyen de sortir de son duel avec Edouard Philippe, favori du bloc central, comme des crises de la rentrée.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Attal / Renaissance) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Référendum : l’histoire tourmentée de l’article 11 de la Constitution, au cœur de la campagne présidentielle",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/10/referendum-l-histoire-tourmentee-de-l-article-11-de-la-constitution-au-c-ur-de-la-campagne-presidentielle_6790950_823448.html",
+      "published": "2026-10-10",
+      "summary": "Bruno Retailleau et Marine Le Pen veulent réécrire ce texte qui limite le champ d’application de cette consultation directe afin de permettre son usage sur des sujets tels que l’immigration ou le voile. Une manière de faire passer des réformes qu’ils savent contraires à la Loi fo",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : le pen, marine le pen, référendum"
+      }
+    },
     {
       "title": "Primaire à gauche : le vote est prolongé jusqu’à dimanche 18 heures, en raison de la cyberattaque qui a visé la plateforme",
       "url": "https://www.lemonde.fr/politique/article/2026/10/09/primaire-a-gauche-le-vote-prolonge-jusqu-a-dimanche-18-heures-en-raison-de-la-cyberattaque-qui-a-vise-la-plateforme_6790554_823449.html",
@@ -20,38 +52,6 @@
         "color": "#5a6570",
         "confidence": 0.35,
         "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : « Marine Le Pen révise son logiciel social-populiste et tente de lui adjoindre son pendant libéral »",
-      "url": "https://www.lemonde.fr/idees/article/2026/10/09/presidentielle-2027-marine-le-pen-revise-son-logiciel-social-populiste-et-tente-de-lui-adjoindre-son-pendant-liberal_6790546_3232.html",
-      "published": "2026-10-09",
-      "summary": "A vouloir contenter de multiples clientèles, l’économie populiste « tous azimuts » de la candidate du Rassemblement national opère aux dépens de toute cohérence doctrinale, analyse Gilles Ivaldi, spécialiste de l’extrême droite, dans une tribune au « Monde ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
-      }
-    },
-    {
-      "title": "Jérôme Guedj, la « mauvaise conscience » de la primaire de la gauche",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/jerome-guedj-la-mauvaise-conscience-de-la-primaire-de-la-gauche_6790524_823448.html",
-      "published": "2026-10-09",
-      "summary": "Le député de l’Essonne, qui souhaite incarner une gauche républicaine, universaliste et laïque, rappelle constamment le caractère infréquentable de La France insoumise. Au risque de réduire sa candidature à une ligne de fracture.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Socialiste / social-démocrate) — teinte pluraliste."
       }
     },
     {
@@ -71,19 +71,19 @@
       }
     },
     {
-      "title": "Contre-budget RN : l’amorce d’une politique antisociale",
-      "url": "https://www.liberation.fr/politique/elections/contre-budget-rn-lamorce-dune-politique-antisociale-20261009_RXGWQNWUUZFFDCQGUP27LUNQNE/",
+      "title": "Présidentielle 2027 : « Marine Le Pen révise son logiciel social-populiste et tente de lui adjoindre son pendant libéral »",
+      "url": "https://www.lemonde.fr/idees/article/2026/10/09/presidentielle-2027-marine-le-pen-revise-son-logiciel-social-populiste-et-tente-de-lui-adjoindre-son-pendant-liberal_6790546_3232.html",
       "published": "2026-10-09",
-      "summary": "Pour financer son hypothétique programme économique présenté mardi, le Rassemblement national devrait mettre à contribution bien plus de personnes que ses cibles habituelles, étrangers, Union européenne, agences de l’Etat… Sans toujours l’assumer ouvertement.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
+      "summary": "A vouloir contenter de multiples clientèles, l’économie populiste « tous azimuts » de la candidate du Rassemblement national opère aux dépens de toute cohérence doctrinale, analyse Gilles Ivaldi, spécialiste de l’extrême droite, dans une tribune au « Monde ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "le-pen",
         "label": "Le Pen / RN",
         "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
+        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
       }
     },
     {
@@ -119,19 +119,35 @@
       }
     },
     {
-      "title": "Michel Barnier au Figaro : «Je souhaite un seul candidat à la fin et que ce soit Bruno Retailleau»",
-      "url": "https://www.lefigaro.fr/elections/presidentielles/michel-barnier-au-figaro-je-souhaite-un-seul-candidat-a-la-fin-et-que-ce-soit-bruno-retailleau-20261009",
+      "title": "Contre-budget RN : l’amorce d’une politique antisociale",
+      "url": "https://www.liberation.fr/politique/elections/contre-budget-rn-lamorce-dune-politique-antisociale-20261009_RXGWQNWUUZFFDCQGUP27LUNQNE/",
       "published": "2026-10-09",
-      "summary": "ENTRETIEN - En marge du Sommet de l’élevage, ce vendredi 9 octobre à Cournon-d’Auvergne, l’ex-premier ministre explique pourquoi il pense que le candidat des Républicains s’imposera comme l’homme du rassemblement de la droite. Tout en pressant l’exécutif de ne pas laisser filer l",
-      "source_id": "lefigaro-politique",
-      "source_label": "Le Figaro — Politique",
+      "summary": "Pour financer son hypothétique programme économique présenté mardi, le Rassemblement national devrait mettre à contribution bien plus de personnes que ses cibles habituelles, étrangers, Union européenne, agences de l’Etat… Sans toujours l’assumer ouvertement.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : retailleau, républicains, republicains"
+        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
+      }
+    },
+    {
+      "title": "Budget 2027 : les députés rejettent largement la partie « recettes » en commission, le texte débattu à partir de mardi dans l’Hémicycle",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/09/budget-2027-les-deputes-rejettent-la-partie-recettes-en-commission_6790637_823448.html",
+      "published": "2026-10-09",
+      "summary": "La mise à contribution des retraités et des collectivités a cristallisé les tensions lors des débats en commission sur le budget 2027. Les députés repartiront de la copie initiale dans l’Hémicycle, dès mardi.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "lisnard",
+        "label": "Lisnard / droite locale",
+        "color": "#162561",
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : collectivités, collectivites"
       }
     },
     {
@@ -151,6 +167,22 @@
       }
     },
     {
+      "title": "Au dernier jour d'examen de la loi \"intégrale\", le Rassemblement national fait tomber plusieurs mesures",
+      "url": "https://www.franceinfo.fr/societe/harcelement-sexuel/au-dernier-jour-d-examen-de-la-loi-integrale-le-rassemblement-national-fait-tomber-plusieurs-mesures_8230735.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-09",
+      "summary": "Ces votes ont suscité les critiques de la coalition féministe et enfantiste à l'origine du texte, celle-ci dénonçant un \"recul\" sur \"les droits au travail et la protection des femmes étrangères\".",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "le-pen",
+        "label": "Le Pen / RN",
+        "color": "#0d378a",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : rassemblement national, rassemblement national"
+      }
+    },
+    {
       "title": "Le sinueux parcours de Ségolène Royal et Raphaël Glucksmann, deux candidats de gauche qui s’accusent d’être de droite",
       "url": "https://www.lemonde.fr/les-decodeurs/article/2026/10/09/le-sinueux-parcours-de-segolene-royal-et-raphael-glucksmann-deux-candidats-de-gauche-qui-s-accusent-d-etre-de-droite_6790533_4355770.html",
       "published": "2026-10-09",
@@ -167,12 +199,12 @@
       }
     },
     {
-      "title": "Vote à 16 ans : « Elargir le cercle des électeurs, c’est la manière dont une démocratie se rend des comptes à elle-même »",
-      "url": "https://www.lemonde.fr/idees/article/2026/10/09/vote-a-16-ans-elargir-le-cercle-des-electeurs-c-est-la-maniere-dont-une-democratie-se-rend-des-comptes-a-elle-meme_6790503_3232.html",
+      "title": "Les lycéens réagissent aux mesures proposées par Édouard Geffray",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20261009-les-lyc%C3%A9ens-r%C3%A9agissent-aux-mesures-propos%C3%A9es-par-%C3%A9douard-geffray",
       "published": "2026-10-09",
-      "summary": "Alors que les lycéens français, inquiets pour leur avenir, se mobilisent, Ridhwane Allouche, chargé d’enseignement en droit, défend dans une tribune au « Monde » l’abaissement de l’âge du suffrage.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "summary": "\"C'est un premier pas, mais il y a encore plein de changements à faire.\" Manifestations lycéennes en #France : le ministre de l’Éducation, Édouard Geffray, a dévoilé jeudi soir, des mesures d’urgence. L’une d’elles : l’arrivée de 3 000 professeurs remplaçants dès vendredi dans le",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -199,22 +231,6 @@
       }
     },
     {
-      "title": "Immigration, allocations familiales, Parcoursup… Ce qu'il faut retenir de l'interview d'Edouard Philippe dans l'émission \"L'Heure de vérité\" sur France 2",
-      "url": "https://www.franceinfo.fr/politique/edouard-philippe/immigration-retraites-allocations-familiales-parcoursup-ce-qu-il-faut-retenir-de-l-interview-d-edouard-philippe-dans-l-emission-l-heure-de-verite_8228416.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-10-09",
-      "summary": "Le candidat Horizons à la présidentielle était l'invité de la nouvelle émission politique de France 2. Voici les passages marquants à retenir de cette interview de plus de deux heures.",
-      "source_id": "franceinfo-politique",
-      "source_label": "franceinfo — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
-      }
-    },
-    {
       "title": "Emmanuel Maurel, la surprise des débats de la primaire sociale-démocrate",
       "url": "https://www.lemonde.fr/politique/article/2026/10/09/emmanuel-maurel-la-surprise-des-debats-de-la-primaire-sociale-democrate_6790531_823448.html",
       "published": "2026-10-09",
@@ -228,38 +244,6 @@
         "color": "#ff8080",
         "confidence": 0.56,
         "rationale": "Proximité lexicale : socialiste"
-      }
-    },
-    {
-      "title": "Les lycéens réagissent aux mesures proposées par Édouard Geffray",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20261009-les-lyc%C3%A9ens-r%C3%A9agissent-aux-mesures-propos%C3%A9es-par-%C3%A9douard-geffray",
-      "published": "2026-10-09",
-      "summary": "\"C'est un premier pas, mais il y a encore plein de changements à faire.\" Manifestations lycéennes en #France : le ministre de l’Éducation, Édouard Geffray, a dévoilé jeudi soir, des mesures d’urgence. L’une d’elles : l’arrivée de 3 000 professeurs remplaçants dès vendredi dans le",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Bruno Retailleau reçoit le soutien de François Baroin (qui croit encore aux miracles)",
-      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-bruno-retailleau-recoit-le-soutien-de-francois-baroin-qui-croit-encore-aux-miracles-20261009_GJRDICS3OZGYVGBYYRS2DPQQRI/",
-      "published": "2026-10-09",
-      "summary": "En déplacement à Troyes pour le séminaire de rentrée des sénateurs LR, le candidat à la présidentielle a obtenu l’appui du maire de la ville jeudi 8 octobre.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "retailleau",
-        "label": "Retailleau / LR",
-        "color": "#0066cc",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : retailleau"
       }
     },
     {
@@ -279,19 +263,19 @@
       }
     },
     {
-      "title": "Budget 2027 : les députés socialistes font planer la menace d’une motion de rejet préalable",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/budget-2027-les-deputes-socialistes-font-planer-la-menace-d-une-motion-de-rejet-prealable_6790522_823448.html",
+      "title": "Michel Barnier au Figaro : «Je souhaite un seul candidat à la fin et que ce soit Bruno Retailleau»",
+      "url": "https://www.lefigaro.fr/elections/presidentielles/michel-barnier-au-figaro-je-souhaite-un-seul-candidat-a-la-fin-et-que-ce-soit-bruno-retailleau-20261009",
       "published": "2026-10-09",
-      "summary": "Les députés socialistes ont déposé une motion sur la première partie du projet de loi de finances, consacrée aux recettes. Si elle est votée, mardi 13 octobre, le texte partirait directement au Sénat.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "summary": "ENTRETIEN - En marge du Sommet de l’élevage, ce vendredi 9 octobre à Cournon-d’Auvergne, l’ex-premier ministre explique pourquoi il pense que le candidat des Républicains s’imposera comme l’homme du rassemblement de la droite. Tout en pressant l’exécutif de ne pas laisser filer l",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : retailleau, républicains, republicains"
       }
     },
     {
@@ -311,6 +295,22 @@
       }
     },
     {
+      "title": "Pour les meetings de Mélenchon, LFI veut coller aux basques de ses adversaires",
+      "url": "https://www.liberation.fr/politique/pour-les-meetings-de-melenchon-lfi-veut-coller-aux-basques-de-ses-adversaires-20261009_YDXFFQMF3VCYPAI64WBUPZK62A/",
+      "published": "2026-10-09",
+      "summary": "Le coordinateur du mouvement Manuel Bompard a explicité la stratégie de campagne insoumise : organiser des meetings proches de ceux des autres candidats comme démonstration de force.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+      }
+    },
+    {
       "title": "Primaire des sociale-démocrates : un scrutin plus incertin que prévu",
       "url": "https://www.france24.com/fr/vid%C3%A9o/20261009-primaire-des-sociale-d%C3%A9mocrates-un-scrutin-plus-incertin-que-pr%C3%A9vu",
       "published": "2026-10-09",
@@ -324,6 +324,22 @@
         "color": "#5a6570",
         "confidence": 0.75,
         "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : le très droitier Gilles Platret présente sa candidature et embouteille son espace politique",
+      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-le-tres-droitier-gilles-platret-presente-sa-candidature-et-embouteille-son-espace-politique-20261009_AKT3J6HRJJFFBJK6I7QQ6TSJ4Q/",
+      "published": "2026-10-09",
+      "summary": "Le maire de Châlon-sur-Saône, ancien vice-président de LR, a annoncé dans sa ville son intention de concourir à la magistrature suprême, jeudi soir. Ajoutant son nom à la longue, longue liste de prétendants de droite et d’extrême droite.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
       }
     },
     {
@@ -391,10 +407,10 @@
       }
     },
     {
-      "title": "Pour les meetings de Mélenchon, LFI veut coller aux basques de ses adversaires",
-      "url": "https://www.liberation.fr/politique/pour-les-meetings-de-melenchon-lfi-veut-coller-aux-basques-de-ses-adversaires-20261009_YDXFFQMF3VCYPAI64WBUPZK62A/",
+      "title": "Dans le Puy-de-Dôme, des insoumis en campagne «bal trad»",
+      "url": "https://www.liberation.fr/politique/elections/dans-le-puy-de-dome-des-insoumis-en-campagne-bal-trad-20261009_WHXSW5PCSJDLDAZRKDK77W4VAI/",
       "published": "2026-10-09",
-      "summary": "Le coordinateur du mouvement Manuel Bompard a explicité la stratégie de campagne insoumise : organiser des meetings proches de ceux des autres candidats comme démonstration de force.",
+      "summary": "Une semaine avant la venue de Jean-Luc Mélenchon, dimanche 11 octobre à Clermont-Ferrand, ses troupes organisaient, à la campagne, une soirée festive et politique destinée à prouver qu’ils ne comptent pas seulement sur les grandes villes et leurs banlieues en 2027.",
       "source_id": "liberation-politique",
       "source_label": "Libération — Politique",
       "source_type": "traditional",
@@ -423,19 +439,19 @@
       }
     },
     {
-      "title": "Budget 2027 de la Sécurité sociale : le gouvernement veut à nouveau dérembourser les cures thermales",
-      "url": "https://www.publicsenat.fr/actualites/sante/budget-2027-de-la-securite-sociale-le-gouvernement-veut-a-nouveau-derembourser-les-cures-thermales",
+      "title": "Présidentielle 2027 : Bruno Retailleau reçoit le soutien de François Baroin (qui croit encore aux miracles)",
+      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-bruno-retailleau-recoit-le-soutien-de-francois-baroin-qui-croit-encore-aux-miracles-20261009_GJRDICS3OZGYVGBYYRS2DPQQRI/",
       "published": "2026-10-09",
-      "summary": "Comme l’an dernier, le ministère de la Santé propose dans le cadre du projet de loi de financement de la Sécurité sociale 200 millions d’euros d’économies sur le champ des cures thermales, pour l’Assurance maladie. La charge serait alors transférée aux complémentaires. L’an derni",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
+      "summary": "En déplacement à Troyes pour le séminaire de rentrée des sénateurs LR, le candidat à la présidentielle a obtenu l’appui du maire de la ville jeudi 8 octobre.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "retailleau",
         "label": "Retailleau / LR",
         "color": "#0066cc",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : sécurité, securite"
+        "confidence": 0.77,
+        "rationale": "Proximité lexicale : retailleau"
       }
     },
     {
@@ -484,22 +500,6 @@
         "color": "#0d378a",
         "confidence": 0.77,
         "rationale": "Proximité lexicale : rn"
-      }
-    },
-    {
-      "title": "Défiscalisation des heures sup' et allocation familiale unique de 350 euros dès le premier enfant : Edouard Philippe ouvre (un peu) le carnet de chèque",
-      "url": "https://www.liberation.fr/politique/elections/defiscalisation-des-heures-sup-et-allocation-familiale-unique-de-350-euros-des-le-premier-enfant-edouard-philippe-ouvre-un-peu-le-carnet-de-cheque-20261008_BBNCC4756JFTPG7P3HBE7WIE5E/",
-      "published": "2026-10-08",
-      "summary": "Premier invité de la nouvelle version de L’Heure de vérité sur France 2, le candidat Horizons à la présidentielle a annoncé plusieurs mesures destinées à adoucir la potion économique amère qu’il propose aux Français.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe, horizons"
       }
     },
     {

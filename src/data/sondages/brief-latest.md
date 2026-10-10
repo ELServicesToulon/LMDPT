@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-10-09T16:16:39.094Z
+**Scan** : 2026-10-10T16:18:13.097Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Scan 2026-10-09T16:16 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
+- Scan 2026-10-10T16:18 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 

@@ -21,6 +21,12 @@ import {
   moderationStartupWarning,
   resolveModeratorAccounts,
 } from './lib/moderators.mjs';
+import {
+  FIRST_ROUND_HUES as HUES,
+  ROLE_LEVEL,
+  classifyPoliticalHueHeuristic as classifyHeuristic,
+  hueBySlug,
+} from '../src/lib/comment-politics.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = process.env.LMDPT_COMMENTS_DATA || join(__dirname, 'data');
@@ -28,51 +34,6 @@ const PORT = Number(process.env.LMDPT_COMMENTS_PORT || 8796);
 const HOST = process.env.LMDPT_COMMENTS_HOST || '127.0.0.1';
 const OLLAMA = (process.env.OLLAMA_HOST || 'http://127.0.0.1:11434').replace(/\/$/, '');
 const OLLAMA_MODEL = process.env.LMDPT_COMMENTS_MODEL || 'gemma2:27b';
-
-const ROLE_LEVEL = {
-  lecteur: 0,
-  contributeur: 1,
-  modo: 2,
-  'modo-senior': 3,
-  redaction: 4,
-};
-
-/** Aligné sur src/lib/comment-politics.ts — teintes 1er tour (commentaires + articles presse) */
-const HUES = [
-  { slug: 'melenchon', label: 'Mélenchon / LFI', color: '#cc2443', themes: ['insoumis', 'lfi', 'mélenchon', 'france insoumise', 'retraite 60', 'smic', 'planification', 'sixième république'] },
-  { slug: 'ruffin', label: 'Ruffin', color: '#c0392b', themes: ['ruffin', 'ouvrier', 'picardie'] },
-  { slug: 'parti-socialiste', label: 'Socialiste / social-démocrate', color: '#ff8080', themes: ['socialiste', 'social-démocrate', 'cazeneuve', 'hollande', 'égalité', 'service public', 'glucksmann', 'primaire socialiste'] },
-  { slug: 'glucksmann', label: 'Glucksmann / Place publique', color: '#e85d75', themes: ['glucksmann', 'place publique', 'europe sociale'] },
-  { slug: 'roussel', label: 'Roussel / PCF', color: '#dd0000', themes: ['communiste', 'pcf', 'roussel', 'nucléaire'] },
-  { slug: 'ecolo', label: 'Écologiste', color: '#00c000', themes: ['écologie', 'climat', 'biodiversité', 'transition', 'tondelier', 'eelv'] },
-  { slug: 'attal', label: 'Attal / Renaissance', color: '#ffeb00', themes: ['attal', 'renaissance', 'macron', 'école', 'autorité', 'macronie', 'bloc central'] },
-  { slug: 'philippe', label: 'Philippe / Horizons', color: '#0001b8', themes: ['édouard philippe', 'edouard philippe', 'horizons', 'centre droit'] },
-  { slug: 'barrot', label: 'Barrot / centre', color: '#ff9900', themes: ['barrot', 'modem', 'démocrates', 'bayrou'] },
-  {
-    slug: 'retailleau',
-    label: 'Retailleau / LR',
-    color: '#0066cc',
-    themes: [
-      'retailleau',
-      'républicains',
-      'les républicains',
-      'sécurité',
-      'immigration',
-      'prison',
-      'détenu',
-      'détention',
-      'emprisonnement',
-      'peine',
-      'justice pénale',
-      'bertrand',
-    ],
-  },
-  { slug: 'lisnard', label: 'Lisnard', color: '#162561', themes: ['lisnard', 'maire', 'collectivités', 'nouvelle énergie'] },
-  { slug: 'le-pen', label: 'Le Pen / RN', color: '#0d378a', themes: ['le pen', 'marine le pen', 'rassemblement national', 'priorité nationale', 'référendum', 'frontières'] },
-  { slug: 'bardella', label: 'Bardella / RN', color: '#0d378a', themes: ['bardella', 'jeunesse'] },
-  { slug: 'zemmour', label: 'Zemmour / Reconquête', color: '#000080', themes: ['zemmour', 'reconquête', 'knafo', 'remigration'] },
-  { slug: 'pluraliste', label: 'Pluraliste / transversal 1er tour', color: '#5a6570', themes: ['premier tour', 'pluralité', 'démocratie', 'proportionnelle', 'représentation'] },
-];
 
 const previews = new Map(); // token → preview payload (TTL in-memory)
 
@@ -373,38 +334,6 @@ function readBody(req, { raw = false } = {}) {
 
 function parseForm(text) {
   return Object.fromEntries(new URLSearchParams(String(text || '')));
-}
-
-function classifyHeuristic(text) {
-  const t = text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '');
-  let best = { slug: 'pluraliste', score: 0, hit: '' };
-  for (const h of HUES) {
-    if (h.slug === 'pluraliste') continue;
-    let score = 0;
-    const hits = [];
-    for (const theme of h.themes) {
-      const th = theme
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/\p{M}/gu, '');
-      if (t.includes(th)) {
-        score += 2;
-        hits.push(theme);
-      }
-    }
-    if (score > best.score) best = { slug: h.slug, score, hit: hits.slice(0, 3).join(', ') };
-  }
-  if (best.score === 0) {
-    return { slug: 'pluraliste', confidence: 0.35, rationale: 'Aucune proximité nette — teinte pluraliste (1er tour).' };
-  }
-  return {
-    slug: best.slug,
-    confidence: Math.min(0.85, 0.4 + best.score * 0.1),
-    rationale: `Proximité lexicale : ${best.hit}`,
-  };
 }
 
 /**
@@ -734,7 +663,7 @@ async function buildPreview(raw) {
       engine: 'heuristic-fr',
     };
   }
-  const hue = HUES.find((x) => x.slug === result.slug) || HUES[HUES.length - 1];
+  const hue = hueBySlug(result.slug);
   const token = randomUUID();
   const payload = {
     token,

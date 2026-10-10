@@ -471,17 +471,3 @@ export function hueBadgesForPublication(opts: {
   }
   return [toHueBadge(hueBySlug('pluraliste'))];
 }
-
-export function lightReformulate(text: string): string {
-  let s = text.replace(/\s+/g, ' ').trim();
-  if (!s) return s;
-  s = s.charAt(0).toUpperCase() + s.slice(1);
-  if (!/[.!?…]$/.test(s)) s += '.';
-  // nettoyage basique
-  s = s
-    .replace(/\bi+\b/gi, 'je')
-    .replace(/\b digne\b/gi, ' digne')
-    .replace(/ ,/g, ',')
-    .replace(/ \./g, '.');
-  return s;
-}

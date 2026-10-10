@@ -1,3 +1,6 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import leg2024National from '../data/elections/2024-legislatives-1er-tour-national.json';
 import leg2024Circos from '../data/elections/2024-legislatives-1er-tour-circonscriptions.json';
@@ -98,5 +101,44 @@ describe('an1t', () => {
     expect(seats.reduce((s, r) => s + r.seats, 0)).toBe(577);
     expect(seats.some((r) => r.id === 'rn' && r.seats > 100)).toBe(true);
     expect(seats.some((r) => r.id === 'nfp' && r.seats > 100)).toBe(true);
+  });
+
+  it('default live-simulator preset keeps one Sainte-Laguë seat map and AN1T colors', () => {
+    const pcts: Record<string, number> = {
+      rn: 33,
+      nfp: 28,
+      ensemble: 20,
+      lr: 6.5,
+      autres: 12.5,
+    };
+    const shares = AN1T_BLOCS.map((b) => ({
+      id: b.id,
+      label: b.label,
+      color: b.color,
+      pct: pcts[b.id] ?? 0,
+    }));
+    const seats = simulateFromVoteShares(shares, 577, 3);
+    expect(Object.fromEntries(seats.map((r) => [r.id, r.seats]))).toEqual({
+      rn: 190,
+      nfp: 162,
+      ensemble: 115,
+      autres: 72,
+      lr: 38,
+    });
+    for (const row of seats) {
+      expect(row.color).toBe(AN1T_BLOCS.find((b) => b.id === row.id)?.color);
+    }
+  });
+
+  it('does not ship a second seat formula beside src/lib/an1t.ts', () => {
+    const src = join(dirname(fileURLToPath(import.meta.url)), '..');
+    const sim = readFileSync(join(src, 'components/An1tSimulator.astro'), 'utf8');
+    const page = readFileSync(join(src, 'pages/analyses/assemblee-premier-tour.astro'), 'utf8');
+    expect(sim).toContain("import { simulateFromVoteShares } from '../lib/an1t'");
+    expect(sim).not.toContain('allocateSainteLagueClient');
+    expect(sim).not.toContain("color: '#ffeb00'");
+    expect(page).not.toContain('sainteLagueSimple');
+    expect(page).not.toContain('sim-form');
+    expect(existsSync(join(src, 'components/SimulateurPluralite1erTour.astro'))).toBe(false);
   });
 });

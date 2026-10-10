@@ -58,4 +58,9 @@ describe('comment-politics — badges couleurs d’idées', () => {
   it('hueBadgesForText always returns at least one badge', () => {
     expect(hueBadgesForText('calendrier électoral technique').length).toBeGreaterThanOrEqual(1);
   });
+
+  it('classifies names that only live on FIRST_ROUND_HUES', () => {
+    expect(resolvePoliticalHue('Autain parle de la NUPES').slug).toBe('melenchon');
+    expect(resolvePoliticalHue('Wauquiez et la sécurité').slug).toBe('retailleau');
+  });
 });

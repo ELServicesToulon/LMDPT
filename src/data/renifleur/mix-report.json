@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-09T18:27:21.792Z",
+  "generated_at": "2026-10-10T05:30:13.251Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
-  "poll_updated": "2026-10-09",
+  "poll_updated": "2026-10-10",
   "mapping": {
     "rn": [
       "le-pen",
@@ -146,7 +146,7 @@
   "max_share_per_host": 0.4,
   "before": {
     "item_count": 35,
-    "l1_deviation": 72.7,
+    "l1_deviation": 65,
     "observed": [
       {
         "bloc": "rn",
@@ -155,9 +155,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 8.6,
-        "count": 3,
-        "delta_pct": -26.3
+        "observed_pct": 11.4,
+        "count": 4,
+        "delta_pct": -23.5
       },
       {
         "bloc": "centre-droit",
@@ -178,9 +178,9 @@
           "parti-socialiste"
         ],
         "target_pct": 14.7,
-        "observed_pct": 20,
-        "count": 7,
-        "delta_pct": 5.3
+        "observed_pct": 14.3,
+        "count": 5,
+        "delta_pct": -0.4
       },
       {
         "bloc": "gauche-sociale-democrate",
@@ -252,7 +252,7 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 19
+      "pluraliste": 20
     },
     "top_hosts": [
       {
@@ -308,9 +308,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 17.1,
-        "count": 6,
-        "delta_pct": -17.8
+        "observed_pct": 22.9,
+        "count": 8,
+        "delta_pct": -12
       },
       {
         "bloc": "centre-droit",
@@ -318,9 +318,9 @@
           "philippe"
         ],
         "target_pct": 16.6,
-        "observed_pct": 11.4,
-        "count": 4,
-        "delta_pct": -5.2
+        "observed_pct": 5.7,
+        "count": 2,
+        "delta_pct": -10.9
       },
       {
         "bloc": "gauche",
@@ -415,8 +415,8 @@
       },
       {
         "host": "liberation.fr",
-        "count": 6,
-        "share_pct": 17.1
+        "count": 7,
+        "share_pct": 20
       },
       {
         "host": "lefigaro.fr",
@@ -429,12 +429,12 @@
         "share_pct": 11.4
       },
       {
-        "host": "publicsenat.fr",
-        "count": 4,
-        "share_pct": 11.4
+        "host": "la-croix.com",
+        "count": 3,
+        "share_pct": 8.6
       },
       {
-        "host": "la-croix.com",
+        "host": "publicsenat.fr",
         "count": 3,
         "share_pct": 8.6
       },
