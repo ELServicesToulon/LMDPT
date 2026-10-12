@@ -7,7 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
-import glucksmannNonVote from '../data/analyses/glucksmann-non-vote-freres-musulmans.json';
+import glucksmannRegistres from '../data/analyses/glucksmann-vote-8-octobre-registres.json';
 import freresMusulmans from '../data/analyses/freres-musulmans-strasbourg-a-vote.json';
 import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
 
@@ -34,15 +34,15 @@ function uneCover(slug: string, alt: string): EditorialCover {
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
-    slug: glucksmannNonVote.slug,
-    title: glucksmannNonVote.title,
-    description: glucksmannNonVote.description,
-    date: glucksmannNonVote.date,
-    published: glucksmannNonVote.date,
-    updated: glucksmannNonVote.updated,
-    href: '/analyses/glucksmann-non-vote-freres-musulmans',
+    slug: glucksmannRegistres.slug,
+    title: glucksmannRegistres.title,
+    description: glucksmannRegistres.description,
+    date: glucksmannRegistres.date,
+    published: glucksmannRegistres.date,
+    updated: glucksmannRegistres.updated,
+    href: '/analyses/glucksmann-vote-8-octobre-registres',
     cover: uneCover(
-      'glucksmann-non-vote-freres-musulmans',
+      'glucksmann-vote-8-octobre-registres',
       'Illustration à l’encre et à l’aquarelle en tons gris : un hémicycle sans public, une carte d’Europe et un parchemin au premier plan ; un siège est cerclé de rouge.',
     ),
   },
