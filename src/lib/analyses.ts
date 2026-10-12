@@ -6,6 +6,7 @@ import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
+import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import primaireDroite from '../data/analyses/primaire-droite-qui-la-veut.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import freresMusulmans from '../data/analyses/freres-musulmans-strasbourg-a-vote.json';
@@ -33,6 +34,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: chroniquePrimaire.slug,
+    title: chroniquePrimaire.title,
+    description: chroniquePrimaire.description,
+    date: chroniquePrimaire.date,
+    published: chroniquePrimaire.date,
+    updated: chroniquePrimaire.updated,
+    href: '/analyses/chronique-manusk-primaire-vent-arriere',
+    cover: uneCover(
+      'chronique-manusk-primaire-vent-arriere',
+      'Vignette éditoriale : une manche à air gonflée côté gauche, une salle d’attente aux chaises vides côté droit.',
+    ),
+  },
   {
     slug: primaireDroite.slug,
     title: primaireDroite.title,
