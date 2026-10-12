@@ -132,7 +132,7 @@
       "kind": "candidats",
       "id": "doe",
       "title": "Boîte DOE : où se situent les familles candidates à 2027",
-      "intro": "Repère factuel : vote de leurs eurodéputés le 8 octobre 2026 ([HowTheyVote](https://howtheyvote.eu/votes/198051)). Sans classement ni consigne de vote. **À confirmer** : ce sont des votes d'eurodéputés, pas des déclarations de candidats.",
+      "intro": "Repère factuel : vote des eurodéputés français le 8 octobre 2026 ([HowTheyVote](https://howtheyvote.eu/votes/198051), [relevé nominal officiel](https://www.europarl.europa.eu/doceo/document/PV-10-2026-10-08-RCV_FR.html)) : 48 pour, 20 contre, 2 abstentions, 11 non-votants. Sans classement ni consigne de vote. **À confirmer** : ce sont des votes d'eurodéputés, pas des déclarations de candidats.",
       "table": {
         "caption": "Vote des familles politiques françaises sur la résolution B10-0424/2026",
         "headers": [
@@ -142,38 +142,38 @@
         ],
         "rows": [
           [
-            "RN, Le Pen / Bardella (PfE)",
-            "Pour, en bloc",
-            "Réclame l'inscription de la confrérie sur la liste terroriste."
+            "RN (PfE), candidat **à confirmer**",
+            "26 pour, 3 non-votants",
+            "Dont Jordan Bardella, non-votant. Marine Le Pen n'est pas eurodéputée."
           ],
           [
-            "LR (PPE)",
+            "LR (PPE), candidat Bruno Retailleau",
+            "Pour (5 sur 5)",
+            "Texte porté par Céline Imart (LR, PPE). B. Retailleau n'est pas eurodéputé."
+          ],
+          [
+            "Identité-Libertés (ECR) ; Reconquête (ESN)",
             "Pour",
-            "Auteur du texte (Céline Imart)."
+            "4 sur 4 ; 1 sur 1."
           ],
           [
-            "Reconquête (ESN)",
-            "Pour",
-            ""
+            "Renaissance / MoDem / Horizons (Renew)",
+            "10 pour, 1 abstention",
+            "2 abstentions françaises au total (avec un élu sans parti)."
           ],
           [
-            "Renaissance / Horizons / MoDem (Renew)",
-            "Pour en majorité",
-            "2 abstentions françaises."
+            "Délégation française S&D (PS et Place publique)",
+            "7 contre, 6 non-votants",
+            "Dont R. Glucksmann, non-votant (vote final, 8 oct. 2026)."
           ],
           [
-            "PS / Place publique (S&D)",
-            "Contre : 7 contre, 6 non-votants, dont R. Glucksmann (vote final, 8 oct. 2026)",
-            "Délégation française : aucun pour, aucune abstention. Sources : relevé nominal officiel du PE (PV du 8 oct. 2026) et HowTheyVote.eu."
-          ],
-          [
-            "LFI, Mélenchon (La Gauche)",
-            "Contre",
-            ""
+            "LFI (La Gauche)",
+            "8 contre, 1 non-votant",
+            "Non-votant : Damien Carême."
           ],
           [
             "Écologistes (Verts/ALE)",
-            "Contre",
+            "5 contre",
             ""
           ]
         ]
