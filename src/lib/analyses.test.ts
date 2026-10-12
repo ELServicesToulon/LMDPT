@@ -33,9 +33,9 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('glucksmann-case-vide-strasbourg');
-    expect(getAnalysis('glucksmann-case-vide-strasbourg')?.href).toBe(
-      '/analyses/glucksmann-case-vide-strasbourg',
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('glucksmann-non-vote-freres-musulmans');
+    expect(getAnalysis('glucksmann-non-vote-freres-musulmans')?.href).toBe(
+      '/analyses/glucksmann-non-vote-freres-musulmans',
     );
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
