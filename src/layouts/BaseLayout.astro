@@ -1230,7 +1230,7 @@ const shareTitle = editorialPost?.title ?? title;
         s.textContent = `
           .feedback-form { margin: 0.75rem 0; padding: 0.5rem 0.65rem; border:1px solid var(--border); border-radius:6px; background: rgba(0,0,0,0.015); }
           @media (max-width: 640px) {
-            .feedback-form form > div { flex-direction: column; }
+            .feedback-form form > div { flex-direction: column; align-items: stretch !important; } .feedback-form form > div > label { flex: 1 1 auto !important; width: 100%; min-width: 0 !important; } .feedback-form form > div > button { align-self: flex-start; }
             .feedback-form input, .feedback-form select { font-size: 0.95rem; }
           }
         `;
