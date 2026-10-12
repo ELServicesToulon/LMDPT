@@ -260,6 +260,19 @@ export interface HypotheticalShare {
   pct: number;
 }
 
+/** Scénarios pédagogiques : % par bloc + couleurs canoniques {@link AN1T_BLOCS}. */
+export function hypotheticalSharesFromPcts(
+  pcts: Partial<Record<string, number>>,
+  labelOverrides?: Partial<Record<string, string>>,
+): HypotheticalShare[] {
+  return AN1T_BLOCS.map((b) => ({
+    id: b.id,
+    label: labelOverrides?.[b.id] ?? b.label,
+    color: b.color,
+    pct: pcts[b.id] ?? 0,
+  }));
+}
+
 export function simulateFromVoteShares(
   shares: HypotheticalShare[],
   totalSeats = 577,

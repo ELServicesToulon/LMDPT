@@ -1,27 +1,27 @@
 {
   "schema": "lmdpt-hero-daily-override-v1",
-  "dayKey": "2026-07-26",
+  "dayKey": "2026-10-11",
   "timezone": "Europe/Paris",
-  "generatedAt": "2026-07-26T05:41:10.887Z",
+  "generatedAt": "2026-10-11T16:54:25.867Z",
   "forceDaily": true,
   "motif": "campagne",
   "scoop": {
-    "title": "Présidentielle 2027 : les « insoumis » et leurs caravanes populaires à la conquête des abstentionnistes",
-    "source": "Le Monde — Élection présidentielle 2027",
-    "url": "https://www.lemonde.fr/politique/article/2026/07/26/presidentielle-2027-les-insoumis-et-leurs-caravanes-populaires-a-la-conquete-des-abstentionnistes_6732763_823448.html",
-    "renifleurFetchedAt": "2026-07-26T05:41:08.709Z",
-    "alertesUpdated": "2026-07-21"
+    "title": "Primaire sociale-démocrate : Glucksmann élu dès le 1er tour (66 %) — fiche",
+    "source": "LMDPT — fiche Raphaël Glucksmann",
+    "url": "/analyses/programmes/presidentielle-2027/glucksmann/",
+    "renifleurFetchedAt": "2026-10-11T05:30:13.288Z",
+    "alertesUpdated": "2026-10-11"
   },
-  "heroVideo": "/videos/2027/hero-daily-live.mp4?d=2026-07-26",
+  "heroVideo": "/videos/2027/hero-daily-live.mp4?d=2026-10-11",
   "heroVideoFile": "/videos/2027/hero-daily-live.mp4",
-  "heroPosterWebp": "/illustrations/2027/hero-daily-live.webp?d=2026-07-26",
-  "heroPosterJpg": "/illustrations/2027/hero-daily-live.jpg?d=2026-07-26",
-  "heroAlt": "Croquis encre noir et blanc du jour (sans texte) — illustration civique laïque liée au scoop du jour.",
-  "id": "scoop-2026-07-26-campagne",
+  "heroPosterWebp": "/illustrations/2027/hero-daily-live.webp?d=2026-10-11",
+  "heroPosterJpg": "/illustrations/2027/hero-daily-live.jpg?d=2026-10-11",
+  "heroAlt": "Encre épique du jour (sans texte) : parchemin d’orage, silhouettes à capuche, coffre ferré — illustration civique laïque.",
+  "id": "scoop-2026-10-11-campagne",
   "galleryVideo": {
-    "src": "/videos/2027/hero-daily-live.mp4?d=2026-07-26",
-    "poster": "/illustrations/2027/hero-daily-live.webp?d=2026-07-26",
-    "caption": "Vidéo hero du jour — croquis N&B, mise à jour quotidienne."
+    "src": "/videos/2027/hero-daily-live.mp4?d=2026-10-11",
+    "poster": "/illustrations/2027/hero-daily-live.webp?d=2026-10-11",
+    "caption": "Vidéo hero du jour — encre épique, mise à jour quotidienne."
   },
   "engine": "local-cairo+ffmpeg"
 }

@@ -7,9 +7,76 @@
   },
   "program": {
     "status": "awaiting_program",
-    "document_label": "Fiche veille — programme présidentiel non intégré (primaire PS / sociale-démocrate, oct. 2026)"
+    "document_label": "Fiche veille — programme présidentiel distinct non intégré ; désigné candidat sociale-démocrate à la primaire (oct. 2026)"
   },
-  "updated": "2026-10-02",
-  "measures": [],
+  "updated": "2026-10-11",
+  "measures": [
+    {
+      "id": "rg-2027-primaire-sociale-democrate-calendrier",
+      "theme": "institutions",
+      "subtheme": "Primaire sociale-démocrate",
+      "label": "Premier tour de la primaire sociale-démocrate — vote en ligne prolongé jusqu’au dimanche 11 octobre 2026, 18 h (Paris)",
+      "detail": "Cinq candidats au premier tour : Olivier Faure, Raphaël Glucksmann, Jérôme Guedj, Emmanuel Maurel et Ségolène Royal. Second tour prévu le week-end suivant selon la commission d’organisation.",
+      "status": "nouveau",
+      "source_url": "https://www.france24.com/fr/vid%C3%A9o/20261010-primaire-sociale-d%C3%A9mocrate-le-vote-prolong%C3%A9-jusqu-%C3%A0-dimanche-soir",
+      "source_label": "France 24 — 10 oct. 2026",
+      "as_of": "2026-10"
+    },
+    {
+      "id": "rg-2027-primaire-inscrits",
+      "theme": "institutions",
+      "subtheme": "Primaire sociale-démocrate",
+      "label": "Près de 140 000 personnes inscrites pour voter à la primaire",
+      "detail": "Chiffre communiqué par la commission d’organisation à l’approche du scrutin.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/10/06/primaire-a-gauche-plus-de-140-000-inscrits-appeles-a-designer-leur-candidat-a-la-presidentielle_6788654_823448.html",
+      "source_label": "Le Monde — 6 oct. 2026",
+      "as_of": "2026-10"
+    },
+    {
+      "id": "rg-2027-primaire-participation-mi-parcours",
+      "theme": "institutions",
+      "subtheme": "Primaire sociale-démocrate",
+      "label": "Plus de 100 000 votants au samedi 10 octobre, 20 h",
+      "detail": "Participation partielle communiquée après une première journée marquée par une cyberattaque et des ralentissements de la plateforme.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/10/10/primaire-de-la-gauche-sociale-democrate-plus-de-100-000-personnes-ont-deja-vote-selon-la-commission-d-organisation_6790987_823449.html",
+      "source_label": "Le Monde — 10 oct. 2026",
+      "as_of": "2026-10"
+    },
+    {
+      "id": "rg-2027-primaire-cyberattaque",
+      "theme": "institutions",
+      "subtheme": "Sécurité du vote en ligne",
+      "label": "Cyberattaque signalée vendredi sur la plateforme de vote",
+      "detail": "La commission d’organisation a annoncé une attaque perturbant l’accès au vote en ligne, sans l’empêcher totalement ; prolongation du scrutin pour compenser les lenteurs.",
+      "status": "nouveau",
+      "source_url": "https://www.france24.com/fr/france/20261009-france-primaire-sociale-democrate-plateforme-de-vote-victime-cyberattaque",
+      "source_label": "France 24 — 9 oct. 2026",
+      "as_of": "2026-10"
+    },
+    {
+      "id": "rg-2027-candidature-primaire-ps",
+      "theme": "institutions",
+      "subtheme": "Candidature 2027",
+      "label": "Candidature à la présidentielle 2027 dans le cadre de la primaire organisée avec le PS",
+      "detail": "Déclaration publique de candidature dans le dispositif commun PS / sociale-démocrate — hors désignation définitive du candidat unique.",
+      "status": "nouveau",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/08/23/raphael-glucksmann-annonce-etre-candidat-a-l-election-presidentielle-dans-le-cadre-de-la-primaire-organisee-avec-le-parti-socialiste_6754507_823448.html",
+      "source_label": "Le Monde — 23 août 2026",
+      "as_of": "2026-08"
+    },
+    {
+      "id": "rg-2027-primaire-resultat-premier-tour",
+      "theme": "institutions",
+      "subtheme": "Primaire sociale-démocrate",
+      "label": "Élu dès le premier tour avec 66,13 % des voix — candidat de la gauche sociale-démocrate pour 2027",
+      "detail": "Résultats proclamés le 11 octobre 2026 par la commission d’organisation (Patrick Mennucci) après clôture du vote à 18 h : Raphaël Glucksmann 66,13 % (79 613 voix), Olivier Faure 14,48 %, Ségolène Royal 7,62 %, Emmanuel Maurel 5,92 %, Jérôme Guedj 5,83 % — seuil des 50 % atteint, pas de second tour.",
+      "status": "nouveau",
+      "source_url": "https://www.lexpress.fr/politique/ps/primaire-de-la-gauche-raphael-glucksmann-lemporte-des-le-premier-tour-avec-66-des-voix-77XWJDWI7BE4RCP5VNH4BH33RI/",
+      "source_label": "L’Express — 11 oct. 2026 (résultats commission)",
+      "as_of": "2026-10"
+    }
+  ],
   "chiffrages": []
 }

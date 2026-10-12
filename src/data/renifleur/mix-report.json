@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-10T05:30:13.251Z",
+  "generated_at": "2026-10-12T05:30:04.801Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
-  "poll_updated": "2026-10-10",
+  "poll_updated": "2026-10-12",
   "mapping": {
     "rn": [
       "le-pen",
@@ -146,7 +146,160 @@
   "max_share_per_host": 0.4,
   "before": {
     "item_count": 35,
-    "l1_deviation": 65,
+    "l1_deviation": 87.7,
+    "observed": [
+      {
+        "bloc": "rn",
+        "hue_slugs": [
+          "le-pen",
+          "bardella"
+        ],
+        "target_pct": 34.9,
+        "observed_pct": 5.7,
+        "count": 2,
+        "delta_pct": -29.2
+      },
+      {
+        "bloc": "centre-droit",
+        "hue_slugs": [
+          "philippe"
+        ],
+        "target_pct": 16.6,
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -13.7
+      },
+      {
+        "bloc": "gauche",
+        "hue_slugs": [
+          "melenchon",
+          "ruffin",
+          "roussel",
+          "parti-socialiste"
+        ],
+        "target_pct": 14.7,
+        "observed_pct": 31.4,
+        "count": 11,
+        "delta_pct": 16.7
+      },
+      {
+        "bloc": "gauche-sociale-democrate",
+        "hue_slugs": [
+          "glucksmann"
+        ],
+        "target_pct": 9.7,
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -9.7
+      },
+      {
+        "bloc": "centre",
+        "hue_slugs": [
+          "attal",
+          "barrot"
+        ],
+        "target_pct": 7.6,
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -4.7
+      },
+      {
+        "bloc": "droite",
+        "hue_slugs": [
+          "retailleau",
+          "lisnard"
+        ],
+        "target_pct": 7.5,
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -4.6
+      },
+      {
+        "bloc": "ecologie",
+        "hue_slugs": [
+          "ecolo"
+        ],
+        "target_pct": 3.4,
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -3.4
+      },
+      {
+        "bloc": "extreme-droite",
+        "hue_slugs": [
+          "zemmour"
+        ],
+        "target_pct": 3.3,
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -3.3
+      },
+      {
+        "bloc": "droite-souverainiste",
+        "hue_slugs": [],
+        "target_pct": 1.5,
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -1.5
+      },
+      {
+        "bloc": "extreme-gauche",
+        "hue_slugs": [],
+        "target_pct": 0.8,
+        "observed_pct": 0,
+        "count": 0,
+        "delta_pct": -0.8
+      }
+    ],
+    "unmapped_hues": {
+      "pluraliste": 19
+    },
+    "top_hosts": [
+      {
+        "host": "france24.com",
+        "count": 5,
+        "share_pct": 14.3
+      },
+      {
+        "host": "franceinfo.fr",
+        "count": 5,
+        "share_pct": 14.3
+      },
+      {
+        "host": "lemonde.fr",
+        "count": 5,
+        "share_pct": 14.3
+      },
+      {
+        "host": "assemblee-nationale.fr",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
+        "host": "la-croix.com",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
+        "host": "lefigaro.fr",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
+        "host": "liberation.fr",
+        "count": 4,
+        "share_pct": 11.4
+      },
+      {
+        "host": "publicsenat.fr",
+        "count": 4,
+        "share_pct": 11.4
+      }
+    ]
+  },
+  "after": {
+    "item_count": 35,
+    "l1_deviation": 58.4,
     "observed": [
       {
         "bloc": "rn",
@@ -199,9 +352,9 @@
           "barrot"
         ],
         "target_pct": 7.6,
-        "observed_pct": 2.9,
-        "count": 1,
-        "delta_pct": -4.7
+        "observed_pct": 8.6,
+        "count": 3,
+        "delta_pct": 1
       },
       {
         "bloc": "droite",
@@ -210,9 +363,9 @@
           "lisnard"
         ],
         "target_pct": 7.5,
-        "observed_pct": 11.4,
-        "count": 4,
-        "delta_pct": 3.9
+        "observed_pct": 8.6,
+        "count": 3,
+        "delta_pct": 1.1
       },
       {
         "bloc": "ecologie",
@@ -252,28 +405,23 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 20
+      "pluraliste": 19
     },
     "top_hosts": [
+      {
+        "host": "lemonde.fr",
+        "count": 10,
+        "share_pct": 28.6
+      },
+      {
+        "host": "lefigaro.fr",
+        "count": 6,
+        "share_pct": 17.1
+      },
       {
         "host": "france24.com",
         "count": 5,
         "share_pct": 14.3
-      },
-      {
-        "host": "lefigaro.fr",
-        "count": 5,
-        "share_pct": 14.3
-      },
-      {
-        "host": "lemonde.fr",
-        "count": 5,
-        "share_pct": 14.3
-      },
-      {
-        "host": "assemblee-nationale.fr",
-        "count": 4,
-        "share_pct": 11.4
       },
       {
         "host": "franceinfo.fr",
@@ -281,150 +429,7 @@
         "share_pct": 11.4
       },
       {
-        "host": "la-croix.com",
-        "count": 4,
-        "share_pct": 11.4
-      },
-      {
         "host": "liberation.fr",
-        "count": 4,
-        "share_pct": 11.4
-      },
-      {
-        "host": "publicsenat.fr",
-        "count": 4,
-        "share_pct": 11.4
-      }
-    ]
-  },
-  "after": {
-    "item_count": 35,
-    "l1_deviation": 41.2,
-    "observed": [
-      {
-        "bloc": "rn",
-        "hue_slugs": [
-          "le-pen",
-          "bardella"
-        ],
-        "target_pct": 34.9,
-        "observed_pct": 22.9,
-        "count": 8,
-        "delta_pct": -12
-      },
-      {
-        "bloc": "centre-droit",
-        "hue_slugs": [
-          "philippe"
-        ],
-        "target_pct": 16.6,
-        "observed_pct": 5.7,
-        "count": 2,
-        "delta_pct": -10.9
-      },
-      {
-        "bloc": "gauche",
-        "hue_slugs": [
-          "melenchon",
-          "ruffin",
-          "roussel",
-          "parti-socialiste"
-        ],
-        "target_pct": 14.7,
-        "observed_pct": 14.3,
-        "count": 5,
-        "delta_pct": -0.4
-      },
-      {
-        "bloc": "gauche-sociale-democrate",
-        "hue_slugs": [
-          "glucksmann"
-        ],
-        "target_pct": 9.7,
-        "observed_pct": 0,
-        "count": 0,
-        "delta_pct": -9.7
-      },
-      {
-        "bloc": "centre",
-        "hue_slugs": [
-          "attal",
-          "barrot"
-        ],
-        "target_pct": 7.6,
-        "observed_pct": 8.6,
-        "count": 3,
-        "delta_pct": 1
-      },
-      {
-        "bloc": "droite",
-        "hue_slugs": [
-          "retailleau",
-          "lisnard"
-        ],
-        "target_pct": 7.5,
-        "observed_pct": 8.6,
-        "count": 3,
-        "delta_pct": 1.1
-      },
-      {
-        "bloc": "ecologie",
-        "hue_slugs": [
-          "ecolo"
-        ],
-        "target_pct": 3.4,
-        "observed_pct": 2.9,
-        "count": 1,
-        "delta_pct": -0.5
-      },
-      {
-        "bloc": "extreme-droite",
-        "hue_slugs": [
-          "zemmour"
-        ],
-        "target_pct": 3.3,
-        "observed_pct": 0,
-        "count": 0,
-        "delta_pct": -3.3
-      },
-      {
-        "bloc": "droite-souverainiste",
-        "hue_slugs": [],
-        "target_pct": 1.5,
-        "observed_pct": 0,
-        "count": 0,
-        "delta_pct": -1.5
-      },
-      {
-        "bloc": "extreme-gauche",
-        "hue_slugs": [],
-        "target_pct": 0.8,
-        "observed_pct": 0,
-        "count": 0,
-        "delta_pct": -0.8
-      }
-    ],
-    "unmapped_hues": {
-      "pluraliste": 13
-    },
-    "top_hosts": [
-      {
-        "host": "lemonde.fr",
-        "count": 11,
-        "share_pct": 31.4
-      },
-      {
-        "host": "liberation.fr",
-        "count": 7,
-        "share_pct": 20
-      },
-      {
-        "host": "lefigaro.fr",
-        "count": 5,
-        "share_pct": 14.3
-      },
-      {
-        "host": "france24.com",
         "count": 4,
         "share_pct": 11.4
       },
@@ -437,16 +442,6 @@
         "host": "publicsenat.fr",
         "count": 3,
         "share_pct": 8.6
-      },
-      {
-        "host": "assemblee-nationale.fr",
-        "count": 1,
-        "share_pct": 2.9
-      },
-      {
-        "host": "franceinfo.fr",
-        "count": 1,
-        "share_pct": 2.9
       }
     ]
   }

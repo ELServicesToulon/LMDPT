@@ -4,8 +4,12 @@
  *
  * DOE : illustration uniquement — pas de prédiction ni de tier list.
  */
-import { simulateFromVoteShares, type SeatAllocation } from './an1t';
-import type { HypotheticalShare } from './an1t';
+import {
+  AN1T_BLOCS,
+  simulateFromVoteShares,
+  type HypotheticalShare,
+  type SeatAllocation,
+} from './an1t';
 
 export interface PollCandidateMeta {
   slug: string;
@@ -30,18 +34,23 @@ export interface PollSondagesFile {
   sources?: Array<{ label: string; url: string; as_of?: string }>;
 }
 
-/** Couleurs hémicycle LMDPT (alignées page assemblee-premier-tour). */
-export const AN1T_BLOC_UI: Record<
-  string,
-  { id: string; label: string; color: string }
-> = {
-  // Couleurs consensus Wiki AN / médias FR (écologie #00c000 via consensusPartyColor si split)
-  rn: { id: 'rn', label: 'Rassemblement national & alliés', color: '#0d378a' },
-  nfp: { id: 'nfp', label: 'Nouveau Front populaire', color: '#cc2443' },
-  ensemble: { id: 'ensemble', label: 'Ensemble / centre', color: '#ffeb00' },
-  lr: { id: 'lr', label: 'Droite républicaine', color: '#0066cc' },
-  autres: { id: 'autres', label: 'Autres & divers', color: '#dddddd' },
+/** Labels courts pour agrégats sondages ; couleurs = {@link AN1T_BLOCS} (simulateur AN1T). */
+const POLL_BLOC_LABEL: Partial<Record<string, string>> = {
+  rn: 'Rassemblement national & alliés',
+  ensemble: 'Ensemble / centre',
+  autres: 'Autres & divers',
 };
+
+export const AN1T_BLOC_UI = Object.fromEntries(
+  AN1T_BLOCS.map((b) => [
+    b.id,
+    {
+      id: b.id,
+      label: POLL_BLOC_LABEL[b.id] ?? b.label,
+      color: b.color,
+    },
+  ]),
+) as Record<string, { id: string; label: string; color: string }>;
 
 /**
  * Map slug candidat → bloc AN1T législatif (agrégat pédagogique).

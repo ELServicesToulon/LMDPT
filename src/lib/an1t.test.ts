@@ -8,6 +8,7 @@ import pres2022 from '../data/elections/2022-presidentielle-1er-tour-national.js
 import anReelle from '../data/analyses/assemblee-premier-tour-2024.json';
 import {
   allocateSainteLague,
+  hypotheticalSharesFromPcts,
   aggregatePresidentialPctByBloc,
   compareSeatAllocations,
   countCircosByBloc,
@@ -126,6 +127,13 @@ describe('an1t', () => {
       lr: 38,
     });
     for (const row of seats) {
+      expect(row.color).toBe(AN1T_BLOCS.find((b) => b.id === row.id)?.color);
+    }
+  });
+
+  it('hypotheticalSharesFromPcts applies AN1T_BLOCS colors', () => {
+    const shares = hypotheticalSharesFromPcts({ rn: 33, nfp: 28, ensemble: 20, lr: 6.5, autres: 12.5 });
+    for (const row of shares) {
       expect(row.color).toBe(AN1T_BLOCS.find((b) => b.id === row.id)?.color);
     }
   });

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-10T05:30:13.251Z",
+  "fetched_at": "2026-10-12T05:30:04.801Z",
   "enabled": true,
   "traditional_media": true,
   "disclaimer": "Sources secondaires — presse traditionnelle (RSS). Ne remplace pas les données officielles ni la liste du Conseil constitutionnel. Les sondages sont exclus automatiquement.",
@@ -7,10 +7,10 @@
   "feeds_error": 0,
   "items": [
     {
-      "title": "Présidentielle 2027 : en plein mouvement lycéen, Gabriel Attal mise sur l’affrontement avec Jean-Luc Mélenchon pour relancer sa campagne",
-      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/10/presidentielle-2027-en-plein-mouvement-lyceen-gabriel-attal-mise-sur-l-affrontement-avec-jean-luc-melenchon-pour-relancer-sa-campagne_6790958_6205049.html",
-      "published": "2026-10-10",
-      "summary": "Le candidat Renaissance tient un meeting à Lyon, samedi, où il compte mettre en scène une rivalité avec le leader de La France insoumise. Un moyen de sortir de son duel avec Edouard Philippe, favori du bloc central, comme des crises de la rentrée.",
+      "title": "Présidentielle 2027 : Raphaël Glucksmann, vainqueur de la primaire à gauche, au défi de mettre la famille sociale-démocrate en ordre de bataille",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-raphael-glucksmann-vainqueur-de-la-primaire-a-gauche-au-defi-de-mettre-la-famille-sociale-democrate-en-ordre-de-bataille_6792381_6205049.html",
+      "published": "2026-10-12",
+      "summary": "Le coprésident de Place publique, qui l’a emporté dès le premier tour dimanche, a revendiqué la « rupture avec le macronisme » et la fin de « l’hégémonie de Jean-Luc Mélenchon sur la gauche », tout en assurant que le principal adversaire reste « l’extrême droite ».",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -19,32 +19,16 @@
         "label": "Pluraliste / transversal 1er tour",
         "color": "#5a6570",
         "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Attal / Renaissance) — teinte pluraliste."
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Glucksmann / Place publique) — teinte pluraliste."
       }
     },
     {
-      "title": "Référendum : l’histoire tourmentée de l’article 11 de la Constitution, au cœur de la campagne présidentielle",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/10/referendum-l-histoire-tourmentee-de-l-article-11-de-la-constitution-au-c-ur-de-la-campagne-presidentielle_6790950_823448.html",
-      "published": "2026-10-10",
-      "summary": "Bruno Retailleau et Marine Le Pen veulent réécrire ce texte qui limite le champ d’application de cette consultation directe afin de permettre son usage sur des sujets tels que l’immigration ou le voile. Une manière de faire passer des réformes qu’ils savent contraires à la Loi fo",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, référendum"
-      }
-    },
-    {
-      "title": "Primaire à gauche : le vote est prolongé jusqu’à dimanche 18 heures, en raison de la cyberattaque qui a visé la plateforme",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/primaire-a-gauche-le-vote-prolonge-jusqu-a-dimanche-18-heures-en-raison-de-la-cyberattaque-qui-a-vise-la-plateforme_6790554_823449.html",
-      "published": "2026-10-09",
-      "summary": "Malgré une cyberattaque perturbant l’accès à la plateforme, la commission d’organisation assure que l’intégrité des votes reste garantie. A 19 heures, vendredi soir, le scrutin ne comptait que 20 000 votants sur 140 000 inscrits.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
+      "title": "Budget 2027 : rejeté en commission, le projet de loi de finances arrive dans le chaudron de l’Assemblée nationale",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/12/budget-2027-rejete-en-commission-le-projet-de-loi-de-finances-arrive-dans-le-chaudron-de-l-assemblee-nationale_6792420_823448.html",
+      "published": "2026-10-12",
+      "summary": "Le texte, examiné dans l’Hémicycle à partir de mardi, doit permettre de tenir jusqu’à l’élection présidentielle sans crise de la dette. Mais nul ne sait s’il pourra être adopté, ni quand. En cas de blocage, Sébastien Lecornu n’exclut plus de recourir à des ordonnances.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -55,108 +39,12 @@
       }
     },
     {
-      "title": "Présidentielle 2027 : François Baroin apporte son soutien à Bruno Retailleau contre un Edouard Philippe « premier de cordée » du macronisme",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/presidentielle-2027-francois-baroin-apporte-son-soutien-a-bruno-retailleau-contre-un-edouard-philippe-premier-de-cordee-du-macronisme_6790608_823448.html",
-      "published": "2026-10-09",
-      "summary": "Longtemps candidat putatif de sa famille politique à la présidentielle, le maire de Troyes croit à un « chemin possible » vers la victoire pour le président de LR. Garant de la famille gaulliste, il ne veut pas d’une droite ralliée au maire du Havre.",
+      "title": "« Ce qui ressort, c’est un sentiment de colère » : Benoit Mathieu, le microcandidat à la présidentielle qui ausculte la France à vélo",
+      "url": "https://www.lemonde.fr/m-perso/article/2026/10/12/ce-qui-ressort-c-est-un-sentiment-de-colere-benoit-mathieu-le-microcandidat-a-la-presidentielle-qui-ausculte-la-france-a-velo_6792421_4497916.html",
+      "published": "2026-10-12",
+      "summary": "« La France buissonnière ». Cet ancien prof de maths de 27 ans pédale par les petites routes pour aller à la rencontre des maires sans étiquette afin qu’ils le parrainent en vue de la présidentielle. Avec deux ambitions : réformer la Constitution et relancer la démocratie partici",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "philippe",
-        "label": "Philippe / Horizons",
-        "color": "#0001b8",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : édouard philippe, edouard philippe"
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : « Marine Le Pen révise son logiciel social-populiste et tente de lui adjoindre son pendant libéral »",
-      "url": "https://www.lemonde.fr/idees/article/2026/10/09/presidentielle-2027-marine-le-pen-revise-son-logiciel-social-populiste-et-tente-de-lui-adjoindre-son-pendant-liberal_6790546_3232.html",
-      "published": "2026-10-09",
-      "summary": "A vouloir contenter de multiples clientèles, l’économie populiste « tous azimuts » de la candidate du Rassemblement national opère aux dépens de toute cohérence doctrinale, analyse Gilles Ivaldi, spécialiste de l’extrême droite, dans une tribune au « Monde ».",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : le pen, marine le pen, rassemblement national"
-      }
-    },
-    {
-      "title": "Primaire à gauche : comparez les propositions des cinq candidats",
-      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/10/09/primaire-a-gauche-comparez-les-propositions-des-cinq-candidats_6790548_4355770.html",
-      "published": "2026-10-09",
-      "summary": "Des retraites à l’Ukraine, en passant par la crise des carburants, les cinq prétendants du pôle social-démocrate ne sont pas toujours d’accord entre eux. Les Décodeurs font le point sur leurs convergences et leurs désaccords.",
-      "source_id": "lemonde-presidentielle-2027",
-      "source_label": "Le Monde — Élection présidentielle 2027",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "parti-socialiste",
-        "label": "Socialiste / social-démocrate",
-        "color": "#ff8080",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : social-democrate, social-démocrate"
-      }
-    },
-    {
-      "title": "Présidentielle : le match Attal-Philippe s’étend au mouvement lycéen",
-      "url": "https://www.liberation.fr/politique/presidentielle-le-match-attal-philippe-setend-au-mouvement-lyceen-20261009_TTFXUMOOINCCZANITUQK7KSFK4/",
-      "published": "2026-10-09",
-      "summary": "Gabriel Attal, en meeting samedi à Lyon, revendique une approche plus compatissante envers les jeunes mobilisés. Cherchant à coller à son concurrent l’image d’un conservateur sourd aux revendications lycéennes.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : attal, gabriel attal"
-      }
-    },
-    {
-      "title": "Contre-budget RN : l’amorce d’une politique antisociale",
-      "url": "https://www.liberation.fr/politique/elections/contre-budget-rn-lamorce-dune-politique-antisociale-20261009_RXGWQNWUUZFFDCQGUP27LUNQNE/",
-      "published": "2026-10-09",
-      "summary": "Pour financer son hypothétique programme économique présenté mardi, le Rassemblement national devrait mettre à contribution bien plus de personnes que ses cibles habituelles, étrangers, Union européenne, agences de l’Etat… Sans toujours l’assumer ouvertement.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Budget 2027 : les députés rejettent largement la partie « recettes » en commission, le texte débattu à partir de mardi dans l’Hémicycle",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/budget-2027-les-deputes-rejettent-la-partie-recettes-en-commission_6790637_823448.html",
-      "published": "2026-10-09",
-      "summary": "La mise à contribution des retraités et des collectivités a cristallisé les tensions lors des débats en commission sur le budget 2027. Les députés repartiront de la copie initiale dans l’Hémicycle, dès mardi.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "lisnard",
-        "label": "Lisnard / droite locale",
-        "color": "#162561",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : collectivités, collectivites"
-      }
-    },
-    {
-      "title": "Budget 2027 : les acteurs de la formation dénoncent la rétroactivité de la réforme du CPF",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/budget-2027-les-acteurs-de-la-formation-denoncent-la-retroactivite-de-la-reforme-du-cpf_6790603_823448.html",
-      "published": "2026-10-09",
-      "summary": "Contenue dans le projet de loi de finances pour 2027, qui sera débattu à partir de mardi 13 octobre à l’Assemblée nationale, l’augmentation du reste à charge de 200 euros pour les formations non prioritaires est censée s’appliquer aux achats réalisés à partir du 2 octobre.",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "philippe",
@@ -167,26 +55,138 @@
       }
     },
     {
-      "title": "Au dernier jour d'examen de la loi \"intégrale\", le Rassemblement national fait tomber plusieurs mesures",
-      "url": "https://www.franceinfo.fr/societe/harcelement-sexuel/au-dernier-jour-d-examen-de-la-loi-integrale-le-rassemblement-national-fait-tomber-plusieurs-mesures_8230735.html#xtor=RSS-3-%5Bgeneral%5D",
-      "published": "2026-10-09",
-      "summary": "Ces votes ont suscité les critiques de la coalition féministe et enfantiste à l'origine du texte, celle-ci dénonçant un \"recul\" sur \"les droits au travail et la protection des femmes étrangères\".",
+      "title": "Présidentielle 2027 : refuser toute alliance avec LFI aux législatives, l’engagement fragile de Raphaël Glucksmann",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-refuser-toute-alliance-avec-lfi-aux-legislatives-l-engagement-fragile-de-raphael-glucksmann_6792415_6205049.html",
+      "published": "2026-10-12",
+      "summary": "Alors que la question des relations avec le parti de Jean-Luc Mélenchon a été la principale ligne de fracture de la primaire à gauche, le Parti socialiste reste ouvert à des accords avec La France insoumise et les scores de chacun à la présidentielle détermineront largement la st",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, france insoumise"
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann enfariné après sa victoire à la primaire de la gauche sociale-démocrate",
+      "url": "https://www.franceinfo.fr/politique/raphael-glucksmann/raphael-glucksmann-enfarine-apres-sa-victoire-a-la-primaire-de-la-gauche-sociale-democrate_8233369.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-12",
+      "summary": "Le candidat à l’élection présidentielle Raphaël Glucksmann a été enfariné dimanche soir à Paris, alors qu’il quittait sa soirée de victoire à la primaire de la gauche sociale-démocrate, organisée dans un bar de Belleville, un quartier de l’est parisien. Les faits se sont produits",
       "source_id": "franceinfo-politique",
       "source_label": "franceinfo — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "le-pen",
-        "label": "Le Pen / RN",
-        "color": "#0d378a",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : rassemblement national, rassemblement national"
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
       }
     },
     {
-      "title": "Le sinueux parcours de Ségolène Royal et Raphaël Glucksmann, deux candidats de gauche qui s’accusent d’être de droite",
-      "url": "https://www.lemonde.fr/les-decodeurs/article/2026/10/09/le-sinueux-parcours-de-segolene-royal-et-raphael-glucksmann-deux-candidats-de-gauche-qui-s-accusent-d-etre-de-droite_6790533_4355770.html",
-      "published": "2026-10-09",
-      "summary": "Les deux prétendants à la primaire sociale-démocrate pour 2027 se renvoient mutuellement à leurs engagements passés, qui ont fluctué depuis une vingtaine d’années.",
+      "title": "DIRECT. Primaire de la gauche : après sa large victoire, Raphaël Glucksmann s'engage à \"rassembler\"",
+      "url": "https://www.franceinfo.fr/politique/direct-primaire-de-la-gauche-apres-sa-large-victoire-raphael-glucksmann-s-engage-a-rassembler_8233213.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-12",
+      "summary": "Avec plus de 66% des voix, il a réussi son pari de l'emporter dès le premier tour, loin devant Olivier Faure, le patron du Parti socialiste.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "parti-socialiste",
+        "label": "Socialiste / social-démocrate",
+        "color": "#ff8080",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : parti socialiste, faure, glucksmann"
+      }
+    },
+    {
+      "title": "Comment expliquer la large victoire de Raphaël Glucksmann à la primaire de la gauche ?",
+      "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/comment-expliquer-la-large-victoire-de-raphael-glucksmann-a-la-primaire-de-la-gauche_8233033.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-12",
+      "summary": "Le candidat Place publique l'a emporté avec deux tiers des suffrages, très loin devant le patron du PS et principal rival pour ce scrutin, Olivier Faure.",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Cyberattaque contre la primaire du PS : \"On sait qu'il y a une volonté d'ingérence pour nous pousser vers les extrêmes, notamment l'extrême droite\", estime Agnès Pannier-Runacher",
+      "url": "https://www.franceinfo.fr/replay-magazine/franceinfo/l-invite-politique/cyberattaque-contre-la-primaire-du-ps-on-sait-qu-il-y-a-une-volonte-d-ingerence-pour-nous-pousser-vers-les-extremes-notamment-l-extreme-droite-estime-agnes-pannier-runacher_8232571.html#xtor=RSS-3-%5Bgeneral%5D",
+      "published": "2026-10-11",
+      "summary": "La co-responsable du programme de Gabriel Attal et ancienne ministre de la Transition écologique, Agnès Pannier-Runacher est revenu pour Franceinfo sur le meeting de Gabriel Attal à Lyon ce samedi 11 octobre, la cyberattaque lors de la primaire du PS ainsi qu'une éventuelle prima",
+      "source_id": "franceinfo-politique",
+      "source_label": "franceinfo — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal"
+      }
+    },
+    {
+      "title": "Budget 2027 : Roland Lescure assure qu’il « préférerait éviter » le recours aux ordonnances en cas d’impasse au Parlement",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/11/budget-2027-roland-lescure-assure-qu-il-prefererait-eviter-le-recours-aux-ordonnances-en-cas-d-impasse-au-parlement_6791931_823448.html",
+      "published": "2026-10-11",
+      "summary": "Le ministre de l’économie défend un déficit ramené à 5 % « quoi qu’il en coûte », alors que les députés ont rejeté en commission la partie recettes du texte, qui sera discuté mardi dans l’Hémicycle.",
+      "source_id": "lemonde-politique",
+      "source_label": "Le Monde — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.35,
+        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann largement élu candidat de la gauche sociale-démocrate pour la présidentielle",
+      "url": "https://www.france24.com/fr/france/20261011-glucksmann-largement-%C3%A9lu-candidat-de-la-gauche-sociale-d%C3%A9mocrate-pour-la-pr%C3%A9sidentielle-france",
+      "published": "2026-10-11",
+      "summary": "Raphaël Glucksmann s'est imposé dimanche dès le premier tour de la primaire de la gauche sociale-démocrate. L'eurodéputé de 46 ans, qui a promis de \"rassembler la gauche démocratique\" pour \"battre l'extrême droite\" à la présidentielle, va devoir rassembler une famille politique d",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Raphaël Glucksmann officiellement candidat du PS, un \"cap clair\" et des zones d'ombre",
+      "url": "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre",
+      "published": "2026-10-11",
+      "summary": "L’eurodéputé et patron du petit parti Place publique, Raphaël Glucksmann, a remporté dimanche soir la primaire de la gauche sociale-démocrate dès le premier tour. Une victoire nette pour la ligne anti-Mélenchon qu’il défendait et qu'il entend incarner en se présentant comme \"le c",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "EN DIRECT, primaire à gauche : Raphaël Glucksmann, élu dès le premier tour, promet de « rassembler » la gauche pour « battre l’extrême droite », et réaffirme son refus de s’allier avec LFI",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/live/2026/10/12/en-direct-primaire-a-gauche-raphael-glucksmann-elu-des-le-premier-tour-promet-de-rassembler-la-gauche-pour-battre-l-extreme-droite-et-reaffirme-son-refus-de-s-allier-avec-lfi_6791926_6205049.html",
+      "published": "2026-10-11",
+      "summary": "L’eurodéputé a été largement désigné candidat de la gauche sociale-démocrate à la présidentielle, dimanche soir, avec 66 % des voix. Il devance de très loin le premier secrétaire du PS, Olivier Faure (14 %). Ségolène Royal, Jérôme Guedj et Emmanuel Maurel obtiennent tous moins de",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -195,14 +195,46 @@
         "label": "Socialiste / social-démocrate",
         "color": "#ff8080",
         "confidence": 0.9,
-        "rationale": "Proximité lexicale : ségolène royal, segolene royal, glucksmann"
+        "rationale": "Proximité lexicale : ségolène royal, segolene royal, faure"
       }
     },
     {
-      "title": "Les lycéens réagissent aux mesures proposées par Édouard Geffray",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20261009-les-lyc%C3%A9ens-r%C3%A9agissent-aux-mesures-propos%C3%A9es-par-%C3%A9douard-geffray",
-      "published": "2026-10-09",
-      "summary": "\"C'est un premier pas, mais il y a encore plein de changements à faire.\" Manifestations lycéennes en #France : le ministre de l’Éducation, Édouard Geffray, a dévoilé jeudi soir, des mesures d’urgence. L’une d’elles : l’arrivée de 3 000 professeurs remplaçants dès vendredi dans le",
+      "title": "Primaire sociale démocrate : 5 candidats et près de 140 000 votants",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20261011-primaire-sociale-d%C3%A9mocrate-5-candidats-et-pr%C3%A8s-de-140-000-votants",
+      "published": "2026-10-11",
+      "summary": "Qui arrivera en tête de la primaire sociale-démocrate ? Quelque 140.000 votants ont jusqu'à 18H00 ce dimanche pour choisir parmi les cinq prétendants, dont le favori Raphaël Glucksmann, qui espère être élu dès le premier tour, après une cyberattaque qui a perturbé le processus.",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "\"Non, Mme Le Pen ne sera pas à l'Élysée en mai 2027\", promet Raphaël Glucksmann",
+      "url": "https://www.france24.com/fr/france/20261011-en-direct-primaire-sociale-d%C3%A9mocrate-qui-arrivera-en-t%C3%AAte-candidat-gauche-2027",
+      "published": "2026-10-11",
+      "summary": "L'eurodéputé Place publique Raphaël Glucksmann a été élu samedi candidat à la présidentielle de la gauche sociale-démocrate avec 66,17% des voix. Lors d'une conférence de presse, il s'est présenté comme \"le candidat de la gauche démocratique\" qui \"pourra battre\" l'extrême droite\"",
+      "source_id": "france24-france",
+      "source_label": "France 24 — France",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Mobilisations lycéennes, budget ... l'exécutif français sous pression",
+      "url": "https://www.france24.com/fr/vid%C3%A9o/20261011-mobilisations-lyc%C3%A9ennes-d%C3%A9bat-sur-le-budget-l-ex%C3%A9cutif-sous-pression",
+      "published": "2026-10-11",
+      "summary": "Les députés ont rejeté à la quasi-unanimité vendredi en commission la partie \"recettes\" du budget de l'État pour 2027, un revers cinglant mais sans conséquence immédiate, le texte retournant mardi dans l'hémicycle, dans la version initiale du gouvernement. Du côté des mobilisatio",
       "source_id": "france24-france",
       "source_label": "France 24 — France",
       "source_type": "traditional",
@@ -215,26 +247,138 @@
       }
     },
     {
-      "title": "A l’aube de l’élection présidentielle, une envie de renverser le « système » traverse la jeunesse française",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/a-l-aube-de-l-election-presidentielle-une-envie-de-renverser-le-systeme-traverse-la-jeunesse-francaise_6790602_823448.html",
-      "published": "2026-10-09",
-      "summary": "D’un côté, le climat, les questions de genre et d’inclusion, l’effroi de voir l’extrême droite arriver au pouvoir… De l’autre, des peurs identitaires, le sentiment de voir la France s’affaiblir et disparaître dans le magma mondial… Deux jeunesses se retrouvent dos à dos avec l’en",
-      "source_id": "lemonde-politique",
-      "source_label": "Le Monde — Politique",
+      "title": "Primaire du PS et de ses alliés : pour Raphaël Glucksmann, un premier pari réussi",
+      "url": "https://www.liberation.fr/idees-et-debats/editorial/primaire-du-ps-et-de-ses-allies-pour-raphael-glucksmann-un-premier-pari-reussi-20261011_OIKUI75ZYFDZ7CYZLRRWN2Q4V4/",
+      "published": "2026-10-11",
+      "summary": "Le candidat de Place publique a remporté dimanche 11 octobre le scrutin dès le premier tour avec 66,17 % des voix. Un plébiscite qui ne doit pas lui faire minimiser tous ses défis.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
-        "slug": "ecolo",
-        "label": "Écologiste",
-        "color": "#00c000",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : climat"
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
       }
     },
     {
-      "title": "Emmanuel Maurel, la surprise des débats de la primaire sociale-démocrate",
-      "url": "https://www.lemonde.fr/politique/article/2026/10/09/emmanuel-maurel-la-surprise-des-debats-de-la-primaire-sociale-democrate_6790531_823448.html",
-      "published": "2026-10-09",
-      "summary": "Le discret député du Val-d’Oise, à la tête de la Gauche républicaine et socialiste, s’est révélé lors des trois débats télévisés. Calme, mesuré, construit, il a joué les casques bleus entre ses rivaux occupés à s’entre-déchirer.",
+      "title": "Présidentielle 2027 : Jean-Luc Mélenchon promet de supprimer « l’ignominie » Parcoursup devant une salle comble à Clermont-Ferrand",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/11/presidentielle-2027-jean-luc-melenchon-promet-de-supprimer-l-ignominie-parcoursup-devant-une-salle-comble-a-clermont-ferrand_6792108_6205049.html",
+      "published": "2026-10-11",
+      "summary": "Le leader « insoumis » a renouvelé, dimanche, ses encouragements appuyés au mouvement de colère lycéen, dont il a loué la « très grande maturité politique et syndicale ».",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "melenchon",
+        "label": "Mélenchon / LFI",
+        "color": "#cc2443",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
+      }
+    },
+    {
+      "title": "Primaire PS : avec sa large victoire, Raphaël Glucksmann assoit sa légitimité, mais le plus dur commence",
+      "url": "https://www.liberation.fr/politique/primaire-ps-avec-sa-large-victoire-raphael-glucksmann-assoit-sa-legitimite-mais-le-plus-dur-commence-20261011_VFKE7CVTBZBR5JO55WN6KILQ4M/",
+      "published": "2026-10-11",
+      "summary": "Face à un Jean-Luc Mélenchon en pleine dynamique, le leader de Place publique, désigné candidat de la gauche sociale-démocrate à la présidentielle, va devoir parler au cœur de l’électorat PS, tout en restant fréquentable aux yeux du centre gauche macroniste.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Vainqueur de la primaire, Raphaël Glucksmann promet «une campagne punk» pour la présidentielle",
+      "url": "https://www.liberation.fr/politique/elections/victoire-a-la-primaire-ps-raphael-glucksmann-promet-une-campagne-punk-pour-la-presidentielle-20261011_2DHRWSQNWNHVDLRSBXRH4VKSEI/",
+      "published": "2026-10-11",
+      "summary": "Le candidat Place publique a remporté, ce dimanche 11 octobre, l’investiture socialiste à la présidentielle. Rencontré deux jours avant le scrutin, il racontait à «Libé» son parcours et ses changements de stratégie.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Lâchage de Zelensky par Trump : une classe politique française en soutien de l’Ukraine, l’Elysée discret",
+      "url": "https://www.liberation.fr/politique/lachage-de-zelensky-par-trump-une-classe-politique-francaise-en-soutien-de-lukraine-lelysee-bien-silencieux-20261011_M7EYKZGVUFE2PMECJYL6LWHTJY/",
+      "published": "2026-10-11",
+      "summary": "De Jean-Luc Mélenchon à Gabriel Attal en passant par Dominique de Villepin, les réactions se sont multipliées ce week-end après le deal de Donald Trump avec Vladimir Poutine sur le gazole, puis sa volonté de remplacer le président Volodymyr Zelensky.",
+      "source_id": "liberation-politique",
+      "source_label": "Libération — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Attal / Renaissance) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Une victoire éclatante pour Raphaël Glucksmann mais des défis déjà nombreux",
+      "url": "https://www.la-croix.com/politique/primaire-de-la-gauche-raphael-glucksmann-elu-des-le-premier-tour-avec-66-des-voix-20261011",
+      "published": "2026-10-11",
+      "summary": "Avec 66 % des voix, Raphaël Glucksmann remporte haut la main, dimanche 11 octobre, la primaire sociale-démocrate et impose sa ligne à gauche. Mais après une campagne tendue, le candidat devra désormais rassembler les socialistes et convaincre plus largement les électeurs de le re",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Victoire de Raphaël Glucksmann : « C’est le début d’une aventure, ce n’est pas la fin de l’histoire », salue Patrick Kanner",
+      "url": "https://www.publicsenat.fr/actualites/politique/victoire-de-raphael-glucksmann-cest-le-debut-dune-aventure-ce-nest-pas-la-fin-de-lhistoire-salue-patrick-kanner",
+      "published": "2026-10-11",
+      "summary": "Après la victoire de Raphaël Glucksmann à la primaire de la gauche sociale-démocrate, le président du groupe PS du Sénat, Patrick Kanner, « souhaite que le PS se mobilise à tous les niveaux » pour le candidat « presque adoubé ». Mais « c’est une première étape, il faut transforme",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Primaire de la gauche : Raphaël Glucksmann plie le match et remporte le scrutin dès le premier tour avec 66 %",
+      "url": "https://www.publicsenat.fr/actualites/politique/primaire-de-la-gauche-raphael-glucksmann-plie-le-match-et-remporte-le-scrutin-des-le-premier-tour-avec-66",
+      "published": "2026-10-11",
+      "summary": "Le leader de Place Publique remporte haut la main la primaire de la gauche sociale-démocrate. L’horizon se dégage aujourd’hui pour Raphaël Glucksmann, désigné candidat à la présidentielle du PS, de Place Publique et de la GRS. Raphaël Glucksmann a maintenant la légitimité pour in",
+      "source_id": "publicsenat",
+      "source_label": "Public Sénat — Actualités",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.7,
+        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Primaire de la gauche sociale-démocrate : plus de 110 000 personnes ont déjà voté, selon la commission d’organisation",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/11/primaire-de-la-gauche-sociale-democrate-plus-de-110-000-personnes-ont-deja-vote-selon-la-commission-d-organisation_6790987_823449.html",
+      "published": "2026-10-11",
+      "summary": "Quelque 140 000 électeurs doivent choisir leur candidat à la présidentielle parmi cinq prétendants, dont le favori, l’eurodéputé de Place publique, Raphaël Glucksmann, et son challenger, le patron du Parti socialiste, Olivier Faure.",
       "source_id": "lemonde-presidentielle-2027",
       "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
@@ -242,17 +386,49 @@
         "slug": "parti-socialiste",
         "label": "Socialiste / social-démocrate",
         "color": "#ff8080",
-        "confidence": 0.56,
-        "rationale": "Proximité lexicale : socialiste"
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : parti socialiste, faure, glucksmann"
       }
     },
     {
-      "title": "Primaire sociale-démocrate : le vote prolongé jusqu'à dimanche après une cyberattaque",
-      "url": "https://www.france24.com/fr/france/20261009-france-primaire-sociale-democrate-plateforme-de-vote-victime-cyberattaque",
-      "published": "2026-10-09",
-      "summary": "La commission d'organisation de la primaire sociale-démocrate a annoncé vendredi matin que la plateforme de vote était victime d'une cyberattaque qui impactait le processus pour voter, sans toutefois empêcher le scrutin. L'incident a cependant contraint les organisateurs à prolon",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
+      "title": "Présidentielle 2027 : Gabriel Attal mise sur la carte « jeunes » et son plan pour l’école",
+      "url": "https://www.la-croix.com/politique/presidentielle-2027-gabriel-attal-mise-sur-la-carte-jeunes-et-son-plan-pour-l-ecole-20261010",
+      "published": "2026-10-10",
+      "summary": "En plein mouvement de contestation des lycéens, le candidat de Renaissance à l’élection présidentielle Gabriel Attal a proposé, lors d’un meeting à Lyon, samedi 10 octobre, « un pacte pour la jeunesse » afin de changer de modèle scolaire.",
+      "source_id": "lacroix-politique",
+      "source_label": "La Croix — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "attal",
+        "label": "Attal / Renaissance",
+        "color": "#ffeb00",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : attal, gabriel attal, renaissance"
+      }
+    },
+    {
+      "title": "Présidentielle 2027 : en raison du mouvement lycéen, Gabriel Attal réajuste son programme et défend un « pacte pour la jeunesse »",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/11/presidentielle-2027-face-au-mouvement-lyceen-gabriel-attal-reajuste-son-programme-et-defend-un-pacte-pour-la-jeunesse_6791096_6205049.html",
+      "published": "2026-10-10",
+      "summary": "A Lyon, samedi 10 octobre, où il donnait le coup d’envoi à sa tournée de meetings régionaux, le candidat Renaissance, devancé par Jean-Luc Mélenchon chez les 18-24 ans, a tenté de reprendre la main en mettant en avant ses mesures éducatives.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "pluraliste",
+        "label": "Pluraliste / transversal 1er tour",
+        "color": "#5a6570",
+        "confidence": 0.75,
+        "rationale": "Plusieurs camps cités (Attal / Renaissance · Mélenchon / LFI) — teinte pluraliste."
+      }
+    },
+    {
+      "title": "Primaire à gauche : dans les sections locales, les militants mobilisés pour rassurer les votants après la cyberattaque",
+      "url": "https://www.lemonde.fr/politique/article/2026/10/11/primaire-a-gauche-dans-les-sections-locales-les-militants-mobilises-pour-offrir-un-cadre-rassurant_6791094_823448.html",
+      "published": "2026-10-10",
+      "summary": "Après une première journée chaotique, à la suite d’une cyberattaque perturbant l’accès à la plateforme, les votes se sont déroulés plus posément, samedi 10 octobre. A 20 heures, plus de 105 000 personnes, sur 140 000 inscrits, avaient exprimé leur choix entre les cinq candidats.",
+      "source_id": "lemonde-presidentielle-2027",
+      "source_label": "Le Monde — Élection présidentielle 2027",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "pluraliste",
@@ -279,195 +455,19 @@
       }
     },
     {
-      "title": "Trancher le rapport à LFI : une primaire sociale-démocrate en forme de congrès du PS",
-      "url": "https://www.france24.com/fr/france/20261009-france-trancher-rapport-lfi-primaire-sociale-democrate-en-forme-de-congres-du-ps-raphael-glucksmann-olivier-faure",
+      "title": "Budget 2027 de la Sécurité sociale : le gouvernement veut à nouveau dérembourser les cures thermales",
+      "url": "https://www.publicsenat.fr/actualites/sante/budget-2027-de-la-securite-sociale-le-gouvernement-veut-a-nouveau-derembourser-les-cures-thermales",
       "published": "2026-10-09",
-      "summary": "Plus de 140 000 personnes sont inscrites pour la primaire sociale-démocrate, dont le premier tour a lieu de vendredi à dimanche, et le second le week-end suivant. L'enjeu principal du scrutin est de trancher le rapport du Parti socialiste à La France insoumise. Deux candidats – d",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Mélenchon / LFI · Socialiste / social-démocrate) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Pour les meetings de Mélenchon, LFI veut coller aux basques de ses adversaires",
-      "url": "https://www.liberation.fr/politique/pour-les-meetings-de-melenchon-lfi-veut-coller-aux-basques-de-ses-adversaires-20261009_YDXFFQMF3VCYPAI64WBUPZK62A/",
-      "published": "2026-10-09",
-      "summary": "Le coordinateur du mouvement Manuel Bompard a explicité la stratégie de campagne insoumise : organiser des meetings proches de ceux des autres candidats comme démonstration de force.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
-      }
-    },
-    {
-      "title": "Primaire des sociale-démocrates : un scrutin plus incertin que prévu",
-      "url": "https://www.france24.com/fr/vid%C3%A9o/20261009-primaire-des-sociale-d%C3%A9mocrates-un-scrutin-plus-incertin-que-pr%C3%A9vu",
-      "published": "2026-10-09",
-      "summary": "Le premier tour de la primaire sociale-démocrate débute vendredi. Quelque 140.000 électeurs vont choisir leur candidat à la présidentielle parmi cinq prétendants, dont le favori, l'eurodéputé de Place publique Raphaël Glucksmann, et son challenger, le patron du PS Olivier Faure.",
-      "source_id": "france24-france",
-      "source_label": "France 24 — France",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Socialiste / social-démocrate · Glucksmann / Place publique) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : le très droitier Gilles Platret présente sa candidature et embouteille son espace politique",
-      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-le-tres-droitier-gilles-platret-presente-sa-candidature-et-embouteille-son-espace-politique-20261009_AKT3J6HRJJFFBJK6I7QQ6TSJ4Q/",
-      "published": "2026-10-09",
-      "summary": "Le maire de Châlon-sur-Saône, ancien vice-président de LR, a annoncé dans sa ville son intention de concourir à la magistrature suprême, jeudi soir. Ajoutant son nom à la longue, longue liste de prétendants de droite et d’extrême droite.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Primaire sociale-démocrate : Raphaël Glucksmann se sent favori de pied en cap clair",
-      "url": "https://www.liberation.fr/politique/elections/primaire-sociale-democrate-raphael-glucksmann-se-sent-favori-de-pied-en-cap-clair-20261009_DJUNKU53WJCU3NLYFGJJ4P2Z24/",
-      "published": "2026-10-09",
-      "summary": "Pas épargné par ses concurrents, le patron de Place publique espère survoler la primaire, dont le premier tour se tient ces 9 et 10 octobre. Optimiste, son camp reste conscient qu’en cas de victoire, il devra se muscler pour affronter la suite.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.7,
-        "rationale": "Plusieurs camps cités (Glucksmann / Place publique · Socialiste / social-démocrate) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Primaire de la gauche : la plateforme de vote victime d’une cyberattaque",
-      "url": "https://www.la-croix.com/politique/primaire-de-la-gauche-la-plateforme-de-vote-victime-d-une-cyberattaque-20261009",
-      "published": "2026-10-09",
-      "summary": "La plateforme de vote de la primaire de la gauche sociale-démocrate a été victime d’une cyberattaque vendredi 9 octobre, sans que cela n’entraîne de « coupure » dans le scrutin qui oppose cinq candidats.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Mouvement lycéen : que comprendre des annonces d’Édouard Geffray ?",
-      "url": "https://www.la-croix.com/politique/mouvement-lyceen-que-comprendre-des-annonces-d-edouard-geffray-20261009",
-      "published": "2026-10-09",
-      "summary": "3 000 enseignants déployés pour des remplacements, recours au pacte enseignant, mention de la plateforme Agora… Édouard Geffray a annoncé plusieurs mesures en réponse au mouvement lycéen, jeudi 8 octobre.",
-      "source_id": "lacroix-politique",
-      "source_label": "La Croix — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Politique familiale, allocations, crèches : que proposent les candidats à la présidentielle ?",
-      "url": "https://www.publicsenat.fr/actualites/politique/politique-familiale-allocations-creches-que-proposent-les-candidats-a-la-presidentielle",
-      "published": "2026-10-09",
-      "summary": "Alors qu’Edouard Philippe met sur la table la création d’une allocation familiale unique de 350 euros, Gabriel Attal se penche sur les familles monoparentales, quand Bruno Retailleau propose un revenu familial de 240 euros par mois dès le premier enfant, et Marine Le Pen la préfé",
+      "summary": "Comme l’an dernier, le ministère de la Santé propose dans le cadre du projet de loi de financement de la Sécurité sociale 200 millions d’euros d’économies sur le champ des cures thermales, pour l’Assurance maladie. La charge serait alors transférée aux complémentaires. L’an derni",
       "source_id": "publicsenat",
       "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.75,
-        "rationale": "Plusieurs camps cités (Attal / Renaissance · Philippe / Horizons) — teinte pluraliste."
-      }
-    },
-    {
-      "title": "Dans le Puy-de-Dôme, des insoumis en campagne «bal trad»",
-      "url": "https://www.liberation.fr/politique/elections/dans-le-puy-de-dome-des-insoumis-en-campagne-bal-trad-20261009_WHXSW5PCSJDLDAZRKDK77W4VAI/",
-      "published": "2026-10-09",
-      "summary": "Une semaine avant la venue de Jean-Luc Mélenchon, dimanche 11 octobre à Clermont-Ferrand, ses troupes organisaient, à la campagne, une soirée festive et politique destinée à prouver qu’ils ne comptent pas seulement sur les grandes villes et leurs banlieues en 2027.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "melenchon",
-        "label": "Mélenchon / LFI",
-        "color": "#cc2443",
-        "confidence": 0.9,
-        "rationale": "Proximité lexicale : mélenchon, melenchon, insoumis"
-      }
-    },
-    {
-      "title": "Le vote du premier tour de la primaire du PS perturbé par une cyberattaque",
-      "url": "https://www.publicsenat.fr/actualites/politique/le-vote-du-premier-tour-de-la-primaire-du-ps-perturbe-par-une-cyberattaque",
-      "published": "2026-10-09",
-      "summary": "Alors que quelque 140 000 électeurs sont invités à exprimer leur préférence pour le premier tour de la primaire organisée à gauche, les opérations de vote sont perturbées depuis l’ouverture du scrutin ce vendredi matin. Les organisateurs font état d’une cyberattaque visant à satu",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
-      }
-    },
-    {
-      "title": "Présidentielle 2027 : Bruno Retailleau reçoit le soutien de François Baroin (qui croit encore aux miracles)",
-      "url": "https://www.liberation.fr/politique/elections/presidentielle-2027-bruno-retailleau-recoit-le-soutien-de-francois-baroin-qui-croit-encore-aux-miracles-20261009_GJRDICS3OZGYVGBYYRS2DPQQRI/",
-      "published": "2026-10-09",
-      "summary": "En déplacement à Troyes pour le séminaire de rentrée des sénateurs LR, le candidat à la présidentielle a obtenu l’appui du maire de la ville jeudi 8 octobre.",
-      "source_id": "liberation-politique",
-      "source_label": "Libération — Politique",
       "source_type": "traditional",
       "politicalHue": {
         "slug": "retailleau",
         "label": "Retailleau / LR",
         "color": "#0066cc",
-        "confidence": 0.77,
-        "rationale": "Proximité lexicale : retailleau"
-      }
-    },
-    {
-      "title": "Documentaire — SENATEUR EN ACTION 2026/2027",
-      "url": "https://www.publicsenat.fr/emission/documentaire/senateur-en-action-2026-2027-e2",
-      "published": "2026-10-09",
-      "summary": "Dans ces reportages, les journalistes de la rédaction suivent un sénateur investi dans un dossier local et mettent en lumière toute une partie du travail d'un parlementaire. L'occasion de découvrir les enjeux de son département, d'en rencontrer les habitants et de voir comment un",
-      "source_id": "publicsenat",
-      "source_label": "Public Sénat — Actualités",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "pluraliste",
-        "label": "Pluraliste / transversal 1er tour",
-        "color": "#5a6570",
-        "confidence": 0.35,
-        "rationale": "Aucune proximité lexicale nette — teinte pluraliste (1er tour)."
+        "confidence": 0.7,
+        "rationale": "Proximité lexicale : sécurité, securite"
       }
     },
     {
@@ -519,6 +519,22 @@
       }
     },
     {
+      "title": "«Je viens à Jérusalem pour regarder le monde en face» : Bruno Retailleau défend les «liens du sang» entre Israël et la France",
+      "url": "https://www.lefigaro.fr/politique/je-viens-a-jerusalem-pour-regarder-le-monde-en-face-bruno-retailleau-defend-les-liens-du-sang-entre-israel-et-la-france-20261007",
+      "published": "2026-10-07",
+      "summary": "En visite de deux jours à Tel-Aviv et Jérusalem, le candidat Les Républicains à la présidentielle a ciblé une extrême gauche « fanatisée ».",
+      "source_id": "lefigaro-politique",
+      "source_label": "Le Figaro — Politique",
+      "source_type": "traditional",
+      "politicalHue": {
+        "slug": "retailleau",
+        "label": "Retailleau / LR",
+        "color": "#0066cc",
+        "confidence": 0.9,
+        "rationale": "Proximité lexicale : retailleau, les républicains, les republicains"
+      }
+    },
+    {
       "title": "Retraites, réforme de l’État, immigration… Ce que contient le plan économique de Marine Le Pen pour «la renaissance de la France»",
       "url": "https://www.lefigaro.fr/conjoncture/retraites-reforme-de-l-etat-immigration-ce-que-contient-le-plan-economique-de-marine-le-pen-pour-la-renaissance-de-la-france-20261006",
       "published": "2026-10-06",
@@ -548,22 +564,6 @@
         "color": "#0d378a",
         "confidence": 0.9,
         "rationale": "Proximité lexicale : rn, rassemblement national, rassemblement national"
-      }
-    },
-    {
-      "title": "Parlement des enfants - annonce des deux classes lauréates",
-      "url": "https://www.assemblee-nationale.fr/dyn/espace-presse/communiques-de-presse/2026/parlement-des-enfants-annonce-des-deux-classes-laureates",
-      "published": "2026-06-08",
-      "summary": "Lundi 8 juin, les classes de CM2 de l'école primaire Jean Dion de Château-Porcien, dans l'académie de Reims, et de 6ème du collège Gisèle Halimi de Lyon, dans l'académie de Lyon, ont été désignées lauréate de l'édition 2026 du Parlement des enfants. Pour cette 29ème édition du Pa",
-      "source_id": "assemblee-communiques",
-      "source_label": "Assemblée nationale — Communiqués",
-      "source_type": "traditional",
-      "politicalHue": {
-        "slug": "attal",
-        "label": "Attal / Renaissance",
-        "color": "#ffeb00",
-        "confidence": 0.7,
-        "rationale": "Proximité lexicale : école, ecole"
       }
     }
   ]

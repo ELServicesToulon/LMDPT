@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-10T05:30:15.696Z",
+  "generated_at": "2026-10-12T05:30:06.335Z",
   "source": "src/data/renifleur/latest.json",
   "window_days": 7,
-  "window_from": "2026-10-04",
-  "window_to": "2026-10-10",
+  "window_from": "2026-10-06",
+  "window_to": "2026-10-12",
   "min_confidence": 0.6,
-  "articles_in_window": 34,
-  "lead": "Sur 34 articles de presse du 2026-10-04 au 2026-10-10, le sujet le plus cité est Institutions / élections (19 articles).",
+  "articles_in_window": 35,
+  "lead": "Sur 35 articles de presse du 2026-10-06 au 2026-10-12, le sujet le plus cité est Institutions / élections (23 articles).",
   "disclaimer": "Source secondaire (RSS presse). Part de la presse collectée, pas une intention de vote. Ce n’est pas un classement de candidats ni un sondage.",
   "doe": "La démocratie avant l’élimination — on montre qui occupe quel sujet dans la presse, pas qui gagne.",
   "bancs": [
@@ -14,20 +14,20 @@
       "theme_id": "institutions",
       "theme_label": "Institutions / élections",
       "theme_color": "#495057",
-      "articles": 19,
-      "pct_of_window": 55.9,
+      "articles": 23,
+      "pct_of_window": 65.7,
       "seats": [
         {
           "candidate_slug": "le-pen",
           "candidate_label": "Le Pen / RN",
           "candidate_color": "#0d378a",
-          "articles": 4
+          "articles": 3
         },
         {
-          "candidate_slug": "philippe",
-          "candidate_label": "Philippe / Horizons",
-          "candidate_color": "#0001b8",
-          "articles": 2
+          "candidate_slug": "parti-socialiste",
+          "candidate_label": "Socialiste / social-démocrate",
+          "candidate_color": "#ff8080",
+          "articles": 3
         },
         {
           "candidate_slug": "retailleau",
@@ -36,53 +36,31 @@
           "articles": 2
         },
         {
+          "candidate_slug": "attal",
+          "candidate_label": "Attal / Renaissance",
+          "candidate_color": "#ffeb00",
+          "articles": 1
+        },
+        {
           "candidate_slug": "melenchon",
           "candidate_label": "Mélenchon / LFI",
           "candidate_color": "#cc2443",
           "articles": 1
-        },
-        {
-          "candidate_slug": "parti-socialiste",
-          "candidate_label": "Socialiste / social-démocrate",
-          "candidate_color": "#ff8080",
-          "articles": 1
         }
       ],
-      "unnamed_articles": 9
+      "unnamed_articles": 13
     },
     {
       "theme_id": "ecole",
       "theme_label": "École",
       "theme_color": "#4a7c59",
       "articles": 4,
-      "pct_of_window": 11.8,
+      "pct_of_window": 11.4,
       "seats": [
         {
           "candidate_slug": "attal",
           "candidate_label": "Attal / Renaissance",
           "candidate_color": "#ffeb00",
-          "articles": 1
-        }
-      ],
-      "unnamed_articles": 3
-    },
-    {
-      "theme_id": "non-classe",
-      "theme_label": "Non classé",
-      "theme_color": "#9aa0a6",
-      "articles": 3,
-      "pct_of_window": 8.8,
-      "seats": [
-        {
-          "candidate_slug": "attal",
-          "candidate_label": "Attal / Renaissance",
-          "candidate_color": "#ffeb00",
-          "articles": 1
-        },
-        {
-          "candidate_slug": "le-pen",
-          "candidate_label": "Le Pen / RN",
-          "candidate_color": "#0d378a",
           "articles": 1
         },
         {
@@ -92,75 +70,53 @@
           "articles": 1
         }
       ],
-      "unnamed_articles": 0
-    },
-    {
-      "theme_id": "emploi",
-      "theme_label": "Emploi / travail",
-      "theme_color": "#8b6914",
-      "articles": 2,
-      "pct_of_window": 5.9,
-      "seats": [
-        {
-          "candidate_slug": "le-pen",
-          "candidate_label": "Le Pen / RN",
-          "candidate_color": "#0d378a",
-          "articles": 1
-        }
-      ],
-      "unnamed_articles": 1
-    },
-    {
-      "theme_id": "retraites",
-      "theme_label": "Retraites",
-      "theme_color": "#a0522d",
-      "articles": 2,
-      "pct_of_window": 5.9,
-      "seats": [
-        {
-          "candidate_slug": "le-pen",
-          "candidate_label": "Le Pen / RN",
-          "candidate_color": "#0d378a",
-          "articles": 1
-        },
-        {
-          "candidate_slug": "lisnard",
-          "candidate_label": "Lisnard / droite locale",
-          "candidate_color": "#162561",
-          "articles": 1
-        }
-      ],
-      "unnamed_articles": 0
+      "unnamed_articles": 2
     },
     {
       "theme_id": "ukraine",
       "theme_label": "Ukraine / Europe",
       "theme_color": "#3d5a80",
+      "articles": 3,
+      "pct_of_window": 8.6,
+      "seats": [],
+      "unnamed_articles": 3
+    },
+    {
+      "theme_id": "non-classe",
+      "theme_label": "Non classé",
+      "theme_color": "#9aa0a6",
       "articles": 2,
-      "pct_of_window": 5.9,
+      "pct_of_window": 5.7,
       "seats": [
         {
-          "candidate_slug": "parti-socialiste",
-          "candidate_label": "Socialiste / social-démocrate",
-          "candidate_color": "#ff8080",
+          "candidate_slug": "attal",
+          "candidate_label": "Attal / Renaissance",
+          "candidate_color": "#ffeb00",
           "articles": 1
         }
       ],
       "unnamed_articles": 1
     },
     {
-      "theme_id": "climat",
-      "theme_label": "Climat / énergie",
-      "theme_color": "#2d6a4f",
+      "theme_id": "laicite",
+      "theme_label": "Laïcité / religion",
+      "theme_color": "#6b5b8c",
       "articles": 1,
       "pct_of_window": 2.9,
-      "seats": [],
-      "unnamed_articles": 1
+      "seats": [
+        {
+          "candidate_slug": "philippe",
+          "candidate_label": "Philippe / Horizons",
+          "candidate_color": "#0001b8",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 0
     },
     {
-      "theme_id": "immigration",
-      "theme_label": "Immigration",
-      "theme_color": "#7a4e2d",
+      "theme_id": "retraites",
+      "theme_label": "Retraites",
+      "theme_color": "#a0522d",
       "articles": 1,
       "pct_of_window": 2.9,
       "seats": [
@@ -168,6 +124,22 @@
           "candidate_slug": "le-pen",
           "candidate_label": "Le Pen / RN",
           "candidate_color": "#0d378a",
+          "articles": 1
+        }
+      ],
+      "unnamed_articles": 0
+    },
+    {
+      "theme_id": "sante",
+      "theme_label": "Santé",
+      "theme_color": "#b91c1c",
+      "articles": 1,
+      "pct_of_window": 2.9,
+      "seats": [
+        {
+          "candidate_slug": "retailleau",
+          "candidate_label": "Retailleau / LR",
+          "candidate_color": "#0066cc",
           "articles": 1
         }
       ],

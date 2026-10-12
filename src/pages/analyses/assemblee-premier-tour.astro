@@ -11,6 +11,7 @@ import leg2024National from '../../data/elections/2024-legislatives-1er-tour-nat
 import {
   compareSeatAllocations,
   countCircosByBloc,
+  hypotheticalSharesFromPcts,
   simulateAn1tSeats,
   simulateFromVoteShares,
 } from '../../lib/an1t';
@@ -75,60 +76,66 @@ const pollUpdated = pollBundle.updated;
 // === Scénarios 2027 liés aux programmes candidats (intégration programmes + AN1T) ===
 // Utilise simulateFromVoteShares (lib/an1t) pour cohérence Sainte-Laguë. % voix = hypothèses pédagogiques alignées sur mesures phares "institutions" des programmes 2027 (veille partielle).
 // Lien : mesures programmes → mobilisation bloc → % voix T1 → sièges AN1T → placement dans hémicycle hybride (quartiers du modèle officiel).
-const bardellaShares = [
-  { id: 'rn', label: 'RN & alliés (Bardella)', color: '#0d378a', pct: 36 },
-  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 22 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 12 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
-];
-const scenarioBardella = simulateFromVoteShares(bardellaShares, 577, 3);
+const scenarioBardella = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 36, nfp: 22, ensemble: 12, lr: 9, autres: 21 },
+    { rn: 'RN & alliés (Bardella)', nfp: 'NFP', ensemble: 'Ensemble', lr: 'LR', autres: 'Autres' },
+  ),
+  577,
+  3,
+);
 
-const attalShares = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 28 },
-  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 26 },
-  { id: 'ensemble', label: 'Ensemble (Attal)', color: '#ffeb00', pct: 19 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 12 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 15 },
-];
-const scenarioAttal = simulateFromVoteShares(attalShares, 577, 3);
+const scenarioAttal = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 28, nfp: 26, ensemble: 19, lr: 12, autres: 15 },
+    { rn: 'RN & alliés', nfp: 'NFP', ensemble: 'Ensemble (Attal)', lr: 'LR', autres: 'Autres' },
+  ),
+  577,
+  3,
+);
 
-const melenchonShares = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 27 },
-  { id: 'nfp', label: 'NFP (Mélenchon)', color: '#cc2443', pct: 30 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 13 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
-];
-const scenarioMelenchon = simulateFromVoteShares(melenchonShares, 577, 3);
+const scenarioMelenchon = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 27, nfp: 30, ensemble: 13, lr: 9, autres: 21 },
+    { rn: 'RN & alliés', nfp: 'NFP (Mélenchon)', ensemble: 'Ensemble', lr: 'LR', autres: 'Autres' },
+  ),
+  577,
+  3,
+);
 
 // Variantes supplémentaires — différents seuils & hypothèses programmes (pédagogiques, pas prédictives)
-const seuil5Shares = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 35.5 },
-  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 23 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 13 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9 },
-  { id: 'autres', label: 'Autres (sous seuil ajusté)', color: '#dddddd', pct: 19.5 },
-];
-const scenarioSeuil5 = simulateFromVoteShares(seuil5Shares, 577, 5);
+const scenarioSeuil5 = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 35.5, nfp: 23, ensemble: 13, lr: 9, autres: 19.5 },
+    { rn: 'RN & alliés', nfp: 'NFP', ensemble: 'Ensemble', lr: 'LR', autres: 'Autres (sous seuil ajusté)' },
+  ),
+  577,
+  5,
+);
 
-const rnMajoriteShares = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 42 },
-  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 20 },
-  { id: 'ensemble', label: 'Ensemble', color: '#ffeb00', pct: 10 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 7 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 21 },
-];
-const scenarioRNMajorite = simulateFromVoteShares(rnMajoriteShares, 577, 3);
+const scenarioRNMajorite = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 42, nfp: 20, ensemble: 10, lr: 7, autres: 21 },
+    { rn: 'RN & alliés', nfp: 'NFP', ensemble: 'Ensemble', lr: 'LR', autres: 'Autres' },
+  ),
+  577,
+  3,
+);
 
-const centreGaucheShares = [
-  { id: 'rn', label: 'RN & alliés', color: '#0d378a', pct: 25 },
-  { id: 'nfp', label: 'NFP', color: '#cc2443', pct: 28.5 },
-  { id: 'ensemble', label: 'Ensemble (Philippe/Attal)', color: '#ffeb00', pct: 22.5 },
-  { id: 'lr', label: 'LR', color: '#0066cc', pct: 9.5 },
-  { id: 'autres', label: 'Autres', color: '#dddddd', pct: 14.5 },
-];
-const scenarioCentreGauche = simulateFromVoteShares(centreGaucheShares, 577, 3);
+const scenarioCentreGauche = simulateFromVoteShares(
+  hypotheticalSharesFromPcts(
+    { rn: 25, nfp: 28.5, ensemble: 22.5, lr: 9.5, autres: 14.5 },
+    {
+      rn: 'RN & alliés',
+      nfp: 'NFP',
+      ensemble: 'Ensemble (Philippe/Attal)',
+      lr: 'LR',
+      autres: 'Autres',
+    },
+  ),
+  577,
+  3,
+);
 
 // === Scénarios enrichis depuis le rapport data (assemblee-premier-tour-2024.json + simulations an1t) ===
 // Utilisés pour illustrations factuelles 2024 (pluralité T1 vs réalité post-T2). Pédagogiques uniquement.

@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { AN1T_BLOCS } from './an1t';
 import {
+  AN1T_BLOC_UI,
   aggregateScoresToBlocShares,
   buildPollAn1tBundle,
   pickPrimaryWaveScores,
@@ -8,6 +10,13 @@ import {
 import sondages from '../data/elections/2027-sondages-candidats.json';
 
 describe('poll-to-an1t', () => {
+  it('uses AN1T_BLOCS colors for poll aggregation UI', () => {
+    for (const b of AN1T_BLOCS) {
+      expect(AN1T_BLOC_UI[b.id]?.color).toBe(b.color);
+    }
+    expect(AN1T_BLOC_UI.ensemble?.color).not.toBe('#ffeb00');
+  });
+
   it('maps candidate slugs to AN1T blocs', () => {
     expect(slugToAn1tBloc('le-pen')).toBe('rn');
     expect(slugToAn1tBloc('melenchon')).toBe('nfp');
