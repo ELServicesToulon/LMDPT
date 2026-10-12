@@ -1,6 +1,6 @@
 {
   "title": "Candidatures déclarées — Présidentielle 2027",
-  "updated": "2026-09-27",
+  "updated": "2026-10-12",
   "disclaimer": "Liste des personnalités ayant publicisé une candidature à l'élection présidentielle de 2027 (annonces politiques, désignations de parti). Ce n'est pas la liste officielle du Conseil constitutionnel — celle-ci ne sera publiée qu'après dépôt des 500 parrainages d'élus (au plus tard le 4e vendredi précédant le 1er tour, indicatif 26 mars 2027). Aucun classement de candidats. LMDPT cite des sondages d’intentions de vote publiés, toujours avec l’institut, le commanditaire, les dates de terrain, l’échantillon et le lien vers la notice de la Commission des sondages. Un sondage n’est pas une prédiction.",
   "legal_note": "Seuls les candidats retenus par le Conseil constitutionnel figureront sur les bulletins. Voir art. 6 Constitution, code électoral (présentations / parrainages).",
   "sources": [
@@ -38,6 +38,16 @@
       "label": "Le Monde — Jadot suspendu, Tondelier candidate des Écologistes (25 sept. 2026)",
       "url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
       "as_of": "2026-09-25"
+    },
+    {
+      "label": "20 Minutes — résultats de la primaire de la gauche (11 oct. 2026)",
+      "url": "https://www.20minutes.fr/politique/4253256-20261011-primaire-gauche-raphael-glucksmann-elu-haut-main-premier-tour",
+      "as_of": "2026-10-11"
+    },
+    {
+      "label": "Europe 1 — Glucksmann élu dès le 1er tour, réactions Guedj, Maurel, Royal",
+      "url": "https://www.europe1.fr/politique/primaire-socialiste-raphael-glucksmann-elu-des-le-premier-tour-avec-66-des-voix-1139288",
+      "as_of": "2026-10-11"
     }
   ],
   "categories": [
@@ -58,8 +68,8 @@
     },
     {
       "id": "retrait",
-      "label": "Retraits documentés",
-      "description": "Candidatures annoncées puis retirées (documentées)."
+      "label": "Retraits et battus aux primaires",
+      "description": "Candidatures annoncées puis retirées, ou battues à une primaire (documentées)."
     }
   ],
   "entries": [
@@ -155,12 +165,12 @@
       "slug": "guedj",
       "name": "Jérôme Guedj",
       "affiliation": "Gauche républicaine / socialiste",
-      "status": "candidature_declaree",
-      "category": "declarees",
+      "status": "battu_primaire",
+      "category": "retrait",
       "declared_at": "2026-02",
-      "source_label": "France Inter / LCP",
-      "source_url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-7h50/l-invite-de-7h50-du-jeudi-05-fevrier-2026-7548548",
-      "note": "Ligne « gauche républicaine, universaliste et laïque ». Aussi présent au premier débat de la primaire à gauche (LCI, 23 sept. 2026) — presse secondaire."
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.europe1.fr/politique/primaire-socialiste-raphael-glucksmann-elu-des-le-premier-tour-avec-66-des-voix-1139288",
+      "note": "Battu à la primaire sociale-démocrate du 11 oct. 2026 ; soutient Raphaël Glucksmann (« La primaire, désormais, elle est derrière nous », Europe 1). Pas de candidature maintenue documentée."
     },
     {
       "slug": "bouamrane",
@@ -287,45 +297,45 @@
       "slug": "royal",
       "name": "Ségolène Royal",
       "affiliation": "Parti socialiste",
-      "status": "primaire",
-      "category": "conditionnelle",
+      "status": "battu_primaire",
+      "category": "retrait",
       "declared_at": "2026-07-10",
-      "source_label": "LCP",
-      "source_url": "https://lcp.fr/actualites/presidentielle-2027-segolene-royal-annonce-sa-candidature-a-la-primaire-socialiste",
-      "note": "Candidature à la primaire fermée PS (pas encore ticket présidentiel unique). Présente au premier débat télévisé du 23 sept. 2026 (Le Monde)."
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.europe1.fr/politique/primaire-socialiste-raphael-glucksmann-elu-des-le-premier-tour-avec-66-des-voix-1139288",
+      "note": "Battue à la primaire sociale-démocrate du 11 oct. 2026 ; s'est dite « très déçue mais sans regrets » (Europe 1)."
     },
     {
       "slug": "faure",
       "name": "Olivier Faure",
       "affiliation": "Parti socialiste",
-      "status": "primaire",
-      "category": "conditionnelle",
+      "status": "battu_primaire",
+      "category": "retrait",
       "declared_at": "2026-09-23",
-      "source_label": "Le Monde",
-      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
-      "note": "Participant au premier débat de la primaire à gauche (LCI, 23 sept. 2026). Pas un ticket présidentiel unique. Source secondaire."
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.20minutes.fr/politique/4253256-20261011-primaire-gauche-raphael-glucksmann-elu-haut-main-premier-tour",
+      "note": "Battu à la primaire sociale-démocrate du 11 oct. 2026 (14,46 % des exprimés)."
     },
     {
       "slug": "maurel",
       "name": "Emmanuel Maurel",
       "affiliation": "Gauche républicaine et socialiste",
-      "status": "primaire",
-      "category": "conditionnelle",
+      "status": "battu_primaire",
+      "category": "retrait",
       "declared_at": "2026-09-23",
-      "source_label": "Le Monde",
-      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
-      "note": "Participant au premier débat de la primaire à gauche (LCI, 23 sept. 2026). Pas un ticket présidentiel unique. Source secondaire."
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.europe1.fr/politique/primaire-socialiste-raphael-glucksmann-elu-des-le-premier-tour-avec-66-des-voix-1139288",
+      "note": "Battu à la primaire sociale-démocrate du 11 oct. 2026 ; « On est partis sur de bons rails » (Europe 1)."
     },
     {
       "slug": "glucksmann",
       "name": "Raphaël Glucksmann",
       "affiliation": "Place publique",
-      "status": "primaire",
-      "category": "conditionnelle",
-      "declared_at": "2026-09-23",
-      "source_label": "Le Monde",
-      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/primaire-a-gauche-la-situation-a-gaza-et-l-alliance-avec-lfi-electrisent-le-premier-debat-televise_6781332_823448.html",
-      "note": "Candidat à la primaire à gauche (débat LCI, 23 sept. 2026), pas ticket unique. Jadot suspendu des Écologistes pour l'avoir soutenu (Le Monde, 25 sept.). Source secondaire."
+      "status": "designe_parti",
+      "category": "parti_designe",
+      "declared_at": "2026-10-11",
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.20minutes.fr/politique/4253256-20261011-primaire-gauche-raphael-glucksmann-elu-haut-main-premier-tour",
+      "note": "Vainqueur de la primaire sociale-démocrate du 11 oct. 2026 dès le 1er tour : 66,17 % des exprimés, 120 787 votants. Candidat désigné de la gauche sociale-démocrate."
     },
     {
       "slug": "brun",

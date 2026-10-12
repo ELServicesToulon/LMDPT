@@ -35,6 +35,7 @@ const statusDeclareLabels: Record<string, string> = {
   conditionnelle: 'Sous condition',
   primaire: 'Primaire (pas ticket final)',
   retrait: 'Retrait documenté',
+  battu_primaire: 'Battu à la primaire',
   substitution_parti: 'Substitution de parti (non ticket principal)',
 };
 
@@ -44,7 +45,7 @@ const categoryTabLabel: Record<(typeof categoryOrder)[number], string> = {
   declarees: 'En lice',
   parti_designe: 'Désignation parti',
   conditionnelle: 'Primaire et conditions',
-  retrait: 'Retraits',
+  retrait: 'Retraits / battus',
 };
 
 const declaredUpdated = new Date(candidaturesDeclarees.updated).toLocaleDateString('fr-FR', {
