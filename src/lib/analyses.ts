@@ -35,6 +35,18 @@ function uneCover(slug: string, alt: string): EditorialCover {
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
+    slug: primaireDroite.slug,
+    title: primaireDroite.title,
+    description: primaireDroite.description,
+    date: primaireDroite.date,
+    published: primaireDroite.date,
+    updated: primaireDroite.updated,
+    href: '/analyses/primaire-droite-qui-la-veut',
+    cover: uneCover(
+      'primaire-droite-qui-la-veut',
+      'Vignette éditoriale : une urne vide entourée de lettres non ouvertes, titre « Primaire de la droite : personne ne l’organise ».',
+    ),
+  },  {
     slug: chroniquePrimaire.slug,
     title: chroniquePrimaire.title,
     description: chroniquePrimaire.description,
@@ -47,19 +59,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
       'Vignette éditoriale : une manche à air gonflée côté gauche, une salle d’attente aux chaises vides côté droit.',
     ),
   },
-  {
-    slug: primaireDroite.slug,
-    title: primaireDroite.title,
-    description: primaireDroite.description,
-    date: primaireDroite.date,
-    published: primaireDroite.date,
-    updated: primaireDroite.updated,
-    href: '/analyses/primaire-droite-qui-la-veut',
-    cover: uneCover(
-      'primaire-droite-qui-la-veut',
-      'Vignette éditoriale : une urne vide entourée de lettres non ouvertes, titre « Primaire de la droite : personne ne l’organise ».',
-    ),
-  },
+
   {
     slug: freresMusulmans.slug,
     title: freresMusulmans.title,
