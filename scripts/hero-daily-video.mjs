@@ -3,7 +3,7 @@
  * LMDPT — Hero vidéo du jour (croquis N&B sans texte) pilotée par le scoop.
  *
  * Pipeline local (pas d'API Imagine ZDR) :
- *   renifleur + alertes → motif → Cairo sketch → ffmpeg Ken Burns → override JSON
+ *   renifleur + alertes → motif → Cairo sketch → ffmpeg Ken Burns
  *
  * Usage:
  *   node scripts/hero-daily-video.mjs
@@ -19,7 +19,9 @@
  *   videos/2027/daily/hero-YYYY-MM-DD.mp4
  *   videos/2027/hero-daily-live.mp4          (copie cache-busted jour)
  *   illustrations/2027/hero-daily-live.jpg|.webp
- *   illustrations/2027/hero-daily-override.json
+ *
+ * État interne (hors public/, jamais servi) : data/cache/hero-daily-state.json
+ * Le fichier public hero-daily-override.json n’est plus écrit (LMD-24).
  */
 import { execFileSync, spawnSync } from 'node:child_process';
 import {
@@ -177,8 +179,8 @@ function main() {
   const dayKey = parisDayKey();
   const scoop = loadScoop();
   const seed = daySeed(dayKey) ^ (scoop.motif.length * 997);
-  const overridePath = join(PUBLIC, 'illustrations/2027/hero-daily-override.json');
-  const prev = readJson(overridePath);
+  const statePath = join(ROOT, 'data/cache/hero-daily-state.json');
+  const prev = readJson(statePath);
 
   const prevVideoRel = String(prev?.heroVideoFile || prev?.heroVideo || '')
     .replace(/^\//, '')
@@ -287,8 +289,8 @@ function main() {
     copyFileSync(dayMp4, liveMp4);
   }
 
-  const override = {
-    schema: 'lmdpt-hero-daily-override-v1',
+  const state = {
+    schema: 'lmdpt-hero-daily-state-v1',
     dayKey,
     timezone: TZ,
     generatedAt: new Date().toISOString(),
@@ -315,18 +317,15 @@ function main() {
       caption: 'Vidéo hero du jour — encre épique, mise à jour quotidienne.',
     },
     engine: poster.mode === 'generate' ? 'local-cairo+ffmpeg' : 'skip-sketch+ffmpeg',
-    note:
-      poster.mode === 'generate'
-        ? 'API Imagine video bloquée ZDR (upload_url) — pipeline local serveur.'
-        : 'Cairo sauté (--skip-sketch) — poster existant, ffmpeg seulement.',
   };
 
   if (!DRY) {
-    writeFileSync(overridePath, JSON.stringify(override, null, 2) + '\n');
+    mkdirSync(dirname(statePath), { recursive: true });
+    writeFileSync(statePath, JSON.stringify(state, null, 2) + '\n');
   }
 
   console.log('[hero-daily] SHIP');
-  console.log(JSON.stringify(override, null, 2));
+  console.log(JSON.stringify(state, null, 2));
 }
 
 function isDirectRun() {
