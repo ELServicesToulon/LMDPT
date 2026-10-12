@@ -1,0 +1,193 @@
+{
+  "slug": "chronique-manusk-primaire-vent-arriere",
+  "title": "Le vent arrière et la salle d'attente",
+  "eyebrow": "Chronique · Manusk",
+  "type_label": "Chronique d'opinion",
+  "date": "2026-10-12",
+  "updated": "2026-10-12",
+  "kicker": "Chronique · Manusk · 12 octobre 2026",
+  "author": "Manusk",
+  "author_role": "Chroniqueur invité",
+  "chapo": "La gauche sociale-démocrate a voté, la droite s'écrit des lettres. Opinion assumée : Glucksmann a le vent dans le dos et la primaire de droite finira par exister. Le sondage Toluna-Harris, lui, ne donne encore raison à personne face à Le Pen.",
+  "description": "Chronique de Manusk : Glucksmann a-t-il le vent arrière ? La primaire de la droite finira-t-elle par exister ? Thèses d'opinion confrontées au sondage Toluna-Harris d'octobre.",
+  "disclaimer": "Chronique d'opinion signée Manusk, chroniqueur invité. Elle n'engage pas la rédaction comme analyse DOE. Les thèses (vent arrière de Glucksmann, primaire de droite inévitable, compatibilités Attal-Glucksmann, Knafo-Lisnard, Lisnard-UE) sont des opinions, pas des faits. Les chiffres viennent de sondages publiés, consultés le 12 octobre 2026.",
+  "tags": [
+    "lmdpt",
+    "chronique",
+    "manusk",
+    "presidentielle-2027",
+    "primaire",
+    "glucksmann",
+    "doe"
+  ],
+  "x_hook": "Le vent arrière et la salle d'attente",
+  "hues": [
+    {
+      "slug": "parti-socialiste",
+      "label": "Socialiste / social-démocrate",
+      "color": "#ff8080",
+      "rationale": "En phase avec la thèse du vent arrière de Glucksmann."
+    },
+    {
+      "slug": "droite",
+      "label": "Droite (débat)",
+      "color": "#0066cc",
+      "rationale": "En phase avec le pari d'une primaire de la droite et du centre."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "Les thèses sont confrontées au sondage qui les contredit."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "chronique",
+      "title": "La chronique",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dimanche, la gauche sociale-démocrate a voté. Raphaël Glucksmann a gagné sa primaire avec 66,17 % des exprimés, sur 120 787 votants. La droite et le centre, eux, s'écrivent des lettres."
+        },
+        {
+          "type": "p",
+          "text": "Je le dis franchement, c'est mon avis et je l'assume : Glucksmann a le vent dans le dos. Et je crois qu'il peut aller chercher des voix chez Jean-Luc Mélenchon."
+        },
+        {
+          "type": "p",
+          "text": "Seulement voilà, le thermomètre ne me donne pas encore raison. Dans la vague 7 Toluna-Harris Interactive pour M6 et RTL (terrain du 5 au 8 octobre), Glucksmann pèse 10 à 11 %. Mélenchon reste à 18-19 % dans toutes les hypothèses. Marine Le Pen plane à 35-37 %. Aucun transfert visible. Une seule excuse, et elle est réelle : l'enquête a été bouclée avant sa victoire. Le vent arrière, il faudra le mesurer au prochain sondage, pas le déclamer."
+        },
+        {
+          "type": "p",
+          "text": "À droite, le spectacle est plus savoureux. 70 % des sympathisants de droite et du centre veulent une primaire (Odoxa-Backbone pour Le Figaro, septembre). Bruno Retailleau jure qu'il l'affrontera, puis ajoute : « Aujourd'hui, je n'y crois pas. » Édouard Philippe la juge « au mieux hypocrite, au pire impossible » et propose à la place de discuter en novembre, « sous l'autorité de personne ». Ce qui, en politique, veut souvent dire sous l'autorité de celui qui convoque."
+        },
+        {
+          "type": "p",
+          "text": "Mon pari : cette primaire finira par exister. Parce que la demande est là, et qu'au second tour testé Le Pen bat Philippe 56 à 44. Un camp qui perd en ordre dispersé finit toujours par chercher un arbitre."
+        },
+        {
+          "type": "p",
+          "text": "Deux intuitions encore, en opinion pure. Gabriel Attal et Glucksmann parlent la même langue européenne et pourraient se retrouver un jour. À l'autre bout, David Lisnard et Sarah Knafo sont plus proches qu'ils ne l'avouent, et Lisnard reste, à mes yeux, compatible avec l'Union européenne. Aucun sondage ne le prouve. Je le note pour qu'on vienne me le reprocher plus tard."
+        },
+        {
+          "type": "p",
+          "text": "Reste l'essentiel. Dans les chiffres d'aujourd'hui, personne ne rattrape Le Pen. Ni le vent arrière, ni la salle d'attente."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : la primaire de la droite et du centre",
+      "intro": "Positions déclarées au 12 octobre 2026.",
+      "table": {
+        "caption": "Positions des candidats 2027 sur une primaire",
+        "headers": [
+          "Candidat",
+          "Position",
+          "Source"
+        ],
+        "rows": [
+          [
+            "David Lisnard",
+            "Pour, « encore organisable »",
+            "BFMTV, 10/10"
+          ],
+          [
+            "Bruno Retailleau",
+            "L'affrontera s'il y en a une, « n'y croit pas »",
+            "France 2, 28/08"
+          ],
+          [
+            "Gabriel Attal",
+            "« Jamais exclu »",
+            "30/08"
+          ],
+          [
+            "Édouard Philippe",
+            "Contre ; discussions début novembre",
+            "11/10"
+          ],
+          [
+            "Raphaël Glucksmann",
+            "Vainqueur de la primaire sociale-démocrate",
+            "11/10"
+          ]
+        ]
+      },
+      "note": "Positions déclarées, pas intentions de vote.",
+      "conclusion": "L'opinion appartient à son auteur ; les faits, à tout le monde."
+    }
+  ],
+  "sources_intro": "Consultations du 12 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Sondages et presse",
+      "items": [
+        {
+          "label": "Toluna-Harris Interactive, vague 7 (rapport)",
+          "links": [
+            {
+              "label": "Toluna-Harris Interactive, vague 7 (rapport)",
+              "url": "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV, sondage Toluna 12/10",
+          "links": [
+            {
+              "label": "BFMTV, sondage Toluna 12/10",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-un-nouveau-sondage-place-marine-le-pen-toujours-largement-en-tete-au-premier-tour-au-cote-de-jean-luc-melenchon-malgre-l-affaire-bardella_AN-202610120289.html"
+            }
+          ]
+        },
+        {
+          "label": "Odoxa-Backbone / Le Figaro, primaire",
+          "links": [
+            {
+              "label": "Odoxa-Backbone / Le Figaro, primaire",
+              "url": "https://www.odoxa.fr/sondage/primaire-de-la-droite-et-du-centre-les-sympathisants-veulent-avoir-leur-mot-a-dire/"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo, Retailleau 28/08",
+          "links": [
+            {
+              "label": "franceinfo, Retailleau 28/08",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/s-il-y-a-une-primaire-de-la-droite-et-du-centre-je-l-affronterai-assure-bruno-retailleau-candidat-a-l-election-presidentielle_8166113.html"
+            }
+          ]
+        },
+        {
+          "label": "La Tribune, Philippe à Dijon",
+          "links": [
+            {
+              "label": "La Tribune, Philippe à Dijon",
+              "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/84798776065116/presidentielle-gabriel-attal-et-edouard-philippe-appellent-au-rassemblement-du-bloc-central-mais-chacun-dans-son-couloir"
+            }
+          ]
+        },
+        {
+          "label": "Les Echos, lettre de Philippe",
+          "links": [
+            {
+              "label": "Les Echos, lettre de Philippe",
+              "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-a-dijon-edouard-philippe-et-gabriel-attal-appellent-au-rassemblement-sans-dire-comment-2256257"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Opinion signée. Aucune simulation, aucun chiffre hors sondages publiés.",
+  "liens_internes": [
+    {
+      "href": "/analyses/primaire-droite-qui-la-veut",
+      "label": "Primaire de la droite : tout le monde la commente, personne ne l'organise"
+    }
+  ]
+}

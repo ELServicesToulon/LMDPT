@@ -1,0 +1,290 @@
+{
+  "slug": "primaire-droite-qui-la-veut",
+  "title": "Primaire de la droite : tout le monde la commente, personne ne l'organise",
+  "eyebrow": "Analyse · Présidentielle 2027",
+  "type_label": "Analyse",
+  "date": "2026-10-12",
+  "updated": "2026-10-12",
+  "kicker": "Analyse · Présidentielle 2027 · 12 octobre 2026",
+  "chapo": "Sept électeurs de droite et du centre sur dix veulent une primaire. Au 12 octobre, il n'y a toujours ni organisateur, ni règles, ni date. David Lisnard et Hervé Morin la réclament, Bruno Retailleau dit qu'il l'affrontera tout en n'y croyant pas, Gabriel Attal ne l'a « jamais exclue », Édouard Philippe la refuse. Pendant ce temps, à gauche, Raphaël Glucksmann a eu la sienne.",
+  "description": "70 % des sympathisants de droite et du centre veulent une primaire. Lisnard et Morin la réclament, Retailleau n'y croit pas, Attal ne l'exclut pas, Philippe refuse. Et le sondage Toluna-Harris d'octobre en contrepoint.",
+  "disclaimer": "Analyse du Média du Premier Tour, fondée sur la presse et les sondages publiés, consultés le 12 octobre 2026. Les sondages sont des photographies, pas des prévisions.",
+  "tags": [
+    "lmdpt",
+    "presidentielle-2027",
+    "primaire",
+    "droite",
+    "centre",
+    "sondages",
+    "doe"
+  ],
+  "x_hook": "Primaire de la droite : tout le monde la commente, personne ne l'organise",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "La thèse (les électeurs veulent trancher, les candidats temporisent) se constate sans prendre parti."
+    },
+    {
+      "slug": "droite",
+      "label": "Droite (débat)",
+      "color": "#0066cc",
+      "rationale": "En phase avec la demande d'arbitrage portée par Lisnard, Morin et 70 % des sympathisants de droite et du centre."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "electeurs",
+      "title": "Ce que veulent les électeurs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le sondage Odoxa-Backbone pour Le Figaro (terrain les 8 et 9 septembre, 1 005 personnes) est net. 61 % des Français et 70 % des sympathisants de droite et du centre sont favorables à une primaire. 64 % la veulent ouverte, 35 % réservée aux adhérents ([Odoxa](https://www.odoxa.fr/sondage/primaire-de-la-droite-et-du-centre-les-sympathisants-veulent-avoir-leur-mot-a-dire/), [BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-plus-de-deux-tiers-des-electeurs-de-droite-et-du-centre-favorables-a-une-primaire-selon-un-sondage_AD-202609100200.html)). À la question « ferait un bon candidat », Philippe obtient 67 %, Retailleau 60 %, Attal 48 %."
+        },
+        {
+          "type": "p",
+          "text": "Ce n'est pas une lubie de rentrée. En février, l'Ifop pour Le Point mesurait déjà 58 % d'approbation chez les personnes de centre et de droite ([Le Point](https://www.lepoint.fr/politique/frederic-dabi-une-primaire-eviterait-le-duel-bardella-melenchon-W67GNTZC6ZHOTGNJYABNXHRYGY/))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "pour",
+      "title": "Ceux qui poussent",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fin août, plus de 200 élus signent une tribune sur le site du *Figaro*, parmi eux Hervé Morin, Franck Louvrier, Véronique Louwagie et Charles de Courson. Ils proposent 300 parrainages de maires venus de 30 départements, et lancent une pétition ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/plus-de-200-elus-dont-herve-morin-appellent-a-une-primaire-ouverte-de-la-droite-et-du-centre-a-l-approche-de-l-election-presidentielle-de-2027_8164085.html), [Paris Match](https://www.parismatch.com/actu/politique/herve-morin-lance-une-petition-pour-imposer-une-primaire-a-la-droite-et-au-centre-274720))."
+        },
+        {
+          "type": "p",
+          "text": "Les 7 et 8 septembre, Morin écrit la même lettre à Philippe, Attal, Retailleau et Lisnard. Il demande une « grande primaire ouverte » qui « doit aboutir avant la fin de l'année ». Il joint une charte, un système de parrainages et un comité d'organisation de deux personnes par candidat, présidé par des « Sages » ([Le Figaro](https://www.lefigaro.fr/politique/le-temps-presse-dans-un-courrier-a-retailleau-philippe-attal-et-lisnard-herve-morin-exhorte-les-candidats-a-organiser-une-primaire-20260908), [franceinfo](https://www.franceinfo.fr/elections/presidentielle/info-franceinfo-presidentielle-2027-les-details-de-la-charte-envoyee-par-herve-morin-aux-candidats-de-la-droite-et-du-centre-pour-l-organisation-d-une-primaire_8182712.html))."
+        },
+        {
+          "type": "p",
+          "text": "Lisnard, président de Nouvelle Énergie et candidat, tient la ligne le 10 octobre sur BFMTV : « C'est encore organisable et je crois qu'elle est souhaitable » ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/video-proposition-d-une-primaire-de-la-droite-et-du-centre-pour-2027-c-est-encore-organisable-et-je-crois-qu-elle-est-souhaitable-declare-david-lisnard-president-de-nouvelle-energie-et-candidat-a-la-presidentielle_VN-202610100371.html)). « Encore ». Le mot dit tout du calendrier."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "hesitants",
+      "title": "Ceux qui hésitent, celui qui refuse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Retailleau, le 28 août sur France 2 : « S'il y a une primaire, je l'affronterai. Je n'ai peur d'aucune compétition. » Puis, dans le même souffle : « Aujourd'hui, je n'y crois pas » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/s-il-y-a-une-primaire-de-la-droite-et-du-centre-je-l-affronterai-assure-bruno-retailleau-candidat-a-l-election-presidentielle_8166113.html)). Courageux à condition que ça n'arrive pas. Il a déjà été désigné par les adhérents LR en avril."
+        },
+        {
+          "type": "p",
+          "text": "Attal, le 30 août à Châlons-en-Champagne, dit n'avoir « jamais exclu » une primaire. Il préfère parler du comité de liaison créé en mars, et décline pour l'instant la main tendue de Philippe ([Les Echos](https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-a-dijon-edouard-philippe-et-gabriel-attal-appellent-au-rassemblement-sans-dire-comment-2256257))."
+        },
+        {
+          "type": "p",
+          "text": "Philippe, lui, ne tourne pas autour. Le 11 octobre, au congrès radical de Dijon, il redit non : une primaire rendrait le rassemblement « au mieux hypocrite, au pire impossible » ([La Tribune](https://www.latribune.fr/article/la-tribune-dimanche/politique/84798776065116/presidentielle-gabriel-attal-et-edouard-philippe-appellent-au-rassemblement-du-bloc-central-mais-chacun-dans-son-couloir)). Sa contre-offre tient dans une lettre du 8 octobre aux chefs de partis et de groupes : des discussions dès début novembre sur un socle de programme et les législatives, « sous l'autorité de personne », chaque candidat restant en course. Se rassembler sans se départager, c'est la formule."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "sondage",
+      "title": "Le contrepoint : un sondage où personne ne décolle",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La vague 7 du baromètre Toluna-Harris Interactive pour M6 et RTL (terrain du 5 au 8 octobre, 2 004 inscrits, marge de ±2,9 à 3,1 points) donne Marine Le Pen à 35-37 % au premier tour dans toutes les hypothèses ([rapport Toluna](https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf), [BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-un-nouveau-sondage-place-marine-le-pen-toujours-largement-en-tete-au-premier-tour-au-cote-de-jean-luc-melenchon-malgre-l-affaire-bardella_AN-202610120289.html)). Jean-Luc Mélenchon suit à 18-19 %."
+        },
+        {
+          "type": "p",
+          "text": "Quand Philippe et Attal sont tous les deux sur la liste, Philippe fait 13 %, Attal 5 %, Retailleau 7 %. Seul, Philippe monte à 17 %. Seul, Attal monte à 12 %. Raphaël Glucksmann est testé à 10-11 %. Au second tour, Le Pen bat Philippe 56 à 44. Il était à 48, puis 49 face à elle cet été."
+        },
+        {
+          "type": "p",
+          "text": "Une précision qui compte : ce terrain précède la victoire de Glucksmann à la primaire sociale-démocrate du 11 octobre (66,17 % des suffrages exprimés, 120 787 votants). La gauche a voté. La droite et le centre, eux, en sont encore aux lettres."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : les candidats 2027 face à la primaire",
+      "intro": "Positions déclarées au 12 octobre 2026, sources dans le texte.",
+      "table": {
+        "caption": "Positions des candidats 2027 sur une primaire de la droite et du centre",
+        "headers": [
+          "Candidat",
+          "Position",
+          "Source"
+        ],
+        "rows": [
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Pour, « encore organisable »",
+            "BFMTV, 10/10"
+          ],
+          [
+            "Hervé Morin (initiateur de la lettre)",
+            "Pour, primaire ouverte avant fin 2026",
+            "Lettre des 7-8/09 (Le Figaro, franceinfo)"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "L'affrontera s'il y en a une, « n'y croit pas »",
+            "France 2, 28/08"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "« Jamais exclu », privilégie le comité de liaison",
+            "Châlons, 30/08 ; Les Echos"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "**Contre** ; propose des discussions début novembre",
+            "Dijon, 11/10 ; lettre du 8/10"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique)",
+            "Non concerné ; vainqueur de la primaire sociale-démocrate (66,17 % des exprimés)",
+            "11/10"
+          ]
+        ]
+      },
+      "note": "Positions déclarées, pas intentions de vote.",
+      "conclusion": "Pas de verdict : la primaire n'existe pas tant que personne ne l'organise."
+    }
+  ],
+  "sources_intro": "Consultations du 12 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Presse et sondages",
+      "items": [
+        {
+          "label": "Odoxa",
+          "links": [
+            {
+              "label": "Odoxa",
+              "url": "https://www.odoxa.fr/sondage/primaire-de-la-droite-et-du-centre-les-sympathisants-veulent-avoir-leur-mot-a-dire/"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV",
+          "links": [
+            {
+              "label": "BFMTV",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-plus-de-deux-tiers-des-electeurs-de-droite-et-du-centre-favorables-a-une-primaire-selon-un-sondage_AD-202609100200.html"
+            }
+          ]
+        },
+        {
+          "label": "Le Point",
+          "links": [
+            {
+              "label": "Le Point",
+              "url": "https://www.lepoint.fr/politique/frederic-dabi-une-primaire-eviterait-le-duel-bardella-melenchon-W67GNTZC6ZHOTGNJYABNXHRYGY/"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo",
+          "links": [
+            {
+              "label": "franceinfo",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/plus-de-200-elus-dont-herve-morin-appellent-a-une-primaire-ouverte-de-la-droite-et-du-centre-a-l-approche-de-l-election-presidentielle-de-2027_8164085.html"
+            }
+          ]
+        },
+        {
+          "label": "Paris Match",
+          "links": [
+            {
+              "label": "Paris Match",
+              "url": "https://www.parismatch.com/actu/politique/herve-morin-lance-une-petition-pour-imposer-une-primaire-a-la-droite-et-au-centre-274720"
+            }
+          ]
+        },
+        {
+          "label": "Le Figaro",
+          "links": [
+            {
+              "label": "Le Figaro",
+              "url": "https://www.lefigaro.fr/politique/le-temps-presse-dans-un-courrier-a-retailleau-philippe-attal-et-lisnard-herve-morin-exhorte-les-candidats-a-organiser-une-primaire-20260908"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo",
+          "links": [
+            {
+              "label": "franceinfo",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/info-franceinfo-presidentielle-2027-les-details-de-la-charte-envoyee-par-herve-morin-aux-candidats-de-la-droite-et-du-centre-pour-l-organisation-d-une-primaire_8182712.html"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV",
+          "links": [
+            {
+              "label": "BFMTV",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/video-proposition-d-une-primaire-de-la-droite-et-du-centre-pour-2027-c-est-encore-organisable-et-je-crois-qu-elle-est-souhaitable-declare-david-lisnard-president-de-nouvelle-energie-et-candidat-a-la-presidentielle_VN-202610100371.html"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo",
+          "links": [
+            {
+              "label": "franceinfo",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/s-il-y-a-une-primaire-de-la-droite-et-du-centre-je-l-affronterai-assure-bruno-retailleau-candidat-a-l-election-presidentielle_8166113.html"
+            }
+          ]
+        },
+        {
+          "label": "Les Echos",
+          "links": [
+            {
+              "label": "Les Echos",
+              "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-a-dijon-edouard-philippe-et-gabriel-attal-appellent-au-rassemblement-sans-dire-comment-2256257"
+            }
+          ]
+        },
+        {
+          "label": "La Tribune",
+          "links": [
+            {
+              "label": "La Tribune",
+              "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/84798776065116/presidentielle-gabriel-attal-et-edouard-philippe-appellent-au-rassemblement-du-bloc-central-mais-chacun-dans-son-couloir"
+            }
+          ]
+        },
+        {
+          "label": "rapport Toluna",
+          "links": [
+            {
+              "label": "rapport Toluna",
+              "url": "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "BFMTV",
+          "links": [
+            {
+              "label": "BFMTV",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-un-nouveau-sondage-place-marine-le-pen-toujours-largement-en-tete-au-premier-tour-au-cote-de-jean-luc-melenchon-malgre-l-affaire-bardella_AN-202610120289.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "**Méthode** : seuls des faits publiés et datés sont repris. Aucune projection ni addition de scores entre hypothèses de sondage.",
+  "liens_internes": [
+    {
+      "href": "/analyses/lisnard-abonnes-electeurs",
+      "label": "Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?"
+    }
+  ]
+}

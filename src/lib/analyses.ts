@@ -6,6 +6,8 @@ import lfiBfmtv from '../data/analyses/lfi-bfmtv-exigence-pluralisme.json';
 import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-algerie-russie.json';
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
+import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import primaireDroite from '../data/analyses/primaire-droite-qui-la-veut.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import freresMusulmans from '../data/analyses/freres-musulmans-strasbourg-a-vote.json';
 import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
@@ -32,6 +34,32 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: primaireDroite.slug,
+    title: primaireDroite.title,
+    description: primaireDroite.description,
+    date: primaireDroite.date,
+    published: primaireDroite.date,
+    updated: primaireDroite.updated,
+    href: '/analyses/primaire-droite-qui-la-veut',
+    cover: uneCover(
+      'primaire-droite-qui-la-veut',
+      'Vignette éditoriale : une urne vide entourée de lettres non ouvertes, titre « Primaire de la droite : personne ne l’organise ».',
+    ),
+  },  {
+    slug: chroniquePrimaire.slug,
+    title: chroniquePrimaire.title,
+    description: chroniquePrimaire.description,
+    date: chroniquePrimaire.date,
+    published: chroniquePrimaire.date,
+    updated: chroniquePrimaire.updated,
+    href: '/analyses/chronique-manusk-primaire-vent-arriere',
+    cover: uneCover(
+      'chronique-manusk-primaire-vent-arriere',
+      'Vignette éditoriale : une manche à air gonflée côté gauche, une salle d’attente aux chaises vides côté droit.',
+    ),
+  },
+
   {
     slug: freresMusulmans.slug,
     title: freresMusulmans.title,
