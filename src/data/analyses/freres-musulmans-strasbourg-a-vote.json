@@ -1,0 +1,273 @@
+{
+  "slug": "freres-musulmans-strasbourg-a-vote",
+  "title": "Frères musulmans : Strasbourg a voté, mais rien n'est encore interdit",
+  "eyebrow": "Analyse · Union européenne",
+  "type_label": "Analyse documentaire",
+  "date": "2026-10-12",
+  "updated": "2026-10-12",
+  "kicker": "Analyse · Union européenne · 12 octobre 2026",
+  "chapo": "Une carte circule depuis jeudi. L'Europe y est presque toute verte, avec deux taches rouges : l'Espagne et la Finlande. Titre : « Vote du Parlement européen sur les Frères musulmans ». Le vote a bien eu lieu, le 8 octobre 2026, et la carte dit vrai. Ce qu'elle tait, c'est le poids du texte. Une résolution, c'est un vœu appuyé. Pas une loi. Reste une question, sans consigne de vote : qui transformera ce vœu en décision, et avec quelles preuves ?",
+  "description": "Le 8 octobre 2026, le Parlement européen a adopté par 381 voix une résolution sur l'entrisme islamiste et les Frères musulmans. Une carte virale dit vrai, mais oublie l'essentiel : ce texte n'interdit rien, la suite revient à la Commission et au Conseil.",
+  "disclaimer": "Analyse documentaire du Média du Premier Tour (ligne éditoriale : la démocratie avant l'élimination). Elle s'appuie sur le texte adopté TA-10-2026-0342, sur le relevé nominal publié par HowTheyVote.eu et sur la presse consultés le 12 octobre 2026. La boîte DOE reflète le vote des eurodéputés de chaque famille politique, pas des déclarations de candidats. Aucune consigne de vote.",
+  "tags": [
+    "lmdpt",
+    "union-europeenne",
+    "parlement-europeen",
+    "freres-musulmans",
+    "entrisme",
+    "fact-check",
+    "presidentielle-2027",
+    "doe"
+  ],
+  "x_hook": "Frères musulmans : Strasbourg a voté, mais rien n'est encore interdit",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "La thèse (un vote réel, une portée encore symbolique, une suite qui dépend de preuves et de critères juridiques) ne tranche pas le fond et peut être partagée par des électeurs de plusieurs familles."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Socialiste / social-démocrate",
+      "color": "#ff8080",
+      "rationale": "En phase sur le volet garanties : le groupe S&D a critiqué le flou des critères de « lien » avec la confrérie."
+    },
+    {
+      "slug": "ecolo",
+      "label": "Écologiste",
+      "color": "#00c000",
+      "rationale": "En phase sur le volet garanties : les Verts ont voté contre en invoquant le manque de critères précis."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "post",
+      "title": "Ce que dit le post",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le post vient de la page Facebook GeoNet. Il annonce : « Le Parlement européen adopte une résolution sur l'influence des Frères musulmans », et parle d'« une stratégie européenne coordonnée ». L'image, signée @geoallday, colore chaque pays selon le vote de la majorité de ses eurodéputés."
+        },
+        {
+          "type": "p",
+          "text": "**Verdict LMDPT : vrai, mais il manque le contexte.** Le vote est réel. La date est bonne. Les couleurs collent aux votes nationaux. Mais la carte suggère que « l'Europe » a décidé. En réalité, le Parlement a donné un avis, qui n'oblige personne."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "vote",
+      "title": "Le vote, en clair",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Jeudi 8 octobre, à Strasbourg, les eurodéputés ont adopté la résolution B10-0424/2026 sur « l'entrisme islamiste et l'influence du réseau des Frères musulmans ». Résultat : **381** voix pour, 167 contre, 15 abstentions ([HowTheyVote](https://howtheyvote.eu/votes/198051), [texte adopté TA-10-2026-0342](https://www.europarl.europa.eu/doceo/document/TA-10-2026-0342_FR.html))."
+        },
+        {
+          "type": "p",
+          "text": "Le texte est porté par une Française, Céline Imart (LR, groupe PPE). Il réclame une méthode européenne pour repérer l'entrisme. Il veut qu'aucun euro de l'Union n'aille à des réseaux inscrits sur la liste terroriste. Il demande la liste des fonds déjà versés à des structures soupçonnées de liens avec la confrérie, et un contrôle plus serré des financements étrangers, en particulier ceux liés au Qatar ou à la Turquie."
+        },
+        {
+          "type": "p",
+          "text": "Il invite aussi le Conseil à inscrire sur la liste terroriste de l'UE des entités et des personnes liées aux Frères musulmans, « lorsque les critères de la position commune 2001/931/PESC sont remplis ». Et il va plus loin que ne le dit le post : soutien aux interdictions nationales du voile intégral, liste européenne de « prédicateurs de haine », portes fermées au FEMYSO."
+        },
+        {
+          "type": "p",
+          "text": "La carte, elle, tient la route. L'Espagne passe au rouge à une voix près (23 pour, 24 contre). La Finlande aussi (6 pour, 8 contre). En France, 48 eurodéputés ont voté pour et 20 contre."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "clivage",
+      "title": "La vraie ligne de partage n'est pas géographique",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une carte par pays, c'est lisible. Mais le vrai clivage ne suit pas les frontières. Il suit les groupes. PPE, Conservateurs (ECR), Patriotes (PfE), ESN et Renew ont voté pour, presque en bloc. Socialistes, Verts et Gauche ont voté contre, tout aussi nettement. Si l'Espagne est rouge, c'est que sa délégation de gauche pèse lourd. Madrid n'a rien « refusé »."
+        },
+        {
+          "type": "p",
+          "text": "À gauche, on reproche au texte son flou : être « lié » aux Frères musulmans, ça veut dire quoi, et qui en juge ? À droite, on invoque l'urgence et les rapports de services de sécurité nationaux. Deux récits pour un même hémicycle."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "suite",
+      "title": "Et maintenant ? Pas grand-chose, pas tout de suite",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une résolution n'est ni un règlement ni une directive. Elle ne contraint personne. La suite se joue ailleurs."
+        },
+        {
+          "type": "p",
+          "text": "À la Commission d'abord. Le commissaire Magnus Brunner ne s'est pas engagé à écrire une stratégie. Selon Les Échos, il a même mis en garde contre une « suspicion généralisée » visant une communauté. Au Conseil ensuite. Lui seul peut inscrire une organisation sur la liste terroriste, à l'unanimité des États et sur la base de décisions d'autorités compétentes. La confrérie en tant que telle n'y figure pas."
+        },
+        {
+          "type": "p",
+          "text": "Ceux qui saluent un vote « historique » et ceux qui dénoncent un vote « liberticide » parlent donc du même texte. Un texte qui, pour l'instant, ne change aucune règle. Il ne peut agir vite que chez lui, au Parlement : il demande de fermer la porte au FEMYSO et de radier du registre de transparence les organisations liées au Conseil des musulmans européens."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "enjeu",
+      "title": "Pourquoi ça compte quand même",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Parce qu'un vœu répété finit par peser. L'Assemblée nationale en avait voté un proche le 22 janvier 2026. Strasbourg prend le relais, la Commission et les capitales sentent la pression, et le sujet tombe en pleine pré-campagne française."
+        },
+        {
+          "type": "p",
+          "text": "Le vrai test viendra plus tard, loin des cartes colorées. Il faudra des critères juridiques précis, des preuves, des recours. On saura alors si l'Europe sait combattre l'entrisme sans fabriquer des suspects par simple association."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : où se situent les familles candidates à 2027",
+      "intro": "Repère factuel : vote de leurs eurodéputés le 8 octobre 2026 ([HowTheyVote](https://howtheyvote.eu/votes/198051)). Sans classement ni consigne de vote. **À confirmer** : ce sont des votes d'eurodéputés, pas des déclarations de candidats.",
+      "table": {
+        "caption": "Vote des familles politiques françaises sur la résolution B10-0424/2026",
+        "headers": [
+          "Famille (groupe au Parlement européen)",
+          "Vote du groupe",
+          "Remarque"
+        ],
+        "rows": [
+          [
+            "RN, Le Pen / Bardella (PfE)",
+            "Pour, en bloc",
+            "Réclame l'inscription de la confrérie sur la liste terroriste."
+          ],
+          [
+            "LR (PPE)",
+            "Pour",
+            "Auteur du texte (Céline Imart)."
+          ],
+          [
+            "Reconquête (ESN)",
+            "Pour",
+            ""
+          ],
+          [
+            "Renaissance / Horizons / MoDem (Renew)",
+            "Pour en majorité",
+            "2 abstentions françaises."
+          ],
+          [
+            "PS / Place publique (S&D)",
+            "Contre",
+            ""
+          ],
+          [
+            "LFI, Mélenchon (La Gauche)",
+            "Contre",
+            ""
+          ],
+          [
+            "Écologistes (Verts/ALE)",
+            "Contre",
+            ""
+          ]
+        ]
+      },
+      "note": "Les positions personnelles des candidats déclarés restent à confirmer sur pièces.",
+      "conclusion": "Thèse de l'article : un vote réel, à portée encore symbolique, dont la suite dépend de preuves et de critères juridiques."
+    }
+  ],
+  "sources_intro": "Consultations du 12 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Sources primaires",
+      "items": [
+        {
+          "label": "Parlement européen, texte adopté TA-10-2026-0342 (8 octobre 2026)",
+          "links": [
+            {
+              "label": "Parlement européen, texte adopté TA-10-2026-0342 (8 octobre 2026)",
+              "url": "https://www.europarl.europa.eu/doceo/document/TA-10-2026-0342_FR.html"
+            }
+          ]
+        },
+        {
+          "label": "Proposition de résolution B10-0424/2026",
+          "links": [
+            {
+              "label": "Proposition de résolution B10-0424/2026",
+              "url": "https://www.europarl.europa.eu/doceo/document/B-10-2026-0424_EN.html"
+            }
+          ]
+        },
+        {
+          "label": "HowTheyVote.eu, vote nominal du 8 octobre 2026",
+          "links": [
+            {
+              "label": "HowTheyVote.eu, vote nominal du 8 octobre 2026",
+              "url": "https://howtheyvote.eu/votes/198051"
+            }
+          ]
+        },
+        {
+          "label": "Question parlementaire O-000009/2026 (résolution de l'Assemblée nationale du 22 janvier 2026)",
+          "links": [
+            {
+              "label": "Question parlementaire O-000009/2026",
+              "url": "https://www.europarl.europa.eu/doceo/document/O-10-2026-000009_FR.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Presse",
+      "items": [
+        {
+          "label": "Les Échos",
+          "links": [
+            {
+              "label": "Les Échos, « Le Parlement européen vise l'entrisme islamiste et les Frères musulmans »",
+              "url": "https://www.lesechos.fr/monde/europe/le-parlement-europeen-vise-lentrisme-islamiste-et-les-freres-musulmans-2255956"
+            }
+          ]
+        },
+        {
+          "label": "JDD",
+          "links": [
+            {
+              "label": "JDD, « Frères musulmans : le Parlement européen adopte une résolution contre l'entrisme islamiste »",
+              "url": "https://www.lejdd.fr/politique/freres-musulmans-le-parlement-europeen-adopte-une-resolution-contre-lentrisme-islamiste-185556"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Post analysé",
+      "items": [
+        {
+          "label": "GeoNet (Facebook), carte @geoallday",
+          "links": [
+            {
+              "label": "GeoNet (Facebook), carte @geoallday",
+              "url": "https://www.facebook.com/share/p/1K6eCcGTzz/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "**Relevé interne (non publié)** : drafts/2026-10-12-analyse-ue-freres-musulmans-resolution.md.",
+  "liens_internes": [
+    {
+      "href": "/analyses/dsa-qui-decide",
+      "label": "Quand un compte disparaît, qui a décidé : la plateforme, l’État ou le juge ?"
+    }
+  ]
+}

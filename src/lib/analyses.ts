@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
+import freresMusulmans from '../data/analyses/freres-musulmans-strasbourg-a-vote.json';
 import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications-saucissonne.json';
 
 export interface AnalysisSummary {
@@ -31,6 +32,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: freresMusulmans.slug,
+    title: freresMusulmans.title,
+    description: freresMusulmans.description,
+    date: freresMusulmans.date,
+    published: freresMusulmans.date,
+    updated: freresMusulmans.updated,
+    href: '/analyses/freres-musulmans-strasbourg-a-vote',
+    cover: uneCover(
+      'freres-musulmans-strasbourg-a-vote',
+      'Illustration à l’encre et à l’aquarelle : un hémicycle vide aux sièges bleus, et au centre un pupitre portant une carte d’Europe dépliée, un parchemin roulé non scellé et un tampon sans encre.',
+    ),
+  },
   {
     slug: lisnardAbonnes.slug,
     title: lisnardAbonnes.title,
