@@ -1,18 +1,18 @@
 {
   "slug": "ukraine-energie-triangle-europe-algerie-russie",
   "title": "Ukraine et énergie : le triangle Europe–Algérie–Russie, à l’horizon de la haute intensité",
-  "eyebrow": "Enquête prospective · énergie · arbre oracle",
+  "eyebrow": "Enquête prospective · énergie · scénarios",
   "type_label": "Enquête prospective",
   "date": "2026-09-17",
   "updated": "2026-09-17",
   "doe_angle": "Qui tient les vannes — et qui tient le récit — lorsque la guerre d’Ukraine sert de levier énergétique ?",
-  "disclaimer": "Enquête prospective du Média du Premier Tour (ligne éditoriale : la démocratie avant l’élimination). Les pourcentages sont des jugements argumentés, selon l’arbre oracle iarbre (horizon 12–36 mois, scénarios A–E ; définition HI stricte) : ce ne sont ni des fréquences historiques, ni une prédiction. L’ossature éditoriale reste celle des branches A–E ; les sorties de l’interface web iarbre.org constituent un signal secondaire. Aucun renseignement en temps réel n’est mobilisé ici.",
-  "oracle_citation": "selon l’arbre oracle iarbre (horizon 12–36 mois, scénarios A–E ; définition HI stricte)",
+  "disclaimer": "Enquête prospective du Média du Premier Tour (ligne éditoriale : la démocratie avant l’élimination). Les pourcentages sont des jugements argumentés, selon l’outil de scénarios iarbre.org (horizon 12 à 36 mois, scénarios A à E) : ce ne sont ni des fréquences historiques, ni une prédiction. L’ossature éditoriale reste celle des branches A–E ; les sorties de l’interface web iarbre.org constituent un signal secondaire. Aucun renseignement en temps réel n’est mobilisé ici.",
+  "oracle_citation": "selon l’outil de scénarios iarbre.org (horizon 12 à 36 mois, scénarios A à E)",
   "oracle_url": "https://iarbre.org",
   "seed": "seed_lmdpt_ukraine_energie_triangle_ae",
   "seed_planted": "2026-09-17",
   "hi_definition": "Affrontement armé direct ou quasi direct entre l’UE ou l’OTAN et la Russie, et/ou escalade militaire impliquant l’Algérie — à distinguer de la seule guerre hybride.",
-  "tldr": "Le conflit ukrainien n’est plus seulement un théâtre militaire. Il fournit un modèle d’instrumentalisation — coercition gazière, frappes sur les infrastructures énergétiques, récit de l’hiver et de la dépendance — que Moscou a déjà éprouvé face à l’Europe, et que Bruxelles a partiellement contourné en se tournant vers la Norvège, le gaz naturel liquéfié américain et l’Algérie (environ 19 à 20 % du gaz de l’Union européenne en 2025, deuxième fournisseur). Sur un horizon de douze à trente-six mois, selon l’arbre oracle iarbre (horizon 12–36 mois, scénarios A–E ; définition HI stricte), le cœur de probabilité porte sur une guerre hybride prolongée, sans guerre ouverte entre l’UE et la Russie ni affrontement armé avec l’Algérie (environ 45 à 55 %). Une crise énergétique ou un chantage logistique sans haute intensité militaire suit (environ 20 à 25 %). Une escalade de haute intensité UE/OTAN–Russie, l’Algérie restant hors combat, demeure possible mais minoritaire (environ 12 à 18 %). Un conflit triangulaire armé Europe–Algérie–Russie relève de la queue de distribution (environ 2 à 5 %).",
+  "tldr": "Le conflit ukrainien n’est plus seulement un théâtre militaire. Il fournit un modèle d’instrumentalisation — coercition gazière, frappes sur les infrastructures énergétiques, récit de l’hiver et de la dépendance — que Moscou a déjà éprouvé face à l’Europe, et que Bruxelles a partiellement contourné en se tournant vers la Norvège, le gaz naturel liquéfié américain et l’Algérie (environ 19 à 20 % du gaz de l’Union européenne en 2025, deuxième fournisseur). Sur un horizon de douze à trente-six mois, selon l’outil de scénarios iarbre.org (horizon 12 à 36 mois, scénarios A à E), le cœur de probabilité porte sur une guerre hybride prolongée, sans guerre ouverte entre l’UE et la Russie ni affrontement armé avec l’Algérie (environ 45 à 55 %). Une crise énergétique ou un chantage logistique sans haute intensité militaire suit (environ 20 à 25 %). Une escalade de haute intensité UE/OTAN–Russie, l’Algérie restant hors combat, demeure possible mais minoritaire (environ 12 à 18 %). Un conflit triangulaire armé Europe–Algérie–Russie relève de la queue de distribution (environ 2 à 5 %).",
   "racines": {
     "arme_gaz": "Dès 2022, Moscou a combiné la réduction des flux — Yamal, Nord Stream — et une saturation narrative (« hiver polaire », « mort de l’industrie allemande ») pour pousser les opinions européennes à lâcher Kiev en échange d’une sécurité énergétique immédiate. C’est l’analyse de l’École de guerre économique (EGE) sur la manœuvre de coercition 2022–2026 : l’objectif n’était pas seulement commercial ; il s’agissait de saturer l’espace décisionnel. Le bilan est contrasté. L’Union européenne a absorbé le choc (REPowerEU), ramenant le gaz russe d’environ 45 % des importations en 2021 à environ 12–13 % en 2025, avec une sortie progressive ciblée pour 2027 (Conseil de l’UE, janvier 2026). La coercition a échoué à faire basculer le soutien à l’Ukraine ; elle a surtout déplacé la dépendance — GNL américain, Norvège, Algérie — sans l’éliminer.",
     "frappes_infra": "Depuis plusieurs hivers, la Russie intensifie les frappes sur le réseau électrique et énergétique ukrainien : attrition de la population, de l’économie et de l’effort de guerre. Ce n’est pas un détail tactique. C’est un modèle exportable — démontrer qu’on peut geler, obscurcir, désorganiser un pays par l’énergie. Pour les opinions d’Europe du Sud, le message implicite est clair : ce qui se produit là-bas peut, sous une autre forme, se produire ici — par les prix, la pénurie ou le sabotage.",
@@ -38,7 +38,7 @@
       "levier": "Disruption, prix, opérations d’information, pression sur le flanc sud-est."
     }
   ],
-  "triangle_cle": "L’Algérie n’est pas un belligérant au sens du conflit Russie–Ukraine. Elle est un levier du système énergétique européen post-2022 : partenaire commercial de l’UE, partenaire militaire et diplomatique historique de Moscou, concurrent gazier de la Russie sur le marché européen. Les trois postures — substitut fiable, levier concurrent de la Russie, non-alignement — coexistent. Selon l’oracle, le non-alignement demeure la plus probable.",
+  "triangle_cle": "L’Algérie n’est pas un belligérant au sens du conflit Russie–Ukraine. Elle est un levier du système énergétique européen post-2022 : partenaire commercial de l’UE, partenaire militaire et diplomatique historique de Moscou, concurrent gazier de la Russie sur le marché européen. Les trois postures — substitut fiable, levier concurrent de la Russie, non-alignement — coexistent. Selon ces scénarios, le non-alignement demeure la plus probable.",
   "distinctions": [
     "Guerre Russie–Ukraine (déjà de haute intensité) et débordement hybride vers l’UE.",
     "Choc énergétique sans guerre Europe–Algérie–Russie (maintenance, prix, sabotage, autre nœud mondial).",
@@ -132,12 +132,12 @@
     ],
     "mecanismes": "Mécanismes d’interface : triangle gaz (instrumentalisation russe, pression européenne sur Alger, vulnérabilité des infrastructures) ; Ukraine comme multiplicateur (coupures de transit, test de résilience, menace sur les corridors du Maghreb) ; blocages induits (Moldavie, Gibraltar/drones — scénarios évoqués, non établis).",
     "ecart": "L’interface agrège un « conflit de haute intensité triangulaire » à 35–45 %, alors que la branche E du livrable IArbre (guerre triangulaire armée) se situe à 2–5 %, et le scénario central A (hybride sans guerre ouverte) à 45–55 %. Hypothèse LMDPT : l’interface élargit le mot « conflit » (crise, coercition, risque d’escalade) ; les branches A–E séparent intensité militaire et pression énergétique. Ossature éditoriale = A–E (confirmé IArbre le 17 septembre 2026) ; interface = signal secondaire et fourchettes sectorielles (gaz −20–30 %, diversification 70 %).",
-    "limites_ui": "Spéculatif ; citations AIE, REPowerEU, IFRI, ECFR et Diplo non revalidées ici. Captures de session : drafts/assets/oracle-iarbre-*.webp (archives de rédaction, non publiées sur ce site)."
+    "limites_ui": "Spéculatif ; citations AIE, REPowerEU, IFRI, ECFR et Diplo non revalidées ici."
   },
-  "limites": "Pas de renseignement en temps réel. Les pourcentages sont des jugements argumentés de l’oracle iarbre, non des fréquences historiques. La « haute intensité » est cadrée comme un affrontement armé direct ou quasi direct UE/OTAN↔Russie et/ou une escalade militaire impliquant l’Algérie — à distinguer de la seule guerre hybride.",
+  "limites": "Pas de renseignement en temps réel. Les pourcentages sont des jugements argumentés issus de l’outil de scénarios iarbre.org, non des fréquences historiques. La « haute intensité » est cadrée comme un affrontement armé direct ou quasi direct UE/OTAN↔Russie et/ou une escalade militaire impliquant l’Algérie — à distinguer de la seule guerre hybride.",
   "sources": [
     {
-      "label": "Oracle iarbre — livrable 2026-09-17 (branches A–E)",
+      "label": "iarbre.org — scénarios A à E (17 septembre 2026)",
       "url": "https://iarbre.org"
     },
     {

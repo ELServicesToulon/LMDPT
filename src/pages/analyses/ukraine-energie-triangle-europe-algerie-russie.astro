@@ -15,13 +15,12 @@ const shareDescription =
   'Enquête : le triangle énergétique entre l’Europe, l’Algérie et la Russie, dans le prolongement de la guerre en Ukraine.';
 const published = new Date(data.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
-const seedPlanted = new Date(data.seed_planted).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 
 const tocItems = [
   { href: '#racines', label: '1. Racines — l’Ukraine utilisée' },
   { href: '#triangle', label: '2. Tronc — triangle Europe / Algérie / Russie' },
   { href: '#haute-intensite', label: '3. Haute intensité et blocages' },
-  { href: '#branches', label: '4. Branches oracle A–E' },
+  { href: '#branches', label: '4. Scénarios A–E' },
   { href: '#implications', label: '5. Implications DOE / LMDPT' },
   { href: '#ui-secondaire', label: '5bis. Interface web (secondaire)' },
   { href: '#limites', label: '6. Limites' },
@@ -55,18 +54,10 @@ const tocItems = [
     <p class="enq-angle"><strong>Angle LMDPT.</strong> {data.doe_angle}</p>
     <dl class="oracle-meta">
       <div>
-        <dt>Citation officielle A–E</dt>
+        <dt>Cadre des scénarios A–E</dt>
         <dd>
           «&nbsp;{data.oracle_citation}&nbsp;» —
           <a href={data.oracle_url} rel="noopener noreferrer">iarbre.org</a>
-        </dd>
-      </div>
-      <div>
-        <dt>Graine oracle</dt>
-        <dd>
-          <code>{data.seed}</code>
-          {' '}
-          (plantée le <time datetime={data.seed_planted}>{seedPlanted}</time>)
         </dd>
       </div>
       <div>
@@ -129,7 +120,7 @@ const tocItems = [
   </section>
 
   <section class="card" id="branches" aria-labelledby="branches-title">
-    <h2 id="branches-title">4. Branches (oracle iarbre, 12–36 mois)</h2>
+    <h2 id="branches-title">4. Scénarios A–E (12 à 36 mois)</h2>
     <p>
       Citation : <em>{data.oracle_citation}</em> —
       <a href={data.oracle_url} rel="noopener noreferrer">iarbre.org</a>.
@@ -164,7 +155,7 @@ const tocItems = [
     <h2 id="ui-title">5bis. {data.ui_web.titre}</h2>
     <p class="meta">
       Signal <strong>secondaire</strong> uniquement. L’ossature éditoriale reste les scénarios A–E
-      (définition HI stricte), cités ci-dessus.
+      (définition stricte de la haute intensité), cités ci-dessus.
     </p>
     <p>{data.ui_web.intro}</p>
     <div class="table-wrap" role="region" aria-label="Signaux d’interface iarbre (secondaires)" tabindex="0">

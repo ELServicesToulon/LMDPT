@@ -132,7 +132,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
             <span class="meta" style="display:block;margin-top:0.5rem;">
               <strong>Cartes départementales :</strong>{' '}
               {deptReadiness?.stub
-                ? `pipeline stub enregistré (${deptReadiness.dept_count} dept) — import data.gouv après le scrutin (miroir 2017/2022).`
+                ? 'publiées après le scrutin, à partir des données officielles (data.gouv), comme pour 2017 et 2022.'
                 : 'national + départements si disponibles.'}{' '}
               National projection uniquement pour l’instant.{' '}
               <strong> Géographie circo :</strong> index {geoIndex.count} circonscriptions prêt
@@ -183,7 +183,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
       <h3>Focus pluralité 2027 — visualisation &amp; scénarios</h3>
       <p class="meta" role="note">
         <strong>Projection pédagogique uniquement</strong> — pas de données officielles du scrutin 2027.
-        Aucune prédiction de résultat. Voir les piliers
+        Aucune prédiction de résultat. Voir les piliers {' '}
         <a href="/">Sécurité &amp; faits</a> ·
         <a href="/charte/">La démocratie avant l’élimination</a>.
       </p>
@@ -232,7 +232,7 @@ const circoLeaders = circoData ? countLeadersByNuance(circoData).slice(0, 3) : [
 
       <h4 style="margin-top:1.25rem;" id="granularite-circo">Granularité circonscriptions / départements (P8-4)</h4>
       <p>
-        Index géographique : <strong>{geoIndex.count} circonscriptions</strong> (découpage
+        Index géographique : <strong>{geoIndex.count} circonscriptions</strong> (découpage {' '}
         <a href="/atlas/2024-legislatives/">législatives 2024</a>).
         {circoReadiness && (
           <>
