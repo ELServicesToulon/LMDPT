@@ -1,0 +1,170 @@
+{
+  "slug": "glucksmann-case-vide-strasbourg",
+  "title": "Frères musulmans : Glucksmann, la case vide",
+  "eyebrow": "Brève · Union européenne",
+  "type_label": "Brève",
+  "date": "2026-10-12",
+  "updated": "2026-10-12",
+  "kicker": "Brève · Parlement européen · 12 octobre 2026",
+  "chapo": "Jeudi 8 octobre, à Strasbourg, le Parlement européen vote la résolution sur « l'entrisme islamiste » et le réseau des Frères musulmans. Adoptée : 381 pour, 167 contre, 15 abstentions. Raphaël Glucksmann, lui, n'a pas voté.",
+  "description": "Résolution du Parlement européen sur les Frères musulmans (8 octobre 2026) : sept eurodéputés PS et Place publique votent contre, six ne votent pas, dont Raphaël Glucksmann. Aucune explication publique trouvée au 12 octobre.",
+  "disclaimer": "Brève du Média du Premier Tour. Elle s'appuie sur le relevé officiel des votes par appel nominal du Parlement européen (8 octobre 2026), sur HowTheyVote.eu et sur la presse consultés le 12 octobre 2026. On sait qu'il n'a pas voté, pas pourquoi. Droit de réponse ouvert. Aucune consigne de vote.",
+  "tags": [
+    "lmdpt",
+    "union-europeenne",
+    "parlement-europeen",
+    "freres-musulmans",
+    "glucksmann",
+    "presidentielle-2027",
+    "doe"
+  ],
+  "x_hook": "Frères musulmans : Glucksmann, la case vide",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "La thèse (un vote réel, une portée encore symbolique, une suite qui dépend de preuves et de critères juridiques) ne tranche pas le fond et peut être partagée par des électeurs de plusieurs familles."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Socialiste / social-démocrate",
+      "color": "#ff8080",
+      "rationale": "En phase sur l'exigence de transparence : savoir comment vote le candidat de son propre camp."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "breve",
+      "title": "La case vide",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Chez les eurodéputés PS et Place publique, la ligne est nette. Sept votent contre. Pas un pour, pas une abstention. Les six autres ne votent pas. Parmi eux, Raphaël Glucksmann, le candidat le plus en vue de son camp pour 2027."
+        },
+        {
+          "type": "p",
+          "text": "Ce n'est pas une abstention. Son nom n'apparaît dans aucun vote nominal de la journée, d'après le [procès-verbal officiel](https://www.europarl.europa.eu/doceo/document/PV-10-2026-10-08-RCV_FR.html). Pas de correction de vote déposée non plus. On sait donc qu'il n'a pas voté. On ne sait pas pourquoi."
+        },
+        {
+          "type": "p",
+          "text": "Et c'est bien là le sujet. Sur un texte qui coupe la France politique en deux, le futur candidat ne laisse aucune trace. Ni pour, ni contre. Sa collègue Chloé Ridel, elle, a parlé en séance de « boucs émissaires » ([RFI](https://www.rfi.fr/fr/europe/20261008-les-d%C3%A9put%C3%A9s-europ%C3%A9ens-adoptent-une-r%C3%A9solution-pour-lutter-contre-l-entrisme-islamiste))."
+        },
+        {
+          "type": "p",
+          "text": "À ce jour (12 octobre, 15 h 45, heure de Paris), nous n'avons trouvé aucune explication publique de sa part. Ni communiqué, ni réponse dans la presse, ni un mot sur son compte X. Sa porte reste ouverte : s'il s'explique, on l'ajoute ici."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : positions sur la résolution",
+      "intro": "Repère factuel : vote des eurodéputés le 8 octobre 2026 ([HowTheyVote](https://howtheyvote.eu/votes/198051)). Sans classement ni consigne de vote.",
+      "table": {
+        "caption": "Positions des familles politiques et candidats 2027 sur la résolution B10-0424/2026",
+        "headers": [
+          "Candidat / famille",
+          "Position",
+          "Remarque"
+        ],
+        "rows": [
+          [
+            "Bardella / Le Pen (RN, PfE)",
+            "Pour, en bloc",
+            "Vote des eurodéputés."
+          ],
+          [
+            "Candidat LR (PPE)",
+            "Pour",
+            "Texte porté par Céline Imart. Candidat nominatif **à confirmer**."
+          ],
+          [
+            "Zemmour (Reconquête, ESN)",
+            "Pour",
+            "Vote des eurodéputés."
+          ],
+          [
+            "Camp présidentiel (Renew)",
+            "Pour en majorité",
+            "2 abstentions françaises. Candidat **à confirmer**."
+          ],
+          [
+            "Glucksmann (Place publique, S&D)",
+            "**N'a pas voté**",
+            "Sa délégation : contre (7 contre, 6 non-votants)."
+          ],
+          [
+            "Mélenchon (LFI, La Gauche)",
+            "Contre",
+            "Vote des eurodéputés."
+          ],
+          [
+            "Écologistes (Verts/ALE)",
+            "Contre",
+            "Candidat **à confirmer**."
+          ]
+        ]
+      },
+      "note": "Ce sont des votes d'eurodéputés, pas des déclarations de candidats, sauf pour Glucksmann, eurodéputé lui-même.",
+      "conclusion": "Thèse de la brève : un non-vote est un fait public ; son explication appartient à l'intéressé."
+    }
+  ],
+  "sources_intro": "Consultations du 12 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Sources primaires",
+      "items": [
+        {
+          "label": "Parlement européen, résultats des votes par appel nominal (PV du 8 octobre 2026)",
+          "links": [
+            {
+              "label": "Parlement européen, résultats des votes par appel nominal (PV du 8 octobre 2026)",
+              "url": "https://www.europarl.europa.eu/doceo/document/PV-10-2026-10-08-RCV_FR.html"
+            }
+          ]
+        },
+        {
+          "label": "HowTheyVote.eu, vote 198051",
+          "links": [
+            {
+              "label": "HowTheyVote.eu, vote 198051",
+              "url": "https://howtheyvote.eu/votes/198051"
+            }
+          ]
+        },
+        {
+          "label": "Texte adopté TA-10-2026-0342",
+          "links": [
+            {
+              "label": "Texte adopté TA-10-2026-0342",
+              "url": "https://www.europarl.europa.eu/doceo/document/TA-10-2026-0342_FR.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Presse",
+      "items": [
+        {
+          "label": "RFI, 8 octobre 2026",
+          "links": [
+            {
+              "label": "RFI, 8 octobre 2026",
+              "url": "https://www.rfi.fr/fr/europe/20261008-les-d%C3%A9put%C3%A9s-europ%C3%A9ens-adoptent-une-r%C3%A9solution-pour-lutter-contre-l-entrisme-islamiste"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "**Relevé interne (non publié)** : drafts/2026-10-12-breve-glucksmann-non-vote.md.",
+  "liens_internes": [
+    {
+      "href": "/analyses/freres-musulmans-strasbourg-a-vote",
+      "label": "Frères musulmans : Strasbourg a voté, mais rien n'est encore interdit"
+    }
+  ]
+}
