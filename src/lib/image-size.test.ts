@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { publicImageSize, readImageSize } from './image-size';
@@ -25,10 +25,10 @@ describe('publicImageSize', () => {
 
 describe('hero daily override public', () => {
   it('ne publie pas la note interne du pipeline', () => {
-    const raw = readFileSync(
-      path.join(process.cwd(), 'public/illustrations/2027/hero-daily-override.json'),
-      'utf8',
-    );
+    const file = path.join(process.cwd(), 'public/illustrations/2027/hero-daily-override.json');
+    // LMD-24 : fichier retiré du dépôt (généré seulement par hero:daily, non lu par l'accueil).
+    if (!existsSync(file)) return;
+    const raw = readFileSync(file, 'utf8');
     const data = JSON.parse(raw) as { note?: string };
     expect(data.note).toBeUndefined();
     expect(raw).not.toMatch(/ZDR|upload_url|API Imagine/);

@@ -103,11 +103,12 @@ export function findEditorialByPath(pathname: string): EditorialPost | undefined
   return listEditorialPosts().find((p) => p.href === clean);
 }
 
-/** Plus récente date ISO d’abord ; égalité → slug stable. */
+/**
+ * Plus récente date ISO d’abord ; égalité → ordre du catalogue (tri stable).
+ * L’ordre de ANALYSIS_CATALOG décide donc de la une entre deux textes du même jour.
+ */
 export function compareEditorialRecency(a: EditorialPost, b: EditorialPost): number {
-  const byDate = b.date.localeCompare(a.date);
-  if (byDate !== 0) return byDate;
-  return a.slug.localeCompare(b.slug, 'fr');
+  return b.date.localeCompare(a.date);
 }
 
 /** Une du jour = couverture du texte éditorial le plus récemment publié. */

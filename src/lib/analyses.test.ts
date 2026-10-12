@@ -33,7 +33,8 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('freres-musulmans-strasbourg-a-vote');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -93,7 +94,8 @@ describe('analyses', () => {
     expect(ukraineShare).toMatch(/hypothèses/);
     expect(ukraineShare).not.toMatch(/oracle|iarbre|HI stricte|signal secondaire/i);
     expect(ukraineEnergie.oracle_url).toBe('https://iarbre.org');
-    expect(ukraineEnergie.oracle_citation).toMatch(/définition HI stricte/);
+    expect(ukraineEnergie.oracle_citation).not.toMatch(/arbre oracle|définition HI/);
+    expect(ukraineEnergie.disclaimer).not.toMatch(/arbre oracle|définition HI/);
     expect(ukraineEnergie.hi_definition).toMatch(/Affrontement armé/);
     expect(ukraineEnergie.branches.map((b) => b.id)).toEqual(['A', 'B', 'C', 'D', 'E']);
     expect(ukraineEnergie.disclaimer).toMatch(/signal secondaire/i);

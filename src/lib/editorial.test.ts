@@ -117,3 +117,11 @@ describe('editorial covers', () => {
     expect(missing.some((e) => e.code === 'missing-field')).toBe(true);
   });
 });
+
+describe('une du jour (égalité de date)', () => {
+  it('suit l’ordre du catalogue : analyse primaire en une, chronique ensuite', () => {
+    const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
+    expect(getUneDuJour()?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[1]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+  });
+});

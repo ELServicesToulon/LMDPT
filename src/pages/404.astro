@@ -1,0 +1,42 @@
+---
+/**
+ * Page 404. Le build Astro produit dist/404.html ; nginx doit la servir
+ * via `error_page 404 /404.html;` (configuration serveur, hors dépôt).
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page introuvable"
+  description="Cette page n’existe pas ou a été déplacée. Retrouvez les analyses, l’Atlas et la charte du Média du Premier Tour."
+  noindex
+  share={false}
+  pageHeading
+>
+  <section class="card notfound" aria-labelledby="notfound-title">
+    <p class="eyebrow">Erreur 404</p>
+    <h1 id="notfound-title">Cette page n’existe pas (ou plus).</h1>
+    <p>
+      Le lien est peut-être ancien, ou l’adresse contient une faute de frappe. Rien de grave :
+      tout le reste est là.
+    </p>
+    <ul class="notfound-links">
+      <li><a href="/">La une et l’accueil</a></li>
+      <li><a href="/analyses/">Toutes les analyses</a></li>
+      <li><a href="/atlas/">L’Atlas des scrutins</a></li>
+      <li><a href="/charte/">La charte éditoriale</a></li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound {
+    max-width: 40rem;
+    margin: 2rem auto;
+  }
+  .notfound-links {
+    display: grid;
+    gap: 0.4rem;
+    padding-left: 1.2rem;
+  }
+</style>
