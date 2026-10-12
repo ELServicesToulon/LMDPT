@@ -64,4 +64,11 @@ describe('hero daily CLI', () => {
     expect(result.status, out).toBe(0);
     expect(out).toContain('hero-daily-sketch.py');
   });
+
+  it('n’écrit plus hero-daily-override.json dans public/ (LMD-24)', async () => {
+    const { readFileSync } = await import('node:fs');
+    const src = readFileSync(script, 'utf8');
+    expect(src).not.toMatch(/join\(PUBLIC, 'illustrations\/2027\/hero-daily-override\.json'\)/);
+    expect(src).toContain('data/cache/hero-daily-state.json');
+  });
 });

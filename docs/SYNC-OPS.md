@@ -172,7 +172,7 @@ Ne pas ignorer `src/data/elections/` ni `src/data/programmes/` en entier : ces a
 | `public/sitemap-images.xml` | `seo:assets` |
 | `public/robots.txt` | `seo:assets` |
 | `public/illustrations/2027/hero-daily-*` | `hero:daily` |
-| `public/illustrations/2027/hero-daily-override.json` | `hero:daily` |
+| `data/cache/hero-daily-state.json` (interne, non publié ; remplace l’ancien `public/…/hero-daily-override.json`) | `hero:daily` |
 | `public/illustrations/2027/hero-daily-live.jpg` | `hero:daily` |
 | `public/illustrations/2027/hero-daily-live.webp` | `hero:daily` |
 | `public/videos/2027/hero-daily-live.mp4` | `hero:daily` |
