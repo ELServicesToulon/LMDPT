@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
 import {
+  getDernieresUnes,
   MISSING_COVER_SRC,
   assertUniqueEditorialCovers,
   auditEditorialCovers,
@@ -87,7 +88,7 @@ describe('editorial covers', () => {
 
   it('homepage hero is the une, not the below-the-fold gallery', () => {
     const src = readFileSync(path.join(process.cwd(), 'src/pages/index.astro'), 'utf8');
-    const hero = src.indexOf('<UneDuJour variant="hero"');
+    const hero = src.indexOf('<UnesCarousel');
     const intro = src.indexOf('home-intro--after-une');
     const gallery = src.indexOf('id="visuels-2027"');
     expect(hero).toBeGreaterThan(-1);
@@ -125,3 +126,16 @@ describe('une du jour (égalité de date)', () => {
     expect(sorted[1]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
+
+describe('carrousel des dernières unes', () => {
+  it('renvoie 5 unes, la première étant la une du jour, sans doublon', () => {
+    const unes = getDernieresUnes(5);
+    expect(unes).toHaveLength(5);
+    expect(unes[0]?.slug).toBe(getUneDuJour()?.slug);
+    expect(new Set(unes.map((u) => u.slug)).size).toBe(5);
+    for (let i = 1; i < unes.length; i++) {
+      expect(unes[i - 1]!.date >= unes[i]!.date).toBe(true);
+    }
+  });
+});
+

@@ -9,7 +9,7 @@ import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
-import UneDuJour from '../components/UneDuJour.astro';
+import UnesCarousel from '../components/UnesCarousel.astro';
 import EditorialCard from '../components/EditorialCard.astro';
 import SheetTabs from '../components/SheetTabs.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
@@ -79,7 +79,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     ni la galerie #visuels-2027 sous la ligne de flottaison.
   -->
   <div id="top">
-    <UneDuJour variant="hero" />
+    <UnesCarousel count={5} />
   </div>
   <section class="home-intro home-intro--after-une" aria-labelledby="home-title">
     <h1 class="home-title" id="home-title">

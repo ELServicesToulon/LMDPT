@@ -6,6 +6,7 @@
 import EditorialCoverImage from './EditorialCoverImage.astro';
 import ShareBar from './ShareBar.astro';
 import {
+  type EditorialPost,
   editorialKindLabel,
   getUneDuJour,
   resolveCover,
@@ -15,10 +16,24 @@ import { withTrailingSlash } from '../lib/internal-path';
 
 interface Props {
   variant?: 'hero' | 'card';
+  /** Texte à afficher (carrousel). Défaut : une du jour. */
+  post?: EditorialPost | null;
+  /** id unique du titre (plusieurs cartes sur la page). */
+  headingId?: string;
+  /** Première carte : image prioritaire. */
+  eager?: boolean;
+  /** Kicker « À la une » (première carte seulement dans le carrousel). */
+  kicker?: string;
 }
 
-const { variant = 'card' } = Astro.props;
-const une = getUneDuJour();
+const {
+  variant = 'card',
+  post,
+  headingId = 'une-du-jour-title',
+  eager = true,
+  kicker = 'À la une',
+} = Astro.props;
+const une = post === undefined ? getUneDuJour() : post;
 const cover = une ? resolveCover(une.cover) : null;
 const kindLabel = une ? editorialKindLabel(une.kind) : '';
 const dateLabel = une
@@ -35,21 +50,21 @@ const uneShareUrl = une
   une && cover && (
     <article
       class:list={['une-du-jour', { 'une-du-jour--hero': isHero }]}
-      aria-labelledby="une-du-jour-title"
+      aria-labelledby={headingId}
       data-une-slug={une.slug}
       data-une-kind={une.kind}
       data-une-variant={variant}
     >
       <p class="une-kicker">
         <span class="une-dot" aria-hidden="true"></span>
-        À la une {' '}
+        {kicker}{' '}
         <span class="une-kicker-kind">{kindLabel}</span>
       </p>
       <a class="une-media" href={withTrailingSlash(une.href)}>
-        <EditorialCoverImage cover={une.cover} eager class={isHero ? 'editorial-cover--hero' : undefined} />
+        <EditorialCoverImage cover={une.cover} eager={eager} class={isHero ? 'editorial-cover--hero' : undefined} />
       </a>
       <div class="une-body">
-        <h2 id="une-du-jour-title">
+        <h2 id={headingId}>
           <a href={withTrailingSlash(une.href)}>{une.title}</a>
         </h2>
         <p class="une-lead">{une.description}</p>

@@ -111,6 +111,11 @@ export function compareEditorialRecency(a: EditorialPost, b: EditorialPost): num
   return b.date.localeCompare(a.date);
 }
 
+/** Les n dernières unes (même tri que la une du jour). */
+export function getDernieresUnes(n = 5, posts: EditorialPost[] = listEditorialPosts()): EditorialPost[] {
+  return [...posts].sort(compareEditorialRecency).slice(0, Math.max(0, n));
+}
+
 /** Une du jour = couverture du texte éditorial le plus récemment publié. */
 export function getUneDuJour(posts: EditorialPost[] = listEditorialPosts()): EditorialPost | null {
   if (posts.length === 0) return null;
