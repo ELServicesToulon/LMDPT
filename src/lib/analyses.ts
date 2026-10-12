@@ -44,7 +44,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/primaire-droite-qui-la-veut',
     cover: uneCover(
       'primaire-droite-qui-la-veut',
-      'Vignette éditoriale : une urne vide entourée de lettres non ouvertes, titre « Primaire de la droite : personne ne l’organise ».',
+      'Illustration à l’encre et à l’aquarelle : une urne en bois sur une table, entourée de lettres cachetées à la cire restées fermées, et une chaise vide en retrait.',
     ),
   },  {
     slug: chroniquePrimaire.slug,
@@ -56,7 +56,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/chronique-manusk-primaire-vent-arriere',
     cover: uneCover(
       'chronique-manusk-primaire-vent-arriere',
-      'Vignette éditoriale : une manche à air gonflée côté gauche, une salle d’attente aux chaises vides côté droit.',
+      'Illustration à l’encre et à l’aquarelle : à gauche, une manche à air gonflée par le vent au-dessus d’un champ ; à droite, une salle d’attente aux chaises vides sous une horloge.',
     ),
   },
 
@@ -171,7 +171,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/lfi-bfmtv-exigence-pluralisme',
     cover: uneCover(
       'lfi-bfmtv-exigence-pluralisme',
-      'Croquis encre et aquarelle : plateau d’info, chaise vide et micro face à une urne transparente',
+      'Illustration à l’encre et à l’aquarelle : un plateau de télévision vide sous trois projecteurs, une chaise vide et un micro sur pied face à une urne transparente.',
     ),
   },
   {
@@ -185,7 +185,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     href: '/analyses/ukraine-energie-triangle-europe-algerie-russie',
     cover: uneCover(
       'ukraine-energie-triangle-europe-algerie-russie',
-      'Croquis encre et aquarelle : triangle de vannes et de gazoducs entre l’Europe, l’Algérie et la Russie',
+      'Illustration à l’encre et à l’aquarelle : trois vannes reliées par des gazoducs en triangle sur une carte esquissée, l’une entravée par une chaîne, un manomètre au milieu.',
     ),
   },
   {
