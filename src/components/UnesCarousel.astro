@@ -1,0 +1,208 @@
+---
+/**
+ * Carrousel des dernières unes (accueil). Pas de défilement automatique.
+ * Mobile : balayage natif (scroll-snap). Ordinateur : flèches + clavier (←/→, Début/Fin).
+ * Sans JS : liste défilante horizontale, toutes les cartes restent accessibles.
+ */
+import UneDuJour from './UneDuJour.astro';
+import { getDernieresUnes } from '../lib/editorial';
+
+interface Props {
+  count?: number;
+}
+
+const { count = 5 } = Astro.props;
+const unes = getDernieresUnes(count);
+const total = unes.length;
+---
+
+{
+  total > 0 && (
+    <section
+      class="unes-carousel"
+      aria-roledescription="carousel"
+      aria-label="Dernières unes"
+      data-unes-carousel
+    >
+      <div class="unes-track" data-unes-track tabindex="0" aria-label="Dernières unes, faire défiler avec les flèches du clavier">
+        {unes.map((post, i) => (
+          <div
+            class="unes-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${i + 1} sur ${total} : ${post.title}`}
+            data-unes-slide={i}
+          >
+            <UneDuJour
+              variant="hero"
+              post={post}
+              headingId={`une-title-${i}`}
+              eager={i === 0}
+              kicker={i === 0 ? 'À la une' : 'Récemment à la une'}
+            />
+          </div>
+        ))}
+      </div>
+      {total > 1 && (
+        <div class="unes-controls">
+          <button type="button" class="unes-arrow" data-unes-prev aria-label="Une précédente" disabled>
+            <span aria-hidden="true">←</span>
+          </button>
+          <div class="unes-dots" role="group" aria-label="Choisir une une">
+            {unes.map((post, i) => (
+              <button
+                type="button"
+                class="unes-dot"
+                data-unes-dot={i}
+                aria-label={`Afficher la une ${i + 1} : ${post.title}`}
+                aria-current={i === 0 ? 'true' : undefined}
+              />
+            ))}
+          </div>
+          <button type="button" class="unes-arrow" data-unes-next aria-label="Une suivante">
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="visually-hidden" aria-live="polite" data-unes-status>Une 1 sur {total}</p>
+        </div>
+      )}
+    </section>
+  )
+}
+
+<script>
+  function initCarousel(root: HTMLElement) {
+    const track = root.querySelector<HTMLElement>('[data-unes-track]');
+    const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-unes-slide]'));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-unes-dot]'));
+    const prev = root.querySelector<HTMLButtonElement>('[data-unes-prev]');
+    const next = root.querySelector<HTMLButtonElement>('[data-unes-next]');
+    const status = root.querySelector<HTMLElement>('[data-unes-status]');
+    if (!track || slides.length < 2) return;
+    let current = 0;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const go = (i: number) => {
+      const target = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: slides[target].offsetLeft - track.offsetLeft, behavior: reduce.matches ? 'auto' : 'smooth' });
+    };
+    const sync = (i: number) => {
+      current = i;
+      dots.forEach((d, k) => (k === i ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+      if (prev) prev.disabled = i === 0;
+      if (next) next.disabled = i === slides.length - 1;
+      slides.forEach((s, k) => s.toggleAttribute('inert', k !== i));
+      if (status) status.textContent = `Une ${i + 1} sur ${slides.length}`;
+    };
+    let raf = 0;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        if (i !== current) sync(Math.max(0, Math.min(slides.length - 1, i)));
+      });
+    });
+    prev?.addEventListener('click', () => go(current - 1));
+    next?.addEventListener('click', () => go(current + 1));
+    dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+    track.addEventListener('keydown', (e) => {
+      const map: Record<string, number> = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: slides.length - 1 };
+      if (e.key in map) {
+        e.preventDefault();
+        go(map[e.key]);
+      }
+    });
+    sync(0);
+  }
+  document.querySelectorAll<HTMLElement>('[data-unes-carousel]').forEach(initCarousel);
+</script>
+
+<style>
+  .unes-carousel {
+    margin: 0 0 1.25rem;
+  }
+  .unes-track {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    border-radius: var(--radius-lg, 12px);
+  }
+  .unes-track::-webkit-scrollbar {
+    display: none;
+  }
+  .unes-track:focus-visible,
+  .unes-arrow:focus-visible,
+  .unes-dot:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .unes-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 0 1px;
+    box-sizing: border-box;
+  }
+  .unes-slide :global(.une-du-jour--hero) {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .unes-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.6rem;
+  }
+  .unes-arrow {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--card);
+    color: inherit;
+    font-size: 1.15rem;
+    cursor: pointer;
+  }
+  .unes-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .unes-dots {
+    display: flex;
+    gap: 0.35rem;
+  }
+  .unes-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+  }
+  .unes-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0.45rem;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .unes-dot[aria-current='true']::before {
+    background: var(--accent);
+  }
+  @media (max-width: 640px) {
+    .unes-arrow {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .unes-track {
+      scroll-behavior: auto;
+    }
+  }
+</style>
