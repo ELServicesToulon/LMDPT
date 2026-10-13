@@ -1,6 +1,6 @@
 {
   "scrutin": "presidentielle-2027",
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "disclaimer": "Programmes partiels intégrés depuis la presse — pas de document officiel qualifié. Seule la liste du Conseil constitutionnel fait foi.",
   "candidates": [
     {
@@ -13,16 +13,10 @@
       "source_url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/07/02/gabriel-attal-veut-100-000-departs-volontaires-de-fonctionnaires-et-l-impunite-budgetaire-zero_6718227_6205049.html",
       "press_signals": [
         {
-          "title": "Cyberattaque contre la primaire du PS : \"On sait qu'il y a une volonté d'ingérence pour nous pousser vers les extrêmes, notamment l'extrême droite\", estime Agnès Pannier-Runacher",
-          "url": "https://www.franceinfo.fr/replay-magazine/franceinfo/l-invite-politique/cyberattaque-contre-la-primaire-du-ps-on-sait-qu-il-y-a-une-volonte-d-ingerence-pour-nous-pousser-vers-les-extremes-notamment-l-extreme-droite-estime-agnes-pannier-runacher_8232571.html#xtor=RSS-3-%5Bgeneral%5D",
-          "published": "2026-10-11",
-          "detected_at": "2026-10-12"
-        },
-        {
           "title": "Présidentielle 2027 : Gabriel Attal mise sur la carte « jeunes » et son plan pour l’école",
           "url": "https://www.la-croix.com/politique/presidentielle-2027-gabriel-attal-mise-sur-la-carte-jeunes-et-son-plan-pour-l-ecole-20261010",
           "published": "2026-10-10",
-          "detected_at": "2026-10-12"
+          "detected_at": "2026-10-13"
         }
       ]
     },
@@ -33,7 +27,21 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique"
+      "source_url": "https://www.france24.com/fr/france/20260701-le-second-tour-de-la-pr%C3%A9sidentielle-aura-lieu-au-lendemain-d-un-1er-mai-soumis-%C3%A0-la-r%C3%A8gle-du-silence-politique",
+      "press_signals": [
+        {
+          "title": "Budget 2027 : Retailleau évoque une «France quasiment en faillite» et griffe Philippe et Attal",
+          "url": "https://www.liberation.fr/politique/budget-2027-retailleau-evoque-une-france-quasiment-en-faillite-et-griffe-philippe-et-attal-20261012_FFPR6VNG2FDTPCA3SGLTGHL5YA/",
+          "published": "2026-10-12",
+          "detected_at": "2026-10-13"
+        },
+        {
+          "title": "Bruno Retailleau veut rétablir l’ordre, y compris dans les finances publiques",
+          "url": "https://www.la-croix.com/politique/bruno-retailleau-veut-retablir-l-ordre-y-compris-dans-les-finances-publiques-20261012",
+          "published": "2026-10-12",
+          "detected_at": "2026-10-13"
+        }
+      ]
     },
     {
       "slug": "philippe",
@@ -42,7 +50,15 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-17",
       "chiffrage_available": false,
-      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html"
+      "source_url": "https://www.lemonde.fr/politique/article/2026/07/01/presidentielle-2027-laurent-wauquiez-met-a-mal-la-candidature-de-bruno-retailleau-en-tendant-la-main-a-edouard-philippe_6717576_823448.html",
+      "press_signals": [
+        {
+          "title": "Budget 2027 : Retailleau évoque une «France quasiment en faillite» et griffe Philippe et Attal",
+          "url": "https://www.liberation.fr/politique/budget-2027-retailleau-evoque-une-france-quasiment-en-faillite-et-griffe-philippe-et-attal-20261012_FFPR6VNG2FDTPCA3SGLTGHL5YA/",
+          "published": "2026-10-12",
+          "detected_at": "2026-10-13"
+        }
+      ]
     },
     {
       "slug": "parti-socialiste",
@@ -74,7 +90,15 @@
       "name": "François Hollande",
       "affiliation": "Sans étiquette",
       "program_status": "awaiting_program",
-      "chiffrage_available": false
+      "chiffrage_available": false,
+      "press_signals": [
+        {
+          "title": "L'union ne doit pas se limiter aux \"seuls socialistes\", plaide François Hollande après la primaire sociale-démocrate",
+          "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/l-union-ne-doit-pas-se-limiter-aux-seuls-socialistes-plaide-francois-hollande-apres-la-primaire-sociale-democrate_8234887.html#xtor=RSS-3-%5Bgeneral%5D",
+          "published": "2026-10-13",
+          "detected_at": "2026-10-13"
+        }
+      ]
     },
     {
       "slug": "melenchon",
@@ -86,16 +110,16 @@
       "source_url": "https://www.lemonde.fr/politique/article/2026/07/02/presidentielle-2027-jean-luc-melenchon-presente-son-projet-d-ecoregions-pour-remplacer-les-regions-actuelles-et-introduire-l-eau-dans-le-debat_6718229_823448.html",
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Raphaël Glucksmann, vainqueur de la primaire à gauche, au défi de mettre la famille sociale-démocrate en ordre de bataille",
+          "title": "Présidentielle 2027 : Raphaël Glucksmann, vainqueur de la primaire à gauche, doit désormais mettre la famille sociale-démocrate en ordre de bataille",
           "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-raphael-glucksmann-vainqueur-de-la-primaire-a-gauche-au-defi-de-mettre-la-famille-sociale-democrate-en-ordre-de-bataille_6792381_6205049.html",
           "published": "2026-10-12",
-          "detected_at": "2026-10-12"
+          "detected_at": "2026-10-13"
         },
         {
           "title": "Présidentielle 2027 : refuser toute alliance avec LFI aux législatives, l’engagement fragile de Raphaël Glucksmann",
           "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-refuser-toute-alliance-avec-lfi-aux-legislatives-l-engagement-fragile-de-raphael-glucksmann_6792415_6205049.html",
           "published": "2026-10-12",
-          "detected_at": "2026-10-12"
+          "detected_at": "2026-10-13"
         }
       ]
     },
@@ -121,7 +145,7 @@
           "title": "Retraites, réforme de l’État, immigration… Ce que contient le plan économique de Marine Le Pen pour «la renaissance de la France»",
           "url": "https://www.lefigaro.fr/conjoncture/retraites-reforme-de-l-etat-immigration-ce-que-contient-le-plan-economique-de-marine-le-pen-pour-la-renaissance-de-la-france-20261006",
           "published": "2026-10-06",
-          "detected_at": "2026-10-12"
+          "detected_at": "2026-10-13"
         }
       ]
     },
@@ -151,16 +175,16 @@
       "chiffrage_available": false,
       "press_signals": [
         {
-          "title": "Présidentielle 2027 : Raphaël Glucksmann, vainqueur de la primaire à gauche, au défi de mettre la famille sociale-démocrate en ordre de bataille",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-raphael-glucksmann-vainqueur-de-la-primaire-a-gauche-au-defi-de-mettre-la-famille-sociale-democrate-en-ordre-de-bataille_6792381_6205049.html",
-          "published": "2026-10-12",
-          "detected_at": "2026-10-12"
+          "title": "\"Les emmerdes commencent\" : les huit défis que Raphaël Glucksmann va devoir relever après sa victoire à la primaire de la gauche",
+          "url": "https://www.franceinfo.fr/elections/presidentielle/les-emmerdes-commencent-les-huit-defis-que-raphael-glucksmann-va-devoir-relever-apres-sa-victoire-a-la-primaire-de-la-gauche_8234041.html#xtor=RSS-3-%5Bgeneral%5D",
+          "published": "2026-10-13",
+          "detected_at": "2026-10-13"
         },
         {
-          "title": "Présidentielle 2027 : refuser toute alliance avec LFI aux législatives, l’engagement fragile de Raphaël Glucksmann",
-          "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/10/12/presidentielle-2027-refuser-toute-alliance-avec-lfi-aux-legislatives-l-engagement-fragile-de-raphael-glucksmann_6792415_6205049.html",
+          "title": "Primaire à gauche : au lendemain de sa victoire, Raphaël Glucksmann veut que la gauche sociale-démocrate renoue avec la « radicalité » et incarne la « rupture »",
+          "url": "https://www.lemonde.fr/election-presidentielle-2027/live/2026/10/12/en-direct-primaire-a-gauche-les-socialistes-ont-dit-qu-ils-souhaitaient-mettre-fin-a-la-politique-de-zig-zag-d-olivier-faure-estime-philippe-brun-au-lendemain-de-la-victoire-de-raphael-glucksmann_6791926_6205049.html",
           "published": "2026-10-12",
-          "detected_at": "2026-10-12"
+          "detected_at": "2026-10-13"
         }
       ]
     },
@@ -171,9 +195,17 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-10",
       "chiffrage_available": false,
-      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
+      "source_url": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "press_signals": [
+        {
+          "title": "Bruno Retailleau veut rétablir l’ordre, y compris dans les finances publiques",
+          "url": "https://www.la-croix.com/politique/bruno-retailleau-veut-retablir-l-ordre-y-compris-dans-les-finances-publiques-20261012",
+          "published": "2026-10-12",
+          "detected_at": "2026-10-13"
+        }
+      ]
     }
   ],
-  "veille_scan_at": "2026-10-12T05:16:54.849Z",
-  "program_press_hits": 26
+  "veille_scan_at": "2026-10-13T05:15:20.778Z",
+  "program_press_hits": 25
 }

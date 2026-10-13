@@ -2,12 +2,6 @@
   "schema": "lmdpt-hero-kicker-editorial-v1",
   "entries": [
     {
-      "date": "2026-09-17",
-      "text": "Liberté d'expression — Budget 2027 : la gauche promet la censure à un gouvernement…",
-      "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20260917",
-      "cta": "Lire →"
-    },
-    {
       "date": "2026-09-24",
       "text": "Liberté d'expression — Revues, think tanks, soirées… Les réseaux qui inspirent les…",
       "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20260924",
@@ -84,12 +78,18 @@
       "text": "Liberté d'expression — Cyberattaque contre la primaire du PS : \"On sait qu'il y a une…",
       "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20261012",
       "cta": "Lire →"
+    },
+    {
+      "date": "2026-10-13",
+      "text": "Liberté d'expression — Infraction sur l'inceste, juridictions spécialisées... Quelles…",
+      "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20261013",
+      "cta": "Lire →"
     }
   ],
   "fallback": {
-    "date": "2026-10-12",
-    "text": "Liberté d'expression — Cyberattaque contre la primaire du PS : \"On sait qu'il y a une…",
-    "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20261012",
+    "date": "2026-10-13",
+    "text": "Liberté d'expression — Infraction sur l'inceste, juridictions spécialisées... Quelles…",
+    "href": "/liberte-d-expression/?utm_source=homepage&utm_medium=hero_kicker&utm_campaign=une_20261013",
     "cta": "Lire →"
   }
 }
