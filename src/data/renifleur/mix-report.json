@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T05:30:13.255Z",
+  "generated_at": "2026-10-08T14:09:05.691Z",
   "doe": "Les sondages calibrent une cible de couverture presse par bloc idéologique — pas une prédiction, pas un classement, pas une consigne d’adhésion.",
   "method": "v1-best-per-bloc-renormalized",
   "source": "src/data/elections/2027-sondages-candidats.json",
@@ -146,7 +146,7 @@
   "max_share_per_host": 0.4,
   "before": {
     "item_count": 35,
-    "l1_deviation": 52.7,
+    "l1_deviation": 67.9,
     "observed": [
       {
         "bloc": "rn",
@@ -155,9 +155,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 28.6,
-        "count": 10,
-        "delta_pct": -6.3
+        "observed_pct": 17.1,
+        "count": 6,
+        "delta_pct": -17.8
       },
       {
         "bloc": "centre-droit",
@@ -178,9 +178,9 @@
           "parti-socialiste"
         ],
         "target_pct": 14.7,
-        "observed_pct": 5.7,
-        "count": 2,
-        "delta_pct": -9
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -11.8
       },
       {
         "bloc": "gauche-sociale-democrate",
@@ -199,9 +199,9 @@
           "barrot"
         ],
         "target_pct": 7.6,
-        "observed_pct": 11.4,
-        "count": 4,
-        "delta_pct": 3.8
+        "observed_pct": 2.9,
+        "count": 1,
+        "delta_pct": -4.7
       },
       {
         "bloc": "droite",
@@ -252,7 +252,7 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 15
+      "pluraliste": 23
     },
     "top_hosts": [
       {
@@ -299,7 +299,7 @@
   },
   "after": {
     "item_count": 35,
-    "l1_deviation": 32.7,
+    "l1_deviation": 35.5,
     "observed": [
       {
         "bloc": "rn",
@@ -308,9 +308,9 @@
           "bardella"
         ],
         "target_pct": 34.9,
-        "observed_pct": 34.3,
-        "count": 12,
-        "delta_pct": -0.6
+        "observed_pct": 31.4,
+        "count": 11,
+        "delta_pct": -3.5
       },
       {
         "bloc": "centre-droit",
@@ -405,36 +405,26 @@
       }
     ],
     "unmapped_hues": {
-      "pluraliste": 10
+      "pluraliste": 11
     },
     "top_hosts": [
       {
         "host": "lemonde.fr",
-        "count": 9,
-        "share_pct": 25.7
+        "count": 10,
+        "share_pct": 28.6
       },
       {
         "host": "liberation.fr",
-        "count": 7,
-        "share_pct": 20
-      },
-      {
-        "host": "publicsenat.fr",
-        "count": 5,
-        "share_pct": 14.3
-      },
-      {
-        "host": "franceinfo.fr",
-        "count": 4,
-        "share_pct": 11.4
-      },
-      {
-        "host": "la-croix.com",
-        "count": 4,
-        "share_pct": 11.4
+        "count": 8,
+        "share_pct": 22.9
       },
       {
         "host": "lefigaro.fr",
+        "count": 6,
+        "share_pct": 17.1
+      },
+      {
+        "host": "publicsenat.fr",
         "count": 4,
         "share_pct": 11.4
       },
@@ -442,6 +432,21 @@
         "host": "france24.com",
         "count": 2,
         "share_pct": 5.7
+      },
+      {
+        "host": "franceinfo.fr",
+        "count": 2,
+        "share_pct": 5.7
+      },
+      {
+        "host": "la-croix.com",
+        "count": 2,
+        "share_pct": 5.7
+      },
+      {
+        "host": "assemblee-nationale.fr",
+        "count": 1,
+        "share_pct": 2.9
       }
     ]
   }

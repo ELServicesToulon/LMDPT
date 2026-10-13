@@ -78,15 +78,7 @@
       "program_status": "partial",
       "last_measure_at": "2026-07-20",
       "chiffrage_available": true,
-      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
-      "press_signals": [
-        {
-          "title": "Présidentielle 2027 : au RN, antisémitisme et sionisme font bon mirage",
-          "url": "https://www.liberation.fr/politique/presidentielle-2027-au-rn-antisemitisme-et-sionisme-font-bon-mirage-20261007_POOK4QB2OZCVVLFZP3UYZBKI7M/",
-          "published": "2026-10-07",
-          "detected_at": "2026-10-08"
-        }
-      ]
+      "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement"
     },
     {
       "slug": "le-pen",
@@ -98,15 +90,15 @@
       "source_url": "https://www.france24.com/fr/france/20260702-proces-appel-marine-le-pen-quels-scenarios-possibles-7-juillet-ineligibilite-rassemblement-national-eurodeputes-fn-jugement",
       "press_signals": [
         {
-          "title": "\"Ce n'est pas du tout crédible\" : le budget de Marine Le Pen et ses 140 milliards d'économies sous le feu des critiques",
-          "url": "https://www.franceinfo.fr/politique/front-national/ce-n-est-pas-du-tout-credible-le-budget-de-marine-le-pen-et-ses-140-milliards-d-economies-sous-le-feu-des-critiques_8227204.html#xtor=RSS-3-%5Bgeneral%5D",
+          "title": "Présidentielle 2027 : les propositions radicales et les chiffres flous de Marine Le Pen sur le budget de l’UE",
+          "url": "https://www.lemonde.fr/politique/article/2026/10/08/presidentielle-2027-les-propositions-radicales-et-les-chiffres-flous-de-marine-le-pen-sur-le-budget-de-l-union-europeenne_6790175_823448.html",
           "published": "2026-10-08",
           "detected_at": "2026-10-08"
         },
         {
-          "title": "Présidentielle 2027 : le RN veut supprimer les intercommunalités",
-          "url": "https://www.lemonde.fr/politique/article/2026/10/07/presidentielle-2027-le-rassemblement-national-veut-supprimer-les-intercommunalites_6789595_823448.html",
-          "published": "2026-10-07",
+          "title": "\"Ce n'est pas du tout crédible\" : le budget de Marine Le Pen et ses 140 milliards d'économies sous le feu des critiques",
+          "url": "https://www.franceinfo.fr/politique/front-national/ce-n-est-pas-du-tout-credible-le-budget-de-marine-le-pen-et-ses-140-milliards-d-economies-sous-le-feu-des-critiques_8227204.html#xtor=RSS-3-%5Bgeneral%5D",
+          "published": "2026-10-08",
           "detected_at": "2026-10-08"
         }
       ]
@@ -137,6 +129,12 @@
       "chiffrage_available": false,
       "press_signals": [
         {
+          "title": "Primaire socialiste et sociale-démocrate : les troublantes ressemblances entre Jadot 2021 et Glucksmann 2026",
+          "url": "https://www.liberation.fr/politique/primaire-socialiste-et-sociale-democrate-les-troublantes-ressemblances-entre-jadot-2021-et-glucksmann-2026-20261008_5YR2LYRPLNHSPOG7IUSNYCRFHU/",
+          "published": "2026-10-08",
+          "detected_at": "2026-10-08"
+        },
+        {
           "title": "Primaire à gauche : plus de 140 000 personnes se sont inscrites pour désigner leur candidat à la présidentielle",
           "url": "https://www.lemonde.fr/politique/article/2026/10/06/primaire-a-gauche-plus-de-140-000-inscrits-appeles-a-designer-leur-candidat-a-la-presidentielle_6788654_823448.html",
           "published": "2026-10-06",
@@ -154,6 +152,6 @@
       "source_url": "https://www.unenouvelleenergie.fr/notre-programme/"
     }
   ],
-  "veille_scan_at": "2026-10-08T05:16:21.972Z",
-  "program_press_hits": 21
+  "veille_scan_at": "2026-10-08T14:09:05.691Z",
+  "program_press_hits": 16
 }
