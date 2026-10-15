@@ -123,8 +123,9 @@ describe('une du jour (égalité de date)', () => {
   it('brève Ifop du 15/10 en une, puis primaire et chronique', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
     expect(getUneDuJour()?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[1]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[2]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[2]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[3]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
