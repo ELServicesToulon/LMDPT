@@ -120,10 +120,11 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('suit l’ordre du catalogue : analyse primaire en une, chronique ensuite', () => {
+  it('brève Ifop du 15/10 en une, puis primaire et chronique', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[1]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(getUneDuJour()?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[1]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[2]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 

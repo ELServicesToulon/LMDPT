@@ -1,9 +1,15 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-10-12",
+  "updated": "2026-10-15",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
   "method": "Veille auto 2026-10-12 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
+    {
+      "label": "Ifop-Fiducial pour LCI / Sud Radio, post-primaire (terrain 12-14 oct. 2026, publié 14/10) — documentée, non fusionnée",
+      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
+      "as_of": "2026-10-15",
+      "note": "Notice Commission des sondages n°10314 (FD 122851). 1 390 inscrits (échantillon 1 525), en ligne, quotas. 4 hypothèses de 1er tour (suffrages exprimés) : Le Pen 32-36, Mélenchon 16-17, Glucksmann 11,5-16, Philippe 13-18 (18 seul au centre), Attal 5-13 (13 seul au centre), Retailleau 5-8, Lisnard 6 (seule hyp. où il est testé), Zemmour 3. Aucun 2nd tour publié dans la notice. Premier terrain postérieur à la primaire sociale-démocrate du 11/10. Non fusionnée dans latest_pct/avg_pct, comme la vague Toluna-Harris 7."
+    },
     {
       "label": "Toluna-Harris Interactive pour M6/RTL, vague 7 (terrain 5-8 oct. 2026) — documentée, non fusionnée",
       "url": "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf",
@@ -59,7 +65,8 @@
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
     "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
     "Mise à jour LMDPT : 2026-10-12 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné).",
-    "Toluna-Harris vague 7 (5-8 oct. 2026) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Les moyennes latest_pct reposent encore sur les vagues de juillet 2026."
+    "Toluna-Harris vague 7 (5-8 oct. 2026) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Les moyennes latest_pct reposent encore sur les vagues de juillet 2026.",
+    "Ifop-Fiducial LCI/Sud Radio (12-14 oct. 2026, notice 10314) documentée en sources, non fusionnée dans les moyennes (voir note de la source)."
   ],
   "waves_latest": [
     {

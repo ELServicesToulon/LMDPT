@@ -1,0 +1,179 @@
+{
+  "slug": "breve-ifop-post-primaire",
+  "title": "Premier sondage après la primaire : Glucksmann gagne du terrain, Le Pen ne bouge pas",
+  "eyebrow": "Brève · Sondage",
+  "type_label": "Brève",
+  "date": "2026-10-15",
+  "updated": "2026-10-15",
+  "kicker": "Brève · 15 octobre 2026",
+  "author": "La rédaction",
+  "author_role": "LMDPT",
+  "chapo": "Ifop-Fiducial pour LCI et Sud Radio, terrain du 12 au 14 octobre : Glucksmann à 11,5-16 %, Mélenchon à 16-17 %, Le Pen en tête. Aucun second tour publié.",
+  "description": "Brève : le sondage Ifop-Fiducial LCI/Sud Radio (12-14 octobre 2026, notice 10314), premier après la primaire sociale-démocrate. Chiffres de 1er tour par hypothèse, sans second tour.",
+  "disclaimer": "Brève factuelle. Tous les chiffres viennent de la notice Ifop n°10314 déposée à la Commission des sondages, consultée le 15 octobre 2026. Les écarts avec fin septembre sont la lecture d'Ifop sur LCI. Intentions de vote en % des exprimés, ni résultat ni prédiction.",
+  "tags": [
+    "lmdpt",
+    "breve",
+    "sondage",
+    "ifop",
+    "presidentielle-2027",
+    "glucksmann",
+    "doe"
+  ],
+  "x_hook": "Premier sondage après la primaire",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "Toutes les hypothèses de 1er tour sont présentées, sans duel ni pronostic."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "breve",
+      "title": "La brève",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ifop-Fiducial a interrogé 1 390 inscrits en ligne, du 12 au 14 octobre, pour LCI et Sud Radio. C'est le premier sondage réalisé après la victoire de Raphaël Glucksmann à la primaire sociale-démocrate du 11 octobre. Les résultats sont parus le 14 octobre (notice n°10314 de la Commission des sondages)."
+        },
+        {
+          "type": "p",
+          "text": "Glucksmann obtient entre 11,5 et 16 % selon les hypothèses. Selon la lecture d'Ifop sur LCI, il gagne 2,5 à 3 points sur la vague de fin septembre. Jean-Luc Mélenchon tient à 16-17 %. Marine Le Pen reste en tête partout, entre 32 et 36 %."
+        },
+        {
+          "type": "p",
+          "text": "Au centre, tout dépend de qui reste en lice. Seul candidat du bloc central, Édouard Philippe atteint 18 %, devant Mélenchon (16 %). Seul à sa place, Gabriel Attal fait 13 % et arrive derrière Glucksmann (16 %). À droite, dans la seule hypothèse où il est testé, David Lisnard recueille 6 %, contre 5 % pour Bruno Retailleau."
+        },
+        {
+          "type": "p",
+          "text": "Ces hypothèses s'excluent : leurs chiffres ne s'additionnent pas. Aucun second tour n'est publié dans cette vague. Pour des scores entre 10 et 20 %, la notice donne une marge d'erreur de l'ordre de 2 à 2,5 points. Un sondage mesure l'opinion à un instant donné. Ce n'est pas une prédiction."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : quatre hypothèses de 1er tour",
+      "intro": "Intentions de vote en % des exprimés, Ifop-Fiducial pour LCI / Sud Radio, 12-14 octobre 2026. Chaque colonne est une hypothèse distincte.",
+      "table": {
+        "caption": "Ifop-Fiducial 12-14/10/2026, 1er tour par hypothèse",
+        "headers": [
+          "Candidat",
+          "Philippe + Attal + Lisnard, Ruffin, Villepin",
+          "Philippe seul au centre",
+          "Attal seul au centre",
+          "Philippe + Attal"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen",
+            "32",
+            "35",
+            "36",
+            "34"
+          ],
+          [
+            "Jean-Luc Mélenchon",
+            "16",
+            "16",
+            "17",
+            "16"
+          ],
+          [
+            "Édouard Philippe",
+            "13",
+            "18",
+            "non testé",
+            "14"
+          ],
+          [
+            "Raphaël Glucksmann",
+            "11,5",
+            "13,5",
+            "16",
+            "14"
+          ],
+          [
+            "Gabriel Attal",
+            "5",
+            "non testé",
+            "13",
+            "6"
+          ],
+          [
+            "David Lisnard",
+            "6",
+            "non testé",
+            "non testé",
+            "non testé"
+          ],
+          [
+            "Bruno Retailleau",
+            "5",
+            "6,5",
+            "8",
+            "6,5"
+          ],
+          [
+            "Éric Zemmour",
+            "3",
+            "3",
+            "3",
+            "3"
+          ]
+        ]
+      },
+      "note": "Autres candidats testés (Roussel, Tondelier, Ruffin, Villepin, Dupont-Aignan, Arthaud) : 3 % ou moins. Ne se prononcent pas : 22 à 26 %. Hypothèses exclusives, ne pas additionner.",
+      "conclusion": "Democracy Over Elimination : au premier tour, chacun vote pour ses idées. Cette vague ne publie aucun duel de second tour, et LMDPT n'en invente pas."
+    }
+  ],
+  "sources_intro": "Consultations du 15 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Sondage et presse",
+      "items": [
+        {
+          "label": "Notice Ifop n°10314 (Commission des sondages)",
+          "links": [
+            {
+              "label": "Notice Ifop n°10314 (Commission des sondages)",
+              "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+            }
+          ]
+        },
+        {
+          "label": "TF1info / LCI, résultats commentés",
+          "links": [
+            {
+              "label": "TF1info / LCI, résultats commentés",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-presidentielle-2027-que-revelent-les-resultats-de-notre-enquete-realisee-apres-la-victoire-de-raphael-glucksmann-a-la-primaire-le-pen-philippe-attal-retailleau-2469980.html"
+            }
+          ]
+        },
+        {
+          "label": "Sud Radio",
+          "links": [
+            {
+              "label": "Sud Radio",
+              "url": "https://www.sudradio.fr/ifop/exclu-presidentielle-2027-glucksmann-grignote-le-pen-reste-intouchable"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Aucune simulation, aucun duel inventé, aucun chiffre hors de la notice publiée.",
+  "liens_internes": [
+    {
+      "href": "/analyses/chronique-manusk-primaire-vent-arriere",
+      "label": "Chronique Manusk : le vent arrière et la salle d'attente"
+    },
+    {
+      "href": "/analyses/primaire-droite-qui-la-veut",
+      "label": "Primaire de la droite : tout le monde la commente, personne ne l'organise"
+    }
+  ]
+}
