@@ -7,6 +7,8 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import breveIfop from '../data/analyses/breve-ifop-post-primaire.json';
+import feuilletonEp1 from '../data/analyses/feuilleton-salle-attente-episode-1.json';
 import primaireDroite from '../data/analyses/primaire-droite-qui-la-veut.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import freresMusulmans from '../data/analyses/freres-musulmans-strasbourg-a-vote.json';
@@ -34,6 +36,32 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: breveIfop.slug,
+    title: breveIfop.title,
+    description: breveIfop.description,
+    date: breveIfop.date,
+    published: breveIfop.date,
+    updated: breveIfop.updated,
+    href: '/analyses/breve-ifop-post-primaire',
+    cover: uneCover(
+      'breve-ifop-post-primaire',
+      'Illustration à l’encre et à l’aquarelle : un thermomètre sous cloche de verre, quatre socles en bois de hauteurs différentes, une girouette et des feuillets blancs épars sur une table.',
+    ),
+  },
+  {
+    slug: feuilletonEp1.slug,
+    title: feuilletonEp1.title,
+    description: feuilletonEp1.description,
+    date: feuilletonEp1.date,
+    published: feuilletonEp1.date,
+    updated: feuilletonEp1.updated,
+    href: '/analyses/feuilleton-salle-attente-episode-1',
+    cover: uneCover(
+      'feuilleton-salle-attente-episode-1',
+      'Illustration à l’encre et à l’aquarelle : une salle d’attente aux chaises vides, une fenêtre ouverte dont le rideau se gonfle sous le vent, une horloge murale et une porte fermée au fond.',
+    ),
+  },
   {
     slug: primaireDroite.slug,
     title: primaireDroite.title,

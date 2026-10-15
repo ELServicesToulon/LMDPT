@@ -4,7 +4,7 @@
   "eyebrow": "Chronique · Manusk",
   "type_label": "Chronique d'opinion",
   "date": "2026-10-12",
-  "updated": "2026-10-12",
+  "updated": "2026-10-15",
   "kicker": "Chronique · Manusk · 12 octobre 2026",
   "author": "Manusk",
   "author_role": "Chroniqueur invité",
@@ -74,6 +74,10 @@
         {
           "type": "p",
           "text": "Reste l'essentiel. Dans les chiffres d'aujourd'hui, personne ne rattrape Le Pen. Ni le vent arrière, ni la salle d'attente."
+        },
+        {
+          "type": "p",
+          "text": "Mise à jour 15/10 : premier sondage après la primaire, Ifop-Fiducial pour LCI et Sud Radio (terrain 12-14/10, notice 10314) donne Glucksmann à 11,5-16 % et Mélenchon à 16-17 %, sans second tour publié. [Lire la brève](https://lmdpt.iarbre.org/analyses/breve-ifop-post-primaire)."
         }
       ]
     },
@@ -188,6 +192,10 @@
     {
       "href": "/analyses/primaire-droite-qui-la-veut",
       "label": "Primaire de la droite : tout le monde la commente, personne ne l'organise"
+    },
+    {
+      "href": "/analyses/breve-ifop-post-primaire",
+      "label": "Brève : premier sondage après la primaire (Ifop, 15/10)"
     }
   ]
 }

@@ -1,0 +1,191 @@
+{
+  "slug": "feuilleton-salle-attente-episode-1",
+  "title": "La salle d'attente, épisode 1 : Le vent se lève",
+  "eyebrow": "Feuilleton · La salle d'attente · Manusk",
+  "type_label": "Opinion · Feuilleton (épisode 1/8)",
+  "date": "2026-10-15",
+  "updated": "2026-10-15",
+  "kicker": "Feuilleton « La salle d'attente » · Opinion · Manusk · 15 octobre 2026",
+  "author": "Manusk",
+  "author_role": "Chroniqueur invité",
+  "chapo": "Premier épisode du feuilleton de Manusk sur la route de 2027. Glucksmann a le vent dans le dos, Mélenchon tient le mur, le centre attend et Le Pen ne regarde même pas. Opinion assumée, chiffres publiés.",
+  "description": "Feuilleton Manusk « La salle d'attente », épisode 1 : la thèse du vent arrière de Glucksmann confrontée au sondage Ifop-Fiducial du 12-14 octobre et au duel Toluna-Harris. Opinion.",
+  "disclaimer": "Opinion. Feuilleton signé Manusk, chroniqueur invité. Il n'engage pas la rédaction comme analyse DOE. Les thèses (vent arrière de Glucksmann, voix prises à Mélenchon, primaire de droite, défaite de Le Pen au second tour) sont des opinions, pas des faits. Les chiffres viennent de sondages publiés, consultés le 15 octobre 2026. Aucune simulation.",
+  "tags": [
+    "lmdpt",
+    "chronique",
+    "feuilleton",
+    "la-salle-d-attente",
+    "manusk",
+    "opinion",
+    "presidentielle-2027",
+    "glucksmann",
+    "doe"
+  ],
+  "x_hook": "La salle d'attente, épisode 1",
+  "hues": [
+    {
+      "slug": "parti-socialiste",
+      "label": "Socialiste / social-démocrate",
+      "color": "#ff8080",
+      "rationale": "En phase avec la thèse du vent arrière de Glucksmann."
+    },
+    {
+      "slug": "droite",
+      "label": "Droite (débat)",
+      "color": "#0066cc",
+      "rationale": "En phase avec le pari d'une primaire de la droite et du centre."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Pluraliste / transversal 1er tour",
+      "color": "#5a6570",
+      "rationale": "Les thèses sont confrontées au sondage qui les contredit."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "episode",
+      "title": "Épisode 1 : Le vent se lève",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Je l'ai écrit lundi, je le maintiens : Raphaël Glucksmann a le vent dans le dos. Il a gagné sa primaire avec 66,17 % des exprimés, sur 120 787 votants. Pour un homme qu'on disait trop doux pour la bagarre, ce n'est pas rien."
+        },
+        {
+          "type": "p",
+          "text": "Le premier thermomètre vient de tomber. Ifop-Fiducial, pour LCI et Sud Radio, terrain du 12 au 14 octobre : Glucksmann pèse entre 11,5 et 16 % selon les hypothèses. Ifop lui compte 2,5 à 3 points de mieux qu'à la fin septembre. Ça bouge. Je ne vais pas faire semblant de ne pas sourire."
+        },
+        {
+          "type": "p",
+          "text": "Seulement voilà, ma deuxième thèse coince. Je crois qu'il prend des voix à Jean-Luc Mélenchon. Les chiffres, eux, ne le montrent pas encore. Mélenchon tient à 16-17 %, et Ifop lit plutôt l'inverse : un vote utile qui le protège contre Glucksmann. Le vent souffle, mais le mur d'en face ne bouge pas."
+        },
+        {
+          "type": "p",
+          "text": "Au centre, la salle d'attente se remplit. Édouard Philippe, seul candidat du bloc central, monte à 18 %. Gabriel Attal, seul à sa place, fait 13 %, derrière Glucksmann. Et à droite, David Lisnard (6 %) passe devant Bruno Retailleau (5 %), dans la seule hypothèse où les deux sont testés. Ceux qui jurent qu'une primaire de la droite est inutile devraient relire cette ligne deux fois."
+        },
+        {
+          "type": "p",
+          "text": "Reste Marine Le Pen, entre 32 et 36 %. Elle ne regarde même pas le vent. Je pense qu'elle perdra au second tour, sauf si elle gagne dès le premier. Sauf que le seul second tour publié ce mois-ci, chez Toluna-Harris Interactive (vague 7, terrain du 5 au 8 octobre), la donne gagnante face à Philippe (56-44). Mon opinion contre leur chiffre. Je garde l'opinion, mais je vous dois le chiffre."
+        },
+        {
+          "type": "p",
+          "text": "**La semaine prochaine, la question qui fâche : si Glucksmann ne prend pas ses voix à Mélenchon, à qui les prend-il ?**"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : ce que disent les chiffres cités",
+      "intro": "Au premier tour, chacun vote pour ses idées. LMDPT ne publie ni pronostic ni duel inventé.",
+      "table": {
+        "caption": "Chiffres cités dans l'épisode 1",
+        "headers": [
+          "Chiffre",
+          "Valeur",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Glucksmann, 1er tour",
+            "11,5 à 16 % selon l'hypothèse",
+            "Ifop-Fiducial LCI/Sud Radio, 12-14/10, notice 10314"
+          ],
+          [
+            "Écart vs fin septembre",
+            "+2,5 à +3 pts",
+            "Lecture Ifop sur LCI"
+          ],
+          [
+            "Mélenchon, 1er tour",
+            "16 à 17 %",
+            "Ifop, 12-14/10"
+          ],
+          [
+            "Philippe seul au centre / Attal seul au centre",
+            "18 % / 13 %",
+            "Ifop, 12-14/10"
+          ],
+          [
+            "Lisnard / Retailleau (même hypothèse)",
+            "6 % / 5 %",
+            "Ifop, 12-14/10"
+          ],
+          [
+            "Le Pen, 1er tour",
+            "32 à 36 %",
+            "Ifop, 12-14/10"
+          ],
+          [
+            "Seul duel publié : Le Pen / Philippe",
+            "56 / 44",
+            "Toluna-Harris Interactive vague 7, 5-8/10"
+          ]
+        ]
+      },
+      "note": "Intentions de vote en % des exprimés. Hypothèses de 1er tour exclusives, ne pas additionner. Ni résultat, ni prédiction.",
+      "conclusion": "L'opinion appartient à Manusk ; les chiffres, à tout le monde."
+    }
+  ],
+  "sources_intro": "Consultations du 15 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Sondages et presse",
+      "items": [
+        {
+          "label": "Notice Ifop n°10314 (Commission des sondages)",
+          "links": [
+            {
+              "label": "Notice Ifop n°10314 (Commission des sondages)",
+              "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+            }
+          ]
+        },
+        {
+          "label": "TF1info / LCI, résultats commentés",
+          "links": [
+            {
+              "label": "TF1info / LCI, résultats commentés",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-presidentielle-2027-que-revelent-les-resultats-de-notre-enquete-realisee-apres-la-victoire-de-raphael-glucksmann-a-la-primaire-le-pen-philippe-attal-retailleau-2469980.html"
+            }
+          ]
+        },
+        {
+          "label": "Sud Radio",
+          "links": [
+            {
+              "label": "Sud Radio",
+              "url": "https://www.sudradio.fr/ifop/exclu-presidentielle-2027-glucksmann-grignote-le-pen-reste-intouchable"
+            }
+          ]
+        },
+        {
+          "label": "Toluna-Harris Interactive, vague 7 (rapport)",
+          "links": [
+            {
+              "label": "Toluna-Harris Interactive, vague 7 (rapport)",
+              "url": "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Opinion signée. Aucune simulation, aucun chiffre hors sondages publiés.",
+  "liens_internes": [
+    {
+      "href": "/analyses/breve-ifop-post-primaire",
+      "label": "Brève : premier sondage après la primaire (Ifop, 15/10)"
+    },
+    {
+      "href": "/analyses/chronique-manusk-primaire-vent-arriere",
+      "label": "Chronique Manusk : le vent arrière et la salle d'attente"
+    },
+    {
+      "href": "/analyses/primaire-droite-qui-la-veut",
+      "label": "Primaire de la droite : tout le monde la commente, personne ne l'organise"
+    }
+  ]
+}
