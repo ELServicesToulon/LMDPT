@@ -60,6 +60,8 @@ export interface DetectedWave {
   scores: Record<string, number>;
   raw_snippet: string;
   metric: 'intentions_vote' | 'souhait_victoire' | 'unknown';
+  /** Label court type « hyp. 1 » — une vague par hypothèse, jamais fusionnées. */
+  hypothesis?: string | null;
 }
 
 export interface Movement {
@@ -82,7 +84,13 @@ export interface SondageVeilleSnapshot {
   sources_ok: number;
   sources_error: number;
   waves: DetectedWave[];
-  head_by_wave: Array<{ wave_id: string; firm: string; head: string; pct: number }>;
+  head_by_wave: Array<{
+    wave_id: string;
+    firm: string;
+    head: string;
+    pct: number;
+    hypothesis?: string | null;
+  }>;
   movements: Movement[];
   brief: string[];
   errors: Array<{ source_id: string; error: string }>;
@@ -210,50 +218,102 @@ export function extractFieldwork(text: string): string | null {
   return m[0];
 }
 
-/** Parse EPOC page : dernier sondage + lignes type 12/07/2026 ELABE. */
-export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
-  const text = stripHtml(html);
-  const waves: DetectedWave[] = [];
+/** EPOC bar charts: "37% LE PEN". 1er tour only — reject duel/aggregate leaks (≥ 50 %). */
+function scoresFromEpocPctNamePairs(block: string): Record<string, number> {
+  const scores: Record<string, number> = {};
+  const scorePairs = [
+    ...block.matchAll(
+      /(\d{1,2}(?:[.,]\d{1,2})?)%\s+([A-ZÉÈÊÀÂÙÛÔÏÇ][A-ZÉÈÊÀÂÙÛÔÏÇ\s-]{2,24})/g,
+    ),
+  ];
+  for (const [, pct, name] of scorePairs) {
+    const slug = nameToSlug(name);
+    const n = Number.parseFloat(pct.replace(',', '.'));
+    if (slug && Number.isFinite(n) && n > 0 && n < 50) scores[slug] = n;
+  }
+  return scores;
+}
 
-  // "Dernier sondage ELABE 12/07/2026"
+function epocFirmKey(firmId: string | null | undefined, firmLabel: string): string {
+  return (firmId ?? firmLabel).toLowerCase().replace(/\s+/g, '-');
+}
+
+function epocDateKey(date: string): string {
+  return date.replace(/\//g, '');
+}
+
+/**
+ * Slice the « Dernier sondage » banner down to 1er-tour hypothesis charts.
+ * Stops before 2nd-tour duels and before « Basée sur l'ensemble » aggregates.
+ */
+function epocLastPollFirstTourSection(text: string, header: string): string {
+  const start = text.indexOf(header);
+  if (start < 0) return '';
+  const after = text.slice(start + header.length);
+  const cut = after.search(
+    /2(?:[eè]me|nd)\s+Tour|\bMoyennes globales\b|\bBas[ée]e sur l['’]ensemble\b/i,
+  );
+  return (cut >= 0 ? after.slice(0, cut) : after.slice(0, 2000)).trim();
+}
+
+const EPOC_FIRST_TOUR_HYP_RE =
+  /1er\s+Tour\s*[·•.\-–]?\s*Hypoth[eè]se\s*N?\s*[°ºo]?\s*(\d+)/gi;
+
+function parseEpocLastPollWaves(text: string, sourceUrl: string): DetectedWave[] {
   const last = text.match(
     /Dernier sondage\s+([A-Z0-9][A-Z0-9\s-]{1,20}?)\s+(\d{2}\/\d{2}\/\d{4})/i,
   );
-  if (last) {
-    const firmLabel = last[1].trim();
-    const firm = matchFirm(firmLabel);
-    // Hypothèse N°1 block after date
-    const after = text.slice(text.indexOf(last[0]), text.indexOf(last[0]) + 800);
-    const scores = extractScores(after);
-    // EPOC layout: "35% LE PEN 16.5% PHILIPPE"
-    const scorePairs = [...after.matchAll(/(\d{1,2}(?:[.,]\d{1,2})?)%\s+([A-ZÉÈÊÀÂÙÛÔÏÇ][A-ZÉÈÊÀÂÙÛÔÏÇ\s-]{2,20})/g)];
-    for (const [, pct, name] of scorePairs) {
-      const f = matchFirm(name) ? null : extractScores(`${name} ${pct}%`);
-      Object.assign(scores, f);
-      const slugScores = extractScores(`${name.trim()} ${pct}%`);
-      Object.assign(scores, slugScores);
-    }
-    // direct map uppercase names
-    for (const [, pct, name] of scorePairs) {
-      const slug = nameToSlug(name);
-      if (slug) scores[slug] = Number.parseFloat(pct.replace(',', '.'));
-    }
-    const id = `epoc-${(firm?.id ?? firmLabel).toLowerCase().replace(/\s+/g, '-')}-${last[2].replace(/\//g, '')}`;
+  if (!last) return [];
+
+  const firmLabel = last[1].trim();
+  const firm = matchFirm(firmLabel);
+  const date = last[2];
+  const section = epocLastPollFirstTourSection(text, last[0]);
+  if (!section) return [];
+
+  const markers: Array<{ n: string; index: number; endHeader: number }> = [];
+  EPOC_FIRST_TOUR_HYP_RE.lastIndex = 0;
+  let hm: RegExpExecArray | null;
+  while ((hm = EPOC_FIRST_TOUR_HYP_RE.exec(section)) !== null) {
+    markers.push({ n: hm[1], index: hm.index, endHeader: hm.index + hm[0].length });
+  }
+
+  const blocks: Array<{ hyp: string; body: string }> =
+    markers.length > 0
+      ? markers.map((m, i) => {
+          const end = i + 1 < markers.length ? markers[i + 1].index : section.length;
+          return { hyp: m.n, body: section.slice(m.endHeader, end) };
+        })
+      : [{ hyp: '1', body: section }];
+
+  const waves: DetectedWave[] = [];
+  const firmKey = epocFirmKey(firm?.id, firmLabel);
+  for (const { hyp, body } of blocks) {
+    const scores = scoresFromEpocPctNamePairs(body);
+    if (!Object.keys(scores).length) continue;
     waves.push({
-      id,
+      id: `epoc-${firmKey}-${epocDateKey(date)}-h${hyp}`,
       firm: firm?.label ?? firmLabel,
       firm_id: firm?.id ?? null,
-      fieldwork: last[2],
-      published_hint: last[2],
+      fieldwork: date,
+      published_hint: date,
       source_url: sourceUrl,
       source_id: 'epoc',
       scores,
-      raw_snippet: after.slice(0, 280),
+      raw_snippet: `${last[0]} 1er Tour · Hypothèse N°${hyp} ${body}`.replace(/\s+/g, ' ').slice(0, 280),
       metric: 'intentions_vote',
+      hypothesis: `hyp. ${hyp}`,
     });
   }
+  return waves;
+}
 
-  // Table rows: "12/07/2026 ELABE"
+/** Parse EPOC page : 1er-tour hypotheses of the last poll (never merged) + table row mentions. */
+export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
+  const text = stripHtml(html);
+  const waves: DetectedWave[] = parseEpocLastPollWaves(text, sourceUrl);
+
+  // Table rows: "12/07/2026 ELABE 1" — mentions only, no scores (columns are positional).
   const rowRe = /(\d{2}\/\d{2}\/\d{4})\s+([A-Z][A-Z0-9\s-]{2,18}?)\s+(\d)\s+/g;
   let rm: RegExpExecArray | null;
   const seen = new Set(waves.map((w) => w.id));
@@ -261,7 +321,10 @@ export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
     const date = rm[1];
     const firmLabel = rm[2].trim();
     const firm = matchFirm(firmLabel);
-    const id = `epoc-row-${(firm?.id ?? firmLabel).toLowerCase().replace(/\s+/g, '-')}-${date.replace(/\//g, '')}-h${rm[3]}`;
+    const hyp = rm[3];
+    const scoredId = `epoc-${epocFirmKey(firm?.id, firmLabel)}-${epocDateKey(date)}-h${hyp}`;
+    if (seen.has(scoredId)) continue;
+    const id = `epoc-row-${epocFirmKey(firm?.id, firmLabel)}-${epocDateKey(date)}-h${hyp}`;
     if (seen.has(id)) continue;
     seen.add(id);
     const chunk = text.slice(rm.index, rm.index + 200);
@@ -276,6 +339,7 @@ export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
       scores: {},
       raw_snippet: chunk,
       metric: 'intentions_vote',
+      hypothesis: `hyp. ${hyp}`,
     });
   }
 
@@ -491,18 +555,26 @@ export function headOfWave(wave: DetectedWave): { head: string; pct: number } | 
   return { head: entries[0][0], pct: entries[0][1] };
 }
 
+function hypothesisLabel(wave: DetectedWave): string | null {
+  if (wave.hypothesis && wave.hypothesis.trim()) return wave.hypothesis.trim();
+  const m = wave.id.match(/-h(\d+)$/);
+  return m ? `hyp. ${m[1]}` : null;
+}
+
 export function commentForNewWave(wave: DetectedWave): string {
   const head = headOfWave(wave);
   const metric =
     wave.metric === 'souhait_victoire' ? 'souhait de victoire' : 'intentions de vote';
+  const hyp = hypothesisLabel(wave);
+  const when = [wave.fieldwork, hyp].filter(Boolean).join(', ');
   if (!head) {
     if (wave.metric === 'souhait_victoire' && /le\s*point|cluster17/i.test(`${wave.firm} ${wave.source_url} ${wave.raw_snippet}`)) {
       return `Cluster17 / Le Point (${wave.fieldwork ?? 'juil. 2026'}) : Le Pen en tête des souhaits de victoire, Mélenchon en embuscade devant Philippe — 56 % jugent la candidature « injustifiée » (paywall ; pas d’intentions de vote isolées auto).`;
     }
-    return `${wave.firm} signalé (${wave.fieldwork ?? 'date n/d'}) — scores non extraits automatiquement ; vérifier la source.`;
+    return `${wave.firm} signalé (${when || 'date n/d'}) — scores non extraits automatiquement ; vérifier la source.`;
   }
   const label = head.head.replace(/-/g, ' ');
-  return `${wave.firm}${wave.fieldwork ? ` (${wave.fieldwork})` : ''} : ${label} en tête à ${formatPct(head.pct)} (${metric}).`;
+  return `${wave.firm}${when ? ` (${when})` : ''} : ${label} en tête à ${formatPct(head.pct)} (${metric}).`;
 }
 
 export function commentForShift(
@@ -545,12 +617,16 @@ export function isRecentFieldwork(fieldwork: string | null | undefined): boolean
   return false;
 }
 
+function waveExactKey(w: DetectedWave): string {
+  const hyp = hypothesisLabel(w) ?? '';
+  return `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}|${hyp}`;
+}
+
 export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string): Movement[] {
   const movements: Movement[] = [];
   const prevByExact = new Map<string, DetectedWave>();
   for (const w of prev) {
-    const key = `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}`;
-    prevByExact.set(key, w);
+    prevByExact.set(waveExactKey(w), w);
   }
 
   const seenIds = new Set(prev.map((w) => w.id));
@@ -559,8 +635,7 @@ export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string
     if (seenIds.has(w.id)) continue;
 
     const hasScores = Object.keys(w.scores).length > 0;
-    const key = `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}`;
-    const oldExact = prevByExact.get(key);
+    const oldExact = prevByExact.get(waveExactKey(w));
 
     if (hasScores) {
       // Prefer exact firm+fieldwork match only for shifts (avoid Bardella-history vs Le Pen-current)
@@ -753,9 +828,16 @@ export async function runSondageVeille(
     .map((w) => {
       const h = headOfWave(w);
       if (!h) return null;
-      return { wave_id: w.id, firm: w.firm, head: h.head, pct: h.pct };
+      const hyp = hypothesisLabel(w);
+      return {
+        wave_id: w.id,
+        firm: w.firm,
+        head: h.head,
+        pct: h.pct,
+        ...(hyp ? { hypothesis: hyp } : {}),
+      };
     })
-    .filter(Boolean) as Array<{ wave_id: string; firm: string; head: string; pct: number }>;
+    .filter(Boolean) as SondageVeilleSnapshot['head_by_wave'];
 
   const brief = movements.map((m) => m.comment);
   if (!brief.length) {

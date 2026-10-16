@@ -83,9 +83,10 @@ async function main(): Promise<void> {
     `## Têtes de vague (scores extraits)`,
     ``,
     ...(snapshot.head_by_wave.length
-      ? snapshot.head_by_wave.map(
-          (h) => `- **${h.firm}** : ${h.head.replace(/-/g, ' ')} — ${h.pct} %`,
-        )
+      ? snapshot.head_by_wave.map((h) => {
+          const hyp = h.hypothesis ? ` (${h.hypothesis})` : '';
+          return `- **${h.firm}**${hyp} : ${h.head.replace(/-/g, ' ')} — ${h.pct} %`;
+        })
       : ['- (aucune tête scorée dans ce scan)']),
     ``,
     `## Sources`,

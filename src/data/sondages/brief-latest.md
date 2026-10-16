@@ -1,12 +1,12 @@
 # Veille sondages — brief
 
-**Scan** : 2026-10-12T04:45:23.079Z
+**Scan** : 2026-10-16T04:47:52.511Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- Harris Interactive / Toluna Harris (12/10/2026) : le pen en tête à 37 % (intentions de vote).
+- Scan 2026-10-16T04:47 — aucun mouvement détecté (30 vague(s) en mémoire, 11 source(s) OK).
 
 ## Têtes de vague (scores extraits)
 
@@ -15,7 +15,8 @@
 - **Verian** : le pen — 37 %
 - **Harris Interactive** : le pen — 35 %
 - **OpinionWay** : le pen — 35 %
-- **Harris Interactive / Toluna Harris** : le pen — 37 %
+- **Odoxa** (hyp. 1) : le pen — 37 %
+- **Odoxa** (hyp. 2) : le pen — 38 %
 
 ## Sources
 

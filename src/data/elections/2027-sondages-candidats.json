@@ -1,9 +1,15 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
   "method": "Veille auto 2026-10-12 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
+    {
+      "label": "Odoxa (publié 15/10/2026, via epocinfo) — documentée, non fusionnée",
+      "url": "https://www.epocinfo.fr/ep2027.php",
+      "as_of": "2026-10-16",
+      "note": "Relevé agrégateur epocinfo ; notice Commission des sondages non consultée ; hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 : Le Pen 37, Mélenchon 18, Philippe 17, Glucksmann 9,5, Retailleau 6,5, Zemmour 4,5, Tondelier 3, Roussel 2, Dupont-Aignan 2, Arthaud 0,5. 1er tour hyp. 2 : Le Pen 38, Mélenchon 18,5, Attal 11, Glucksmann 10,5, Retailleau 9, Zemmour 4,1, Tondelier 3,5, Roussel 2, Dupont-Aignan 2, Arthaud 1. 2nd tour (non mélangé au 1er tour) : Le Pen 68 / Mélenchon 32 ; Le Pen 53 / Philippe 47."
+    },
     {
       "label": "Ifop-Fiducial pour LCI / Sud Radio, post-primaire (terrain 12-14 oct. 2026, publié 14/10) — documentée, non fusionnée",
       "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
@@ -66,7 +72,8 @@
     "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
     "Mise à jour LMDPT : 2026-10-12 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné).",
     "Toluna-Harris vague 7 (5-8 oct. 2026) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Les moyennes latest_pct reposent encore sur les vagues de juillet 2026.",
-    "Ifop-Fiducial LCI/Sud Radio (12-14 oct. 2026, notice 10314) documentée en sources, non fusionnée dans les moyennes (voir note de la source)."
+    "Ifop-Fiducial LCI/Sud Radio (12-14 oct. 2026, notice 10314) documentée en sources, non fusionnée dans les moyennes (voir note de la source).",
+    "Odoxa 15/10/2026 (via epocinfo) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Deux hypothèses de 1er tour distinctes ; duels de 2nd tour non mélangés au 1er tour."
   ],
   "waves_latest": [
     {
