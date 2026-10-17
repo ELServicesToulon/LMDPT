@@ -116,6 +116,21 @@ La rubrique **Débats** (`/debats`) documente des questions civiques liées au p
 | Discussion communautaire | Modérée via GitHub Discussions + Giscus — charte DOE applicable aux commentaires |
 | Distinction fait / opinion | Les débats sont signalés comme espace d'argumentation, pas comme faits établis |
 
+## Arène des chroniqueurs
+
+La page publique **`/chroniqueurs/`** tient un tir à la corde documentaire. Ce n’est pas un sondage, ni un palmarès, ni une consigne de vote.
+
+| Règle | Application |
+|-------|-------------|
+| Données | `src/data/chroniqueurs-arena.json`. Lib : `src/lib/chroniqueurs-arena.ts`. |
+| Axe | `hue_to_side` mappe `FIRST_ROUND_HUES` vers `gauche` / `droite` / `centre` / `exclu`. Centre et exclu n’inclinent pas le nœud. |
+| Poids | `confirme` = 1 · `partiel` = 0,5 · `debattu` et `non_etaye` = 0 sur la corde (restent listés). |
+| Revue | Chaque `fact_check` exige `reviewed_at` et `reviewer_role` ≥ `modo`. |
+| Tribunes | Opinion invitée, distincte de la couche fact-check. Une tribune hors catalogue (`catalog: archive`, `href: null`) peut alimenter le registre sans être republiee. |
+| Copy | Le nœud plus lourd d’un côté n’est pas un camp « gagnant ». Libellé public : équilibre documentaire. |
+
+Corriger une affirmation : page Contribuer ou `lemediadupremiertour@gmail.com`.
+
 ## Conformité
 
 - Licences de données ouvertes respectées par ressource (ODbL, Licence Ouverte / Etalab, etc.) — page Sources.

@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChroniqueursTugArena from '../../components/ChroniqueursTugArena.astro';
+import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
+import {
+  FACT_CHECK_STATUS_LABEL,
+  computeKnot,
+  loadArena,
+} from '../../lib/chroniqueurs-arena';
+import { hueBySlug, toHueBadge } from '../../lib/comment-politics';
+import { DOE_FR } from '../../lib/doe';
+
+const arena = loadArena();
+const knot = computeKnot(arena);
+const updated = new Date(arena.meta.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
+const contactEmail = 'lemediadupremiertour@gmail.com';
+
+const chroniqueTitle = new Map(arena.chroniques.map((entry) => [entry.slug, entry]));
+const hueLegend = Object.entries(arena.hue_to_side)
+  .filter(([slug]) => ['melenchon', 'parti-socialiste', 'attal', 'retailleau', 'le-pen', 'pluraliste'].includes(slug))
+  .map(([slug, side]) => ({ ...toHueBadge(hueBySlug(slug)), side }));
+---
+
+<BaseLayout
+  title="Arène des chroniqueurs · fact-check et tir à la corde"
+  pageHeading
+  description="Thermomètre documentaire des chroniques invitées. Chaque affirmation fact-checkée pèse à gauche ou à droite selon les courants du premier tour. Ce n’est pas un sondage ni un camp gagnant."
+  keywords="chroniqueurs, fact-check, premier tour, pluralité, LMDPT"
+>
+  <article class="arena-page">
+    <header class="card arena-hero">
+      <p class="eyebrow">Chroniques invitées · mise à jour le <time datetime={arena.meta.updated}>{updated}</time></p>
+      <h1>Arène des chroniqueurs</h1>
+      <p class="lead">
+        Plus il y a d’affirmations fact-checkées, plus le nœud se déplace. Il ne désigne personne.
+      </p>
+      <blockquote class="disclaimer-box">{arena.meta.disclaimer}</blockquote>
+      <p class="meta">{DOE_FR}.</p>
+    </header>
+
+    <section class="card" id="corde" aria-labelledby="corde-title">
+      <h2 id="corde-title">Tir à la corde</h2>
+      <ChroniqueursTugArena data={arena} knot={knot} />
+      <p class="meta">
+        {knot.checkCount} affirmation{knot.checkCount > 1 ? 's' : ''} au registre
+        {' · '}
+        {knot.totals.transversal.toFixed(1)} poids transversal (hors corde).
+      </p>
+    </section>
+
+    <section class="card" id="chroniqueurs" aria-labelledby="chroniqueurs-title">
+      <h2 id="chroniqueurs-title">Chroniqueurs</h2>
+      <div class="arena-grid">
+        {
+          arena.chroniqueurs.map((person) => (
+            <article class:list={['arena-seat', person.status === 'invite_vide' && 'arena-seat--empty']}>
+              <p class="eyebrow">{person.status === 'actif' ? 'Actif' : 'Siège ouvert'}</p>
+              <h3>{person.nom}</h3>
+              <p class="meta">{person.role}</p>
+              <p>{person.bio_courte}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="card" id="chroniques" aria-labelledby="chroniques-title">
+      <h2 id="chroniques-title">Chroniques au registre</h2>
+      <ul class="arena-chroniques">
+        {
+          arena.chroniques.map((entry) => (
+            <li>
+              {entry.href ? (
+                <a href={entry.href}>{entry.title}</a>
+              ) : (
+                <span>{entry.title}</span>
+              )}
+              <span class="meta">
+                {' · '}
+                {entry.catalog === 'archive' ? 'hors catalogue public' : 'publique'}
+                {' · '}
+                {entry.date}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="card" id="registre" aria-labelledby="registre-title">
+      <h2 id="registre-title">Registre des fact-checks</h2>
+      <p class="meta">
+        Filtrer par statut. Une affirmation débattue ou non étayée reste visible. Elle ne tire pas.
+      </p>
+      <label class="arena-filter">
+        <span class="meta">Statut</span>
+        <select id="arena-status-filter">
+          <option value="all">Tous</option>
+          <option value="confirme">Confirmé</option>
+          <option value="partiel">Partiel</option>
+          <option value="debattu">Débattu</option>
+          <option value="non_etaye">Non étayé</option>
+        </select>
+      </label>
+      <div class="arena-table-wrap">
+        <table class="arena-table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Affirmation</th>
+              <th scope="col">Tribune</th>
+              <th scope="col">Statut</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              arena.fact_checks.map((check) => {
+                const chronique = chroniqueTitle.get(check.chronique_slug);
+                return (
+                  <tr data-status={check.status}>
+                    <td>
+                      <time datetime={check.reviewed_at}>{check.reviewed_at}</time>
+                    </td>
+                    <td>{check.label}</td>
+                    <td>
+                      {chronique?.href ? (
+                        <a href={chronique.href}>{chronique.title}</a>
+                      ) : (
+                        <span>{chronique?.title ?? check.chronique_slug}</span>
+                      )}
+                    </td>
+                    <td>{FACT_CHECK_STATUS_LABEL[check.status]}</td>
+                    <td>
+                      <a href={check.source.url} rel="noopener noreferrer">
+                        {check.source.label}
+                      </a>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" id="methode" aria-labelledby="methode-title">
+      <h2 id="methode-title">Méthode</h2>
+      <ol>
+        <li>
+          Confirmé : poids plein. Partiel : moitié. Débattu ou non étayé : zéro sur la corde.
+        </li>
+        <li>
+          Le camp vient des courants en phase avec la thèse de l’affirmation.
+          Centre et transversal n’inclinent pas le nœud.
+        </li>
+        <li>
+          Position : (droite − gauche) / total qui tire, plafonnée visuellement à 40 % de part et d’autre du centre.
+        </li>
+        <li>
+          Une relecture humaine au rôle modo ou plus est obligatoire avant publication au registre.
+        </li>
+      </ol>
+      <p>Exemples de mapping, sans palmarès :</p>
+      <PoliticalHueBadges hues={hueLegend} showMeta={false} />
+      <p class="meta">
+        Corriger une affirmation :{' '}
+        <a href="/contribuer/">Contribuer</a>
+        {' ou '}
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      </p>
+      <p class="meta">
+        Détail interne : <a href="https://github.com/ELServicesToulon/LMDPT/blob/Main/docs/EDITORIAL.md">docs/EDITORIAL.md</a>.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<script>
+  const select = document.getElementById('arena-status-filter');
+  if (select instanceof HTMLSelectElement) {
+    select.addEventListener('change', () => {
+      const value = select.value;
+      document.querySelectorAll<HTMLTableRowElement>('.arena-table tbody tr').forEach((row) => {
+        row.hidden = value !== 'all' && row.dataset.status !== value;
+      });
+    });
+  }
+</script>
+
+<style>
+  .arena-page { display: grid; gap: 1.1rem; }
+  .arena-hero h1 { margin-bottom: 0.4rem; }
+  .arena-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.75rem;
+  }
+  .arena-seat {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 0.85rem;
+  }
+  .arena-seat--empty { opacity: 0.78; border-style: dashed; }
+  .arena-seat h3 { margin: 0.15rem 0; font-size: 1.05rem; }
+  .arena-chroniques { margin: 0; padding-left: 1.1rem; }
+  .arena-filter {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0.6rem 0 0.8rem;
+  }
+  .arena-filter select {
+    padding: 0.3rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--fg);
+  }
+  .arena-table-wrap { overflow-x: auto; }
+  .arena-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .arena-table th,
+  .arena-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.45rem 0.5rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .arena-table th { font-size: 0.78rem; color: var(--muted); }
+</style>
