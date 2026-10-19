@@ -1,9 +1,27 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
   "method": "Veille auto 2026-10-12 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
+    {
+      "label": "YouGov / Le HuffPost (notice 10323, publié 18/10/2026) — documentée, non fusionnée",
+      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "as_of": "2026-10-19",
+      "note": "Notice Commission des sondages n°10323. Terrain 2026-10-12/15, publié 2026-10-18. Échantillon 1094 (inscrits 976), en ligne, panel YouGov, marge 1,4 à 3,1 pts selon le score. Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe seul au centre) : Le Pen 36, Mélenchon 15, Glucksmann 13, Philippe 13, Retailleau 7, Tondelier 6, Zemmour 3, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 2 (Attal seul au centre) : Le Pen 37, Mélenchon 15, Glucksmann 14, Attal 10, Retailleau 9, Tondelier 6, Zemmour 4, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 3 (Philippe + Attal) : Le Pen 36, Mélenchon 15, Glucksmann 12, Philippe 10, Attal 6, Retailleau 6, Tondelier 6, Zemmour 3, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 4 (Hollande (sans Glucksmann)) : Le Pen 37, Mélenchon 16, Philippe 15, Hollande 9, Retailleau 7, Tondelier 6, Zemmour 4, Roussel 3, Dupont-Aignan 3, Arthaud 1. 1er tour hyp. 5 (Large (Lisnard, Ruffin, Villepin)) : Le Pen 35, Mélenchon 13, Glucksmann 12, Philippe 8, Attal 6, Retailleau 5, Tondelier 5, Lisnard 4, Zemmour 4, Roussel 2, Dupont-Aignan 2, Ruffin 2, Villepin 1, Arthaud 0. 2nd tour (non mélangé au 1er tour) : Le Pen 52 / Philippe 48 ; Le Pen 55 / Glucksmann 45 ; Le Pen 55 / Hollande 45 (epocinfo) ; Le Pen 68 / Mélenchon 32 (epocinfo) ; Le Pen 55 / Attal 45 (epocinfo) ; Philippe 66 / Mélenchon 34 (epocinfo)."
+    },
+    {
+      "label": "Elabe / BFMTV-La Tribune Dimanche (notice 10324, terrain 14-16 oct. 2026) — documentée, non fusionnée",
+      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "as_of": "2026-10-19",
+      "note": "Notice Commission des sondages n°10324. Terrain 2026-10-14/16, publié 2026-10-17. Échantillon 1701 (inscrits 1553), Internet, quotas, marge 1,2 à 2,8 pts. Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe + Villepin) : Le Pen 32,5, Philippe 16,5, Glucksmann 15,5, Mélenchon 15, Retailleau 7, Zemmour 3,5, Tondelier 3, Dupont-Aignan 2,5, Villepin 2, Roussel 1,5, Arthaud 1. 1er tour hyp. 2 (Attal + Villepin) : Le Pen 33,5, Glucksmann 16,5, Mélenchon 16, Attal 10,5, Retailleau 9,5, Zemmour 3,5, Villepin 3, Tondelier 2,5, Roussel 2, Dupont-Aignan 2, Arthaud 1. 1er tour hyp. 3 (Philippe + Lisnard) : Le Pen 31,5, Mélenchon 15,5, Philippe 15,5, Glucksmann 15, Retailleau 6,5, Lisnard 5,5, Zemmour 3, Dupont-Aignan 3, Tondelier 2,5, Roussel 1,5, Arthaud 0,5. 1er tour hyp. 4 (Attal + Lisnard + Ruffin) : Le Pen 31, Glucksmann 16,5, Mélenchon 16, Attal 9,5, Retailleau 9, Lisnard 6,5, Zemmour 3,5, Ruffin 3, Dupont-Aignan 2,5, Roussel 1,5, Arthaud 1. 1er tour hyp. 5 (Philippe + Attal) : Le Pen 32,5, Mélenchon 15,5, Glucksmann 15,5, Philippe 13,5, Retailleau 7,5, Attal 4,5, Zemmour 3,5, Dupont-Aignan 3, Tondelier 2,5, Roussel 1,5, Arthaud 0,5. 1er tour hyp. 6 (Philippe + Polony) : Le Pen 33,5, Philippe 16,5, Glucksmann 16, Mélenchon 15, Retailleau 7,5, Zemmour 3, Tondelier 2,5, Dupont-Aignan 2,5, Polony 1,5, Arthaud 1, Roussel 1. 2nd tour (non mélangé au 1er tour) : Le Pen 69 / Mélenchon 31 ; Le Pen 53,5 / Glucksmann 46,5 ; Le Pen 52,5 / Philippe 47,5."
+    },
+    {
+      "label": "OpinionWay / CNews (notice 10319, terrain 13-14 oct. 2026) — documentée, non fusionnée",
+      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10319-pres-iv-opinionway-cnews-15-octobre.pdf",
+      "as_of": "2026-10-19",
+      "note": "Notice Commission des sondages n°10319. Terrain 2026-10-13/14, publié 2026-10-15 (notice) ; epocinfo date 16/10/2026. Échantillon 1043 (inscrits 978), en ligne CAWI, quotas, marge table notice : 1,4 à 3,1 pts (978 inscrits), 1,6 à 3,7 pts (731 certains d'aller voter). Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe + Attal + Lisnard) : Le Pen 35, Mélenchon 15, Glucksmann 13, Philippe 12, Retailleau 6, Attal 5, Zemmour 5, Lisnard 4, Tondelier 2, Roussel 1, Dupont-Aignan 1, Arthaud 1. 2nd tour (non mélangé au 1er tour) : Le Pen 68 / Mélenchon 32 ; Le Pen 56 / Philippe 44 ; Le Pen 56 / Glucksmann 44."
+    },
     {
       "label": "Odoxa (publié 15/10/2026, via epocinfo) — documentée, non fusionnée",
       "url": "https://www.epocinfo.fr/ep2027.php",
@@ -73,7 +91,8 @@
     "Mise à jour LMDPT : 2026-10-12 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné).",
     "Toluna-Harris vague 7 (5-8 oct. 2026) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Les moyennes latest_pct reposent encore sur les vagues de juillet 2026.",
     "Ifop-Fiducial LCI/Sud Radio (12-14 oct. 2026, notice 10314) documentée en sources, non fusionnée dans les moyennes (voir note de la source).",
-    "Odoxa 15/10/2026 (via epocinfo) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Deux hypothèses de 1er tour distinctes ; duels de 2nd tour non mélangés au 1er tour."
+    "Odoxa 15/10/2026 (via epocinfo) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Deux hypothèses de 1er tour distinctes ; duels de 2nd tour non mélangés au 1er tour.",
+    "YouGov/HuffPost 18/10 (notice 10323), Elabe/BFMTV-La Tribune Dimanche 17/10 (notice 10324) et OpinionWay/CNews 16/10 (notice 10319) documentées en sources, hypothèses exclusives, non fusionnées dans latest_pct/avg_pct (duels de 2nd tour non mélangés au 1er tour)."
   ],
   "waves_latest": [
     {

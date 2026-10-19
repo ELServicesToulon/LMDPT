@@ -62,6 +62,10 @@ export interface DetectedWave {
   metric: 'intentions_vote' | 'souhait_victoire' | 'unknown';
   /** Label court type « hyp. 1 » — une vague par hypothèse, jamais fusionnées. */
   hypothesis?: string | null;
+  /** Libellé d'hypothèse (notice), distinct du numéro EPOC. */
+  hypothesis_label?: string | null;
+  n?: number | null;
+  notice_url?: string | null;
 }
 
 export interface Movement {
@@ -114,6 +118,8 @@ const CANDIDATE_ALIASES: Array<{ slug: string; patterns: RegExp }> = [
   { slug: 'arthaud', patterns: [/\barthaud\b/i] },
   { slug: 'darmanin', patterns: [/\bdarmanin\b/i] },
   { slug: 'wauquiez', patterns: [/\bwauquiez\b/i] },
+  { slug: 'lisnard', patterns: [/\blisnard\b/i] },
+  { slug: 'polony', patterns: [/\bpolony\b/i] },
 ];
 
 const FIRM_PATTERNS: Array<{ id: string; re: RegExp }> = [
@@ -308,26 +314,129 @@ function parseEpocLastPollWaves(text: string, sourceUrl: string): DetectedWave[]
   return waves;
 }
 
-/** Parse EPOC page : 1er-tour hypotheses of the last poll (never merged) + table row mentions. */
-export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
-  const text = stripHtml(html);
-  const waves: DetectedWave[] = parseEpocLastPollWaves(text, sourceUrl);
+function epocInnerText(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&mdash;/gi, '—')
+    .replace(/&ndash;/gi, '–')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
-  // Table rows: "12/07/2026 ELABE 1" — mentions only, no scores (columns are positional).
-  const rowRe = /(\d{2}\/\d{2}\/\d{4})\s+([A-Z][A-Z0-9\s-]{2,18}?)\s+(\d)\s+/g;
-  let rm: RegExpExecArray | null;
-  const seen = new Set(waves.map((w) => w.id));
-  while ((rm = rowRe.exec(text)) !== null && waves.length < 12) {
-    const date = rm[1];
-    const firmLabel = rm[2].trim();
+function normalizeEpocHeader(header: string): string {
+  return header
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isEpocUntestedCell(raw: string): boolean {
+  const t = raw.trim();
+  return t === '' || t === '—' || t === '–' || t === '−' || t === '-' || t === 'n/a';
+}
+
+/** 1er-tour cell: keep 0 % (tested at zero) ; skip '—' ; reject duel-range ≥ 50. */
+function parseEpocTableScore(raw: string): number | null {
+  if (isEpocUntestedCell(raw)) return null;
+  const m = raw.trim().match(/^(\d{1,2}(?:[.,]\d{1,2})?)\s*%?$/);
+  if (!m) return null;
+  const n = Number.parseFloat(m[1].replace(',', '.'));
+  if (!Number.isFinite(n) || n < 0 || n >= 50) return null;
+  return n;
+}
+
+function parseHtmlTableRows(tableHtml: string): { headers: string[]; rows: string[][] } {
+  const rowHtmls = [...tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((m) => m[1]);
+  let headers: string[] = [];
+  const rows: string[][] = [];
+  for (const row of rowHtmls) {
+    const ths = [...row.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((m) => epocInnerText(m[1]));
+    if (ths.length) {
+      headers = ths;
+      continue;
+    }
+    const tds = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => epocInnerText(m[1]));
+    if (tds.length) rows.push(tds);
+  }
+  return { headers, rows };
+}
+
+/**
+ * « Historique détaillé › 1er Tour » only.
+ * Column mapping by header (never by position). Stops before « 2ème Tour ».
+ * Ignores « Moyennes globales / Basée sur l'ensemble ».
+ */
+function parseEpocFirstTourHistoryTable(html: string, sourceUrl: string): DetectedWave[] {
+  const wrapperRe =
+    /<div class="[^"]*history-table-wrapper[^"]*">\s*<table class="[^"]*history-table[^"]*"[^>]*>([\s\S]*?)<\/table>/gi;
+  let match: RegExpExecArray | null;
+  let tableHtml: string | null = null;
+  while ((match = wrapperRe.exec(html)) !== null) {
+    const before = html.slice(Math.max(0, match.index - 400), match.index);
+    const titleMatch = before.match(
+      /<div class="[^"]*box-title[^"]*">([\s\S]*?)<\/div>\s*$/,
+    );
+    const title = epocInnerText(titleMatch?.[1] ?? '');
+    if (/2(?:[eè]me|nd)\s+Tour/i.test(title)) continue;
+    if (!/1er\s+Tour/i.test(title)) continue;
+    if (/hypoth/i.test(title)) continue;
+    tableHtml = match[1];
+    break;
+  }
+  if (!tableHtml) return [];
+
+  const { headers, rows } = parseHtmlTableRows(tableHtml);
+  if (!headers.length) return [];
+
+  const colKind: Array<'date' | 'institut' | 'hyp' | 'skip' | { candidate: string }> = headers.map(
+    (h) => {
+      const key = normalizeEpocHeader(h);
+      if (key === 'date') return 'date';
+      if (key === 'institut' || key === 'institute') return 'institut';
+      if (key === 'hyp' || key === 'hyp.' || key === 'n' || key === 'hypothese' || key === 'h') {
+        return 'hyp';
+      }
+      if (key === 'autres' || key === 'autre') return 'skip';
+      const slug = nameToSlug(h);
+      return slug ? { candidate: slug } : 'skip';
+    },
+  );
+
+  const waves: DetectedWave[] = [];
+  const seen = new Set<string>();
+  for (const cells of rows) {
+    let date = '';
+    let firmLabel = '';
+    let hyp = '';
+    const scores: Record<string, number> = {};
+    const nCols = Math.min(cells.length, colKind.length);
+    for (let i = 0; i < nCols; i++) {
+      const kind = colKind[i];
+      const val = cells[i];
+      if (kind === 'date') date = val;
+      else if (kind === 'institut') firmLabel = val;
+      else if (kind === 'hyp') hyp = val.trim();
+      else if (kind === 'skip') continue;
+      else {
+        const pct = parseEpocTableScore(val);
+        if (pct != null) scores[kind.candidate] = pct;
+      }
+    }
+    const hypN = hyp.match(/^(\d+)/)?.[1];
+    if (!date || !firmLabel || !hypN) continue;
+    if (!isRecentFieldwork(date)) continue;
+    if (!Object.keys(scores).length) continue;
     const firm = matchFirm(firmLabel);
-    const hyp = rm[3];
-    const scoredId = `epoc-${epocFirmKey(firm?.id, firmLabel)}-${epocDateKey(date)}-h${hyp}`;
-    if (seen.has(scoredId)) continue;
-    const id = `epoc-row-${epocFirmKey(firm?.id, firmLabel)}-${epocDateKey(date)}-h${hyp}`;
+    const id = `epoc-${epocFirmKey(firm?.id, firmLabel)}-${epocDateKey(date)}-h${hypN}`;
     if (seen.has(id)) continue;
     seen.add(id);
-    const chunk = text.slice(rm.index, rm.index + 200);
+    const scoreBits = Object.entries(scores)
+      .map(([slug, pct]) => `${pct}% ${slug}`)
+      .join(' ');
     waves.push({
       id,
       firm: firm?.label ?? firmLabel,
@@ -336,13 +445,27 @@ export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
       published_hint: date,
       source_url: sourceUrl,
       source_id: 'epoc',
-      scores: {},
-      raw_snippet: chunk,
+      scores,
+      raw_snippet: `${date} ${firmLabel} 1er Tour · Hypothèse N°${hypN} ${scoreBits}`
+        .replace(/\s+/g, ' ')
+        .slice(0, 280),
       metric: 'intentions_vote',
-      hypothesis: `hyp. ${hyp}`,
+      hypothesis: `hyp. ${hypN}`,
     });
   }
+  return waves;
+}
 
+/** Parse EPOC page : last-poll 1er-tour charts + historique 1er tour (never merged). */
+export function parseEpocHtml(html: string, sourceUrl: string): DetectedWave[] {
+  const text = stripHtml(html);
+  const waves: DetectedWave[] = parseEpocLastPollWaves(text, sourceUrl);
+  const seen = new Set(waves.map((w) => w.id));
+  for (const w of parseEpocFirstTourHistoryTable(html, sourceUrl)) {
+    if (seen.has(w.id)) continue;
+    seen.add(w.id);
+    waves.push(w);
+  }
   return waves;
 }
 
@@ -357,7 +480,6 @@ function nameToSlug(name: string): string | null {
     lepen: 'le-pen',
     philippe: 'philippe',
     melenchon: 'melenchon',
-    'mélenchon': 'melenchon',
     glucksmann: 'glucksmann',
     retailleau: 'retailleau',
     attal: 'attal',
@@ -366,11 +488,16 @@ function nameToSlug(name: string): string | null {
     zemmour: 'zemmour',
     roussel: 'roussel',
     villepin: 'villepin',
+    'de villepin': 'villepin',
     hollande: 'hollande',
     ruffin: 'ruffin',
     arthaud: 'arthaud',
     'dupont-aignan': 'dupont-aignan',
     'dupont aignan': 'dupont-aignan',
+    lisnard: 'lisnard',
+    polony: 'polony',
+    darmanin: 'darmanin',
+    wauquiez: 'wauquiez',
   };
   return map[n] ?? null;
 }
