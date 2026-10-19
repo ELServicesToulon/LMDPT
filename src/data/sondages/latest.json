@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-12T04:45:23.079Z",
+  "fetched_at": "2026-10-19T12:00:00.000Z",
   "disclaimer": "Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.",
   "providers_indexed": 62,
   "sources_ok": 11,
@@ -132,28 +132,523 @@
       "metric": "intentions_vote"
     },
     {
-      "id": "epoc-harris-12102026",
-      "firm": "Harris Interactive / Toluna Harris",
-      "firm_id": "harris",
-      "fieldwork": "12/10/2026",
-      "published_hint": "12/10/2026",
+      "id": "epoc-odoxa-15102026-h1",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "15/10/2026",
+      "published_hint": "15/10/2026",
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {
         "le-pen": 37,
+        "melenchon": 18,
         "philippe": 17,
-        "attal": 12,
-        "melenchon": 19,
-        "glucksmann": 11,
-        "retailleau": 10,
-        "zemmour": 5,
-        "tondelier": 5,
+        "glucksmann": 9.5,
+        "retailleau": 6.5,
+        "zemmour": 4.5,
+        "tondelier": 3,
         "roussel": 2,
-        "hollande": 7,
+        "dupont-aignan": 2,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Dernier sondage ODOXA 15/10/2026 1er Tour · Hypothèse N°1 37% LE PEN 18% MÉLENCHON 17% PHILIPPE 9.5% GLUCKSMANN 6.5% RETAILLEAU 4.5% ZEMMOUR 3% TONDELIER 2% ROUSSEL 2% DUPONT-AIGNAN 0.5% ARTHAUD",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "id": "epoc-odoxa-15102026-h2",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "15/10/2026",
+      "published_hint": "15/10/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 38,
+        "melenchon": 18.5,
+        "attal": 11,
+        "glucksmann": 10.5,
+        "retailleau": 9,
+        "zemmour": 4.1,
+        "tondelier": 3.5,
+        "roussel": 2,
         "dupont-aignan": 2,
         "arthaud": 1
       },
-      "raw_snippet": "Dernier sondage HARRIS INTERACTIVE 12/10/2026 1er Tour · Hypothèse N°1 35% LE PEN 18% MÉLENCHON 13% PHILIPPE 10% GLUCKSMANN 7% RETAILLEAU 5% ZEMMOUR 5% ATTAL 2% ROUSSEL 2% TONDELIER 2% DUPONT-AIGNAN 1% ARTHAUD 1er Tour · Hypothèse N°2 36% LE PEN 18% MÉLENCHON 17% PHILIPPE 10% GLU",
+      "raw_snippet": "Dernier sondage ODOXA 15/10/2026 1er Tour · Hypothèse N°2 38% LE PEN 18.5% MÉLENCHON 11% ATTAL 10.5% GLUCKSMANN 9% RETAILLEAU 4.1% ZEMMOUR 3.5% TONDELIER 2% ROUSSEL 2% DUPONT-AIGNAN 1% ARTHAUD",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 2"
+    },
+    {
+      "id": "epoc-yougov-18102026-h1",
+      "firm": "YouGov",
+      "firm_id": "yougov",
+      "fieldwork": "2026-10-12/15",
+      "published_hint": "2026-10-18",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "melenchon": 15,
+        "glucksmann": 13,
+        "philippe": 13,
+        "retailleau": 7,
+        "tondelier": 6,
+        "zemmour": 3,
+        "roussel": 3,
+        "dupont-aignan": 3,
+        "arthaud": 0
+      },
+      "raw_snippet": "YouGov 18/10/2026 1er tour hyp. 1 (Philippe seul au centre) — notice 10323 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 1",
+      "hypothesis_label": "Philippe seul au centre",
+      "n": 1094,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf"
+    },
+    {
+      "id": "epoc-yougov-18102026-h2",
+      "firm": "YouGov",
+      "firm_id": "yougov",
+      "fieldwork": "2026-10-12/15",
+      "published_hint": "2026-10-18",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 37,
+        "melenchon": 15,
+        "glucksmann": 14,
+        "attal": 10,
+        "retailleau": 9,
+        "tondelier": 6,
+        "zemmour": 4,
+        "roussel": 3,
+        "dupont-aignan": 3,
+        "arthaud": 0
+      },
+      "raw_snippet": "YouGov 18/10/2026 1er tour hyp. 2 (Attal seul au centre) — notice 10323 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 2",
+      "hypothesis_label": "Attal seul au centre",
+      "n": 1094,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf"
+    },
+    {
+      "id": "epoc-yougov-18102026-h3",
+      "firm": "YouGov",
+      "firm_id": "yougov",
+      "fieldwork": "2026-10-12/15",
+      "published_hint": "2026-10-18",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "melenchon": 15,
+        "glucksmann": 12,
+        "philippe": 10,
+        "attal": 6,
+        "retailleau": 6,
+        "tondelier": 6,
+        "zemmour": 3,
+        "roussel": 3,
+        "dupont-aignan": 3,
+        "arthaud": 0
+      },
+      "raw_snippet": "YouGov 18/10/2026 1er tour hyp. 3 (Philippe + Attal) — notice 10323 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 3",
+      "hypothesis_label": "Philippe + Attal",
+      "n": 1094,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf"
+    },
+    {
+      "id": "epoc-yougov-18102026-h4",
+      "firm": "YouGov",
+      "firm_id": "yougov",
+      "fieldwork": "2026-10-12/15",
+      "published_hint": "2026-10-18",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 37,
+        "melenchon": 16,
+        "philippe": 15,
+        "hollande": 9,
+        "retailleau": 7,
+        "tondelier": 6,
+        "zemmour": 4,
+        "roussel": 3,
+        "dupont-aignan": 3,
+        "arthaud": 1
+      },
+      "raw_snippet": "YouGov 18/10/2026 1er tour hyp. 4 (Hollande (sans Glucksmann)) — notice 10323 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 4",
+      "hypothesis_label": "Hollande (sans Glucksmann)",
+      "n": 1094,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf"
+    },
+    {
+      "id": "epoc-yougov-18102026-h5",
+      "firm": "YouGov",
+      "firm_id": "yougov",
+      "fieldwork": "2026-10-12/15",
+      "published_hint": "2026-10-18",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 35,
+        "melenchon": 13,
+        "glucksmann": 12,
+        "philippe": 8,
+        "attal": 6,
+        "retailleau": 5,
+        "tondelier": 5,
+        "lisnard": 4,
+        "zemmour": 4,
+        "roussel": 2,
+        "dupont-aignan": 2,
+        "ruffin": 2,
+        "villepin": 1,
+        "arthaud": 0
+      },
+      "raw_snippet": "YouGov 18/10/2026 1er tour hyp. 5 (Large (Lisnard, Ruffin, Villepin)) — notice 10323 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 5",
+      "hypothesis_label": "Large (Lisnard, Ruffin, Villepin)",
+      "n": 1094,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h1",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 32.5,
+        "philippe": 16.5,
+        "glucksmann": 15.5,
+        "melenchon": 15,
+        "retailleau": 7,
+        "zemmour": 3.5,
+        "tondelier": 3,
+        "dupont-aignan": 2.5,
+        "villepin": 2,
+        "roussel": 1.5,
+        "arthaud": 1
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 1 (Philippe + Villepin) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 1",
+      "hypothesis_label": "Philippe + Villepin",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h2",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 33.5,
+        "glucksmann": 16.5,
+        "melenchon": 16,
+        "attal": 10.5,
+        "retailleau": 9.5,
+        "zemmour": 3.5,
+        "villepin": 3,
+        "tondelier": 2.5,
+        "roussel": 2,
+        "dupont-aignan": 2,
+        "arthaud": 1
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 2 (Attal + Villepin) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 2",
+      "hypothesis_label": "Attal + Villepin",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h3",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 31.5,
+        "melenchon": 15.5,
+        "philippe": 15.5,
+        "glucksmann": 15,
+        "retailleau": 6.5,
+        "lisnard": 5.5,
+        "zemmour": 3,
+        "dupont-aignan": 3,
+        "tondelier": 2.5,
+        "roussel": 1.5,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 3 (Philippe + Lisnard) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 3",
+      "hypothesis_label": "Philippe + Lisnard",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h4",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 31,
+        "glucksmann": 16.5,
+        "melenchon": 16,
+        "attal": 9.5,
+        "retailleau": 9,
+        "lisnard": 6.5,
+        "zemmour": 3.5,
+        "ruffin": 3,
+        "dupont-aignan": 2.5,
+        "roussel": 1.5,
+        "arthaud": 1
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 4 (Attal + Lisnard + Ruffin) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 4",
+      "hypothesis_label": "Attal + Lisnard + Ruffin",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h5",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 32.5,
+        "melenchon": 15.5,
+        "glucksmann": 15.5,
+        "philippe": 13.5,
+        "retailleau": 7.5,
+        "attal": 4.5,
+        "zemmour": 3.5,
+        "dupont-aignan": 3,
+        "tondelier": 2.5,
+        "roussel": 1.5,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 5 (Philippe + Attal) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 5",
+      "hypothesis_label": "Philippe + Attal",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-elabe-18102026-h6",
+      "firm": "Elabe",
+      "firm_id": "elabe",
+      "fieldwork": "2026-10-14/16",
+      "published_hint": "2026-10-17",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 33.5,
+        "philippe": 16.5,
+        "glucksmann": 16,
+        "melenchon": 15,
+        "retailleau": 7.5,
+        "zemmour": 3,
+        "tondelier": 2.5,
+        "dupont-aignan": 2.5,
+        "polony": 1.5,
+        "arthaud": 1,
+        "roussel": 1
+      },
+      "raw_snippet": "Elabe 18/10/2026 1er tour hyp. 6 (Philippe + Polony) — notice 10324 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 6",
+      "hypothesis_label": "Philippe + Polony",
+      "n": 1701,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf"
+    },
+    {
+      "id": "epoc-opinionway-16102026-h1",
+      "firm": "OpinionWay",
+      "firm_id": "opinionway",
+      "fieldwork": "2026-10-13/14",
+      "published_hint": "16/10/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 35,
+        "melenchon": 15,
+        "glucksmann": 13,
+        "philippe": 12,
+        "retailleau": 6,
+        "attal": 5,
+        "zemmour": 5,
+        "lisnard": 4,
+        "tondelier": 2,
+        "roussel": 1,
+        "dupont-aignan": 1,
+        "arthaud": 1
+      },
+      "raw_snippet": "OpinionWay 16/10/2026 1er tour hyp. 1 (Philippe + Attal + Lisnard) — notice 10319 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10319-pres-iv-opinionway-cnews-15-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 1",
+      "hypothesis_label": "Philippe + Attal + Lisnard",
+      "n": 1043,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10319-pres-iv-opinionway-cnews-15-octobre.pdf"
+    },
+    {
+      "id": "epoc-ifop-14102026-h1",
+      "firm": "Ifop-Fiducial",
+      "firm_id": "ifop",
+      "fieldwork": "2026-10-12/14",
+      "published_hint": "2026-10-14",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 32,
+        "melenchon": 16,
+        "philippe": 13,
+        "glucksmann": 11.5,
+        "lisnard": 6,
+        "attal": 5,
+        "retailleau": 5,
+        "zemmour": 3,
+        "roussel": 2,
+        "ruffin": 2,
+        "tondelier": 2,
+        "villepin": 1.5,
+        "dupont-aignan": 1
+      },
+      "raw_snippet": "Ifop-Fiducial 14/10/2026 1er tour hyp. 1 (Ruffin + Villepin + Lisnard) — notice 10314 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 1",
+      "hypothesis_label": "Ruffin + Villepin + Lisnard",
+      "n": 1525,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+    },
+    {
+      "id": "epoc-ifop-14102026-h2",
+      "firm": "Ifop-Fiducial",
+      "firm_id": "ifop",
+      "fieldwork": "2026-10-12/14",
+      "published_hint": "2026-10-14",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 35,
+        "philippe": 18,
+        "melenchon": 16,
+        "glucksmann": 13.5,
+        "retailleau": 6.5,
+        "roussel": 3,
+        "zemmour": 3,
+        "tondelier": 2.5,
+        "dupont-aignan": 2,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Ifop-Fiducial 14/10/2026 1er tour hyp. 2 (Philippe seul au centre) — notice 10314 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 2",
+      "hypothesis_label": "Philippe seul au centre",
+      "n": 1525,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+    },
+    {
+      "id": "epoc-ifop-14102026-h3",
+      "firm": "Ifop-Fiducial",
+      "firm_id": "ifop",
+      "fieldwork": "2026-10-12/14",
+      "published_hint": "2026-10-14",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 34,
+        "melenchon": 16,
+        "glucksmann": 14,
+        "philippe": 14,
+        "retailleau": 6.5,
+        "attal": 6,
+        "zemmour": 3,
+        "roussel": 2.5,
+        "tondelier": 2,
+        "dupont-aignan": 2
+      },
+      "raw_snippet": "Ifop-Fiducial 14/10/2026 1er tour hyp. 3 (Philippe + Attal) — notice 10314 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 3",
+      "hypothesis_label": "Philippe + Attal",
+      "n": 1525,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+    },
+    {
+      "id": "epoc-ifop-14102026-h4",
+      "firm": "Ifop-Fiducial",
+      "firm_id": "ifop",
+      "fieldwork": "2026-10-12/14",
+      "published_hint": "2026-10-14",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {
+        "le-pen": 36,
+        "melenchon": 17,
+        "glucksmann": 16,
+        "attal": 13,
+        "retailleau": 8,
+        "zemmour": 3,
+        "roussel": 2.5,
+        "tondelier": 2,
+        "dupont-aignan": 2,
+        "arthaud": 0.5
+      },
+      "raw_snippet": "Ifop-Fiducial 14/10/2026 1er tour hyp. 4 (Attal seul au centre) — notice 10314 https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
+      "metric": "intentions_vote",
+      "hypothesis": "hyp. 4",
+      "hypothesis_label": "Attal seul au centre",
+      "n": 1525,
+      "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf"
+    },
+    {
+      "id": "epoc-row-odoxa-15102026-h1",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "15/10/2026",
+      "published_hint": "15/10/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "15/10/2026 ODOXA 1 37% 18% 17% — 9.5% 6.5% 4.5% 3% 2% 2% 0.5% — — — — — — — — — — — — — — — — — 15/10/2026 ODOXA 2 38% 18.5% — 11% 10.5% 9% 4.1% 3.5% 2% 2% 1% — — — — — — — — — — — — — — — — — 12/10/2",
+      "metric": "intentions_vote"
+    },
+    {
+      "id": "epoc-row-odoxa-15102026-h2",
+      "firm": "Odoxa",
+      "firm_id": "odoxa",
+      "fieldwork": "15/10/2026",
+      "published_hint": "15/10/2026",
+      "source_url": "https://www.epocinfo.fr/ep2027.php",
+      "source_id": "epoc",
+      "scores": {},
+      "raw_snippet": "15/10/2026 ODOXA 2 38% 18.5% — 11% 10.5% 9% 4.1% 3.5% 2% 2% 1% — — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 1 35% 18% 13% 5% 10% 7% 5% 2% 2% 2% 1% — — — — — — — — — — — — — — — — — ",
       "metric": "intentions_vote"
     },
     {
@@ -165,7 +660,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 1 35% 18% 13% 10% 5% 7% — 5% 2% 2% 2% 1% — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 2 36% 18% 17% 10% — 7% — 4% 3% 2% 2% 1% — — — — — — — — — — — — — —",
+      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 1 35% 18% 13% 5% 10% 7% 5% 2% 2% 2% 1% — — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 2 36% 18% 17% — 10% 7% 4% 3% 2% 2% 1% — — — — — — — — — — — — — — —",
       "metric": "intentions_vote"
     },
     {
@@ -177,7 +672,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 2 36% 18% 17% 10% — 7% — 4% 3% 2% 2% 1% — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 3 36% 18% — 11% 12% 10% — 5% 3% 2% 2% 1% — — — — — — — — — — — — — —",
+      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 2 36% 18% 17% — 10% 7% 4% 3% 2% 2% 1% — — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 3 36% 18% — 12% 11% 10% 5% 3% 2% 2% 1% — — — — — — — — — — — — — — —",
       "metric": "intentions_vote"
     },
     {
@@ -189,7 +684,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 3 36% 18% — 11% 12% 10% — 5% 3% 2% 2% 1% — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 4 36% 18% 17% — — 8% 7% 4% 4% 3% 2% 1% — — — — — — — — — — — — — — ",
+      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 3 36% 18% — 12% 11% 10% 5% 3% 2% 2% 1% — — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 4 36% 18% 17% — — 8% 4% 4% 3% 2% 1% — — 7% — — — — — — — — — — — — ",
       "metric": "intentions_vote"
     },
     {
@@ -201,7 +696,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 4 36% 18% 17% — — 8% 7% 4% 4% 3% 2% 1% — — — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 5 37% 19% — — 12% 10% 7% 5% 5% 2% 2% 1% — — — — — — — — — — — — — — —",
+      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 4 36% 18% 17% — — 8% 4% 4% 3% 2% 1% — — 7% — — — — — — — — — — — — — — 12/10/2026 HARRIS INTERACTIVE 5 37% 19% — 12% — 10% 5% 5% 2% 2% 1% — — 7% — — — — — — — — — — — — —",
       "metric": "intentions_vote"
     },
     {
@@ -213,7 +708,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 5 37% 19% — — 12% 10% 7% 5% 5% 2% 2% 1% — — — — — — — — — — — — — — — — 30/09/2026 IFOP 1 32% 15% 16% 11% 8% 7% — 4% 3% 2.5% 1% 0.5% — — — — — — — — — — — — — — — — 30/09",
+      "raw_snippet": "12/10/2026 HARRIS INTERACTIVE 5 37% 19% — 12% — 10% 5% 5% 2% 2% 1% — — 7% — — — — — — — — — — — — — — 30/09/2026 IFOP 1 32% 15% 16% 8% 11% 7% 4% 3% 2.5% 1% 0.5% — — — — — — — — — — — — — — — — — 30/09",
       "metric": "intentions_vote"
     },
     {
@@ -225,7 +720,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 1 32% 15% 16% 11% 8% 7% — 4% 3% 2.5% 1% 0.5% — — — — — — — — — — — — — — — — 30/09/2026 IFOP 2 33% 16% 21% 11% — 8% — 3.5% 3% 2.5% 1.5% 0.5% — — — — — — — — — — — — — — — — 30/09/2026 ",
+      "raw_snippet": "30/09/2026 IFOP 1 32% 15% 16% 8% 11% 7% 4% 3% 2.5% 1% 0.5% — — — — — — — — — — — — — — — — — 30/09/2026 IFOP 2 33% 16% 21% — 11% 8% 3.5% 3% 2.5% 1.5% 0.5% — — — — — — — — — — — — — — — — — 30/09/2026 ",
       "metric": "intentions_vote"
     },
     {
@@ -237,7 +732,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 2 33% 16% 21% 11% — 8% — 3.5% 3% 2.5% 1.5% 0.5% — — — — — — — — — — — — — — — — 30/09/2026 IFOP 3 34% 15% — 13% 15% 10% — 3.5% 4% 2.5% 2% 1% — — — — — — — — — — — — — — — — 30/09/2026 ",
+      "raw_snippet": "30/09/2026 IFOP 2 33% 16% 21% — 11% 8% 3.5% 3% 2.5% 1.5% 0.5% — — — — — — — — — — — — — — — — — 30/09/2026 IFOP 3 34% 15% — 15% 13% 10% 3.5% 4% 2.5% 2% 1% — — — — — — — — — — — — — — — — — 30/09/2026 ",
       "metric": "intentions_vote"
     },
     {
@@ -249,7 +744,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 3 34% 15% — 13% 15% 10% — 3.5% 4% 2.5% 2% 1% — — — — — — — — — — — — — — — — 30/09/2026 IFOP 4 35% 16% 23% — — 8% — 4% 5% 3.5% 1.5% 1% — — — — — — — — 3% — — — — — — — 30/09/2026 IFOP ",
+      "raw_snippet": "30/09/2026 IFOP 3 34% 15% — 15% 13% 10% 3.5% 4% 2.5% 2% 1% — — — — — — — — — — — — — — — — — 30/09/2026 IFOP 4 35% 16% 23% — — 8% 4% 5% 3.5% 1.5% 1% — — — — — — — — — 3% — — — — — — — 30/09/2026 IFOP ",
       "metric": "intentions_vote"
     },
     {
@@ -261,31 +756,7 @@
       "source_url": "https://www.epocinfo.fr/ep2027.php",
       "source_id": "epoc",
       "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 4 35% 16% 23% — — 8% — 4% 5% 3.5% 1.5% 1% — — — — — — — — 3% — — — — — — — 30/09/2026 IFOP 5 36% 17% — — 17% 11% — 4.5% 5.5% 3% 1% 1% — — — — — — — — 4% — — — — — — — 30/09/2026 IFOP 6",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-ifop-30092026-h5",
-      "firm": "Ifop",
-      "firm_id": "ifop",
-      "fieldwork": "30/09/2026",
-      "published_hint": "30/09/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 5 36% 17% — — 17% 11% — 4.5% 5.5% 3% 1% 1% — — — — — — — — 4% — — — — — — — 30/09/2026 IFOP 6 31% 14% 15% 9% 7% 5% — 4% 3% 2% 1% 0.5% — — — — — — — 3% — 2% — — — 3.5% — — 30/09/2026 IF",
-      "metric": "intentions_vote"
-    },
-    {
-      "id": "epoc-row-ifop-30092026-h6",
-      "firm": "Ifop",
-      "firm_id": "ifop",
-      "fieldwork": "30/09/2026",
-      "published_hint": "30/09/2026",
-      "source_url": "https://www.epocinfo.fr/ep2027.php",
-      "source_id": "epoc",
-      "scores": {},
-      "raw_snippet": "30/09/2026 IFOP 6 31% 14% 15% 9% 7% 5% — 4% 3% 2% 1% 0.5% — — — — — — — 3% — 2% — — — 3.5% — — 30/09/2026 IFOP 7 35% 15% 24% — — 8% — 4% 6% 3% 1.5% 0.5% — — — — — — — — — — 3% — — — — — 30/09/2026 IFO",
+      "raw_snippet": "30/09/2026 IFOP 4 35% 16% 23% — — 8% 4% 5% 3.5% 1.5% 1% — — — — — — — — — 3% — — — — — — — 30/09/2026 IFOP 5 36% 17% — 17% — 11% 4.5% 5.5% 3% 1% 1% — — — — — — — — — 4% — — — — — — — 30/09/2026 IFOP 6",
       "metric": "intentions_vote"
     },
     {
@@ -465,24 +936,279 @@
       "pct": 35
     },
     {
-      "wave_id": "epoc-harris-12102026",
-      "firm": "Harris Interactive / Toluna Harris",
+      "wave_id": "epoc-odoxa-15102026-h1",
+      "firm": "Odoxa",
       "head": "le-pen",
-      "pct": 37
+      "pct": 37,
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "wave_id": "epoc-odoxa-15102026-h2",
+      "firm": "Odoxa",
+      "head": "le-pen",
+      "pct": 38,
+      "hypothesis": "hyp. 2"
+    },
+    {
+      "wave_id": "epoc-yougov-18102026-h1",
+      "firm": "YouGov",
+      "head": "le-pen",
+      "pct": 36,
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "wave_id": "epoc-yougov-18102026-h2",
+      "firm": "YouGov",
+      "head": "le-pen",
+      "pct": 37,
+      "hypothesis": "hyp. 2"
+    },
+    {
+      "wave_id": "epoc-yougov-18102026-h3",
+      "firm": "YouGov",
+      "head": "le-pen",
+      "pct": 36,
+      "hypothesis": "hyp. 3"
+    },
+    {
+      "wave_id": "epoc-yougov-18102026-h4",
+      "firm": "YouGov",
+      "head": "le-pen",
+      "pct": 37,
+      "hypothesis": "hyp. 4"
+    },
+    {
+      "wave_id": "epoc-yougov-18102026-h5",
+      "firm": "YouGov",
+      "head": "le-pen",
+      "pct": 35,
+      "hypothesis": "hyp. 5"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h1",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 32.5,
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h2",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 33.5,
+      "hypothesis": "hyp. 2"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h3",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 31.5,
+      "hypothesis": "hyp. 3"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h4",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 31,
+      "hypothesis": "hyp. 4"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h5",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 32.5,
+      "hypothesis": "hyp. 5"
+    },
+    {
+      "wave_id": "epoc-elabe-18102026-h6",
+      "firm": "Elabe",
+      "head": "le-pen",
+      "pct": 33.5,
+      "hypothesis": "hyp. 6"
+    },
+    {
+      "wave_id": "epoc-opinionway-16102026-h1",
+      "firm": "OpinionWay",
+      "head": "le-pen",
+      "pct": 35,
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "wave_id": "epoc-ifop-14102026-h1",
+      "firm": "Ifop-Fiducial",
+      "head": "le-pen",
+      "pct": 32,
+      "hypothesis": "hyp. 1"
+    },
+    {
+      "wave_id": "epoc-ifop-14102026-h2",
+      "firm": "Ifop-Fiducial",
+      "head": "le-pen",
+      "pct": 35,
+      "hypothesis": "hyp. 2"
+    },
+    {
+      "wave_id": "epoc-ifop-14102026-h3",
+      "firm": "Ifop-Fiducial",
+      "head": "le-pen",
+      "pct": 34,
+      "hypothesis": "hyp. 3"
+    },
+    {
+      "wave_id": "epoc-ifop-14102026-h4",
+      "firm": "Ifop-Fiducial",
+      "head": "le-pen",
+      "pct": 36,
+      "hypothesis": "hyp. 4"
     }
   ],
   "movements": [
     {
-      "at": "2026-10-12T04:45:23.079Z",
+      "at": "2026-10-19T12:00:00.000Z",
       "kind": "new_wave",
-      "firm": "Harris Interactive / Toluna Harris",
-      "comment": "Harris Interactive / Toluna Harris (12/10/2026) : le pen en tête à 37 % (intentions de vote).",
-      "wave_id": "epoc-harris-12102026",
+      "firm": "YouGov",
+      "comment": "YouGov (18/10/2026, hyp. 1) : le pen en tête à 36 % (intentions de vote).",
+      "wave_id": "epoc-yougov-18102026-h1",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "YouGov",
+      "comment": "YouGov (18/10/2026, hyp. 2) : le pen en tête à 37 % (intentions de vote).",
+      "wave_id": "epoc-yougov-18102026-h2",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "YouGov",
+      "comment": "YouGov (18/10/2026, hyp. 3) : le pen en tête à 36 % (intentions de vote).",
+      "wave_id": "epoc-yougov-18102026-h3",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "YouGov",
+      "comment": "YouGov (18/10/2026, hyp. 4) : le pen en tête à 37 % (intentions de vote).",
+      "wave_id": "epoc-yougov-18102026-h4",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "YouGov",
+      "comment": "YouGov (18/10/2026, hyp. 5) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "epoc-yougov-18102026-h5",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 1) : le pen en tête à 32,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h1",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 2) : le pen en tête à 33,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h2",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 3) : le pen en tête à 31,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h3",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 4) : le pen en tête à 31 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h4",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 5) : le pen en tête à 32,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h5",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Elabe",
+      "comment": "Elabe (18/10/2026, hyp. 6) : le pen en tête à 33,5 % (intentions de vote).",
+      "wave_id": "epoc-elabe-18102026-h6",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "OpinionWay",
+      "comment": "OpinionWay (16/10/2026, hyp. 1) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "epoc-opinionway-16102026-h1",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Ifop-Fiducial",
+      "comment": "Ifop-Fiducial (14/10/2026, hyp. 1) : le pen en tête à 32 % (intentions de vote).",
+      "wave_id": "epoc-ifop-14102026-h1",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Ifop-Fiducial",
+      "comment": "Ifop-Fiducial (14/10/2026, hyp. 2) : le pen en tête à 35 % (intentions de vote).",
+      "wave_id": "epoc-ifop-14102026-h2",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Ifop-Fiducial",
+      "comment": "Ifop-Fiducial (14/10/2026, hyp. 3) : le pen en tête à 34 % (intentions de vote).",
+      "wave_id": "epoc-ifop-14102026-h3",
+      "source_url": "https://www.epocinfo.fr/ep2027.php"
+    },
+    {
+      "at": "2026-10-19T12:00:00.000Z",
+      "kind": "new_wave",
+      "firm": "Ifop-Fiducial",
+      "comment": "Ifop-Fiducial (14/10/2026, hyp. 4) : le pen en tête à 36 % (intentions de vote).",
+      "wave_id": "epoc-ifop-14102026-h4",
       "source_url": "https://www.epocinfo.fr/ep2027.php"
     }
   ],
   "brief": [
-    "Harris Interactive / Toluna Harris (12/10/2026) : le pen en tête à 37 % (intentions de vote)."
+    "YouGov (18/10/2026, hyp. 1) : le pen en tête à 36 % (intentions de vote).",
+    "YouGov (18/10/2026, hyp. 2) : le pen en tête à 37 % (intentions de vote).",
+    "YouGov (18/10/2026, hyp. 3) : le pen en tête à 36 % (intentions de vote).",
+    "YouGov (18/10/2026, hyp. 4) : le pen en tête à 37 % (intentions de vote).",
+    "YouGov (18/10/2026, hyp. 5) : le pen en tête à 35 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 1) : le pen en tête à 32,5 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 2) : le pen en tête à 33,5 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 3) : le pen en tête à 31,5 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 4) : le pen en tête à 31 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 5) : le pen en tête à 32,5 % (intentions de vote).",
+    "Elabe (18/10/2026, hyp. 6) : le pen en tête à 33,5 % (intentions de vote).",
+    "OpinionWay (16/10/2026, hyp. 1) : le pen en tête à 35 % (intentions de vote).",
+    "Ifop-Fiducial (14/10/2026, hyp. 1) : le pen en tête à 32 % (intentions de vote).",
+    "Ifop-Fiducial (14/10/2026, hyp. 2) : le pen en tête à 35 % (intentions de vote).",
+    "Ifop-Fiducial (14/10/2026, hyp. 3) : le pen en tête à 34 % (intentions de vote).",
+    "Ifop-Fiducial (14/10/2026, hyp. 4) : le pen en tête à 36 % (intentions de vote)."
   ],
   "errors": [
     {

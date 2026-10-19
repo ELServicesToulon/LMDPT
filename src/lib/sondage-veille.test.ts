@@ -54,6 +54,230 @@ describe('sondage-veille', () => {
     expect(waves[0].firm.toLowerCase()).toContain('elabe');
     expect(waves[0].scores['le-pen']).toBe(35);
     expect(waves[0].scores.philippe).toBe(16.5);
+    expect(waves[0].id).toBe('epoc-elabe-12072026-h1');
+  });
+
+  it('parses EPOC Odoxa 15/10/2026 as separate 1er-tour hypotheses, ignoring 2nd tour and aggregates', () => {
+    const html = `
+      <html><body>
+        <div class="latest-poll-banner">
+          <div class="lp-label">Dernier sondage</div>
+          <div class="lp-text"><strong>ODOXA</strong></div>
+          <div class="lp-date">15/10/2026</div>
+        </div>
+        <div class="box-title">1er Tour · Hypothèse N°1</div>
+        <div class="bar-value">37%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">18%</div><div class="bar-label">MÉLENCHON</div>
+        <div class="bar-value">17%</div><div class="bar-label">PHILIPPE</div>
+        <div class="bar-value">9.5%</div><div class="bar-label">GLUCKSMANN</div>
+        <div class="bar-value">6.5%</div><div class="bar-label">RETAILLEAU</div>
+        <div class="bar-value">4.5%</div><div class="bar-label">ZEMMOUR</div>
+        <div class="bar-value">3%</div><div class="bar-label">TONDELIER</div>
+        <div class="bar-value">2%</div><div class="bar-label">ROUSSEL</div>
+        <div class="bar-value">2%</div><div class="bar-label">DUPONT-AIGNAN</div>
+        <div class="bar-value">0.5%</div><div class="bar-label">ARTHAUD</div>
+        <div class="box-title">1er Tour · Hypothèse N°2</div>
+        <div class="bar-value">38%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">18.5%</div><div class="bar-label">MÉLENCHON</div>
+        <div class="bar-value">11%</div><div class="bar-label">ATTAL</div>
+        <div class="bar-value">10.5%</div><div class="bar-label">GLUCKSMANN</div>
+        <div class="bar-value">9%</div><div class="bar-label">RETAILLEAU</div>
+        <div class="bar-value">4.1%</div><div class="bar-label">ZEMMOUR</div>
+        <div class="bar-value">3.5%</div><div class="bar-label">TONDELIER</div>
+        <div class="bar-value">2%</div><div class="bar-label">ROUSSEL</div>
+        <div class="bar-value">2%</div><div class="bar-label">DUPONT-AIGNAN</div>
+        <div class="bar-value">1%</div><div class="bar-label">ARTHAUD</div>
+        <div class="box-title">2ème Tour · Hypothèse N°1</div>
+        <div class="bar-value">68%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">32%</div><div class="bar-label">MÉLENCHON</div>
+        <div class="box-title">2ème Tour · Hypothèse N°2</div>
+        <div class="bar-value">53%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">47%</div><div class="bar-label">PHILIPPE</div>
+        <div>Moyennes globales</div>
+        <div>1er Tour Basée sur l'ensemble des sondages saisis</div>
+        <div class="bar-value">34.1%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">14.7%</div><div class="bar-label">MÉLENCHON</div>
+        <div>2ème Tour Basée sur l'ensemble des sondages saisis</div>
+        <div class="bar-value">57.3%</div><div class="bar-label">LE PEN</div>
+        <table>
+          <tr><th>Date</th><th>Institut</th><th>Hyp.</th><th>LE PEN</th><th>MÉLENCHON</th></tr>
+          <tr><td>15/10/2026</td><td>ODOXA</td><td>1</td><td>37%</td><td>18%</td></tr>
+          <tr><td>15/10/2026</td><td>ODOXA</td><td>2</td><td>38%</td><td>18.5%</td></tr>
+        </table>
+      </body></html>
+    `;
+    const waves = parseEpocHtml(html, 'https://www.epocinfo.fr/ep2027.php');
+    const scored = waves.filter((w) => Object.keys(w.scores).length > 0);
+    expect(scored).toHaveLength(2);
+
+    const h1 = scored.find((w) => w.id === 'epoc-odoxa-15102026-h1');
+    const h2 = scored.find((w) => w.id === 'epoc-odoxa-15102026-h2');
+    expect(h1).toBeDefined();
+    expect(h2).toBeDefined();
+    expect(h1?.hypothesis).toBe('hyp. 1');
+    expect(h2?.hypothesis).toBe('hyp. 2');
+    expect(h1?.scores['le-pen']).toBe(37);
+    expect(h1?.scores.melenchon).toBe(18);
+    expect(h1?.scores.philippe).toBe(17);
+    expect(h1?.scores.attal).toBeUndefined();
+    expect(h2?.scores['le-pen']).toBe(38);
+    expect(h2?.scores.melenchon).toBe(18.5);
+    expect(h2?.scores.attal).toBe(11);
+    expect(h2?.scores.philippe).toBeUndefined();
+
+    const forbidden = [53, 47, 68, 32, 34.1, 14.7];
+    for (const w of waves) {
+      for (const pct of Object.values(w.scores)) {
+        expect(forbidden).not.toContain(pct);
+      }
+    }
+    expect(commentForNewWave(h1!)).toMatch(/hyp\. 1/);
+    expect(commentForNewWave(h1!)).toMatch(/37/);
+    expect(commentForNewWave(h2!)).toMatch(/hyp\. 2/);
+    expect(commentForNewWave(h2!)).toMatch(/38/);
+  });
+
+  it('parses EPOC historique 1er tour by header (non-standard column order), ignoring 2nd tour and aggregates', () => {
+    const html = `
+      <html><body>
+        <div class="latest-poll-banner">
+          <div class="lp-label">Dernier sondage</div>
+          <div class="lp-text"><strong>YOUGOV</strong></div>
+          <div class="lp-date">18/10/2026</div>
+        </div>
+        <div class="box-title">1er Tour · Hypothèse N°1</div>
+        <div class="bar-value">36%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">15%</div><div class="bar-label">MÉLENCHON</div>
+        <div class="bar-value">13%</div><div class="bar-label">PHILIPPE</div>
+        <div class="bar-value">13%</div><div class="bar-label">GLUCKSMANN</div>
+        <div class="inner-section-title">Moyennes globales</div>
+        <div class="box-title">1er Tour</div>
+        <p class="box-subtitle">Basée sur l'ensemble des sondages saisis</p>
+        <div class="bar-value">34.1%</div><div class="bar-label">LE PEN</div>
+        <div class="bar-value">14.8%</div><div class="bar-label">MÉLENCHON</div>
+        <div class="box-title"><i data-lucide="table"></i> 1er Tour</div>
+        <div class="history-table-wrapper">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Hyp.</th>
+                <th>Institut</th>
+                <th>PHILIPPE</th>
+                <th>LE PEN</th>
+                <th>MÉLENCHON</th>
+                <th>ATTAL</th>
+                <th>LISNARD</th>
+                <th>GLUCKSMANN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>18/10/2026</td><td>1</td><td><strong>YOUGOV</strong></td>
+                <td class="score-active">13%</td><td class="score-active">36%</td>
+                <td class="score-active">15%</td><td class="score-empty">—</td>
+                <td class="score-empty">—</td><td class="score-active">13%</td>
+              </tr>
+              <tr>
+                <td>18/10/2026</td><td>5</td><td><strong>YOUGOV</strong></td>
+                <td class="score-active">8%</td><td class="score-active">35%</td>
+                <td class="score-active">13%</td><td class="score-active">6%</td>
+                <td class="score-active">4%</td><td class="score-active">12%</td>
+              </tr>
+              <tr>
+                <td>18/10/2026</td><td>1</td><td><strong>ELABE</strong></td>
+                <td class="score-active">16.5%</td><td class="score-active">32.5%</td>
+                <td class="score-active">15%</td><td class="score-empty">—</td>
+                <td class="score-empty">—</td><td class="score-active">15.5%</td>
+              </tr>
+              <tr>
+                <td>18/10/2026</td><td>2</td><td><strong>ELABE</strong></td>
+                <td class="score-empty">—</td><td class="score-active">33.5%</td>
+                <td class="score-active">16%</td><td class="score-active">10.5%</td>
+                <td class="score-empty">—</td><td class="score-active">16.5%</td>
+              </tr>
+              <tr>
+                <td>14/10/2026</td><td>1</td><td><strong>IFOP</strong></td>
+                <td class="score-active">13%</td><td class="score-active">32%</td>
+                <td class="score-active">16%</td><td class="score-active">5%</td>
+                <td class="score-active">6%</td><td class="score-active">11.5%</td>
+              </tr>
+              <tr>
+                <td>12/03/2026</td><td>1</td><td><strong>ELABE</strong></td>
+                <td class="score-active">20%</td><td class="score-active">34%</td>
+                <td class="score-active">14%</td><td class="score-empty">—</td>
+                <td class="score-empty">—</td><td class="score-active">10%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box-title"><i data-lucide="table"></i> 2ème Tour</div>
+        <div class="history-table-wrapper">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date</th><th>Institut</th><th>Hyp.</th>
+                <th>LE PEN</th><th>PHILIPPE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>18/10/2026</td><td>YOUGOV</td><td>1</td>
+                <td>52%</td><td>48%</td>
+              </tr>
+              <tr>
+                <td>16/10/2026</td><td>OPINIONWAY</td><td>1</td>
+                <td>56%</td><td>44%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </body></html>
+    `;
+    const waves = parseEpocHtml(html, 'https://www.epocinfo.fr/ep2027.php');
+    const scored = waves.filter((w) => Object.keys(w.scores).length > 0);
+    const byId = Object.fromEntries(scored.map((w) => [w.id, w]));
+
+    expect(byId['epoc-yougov-18102026-h1']).toBeDefined();
+    expect(byId['epoc-yougov-18102026-h5']).toBeDefined();
+    expect(byId['epoc-elabe-18102026-h1']).toBeDefined();
+    expect(byId['epoc-elabe-18102026-h2']).toBeDefined();
+    expect(byId['epoc-ifop-14102026-h1']).toBeDefined();
+    expect(byId['epoc-elabe-12032026-h1']).toBeUndefined();
+
+    const yougovH1 = byId['epoc-yougov-18102026-h1'];
+    const yougovH5 = byId['epoc-yougov-18102026-h5'];
+    expect(yougovH1.hypothesis).toBe('hyp. 1');
+    expect(yougovH1.scores['le-pen']).toBe(36);
+    expect(yougovH1.scores.philippe).toBe(13);
+    expect(yougovH1.scores.attal).toBeUndefined();
+    expect(yougovH1.scores.lisnard).toBeUndefined();
+    expect(yougovH5.hypothesis).toBe('hyp. 5');
+    expect(yougovH5.scores['le-pen']).toBe(35);
+    expect(yougovH5.scores.philippe).toBe(8);
+    expect(yougovH5.scores.attal).toBe(6);
+    expect(yougovH5.scores.lisnard).toBe(4);
+    expect(yougovH1.scores.philippe).not.toBe(8);
+
+    expect(byId['epoc-elabe-18102026-h1'].scores['le-pen']).toBe(32.5);
+    expect(byId['epoc-elabe-18102026-h1'].scores.philippe).toBe(16.5);
+    expect(byId['epoc-elabe-18102026-h1'].scores.attal).toBeUndefined();
+    expect(byId['epoc-elabe-18102026-h2'].scores['le-pen']).toBe(33.5);
+    expect(byId['epoc-elabe-18102026-h2'].scores.attal).toBe(10.5);
+    expect(byId['epoc-elabe-18102026-h2'].scores.philippe).toBeUndefined();
+
+    expect(byId['epoc-ifop-14102026-h1'].scores['le-pen']).toBe(32);
+    expect(byId['epoc-ifop-14102026-h1'].scores.lisnard).toBe(6);
+    expect(byId['epoc-ifop-14102026-h1'].scores.philippe).toBe(13);
+
+    expect(scored.filter((w) => w.id.startsWith('epoc-yougov-18102026-h1'))).toHaveLength(1);
+
+    const forbidden = [52, 48, 56, 44, 34.1, 14.8, 20];
+    for (const w of waves) {
+      for (const pct of Object.values(w.scores)) {
+        expect(forbidden).not.toContain(pct);
+      }
+    }
   });
 
   it('comments new wave and shifts briefly in French', () => {
@@ -73,6 +297,37 @@ describe('sondage-veille', () => {
     expect(commentForNewWave(wave)).toMatch(/le pen/i);
     expect(commentForShift('Ifop', 'melenchon', 13, 16)).toMatch(/hausse/);
     expect(commentForShift('Ifop', 'philippe', 19, 16.5)).toMatch(/repli/);
+  });
+
+  it('treats EPOC hypotheses of the same firm and date as distinct waves', () => {
+    const h1: DetectedWave = {
+      id: 'epoc-odoxa-15102026-h1',
+      firm: 'Odoxa',
+      firm_id: 'odoxa',
+      fieldwork: '15/10/2026',
+      published_hint: '15/10/2026',
+      source_url: 'https://www.epocinfo.fr/ep2027.php',
+      source_id: 'epoc',
+      scores: { 'le-pen': 37, melenchon: 18, philippe: 17 },
+      raw_snippet: '',
+      metric: 'intentions_vote',
+      hypothesis: 'hyp. 1',
+    };
+    const h2: DetectedWave = {
+      ...h1,
+      id: 'epoc-odoxa-15102026-h2',
+      scores: { 'le-pen': 38, melenchon: 18.5, attal: 11 },
+      hypothesis: 'hyp. 2',
+    };
+    const moves = diffWaves([], [h1, h2], '2026-10-16T12:00:00.000Z');
+    expect(moves.filter((m) => m.kind === 'new_wave')).toHaveLength(2);
+    expect(moves.filter((m) => m.kind === 'score_shift' || m.kind === 'head_change')).toHaveLength(
+      0,
+    );
+    expect(moves.map((m) => m.wave_id).sort()).toEqual([
+      'epoc-odoxa-15102026-h1',
+      'epoc-odoxa-15102026-h2',
+    ]);
   });
 
   it('detects new wave movements', () => {
