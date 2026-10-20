@@ -992,55 +992,165 @@ export async function runSondageVeille(
   };
 }
 
-export async function loadPreviousSnapshot(): Promise<SondageVeilleSnapshot | null> {
-  if (!existsSync(LATEST_PATH)) return null;
-  try {
-    const raw = await readFile(LATEST_PATH, 'utf8');
-    return JSON.parse(raw) as SondageVeilleSnapshot;
-  } catch {
-    return null;
+export type SondageStateReason = 'unreadable' | 'conflict-markers' | 'invalid-json';
+
+export interface SondagePersistPaths {
+  latest?: string;
+  waves?: string;
+  movements?: string;
+  candidats?: string;
+}
+
+export class SondageStateError extends Error {
+  readonly path: string;
+  readonly reason: SondageStateReason;
+
+  constructor(path: string, reason: SondageStateReason, label = 'état') {
+    const shown = repoRelative(path);
+    const reasonFr =
+      reason === 'unreadable'
+        ? 'illisible'
+        : reason === 'conflict-markers'
+          ? 'marqueurs de conflit git'
+          : 'JSON invalide';
+    super(
+      `Fichier d'état « ${label} » (${reasonFr}) : ${shown}. ` +
+        `Ne pas relancer la veille tant que le fichier n'est pas restauré ` +
+        `(git show origin/Main:${shown}) ; la veille refuse de repartir d'un état vide.`,
+    );
+    this.name = 'SondageStateError';
+    this.path = path;
+    this.reason = reason;
   }
 }
 
-export async function persistSnapshot(snapshot: SondageVeilleSnapshot): Promise<CandidatsFile> {
-  await mkdir(DATA_DIR, { recursive: true });
-  await writeFile(LATEST_PATH, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
-  for (const m of snapshot.movements) {
-    await appendFile(MOVEMENTS_PATH, `${JSON.stringify(m)}\n`, 'utf8');
-  }
+function repoRelative(p: string): string {
+  const prefix = ROOT.endsWith('/') ? ROOT : `${ROOT}/`;
+  return p.startsWith(prefix) ? p.slice(prefix.length) : p;
+}
 
-  // merge waves registry
+function fsErrorCode(err: unknown): string | undefined {
+  if (err && typeof err === 'object' && 'code' in err && typeof (err as { code: unknown }).code === 'string') {
+    return (err as { code: string }).code;
+  }
+  return undefined;
+}
+
+function hasGitConflictMarkers(raw: string): boolean {
+  for (const line of raw.split(/\r?\n/)) {
+    if (line.startsWith('<<<<<<<') || line.startsWith('>>>>>>>') || line === '=======') {
+      return true;
+    }
+  }
+  return false;
+}
+
+export async function readStateJson<T>(path: string, label: string): Promise<T | null> {
+  let raw: string;
+  try {
+    if (!existsSync(path)) return null;
+    raw = await readFile(path, 'utf8');
+  } catch (err) {
+    if (fsErrorCode(err) === 'ENOENT') return null;
+    throw new SondageStateError(path, 'unreadable', label);
+  }
+  if (hasGitConflictMarkers(raw)) {
+    throw new SondageStateError(path, 'conflict-markers', label);
+  }
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    throw new SondageStateError(path, 'invalid-json', label);
+  }
+}
+
+async function assertNoConflictMarkers(path: string, label: string): Promise<void> {
+  let raw: string;
+  try {
+    if (!existsSync(path)) return;
+    raw = await readFile(path, 'utf8');
+  } catch (err) {
+    if (fsErrorCode(err) === 'ENOENT') return;
+    throw new SondageStateError(path, 'unreadable', label);
+  }
+  if (hasGitConflictMarkers(raw)) {
+    throw new SondageStateError(path, 'conflict-markers', label);
+  }
+}
+
+export async function loadPreviousSnapshot(
+  path = LATEST_PATH,
+): Promise<SondageVeilleSnapshot | null> {
+  return readStateJson<SondageVeilleSnapshot>(path, 'latest.json');
+}
+
+export async function persistSnapshot(
+  snapshot: SondageVeilleSnapshot,
+  paths?: SondagePersistPaths,
+): Promise<CandidatsFile> {
+  const latestPath = paths?.latest ?? LATEST_PATH;
+  const wavesPath = paths?.waves ?? WAVES_PATH;
+  const movementsPath = paths?.movements ?? MOVEMENTS_PATH;
+  const candidatsPath = paths?.candidats ?? CANDIDATS_PATH;
+
   let registry: { updated: string; waves: DetectedWave[] } = {
     updated: snapshot.fetched_at,
     waves: [],
   };
-  if (existsSync(WAVES_PATH)) {
-    try {
-      registry = JSON.parse(await readFile(WAVES_PATH, 'utf8'));
-    } catch {
-      /* keep empty */
-    }
+  const loaded = await readStateJson<{ updated: string; waves: DetectedWave[] }>(
+    wavesPath,
+    'waves-registry.json',
+  );
+  if (loaded !== null) registry = loaded;
+
+  await assertNoConflictMarkers(movementsPath, 'movements.jsonl');
+
+  const existingCandidats = await readStateJson<CandidatsFile>(
+    candidatsPath,
+    '2027-sondages-candidats.json',
+  );
+  if (existingCandidats === null) {
+    throw new SondageStateError(candidatsPath, 'unreadable', '2027-sondages-candidats.json');
   }
+
+  await mkdir(dirname(latestPath), { recursive: true });
+  await mkdir(dirname(wavesPath), { recursive: true });
+  await mkdir(dirname(movementsPath), { recursive: true });
+  await writeFile(latestPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+  for (const m of snapshot.movements) {
+    await appendFile(movementsPath, `${JSON.stringify(m)}\n`, 'utf8');
+  }
+
   const byId = new Map(registry.waves.map((w) => [w.id, w]));
   for (const w of snapshot.waves) byId.set(w.id, w);
   registry.updated = snapshot.fetched_at;
   registry.waves = [...byId.values()].sort((a, b) =>
     (b.fieldwork ?? '').localeCompare(a.fieldwork ?? ''),
   );
-  await writeFile(WAVES_PATH, `${JSON.stringify(registry, null, 2)}\n`, 'utf8');
+  await writeFile(wavesPath, `${JSON.stringify(registry, null, 2)}\n`, 'utf8');
 
-  return persistCandidatsFromWaves(snapshot.waves, snapshot.fetched_at);
+  return persistCandidatsFromWaves(
+    snapshot.waves,
+    snapshot.fetched_at,
+    candidatsPath,
+    existingCandidats,
+  );
 }
 
 /** Refresh pedagogical candidate averages from scored intentions_vote waves. */
 export async function persistCandidatsFromWaves(
   waves: DetectedWave[],
   fetchedAt: string,
+  path = CANDIDATS_PATH,
+  existing?: CandidatsFile,
 ): Promise<CandidatsFile> {
-  const raw = await readFile(CANDIDATS_PATH, 'utf8');
-  const existing = JSON.parse(raw) as CandidatsFile;
-  const next = rebuildCandidatsFromWaves(existing, waves, fetchedAt);
-  await writeFile(CANDIDATS_PATH, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+  const current =
+    existing ?? (await readStateJson<CandidatsFile>(path, '2027-sondages-candidats.json'));
+  if (current === null) {
+    throw new SondageStateError(path, 'unreadable', '2027-sondages-candidats.json');
+  }
+  const next = rebuildCandidatsFromWaves(current, waves, fetchedAt);
+  await writeFile(path, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
   return next;
 }
 
