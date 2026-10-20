@@ -1,3 +1,6 @@
+import { chmod, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   commentForNewWave,
@@ -7,8 +10,12 @@ import {
   parseEpocHtml,
   parseCommissionNotices,
   diffWaves,
+  persistSnapshot,
+  readStateJson,
   seedKnownWaves,
+  SondageStateError,
   type DetectedWave,
+  type SondageVeilleSnapshot,
 } from './sondage-veille';
 
 describe('sondage-veille', () => {
@@ -409,5 +416,211 @@ describe('sondage-veille', () => {
     expect(moves.filter((m) => m.kind === 'head_change' || m.kind === 'score_shift')).toHaveLength(
       0,
     );
+  });
+});
+
+describe('état JSON de la veille (readStateJson)', () => {
+  async function withTempDir<T>(fn: (dir: string) => Promise<T>): Promise<T> {
+    const dir = await mkdtemp(join(tmpdir(), 'sondage-etat-'));
+    try {
+      return await fn(dir);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  }
+
+  it('fichier absent → null', async () => {
+    await withTempDir(async (dir) => {
+      await expect(readStateJson(join(dir, 'latest.json'), 'latest.json')).resolves.toBeNull();
+    });
+  });
+
+  it('marqueurs de conflit → SondageStateError conflict-markers', async () => {
+    await withTempDir(async (dir) => {
+      const path = join(dir, 'latest.json');
+      await writeFile(
+        path,
+        ['<<<<<<< HEAD', '{"ok":true}', '=======', '{"ok":false}', '>>>>>>> other', ''].join('\n'),
+        'utf8',
+      );
+      try {
+        await readStateJson(path, 'latest.json');
+        expect.unreachable('devait lever SondageStateError');
+      } catch (err) {
+        expect(err).toBeInstanceOf(SondageStateError);
+        const e = err as SondageStateError;
+        expect(e.reason).toBe('conflict-markers');
+        expect(e.path).toBe(path);
+        expect(e.message).toMatch(/marqueurs de conflit git/);
+        expect(e.message).toMatch(/Ne pas relancer la veille/);
+        expect(e.message).toMatch(/git show origin\/Main:/);
+        expect(e.message).toMatch(/refuse de repartir d'un état vide/);
+      }
+    });
+  });
+
+  it('JSON invalide → invalid-json', async () => {
+    await withTempDir(async (dir) => {
+      const path = join(dir, 'latest.json');
+      await writeFile(path, '{pas du json', 'utf8');
+      try {
+        await readStateJson(path, 'latest.json');
+        expect.unreachable('devait lever SondageStateError');
+      } catch (err) {
+        expect(err).toBeInstanceOf(SondageStateError);
+        expect((err as SondageStateError).reason).toBe('invalid-json');
+        expect((err as SondageStateError).path).toBe(path);
+      }
+    });
+  });
+
+  it('fichier illisible (dossier) → unreadable', async () => {
+    await withTempDir(async (dir) => {
+      try {
+        await readStateJson(dir, 'latest.json');
+        expect.unreachable('devait lever SondageStateError');
+      } catch (err) {
+        expect(err).toBeInstanceOf(SondageStateError);
+        expect((err as SondageStateError).reason).toBe('unreadable');
+        expect((err as SondageStateError).path).toBe(dir);
+      }
+
+      if (typeof process.getuid === 'function' && process.getuid() !== 0) {
+        const locked = join(dir, 'locked.json');
+        await writeFile(locked, '{"ok":true}\n', 'utf8');
+        await chmod(locked, 0o000);
+        try {
+          await readStateJson(locked, 'locked.json');
+          expect.unreachable('devait lever SondageStateError');
+        } catch (err) {
+          expect(err).toBeInstanceOf(SondageStateError);
+          expect((err as SondageStateError).reason).toBe('unreadable');
+        } finally {
+          await chmod(locked, 0o644);
+        }
+      }
+    });
+  });
+
+  it('JSON valide → objet', async () => {
+    await withTempDir(async (dir) => {
+      const path = join(dir, 'latest.json');
+      await writeFile(path, '{"ok":true,"n":1}\n', 'utf8');
+      await expect(readStateJson<{ ok: boolean; n: number }>(path, 'latest.json')).resolves.toEqual({
+        ok: true,
+        n: 1,
+      });
+    });
+  });
+
+  it('persistSnapshot registre en conflit → rejette et n’écrit rien', async () => {
+    await withTempDir(async (dir) => {
+      const latest = join(dir, 'latest.json');
+      const waves = join(dir, 'waves-registry.json');
+      const movements = join(dir, 'movements.jsonl');
+      const candidats = join(dir, '2027-sondages-candidats.json');
+      const latestBefore = '{"keep":"latest"}\n';
+      const movementsBefore = '{"kind":"new_wave","comment":"existant"}\n';
+      const registryConflict = [
+        '<<<<<<< HEAD',
+        '{"updated":"2026-10-19","waves":[]}',
+        '=======',
+        '{"updated":"2026-10-18","waves":[]}',
+        '>>>>>>> other',
+        '',
+      ].join('\n');
+      await writeFile(latest, latestBefore, 'utf8');
+      await writeFile(movements, movementsBefore, 'utf8');
+      await writeFile(waves, registryConflict, 'utf8');
+
+      const snapshot: SondageVeilleSnapshot = {
+        fetched_at: '2026-10-20T06:47:00.000Z',
+        disclaimer: 'test',
+        providers_indexed: 0,
+        sources_ok: 0,
+        sources_error: 0,
+        waves: [],
+        head_by_wave: [],
+        movements: [
+          {
+            at: '2026-10-20T06:47:00.000Z',
+            kind: 'new_wave',
+            comment: 'ne doit pas être appendu',
+          },
+        ],
+        brief: [],
+        errors: [],
+      };
+
+      try {
+        await persistSnapshot(snapshot, { latest, waves, movements, candidats });
+        expect.unreachable('devait lever SondageStateError');
+      } catch (err) {
+        expect(err).toBeInstanceOf(SondageStateError);
+        expect((err as SondageStateError).reason).toBe('conflict-markers');
+        expect((err as SondageStateError).path).toBe(waves);
+      }
+
+      expect(await readFile(latest, 'utf8')).toBe(latestBefore);
+      expect(await readFile(movements, 'utf8')).toBe(movementsBefore);
+      expect(await readFile(waves, 'utf8')).toBe(registryConflict);
+    });
+  });
+
+  it('persistSnapshot candidats en conflit → rejette et n’écrit rien', async () => {
+    await withTempDir(async (dir) => {
+      const latest = join(dir, 'latest.json');
+      const waves = join(dir, 'waves-registry.json');
+      const movements = join(dir, 'movements.jsonl');
+      const candidats = join(dir, '2027-sondages-candidats.json');
+      const latestBefore = '{"keep":"latest"}\n';
+      const movementsBefore = '{"kind":"new_wave","comment":"existant"}\n';
+      const registryBefore = '{"updated":"2026-10-19","waves":[]}\n';
+      const candidatsConflict = [
+        '<<<<<<< HEAD',
+        '{"title":"a","updated":"2026-10-19","candidates":[]}',
+        '=======',
+        '{"title":"b","updated":"2026-10-18","candidates":[]}',
+        '>>>>>>> other',
+        '',
+      ].join('\n');
+      await writeFile(latest, latestBefore, 'utf8');
+      await writeFile(movements, movementsBefore, 'utf8');
+      await writeFile(waves, registryBefore, 'utf8');
+      await writeFile(candidats, candidatsConflict, 'utf8');
+
+      const snapshot: SondageVeilleSnapshot = {
+        fetched_at: '2026-10-20T06:47:00.000Z',
+        disclaimer: 'test',
+        providers_indexed: 0,
+        sources_ok: 0,
+        sources_error: 0,
+        waves: [],
+        head_by_wave: [],
+        movements: [
+          {
+            at: '2026-10-20T06:47:00.000Z',
+            kind: 'new_wave',
+            comment: 'ne doit pas être appendu',
+          },
+        ],
+        brief: [],
+        errors: [],
+      };
+
+      try {
+        await persistSnapshot(snapshot, { latest, waves, movements, candidats });
+        expect.unreachable('devait lever SondageStateError');
+      } catch (err) {
+        expect(err).toBeInstanceOf(SondageStateError);
+        expect((err as SondageStateError).reason).toBe('conflict-markers');
+        expect((err as SondageStateError).path).toBe(candidats);
+      }
+
+      expect(await readFile(latest, 'utf8')).toBe(latestBefore);
+      expect(await readFile(movements, 'utf8')).toBe(movementsBefore);
+      expect(await readFile(waves, 'utf8')).toBe(registryBefore);
+      expect(await readFile(candidats, 'utf8')).toBe(candidatsConflict);
+    });
   });
 });

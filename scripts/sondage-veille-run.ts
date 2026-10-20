@@ -15,6 +15,7 @@ import {
   persistSnapshot,
   runSondageVeille,
   seedKnownWaves,
+  SondageStateError,
 } from '../src/lib/sondage-veille';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -114,6 +115,10 @@ async function main(): Promise<void> {
 }
 
 main().catch((err: unknown) => {
-  console.error(err);
+  if (err instanceof SondageStateError) {
+    console.error(err.message);
+  } else {
+    console.error(err);
+  }
   process.exit(1);
 });
