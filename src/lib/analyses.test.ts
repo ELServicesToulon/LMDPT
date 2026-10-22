@@ -52,7 +52,7 @@ describe('analyses', () => {
     );
   });
 
-  it('chronique Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
+  it('chronique Debord du 23 octobre en une, 18 sources, boîte DOE', () => {
     expect(debordWatts.slug).toBe('debord-watts-frigo-sans-courant');
     expect(debordWatts.date).toBe('2026-10-23');
     expect(debordWatts.updated).toBe('2026-10-23');
@@ -68,7 +68,7 @@ describe('analyses', () => {
     expect(entry?.cover?.alt).toMatch(/vitrine brisée/);
     expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
     const nSources = debordWatts.sources_groups.reduce((n, g) => n + g.items.length, 0);
-    expect(nSources).toBe(17);
+    expect(nSources).toBe(18);
     const encadre = debordWatts.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
     if (encadre?.kind === 'candidats') {
