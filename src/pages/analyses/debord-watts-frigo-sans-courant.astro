@@ -1,6 +1,6 @@
 ---
 /**
- * Chronique « Le frigo sans courant » (Debord, Watts, 17 octobre) — 23 octobre 2026
+ * Chronique Manusk « Le frigo sans courant » (Debord, Watts, 17 octobre), 23 octobre 2026
  * Données : src/data/analyses/debord-watts-frigo-sans-courant.json
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -128,7 +128,9 @@ const keywords = [
               </table>
             </div>
             <p set:html={renderAnalysisInline(section.note)} />
-            <p set:html={renderAnalysisInline(section.conclusion)} />
+            {section.conclusion ? (
+              <p set:html={renderAnalysisInline(section.conclusion)} />
+            ) : null}
           </aside>
         );
       }
