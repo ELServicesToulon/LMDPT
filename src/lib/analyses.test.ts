@@ -92,7 +92,16 @@ describe('analyses', () => {
     const sourceBlob = JSON.stringify(debordWatts.sources_groups);
     expect(sourceBlob).not.toMatch(/tension maximale/);
     expect(sourceBlob).not.toMatch(/programme de travaux publics/);
-    expect(sourceBlob).toMatch(/les grandes villes en proie aux pillages/);
+    expect(sourceBlob).toMatch(/la désolation à Lille au lendemain du 17 octobre/);
+    expect(sourceBlob).toMatch(
+      /https:\/\/actu.fr\/hauts-de-france\/lille_59350\/en-images-commerces-eventres-vides-odeur-de-brule-persistante-la-desolation-a-lille-au-lendemain-du-17-octobre_64940855.html/,
+    );
+    expect(sourceBlob).toMatch(
+      /https:\/\/actu.fr\/nouvelle-aquitaine\/bordeaux_33063\/mobilisation-du-17-octobre-les-images-de-l-apple-store-devalise-en-marge-de-la-manifestation-a-bordeaux_64941387.html/,
+    );
+    expect(sourceBlob).not.toMatch(
+      /https:\/\/www.france24.com\/fr\/france\/20261017-france-les-grandes-villes-en-proie-aux-pillages-en-marge-des-manifestations/,
+    );
     const encadre = debordWatts.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
     if (encadre?.kind === 'candidats') {
