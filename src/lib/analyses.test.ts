@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
 import { socialTitleFrom, SOCIAL_TITLE_MAX } from './seo';
@@ -33,10 +34,12 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -47,6 +50,33 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('chronique Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
+    expect(debordWatts.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(debordWatts.date).toBe('2026-10-23');
+    expect(debordWatts.updated).toBe('2026-10-23');
+    expect(debordWatts.title).toBe('Le frigo sans courant');
+    expect(debordWatts.author).toBe('La rédaction');
+    expect(debordWatts.x_hook).toBe(debordWatts.title);
+    expect(debordWatts.description.length).toBeLessThanOrEqual(200);
+    expect(debordWatts.disclaimer).toMatch(/^Opinion\./);
+    expect(debordWatts.hues).toHaveLength(3);
+    const entry = getAnalysis('debord-watts-frigo-sans-courant');
+    expect(entry?.href).toBe('/analyses/debord-watts-frigo-sans-courant');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/debord-watts-frigo-sans-courant.jpg');
+    expect(entry?.cover?.alt).toMatch(/vitrine brisée/);
+    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
+    const nSources = debordWatts.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(17);
+    const encadre = debordWatts.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat ou responsable', 'Position publique', 'Source']);
+      expect(encadre.table.rows).toHaveLength(8);
+      expect(encadre.intro).toMatch(/ne classe pas/);
+      expect(encadre.note).toMatch(/assurance contre les émeutes/);
+    }
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {

@@ -1,0 +1,348 @@
+{
+  "slug": "debord-watts-frigo-sans-courant",
+  "title": "Le frigo sans courant",
+  "eyebrow": "Chronique · idées et violences urbaines",
+  "type_label": "Opinion · Chronique",
+  "date": "2026-10-23",
+  "updated": "2026-10-23",
+  "kicker": "Chronique · idées et violences urbaines · Opinion · 23 octobre 2026",
+  "author": "La rédaction",
+  "author_role": "Chronique",
+  "chapo": "Depuis les pillages des 17 et 18 octobre, le vocabulaire de Guy Debord refait surface : le reporter d'actu Paris Antoine Grotteria voit « une forme de société du spectacle » dans les téléphones brandis devant les carcasses de vélos. Avant que quelqu'un ne ressorte, pour nos vitrines, le texte que Debord a consacré au pillage, relisons-le. Il parle de Watts, à Los Angeles, en août 1965. On y trouve même un frigo sans courant.",
+  "description": "Depuis les pillages des 17 et 18 octobre, relire Debord sur Watts (1965) : le frigo volé sans courant, qui paie, et la grève contre le spectacle. Opinion.",
+  "disclaimer": "Opinion. Les thèses (désir captif, primauté de l'organisation sur l'émeute) sont celles de l'auteur. Les faits et citations sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "chronique",
+    "opinion",
+    "debord",
+    "watts",
+    "violences-urbaines",
+    "17-octobre",
+    "presidentielle-2027",
+    "doe"
+  ],
+  "x_hook": "Le frigo sans courant",
+  "hues": [
+    {
+      "slug": "parti-socialiste",
+      "label": "Gauche sociale-démocrate et syndicale",
+      "color": "#ff8080",
+      "rationale": "La condamnation des dégradations « parce qu'elles nuisent aux revendications », et la grève comme levier."
+    },
+    {
+      "slug": "roussel",
+      "label": "Marxisme orthodoxe et organisationnel",
+      "color": "#dd0000",
+      "rationale": "Le parti et le syndicat contre le spontanéisme ; la valeur se combat dans la production, pas à la caisse."
+    },
+    {
+      "slug": "gauche-republicaine",
+      "label": "Républicanisme social",
+      "color": "#e74c6f",
+      "rationale": "La défense des services publics (mairies, écoles) comme conquête collective."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "chronique",
+      "title": "La chronique",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Du 11 au 17 août 1965, Watts, quartier noir de Los Angeles, brûle. En décembre, l'Internationale situationniste diffuse en anglais un tract non signé, attribué à Guy Debord : « Le déclin et la chute de l'économie spectaculaire-marchande ». Il paraît en français dans le n° 10 de la revue, en mars 1966. Il prend le parti des émeutiers avec un talent qui rend la citation facile. Les « vrais désirs » s'y expriment « dans la fête, dans l'affirmation ludique, dans le potlatch de destruction ». Et cette phrase qu'on recopie volontiers : « L'homme qui détruit les marchandises montre sa supériorité humaine sur les marchandises. »"
+        },
+        {
+          "type": "p",
+          "text": "Ce texte parle d'une population ségréguée, dans un quartier où les commerçants étaient, note la commission d'enquête McCone, « pour la plupart blancs » (notre traduction). Le coller sur le boulevard Magenta ou sur un centre commercial de 2026 sans le dire, c'est commettre la faute que Debord reprochait au spectacle : prendre l'image pour la chose."
+        },
+        {
+          "type": "p",
+          "text": "Reste son meilleur argument, et il faut le prendre au sérieux. Les pillards, écrit-il, veulent faire usage des objets qu'on leur montre ; « de ce fait ils en récusent la valeur d'échange ». Prendre sans payer, ce serait nier la marchandise en son cœur. Sauf qu'une valeur d'échange ne meurt pas parce qu'un objet passe par-dessus une caisse. Elle meurt si on ne peut plus la reconstituer. Le 19 octobre, le gouvernement a réuni des plateformes de vente en ligne pour faire retirer des annonces d'articles volés le week-end. La marchandise a traversé la vitrine et cherché aussitôt un acheteur. Debord lui-même tend le bâton. Il écrit que les émeutiers « prennent au mot » la publicité de l'abondance, puis il cite ces « grands frigidaires volés par des gens qui n'avaient pas l'électricité » : selon lui, « la meilleure image du mensonge de l'abondance devenu vérité en jeu ». La lecture retenue ici est moins héroïque : un désir si bien fabriqué qu'on emporte le frigo même sans prise pour le brancher."
+        },
+        {
+          "type": "p",
+          "text": "Vient ensuite la question qui fâche : qui paie ? À Watts, la réponse est disputée. La commission McCone ne trouve pas de vengeance ciblée contre les commerçants abusifs : des magasins réputés honnêtes ont brûlé, des enseignes détestées sont restées intactes. Bayard Rustin, figure des droits civiques, lui répond en mars 1966 que la foule a bien visé les boutiques « connues pour leurs prix élevés et leurs manières hostiles » (notre traduction). Mais le même Rustin raconte avoir rappelé à un jeune chômeur de Watts que « les magasins où vous achetez à manger et de quoi vous habiller » étaient détruits. En France, la mission du Sénat sur juin 2023 recense 105 mairies, 243 établissements scolaires et « vraisemblablement autour de 1 500 » commerces vandalisés ou pillés. Selon le même rapport, qui s'appuie sur le renseignement territorial, la première vague de pillages de 2023, dans les quartiers, concernait « essentiellement des commerces de proximité ». En octobre 2026, la liste mêle Apple Store, Sephora et grands magasins, mais aussi un tabac et une petite boutique de téléphones du 10e arrondissement, dont le gérant chiffre ses pertes entre 70 000 et 90 000 euros. Le potlatch peut avoir lieu en bas de chez soi."
+        },
+        {
+          "type": "p",
+          "text": "Debord demande aussi : « Qu'est-ce qu'un policier ? C'est le serviteur actif de la marchandise. » La formule claque. Prise au pied de la lettre, elle réduit l'État à son bras armé. Le 20 octobre, l'aide aux commerçants sinistrés est venue notamment de l'Urssaf, qui reporte les cotisations patronales, et d'une activité partielle sans reste à charge pour les entreprises de moins de 250 salariés. Les mairies et les écoles visées en 2023 ne gardaient aucun stock de baskets. Elles font partie de cet État social arraché par des générations de travailleurs organisés, qu'une lecture purement policière de l'ordre empêche de penser. Rustin, en 1966, ne réclamait pas moins d'État : il voulait que l'État fédéral et la Californie lancent un vaste programme de travaux publics pour Watts."
+        },
+        {
+          "type": "p",
+          "text": "Le plus cruel, c'est que le spectacle, au sens de Debord, a joué contre l'émeute. Le 17 octobre, entre 550 000 et 800 000 personnes manifestaient contre la vie chère, selon qu'on compte comme les autorités ou comme les organisateurs. Sophie Binet, pour la CGT, l'a dit en deux temps : « Les dégradations, nous les condamnons parce qu'elles nuisent aux revendications. » Puis : « Ce qui est choquant, c'est qu'on ne parle que des dégradations. » Le pillage, censé déchirer l'image, a fourni l'image."
+        },
+        {
+          "type": "p",
+          "text": "Pour cette chronique, la vraie négation de la valeur d'échange ne passe pas par une nuit de vitrines brisées. Elle passe par ce qui arrête la production et oblige à négocier : une grève, un syndicat, un rapport de force qui survit au lendemain. L'intersyndicale appelle à la grève le 5 novembre. On verra alors si la colère de la mi-octobre a fabriqué une organisation, ou seulement des annonces de revente."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Ce que les candidats 2027 ont dit après les 17 et 18 octobre",
+      "intro": "Au premier tour, chacun vote pour ses idées. LMDPT ne classe pas ces réponses : elle les met côte à côte, avec leur source.",
+      "table": {
+        "caption": "Positions publiques après les 17 et 18 octobre 2026",
+        "headers": [
+          "Candidat ou responsable",
+          "Position publique",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "« Ceux qui partagent notre combat n'ont rien à faire dans le pillage, le saccage. » Met en cause le maintien de l'ordre : « Dans Paris, le commandement aberrant a ouvert la porte au chaos. »",
+            "LCP, 17/10"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique, candidat social-démocrate désigné le 11/10)",
+            "Accuse Mélenchon d'être le « marchepied de l'extrême droite », « incapable de condamner clairement » les violences.",
+            "RFI, 20/10 ; Politico Europe, 20/10"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Veut que les auteurs soient « tous pourchassés et punis avec une grande sévérité » ; parle d'une « ultragauche organisée qui veut casser l'ordre républicain ».",
+            "LCP, 17/10 ; RFI, 20/10"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Appelle à « la force implacable de l'État » ; accuse « les troupes de Jean-Luc Mélenchon » d'avoir armé la violence.",
+            "LCP, 17/10 ; RFI, 20/10"
+          ],
+          [
+            "Marine Le Pen (RN)",
+            "Les « revendications sociales légitimes » auraient été « prises en otage par l'extrême gauche ».",
+            "LCP, 17/10 ; Le Parisien, 17/10"
+          ],
+          [
+            "Jordan Bardella (RN)",
+            "Parle de « professionnels du chaos » ; promet le principe « casseur-payeur » et la suspension des allocations familiales des délinquants récidivistes.",
+            "LCP, 17/10 ; RFI, 20/10"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "Des scènes de pillage « indignes », une « provocation envers l'autorité de l'État ».",
+            "LCP, 17/10"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Non trouvé dans les sources consultées.",
+            "—"
+          ]
+        ]
+      },
+      "note": "Ce que la chronique ne tranche pas : le régime d'assurance contre les émeutes prévu par la loi de finances 2026 attend encore un décret et l'avis de la Commission européenne (Euronews, 20/10).",
+      "conclusion": "Qui paiera la prochaine fois reste une question ouverte de la campagne."
+    }
+  ],
+  "sources_intro": "Consultations du 22 octobre 2026 (heure de Paris).",
+  "sources_groups": [
+    {
+      "title": "Textes historiques",
+      "items": [
+        {
+          "label": "Internationale situationniste, « Le déclin et la chute de l'économie spectaculaire-marchande », Internationale situationniste n° 10, mars 1966, p. 3-11",
+          "lead": "Internationale situationniste, « Le déclin et la chute de l'économie spectaculaire-marchande », Internationale situationniste n° 10, mars 1966, p. 3-11",
+          "links": [
+            {
+              "label": "Texte en ligne",
+              "url": "https://infokiosques.net/lire.php?id_article=108"
+            },
+            {
+              "label": "Fac-similé",
+              "url": "https://mai68.org/spip/IMG/pdf/Emeutes-de-Watts_1965_Los-Angeles_Guy-Debord_IS-10_10mars1966.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Diffusion en anglais en décembre 1965 et attribution à Debord",
+          "lead": "Diffusion en anglais en décembre 1965 et attribution à Debord",
+          "links": [
+            {
+              "label": "The Anarchist Library",
+              "url": "https://theanarchistlibrary.org/library/situationist-international-the-decline-and-fall-of-the-spectacle-commodity-economy"
+            },
+            {
+              "label": "Bibliographie NOT BORED!",
+              "url": "https://notbored.org/bibliography.html"
+            }
+          ]
+        },
+        {
+          "label": "Governor's Commission on the Los Angeles Riots (commission McCone), Violence in the City: An End or a Beginning?, 2 décembre 1965 (34 morts, 1 032 blessés, plus de 40 millions de dollars de dégâts, plus de 600 bâtiments touchés dont plus de 200 détruits ; commerces visés surtout alimentation, alcool, meubles, vêtements, grands magasins, prêteurs sur gages ; aucune habitation incendiée volontairement)",
+          "lead": "Governor's Commission on the Los Angeles Riots (commission McCone), Violence in the City: An End or a Beginning?, 2 décembre 1965 (34 morts, 1 032 blessés, plus de 40 millions de dollars de dégâts, plus de 600 bâtiments touchés dont plus de 200 détruits ; commerces visés surtout alimentation, alcool, meubles, vêtements, grands magasins, prêteurs sur gages ; aucune habitation incendiée volontairement)",
+          "links": [
+            {
+              "label": "Rapport McCone (PDF)",
+              "url": "https://libraryarchives.metro.net/dpgtl/studies/1965-McCone-Commission-Report-Violence-in-the-City-Watts-Neighborhood.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Bayard Rustin, « The Watts \"Manifesto\" & the McCone Report », Commentary, mars 1966 (ciblage des commerces « notorious for their high prices and hostile manners » ; échange avec un jeune chômeur ; programme de travaux publics)",
+          "lead": "Bayard Rustin, « The Watts \"Manifesto\" & the McCone Report », Commentary, mars 1966 (ciblage des commerces « notorious for their high prices and hostile manners » ; échange avec un jeune chômeur ; programme de travaux publics)",
+          "links": [
+            {
+              "label": "Commentary, mars 1966",
+              "url": "https://www.commentary.org/articles/bayard-rustin-2/the-watts/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Institutions françaises",
+      "items": [
+        {
+          "label": "Sénat, rapport d'information n° 521 (2023-2024), Émeutes de juin 2023 : comprendre, évaluer, réagir, avril 2024",
+          "lead": "Sénat, rapport d'information n° 521 (2023-2024), Émeutes de juin 2023 : comprendre, évaluer, réagir, avril 2024",
+          "links": [
+            {
+              "label": "Rapport n° 521 (PDF)",
+              "url": "https://www.senat.fr/rap/r23-521/r23-5211.pdf"
+            },
+            {
+              "label": "Chiffres clés (communiqué)",
+              "url": "https://www.senat.fr/salle-de-presse/communiques-de-presse/presse/10-04-2024/emeutes-de-juin-2023-comprendre-evaluer-reagir.html"
+            }
+          ]
+        },
+        {
+          "label": "Ministère de l'Économie, communiqué n° 1138, 20/10/2026",
+          "lead": "Ministère de l'Économie, communiqué n° 1138, 20/10/2026",
+          "links": [
+            {
+              "label": "Communiqué n° 1138",
+              "url": "https://presse.economie.gouv.fr/le-gouvernement-met-en-place-des-mesures-de-soutien-aux-commerces-touches-par-les-degradations-du-samedi-17-et-dimanche-18-octobre-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Presse des 17-21 octobre 2026",
+      "items": [
+        {
+          "label": "Public Sénat (avec AFP), « Pillages : \"au moins 3 000\" commerces touchés… », 19/10/2026",
+          "lead": "Public Sénat (avec AFP), « Pillages : \"au moins 3 000\" commerces touchés… », 19/10/2026",
+          "links": [
+            {
+              "label": "Public Sénat, 19/10/2026",
+              "url": "https://www.publicsenat.fr/actualites/economie/pillages-au-moins-3-000-commerces-touchees-pour-des-centaines-de-millions-deuros-de-degats"
+            }
+          ]
+        },
+        {
+          "label": "France 24 (avec AFP), 17/10/2026",
+          "lead": "France 24 (avec AFP), 17/10/2026",
+          "links": [
+            {
+              "label": "France 24, 17/10/2026",
+              "url": "https://www.france24.com/fr/france/20261017-france-les-grandes-villes-en-proie-aux-pillages-en-marge-des-manifestations"
+            }
+          ]
+        },
+        {
+          "label": "franceinfo, « Mobilisation du 17 octobre : tension maximale… », 18/10/2026",
+          "lead": "franceinfo, « Mobilisation du 17 octobre : tension maximale… », 18/10/2026",
+          "links": [
+            {
+              "label": "franceinfo, 18/10/2026",
+              "url": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/mobilisation-du-17-octobre-tension-maximale-dans-les-centres-villes-des-grandes-villes-francaises_8243167.html"
+            }
+          ]
+        },
+        {
+          "label": "actu Paris (Antoine Grotteria), « \"Ils ont tout cassé\" : à Paris, les commerçants sous le choc… », 18/10/2026",
+          "lead": "actu Paris (Antoine Grotteria), « \"Ils ont tout cassé\" : à Paris, les commerçants sous le choc… », 18/10/2026",
+          "links": [
+            {
+              "label": "actu Paris, 18/10/2026",
+              "url": "https://actu.fr/ile-de-france/paris_75056/ils-ont-tout-casse-a-paris-les-commercants-sous-le-choc-apres-les-pillages-et-saccages-du-17-octobre_64941135.html"
+            }
+          ]
+        },
+        {
+          "label": "Boursorama (avec Media Services), « \"Le résultat de dix ans de macronisme\", attaque Sophie Binet », 19/10/2026",
+          "lead": "Boursorama (avec Media Services), « \"Le résultat de dix ans de macronisme\", attaque Sophie Binet », 19/10/2026",
+          "links": [
+            {
+              "label": "Boursorama, 19/10/2026",
+              "url": "https://www.boursorama.com/actualite-economique/actualites/mobilisation-du-17-octobre-le-resultat-de-dix-ans-de-macronisme-attaque-sophie-binet-2ae52257869decf1e6f70c464d442338"
+            }
+          ]
+        },
+        {
+          "label": "20 Minutes (avec AFP), « Les syndicats ressortent \"déçus\" de Matignon et appellent à se mobiliser le 5 novembre », 21/10/2026",
+          "lead": "20 Minutes (avec AFP), « Les syndicats ressortent \"déçus\" de Matignon et appellent à se mobiliser le 5 novembre », 21/10/2026",
+          "links": [
+            {
+              "label": "20 Minutes, 21/10/2026",
+              "url": "https://www.20minutes.fr/societe/4256372-20261021-violences-17-octobre-syndicats-ressortent-decus-matignon-appellent-mobiliser-5-novembre"
+            }
+          ]
+        },
+        {
+          "label": "LCP, « Manifestations du 17 octobre : soutien aux policiers ou critiques du maintien de l'ordre… », 17/10/2026",
+          "lead": "LCP, « Manifestations du 17 octobre : soutien aux policiers ou critiques du maintien de l'ordre… », 17/10/2026",
+          "links": [
+            {
+              "label": "LCP, 17/10/2026",
+              "url": "https://lcp.fr/actualites/manifestations-du-17-octobre-soutien-aux-policiers-ou-critiques-du-maintien-de-l-ordre"
+            }
+          ]
+        },
+        {
+          "label": "RFI, « LFI sous le feu des critiques après les violences urbaines », 20/10/2026",
+          "lead": "RFI, « LFI sous le feu des critiques après les violences urbaines », 20/10/2026",
+          "links": [
+            {
+              "label": "RFI, 20/10/2026",
+              "url": "https://www.rfi.fr/fr/france/20261020-mobilisation-en-france-lfi-sous-le-feu-des-critiques-apr%C3%A8s-les-violences-urbaines"
+            }
+          ]
+        },
+        {
+          "label": "Le Parisien, réactions de la classe politique, 17/10/2026",
+          "lead": "Le Parisien, réactions de la classe politique, 17/10/2026",
+          "links": [
+            {
+              "label": "Le Parisien, 17/10/2026",
+              "url": "https://www.leparisien.fr/societe/fascisme-rouge-desordre-organise-par-le-prefet-de-paris-les-reactions-de-la-classe-politique-a-la-mobilisation-du-17-octobre-17-10-2026-EKT4SYRCZJGQDOMGKSF7HBJQBU.php"
+            }
+          ]
+        },
+        {
+          "label": "Euronews, « France's riot damage doubles… », 20/10/2026",
+          "lead": "Euronews, « France's riot damage doubles… », 20/10/2026",
+          "links": [
+            {
+              "label": "Euronews, 20/10/2026",
+              "url": "https://www.euronews.com/2026/10/20/frances-riot-damage-doubles-who-will-pay-for-thousands-of-wrecked-shops"
+            }
+          ]
+        },
+        {
+          "label": "Politico Europe, « French riots lay bare risks and opportunities for 2027 election candidates », octobre 2026 (Glucksmann vainqueur de la primaire du centre gauche)",
+          "lead": "Politico Europe, « French riots lay bare risks and opportunities for 2027 election candidates », octobre 2026 (Glucksmann vainqueur de la primaire du centre gauche)",
+          "links": [
+            {
+              "label": "Politico Europe, octobre 2026",
+              "url": "https://www.politico.eu/article/french-riots-lay-bare-risks-and-opportunities-for-2027-election-candidates/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Opinion. Les faits et citations sont ceux des sources ci-dessus, consultées le 22 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/mouvement-lyceen-revendications-saucissonne",
+      "label": "Tribune : mouvement lycéen, revendications saucissonnées"
+    }
+  ]
+}

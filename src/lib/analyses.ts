@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import breveIfop from '../data/analyses/breve-ifop-post-primaire.json';
 import feuilletonEp1 from '../data/analyses/feuilleton-salle-attente-episode-1.json';
 import primaireDroite from '../data/analyses/primaire-droite-qui-la-veut.json';
@@ -36,6 +37,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: debordWatts.slug,
+    title: debordWatts.title,
+    description: debordWatts.description,
+    date: debordWatts.date,
+    published: debordWatts.date,
+    updated: debordWatts.updated,
+    href: '/analyses/debord-watts-frigo-sans-courant',
+    cover: uneCover(
+      'debord-watts-frigo-sans-courant',
+      "Aquarelle : au petit matin, une vitrine brisée sur des étagères vides, un carton d'électroménager renversé et un caddie abandonné sur le trottoir, devant un rideau de fer baissé. Aucun personnage.",
+    ),
+  },
   {
     slug: breveIfop.slug,
     title: breveIfop.title,
