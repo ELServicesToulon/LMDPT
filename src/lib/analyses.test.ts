@@ -115,7 +115,7 @@ describe('analyses', () => {
       expect(encadre.table.headers).toEqual([
         'Candidat',
         'Programme retraites et Sécu (avant le vote)',
-        'Vote du groupe proche, 23 octobre [1]',
+        'Vote du groupe proche le 23 octobre, pas du candidat [1]',
         'Sources',
       ]);
       expect(encadre.table.rows).toHaveLength(8);
