@@ -74,6 +74,18 @@
     </news:news>
   </url>
   <url>
+    <loc>https://lmdpt.iarbre.org/chroniqueurs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Le Média du Premier Tour</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-08T08:00:00+02:00</news:publication_date>
+      <news:title>Arène des chroniqueurs · fact-check et tir à la corde</news:title>
+      <news:keywords>chroniqueurs, fact-check, premier tour, pluralité</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lmdpt.iarbre.org/analyses/temps-parole-equite/</loc>
     <news:news>
       <news:publication>

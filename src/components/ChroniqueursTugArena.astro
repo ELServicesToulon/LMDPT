@@ -1,0 +1,100 @@
+---
+import type { ArenaKnot, ChroniqueursArenaData } from '../lib/chroniqueurs-arena';
+import { knotAriaText } from '../lib/chroniqueurs-arena';
+
+interface Props {
+  data: ChroniqueursArenaData;
+  knot: ArenaKnot;
+}
+
+const { data, knot } = Astro.props;
+const aria = knotAriaText(knot, data.rope);
+const knotX = knot.knotPercent;
+---
+
+<figure
+  class="tug"
+  aria-labelledby="tug-caption"
+  style={`--tug-left: ${data.rope.left_color}; --tug-right: ${data.rope.right_color}`}
+>
+  <div class="tug-bands">
+    <p class="tug-side tug-side--left">
+      <strong>{data.rope.left_label}</strong>
+      <span>{knot.totals.gauche.toFixed(1)} poids · {knot.pullingCheckCount} affirmation{knot.pullingCheckCount > 1 ? 's' : ''} qui tirent</span>
+    </p>
+    <p class="tug-side tug-side--right">
+      <strong>{data.rope.right_label}</strong>
+      <span>{knot.totals.droite.toFixed(1)} poids</span>
+    </p>
+  </div>
+
+  <svg
+    class="tug-svg"
+    viewBox="0 0 100 28"
+    role="meter"
+    aria-valuemin={-100}
+    aria-valuemax={100}
+    aria-valuenow={Math.round(knot.knotRatio * 100)}
+    aria-valuetext={aria}
+    aria-label="Tir à la corde documentaire"
+  >
+    <title id="tug-title">Tir à la corde des chroniques fact-checkées</title>
+    <desc id="tug-desc">{aria}</desc>
+    <line class="tug-rope tug-rope--left" x1="6" y1="14" x2={knotX} y2="14" />
+    <line class="tug-rope tug-rope--right" x1={knotX} y1="14" x2="94" y2="14" />
+    <line class="tug-center" x1="50" y1="6" x2="50" y2="22" />
+    <circle class="tug-knot" cx={knotX} cy="14" r="3.6" />
+  </svg>
+
+  <figcaption id="tug-caption" class="meta">
+    {
+      knot.bootstrapping
+        ? 'Arène en amorçage. Aucune affirmation ne tire encore la corde. Le nœud reste à l’équilibre documentaire.'
+        : knot.inNeutralZone
+          ? 'Équilibre documentaire. Le nœud reste près du centre. Ce n’est pas un camp gagnant.'
+          : aria
+    }
+  </figcaption>
+</figure>
+
+<style>
+  .tug {
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .tug-bands {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .tug-side {
+    margin: 0;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: grid;
+    gap: 0.2rem;
+  }
+  .tug-side strong { font-size: 0.95rem; }
+  .tug-side span { font-size: 0.8rem; color: var(--muted); }
+  .tug-side--left { border-left: 4px solid var(--tug-left, #cc2443); }
+  .tug-side--right { border-right: 4px solid var(--tug-right, #0d378a); text-align: right; }
+  .tug-svg {
+    width: 100%;
+    height: auto;
+  }
+  .tug-rope { stroke-width: 1.8; stroke-linecap: round; }
+  .tug-rope--left { stroke: var(--tug-left); }
+  .tug-rope--right { stroke: var(--tug-right); }
+  .tug-center { stroke: var(--fg); stroke-width: 0.6; opacity: 0.55; }
+  .tug-knot {
+    fill: var(--fg);
+    stroke: var(--card);
+    stroke-width: 0.8;
+  }
+  @media (max-width: 640px) {
+    .tug-bands { grid-template-columns: 1fr; }
+    .tug-side--right { text-align: left; }
+  }
+</style>
