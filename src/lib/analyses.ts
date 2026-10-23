@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import breveIfop from '../data/analyses/breve-ifop-post-primaire.json';
 import feuilletonEp1 from '../data/analyses/feuilleton-salle-attente-episode-1.json';
@@ -37,6 +38,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: secu115Contre1.slug,
+    title: secu115Contre1.title,
+    description: secu115Contre1.description,
+    date: secu115Contre1.date,
+    published: secu115Contre1.date,
+    updated: secu115Contre1.updated,
+    href: '/analyses/secu-115-contre-1',
+    cover: uneCover(
+      'secu-115-contre-1',
+      "Aquarelle d'un hémicycle presque vide : rangées de sièges rouges inoccupés sous une lumière d'après-midi, quelques feuilles de papier oubliées sur les pupitres.",
+    ),
+  },
   {
     slug: debordWatts.slug,
     title: debordWatts.title,

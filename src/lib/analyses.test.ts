@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
@@ -34,12 +35,14 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -50,6 +53,103 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('analyse Sécu 115 contre 1 du 24 octobre en une, sources, boîte DOE', () => {
+    expect(secu115Contre1.slug).toBe('secu-115-contre-1');
+    expect(secu115Contre1.date).toBe('2026-10-24');
+    expect(secu115Contre1.updated).toBe('2026-10-24');
+    expect(secu115Contre1.title).toBe("115 contre 1 : l'Assemblée efface trois jours de votes");
+    expect(secu115Contre1.author).toBe('La rédaction');
+    expect(secu115Contre1.author_role).toBe('Rédaction LMDPT');
+    expect(secu115Contre1.eyebrow).toBe('Analyse · Budget de la Sécu');
+    expect(secu115Contre1.type_label).toBe('Analyse');
+    expect(secu115Contre1.kicker).toBe('Analyse · La rédaction · 24 octobre 2026');
+    expect(secu115Contre1.tags).toContain('doe');
+    expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : trois jours de votes effacés');
+    expect(secu115Contre1.description.length).toBeLessThanOrEqual(200);
+    expect(secu115Contre1.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(secu115Contre1.sources_closing).toMatch(/consultés le 23 octobre 2026/);
+    expect(secu115Contre1.hues).toHaveLength(3);
+    expect(secu115Contre1.hues.map((hue) => hue.slug)).toEqual([
+      'pluraliste',
+      'droite',
+      'parti-socialiste',
+    ]);
+    const raz = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'raz-de-maree',
+    );
+    expect(raz?.kind).toBe('prose');
+    const troisJours = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'trois-jours',
+    );
+    expect(troisJours?.kind).toBe('prose');
+    if (troisJours?.kind === 'prose') {
+      const bullets = troisJours.blocks.find((block) => block.type === 'ul');
+      expect(bullets?.type).toBe('ul');
+      if (bullets?.type === 'ul') {
+        expect(bullets.items).toHaveLength(7);
+      }
+    }
+    const courants = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('secu-115-contre-1');
+    expect(entry?.href).toBe('/analyses/secu-115-contre-1');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/secu-115-contre-1.jpg');
+    expect(entry?.cover?.alt).toMatch(/hémicycle presque vide/);
+    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
+    const nSources = secu115Contre1.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(13);
+    const sourceBlob = JSON.stringify(secu115Contre1.sources_groups);
+    expect(sourceBlob).toMatch(/scrutins\/9097/);
+    expect(sourceBlob).toMatch(/article_lc\/LEGIARTI000045358069/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = secu115Contre1.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Programme retraites et Sécu (avant le vote)',
+        'Vote du groupe proche, 23 octobre [1]',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(8);
+      expect(encadre.note).toMatch(/groupes parlementaires proches/);
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[2]).toMatch(/Sans objet/);
+      expect(lisnard?.[3]).toBe('Aucune');
+    }
+    const analyseTexts = [
+      secu115Contre1.chapo,
+      secu115Contre1.description,
+      secu115Contre1.disclaimer,
+      secu115Contre1.sources_closing,
+      ...secu115Contre1.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[13\]/);
   });
 
   it('chronique Manusk Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
@@ -86,7 +186,7 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/debord-watts-frigo-sans-courant');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/debord-watts-frigo-sans-courant.jpg');
     expect(entry?.cover?.alt).toMatch(/vitrine brisée/);
-    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(getUneDuJour()?.slug).not.toBe('debord-watts-frigo-sans-courant');
     const nSources = debordWatts.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(17);
     const sourceBlob = JSON.stringify(debordWatts.sources_groups);

@@ -120,13 +120,14 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('chronique Debord du 23/10 en une, puis Ifop et feuilleton', () => {
+  it('analyse Sécu du 24/10 en une, puis Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[1]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[3]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
+    expect(sorted[1]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[2]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[4]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
