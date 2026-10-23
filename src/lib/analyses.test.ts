@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
 import { socialTitleFrom, SOCIAL_TITLE_MAX } from './seo';
@@ -33,10 +34,12 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -47,6 +50,99 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('chronique Manusk Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
+    expect(debordWatts.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(debordWatts.date).toBe('2026-10-23');
+    expect(debordWatts.updated).toBe('2026-10-23');
+    expect(debordWatts.title).toBe('Le frigo sans courant');
+    expect(debordWatts.author).toBe('Manusk');
+    expect(debordWatts.author_role).toBe('Chroniqueur invité');
+    expect(debordWatts.eyebrow).toBe('Chronique · Manusk');
+    expect(debordWatts.type_label).toBe("Chronique d'opinion");
+    expect(debordWatts.kicker).toBe('Chronique · Manusk · 23 octobre 2026');
+    expect(debordWatts.tags).toContain('manusk');
+    expect(debordWatts.x_hook).toBe(debordWatts.title);
+    expect(debordWatts.description.length).toBeLessThanOrEqual(200);
+    expect(debordWatts.disclaimer).toMatch(/^Chronique d'opinion signée Manusk/);
+    expect(debordWatts.sources_closing).toMatch(/^Chronique d'opinion signée Manusk/);
+    expect(debordWatts.hues).toHaveLength(3);
+    const chronique = debordWatts.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'chronique',
+    );
+    expect(chronique?.kind).toBe('prose');
+    if (chronique?.kind === 'prose') {
+      expect(chronique.blocks.filter((block) => block.type === 'p')).toHaveLength(7);
+    }
+    const courants = debordWatts.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette chronique rejoint');
+    }
+    const entry = getAnalysis('debord-watts-frigo-sans-courant');
+    expect(entry?.href).toBe('/analyses/debord-watts-frigo-sans-courant');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/debord-watts-frigo-sans-courant.jpg');
+    expect(entry?.cover?.alt).toMatch(/vitrine brisée/);
+    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
+    const nSources = debordWatts.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(17);
+    const sourceBlob = JSON.stringify(debordWatts.sources_groups);
+    expect(sourceBlob).not.toMatch(/tension maximale/);
+    expect(sourceBlob).not.toMatch(/programme de travaux publics/);
+    expect(sourceBlob).toMatch(/la désolation à Lille au lendemain du 17 octobre/);
+    expect(sourceBlob).toMatch(
+      /https:\/\/actu.fr\/hauts-de-france\/lille_59350\/en-images-commerces-eventres-vides-odeur-de-brule-persistante-la-desolation-a-lille-au-lendemain-du-17-octobre_64940855.html/,
+    );
+    expect(sourceBlob).toMatch(
+      /https:\/\/actu.fr\/nouvelle-aquitaine\/bordeaux_33063\/mobilisation-du-17-octobre-les-images-de-l-apple-store-devalise-en-marge-de-la-manifestation-a-bordeaux_64941387.html/,
+    );
+    expect(sourceBlob).not.toMatch(
+      /https:\/\/www.france24.com\/fr\/france\/20261017-france-les-grandes-villes-en-proie-aux-pillages-en-marge-des-manifestations/,
+    );
+    const encadre = debordWatts.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat ou responsable', 'Position publique', 'Source']);
+      expect(encadre.table.rows).toHaveLength(8);
+      expect(encadre.intro).toMatch(/ne classe pas/);
+      expect(encadre.note).toMatch(/Ce que la chronique ne tranche pas/);
+      expect(encadre.note).toMatch(/assurance contre les émeutes/);
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/force implacable de l'État » \(LCP, 17\/10\)/);
+      expect(retailleau?.[1]).toMatch(/troupes de Jean-Luc Mélenchon » dans les violences \(RFI, 20\/10\)/);
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[2]).toBe('—');
+    }
+    const chroniqueTexts = [
+      debordWatts.chapo,
+      debordWatts.description,
+      debordWatts.disclaimer,
+      debordWatts.sources_closing,
+      ...(chronique?.kind === 'prose'
+        ? chronique.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          )
+        : []),
+      ...(courants?.kind === 'prose'
+        ? courants.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          )
+        : []),
+      ...(encadre?.kind === 'candidats'
+        ? [
+            encadre.intro,
+            encadre.note,
+            encadre.conclusion,
+            ...encadre.table.rows.flatMap((row) =>
+              row[0]?.includes('Lisnard') ? row.slice(0, 2) : row,
+            ),
+          ]
+        : []),
+    ].join('\n');
+    expect(chroniqueTexts).not.toMatch(/—/);
   });
 
   it('alerte citoyenne documents 11 points with X signal source', () => {
