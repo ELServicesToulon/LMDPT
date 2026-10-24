@@ -55,21 +55,22 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse Sécu 115 contre 1 du 24 octobre en une, sources, boîte DOE', () => {
+  it('analyse Sécu 115 contre 1 du 25 octobre en une, sources, boîte DOE', () => {
     expect(secu115Contre1.slug).toBe('secu-115-contre-1');
-    expect(secu115Contre1.date).toBe('2026-10-24');
-    expect(secu115Contre1.updated).toBe('2026-10-24');
+    expect(secu115Contre1.date).toBe('2026-10-25');
+    expect(secu115Contre1.updated).toBe('2026-10-25');
     expect(secu115Contre1.title).toBe("115 contre 1 : l'Assemblée efface trois jours de votes");
     expect(secu115Contre1.author).toBe('La rédaction');
     expect(secu115Contre1.author_role).toBe('Rédaction LMDPT');
     expect(secu115Contre1.eyebrow).toBe('Analyse · Budget de la Sécu');
     expect(secu115Contre1.type_label).toBe('Analyse');
-    expect(secu115Contre1.kicker).toBe('Analyse · La rédaction · 24 octobre 2026');
+    expect(secu115Contre1.kicker).toBe('Analyse · La rédaction · 25 octobre 2026');
     expect(secu115Contre1.tags).toContain('doe');
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : trois jours de votes effacés');
     expect(secu115Contre1.description.length).toBeLessThanOrEqual(200);
     expect(secu115Contre1.disclaimer).toMatch(/opinion de la rédaction/);
-    expect(secu115Contre1.sources_closing).toMatch(/consultés le 23 octobre 2026/);
+    expect(secu115Contre1.sources_intro).toMatch(/Consultées les 23 et 24 octobre 2026/);
+    expect(secu115Contre1.sources_closing).toMatch(/consultés les 23 et 24 octobre 2026/);
     expect(secu115Contre1.hues).toHaveLength(3);
     expect(secu115Contre1.hues.map((hue) => hue.slug)).toEqual([
       'pluraliste',
@@ -104,10 +105,15 @@ describe('analyses', () => {
     expect(entry?.cover?.alt).toMatch(/hémicycle presque vide/);
     expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
     const nSources = secu115Contre1.sources_groups.reduce((n, g) => n + g.items.length, 0);
-    expect(nSources).toBe(13);
+    expect(nSources).toBe(16);
     const sourceBlob = JSON.stringify(secu115Contre1.sources_groups);
     expect(sourceBlob).toMatch(/scrutins\/9097/);
     expect(sourceBlob).toMatch(/article_lc\/LEGIARTI000045358069/);
+    expect(sourceBlob).toMatch(/vie-publique\.fr\/loi\/305082/);
+    expect(sourceBlob).toMatch(/france24\.com\/fr\/info-en-continu\/20261023/);
+    expect(sourceBlob).toMatch(/midilibre\.fr\/2026\/10\/23/);
+    expect(sourceBlob).toMatch(/Vie publique/);
+    expect(sourceBlob).toMatch(/France 24 avec AFP/);
     expect(sourceBlob).not.toMatch(/Note de vérification/);
     const encadre = secu115Contre1.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
@@ -150,6 +156,15 @@ describe('analyses', () => {
     expect(analyseTexts).not.toMatch(/—/);
     expect(analyseTexts).toMatch(/\[1\]/);
     expect(analyseTexts).toMatch(/\[13\]/);
+    expect(analyseTexts).toMatch(/\[14\]/);
+    expect(analyseTexts).toMatch(/\[15\]/);
+    expect(analyseTexts).toMatch(/le Sénat examinera bien le texte à partir du 9 novembre/);
+    expect(analyseTexts).toMatch(/selon Vie publique et Capital \[14\]\[5\]/);
+    expect(analyseTexts).toMatch(/Vendredi, 138 ont voté/);
+    expect(analyseTexts).toMatch(/les plus précaires/);
+    expect(analyseTexts).toMatch(/samedi 24 octobre à 20 h/);
+    expect(analyseTexts).toMatch(/rapportent Les Échos et l'AFP \[3\]\[15\]\[16\]/);
+    expect(analyseTexts).toMatch(/dans le contre-budget 2027, sans dire s'il s'agit d'une seule année ou d'un cumul/);
   });
 
   it('chronique Manusk Debord du 23 octobre en une, 17 sources, boîte DOE', () => {

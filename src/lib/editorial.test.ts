@@ -120,7 +120,7 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse Sécu du 24/10 en une, puis Debord, Ifop et feuilleton', () => {
+  it('analyse Sécu du 25/10 en une, puis Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
     expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
     expect(sorted[1]?.slug).toBe('debord-watts-frigo-sans-courant');
