@@ -1,6 +1,6 @@
 {
   "slug": "secu-115-contre-1",
-  "title": "115 contre 1 : l'Assemblée efface trois jours de votes",
+  "title": "115 contre 1 : l'Assemblée efface quatre jours de votes",
   "eyebrow": "Analyse · Budget de la Sécu",
   "type_label": "Analyse",
   "date": "2026-10-25",
@@ -9,7 +9,7 @@
   "author": "La rédaction",
   "author_role": "Rédaction LMDPT",
   "chapo": "Vendredi 23 octobre, les députés ont rejeté le budget de la Sécurité sociale pour 2027 par 115 voix contre 1. On dirait un raz-de-marée. En fait, ils n'étaient que 138 à voter, pour 577 sièges en théorie. Et ce rejet efface tout ce que l'Assemblée avait voté depuis mardi : un « congé anticipatoire de départ en retraite » à 62 ans après 42 ans de cotisation, les taxes supprimées, les exonérations rétablies. Le Sénat repart de la copie du gouvernement. Et le déficit de 2027, lui, n'est toujours pas tranché.",
-  "description": "115 contre 1, mais 138 votants : trois jours de votes effacés. Le Sénat repart de la copie du gouvernement. Le déficit de 2027 n'est toujours pas tranché.",
+  "description": "115 contre 1, mais 138 votants : quatre jours de votes effacés. Le Sénat repart de la copie du gouvernement. Le déficit de 2027 n'est toujours pas tranché.",
   "disclaimer": "Cette analyse défend une thèse : un vote qui supprime une recette devrait dire qui paie à la place, et le budget de la Sécu devrait être tranché par un vote des députés plutôt que par une ordonnance du gouvernement. C'est une opinion de la rédaction. Les faits et chiffres sont sourcés ci-dessous.",
   "tags": [
     "lmdpt",
@@ -21,7 +21,7 @@
     "presidentielle-2027",
     "doe"
   ],
-  "x_hook": "115 contre 1, mais 138 votants : trois jours de votes effacés",
+  "x_hook": "115 contre 1, mais 138 votants : quatre jours de votes effacés",
   "hues": [
     {
       "slug": "pluraliste",
@@ -69,42 +69,42 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Le budget de la Sécu a un nom barbare : PLFSS, pour projet de loi de financement de la Sécurité sociale. Il est découpé en parties : une sur l'année en cours (2026), puis, pour 2027, les recettes, c'est-à-dire d'où vient l'argent, et enfin les dépenses, c'est-à-dire ce qu'on en fait. Vendredi, les députés votaient sur la partie recettes de 2027, la deuxième partie du texte [1]. La loi prévoit une règle simple (article L.O. 111-7-1 du code de la sécurité sociale) : si cette partie est rejetée, tout le texte est considéré comme rejeté. Les dépenses ne sont même pas discutées [4][5][13]."
+          "text": "Le budget de la Sécu a un nom barbare : PLFSS, pour projet de loi de financement de la Sécurité sociale. Il est découpé en parties : une sur l'année en cours (2026), puis, pour 2027, les recettes, c'est-à-dire d'où vient l'argent, et enfin les dépenses, c'est-à-dire ce qu'on en fait. Vendredi, les députés votaient sur la partie recettes de 2027, la deuxième partie du texte [1]. La loi fixe d'abord un ordre (article L.O. 111-7-1 du code de la sécurité sociale) : les dépenses ne peuvent être discutées qu'après le vote des recettes [13]. Vendredi, les recettes ont été rejetées. Les dépenses n'ont donc jamais été discutées [15]."
         },
         {
           "type": "p",
-          "text": "C'est ce qui s'est passé. Le texte final de l'Assemblée tient en une ligne : le projet est « considéré comme rejeté en première lecture » [4]. Le Sénat, qui s'en saisit à partir du 9 novembre, ne travaillera pas sur la version des députés. Il reprend le texte de départ du gouvernement [5][6]."
+          "text": "Reste le sort du texte entier. C'est l'Assemblée qui le tranche, dans son texte n° 358, qui tient en une ligne : faute d'avoir adopté la deuxième partie, le projet est « considéré comme rejeté en première lecture », « en application de l'article L.O. 111-7-1 » [4]. Le Sénat, qui s'en saisit à partir du 9 novembre, ne travaillera pas sur la version des députés. Il reprend le texte de départ du gouvernement [5][6]."
         }
       ]
     },
     {
       "kind": "prose",
       "id": "trois-jours",
-      "title": "Trois jours de votes, puis la gomme",
+      "title": "Quatre jours de votes, puis la gomme",
       "blocks": [
         {
           "type": "p",
-          "text": "Entre mardi et vendredi, les députés ont pourtant changé le texte en profondeur. Capital a fait le compte, avec les montants avancés par le gouvernement ou le rapporteur [5]. Quand nous avons retrouvé un scrutin public, nous le citons. Les montants, eux, viennent de Capital, sauf mention contraire :"
+          "text": "Du mardi 20 au vendredi 23 octobre, quatre jours de séance, les députés ont pourtant changé le texte en profondeur [4]. Capital a fait le compte, avec les montants avancés par le gouvernement ou le rapporteur [5]. Quand nous avons retrouvé un scrutin public, nous le citons. Sinon, nous le disons, et le fait repose sur Capital ou l'AFP. Les montants, eux, viennent de Capital, sauf mention contraire :"
         },
         {
           "type": "ul",
           "items": [
             "la baisse des allègements de cotisations patronales voulue par le gouvernement (3,7 milliards d'euros attendus, selon Capital [5]) : supprimée, par un amendement de Laurent Wauquiez voté par 101 voix contre 68, et 2 abstentions [10] ;",
-            "la taxe sur les produits sucrés, biscuits, céréales ou viennoiseries (300 millions, selon Capital [5]) : supprimée ;",
-            "la surtaxe de 2,05 % sur les complémentaires santé (1,1 milliard attendu, selon le résumé du projet publié par Vie publique [14]) : supprimée, selon Capital, par neuf amendements venus de neuf groupes différents [5] ;",
+            "la taxe sur les produits sucrés, biscuits, céréales ou viennoiseries (300 millions, selon Capital [5]) : supprimée, selon Capital et l'AFP, sans scrutin public retrouvé [5][15] ;",
+            "la surtaxe de 2,05 % sur les complémentaires santé (1,1 milliard attendu, selon le résumé du projet publié par Vie publique [14]) : supprimée par neuf amendements venus de neuf groupes différents, selon Capital, sans scrutin public retrouvé [5] ;",
             "une taxe de 15 % sur des sommes versées par les laboratoires aux groupements de pharmacies (120 millions, selon Capital [5]) : supprimée à une voix près : l'amendement de suppression a été adopté par 55 voix contre 54, et 1 abstention. C'était un amendement de Joëlle Mélin (RN) [11] ;",
-            "l'exonération de CSG-CRDS des apprentis (350 millions, selon le rapporteur général Thibault Bazin cité par Capital [5]) : rétablie ;",
-            "la C3S, un impôt que les entreprises paient sur leur chiffre d'affaires, qu'elles fassent des bénéfices ou non : supprimée, à l'initiative du RN [3][15]. Coût : 5,5 milliards, selon David Amiel cité par l'AFP [15] ;",
+            "l'exonération de CSG-CRDS des apprentis (350 millions, selon le rapporteur général Thibault Bazin cité par Capital [5]) : rétablie, selon Capital, sans scrutin public retrouvé [5] ;",
+            "la C3S, un impôt que les entreprises paient sur leur chiffre d'affaires, qu'elles fassent des bénéfices ou non : supprimée à l'initiative du RN, selon Les Échos et l'AFP, sans scrutin public retrouvé [3][15]. Coût : 5,5 milliards, selon David Amiel cité par l'AFP [15] ;",
             "un « congé anticipatoire de départ en retraite à 62 ans » après 168 trimestres de cotisation (42 ans), payé par l'employeur au niveau d'une retraite à taux plein, en échange d'une baisse de ses cotisations, proposé par l'écologiste Sandrine Rousseau : adopté jeudi par 45 voix contre 36, avec 81 votants [12]. Coût selon David Amiel : 1,5 milliard pour les entreprises et 1,2 milliard pour la Sécu [5]."
           ]
         },
         {
           "type": "p",
-          "text": "Selon Capital, le ministre des Comptes publics, David Amiel, chiffre l'ensemble des votes des députés, y compris d'autres que ceux listés ici, à près de 12 milliards d'euros de dégradation des comptes sociaux [5]. Dans son projet, le gouvernement visait un déficit de la Sécu à 12,7 milliards en 2027, contre 21,8 milliards attendus en 2026 [14]. D'après le ministre, les votes des députés l'auraient « virtuellement » porté à 24 milliards [5]. « Le budget de la France, ce n'est pas un jeu vidéo », a-t-il lancé [5]."
+          "text": "Selon Capital, le ministre de l'Action et des Comptes publics, David Amiel, chiffre l'ensemble des votes des députés, y compris d'autres que ceux listés ici, à près de 12 milliards d'euros de dégradation des comptes sociaux [5]. Dans son projet, le gouvernement visait un déficit de la Sécu à 12,7 milliards en 2027, contre 21,8 milliards attendus en 2026 [14]. D'après le ministre, les votes des députés l'auraient « virtuellement » porté à 24 milliards [5]. « Le budget de la France, ce n'est pas un jeu vidéo », a-t-il lancé [5]."
         },
         {
           "type": "p",
-          "text": "Et puis vendredi, le rejet final a tout remis à zéro. Le congé à 62 ans adopté jeudi ? Disparu. La taxe sur les produits sucrés supprimée jeudi ? Revenue [5]. L'Assemblée a passé trois jours à modifier un texte, puis l'a rejeté. Pas forcément avec les mêmes députés : 171 votants pour l'amendement Wauquiez [10], 81 pour l'amendement Rousseau [12], 138 pour le vote final [1]. Mais le résultat est le même : trois jours de votes effacés d'un coup."
+          "text": "Et puis vendredi, le rejet final a tout remis à zéro. Le congé à 62 ans adopté jeudi ? Disparu. La taxe sur les produits sucrés supprimée jeudi ? Revenue [5]. L'Assemblée a passé quatre jours à modifier un texte, puis l'a rejeté. Pas forcément avec les mêmes députés : 171 votants pour l'amendement Wauquiez [10], 81 pour l'amendement Rousseau [12], 138 pour le vote final [1]. Mais le résultat est le même : quatre jours de votes effacés d'un coup."
         }
       ]
     },
@@ -123,7 +123,7 @@
         },
         {
           "type": "p",
-          "text": "Bref, une partie de l'hémicycle trouvait le texte trop lourd en impôts, une autre trop léger. Ils ont voté pareil. C'est là que la rédaction voit un problème (lire « L'opinion de la rédaction », plus bas) : ce jour-là, le vote unique sur les recettes n'a obligé aucun groupe à écrire, noir sur blanc, dans ce texte, qui paierait à la place des taxes supprimées. Certains candidats ont des pistes de financement (voir la boîte DOE plus bas), mais ce vote ne les a pas mises sur la table."
+          "text": "Bref, une partie de l'hémicycle trouvait le texte trop lourd en impôts, une autre trop léger. Ils ont voté pareil. C'est là que la rédaction voit un problème (lire « L'opinion de la rédaction », plus bas) : ce jour-là, le vote unique sur les recettes n'a obligé aucun groupe à écrire, noir sur blanc, dans ce texte, qui paierait à la place des taxes supprimées. Côté candidats, RTL notait début octobre des projets de retraite présentés « sans préciser totalement les financements » ; quelques pistes y figurent, comme une part de capitalisation (Attal, Retailleau) ou une baisse des exonérations de cotisations (Tondelier) (voir la boîte DOE plus bas) [8]. Ce vote ne les a pas mises sur la table."
         }
       ]
     },
@@ -153,7 +153,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "À l'heure du bouclage, le samedi 24 octobre à 20 h, nous n'avons trouvé aucune réaction publique d'un de ces candidats au vote de vendredi. Nous n'avons pas trouvé non plus d'annonce du gouvernement sur le choix entre ordonnance et 49.3. Mais plusieurs candidats ont déjà posé leurs cartes sur les retraites, qui se sont invitées dans ce budget avec l'amendement Rousseau. Début octobre, RTL notait qu'ils le faisaient « sans préciser totalement les financements » [8]. Les positions ci-dessous datent du 1er octobre (RTL) et du 6 octobre (Le Figaro), donc d'avant le vote."
+          "text": "À l'heure du bouclage, le samedi 24 octobre à 19 h 45, nous n'avons trouvé aucune réaction publique d'un de ces candidats au vote de vendredi. Nous n'avons pas trouvé non plus d'annonce du gouvernement sur le choix entre ordonnance et 49.3. Mais plusieurs candidats ont déjà posé leurs cartes sur les retraites, qui se sont invitées dans ce budget avec l'amendement Rousseau. Début octobre, RTL notait qu'ils le faisaient « sans préciser totalement les financements » [8]. Les positions ci-dessous datent du 1er octobre (RTL) et du 6 octobre (Le Figaro), donc d'avant le vote."
         }
       ]
     },
@@ -196,21 +196,21 @@
           ],
           [
             "Gabriel Attal (Renaissance)",
-            "Fin de l'âge légal, retraite selon la durée de cotisation, avec une décote si on part avant [8].",
+            "Fin de l'âge légal, retraite selon la durée de cotisation, avec une décote si on part avant. Système financé par « une dose de capitalisation », selon RTL, et un compte de 1 000 euros versés par l'État pour chaque nouveau-né [8].",
             "EPR : 2 contre, 4 abstentions, sur 90 membres.",
             "[8][1]"
           ],
           [
             "Bruno Retailleau (LR)",
-            "Départ possible à 63 ans et 43 annuités, avec une décote de 7 % par an, taux plein à 65 ans [8].",
+            "Départ possible à 63 ans et 43 annuités, avec une décote de 7 % par an, taux plein à 65 ans. Une retraite par capitalisation pour les jeunes, à hauteur de « 25 à 30 % » de leurs retraites [8].",
             "Droite républicaine : 8 contre, 1 abstention, sur 47 membres.",
             "[8][1]"
           ],
           [
             "Raphaël Glucksmann (Place publique)",
-            "Retour à 62 ans « comme base », avec une décote et un travail sur la pénibilité [8].",
-            "Sans objet : il n'est pas député.",
-            "[8]"
+            "Retour à 62 ans « comme base », avec une décote liée à la pénibilité ; proposition pas encore détaillée, selon RTL [8].",
+            "Sans objet : il n'est pas député, et Place publique n'a pas de groupe à l'Assemblée. Pour repère, Socialistes : 8 contre, sur 68 membres.",
+            "[8][1]"
           ],
           [
             "Jean-Luc Mélenchon (LFI)",
@@ -232,7 +232,7 @@
           ]
         ]
       },
-      "note": "*Programmes : extraits sur l'âge et la durée, d'après RTL (1er octobre) et Le Figaro (6 octobre). Votes : ceux des groupes parlementaires proches des candidats, pas un vote personnel de chaque candidat.*",
+      "note": "*Programmes : extraits sur l'âge, la durée et le financement, d'après RTL (1er octobre) et Le Figaro (6 octobre). Votes : ceux des groupes parlementaires proches des candidats, pas un vote personnel de chaque candidat.*",
       "conclusion": ""
     },
     {
@@ -255,7 +255,7 @@
       ]
     }
   ],
-  "sources_intro": "Consultées les 23 et 24 octobre 2026.",
+  "sources_intro": "Consultées du 23 au 25 octobre 2026.",
   "sources_groups": [
     {
       "title": "Assemblée, presse et textes officiels",
@@ -291,7 +291,7 @@
           ]
         },
         {
-          "label": "4. Assemblée nationale, texte adopté n° 358 (PLFSS 2027 rejeté en première lecture, article L.O. 111-7-1 du code de la sécurité sociale), 23 octobre 2026 : https://www.assemblee-nationale.fr/dyn/17/textes/l17t0358_texte-adopte-seance.pdf ; dossier législatif : https://www.assemblee-nationale.fr/dyn/17/dossiers/plfss_2027",
+          "label": "4. Assemblée nationale, texte adopté n° 358 (PLFSS 2027 rejeté en première lecture, article L.O. 111-7-1 du code de la sécurité sociale), 23 octobre 2026 : https://www.assemblee-nationale.fr/dyn/17/textes/l17t0358_texte-adopte-seance.pdf ; dossier législatif : https://www.assemblee-nationale.fr/dyn/17/dossiers/plfss_2027 ; actualité « Rejet, en première lecture, du projet de loi de financement de la sécurité sociale pour 2027 » (séances du mardi 20 au vendredi 23 octobre) : https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/rejet-en-premiere-lecture-du-projet-de-loi-de-financement-de-la-securite-sociale-pour-2027",
           "lead": "4. Assemblée nationale, texte adopté n° 358 (PLFSS 2027 rejeté en première lecture, article L.O. 111-7-1 du code de la sécurité sociale), 23 octobre 2026",
           "links": [
             {
@@ -301,6 +301,10 @@
             {
               "label": "dossier législatif",
               "url": "https://www.assemblee-nationale.fr/dyn/17/dossiers/plfss_2027"
+            },
+            {
+              "label": "actualité « Rejet, en première lecture, du projet de loi de financement de la sécurité sociale pour 2027 » (séances du mardi 20 au vendredi 23 octobre)",
+              "url": "https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/rejet-en-premiere-lecture-du-projet-de-loi-de-financement-de-la-securite-sociale-pour-2027"
             }
           ]
         },
@@ -431,7 +435,7 @@
       ]
     }
   ],
-  "sources_closing": "Les faits et chiffres sont sourcés ci-dessus, consultés les 23 et 24 octobre 2026.",
+  "sources_closing": "Les faits et chiffres sont sourcés ci-dessus, consultés du 23 au 25 octobre 2026.",
   "liens_internes": [
     {
       "href": "/analyses/gouvernance-an1t-droit",

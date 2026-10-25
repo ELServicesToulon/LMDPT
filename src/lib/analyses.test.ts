@@ -59,18 +59,19 @@ describe('analyses', () => {
     expect(secu115Contre1.slug).toBe('secu-115-contre-1');
     expect(secu115Contre1.date).toBe('2026-10-25');
     expect(secu115Contre1.updated).toBe('2026-10-25');
-    expect(secu115Contre1.title).toBe("115 contre 1 : l'Assemblée efface trois jours de votes");
+    expect(secu115Contre1.title).toBe("115 contre 1 : l'Assemblée efface quatre jours de votes");
     expect(secu115Contre1.author).toBe('La rédaction');
     expect(secu115Contre1.author_role).toBe('Rédaction LMDPT');
     expect(secu115Contre1.eyebrow).toBe('Analyse · Budget de la Sécu');
     expect(secu115Contre1.type_label).toBe('Analyse');
     expect(secu115Contre1.kicker).toBe('Analyse · La rédaction · 25 octobre 2026');
     expect(secu115Contre1.tags).toContain('doe');
-    expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : trois jours de votes effacés');
+    expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
     expect(secu115Contre1.description.length).toBeLessThanOrEqual(200);
+    expect(secu115Contre1.description).toMatch(/quatre jours de votes effacés/);
     expect(secu115Contre1.disclaimer).toMatch(/opinion de la rédaction/);
-    expect(secu115Contre1.sources_intro).toMatch(/Consultées les 23 et 24 octobre 2026/);
-    expect(secu115Contre1.sources_closing).toMatch(/consultés les 23 et 24 octobre 2026/);
+    expect(secu115Contre1.sources_intro).toMatch(/Consultées du 23 au 25 octobre 2026/);
+    expect(secu115Contre1.sources_closing).toMatch(/consultés du 23 au 25 octobre 2026/);
     expect(secu115Contre1.hues).toHaveLength(3);
     expect(secu115Contre1.hues.map((hue) => hue.slug)).toEqual([
       'pluraliste',
@@ -86,10 +87,12 @@ describe('analyses', () => {
     );
     expect(troisJours?.kind).toBe('prose');
     if (troisJours?.kind === 'prose') {
+      expect(troisJours.title).toBe('Quatre jours de votes, puis la gomme');
       const bullets = troisJours.blocks.find((block) => block.type === 'ul');
       expect(bullets?.type).toBe('ul');
       if (bullets?.type === 'ul') {
         expect(bullets.items).toHaveLength(7);
+        expect(bullets.items.filter((item) => item.includes('sans scrutin public retrouvé'))).toHaveLength(4);
       }
     }
     const courants = secu115Contre1.sections.find(
@@ -114,6 +117,7 @@ describe('analyses', () => {
     expect(sourceBlob).toMatch(/midilibre\.fr\/2026\/10\/23/);
     expect(sourceBlob).toMatch(/Vie publique/);
     expect(sourceBlob).toMatch(/France 24 avec AFP/);
+    expect(sourceBlob).toMatch(/actualites-accueil-hub\/rejet-en-premiere-lecture-du-projet-de-loi-de-financement-de-la-securite-sociale-pour-2027/);
     expect(sourceBlob).not.toMatch(/Note de vérification/);
     const encadre = secu115Contre1.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
@@ -126,6 +130,15 @@ describe('analyses', () => {
       ]);
       expect(encadre.table.rows).toHaveLength(8);
       expect(encadre.note).toMatch(/groupes parlementaires proches/);
+      expect(encadre.note).toMatch(/l'âge, la durée et le financement/);
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/dose de capitalisation/);
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/25 à 30 %/);
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/pas encore détaillée/);
+      expect(glucksmann?.[2]).toMatch(/Place publique n'a pas de groupe/);
+      expect(glucksmann?.[3]).toBe('[8][1]');
       const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
       expect(lisnard?.[2]).toMatch(/Sans objet/);
       expect(lisnard?.[3]).toBe('Aucune');
@@ -162,9 +175,15 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/selon Vie publique et Capital \[14\]\[5\]/);
     expect(analyseTexts).toMatch(/Vendredi, 138 ont voté/);
     expect(analyseTexts).toMatch(/les plus précaires/);
-    expect(analyseTexts).toMatch(/samedi 24 octobre à 20 h/);
+    expect(analyseTexts).toMatch(/samedi 24 octobre à 19 h 45/);
+    expect(analyseTexts).toMatch(/en application de l'article L\.O\. 111-7-1/);
+    expect(analyseTexts).toMatch(/sans scrutin public retrouvé/);
+    expect(analyseTexts).toMatch(/ministre de l'Action et des Comptes publics/);
+    expect(analyseTexts).toMatch(/Du mardi 20 au vendredi 23 octobre, quatre jours de séance/);
     expect(analyseTexts).toMatch(/rapportent Les Échos et l'AFP \[3\]\[15\]\[16\]/);
     expect(analyseTexts).toMatch(/dans le contre-budget 2027, sans dire s'il s'agit d'une seule année ou d'un cumul/);
+    expect(analyseTexts).toMatch(/Trois jours plus tôt, le mardi 20 octobre/);
+    expect(analyseTexts.replace('Trois jours plus tôt, le mardi 20 octobre', '')).not.toMatch(/trois jours/i);
   });
 
   it('chronique Manusk Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
@@ -188,7 +207,13 @@ describe('analyses', () => {
     );
     expect(chronique?.kind).toBe('prose');
     if (chronique?.kind === 'prose') {
-      expect(chronique.blocks.filter((block) => block.type === 'p')).toHaveLength(7);
+      const paras = chronique.blocks.filter((block) => block.type === 'p');
+      expect(paras).toHaveLength(7);
+      const chroniqueBody = paras.map((block) => (block.type === 'p' ? block.text : '')).join('\n');
+      expect(debordWatts.chapo).toMatch(/Les 17 et 18 octobre, des magasins ont été pillés/);
+      expect(chroniqueBody).toMatch(/Sephora de Lille/);
+      expect(chroniqueBody).toMatch(/boulevard Magenta/);
+      expect(chroniqueBody).toMatch(/Son meilleur argument mérite quand même qu'on s'y arrête\./);
     }
     const courants = debordWatts.sections.find(
       (section) => section.kind === 'prose' && section.id === 'courants',
