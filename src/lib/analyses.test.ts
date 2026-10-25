@@ -138,6 +138,7 @@ describe('analyses', () => {
       const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
       expect(glucksmann?.[1]).toMatch(/pas encore détaillée/);
       expect(glucksmann?.[2]).toMatch(/Place publique n'a pas de groupe/);
+      expect(glucksmann?.[2]).toMatch(/Groupe le plus proche : Socialistes, 8 contre, sur 68 membres/);
       expect(glucksmann?.[3]).toBe('[8][1]');
       const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
       expect(lisnard?.[2]).toMatch(/Sans objet/);
