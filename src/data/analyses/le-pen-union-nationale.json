@@ -1,0 +1,451 @@
+{
+  "slug": "le-pen-union-nationale",
+  "title": "« Union nationale » : le chef d'orchestre est choisi, les musiciens manquent",
+  "eyebrow": "Analyse · Présidentielle 2027",
+  "type_label": "Analyse",
+  "date": "2026-10-26",
+  "updated": "2026-10-26",
+  "kicker": "Analyse · La rédaction · 26 octobre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Dimanche 25 octobre à Orléans, Marine Le Pen a promis, si elle est élue au printemps, un gouvernement « d'union nationale » et « pluraliste ». Dans le même discours, elle a confirmé qui le dirigerait : Jordan Bardella. Le chef est donc nommé avant les partenaires. Et derrière la promesse, il y a une addition. Pour gouverner à l'abri d'une motion de censure, il faut 289 députés. Le RN et son allié ciottiste en comptent aujourd'hui 138. Et en avril, le président des Républicains, Bruno Retailleau, a exclu toute alliance avec le RN.",
+  "description": "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
+  "disclaimer": "Cette analyse défend une thèse : un gouvernement d'union nationale se négocie avec des partenaires qui ont dit oui, sur un programme et un nom. Promettre l'union en ayant déjà choisi le chef, sans partenaire déclaré à part un allié de 2024, c'est un recrutement, pas une union. Et la question vaut pour tous les candidats : avec quels députés gouvernerez-vous ? C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "union-nationale",
+    "le-pen",
+    "bardella",
+    "rassemblement-national",
+    "assemblee",
+    "presidentielle-2027",
+    "doe"
+  ],
+  "x_hook": "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Parlementarisme",
+      "color": "#5a6570",
+      "rationale": "On gouverne avec une majorité de députés, construite et assumée avant le vote."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Culture de coalition",
+      "color": "#ff8080",
+      "rationale": "Une union se négocie, programme et nom compris, avec des partenaires qui disent oui."
+    },
+    {
+      "slug": "droite",
+      "label": "Constitutionnalisme",
+      "color": "#0066cc",
+      "rationale": "Une révision de la Constitution passe par la procédure prévue pour ça (article 89), pas par un raccourci."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "orleans",
+      "title": "Ce qui a été promis à Orléans",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le cadre, d'abord. Le RN tenait son congrès les 24 et 25 octobre à Orléans. Samedi, Jordan Bardella, seul candidat, a été réélu président du parti avec 98,98 % des voix des votants [2]. Dimanche, Marine Le Pen prononçait son premier grand discours de campagne [1][3]."
+        },
+        {
+          "type": "p",
+          "text": "Elle a promis un gouvernement « d'union nationale » et « pluraliste », un « gouvernement ouvert », justifié par « la situation d'un pays fracturé » [1]. « L'État que nous voulons ne sera pas RN mais ce sera une œuvre collective, une œuvre, certes patriote, mais pas partisane », a-t-elle dit [1]. Et elle a confirmé qu'elle nommerait Jordan Bardella « chef de l'orchestre gouvernemental » [1]."
+        },
+        {
+          "type": "p",
+          "text": "Le seul partenaire visible sur scène, c'était Éric Ciotti, l'ancien président des Républicains allié au RN depuis 2024, invité à ouvrir le meeting : « Je suis à tes côtés, avec détermination » [3]. Marion Maréchal, elle, était dans les gradins. Marine Le Pen dit qu'elle participera à la campagne, mais explique son absence de la tribune par le fait qu'elle n'a « pas de groupe de députés à l'Assemblée nationale » [3]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "addition",
+      "title": "L'union, c'est d'abord une addition",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "« Union nationale », ça sonne comme une main tendue. En pratique, c'est surtout un problème de calcul."
+        },
+        {
+          "type": "p",
+          "text": "Sous la Ve République, le président nomme le Premier ministre (article 8 de la Constitution). Mais le gouvernement répond devant l'Assemblée nationale : si une motion de censure réunit la majorité des députés, il doit partir (articles 49 et 50) [4]. Sur 577 sièges, cette majorité, c'est 289 voix. Un gouvernement minoritaire peut tenir tant que les oppositions n'atteignent pas ce chiffre ensemble. Mais avec 289 soutiens, la censure devient impossible. C'est ça, la majorité absolue."
+        },
+        {
+          "type": "p",
+          "text": "Dans l'Assemblée d'aujourd'hui, le groupe RN compte 121 membres et l'UDR, le groupe d'Éric Ciotti, 17 [5]. Total : 138. Pour atteindre 289, il en manque 151."
+        },
+        {
+          "type": "p",
+          "text": "Bien sûr, cette Assemblée-là peut changer. Un président élu peut la dissoudre dès son entrée en fonction. Les élections ont alors lieu 20 à 40 jours plus tard, et il ne peut pas y avoir de nouvelle dissolution dans l'année qui suit (article 12) [4]. Une étude du Centre Jacques Delors, publiée le 8 octobre, estime que ces législatives pourraient se tenir début juin au plus tôt [6]. C'est le pari du RN : une victoire à la présidentielle, puis une majorité absolue aux législatives. Au printemps déjà, L'Opinion notait que Jordan Bardella et son entourage se disaient « les seuls capables d'arracher une majorité absolue » [7]. Le journal rappelait aussi qu'en 2024, 143 députés du RN et de son allié ciottiste avaient été élus, « loin de l'objectif majoritaire » [7]. Ce chiffre de 2024 et les 138 d'aujourd'hui ne datent pas du même moment. Le même article rapportait, en mai, que le RN comptait organiser un référendum sur l'immigration le même jour que le premier tour des législatives, pour mobiliser son électorat [7]."
+        },
+        {
+          "type": "p",
+          "text": "Voilà pourquoi la question des alliés se pose : si la majorité absolue ne vient pas seule, il faudra en trouver."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "allies",
+      "title": "Des alliés, mais lesquels ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "C'est là que la promesse devient floue. Une union se fait à plusieurs. Or, à droite, la réponse publique la plus nette est un non."
+        },
+        {
+          "type": "p",
+          "text": "À droite, le président des Républicains, Bruno Retailleau, a été clair dès avril : Marine Le Pen et Éric Zemmour « seront mes adversaires ». Une alliance avec le RN ? « Jamais on ne l'a fait. Pourquoi on le ferait demain ? » [8]. Lui veut « l'union des droites par les électeurs, dans les urnes », pas par les partis [8]."
+        },
+        {
+          "type": "p",
+          "text": "Le RN, de son côté, s'adresse surtout aux électeurs et aux « orphelins » de la droite. En octobre 2025, Jordan Bardella tendait déjà la main aux « orphelins de la droite », mais pas à Bruno Retailleau, qui s'était selon lui « fondu dans le macronisme » [9]. Le 23 octobre dernier, sur Europe 1, le député RN Sébastien Chenu lançait aux électeurs de Bruno Retailleau et de David Lisnard : « venez directement avec nous », selon l'extrait relayé par La Dépêche [10]."
+        },
+        {
+          "type": "p",
+          "text": "Bref, vue d'ici, l'« union nationale » version Orléans ressemble davantage à un appel aux électeurs qu'à un accord entre partis. C'est un choix politique qui se défend. Mais ce n'est pas tout à fait ce que le mot « union » laisse entendre."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "chef",
+      "title": "Le chef est déjà nommé, et contesté",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dans un gouvernement d'union, le choix du Premier ministre fait souvent partie de la négociation. Ici, il est réglé d'avance."
+        },
+        {
+          "type": "p",
+          "text": "Ce chef d'orchestre est aussi, depuis plusieurs semaines, au centre d'une affaire. Mediapart affirme que Jordan Bardella a écrit des messages antisémites sur Facebook Messenger en 2013. Le 1er octobre, Mediapart a publié des captures d'écran et indiqué avoir fait authentifier l'historique de ces échanges par un huissier de justice [11][12]. Jordan Bardella « conteste formellement » ces accusations : « Je n'ai jamais tenu ces propos ignobles et antisémites », a-t-il déclaré sur LCI le 8 octobre [13]. Il a porté plainte pour diffamation (le parquet de Paris a confirmé l'avoir reçue), et annoncé le 1er octobre une plainte pour faux et usage de faux [12][13]. Les sources consultées ne mentionnent aucune décision de justice. Dimanche, Marine Le Pen a maintenu son choix « malgré les accusations », note franceinfo [1]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "outils",
+      "title": "Deux outils pour se passer d'une vraie coalition",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le discours d'Orléans contenait deux autres pistes, qui en disent long sur la façon dont le RN compte gouverner."
+        },
+        {
+          "type": "p",
+          "text": "D'abord, la proportionnelle « avec prime majoritaire », rappelée dimanche selon Les Échos [3]. Expliquons. La proportionnelle, c'est attribuer les sièges selon le pourcentage de voix de chaque liste. La « prime », c'est un bonus de sièges donné à la liste arrivée en tête, pour qu'elle obtienne plus facilement la majorité. Autrement dit, selon l'ampleur de ce bonus, qui n'a pas été détaillée, moins besoin de partenaires."
+        },
+        {
+          "type": "p",
+          "text": "Ensuite, le référendum. Selon Les Échos, plusieurs mesures du programme (sur l'immigration, la préférence nationale, la suppression du droit du sol) sont contraires à la Constitution, et Marine Le Pen veut la modifier par référendum, sans passer par le Parlement [3]. L'étude du Centre Jacques Delors décrit la méthode envisagée : le RN veut passer par l'article 11 de la Constitution, qui prévoit des référendums sur certains projets de loi, plutôt que par l'article 89, la procédure normale de révision, qui exige d'abord le vote du même texte par l'Assemblée et le Sénat [4][6]. Cette voie est contestée, car l'article 11 ne vise pas, en principe, les révisions de la Constitution [6]. Or, au Sénat, le groupe qui réunit les élus RN et UDR (il s'appelle, ça ne s'invente pas, « Union nationale pour les Territoires ») compte 15 sénateurs sur 348 [16][17]. Avec l'article 89, il faudrait donc l'accord des sénateurs de droite et du centre, ce que l'étude juge irréaliste [6]. L'article 11 permettrait de se passer de ce feu vert, au risque, selon Les Échos, d'un « bras de fer juridique avec le Conseil constitutionnel » [3]."
+        },
+        {
+          "type": "p",
+          "text": "Une union nationale, donc, mais accompagnée de deux outils pensés pour avoir moins besoin de la négocier."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "autres",
+      "title": "Les autres ne sont pas plus clairs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Soyons justes : le RN n'est pas le seul à parler de rassemblement. Les Échos le notent en une ligne : « Elle n'est pas la seule à le dire » [3]."
+        },
+        {
+          "type": "p",
+          "text": "Édouard Philippe propose un rassemblement de la droite et du centre pour la présidentielle et les législatives. Bruno Retailleau l'a refusé par lettre le 13 octobre, préférant « la confrontation franche » des projets, et Gabriel Attal avait déjà décliné [14]. À gauche, Raphaël Glucksmann a fermé la porte à La France insoumise : « C'est tranché, c'est fini, il n'y aura pas d'alliance » [15]. Marine Tondelier, elle, refuse « le concept des gauches irréconciliables » [15]. Et selon La Dépêche, Bruno Retailleau et David Lisnard ont évoqué ensemble, lors d'un déjeuner le 21 octobre, une candidature unique à droite [10]."
+        },
+        {
+          "type": "p",
+          "text": "Résumons. Marine Le Pen a nommé son Premier ministre et affiche un allié. Édouard Philippe propose une alliance que ses voisins refusent. Raphaël Glucksmann dit avec qui il ne s'alliera pas. Dans les sources consultées, aucun n'a encore présenté une liste de partenaires capable d'atteindre 289 députés."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Cette analyse défend une thèse : un gouvernement d'union nationale se négocie avec des partenaires qui ont dit oui, sur un programme et un nom. Promettre l'union en ayant déjà choisi le chef, sans partenaire déclaré à part un allié de 2024, c'est un recrutement, pas une union. Et la question vaut pour tous les candidats : avec quels députés gouvernerez-vous ? C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Gouverner avec qui ? Les candidats 2027 et les alliances (au 25 octobre)",
+      "intro": "",
+      "table": {
+        "caption": "Gouverner avec qui ? Les candidats 2027 et les alliances (au 25 octobre)",
+        "headers": [
+          "Candidat",
+          "Ce qu'il ou elle dit des alliances",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen (RN)",
+            "Gouvernement « d'union nationale », « pluraliste », dirigé par Jordan Bardella. Allié affiché : Éric Ciotti (UDR). Proportionnelle avec prime majoritaire, référendum pour réviser la Constitution.",
+            "[1][3]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Propose un rassemblement de la droite et du centre pour la présidentielle et les législatives, refusé par Bruno Retailleau et Gabriel Attal.",
+            "[14]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "A décliné l'appel d'Édouard Philippe : « Des réunions, il y en a déjà tous les mois ».",
+            "[14]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Pas d'alliance avec le RN : Le Pen et Zemmour « seront mes adversaires ». Refuse le rassemblement proposé par Philippe. Évoque une candidature unique avec David Lisnard.",
+            "[8][14][10]"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Évoque avec Bruno Retailleau une candidature unique à droite (déjeuner du 21 octobre, selon La Dépêche). Position sur le RN non trouvée dans les sources consultées.",
+            "[10]"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique, vainqueur de la primaire socialiste)",
+            "Pas d'alliance avec LFI : « C'est tranché, c'est fini ».",
+            "[15]"
+          ],
+          [
+            "Marine Tondelier (Les Écologistes)",
+            "Refuse « le concept des gauches irréconciliables », reproche à Glucksmann « le choix du repli ».",
+            "[15]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Position sur les alliances non trouvée dans les sources consultées.",
+            "Aucune"
+          ]
+        ]
+      },
+      "note": "*Positions tirées des déclarations publiques citées par les sources, pas d'un programme complet.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Parlementarisme** : on gouverne avec une majorité de députés, construite et assumée avant le vote.",
+            "**Culture de coalition** : une union se négocie, programme et nom compris, avec des partenaires qui disent oui.",
+            "**Constitutionnalisme** : une révision de la Constitution passe par la procédure prévue pour ça (article 89), pas par un raccourci."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** la stratégie de la majorité absolue à tout prix (prime majoritaire, référendum de l'article 11), et plus largement le « rassemblement » sans partenaires, quel que soit le camp qui le promet."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 25 octobre 2026.",
+  "sources_groups": [
+    {
+      "title": "Presse, institutions et textes officiels",
+      "items": [
+        {
+          "label": "1. franceinfo avec AFP, « Congrès du RN : Marine Le Pen promet un gouvernement \"d'union nationale\", \"pluraliste\" et dirigé par Jordan Bardella », 25 octobre 2026 : https://www.franceinfo.fr/politique/front-national/congres-du-rn-marine-le-pen-promet-un-gouvernement-d-union-nationale-pluraliste-et-dirige-par-jordan-bardella_8253364.html",
+          "lead": "1. franceinfo avec AFP, « Congrès du RN : Marine Le Pen promet un gouvernement \"d'union nationale\", \"pluraliste\" et dirigé par Jordan Bardella », 25 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/front-national/congres-du-rn-marine-le-pen-promet-un-gouvernement-d-union-nationale-pluraliste-et-dirige-par-jordan-bardella_8253364.html",
+              "url": "https://www.franceinfo.fr/politique/front-national/congres-du-rn-marine-le-pen-promet-un-gouvernement-d-union-nationale-pluraliste-et-dirige-par-jordan-bardella_8253364.html"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, direct « Congrès du RN à Orléans », 25 octobre 2026 (réélection de Jordan Bardella à 98,98 %) : https://www.franceinfo.fr/elections/presidentielle/direct-congres-du-rn-a-orleans-marine-le-pen-lance-sa-campagne-presidentielle-avec-un-premier-meeting-son-discours-prevu-a-15h30_8252842.html",
+          "lead": "2. franceinfo, direct « Congrès du RN à Orléans », 25 octobre 2026 (réélection de Jordan Bardella à 98,98 %)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/direct-congres-du-rn-a-orleans-marine-le-pen-lance-sa-campagne-presidentielle-avec-un-premier-meeting-son-discours-prevu-a-15h30_8252842.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/direct-congres-du-rn-a-orleans-marine-le-pen-lance-sa-campagne-presidentielle-avec-un-premier-meeting-son-discours-prevu-a-15h30_8252842.html"
+            }
+          ]
+        },
+        {
+          "label": "3. Les Échos, Anne Feitz, « A Orléans, Marine Le Pen cherche à incarner une \"France apaisée\" », 25 octobre 2026 : https://www.lesechos.fr/elections/presidentielle/a-orleans-marine-le-pen-cherche-a-incarner-une-france-apaisee-2258987",
+          "lead": "3. Les Échos, Anne Feitz, « A Orléans, Marine Le Pen cherche à incarner une \"France apaisée\" », 25 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/presidentielle/a-orleans-marine-le-pen-cherche-a-incarner-une-france-apaisee-2258987",
+              "url": "https://www.lesechos.fr/elections/presidentielle/a-orleans-marine-le-pen-cherche-a-incarner-une-france-apaisee-2258987"
+            }
+          ]
+        },
+        {
+          "label": "4. Conseil constitutionnel, texte intégral de la Constitution du 4 octobre 1958 (articles 8, 11, 12, 49, 50, 89) : https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+          "lead": "4. Conseil constitutionnel, texte intégral de la Constitution du 4 octobre 1958 (articles 8, 11, 12, 49, 50, 89)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+              "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur"
+            }
+          ]
+        },
+        {
+          "label": "5. Assemblée nationale, scrutin public n° 9097, 23 octobre 2026 (effectifs des groupes : RN 121 membres, UDR 17 membres) : https://www.assemblee-nationale.fr/dyn/17/scrutins/9097",
+          "lead": "5. Assemblée nationale, scrutin public n° 9097, 23 octobre 2026 (effectifs des groupes : RN 121 membres, UDR 17 membres)",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/17/scrutins/9097",
+              "url": "https://www.assemblee-nationale.fr/dyn/17/scrutins/9097"
+            }
+          ]
+        },
+        {
+          "label": "6. Centre Jacques Delors, Yann Wernert, « Navigating the 2027 French elections », Policy Brief, 8 octobre 2026 : https://www.delorscentre.eu/fileadmin/2_Research/1_About_our_research/2_Research_centres/6_Jacques_Delors_Centre/Documents/20261008_Policy_Brief_French_Elections_Wernert.pdf",
+          "lead": "6. Centre Jacques Delors, Yann Wernert, « Navigating the 2027 French elections », Policy Brief, 8 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.delorscentre.eu/fileadmin/2_Research/1_About_our_research/2_Research_centres/6_Jacques_Delors_Centre/Documents/20261008_Policy_Brief_French_Elections_Wernert.pdf",
+              "url": "https://www.delorscentre.eu/fileadmin/2_Research/1_About_our_research/2_Research_centres/6_Jacques_Delors_Centre/Documents/20261008_Policy_Brief_French_Elections_Wernert.pdf"
+            }
+          ]
+        },
+        {
+          "label": "7. L'Opinion, Dinah Cohen et Nina Jackowski, « Présidentielle : la majorité absolue, nouvel argument à double tranchant du RN », 10 mai 2026 : https://www.lopinion.fr/politique/presidentielle-la-majorite-absolue-nouvel-argument-a-double-tranchant-du-rn",
+          "lead": "7. L'Opinion, Dinah Cohen et Nina Jackowski, « Présidentielle : la majorité absolue, nouvel argument à double tranchant du RN », 10 mai 2026",
+          "links": [
+            {
+              "label": "https://www.lopinion.fr/politique/presidentielle-la-majorite-absolue-nouvel-argument-a-double-tranchant-du-rn",
+              "url": "https://www.lopinion.fr/politique/presidentielle-la-majorite-absolue-nouvel-argument-a-double-tranchant-du-rn"
+            }
+          ]
+        },
+        {
+          "label": "8. franceinfo, « Alliance avec le RN pour 2027 : \"Jamais on ne l'a fait, pourquoi on le ferait demain ?\" », 8 avril 2026 : https://www.franceinfo.fr/elections/presidentielle/alliance-avec-le-rn-pour-2027-jamais-on-ne-l-a-fait-pourquoi-on-le-ferait-demain-interroge-le-president-des-republicains-bruno-retailleau_7923746.html",
+          "lead": "8. franceinfo, « Alliance avec le RN pour 2027 : \"Jamais on ne l'a fait, pourquoi on le ferait demain ?\" », 8 avril 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/alliance-avec-le-rn-pour-2027-jamais-on-ne-l-a-fait-pourquoi-on-le-ferait-demain-interroge-le-president-des-republicains-bruno-retailleau_7923746.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/alliance-avec-le-rn-pour-2027-jamais-on-ne-l-a-fait-pourquoi-on-le-ferait-demain-interroge-le-president-des-republicains-bruno-retailleau_7923746.html"
+            }
+          ]
+        },
+        {
+          "label": "9. Arab News en français avec AFP, « Bardella maintient sa \"main tendue\" aux LR, mais \"ne pourrait pas\" faire \"alliance\" avec Retailleau », 10 octobre 2025 : https://www.arabnews.fr/france/bardella-maintient-sa-main-tendue-aux-lr-mais-ne-pourrait-pas-faire-alliance-avec-retailleau-504308",
+          "lead": "9. Arab News en français avec AFP, « Bardella maintient sa \"main tendue\" aux LR, mais \"ne pourrait pas\" faire \"alliance\" avec Retailleau », 10 octobre 2025",
+          "links": [
+            {
+              "label": "https://www.arabnews.fr/france/bardella-maintient-sa-main-tendue-aux-lr-mais-ne-pourrait-pas-faire-alliance-avec-retailleau-504308",
+              "url": "https://www.arabnews.fr/france/bardella-maintient-sa-main-tendue-aux-lr-mais-ne-pourrait-pas-faire-alliance-avec-retailleau-504308"
+            }
+          ]
+        },
+        {
+          "label": "10. La Dépêche du Midi, direct « Présidentielle 2027 », 23 octobre 2026 (Sébastien Chenu sur Europe 1 ; déjeuner Retailleau-Lisnard du mercredi 21 octobre ; Olivier Faure et LFI) : https://www.ladepeche.fr/2026/10/23/direct-presidentielle-2027-a-gauche-olivier-faure-exclut-une-alliance-avec-lfi-a-droite-bruno-retailleau-et-david-lisnard-ont-laisse-entendre-quils-13616442.php",
+          "lead": "10. La Dépêche du Midi, direct « Présidentielle 2027 », 23 octobre 2026 (Sébastien Chenu sur Europe 1 ; déjeuner Retailleau-Lisnard du mercredi 21 octobre ; Olivier Faure et LFI)",
+          "links": [
+            {
+              "label": "https://www.ladepeche.fr/2026/10/23/direct-presidentielle-2027-a-gauche-olivier-faure-exclut-une-alliance-avec-lfi-a-droite-bruno-retailleau-et-david-lisnard-ont-laisse-entendre-quils-13616442.php",
+              "url": "https://www.ladepeche.fr/2026/10/23/direct-presidentielle-2027-a-gauche-olivier-faure-exclut-une-alliance-avec-lfi-a-droite-bruno-retailleau-et-david-lisnard-ont-laisse-entendre-quils-13616442.php"
+            }
+          ]
+        },
+        {
+          "label": "11. Mediapart, « Écrits antisémites de Jordan Bardella : les preuves du mensonge », 1er octobre 2026 : https://www.mediapart.fr/journal/politique/011026/ecrits-antisemites-de-jordan-bardella-les-preuves-du-mensonge",
+          "lead": "11. Mediapart, « Écrits antisémites de Jordan Bardella : les preuves du mensonge », 1er octobre 2026",
+          "links": [
+            {
+              "label": "https://www.mediapart.fr/journal/politique/011026/ecrits-antisemites-de-jordan-bardella-les-preuves-du-mensonge",
+              "url": "https://www.mediapart.fr/journal/politique/011026/ecrits-antisemites-de-jordan-bardella-les-preuves-du-mensonge"
+            }
+          ]
+        },
+        {
+          "label": "12. franceinfo, « Jordan Bardella dénonce les \"pseudo-preuves\" de Mediapart et va porter plainte pour \"faux et usage de faux\" », 1er octobre 2026 : https://www.franceinfo.fr/politique/jordan-bardella/jordan-bardella-denonce-les-pseudo-preuves-de-mediapart-et-va-porter-plainte-pour-faux-et-usage-de-faux_8218723.html",
+          "lead": "12. franceinfo, « Jordan Bardella dénonce les \"pseudo-preuves\" de Mediapart et va porter plainte pour \"faux et usage de faux\" », 1er octobre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/jordan-bardella/jordan-bardella-denonce-les-pseudo-preuves-de-mediapart-et-va-porter-plainte-pour-faux-et-usage-de-faux_8218723.html",
+              "url": "https://www.franceinfo.fr/politique/jordan-bardella/jordan-bardella-denonce-les-pseudo-preuves-de-mediapart-et-va-porter-plainte-pour-faux-et-usage-de-faux_8218723.html"
+            }
+          ]
+        },
+        {
+          "label": "13. TF1 Info, « \"Je n'ai jamais tenu ces propos\" : sur LCI, Jordan Bardella \"conteste formellement\" les accusations d'antisémitisme », 8 octobre 2026 : https://www.tf1info.fr/politique/video-replay-je-n-ai-jamais-tenu-ces-propos-sur-lci-jordan-bardella-conteste-formellement-les-accusations-d-antisemitisme-mediapart-2468910.html",
+          "lead": "13. TF1 Info, « \"Je n'ai jamais tenu ces propos\" : sur LCI, Jordan Bardella \"conteste formellement\" les accusations d'antisémitisme », 8 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/video-replay-je-n-ai-jamais-tenu-ces-propos-sur-lci-jordan-bardella-conteste-formellement-les-accusations-d-antisemitisme-mediapart-2468910.html",
+              "url": "https://www.tf1info.fr/politique/video-replay-je-n-ai-jamais-tenu-ces-propos-sur-lci-jordan-bardella-conteste-formellement-les-accusations-d-antisemitisme-mediapart-2468910.html"
+            }
+          ]
+        },
+        {
+          "label": "14. Le Parisien, Louis Valleau, « Présidentielle 2027 : Bruno Retailleau repousse l'appel au rassemblement d'Édouard Philippe pour \"laisser aux électeurs la liberté\" », 15 octobre 2026 : https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-bruno-retailleau-repousse-lappel-au-rassemblement-dedouard-philippe-pour-laisser-aux-electeurs-la-liberte-15-10-2026-LIIE6YFBG5FLPMNNNU6O4OBMXE.php",
+          "lead": "14. Le Parisien, Louis Valleau, « Présidentielle 2027 : Bruno Retailleau repousse l'appel au rassemblement d'Édouard Philippe pour \"laisser aux électeurs la liberté\" », 15 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-bruno-retailleau-repousse-lappel-au-rassemblement-dedouard-philippe-pour-laisser-aux-electeurs-la-liberte-15-10-2026-LIIE6YFBG5FLPMNNNU6O4OBMXE.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-bruno-retailleau-repousse-lappel-au-rassemblement-dedouard-philippe-pour-laisser-aux-electeurs-la-liberte-15-10-2026-LIIE6YFBG5FLPMNNNU6O4OBMXE.php"
+            }
+          ]
+        },
+        {
+          "label": "15. L'Opinion, Alice Clavier, « \"Le stagiaire a gagné, malheureusement\" : Raphaël Glucksmann face au défi de l'union impossible de la gauche », 12 octobre 2026 : https://www.lopinion.fr/politique/presidentielle-2027-raphael-glucksmann-face-au-defi-de-lunion-impossible-de-la-gauche",
+          "lead": "15. L'Opinion, Alice Clavier, « \"Le stagiaire a gagné, malheureusement\" : Raphaël Glucksmann face au défi de l'union impossible de la gauche », 12 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.lopinion.fr/politique/presidentielle-2027-raphael-glucksmann-face-au-defi-de-lunion-impossible-de-la-gauche",
+              "url": "https://www.lopinion.fr/politique/presidentielle-2027-raphael-glucksmann-face-au-defi-de-lunion-impossible-de-la-gauche"
+            }
+          ]
+        },
+        {
+          "label": "16. Sénat, « Liste des sénateurs par groupes politiques », page mise à jour le 25 octobre 2026 (groupe Union nationale pour les Territoires : 15 sénateurs ; total des groupes : 348) : https://www.senat.fr/senateurs/grp.html",
+          "lead": "16. Sénat, « Liste des sénateurs par groupes politiques », page mise à jour le 25 octobre 2026 (groupe Union nationale pour les Territoires : 15 sénateurs ; total des groupes : 348)",
+          "links": [
+            {
+              "label": "https://www.senat.fr/senateurs/grp.html",
+              "url": "https://www.senat.fr/senateurs/grp.html"
+            }
+          ]
+        },
+        {
+          "label": "17. Public Sénat, « Le nouveau groupe RN/UDR s'appelle \"Union Nationale pour les Territoires\", annonce Joshua Hochart », 1er octobre 2026 : https://www.publicsenat.fr/actualites/politique/le-nouveau-groupe-rn-udr-sappelle-union-nationale-pour-les-territoires-annonce-joshua-hochart",
+          "lead": "17. Public Sénat, « Le nouveau groupe RN/UDR s'appelle \"Union Nationale pour les Territoires\", annonce Joshua Hochart », 1er octobre 2026",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/le-nouveau-groupe-rn-udr-sappelle-union-nationale-pour-les-territoires-annonce-joshua-hochart",
+              "url": "https://www.publicsenat.fr/actualites/politique/le-nouveau-groupe-rn-udr-sappelle-union-nationale-pour-les-territoires-annonce-joshua-hochart"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 25 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/gouvernance-an1t-droit",
+      "label": "Droit électoral, AN1T et gouvernance non bloquée"
+    },
+    {
+      "href": "/analyses/assemblee-premier-tour",
+      "label": "L'Assemblée du Premier Tour 2027"
+    }
+  ]
+}
