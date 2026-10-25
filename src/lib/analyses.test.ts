@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
@@ -34,12 +35,14 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -50,6 +53,138 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('analyse Sécu 115 contre 1 du 25 octobre en une, sources, boîte DOE', () => {
+    expect(secu115Contre1.slug).toBe('secu-115-contre-1');
+    expect(secu115Contre1.date).toBe('2026-10-25');
+    expect(secu115Contre1.updated).toBe('2026-10-25');
+    expect(secu115Contre1.title).toBe("115 contre 1 : l'Assemblée efface quatre jours de votes");
+    expect(secu115Contre1.author).toBe('La rédaction');
+    expect(secu115Contre1.author_role).toBe('Rédaction LMDPT');
+    expect(secu115Contre1.eyebrow).toBe('Analyse · Budget de la Sécu');
+    expect(secu115Contre1.type_label).toBe('Analyse');
+    expect(secu115Contre1.kicker).toBe('Analyse · La rédaction · 25 octobre 2026');
+    expect(secu115Contre1.tags).toContain('doe');
+    expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
+    expect(secu115Contre1.description.length).toBeLessThanOrEqual(200);
+    expect(secu115Contre1.description).toMatch(/quatre jours de votes effacés/);
+    expect(secu115Contre1.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(secu115Contre1.sources_intro).toMatch(/Consultées du 23 au 25 octobre 2026/);
+    expect(secu115Contre1.sources_closing).toMatch(/consultés du 23 au 25 octobre 2026/);
+    expect(secu115Contre1.hues).toHaveLength(3);
+    expect(secu115Contre1.hues.map((hue) => hue.slug)).toEqual([
+      'pluraliste',
+      'droite',
+      'parti-socialiste',
+    ]);
+    const raz = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'raz-de-maree',
+    );
+    expect(raz?.kind).toBe('prose');
+    const troisJours = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'trois-jours',
+    );
+    expect(troisJours?.kind).toBe('prose');
+    if (troisJours?.kind === 'prose') {
+      expect(troisJours.title).toBe('Quatre jours de votes, puis la gomme');
+      const bullets = troisJours.blocks.find((block) => block.type === 'ul');
+      expect(bullets?.type).toBe('ul');
+      if (bullets?.type === 'ul') {
+        expect(bullets.items).toHaveLength(7);
+        expect(bullets.items.filter((item) => item.includes('sans scrutin public retrouvé'))).toHaveLength(4);
+      }
+    }
+    const courants = secu115Contre1.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('secu-115-contre-1');
+    expect(entry?.href).toBe('/analyses/secu-115-contre-1');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/secu-115-contre-1.jpg');
+    expect(entry?.cover?.alt).toMatch(/hémicycle presque vide/);
+    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
+    const nSources = secu115Contre1.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(16);
+    const sourceBlob = JSON.stringify(secu115Contre1.sources_groups);
+    expect(sourceBlob).toMatch(/scrutins\/9097/);
+    expect(sourceBlob).toMatch(/article_lc\/LEGIARTI000045358069/);
+    expect(sourceBlob).toMatch(/vie-publique\.fr\/loi\/305082/);
+    expect(sourceBlob).toMatch(/france24\.com\/fr\/info-en-continu\/20261023/);
+    expect(sourceBlob).toMatch(/midilibre\.fr\/2026\/10\/23/);
+    expect(sourceBlob).toMatch(/Vie publique/);
+    expect(sourceBlob).toMatch(/France 24 avec AFP/);
+    expect(sourceBlob).toMatch(/actualites-accueil-hub\/rejet-en-premiere-lecture-du-projet-de-loi-de-financement-de-la-securite-sociale-pour-2027/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = secu115Contre1.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Programme retraites et Sécu (avant le vote)',
+        'Vote du groupe proche le 23 octobre, pas du candidat [1]',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(8);
+      expect(encadre.note).toMatch(/groupes parlementaires proches/);
+      expect(encadre.note).toMatch(/l'âge, la durée et le financement/);
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/dose de capitalisation/);
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/25 à 30 %/);
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/pas encore détaillée/);
+      expect(glucksmann?.[2]).toMatch(/Place publique n'a pas de groupe/);
+      expect(glucksmann?.[2]).toMatch(/Groupe le plus proche : Socialistes, 8 contre, sur 68 membres/);
+      expect(glucksmann?.[3]).toBe('[8][1]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[2]).toMatch(/Sans objet/);
+      expect(lisnard?.[3]).toBe('Aucune');
+    }
+    const analyseTexts = [
+      secu115Contre1.chapo,
+      secu115Contre1.description,
+      secu115Contre1.disclaimer,
+      secu115Contre1.sources_closing,
+      ...secu115Contre1.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[13\]/);
+    expect(analyseTexts).toMatch(/\[14\]/);
+    expect(analyseTexts).toMatch(/\[15\]/);
+    expect(analyseTexts).toMatch(/le Sénat examinera bien le texte à partir du 9 novembre/);
+    expect(analyseTexts).toMatch(/selon Vie publique et Capital \[14\]\[5\]/);
+    expect(analyseTexts).toMatch(/Vendredi, 138 ont voté/);
+    expect(analyseTexts).toMatch(/les plus précaires/);
+    expect(analyseTexts).toMatch(/samedi 24 octobre à 19 h 45/);
+    expect(analyseTexts).toMatch(/en application de l'article L\.O\. 111-7-1/);
+    expect(analyseTexts).toMatch(/sans scrutin public retrouvé/);
+    expect(analyseTexts).toMatch(/ministre de l'Action et des Comptes publics/);
+    expect(analyseTexts).toMatch(/Du mardi 20 au vendredi 23 octobre, quatre jours de séance/);
+    expect(analyseTexts).toMatch(/rapportent Les Échos et l'AFP \[3\]\[15\]\[16\]/);
+    expect(analyseTexts).toMatch(/dans le contre-budget 2027, sans dire s'il s'agit d'une seule année ou d'un cumul/);
+    expect(analyseTexts).toMatch(/Trois jours plus tôt, le mardi 20 octobre/);
+    expect(analyseTexts.replace('Trois jours plus tôt, le mardi 20 octobre', '')).not.toMatch(/trois jours/i);
   });
 
   it('chronique Manusk Debord du 23 octobre en une, 17 sources, boîte DOE', () => {
@@ -73,7 +208,13 @@ describe('analyses', () => {
     );
     expect(chronique?.kind).toBe('prose');
     if (chronique?.kind === 'prose') {
-      expect(chronique.blocks.filter((block) => block.type === 'p')).toHaveLength(7);
+      const paras = chronique.blocks.filter((block) => block.type === 'p');
+      expect(paras).toHaveLength(7);
+      const chroniqueBody = paras.map((block) => (block.type === 'p' ? block.text : '')).join('\n');
+      expect(debordWatts.chapo).toMatch(/Les 17 et 18 octobre, des magasins ont été pillés/);
+      expect(chroniqueBody).toMatch(/Sephora de Lille/);
+      expect(chroniqueBody).toMatch(/boulevard Magenta/);
+      expect(chroniqueBody).toMatch(/Son meilleur argument mérite quand même qu'on s'y arrête\./);
     }
     const courants = debordWatts.sections.find(
       (section) => section.kind === 'prose' && section.id === 'courants',
@@ -86,7 +227,7 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/debord-watts-frigo-sans-courant');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/debord-watts-frigo-sans-courant.jpg');
     expect(entry?.cover?.alt).toMatch(/vitrine brisée/);
-    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(getUneDuJour()?.slug).not.toBe('debord-watts-frigo-sans-courant');
     const nSources = debordWatts.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(17);
     const sourceBlob = JSON.stringify(debordWatts.sources_groups);

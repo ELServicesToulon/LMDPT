@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import {
   getDernieresUnes,
   MISSING_COVER_SRC,
@@ -120,13 +121,16 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('chronique Debord du 23/10 en une, puis Ifop et feuilleton', () => {
+  it('analyse Sécu du 25/10 en une, puis Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[1]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[2]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[3]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[4]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
+    expect(getUneDuJour()?.title).toBe("115 contre 1 : l'Assemblée efface quatre jours de votes");
+    expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
+    expect(sorted[1]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[2]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[4]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
