@@ -120,6 +120,9 @@ describe('analyses', () => {
     expect(nSources).toBe(17);
     const sourceBlob = JSON.stringify(lePenUnionNationale.sources_groups);
     expect(sourceBlob).toMatch(/scrutins\/9097/);
+    expect(sourceBlob).toContain(
+      'https://www2.assemblee-nationale.fr/instances/liste/groupes_politiques/effectif',
+    );
     expect(sourceBlob).toMatch(/franceinfo\.fr\/politique\/front-national\/congres-du-rn/);
     expect(sourceBlob).toMatch(/lesechos\.fr\/elections\/presidentielle\/a-orleans-marine-le-pen/);
     expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
@@ -182,6 +185,12 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/chef de l'orchestre gouvernemental/);
     expect(analyseTexts).toMatch(/Union nationale pour les Territoires/);
     expect(analyseTexts).toMatch(/un recrutement, pas une union/);
+    expect(analyseTexts).toContain(
+      "Selon Mediapart, des messages antisémites envoyés en 2013 sur Facebook Messenger seraient de Jordan Bardella.",
+    );
+    expect(analyseTexts).toContain("visé par des accusations qu'il conteste");
+    expect(analyseTexts).not.toContain('Mediapart affirme que Jordan Bardella a écrit');
+    expect(analyseTexts).not.toContain("au centre d'une affaire");
     expect(JSON.stringify(lePenUnionNationale)).not.toMatch(/<!--/);
   });
 
