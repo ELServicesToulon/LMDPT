@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "updated": "2026-10-08",
+    "disclaimer": "Le nœud mesure des affirmations sourcées et revues, associées à des courants du premier tour. Un côté plus lourd n’est pas un camp gagnant, ni une consigne de vote. Les tribunes restent des opinions invitées. Les fact-checks sont une couche documentaire séparée.",
+    "method_url": "/chroniqueurs/#methode"
+  },
+  "rope": {
+    "left_label": "Courants gauche et alliés",
+    "right_label": "Courants droite et alliés",
+    "left_color": "#cc2443",
+    "right_color": "#0d378a",
+    "neutral_zone_pct": 8
+  },
+  "hue_to_side": {
+    "melenchon": "gauche",
+    "ruffin": "gauche",
+    "parti-socialiste": "gauche",
+    "glucksmann": "gauche",
+    "roussel": "gauche",
+    "ecolo": "gauche",
+    "gauche": "gauche",
+    "attal": "centre",
+    "philippe": "centre",
+    "barrot": "centre",
+    "macron": "centre",
+    "ensemble": "centre",
+    "renaissance": "centre",
+    "retailleau": "droite",
+    "lisnard": "droite",
+    "le-pen": "droite",
+    "bardella": "droite",
+    "zemmour": "droite",
+    "droite": "droite",
+    "lr": "droite",
+    "pluraliste": "exclu"
+  },
+  "chroniqueurs": [
+    {
+      "id": "manusk",
+      "nom": "Manusk",
+      "role": "Chroniqueur invité",
+      "status": "actif",
+      "bio_courte": "Tribunes d’opinion, hors enquête DOE. Les faits cités sont recoupés à part, dans cette arène."
+    },
+    {
+      "id": "invite-a",
+      "nom": "Siège invité",
+      "role": "Chroniqueur à nommer",
+      "status": "invite_vide",
+      "bio_courte": "Place ouverte. Même gabarit, mêmes fact-checks, pas de palmarès."
+    },
+    {
+      "id": "invite-b",
+      "nom": "Siège invité",
+      "role": "Chroniqueur à nommer",
+      "status": "invite_vide",
+      "bio_courte": "Place ouverte. Une tribune sourcée déplace le nœud, pas une notoriété."
+    },
+    {
+      "id": "invite-c",
+      "nom": "Siège invité",
+      "role": "Chroniqueur à nommer",
+      "status": "invite_vide",
+      "bio_courte": "Place ouverte. La rédaction relit chaque affirmation avant publication."
+    }
+  ],
+  "chroniques": [
+    {
+      "slug": "mouvement-lyceen-revendications-saucissonne",
+      "href": "/analyses/mouvement-lyceen-revendications-saucissonne/",
+      "chroniqueur_id": "manusk",
+      "title": "Mouvement lycéen : revendications saucissonnées",
+      "date": "2026-10-08",
+      "catalog": "public",
+      "thesis_hues": ["melenchon", "parti-socialiste", "pluraliste"],
+      "factual_dossier": "publication-director/research/actu-lyceenne/"
+    },
+    {
+      "slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "href": null,
+      "chroniqueur_id": "manusk",
+      "title": "On a volé la révolution, puis la révolte",
+      "date": "2026-10-05",
+      "catalog": "archive",
+      "thesis_hues": ["pluraliste"],
+      "factual_dossier": "publication-director/research/actu-lyceenne/"
+    }
+  ],
+  "fact_checks": [
+    {
+      "id": "fc-lyc-413",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Le 5 octobre 2026 à la mi-journée, le ministère de l’Éducation nationale annonce 413 lycées perturbés.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "franceinfo, direct acte III, 6 octobre 2026",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-blocages-des-lycees-des-manifestations-prevues-dans-une-trentaine-de-villes-pour-l-acte-iii-de-la-mobilisation_8224333.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-589",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Sur la journée complète du 5 octobre, le ministre Édouard Geffray compte 589 lycées perturbés.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "franceinfo, direct acte III, 6 octobre 2026",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-blocages-des-lycees-des-manifestations-prevues-dans-une-trentaine-de-villes-pour-l-acte-iii-de-la-mobilisation_8224333.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-891",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Le 6 octobre à la mi-journée, le ministère de l’Éducation nationale recense 891 lycées où les cours sont suspendus totalement ou partiellement, dont 250 en Île-de-France.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Euronews / AFP, 6 octobre 2026",
+        "url": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-usl-1800",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "L’Union syndicale lycéenne revendique environ 1 800 établissements le 6 octobre. Le chiffre officiel de mi-journée est 891.",
+      "status": "partiel",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Euronews / AFP, 6 octobre 2026",
+        "url": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-86000",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "L’Intérieur compte 86 000 manifestants dans les cortèges du matin en région le 6 octobre. Chiffre provisoire de mi-journée.",
+      "status": "partiel",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Euronews / AFP, 6 octobre 2026",
+        "url": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-6059",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Au 5 octobre au soir, depuis le 28 septembre, le décompte attribué à l’Intérieur par actuforcesdelordre.fr atteint 6 059 interpellations. L’AFP écrit « plus de 6 000 ». Une interpellation n’est pas une culpabilité.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "franceinfo, gardes à vue et détentions provisoires",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/blocage-des-lycees-plus-de-5-000-gardes-a-vue-depuis-le-debut-du-mouvement-14-personnes-en-detention-provisoire-rapporte-le-ministere-de-la-justice_8223922.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-715",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Le même bilan attribue 715 policiers et gendarmes blessés. Matignon reprend ce chiffre via l’AFP.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Euronews / AFP, 6 octobre 2026",
+        "url": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-justice",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Le ministère de la Justice compte 5 060 gardes à vue, dont 87 % de mineurs, 1 802 personnes poursuivies et 14 détentions provisoires, dont quatre de mineurs.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "ministère de la Justice, bilan judiciaire",
+        "url": "https://www.justice.gouv.fr/actualites/espace-presse/bilan-judiciaire-violences-urbaines-marge-du-mouvement-lyceen"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-demande-profs",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Les lycéens réclament des professeurs remplacés et des locaux décents. Doléance concrète, documentée dès la genèse du mouvement à Créteil.",
+      "status": "confirme",
+      "weight": 1,
+      "supports_hues": ["parti-socialiste"],
+      "source": {
+        "label": "franceinfo, direct acte III (revendications et genèse du mouvement)",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-blocages-des-lycees-des-manifestations-prevues-dans-une-trentaine-de-villes-pour-l-acte-iii-de-la-mobilisation_8224333.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-bati",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "RFI, le 5 octobre 2026, rapporte que 70 % du bâti scolaire a plus de 50 ans, et que les lycées professionnels ont 71 ans de moyenne. Recoupé dans le dossier lycéen de la rédaction.",
+      "status": "partiel",
+      "weight": 1,
+      "supports_hues": ["parti-socialiste"],
+      "source": {
+        "label": "franceinfo, direct acte III (dossier lycéen, bâti scolaire cité via RFI)",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-blocages-des-lycees-des-manifestations-prevues-dans-une-trentaine-de-villes-pour-l-acte-iii-de-la-mobilisation_8224333.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-sauc-revendications-multiples",
+      "chronique_slug": "mouvement-lyceen-revendications-saucissonne",
+      "label": "Le dossier lycéen documente plusieurs revendications distinctes (profs, bâtiments, démocratie lycéenne, frais BTS/CPGE). Le morcellement est observable. Le mot « saucissonné » reste une lecture d’opinion.",
+      "status": "partiel",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Tribune Manusk, 8 octobre 2026",
+        "url": "https://lmdpt.iarbre.org/analyses/mouvement-lyceen-revendications-saucissonne/"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-sauc-revenu-universel",
+      "chronique_slug": "mouvement-lyceen-revendications-saucissonne",
+      "label": "La tribune pose le revenu universel comme urgence face aux mutations technologiques. C’est une thèse, pas un fait établi du mouvement lycéen.",
+      "status": "non_etaye",
+      "weight": 1,
+      "supports_hues": ["melenchon", "parti-socialiste"],
+      "source": {
+        "label": "Tribune Manusk, 8 octobre 2026",
+        "url": "https://lmdpt.iarbre.org/analyses/mouvement-lyceen-revendications-saucissonne/"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-sauc-tokens-edu",
+      "chronique_slug": "mouvement-lyceen-revendications-saucissonne",
+      "label": "L’image des « tokens d’apprentissage » dans une Éducation nationale « obsolète » est une métaphore d’opinion, non un chiffrage sourcé.",
+      "status": "non_etaye",
+      "weight": 1,
+      "supports_hues": ["pluraliste"],
+      "source": {
+        "label": "Tribune Manusk, 8 octobre 2026",
+        "url": "https://lmdpt.iarbre.org/analyses/mouvement-lyceen-revendications-saucissonne/"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    },
+    {
+      "id": "fc-lyc-fermeté-debattu",
+      "chronique_slug": "on-a-vole-la-revolution-puis-la-revolte",
+      "label": "Les mêmes chiffres d’interpellations se lisent en fermeté ou en coup de filet. Les deux lectures restent ouvertes. Aucune n’est tranchée ici.",
+      "status": "debattu",
+      "weight": 1,
+      "supports_hues": ["le-pen", "retailleau", "melenchon"],
+      "source": {
+        "label": "franceinfo, gardes à vue et détentions provisoires",
+        "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/blocage-des-lycees-plus-de-5-000-gardes-a-vue-depuis-le-debut-du-mouvement-14-personnes-en-detention-provisoire-rapporte-le-ministere-de-la-justice_8223922.html"
+      },
+      "reviewed_at": "2026-10-08",
+      "reviewer_role": "redaction"
+    }
+  ]
+}
