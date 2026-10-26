@@ -1,0 +1,469 @@
+{
+  "slug": "corse-senat-non",
+  "title": "Corse : Les Républicains ont voté pour leur copie, 181 sénateurs l'ont rejetée",
+  "eyebrow": "Analyse · Présidentielle 2027",
+  "type_label": "Analyse",
+  "date": "2026-10-28",
+  "updated": "2026-10-28",
+  "kicker": "Analyse · La rédaction · 28 octobre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Lundi 26 octobre, le Sénat a rejeté le projet de révision de la Constitution sur l'autonomie de la Corse, par 181 voix contre 134 [1]. Le détail du vote est plus étrange que le résultat. Les sénateurs Les Républicains ont voté pour à 122 sur 124 : ils votaient pour le texte tel que « la droite sénatoriale » venait de le réécrire, selon franceinfo [1][2]. Contre cette version : les centristes, les socialistes, les écologistes, le RDPI et le groupe Union nationale pour les territoires, entre autres. Les communistes se sont surtout abstenus [1]. Le sénateur autonomiste Paul Toussaint Parigi a annoncé son retrait du « processus de Beauvau » [2]. Le gouvernement annonce une concertation rapide [4]. Un aboutissement avant la présidentielle, déjà « très improbable » selon franceinfo, s'éloigne encore [2].",
+  "description": "Lundi 26 octobre, le Sénat a rejeté le projet de révision de la Constitution sur l'autonomie de la Corse, par 181 voix contre 134.",
+  "disclaimer": "Le Sénat a dit non, mais à quoi ? Pas à l'autonomie en général : 122 sénateurs LR ont voté pour leur propre version. Mais ce rejet laisse en place la procédure de 1991, dont le rapport du Sénat lui-même dit qu'elle a abouti 13 fois sur au moins 73, entre « manque de diligence des gouvernements » et demandes hors des conditions de la loi. Ce vote a surtout montré qu'on peut partager une partie du constat et se déchirer sur le remède. Les candidats à 2027 ne pourront pas se cacher derrière ce « non » de circonstance. Trois questions simples les attendent. Reprendront-ils le texte des députés, la copie rejetée par le Sénat, ou aucun ? Passeront-ils par le référendum ou par le Congrès ? Et, statut ou pas, obligeront-ils l'État à répondre aux demandes de la Corse dans un délai fixé ? C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "corse",
+    "autonomie",
+    "senat",
+    "constitution",
+    "presidentielle-2027",
+    "doe"
+  ],
+  "x_hook": "Corse : au Sénat, 122 des 124 sénateurs LR ont voté pour leur version réécrite de l'autonomie. Centristes, socialistes, écologistes, RDPI et Union nationale pour les territoires, entre autres, ont voté contre : 181 à 134. Un aboutissement avant 2027 s'éloigne.",
+  "hues": [
+    {
+      "slug": "lisnard",
+      "label": "Décentralisation et subsidiarité",
+      "color": "#162561",
+      "rationale": "Une décision se prend au plus près des gens quand c'est possible, et l'État répond quand on lui pose une question."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Parlementarisme",
+      "color": "#5a6570",
+      "rationale": "Le Parlement a le droit de dire non, mais il doit dire clairement à quoi."
+    },
+    {
+      "slug": "droite",
+      "label": "Constitutionnalisme",
+      "color": "#0066cc",
+      "rationale": "On écrit dans la Constitution qui décide de quoi, au lieu de renvoyer l'essentiel à plus tard."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "non",
+      "title": "Un « non » fait de deux refus opposés",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le scrutin public n° 34 du Sénat donne les chiffres : 340 votants, 315 suffrages exprimés, 134 pour, 181 contre, 25 abstentions [1]."
+        },
+        {
+          "type": "p",
+          "text": "Qui a voté quoi ? Voici le tableau complet du scrutin [1] :"
+        },
+        {
+          "type": "table",
+          "caption": "Scrutin public n° 34 du Sénat, séance du 26 octobre 2026, sur l'ensemble du projet de loi constitutionnelle pour une Corse autonome au sein de la République",
+          "headers": [
+            "Groupe",
+            "Pour",
+            "Contre",
+            "Abstention",
+            "Ne prend pas part"
+          ],
+          "rows": [
+            [
+              "Les Républicains (124)",
+              "122",
+              "1",
+              "0",
+              "1 (Gérard Larcher, président du Sénat)"
+            ],
+            [
+              "Union centriste et Indépendants (63)",
+              "0",
+              "58",
+              "0",
+              "5"
+            ],
+            [
+              "Socialiste, écologiste et républicain (62)",
+              "0",
+              "62",
+              "0",
+              "0"
+            ],
+            [
+              "Communiste républicain citoyen et écologiste - Kanaky (18)",
+              "0",
+              "2",
+              "16",
+              "0"
+            ],
+            [
+              "Rassemblement démocratique et social européen (18)",
+              "3",
+              "13",
+              "1",
+              "1"
+            ],
+            [
+              "Rassemblement des démocrates, progressistes et indépendants (16)",
+              "0",
+              "14",
+              "2",
+              "0"
+            ],
+            [
+              "Les Indépendants - République et Territoires (15)",
+              "9",
+              "0",
+              "6",
+              "0"
+            ],
+            [
+              "Union nationale pour les territoires (15)",
+              "0",
+              "15",
+              "0",
+              "0"
+            ],
+            [
+              "Écologiste - Solidarité et Territoires (15)",
+              "0",
+              "15",
+              "0",
+              "0"
+            ],
+            [
+              "Non inscrits (2)",
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            [
+              "**Total**",
+              "**134**",
+              "**181**",
+              "**25**",
+              "**8**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "La seule voix LR contre est celle de Thierry Meignen. Bruno Retailleau, lui, a voté pour [1]."
+        },
+        {
+          "type": "p",
+          "text": "Franceinfo, avec l'AFP, résume ce paradoxe : le texte a été « emporté par l'addition des voix des opposants à toute réforme et de ceux qui refusaient la copie sénatoriale » [2]. Franceinfo ne dit pas quel groupe relève de quel motif. Le tableau ne le dit pas non plus : il montre seulement que des groupes aussi éloignés que les socialistes et l'Union nationale pour les territoires ont fini dans la même colonne [1]."
+        },
+        {
+          "type": "p",
+          "text": "Car le texte soumis au vote n'était plus celui des députés. En commission, les sénateurs avaient adopté 7 amendements, qui proposaient de reconnaître les « singularités » de la Corse « dans le respect de l'universalisme républicain », de donner un « caractère administratif » aux actes de la collectivité, de retirer de la Constitution un « principe de non-régression » et de « sécuriser le pouvoir d'adaptation du Gouvernement » [7]. Selon franceinfo, la séance a ensuite refusé d'inscrire une « communauté insulaire » dans la Constitution et réduit les pouvoirs dérogatoires prévus pour la Corse, c'est-à-dire la possibilité d'adapter localement des règles nationales [2]. Le gouvernement juge que ces amendements avaient « profondément modifié l'équilibre du texte » et l'avaient « éloigné de l'esprit de l'accord de Beauvau » [4]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "dit",
+      "title": "Ce que chacun en dit",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le sénateur autonomiste Paul Toussaint Parigi (Femu a Corsica selon franceinfo, inscrit au groupe Union centriste, et qui a voté contre [1]) a parlé, selon franceinfo, d'« une majorité archaïque » qui a « choisi ce soir de détruire un accord politique équilibré », avant d'annoncer : « nous nous retirons du processus de Beauvau » [2]. Il a ensuite quitté l'hémicycle avec plusieurs élus autonomistes et nationalistes venus assister aux débats [2]. Le maire de Bastia, Gilles Simeoni, a dénoncé « une volonté de mettre à bas tout cela » [2][3]."
+        },
+        {
+          "type": "p",
+          "text": "Côté droite, Corse-Matin rapporte un autre ton. Jean-Jacques Panunzi, sénateur LR de Corse-du-Sud, s'est dit « un petit peu déçu de ne pas avoir été au bout de la discussion » et a jugé que « la méthode utilisée n'a pas été la bonne » [3]. Jean-Martin Mondoloni, chef de l'opposition de droite à l'Assemblée de Corse, reproche aux autonomistes de « feindre d'être surpris » [3]."
+        },
+        {
+          "type": "p",
+          "text": "Le gouvernement, lui, refuse de lire ce vote comme un enterrement. Son communiqué du 27 octobre affirme que ce rejet « ne saurait donc être interprété comme un rejet du principe de l'autonomie de la Corse » [4]. La ministre Françoise Gatel réunira « dans les prochains jours » les élus corses et des représentants des deux assemblées, pour chercher « une rédaction commune » [4]. Selon France 3 Corse, le Premier ministre Sébastien Lecornu pourrait organiser cette réunion dès la semaine prochaine [5]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "procedure",
+      "title": "La procédure de 1991 : 13 changements de règle sur « au moins 73 » demandes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Il existe déjà une procédure : depuis le « statut Joxe » de 1991, les élus de l'Assemblée de Corse peuvent demander au gouvernement d'adapter des règles nationales [6]. Selon le rapport de la commission des lois du Sénat, ils l'ont fait « au moins 73 » fois, sur la langue, le tourisme, la santé, la chasse, la fiscalité ou l'environnement [6][7]. Résultat : « seules 13 des 73 demandes d'adaptation ont donné lieu à une évolution normative » [6]. Autrement dit, 13 seulement ont changé une règle."
+        },
+        {
+          "type": "p",
+          "text": "Le rapport y voit deux causes : « le manque de diligence des gouvernements successifs », et des demandes qui ne respectaient pas toujours les conditions prévues par la loi [6]. La rapporteure Muriel Jourda (LR) l'a dit plus simplement : « faute de réponse du Premier ministre, la procédure s'arrête » [8]."
+        },
+        {
+          "type": "p",
+          "text": "Ce chiffre ne disparaît pas avec le rejet du texte. Il décrit le cadre qui reste en place après ce rejet, comme la pile d'enveloppes de notre illustration."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "apres-2027",
+      "title": "Pourquoi le dossier glisse vers 2027",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une révision de la Constitution suit l'article 89. Les deux assemblées doivent voter exactement le même texte. Ensuite, il faut un référendum, ou un vote du Parlement réuni en Congrès, à la majorité des trois cinquièmes des suffrages exprimés [9]. Aujourd'hui, l'Assemblée a voté un texte [10], et le Sénat n'en a voté aucun [1]."
+        },
+        {
+          "type": "p",
+          "text": "Franceinfo le note : un aboutissement avant la présidentielle « paraissait déjà très improbable », et les débats de lundi « éloignent encore plus cette hypothèse » [2]. Ce n'est pas impossible sur le papier : si les deux chambres s'accordaient à temps, Emmanuel Macron pourrait encore convoquer le Congrès ou un référendum [9]. Mais le plus probable est que le prochain président hérite du dossier. Notre calcul, à partir du rapport : sur au moins 73 demandes, 13 ont abouti, soit au moins 60 sans changement de règle, faute de réponse de l'État ou parce qu'elles sortaient des conditions de la loi [6]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Le Sénat a dit non, mais à quoi ? Pas à l'autonomie en général : 122 sénateurs LR ont voté pour leur propre version. Mais ce rejet laisse en place la procédure de 1991, dont le rapport du Sénat lui-même dit qu'elle a abouti 13 fois sur au moins 73, entre « manque de diligence des gouvernements » et demandes hors des conditions de la loi. Ce vote a surtout montré qu'on peut partager une partie du constat et se déchirer sur le remède. Les candidats à 2027 ne pourront pas se cacher derrière ce « non » de circonstance. Trois questions simples les attendent. Reprendront-ils le texte des députés, la copie rejetée par le Sénat, ou aucun ? Passeront-ils par le référendum ou par le Congrès ? Et, statut ou pas, obligeront-ils l'État à répondre aux demandes de la Corse dans un délai fixé ? C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Autonomie de la Corse : ce que disent les candidats 2027 (positions datées, relevé au 27 octobre)",
+      "intro": "",
+      "table": {
+        "caption": "Autonomie de la Corse : ce que disent les candidats 2027 (positions datées, relevé au 27 octobre)",
+        "headers": [
+          "Candidat",
+          "Position sur l'autonomie de la Corse",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen (RN)",
+            "Selon Europe 1 (août 2026), réservée sur la notion de « communauté » [12]. Plus tôt, dans un entretien à Corse-Matin en mars 2026, cité par France 3 : « Si cette autonomie s'imagine contre la France, on ne l'admettra pas », mais il est « envisageable d'avancer sur une autonomie tenant compte des spécificités » de l'île, « tout en conservant un cadre national » [13].",
+            "[12][13]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Favorable : « Nous accompagnerons spécifiquement la Corse vers l'autonomie étendue que demande ce peuple » (7 juin 2026).",
+            "[13]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Juge « envisageable et utile » de prendre en compte les spécificités de la Corse, tout en restant attaché à une seule communauté politique française (Europe 1, août 2026, dernière déclaration trouvée).",
+            "[12]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "« Reconnaître la singularité de la Corse, ce n'est pas affaiblir la République » (Europe 1, août 2026, dernière déclaration trouvée).",
+            "[12]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Selon Europe 1 (août 2026), l'autonomie « percuterait des piliers de la République, notamment son indivisibilité » [12]. En séance le 26 octobre : un statut ne réglera pas les déchets, les transports, les infrastructures [11]. Le même jour, il a voté pour la version réécrite par le Sénat, finalement rejetée (vote nominatif) [1].",
+            "[1][11][12]"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Sur le projet de loi : « je ne veux pas le commenter, c'est aux parlementaires de décider ». Sur le fond, il se dit « favorable à la liberté d'action locale » et voit dans ces demandes d'autonomie le signe d'« un Etat centralisateur qui aujourd'hui ne fonctionne plus » (août 2026).",
+            "[14]"
+          ],
+          [
+            "Delphine Batho (Génération écologie)",
+            "« Favorable de longue date à un statut d'autonomie de la Corse dans la République » (juin 2026).",
+            "[13]"
+          ],
+          [
+            "Nathalie Arthaud (LO)",
+            "« Ni pour, ni contre ce projet de loi » : selon elle, rien ne changera sans mobilisation des couches populaires de l'île (juin 2026).",
+            "[13]"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique)",
+            "Position non trouvée dans les sources consultées.",
+            "Aucune"
+          ]
+        ]
+      },
+      "note": "*Méthode : candidats déclarés ou cités par France 3 Corse (18 juin 2026) et Europe 1 (8 août 2026), plus les propos de séance et le vote nominatif du 26 octobre. Sources dépouillées : [1], [11] à [14]. « Non trouvé » veut dire absent de ces sources. Chaque position est datée ; ce sont des déclarations publiques, pas un programme complet.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Décentralisation et subsidiarité** : une décision se prend au plus près des gens quand c'est possible, et l'État répond quand on lui pose une question.",
+            "**Parlementarisme** : le Parlement a le droit de dire non, mais il doit dire clairement à quoi.",
+            "**Constitutionnalisme** : on écrit dans la Constitution qui décide de quoi, au lieu de renvoyer l'essentiel à plus tard."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** le centralisme qui laisse les demandes sans réponse, et la politique du vote de circonstance, où l'on rejette un texte sans dire ce qu'on propose."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 27 octobre 2026.",
+  "sources_groups": [
+    {
+      "title": "Sénat, Assemblée, presse et textes officiels",
+      "items": [
+        {
+          "label": "1. Sénat, scrutin public n° 34, séance du 26 octobre 2026, sur l'ensemble du projet de loi constitutionnelle pour une Corse autonome au sein de la République (résultat et détail par groupe) : https://www.senat.fr/scrutin-public/2026/scr2026-34.html",
+          "lead": "1. Sénat, scrutin public n° 34, séance du 26 octobre 2026, sur l'ensemble du projet de loi constitutionnelle pour une Corse autonome au sein de la République (résultat et détail par groupe)",
+          "links": [
+            {
+              "label": "https://www.senat.fr/scrutin-public/2026/scr2026-34.html",
+              "url": "https://www.senat.fr/scrutin-public/2026/scr2026-34.html"
+            }
+          ]
+        },
+        {
+          "label": "2. Franceinfo avec AFP, « Le Sénat rejette la réforme constitutionnelle sur l'autonomie de la Corse, censée aboutir à l'octroi de pouvoirs dérogatoires à l'île », 27 octobre 2026 : https://www.franceinfo.fr/france/corse/le-senat-rejette-la-reforme-constitutionnelle-sur-l-autonomie-de-la-corse-censee-aboutir-a-l-octroi-de-pouvoirs-derogatoires-le-camp-autonomiste-claque-la-porte_8255089.html",
+          "lead": "2. Franceinfo avec AFP, « Le Sénat rejette la réforme constitutionnelle sur l'autonomie de la Corse, censée aboutir à l'octroi de pouvoirs dérogatoires à l'île », 27 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/france/corse/le-senat-rejette-la-reforme-constitutionnelle-sur-l-autonomie-de-la-corse-censee-aboutir-a-l-octroi-de-pouvoirs-derogatoires-le-camp-autonomiste-claque-la-porte_8255089.html",
+              "url": "https://www.franceinfo.fr/france/corse/le-senat-rejette-la-reforme-constitutionnelle-sur-l-autonomie-de-la-corse-censee-aboutir-a-l-octroi-de-pouvoirs-derogatoires-le-camp-autonomiste-claque-la-porte_8255089.html"
+            }
+          ]
+        },
+        {
+          "label": "3. Corse-Matin, « Rejet de l'autonomie par le Sénat : \"Le suffrage universel est méprisé\", retrouvez les dernières réactions », 27 octobre 2026 : https://www.corsematin.com/article/politique/20008318945216/rejet-de-lautonomie-par-le-senat-le-suffrage-universel-est-meprise-retrouvez-les-dernieres-reactions",
+          "lead": "3. Corse-Matin, « Rejet de l'autonomie par le Sénat : \"Le suffrage universel est méprisé\", retrouvez les dernières réactions », 27 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.corsematin.com/article/politique/20008318945216/rejet-de-lautonomie-par-le-senat-le-suffrage-universel-est-meprise-retrouvez-les-dernieres-reactions",
+              "url": "https://www.corsematin.com/article/politique/20008318945216/rejet-de-lautonomie-par-le-senat-le-suffrage-universel-est-meprise-retrouvez-les-dernieres-reactions"
+            }
+          ]
+        },
+        {
+          "label": "4. Ministère de l'Aménagement du territoire et de la Décentralisation, communiqué « Autonomie de la Corse : après le rejet du texte par le Sénat, Françoise Gatel engagera rapidement une concertation avec les élus corses et les représentants du Parlement », 27 octobre 2026 : https://www.ecologie.gouv.fr/presse/autonomie-corse-apres-rejet-du-texte-senat-francoise-gatel-engagera-rapidement-concertation",
+          "lead": "4. Ministère de l'Aménagement du territoire et de la Décentralisation, communiqué « Autonomie de la Corse : après le rejet du texte par le Sénat, Françoise Gatel engagera rapidement une concertation avec les élus corses et les représentants du Parlement », 27 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.ecologie.gouv.fr/presse/autonomie-corse-apres-rejet-du-texte-senat-francoise-gatel-engagera-rapidement-concertation",
+              "url": "https://www.ecologie.gouv.fr/presse/autonomie-corse-apres-rejet-du-texte-senat-francoise-gatel-engagera-rapidement-concertation"
+            }
+          ]
+        },
+        {
+          "label": "5. France 3 Corse ViaStella, « Rejet du texte sur l'autonomie de la Corse au Sénat : le Premier ministre devrait organiser une réunion la semaine prochaine avec les élus insulaires », 27 octobre 2026 : https://france3-regions.franceinfo.fr/corse/rejet-du-texte-sur-l-autonomie-de-la-corse-au-senat-le-gouvernement-reaffirme-sa-volonte-d-engager-une-nouvelle-concertation-avec-les-elus-insulaires-le-premier-ministre-devrait-organiser-une-reunion-la-semaine-prochaine-3439902.html",
+          "lead": "5. France 3 Corse ViaStella, « Rejet du texte sur l'autonomie de la Corse au Sénat : le Premier ministre devrait organiser une réunion la semaine prochaine avec les élus insulaires », 27 octobre 2026",
+          "links": [
+            {
+              "label": "https://france3-regions.franceinfo.fr/corse/rejet-du-texte-sur-l-autonomie-de-la-corse-au-senat-le-gouvernement-reaffirme-sa-volonte-d-engager-une-nouvelle-concertation-avec-les-elus-insulaires-le-premier-ministre-devrait-organiser-une-reunion-la-semaine-prochaine-3439902.html",
+              "url": "https://france3-regions.franceinfo.fr/corse/rejet-du-texte-sur-l-autonomie-de-la-corse-au-senat-le-gouvernement-reaffirme-sa-volonte-d-engager-une-nouvelle-concertation-avec-les-elus-insulaires-le-premier-ministre-devrait-organiser-une-reunion-la-semaine-prochaine-3439902.html"
+            }
+          ]
+        },
+        {
+          "label": "6. Sénat, rapport n° 85 (2026-2027) de Muriel Jourda au nom de la commission des lois, 21 octobre 2026, synthèse : https://www.senat.fr/rap/l26-085/l26-0850.html",
+          "lead": "6. Sénat, rapport n° 85 (2026-2027) de Muriel Jourda au nom de la commission des lois, 21 octobre 2026, synthèse",
+          "links": [
+            {
+              "label": "https://www.senat.fr/rap/l26-085/l26-0850.html",
+              "url": "https://www.senat.fr/rap/l26-085/l26-0850.html"
+            }
+          ]
+        },
+        {
+          "label": "7. Même rapport, examen de l'article unique : https://www.senat.fr/rap/l26-085/l26-0854.html",
+          "lead": "7. Même rapport, examen de l'article unique",
+          "links": [
+            {
+              "label": "https://www.senat.fr/rap/l26-085/l26-0854.html",
+              "url": "https://www.senat.fr/rap/l26-085/l26-0854.html"
+            }
+          ]
+        },
+        {
+          "label": "8. Même rapport, examen en commission (propos de Muriel Jourda) : https://www.senat.fr/rap/l26-085/l26-0855.html",
+          "lead": "8. Même rapport, examen en commission (propos de Muriel Jourda)",
+          "links": [
+            {
+              "label": "https://www.senat.fr/rap/l26-085/l26-0855.html",
+              "url": "https://www.senat.fr/rap/l26-085/l26-0855.html"
+            }
+          ]
+        },
+        {
+          "label": "9. Conseil constitutionnel, texte intégral de la Constitution du 4 octobre 1958 (article 89) : https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+          "lead": "9. Conseil constitutionnel, texte intégral de la Constitution du 4 octobre 1958 (article 89)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+              "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur"
+            }
+          ]
+        },
+        {
+          "label": "10. Assemblée nationale, analyse du scrutin public n° 7454 (271 pour, 202 contre, 64 abstentions) : https://www.assemblee-nationale.fr/dyn/17/scrutins/7454",
+          "lead": "10. Assemblée nationale, analyse du scrutin public n° 7454 (271 pour, 202 contre, 64 abstentions)",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/17/scrutins/7454",
+              "url": "https://www.assemblee-nationale.fr/dyn/17/scrutins/7454"
+            }
+          ]
+        },
+        {
+          "label": "11. France 3 Corse ViaStella, direct du 26 octobre 2026 (propos de Bruno Retailleau en séance) : https://france3-regions.franceinfo.fr/corse/direct-suivez-minute-par-minute-les-debats-sur-l-autonomie-de-la-corse-au-senat-3438900.html",
+          "lead": "11. France 3 Corse ViaStella, direct du 26 octobre 2026 (propos de Bruno Retailleau en séance)",
+          "links": [
+            {
+              "label": "https://france3-regions.franceinfo.fr/corse/direct-suivez-minute-par-minute-les-debats-sur-l-autonomie-de-la-corse-au-senat-3438900.html",
+              "url": "https://france3-regions.franceinfo.fr/corse/direct-suivez-minute-par-minute-les-debats-sur-l-autonomie-de-la-corse-au-senat-3438900.html"
+            }
+          ]
+        },
+        {
+          "label": "12. Europe 1, « Présidentielle : le statut d'autonomie de la Corse s'invite dans la campagne », 8 août 2026 : https://www.europe1.fr/politique/presidentielle-le-statut-dautonomie-de-la-corse-sinvite-dans-la-campagne-1003536",
+          "lead": "12. Europe 1, « Présidentielle : le statut d'autonomie de la Corse s'invite dans la campagne », 8 août 2026",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/presidentielle-le-statut-dautonomie-de-la-corse-sinvite-dans-la-campagne-1003536",
+              "url": "https://www.europe1.fr/politique/presidentielle-le-statut-dautonomie-de-la-corse-sinvite-dans-la-campagne-1003536"
+            }
+          ]
+        },
+        {
+          "label": "13. France 3 Corse ViaStella, « Autonomie de la Corse : quelle est la position des candidats à la présidentielle 2027 ? », 18 juin 2026 : https://france3-regions.franceinfo.fr/corse/autonomie-de-la-corse-quelle-est-la-position-des-candidats-a-la-presidentielle-2027-3365797.html",
+          "lead": "13. France 3 Corse ViaStella, « Autonomie de la Corse : quelle est la position des candidats à la présidentielle 2027 ? », 18 juin 2026",
+          "links": [
+            {
+              "label": "https://france3-regions.franceinfo.fr/corse/autonomie-de-la-corse-quelle-est-la-position-des-candidats-a-la-presidentielle-2027-3365797.html",
+              "url": "https://france3-regions.franceinfo.fr/corse/autonomie-de-la-corse-quelle-est-la-position-des-candidats-a-la-presidentielle-2027-3365797.html"
+            }
+          ]
+        },
+        {
+          "label": "14. France 3 Corse ViaStella, « \"L'État centralisateur ne fonctionne plus\" : David Lisnard livre sa vision pour la Corse », 9 août 2026 : https://france3-regions.franceinfo.fr/corse/l-etat-centralisateur-ne-fonctionne-plus-autonomie-insularite-role-des-communes-david-lisnard-livre-sa-vision-pour-la-corse-3398806.html",
+          "lead": "14. France 3 Corse ViaStella, « \"L'État centralisateur ne fonctionne plus\" : David Lisnard livre sa vision pour la Corse », 9 août 2026",
+          "links": [
+            {
+              "label": "https://france3-regions.franceinfo.fr/corse/l-etat-centralisateur-ne-fonctionne-plus-autonomie-insularite-role-des-communes-david-lisnard-livre-sa-vision-pour-la-corse-3398806.html",
+              "url": "https://france3-regions.franceinfo.fr/corse/l-etat-centralisateur-ne-fonctionne-plus-autonomie-insularite-role-des-communes-david-lisnard-livre-sa-vision-pour-la-corse-3398806.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 27 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/gouvernance-an1t-droit",
+      "label": "Droit électoral, AN1T et gouvernance non bloquée"
+    },
+    {
+      "href": "/analyses/assemblee-premier-tour",
+      "label": "L'Assemblée du Premier Tour 2027"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
@@ -39,6 +40,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: corseSenatNon.slug,
+    title: corseSenatNon.title,
+    description: corseSenatNon.description,
+    date: corseSenatNon.date,
+    published: corseSenatNon.date,
+    updated: corseSenatNon.updated,
+    href: '/analyses/corse-senat-non',
+    cover: uneCover(
+      'corse-senat-non',
+      "Aquarelle d'une pile d'enveloppes vierges ficelées sur une table en bois, sur une terrasse en pierre, face à une côte montagneuse méditerranéenne et à une mer turquoise, dans une lumière d'automne.",
+    ),
+  },
   {
     slug: lePenUnionNationale.slug,
     title: lePenUnionNationale.title,
