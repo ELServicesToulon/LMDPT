@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import { renderAnalysisInline } from './analysis-inline';
@@ -35,14 +36,16 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -55,7 +58,143 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse Sécu 115 contre 1 du 25 octobre en une, sources, boîte DOE', () => {
+  it('analyse Union nationale du 26 octobre en une, sources, boîte DOE', () => {
+    expect(lePenUnionNationale.slug).toBe('le-pen-union-nationale');
+    expect(lePenUnionNationale.date).toBe('2026-10-26');
+    expect(lePenUnionNationale.updated).toBe('2026-10-26');
+    expect(lePenUnionNationale.title).toBe(
+      "« Union nationale » : le chef d'orchestre est choisi, les musiciens manquent",
+    );
+    expect(lePenUnionNationale.author).toBe('La rédaction');
+    expect(lePenUnionNationale.author_role).toBe('Rédaction LMDPT');
+    expect(lePenUnionNationale.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(lePenUnionNationale.type_label).toBe('Analyse');
+    expect(lePenUnionNationale.kicker).toBe('Analyse · La rédaction · 26 octobre 2026');
+    expect(lePenUnionNationale.tags).toContain('doe');
+    expect(lePenUnionNationale.x_hook).toBe(
+      "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
+    );
+    expect(lePenUnionNationale.description.length).toBeLessThanOrEqual(200);
+    expect(lePenUnionNationale.description).toMatch(/il en manque 151/);
+    expect(lePenUnionNationale.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(lePenUnionNationale.sources_intro).toMatch(/Consultées le 25 octobre 2026/);
+    expect(lePenUnionNationale.sources_closing).toMatch(/consultés le 25 octobre 2026/);
+    expect(lePenUnionNationale.hues).toHaveLength(3);
+    expect(lePenUnionNationale.hues.map((hue) => hue.slug)).toEqual([
+      'pluraliste',
+      'parti-socialiste',
+      'droite',
+    ]);
+    expect(lePenUnionNationale.hues.map((hue) => hue.label)).toEqual([
+      'Parlementarisme',
+      'Culture de coalition',
+      'Constitutionnalisme',
+    ]);
+    const orleans = lePenUnionNationale.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'orleans',
+    );
+    expect(orleans?.kind).toBe('prose');
+    if (orleans?.kind === 'prose') {
+      expect(orleans.title).toBe('Ce qui a été promis à Orléans');
+    }
+    const addition = lePenUnionNationale.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'addition',
+    );
+    expect(addition?.kind).toBe('prose');
+    if (addition?.kind === 'prose') {
+      expect(addition.title).toBe("L'union, c'est d'abord une addition");
+    }
+    const courants = lePenUnionNationale.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('le-pen-union-nationale');
+    expect(entry?.href).toBe('/analyses/le-pen-union-nationale');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/le-pen-union-nationale.jpg');
+    expect(entry?.cover?.alt).toMatch(/estrade de chef d'orchestre vide/);
+    expect(getUneDuJour()?.slug).toBe('le-pen-union-nationale');
+    const nSources = lePenUnionNationale.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(17);
+    const sourceBlob = JSON.stringify(lePenUnionNationale.sources_groups);
+    expect(sourceBlob).toMatch(/scrutins\/9097/);
+    expect(sourceBlob).toContain(
+      'https://www2.assemblee-nationale.fr/instances/liste/groupes_politiques/effectif',
+    );
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/politique\/front-national\/congres-du-rn/);
+    expect(sourceBlob).toMatch(/lesechos\.fr\/elections\/presidentielle\/a-orleans-marine-le-pen/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
+    expect(sourceBlob).toMatch(/delorscentre\.eu/);
+    expect(sourceBlob).toMatch(/senat\.fr\/senateurs\/grp\.html/);
+    expect(sourceBlob).toMatch(/publicsenat\.fr/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = lePenUnionNationale.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        "Ce qu'il ou elle dit des alliances",
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(8);
+      expect(encadre.note).toMatch(/déclarations publiques citées par les sources/);
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/union nationale/);
+      expect(lePen?.[2]).toBe('[1][3]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/seront mes adversaires/);
+      expect(retailleau?.[2]).toBe('[8][14][10]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/C'est tranché, c'est fini/);
+      expect(glucksmann?.[2]).toBe('[15]');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/non trouvée dans les sources consultées/);
+      expect(melenchon?.[2]).toBe('Aucune');
+    }
+    const analyseTexts = [
+      lePenUnionNationale.chapo,
+      lePenUnionNationale.description,
+      lePenUnionNationale.disclaimer,
+      lePenUnionNationale.sources_closing,
+      ...lePenUnionNationale.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[16\]/);
+    expect(analyseTexts).toMatch(/\[17\]/);
+    expect(analyseTexts).toMatch(/98,98 %/);
+    expect(analyseTexts).toMatch(/il en manque 151/);
+    expect(analyseTexts).toMatch(/chef de l'orchestre gouvernemental/);
+    expect(analyseTexts).toMatch(/Union nationale pour les Territoires/);
+    expect(analyseTexts).toMatch(/un recrutement, pas une union/);
+    expect(analyseTexts).toContain(
+      "Selon Mediapart, des messages antisémites envoyés en 2013 sur Facebook Messenger seraient de Jordan Bardella.",
+    );
+    expect(analyseTexts).toContain("visé par des accusations qu'il conteste");
+    expect(analyseTexts).not.toContain('Mediapart affirme que Jordan Bardella a écrit');
+    expect(analyseTexts).not.toContain("au centre d'une affaire");
+    expect(JSON.stringify(lePenUnionNationale)).not.toMatch(/<!--/);
+  });
+
+  it('analyse Sécu 115 contre 1 du 25 octobre, sources, boîte DOE', () => {
     expect(secu115Contre1.slug).toBe('secu-115-contre-1');
     expect(secu115Contre1.date).toBe('2026-10-25');
     expect(secu115Contre1.updated).toBe('2026-10-25');
@@ -106,7 +245,7 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/secu-115-contre-1');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/secu-115-contre-1.jpg');
     expect(entry?.cover?.alt).toMatch(/hémicycle presque vide/);
-    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
+    expect(getUneDuJour()?.slug).not.toBe('secu-115-contre-1');
     const nSources = secu115Contre1.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(16);
     const sourceBlob = JSON.stringify(secu115Contre1.sources_groups);

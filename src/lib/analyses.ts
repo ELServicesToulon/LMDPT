@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
 import breveIfop from '../data/analyses/breve-ifop-post-primaire.json';
@@ -38,6 +39,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: lePenUnionNationale.slug,
+    title: lePenUnionNationale.title,
+    description: lePenUnionNationale.description,
+    date: lePenUnionNationale.date,
+    published: lePenUnionNationale.date,
+    updated: lePenUnionNationale.updated,
+    href: '/analyses/le-pen-union-nationale',
+    cover: uneCover(
+      'le-pen-union-nationale',
+      "Aquarelle d'une estrade de chef d'orchestre vide, une baguette posée sur le pupitre, face à des chaises de musiciens inoccupées et des partitions, sous une lumière d'automne.",
+    ),
+  },
   {
     slug: secu115Contre1.slug,
     title: secu115Contre1.title,

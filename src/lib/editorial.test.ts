@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import {
   getDernieresUnes,
@@ -121,16 +122,22 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse Sécu du 25/10 en une, puis Debord, Ifop et feuilleton', () => {
+  it('analyse Union nationale du 26/10 en une, puis Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('secu-115-contre-1');
-    expect(getUneDuJour()?.title).toBe("115 contre 1 : l'Assemblée efface quatre jours de votes");
+    expect(getUneDuJour()?.slug).toBe('le-pen-union-nationale');
+    expect(getUneDuJour()?.title).toBe(
+      "« Union nationale » : le chef d'orchestre est choisi, les musiciens manquent",
+    );
+    expect(lePenUnionNationale.x_hook).toBe(
+      "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
+    );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[2]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[3]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[4]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[5]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[2]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[3]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[4]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[5]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[6]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
