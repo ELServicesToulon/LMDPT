@@ -1,6 +1,6 @@
 {
   "slug": "corse-senat-non",
-  "title": "Corse : 181 contre 134, et 122 LR sur 124 ont voté pour le texte modifié par le Sénat",
+  "title": "Corse : le Sénat rejette par 181 voix contre 134 le texte modifié, pourtant voté par 122 LR sur 124",
   "eyebrow": "Analyse · Présidentielle 2027",
   "type_label": "Analyse",
   "date": "2026-10-28",
@@ -21,7 +21,7 @@
     "presidentielle-2027",
     "doe"
   ],
-  "x_hook": "Corse : au Sénat, 122 des 124 LR ont voté pour le texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Socialistes, écologistes et Union nationale pour les territoires ont voté contre en bloc. Score final : 181 contre 134.",
+  "x_hook": "Corse : le Sénat a rejeté la réforme constitutionnelle par 181 voix contre 134. 122 des 124 LR ont pourtant voté pour, sur un texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Aucun socialiste ni écologiste n'a voté pour.",
   "hues": [
     {
       "slug": "lisnard",
@@ -156,7 +156,7 @@
         },
         {
           "type": "p",
-          "text": "Car le texte soumis au vote final n'était plus celui des députés. Selon France 3 Corse, la séance s'est ouverte sur le texte adopté à l'Assemblée, puis « la Chambre haute » l'a « elle-même modifié tout au long de la journée » [11]. En amont, en commission, les sénateurs avaient adopté 7 amendements, qui proposaient notamment de reconnaître les « singularités » de la Corse « dans le respect de l'universalisme républicain », de donner un « caractère administratif » aux actes de la collectivité, de retirer de la Constitution un « principe de non-régression » et de « sécuriser le pouvoir d'adaptation du Gouvernement » [7]. Franceinfo résume l'ensemble : à l'initiative de la droite, la chambre haute avait « largement réécrit » le texte, refusant notamment « d'inscrire dans le texte suprême l'existence d'une \"communauté insulaire\" » et « amoindrissant la portée des pouvoirs dérogatoires accordés à la collectivité de Corse » [2]. Le gouvernement parle d'« amendements de la droite sénatoriale » et juge qu'ils avaient « profondément modifié l'équilibre du texte » et l'avaient « éloigné de l'esprit de l'accord de Beauvau » [4]."
+          "text": "Car le texte soumis au vote final n'était plus celui des députés. Selon France 3 Corse, la séance s'est ouverte sur le texte adopté à l'Assemblée, puis « la Chambre haute » l'a « elle-même modifié tout au long de la journée » [11]. En amont, en commission, les sénateurs avaient adopté 7 amendements, qui proposaient notamment de reconnaître les « singularités » de la Corse « dans le respect de l'universalisme républicain », de donner un « caractère administratif » aux actes de la collectivité, de retirer du projet de révision l'inscription d'un « principe de non-régression » et de « sécuriser le pouvoir d'adaptation du Gouvernement » [7]. Franceinfo résume l'ensemble : à l'initiative de la droite, la chambre haute avait « largement réécrit » le texte, refusant notamment « d'inscrire dans le texte suprême l'existence d'une \"communauté insulaire\" » et « amoindrissant la portée des pouvoirs dérogatoires accordés à la collectivité de Corse » [2]. Le gouvernement parle d'« amendements de la droite sénatoriale » et juge qu'ils avaient « profondément modifié l'équilibre du texte » et l'avaient « éloigné de l'esprit de l'accord de Beauvau » [4]."
         }
       ]
     },
@@ -205,11 +205,11 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Une révision de la Constitution suit l'article 89. Les deux assemblées doivent voter exactement le même texte. Ensuite, il faut un référendum ou, si le président de la République le décide, un vote du Parlement réuni en Congrès, à la majorité des trois cinquièmes des suffrages exprimés [9]. Aujourd'hui, l'Assemblée a voté un texte [10], et le Sénat n'en a voté aucun [1]."
+          "text": "Une révision de la Constitution suit l'article 89. Les deux assemblées doivent voter exactement le même texte. Ensuite, s'agissant d'un projet de loi constitutionnelle, il faut un référendum ou, si le président de la République le décide, un vote du Parlement réuni en Congrès, à la majorité des trois cinquièmes des suffrages exprimés [9]. Aujourd'hui, l'Assemblée a voté un texte [10], et le Sénat n'en a voté aucun [1]."
         },
         {
           "type": "p",
-          "text": "Franceinfo le note : un aboutissement avant la présidentielle « paraissait déjà très improbable », et les débats de lundi « éloignent encore plus cette hypothèse » [2]. Pour aboutir, il faudrait d'abord que les deux chambres votent le même texte, puis un référendum ou un Congrès, comme le prévoit l'article 89 [9]. Le rapport compte « au moins 73 » demandes et 13 « évolutions normatives » [6]. Notre calcul : sur les 73 demandes recensées, 60 sont restées sans changement de règle."
+          "text": "Franceinfo le note : un aboutissement avant la présidentielle « paraissait déjà très improbable », et les débats de lundi « éloignent encore plus cette hypothèse » [2]. Pour aboutir, il faudrait d'abord que les deux chambres votent le même texte, puis un référendum ou un Congrès, comme le prévoit l'article 89 [9]. Le rapport compte « au moins 73 » demandes et 13 « évolutions normatives » [6]. Notre calcul : le rapport compte ces demandes « sans prétendre à l'exhaustivité » ; sur les 73 qu'il recense, 60 n'ont pas débouché sur une « évolution normative »."
         }
       ]
     },

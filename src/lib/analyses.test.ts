@@ -66,7 +66,7 @@ describe('analyses', () => {
     expect(corseSenatNon.date).toBe('2026-10-28');
     expect(corseSenatNon.updated).toBe('2026-10-28');
     expect(corseSenatNon.title).toBe(
-      'Corse : 181 contre 134, et 122 LR sur 124 ont voté pour le texte modifié par le Sénat',
+      'Corse : le Sénat rejette par 181 voix contre 134 le texte modifié, pourtant voté par 122 LR sur 124',
     );
     expect(corseSenatNon.author).toBe('La rédaction');
     expect(corseSenatNon.author_role).toBe('Rédaction LMDPT');
@@ -75,7 +75,7 @@ describe('analyses', () => {
     expect(corseSenatNon.kicker).toBe('Analyse · La rédaction · 28 octobre 2026');
     expect(corseSenatNon.tags).toContain('doe');
     expect(corseSenatNon.x_hook).toBe(
-      "Corse : au Sénat, 122 des 124 LR ont voté pour le texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Socialistes, écologistes et Union nationale pour les territoires ont voté contre en bloc. Score final : 181 contre 134.",
+      "Corse : le Sénat a rejeté la réforme constitutionnelle par 181 voix contre 134. 122 des 124 LR ont pourtant voté pour, sur un texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Aucun socialiste ni écologiste n'a voté pour.",
     );
     expect(corseSenatNon.description.length).toBeLessThanOrEqual(200);
     expect(corseSenatNon.description).toMatch(/181 voix contre 134/);
@@ -222,6 +222,13 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/seules 13 des 73 demandes d'adaptation/);
     expect(analyseTexts).toMatch(/très improbable/);
     expect(analyseTexts).toMatch(/122 sur 124/);
+    expect(analyseTexts).toMatch(
+      /de retirer du projet de révision l'inscription d'un « principe de non-régression »/,
+    );
+    expect(analyseTexts).toMatch(/s'agissant d'un projet de loi constitutionnelle/);
+    expect(analyseTexts).toMatch(
+      /Notre calcul : le rapport compte ces demandes « sans prétendre à l'exhaustivité » ; sur les 73 qu'il recense, 60 n'ont pas débouché sur une « évolution normative »/,
+    );
     expect(analyseTexts).toMatch(/scrutin public n° 34/);
     expect(analyseTexts).toMatch(/Trois questions simples/);
     expect(analyseTexts).toMatch(/Gérard Larcher/);

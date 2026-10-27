@@ -127,10 +127,10 @@ describe('une du jour (égalité de date)', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
     expect(getUneDuJour()?.slug).toBe('corse-senat-non');
     expect(getUneDuJour()?.title).toBe(
-      'Corse : 181 contre 134, et 122 LR sur 124 ont voté pour le texte modifié par le Sénat',
+      'Corse : le Sénat rejette par 181 voix contre 134 le texte modifié, pourtant voté par 122 LR sur 124',
     );
     expect(corseSenatNon.x_hook).toBe(
-      "Corse : au Sénat, 122 des 124 LR ont voté pour le texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Socialistes, écologistes et Union nationale pour les territoires ont voté contre en bloc. Score final : 181 contre 134.",
+      "Corse : le Sénat a rejeté la réforme constitutionnelle par 181 voix contre 134. 122 des 124 LR ont pourtant voté pour, sur un texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Aucun socialiste ni écologiste n'a voté pour.",
     );
     expect(lePenUnionNationale.x_hook).toBe(
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
