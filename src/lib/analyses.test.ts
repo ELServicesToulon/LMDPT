@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
@@ -36,16 +37,18 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('corse-senat-non');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -58,7 +61,181 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse Union nationale du 26 octobre en une, sources, boîte DOE', () => {
+  it('analyse Corse Sénat non du 28 octobre en une, sources, boîte DOE', () => {
+    expect(corseSenatNon.slug).toBe('corse-senat-non');
+    expect(corseSenatNon.date).toBe('2026-10-28');
+    expect(corseSenatNon.updated).toBe('2026-10-28');
+    expect(corseSenatNon.title).toBe(
+      'Corse : le Sénat rejette par 181 voix contre 134 le texte modifié, pourtant voté par 122 LR sur 124',
+    );
+    expect(corseSenatNon.author).toBe('La rédaction');
+    expect(corseSenatNon.author_role).toBe('Rédaction LMDPT');
+    expect(corseSenatNon.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(corseSenatNon.type_label).toBe('Analyse');
+    expect(corseSenatNon.kicker).toBe('Analyse · La rédaction · 28 octobre 2026');
+    expect(corseSenatNon.tags).toContain('doe');
+    expect(corseSenatNon.x_hook).toBe(
+      "Corse : le Sénat a rejeté la réforme constitutionnelle par 181 voix contre 134. 122 des 124 LR ont pourtant voté pour, sur un texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Aucun socialiste ni écologiste n'a voté pour.",
+    );
+    expect(corseSenatNon.description.length).toBeLessThanOrEqual(200);
+    expect(corseSenatNon.description).toMatch(/181 voix contre 134/);
+    expect(corseSenatNon.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(corseSenatNon.sources_intro).toMatch(/Consultées le 27 octobre 2026/);
+    expect(corseSenatNon.sources_closing).toMatch(/consultés le 27 octobre 2026/);
+    expect(corseSenatNon.hues).toHaveLength(3);
+    expect(corseSenatNon.hues.map((hue) => hue.slug)).toEqual([
+      'lisnard',
+      'pluraliste',
+      'droite',
+    ]);
+    expect(corseSenatNon.hues.map((hue) => hue.label)).toEqual([
+      'Décentralisation et subsidiarité',
+      'Parlementarisme',
+      'Constitutionnalisme',
+    ]);
+    const non = corseSenatNon.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'non',
+    );
+    expect(non?.kind).toBe('prose');
+    if (non?.kind === 'prose') {
+      expect(non.title).toBe('181 « non » : ce que dit le scrutin, et ce qu\'il ne dit pas');
+      const scrutin = non.blocks.find((block) => block.type === 'table');
+      expect(scrutin?.type).toBe('table');
+      if (scrutin?.type === 'table') {
+        expect(scrutin.headers).toEqual([
+          'Groupe',
+          'Pour',
+          'Contre',
+          'Abstention',
+          'Ne prend pas part',
+        ]);
+        expect(scrutin.rows).toHaveLength(11);
+        expect(scrutin.rows[0]).toEqual([
+          'Les Républicains (124)',
+          '122',
+          '1',
+          '0',
+          '1 (Gérard Larcher, président du Sénat)',
+        ]);
+        expect(scrutin.rows[10]?.[0]).toBe('**Total**');
+        expect(scrutin.rows[10]?.[2]).toBe('**181**');
+      }
+    }
+    const procedure = corseSenatNon.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'procedure',
+    );
+    expect(procedure?.kind).toBe('prose');
+    if (procedure?.kind === 'prose') {
+      expect(procedure.title).toBe(
+        'La procédure de 1991 : 13 « évolutions normatives » sur « au moins 73 » demandes',
+      );
+    }
+    const courants = corseSenatNon.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('corse-senat-non');
+    expect(entry?.href).toBe('/analyses/corse-senat-non');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
+    expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
+    expect(getUneDuJour()?.slug).toBe('corse-senat-non');
+    const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(15);
+    const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
+    expect(sourceBlob).toContain('https://www.senat.fr/scrutin-public/2026/scr2026-34.html');
+    expect(sourceBlob).toMatch(/scrutins\/7454/);
+    expect(sourceBlob).toMatch(/senat\.fr\/rap\/l26-085/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/france\/corse\/le-senat-rejette/);
+    expect(sourceBlob).toMatch(/corsematin\.com\/article\/politique/);
+    expect(sourceBlob).toMatch(/ecologie\.gouv\.fr\/presse\/autonomie-corse/);
+    expect(sourceBlob).toMatch(/europe1\.fr\/politique\/presidentielle-le-statut-dautonomie/);
+    expect(sourceBlob).toMatch(/senat\.fr\/cra\/s20261026\/s20261026_mono\.html/);
+    expect(sourceBlob).toMatch(/déroulé de la séance/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = corseSenatNon.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        "Position sur l'autonomie de la Corse",
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(10);
+      expect(encadre.note).toMatch(/déclarations publiques/);
+      expect(encadre.note).toMatch(/\[1\], \[11\] à \[15\]/);
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/Si cette autonomie s'imagine contre la France/);
+      expect(lePen?.[2]).toBe('[12][13]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/indivisibilité/);
+      expect(retailleau?.[1]).toMatch(/voté pour le texte modifié par le Sénat/);
+      expect(retailleau?.[2]).toBe('[1][12][15]');
+      const bertrand = encadre.table.rows.find((row) => row[0]?.includes('Bertrand'));
+      expect(bertrand?.[1]).toMatch(/référendum comme préalable incontournable/);
+      expect(bertrand?.[2]).toBe('[13]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/non trouvée dans les sources consultées/);
+      expect(glucksmann?.[2]).toBe('Aucune');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/autonomie étendue que demande ce peuple/);
+      expect(melenchon?.[2]).toBe('[13]');
+    }
+    const analyseTexts = [
+      corseSenatNon.chapo,
+      corseSenatNon.description,
+      corseSenatNon.disclaimer,
+      corseSenatNon.sources_closing,
+      ...corseSenatNon.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[2\]/);
+    expect(analyseTexts).toMatch(/\[14\]/);
+    expect(analyseTexts).toMatch(/\[15\]/);
+    expect(analyseTexts).toMatch(/au moins 73/);
+    expect(analyseTexts).toMatch(/seules 13 des 73 demandes d'adaptation/);
+    expect(analyseTexts).toMatch(/très improbable/);
+    expect(analyseTexts).toMatch(/122 sur 124/);
+    expect(analyseTexts).toMatch(
+      /de retirer du projet de révision l'inscription d'un « principe de non-régression »/,
+    );
+    expect(analyseTexts).toMatch(/s'agissant d'un projet de loi constitutionnelle/);
+    expect(analyseTexts).toMatch(
+      /Notre calcul : le rapport compte ces demandes « sans prétendre à l'exhaustivité » ; sur les 73 qu'il recense, 60 n'ont pas débouché sur une « évolution normative »/,
+    );
+    expect(analyseTexts).toMatch(/scrutin public n° 34/);
+    expect(analyseTexts).toMatch(/Trois questions simples/);
+    expect(analyseTexts).toMatch(/Gérard Larcher/);
+    expect(JSON.stringify(corseSenatNon)).not.toMatch(/<!--/);
+  });
+
+  it('analyse Union nationale du 26 octobre, sources, boîte DOE', () => {
     expect(lePenUnionNationale.slug).toBe('le-pen-union-nationale');
     expect(lePenUnionNationale.date).toBe('2026-10-26');
     expect(lePenUnionNationale.updated).toBe('2026-10-26');
@@ -115,7 +292,7 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/le-pen-union-nationale');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/le-pen-union-nationale.jpg');
     expect(entry?.cover?.alt).toMatch(/estrade de chef d'orchestre vide/);
-    expect(getUneDuJour()?.slug).toBe('le-pen-union-nationale');
+    expect(getUneDuJour()?.slug).not.toBe('le-pen-union-nationale');
     const nSources = lePenUnionNationale.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(17);
     const sourceBlob = JSON.stringify(lePenUnionNationale.sources_groups);
