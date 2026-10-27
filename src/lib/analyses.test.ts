@@ -66,7 +66,7 @@ describe('analyses', () => {
     expect(corseSenatNon.date).toBe('2026-10-28');
     expect(corseSenatNon.updated).toBe('2026-10-28');
     expect(corseSenatNon.title).toBe(
-      "Corse : Les Républicains ont voté pour leur copie, 181 sénateurs l'ont rejetée",
+      'Corse : 181 contre 134, et 122 LR sur 124 ont voté pour le texte modifié par le Sénat',
     );
     expect(corseSenatNon.author).toBe('La rédaction');
     expect(corseSenatNon.author_role).toBe('Rédaction LMDPT');
@@ -75,7 +75,7 @@ describe('analyses', () => {
     expect(corseSenatNon.kicker).toBe('Analyse · La rédaction · 28 octobre 2026');
     expect(corseSenatNon.tags).toContain('doe');
     expect(corseSenatNon.x_hook).toBe(
-      "Corse : au Sénat, 122 des 124 sénateurs LR ont voté pour leur version réécrite de l'autonomie. Centristes, socialistes, écologistes, RDPI et Union nationale pour les territoires, entre autres, ont voté contre : 181 à 134. Un aboutissement avant 2027 s'éloigne.",
+      "Corse : au Sénat, 122 des 124 LR ont voté pour le texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Socialistes, écologistes et Union nationale pour les territoires ont voté contre en bloc. Score final : 181 contre 134.",
     );
     expect(corseSenatNon.description.length).toBeLessThanOrEqual(200);
     expect(corseSenatNon.description).toMatch(/181 voix contre 134/);
@@ -98,7 +98,7 @@ describe('analyses', () => {
     );
     expect(non?.kind).toBe('prose');
     if (non?.kind === 'prose') {
-      expect(non.title).toBe('Un « non » fait de deux refus opposés');
+      expect(non.title).toBe('181 « non » : ce que dit le scrutin, et ce qu\'il ne dit pas');
       const scrutin = non.blocks.find((block) => block.type === 'table');
       expect(scrutin?.type).toBe('table');
       if (scrutin?.type === 'table') {
@@ -127,7 +127,7 @@ describe('analyses', () => {
     expect(procedure?.kind).toBe('prose');
     if (procedure?.kind === 'prose') {
       expect(procedure.title).toBe(
-        'La procédure de 1991 : 13 changements de règle sur « au moins 73 » demandes',
+        'La procédure de 1991 : 13 « évolutions normatives » sur « au moins 73 » demandes',
       );
     }
     const courants = corseSenatNon.sections.find(
@@ -143,7 +143,7 @@ describe('analyses', () => {
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).toBe('corse-senat-non');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
-    expect(nSources).toBe(14);
+    expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
     expect(sourceBlob).toContain('https://www.senat.fr/scrutin-public/2026/scr2026-34.html');
     expect(sourceBlob).toMatch(/scrutins\/7454/);
@@ -153,6 +153,8 @@ describe('analyses', () => {
     expect(sourceBlob).toMatch(/corsematin\.com\/article\/politique/);
     expect(sourceBlob).toMatch(/ecologie\.gouv\.fr\/presse\/autonomie-corse/);
     expect(sourceBlob).toMatch(/europe1\.fr\/politique\/presidentielle-le-statut-dautonomie/);
+    expect(sourceBlob).toMatch(/senat\.fr\/cra\/s20261026\/s20261026_mono\.html/);
+    expect(sourceBlob).toMatch(/déroulé de la séance/);
     expect(sourceBlob).not.toMatch(/Note de vérification/);
     const encadre = corseSenatNon.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
@@ -162,15 +164,19 @@ describe('analyses', () => {
         "Position sur l'autonomie de la Corse",
         'Sources',
       ]);
-      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.table.rows).toHaveLength(10);
       expect(encadre.note).toMatch(/déclarations publiques/);
+      expect(encadre.note).toMatch(/\[1\], \[11\] à \[15\]/);
       const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
       expect(lePen?.[1]).toMatch(/Si cette autonomie s'imagine contre la France/);
       expect(lePen?.[2]).toBe('[12][13]');
       const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
       expect(retailleau?.[1]).toMatch(/indivisibilité/);
-      expect(retailleau?.[1]).toMatch(/voté pour la version réécrite par le Sénat/);
-      expect(retailleau?.[2]).toBe('[1][11][12]');
+      expect(retailleau?.[1]).toMatch(/voté pour le texte modifié par le Sénat/);
+      expect(retailleau?.[2]).toBe('[1][12][15]');
+      const bertrand = encadre.table.rows.find((row) => row[0]?.includes('Bertrand'));
+      expect(bertrand?.[1]).toMatch(/référendum comme préalable incontournable/);
+      expect(bertrand?.[2]).toBe('[13]');
       const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
       expect(glucksmann?.[1]).toMatch(/non trouvée dans les sources consultées/);
       expect(glucksmann?.[2]).toBe('Aucune');
@@ -211,6 +217,7 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/\[1\]/);
     expect(analyseTexts).toMatch(/\[2\]/);
     expect(analyseTexts).toMatch(/\[14\]/);
+    expect(analyseTexts).toMatch(/\[15\]/);
     expect(analyseTexts).toMatch(/au moins 73/);
     expect(analyseTexts).toMatch(/seules 13 des 73 demandes d'adaptation/);
     expect(analyseTexts).toMatch(/très improbable/);

@@ -127,10 +127,10 @@ describe('une du jour (égalité de date)', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
     expect(getUneDuJour()?.slug).toBe('corse-senat-non');
     expect(getUneDuJour()?.title).toBe(
-      "Corse : Les Républicains ont voté pour leur copie, 181 sénateurs l'ont rejetée",
+      'Corse : 181 contre 134, et 122 LR sur 124 ont voté pour le texte modifié par le Sénat',
     );
     expect(corseSenatNon.x_hook).toBe(
-      "Corse : au Sénat, 122 des 124 sénateurs LR ont voté pour leur version réécrite de l'autonomie. Centristes, socialistes, écologistes, RDPI et Union nationale pour les territoires, entre autres, ont voté contre : 181 à 134. Un aboutissement avant 2027 s'éloigne.",
+      "Corse : au Sénat, 122 des 124 LR ont voté pour le texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Socialistes, écologistes et Union nationale pour les territoires ont voté contre en bloc. Score final : 181 contre 134.",
     );
     expect(lePenUnionNationale.x_hook).toBe(
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
