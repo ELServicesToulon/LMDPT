@@ -136,13 +136,14 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[2]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[3]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[4]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[5]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[6]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[7]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[2]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[3]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[4]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[5]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[6]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[7]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[8]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 

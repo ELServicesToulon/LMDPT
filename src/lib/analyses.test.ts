@@ -12,6 +12,7 @@ import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
 import debordWatts from '../data/analyses/debord-watts-frigo-sans-courant.json';
+import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
 import { renderAnalysisInline } from './analysis-inline';
 import { getUneDuJour } from './editorial';
 import { socialTitleFrom, SOCIAL_TITLE_MAX } from './seo';
@@ -41,14 +42,18 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
+      'chronique-manusk-fiction-demission-macron',
+    );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -233,6 +238,115 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/Trois questions simples/);
     expect(analyseTexts).toMatch(/Gérard Larcher/);
     expect(JSON.stringify(corseSenatNon)).not.toMatch(/<!--/);
+  });
+
+  it('chronique Manusk fiction démission Macron du 28 octobre, bandeau, DOE, sources', () => {
+    expect(chroniqueFictionDemission.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(chroniqueFictionDemission.date).toBe('2026-10-28');
+    expect(chroniqueFictionDemission.updated).toBe('2026-10-28');
+    expect(chroniqueFictionDemission.title.startsWith('Fiction :')).toBe(true);
+    expect(chroniqueFictionDemission.title).toBe(
+      "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen gagne du temps, ou le perd",
+    );
+    expect(chroniqueFictionDemission.x_hook.startsWith('Fiction :')).toBe(true);
+    expect(chroniqueFictionDemission.x_hook).toBe(chroniqueFictionDemission.title);
+    expect(chroniqueFictionDemission.author).toBe('Manusk');
+    expect(chroniqueFictionDemission.author_role).toBe('Chroniqueur invité');
+    expect(chroniqueFictionDemission.eyebrow).toBe('Chronique · Manusk');
+    expect(chroniqueFictionDemission.type_label).toBe("Chronique d'opinion");
+    expect(chroniqueFictionDemission.kicker).toBe('Chronique · Manusk · 28 octobre 2026');
+    expect(chroniqueFictionDemission.kicker).not.toMatch(/DRAFT/);
+    expect(chroniqueFictionDemission.fiction_banner).toBe(
+      "FICTION / PROSPECTIVE. Rien de ce qui suit n'est arrivé. Emmanuel Macron n'a pas démissionné, et rien ne l'annonce.",
+    );
+    expect(chroniqueFictionDemission.disclaimer).toMatch(/Chronique d'opinion et fiction prospective signée Manusk/);
+    expect(chroniqueFictionDemission.disclaimer).toMatch(/n'engage pas la rédaction/);
+    expect(chroniqueFictionDemission.description.length).toBeLessThanOrEqual(200);
+    expect(chroniqueFictionDemission.tags).toContain('manusk');
+    expect(chroniqueFictionDemission.hues).toHaveLength(3);
+    expect(chroniqueFictionDemission.hues.map((hue) => hue.slug)).toEqual([
+      'philippe',
+      'parti-socialiste',
+      'le-pen',
+    ]);
+    expect(chroniqueFictionDemission.hues.map((hue) => hue.label)).toEqual([
+      'Droite et centre (Horizons)',
+      'Social-démocrate',
+      'Rassemblement national',
+    ]);
+    expect(chroniqueFictionDemission.hues[2]?.rationale).toMatch(/en tension/i);
+    const chronique = chroniqueFictionDemission.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'chronique',
+    );
+    expect(chronique?.kind).toBe('prose');
+    if (chronique?.kind === 'prose') {
+      const paras = chronique.blocks.filter((block) => block.type === 'p');
+      expect(paras).toHaveLength(11);
+      expect(chroniqueFictionDemission.chapo).toMatch(/Et si le président partait un lundi matin/);
+    }
+    const courants = chroniqueFictionDemission.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Badges des courants en phase');
+    }
+    const entry = getAnalysis('chronique-manusk-fiction-demission-macron');
+    expect(entry?.href).toBe('/analyses/chronique-manusk-fiction-demission-macron');
+    expect(entry?.cover?.src).toBe(
+      '/illustrations/unes/analyses/chronique-manusk-fiction-demission-macron.jpg',
+    );
+    expect(entry?.cover?.alt).toMatch(/fauteuil présidentiel vide/);
+    expect(getUneDuJour()?.slug).not.toBe('chronique-manusk-fiction-demission-macron');
+    const nSources = chroniqueFictionDemission.sources_groups.reduce(
+      (n, g) => n + g.items.length,
+      0,
+    );
+    expect(nSources).toBe(9);
+    const sourceBlob = JSON.stringify(chroniqueFictionDemission.sources_groups);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
+    expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/loda\/id\/JORFTEXT000000684037/);
+    expect(sourceBlob).toMatch(/courdecassation\.fr/);
+    expect(sourceBlob).toMatch(/commission-des-sondages\.fr\/notices/);
+    expect(sourceBlob).toMatch(/31mars 2025/);
+    expect(JSON.stringify(chroniqueFictionDemission)).not.toMatch(/DRAFT, pas de X/);
+    expect(JSON.stringify(chroniqueFictionDemission)).not.toMatch(/Test rédaction/);
+    expect(JSON.stringify(chroniqueFictionDemission)).not.toMatch(/Note pour la future PR/);
+    const encadre = chroniqueFictionDemission.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat', 'Situation réelle', 'Dans la fiction']);
+      expect(encadre.table.rows).toHaveLength(4);
+      expect(encadre.note).toMatch(/hypothèse de la rédaction/);
+    }
+    const chroniqueTexts = [
+      chroniqueFictionDemission.chapo,
+      chroniqueFictionDemission.description,
+      chroniqueFictionDemission.disclaimer,
+      chroniqueFictionDemission.fiction_banner,
+      chroniqueFictionDemission.sources_closing,
+      ...(chronique?.kind === 'prose'
+        ? chronique.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          )
+        : []),
+      ...(courants?.kind === 'prose'
+        ? courants.blocks.flatMap((block) =>
+            block.type === 'p' ? [block.text] : block.type === 'ul' || block.type === 'ol' ? block.items : [],
+          )
+        : []),
+      ...(encadre?.kind === 'candidats'
+        ? [
+            encadre.intro,
+            encadre.note,
+            encadre.conclusion,
+            ...encadre.table.headers,
+            ...encadre.table.rows.flat(),
+          ]
+        : []),
+    ].join('\n');
+    expect(chroniqueTexts).not.toMatch(/—/);
+    expect(socialTitleFrom(chroniqueFictionDemission.title).startsWith('Fiction :')).toBe(true);
   });
 
   it('analyse Union nationale du 26 octobre, sources, boîte DOE', () => {

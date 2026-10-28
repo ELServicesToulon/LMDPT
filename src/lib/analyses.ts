@@ -7,6 +7,7 @@ import ukraineEnergie from '../data/analyses/ukraine-energie-triangle-europe-alg
 import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
+import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
@@ -51,6 +52,19 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     cover: uneCover(
       'corse-senat-non',
       "Aquarelle d'une pile d'enveloppes vierges ficelées sur une table en bois, sur une terrasse en pierre, face à une côte montagneuse méditerranéenne et à une mer turquoise, dans une lumière d'automne.",
+    ),
+  },
+  {
+    slug: chroniqueFictionDemission.slug,
+    title: chroniqueFictionDemission.title,
+    description: chroniqueFictionDemission.description,
+    date: chroniqueFictionDemission.date,
+    published: chroniqueFictionDemission.date,
+    updated: chroniqueFictionDemission.updated,
+    href: '/analyses/chronique-manusk-fiction-demission-macron',
+    cover: uneCover(
+      'chronique-manusk-fiction-demission-macron',
+      "Un fauteuil présidentiel vide dans un salon doré, des pages de calendrier qui s'envolent par la fenêtre (aquarelle)",
     ),
   },
   {
