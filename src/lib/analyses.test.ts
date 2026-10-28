@@ -246,7 +246,7 @@ describe('analyses', () => {
     expect(chroniqueFictionDemission.updated).toBe('2026-10-28');
     expect(chroniqueFictionDemission.title.startsWith('Fiction :')).toBe(true);
     expect(chroniqueFictionDemission.title).toBe(
-      "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen gagne du temps, ou le perd",
+      "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen, aidée ou bloquée",
     );
     expect(chroniqueFictionDemission.x_hook.startsWith('Fiction :')).toBe(true);
     expect(chroniqueFictionDemission.x_hook).toBe(chroniqueFictionDemission.title);
@@ -302,7 +302,7 @@ describe('analyses', () => {
       (n, g) => n + g.items.length,
       0,
     );
-    expect(nSources).toBe(9);
+    expect(nSources).toBe(10);
     const sourceBlob = JSON.stringify(chroniqueFictionDemission.sources_groups);
     expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
     expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/loda\/id\/JORFTEXT000000684037/);

@@ -1,6 +1,6 @@
 {
   "slug": "chronique-manusk-fiction-demission-macron",
-  "title": "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen gagne du temps, ou le perd",
+  "title": "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen, aidée ou bloquée",
   "eyebrow": "Chronique · Manusk",
   "type_label": "Chronique d'opinion",
   "date": "2026-10-28",
@@ -23,25 +23,25 @@
     "philippe",
     "doe"
   ],
-  "x_hook": "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen gagne du temps, ou le perd",
+  "x_hook": "Fiction : Macron s'en va, premier tour dans 35 jours au plus. Le Pen, aidée ou bloquée",
   "hues": [
     {
       "slug": "philippe",
       "label": "Droite et centre (Horizons)",
       "color": "#0001b8",
-      "rationale": "En phase, le calendrier aide le candidat déjà déclaré."
+      "rationale": "En phase, selon la lecture de la chronique : un calendrier court avantage le candidat d'Horizons, qui refuse une primaire."
     },
     {
       "slug": "parti-socialiste",
       "label": "Social-démocrate",
       "color": "#ff8080",
-      "rationale": "En phase, duel resserré dans l'Elabe."
+      "rationale": "En phase, écart Elabe ramené de 17 points au premier tour (hypothèse Attal) à 7 au duel, hors marge."
     },
     {
       "slug": "le-pen",
       "label": "Rassemblement national",
       "color": "#0d378a",
-      "rationale": "En tension, l'élection éclair aide ou bloque selon la lecture de l'éligibilité."
+      "rationale": "En tension, l'élection éclair l'aide ou la bloque selon la lecture retenue de l'éligibilité (pourvoi suspensif selon la Cour de cassation)."
     }
   ],
   "sections": [
@@ -56,7 +56,7 @@
         },
         {
           "type": "p",
-          "text": "Gérard Larcher, président du Sénat, assure l'intérim : c'est l'article 7 de la Constitution. Le premier tour doit avoir lieu entre 20 et 35 jours plus tard. Les 500 parrainages doivent arriver au Conseil constitutionnel le troisième mardi avant ce premier tour, à 18 h. Selon le dimanche retenu, dépôt le lendemain, huit ou quinze jours après la vacance. Ce n'est plus une campagne, c'est un sprint."
+          "text": "Gérard Larcher, réélu président du Sénat le 1er octobre, assure l'intérim : c'est l'article 7 de la Constitution. Le premier tour doit avoir lieu entre 20 et 35 jours plus tard. Les 500 parrainages doivent arriver au Conseil constitutionnel le troisième mardi avant ce premier tour, à 18 h. Selon le dimanche retenu, dépôt le lendemain, huit ou quinze jours après la vacance."
         },
         {
           "type": "p",
@@ -64,31 +64,31 @@
         },
         {
           "type": "p",
-          "text": "Marine Le Pen, d'abord. Sauf que sa ligne de départ est contestée. En appel, le 7 juillet, elle a pris 45 mois d'inéligibilité, dont 30 avec sursis, décision non définitive. Le 8 juillet, la Cour de cassation a indiqué qu'elle « pourrait être en mesure » de statuer « au plus tard début avril 2027 », un calendrier « susceptible d'évoluer »."
+          "text": "Marine Le Pen, d'abord. Sauf que sa ligne de départ est contestée. En appel, le 7 juillet, selon le communiqué de la cour, elle a pris 45 mois d'inéligibilité, dont 30 avec sursis. Le 8 juillet, la Cour de cassation a indiqué qu'elle « pourrait être en mesure » de statuer « au plus tard début avril 2027 », un calendrier « susceptible d'évoluer »."
         },
         {
           "type": "p",
-          "text": "Première lecture, celle de franceinfo le 7 juillet, avant le pourvoi : 15 mois comptés depuis le 31 mars 2025, peine purgée le 1er juillet, donc éligible pour la présidentielle de 2027. Mais, selon la Cour de cassation, le pourvoi suspend cet arrêt. Pour un scrutin éclair à l'automne 2026, la question reste ouverte. Si elle peut se présenter, le départ le plus brutal serait pour elle, à notre sens, le cadeau le plus doux. Seconde lecture, le titre de l'entretien publié hier par Le Monde avec Didier Guérin, président de chambre honoraire à la Cour de cassation : elle est « actuellement inéligible jusqu'à la décision de la Cour de cassation sur son pourvoi ». Alors, à notre sens, l'élection éclair devient son pire cauchemar. Et c'est au Conseil constitutionnel d'arrêter la liste. Le même calendrier l'aide ou la bloque."
+          "text": "Première lecture, celle de franceinfo le 7 juillet, avant le communiqué du 8 juillet : 15 mois comptés depuis le 31 mars 2025, peine purgée le 1er juillet, donc éligible pour la présidentielle de 2027. Mais, selon la Cour de cassation, le pourvoi suspend cet arrêt, qui n'est donc pas définitif. Pour un scrutin éclair à l'automne 2026, la question reste ouverte. Si elle peut se présenter, le départ le plus brutal serait pour elle, à notre sens, le cadeau le plus doux. Seconde lecture, le titre de l'entretien publié hier par Le Monde avec Didier Guérin, président de chambre honoraire à la Cour de cassation : elle est « actuellement inéligible jusqu'à la décision de la Cour de cassation sur son pourvoi ». Alors, à notre sens, l'élection éclair devient son pire cauchemar. Et c'est au Conseil constitutionnel d'arrêter la liste. Le même calendrier l'aide ou la bloque."
         },
         {
           "type": "p",
-          "text": "Édouard Philippe, ensuite. Le candidat d'Horizons refuse une primaire qui rendrait, disait-il le 11 octobre, « au mieux le rassemblement hypocrite, au pire impossible ». Quinze jours au plus pour réunir 500 signatures, c'est déjà serré. Organiser un vote avant, c'est notre lecture, ne tient pas dans la fenêtre."
+          "text": "Édouard Philippe, ensuite. Le candidat d'Horizons refuse une primaire qui rendrait, disait-il le 11 octobre, « au mieux le rassemblement hypocrite, au pire impossible ». Entre la vacance et le dépôt, un, huit ou quinze jours pour réunir 500 signatures. Y caser une primaire ne tient pas, à notre lecture."
         },
         {
           "type": "p",
-          "text": "Reste le second tour, mesuré pour une campagne longue. Enquête Elabe pour BFMTV et La Tribune Dimanche (14 au 16 octobre), premier tour de l'hypothèse Philippe : Le Pen 32,5, Philippe 16,5. Seize points d'écart. Au second tour, testé à part : 52,5 contre 47,5. Plus que cinq. Premier tour de l'hypothèse Attal : Le Pen 33,5, Raphaël Glucksmann 16,5. Dix-sept points. Duel testé à part : Le Pen 53,5, Glucksmann 46,5. Plus que sept."
+          "text": "Reste le second tour, mesuré pour une campagne longue. Enquête Elabe (14 au 16 octobre), premier tour de l'hypothèse Philippe : Le Pen 32,5, Philippe 16,5. Seize points d'écart. Au second tour, testé à part : 52,5 contre 47,5. Il en reste cinq. Premier tour de l'hypothèse Attal : Le Pen 33,5, Raphaël Glucksmann 16,5. Dix-sept points. Duel testé à part : Le Pen 53,5, Glucksmann 46,5. Il en reste sept."
         },
         {
           "type": "p",
-          "text": "Pourquoi l'écart fond ? Au second tour, il ne reste que deux noms. Le premier tour dit qui est devant. Le second dépend des reports."
+          "text": "Comment un écart peut-il fondre ? Mécanisme général d'un duel posé à part : il ne reste que deux noms, les autres électeurs se reportent ou s'abstiennent."
         },
         {
           "type": "p",
-          "text": "Cinq points parmi les exprimés, avec 22 % des inscrits interrogés sans intention de vote : l'écart reste dans la marge d'erreur, 2,8 points autour de 50 %. Ce sondage ne désigne pas de gagnant, et la notice Elabe rappelle qu'il n'est pas une prédiction. Ifop (17 au 19 octobre) la donne plus loin devant : 56 contre 44 face à Philippe. Face à Jean-Luc Mélenchon, l'Elabe la met à 69 % des exprimés, avec 30 % des inscrits interrogés sans intention de vote."
+          "text": "Face à Philippe, ses 52,5 sont à 2,5 points de 50, dans la marge d'erreur de 2,8 points, avec 22 % des inscrits interrogés sans intention de vote. Pas de gagnant pour ce duel. Face à Glucksmann, 53,5 en sort. Ifop (17 au 19 octobre) donne Le Pen à 56 contre 44 face à Philippe, au-delà d'environ 3 points de marge, selon notre lecture de sa notice. Face à Jean-Luc Mélenchon, l'Elabe la met à 69 % des exprimés, avec 30 % des inscrits interrogés sans intention de vote."
         },
         {
           "type": "p",
-          "text": "Aucun de ces sondages ne teste un premier tour à 20 ou 35 jours. Les candidats, eux, auraient bien moins de temps pour réunir leurs signatures."
+          "text": "Aucun de ces sondages ne teste un premier tour à 20 ou 35 jours."
         },
         {
           "type": "p",
@@ -111,23 +111,23 @@
         "rows": [
           [
             "Marine Le Pen",
-            "Éligibilité disputée : peine purgée selon franceinfo, « actuellement inéligible » selon Didier Guérin (Le Monde)",
-            "Vote avant la cassation : avantage ou blocage selon la lecture"
+            "Condamnée en appel le 7/07 (communiqué de la cour), pourvoi suspensif selon la Cour de cassation. Deux lectures : peine purgée selon franceinfo (7/07, avant le communiqué du 8 juillet), « actuellement inéligible » selon Didier Guérin (titre Le Monde, 27/10)",
+            "Élection éclair avant la cassation : elle l'aide ou la bloque, selon la lecture retenue"
           ],
           [
             "Édouard Philippe",
             "Candidat Horizons, contre une primaire (11/10)",
-            "Lecture de la chronique : pas de primaire possible dans la fenêtre"
+            "Lecture de la chronique : pas de primaire en un, huit ou quinze jours"
           ],
           [
             "Raphaël Glucksmann",
-            "Testé dans l'Elabe (hypothèse Attal)",
-            "Duel Elabe : de 17 points d'écart à 7"
+            "Testé dans l'Elabe (hypothèse de premier tour Attal)",
+            "Elabe : 17 points d'écart au premier tour, 7 au duel testé à part"
           ],
           [
             "Jean-Luc Mélenchon",
-            "Testé dans l'Elabe",
-            "Duel Elabe : Le Pen 69 % des exprimés, 30 % sans intention de vote"
+            "Testé dans l'Elabe (duel de second tour)",
+            "Duel Elabe : Le Pen 69 % des exprimés, 30 % des inscrits interrogés sans intention de vote"
           ]
         ]
       },
@@ -142,9 +142,9 @@
         {
           "type": "ul",
           "items": [
-            "**Droite et centre (Horizons)** : en phase, le calendrier aide le candidat déjà déclaré.",
-            "**Social-démocrate** : en phase, duel resserré dans l'Elabe.",
-            "**Rassemblement national** : en tension, l'élection éclair aide ou bloque selon la lecture de l'éligibilité."
+            "**Droite et centre (Horizons)** : en phase, selon la lecture de la chronique : un calendrier court avantage le candidat d'Horizons, qui refuse une primaire.",
+            "**Social-démocrate** : en phase, écart Elabe ramené de 17 points au premier tour (hypothèse Attal) à 7 au duel, hors marge.",
+            "**Rassemblement national** : en tension, l'élection éclair l'aide ou la bloque selon la lecture retenue de l'éligibilité (pourvoi suspensif selon la Cour de cassation)."
           ]
         }
       ]
@@ -160,7 +160,11 @@
           "links": []
         },
         {
-          "label": "Loi n° 62-1292 du 6 novembre 1962, article 3 (parrainages au plus tard le troisième mardi précédant le premier tour à 18 h en cas de vacance ; liste arrêtée par le Conseil constitutionnel) : [Légifrance](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037/).",
+          "label": "Gérard Larcher réélu président du Sénat le 1er octobre 2026 (203 voix sur 302 suffrages exprimés) : [Sénat, renouvellement des instances 2026](https://www.senat.fr/connaitre-le-senat/renouvellement-des-instances-du-senat-2026.html) ; [compte rendu de la séance du 1er octobre 2026](https://www.senat.fr/seances/s202610/s20261001/st20261001000.html).",
+          "links": []
+        },
+        {
+          "label": "Loi n° 62-1292 du 6 novembre 1962, article 3 (parrainages au plus tard le troisième mardi précédant le premier tour à 18 h en cas de vacance ; liste arrêtée par le Conseil constitutionnel) : [Légifrance](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037/). Scrutin un dimanche : article L55 du code électoral, « Le scrutin a lieu un dimanche », [Légifrance, code électoral](https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006070239/).",
           "links": []
         }
       ]
@@ -169,7 +173,7 @@
       "title": "Éligibilité de Marine Le Pen",
       "items": [
         {
-          "label": "Arrêt de la cour d'appel de Paris du 7/07/2026, communiqué de presse de la cour (l'arrêt lui-même n'est pas publié en ligne ; l'URL officielle [cours-appel.justice.fr](https://www.cours-appel.justice.fr/sites/default/files/2026-07/20260707%20-%20CA%20Paris%20-%20CP.pdf) affiche « site en cours de maintenance » au 28/10, copie intégrale du communiqué : [PDF](https://infodujour.fr/wp-content/uploads/2026/07/Communique-de-la-cour-dappel-de-Paris.pdf)). Phrases exactes : « Mme Le Pen a été condamnée à une peine d'inéligibilité de 45 mois dont 30 mois avec sursis. La cour considère que l'exécution de cette peine depuis le 31mars 2025 a d'ores et déjà réparé l'atteinte à la probité » ; « La cour a aménagé la partie ferme de la peine d'emprisonnement sous la forme d'une détention à domicile sous surveillance électronique. »",
+          "label": "Arrêt de la cour d'appel de Paris du 7/07/2026, communiqué de presse de la cour (l'arrêt lui-même n'est pas publié en ligne ; l'URL officielle [cours-appel.justice.fr](https://www.cours-appel.justice.fr/sites/default/files/2026-07/20260707%20-%20CA%20Paris%20-%20CP.pdf) affiche « site en cours de maintenance » au 28/10, copie intégrale du communiqué sur un site tiers, pas celui de la cour : [PDF](https://infodujour.fr/wp-content/uploads/2026/07/Communique-de-la-cour-dappel-de-Paris.pdf)). Phrases exactes : « Mme Le Pen a été condamnée à une peine d'inéligibilité de 45 mois dont 30 mois avec sursis. La cour considère que l'exécution de cette peine depuis le 31mars 2025 a d'ores et déjà réparé l'atteinte à la probité » ; « La cour a aménagé la partie ferme de la peine d'emprisonnement sous la forme d'une détention à domicile sous surveillance électronique. »",
           "links": []
         },
         {
@@ -177,7 +181,7 @@
           "links": []
         },
         {
-          "label": "Communiqué de la Cour de cassation, 8/07/2026 : [courdecassation.fr](https://www.courdecassation.fr/toutes-les-actualites/2026/07/08/affaire-dite-des-assistants-parlementaires-du-front-national). Phrases exactes : « Sauf exécution provisoire, le pourvoi a un effet suspensif » ; « La cour d'appel de Paris n'a prononcé l'exécution provisoire sur aucune partie de sa décision. » ; « À ce jour, la chambre criminelle de la Cour de cassation pourrait être en mesure de rendre son arrêt au plus tard début avril 2027, avant le scrutin présidentiel. » ; « Ce calendrier est susceptible d'évoluer en fonction des facteurs procéduraux précédemment décrits. » Même annonce rapportée par [Europe 1, 15/07/2026](https://www.europe1.fr/police-justice/proces-en-appel-du-rn-pas-de-pourvoi-en-cassation-du-parquet-general-contre-la-decision-de-la-cour-dappel-974346).",
+          "label": "Communiqué de la Cour de cassation, 8/07/2026 : [courdecassation.fr](https://www.courdecassation.fr/toutes-les-actualites/2026/07/08/affaire-dite-des-assistants-parlementaires-du-front-national). Phrases exactes : « Sauf exécution provisoire, le pourvoi a un effet suspensif » ; « La cour d'appel de Paris n'a prononcé l'exécution provisoire sur aucune partie de sa décision. » ; « À ce jour, la chambre criminelle de la Cour de cassation pourrait être en mesure de rendre son arrêt au plus tard début avril 2027, avant le scrutin présidentiel. » ; « Ce calendrier est susceptible d'évoluer en fonction des facteurs procéduraux précédemment décrits. » Calendrier aussi rapporté par [Europe 1, 15/07/2026](https://www.europe1.fr/police-justice/proces-en-appel-du-rn-pas-de-pourvoi-en-cassation-du-parquet-general-contre-la-decision-de-la-cour-dappel-974346), article consacré à l'absence de pourvoi du parquet général : « la Cour de cassation avait indiqué qu'elle devrait pouvoir statuer \"au plus tard début avril 2027\" ».",
           "links": []
         },
         {
@@ -198,7 +202,7 @@
           "links": []
         },
         {
-          "label": "Ifop-Fiducial / LCI, Le Figaro, Sud Radio, terrain du 17/10/2026 à 20 h au 19/10/2026 (Le Pen 56, Philippe 44, exprimés ; échantillon de 1 928 personnes inscrites sur les listes électorales, extrait d'un échantillon de 2 081 personnes représentatif de la population française âgée de 18 ans et plus ; questionnaire auto-administré en ligne ; marge d'erreur : le document ne donne qu'un tableau d'intervalles de confiance à 95 % par taille d'échantillon, marge propre à ce sondage à compléter) : [résultats Ifop](https://www.ifopgroup.com/wp-content/uploads/2026/10/122853-barometre-de-lelection-presidentielle-vague-7-resultats-densemble.pdf).",
+          "label": "Ifop-Fiducial / LCI, Le Figaro, Sud Radio, terrain du 17/10/2026 à 20 h au 19/10/2026 (Le Pen 56, Philippe 44, exprimés ; échantillon de 1 928 personnes inscrites sur les listes électorales, extrait d'un échantillon de 2 081 personnes représentatif de la population française âgée de 18 ans et plus ; questionnaire auto-administré en ligne ; 1 345 inscrits interrogés ont exprimé une intention de vote pour ce duel, 1 061 parmi les inscrits certains d'aller voter, base des scores publiés selon la notice). Marge d'erreur : Ifop ne publie pas de marge calculée pour ce duel. Sa notice donne un tableau d'intervalles de confiance à 95 % ; pour un résultat entre 40 et 60 %, il indique 3,0 points pour 1 000 personnes et 2,9 pour 1 100, soit environ 3 points pour la base de 1 061 (2,6 à 2,7 pour la base de 1 345). C'est notre lecture du tableau, pas un chiffre publié pour ce sondage : [notice n° 10327, Commission des sondages](https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10327-pres-barometre-election-v7-ifop-20-octobre.pdf), pages 2 et 20 ; [résultats Ifop](https://www.ifopgroup.com/wp-content/uploads/2026/10/122853-barometre-de-lelection-presidentielle-vague-7-resultats-densemble.pdf).",
           "links": []
         }
       ]
