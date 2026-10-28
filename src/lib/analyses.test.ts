@@ -158,7 +158,7 @@ describe('analyses', () => {
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).toBe('bataille-du-2-mai');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
-    expect(nSources).toBe(13);
+    expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
     expect(sourceBlob).toContain(
       'https://www.franceinfo.fr/elections/presidentielle/le-gouvernement-oppose-une-fin-de-non-recevoir-a-la-demande-de-bruno-retailleau-de-changer-les-dates-de-la-presidentielle_8257021.html',
@@ -168,6 +168,8 @@ describe('analyses', () => {
     expect(sourceBlob).toMatch(/blogdudroitelectoral\.fr\/\?p=23599/);
     expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
     expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/jorf\/id\/JORFTEXT000052416058/);
+    expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/loda\/id\/JORFTEXT000000684037/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/decision\/2022\/2022184_188PDR/);
     expect(sourceBlob).toMatch(/unenouvelleenergie\.fr\/quand-macron-a-parle/);
     expect(sourceBlob).not.toMatch(/Note de vérification/);
     const encadre = batailleDu2Mai.sections.find((section) => section.kind === 'candidats');
