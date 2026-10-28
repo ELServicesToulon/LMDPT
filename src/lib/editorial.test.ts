@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
@@ -123,11 +124,14 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse Corse Sénat non du 28/10 en une, puis Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('analyse bataille du 2 mai du 29/10 en une, puis Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('corse-senat-non');
+    expect(getUneDuJour()?.slug).toBe('bataille-du-2-mai');
     expect(getUneDuJour()?.title).toBe(
-      'Corse : le Sénat rejette par 181 voix contre 134 le texte modifié, pourtant voté par 122 LR sur 124',
+      'Présidentielle : on se bat pour le 2 mai, mais le premier tour tombe en pleines vacances scolaires',
+    );
+    expect(batailleDu2Mai.x_hook).toBe(
+      "Présidentielle : Retailleau veut changer les dates, pour ne pas voter le 2 mai, au lendemain du 1er-Mai. L'exécutif refuse et met en avant les vacances scolaires. Nous avons vérifié : le 2 mai, une seule zone scolaire reste en congés. Mais le 18 avril, au premier tour, les trois zones le seront.",
     );
     expect(corseSenatNon.x_hook).toBe(
       "Corse : le Sénat a rejeté la réforme constitutionnelle par 181 voix contre 134. 122 des 124 LR ont pourtant voté pour, sur un texte « largement réécrit » « à l'initiative de la droite », selon franceinfo. Aucun socialiste ni écologiste n'a voté pour.",
@@ -136,14 +140,16 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[2]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[3]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[4]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[5]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[6]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[7]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[8]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('corse-senat-non');
+    expect(sorted[1]?.date).toBe('2026-10-28');
+    expect(sorted[2]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[3]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[4]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[5]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[6]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[7]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[8]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[9]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
