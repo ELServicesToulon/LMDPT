@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
@@ -41,6 +42,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: batailleDu2Mai.slug,
+    title: batailleDu2Mai.title,
+    description: batailleDu2Mai.description,
+    date: batailleDu2Mai.date,
+    published: batailleDu2Mai.date,
+    updated: batailleDu2Mai.updated,
+    href: '/analyses/bataille-du-2-mai',
+    cover: uneCover(
+      'bataille-du-2-mai',
+      "Aquarelle d'une urne transparente vide posée sur une table en bois dans une salle de mairie, à côté d'un verre de muguet, avec par la fenêtre une rue pavée déserte et un arbre en fleurs, dans une lumière de printemps.",
+    ),
+  },
   {
     slug: corseSenatNon.slug,
     title: corseSenatNon.title,

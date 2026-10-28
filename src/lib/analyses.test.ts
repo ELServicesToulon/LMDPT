@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
 import secu115Contre1 from '../data/analyses/secu-115-contre-1.json';
@@ -38,6 +39,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('bataille-du-2-mai');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('corse-senat-non');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('secu-115-contre-1');
@@ -45,15 +47,16 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -64,6 +67,170 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('analyse bataille du 2 mai du 29 octobre en une, sources, boîte DOE, tableau vacances', () => {
+    expect(batailleDu2Mai.slug).toBe('bataille-du-2-mai');
+    expect(batailleDu2Mai.date).toBe('2026-10-29');
+    expect(batailleDu2Mai.updated).toBe('2026-10-29');
+    expect(batailleDu2Mai.title).toBe(
+      'Présidentielle : on se bat pour le 2 mai, mais le premier tour tombe en pleines vacances scolaires',
+    );
+    expect(batailleDu2Mai.author).toBe('La rédaction');
+    expect(batailleDu2Mai.author_role).toBe('Rédaction LMDPT');
+    expect(batailleDu2Mai.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(batailleDu2Mai.type_label).toBe('Analyse');
+    expect(batailleDu2Mai.kicker).toBe('Analyse · La rédaction · 29 octobre 2026');
+    expect(batailleDu2Mai.tags).toContain('doe');
+    expect(batailleDu2Mai.x_hook).toBe(
+      "Présidentielle : Retailleau veut changer les dates, pour ne pas voter le 2 mai, au lendemain du 1er-Mai. L'exécutif refuse et met en avant les vacances scolaires. Nous avons vérifié : le 2 mai, une seule zone scolaire reste en congés. Mais le 18 avril, au premier tour, les trois zones le seront.",
+    );
+    expect(batailleDu2Mai.description.length).toBeLessThanOrEqual(200);
+    expect(batailleDu2Mai.description).toMatch(/18 avril et 2 mai 2027/);
+    expect(batailleDu2Mai.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(batailleDu2Mai.sources_intro).toMatch(/Consultées le 28 octobre 2026/);
+    expect(batailleDu2Mai.sources_closing).toMatch(/consultés le 28 octobre 2026/);
+    expect(batailleDu2Mai.hues).toHaveLength(3);
+    expect(batailleDu2Mai.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'lisnard',
+    ]);
+    expect(batailleDu2Mai.hues.map((hue) => hue.label)).toEqual([
+      'État de droit et règles stables',
+      'Républicanisme civique',
+      "Transparence de l'action publique",
+    ]);
+    const retailleau = batailleDu2Mai.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'retailleau',
+    );
+    expect(retailleau?.kind).toBe('prose');
+    if (retailleau?.kind === 'prose') {
+      expect(retailleau.title).toBe('Ce que demande Retailleau');
+    }
+    const vacances = batailleDu2Mai.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'vacances',
+    );
+    expect(vacances?.kind).toBe('prose');
+    if (vacances?.kind === 'prose') {
+      expect(vacances.title).toBe('Nous avons compté les dimanches de vacances');
+      const table = vacances.blocks.find((block) => block.type === 'table');
+      expect(table?.type).toBe('table');
+      if (table?.type === 'table') {
+        expect(table.headers).toEqual([
+          'Dimanche de vote',
+          'Zones en vacances ce jour-là',
+          'Nombre de zones',
+        ]);
+        expect(table.rows).toHaveLength(4);
+        expect(table.rows[0]).toEqual([
+          '**Calendrier retenu** : 1er tour 18 avril',
+          'A, B et C',
+          '3',
+        ]);
+        expect(table.rows[1]).toEqual([
+          '**Calendrier retenu** : 2nd tour 2 mai',
+          'B',
+          '1',
+        ]);
+        expect(table.rows[2]).toEqual([
+          '**Alternative** : 1er tour 11 avril',
+          'A et C',
+          '2',
+        ]);
+        expect(table.rows[3]).toEqual([
+          '**Alternative** : 2nd tour 25 avril',
+          'A et B',
+          '2',
+        ]);
+      }
+    }
+    const courants = batailleDu2Mai.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('bataille-du-2-mai');
+    expect(entry?.href).toBe('/analyses/bataille-du-2-mai');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
+    expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
+    expect(getUneDuJour()?.slug).toBe('bataille-du-2-mai');
+    const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(13);
+    const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.franceinfo.fr/elections/presidentielle/le-gouvernement-oppose-une-fin-de-non-recevoir-a-la-demande-de-bruno-retailleau-de-changer-les-dates-de-la-presidentielle_8257021.html',
+    );
+    expect(sourceBlob).toMatch(/service-public\.gouv\.fr\/particuliers\/actualites\/A15053/);
+    expect(sourceBlob).toMatch(/service-public\.gouv\.fr\/particuliers\/actualites\/A18563/);
+    expect(sourceBlob).toMatch(/blogdudroitelectoral\.fr\/\?p=23599/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
+    expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/jorf\/id\/JORFTEXT000052416058/);
+    expect(sourceBlob).toMatch(/unenouvelleenergie\.fr\/quand-macron-a-parle/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = batailleDu2Mai.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Position sur les dates de la présidentielle',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(7);
+      expect(encadre.note).toMatch(/Non trouvé/);
+      const retailleauRow = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleauRow?.[1]).toMatch(/solennellement/);
+      expect(retailleauRow?.[2]).toBe('[1][2][8][9]');
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/nécessairement rompue/);
+      expect(lePen?.[2]).toBe('[1][4][8]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[1]).toMatch(/C'est une question qui peut se poser/);
+      expect(lisnard?.[2]).toBe('[11]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/non trouvée dans les sources consultées/);
+      expect(glucksmann?.[2]).toBe('Aucune');
+    }
+    const analyseTexts = [
+      batailleDu2Mai.chapo,
+      batailleDu2Mai.description,
+      batailleDu2Mai.disclaimer,
+      batailleDu2Mai.sources_closing,
+      ...batailleDu2Mai.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[13\]/);
+    expect(analyseTexts).toMatch(/4 de chaque côté/);
+    expect(analyseTexts).toMatch(/trois zones scolaires de métropole/);
+    expect(analyseTexts).toMatch(/article L\. 49/);
+    expect(analyseTexts).toMatch(/13 mai 2027 à minuit/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(batailleDu2Mai)).not.toMatch(/<!--/);
   });
 
   it('analyse Corse Sénat non du 28 octobre en une, sources, boîte DOE', () => {
@@ -146,7 +313,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/corse-senat-non');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
-    expect(getUneDuJour()?.slug).toBe('corse-senat-non');
+    expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
+    expect(getUneDuJour()?.date).toBe('2026-10-29');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
