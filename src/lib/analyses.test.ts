@@ -281,7 +281,7 @@ describe('analyses', () => {
     expect(chronique?.kind).toBe('prose');
     if (chronique?.kind === 'prose') {
       const paras = chronique.blocks.filter((block) => block.type === 'p');
-      expect(paras).toHaveLength(11);
+      expect(paras).toHaveLength(12);
       expect(chroniqueFictionDemission.chapo).toMatch(/Et si le président partait un lundi matin/);
     }
     const courants = chroniqueFictionDemission.sections.find(
@@ -302,7 +302,7 @@ describe('analyses', () => {
       (n, g) => n + g.items.length,
       0,
     );
-    expect(nSources).toBe(10);
+    expect(nSources).toBe(11);
     const sourceBlob = JSON.stringify(chroniqueFictionDemission.sources_groups);
     expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/le-bloc-de-constitutionnalite/);
     expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/loda\/id\/JORFTEXT000000684037/);

@@ -41,7 +41,7 @@
       "slug": "le-pen",
       "label": "Rassemblement national",
       "color": "#0d378a",
-      "rationale": "En tension, l'élection éclair l'aide ou la bloque selon la lecture retenue de l'éligibilité (pourvoi suspensif selon la Cour de cassation)."
+      "rationale": "En tension, éligibilité ouverte pour un scrutin éclair (pourvoi suspensif selon la Cour de cassation) ; le Conseil constitutionnel trancherait en arrêtant la liste."
     }
   ],
   "sections": [
@@ -64,11 +64,15 @@
         },
         {
           "type": "p",
-          "text": "Marine Le Pen, d'abord. Sauf que sa ligne de départ est contestée. En appel, le 7 juillet, selon le communiqué de la cour, elle a pris 45 mois d'inéligibilité, dont 30 avec sursis. Le 8 juillet, la Cour de cassation a indiqué qu'elle « pourrait être en mesure » de statuer « au plus tard début avril 2027 », un calendrier « susceptible d'évoluer »."
+          "text": "Marine Le Pen, d'abord. Sauf que sa ligne de départ est contestée. En appel, le 7 juillet, selon le communiqué de la cour, elle a pris 45 mois d'inéligibilité, dont 30 avec sursis, décision non définitive."
         },
         {
           "type": "p",
-          "text": "Première lecture, celle de franceinfo le 7 juillet, avant le communiqué du 8 juillet : 15 mois comptés depuis le 31 mars 2025, peine purgée le 1er juillet, donc éligible pour la présidentielle de 2027. Mais, selon la Cour de cassation, le pourvoi suspend cet arrêt, qui n'est donc pas définitif. Pour un scrutin éclair à l'automne 2026, la question reste ouverte. Si elle peut se présenter, le départ le plus brutal serait pour elle, à notre sens, le cadeau le plus doux. Seconde lecture, le titre de l'entretien publié hier par Le Monde avec Didier Guérin, président de chambre honoraire à la Cour de cassation : elle est « actuellement inéligible jusqu'à la décision de la Cour de cassation sur son pourvoi ». Alors, à notre sens, l'élection éclair devient son pire cauchemar. Et c'est au Conseil constitutionnel d'arrêter la liste. Le même calendrier l'aide ou la bloque."
+          "text": "Pour 2027, franceinfo jugeait le 7 juillet l'inéligibilité déjà purgée : 15 mois fermes comptés depuis le 31 mars 2025. Mais, selon la Cour de cassation, le pourvoi est suspensif ; elle examinera d'abord des QPC le 16 décembre et vise un arrêt « au plus tard début avril 2027 ». Pour Didier Guérin, président de chambre honoraire à la Cour de cassation, elle est « actuellement inéligible jusqu'à la décision de la Cour de cassation sur son pourvoi » : c'est l'interprétation d'un magistrat, pas une décision. Pour un scrutin éclair à l'automne 2026, la question reste ouverte, et c'est le Conseil constitutionnel qui trancherait en arrêtant la liste des candidats."
+        },
+        {
+          "type": "p",
+          "text": "Si elle peut se présenter, ce sprint des parrainages serait, à notre sens, le cadeau le plus doux. Si elle ne le peut pas, il serait son pire cauchemar."
         },
         {
           "type": "p",
@@ -111,8 +115,8 @@
         "rows": [
           [
             "Marine Le Pen",
-            "Condamnée en appel le 7/07 (communiqué de la cour), pourvoi suspensif selon la Cour de cassation. Deux lectures : peine purgée selon franceinfo (7/07, avant le communiqué du 8 juillet), « actuellement inéligible » selon Didier Guérin (titre Le Monde, 27/10)",
-            "Élection éclair avant la cassation : elle l'aide ou la bloque, selon la lecture retenue"
+            "Condamnée en appel le 7/07 (communiqué de la cour), décision non définitive : pourvoi suspensif selon la Cour de cassation, QPC examinées le 16/12, arrêt visé « au plus tard début avril 2027 ». Pour 2027, inéligibilité déjà purgée selon franceinfo (7/07) ; « actuellement inéligible » selon Didier Guérin (Le Monde, 27/10), interprétation d'un magistrat, pas une décision",
+            "Élection éclair : question ouverte, tranchée par le Conseil constitutionnel en arrêtant la liste ; selon la réponse, le sprint l'aide ou la bloque (opinion)"
           ],
           [
             "Édouard Philippe",
@@ -144,7 +148,7 @@
           "items": [
             "**Droite et centre (Horizons)** : en phase, selon la lecture de la chronique : un calendrier court avantage le candidat d'Horizons, qui refuse une primaire.",
             "**Social-démocrate** : en phase, écart Elabe ramené de 17 points au premier tour (hypothèse Attal) à 7 au duel, hors marge.",
-            "**Rassemblement national** : en tension, l'élection éclair l'aide ou la bloque selon la lecture retenue de l'éligibilité (pourvoi suspensif selon la Cour de cassation)."
+            "**Rassemblement national** : en tension, éligibilité ouverte pour un scrutin éclair (pourvoi suspensif selon la Cour de cassation) ; le Conseil constitutionnel trancherait en arrêtant la liste."
           ]
         }
       ]
@@ -177,11 +181,15 @@
           "links": []
         },
         {
-          "label": "Lecture « peine purgée » : [franceinfo, 7/07/2026](https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/ineligibilite-peine-de-prison-pourquoi-la-condamnation-de-marine-le-pen-a-ete-reduite-en-appel_8098121.html). Phrase exacte : « Celle-ci passe à 45 mois, dont 30 mois avec sursis. Ce qui la rend éligible pour l'élection présidentielle de 2027. Il faut en effet compter 15 mois à partir du 31 mars 2025, date du jugement de première instance, soit une peine purgée depuis le 1er juillet. »",
+          "label": "Lecture « déjà purgée » pour 2027 : [franceinfo, 7/07/2026](https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/ineligibilite-peine-de-prison-pourquoi-la-condamnation-de-marine-le-pen-a-ete-reduite-en-appel_8098121.html). Phrase exacte : « Celle-ci passe à 45 mois, dont 30 mois avec sursis. Ce qui la rend éligible pour l'élection présidentielle de 2027. Il faut en effet compter 15 mois à partir du 31 mars 2025, date du jugement de première instance, soit une peine purgée depuis le 1er juillet. »",
           "links": []
         },
         {
           "label": "Communiqué de la Cour de cassation, 8/07/2026 : [courdecassation.fr](https://www.courdecassation.fr/toutes-les-actualites/2026/07/08/affaire-dite-des-assistants-parlementaires-du-front-national). Phrases exactes : « Sauf exécution provisoire, le pourvoi a un effet suspensif » ; « La cour d'appel de Paris n'a prononcé l'exécution provisoire sur aucune partie de sa décision. » ; « À ce jour, la chambre criminelle de la Cour de cassation pourrait être en mesure de rendre son arrêt au plus tard début avril 2027, avant le scrutin présidentiel. » ; « Ce calendrier est susceptible d'évoluer en fonction des facteurs procéduraux précédemment décrits. » Calendrier aussi rapporté par [Europe 1, 15/07/2026](https://www.europe1.fr/police-justice/proces-en-appel-du-rn-pas-de-pourvoi-en-cassation-du-parquet-general-contre-la-decision-de-la-cour-dappel-974346), article consacré à l'absence de pourvoi du parquet général : « la Cour de cassation avait indiqué qu'elle devrait pouvoir statuer \"au plus tard début avril 2027\" ».",
+          "links": []
+        },
+        {
+          "label": "Communiqué de la Cour de cassation du 16/10/2026 (QPC examinées à l'audience du 16 décembre 2026, décision « en principe » rendue le jour même ; lien officiel sur courdecassation.fr non trouvé au 28/10), rapporté par [Sud Ouest avec AFP, 16/10/2026](https://www.sudouest.fr/politique/proces-du-rn-les-questions-prioritaires-de-constitutionnalite-de-marine-le-pen-seront-examinees-le-16-decembre-31099093.php) : « La Cour de cassation examinera le 16 décembre les questions prioritaires de constitutionnalité (QPC) déposées dans le cadre des pourvois en cassation de Marine Le Pen et ses coprévenus ».",
           "links": []
         },
         {
