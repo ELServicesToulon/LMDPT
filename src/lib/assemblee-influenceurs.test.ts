@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   FAMILY_COLORS,
@@ -11,6 +14,8 @@ import {
   layoutHemicycleSeats,
   loadAssembleeInfluenceurs,
 } from './assemblee-influenceurs';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
 describe('assemblee-influenceurs', () => {
   it('loads schema v1 with exactly 577 seats (AN standard)', () => {
@@ -133,5 +138,30 @@ describe('assemblee-influenceurs', () => {
     expect(kinds.has('twitch')).toBe(true);
     expect(kinds.has('x')).toBe(true);
     expect(kinds.has('facebook')).toBe(true);
+  });
+});
+
+describe('page assemblée influenceurs masquée', () => {
+  const page = readFileSync(
+    join(ROOT, 'src/pages/assemblee-influenceurs/index.astro'),
+    'utf8',
+  );
+  const seoScript = readFileSync(join(ROOT, 'scripts/generate-seo-assets.ts'), 'utf8');
+  const layout = readFileSync(join(ROOT, 'src/layouts/BaseLayout.astro'), 'utf8');
+
+  it('est noindex, porte l’avis et le contact, sans hémicycle ni fiches', () => {
+    expect(page).toContain('noindex');
+    expect(page).toContain(
+      'Page en cours de refonte. Elle reviendra avec des sources vérifiées et un contact pour la rectification.',
+    );
+    expect(page).toContain('lemediadupremiertour@gmail.com');
+    expect(page).not.toContain('Déclarée (sourcée)');
+    expect(page).not.toContain('InfluenceursHemicycle');
+    expect(page).not.toContain('getAssembleeInfluenceursView');
+  });
+
+  it('retire la route des sitemaps et du menu, disallow robots', () => {
+    expect(seoScript).toContain("Disallow: /assemblee-influenceurs/");
+    expect(layout).not.toContain('href="/assemblee-influenceurs/"');
   });
 });
