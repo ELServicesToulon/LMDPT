@@ -30,7 +30,6 @@ const CORE_ROUTES: { path: string; changefreq: string; priority: string }[] = [
   { path: '/debats', changefreq: 'weekly', priority: '0.8' },
   { path: '/liberte-d-expression', changefreq: 'weekly', priority: '0.95' },
   { path: '/observatoire-censure', changefreq: 'weekly', priority: '0.92' },
-  { path: '/assemblee-influenceurs', changefreq: 'weekly', priority: '0.9' },
   { path: '/debats/assemblee-premier-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/desistements-second-tour', changefreq: 'monthly', priority: '0.7' },
   { path: '/debats/vote-utile-pluralite', changefreq: 'monthly', priority: '0.7' },
@@ -209,11 +208,6 @@ function buildNewsSitemap(): string {
       keywords: 'censure, médias, liberté d expression',
     },
     {
-      path: '/assemblee-influenceurs',
-      title: 'Assemblée des influenceurs — hémicycle pédagogique',
-      keywords: 'influenceurs, hémicycle, teinte politique, dépendances économiques',
-    },
-    {
       path: '/analyses/temps-parole-equite',
       title: 'Temps de parole et équité d exposition',
       keywords: 'Arcom, temps de parole, pluralisme',
@@ -310,7 +304,8 @@ function buildRobotsTxt(): string {
   const privateDisallows = `Disallow: /moderation
 Disallow: /redaction
 Disallow: /connexion
-Disallow: /compte`;
+Disallow: /compte
+Disallow: /assemblee-influenceurs/`;
   const aiBots = [
     'GPTBot',
     'ChatGPT-User',
