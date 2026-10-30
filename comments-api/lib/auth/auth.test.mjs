@@ -63,7 +63,11 @@ describe('users', () => {
     assert.ok(u2.providers.some((p) => p.provider === 'email'));
     const pub = publicUser(u2);
     assert.equal(pub.email, undefined);
+    assert.equal('preferredHueSlug' in pub, false);
+    assert.equal('preferredHueSlug' in u1, false);
     assert.ok(pub.providers.includes('google'));
+    const legacy = publicUser({ ...u2, preferredHueSlug: 'attal' });
+    assert.equal('preferredHueSlug' in legacy, false);
   });
 });
 

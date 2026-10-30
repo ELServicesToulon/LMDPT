@@ -47,7 +47,6 @@ export function upsertFromProvider(dataDir, {
       email: emailNorm,
       emailVerified: Boolean(emailVerified && emailNorm),
       displayNameDefault: String(displayName || 'Citoyen·ne').slice(0, 40) || 'Citoyen·ne',
-      preferredHueSlug: null,
       role: 'lecteur',
       createdAt: now,
       lastLoginAt: now,
@@ -93,7 +92,6 @@ export function publicUser(user) {
   return {
     id: user.id,
     displayName: user.displayNameDefault || 'Citoyen·ne',
-    preferredHueSlug: user.preferredHueSlug || null,
     role: user.role || 'lecteur',
     providers: (user.providers || []).map((p) => p.provider),
     // email volontairement absent du public

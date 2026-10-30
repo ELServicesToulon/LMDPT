@@ -10,7 +10,7 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
 >
   <section>
     <h2>Politique de confidentialité</h2>
-    <p class="meta">Dernière mise à jour : 4 octobre 2026</p>
+    <p class="meta">Dernière mise à jour : 30 octobre 2026</p>
     <p>
       Responsable du traitement : Emmanuel Lecourt, éditeur non professionnel du site Le Média du
       Premier Tour (voir <a href="/mentions-legales/">mentions légales</a>).
@@ -47,8 +47,9 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       la ligne éditoriale.
     </p>
     <p>
-      <strong>Durée</strong> : durée à préciser. Le code ne supprime pas automatiquement les
-      propositions, qu’elles soient en attente, publiées ou rejetées.
+      <strong>Durée</strong> : propositions rejetées, 12 mois après leur traitement ; propositions
+      publiées, tant que la page qui les affiche est en ligne. L’e-mail facultatif est effacé 12
+      mois après l’envoi, ou plus tôt si vous retirez votre consentement.
     </p>
   </section>
 
@@ -58,8 +59,8 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       L’identification sert à publier un commentaire citoyen. Le code propose Google, X, Apple, ou un
       lien magique par e-mail. Il enregistre un identifiant technique, les fournisseurs liés
       (identifiant chez le fournisseur, e-mail transmis par lui, date de lien), l’e-mail, le fait
-      qu’il soit vérifié, le pseudonyme, une teinte préférée si elle est un jour renseignée, le rôle,
-      la date de création et la date de dernière connexion.
+      qu’il soit vérifié, le pseudonyme, le rôle, la date de création et la date de dernière
+      connexion.
     </p>
     <p>
       La réponse publique du compte ne contient pas l’e-mail. Le pseudonyme est modifiable depuis
@@ -81,8 +82,8 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
     </p>
     <p>
       <strong>Durée</strong> : session et cookie, 30 jours glissants, tels que définis dans le code.
-      Lien magique et état OAuth : 15 minutes. Le dossier de compte lui-même n’a pas de durée de
-      conservation dans le code : durée à préciser.
+      Lien magique et état OAuth : 15 minutes. Le compte est supprimé après 3 ans sans connexion, ou
+      plus tôt sur demande.
     </p>
   </section>
 
@@ -90,9 +91,14 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
     <h3>Commentaires citoyens</h3>
     <p>
       Publier un commentaire passe par l’API du site. Le code enregistre le texte, le pseudonyme,
-      l’identifiant de compte s’il y en a un, l’empreinte de clé d’auteur, la teinte politique
-      calculée sur le message, le statut de modération et les dates. Une prévisualisation est
-      conservée en mémoire 30 minutes, puis écartée.
+      l’identifiant de compte s’il y en a un, l’empreinte de clé d’auteur, le statut de modération
+      et les dates. Une prévisualisation est conservée en mémoire 30 minutes, puis écartée.
+    </p>
+    <p>
+      <strong>Teinte politique</strong> : le site peut estimer une tendance politique d’un message, à
+      des fins d’affichage uniquement. Cette estimation porte sur le texte, pas sur la personne :
+      elle n’est ni rattachée à votre compte ni à votre pseudonyme, et n’est pas utilisée pour vous
+      profiler. Elle est recalculée à chaque affichage et n’est pas enregistrée.
     </p>
     <p>
       <strong>Finalité</strong> : publier un commentaire après modération.
@@ -102,8 +108,9 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       intérêt légitime de modération (article 6.1.f).
     </p>
     <p>
-      <strong>Durée</strong> : la prévisualisation expire à 30 minutes. Les commentaires enregistrés
-      ne sont pas purgés par le code : durée à préciser.
+      <strong>Durée</strong> : la prévisualisation expire à 30 minutes. Les commentaires sont
+      conservés tant que la page commentée est en ligne, et au plus 3 ans ; ils sont supprimés avec
+      le compte sur demande.
     </p>
   </section>
 
@@ -132,8 +139,8 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       </a>.
     </p>
     <p>
-      <strong>Durée</strong> : durée à préciser. Le code du site ne fixe pas la conservation chez
-      Cloudflare.
+      <strong>Durée</strong> : données agrégées ; la durée de conservation est fixée par Cloudflare
+      (voir sa politique ci-dessus).
     </p>
   </section>
 
@@ -153,7 +160,7 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       >
         GitHub Privacy Statement
       </a>.
-      Durée de ces données : durée à préciser (définie par GitHub, pas par le code LMDPT).
+      Durée de ces données : fixée par GitHub (voir sa politique), pas par le code LMDPT.
     </p>
   </section>
 
@@ -169,8 +176,20 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
     </p>
     <p>
       Le code de l’application n’enregistre pas l’adresse IP des visites. L’hébergeur (OVHcloud) et
-      le proxy (Cloudflare) peuvent conserver des journaux techniques de connexion. Durée de ces
-      journaux : durée à préciser (elle n’est pas définie dans le code du site).
+      le proxy (Cloudflare) peuvent conserver des journaux techniques de connexion. Ces journaux
+      techniques sont conservés 12 mois au plus.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Transferts hors de l’Union européenne</h3>
+    <p>
+      Cloudflare, Inc. et GitHub, Inc. sont établis aux États-Unis. À la date de mise à jour de
+      cette page, les deux sociétés figurent comme participantes actives au cadre de protection des
+      données UE-États-Unis (Data Privacy Framework) sur la liste officielle{' '}
+      <a href="https://www.dataprivacyframework.gov/list" rel="noopener noreferrer">dataprivacyframework.gov</a>.
+      Les transferts vers ces sociétés reposent sur ce cadre et, à défaut, sur les clauses
+      contractuelles types de la Commission européenne.
     </p>
   </section>
 

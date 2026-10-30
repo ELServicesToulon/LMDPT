@@ -27,6 +27,7 @@ import {
   classifyPoliticalHueHeuristic as classifyHeuristic,
   hueBySlug,
 } from '../src/lib/comment-politics.ts';
+import { displayHueForText } from './lib/display-hue.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = process.env.LMDPT_COMMENTS_DATA || join(__dirname, 'data');
@@ -739,7 +740,8 @@ const server = createServer(async (req, res) => {
       const db = loadComments();
       const list = db.comments
         .filter((c) => c.threadId === threadId && c.status === 'published')
-        .sort((a, b) => new Date(a.publishedAt || a.createdAt) - new Date(b.publishedAt || b.createdAt));
+        .sort((a, b) => new Date(a.publishedAt || a.createdAt) - new Date(b.publishedAt || b.createdAt))
+        .map(publicComment);
       return json(res, 200, { threadId, comments: list });
     }
 
@@ -806,13 +808,6 @@ const server = createServer(async (req, res) => {
         authorKeyHash: createHash('sha256').update(key).digest('hex').slice(0, 24),
         raw: preview.raw,
         body: finalText,
-        politicalHue: {
-          slug: preview.candidateSlug,
-          label: preview.candidateLabel,
-          color: preview.color,
-          confidence: preview.confidence,
-          rationale: preview.rationale,
-        },
         engine: preview.engine,
         status: 'pending', // file modo sauf auto si redaction
         createdAt: new Date().toISOString(),
@@ -855,7 +850,7 @@ const server = createServer(async (req, res) => {
       if (decision.status) return json(res, decision.status, decision.body);
       const mod = decision.mod;
       const db = loadComments();
-      const queue = db.comments.filter((c) => c.status === 'pending');
+      const queue = db.comments.filter((c) => c.status === 'pending').map(commentForModQueue);
       return json(res, 200, { role: mod.role, queue });
     }
 
@@ -865,7 +860,12 @@ const server = createServer(async (req, res) => {
           { role: 'lecteur', level: 0, rights: 'Lecture seule' },
           { role: 'contributeur', level: 1, description: 'Poste après validation IA + file modo' },
           { role: 'modo', level: 2, description: 'Approuve / masque les commentaires' },
-          { role: 'modo-senior', level: 3, description: 'Peut réassigner la teinte politique' },
+          {
+            role: 'modo-senior',
+            level: 3,
+            description:
+              'Modération avancée ; la teinte n’est plus réassignable (calculée à l’affichage à partir du texte).',
+          },
           { role: 'redaction', level: 4, description: 'Supervision éditoriale complète' },
         ],
       });
@@ -887,22 +887,17 @@ const server = createServer(async (req, res) => {
         c.publishedAt = at;
       } else if (action === 'reject' || action === 'hide') {
         c.status = 'hidden';
-      } else if (action === 'recolor' && ROLE_LEVEL[mod.role] >= ROLE_LEVEL['modo-senior']) {
-        const hue = HUES.find((h) => h.slug === slug);
-        if (!hue) return json(res, 400, { error: 'slug teinte inconnu' });
-        c.politicalHue = {
-          slug: hue.slug,
-          label: hue.label,
-          color: hue.color,
-          confidence: c.politicalHue?.confidence ?? 0.5,
-          rationale: `Réassigné par ${mod.role}`,
-        };
+      } else if (action === 'recolor') {
+        return json(res, 410, {
+          error:
+            'Réassignation de teinte désactivée : la teinte est calculée à l’affichage à partir du texte, elle n’est plus stockée.',
+        });
       } else {
         return json(res, 400, { error: 'action invalide ou droits insuffisants' });
       }
       c.moderation.history.push({ at, by: mod.id, role: mod.role, action, slug: slug || null });
       saveComments(db);
-      return json(res, 200, { ok: true, comment: c });
+      return json(res, 200, { ok: true, comment: commentForModQueue(c) });
     }
 
     // --- Tips / suggestions & alertes lecteurs ---
@@ -1024,9 +1019,17 @@ function publicComment(c) {
     id: c.id,
     displayName: c.displayName,
     body: c.body,
-    politicalHue: c.politicalHue,
+    politicalHue: displayHueForText(c.body),
     publishedAt: c.publishedAt,
     createdAt: c.createdAt,
+  };
+}
+
+function commentForModQueue(c) {
+  const { politicalHue: _storedHue, ...rest } = c;
+  return {
+    ...rest,
+    politicalHue: displayHueForText(c.body),
   };
 }
 
