@@ -97,12 +97,12 @@ describe('analyses', () => {
     expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.slug)).toEqual([
       'droite',
       'pluraliste',
-      'parti-socialiste',
+      'gauche',
     ]);
     expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.label)).toEqual([
       'État de droit et règles stables',
       'Républicanisme civique',
-      'Social-démocratie de gouvernement',
+      'Gauche',
     ]);
     expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.rationale)).toEqual([
       "C'est au juge de dire qui a provoqué à la violence, sur la base d'un acte précis, pas d'une étiquette.",
