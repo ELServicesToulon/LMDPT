@@ -9,6 +9,8 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
+import antifaTerroristeDeuxPays from '../data/analyses/antifa-terroriste-deux-pays-l-ont-ecrit.json';
+import terrorismeChacunSonRatio from '../data/analyses/terrorisme-chacun-son-ratio.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
@@ -41,6 +43,8 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('terrorisme-chacun-son-ratio');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('bataille-du-2-mai');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('corse-senat-non');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
@@ -50,16 +54,18 @@ describe('analyses', () => {
       'chronique-manusk-fiction-demission-macron',
     );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('terrorisme-chacun-son-ratio');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -210,6 +216,257 @@ describe('analyses', () => {
     expect(analyseTexts).toMatch(/Riposte Frontières/);
     expect(analyseTexts).toMatch(/En tension avec/);
     expect(JSON.stringify(guerreCivileLeMotDeLAutre)).not.toMatch(/<!--/);
+  });
+
+  it('chronique antifa terroriste du 30 octobre, hors une, 27 sources, boîte DOE', () => {
+    expect(antifaTerroristeDeuxPays.slug).toBe('antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(antifaTerroristeDeuxPays.date).toBe('2026-10-30');
+    expect(antifaTerroristeDeuxPays.updated).toBe('2026-10-30');
+    expect(antifaTerroristeDeuxPays.title).toBe(
+      "« Antifa » terroriste : deux pays l'ont écrit, les autres en font un slogan",
+    );
+    expect(antifaTerroristeDeuxPays.author).toBe('La rédaction de LMDPT');
+    expect(antifaTerroristeDeuxPays.author_role).toBe('Rédaction LMDPT');
+    expect(antifaTerroristeDeuxPays.eyebrow).toBe('Chronique · Présidentielle 2027');
+    expect(antifaTerroristeDeuxPays.type_label).toBe('Chronique');
+    expect(antifaTerroristeDeuxPays.kicker).toBe('Chronique · La rédaction · 30 octobre 2026');
+    expect(antifaTerroristeDeuxPays.kicker).not.toMatch(/DRAFT|BROUILLON/);
+    expect(antifaTerroristeDeuxPays.tags).toContain('doe');
+    expect(antifaTerroristeDeuxPays.tags).toContain('antifa');
+    expect(antifaTerroristeDeuxPays.tags).toContain('terrorisme');
+    expect(antifaTerroristeDeuxPays.tags.join(' ')).not.toMatch(
+      /philippe|retailleau|le-pen|melenchon|bardella|trump|orban/i,
+    );
+    expect(antifaTerroristeDeuxPays.x_hook).toBe('');
+    expect(antifaTerroristeDeuxPays.chapo).toMatch(/Washington et Budapest ont couché le mot/);
+    expect(antifaTerroristeDeuxPays.description).toMatch(/listes terroristes/);
+    expect(antifaTerroristeDeuxPays.hues).toHaveLength(4);
+    expect(antifaTerroristeDeuxPays.hues.map((hue) => hue.slug)).toEqual([
+      'pluraliste',
+      'parti-socialiste',
+      'droite',
+      'gauche',
+    ]);
+    expect(new Set(antifaTerroristeDeuxPays.hues.map((hue) => hue.slug)).size).toBe(4);
+    expect(antifaTerroristeDeuxPays.hues.map((hue) => hue.label)).toEqual([
+      'État de droit / garantiste',
+      'Libéral / défense des libertés publiques',
+      "Droite d'ordre légaliste",
+      'Gauche démocratique',
+    ]);
+    const washington = antifaTerroristeDeuxPays.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'washington',
+    );
+    expect(washington?.kind).toBe('prose');
+    if (washington?.kind === 'prose') {
+      expect(washington.title).toBe('Washington : un décret sans base, puis des listes bien réelles');
+    }
+    const paris = antifaTerroristeDeuxPays.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'paris',
+    );
+    expect(paris?.kind).toBe('prose');
+    if (paris?.kind === 'prose') {
+      expect(paris.title).toBe('Paris : la dissolution, pas la liste');
+    }
+    const courants = antifaTerroristeDeuxPays.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Badges des courants en phase');
+    }
+    const entry = getAnalysis('antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(entry?.href).toBe('/analyses/antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(entry?.cover?.src).toBe(
+      '/illustrations/unes/analyses/antifa-terroriste-deux-pays-l-ont-ecrit.jpg',
+    );
+    expect(entry?.cover?.alt).toMatch(/bureau d'archives/);
+    expect(getUneDuJour()?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(getUneDuJour()?.slug).not.toBe('antifa-terroriste-deux-pays-l-ont-ecrit');
+    const nSources = antifaTerroristeDeuxPays.sources_groups.reduce(
+      (n, g) => n + g.items.length,
+      0,
+    );
+    expect(nSources).toBe(27);
+    const sourceBlob = JSON.stringify(antifaTerroristeDeuxPays.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.whitehouse.gov/presidential-actions/2025/09/designating-antifa-as-a-domestic-terrorist-organization/',
+    );
+    expect(sourceBlob).toMatch(/njt\.jog\.gov\.hu\/jogszabaly\/2025-297-20-22/);
+    expect(sourceBlob).toMatch(/conseil-etat\.fr/);
+    expect(sourceBlob).toMatch(/legifrance\.gouv\.fr\/jorf\/id\/JORFTEXT000054189930/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    expect(sourceBlob).not.toMatch(/onbloquelextremedroite|unfachoko|OnBloqueLExtremeDroite/i);
+    const encadre = antifaTerroristeDeuxPays.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat', 'Position']);
+      expect(encadre.table.rows).toHaveLength(4);
+      expect(encadre.note).toMatch(/Positions déclarées/);
+      const bardella = encadre.table.rows.find((row) => row[0]?.includes('Bardella'));
+      expect(bardella?.[1]).toMatch(/liste nationale/);
+      expect(bardella?.[1]).toMatch(/\[26\]/);
+    }
+    const analyseTexts = [
+      antifaTerroristeDeuxPays.chapo,
+      antifaTerroristeDeuxPays.description,
+      antifaTerroristeDeuxPays.sources_closing,
+      ...antifaTerroristeDeuxPays.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[27\]/);
+    expect(analyseTexts).toMatch(/article L\. 212-1/);
+    expect(analyseTexts).toMatch(/Jeune Garde/);
+    expect(analyseTexts).not.toMatch(/onbloquelextremedroite|unfachoko|OnBloqueLExtremeDroite/i);
+    expect(JSON.stringify(antifaTerroristeDeuxPays)).not.toMatch(/<!--/);
+    expect(JSON.stringify(antifaTerroristeDeuxPays)).not.toMatch(/BROUILLON|DRAFT/);
+  });
+
+  it('chronique terrorisme chacun son ratio du 30 octobre, hors une, 11 sources, tableau Europol', () => {
+    expect(terrorismeChacunSonRatio.slug).toBe('terrorisme-chacun-son-ratio');
+    expect(terrorismeChacunSonRatio.date).toBe('2026-10-30');
+    expect(terrorismeChacunSonRatio.updated).toBe('2026-10-30');
+    expect(terrorismeChacunSonRatio.title).toBe(
+      'Terrorisme : chacun son ratio, et tout le monde a raison',
+    );
+    expect(terrorismeChacunSonRatio.author).toBe('La rédaction de LMDPT');
+    expect(terrorismeChacunSonRatio.author_role).toBe('Rédaction LMDPT');
+    expect(terrorismeChacunSonRatio.eyebrow).toBe('Chronique · Présidentielle 2027');
+    expect(terrorismeChacunSonRatio.type_label).toBe('Chronique');
+    expect(terrorismeChacunSonRatio.kicker).toBe('Chronique · La rédaction · 30 octobre 2026');
+    expect(terrorismeChacunSonRatio.tags).toContain('doe');
+    expect(terrorismeChacunSonRatio.tags).toContain('europol');
+    expect(terrorismeChacunSonRatio.tags).toContain('pnat');
+    expect(terrorismeChacunSonRatio.tags).toContain('extreme-gauche');
+    expect(terrorismeChacunSonRatio.tags.join(' ')).not.toMatch(
+      /philippe|retailleau|le-pen|melenchon|bardella/i,
+    );
+    expect(terrorismeChacunSonRatio.x_hook).toBe('');
+    expect(terrorismeChacunSonRatio.chapo).toMatch(/Selon le chiffre qu'on choisit/);
+    expect(terrorismeChacunSonRatio.description.length).toBeLessThanOrEqual(200);
+    expect(terrorismeChacunSonRatio.description).toMatch(/Europol et PNAT 2025/);
+    expect(terrorismeChacunSonRatio.hues).toHaveLength(4);
+    expect(terrorismeChacunSonRatio.hues.map((hue) => hue.slug)).toEqual([
+      'pluraliste',
+      'parti-socialiste',
+      'droite',
+      'gauche',
+    ]);
+    expect(new Set(terrorismeChacunSonRatio.hues.map((hue) => hue.slug)).size).toBe(4);
+    expect(terrorismeChacunSonRatio.hues.map((hue) => hue.label)).toEqual([
+      "Rationalistes / « data d'abord »",
+      'État de droit / garantiste',
+      "Droite d'ordre légaliste",
+      'Gauche démocratique',
+    ]);
+    const chiffres = terrorismeChacunSonRatio.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'chiffres',
+    );
+    expect(chiffres?.kind).toBe('prose');
+    if (chiffres?.kind === 'prose') {
+      expect(chiffres.title).toBe('Ce que disent les chiffres');
+      const table = chiffres.blocks.find((block) => block.type === 'table');
+      expect(table?.type).toBe('table');
+      if (table?.type === 'table') {
+        expect(table.headers).toEqual(['2025', 'Commis', 'Déjoués', 'Arrestations']);
+        expect(table.rows).toHaveLength(3);
+      }
+    }
+    const courants = terrorismeChacunSonRatio.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Badges des courants en phase');
+    }
+    const entry = getAnalysis('terrorisme-chacun-son-ratio');
+    expect(entry?.href).toBe('/analyses/terrorisme-chacun-son-ratio');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/terrorisme-chacun-son-ratio.jpg');
+    expect(entry?.cover?.alt).toMatch(/balance ancienne en laiton/);
+    expect(getUneDuJour()?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(getUneDuJour()?.slug).not.toBe('terrorisme-chacun-son-ratio');
+    const nSources = terrorismeChacunSonRatio.sources_groups.reduce(
+      (n, g) => n + g.items.length,
+      0,
+    );
+    expect(nSources).toBe(11);
+    const sourceBlob = JSON.stringify(terrorismeChacunSonRatio.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.europol.europa.eu/cms/sites/default/files/documents/EU-TE-SAT-2026.pdf',
+    );
+    expect(sourceBlob).toMatch(/enm\.justice\.fr\/mineurs-mis-en-examen-infraction-terroriste-pnat/);
+    expect(sourceBlob).toMatch(/vie-publique\.fr\/discours\/296769-bruno-retailleau-07012025-rtl-terrorisme/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    expect(sourceBlob).not.toMatch(/onbloquelextremedroite|unfachoko|OnBloqueLExtremeDroite/i);
+    const encadre = terrorismeChacunSonRatio.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat', 'Position sourcée']);
+      expect(encadre.table.rows).toHaveLength(6);
+      expect(encadre.note).toMatch(/positions déclarées/);
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/islamisme/);
+      expect(retailleau?.[1]).toMatch(/\[11\]/);
+    }
+    const analyseTexts = [
+      terrorismeChacunSonRatio.chapo,
+      terrorismeChacunSonRatio.description,
+      terrorismeChacunSonRatio.sources_closing,
+      ...terrorismeChacunSonRatio.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[11\]/);
+    expect(analyseTexts).toMatch(/11 sur 22/);
+    expect(analyseTexts).toMatch(/Puget-sur-Argens/);
+    expect(analyseTexts).not.toMatch(/onbloquelextremedroite|unfachoko|OnBloqueLExtremeDroite/i);
+    expect(JSON.stringify(terrorismeChacunSonRatio)).not.toMatch(/<!--/);
+    expect(JSON.stringify(terrorismeChacunSonRatio)).not.toMatch(/BROUILLON|DRAFT/);
   });
 
   it('analyse bataille du 2 mai du 29 octobre en une, sources, boîte DOE, tableau vacances', () => {
