@@ -146,7 +146,7 @@ describe('analyses', () => {
       (n, g) => n + g.items.length,
       0,
     );
-    expect(nSources).toBe(25);
+    expect(nSources).toBe(26);
     const sourceBlob = JSON.stringify(guerreCivileLeMotDeLAutre.sources_groups);
     expect(sourceBlob).toContain(
       'https://www.europe1.fr/politique/apres-les-pillages-jordan-bardella-affirme-que-lfi-pousse-a-la-guerre-civile-1162437',
