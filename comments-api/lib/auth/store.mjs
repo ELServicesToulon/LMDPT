@@ -3,6 +3,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { withDataLockSync } from '../data-lock.mjs';
 
 export function ensureDir(dir) {
   mkdirSync(dir, { recursive: true });
@@ -22,6 +23,22 @@ export function saveJsonAtomic(path, data) {
   const tmp = `${path}.${process.pid}.${Date.now()}.tmp`;
   writeFileSync(tmp, JSON.stringify(data, null, 2) + '\n', 'utf8');
   renameSync(tmp, path);
+}
+
+/**
+ * Lecture-modification-écriture sous le verrou partagé du répertoire parent.
+ * @param {string} path
+ * @param {object} fallback
+ * @param {(db: object) => *} fn
+ * @param {string} [owner]
+ */
+export function updateJsonLocked(path, fallback, fn, owner = 'api') {
+  return withDataLockSync(dirname(path), owner, () => {
+    const db = loadJson(path, fallback);
+    const result = fn(db);
+    saveJsonAtomic(path, db);
+    return result;
+  });
 }
 
 export function usersPath(dataDir) {

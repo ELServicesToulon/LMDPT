@@ -97,8 +97,8 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
     <p>
       <strong>Teinte politique</strong> : le site peut estimer une tendance politique d’un message, à
       des fins d’affichage uniquement. Cette estimation porte sur le texte, pas sur la personne :
-      elle n’est ni rattachée à votre compte ni à votre pseudonyme, et n’est pas utilisée pour vous
-      profiler. Elle est recalculée à chaque affichage et n’est pas enregistrée.
+      elle n’est pas enregistrée, est recalculée à l’affichage à partir du seul texte et n’est
+      rattachée ni à votre compte ni à votre profil. Elle n’est pas utilisée pour vous profiler.
     </p>
     <p>
       <strong>Finalité</strong> : publier un commentaire après modération.
@@ -176,8 +176,9 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
     </p>
     <p>
       Le code de l’application n’enregistre pas l’adresse IP des visites. L’hébergeur (OVHcloud) et
-      le proxy (Cloudflare) peuvent conserver des journaux techniques de connexion. Ces journaux
-      techniques sont conservés 12 mois au plus.
+      le proxy (Cloudflare) peuvent conserver des journaux techniques de connexion. Journaux du
+      serveur (nginx) : 12 mois au plus. Journaux d’OVHcloud et de Cloudflare : durée fixée par
+      ces prestataires, voir leurs politiques.
     </p>
   </section>
 
@@ -200,7 +201,7 @@ const contactEmail = 'lemediadupremiertour@gmail.com';
       la portabilité des données vous concernant, et définir des directives sur leur sort après
       votre décès. Pour exercer ces droits :{' '}
       <a href={`mailto:${contactEmail}`}>{contactEmail}</a>, en indiquant le pseudonyme, le mode de
-      connexion et une date approximative.
+      connexion et une date approximative. Réponse sous un mois au plus.
     </p>
     <p>
       Vous pouvez aussi introduire une réclamation auprès de la CNIL : {' '}

@@ -7,6 +7,12 @@ import { chmodSync, copyFileSync, existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { saveJsonAtomic } from '../lib/auth/store.mjs';
+import {
+  isLockedError,
+  releaseDataLock,
+  waitForDataLock,
+  withDataLockSync,
+} from '../lib/data-lock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -91,37 +97,88 @@ export function commentsDataDir() {
  */
 export function runMigrateStripStoredHue({ dataDir, apply = false, now = new Date() }) {
   if (!dataDir) throw new Error('dataDir requis');
-  const commentsPath = join(dataDir, 'comments.json');
-  const usersPath = join(dataDir, 'users.json');
-  const commentsLoaded = loadJsonOrThrow(commentsPath, EMPTY_COMMENTS);
-  const usersLoaded = loadJsonOrThrow(usersPath, EMPTY_USERS);
-  const result = stripStoredHue(commentsLoaded.data, usersLoaded.data);
+  const work = () => {
+    const commentsPath = join(dataDir, 'comments.json');
+    const usersPath = join(dataDir, 'users.json');
+    const commentsLoaded = loadJsonOrThrow(commentsPath, EMPTY_COMMENTS);
+    const usersLoaded = loadJsonOrThrow(usersPath, EMPTY_USERS);
+    const result = stripStoredHue(commentsLoaded.data, usersLoaded.data);
+
+    if (apply === true) {
+      const stamp = bakStamp(now);
+      if (commentsLoaded.exists) {
+        backupFile(commentsPath, join(dataDir, `comments.json.bak-${stamp}`));
+        saveJsonAtomic(commentsPath, result.comments);
+      }
+      if (usersLoaded.exists) {
+        backupFile(usersPath, join(dataDir, `users.json.bak-${stamp}`));
+        saveJsonAtomic(usersPath, result.users);
+      }
+    }
+
+    return result.counts;
+  };
 
   if (apply === true) {
-    const stamp = bakStamp(now);
-    if (commentsLoaded.exists) {
-      backupFile(commentsPath, join(dataDir, `comments.json.bak-${stamp}`));
-      saveJsonAtomic(commentsPath, result.comments);
-    }
-    if (usersLoaded.exists) {
-      backupFile(usersPath, join(dataDir, `users.json.bak-${stamp}`));
-      saveJsonAtomic(usersPath, result.users);
-    }
+    return withDataLockSync(dataDir, 'migrate-strip-hue', work);
   }
-
-  return result.counts;
+  return work();
 }
 
-export function main(argv = process.argv.slice(2)) {
-  const apply = argv.includes('--apply');
-  const dataDir = commentsDataDir();
-  const counts = runMigrateStripStoredHue({ dataDir, apply, now: new Date() });
+function lockTimeoutMs() {
+  const n = Number(process.env.LMDPT_PURGE_LOCK_TIMEOUT_MS);
+  return Number.isFinite(n) && n >= 0 ? n : 60_000;
+}
+
+function lockIntervalMs() {
+  const n = Number(process.env.LMDPT_PURGE_LOCK_INTERVAL_MS);
+  return Number.isFinite(n) && n > 0 ? n : 200;
+}
+
+const LOCKED_EXIT = 75;
+
+function printCounts(apply, counts) {
   console.log(apply ? 'Migration appliquée.' : 'Dry-run — aucune écriture.');
   console.log(`Commentaires avec teinte stockée : ${counts.commentsStripped}`);
   console.log(`Entrées recolor (slug) : ${counts.recolorSlugsStripped}`);
   console.log(`Comptes avec teinte préférée : ${counts.preferredHueStripped}`);
   if (!apply) {
     console.log('Relancer avec --apply pour écrire (sauvegarde .bak- horodatée, mode 600).');
+  }
+}
+
+export async function main(argv = process.argv.slice(2)) {
+  const apply = argv.includes('--apply');
+  const dataDir = commentsDataDir();
+  if (!apply) {
+    const counts = runMigrateStripStoredHue({ dataDir, apply: false, now: new Date() });
+    printCounts(false, counts);
+    return counts;
+  }
+
+  const handle = await waitForDataLock(dataDir, {
+    owner: 'migrate-strip-hue',
+    timeoutMs: lockTimeoutMs(),
+    intervalMs: lockIntervalMs(),
+  });
+  if (!handle) {
+    console.error('Verrou d’écriture occupé — réessayez plus tard.');
+    process.exitCode = LOCKED_EXIT;
+    return null;
+  }
+  try {
+    const counts = runMigrateStripStoredHue({ dataDir, apply: true, now: new Date() });
+    printCounts(true, counts);
+    return counts;
+  } catch (e) {
+    if (isLockedError(e)) {
+      console.error('Verrou d’écriture occupé — réessayez plus tard.');
+      process.exitCode = LOCKED_EXIT;
+      return null;
+    }
+    throw e;
+  } finally {
+    releaseDataLock(handle);
   }
 }
 
@@ -132,5 +189,16 @@ function isDirectRun() {
 }
 
 if (isDirectRun()) {
-  main();
+  main()
+    .then(() => {
+      if (process.exitCode === LOCKED_EXIT) process.exit(LOCKED_EXIT);
+    })
+    .catch((e) => {
+      if (isLockedError(e)) {
+        console.error('Verrou d’écriture occupé — réessayez plus tard.');
+        process.exit(LOCKED_EXIT);
+      }
+      console.error(e);
+      process.exit(1);
+    });
 }

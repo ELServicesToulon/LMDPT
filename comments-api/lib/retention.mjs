@@ -4,6 +4,7 @@
  */
 import { join } from 'node:path';
 import { loadJson, saveJsonAtomic } from './auth/store.mjs';
+import { withDataLockSync } from './data-lock.mjs';
 
 /** Propositions rejetées / masquées : 12 mois après traitement. */
 export const TIPS_REJECTED_MONTHS = 12;
@@ -163,24 +164,31 @@ export function runRetention({ dataDir, now = new Date(), apply = false }) {
   if (!dataDir) {
     throw new Error('dataDir requis');
   }
-  const tipsPath = join(dataDir, 'tips.json');
-  const commentsPath = join(dataDir, 'comments.json');
-  const usersPath = join(dataDir, 'users.json');
-  const sessionsPath = join(dataDir, 'sessions.json');
+  const work = () => {
+    const tipsPath = join(dataDir, 'tips.json');
+    const commentsPath = join(dataDir, 'comments.json');
+    const usersPath = join(dataDir, 'users.json');
+    const sessionsPath = join(dataDir, 'sessions.json');
 
-  const tipsDb = loadJson(tipsPath, EMPTY_TIPS);
-  const commentsDb = loadJson(commentsPath, EMPTY_COMMENTS);
-  const usersDb = loadJson(usersPath, EMPTY_USERS);
-  const sessionsDb = loadJson(sessionsPath, EMPTY_SESSIONS);
+    const tipsDb = loadJson(tipsPath, EMPTY_TIPS);
+    const commentsDb = loadJson(commentsPath, EMPTY_COMMENTS);
+    const usersDb = loadJson(usersPath, EMPTY_USERS);
+    const sessionsDb = loadJson(sessionsPath, EMPTY_SESSIONS);
 
-  const result = computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb }, now);
+    const result = computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb }, now);
+
+    if (apply === true) {
+      saveJsonAtomic(tipsPath, result.tipsDb);
+      saveJsonAtomic(commentsPath, result.commentsDb);
+      saveJsonAtomic(usersPath, result.usersDb);
+      saveJsonAtomic(sessionsPath, result.sessionsDb);
+    }
+
+    return result.counts;
+  };
 
   if (apply === true) {
-    saveJsonAtomic(tipsPath, result.tipsDb);
-    saveJsonAtomic(commentsPath, result.commentsDb);
-    saveJsonAtomic(usersPath, result.usersDb);
-    saveJsonAtomic(sessionsPath, result.sessionsDb);
+    return withDataLockSync(dataDir, 'retention-purge', work);
   }
-
-  return result.counts;
+  return work();
 }

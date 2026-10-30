@@ -28,6 +28,7 @@ import {
   hueBySlug,
 } from '../src/lib/comment-politics.ts';
 import { displayHueForText } from './lib/display-hue.mjs';
+import { isLockedError, LOCKED_MESSAGE, withDataLockSync } from './lib/data-lock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = process.env.LMDPT_COMMENTS_DATA || join(__dirname, 'data');
@@ -171,6 +172,24 @@ function saveTips(db) {
   writeFileSync(join(DATA_DIR, 'tips.json'), JSON.stringify(db, null, 2));
 }
 
+function mutateComments(mutator) {
+  return withDataLockSync(DATA_DIR, 'api', () => {
+    const db = loadComments();
+    const result = mutator(db);
+    if (!result?.skipSave) saveComments(db);
+    return result;
+  });
+}
+
+function mutateTips(mutator) {
+  return withDataLockSync(DATA_DIR, 'api', () => {
+    const db = loadTips();
+    const result = mutator(db);
+    if (!result?.skipSave) saveTips(db);
+    return result;
+  });
+}
+
 const TIP_TYPES = new Set(['suggestion', 'alerte']);
 
 function publicTip(t) {
@@ -300,15 +319,20 @@ function publicOriginHint() {
   }
 }
 
-function json(res, status, body, { setCookie } = {}) {
+function json(res, status, body, { setCookie, retryAfter } = {}) {
   const payload = JSON.stringify(body);
   const headers = {
     'Content-Type': 'application/json; charset=utf-8',
     ...corsHeaders(),
   };
   if (setCookie) headers['Set-Cookie'] = setCookie;
+  if (retryAfter != null) headers['Retry-After'] = String(retryAfter);
   res.writeHead(status, headers);
   res.end(payload);
+}
+
+function jsonLocked(res) {
+  return json(res, 503, { error: LOCKED_MESSAGE }, { retryAfter: 30 });
 }
 
 function readBody(req, { raw = false } = {}) {
@@ -828,9 +852,10 @@ const server = createServer(async (req, res) => {
         });
       }
 
-      const db = loadComments();
-      db.comments.push(comment);
-      saveComments(db);
+      mutateComments((db) => {
+        db.comments.push(comment);
+        return comment;
+      });
       previews.delete(token);
 
       return json(res, 201, {
@@ -877,27 +902,30 @@ const server = createServer(async (req, res) => {
       const mod = decision.mod;
       const body = await readBody(req);
       const { commentId, action, slug } = body;
-      const db = loadComments();
-      const c = db.comments.find((x) => x.id === commentId);
-      if (!c) return json(res, 404, { error: 'Commentaire introuvable' });
-
-      const at = new Date().toISOString();
-      if (action === 'approve') {
-        c.status = 'published';
-        c.publishedAt = at;
-      } else if (action === 'reject' || action === 'hide') {
-        c.status = 'hidden';
-      } else if (action === 'recolor') {
+      if (action === 'recolor') {
         return json(res, 410, {
           error:
             'Réassignation de teinte désactivée : la teinte est calculée à l’affichage à partir du texte, elle n’est plus stockée.',
         });
-      } else {
-        return json(res, 400, { error: 'action invalide ou droits insuffisants' });
       }
-      c.moderation.history.push({ at, by: mod.id, role: mod.role, action, slug: slug || null });
-      saveComments(db);
-      return json(res, 200, { ok: true, comment: commentForModQueue(c) });
+      const outcome = mutateComments((db) => {
+        const c = db.comments.find((x) => x.id === commentId);
+        if (!c) return { skipSave: true, notFound: true };
+        const at = new Date().toISOString();
+        if (action === 'approve') {
+          c.status = 'published';
+          c.publishedAt = at;
+        } else if (action === 'reject' || action === 'hide') {
+          c.status = 'hidden';
+        } else {
+          return { skipSave: true, badAction: true };
+        }
+        c.moderation.history.push({ at, by: mod.id, role: mod.role, action, slug: slug || null });
+        return { comment: c };
+      });
+      if (outcome.notFound) return json(res, 404, { error: 'Commentaire introuvable' });
+      if (outcome.badAction) return json(res, 400, { error: 'action invalide ou droits insuffisants' });
+      return json(res, 200, { ok: true, comment: commentForModQueue(outcome.comment) });
     }
 
     // --- Tips / suggestions & alertes lecteurs ---
@@ -942,9 +970,10 @@ const server = createServer(async (req, res) => {
         publishedAt: null,
         moderation: { history: [] },
       };
-      const db = loadTips();
-      db.tips.push(tip);
-      saveTips(db);
+      mutateTips((db) => {
+        db.tips.push(tip);
+        return tip;
+      });
       return json(res, 201, {
         id: tip.id,
         status: tip.status,
@@ -977,31 +1006,40 @@ const server = createServer(async (req, res) => {
       const mod = decision.mod;
       const body = await readBody(req);
       const { tipId, action } = body;
-      const db = loadTips();
-      const t = db.tips.find((x) => x.id === tipId);
-      if (!t) return json(res, 404, { error: 'Proposition introuvable' });
-      const at = new Date().toISOString();
-      if (action === 'approve') {
-        // Re-gate avant publication site
-        const gate = gateModeratorChief(`${t.title}\n${t.body}`);
-        if (!gate.allowed) {
-          return json(res, 422, { error: gate.reason, code: gate.code, flags: gate.flags });
+      const outcome = mutateTips((db) => {
+        const t = db.tips.find((x) => x.id === tipId);
+        if (!t) return { skipSave: true, notFound: true };
+        const at = new Date().toISOString();
+        if (action === 'approve') {
+          const gate = gateModeratorChief(`${t.title}\n${t.body}`);
+          if (!gate.allowed) {
+            return { skipSave: true, gate };
+          }
+          t.status = 'published';
+          t.publishedAt = at;
+        } else if (action === 'reject' || action === 'hide') {
+          t.status = 'rejected';
+        } else {
+          return { skipSave: true, badAction: true };
         }
-        t.status = 'published';
-        t.publishedAt = at;
-      } else if (action === 'reject' || action === 'hide') {
-        t.status = 'rejected';
-      } else {
-        return json(res, 400, { error: 'action invalide (approve|reject)' });
+        t.moderation.history.push({ at, by: mod.id, role: mod.role, action });
+        return { tip: t };
+      });
+      if (outcome.notFound) return json(res, 404, { error: 'Proposition introuvable' });
+      if (outcome.gate) {
+        return json(res, 422, {
+          error: outcome.gate.reason,
+          code: outcome.gate.code,
+          flags: outcome.gate.flags,
+        });
       }
-      t.moderation.history.push({ at, by: mod.id, role: mod.role, action });
-      saveTips(db);
+      if (outcome.badAction) return json(res, 400, { error: 'action invalide (approve|reject)' });
       return json(res, 200, {
         ok: true,
-        tip: publicTip(t),
-        status: t.status,
+        tip: publicTip(outcome.tip),
+        status: outcome.tip.status,
         message:
-          t.status === 'published'
+          outcome.tip.status === 'published'
             ? 'Validé — visible sur /contribuer et dans le fil lecteurs.'
             : 'Proposition rejetée.',
       });
@@ -1009,6 +1047,7 @@ const server = createServer(async (req, res) => {
 
     return json(res, 404, { error: 'not found' });
   } catch (e) {
+    if (isLockedError(e)) return jsonLocked(res);
     const status = e.status || 500;
     return json(res, status, { error: e.message || 'error' });
   }

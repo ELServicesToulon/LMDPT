@@ -134,6 +134,7 @@ export async function handleAuthRoutes(req, res, {
       const loc = buildAuthorizeRedirect(dataDir, provider, { next });
       redirect(res, loc);
     } catch (e) {
+      if (e?.code === 'LOCKED') throw e;
       json(res, e.status || 500, { error: e.message || String(e) });
     }
     return true;
@@ -170,6 +171,7 @@ export async function handleAuthRoutes(req, res, {
       const sess = createSession(dataDir, user.id);
       redirect(res, next || '/', { setCookie: buildSetCookie(sess.id) });
     } catch (e) {
+      if (e?.code === 'LOCKED') throw e;
       console.error('[lmdpt-auth] callback', provider, e.message || e);
       redirect(res, `/connexion?error=${encodeURIComponent(e.message || 'oauth_failed')}`);
     }
@@ -205,6 +207,7 @@ export async function handleAuthRoutes(req, res, {
           : {}),
       });
     } catch (e) {
+      if (e?.code === 'LOCKED') throw e;
       json(res, e.status || 500, { error: e.message || String(e) });
     }
     return true;

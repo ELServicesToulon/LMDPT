@@ -1,0 +1,18 @@
+[Unit]
+Description=LMDPT — purge de conservation des commentaires (oneshot, non activé par défaut)
+Documentation=file:///home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api/README.md
+
+[Service]
+Type=oneshot
+User=debian
+Group=debian
+WorkingDirectory=/home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api
+Environment=LMDPT_COMMENTS_DATA=/home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api/data
+ExecStart=/usr/bin/node scripts/retention-purge.mjs --apply
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api/data
+StandardOutput=journal
+StandardError=journal

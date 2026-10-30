@@ -15,6 +15,7 @@ import {
   lastTreatmentAt,
   runRetention,
 } from './retention.mjs';
+import { acquireDataLock, LOCKED_CODE, releaseDataLock } from './data-lock.mjs';
 
 const NOW = new Date('2026-10-30T12:00:00.000Z');
 
@@ -366,6 +367,33 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
       assert.equal(comments.comments[0].userId, null);
       assert.equal(users.users.length, 0);
       assert.equal(sessions.sessions.length, 0);
+    } finally {
+      rmSync(dataDir, { recursive: true, force: true });
+    }
+  });
+
+  it('apply refuse si le verrou est tenu ; fonctionne sinon', () => {
+    const dataDir = mkdtempSync(join(tmpdir(), 'lmdpt-ret-lock-'));
+    try {
+      writeJson(dataDir, 'tips.json', { version: 1, tips: [] });
+      writeJson(dataDir, 'comments.json', { version: 1, comments: [] });
+      writeJson(dataDir, 'users.json', { version: 1, users: [] });
+      writeJson(dataDir, 'sessions.json', { version: 1, sessions: [] });
+
+      const held = acquireDataLock(dataDir, { owner: 'other' });
+      assert.ok(held);
+      const before = readFileSync(join(dataDir, 'tips.json'), 'utf8');
+      assert.throws(
+        () => runRetention({ dataDir, now: NOW, apply: true }),
+        (err) => err.code === LOCKED_CODE,
+      );
+      assert.equal(readFileSync(join(dataDir, 'tips.json'), 'utf8'), before);
+      const dryWhileLocked = runRetention({ dataDir, now: NOW, apply: false });
+      assert.equal(typeof dryWhileLocked.tipsDeleted, 'number');
+
+      releaseDataLock(held);
+      const applied = runRetention({ dataDir, now: NOW, apply: true });
+      assert.equal(applied.tipsDeleted, 0);
     } finally {
       rmSync(dataDir, { recursive: true, force: true });
     }

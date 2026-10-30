@@ -144,14 +144,18 @@ const apiBase = '/api/comments';
         listEl.innerHTML = comments
           .map(
             (c: any) => `
-          <article class="ccm-item" style="border-left:4px solid ${c.politicalHue?.color || '#5a6570'}">
+          <article class="ccm-item">
             <header>
               <strong>${escapeHtml(c.displayName || 'Citoyen·ne')}</strong>
-              <span class="ccm-pill" title="Teinte estimée sur le texte du message, pas sur la personne" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
               <time class="meta">${c.publishedAt ? new Date(c.publishedAt).toLocaleString('fr-FR') : ''}</time>
             </header>
-            <p class="ccm-hue-meta meta">Couleur politique (transparence) : ${escapeHtml(c.politicalHue?.label || 'Pluraliste / transversal')}</p>
-            <p>${escapeHtml(c.body)}</p>
+            <div class="ccm-body">
+              <p class="ccm-hue-meta meta">
+                <span class="ccm-pill" title="Tendance estimée automatiquement à partir du texte de ce message" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
+                Couleur politique (transparence) : ${escapeHtml(c.politicalHue?.label || 'Pluraliste / transversal')}
+              </p>
+              <p>${escapeHtml(c.body)}</p>
+            </div>
           </article>`,
           )
           .join('');
@@ -289,6 +293,18 @@ const apiBase = '/api/comments';
     gap: 0.4rem 0.75rem;
     align-items: center;
     margin-bottom: 0.35rem;
+  }
+  .ccm-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .ccm-hue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.55rem;
+    margin: 0;
   }
   .ccm-pill {
     font-size: 0.72rem;

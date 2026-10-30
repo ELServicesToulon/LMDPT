@@ -6,17 +6,30 @@
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { runRetention } from '../lib/retention.mjs';
+import {
+  isLockedError,
+  releaseDataLock,
+  waitForDataLock,
+} from '../lib/data-lock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const LOCKED_EXIT = 75;
 
 export function commentsDataDir() {
   return process.env.LMDPT_COMMENTS_DATA || join(__dirname, '..', 'data');
 }
 
-export function main(argv = process.argv.slice(2)) {
-  const apply = argv.includes('--apply');
-  const dataDir = commentsDataDir();
-  const counts = runRetention({ dataDir, now: new Date(), apply });
+function lockTimeoutMs() {
+  const n = Number(process.env.LMDPT_PURGE_LOCK_TIMEOUT_MS);
+  return Number.isFinite(n) && n >= 0 ? n : 60_000;
+}
+
+function lockIntervalMs() {
+  const n = Number(process.env.LMDPT_PURGE_LOCK_INTERVAL_MS);
+  return Number.isFinite(n) && n > 0 ? n : 200;
+}
+
+function printCounts(apply, counts) {
   console.log(apply ? 'Purge appliquée.' : 'Dry-run — aucune écriture.');
   console.log(`Propositions supprimées : ${counts.tipsDeleted}`);
   console.log(`E-mails de propositions effacés : ${counts.tipEmailsCleared}`);
@@ -27,7 +40,41 @@ export function main(argv = process.argv.slice(2)) {
   if (!apply) {
     console.log('Relancer avec --apply pour écrire.');
   }
-  return counts;
+}
+
+export async function main(argv = process.argv.slice(2)) {
+  const apply = argv.includes('--apply');
+  const dataDir = commentsDataDir();
+  if (!apply) {
+    const counts = runRetention({ dataDir, now: new Date(), apply: false });
+    printCounts(false, counts);
+    return counts;
+  }
+
+  const handle = await waitForDataLock(dataDir, {
+    owner: 'retention-purge',
+    timeoutMs: lockTimeoutMs(),
+    intervalMs: lockIntervalMs(),
+  });
+  if (!handle) {
+    console.error('Verrou d’écriture occupé — réessayez plus tard.');
+    process.exitCode = LOCKED_EXIT;
+    return null;
+  }
+  try {
+    const counts = runRetention({ dataDir, now: new Date(), apply: true });
+    printCounts(true, counts);
+    return counts;
+  } catch (e) {
+    if (isLockedError(e)) {
+      console.error('Verrou d’écriture occupé — réessayez plus tard.');
+      process.exitCode = LOCKED_EXIT;
+      return null;
+    }
+    throw e;
+  } finally {
+    releaseDataLock(handle);
+  }
 }
 
 function isDirectRun() {
@@ -37,5 +84,16 @@ function isDirectRun() {
 }
 
 if (isDirectRun()) {
-  main();
+  main()
+    .then(() => {
+      if (process.exitCode === LOCKED_EXIT) process.exit(LOCKED_EXIT);
+    })
+    .catch((e) => {
+      if (isLockedError(e)) {
+        console.error('Verrou d’écriture occupé — réessayez plus tard.');
+        process.exit(LOCKED_EXIT);
+      }
+      console.error(e);
+      process.exit(1);
+    });
 }

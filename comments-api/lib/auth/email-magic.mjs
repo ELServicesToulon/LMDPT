@@ -1,4 +1,4 @@
-import { loadJson, saveJsonAtomic, magicPath } from './store.mjs';
+import { updateJsonLocked, magicPath } from './store.mjs';
 import { randomToken, sha256 } from './crypto.mjs';
 import { publicUrl } from './config.mjs';
 import tls from 'node:tls';
@@ -29,16 +29,17 @@ export function createMagicToken(dataDir, email) {
     throw err;
   }
   const raw = randomToken(32);
-  const db = loadJson(magicPath(dataDir), EMPTY);
-  const now = Date.now();
-  db.tokens = (db.tokens || []).filter((t) => t.expiresAt > now);
-  db.tokens.push({
-    hash: sha256(raw),
-    email: emailNorm,
-    expiresAt: now + TTL_MS,
-    createdAt: now,
+  updateJsonLocked(magicPath(dataDir), EMPTY, (db) => {
+    const now = Date.now();
+    db.tokens = (db.tokens || []).filter((t) => t.expiresAt > now);
+    db.tokens.push({
+      hash: sha256(raw),
+      email: emailNorm,
+      expiresAt: now + TTL_MS,
+      createdAt: now,
+    });
+    return null;
   });
-  saveJsonAtomic(magicPath(dataDir), db);
   const verifyUrl = `${publicUrl()}/api/auth/email/verify?token=${encodeURIComponent(raw)}`;
   return { email: emailNorm, token: raw, verifyUrl, expiresInSec: TTL_MS / 1000 };
 }
@@ -46,13 +47,13 @@ export function createMagicToken(dataDir, email) {
 export function consumeMagicToken(dataDir, rawToken) {
   if (!rawToken) return null;
   const hash = sha256(rawToken);
-  const db = loadJson(magicPath(dataDir), EMPTY);
-  const now = Date.now();
-  const idx = (db.tokens || []).findIndex((t) => t.hash === hash && t.expiresAt > now);
-  if (idx < 0) return null;
-  const [item] = db.tokens.splice(idx, 1);
-  saveJsonAtomic(magicPath(dataDir), db);
-  return item;
+  return updateJsonLocked(magicPath(dataDir), EMPTY, (db) => {
+    const now = Date.now();
+    const idx = (db.tokens || []).findIndex((t) => t.hash === hash && t.expiresAt > now);
+    if (idx < 0) return null;
+    const [item] = db.tokens.splice(idx, 1);
+    return item;
+  });
 }
 
 function smtpConfig() {
