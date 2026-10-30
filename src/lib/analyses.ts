@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
@@ -42,6 +43,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: guerreCivileLeMotDeLAutre.slug,
+    title: guerreCivileLeMotDeLAutre.title,
+    description: guerreCivileLeMotDeLAutre.description,
+    date: guerreCivileLeMotDeLAutre.date,
+    published: guerreCivileLeMotDeLAutre.date,
+    updated: guerreCivileLeMotDeLAutre.updated,
+    href: '/analyses/guerre-civile-le-mot-de-l-autre',
+    cover: uneCover(
+      'guerre-civile-le-mot-de-l-autre',
+      "Aquarelle d'une place de village au petit matin, pavés mouillés, fontaine au centre, une vitrine éclairée à gauche, une devanture encore barricadée de planches à droite, et deux bancs vides de part et d'autre de la fontaine.",
+    ),
+  },
   {
     slug: batailleDu2Mai.slug,
     title: batailleDu2Mai.title,

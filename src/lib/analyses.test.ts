@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
@@ -39,6 +40,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('guerre-civile-le-mot-de-l-autre');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('bataille-du-2-mai');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('corse-senat-non');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('le-pen-union-nationale');
@@ -47,16 +49,17 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -67,6 +70,146 @@ describe('analyses', () => {
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
     );
+  });
+
+  it('analyse guerre civile du 30 octobre en une, sources, boîte DOE', () => {
+    expect(guerreCivileLeMotDeLAutre.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(guerreCivileLeMotDeLAutre.date).toBe('2026-10-30');
+    expect(guerreCivileLeMotDeLAutre.updated).toBe('2026-10-30');
+    expect(guerreCivileLeMotDeLAutre.title).toBe(
+      "« Guerre civile » : chacun la voit venir de l'autre camp",
+    );
+    expect(guerreCivileLeMotDeLAutre.author).toBe('La rédaction');
+    expect(guerreCivileLeMotDeLAutre.author_role).toBe('Rédaction LMDPT');
+    expect(guerreCivileLeMotDeLAutre.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(guerreCivileLeMotDeLAutre.type_label).toBe('Analyse');
+    expect(guerreCivileLeMotDeLAutre.kicker).toBe('Analyse · La rédaction · 30 octobre 2026');
+    expect(guerreCivileLeMotDeLAutre.tags).toContain('doe');
+    expect(guerreCivileLeMotDeLAutre.x_hook).toBe(
+      "« Guerre civile » : Bardella la voit venir de LFI, la gauche de Zemmour, Villepin de partout. Pendant ce temps, la justice instruit des dossiers bien réels : Nice, Rouen, Riposte Frontières, Trappes. Qui en parle, qui y pousse, qui la combat.",
+    );
+    expect(guerreCivileLeMotDeLAutre.description.length).toBeLessThanOrEqual(200);
+    expect(guerreCivileLeMotDeLAutre.description).toMatch(/17 octobre/);
+    expect(guerreCivileLeMotDeLAutre.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(guerreCivileLeMotDeLAutre.sources_intro).toMatch(/Consultées le 29 et le 30 octobre 2026/);
+    expect(guerreCivileLeMotDeLAutre.sources_closing).toMatch(/consultés le 29 et le 30 octobre 2026/);
+    expect(guerreCivileLeMotDeLAutre.hues).toHaveLength(3);
+    expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'parti-socialiste',
+    ]);
+    expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.label)).toEqual([
+      'État de droit et règles stables',
+      'Républicanisme civique',
+      'Social-démocratie de gouvernement',
+    ]);
+    expect(guerreCivileLeMotDeLAutre.hues.map((hue) => hue.rationale)).toEqual([
+      "C'est au juge de dire qui a provoqué à la violence, sur la base d'un acte précis, pas d'une étiquette.",
+      'Les mots du débat public ont des effets, et un responsable politique répond de ceux qu\'il choisit.',
+      "La fermeté face aux violences et la défense de l'État de droit vont ensemble, comme le soutient Raphaël Glucksmann.",
+    ]);
+    const quiEnParle = guerreCivileLeMotDeLAutre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'qui-en-parle',
+    );
+    expect(quiEnParle?.kind).toBe('prose');
+    if (quiEnParle?.kind === 'prose') {
+      expect(quiEnParle.title).toBe('Qui en parle');
+    }
+    const justice = guerreCivileLeMotDeLAutre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'justice',
+    );
+    expect(justice?.kind).toBe('prose');
+    if (justice?.kind === 'prose') {
+      expect(justice.title).toBe('Ce que la justice a sur la table');
+      const nice = justice.blocks.find(
+        (block) => block.type === 'p' && block.text.startsWith('**À Nice**'),
+      );
+      expect(nice?.type).toBe('p');
+    }
+    const courants = guerreCivileLeMotDeLAutre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('guerre-civile-le-mot-de-l-autre');
+    expect(entry?.href).toBe('/analyses/guerre-civile-le-mot-de-l-autre');
+    expect(entry?.cover?.src).toBe(
+      '/illustrations/unes/analyses/guerre-civile-le-mot-de-l-autre.jpg',
+    );
+    expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
+    expect(getUneDuJour()?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(getUneDuJour()?.date).toBe('2026-10-30');
+    const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
+      (n, g) => n + g.items.length,
+      0,
+    );
+    expect(nSources).toBe(25);
+    const sourceBlob = JSON.stringify(guerreCivileLeMotDeLAutre.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.europe1.fr/politique/apres-les-pillages-jordan-bardella-affirme-que-lfi-pousse-a-la-guerre-civile-1162437',
+    );
+    expect(sourceBlob).toMatch(/franc-tireur\.fr\/la-guerre-des-morts/);
+    expect(sourceBlob).toMatch(/elabe\.fr\/fichier-pdf\/13334/);
+    expect(sourceBlob).toMatch(/la-croix\.com\/a-vif\/a-force-d-annoncer-la-guerre-civile/);
+    expect(sourceBlob).toMatch(/lejdd\.fr\/politique\/horde-de-barbares/);
+    expect(sourceBlob).toMatch(/sudouest\.fr\/societe\/greves-et-manifestations/);
+    expect(sourceBlob).toMatch(/tf1info\.fr\/politique\/une-menace-sur-la-democratie/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = guerreCivileLeMotDeLAutre.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual(['Candidat', 'Position', 'Sources']);
+      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.note).toMatch(/Non trouvée/);
+      const bardella = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(bardella?.[1]).toMatch(/pousse à la guerre civile/);
+      expect(bardella?.[2]).toBe('[25][8]');
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/État d'urgence/);
+      expect(attal?.[2]).toBe('[22][23][17]');
+      const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
+      expect(zemmour?.[1]).toMatch(/non trouvée dans les sources consultées/);
+      expect(zemmour?.[2]).toBe('[12]');
+    }
+    const analyseTexts = [
+      guerreCivileLeMotDeLAutre.chapo,
+      guerreCivileLeMotDeLAutre.description,
+      guerreCivileLeMotDeLAutre.disclaimer,
+      guerreCivileLeMotDeLAutre.sources_closing,
+      ...guerreCivileLeMotDeLAutre.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[25\]/);
+    expect(analyseTexts).toMatch(/1,4 pour 100 000/);
+    expect(analyseTexts).toMatch(/Riposte Frontières/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(guerreCivileLeMotDeLAutre)).not.toMatch(/<!--/);
   });
 
   it('analyse bataille du 2 mai du 29 octobre en une, sources, boîte DOE, tableau vacances', () => {
@@ -156,7 +299,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/bataille-du-2-mai');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
-    expect(getUneDuJour()?.slug).toBe('bataille-du-2-mai');
+    expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
+    expect(getUneDuJour()?.date).toBe('2026-10-30');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -316,7 +460,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-10-29');
+    expect(getUneDuJour()?.date).toBe('2026-10-30');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);

@@ -1,0 +1,509 @@
+{
+  "slug": "guerre-civile-le-mot-de-l-autre",
+  "title": "« Guerre civile » : chacun la voit venir de l'autre camp",
+  "eyebrow": "Analyse · Présidentielle 2027",
+  "type_label": "Analyse",
+  "date": "2026-10-30",
+  "updated": "2026-10-30",
+  "kicker": "Analyse · La rédaction · 30 octobre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Depuis les violences du 17 octobre, l'expression « guerre civile » est passée des réseaux aux plateaux, puis aux discours des candidats. Jordan Bardella affirme que La France insoumise « pousse à la guerre civile » [8]. Un député insoumis saisit la justice contre des « propos de guerre civile » d'Éric Zemmour [12]. Dominique de Villepin affirme dans une vidéo que « la guerre civile frappe à la porte » [2]. Les chercheurs interrogés jugent le mot excessif [5][6]. Les enquêtes, elles, avancent sur des faits précis : des groupes masqués à Nice et à Rouen, un groupe Facebook visé par le pôle haine en ligne, la tuerie de Trappes. Qui en parle, qui y pousse, qui la combat : nous avons trié.",
+  "description": "Depuis les violences du 17 octobre, l'expression « guerre civile » est passée des réseaux aux plateaux, puis aux discours des candidats.",
+  "disclaimer": "« Guerre civile » est un mot commode. Il désigne toujours la faute de l'autre et ne coûte rien à celui qui le prononce. Le RN le pose sur LFI, une partie de la gauche sur Zemmour, Villepin sur tout le monde, et chacun se présente en pompier. Pendant ce temps, les dossiers sérieux tiennent en peu de lignes : des hommes masqués à Nice et à Rouen, un groupe en ligne visé pour menaces de mort, une tuerie à Trappes que le parquet antiterroriste traite comme raciste. Ces faits relèvent de la police et des juges, et c'est là que la lutte contre les appels à la violence se gagne : une provocation explicite, un auteur identifié, un procès. Notre conviction est simple. Un candidat qui veut combattre ces appels devrait appliquer la même exigence à son propre camp qu'au camp d'en face, et laisser au juge, pas au micro, le soin de dire qui a franchi la ligne. Celui qui promet la guerre civile pour la conjurer ensuite s'assure surtout un bon rôle dans la pièce. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "guerre-civile",
+    "violences",
+    "17-octobre",
+    "bardella",
+    "doe"
+  ],
+  "x_hook": "« Guerre civile » : Bardella la voit venir de LFI, la gauche de Zemmour, Villepin de partout. Pendant ce temps, la justice instruit des dossiers bien réels : Nice, Rouen, Riposte Frontières, Trappes. Qui en parle, qui y pousse, qui la combat.",
+  "hues": [
+    {
+      "slug": "droite",
+      "label": "État de droit et règles stables",
+      "color": "#0066cc",
+      "rationale": "C'est au juge de dire qui a provoqué à la violence, sur la base d'un acte précis, pas d'une étiquette."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Républicanisme civique",
+      "color": "#5a6570",
+      "rationale": "Les mots du débat public ont des effets, et un responsable politique répond de ceux qu'il choisit."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Social-démocratie de gouvernement",
+      "color": "#ff8080",
+      "rationale": "La fermeté face aux violences et la défense de l'État de droit vont ensemble, comme le soutient Raphaël Glucksmann."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "qui-en-parle",
+      "title": "Qui en parle",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le mot circule partout. Le 18 octobre, sur France 2, Bruno Retailleau répond qu'il ne peut pas y avoir « de manifestations paisibles dans cette guerre civile, dans ces émeutes » [3]. Le 21 octobre, Dominique de Villepin, qui prépare une candidature, publie une vidéo : « la guerre civile frappe à la porte », « Le danger, c'est maintenant. C'est la déchirure ». Il propose une « plateforme commune anticrise » et des « États généraux de la République » [2]. Le 28 octobre, l'éditorialiste Caroline Fourest écrit dans Franc-Tireur que le crime raciste de Trappes intervient « en plein risque de guerre civile » [1]."
+        },
+        {
+          "type": "p",
+          "text": "L'inquiétude gagne aussi l'opinion. Selon un sondage Elabe pour BFMTV réalisé les 20 et 21 octobre, 61 % des personnes interrogées estiment « qu'il va falloir se protéger par ses propres moyens, car les forces de l'ordre ne parviennent plus à protéger la population » [7]. Le baromètre Toluna Harris Interactive analysé par Terra Nova relève, parmi les réponses spontanées sur la campagne, la mention d'un « risque de guerre civile » [4]."
+        },
+        {
+          "type": "p",
+          "text": "Les spécialistes, eux, freinent. Sur France Inter, le politiste Antoine Bristielle rappelle qu'une guerre civile suppose des « acteurs politiquement et militairement organisés, poursuivant des objectifs identifiables et homogènes ». Selon lui, le 17 octobre relève de deux dynamiques différentes : d'un côté des militants issus en partie de l'ultragauche, de l'autre des individus qui ont profité des affrontements pour piller [5]. Dans La Croix, les chercheurs Antoine Marie et Peter Barrett rappellent que le taux d'homicide en France avoisine 1,4 pour 100 000 habitants. Leur titre résume le risque : « À force d'annoncer la guerre civile, on augmente la défiance et le refus du compromis » [6]. Autrement dit, le mot peut fabriquer une partie de ce qu'il décrit."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "qui-accuse",
+      "title": "Qui accuse l'autre d'y pousser",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "À droite et à l'extrême droite, la cible est La France insoumise. Le 19 octobre, sur CNews et Europe 1, Jordan Bardella déclare : « Ce mouvement aujourd'hui est un mouvement qui pousse à la guerre civile, qui pousse à l'insurrection ». Il ajoute : « Les casseurs sont désormais la branche armée et le bras armé » de LFI [8]. Édouard Philippe estime de son côté que la violence a été « nourrie » et « légitimée » par des responsables insoumis, qui l'ont présentée comme une réaction à « une autre violence », celle de la société [11]. Raphaël Glucksmann, à gauche, accuse Jean-Luc Mélenchon d'avoir « misé sur le chaos depuis des années » et d'être « le marchepied de l'extrême droite » [10]."
+        },
+        {
+          "type": "p",
+          "text": "Jean-Luc Mélenchon répond sur X qu'il craint « des provocations souvent pratiquées dans ce type de période de crise par les gouvernements aux abois », et appelle ses militants à « la vigilance » [9]. Une accusation contre l'exécutif, donc, en réponse à une accusation contre son parti."
+        },
+        {
+          "type": "p",
+          "text": "À gauche, la cible est l'extrême droite. Le 18 octobre, sur LCI, Éric Zemmour décrit les émeutiers comme « une horde de barbares maghrébins et africains qui rentrent dans les villes ». Le député LFI Antoine Léaument y voit des « propos de guerre civile » et saisit la procureure [12]. La justice dira si ces mots tombent sous le coup de la loi. Après Trappes, Marine Tondelier, secrétaire nationale des Écologistes, écrit que « la violence des mots précède toujours la violence des actes », et appelle à « faire preuve de retenue dans le choix des mots » [17]."
+        },
+        {
+          "type": "p",
+          "text": "Que dit le droit ? Interrogée par franceinfo, la professeure de droit public Gwénaële Calvès explique qu'une provocation punissable doit être « explicite » : de « vagues propos tendant à justifier » des violences ne suffisent pas [13]. Le constitutionnaliste Christophe Boutin ajoute que LFI « en tant que tel n'a pas fait d'appel à la violence, il a fait des appels à manifester » [13]. Sur TF1, la procureure de Paris, Laure Beccuau, a dit qu'elle ne « peut absolument pas confirmer » que les auteurs des violences sont « des personnes politisées vers l'ultragauche » [13]. L'accusation politique et la preuve pénale ne vont donc pas au même rythme."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "justice",
+      "title": "Ce que la justice a sur la table",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pendant que les camps s'accusent, quatre dossiers concrets avancent. Tous les mis en cause sont présumés innocents."
+        },
+        {
+          "type": "p",
+          "text": "**À Nice**, après la manifestation du 24 octobre, dix personnes de 18 à 32 ans sont poursuivis pour association de malfaiteurs en vue de commettre des violences, et un mineur doit passer devant le juge des enfants. Leur procès a été renvoyé au 26 novembre. Le parquet demandait la détention de cinq d'entre eux, le tribunal a écarté toute « mesure coercitive ». Ils contestent toute appartenance à l'ultradroite et disent avoir voulu protéger les commerces [14]."
+        },
+        {
+          "type": "p",
+          "text": "**À Rouen**, le parquet a ouvert une enquête pour violences aggravées après une vidéo diffusée par le média Blast. On y voit un groupe, dont certains membres sont masqués et cagoulés, frapper un homme à terre, puis repartir aux cris de « Rouen nationaliste » et « la rue, la France, nous appartient » [15]. Selon le procureur, des affrontements avaient opposé ce jour-là des militants d'ultradroite et d'ultragauche [15]."
+        },
+        {
+          "type": "p",
+          "text": "**En ligne**, le pôle national de lutte contre la haine en ligne enquête depuis le 11 septembre sur un groupe Facebook d'environ 6 000 membres, « Riposte Frontières », pour provocation à la discrimination, injure publique et menace de mort. Selon franceinfo, la page Facebook officielle du média Frontières figure parmi les deux administrateurs du groupe [16]. L'enquête fait suite au signalement d'un député LFI."
+        },
+        {
+          "type": "p",
+          "text": "**À Trappes et à La Verrière**, le 23 octobre, un homme de 39 ans a ouvert le feu. Un Français de 26 ans a été tué, cinq personnes ont été blessées, dont une enfant [18]. Le parquet national antiterroriste a ouvert une enquête pour assassinat en relation avec une entreprise terroriste, avec la circonstance que les faits auraient été commis à raison de l'appartenance, vraie ou supposée, des victimes à une prétendue race, une ethnie, une nation ou une religion. Selon le procureur national antiterroriste, le suspect a démenti avoir agi par racisme [18]. Un rassemblement est prévu à Trappes ce vendredi 30 octobre [19]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "qui-combat",
+      "title": "Qui la combat, et avec quels outils",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Des députés insoumis accusent les autorités d'avoir « protégé les milices d'extrême droite » le week-end du 24 octobre. Le ministre de l'Intérieur, Laurent Nuñez, répond : « à aucun moment, évidemment, la police ne les a protégés ». Il décrit ces groupes comme « un groupe constitué en vue de commettre des violences », promet « des suites » judiciaires et administratives, et évoque des « possibilités de dissoudre ces groupes » [20]. Le préfet de Seine-Maritime a signalé les faits de Rouen à la justice [15]. Devant le Sénat, le 28 octobre, il promet : « Nous continuerons à agir contre l'ultradroite comme nous le faisons contre l'ultra gauche ». Le sénateur socialiste Hussein Bourgi parle, lui, d'une « passivité troublante » [21]."
+        },
+        {
+          "type": "p",
+          "text": "Dissoudre, c'est l'outil le plus lourd. Un décret en Conseil des ministres, fondé sur l'un des motifs prévus par le Code de la sécurité intérieure, et que le Conseil d'État peut annuler s'il le juge disproportionné [13]. Bruno Retailleau a proposé dès le 1er octobre d'interdire La France insoumise, et Gérard Larcher, président du Sénat, juge que « la question peut être posée » [13]. Le constitutionnaliste Christophe Boutin juge l'hypothèse « très très improbable » et doute que le Conseil d'État valide un tel décret [13]."
+        },
+        {
+          "type": "p",
+          "text": "Les candidats proposent d'autres outils. Gabriel Attal veut l'état d'urgence si la situation n'est pas rétablie, des perquisitions et des assignations administratives, et une coupure des réseaux sociaux « temporaire et ciblée » [22][23]. David Lisnard veut démanteler les groupuscules violents, « d'extrême gauche ou d'extrême droite », mais refuse que cette dénonciation « exonère » les gouvernants de leurs responsabilités [24]. Raphaël Glucksmann demande une réponse « extrêmement ferme » tout en prévenant : « l'État de droit n'est pas la faiblesse » [10]. Marine Le Pen appelle « au calme, à la dignité et à la retenue républicaine », tout en qualifiant LFI et « ses branches » de « pyromanes sociaux » [25]."
+        },
+        {
+          "type": "p",
+          "text": "Restent les mots. Caroline Fourest propose de dire « racisme anti-musulmans » plutôt qu'« islamophobe », un terme qu'elle juge source de division [1]. Le maire de Trappes, Ali Rabeh, appelle à « la concorde nationale » et à « tenir pied à pied la digue républicaine » [19]. Les deux ne s'accordent pas sur le vocabulaire. Ils s'accordent sur l'idée qu'il en faut un commun."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*« Guerre civile » est un mot commode. Il désigne toujours la faute de l'autre et ne coûte rien à celui qui le prononce. Le RN le pose sur LFI, une partie de la gauche sur Zemmour, Villepin sur tout le monde, et chacun se présente en pompier. Pendant ce temps, les dossiers sérieux tiennent en peu de lignes : des hommes masqués à Nice et à Rouen, un groupe en ligne visé pour menaces de mort, une tuerie à Trappes que le parquet antiterroriste traite comme raciste. Ces faits relèvent de la police et des juges, et c'est là que la lutte contre les appels à la violence se gagne : une provocation explicite, un auteur identifié, un procès. Notre conviction est simple. Un candidat qui veut combattre ces appels devrait appliquer la même exigence à son propre camp qu'au camp d'en face, et laisser au juge, pas au micro, le soin de dire qui a franchi la ligne. Celui qui promet la guerre civile pour la conjurer ensuite s'assure surtout un bon rôle dans la pièce.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Guerre civile et appels à la violence : ce que disent les candidats et prétendants 2027 (relevé au 29 octobre)",
+      "intro": "",
+      "table": {
+        "caption": "Guerre civile et appels à la violence : ce que disent les candidats et prétendants 2027 (relevé au 29 octobre)",
+        "headers": [
+          "Candidat",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen (RN)",
+            "Appelle « au calme, à la dignité et à la retenue républicaine ». Qualifie LFI et « ses branches » de « pyromanes sociaux ». Promet la règle du « casseur-payeur » (18/10). Le président du RN, Jordan Bardella, affirme que LFI « pousse à la guerre civile » (19/10).",
+            "[25][8]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Craint des « provocations » du pouvoir et appelle à « la vigilance » (20/10). Après Trappes : « Le racisme tue » (23/10) ; promet que le racisme sera « systématiquement pourchassé et puni » (26/10).",
+            "[9][17][18]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Parle de « cette guerre civile » à propos des émeutes (18/10). A proposé d'interdire LFI (1/10).",
+            "[3][13]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Violence « nourrie » et « légitimée » par des responsables LFI. Demande des réponses sur le renseignement et le maintien de l'ordre (18/10).",
+            "[11]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "État d'urgence si l'ordre n'est pas rétabli, mesures administratives, coupure « temporaire et ciblée » des réseaux sociaux (19 et 23/10). Après Trappes : « La haine tue ».",
+            "[22][23][17]"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique)",
+            "Réponse « extrêmement ferme », mais « l'État de droit n'est pas la faiblesse ». Accuse Mélenchon de servir de « marchepied » à Le Pen (19/10).",
+            "[10]"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Démanteler les groupuscules violents d'extrême gauche comme d'extrême droite, sans que cela « exonère » les gouvernants (20/10).",
+            "[24]"
+          ],
+          [
+            "Dominique de Villepin",
+            "« La guerre civile frappe à la porte ». Propose une plateforme commune anticrise et des États généraux de la République (21/10). Candidature non officialisée.",
+            "[2]"
+          ],
+          [
+            "Éric Zemmour (Reconquête)",
+            "Ses propos du 18/10 sur LCI font l'objet d'un signalement d'un député LFI. Position sur la lutte contre les appels à la violence non trouvée dans les sources consultées.",
+            "[12]"
+          ]
+        ]
+      },
+      "note": "*Méthode : déclarations publiques rapportées par la presse ou publiées par les candidats, du 1er au 29 octobre 2026. « Non trouvée » veut dire absente de ces sources, pas absence de position. Jordan Bardella n'est pas candidat ; il figure comme président du parti de Marine Le Pen.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**État de droit et règles stables** (droite) : c'est au juge de dire qui a provoqué à la violence, sur la base d'un acte précis, pas d'une étiquette.",
+            "**Républicanisme civique** (pluraliste) : les mots du débat public ont des effets, et un responsable politique répond de ceux qu'il choisit.",
+            "**Social-démocratie de gouvernement** (parti-socialiste) : la fermeté face aux violences et la défense de l'État de droit vont ensemble, comme le soutient Raphaël Glucksmann."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** l'usage de « guerre civile » comme arme de campagne contre l'adversaire, et les appels à la dissolution d'un parti sur la base d'accusations que les juristes jugent insuffisantes."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 29 et le 30 octobre 2026.",
+  "sources_groups": [
+    {
+      "title": "Presse, justice et déclarations",
+      "items": [
+        {
+          "label": "1. Franc-Tireur n° 259, Caroline Fourest, « La guerre des morts », 28 octobre 2026 : https://www.franc-tireur.fr/la-guerre-des-morts-le-franc-parler-de-caroline-fourest",
+          "lead": "1. Franc-Tireur n° 259, Caroline Fourest, « La guerre des morts », 28 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.franc-tireur.fr/la-guerre-des-morts-le-franc-parler-de-caroline-fourest",
+              "url": "https://www.franc-tireur.fr/la-guerre-des-morts-le-franc-parler-de-caroline-fourest"
+            }
+          ]
+        },
+        {
+          "label": "2. CNews avec AFP, 21 octobre 2026 (vidéo de Dominique de Villepin) : https://www.cnews.fr/france/2026-10-21/presidentielle-2027-face-au-risque-dune-guerre-civile-dominique-de-villepin",
+          "lead": "2. CNews avec AFP, 21 octobre 2026 (vidéo de Dominique de Villepin)",
+          "links": [
+            {
+              "label": "https://www.cnews.fr/france/2026-10-21/presidentielle-2027-face-au-risque-dune-guerre-civile-dominique-de-villepin",
+              "url": "https://www.cnews.fr/france/2026-10-21/presidentielle-2027-face-au-risque-dune-guerre-civile-dominique-de-villepin"
+            }
+          ]
+        },
+        {
+          "label": "3. Gala avec 6Medias, 18 octobre 2026 (Bruno Retailleau dans Franc-jeu, France 2) : https://www.gala.fr/politique/votre-question-n-est-pas-une-blague-bruno-retailleau-s-offusque-face-a-benjamin-duhamel-il-ne-cache-pas-son-indignation-20261018",
+          "lead": "3. Gala avec 6Medias, 18 octobre 2026 (Bruno Retailleau dans Franc-jeu, France 2)",
+          "links": [
+            {
+              "label": "https://www.gala.fr/politique/votre-question-n-est-pas-une-blague-bruno-retailleau-s-offusque-face-a-benjamin-duhamel-il-ne-cache-pas-son-indignation-20261018",
+              "url": "https://www.gala.fr/politique/votre-question-n-est-pas-une-blague-bruno-retailleau-s-offusque-face-a-benjamin-duhamel-il-ne-cache-pas-son-indignation-20261018"
+            }
+          ]
+        },
+        {
+          "label": "4. Terra Nova, « Présidentielle 2027 : la peur au centre », note d'après le baromètre Toluna Harris Interactive, 29 octobre 2026 : https://tnova.fr/democratie/politique-institutions/presidentielle-2027-la-peur-au-centre/",
+          "lead": "4. Terra Nova, « Présidentielle 2027 : la peur au centre », note d'après le baromètre Toluna Harris Interactive, 29 octobre 2026",
+          "links": [
+            {
+              "label": "https://tnova.fr/democratie/politique-institutions/presidentielle-2027-la-peur-au-centre/",
+              "url": "https://tnova.fr/democratie/politique-institutions/presidentielle-2027-la-peur-au-centre/"
+            }
+          ]
+        },
+        {
+          "label": "5. France Inter, L'invité de 8h20, 22 octobre 2026 (Antoine Bristielle et Pierre-Henri Tavoillot) : https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-jeudi-22-octobre-2026-6854751",
+          "lead": "5. France Inter, L'invité de 8h20, 22 octobre 2026 (Antoine Bristielle et Pierre-Henri Tavoillot)",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-jeudi-22-octobre-2026-6854751",
+              "url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-jeudi-22-octobre-2026-6854751"
+            }
+          ]
+        },
+        {
+          "label": "6. La Croix, Antoine Marie et Peter Barrett, tribune, 23 octobre 2026 : https://www.la-croix.com/a-vif/a-force-d-annoncer-la-guerre-civile-on-augmente-la-defiance-et-le-refus-du-compromis-20261023",
+          "lead": "6. La Croix, Antoine Marie et Peter Barrett, tribune, 23 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.la-croix.com/a-vif/a-force-d-annoncer-la-guerre-civile-on-augmente-la-defiance-et-le-refus-du-compromis-20261023",
+              "url": "https://www.la-croix.com/a-vif/a-force-d-annoncer-la-guerre-civile-on-augmente-la-defiance-et-le-refus-du-compromis-20261023"
+            }
+          ]
+        },
+        {
+          "label": "7. BFMTV, sondage Elabe, 21 octobre 2026 (terrain en ligne les 20 et 21 octobre, 1 001 personnes) : https://www.bfmtv.com/politique/sondages/sondage-bfmtv-six-francais-sur-dix-estiment-devoir-assurer-eux-memes-leur-securite-apres-les-violences-du-17-octobre_AN-202610210673.html ; rapport Elabe : https://elabe.fr/fichier-pdf/13334-les-francais-les-manifestations-du-17-octobre-et-les-violences/",
+          "lead": "7. BFMTV, sondage Elabe, 21 octobre 2026 (terrain en ligne les 20 et 21 octobre, 1 001 personnes)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/sondages/sondage-bfmtv-six-francais-sur-dix-estiment-devoir-assurer-eux-memes-leur-securite-apres-les-violences-du-17-octobre_AN-202610210673.html",
+              "url": "https://www.bfmtv.com/politique/sondages/sondage-bfmtv-six-francais-sur-dix-estiment-devoir-assurer-eux-memes-leur-securite-apres-les-violences-du-17-octobre_AN-202610210673.html"
+            },
+            {
+              "label": "rapport Elabe",
+              "url": "https://elabe.fr/fichier-pdf/13334-les-francais-les-manifestations-du-17-octobre-et-les-violences/"
+            }
+          ]
+        },
+        {
+          "label": "8. Europe 1, 19 octobre 2026 (Jordan Bardella dans La Grande Interview) : https://www.europe1.fr/politique/apres-les-pillages-jordan-bardella-affirme-que-lfi-pousse-a-la-guerre-civile-1162437",
+          "lead": "8. Europe 1, 19 octobre 2026 (Jordan Bardella dans La Grande Interview)",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/apres-les-pillages-jordan-bardella-affirme-que-lfi-pousse-a-la-guerre-civile-1162437",
+              "url": "https://www.europe1.fr/politique/apres-les-pillages-jordan-bardella-affirme-que-lfi-pousse-a-la-guerre-civile-1162437"
+            }
+          ]
+        },
+        {
+          "label": "9. France 24 (AFP), 20 octobre 2026 (réponse de Jean-Luc Mélenchon, Gérard Larcher) : https://www.france24.com/fr/info-en-continu/20261020-violences-lfi-ne-veut-pas-%C3%AAtre-le-bouc-%C3%A9missaire-du-fiasco",
+          "lead": "9. France 24 (AFP), 20 octobre 2026 (réponse de Jean-Luc Mélenchon, Gérard Larcher)",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261020-violences-lfi-ne-veut-pas-%C3%AAtre-le-bouc-%C3%A9missaire-du-fiasco",
+              "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-lfi-ne-veut-pas-%C3%AAtre-le-bouc-%C3%A9missaire-du-fiasco"
+            }
+          ]
+        },
+        {
+          "label": "10. BFMTV, 19 octobre 2026 (Raphaël Glucksmann sur RTL) : https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-raphael-glucksmann-appelle-a-une-reponse-extremement-ferme-des-autorites_AN-202610190326.html",
+          "lead": "10. BFMTV, 19 octobre 2026 (Raphaël Glucksmann sur RTL)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-raphael-glucksmann-appelle-a-une-reponse-extremement-ferme-des-autorites_AN-202610190326.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-raphael-glucksmann-appelle-a-une-reponse-extremement-ferme-des-autorites_AN-202610190326.html"
+            }
+          ]
+        },
+        {
+          "label": "11. BFMTV avec AFP, 18 octobre 2026 (Édouard Philippe) : https://www.bfmtv.com/politique/horizons/est-ce-qu-il-y-a-eu-ou-non-une-faille-edouard-philippe-se-pose-des-questions-sur-le-niveau-du-renseignement-apres-les-violences-du-17-octobre_AD-202610180312.html",
+          "lead": "11. BFMTV avec AFP, 18 octobre 2026 (Édouard Philippe)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/horizons/est-ce-qu-il-y-a-eu-ou-non-une-faille-edouard-philippe-se-pose-des-questions-sur-le-niveau-du-renseignement-apres-les-violences-du-17-octobre_AD-202610180312.html",
+              "url": "https://www.bfmtv.com/politique/horizons/est-ce-qu-il-y-a-eu-ou-non-une-faille-edouard-philippe-se-pose-des-questions-sur-le-niveau-du-renseignement-apres-les-violences-du-17-octobre_AD-202610180312.html"
+            }
+          ]
+        },
+        {
+          "label": "12. Le JDD, 20 octobre 2026 (propos d'Éric Zemmour sur LCI, signalement d'Antoine Léaument) : https://www.lejdd.fr/politique/horde-de-barbares-maghrebins-et-africains-linsoumis-leaument-saisit-la-justice-apres-des-propos-de-zemmour-186495",
+          "lead": "12. Le JDD, 20 octobre 2026 (propos d'Éric Zemmour sur LCI, signalement d'Antoine Léaument)",
+          "links": [
+            {
+              "label": "https://www.lejdd.fr/politique/horde-de-barbares-maghrebins-et-africains-linsoumis-leaument-saisit-la-justice-apres-des-propos-de-zemmour-186495",
+              "url": "https://www.lejdd.fr/politique/horde-de-barbares-maghrebins-et-africains-linsoumis-leaument-saisit-la-justice-apres-des-propos-de-zemmour-186495"
+            }
+          ]
+        },
+        {
+          "label": "13. Franceinfo, Camille Laurent et Margaux Queffélec, 21 octobre 2026 (interdire un parti : Gwénaële Calvès, Christophe Boutin, Laure Beccuau) : https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/est-il-possible-d-interdire-un-parti-politique-comme-le-proposent-gerard-larcher-et-bruno-retailleau-pour-la-france-insoumise_8245717.html",
+          "lead": "13. Franceinfo, Camille Laurent et Margaux Queffélec, 21 octobre 2026 (interdire un parti : Gwénaële Calvès, Christophe Boutin, Laure Beccuau)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/est-il-possible-d-interdire-un-parti-politique-comme-le-proposent-gerard-larcher-et-bruno-retailleau-pour-la-france-insoumise_8245717.html",
+              "url": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/est-il-possible-d-interdire-un-parti-politique-comme-le-proposent-gerard-larcher-et-bruno-retailleau-pour-la-france-insoumise_8245717.html"
+            }
+          ]
+        },
+        {
+          "label": "14. Sud Ouest avec AFP, 27 octobre 2026 (procès de Nice renvoyé au 26 novembre) : https://www.sudouest.fr/societe/greves-et-manifestations/manifestation-du-24-octobre-le-proces-de-dix-militants-presumes-d-ultradroite-a-nice-reporte-au-26-novembre-31266879.php",
+          "lead": "14. Sud Ouest avec AFP, 27 octobre 2026 (procès de Nice renvoyé au 26 novembre)",
+          "links": [
+            {
+              "label": "https://www.sudouest.fr/societe/greves-et-manifestations/manifestation-du-24-octobre-le-proces-de-dix-militants-presumes-d-ultradroite-a-nice-reporte-au-26-novembre-31266879.php",
+              "url": "https://www.sudouest.fr/societe/greves-et-manifestations/manifestation-du-24-octobre-le-proces-de-dix-militants-presumes-d-ultradroite-a-nice-reporte-au-26-novembre-31266879.php"
+            }
+          ]
+        },
+        {
+          "label": "15. Le Parisien avec AFP, 27 octobre 2026 (enquête à Rouen) : https://www.leparisien.fr/seine-maritime-76/rouen-une-enquete-ouverte-apres-la-diffusion-dune-video-de-violences-de-lultradroite-devenue-virale-27-10-2026-NOEWALQ6MRC5DMQPWPK33UJIVM.php",
+          "lead": "15. Le Parisien avec AFP, 27 octobre 2026 (enquête à Rouen)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/seine-maritime-76/rouen-une-enquete-ouverte-apres-la-diffusion-dune-video-de-violences-de-lultradroite-devenue-virale-27-10-2026-NOEWALQ6MRC5DMQPWPK33UJIVM.php",
+              "url": "https://www.leparisien.fr/seine-maritime-76/rouen-une-enquete-ouverte-apres-la-diffusion-dune-video-de-violences-de-lultradroite-devenue-virale-27-10-2026-NOEWALQ6MRC5DMQPWPK33UJIVM.php"
+            }
+          ]
+        },
+        {
+          "label": "16. Franceinfo avec AFP, 13 octobre 2026 (enquête sur « Riposte Frontières ») : https://www.franceinfo.fr/economie/vincent-bollore/le-parquet-de-paris-ouvre-une-enquete-sur-un-groupe-facebook-lie-au-media-frontieres_8235247.html",
+          "lead": "16. Franceinfo avec AFP, 13 octobre 2026 (enquête sur « Riposte Frontières »)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/vincent-bollore/le-parquet-de-paris-ouvre-une-enquete-sur-un-groupe-facebook-lie-au-media-frontieres_8235247.html",
+              "url": "https://www.franceinfo.fr/economie/vincent-bollore/le-parquet-de-paris-ouvre-une-enquete-sur-un-groupe-facebook-lie-au-media-frontieres_8235247.html"
+            }
+          ]
+        },
+        {
+          "label": "17. BFMTV, 23 octobre 2026 (réactions après Trappes : Jean-Luc Mélenchon, Gabriel Attal, Marine Tondelier) : https://www.bfmtv.com/politique/elections/presidentielle/horreur-le-racisme-tue-violence-terrifiante-les-reactions-de-la-classe-politique-apres-la-fusillade-a-trappes_AN-202610230613.html",
+          "lead": "17. BFMTV, 23 octobre 2026 (réactions après Trappes : Jean-Luc Mélenchon, Gabriel Attal, Marine Tondelier)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/horreur-le-racisme-tue-violence-terrifiante-les-reactions-de-la-classe-politique-apres-la-fusillade-a-trappes_AN-202610230613.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/horreur-le-racisme-tue-violence-terrifiante-les-reactions-de-la-classe-politique-apres-la-fusillade-a-trappes_AN-202610230613.html"
+            }
+          ]
+        },
+        {
+          "label": "18. 20 Minutes avec AFP, 27 octobre 2026 (Jean-Luc Mélenchon à La Courneuve, bilan, déclaration du procureur) : https://www.20minutes.fr/societe/4257850-20261027-attentat-raciste-trappes-verriere-pardonner-melenchon-fait-part-rage",
+          "lead": "18. 20 Minutes avec AFP, 27 octobre 2026 (Jean-Luc Mélenchon à La Courneuve, bilan, déclaration du procureur)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/societe/4257850-20261027-attentat-raciste-trappes-verriere-pardonner-melenchon-fait-part-rage",
+              "url": "https://www.20minutes.fr/societe/4257850-20261027-attentat-raciste-trappes-verriere-pardonner-melenchon-fait-part-rage"
+            }
+          ]
+        },
+        {
+          "label": "19. Maire-info, 27 octobre 2026 (associations d'élus, Ali Rabeh, rassemblement du 30 octobre) : https://www.maire-info.com/terrorisme/attentat-de-trappes-plusieurs-associations-da-lus-rappellent-la-na-cessita-de-continuer-a-combattre-un-racisme-de-plus-en-plus-a-banalisa-a-art26-31224",
+          "lead": "19. Maire-info, 27 octobre 2026 (associations d'élus, Ali Rabeh, rassemblement du 30 octobre)",
+          "links": [
+            {
+              "label": "https://www.maire-info.com/terrorisme/attentat-de-trappes-plusieurs-associations-da-lus-rappellent-la-na-cessita-de-continuer-a-combattre-un-racisme-de-plus-en-plus-a-banalisa-a-art26-31224",
+              "url": "https://www.maire-info.com/terrorisme/attentat-de-trappes-plusieurs-associations-da-lus-rappellent-la-na-cessita-de-continuer-a-combattre-un-racisme-de-plus-en-plus-a-banalisa-a-art26-31224"
+            }
+          ]
+        },
+        {
+          "label": "20. Le Parisien avec AFP, 26 octobre 2026 (Laurent Nuñez répond à LFI) : https://www.leparisien.fr/faits-divers/on-ne-protege-personne-nunez-repond-aux-accusations-de-lfi-davoir-favorise-des-groupes-dultradroite-lors-des-manifestations-samedi-26-10-2026-BXGP44QBQNBOVJ7SLUDI3N72NQ.php",
+          "lead": "20. Le Parisien avec AFP, 26 octobre 2026 (Laurent Nuñez répond à LFI)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/faits-divers/on-ne-protege-personne-nunez-repond-aux-accusations-de-lfi-davoir-favorise-des-groupes-dultradroite-lors-des-manifestations-samedi-26-10-2026-BXGP44QBQNBOVJ7SLUDI3N72NQ.php",
+              "url": "https://www.leparisien.fr/faits-divers/on-ne-protege-personne-nunez-repond-aux-accusations-de-lfi-davoir-favorise-des-groupes-dultradroite-lors-des-manifestations-samedi-26-10-2026-BXGP44QBQNBOVJ7SLUDI3N72NQ.php"
+            }
+          ]
+        },
+        {
+          "label": "21. Public Sénat, 28 octobre 2026 (questions au gouvernement) : https://www.publicsenat.fr/actualites/politique/ultra-droite-dans-les-rues-le-24-octobre-il-ny-a-eu-aucune-complaisance-des-forces-de-lordre-assure-laurent-nunez",
+          "lead": "21. Public Sénat, 28 octobre 2026 (questions au gouvernement)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/ultra-droite-dans-les-rues-le-24-octobre-il-ny-a-eu-aucune-complaisance-des-forces-de-lordre-assure-laurent-nunez",
+              "url": "https://www.publicsenat.fr/actualites/politique/ultra-droite-dans-les-rues-le-24-octobre-il-ny-a-eu-aucune-complaisance-des-forces-de-lordre-assure-laurent-nunez"
+            }
+          ]
+        },
+        {
+          "label": "22. Le Parisien, 19 octobre 2026 (Gabriel Attal) : https://www.leparisien.fr/politique/violences-du-17-octobre-gabriel-attal-estime-que-le-gouvernement-a-failli-et-appelle-a-decreter-letat-durgence-19-10-2026-XEGPPEUVJRFXPI3A67REK5DFJQ.php",
+          "lead": "22. Le Parisien, 19 octobre 2026 (Gabriel Attal)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/politique/violences-du-17-octobre-gabriel-attal-estime-que-le-gouvernement-a-failli-et-appelle-a-decreter-letat-durgence-19-10-2026-XEGPPEUVJRFXPI3A67REK5DFJQ.php",
+              "url": "https://www.leparisien.fr/politique/violences-du-17-octobre-gabriel-attal-estime-que-le-gouvernement-a-failli-et-appelle-a-decreter-letat-durgence-19-10-2026-XEGPPEUVJRFXPI3A67REK5DFJQ.php"
+            }
+          ]
+        },
+        {
+          "label": "23. Franceinfo (France 2, Les 4 Vérités), 23 octobre 2026 (Gabriel Attal) : https://www.franceinfo.fr/politique/gabriel-attal/mobilisation-du-24-octobre-si-la-situation-n-est-pas-retablie-evidemment-qu-il-faudra-declarer-l-etat-d-urgence-estime-gabriel-attal_8250256.html",
+          "lead": "23. Franceinfo (France 2, Les 4 Vérités), 23 octobre 2026 (Gabriel Attal)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/gabriel-attal/mobilisation-du-24-octobre-si-la-situation-n-est-pas-retablie-evidemment-qu-il-faudra-declarer-l-etat-d-urgence-estime-gabriel-attal_8250256.html",
+              "url": "https://www.franceinfo.fr/politique/gabriel-attal/mobilisation-du-24-octobre-si-la-situation-n-est-pas-retablie-evidemment-qu-il-faudra-declarer-l-etat-d-urgence-estime-gabriel-attal_8250256.html"
+            }
+          ]
+        },
+        {
+          "label": "24. Nouvelle Énergie, 23 octobre 2026 (David Lisnard sur RTL le 20 octobre) : https://www.unenouvelleenergie.fr/david-lisnard-sur-rtl-lordre-conditionne-la-liberte-la-prosperite-et-la-paix/",
+          "lead": "24. Nouvelle Énergie, 23 octobre 2026 (David Lisnard sur RTL le 20 octobre)",
+          "links": [
+            {
+              "label": "https://www.unenouvelleenergie.fr/david-lisnard-sur-rtl-lordre-conditionne-la-liberte-la-prosperite-et-la-paix/",
+              "url": "https://www.unenouvelleenergie.fr/david-lisnard-sur-rtl-lordre-conditionne-la-liberte-la-prosperite-et-la-paix/"
+            }
+          ]
+        },
+        {
+          "label": "25. TF1 Info, 18 octobre 2026 (allocution de Marine Le Pen) : https://www.tf1info.fr/politique/une-menace-sur-la-democratie-apres-les-violences-du-17-octobre-marine-le-pen-denonce-une-crise-profonde-2470633.html",
+          "lead": "25. TF1 Info, 18 octobre 2026 (allocution de Marine Le Pen)",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/une-menace-sur-la-democratie-apres-les-violences-du-17-octobre-marine-le-pen-denonce-une-crise-profonde-2470633.html",
+              "url": "https://www.tf1info.fr/politique/une-menace-sur-la-democratie-apres-les-violences-du-17-octobre-marine-le-pen-denonce-une-crise-profonde-2470633.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 29 et le 30 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/debord-watts-frigo-sans-courant",
+      "label": "Le frigo sans courant"
+    },
+    {
+      "href": "/analyses/gouvernance-an1t-droit",
+      "label": "Droit électoral, AN1T et gouvernance non bloquée"
+    },
+    {
+      "href": "/analyses/presidentielle-2027-preparation",
+      "label": "Présidentielle 2027 — préparation"
+    }
+  ]
+}

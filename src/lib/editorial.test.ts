@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
@@ -124,11 +125,14 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse bataille du 2 mai du 29/10 en une, puis Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('analyse guerre civile du 30/10 en une, puis bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('bataille-du-2-mai');
+    expect(getUneDuJour()?.slug).toBe('guerre-civile-le-mot-de-l-autre');
     expect(getUneDuJour()?.title).toBe(
-      'Présidentielle : on se bat pour le 2 mai, mais le premier tour tombe en pleines vacances scolaires',
+      "« Guerre civile » : chacun la voit venir de l'autre camp",
+    );
+    expect(guerreCivileLeMotDeLAutre.x_hook).toBe(
+      "« Guerre civile » : Bardella la voit venir de LFI, la gauche de Zemmour, Villepin de partout. Pendant ce temps, la justice instruit des dossiers bien réels : Nice, Rouen, Riposte Frontières, Trappes. Qui en parle, qui y pousse, qui la combat.",
     );
     expect(batailleDu2Mai.x_hook).toBe(
       "Présidentielle : Retailleau veut changer les dates, pour ne pas voter le 2 mai, au lendemain du 1er-Mai. L'exécutif refuse et met en avant les vacances scolaires. Nous avons vérifié : le 2 mai, une seule zone scolaire reste en congés. Mais le 18 avril, au premier tour, les trois zones le seront.",
@@ -140,16 +144,18 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('corse-senat-non');
-    expect(sorted[1]?.date).toBe('2026-10-28');
-    expect(sorted[2]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[3]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[4]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[5]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[6]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[7]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[8]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[9]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('bataille-du-2-mai');
+    expect(sorted[1]?.date).toBe('2026-10-29');
+    expect(sorted[2]?.slug).toBe('corse-senat-non');
+    expect(sorted[2]?.date).toBe('2026-10-28');
+    expect(sorted[3]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[4]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[5]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[6]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[7]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[8]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[9]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[10]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
