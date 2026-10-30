@@ -19,6 +19,11 @@ const EMPTY_TIPS = { version: 1, tips: [] };
 const EMPTY_COMMENTS = { version: 1, comments: [] };
 const EMPTY_USERS = { version: 1, users: [] };
 const EMPTY_SESSIONS = { version: 1, sessions: [] };
+const EMPTY_MAGIC = { version: 1, tokens: [] };
+
+export const DELETED_ACCOUNT_DISPLAY_NAME = 'Compte supprimé';
+
+const AUTHOR_LINK_KEYS = ['authorKeyHash', 'email', 'contactEmail', 'authorEmail', 'userEmail'];
 
 const PURGEABLE_TIP_STATUS = new Set(['rejected', 'hidden']);
 
@@ -68,16 +73,62 @@ function cloneDb(db, key, fallback) {
   return { ...fallback, ...base, [key]: list };
 }
 
+function collectUserEmails(user) {
+  const emails = new Set();
+  if (user?.email) emails.add(String(user.email).trim().toLowerCase());
+  for (const p of user?.providers || []) {
+    if (p?.email) emails.add(String(p.email).trim().toLowerCase());
+  }
+  return emails;
+}
+
+/**
+ * Neutralise le rattachement auteur d’un commentaire conservé.
+ * Ne touche pas à moderation.history (identifiant du modérateur).
+ */
+export function anonymizeCommentRecord(comment) {
+  const next = {
+    ...comment,
+    userId: null,
+    displayName: DELETED_ACCOUNT_DISPLAY_NAME,
+    authorKeyHash: null,
+  };
+  for (const key of AUTHOR_LINK_KEYS) {
+    if (key === 'authorKeyHash') continue;
+    if (Object.prototype.hasOwnProperty.call(next, key)) next[key] = null;
+  }
+  return next;
+}
+
+/**
+ * Anonymise les commentaires d’un compte (mutation in-place du tableau).
+ * Réutilisable par la purge et par un chemin manuel s’il existe un jour.
+ * @returns {number} commentaires anonymisés
+ */
+export function anonymizeCommentsForUser(comments, userId) {
+  if (!Array.isArray(comments) || !userId) return 0;
+  let n = 0;
+  for (let i = 0; i < comments.length; i++) {
+    const c = comments[i];
+    if (c && c.userId === userId) {
+      comments[i] = anonymizeCommentRecord(c);
+      n += 1;
+    }
+  }
+  return n;
+}
+
 /**
  * Calcule la purge sans I/O. Ne mute pas les objets d’entrée.
- * @returns {{ tipsDb, commentsDb, usersDb, sessionsDb, counts }}
+ * @returns {{ tipsDb, commentsDb, usersDb, sessionsDb, magicDb, counts }}
  */
-export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb } = {}, now) {
+export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb, magicDb } = {}, now) {
   const nowDate = parseDate(now) || new Date();
   const tipsNext = cloneDb(tipsDb, 'tips', EMPTY_TIPS);
   const commentsNext = cloneDb(commentsDb, 'comments', EMPTY_COMMENTS);
   const usersNext = cloneDb(usersDb, 'users', EMPTY_USERS);
   const sessionsNext = cloneDb(sessionsDb, 'sessions', EMPTY_SESSIONS);
+  const magicNext = cloneDb(magicDb, 'tokens', EMPTY_MAGIC);
 
   const commentsKept = [];
   let commentsDeleted = 0;
@@ -91,22 +142,21 @@ export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb } = {
   }
 
   const deletedUserIds = new Set();
+  const deletedEmails = new Set();
   const usersKept = [];
   for (const u of usersNext.users) {
     const ref = u.lastLoginAt || u.createdAt;
     if (u.id && isDue(ref, nowDate, { years: ACCOUNTS_INACTIVE_YEARS })) {
       deletedUserIds.add(u.id);
+      for (const email of collectUserEmails(u)) deletedEmails.add(email);
     } else {
       usersKept.push(u);
     }
   }
 
   let commentsUnlinked = 0;
-  for (const c of commentsKept) {
-    if (c.userId && deletedUserIds.has(c.userId)) {
-      c.userId = null;
-      commentsUnlinked += 1;
-    }
+  for (const userId of deletedUserIds) {
+    commentsUnlinked += anonymizeCommentsForUser(commentsKept, userId);
   }
 
   const sessionsKept = [];
@@ -116,6 +166,17 @@ export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb } = {
       sessionsDeleted += 1;
     } else {
       sessionsKept.push(s);
+    }
+  }
+
+  const tokensKept = [];
+  let magicDeleted = 0;
+  for (const t of magicNext.tokens) {
+    const email = t.email ? String(t.email).trim().toLowerCase() : '';
+    if (email && deletedEmails.has(email)) {
+      magicDeleted += 1;
+    } else {
+      tokensKept.push(t);
     }
   }
 
@@ -145,6 +206,7 @@ export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb } = {
     commentsDb: { ...commentsNext, comments: commentsKept },
     usersDb: { ...usersNext, users: usersKept },
     sessionsDb: { ...sessionsNext, sessions: sessionsKept },
+    magicDb: { ...magicNext, tokens: tokensKept },
     counts: {
       tipsDeleted,
       tipEmailsCleared,
@@ -152,6 +214,7 @@ export function computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb } = {
       commentsUnlinked,
       accountsDeleted: deletedUserIds.size,
       sessionsDeleted,
+      magicDeleted,
     },
   };
 }
@@ -169,19 +232,25 @@ export function runRetention({ dataDir, now = new Date(), apply = false }) {
     const commentsPath = join(dataDir, 'comments.json');
     const usersPath = join(dataDir, 'users.json');
     const sessionsPath = join(dataDir, 'sessions.json');
+    const magicFile = join(dataDir, 'magic-tokens.json');
 
     const tipsDb = loadJson(tipsPath, EMPTY_TIPS);
     const commentsDb = loadJson(commentsPath, EMPTY_COMMENTS);
     const usersDb = loadJson(usersPath, EMPTY_USERS);
     const sessionsDb = loadJson(sessionsPath, EMPTY_SESSIONS);
+    const magicDb = loadJson(magicFile, EMPTY_MAGIC);
 
-    const result = computeRetention({ tipsDb, commentsDb, usersDb, sessionsDb }, now);
+    const result = computeRetention(
+      { tipsDb, commentsDb, usersDb, sessionsDb, magicDb },
+      now,
+    );
 
     if (apply === true) {
       saveJsonAtomic(tipsPath, result.tipsDb);
       saveJsonAtomic(commentsPath, result.commentsDb);
       saveJsonAtomic(usersPath, result.usersDb);
       saveJsonAtomic(sessionsPath, result.sessionsDb);
+      saveJsonAtomic(magicFile, result.magicDb);
     }
 
     return result.counts;

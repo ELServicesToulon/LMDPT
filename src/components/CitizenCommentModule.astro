@@ -73,6 +73,8 @@ const apiBase = '/api/comments';
 </script>
 
 <script>
+  import { COMMENT_DISPLAY_FALLBACK } from '../lib/comment-display-hue';
+
   function initCcm(root: HTMLElement) {
     const api = root.dataset.api || '/api/comments';
     const threadId = root.dataset.thread || 'general';
@@ -151,8 +153,8 @@ const apiBase = '/api/comments';
             </header>
             <div class="ccm-body">
               <p class="ccm-hue-meta meta">
-                <span class="ccm-pill" title="Tendance estimée automatiquement à partir du texte de ce message" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
-                Couleur politique (transparence) : ${escapeHtml(c.politicalHue?.label || 'Pluraliste / transversal')}
+                <span class="ccm-pill" title="Tendance estimée automatiquement à partir du texte de ce message" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || COMMENT_DISPLAY_FALLBACK)}</span>
+                Tendance estimée du message : ${escapeHtml(c.politicalHue?.label || COMMENT_DISPLAY_FALLBACK)}
               </p>
               <p>${escapeHtml(c.body)}</p>
             </div>
@@ -201,7 +203,7 @@ const apiBase = '/api/comments';
         reformEl.value = data.reformulated || '';
         const h = data.politicalHue || {};
         swatch.style.background = h.color || '#5a6570';
-        hueLabel.textContent = h.label || '—';
+        hueLabel.textContent = h.label || COMMENT_DISPLAY_FALLBACK;
         hueRat.textContent = h.rationale || '';
         hueConf.textContent = h.confidence != null ? Math.round(h.confidence * 100) + ' %' : '—';
         preview.hidden = false;

@@ -11,6 +11,8 @@ import {
   COMMENTS_RETENTION_YEARS,
   TIPS_EMAIL_MONTHS,
   TIPS_REJECTED_MONTHS,
+  DELETED_ACCOUNT_DISPLAY_NAME,
+  anonymizeCommentsForUser,
   computeRetention,
   lastTreatmentAt,
   runRetention,
@@ -211,18 +213,20 @@ describe('computeRetention — seuils juste avant / juste après', () => {
     );
   });
 
-  it('compte inactif 3 ans : supprimé avec ses sessions ; userId des commentaires conservés mis à null', () => {
+  it('compte inactif 3 ans : commentaires anonymisés, sessions et liens magiques supprimés', () => {
     const result = computeRetention(
       {
         usersDb: {
           users: [
             {
               id: 'usr_old',
+              email: 'old@example.test',
               lastLoginAt: '2023-10-30T11:59:59.999Z',
               createdAt: '2020-01-01T00:00:00.000Z',
             },
             {
               id: 'usr_fresh',
+              email: 'fresh@example.test',
               lastLoginAt: '2023-10-30T12:00:00.001Z',
               createdAt: '2020-01-01T00:00:00.000Z',
             },
@@ -239,17 +243,32 @@ describe('computeRetention — seuils juste avant / juste après', () => {
             { id: 'ses_other', userId: 'usr_created_old' },
           ],
         },
+        magicDb: {
+          tokens: [
+            { hash: 'tok_old', email: 'old@example.test' },
+            { hash: 'tok_fresh', email: 'fresh@example.test' },
+          ],
+        },
         commentsDb: {
           comments: [
             {
               id: 'c-kept',
               userId: 'usr_old',
+              displayName: 'Alice Fictive',
+              authorKeyHash: 'hashauteurfictif0001',
+              raw: 'texte brut fictif',
+              body: 'Message conservé fictif.',
               publishedAt: '2026-01-01T00:00:00.000Z',
               createdAt: '2026-01-01T00:00:00.000Z',
+              moderation: {
+                history: [{ at: '2026-01-02T00:00:00.000Z', by: 'mod_senior_1', action: 'approve' }],
+              },
             },
             {
               id: 'c-fresh-user',
               userId: 'usr_fresh',
+              displayName: 'Bob Fictif',
+              authorKeyHash: 'hashauteurfictif0002',
               publishedAt: '2026-01-01T00:00:00.000Z',
               createdAt: '2026-01-01T00:00:00.000Z',
             },
@@ -261,6 +280,7 @@ describe('computeRetention — seuils juste avant / juste après', () => {
     assert.equal(result.counts.accountsDeleted, 2);
     assert.equal(result.counts.sessionsDeleted, 2);
     assert.equal(result.counts.commentsUnlinked, 1);
+    assert.equal(result.counts.magicDeleted, 1);
     assert.deepEqual(
       result.usersDb.users.map((u) => u.id),
       ['usr_fresh'],
@@ -269,10 +289,51 @@ describe('computeRetention — seuils juste avant / juste après', () => {
       result.sessionsDb.sessions.map((s) => s.id),
       ['ses_fresh'],
     );
+    assert.deepEqual(
+      result.magicDb.tokens.map((t) => t.hash),
+      ['tok_fresh'],
+    );
     const kept = result.commentsDb.comments.find((c) => c.id === 'c-kept');
     assert.equal(kept.userId, null);
+    assert.equal(kept.displayName, DELETED_ACCOUNT_DISPLAY_NAME);
+    assert.equal(kept.authorKeyHash ?? null, null);
+    assert.equal(kept.raw, 'texte brut fictif');
+    assert.equal(kept.moderation.history[0].by, 'mod_senior_1');
     const fresh = result.commentsDb.comments.find((c) => c.id === 'c-fresh-user');
     assert.equal(fresh.userId, 'usr_fresh');
+    assert.equal(fresh.displayName, 'Bob Fictif');
+    assert.equal(fresh.authorKeyHash, 'hashauteurfictif0002');
+  });
+});
+
+describe('anonymizeCommentsForUser', () => {
+  it('neutralise userId, displayName et authorKeyHash ; laisse les autres comptes', () => {
+    const comments = [
+      {
+        id: 'c-a',
+        userId: 'usr_gone',
+        displayName: 'Alice Fictive',
+        authorKeyHash: 'hashauteurfictif0001',
+        email: 'alice@example.test',
+        moderation: { history: [{ by: 'mod_1', action: 'approve' }] },
+      },
+      {
+        id: 'c-b',
+        userId: 'usr_other',
+        displayName: 'Bob Fictif',
+        authorKeyHash: 'hashauteurfictif0002',
+      },
+    ];
+    const n = anonymizeCommentsForUser(comments, 'usr_gone');
+    assert.equal(n, 1);
+    assert.equal(comments[0].userId, null);
+    assert.equal(comments[0].displayName, 'Compte supprimé');
+    assert.equal(comments[0].authorKeyHash ?? null, null);
+    assert.equal(comments[0].email, null);
+    assert.equal(comments[0].moderation.history[0].by, 'mod_1');
+    assert.equal(comments[1].userId, 'usr_other');
+    assert.equal(comments[1].displayName, 'Bob Fictif');
+    assert.equal(comments[1].authorKeyHash, 'hashauteurfictif0002');
   });
 });
 
@@ -312,6 +373,8 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
             {
               id: 'c-new',
               userId: 'usr_old',
+              displayName: 'Alice Fictive',
+              authorKeyHash: 'hashauteurfictif0001',
               status: 'published',
               publishedAt: '2026-01-01T00:00:00.000Z',
               createdAt: '2026-01-01T00:00:00.000Z',
@@ -323,6 +386,7 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
           users: [
             {
               id: 'usr_old',
+              email: 'old@example.test',
               createdAt: '2020-01-01T00:00:00.000Z',
               lastLoginAt: '2022-01-01T00:00:00.000Z',
             },
@@ -332,16 +396,22 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
           version: 1,
           sessions: [{ id: 'ses_old', userId: 'usr_old' }],
         },
+        magic: {
+          version: 1,
+          tokens: [{ hash: 'tok_old', email: 'old@example.test' }],
+        },
       };
       writeJson(dataDir, 'tips.json', seed.tips);
       writeJson(dataDir, 'comments.json', seed.comments);
       writeJson(dataDir, 'users.json', seed.users);
       writeJson(dataDir, 'sessions.json', seed.sessions);
+      writeJson(dataDir, 'magic-tokens.json', seed.magic);
 
       const beforeTips = readFileSync(join(dataDir, 'tips.json'), 'utf8');
       const beforeComments = readFileSync(join(dataDir, 'comments.json'), 'utf8');
       const beforeUsers = readFileSync(join(dataDir, 'users.json'), 'utf8');
       const beforeSessions = readFileSync(join(dataDir, 'sessions.json'), 'utf8');
+      const beforeMagic = readFileSync(join(dataDir, 'magic-tokens.json'), 'utf8');
 
       const dry = runRetention({ dataDir, now: NOW, apply: false });
       assert.equal(dry.tipsDeleted, 1);
@@ -352,6 +422,7 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
       assert.equal(readFileSync(join(dataDir, 'comments.json'), 'utf8'), beforeComments);
       assert.equal(readFileSync(join(dataDir, 'users.json'), 'utf8'), beforeUsers);
       assert.equal(readFileSync(join(dataDir, 'sessions.json'), 'utf8'), beforeSessions);
+      assert.equal(readFileSync(join(dataDir, 'magic-tokens.json'), 'utf8'), beforeMagic);
 
       const applied = runRetention({ dataDir, now: NOW, apply: true });
       assert.deepEqual(applied, dry);
@@ -365,8 +436,12 @@ describe('runRetention — dry-run vs apply (mkdtemp)', () => {
       assert.equal(comments.comments.length, 1);
       assert.equal(comments.comments[0].id, 'c-new');
       assert.equal(comments.comments[0].userId, null);
+      assert.equal(comments.comments[0].displayName, 'Compte supprimé');
+      assert.equal(comments.comments[0].authorKeyHash ?? null, null);
       assert.equal(users.users.length, 0);
       assert.equal(sessions.sessions.length, 0);
+      const magic = readJson(dataDir, 'magic-tokens.json');
+      assert.equal(magic.tokens.length, 0);
     } finally {
       rmSync(dataDir, { recursive: true, force: true });
     }

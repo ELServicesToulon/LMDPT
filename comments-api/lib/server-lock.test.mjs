@@ -70,6 +70,19 @@ describe('server.mjs verrou et fil public', { timeout: 20000 }, () => {
               createdAt: '2026-10-01T00:00:00.000Z',
               moderation: { history: [] },
             },
+            {
+              id: 'c-hue',
+              threadId: 'x',
+              displayName: 'Bob Fictif',
+              userId: 'usr_hue_fictif',
+              authorKeyHash: 'hashauteurfictif0002',
+              raw: 'Mélenchon propose le SMIC à 1600',
+              body: 'Mélenchon propose le SMIC à 1600',
+              status: 'published',
+              publishedAt: '2026-10-02T00:00:00.000Z',
+              createdAt: '2026-10-02T00:00:00.000Z',
+              moderation: { history: [] },
+            },
           ],
         },
         null,
@@ -135,11 +148,39 @@ describe('server.mjs verrou et fil public', { timeout: 20000 }, () => {
       assert.equal(rawText.includes('hashauteurfictif0001'), false);
       assert.equal(rawText.includes('texte brut secret fictif'), false);
       const thread = JSON.parse(rawText);
-      assert.equal(thread.comments.length, 1);
+      assert.equal(thread.comments.length, 2);
       assert.equal('userId' in thread.comments[0], false);
       assert.equal('authorKeyHash' in thread.comments[0], false);
       assert.equal('raw' in thread.comments[0], false);
       assert.equal(thread.comments[0].body, 'Texte publié fictif pour le test de fil public.');
+      const hueComment = thread.comments.find((c) => c.id === 'c-hue');
+      assert.equal(hueComment.politicalHue.slug, 'melenchon');
+      assert.equal(hueComment.politicalHue.label, 'Gauche radicale');
+      assert.equal('rationale' in hueComment.politicalHue, false);
+      assert.equal(rawText.includes('Mélenchon / LFI'), false);
+      assert.equal(rawText.includes('Attal / Renaissance'), false);
+
+      const huesRes = await fetch(`${base}/api/comments/hues`);
+      assert.equal(huesRes.status, 200);
+      const huesBody = await huesRes.json();
+      const attal = huesBody.hues.find((h) => h.slug === 'attal');
+      assert.equal(attal.label, 'Centre libéral');
+      for (const h of huesBody.hues) {
+        assert.equal(String(h.label).includes('Attal'), false);
+        assert.equal(String(h.label).includes('Mélenchon'), false);
+      }
+
+      const previewRes = await fetch(`${base}/api/comments/preview`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ raw: 'Gabriel Attal réforme l’école publique fictive.' }),
+      });
+      assert.equal(previewRes.status, 200);
+      const preview = await previewRes.json();
+      assert.equal(preview.politicalHue.slug, 'attal');
+      assert.equal(preview.politicalHue.label, 'Centre libéral');
+      assert.equal(String(preview.politicalHue.rationale || '').includes('Attal'), false);
+      assert.equal(String(preview.politicalHue.rationale || '').includes('Gabriel'), false);
     } catch (e) {
       e.message = `${e.message}\nstderr: ${stderr}`;
       throw e;

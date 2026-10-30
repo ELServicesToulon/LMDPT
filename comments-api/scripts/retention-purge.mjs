@@ -37,6 +37,7 @@ function printCounts(apply, counts) {
   console.log(`Commentaires dissociés (userId) : ${counts.commentsUnlinked}`);
   console.log(`Comptes supprimés : ${counts.accountsDeleted}`);
   console.log(`Sessions supprimées : ${counts.sessionsDeleted}`);
+  console.log(`Liens magiques supprimés : ${counts.magicDeleted}`);
   if (!apply) {
     console.log('Relancer avec --apply pour écrire.');
   }

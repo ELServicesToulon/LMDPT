@@ -62,7 +62,7 @@ systemd, pas de cron, pas d’appel au démarrage) :
 
 - propositions rejetées : 12 mois après leur traitement ; publiées et en attente : conservées
 - e-mail facultatif des propositions : 12 mois après l’envoi
-- comptes : 3 ans sans connexion (sessions associées supprimées)
+- comptes : 3 ans sans connexion (sessions et liens magiques associés supprimés ; commentaires conservés : `userId` retiré, `displayName` « Compte supprimé », `authorKeyHash` neutralisé)
 - commentaires : 3 ans après publication (à défaut création)
 
 ```bash

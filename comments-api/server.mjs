@@ -25,9 +25,12 @@ import {
   FIRST_ROUND_HUES as HUES,
   ROLE_LEVEL,
   classifyPoliticalHueHeuristic as classifyHeuristic,
-  hueBySlug,
 } from '../src/lib/comment-politics.ts';
-import { displayHueForText } from './lib/display-hue.mjs';
+import {
+  displayCurrentForSlug,
+  displayHueForText,
+  displayRationale,
+} from './lib/display-hue.mjs';
 import { isLockedError, LOCKED_MESSAGE, withDataLockSync } from './lib/data-lock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -688,7 +691,7 @@ async function buildPreview(raw) {
       engine: 'heuristic-fr',
     };
   }
-  const hue = hueBySlug(result.slug);
+  const hue = displayHueForText(result.reformulated || clean);
   const token = randomUUID();
   const payload = {
     token,
@@ -698,7 +701,7 @@ async function buildPreview(raw) {
     candidateLabel: hue.label,
     color: hue.color,
     confidence: result.confidence,
-    rationale: result.rationale,
+    rationale: displayRationale(),
     engine: result.engine,
     createdAt: new Date().toISOString(),
     expiresAt: Date.now() + 30 * 60 * 1000,
@@ -747,7 +750,11 @@ const server = createServer(async (req, res) => {
 
     if (req.method === 'GET' && path === '/api/comments/hues') {
       return json(res, 200, {
-        hues: HUES.map(({ slug, label, color }) => ({ slug, label, color })),
+        hues: HUES.map(({ slug, color }) => ({
+          slug,
+          label: displayCurrentForSlug(slug),
+          color,
+        })),
         disclaimer:
           'Transparence : la couleur indique une proximité d’idées 1er tour — pas une appartenance partisane. LMDPT zéro biais / zéro parti pris.',
         policy: {
