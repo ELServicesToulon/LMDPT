@@ -9,6 +9,8 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
+import antifaTerroristeDeuxPays from '../data/analyses/antifa-terroriste-deux-pays-l-ont-ecrit.json';
+import terrorismeChacunSonRatio from '../data/analyses/terrorisme-chacun-son-ratio.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
 import lePenUnionNationale from '../data/analyses/le-pen-union-nationale.json';
@@ -54,6 +56,32 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     cover: uneCover(
       'guerre-civile-le-mot-de-l-autre',
       "Aquarelle d'une place de village au petit matin, pavés mouillés, fontaine au centre, une vitrine éclairée à gauche, une devanture encore barricadée de planches à droite, et deux bancs vides de part et d'autre de la fontaine.",
+    ),
+  },
+  {
+    slug: antifaTerroristeDeuxPays.slug,
+    title: antifaTerroristeDeuxPays.title,
+    description: antifaTerroristeDeuxPays.description,
+    date: antifaTerroristeDeuxPays.date,
+    published: antifaTerroristeDeuxPays.date,
+    updated: antifaTerroristeDeuxPays.updated,
+    href: '/analyses/antifa-terroriste-deux-pays-l-ont-ecrit',
+    cover: uneCover(
+      'antifa-terroriste-deux-pays-l-ont-ecrit',
+      "Aquarelle d'un bureau d'archives : une pile de documents officiels tamponnée « LISTE », un tampon encreur, un stylo plume et, à la fenêtre, trois petits drapeaux (États-Unis, Hongrie, France).",
+    ),
+  },
+  {
+    slug: terrorismeChacunSonRatio.slug,
+    title: terrorismeChacunSonRatio.title,
+    description: terrorismeChacunSonRatio.description,
+    date: terrorismeChacunSonRatio.date,
+    published: terrorismeChacunSonRatio.date,
+    updated: terrorismeChacunSonRatio.updated,
+    href: '/analyses/terrorisme-chacun-son-ratio',
+    cover: uneCover(
+      'terrorisme-chacun-son-ratio',
+      "Aquarelle d'une balance ancienne en laiton sur une table en bois, entourée de rapports aux graphiques en barres et en camembert et d'une loupe, devant une carte d'Europe punaisée au mur.",
     ),
   },
   {

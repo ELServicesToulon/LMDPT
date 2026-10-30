@@ -1,0 +1,541 @@
+{
+  "slug": "antifa-terroriste-deux-pays-l-ont-ecrit",
+  "title": "« Antifa » terroriste : deux pays l'ont écrit, les autres en font un slogan",
+  "eyebrow": "Chronique · Présidentielle 2027",
+  "type_label": "Chronique",
+  "date": "2026-10-30",
+  "updated": "2026-10-30",
+  "kicker": "Chronique · La rédaction · 30 octobre 2026",
+  "author": "La rédaction de LMDPT",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Washington et Budapest ont couché le mot « antifa » sur des listes terroristes. Ailleurs, on vote des vœux, on dépose des résolutions, on dissout des groupes un par un. Ce n'est pas la même chose, et la nuance compte à six mois de la présidentielle.",
+  "description": "Washington et Budapest ont inscrit « antifa » sur des listes terroristes. Pays-Bas, Belgique, France : motions, résolutions et dissolutions, mais pas de liste. Ce que change la nuance à six mois de la présidentielle.",
+  "disclaimer": "",
+  "tags": [
+    "lmdpt",
+    "chronique",
+    "presidentielle-2027",
+    "antifa",
+    "terrorisme",
+    "dissolution",
+    "etats-unis",
+    "hongrie",
+    "doe"
+  ],
+  "x_hook": "",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "État de droit / garantiste",
+      "color": "#5a6570",
+      "rationale": "en phase (on juge des actes et des groupes précis, pas un mot)."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Libéral / défense des libertés publiques",
+      "color": "#ff8080",
+      "rationale": "en phase (méfiance envers les listes administratives aux contours flous)."
+    },
+    {
+      "slug": "droite",
+      "label": "Droite d'ordre légaliste",
+      "color": "#0066cc",
+      "rationale": "en phase partielle (dissolutions oui, sous contrôle du juge ; liste terroriste « antifa » non)."
+    },
+    {
+      "slug": "gauche",
+      "label": "Gauche démocratique",
+      "color": "#ff8080",
+      "rationale": "en phase partielle (refus de l'amalgame, mais la chronique reconnaît les violences établies par le juge)."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "ouverture",
+      "title": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tout le débat tient dans trois mots. Une **désignation terroriste**, c'est un gouvernement qui inscrit un groupe sur une liste officielle : comptes gelés, soutien financier interdit, entrée sur le territoire refusée. Une **dissolution**, en France, c'est un décret qui fait disparaître une association ou un groupe de fait, sous le contrôle du Conseil d'État. Une **motion** ou une **résolution**, c'est un Parlement qui exprime un souhait. Le gouvernement peut l'ignorer."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "washington",
+      "title": "Washington : un décret sans base, puis des listes bien réelles",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le 22 septembre 2025, Donald Trump signe un texte qui « désigne Antifa comme organisation terroriste intérieure ». Il y voit une « entreprise militariste et anarchiste » à « démanteler » [1][2]. L'assassinat de l'influenceur conservateur Charlie Kirk remonte alors à moins de deux semaines. Le suspect n'a aucun lien connu avec le mouvement [3]."
+        },
+        {
+          "type": "p",
+          "text": "Petit problème : le droit américain ne prévoit aucune liste de groupes terroristes *intérieurs*. Le décret ne cite d'ailleurs aucune loi qui l'y autoriserait. Pour le site juridique Lawfare, son effet juridique est simple : « aucun ». Désigner « antifa », mouvance sans chef ni structure, serait une « erreur de catégorie » [4]. Trois jours plus tard, un mémorandum présidentiel (NSPM-7) charge les task forces antiterroristes du FBI et le fisc de remonter jusqu'aux financeurs [5]. L'ACLU, association de défense des libertés, réplique que « le président ne peut pas réécrire la Constitution par mémo » [6]."
+        },
+        {
+          "type": "p",
+          "text": "Le vrai levier, c'est la liste des groupes étrangers, qui existe bien dans la loi. Le 13 novembre 2025, le département d'État inscrit quatre groupes européens qu'il qualifie d'« antifa violents ». Le premier, Antifa Ost, dit « Hammerbande », est un groupe allemand que le département d'État accuse d'agressions contre des militants d'extrême droite entre 2018 et 2023, en Allemagne et à Budapest. Les trois autres sont une fédération anarchiste italienne et deux groupes grecs [7]. Le statut d'« organisation terroriste étrangère » s'applique à partir du 20 novembre [8]. Fin août 2026, le Trésor ajoute Autistici/Inventati, un hébergeur italien de sites et de messageries chiffrées, qu'il qualifie d'« antifasciste » [9]."
+        },
+        {
+          "type": "p",
+          "text": "Mark Bray, historien de l'antifascisme cité par le Guardian, relève qu'un seul des quatre se dit antifasciste. Les autres sont des groupes révolutionnaires rangés sous la même étiquette [10]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "budapest",
+      "title": "Budapest : le seul pays de l'UE à l'avoir fait",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le 26 septembre 2025, la Hongrie de Viktor Orbán publie un décret qui crée une « liste nationale » antiterroriste. Elle y inscrit deux entrées : le « groupement Antifa » et la Hammerbande [11][12]. Conséquences : gel des avoirs, expulsion et interdiction d'entrée pour les personnes liées [11]. Orbán assume qu'il faut agir « avant qu'ils ne commettent » des crimes [13]. Le préambule du décret cite même un groupe toulousain, l'« Offensive révolutionnaire antifasciste » [11]."
+        },
+        {
+          "type": "p",
+          "text": "En mars 2026, la liste compte quatre groupes [14]. Le gouvernement de Péter Magyar, arrivé au pouvoir au printemps 2026, n'y a pas touché : en août, il ne s'était jamais exprimé sur ce texte, selon le quotidien allemand nd [15]. Une liste survit très bien à une alternance."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "haye-bruxelles",
+      "title": "La Haye et Bruxelles : beaucoup de bruit, pas de liste",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Aux Pays-Bas, la Chambre basse adopte le 18 septembre 2025 une motion qui demande au gouvernement de classer « antifa » comme organisation terroriste. Elle passe avec 76 voix sur 150, contre l'avis du gouvernement [16]. Non, ce n'est pas une « interdiction » : une motion ne lie pas le gouvernement [17]. En mai 2026, le ministre de la Justice répond qu'aucun élément ne montre qu'« antifa » est une organisation centralisée. Il ne peut donc pas la désigner [18]."
+        },
+        {
+          "type": "p",
+          "text": "En Belgique, le président du MR, Georges-Louis Bouchez, a annoncé en septembre 2025 vouloir « dissoudre la structure Antifa » [19]. La Ligue des droits humains critique le projet de loi de dissolution qui l'accompagne [19]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "paris",
+      "title": "Paris : la dissolution, pas la liste",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La France a choisi un autre outil. Le code de la sécurité intérieure (article L. 212-1) permet notamment de dissoudre un groupe qui provoque à la violence, sous le contrôle du Conseil d'État. Celui-ci a confirmé en 2023 la dissolution du Groupe antifasciste Lyon et environs (GALE). Le même jour, il annulait celle des Soulèvements de la Terre, jugée disproportionnée [20]. En avril 2026, il a validé celle de la Jeune Garde, décidée en juin 2025. Il relève que le groupe incitait à « exclure physiquement de l'espace public » ceux qu'il jugeait « fascistes » [21]. En juin 2026, le gouvernement dissout le même jour un groupe antifasciste lillois, Front de rue, et un groupe d'ultradroite d'Albi, Patria Albiges [22][23]. Une cinquantaine de groupes, des deux bords, ont été dissous depuis 2017 [22]."
+        },
+        {
+          "type": "p",
+          "text": "En décembre 2025, un sénateur LR, Stéphane Le Rudulier, dépose une résolution qui invite le gouvernement à classer les « groupes dits antifas » comme terroristes [24]. Après la mort d'un militant nationaliste à Lyon en février 2026, que le parquet a qualifiée de meurtre (l'enquête est en cours et les personnes mises en cause sont présumées innocentes), une députée RN demande au gouvernement s'il suivra « les démocraties qui les ont classées comme terroristes » [25]. Le garde des Sceaux répond : dissolutions, pas liste [25]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "etiquette",
+      "title": "Ce que dit l'étiquette",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les deux bouts de la corde existent. Il y a des groupes dont le juge a validé la dissolution pour provocation à la violence. Il y a aussi un mot si large qu'un historien allemand, cité par le Guardian, note qu'il pourrait viser jusqu'à la Rose blanche, ces étudiants qui résistaient aux nazis [10]. Le droit français, lui, sanctionne des actes et dissout des groupes précis. Une liste « antifa » ferait l'inverse : elle partirait d'un mot pour arriver aux gens."
+        },
+        {
+          "type": "p",
+          "text": "En 2027, la question ne sera pas de savoir si la violence politique existe. Elle existe des deux côtés, les décrets de dissolution le montrent. La question sera de savoir qui tient le stylo quand on remplit la liste."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : classer « antifa » comme terroriste ? Positions déclarées des candidats déclarés ou pressentis 2027 (au 30/10/2026)",
+      "intro": "",
+      "table": {
+        "caption": "Boîte DOE : classer « antifa » comme terroriste ? Positions déclarées des candidats déclarés ou pressentis 2027 (au 30/10/2026)",
+        "headers": [
+          "Candidat",
+          "Position"
+        ],
+        "rows": [
+          [
+            "Jordan Bardella (RN)",
+            "Réclame une liste nationale « des organisations de droit ou de fait qui portent atteinte à l'ordre public et à la sécurité nationale », sur le modèle européen (18/02/2026) [26]. Veut « mettre hors d'état de nuire ceux qui veulent déstabiliser le débat démocratique » [27]. Aucune demande explicite de classement terroriste d'« antifa » trouvée dans ses propos."
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Alors ministre de l'Intérieur, il a fait dissoudre la Jeune Garde en 2025 [21]. Classement terroriste : non trouvé."
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Non trouvé sur la question du classement."
+          ],
+          [
+            "Édouard Philippe, Gabriel Attal, Raphaël Glucksmann, Éric Zemmour, David Lisnard",
+            "Non trouvé."
+          ]
+        ]
+      },
+      "note": "Positions déclarées, pas des intentions de vote. Aucune ne vaut jugement sur la culpabilité de quiconque.",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Badges des courants en phase",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**État de droit / garantiste** : en phase (on juge des actes et des groupes précis, pas un mot).",
+            "**Libéral / défense des libertés publiques** : en phase (méfiance envers les listes administratives aux contours flous).",
+            "**Droite d'ordre légaliste** : en phase partielle (dissolutions oui, sous contrôle du juge ; liste terroriste « antifa » non).",
+            "**Gauche démocratique** : en phase partielle (refus de l'amalgame, mais la chronique reconnaît les violences établies par le juge)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 30 octobre 2026.",
+  "sources_groups": [
+    {
+      "title": "Textes officiels, justice et presse",
+      "items": [
+        {
+          "label": "1. Maison-Blanche, « Designating Antifa as a Domestic Terrorist Organization », 22/09/2025 : https://www.whitehouse.gov/presidential-actions/2025/09/designating-antifa-as-a-domestic-terrorist-organization/",
+          "lead": "1. Maison-Blanche, « Designating Antifa as a Domestic Terrorist Organization », 22/09/2025",
+          "id": "source-1",
+          "links": [
+            {
+              "label": "https://www.whitehouse.gov/presidential-actions/2025/09/designating-antifa-as-a-domestic-terrorist-organization/",
+              "url": "https://www.whitehouse.gov/presidential-actions/2025/09/designating-antifa-as-a-domestic-terrorist-organization/"
+            }
+          ]
+        },
+        {
+          "label": "2. Federal Register, 90 FR 46317, 25/09/2025 : https://www.federalregister.gov/documents/2025/09/25/2025-18709/designating-antifa-as-a-domestic-terrorist-organization",
+          "lead": "2. Federal Register, 90 FR 46317, 25/09/2025",
+          "id": "source-2",
+          "links": [
+            {
+              "label": "https://www.federalregister.gov/documents/2025/09/25/2025-18709/designating-antifa-as-a-domestic-terrorist-organization",
+              "url": "https://www.federalregister.gov/documents/2025/09/25/2025-18709/designating-antifa-as-a-domestic-terrorist-organization"
+            }
+          ]
+        },
+        {
+          "label": "3. PBS NewsHour, « What is antifa and why Trump wants to label it a terrorist organization », 09/2025 : https://www.pbs.org/newshour/show/what-is-antifa-and-why-trump-wants-to-label-it-a-terrorist-organization (voir aussi Euronews [17])",
+          "lead": "3. PBS NewsHour, « What is antifa and why Trump wants to label it a terrorist organization », 09/2025 (voir aussi Euronews [17])",
+          "id": "source-3",
+          "links": [
+            {
+              "label": "https://www.pbs.org/newshour/show/what-is-antifa-and-why-trump-wants-to-label-it-a-terrorist-organization",
+              "url": "https://www.pbs.org/newshour/show/what-is-antifa-and-why-trump-wants-to-label-it-a-terrorist-organization"
+            }
+          ]
+        },
+        {
+          "label": "4. Lawfare, « The Situation: The Nonsense and the Menace » : https://www.lawfaremedia.org/article/the-situation--the-nonsense-and-the-menace ; et « You Can't Designate \"Antifa.\" Banks and Platforms Will Act Like You Did Anyway » : https://www.lawfaremedia.org/article/you-can-t-designate--antifa--banks-and-platforms-will-act-like-you-did-anyway",
+          "lead": "4. Lawfare, « The Situation: The Nonsense and the Menace »",
+          "id": "source-4",
+          "links": [
+            {
+              "label": "https://www.lawfaremedia.org/article/the-situation--the-nonsense-and-the-menace",
+              "url": "https://www.lawfaremedia.org/article/the-situation--the-nonsense-and-the-menace"
+            },
+            {
+              "label": "You Can't Designate \"Antifa.\" Banks and Platforms Will Act Like You Did Anyway",
+              "url": "https://www.lawfaremedia.org/article/you-can-t-designate--antifa--banks-and-platforms-will-act-like-you-did-anyway"
+            }
+          ]
+        },
+        {
+          "label": "5. Maison-Blanche, NSPM-7 « Countering Domestic Terrorism and Organized Political Violence », 25/09/2025 : https://www.whitehouse.gov/presidential-actions/2025/09/countering-domestic-terrorism-and-organized-political-violence/ (Federal Register, 30/09/2025 : https://www.federalregister.gov/documents/2025/09/30/2025-19141/countering-domestic-terrorism-and-organized-political-violence)",
+          "lead": "5. Maison-Blanche, NSPM-7 « Countering Domestic Terrorism and Organized Political Violence », 25/09/2025",
+          "id": "source-5",
+          "links": [
+            {
+              "label": "https://www.whitehouse.gov/presidential-actions/2025/09/countering-domestic-terrorism-and-organized-political-violence/",
+              "url": "https://www.whitehouse.gov/presidential-actions/2025/09/countering-domestic-terrorism-and-organized-political-violence/"
+            },
+            {
+              "label": "Federal Register, 30/09/2025",
+              "url": "https://www.federalregister.gov/documents/2025/09/30/2025-19141/countering-domestic-terrorism-and-organized-political-violence"
+            }
+          ]
+        },
+        {
+          "label": "6. ACLU, communiqué du 25/09/2025 : https://www.aclu.org/press-releases/aclu-statement-on-the-trump-administrations-memorandum-targeting-political-opponents",
+          "lead": "6. ACLU, communiqué du 25/09/2025",
+          "id": "source-6",
+          "links": [
+            {
+              "label": "https://www.aclu.org/press-releases/aclu-statement-on-the-trump-administrations-memorandum-targeting-political-opponents",
+              "url": "https://www.aclu.org/press-releases/aclu-statement-on-the-trump-administrations-memorandum-targeting-political-opponents"
+            }
+          ]
+        },
+        {
+          "label": "7. Département d'État, « Designations of Antifa Ost and Three Other Violent Antifa Groups », 13/11/2025 : https://www.state.gov/releases/office-of-the-spokesperson/2025/11/designations-of-antifa-ost-and-three-other-violent-antifa-groups/ ; OFAC, 13/11/2025 : https://ofac.treasury.gov/recent-actions/20251113_33",
+          "lead": "7. Département d'État, « Designations of Antifa Ost and Three Other Violent Antifa Groups », 13/11/2025",
+          "id": "source-7",
+          "links": [
+            {
+              "label": "https://www.state.gov/releases/office-of-the-spokesperson/2025/11/designations-of-antifa-ost-and-three-other-violent-antifa-groups/",
+              "url": "https://www.state.gov/releases/office-of-the-spokesperson/2025/11/designations-of-antifa-ost-and-three-other-violent-antifa-groups/"
+            },
+            {
+              "label": "OFAC, 13/11/2025",
+              "url": "https://ofac.treasury.gov/recent-actions/20251113_33"
+            }
+          ]
+        },
+        {
+          "label": "8. Federal Register, 90 FR 52552, 20/11/2025 : https://www.federalregister.gov/documents/2025/11/20/2025-20663/foreign-terrorist-organization-designation-of-antifa-ost-informal-anarchist-federationinternational",
+          "lead": "8. Federal Register, 90 FR 52552, 20/11/2025",
+          "id": "source-8",
+          "links": [
+            {
+              "label": "https://www.federalregister.gov/documents/2025/11/20/2025-20663/foreign-terrorist-organization-designation-of-antifa-ost-informal-anarchist-federationinternational",
+              "url": "https://www.federalregister.gov/documents/2025/11/20/2025-20663/foreign-terrorist-organization-designation-of-antifa-ost-informal-anarchist-federationinternational"
+            }
+          ]
+        },
+        {
+          "label": "9. Trésor américain, « Treasury Takes Action Against Violent Far-Left Terrorist Networks », 26/08/2026 : https://home.treasury.gov/news/press-releases/sb0616",
+          "lead": "9. Trésor américain, « Treasury Takes Action Against Violent Far-Left Terrorist Networks », 26/08/2026",
+          "id": "source-9",
+          "links": [
+            {
+              "label": "https://home.treasury.gov/news/press-releases/sb0616",
+              "url": "https://home.treasury.gov/news/press-releases/sb0616"
+            }
+          ]
+        },
+        {
+          "label": "10. The Guardian, « AfD hails US ban on European leftwing groups as historians fear crackdown on anti-fascists », 14/11/2025 : https://www.theguardian.com/world/2025/nov/14/afd-hails-us-ban-european-leftwing-groups-historians-fear-anti-fascist-crackdown",
+          "lead": "10. The Guardian, « AfD hails US ban on European leftwing groups as historians fear crackdown on anti-fascists », 14/11/2025",
+          "id": "source-10",
+          "links": [
+            {
+              "label": "https://www.theguardian.com/world/2025/nov/14/afd-hails-us-ban-european-leftwing-groups-historians-fear-anti-fascist-crackdown",
+              "url": "https://www.theguardian.com/world/2025/nov/14/afd-hails-us-ban-european-leftwing-groups-historians-fear-anti-fascist-crackdown"
+            }
+          ]
+        },
+        {
+          "label": "11. Décret gouvernemental hongrois 297/2025 (IX. 26.), Nemzeti Jogszabálytár : https://njt.jog.gov.hu/jogszabaly/2025-297-20-22",
+          "lead": "11. Décret gouvernemental hongrois 297/2025 (IX. 26.), Nemzeti Jogszabálytár",
+          "id": "source-11",
+          "links": [
+            {
+              "label": "https://njt.jog.gov.hu/jogszabaly/2025-297-20-22",
+              "url": "https://njt.jog.gov.hu/jogszabaly/2025-297-20-22"
+            }
+          ]
+        },
+        {
+          "label": "12. Telex, 26/09/2025 : https://telex.hu/belfold/2025/09/26/kijott-a-rendelet-ami-terrorszervezette-nyilvanitja-az-atifa-csoportosulast",
+          "lead": "12. Telex, 26/09/2025",
+          "id": "source-12",
+          "links": [
+            {
+              "label": "https://telex.hu/belfold/2025/09/26/kijott-a-rendelet-ami-terrorszervezette-nyilvanitja-az-atifa-csoportosulast",
+              "url": "https://telex.hu/belfold/2025/09/26/kijott-a-rendelet-ami-terrorszervezette-nyilvanitja-az-atifa-csoportosulast"
+            }
+          ]
+        },
+        {
+          "label": "13. Le Monde, « La Hongrie classe à son tour \"l'idéologie antifa\" comme organisation terroriste », 27/09/2025 : https://www.lemonde.fr/international/article/2025/09/27/apres-les-etats-unis-la-hongrie-classe-a-son-tour-le-mouvement-antifa-comme-organisation-terroriste_6643156_3210.html",
+          "lead": "13. Le Monde, « La Hongrie classe à son tour \"l'idéologie antifa\" comme organisation terroriste », 27/09/2025",
+          "id": "source-13",
+          "links": [
+            {
+              "label": "https://www.lemonde.fr/international/article/2025/09/27/apres-les-etats-unis-la-hongrie-classe-a-son-tour-le-mouvement-antifa-comme-organisation-terroriste_6643156_3210.html",
+              "url": "https://www.lemonde.fr/international/article/2025/09/27/apres-les-etats-unis-la-hongrie-classe-a-son-tour-le-mouvement-antifa-comme-organisation-terroriste_6643156_3210.html"
+            }
+          ]
+        },
+        {
+          "label": "14. Budapester Zeitung, « Terrorismus-Liste erweitert », 25/03/2026 : https://www.budapester.hu/inland/terrorismus-liste-erweitert/",
+          "lead": "14. Budapester Zeitung, « Terrorismus-Liste erweitert », 25/03/2026",
+          "id": "source-14",
+          "links": [
+            {
+              "label": "https://www.budapester.hu/inland/terrorismus-liste-erweitert/",
+              "url": "https://www.budapester.hu/inland/terrorismus-liste-erweitert/"
+            }
+          ]
+        },
+        {
+          "label": "15. nd-aktuell, « Kein Kurswechsel in Budapest: Antifas bleiben \"Terroristen\" », 24/08/2026 : https://www.nd-aktuell.de/artikel/1202013.umstrittenes-orban-gesetz-kein-kurswechsel-in-budapest-antifas-bleiben-terroristen.html",
+          "lead": "15. nd-aktuell, « Kein Kurswechsel in Budapest: Antifas bleiben \"Terroristen\" », 24/08/2026",
+          "id": "source-15",
+          "links": [
+            {
+              "label": "https://www.nd-aktuell.de/artikel/1202013.umstrittenes-orban-gesetz-kein-kurswechsel-in-budapest-antifas-bleiben-terroristen.html",
+              "url": "https://www.nd-aktuell.de/artikel/1202013.umstrittenes-orban-gesetz-kein-kurswechsel-in-budapest-antifas-bleiben-terroristen.html"
+            }
+          ]
+        },
+        {
+          "label": "16. Tweede Kamer, motion De Vos c.s. n° 36800-47, 18/09/2025 (avis « ontraden », vote par fraction) : https://www.tweedekamer.nl/kamerstukken/detail?did=2025D40130&id=2025Z17241 ; texte officiel : https://zoek.officielebekendmakingen.nl/kst-36800-47.html",
+          "lead": "16. Tweede Kamer, motion De Vos c.s. n° 36800-47, 18/09/2025 (avis « ontraden », vote par fraction)",
+          "id": "source-16",
+          "links": [
+            {
+              "label": "https://www.tweedekamer.nl/kamerstukken/detail?did=2025D40130&id=2025Z17241",
+              "url": "https://www.tweedekamer.nl/kamerstukken/detail?did=2025D40130&id=2025Z17241"
+            },
+            {
+              "label": "texte officiel",
+              "url": "https://zoek.officielebekendmakingen.nl/kst-36800-47.html"
+            }
+          ]
+        },
+        {
+          "label": "17. Euronews, « Fact-check: Has the Netherlands banned Antifa? », 23/09/2025 : https://www.euronews.com/2025/09/23/fact-check-has-the-netherlands-banned-antifa",
+          "lead": "17. Euronews, « Fact-check: Has the Netherlands banned Antifa? », 23/09/2025",
+          "id": "source-17",
+          "links": [
+            {
+              "label": "https://www.euronews.com/2025/09/23/fact-check-has-the-netherlands-banned-antifa",
+              "url": "https://www.euronews.com/2025/09/23/fact-check-has-the-netherlands-banned-antifa"
+            }
+          ]
+        },
+        {
+          "label": "18. NRC, « Kabinet kan \"antifa\" niet aanmerken als terroristische organisatie », 22/05/2026 : https://www.nrc.nl/nieuws/2026/05/22/kabinet-kan-antifa-niet-aanmerken-als-terroristische-organisatie-geen-feitelijke-onderbouwing-a4928492",
+          "lead": "18. NRC, « Kabinet kan \"antifa\" niet aanmerken als terroristische organisatie », 22/05/2026",
+          "id": "source-18",
+          "links": [
+            {
+              "label": "https://www.nrc.nl/nieuws/2026/05/22/kabinet-kan-antifa-niet-aanmerken-als-terroristische-organisatie-geen-feitelijke-onderbouwing-a4928492",
+              "url": "https://www.nrc.nl/nieuws/2026/05/22/kabinet-kan-antifa-niet-aanmerken-als-terroristische-organisatie-geen-feitelijke-onderbouwing-a4928492"
+            }
+          ]
+        },
+        {
+          "label": "19. RTBF, 22/09/2025 : https://www.rtbf.be/article/designe-par-donald-trump-comme-organisation-terroriste-le-mr-veut-le-dissoudre-que-represente-le-mouvement-antifa-11603562",
+          "lead": "19. RTBF, 22/09/2025",
+          "id": "source-19",
+          "links": [
+            {
+              "label": "https://www.rtbf.be/article/designe-par-donald-trump-comme-organisation-terroriste-le-mr-veut-le-dissoudre-que-represente-le-mouvement-antifa-11603562",
+              "url": "https://www.rtbf.be/article/designe-par-donald-trump-comme-organisation-terroriste-le-mr-veut-le-dissoudre-que-represente-le-mouvement-antifa-11603562"
+            }
+          ]
+        },
+        {
+          "label": "20. Conseil d'État, 9/11/2023 (Soulèvements de la Terre, GALE, Alvarium, CRI) : https://www.conseil-etat.fr/actualites/soulevements-de-la-terre-gale-alvarium-cri-le-conseil-d-etat-precise-les-criteres-justifiant-la-dissolution-d-une-association-ou-d-un-groupement",
+          "lead": "20. Conseil d'État, 9/11/2023 (Soulèvements de la Terre, GALE, Alvarium, CRI)",
+          "id": "source-20",
+          "links": [
+            {
+              "label": "https://www.conseil-etat.fr/actualites/soulevements-de-la-terre-gale-alvarium-cri-le-conseil-d-etat-precise-les-criteres-justifiant-la-dissolution-d-une-association-ou-d-un-groupement",
+              "url": "https://www.conseil-etat.fr/actualites/soulevements-de-la-terre-gale-alvarium-cri-le-conseil-d-etat-precise-les-criteres-justifiant-la-dissolution-d-une-association-ou-d-un-groupement"
+            }
+          ]
+        },
+        {
+          "label": "21. Conseil d'État, 30/04/2026, n° 506860 (Jeune Garde) : https://www.conseil-etat.fr/actualites/le-conseil-d-etat-rejette-le-recours-forme-par-la-jeune-garde-contre-le-decret-qui-prononcait-sa-dissolution ; décision : https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2026-04-30/506860",
+          "lead": "21. Conseil d'État, 30/04/2026, n° 506860 (Jeune Garde)",
+          "id": "source-21",
+          "links": [
+            {
+              "label": "https://www.conseil-etat.fr/actualites/le-conseil-d-etat-rejette-le-recours-forme-par-la-jeune-garde-contre-le-decret-qui-prononcait-sa-dissolution",
+              "url": "https://www.conseil-etat.fr/actualites/le-conseil-d-etat-rejette-le-recours-forme-par-la-jeune-garde-contre-le-decret-qui-prononcait-sa-dissolution"
+            },
+            {
+              "label": "décision",
+              "url": "https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2026-04-30/506860"
+            }
+          ]
+        },
+        {
+          "label": "22. Le Parisien (avec AFP), 03/06/2026 : https://www.leparisien.fr/politique/le-gouvernement-veut-dissoudre-un-groupe-dultradroite-patria-albiges-et-un-dultragauche-front-de-rue-03-06-2026-4R535E6J2FEYLHMK7ITBXIMRDY.php",
+          "lead": "22. Le Parisien (avec AFP), 03/06/2026",
+          "id": "source-22",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/politique/le-gouvernement-veut-dissoudre-un-groupe-dultradroite-patria-albiges-et-un-dultragauche-front-de-rue-03-06-2026-4R535E6J2FEYLHMK7ITBXIMRDY.php",
+              "url": "https://www.leparisien.fr/politique/le-gouvernement-veut-dissoudre-un-groupe-dultradroite-patria-albiges-et-un-dultragauche-front-de-rue-03-06-2026-4R535E6J2FEYLHMK7ITBXIMRDY.php"
+            }
+          ]
+        },
+        {
+          "label": "23. Journal officiel (JORF n° 0129 du 4/06/2026) : décret du 3 juin 2026 portant dissolution du groupement de fait « Front de rue » (art. L. 212-1 1° CSI) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054189930 ; décret du 3 juin 2026 portant dissolution du groupement de fait « Patria Albiges » (art. L. 212-1 6° CSI) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054189917 ; compte rendu du Conseil des ministres du 3/06/2026 : https://www.elysee.fr/emmanuel-macron/2026/06/03/compte-rendu-du-conseil-des-ministres-du-3-juin-2026",
+          "lead": "23. Journal officiel (JORF n° 0129 du 4/06/2026)",
+          "id": "source-23",
+          "links": [
+            {
+              "label": "décret du 3 juin 2026 portant dissolution du groupement de fait « Front de rue » (art. L. 212-1 1° CSI)",
+              "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054189930"
+            },
+            {
+              "label": "décret du 3 juin 2026 portant dissolution du groupement de fait « Patria Albiges » (art. L. 212-1 6° CSI)",
+              "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054189917"
+            },
+            {
+              "label": "compte rendu du Conseil des ministres du 3/06/2026",
+              "url": "https://www.elysee.fr/emmanuel-macron/2026/06/03/compte-rendu-du-conseil-des-ministres-du-3-juin-2026"
+            }
+          ]
+        },
+        {
+          "label": "24. Sénat, proposition de résolution n° 226 (2025-2026), 16/12/2025 : https://www.senat.fr/leg/ppr25-226.html",
+          "lead": "24. Sénat, proposition de résolution n° 226 (2025-2026), 16/12/2025",
+          "id": "source-24",
+          "links": [
+            {
+              "label": "https://www.senat.fr/leg/ppr25-226.html",
+              "url": "https://www.senat.fr/leg/ppr25-226.html"
+            }
+          ]
+        },
+        {
+          "label": "25. Assemblée nationale, question au gouvernement n° 1308 (T. Joncour, réponse G. Darmanin), JO du 18/02/2026 : https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QG1308",
+          "lead": "25. Assemblée nationale, question au gouvernement n° 1308 (T. Joncour, réponse G. Darmanin), JO du 18/02/2026",
+          "id": "source-25",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QG1308",
+              "url": "https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QG1308"
+            }
+          ]
+        },
+        {
+          "label": "26. Conférence de presse de Jordan Bardella (RN), 18/02/2026, vidéo intégrale sur Dailymotion (passage à 19 min 31) : https://www.dailymotion.com/video/xa0bh0g",
+          "lead": "26. Conférence de presse de Jordan Bardella (RN), 18/02/2026, vidéo intégrale sur Dailymotion (passage à 19 min 31)",
+          "id": "source-26",
+          "links": [
+            {
+              "label": "https://www.dailymotion.com/video/xa0bh0g",
+              "url": "https://www.dailymotion.com/video/xa0bh0g"
+            }
+          ]
+        },
+        {
+          "label": "27. L'Opinion, 18/02/2026 : https://www.lopinion.fr/politique/bardella-exploite-la-tourmente-de-lfi-pour-briser-lisolement-du-rn (même vidéo que [26], passage à 24 min 39)",
+          "lead": "27. L'Opinion, 18/02/2026 (même vidéo que [26], passage à 24 min 39)",
+          "id": "source-27",
+          "links": [
+            {
+              "label": "https://www.lopinion.fr/politique/bardella-exploite-la-tourmente-de-lfi-pour-briser-lisolement-du-rn",
+              "url": "https://www.lopinion.fr/politique/bardella-exploite-la-tourmente-de-lfi-pour-briser-lisolement-du-rn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 30 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/terrorisme-chacun-son-ratio",
+      "label": "Terrorisme : chacun son ratio, et tout le monde a raison"
+    },
+    {
+      "href": "/analyses/guerre-civile-le-mot-de-l-autre",
+      "label": "« Guerre civile » : chacun la voit venir de l'autre camp"
+    }
+  ]
+}

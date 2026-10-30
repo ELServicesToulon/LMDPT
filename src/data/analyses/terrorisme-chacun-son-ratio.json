@@ -1,0 +1,383 @@
+{
+  "slug": "terrorisme-chacun-son-ratio",
+  "title": "Terrorisme : chacun son ratio, et tout le monde a raison",
+  "eyebrow": "Chronique · Présidentielle 2027",
+  "type_label": "Chronique",
+  "date": "2026-10-30",
+  "updated": "2026-10-30",
+  "kicker": "Chronique · La rédaction · 30 octobre 2026",
+  "author": "La rédaction de LMDPT",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Selon le chiffre qu'on choisit, l'extrême gauche est la « première menace » en Europe ou bien elle est quasi absente. Le jihadisme écrase tout, ou bien il est minoritaire. Les rapports officiels disent tout cela à la fois. À six mois de la présidentielle, voici ce que mesurent vraiment les trois ratios, et ce qu'ils ne mesurent pas.",
+  "description": "Attentats commis, déjoués, arrestations : selon le chiffre retenu, l'extrême gauche est la « première menace » en Europe ou presque absente. Ce que mesurent vraiment les ratios Europol et PNAT 2025.",
+  "disclaimer": "",
+  "tags": [
+    "lmdpt",
+    "chronique",
+    "presidentielle-2027",
+    "terrorisme",
+    "europol",
+    "pnat",
+    "extreme-gauche",
+    "extreme-droite",
+    "jihadisme",
+    "doe"
+  ],
+  "x_hook": "",
+  "hues": [
+    {
+      "slug": "pluraliste",
+      "label": "Rationalistes / « data d'abord »",
+      "color": "#5a6570",
+      "rationale": "en phase (on dit ce qu'on compte avant de conclure)."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "État de droit / garantiste",
+      "color": "#ff8080",
+      "rationale": "en phase (on s'en tient à la qualification par le juge, on applique la présomption d'innocence, on se méfie des chiffres déclarés)."
+    },
+    {
+      "slug": "droite",
+      "label": "Droite d'ordre légaliste",
+      "color": "#0066cc",
+      "rationale": "en phase partielle (primauté du jihadisme confirmée, mais l'ultragauche n'est pas une menace terroriste au sens du droit français)."
+    },
+    {
+      "slug": "gauche",
+      "label": "Gauche démocratique",
+      "color": "#ff8080",
+      "rationale": "en phase partielle (la montée de l'extrême droite est confirmée, mais le jihadisme reste de loin la première menace)."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "ouverture",
+      "title": "",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sur un plateau, un invité cite Europol : la moitié des attentats commis en Europe viennent de l'extrême gauche. Son voisin cite le même Europol : sept arrestations sur dix concernent le jihadisme. Aucun des deux ne ment. Ils ne comptent pas la même chose."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "trois-facons",
+      "title": "Trois façons de compter",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un **attentat commis** a eu lieu, avec des victimes ou seulement des dégâts. Un **attentat déjoué** est un projet stoppé avant le passage à l'acte. Une **arrestation** vise une personne soupçonnée d'une infraction terroriste, parfois du financement ou de la propagande. Ces séries ne s'additionnent pas, et une arrestation ne vaut pas condamnation."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "chiffres",
+      "title": "Ce que disent les chiffres",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "2025",
+          "headers": [
+            "2025",
+            "Commis",
+            "Déjoués",
+            "Arrestations"
+          ],
+          "rows": [
+            [
+              "**UE** (Europol) [1]",
+              "22 : extrême gauche/anarchistes 50 %, jihadistes 40,9 %, extrême droite 4,5 %, autres 4,5 %",
+              "20 : jihadistes 75 %, extrême droite 20 %, autres 5 %",
+              "486 : jihadistes 71,4 %, extrême droite 8,8 %, séparatistes 7 %, extrême gauche 2,7 %, autres 10,1 %"
+            ],
+            [
+              "**France** (Europol) [1]",
+              "3 : jihadistes 2 (66,7 %), extrême droite 1 (33,3 %)",
+              "11 : jihadistes 72,7 %, extrême droite 27,3 %",
+              "84 : jihadistes 76,2 %, séparatistes 8,3 %, extrême droite 6 %, extrême gauche 2,4 %, autres 7,1 %"
+            ],
+            [
+              "**France** (Parquet national antiterroriste, PNAT) [4][5]",
+              "4 : jihadistes 75 %, extrême droite 25 %",
+              "10 : jihadistes 70 %, extrême droite 30 %",
+              "non publié"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Pourcentages calculés par LMDPT à partir des nombres bruts publiés.*"
+        },
+        {
+          "type": "p",
+          "text": "Dans l'Union, l'extrême gauche arrive donc en tête des attentats commis en 2025 : 11 sur 22, dont 10 en Italie et 1 en Grèce, visant surtout des bâtiments ou des véhicules, sans aucune victime [1]. Côté projets stoppés, arrestations ou morts, le jihadisme domine nettement, chaque année de 2023 à 2025 [1]."
+        },
+        {
+          "type": "p",
+          "text": "Ce palmarès est volatil. En 2023, le premier poste européen était le séparatisme : 70 actions en Corse, soit 71 % des attentats commis dans l'UE. En 2025 : zéro [1]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "morts",
+      "title": "Les morts, l'autre ratio",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Six personnes ont été tuées dans l'UE en 2025 : cinq dans des attentats jihadistes, une en France, dans un attentat classé d'extrême droite par Europol [1]. Les cinq morts de 2024 et les six de 2023 sont tous dus à des jihadistes [1][3]. Extrême gauche : zéro victime [1]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "france-extreme-droite",
+      "title": "En France, l'extrême droite monte",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le PNAT, qui centralise les affaires de terrorisme, résume 2025 ainsi : le jihadisme reste la menace « la plus élevée » (3 attentats commis, 7 déjoués), et l'ultradroite marque « une montée en intensité », avec ce qu'il présente comme un premier attentat mortel, à Puget-sur-Argens, dont l'auteur présumé n'a pas encore été jugé [4], et 3 projets déjoués [5]. En 2024, Europol ne comptait aucun attentat ni projet déjoué d'extrême droite en France [2]."
+        },
+        {
+          "type": "p",
+          "text": "Depuis, il y a eu Trappes. Le 23 octobre 2026, le PNAT a ouvert une enquête pour assassinat « en relation avec une entreprise terroriste », avec une circonstance liée à une « prétendue race » ou à une religion [9]. Selon le procureur, cité par l'AFP, le suspect conteste tout mobile raciste [10]. Il est présumé innocent, et ces faits n'entrent dans aucune statistique citée ici."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "extreme-gauche",
+      "title": "L'extrême gauche : présente dans la rue, absente des statistiques",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "En France, de 2023 à 2025, Europol ne recense aucun attentat d'extrême gauche, et deux arrestations, en 2025 [1][3]. Depuis 2017, un seul projet déjoué, fin 2020, selon le patron de la DGSI devant les députés [6]. Ce camp n'est pas inactif : une note du centre de recherche de la Gendarmerie (CRGN) recense 120 actions revendiquées par l'ultragauche en 2025 [8]. Mais elles relèvent en général du droit commun, comme l'incendie de la gendarmerie de Meylan en 2017, cité par la DGSI [6]."
+        },
+        {
+          "type": "p",
+          "text": "D'où l'effet Italie-Grèce. Chaque pays déclare à Europol ce que *sa* loi appelle terrorisme [1]. Rome et Athènes y rangent des attaques anarchistes contre des biens, qu'en France on poursuit en général en droit commun. Le « 50 % » européen reflète donc surtout la façon dont l'Italie qualifie ces actes."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "ne-disent-pas",
+      "title": "Ce que les chiffres ne disent pas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un « déjoué » est un chiffre déclaré, sans liste publique vérifiable, et les sources divergent : pour 2025, Europol compte 11 projets déjoués en France, le PNAT 10 [1][4][5]. Pour l'extrême droite depuis 2017, la DGSI en comptait 7 en juin 2023 [6], le ministre de l'Intérieur 9 deux mois plus tôt [7]."
+        },
+        {
+          "type": "p",
+          "text": "Les effectifs sont minuscules : sur 3 attentats commis en France en 2025, un seul cas pèse 33 points [1]. Et les déclarations traînent : la France a signalé ses attentats corses de 2021 et 2022 avec retard [3]."
+        },
+        {
+          "type": "p",
+          "text": "La prochaine fois qu'un ratio vous est servi sur un plateau, posez trois questions. Que compte-t-on ? Où ? Et selon quelle loi ?"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : la menace terroriste par mouvance, positions des candidats déclarés ou pressentis 2027 (au 30/10/2026)",
+      "intro": "",
+      "table": {
+        "caption": "Boîte DOE : la menace terroriste par mouvance, positions des candidats déclarés ou pressentis 2027 (au 30/10/2026)",
+        "headers": [
+          "Candidat",
+          "Position sourcée"
+        ],
+        "rows": [
+          [
+            "Bruno Retailleau (LR)",
+            "Alors ministre de l'Intérieur (7/01/2025) : « le terreau de cette menace […] est l'islamisme » [11]. Aucune hiérarchie chiffrée entre mouvances."
+          ],
+          [
+            "Jordan Bardella (RN)",
+            "Non trouvé."
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Après Trappes, appelle à « ne pas pardonner ou regarder ailleurs » et promet de « pourchasser » le racisme [10]. Hiérarchie par mouvance : non trouvée."
+          ],
+          [
+            "Raphaël Glucksmann (PS-Place publique)",
+            "Non trouvé."
+          ],
+          [
+            "Éric Zemmour (Reconquête)",
+            "Non trouvé pour 2027."
+          ],
+          [
+            "Édouard Philippe, Gabriel Attal, David Lisnard",
+            "Non trouvé."
+          ]
+        ]
+      },
+      "note": "Ce sont des positions déclarées, pas des intentions de vote. Aucune ne vaut jugement sur la culpabilité de quiconque.",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Badges des courants en phase",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Rationalistes / « data d'abord »** : en phase (on dit ce qu'on compte avant de conclure).",
+            "**État de droit / garantiste** : en phase (on s'en tient à la qualification par le juge, on applique la présomption d'innocence, on se méfie des chiffres déclarés).",
+            "**Droite d'ordre légaliste** : en phase partielle (primauté du jihadisme confirmée, mais l'ultragauche n'est pas une menace terroriste au sens du droit français).",
+            "**Gauche démocratique** : en phase partielle (la montée de l'extrême droite est confirmée, mais le jihadisme reste de loin la première menace)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 30 octobre 2026.",
+  "sources_groups": [
+    {
+      "title": "Rapports officiels et presse",
+      "items": [
+        {
+          "label": "1. Europol, EU TE-SAT 2026 (données 2023-2025) : https://www.europol.europa.eu/cms/sites/default/files/documents/EU-TE-SAT-2026.pdf",
+          "lead": "1. Europol, EU TE-SAT 2026 (données 2023-2025)",
+          "id": "source-1",
+          "links": [
+            {
+              "label": "https://www.europol.europa.eu/cms/sites/default/files/documents/EU-TE-SAT-2026.pdf",
+              "url": "https://www.europol.europa.eu/cms/sites/default/files/documents/EU-TE-SAT-2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "2. Europol, EU TE-SAT 2025 (données 2024) : https://www.europol.europa.eu/cms/sites/default/files/documents/EU_TE-SAT_2025.pdf",
+          "lead": "2. Europol, EU TE-SAT 2025 (données 2024)",
+          "id": "source-2",
+          "links": [
+            {
+              "label": "https://www.europol.europa.eu/cms/sites/default/files/documents/EU_TE-SAT_2025.pdf",
+              "url": "https://www.europol.europa.eu/cms/sites/default/files/documents/EU_TE-SAT_2025.pdf"
+            }
+          ]
+        },
+        {
+          "label": "3. Europol, EU TE-SAT 2024 (données 2021-2023) : https://www.europol.europa.eu/cms/sites/default/files/documents/TE-SAT%202024.pdf",
+          "lead": "3. Europol, EU TE-SAT 2024 (données 2021-2023)",
+          "id": "source-3",
+          "links": [
+            {
+              "label": "https://www.europol.europa.eu/cms/sites/default/files/documents/TE-SAT%202024.pdf",
+              "url": "https://www.europol.europa.eu/cms/sites/default/files/documents/TE-SAT%202024.pdf"
+            }
+          ]
+        },
+        {
+          "label": "4. PNAT, bilan 2025 (audience solennelle du 26/01/2026) : https://fr.linkedin.com/posts/parquet-national-antiterroriste-630360333_le-26-janvier-2026-sest-tenue-au-tribunal-activity-7423059156129087489-wJOA",
+          "lead": "4. PNAT, bilan 2025 (audience solennelle du 26/01/2026)",
+          "id": "source-4",
+          "links": [
+            {
+              "label": "https://fr.linkedin.com/posts/parquet-national-antiterroriste-630360333_le-26-janvier-2026-sest-tenue-au-tribunal-activity-7423059156129087489-wJOA",
+              "url": "https://fr.linkedin.com/posts/parquet-national-antiterroriste-630360333_le-26-janvier-2026-sest-tenue-au-tribunal-activity-7423059156129087489-wJOA"
+            }
+          ]
+        },
+        {
+          "label": "5. École nationale de la magistrature, entretien avec Olivier Christen, procureur de la République antiterroriste, 06/2026 : https://www.enm.justice.fr/mineurs-mis-en-examen-infraction-terroriste-pnat",
+          "lead": "5. École nationale de la magistrature, entretien avec Olivier Christen, procureur de la République antiterroriste, 06/2026",
+          "id": "source-5",
+          "links": [
+            {
+              "label": "https://www.enm.justice.fr/mineurs-mis-en-examen-infraction-terroriste-pnat",
+              "url": "https://www.enm.justice.fr/mineurs-mis-en-examen-infraction-terroriste-pnat"
+            }
+          ]
+        },
+        {
+          "label": "6. Assemblée nationale, audition du directeur général de la DGSI, 20/06/2023 : https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/cegrvimani/l16cegrvimani2223012_compte-rendu.pdf",
+          "lead": "6. Assemblée nationale, audition du directeur général de la DGSI, 20/06/2023",
+          "id": "source-6",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/cegrvimani/l16cegrvimani2223012_compte-rendu.pdf",
+              "url": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/cegrvimani/l16cegrvimani2223012_compte-rendu.pdf"
+            }
+          ]
+        },
+        {
+          "label": "7. AFP via Arab News, 05/04/2023 : https://www.arabnews.fr/france/41-attentats-dejoues-en-france-depuis-2017-selon-darmanin-366291",
+          "lead": "7. AFP via Arab News, 05/04/2023",
+          "id": "source-7",
+          "links": [
+            {
+              "label": "https://www.arabnews.fr/france/41-attentats-dejoues-en-france-depuis-2017-selon-darmanin-366291",
+              "url": "https://www.arabnews.fr/france/41-attentats-dejoues-en-france-depuis-2017-selon-darmanin-366291"
+            }
+          ]
+        },
+        {
+          "label": "8. CRGN (Gendarmerie nationale), note n° 125, 2025 : https://www.gendarmerie.interieur.gouv.fr/crgn/content/download/57190/file/Research_Note_CRGN_125_Terrorism_radical_Movements_2025.pdf",
+          "lead": "8. CRGN (Gendarmerie nationale), note n° 125, 2025",
+          "id": "source-8",
+          "links": [
+            {
+              "label": "https://www.gendarmerie.interieur.gouv.fr/crgn/content/download/57190/file/Research_Note_CRGN_125_Terrorism_radical_Movements_2025.pdf",
+              "url": "https://www.gendarmerie.interieur.gouv.fr/crgn/content/download/57190/file/Research_Note_CRGN_125_Terrorism_radical_Movements_2025.pdf"
+            }
+          ]
+        },
+        {
+          "label": "9. PNAT, communiqué du 23/10/2026 (Trappes) : https://cdn-s-www.dna.fr/pdf/cb1e49fc-f652-46a6-b3e4-d565892570f6/document.pdf",
+          "lead": "9. PNAT, communiqué du 23/10/2026 (Trappes)",
+          "id": "source-9",
+          "links": [
+            {
+              "label": "https://cdn-s-www.dna.fr/pdf/cb1e49fc-f652-46a6-b3e4-d565892570f6/document.pdf",
+              "url": "https://cdn-s-www.dna.fr/pdf/cb1e49fc-f652-46a6-b3e4-d565892570f6/document.pdf"
+            }
+          ]
+        },
+        {
+          "label": "10. AFP via MSN, « Attentat dans les Yvelines : Mélenchon appelle à \"ne pas pardonner ou regarder ailleurs\" », 10/2026 : https://www.msn.com/fr-fr/actualite/politique/attentat-dans-les-yvelines-m%C3%A9lenchon-appelle-%C3%A0-ne-pas-pardonner-ou-regarder-ailleurs/ar-AA2g6G71",
+          "lead": "10. AFP via MSN, « Attentat dans les Yvelines : Mélenchon appelle à \"ne pas pardonner ou regarder ailleurs\" », 10/2026",
+          "id": "source-10",
+          "links": [
+            {
+              "label": "https://www.msn.com/fr-fr/actualite/politique/attentat-dans-les-yvelines-m%C3%A9lenchon-appelle-%C3%A0-ne-pas-pardonner-ou-regarder-ailleurs/ar-AA2g6G71",
+              "url": "https://www.msn.com/fr-fr/actualite/politique/attentat-dans-les-yvelines-m%C3%A9lenchon-appelle-%C3%A0-ne-pas-pardonner-ou-regarder-ailleurs/ar-AA2g6G71"
+            }
+          ]
+        },
+        {
+          "label": "11. Vie-publique.fr, interview de B. Retailleau sur RTL, 07/01/2025 : https://www.vie-publique.fr/discours/296769-bruno-retailleau-07012025-rtl-terrorisme",
+          "lead": "11. Vie-publique.fr, interview de B. Retailleau sur RTL, 07/01/2025",
+          "id": "source-11",
+          "links": [
+            {
+              "label": "https://www.vie-publique.fr/discours/296769-bruno-retailleau-07012025-rtl-terrorisme",
+              "url": "https://www.vie-publique.fr/discours/296769-bruno-retailleau-07012025-rtl-terrorisme"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 30 octobre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/antifa-terroriste-deux-pays-l-ont-ecrit",
+      "label": "« Antifa » terroriste : deux pays l'ont écrit, les autres en font un slogan"
+    },
+    {
+      "href": "/analyses/guerre-civile-le-mot-de-l-autre",
+      "label": "« Guerre civile » : chacun la voit venir de l'autre camp"
+    }
+  ]
+}

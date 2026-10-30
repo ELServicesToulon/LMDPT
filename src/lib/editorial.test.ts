@@ -144,18 +144,22 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('bataille-du-2-mai');
-    expect(sorted[1]?.date).toBe('2026-10-29');
-    expect(sorted[2]?.slug).toBe('corse-senat-non');
-    expect(sorted[2]?.date).toBe('2026-10-28');
-    expect(sorted[3]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[4]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[5]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[6]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[7]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[8]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[9]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[10]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('antifa-terroriste-deux-pays-l-ont-ecrit');
+    expect(sorted[1]?.date).toBe('2026-10-30');
+    expect(sorted[2]?.slug).toBe('terrorisme-chacun-son-ratio');
+    expect(sorted[2]?.date).toBe('2026-10-30');
+    expect(sorted[3]?.slug).toBe('bataille-du-2-mai');
+    expect(sorted[3]?.date).toBe('2026-10-29');
+    expect(sorted[4]?.slug).toBe('corse-senat-non');
+    expect(sorted[4]?.date).toBe('2026-10-28');
+    expect(sorted[5]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[6]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[7]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[8]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[9]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[10]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[11]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[12]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
