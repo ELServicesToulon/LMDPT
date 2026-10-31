@@ -43,7 +43,7 @@ Stockage : `./data/tips.json`
 | lecteur | 0 | lecture |
 | contributeur | 1 | poster (après validation IA) |
 | modo | 2 | approuver / masquer |
-| modo-senior | 3 | + recolorer la teinte |
+| modo-senior | 3 | modération avancée (teinte calculée à l’affichage, plus de recolor) |
 | redaction | 4 | supervision |
 
 Jetons : **aucun défaut dans le code**. Configurer avant tout déploiement, soit :
@@ -54,6 +54,53 @@ Jetons : **aucun défaut dans le code**. Configurer avant tout déploiement, soi
 Les placeholders `__REMPLACER_JETON_*__` de `.env.example` sont refusés. Sans jeton utilisable, le processus journalise un avertissement au démarrage et répond **503** aux actions de modération et d’édition (`/api/comments/mod/*`, publication forcée).
 
 UI : `/moderation/`
+
+## Conservation et purge
+
+Règles prévues (à brancher plus tard sur GO — **aucune routine n’est activée** : pas de timer
+systemd, pas de cron, pas d’appel au démarrage) :
+
+- propositions rejetées : 12 mois après leur traitement ; publiées et en attente : conservées
+- e-mail facultatif des propositions : 12 mois après l’envoi
+- comptes : 3 ans sans connexion (sessions et liens magiques associés supprimés ; commentaires conservés : `userId` retiré, `displayName` « Compte supprimé », `authorKeyHash` neutralisé)
+- commentaires : 3 ans après publication (à défaut création)
+
+```bash
+# dry-run (défaut) — affiche des compteurs, n’écrit rien
+node comments-api/scripts/retention-purge.mjs
+
+# écriture (après revue des compteurs)
+node comments-api/scripts/retention-purge.mjs --apply
+```
+
+Chemin des données : `LMDPT_COMMENTS_DATA` ou `comments-api/data`.
+
+**Aucune routine n’est activée.** Les unités `comments-api/deploy/systemd/lmdpt-comments-purge.service` et
+`.timer` sont préparées, pas installées. Ne pas les copier ni les `enable` sans revue.
+
+Installation future (à ne lancer que sur GO, après dry-run manuel) :
+
+```bash
+# 1. dry-run manuel
+LMDPT_COMMENTS_DATA=/home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api/data \
+  node /home/debian/ks5b/iarbre/le-media-du-premier-tour/comments-api/scripts/retention-purge.mjs
+
+# 2. copier les unités puis recharger systemd
+sudo cp comments-api/deploy/systemd/lmdpt-comments-purge.service /etc/systemd/system/
+sudo cp comments-api/deploy/systemd/lmdpt-comments-purge.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+
+# 3. activer le timer (pas le service seul)
+sudo systemctl enable --now lmdpt-comments-purge.timer
+```
+
+Retour arrière :
+
+```bash
+sudo systemctl disable --now lmdpt-comments-purge.timer
+sudo rm -f /etc/systemd/system/lmdpt-comments-purge.timer /etc/systemd/system/lmdpt-comments-purge.service
+sudo systemctl daemon-reload
+```
 
 ## Démarrage
 

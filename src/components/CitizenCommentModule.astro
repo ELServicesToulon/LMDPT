@@ -73,6 +73,8 @@ const apiBase = '/api/comments';
 </script>
 
 <script>
+  import { COMMENT_DISPLAY_FALLBACK } from '../lib/comment-display-hue';
+
   function initCcm(root: HTMLElement) {
     const api = root.dataset.api || '/api/comments';
     const threadId = root.dataset.thread || 'general';
@@ -144,14 +146,18 @@ const apiBase = '/api/comments';
         listEl.innerHTML = comments
           .map(
             (c: any) => `
-          <article class="ccm-item" style="border-left:4px solid ${c.politicalHue?.color || '#5a6570'}">
+          <article class="ccm-item">
             <header>
               <strong>${escapeHtml(c.displayName || 'Citoyen·ne')}</strong>
-              <span class="ccm-pill" title="Teinte politique affichée en transparence (pas une adhésion partisane)" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || 'Pluraliste')}</span>
               <time class="meta">${c.publishedAt ? new Date(c.publishedAt).toLocaleString('fr-FR') : ''}</time>
             </header>
-            <p class="ccm-hue-meta meta">Couleur politique (transparence) : ${escapeHtml(c.politicalHue?.label || 'Pluraliste / transversal')}</p>
-            <p>${escapeHtml(c.body)}</p>
+            <div class="ccm-body">
+              <p class="ccm-hue-meta meta">
+                <span class="ccm-pill" title="Tendance estimée automatiquement à partir du texte de ce message" style="background:${c.politicalHue?.color || '#5a6570'}">${escapeHtml(c.politicalHue?.label || COMMENT_DISPLAY_FALLBACK)}</span>
+                Tendance estimée du message : ${escapeHtml(c.politicalHue?.label || COMMENT_DISPLAY_FALLBACK)}
+              </p>
+              <p>${escapeHtml(c.body)}</p>
+            </div>
           </article>`,
           )
           .join('');
@@ -197,7 +203,7 @@ const apiBase = '/api/comments';
         reformEl.value = data.reformulated || '';
         const h = data.politicalHue || {};
         swatch.style.background = h.color || '#5a6570';
-        hueLabel.textContent = h.label || '—';
+        hueLabel.textContent = h.label || COMMENT_DISPLAY_FALLBACK;
         hueRat.textContent = h.rationale || '';
         hueConf.textContent = h.confidence != null ? Math.round(h.confidence * 100) + ' %' : '—';
         preview.hidden = false;
@@ -289,6 +295,18 @@ const apiBase = '/api/comments';
     gap: 0.4rem 0.75rem;
     align-items: center;
     margin-bottom: 0.35rem;
+  }
+  .ccm-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .ccm-hue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.55rem;
+    margin: 0;
   }
   .ccm-pill {
     font-size: 0.72rem;

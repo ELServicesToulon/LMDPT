@@ -1,4 +1,4 @@
-import { loadJson, saveJsonAtomic, usersPath } from './store.mjs';
+import { loadJson, saveJsonAtomic, updateJsonLocked, usersPath } from './store.mjs';
 import { randomId } from './crypto.mjs';
 
 const EMPTY = { version: 1, users: [] };
@@ -25,61 +25,60 @@ export function upsertFromProvider(dataDir, {
   if (!provider || !providerUserId) {
     throw new Error('provider + providerUserId requis');
   }
-  const db = loadUsers(dataDir);
-  const now = new Date().toISOString();
-  const emailNorm = email ? String(email).trim().toLowerCase() : null;
+  return updateJsonLocked(usersPath(dataDir), EMPTY, (db) => {
+    const now = new Date().toISOString();
+    const emailNorm = email ? String(email).trim().toLowerCase() : null;
 
-  let user =
-    db.users.find((u) =>
-      (u.providers || []).some(
-        (p) => p.provider === provider && p.providerUserId === String(providerUserId),
-      ),
-    ) || null;
+    let user =
+      db.users.find((u) =>
+        (u.providers || []).some(
+          (p) => p.provider === provider && p.providerUserId === String(providerUserId),
+        ),
+      ) || null;
 
-  if (!user && emailNorm && emailVerified) {
-    user = db.users.find((u) => u.email === emailNorm && u.emailVerified) || null;
-  }
+    if (!user && emailNorm && emailVerified) {
+      user = db.users.find((u) => u.email === emailNorm && u.emailVerified) || null;
+    }
 
-  if (!user) {
-    user = {
-      id: randomId('usr'),
-      providers: [],
+    if (!user) {
+      user = {
+        id: randomId('usr'),
+        providers: [],
+        email: emailNorm,
+        emailVerified: Boolean(emailVerified && emailNorm),
+        displayNameDefault: String(displayName || 'Citoyen·ne').slice(0, 40) || 'Citoyen·ne',
+        role: 'lecteur',
+        createdAt: now,
+        lastLoginAt: now,
+      };
+      db.users.push(user);
+    }
+
+    const prov = {
+      provider,
+      providerUserId: String(providerUserId),
       email: emailNorm,
-      emailVerified: Boolean(emailVerified && emailNorm),
-      displayNameDefault: String(displayName || 'Citoyen·ne').slice(0, 40) || 'Citoyen·ne',
-      preferredHueSlug: null,
-      role: 'lecteur',
-      createdAt: now,
-      lastLoginAt: now,
+      linkedAt: now,
     };
-    db.users.push(user);
-  }
+    const idx = (user.providers || []).findIndex(
+      (p) => p.provider === provider && p.providerUserId === String(providerUserId),
+    );
+    if (idx >= 0) user.providers[idx] = { ...user.providers[idx], ...prov };
+    else {
+      user.providers = user.providers || [];
+      user.providers.push(prov);
+    }
 
-  const prov = {
-    provider,
-    providerUserId: String(providerUserId),
-    email: emailNorm,
-    linkedAt: now,
-  };
-  const idx = (user.providers || []).findIndex(
-    (p) => p.provider === provider && p.providerUserId === String(providerUserId),
-  );
-  if (idx >= 0) user.providers[idx] = { ...user.providers[idx], ...prov };
-  else {
-    user.providers = user.providers || [];
-    user.providers.push(prov);
-  }
-
-  if (emailNorm && emailVerified) {
-    user.email = emailNorm;
-    user.emailVerified = true;
-  }
-  if (displayName && !user.displayNameDefault) {
-    user.displayNameDefault = String(displayName).slice(0, 40);
-  }
-  user.lastLoginAt = now;
-  saveUsers(dataDir, db);
-  return user;
+    if (emailNorm && emailVerified) {
+      user.email = emailNorm;
+      user.emailVerified = true;
+    }
+    if (displayName && !user.displayNameDefault) {
+      user.displayNameDefault = String(displayName).slice(0, 40);
+    }
+    user.lastLoginAt = now;
+    return user;
+  });
 }
 
 export function getUserById(dataDir, id) {
@@ -93,7 +92,6 @@ export function publicUser(user) {
   return {
     id: user.id,
     displayName: user.displayNameDefault || 'Citoyen·ne',
-    preferredHueSlug: user.preferredHueSlug || null,
     role: user.role || 'lecteur',
     providers: (user.providers || []).map((p) => p.provider),
     // email volontairement absent du public
@@ -101,10 +99,10 @@ export function publicUser(user) {
 }
 
 export function updateDisplayName(dataDir, userId, displayName) {
-  const db = loadUsers(dataDir);
-  const user = db.users.find((u) => u.id === userId);
-  if (!user) return null;
-  user.displayNameDefault = String(displayName || 'Citoyen·ne').slice(0, 40) || 'Citoyen·ne';
-  saveUsers(dataDir, db);
-  return user;
+  return updateJsonLocked(usersPath(dataDir), EMPTY, (db) => {
+    const user = db.users.find((u) => u.id === userId);
+    if (!user) return null;
+    user.displayNameDefault = String(displayName || 'Citoyen·ne').slice(0, 40) || 'Citoyen·ne';
+    return user;
+  });
 }

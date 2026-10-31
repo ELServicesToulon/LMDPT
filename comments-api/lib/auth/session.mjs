@@ -1,4 +1,4 @@
-import { loadJson, saveJsonAtomic, sessionsPath } from './store.mjs';
+import { loadJson, saveJsonAtomic, updateJsonLocked, sessionsPath } from './store.mjs';
 import { randomId, signSessionCookie, verifySessionCookie } from './crypto.mjs';
 
 const EMPTY = { version: 1, sessions: [] };
@@ -13,20 +13,19 @@ export function saveSessions(dataDir, db) {
 }
 
 export function createSession(dataDir, userId, { ttlMs = DEFAULT_TTL_MS } = {}) {
-  const db = loadSessions(dataDir);
-  const now = Date.now();
-  const session = {
-    id: randomId('ses'),
-    userId,
-    createdAt: new Date(now).toISOString(),
-    expiresAt: new Date(now + ttlMs).toISOString(),
-    lastSeenAt: new Date(now).toISOString(),
-  };
-  db.sessions.push(session);
-  // prune expired opportunistically
-  db.sessions = db.sessions.filter((s) => new Date(s.expiresAt).getTime() > now);
-  saveSessions(dataDir, db);
-  return session;
+  return updateJsonLocked(sessionsPath(dataDir), EMPTY, (db) => {
+    const now = Date.now();
+    const session = {
+      id: randomId('ses'),
+      userId,
+      createdAt: new Date(now).toISOString(),
+      expiresAt: new Date(now + ttlMs).toISOString(),
+      lastSeenAt: new Date(now).toISOString(),
+    };
+    db.sessions.push(session);
+    db.sessions = db.sessions.filter((s) => new Date(s.expiresAt).getTime() > now);
+    return session;
+  });
 }
 
 export function getSession(dataDir, sessionId) {
@@ -35,34 +34,34 @@ export function getSession(dataDir, sessionId) {
   const s = db.sessions.find((x) => x.id === sessionId);
   if (!s) return null;
   if (new Date(s.expiresAt).getTime() <= Date.now()) {
-    db.sessions = db.sessions.filter((x) => x.id !== sessionId);
-    saveSessions(dataDir, db);
-    return null;
+    return updateJsonLocked(sessionsPath(dataDir), EMPTY, (fresh) => {
+      fresh.sessions = fresh.sessions.filter((x) => x.id !== sessionId);
+      return null;
+    });
   }
   return s;
 }
 
 export function touchSession(dataDir, sessionId, { ttlMs = DEFAULT_TTL_MS } = {}) {
-  const db = loadSessions(dataDir);
-  const s = db.sessions.find((x) => x.id === sessionId);
-  if (!s) return null;
-  const now = Date.now();
-  if (new Date(s.expiresAt).getTime() <= now) {
-    db.sessions = db.sessions.filter((x) => x.id !== sessionId);
-    saveSessions(dataDir, db);
-    return null;
-  }
-  s.lastSeenAt = new Date(now).toISOString();
-  s.expiresAt = new Date(now + ttlMs).toISOString();
-  saveSessions(dataDir, db);
-  return s;
+  return updateJsonLocked(sessionsPath(dataDir), EMPTY, (db) => {
+    const s = db.sessions.find((x) => x.id === sessionId);
+    if (!s) return null;
+    const now = Date.now();
+    if (new Date(s.expiresAt).getTime() <= now) {
+      db.sessions = db.sessions.filter((x) => x.id !== sessionId);
+      return null;
+    }
+    s.lastSeenAt = new Date(now).toISOString();
+    s.expiresAt = new Date(now + ttlMs).toISOString();
+    return s;
+  });
 }
 
 export function revokeSession(dataDir, sessionId) {
-  const db = loadSessions(dataDir);
-  const before = db.sessions.length;
-  db.sessions = db.sessions.filter((x) => x.id !== sessionId);
-  if (db.sessions.length !== before) saveSessions(dataDir, db);
+  updateJsonLocked(sessionsPath(dataDir), EMPTY, (db) => {
+    db.sessions = db.sessions.filter((x) => x.id !== sessionId);
+    return null;
+  });
 }
 
 export function cookieName() {
