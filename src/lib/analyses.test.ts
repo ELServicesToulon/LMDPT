@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
@@ -40,6 +41,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('primaire-sans-la-gauche');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('guerre-civile-le-mot-de-l-autre');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('bataille-du-2-mai');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('corse-senat-non');
@@ -49,17 +51,18 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -72,7 +75,174 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse guerre civile du 30 octobre en une, sources, boîte DOE', () => {
+  it('analyse primaire sans la gauche du 1er novembre en une, sources, boîte DOE', () => {
+    expect(primaireSansLaGauche.slug).toBe('primaire-sans-la-gauche');
+    expect(primaireSansLaGauche.date).toBe('2026-11-01');
+    expect(primaireSansLaGauche.updated).toBe('2026-11-01');
+    expect(primaireSansLaGauche.title).toBe(
+      "Primaire d'Attal : la gauche est déjà sortie, et le seul candidat qui applaudit en veut une autre",
+    );
+    expect(primaireSansLaGauche.author).toBe('La rédaction');
+    expect(primaireSansLaGauche.author_role).toBe('Rédaction LMDPT');
+    expect(primaireSansLaGauche.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(primaireSansLaGauche.type_label).toBe('Analyse');
+    expect(primaireSansLaGauche.kicker).toBe('Analyse · La rédaction · 1er novembre 2026');
+    expect(primaireSansLaGauche.tags).toContain('doe');
+    expect(primaireSansLaGauche.x_hook).toBe(
+      "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour le gagnant.",
+    );
+    expect(primaireSansLaGauche.description.length).toBeLessThanOrEqual(200);
+    expect(primaireSansLaGauche.description).toMatch(/grande primaire/);
+    expect(primaireSansLaGauche.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(primaireSansLaGauche.sources_intro).toMatch(/Consultées du 29 au 31 octobre 2026/);
+    expect(primaireSansLaGauche.sources_closing).toMatch(/consultés du 29 au 31 octobre 2026/);
+    expect(primaireSansLaGauche.hues).toHaveLength(3);
+    expect(primaireSansLaGauche.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'lisnard',
+    ]);
+    expect(primaireSansLaGauche.hues.map((hue) => hue.label)).toEqual([
+      'Démocratie de règles claires',
+      'Pluralisme loyal',
+      "Transparence de l'action publique",
+    ]);
+    const attal = primaireSansLaGauche.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'attal',
+    );
+    expect(attal?.kind).toBe('prose');
+    if (attal?.kind === 'prose') {
+      expect(attal.title).toBe('Ce que propose Gabriel Attal');
+    }
+    const troisJours = primaireSansLaGauche.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'trois-jours',
+    );
+    expect(troisJours?.kind).toBe('prose');
+    if (troisJours?.kind === 'prose') {
+      expect(troisJours.title).toBe('Trois jours plus tard : sans la gauche, et avec une échéance');
+    }
+    const horloge = primaireSansLaGauche.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'horloge',
+    );
+    expect(horloge?.kind).toBe('prose');
+    if (horloge?.kind === 'prose') {
+      expect(horloge.title).toBe("L'horloge, elle, ne négocie pas");
+    }
+    const courants = primaireSansLaGauche.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('primaire-sans-la-gauche');
+    expect(entry?.href).toBe('/analyses/primaire-sans-la-gauche');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
+    expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
+    expect(getUneDuJour()?.slug).toBe('primaire-sans-la-gauche');
+    expect(getUneDuJour()?.date).toBe('2026-11-01');
+    const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(15);
+    const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.20minutes.fr/politique/4258468-20261029-presidentielle-2027-attal-veut-primaire-democrates-philippe-retailleau-reticents',
+    );
+    expect(sourceBlob).toMatch(/europe1\.fr\/politique\/presidentielle-2027-gabriel-attal-franchit-le-pas/);
+    expect(sourceBlob).toMatch(/lcp\.fr\/actualites\/grande-primaire-des-democrates/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/elections\/presidentielle\/ce-serait-du-suicide/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/elections\/presidentielle\/le-candidat-lr-a-la-presidentielle-bruno-retailleau-juge-fantaisiste/);
+    expect(sourceBlob).toMatch(/laprovence\.com\/article\/politique\/49845068298277/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/un-projet-cafouilleux/);
+    expect(sourceBlob).toMatch(/service-public\.gouv\.fr\/particuliers\/vosdroits\/F1939/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/fondements-textuels\/loi-n-62-1292/);
+    expect(sourceBlob).toMatch(/touteleurope\.eu\/vie-politique-des-etats-membres\/presidentielle-2027-calendrier/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/elections\/presidentielle\/pour-la-presidentielle-de-2027-francois-bayrou/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/les-republicains\/presidentielle-2027-david-lisnard-appelle/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/reconquete\/une-proposition-intelligente-eric-zemmour/);
+    expect(sourceBlob).toMatch(/midilibre\.fr\/2026\/10\/31\/presidentielle-2027-avec-son-projet-de-primaire/);
+    expect(sourceBlob).toMatch(/leparisien\.fr\/politique\/aurore-berge-sur-la-presidentielle-2027/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = primaireSansLaGauche.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Position sur une primaire commune',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.note).toMatch(/Non trouvé/);
+      const attalRow = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attalRow?.[1]).toMatch(/grande primaire des démocrates/);
+      expect(attalRow?.[1]).toMatch(/centre et de la droite/);
+      expect(attalRow?.[2]).toBe('[2][14]');
+      const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
+      expect(philippe?.[1]).toMatch(/rancœurs que d'unité/);
+      expect(philippe?.[2]).toBe('[2][4]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/Edouard Philippe y participe/);
+      expect(retailleau?.[2]).toBe('[4][5]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[1]).toMatch(/pas une alliance/);
+      expect(lisnard?.[2]).toBe('[1][4][12]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/non trouvée dans les sources consultées/);
+      expect(glucksmann?.[1]).toMatch(/sort d'une primaire/);
+      expect(glucksmann?.[2]).toBe('[2][14]');
+      const villepin = encadre.table.rows.find((row) => row[0]?.includes('Villepin'));
+      expect(villepin?.[1]).toMatch(/gentiment éconduits|Refus de participer/);
+      expect(villepin?.[2]).toBe('[6]');
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/Hors du périmètre/);
+      expect(lePen?.[2]).toBe('Aucune');
+      const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
+      expect(zemmour?.[1]).toMatch(/Retailleau à Attal/);
+      expect(zemmour?.[2]).toBe('[13]');
+    }
+    const analyseTexts = [
+      primaireSansLaGauche.chapo,
+      primaireSansLaGauche.description,
+      primaireSansLaGauche.disclaimer,
+      primaireSansLaGauche.sources_closing,
+      ...primaireSansLaGauche.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[15\]/);
+    expect(analyseTexts).toMatch(/tend\(re\) la main/);
+    expect(analyseTexts).toMatch(/concours de beauté à deux euros/);
+    expect(analyseTexts).toMatch(/vendredi 12 mars 2027/);
+    expect(analyseTexts).toMatch(/onze semaines de campagne/);
+    expect(analyseTexts).toMatch(/Je ne veux pas faire campagne pour Edouard Philippe/);
+    expect(analyseTexts).toMatch(/primaire du centre et de la droite/);
+    expect(analyseTexts).toMatch(/Aurore Bergé/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(primaireSansLaGauche)).not.toMatch(/<!--/);
+  });
+
+  it('analyse guerre civile du 30 octobre, sources, boîte DOE', () => {
     expect(guerreCivileLeMotDeLAutre.slug).toBe('guerre-civile-le-mot-de-l-autre');
     expect(guerreCivileLeMotDeLAutre.date).toBe('2026-10-30');
     expect(guerreCivileLeMotDeLAutre.updated).toBe('2026-10-30');
@@ -140,8 +310,8 @@ describe('analyses', () => {
       '/illustrations/unes/analyses/guerre-civile-le-mot-de-l-autre.jpg',
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
-    expect(getUneDuJour()?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-10-30');
+    expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
+    expect(getUneDuJour()?.date).toBe('2026-11-01');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -212,7 +382,7 @@ describe('analyses', () => {
     expect(JSON.stringify(guerreCivileLeMotDeLAutre)).not.toMatch(/<!--/);
   });
 
-  it('analyse bataille du 2 mai du 29 octobre en une, sources, boîte DOE, tableau vacances', () => {
+  it('analyse bataille du 2 mai du 29 octobre, sources, boîte DOE, tableau vacances', () => {
     expect(batailleDu2Mai.slug).toBe('bataille-du-2-mai');
     expect(batailleDu2Mai.date).toBe('2026-10-29');
     expect(batailleDu2Mai.updated).toBe('2026-10-29');
@@ -300,7 +470,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-10-30');
+    expect(getUneDuJour()?.date).toBe('2026-11-01');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -460,7 +630,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-10-30');
+    expect(getUneDuJour()?.date).toBe('2026-11-01');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);

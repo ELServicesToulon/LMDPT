@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
 import corseSenatNon from '../data/analyses/corse-senat-non.json';
@@ -43,6 +44,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: primaireSansLaGauche.slug,
+    title: primaireSansLaGauche.title,
+    description: primaireSansLaGauche.description,
+    date: primaireSansLaGauche.date,
+    published: primaireSansLaGauche.date,
+    updated: primaireSansLaGauche.updated,
+    href: '/analyses/primaire-sans-la-gauche',
+    cover: uneCover(
+      'primaire-sans-la-gauche',
+      "Aquarelle d'une longue table de réunion vide dans une salle claire, avec des chevalets nominatifs restés blancs, des chaises écartées de la table de chaque côté et une seule chaise au bout, tournée vers la table, dans une lumière d'automne.",
+    ),
+  },
   {
     slug: guerreCivileLeMotDeLAutre.slug,
     title: guerreCivileLeMotDeLAutre.title,
