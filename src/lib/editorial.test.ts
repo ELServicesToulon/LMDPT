@@ -133,7 +133,7 @@ describe('une du jour (égalité de date)', () => {
       "Primaire d'Attal : la gauche est déjà sortie, et le seul candidat qui applaudit en veut une autre",
     );
     expect(primaireSansLaGauche.x_hook).toBe(
-      "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour le gagnant.",
+      "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour un gagnant dont il ne partage pas les idées.",
     );
     expect(guerreCivileLeMotDeLAutre.x_hook).toBe(
       "« Guerre civile » : Bardella la voit venir de LFI, la gauche de Zemmour, Villepin de partout. Pendant ce temps, la justice instruit des dossiers bien réels : Nice, Rouen, Riposte Frontières, Trappes. Qui en parle, qui y pousse, qui la combat.",

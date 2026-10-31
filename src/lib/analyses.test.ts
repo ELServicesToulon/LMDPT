@@ -89,7 +89,7 @@ describe('analyses', () => {
     expect(primaireSansLaGauche.kicker).toBe('Analyse · La rédaction · 1er novembre 2026');
     expect(primaireSansLaGauche.tags).toContain('doe');
     expect(primaireSansLaGauche.x_hook).toBe(
-      "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour le gagnant.",
+      "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour un gagnant dont il ne partage pas les idées.",
     );
     expect(primaireSansLaGauche.description.length).toBeLessThanOrEqual(200);
     expect(primaireSansLaGauche.description).toMatch(/grande primaire/);
