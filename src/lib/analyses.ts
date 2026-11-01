@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
@@ -44,6 +45,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: retirezHalloween.slug,
+    title: retirezHalloween.title,
+    description: retirezHalloween.description,
+    date: retirezHalloween.date,
+    published: retirezHalloween.date,
+    updated: retirezHalloween.updated,
+    href: '/analyses/779-retirez-halloween',
+    cover: uneCover(
+      '779-retirez-halloween',
+      "Aquarelle d'un carnet de comptage ouvert sur un muret de pierre au crépuscule, couvert de bâtons tracés au crayon, avec d'un côté une banderole de manifestation roulée et de l'autre une citrouille d'Halloween éteinte, sous un réverbère qui s'allume.",
+    ),
+  },
   {
     slug: primaireSansLaGauche.slug,
     title: primaireSansLaGauche.title,
