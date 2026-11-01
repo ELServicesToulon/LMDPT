@@ -1,0 +1,381 @@
+{
+  "slug": "779-retirez-halloween",
+  "title": "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre",
+  "eyebrow": "Analyse · Mobilisation sociale",
+  "type_label": "Analyse",
+  "date": "2026-11-02",
+  "updated": "2026-11-02",
+  "kicker": "Analyse · La rédaction · 2 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Dimanche 1er novembre à midi, le ministère de l'Intérieur publie son bilan de l'acte III de la mobilisation contre la vie chère : 779 interpellations « au cumulé » [1]. Le chiffre fait aussitôt les titres. Mais il additionne deux choses différentes : les manifestations de la journée, et la soirée d'Halloween qui a suivi. Avant 21 heures, l'Intérieur compte 565 interpellations. Après 21 heures, pour Halloween, 214 [1]. Et le chiffre des blessés qu'on lit à côté, 116 membres des forces de l'ordre, ne couvre que la journée [1]. Nous avons remis chaque chiffre dans sa case. Ce que disent les chiffres officiels, une fois triés : moins de manifestants, et beaucoup moins d'interpellations.",
+  "description": "Dimanche 1er novembre à midi, le ministère de l'Intérieur publie son bilan de l'acte III de la mobilisation contre la vie chère : 779 interpellations « au cumulé ».",
+  "disclaimer": "Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées pour empêcher de manifester, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "mobilisation",
+    "interpellations",
+    "halloween",
+    "vie-chere",
+    "doe"
+  ],
+  "x_hook": "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Pour les seuls cortèges, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
+  "hues": [
+    {
+      "slug": "droite",
+      "label": "Statistique publique loyale",
+      "color": "#0066cc",
+      "rationale": "Un chiffre officiel vaut par son périmètre, annoncé clairement et stable d'une fois sur l'autre."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Redevabilité de la force publique",
+      "color": "#5a6570",
+      "rationale": "L'État qui interpelle, place en garde à vue ou assigne à résidence en rend compte, en nombre."
+    },
+    {
+      "slug": "lisnard",
+      "label": "Liberté de manifester et sûreté",
+      "color": "#162561",
+      "rationale": "On peut défendre les deux à la fois, à condition de mesurer séparément les cortèges et les violences."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "bilan",
+      "title": "Un bilan, deux soirées",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le communiqué de la place Beauvau, repris par l'AFP, se lit en deux temps [1]. D'abord la journée, arrêtée à 21 heures : 291 « actions de voie publique », c'est-à-dire des rassemblements et cortèges recensés, 320 000 manifestants selon le ministère, dont 70 000 à Paris, 565 interpellations et 116 membres des forces de l'ordre blessés [1]. Les organisateurs, l'intersyndicale de la jeunesse, annoncent de leur côté près de 500 000 manifestants [1]."
+        },
+        {
+          "type": "p",
+          "text": "Ensuite la nuit. « À partir de 21 heures, pour la soirée d'Halloween », le ministère compte 214 interpellations et 43 blessés parmi les forces de l'ordre [1]. Il donne lui-même un point de comparaison : 170 interpellations pour la soirée d'Halloween 2025, 148 en 2024 [1]."
+        },
+        {
+          "type": "p",
+          "text": "Le total, 779, est donc juste. C'est son étiquette qui flotte. Franceinfo écrit que 779 personnes ont été interpellées « au cours des manifestations » [3]. BFMTV, plus précis, parle de 779 interpellations « au cumulé » sur la journée de mobilisation « et dans la nuit, où se déroulaient les festivités d'Halloween » [1]. Et Le Figaro titre : « 779 interpellations en France, 116 forces de l'ordre blessées » [2]. Dans ce titre, le premier chiffre compte la journée et la nuit, le second seulement la journée. Si l'on compte la nuit pour les deux, les blessés sont 159 (116 + 43, notre calcul)."
+        },
+        {
+          "type": "p",
+          "text": "Personne n'a menti. Mais un lecteur pressé retient « 779 interpellations dans les manifs ». Ce chiffre-là n'existe pas."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "trois-samedis",
+      "title": "Trois samedis, une seule colonne",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le ministère met lui-même ses chiffres de 21 heures en regard des deux samedis précédents [1] :"
+        },
+        {
+          "type": "table",
+          "caption": "Trois samedis de mobilisation : manifestants, interpellations et forces de l'ordre blessées (ministère de l'Intérieur)",
+          "headers": [
+            "Samedi",
+            "Manifestants (Intérieur)",
+            "Interpellations",
+            "Forces de l'ordre blessées"
+          ],
+          "rows": [
+            [
+              "17 octobre",
+              "550 000",
+              "2 628",
+              "1 144"
+            ],
+            [
+              "24 octobre",
+              "410 000",
+              "1 435",
+              "267"
+            ],
+            [
+              "31 octobre (à 21 h)",
+              "320 000",
+              "565",
+              "116"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Source : ministère de l'Intérieur, communiqué du 1er novembre, via BFMTV et AFP [1]. Le communiqué, tel que la presse le rapporte, ne précise pas si les chiffres du 17 et du 24 octobre ont été arrêtés à la même heure.*"
+        },
+        {
+          "type": "p",
+          "text": "Le nombre de manifestants a baissé de 22 % en une semaine et de 42 % en deux semaines, selon le ministère [1]. Les interpellations, elles, ont baissé bien plus vite : 565 contre 2 628, c'est plus de quatre fois moins qu'au 17 octobre (notre calcul). Ramené au nombre de manifestants comptés par la police, on passe d'environ 4,8 interpellations pour mille manifestants le 17 octobre à 3,5 le 24, puis 1,8 le 31 (notre calcul). Même pente pour les blessés dans les forces de l'ordre : 1 144, puis 267, puis 116 [1]."
+        },
+        {
+          "type": "p",
+          "text": "Autrement dit, la foule a fondu d'un peu plus d'un tiers en deux semaines, les interpellations de près de quatre cinquièmes (notre calcul). Laurent Nuñez y voit l'effet de son dispositif. Samedi soir, il a défendu le choix « d'écarter ces cortèges des centres-villes » et « énormément de contrôles en amont » : « 40 000 dont 15 000 » dans l'agglomération parisienne, « particulièrement efficaces » et au « caractère dissuasif évident », selon lui [9]. C'est une explication possible. Les chiffres publiés ne permettent pas de la vérifier seuls : moins de monde, d'autres parcours et plus de contrôles ont joué en même temps."
+        },
+        {
+          "type": "p",
+          "text": "Halloween, à l'inverse, monte : 214 interpellations contre 170 l'an dernier, et 43 blessés contre 16 [1]. Le communiqué parle d'une seconde partie de soirée « sans incident majeur » [1]. Sans plus de détail, on ne sait pas quelle part de ces 214 interpellations a un lien avec le mouvement social."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "paris",
+      "title": "À Paris, même chiffre, autre compteur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le même flou existe à l'échelle de la capitale. Samedi à 21 heures, la préfecture de police annonce 79 interpellations à Paris [5]. Dimanche matin, le parquet de Paris en compte 105 : 88 « dans le cadre des manifestations » et 17 « dans le cadre de la nuit d'Halloween » [4][5]. Les 79 et les 88 ne viennent ni de la même source ni de la même heure. Le parquet indique aussi que 89 personnes sont en garde à vue [4]."
+        },
+        {
+          "type": "p",
+          "text": "Une interpellation n'est pas une garde à vue. Une garde à vue n'est pas une poursuite. Et une poursuite n'est pas une condamnation. Les personnes interpellées sont présumées innocentes. Combien de ces 779 interpellations finiront devant un tribunal ? Aucun bilan national n'est encore publié."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "grave",
+      "title": "Ce qui est grave, et ce qu'on ne sait pas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Rien de ce tri ne minimise les violences de fin de cortège. À Paris, porte de Charenton, un engin incendiaire a enflammé l'équipement d'un gendarme mobile. Le parquet de Paris a ouvert une enquête pour « tentative d'homicide sur personnes dépositaires de l'autorité publique ». « Des jets d'objets explosifs ont visé une quinzaine de gendarmes ainsi que des policiers », précise-t-il. Aucun suspect n'avait été interpellé pour ces faits dimanche [6]. Le gendarme touché a témoigné anonymement de « la peau qui pique » et de « la pluie » de projectiles reçue par son unité [6]. Laurent Nuñez parle d'une « tentative de meurtre » et d'une « violence inouïe » de « groupes de casseurs » [9]. Le ministère compte aussi 515 départs de feu traités et 36 commerces dégradés, dont 3 pillés [1]."
+        },
+        {
+          "type": "p",
+          "text": "Il manque en revanche un chiffre. Des avocats dénoncent des assignations à résidence visant des militants avant la mobilisation. Le ministère de l'Intérieur n'en a pas donné le nombre [3][4]."
+        },
+        {
+          "type": "p",
+          "text": "Les syndicats étudiants et lycéens appellent déjà à de nouveaux blocages mardi [4]. Il y aura un nouveau bilan."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées pour empêcher de manifester, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Les violences de l'acte III : ce qu'ont dit les candidats 2027 (relevé au 1er novembre, 19 h)",
+      "intro": "",
+      "table": {
+        "caption": "Les violences de l'acte III : ce qu'ont dit les candidats 2027 (relevé au 1er novembre, 19 h)",
+        "headers": [
+          "Candidat",
+          "Ce qu'il ou elle a dit du 31 octobre",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen (RN)",
+            "Geste « insupportable » : « Les auteurs de cette attaque doivent être retrouvés et condamnés avec la plus grande sévérité. » Remercie les forces de l'ordre face aux « hordes d'extrême gauche ».",
+            "[7]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "« Celui qui a fait ça doit en répondre. Il s'agit d'une tentative de meurtre. »",
+            "[7]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Salue une foule « aussi disciplinée » et accuse les médias de « minorer » la mobilisation. Emmanuel Macron « devra céder ou partir ».",
+            "[8]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Non trouvé dans les sources consultées à 19 h. Invité du 20 h de TF1 dimanche soir, sur la mobilisation sociale et la primaire.",
+            "[10]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "Non trouvé dans les sources consultées.",
+            "Aucune"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique / PS)",
+            "Non trouvé dans les sources consultées.",
+            "Aucune"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Non trouvé dans les sources consultées.",
+            "Aucune"
+          ],
+          [
+            "Éric Zemmour (Reconquête)",
+            "Non trouvé dans les sources consultées.",
+            "Aucune"
+          ],
+          [
+            "Natacha Polony",
+            "Non trouvé sur les violences. Dimanche, elle revendique 174 parrainages.",
+            "[4]"
+          ]
+        ]
+      },
+      "note": "*Méthode : sources de presse listées ci-dessous, du 31 octobre au 1er novembre 2026, 19 h. « Non trouvé » veut dire absent de ces sources, pas absence de position. Aucun sondage n'est cité.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Statistique publique loyale** : un chiffre officiel vaut par son périmètre, annoncé clairement et stable d'une fois sur l'autre.",
+            "**Redevabilité de la force publique** : l'État qui interpelle, place en garde à vue ou assigne à résidence en rend compte, en nombre.",
+            "**Liberté de manifester et sûreté** : on peut défendre les deux à la fois, à condition de mesurer séparément les cortèges et les violences."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** la communication de crise qui met en avant le chiffre le plus gros, et la lecture qui se sert d'un seul total pour juger tout un mouvement, dans un sens comme dans l'autre."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 1er novembre 2026.",
+  "sources_groups": [
+    {
+      "title": "Presse, ministère de l'Intérieur et parquet",
+      "items": [
+        {
+          "label": "1. BFMTV avec AFP, « Manifestations du 31 octobre : 779 interpellations en France, \"sans incident majeur en seconde partie de soirée\" », 1er novembre 2026 (communiqué du ministère de l'Intérieur : chiffres à 21 h et comparaisons avec le 17 et le 24 octobre, soirée d'Halloween, contrôles, départs de feu, commerces) : https://www.bfmtv.com/police-justice/manifestations-du-31-octobre-779-interpellations-en-france-sans-incident-majeur-en-seconde-partie-de-soiree_AD-202611010262.html ; même communiqué cité par La Nouvelle République, 1er novembre 2026 : https://www.lanouvellerepublique.fr/a-la-une/acte-iii-contre-la-vie-chere-un-total-de-779-interpellations-sans-incident-majeur-en-seconde-partie-de-soiree-1793544242",
+          "lead": "1. BFMTV avec AFP, « Manifestations du 31 octobre : 779 interpellations en France, \"sans incident majeur en seconde partie de soirée\" », 1er novembre 2026 (communiqué du ministère de l'Intérieur : chiffres à 21 h et comparaisons avec le 17 et le 24 octobre, soirée d'Halloween, contrôles, départs de feu, commerces)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/police-justice/manifestations-du-31-octobre-779-interpellations-en-france-sans-incident-majeur-en-seconde-partie-de-soiree_AD-202611010262.html",
+              "url": "https://www.bfmtv.com/police-justice/manifestations-du-31-octobre-779-interpellations-en-france-sans-incident-majeur-en-seconde-partie-de-soiree_AD-202611010262.html"
+            },
+            {
+              "label": "même communiqué cité par La Nouvelle République, 1er novembre 2026",
+              "url": "https://www.lanouvellerepublique.fr/a-la-une/acte-iii-contre-la-vie-chere-un-total-de-779-interpellations-sans-incident-majeur-en-seconde-partie-de-soiree-1793544242"
+            }
+          ]
+        },
+        {
+          "label": "2. Le Figaro, « Manifestations du 31 octobre : 779 interpellations en France, 116 forces de l'ordre blessées et 36 commerces dégradés », 1er novembre 2026 : https://www.lefigaro.fr/actualite-france/manifestations-du-31-octobre-779-interpellations-en-france-116-forces-de-l-ordre-blessees-et-36-commerces-degrades-20261101",
+          "lead": "2. Le Figaro, « Manifestations du 31 octobre : 779 interpellations en France, 116 forces de l'ordre blessées et 36 commerces dégradés », 1er novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/actualite-france/manifestations-du-31-octobre-779-interpellations-en-france-116-forces-de-l-ordre-blessees-et-36-commerces-degrades-20261101",
+              "url": "https://www.lefigaro.fr/actualite-france/manifestations-du-31-octobre-779-interpellations-en-france-116-forces-de-l-ordre-blessees-et-36-commerces-degrades-20261101"
+            }
+          ]
+        },
+        {
+          "label": "3. Franceinfo, direct du 1er novembre 2026 (779 interpellations « au cours des manifestations », assignations à résidence) : https://www.franceinfo.fr/economie/greve/direct-mobilisation-sociale-la-jeunesse-ne-lache-pas-declare-la-porte-parole-de-l-union-etudiante-au-lendemain-des-manifestations-du-31-octobre_8262449.html",
+          "lead": "3. Franceinfo, direct du 1er novembre 2026 (779 interpellations « au cours des manifestations », assignations à résidence)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/greve/direct-mobilisation-sociale-la-jeunesse-ne-lache-pas-declare-la-porte-parole-de-l-union-etudiante-au-lendemain-des-manifestations-du-31-octobre_8262449.html",
+              "url": "https://www.franceinfo.fr/economie/greve/direct-mobilisation-sociale-la-jeunesse-ne-lache-pas-declare-la-porte-parole-de-l-union-etudiante-au-lendemain-des-manifestations-du-31-octobre_8262449.html"
+            }
+          ]
+        },
+        {
+          "label": "4. BFMTV, direct du 1er novembre 2026 (bilan du parquet de Paris à 11 h 58, assignations à résidence, appel à des blocages mardi, Natacha Polony) : https://www.bfmtv.com/societe/manifestations/direct-colere-sociale-les-syndicats-etudiants-et-lyceens-appellent-a-de-nouveaux-blocages-mardi_LN-202611010101.html",
+          "lead": "4. BFMTV, direct du 1er novembre 2026 (bilan du parquet de Paris à 11 h 58, assignations à résidence, appel à des blocages mardi, Natacha Polony)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/societe/manifestations/direct-colere-sociale-les-syndicats-etudiants-et-lyceens-appellent-a-de-nouveaux-blocages-mardi_LN-202611010101.html",
+              "url": "https://www.bfmtv.com/societe/manifestations/direct-colere-sociale-les-syndicats-etudiants-et-lyceens-appellent-a-de-nouveaux-blocages-mardi_LN-202611010101.html"
+            }
+          ]
+        },
+        {
+          "label": "5. France 3 Paris Île-de-France, « Mobilisation du 31 octobre à Paris : trois membres des forces de l'ordre blessés par un jet de cocktail molotov » (bilan de la préfecture de police à 21 h, bilan du parquet de Paris le 1er novembre) : https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/mobilisation-du-31-octobre-a-paris-trois-membres-des-forces-de-l-ordre-blesses-par-un-jet-de-cocktail-molotov-3442341.html",
+          "lead": "5. France 3 Paris Île-de-France, « Mobilisation du 31 octobre à Paris : trois membres des forces de l'ordre blessés par un jet de cocktail molotov » (bilan de la préfecture de police à 21 h, bilan du parquet de Paris le 1er novembre)",
+          "links": [
+            {
+              "label": "https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/mobilisation-du-31-octobre-a-paris-trois-membres-des-forces-de-l-ordre-blesses-par-un-jet-de-cocktail-molotov-3442341.html",
+              "url": "https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/mobilisation-du-31-octobre-a-paris-trois-membres-des-forces-de-l-ordre-blesses-par-un-jet-de-cocktail-molotov-3442341.html"
+            }
+          ]
+        },
+        {
+          "label": "6. Franceinfo, « Une enquête ouverte pour \"tentative d'homicide\" après un jet de cocktail Molotov sur des gendarmes à Paris », 1er novembre 2026 : https://www.franceinfo.fr/societe/manifestations/une-enquete-ouverte-pour-tentative-d-homicide-apres-un-jet-de-cocktail-molotov-sur-des-gendarmes-a-paris_8262818.html",
+          "lead": "6. Franceinfo, « Une enquête ouverte pour \"tentative d'homicide\" après un jet de cocktail Molotov sur des gendarmes à Paris », 1er novembre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/manifestations/une-enquete-ouverte-pour-tentative-d-homicide-apres-un-jet-de-cocktail-molotov-sur-des-gendarmes-a-paris_8262818.html",
+              "url": "https://www.franceinfo.fr/societe/manifestations/une-enquete-ouverte-pour-tentative-d-homicide-apres-un-jet-de-cocktail-molotov-sur-des-gendarmes-a-paris_8262818.html"
+            }
+          ]
+        },
+        {
+          "label": "7. France 24 (dépêche AFP), « Jet de molotov contre les forces de l'ordre : Le Pen et Retailleau dénoncent un acte \"insupportable\" », 31 octobre 2026 : https://www.france24.com/fr/info-en-continu/20261031-jet-de-molotov-contre-les-forces-de-l-ordre-le-pen-et-retailleau-d%C3%A9noncent-un-acte-insupportable",
+          "lead": "7. France 24 (dépêche AFP), « Jet de molotov contre les forces de l'ordre : Le Pen et Retailleau dénoncent un acte \"insupportable\" », 31 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261031-jet-de-molotov-contre-les-forces-de-l-ordre-le-pen-et-retailleau-d%C3%A9noncent-un-acte-insupportable",
+              "url": "https://www.france24.com/fr/info-en-continu/20261031-jet-de-molotov-contre-les-forces-de-l-ordre-le-pen-et-retailleau-d%C3%A9noncent-un-acte-insupportable"
+            }
+          ]
+        },
+        {
+          "label": "8. Le Parisien, « Manifestations du 31 octobre : Jean-Luc Mélenchon répète qu'Emmanuel Macron \"devra céder ou partir\" », 31 octobre 2026 : https://www.leparisien.fr/politique/manifestations-du-31-octobre-jean-luc-melenchon-repete-quemmanuel-macron-devra-ceder-ou-partir-31-10-2026-K4PZEKH63RDF7PKTI5553LBRXE.php",
+          "lead": "8. Le Parisien, « Manifestations du 31 octobre : Jean-Luc Mélenchon répète qu'Emmanuel Macron \"devra céder ou partir\" », 31 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/politique/manifestations-du-31-octobre-jean-luc-melenchon-repete-quemmanuel-macron-devra-ceder-ou-partir-31-10-2026-K4PZEKH63RDF7PKTI5553LBRXE.php",
+              "url": "https://www.leparisien.fr/politique/manifestations-du-31-octobre-jean-luc-melenchon-repete-quemmanuel-macron-devra-ceder-ou-partir-31-10-2026-K4PZEKH63RDF7PKTI5553LBRXE.php"
+            }
+          ]
+        },
+        {
+          "label": "9. Franceinfo, « Mobilisation du 31 octobre : \"Les cortèges se sont bien déroulés\", malgré la \"violence inouïe\" de \"casseurs\", constate Laurent Nuñez », 31 octobre 2026 : https://www.franceinfo.fr/societe/manifestations/video-mobilisation-du-31-octobre-les-corteges-se-sont-bien-deroules-malgre-la-violence-inouie-de-casseurs-constate-laurent-nunez_8262167.html",
+          "lead": "9. Franceinfo, « Mobilisation du 31 octobre : \"Les cortèges se sont bien déroulés\", malgré la \"violence inouïe\" de \"casseurs\", constate Laurent Nuñez », 31 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/manifestations/video-mobilisation-du-31-octobre-les-corteges-se-sont-bien-deroules-malgre-la-violence-inouie-de-casseurs-constate-laurent-nunez_8262167.html",
+              "url": "https://www.franceinfo.fr/societe/manifestations/video-mobilisation-du-31-octobre-les-corteges-se-sont-bien-deroules-malgre-la-violence-inouie-de-casseurs-constate-laurent-nunez_8262167.html"
+            }
+          ]
+        },
+        {
+          "label": "10. TF1info, « Primaire, mobilisation sociale... Édouard Philippe invité du 20H de TF1 ce dimanche », 1er novembre 2026 : https://www.tf1info.fr/politique/direct-interview-presidentielle-edouard-philippe-invite-du-20h-de-tf1-ce-dimanche-primaire-centre-droite-democrates-gabriel-attal-mobilisation-sociale-2473135.html",
+          "lead": "10. TF1info, « Primaire, mobilisation sociale... Édouard Philippe invité du 20H de TF1 ce dimanche », 1er novembre 2026",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/direct-interview-presidentielle-edouard-philippe-invite-du-20h-de-tf1-ce-dimanche-primaire-centre-droite-democrates-gabriel-attal-mobilisation-sociale-2473135.html",
+              "url": "https://www.tf1info.fr/politique/direct-interview-presidentielle-edouard-philippe-invite-du-20h-de-tf1-ce-dimanche-primaire-centre-droite-democrates-gabriel-attal-mobilisation-sociale-2473135.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 1er novembre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/guerre-civile-le-mot-de-l-autre",
+      "label": "« Guerre civile » : chacun la voit venir de l'autre camp"
+    },
+    {
+      "href": "/analyses/debord-watts-frigo-sans-courant",
+      "label": "Le frigo sans courant"
+    },
+    {
+      "href": "/analyses/presidentielle-2027-preparation",
+      "label": "Présidentielle 2027 — préparation"
+    }
+  ]
+}

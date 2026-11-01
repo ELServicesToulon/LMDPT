@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
 import batailleDu2Mai from '../data/analyses/bataille-du-2-mai.json';
@@ -41,6 +42,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('779-retirez-halloween');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('primaire-sans-la-gauche');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('guerre-civile-le-mot-de-l-autre');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('bataille-du-2-mai');
@@ -51,18 +53,19 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -75,7 +78,174 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse primaire sans la gauche du 1er novembre en une, sources, boîte DOE', () => {
+  it('analyse 779 retirez Halloween du 2 novembre en une, sources, boîte DOE', () => {
+    expect(retirezHalloween.slug).toBe('779-retirez-halloween');
+    expect(retirezHalloween.date).toBe('2026-11-02');
+    expect(retirezHalloween.updated).toBe('2026-11-02');
+    expect(retirezHalloween.title).toBe(
+      "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre",
+    );
+    expect(retirezHalloween.author).toBe('La rédaction');
+    expect(retirezHalloween.author_role).toBe('Rédaction LMDPT');
+    expect(retirezHalloween.eyebrow).toBe('Analyse · Mobilisation sociale');
+    expect(retirezHalloween.type_label).toBe('Analyse');
+    expect(retirezHalloween.kicker).toBe('Analyse · La rédaction · 2 novembre 2026');
+    expect(retirezHalloween.tags).toContain('doe');
+    expect(retirezHalloween.x_hook).toBe(
+      "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Pour les seuls cortèges, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
+    );
+    expect(retirezHalloween.description.length).toBeLessThanOrEqual(200);
+    expect(retirezHalloween.description).toMatch(/779 interpellations/);
+    expect(retirezHalloween.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(retirezHalloween.sources_intro).toMatch(/Consultées le 1er novembre 2026/);
+    expect(retirezHalloween.sources_closing).toMatch(/consultés le 1er novembre 2026/);
+    expect(retirezHalloween.hues).toHaveLength(3);
+    expect(retirezHalloween.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'lisnard',
+    ]);
+    expect(retirezHalloween.hues.map((hue) => hue.label)).toEqual([
+      'Statistique publique loyale',
+      'Redevabilité de la force publique',
+      'Liberté de manifester et sûreté',
+    ]);
+    const bilan = retirezHalloween.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'bilan',
+    );
+    expect(bilan?.kind).toBe('prose');
+    if (bilan?.kind === 'prose') {
+      expect(bilan.title).toBe('Un bilan, deux soirées');
+    }
+    const troisSamedis = retirezHalloween.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'trois-samedis',
+    );
+    expect(troisSamedis?.kind).toBe('prose');
+    if (troisSamedis?.kind === 'prose') {
+      expect(troisSamedis.title).toBe('Trois samedis, une seule colonne');
+      const table = troisSamedis.blocks.find((block) => block.type === 'table');
+      expect(table?.type).toBe('table');
+      if (table?.type === 'table') {
+        expect(table.headers).toEqual([
+          'Samedi',
+          'Manifestants (Intérieur)',
+          'Interpellations',
+          "Forces de l'ordre blessées",
+        ]);
+        expect(table.rows).toHaveLength(3);
+        expect(table.rows[0]).toEqual(['17 octobre', '550 000', '2 628', '1 144']);
+        expect(table.rows[2]).toEqual(['31 octobre (à 21 h)', '320 000', '565', '116']);
+      }
+    }
+    const paris = retirezHalloween.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'paris',
+    );
+    expect(paris?.kind).toBe('prose');
+    if (paris?.kind === 'prose') {
+      expect(paris.title).toBe('À Paris, même chiffre, autre compteur');
+    }
+    const courants = retirezHalloween.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('779-retirez-halloween');
+    expect(entry?.href).toBe('/analyses/779-retirez-halloween');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/779-retirez-halloween.jpg');
+    expect(entry?.cover?.alt).toMatch(/carnet de comptage ouvert/);
+    expect(getUneDuJour()?.slug).toBe('779-retirez-halloween');
+    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    const nSources = retirezHalloween.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(10);
+    const sourceBlob = JSON.stringify(retirezHalloween.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.bfmtv.com/police-justice/manifestations-du-31-octobre-779-interpellations-en-france-sans-incident-majeur-en-seconde-partie-de-soiree_AD-202611010262.html',
+    );
+    expect(sourceBlob).toMatch(/lanouvellerepublique\.fr\/a-la-une\/acte-iii-contre-la-vie-chere/);
+    expect(sourceBlob).toMatch(/lefigaro\.fr\/actualite-france\/manifestations-du-31-octobre-779/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/economie\/greve\/direct-mobilisation-sociale/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/societe\/manifestations\/direct-colere-sociale/);
+    expect(sourceBlob).toMatch(/france3-regions\.franceinfo\.fr\/paris-ile-de-france\/paris\/mobilisation-du-31-octobre/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/societe\/manifestations\/une-enquete-ouverte-pour-tentative-d-homicide/);
+    expect(sourceBlob).toMatch(/france24\.com\/fr\/info-en-continu\/20261031-jet-de-molotov/);
+    expect(sourceBlob).toMatch(/leparisien\.fr\/politique\/manifestations-du-31-octobre-jean-luc-melenchon/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/societe\/manifestations\/video-mobilisation-du-31-octobre-les-corteges/);
+    expect(sourceBlob).toMatch(/tf1info\.fr\/politique\/direct-interview-presidentielle-edouard-philippe/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = retirezHalloween.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        "Ce qu'il ou elle a dit du 31 octobre",
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.note).toMatch(/Non trouvé/);
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/insupportable/);
+      expect(lePen?.[2]).toBe('[7]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/tentative de meurtre/);
+      expect(retailleau?.[2]).toBe('[7]');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/aussi disciplinée/);
+      expect(melenchon?.[2]).toBe('[8]');
+      const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
+      expect(philippe?.[1]).toMatch(/Invité du 20 h de TF1/);
+      expect(philippe?.[2]).toBe('[10]');
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/Non trouvé dans les sources consultées/);
+      expect(attal?.[2]).toBe('Aucune');
+      const polony = encadre.table.rows.find((row) => row[0]?.includes('Polony'));
+      expect(polony?.[1]).toMatch(/174 parrainages/);
+      expect(polony?.[2]).toBe('[4]');
+    }
+    const analyseTexts = [
+      retirezHalloween.chapo,
+      retirezHalloween.description,
+      retirezHalloween.disclaimer,
+      retirezHalloween.sources_closing,
+      ...retirezHalloween.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[10\]/);
+    expect(analyseTexts).toMatch(/779 interpellations/);
+    expect(analyseTexts).toMatch(/tableau à périmètre fixe/);
+    expect(analyseTexts).toMatch(/quatre fois moins/);
+    expect(analyseTexts).toMatch(/Laurent Nuñez/);
+    expect(analyseTexts).toMatch(/assignations à résidence/);
+    expect(analyseTexts).toMatch(/tentative d'homicide/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(retirezHalloween)).not.toMatch(/<!--/);
+  });
+
+  it('analyse primaire sans la gauche du 1er novembre, sources, boîte DOE', () => {
     expect(primaireSansLaGauche.slug).toBe('primaire-sans-la-gauche');
     expect(primaireSansLaGauche.date).toBe('2026-11-01');
     expect(primaireSansLaGauche.updated).toBe('2026-11-01');
@@ -139,8 +309,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/primaire-sans-la-gauche');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
     expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
-    expect(getUneDuJour()?.slug).toBe('primaire-sans-la-gauche');
-    expect(getUneDuJour()?.date).toBe('2026-11-01');
+    expect(getUneDuJour()?.slug).not.toBe('primaire-sans-la-gauche');
+    expect(getUneDuJour()?.date).toBe('2026-11-02');
     const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
@@ -311,7 +481,7 @@ describe('analyses', () => {
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
     expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-11-01');
+    expect(getUneDuJour()?.date).toBe('2026-11-02');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -470,7 +640,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-11-01');
+    expect(getUneDuJour()?.date).toBe('2026-11-02');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -630,7 +800,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-11-01');
+    expect(getUneDuJour()?.date).toBe('2026-11-02');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
