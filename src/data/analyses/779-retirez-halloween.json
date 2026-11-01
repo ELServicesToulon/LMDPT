@@ -10,7 +10,7 @@
   "author_role": "Rédaction LMDPT",
   "chapo": "Dimanche 1er novembre à midi, le ministère de l'Intérieur publie son bilan de l'acte III de la mobilisation contre la vie chère : 779 interpellations « au cumulé » [1]. Le chiffre fait aussitôt les titres. Mais il additionne deux choses différentes : les manifestations de la journée, et la soirée d'Halloween qui a suivi. Avant 21 heures, l'Intérieur compte 565 interpellations. Après 21 heures, pour Halloween, 214 [1]. Et le chiffre des blessés qu'on lit à côté, 116 membres des forces de l'ordre, ne couvre que la journée [1]. Nous avons remis chaque chiffre dans sa case. Ce que disent les chiffres officiels, une fois triés : moins de manifestants, et beaucoup moins d'interpellations.",
   "description": "Dimanche 1er novembre à midi, le ministère de l'Intérieur publie son bilan de l'acte III de la mobilisation contre la vie chère : 779 interpellations « au cumulé ».",
-  "disclaimer": "Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées pour empêcher de manifester, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "disclaimer": "Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées autour des manifestations, que des avocats accusent de viser des manifestants, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
   "tags": [
     "lmdpt",
     "analyse",
@@ -21,7 +21,7 @@
     "vie-chere",
     "doe"
   ],
-  "x_hook": "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Pour les seuls cortèges, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
+  "x_hook": "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Avant 21 h, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
   "hues": [
     {
       "slug": "droite",
@@ -111,11 +111,11 @@
         },
         {
           "type": "p",
-          "text": "Le nombre de manifestants a baissé de 22 % en une semaine et de 42 % en deux semaines, selon le ministère [1]. Les interpellations, elles, ont baissé bien plus vite : 565 contre 2 628, c'est plus de quatre fois moins qu'au 17 octobre (notre calcul). Ramené au nombre de manifestants comptés par la police, on passe d'environ 4,8 interpellations pour mille manifestants le 17 octobre à 3,5 le 24, puis 1,8 le 31 (notre calcul). Même pente pour les blessés dans les forces de l'ordre : 1 144, puis 267, puis 116 [1]."
+          "text": "Le nombre de manifestants a baissé de 22 % en une semaine et de 42 % en deux semaines, selon le ministère [1]. Les interpellations, elles, ont baissé bien plus vite : 565 contre 2 628, c'est plus de quatre fois moins qu'au 17 octobre (notre calcul). Ramené au nombre de manifestants comptés par le ministère, on passe d'environ 4,8 interpellations pour mille manifestants le 17 octobre à 3,5 le 24, puis 1,8 le 31 (notre calcul). Même pente pour les blessés dans les forces de l'ordre : 1 144, puis 267, puis 116 [1]."
         },
         {
           "type": "p",
-          "text": "Autrement dit, la foule a fondu d'un peu plus d'un tiers en deux semaines, les interpellations de près de quatre cinquièmes (notre calcul). Laurent Nuñez y voit l'effet de son dispositif. Samedi soir, il a défendu le choix « d'écarter ces cortèges des centres-villes » et « énormément de contrôles en amont » : « 40 000 dont 15 000 » dans l'agglomération parisienne, « particulièrement efficaces » et au « caractère dissuasif évident », selon lui [9]. C'est une explication possible. Les chiffres publiés ne permettent pas de la vérifier seuls : moins de monde, d'autres parcours et plus de contrôles ont joué en même temps."
+          "text": "Autrement dit, la foule a fondu de plus de deux cinquièmes en deux semaines (42 %, selon le ministère), les interpellations de près de quatre cinquièmes (notre calcul). Laurent Nuñez y voit l'effet de son dispositif. Samedi soir, il a défendu le choix « d'écarter ces cortèges des centres-villes » et « énormément de contrôles en amont » : « 40 000 dont 15 000 » dans l'agglomération parisienne, « particulièrement efficaces » et au « caractère dissuasif évident », selon lui [9]. C'est une explication possible. Les chiffres publiés ne permettent pas de la vérifier seuls : moins de monde, d'autres parcours et plus de contrôles ont joué en même temps."
         },
         {
           "type": "p",
@@ -134,7 +134,7 @@
         },
         {
           "type": "p",
-          "text": "Une interpellation n'est pas une garde à vue. Une garde à vue n'est pas une poursuite. Et une poursuite n'est pas une condamnation. Les personnes interpellées sont présumées innocentes. Combien de ces 779 interpellations finiront devant un tribunal ? Aucun bilan national n'est encore publié."
+          "text": "Une interpellation n'est pas une garde à vue. Une garde à vue n'est pas une poursuite. Et une poursuite n'est pas une condamnation. Les personnes interpellées sont présumées innocentes. Combien de ces 779 interpellations finiront devant un tribunal ? Aucun bilan national n'a encore été publié, à notre connaissance."
         }
       ]
     },
@@ -145,11 +145,11 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Rien de ce tri ne minimise les violences de fin de cortège. À Paris, porte de Charenton, un engin incendiaire a enflammé l'équipement d'un gendarme mobile. Le parquet de Paris a ouvert une enquête pour « tentative d'homicide sur personnes dépositaires de l'autorité publique ». « Des jets d'objets explosifs ont visé une quinzaine de gendarmes ainsi que des policiers », précise-t-il. Aucun suspect n'avait été interpellé pour ces faits dimanche [6]. Le gendarme touché a témoigné anonymement de « la peau qui pique » et de « la pluie » de projectiles reçue par son unité [6]. Laurent Nuñez parle d'une « tentative de meurtre » et d'une « violence inouïe » de « groupes de casseurs » [9]. Le ministère compte aussi 515 départs de feu traités et 36 commerces dégradés, dont 3 pillés [1]."
+          "text": "Rien de ce tri ne minimise les violences de fin de cortège. À Paris, porte de Charenton, un engin incendiaire a enflammé l'équipement d'un gendarme mobile [7]. Le parquet de Paris a ouvert une enquête pour « tentative d'homicide sur personnes dépositaires de l'autorité publique ». « Des jets d'objets explosifs ont visé une quinzaine de gendarmes ainsi que des policiers », précise-t-il. Dimanche après-midi, le parquet indiquait qu'aucun mis en cause n'avait été interpellé « à ce stade » pour ces faits [6]. Le gendarme touché a témoigné de « la peau qui pique » et de « la pluie » de projectiles reçue par son unité [6]. Laurent Nuñez parle d'une « tentative de meurtre » et d'une « violence inouïe » de « groupes de casseurs » [9]. Le ministère compte aussi 515 départs de feu traités et 36 commerces dégradés, dont 3 pillés [1]."
         },
         {
           "type": "p",
-          "text": "Il manque en revanche un chiffre. Des avocats dénoncent des assignations à résidence visant des militants avant la mobilisation. Le ministère de l'Intérieur n'en a pas donné le nombre [3][4]."
+          "text": "Il manque en revanche un chiffre. Des avocats, dont Raphaël Kempf et Me Pascual, dénoncent des assignations à résidence visant des militants avant la mobilisation ; les documents invoquent la prévention du terrorisme. Sollicité par l'AFP, le ministère de l'Intérieur n'a pas donné leur nombre [3][4]."
         },
         {
           "type": "p",
@@ -164,7 +164,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "*Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées pour empêcher de manifester, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+          "text": "*Un bilan chiffré sert à deux choses : savoir ce qui s'est passé, et comparer d'une semaine à l'autre. Le communiqué de dimanche permettait les deux, puisqu'il séparait la journée et la soirée. C'est le chiffre « au cumulé », mis en avant en premier, qui a brouillé la lecture. Ensuite, des rédactions l'ont collé à un nombre de blessés qui ne couvre que la journée. Nous demandons au ministère une chose simple pour le prochain bilan : un tableau à périmètre fixe. Les manifestations d'un côté, le reste de la nuit de l'autre, à la même heure chaque semaine, avec le nombre de gardes à vue, puis de poursuites. Et le nombre d'assignations à résidence prononcées autour des manifestations, que des avocats accusent de viser des manifestants, puisque c'est l'État qui les décide. Ce n'est pas une faveur à la presse. C'est ce qui permet à chacun, au gouvernement compris, de dire si la situation s'améliore. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
         }
       ]
     },
@@ -183,7 +183,7 @@
         "rows": [
           [
             "Marine Le Pen (RN)",
-            "Geste « insupportable » : « Les auteurs de cette attaque doivent être retrouvés et condamnés avec la plus grande sévérité. » Remercie les forces de l'ordre face aux « hordes d'extrême gauche ».",
+            "Dénonce, selon l'AFP, un geste « insupportable » : « Les auteurs de cette attaque doivent être retrouvés et condamnés avec la plus grande sévérité. » Remercie les forces de l'ordre face aux « hordes d'extrême gauche ».",
             "[7]"
           ],
           [
@@ -193,7 +193,7 @@
           ],
           [
             "Jean-Luc Mélenchon (LFI)",
-            "Salue une foule « aussi disciplinée » et accuse les médias de « minorer » la mobilisation. Emmanuel Macron « devra céder ou partir ».",
+            "Salue une foule « aussi disciplinée » et accuse les médias d'avoir minoré la mobilisation (« en minorant une nouvelle fois notre nombre »). Emmanuel Macron « devra céder ou partir ».",
             "[8]"
           ],
           [
@@ -246,7 +246,7 @@
         },
         {
           "type": "p",
-          "text": "**En tension avec :** la communication de crise qui met en avant le chiffre le plus gros, et la lecture qui se sert d'un seul total pour juger tout un mouvement, dans un sens comme dans l'autre."
+          "text": "**En tension avec :** la communication qui met en avant un total sans son détail, et la lecture qui se sert d'un seul total pour juger tout un mouvement, dans un sens comme dans l'autre."
         }
       ]
     }

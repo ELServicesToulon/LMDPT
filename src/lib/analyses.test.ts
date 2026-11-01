@@ -92,7 +92,7 @@ describe('analyses', () => {
     expect(retirezHalloween.kicker).toBe('Analyse · La rédaction · 2 novembre 2026');
     expect(retirezHalloween.tags).toContain('doe');
     expect(retirezHalloween.x_hook).toBe(
-      "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Pour les seuls cortèges, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
+      "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Avant 21 h, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
     );
     expect(retirezHalloween.description.length).toBeLessThanOrEqual(200);
     expect(retirezHalloween.description).toMatch(/779 interpellations/);

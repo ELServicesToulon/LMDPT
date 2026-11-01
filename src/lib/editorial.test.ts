@@ -134,7 +134,7 @@ describe('une du jour (égalité de date)', () => {
       "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre",
     );
     expect(retirezHalloween.x_hook).toBe(
-      "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Pour les seuls cortèges, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
+      "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Avant 21 h, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
     );
     expect(primaireSansLaGauche.x_hook).toBe(
       "La « primaire des démocrates » de Gabriel Attal devait aller de Glucksmann à Lisnard. Trois jours plus tard, c'est une primaire « du centre et de la droite ». Et le seul candidat qui applaudit en veut une autre, ouverte jusqu'à Reconquête, sans promesse de faire campagne pour un gagnant dont il ne partage pas les idées.",
