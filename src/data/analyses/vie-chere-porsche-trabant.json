@@ -1,0 +1,844 @@
+{
+  "slug": "vie-chere-porsche-trabant",
+  "title": "Vie chère : la Porsche au prix d'une Trabant ? On a fait l'addition",
+  "eyebrow": "Analyse · Vie chère",
+  "type_label": "Analyse",
+  "date": "2026-11-03",
+  "updated": "2026-11-03",
+  "kicker": "Analyse · La rédaction · 3 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Manifester contre la vie chère, est-ce vouloir une Porsche au prix d'une Trabant ? Nous avons posé la question au pied de la lettre et testé les revendications une par une. Sur l'essence, la formule tient : on ne bloque pas depuis Paris un prix qui se fixe ailleurs. Sur les bourses étudiantes, la taxe Zucman ou un coup de pouce au Smic, elle tient mal. Et une question reste sans réponse : cette fois, qui paie la Trabant ?",
+  "description": "Manifester contre la vie chère, est-ce vouloir une Porsche au prix d'une Trabant ? Nous avons posé la question au pied de la lettre et testé les revendications une par une.",
+  "disclaimer": "La formule de la Porsche et de la Trabant mérite mieux qu'un slogan. Sur l'énergie, elle dit une chose vraie : aucun gouvernement ne peut promettre un prix français pour un produit qui se négocie dans le monde entier, sans le payer avec de la dette. Nous l'avons fait en 2022, pour 36 Md€ nets, et nous le paierons encore longtemps. Mais elle devient injuste quand elle met dans le même sac un étudiant qui chiffre ses demandes, un syndicat qui propose une recette et une coordination qui n'en propose aucune. Le vrai débat de 2027 n'est pas de savoir si les Français veulent tout pour rien. C'est de savoir qui encaisse un choc venu d'ailleurs. Aujourd'hui, ce sont les ménages. Les candidats qui veulent leur dire non ont aussi le devoir de leur dire qui paiera à leur place. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "vie-chere",
+    "carburants",
+    "smic",
+    "doe"
+  ],
+  "x_hook": "Manifester contre la vie chère, c'est vouloir une Porsche au prix d'une Trabant ? On a fait l'addition, mesure par mesure. Sur l'essence, la formule tient. Sur les bourses, la taxe Zucman ou le Smic, beaucoup moins.",
+  "hues": [
+    {
+      "slug": "droite",
+      "label": "Réalisme budgétaire",
+      "color": "#0066cc",
+      "rationale": "Un prix bloqué ou une taxe baissée pour tous se paie, en dette ou en impôts, comme l'a montré le bouclier de 2021-2024."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Aide ciblée plutôt que générale",
+      "color": "#5a6570",
+      "rationale": "Aider d'abord ceux qui dépendent de leur voiture et des revenus modestes, comme le recommandent la Cour des comptes et la Banque de France."
+    },
+    {
+      "slug": "parti-socialiste",
+      "label": "Justice fiscale chiffrée",
+      "color": "#ff8080",
+      "rationale": "Une recette sur les plus hauts patrimoines se discute sur son rendement, pas sur son principe."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "revendications",
+      "title": "Ce que demandent les cortèges",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Trois samedis de mobilisation ont eu lieu, les 17, 24 et 31 octobre. Une grève intersyndicale est prévue le 5 novembre, et la coordination annonce un acte IV les 5, 6 et 7 novembre [1][4]. Mais il n'y a pas une liste de revendications. Il y en a plusieurs, portées par des groupes différents [1][6] :"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**l'intersyndicale** demande des hausses de salaires, du Smic et de toutes les aides sociales (au moins 100 € de plus par mois sur le Smic, selon France 2 [21]) ; la CGT et Solidaires veulent aussi indexer les salaires sur les prix, et la CGT baisser la TVA ;",
+            "**les organisations étudiantes** (Fage, Union étudiante, Unef) portent dix mesures, dont 250 000 places en plus et des bourses relevées de 200 € par mois ;",
+            "**les lycéens** réclament des professeurs remplacés et des classes moins chargées ;",
+            "**la coordination gilets jaunes / Bloquons tout**, qui appelle aux actes, parle surtout de libertés et de démocratie [2][3]."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Un communiqué gilets jaunes du 22 octobre, cité par actu.fr, demande aussi le blocage des prix de l'essence, du gaz et de l'électricité, ainsi qu'une baisse des loyers [5]. Nous n'avons pas pu lire l'original."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "liste-sans-prix",
+      "title": "Encadré · Une liste sans prix",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La coordination qui appelle aux actes II et III publie un « Nous exigeons » [2]. On y trouve la dignité, les libertés, l'interdiction des LBD et des grenades, la fin des gardes à vue de mineurs, la démission d'Emmanuel Macron et la fin de « cette démocratie représentative qui méprise les intérêts du peuple ». Le texte de l'acte III ajoute la levée des couvre-feux, une amnistie, des états généraux et un processus constituant [3]."
+        },
+        {
+          "type": "p",
+          "text": "Aucune de ces demandes n'est une mesure économique chiffrée. La coordination renvoie à ses assemblées : « Dans chaque assemblée locale, puis nationalement, nous construirons les revendications » [4]. Son site affiche bien un tableau de hausses de prix depuis 2017 (par exemple +86,6 % pour le gazole). Le chiffre est cohérent avec l'Insee : le gazole est passé d'environ 1,21 €/L en mai 2017 à 2,21 €/L en août 2026 (+83 %) et 2,34 €/L en septembre (+93 %) [41]."
+        },
+        {
+          "type": "p",
+          "text": "Les seuls chiffrages trouvés viennent d'ailleurs : des étudiants, qui évaluent eux-mêmes leurs dix mesures à 10 Md€ par an, et de la CFDT, qui chiffre une taxe sur les très grandes fortunes [1]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "contexte",
+      "title": "Le contexte : un choc que les ménages paient seuls",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les prix auraient augmenté de 3,4 % (estimation provisoire) sur un an en octobre, selon l'Insee. L'énergie monte de 24,1 %, les produits frais de 8,0 %. L'alimentation dans son ensemble ne prend que 1,2 %, et les produits manufacturés baissent un peu (−0,2 %) [7]."
+        },
+        {
+          "type": "p",
+          "text": "En septembre, l'Insee prévoyait un pouvoir d'achat en baisse de 0,4 % en 2026 [8]. Les revenus du travail reculeraient, en euros constants, « pour la première fois depuis 1993 (hors crise sanitaire) ». En fin d'année, le salaire réel resterait « en deçà de celui de 2021 ». L'économie perdrait 52 000 emplois salariés, même si l'emploi non salarié continuerait de progresser, et le chômage monterait à 8,6 % [8]."
+        },
+        {
+          "type": "p",
+          "text": "La phrase clé est ailleurs. L'Insee note que le choc est moins fort qu'en 2022 pour l'économie dans son ensemble. Mais il pèse plus sur les ménages, car il serait cette fois « largement à leur charge » : l'État a choisi des aides ciblées et non des mesures générales [8]. Sur le diagnostic, les manifestants ont donc l'Insee de leur côté."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "fil-rouge",
+      "title": "Le fil rouge : un choc qui vient de l'extérieur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "D'où vient la hausse à la pompe ? La Banque de France a fait le calcul. Entre février et août 2026, les prix des produits pétroliers ont augmenté d'environ 26 %. Environ 60 % de cette hausse vient de la marge de raffinage [9]."
+        },
+        {
+          "type": "p",
+          "text": "**La marge de raffinage**, c'est l'écart entre le prix du pétrole brut et le prix de l'essence ou du gazole qui sortent de la raffinerie. Quand les raffineries manquent dans le monde, à cause de la guerre au Moyen-Orient par exemple, cet écart grimpe. Il se fixe sur un marché mondial, pas à Paris. Et la France importe environ 90 % de ses besoins, rappelle l'économiste Jacques Percebois, cité par Le Télégramme [14]."
+        },
+        {
+          "type": "p",
+          "text": "C'est le point de départ de tout le reste. Un pays qui achète plus cher ce qu'il importe s'appauvrit. L'Insee parle d'une dégradation des « termes de l'échange », qui « appauvrit » le pays [8]. On peut décider qui supporte cette perte : l'État, les entreprises ou les ménages. On ne peut pas la faire disparaître."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "mesures",
+      "title": "Mesure par mesure",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Geler les prix à la pompe : la formule tient"
+        },
+        {
+          "type": "p",
+          "text": "Geler les prix bute sur trois limites."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Le droit.** Le Code de commerce (article L410-2) permet de bloquer des prix en cas de crise, mais pour six mois au plus [13].",
+            "**Les stocks.** Si le prix est bloqué en France et pas ailleurs, les fournisseurs vendent ailleurs. Avec 90 % d'importations, le risque est la pénurie [14].",
+            "**Le précédent.** En 1990, la France a fixé les marges par décret et bloqué les taxes. Mais le prix maximal suivait le cours du pétrole chaque jour. Il a donc augmenté quand même [16]."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Plafonner le prix à la pompe en laissant les entreprises absorber la différence n'aurait « aucun coût direct pour les finances publiques », explique l'économiste Sylvain Bersinger (cabinet Bersingéco), qui alerte toutefois sur les effets indirects [15]. TotalEnergies affirme de son côté, en réponse à Jean-Luc Mélenchon, que son raffinage en France a connu « six exercices (...) déficitaires sur les dix dernières années » [16]."
+        },
+        {
+          "type": "p",
+          "text": "Reste la version « l'État paie la différence ». C'est le **bouclier tarifaire** de 2021-2024 : l'État a plafonné les factures d'énergie et versé des remises à la pompe. Selon la Cour des comptes, l'ensemble de ces mesures a coûté environ 72 Md€ bruts et 36 Md€ nets, une fois déduites les recettes en plus, et l'aide aux ménages a été donnée « sans ciblage » [11]. Le bouclier a fait baisser l'inflation d'environ 2,2 points, selon la Banque de France. Mais face à un choc qui dure, il « ne ferait que différer » la hausse, avec un « coût budgétaire prohibitif » [10]."
+        },
+        {
+          "type": "p",
+          "text": "Sur ce point, oui, c'est bien la Porsche au prix de la Trabant. Le gouvernement a pris d'autres voies : libérer 10 millions de barils de gazole sur trois mois, pour une baisse annoncée « entre 12 et 18 centimes par litre », sur trois mois [17]."
+        },
+        {
+          "type": "h3",
+          "text": "Baisser la TVA sur l'essence : la formule tient aussi"
+        },
+        {
+          "type": "p",
+          "text": "Le RN propose de passer la TVA sur les carburants, le fioul et le gaz de 20 % à 5,5 % [16]. Le droit européen fixe un **plancher de TVA de 15 %** : un pays de l'Union ne peut pas descendre plus bas sur les carburants. La Commission a déjà critiqué l'Espagne et la Pologne pour des baisses de ce type [16]."
+        },
+        {
+          "type": "p",
+          "text": "L'autre levier est l'**accise**. C'est une taxe fixe par litre (l'ancienne TICPE), qui ne dépend pas du prix. La baisser est permis. Mais cela coûte cher : annuler les hausses décidées depuis 2017 coûterait « 12 milliards d'euros », reconnaissait le 12 septembre le porte-parole du RN Thomas Ménagé [16]. Éric Zemmour avance « à peu près 12 milliards » pour baisser l'accise d'un tiers [16]. L'Allemagne a choisi cette voie : −17 centimes par litre depuis le 1er octobre, pour 2,5 Md€ [14]."
+        },
+        {
+          "type": "p",
+          "text": "Une baisse de taxe générale aide tout le monde, y compris ceux qui roulent beaucoup et gagnent bien leur vie. C'est la critique « sans ciblage » de la Cour des comptes [11]. Ici aussi, la formule tient."
+        },
+        {
+          "type": "h3",
+          "text": "Le coup de pouce au Smic : ça se discute"
+        },
+        {
+          "type": "p",
+          "text": "Le Smic est revalorisé chaque année selon une formule. Un « coup de pouce », c'est une hausse décidée en plus par le gouvernement. Il n'y en a pas eu depuis juillet 2012 [22]."
+        },
+        {
+          "type": "p",
+          "text": "Les sources se contredisent sur ce que prépare l'exécutif, et nous le disons tel quel :"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**RTL** (28 octobre) évoque un coup de pouce « envisagé » : +1,5 % au lieu de 1 %, soit environ 20 € net par mois. Coût pour les entreprises : 2,5 Md€ par an, selon Michel Picon, de l'U2P, qui représente les artisans et commerçants [20] ;",
+            "**France 2** (28 octobre) évoque une revalorisation avancée à décembre, avec en plus un coup de pouce de 0,5 %, soit environ 22 € net. Les syndicats veulent au moins 100 € [21] ;",
+            "**LaBanque.org** (29 octobre) écrit au contraire que l'exécutif « écarte tout coup de pouce » et étudie seulement d'avancer au 1er décembre la hausse prévue, avec une décision vers le 30 novembre [22]."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Le ministre du Travail et des Solidarités, Jean-Pierre Farandou, affirme dans Capital le 29 octobre : « Smic à 1 700 euros net, vous détruiriez 250 000 emplois ». Selon LaBanque.org, ce chiffrage n'a pas été accompagné d'une publication méthodologique détaillée [22]."
+        },
+        {
+          "type": "p",
+          "text": "Un coup de pouce modeste n'a rien d'une Porsche : le gouvernement l'aurait lui-même envisagé, selon RTL et France 2, ce que LaBanque.org dément. Une hausse de 100 € ou plus est un autre débat, plus lourd, au moment où l'emploi salarié recule [8]."
+        },
+        {
+          "type": "h3",
+          "text": "Indexer les salaires sur les prix : un vrai débat"
+        },
+        {
+          "type": "p",
+          "text": "Indexer, c'est augmenter automatiquement les salaires au rythme des prix. La Banque de France et le Trésor décrivent le risque d'une boucle : les salaires montent, les entreprises remontent leurs prix, et l'inflation s'installe [23][24]. Face à un choc importé, indexer déplace la perte des salariés vers les entreprises, sans la supprimer [8]. Ce n'est pas une absurdité. C'est un choix de répartition, qui a un coût."
+        },
+        {
+          "type": "h3",
+          "text": "Les prestations : surtout ne pas couper"
+        },
+        {
+          "type": "p",
+          "text": "L'intersyndicale demande de revaloriser les aides (APL, allocations familiales, RSA) [1]. Une partie de la demande consiste surtout à refuser des économies : le budget 2027 prévoit de geler les allocations familiales, pour environ 500 M€ [19]. Nous n'avons trouvé aucun chiffrage de l'ensemble. Cela heurte l'objectif du gouvernement de ramener le déficit à 5,0 % du PIB en 2027, après 5,4 % en 2026 [18]."
+        },
+        {
+          "type": "h3",
+          "text": "Les dix mesures étudiantes : la formule ne tient pas"
+        },
+        {
+          "type": "p",
+          "text": "Les organisations étudiantes chiffrent elles-mêmes leurs dix mesures à 10 Md€ par an [1]. On peut juger la somme trop élevée. Mais elle est affichée et assumée. C'est l'inverse d'une Porsche réclamée au prix d'une Trabant : c'est une voiture dont on montre le prix. Le gouvernement a déjà accordé une partie (15 000 places, fin de Parcoursup en 2028), selon actu.fr [5]. Pour les lycéens, il a annoncé 3 000 remplaçants le 8 octobre [1]."
+        },
+        {
+          "type": "h3",
+          "text": "La taxe Zucman et l'ISF : ce n'est pas une dépense"
+        },
+        {
+          "type": "p",
+          "text": "La **taxe Zucman** est un impôt minimum de 2 % par an sur les patrimoines de plus de 100 M€. La CFDT estime qu'elle rapporterait 5,5 Md€ par an, et environ 15 Md€ pour un « ISF climatique » [1]. Ce sont les calculs du syndicat."
+        },
+        {
+          "type": "p",
+          "text": "Le débat porte sur le rendement. L'économiste Gabriel Zucman parlait de 20 Md€. Sept économistes jugent qu'elle rapporterait environ quatre fois moins, autour de 5 Md€, à cause des départs et de l'optimisation [25]. Le Conseil d'analyse économique cite une étude scandinave selon laquelle, sur les hauts patrimoines, un euro d'impôt attendu ne rapporte qu'environ 26 centimes, une fois pris en compte les départs et surtout l'optimisation [26]."
+        },
+        {
+          "type": "p",
+          "text": "Mais c'est une recette, pas une dépense. La formule de la Porsche ne s'applique pas. On peut contester son rendement ou sa légalité, pas la traiter de cadeau gratuit."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "fin-du-mois",
+      "title": "Fin du mois, fin du monde",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Il existe une vraie tension. Baisser le prix des carburants pousse à en consommer plus, alors que la sortie des énergies fossiles fait aussi consensus dans une large partie de la classe politique. Édouard Philippe, par exemple, écrivait mi-septembre qu'« à plus long terme, l'électrification est la solution » [16]."
+        },
+        {
+          "type": "p",
+          "text": "Il faut pourtant rendre justice aux manifestants. Ceux qui dépendent de leur voiture pour travailler ne peuvent pas passer à l'électrique en un mois. L'Insee note que la hausse des carburants a stimulé les achats de véhicules, notamment électriques [8]. Les autres paient le plein. La vraie question est donc : comment aider ceux qui n'ont pas le choix, sans encourager tout le monde à consommer plus ? Les aides ciblées répondent à cette question. Une baisse générale des taxes n'y répond pas."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "precedents",
+      "title": "Ce que coûtaient les fois précédentes",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Ce que coûtaient les fois précédentes",
+          "headers": [
+            "Précédent",
+            "Coût",
+            "Source"
+          ],
+          "rows": [
+            [
+              "Mesures gilets jaunes 2018-2019",
+              "10 à 17 Md€ selon le périmètre (17 Md€ selon Bruno Le Maire ; 11 Md€ pour la Cour des comptes (budget de l'État 2019) ; 11,7 Md€ dont 10,3 Md€ issus des décisions de décembre pour l'OFCE)",
+              "[27][28][29]"
+            ],
+            [
+              "Indemnité inflation 2021",
+              "3,8 Md€ : 100 € versés à 38 millions de personnes, avec des doublons estimés à 1,7 million de bénéficiaires (environ 170 M€ versés à tort)",
+              "[12]"
+            ],
+            [
+              "Bouclier et remises 2021-2024",
+              "Environ 72 Md€ bruts, 36 Md€ nets",
+              "[11]"
+            ],
+            [
+              "Contributions sur les rentes des énergéticiens 2022-2023",
+              "Environ 4,5 Md€ prévus en recettes",
+              "[11]"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sources : Cour des comptes, OFCE, Ouest-France, franceinfo. Les montants ne sont pas tous calculés de la même façon.*"
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "bilan",
+      "title": "Le bilan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La formule vise juste sur un point : réclamer en même temps le gel des prix de l'énergie, une baisse de la TVA, l'indexation des salaires, la hausse de toutes les prestations et 100 € de plus sur le Smic. Personne n'a fait l'addition de cet ensemble. Nous ne l'avons trouvée dans aucun document."
+        },
+        {
+          "type": "p",
+          "text": "Elle vise mal sur le reste. Les étudiants montrent leur facture. La CFDT chiffre une recette. Selon RTL et France 2, le gouvernement a lui-même envisagé un geste sur le Smic. Et surtout, la Trabant n'est pas gratuite pour les ménages : cette fois, ce sont eux qui la paient, selon l'Insee [8]."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*La formule de la Porsche et de la Trabant mérite mieux qu'un slogan. Sur l'énergie, elle dit une chose vraie : aucun gouvernement ne peut promettre un prix français pour un produit qui se négocie dans le monde entier, sans le payer avec de la dette. Nous l'avons fait en 2022, pour 36 Md€ nets, et nous le paierons encore longtemps. Mais elle devient injuste quand elle met dans le même sac un étudiant qui chiffre ses demandes, un syndicat qui propose une recette et une coordination qui n'en propose aucune. Le vrai débat de 2027 n'est pas de savoir si les Français veulent tout pour rien. C'est de savoir qui encaisse un choc venu d'ailleurs. Aujourd'hui, ce sont les ménages. Les candidats qui veulent leur dire non ont aussi le devoir de leur dire qui paiera à leur place. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Vie chère : ce qu'ont dit les candidats 2027 (relevé au 2 novembre 2026)",
+      "intro": "",
+      "table": {
+        "caption": "Vie chère : ce qu'ont dit les candidats 2027 (relevé au 2 novembre 2026)",
+        "headers": [
+          "Candidat",
+          "Position sur les revendications vie chère",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen / Jordan Bardella (RN)",
+            "TVA de 20 % à 5,5 % sur les carburants, le fioul et le gaz ; retour des accises à leur niveau de 2017 (« 12 milliards d'euros » selon T. Ménagé) ; TVA à 0 % sur 100 produits de première nécessité. Le Pen juge (17 octobre) les « revendications sociales légitimes » mais « prises en otage par l'extrême gauche » ; Bardella parle (19 octobre) d'une « colère légitime »",
+            "[16][30][31][32]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "Blocage des prix des carburants à leur niveau d'avant la guerre (1,70 € le litre d'essence) et des marges des raffineurs. Dans Mediapart (entretien publié le 23 octobre) : « plus les jours passent, plus le pouvoir n'aura plus qu'un seul choix, signer en bas du cahier de revendications ou s'en aller »",
+            "[16][33]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Supprimer les certificats d'économie d'énergie, pour 15 à 17 centimes de moins par litre, sans toucher à la TVA (septembre). Réaction à la liste d'octobre : non trouvé dans les sources consultées",
+            "[16]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Le 1er novembre sur TF1 : une hausse du Smic lui « paraît une solution illusoire », il n'y aura pas « d'argent magique » ; les demandes des lycéens sont « à bien des égards fondées ». En septembre : doubler les aides ciblées, financées par des économies",
+            "[34][16]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "« Aller droit au brut » : jusqu'à 250 € net de plus pour le salaire médian, financé notamment par une TVA sociale (coût : 40 Md€). Sa porte-parole Céline Géraud, le 27 octobre, à propos de la colère lycéenne : l'inquiétude est « entendable »",
+            "[35][36]"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique)",
+            "Plan en dix points présenté à Matignon le 22 octobre : Smic à 1 700 € net, CSG progressive, chèques énergie financés par une taxe sur les superprofits, encadrement des marges (−20 c/L), abrogation de Parcoursup",
+            "[37]"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "S'est exprimé sur l'ordre public. Sur les prix et les salaires : non trouvé dans les sources consultées",
+            "[38]"
+          ],
+          [
+            "Dominique de Villepin",
+            "Soutien à la fin de Parcoursup, au vote à 16 ans et à l'interdiction des LBD. Sur les prix et les salaires : non trouvé dans les sources consultées",
+            "[39][40]"
+          ],
+          [
+            "Éric Zemmour (Reconquête)",
+            "Baisser d'un tiers l'accise sur les carburants (« à peu près 12 milliards », −27 c/L sur l'essence), financé par la suppression de l'aide publique au développement (mai). Réaction aux mobilisations d'octobre : non trouvé dans les sources consultées",
+            "[16]"
+          ]
+        ]
+      },
+      "note": "*Méthode : positions relevées dans les sources listées ci-dessous, au 2 novembre 2026. « Non trouvé » veut dire absent de ces sources, pas absence de position. Aucun sondage n'est cité.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Réalisme budgétaire :** un prix bloqué ou une taxe baissée pour tous se paie, en dette ou en impôts, comme l'a montré le bouclier de 2021-2024.",
+            "**Aide ciblée plutôt que générale :** aider d'abord ceux qui dépendent de leur voiture et des revenus modestes, comme le recommandent la Cour des comptes et la Banque de France.",
+            "**Justice fiscale chiffrée :** une recette sur les plus hauts patrimoines se discute sur son rendement, pas sur son principe."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** le blocage général des prix de l'énergie, la baisse de TVA sous le plancher européen, et le refus de principe de tout coup de pouce au Smic."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 2 novembre 2026.",
+  "sources_groups": [
+    {
+      "title": "Presse, Insee, Banque de France, Cour des comptes et institutions",
+      "items": [
+        {
+          "label": "1. franceinfo (M. Duguet avec l'AFP), « Mobilisation de la jeunesse, retour des gilets jaunes, appel de l'intersyndicale : on vous résume les revendications et la réponse du gouvernement », 24/10/2026. https://www.franceinfo.fr/societe/education/blocage-des-lycees/mobilisation-de-la-jeunesse-retour-des-gilets-jaunes-appel-de-l-intersyndicale-on-vous-resume-les-revendications-et-la-reponse-du-gouvernement_8248597.html",
+          "lead": "1. franceinfo (M. Duguet avec l'AFP), « Mobilisation de la jeunesse, retour des gilets jaunes, appel de l'intersyndicale : on vous résume les revendications et la réponse du gouvernement », 24/10/2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/mobilisation-de-la-jeunesse-retour-des-gilets-jaunes-appel-de-l-intersyndicale-on-vous-resume-les-revendications-et-la-reponse-du-gouvernement_8248597.html",
+              "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/mobilisation-de-la-jeunesse-retour-des-gilets-jaunes-appel-de-l-intersyndicale-on-vous-resume-les-revendications-et-la-reponse-du-gouvernement_8248597.html"
+            }
+          ]
+        },
+        {
+          "label": "2. Coordination 17 octobre, « Macron doit partir… » (actes II et III). https://17octobregiletjaune.net/macron-doit-partir/",
+          "lead": "2. Coordination 17 octobre, « Macron doit partir… » (actes II et III)",
+          "links": [
+            {
+              "label": "https://17octobregiletjaune.net/macron-doit-partir/",
+              "url": "https://17octobregiletjaune.net/macron-doit-partir/"
+            }
+          ]
+        },
+        {
+          "label": "3. Coordination 17 octobre, « Pour nos libertés ! » (acte III). https://17octobregiletjaune.net/pour-nos-libertes/",
+          "lead": "3. Coordination 17 octobre, « Pour nos libertés ! » (acte III)",
+          "links": [
+            {
+              "label": "https://17octobregiletjaune.net/pour-nos-libertes/",
+              "url": "https://17octobregiletjaune.net/pour-nos-libertes/"
+            }
+          ]
+        },
+        {
+          "label": "4. Coordination 17 octobre, page d'accueil (acte IV, tableau des prix). https://17octobregiletjaune.net/",
+          "lead": "4. Coordination 17 octobre, page d'accueil (acte IV, tableau des prix)",
+          "links": [
+            {
+              "label": "https://17octobregiletjaune.net/",
+              "url": "https://17octobregiletjaune.net/"
+            }
+          ]
+        },
+        {
+          "label": "5. actu.fr, direct des manifestations du 31 octobre, 31/10/2026. https://actu.fr/societe/direct-manifestations-du-31-octobre-acte-iii-des-gilets-jaunes-ce-samedi-suivez-la-mobilisation-partout-en-france_64997812.html",
+          "lead": "5. actu.fr, direct des manifestations du 31 octobre, 31/10/2026",
+          "links": [
+            {
+              "label": "https://actu.fr/societe/direct-manifestations-du-31-octobre-acte-iii-des-gilets-jaunes-ce-samedi-suivez-la-mobilisation-partout-en-france_64997812.html",
+              "url": "https://actu.fr/societe/direct-manifestations-du-31-octobre-acte-iii-des-gilets-jaunes-ce-samedi-suivez-la-mobilisation-partout-en-france_64997812.html"
+            }
+          ]
+        },
+        {
+          "label": "6. Syndicollectif, « Après le 17 octobre 2026 : positions syndicales ». https://syndicollectif.fr/apres-le-17-octobre-2026-positions-syndicales/",
+          "lead": "6. Syndicollectif, « Après le 17 octobre 2026 : positions syndicales »",
+          "links": [
+            {
+              "label": "https://syndicollectif.fr/apres-le-17-octobre-2026-positions-syndicales/",
+              "url": "https://syndicollectif.fr/apres-le-17-octobre-2026-positions-syndicales/"
+            }
+          ]
+        },
+        {
+          "label": "7. Insee, Informations rapides n°266, indice des prix à la consommation, 30/10/2026. https://www.insee.fr/fr/statistiques/9107965",
+          "lead": "7. Insee, Informations rapides n°266, indice des prix à la consommation, 30/10/2026",
+          "links": [
+            {
+              "label": "https://www.insee.fr/fr/statistiques/9107965",
+              "url": "https://www.insee.fr/fr/statistiques/9107965"
+            }
+          ]
+        },
+        {
+          "label": "8. Insee, Note de conjoncture, 10/09/2026. https://www.insee.fr/fr/statistiques/fichier/9050757/ndc-sept-2026.pdf",
+          "lead": "8. Insee, Note de conjoncture, 10/09/2026",
+          "links": [
+            {
+              "label": "https://www.insee.fr/fr/statistiques/fichier/9050757/ndc-sept-2026.pdf",
+              "url": "https://www.insee.fr/fr/statistiques/fichier/9050757/ndc-sept-2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "9. Banque de France, billet n°464, « Pourquoi le prix des carburants ne suit-il pas toujours strictement le cours mondial du pétrole ? ». https://www.banque-france.fr/fr/publications-et-statistiques/publications/pourquoi-le-prix-des-carburants-ne-suit-il-pas-toujours-strictement-le-cours-mondial-du-petrole",
+          "lead": "9. Banque de France, billet n°464, « Pourquoi le prix des carburants ne suit-il pas toujours strictement le cours mondial du pétrole ? »",
+          "links": [
+            {
+              "label": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/pourquoi-le-prix-des-carburants-ne-suit-il-pas-toujours-strictement-le-cours-mondial-du-petrole",
+              "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/pourquoi-le-prix-des-carburants-ne-suit-il-pas-toujours-strictement-le-cours-mondial-du-petrole"
+            }
+          ]
+        },
+        {
+          "label": "10. Banque de France, Bulletin n°253, « Bouclier tarifaire sur les prix de l'énergie en France : quel bilan ? ». https://www.banque-france.fr/fr/publications-et-statistiques/publications/bouclier-tarifaire-sur-les-prix-de-lenergie-en-france-quel-bilan",
+          "lead": "10. Banque de France, Bulletin n°253, « Bouclier tarifaire sur les prix de l'énergie en France : quel bilan ? »",
+          "links": [
+            {
+              "label": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/bouclier-tarifaire-sur-les-prix-de-lenergie-en-france-quel-bilan",
+              "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/bouclier-tarifaire-sur-les-prix-de-lenergie-en-france-quel-bilan"
+            }
+          ]
+        },
+        {
+          "label": "11. Cour des comptes, synthèse du rapport sur les mesures exceptionnelles de lutte contre la hausse des prix de l'énergie, mars 2024. https://www.ccomptes.fr/sites/default/files/2024-03/20240315_synthese-Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf",
+          "lead": "11. Cour des comptes, synthèse du rapport sur les mesures exceptionnelles de lutte contre la hausse des prix de l'énergie, mars 2024",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/sites/default/files/2024-03/20240315_synthese-Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf",
+              "url": "https://www.ccomptes.fr/sites/default/files/2024-03/20240315_synthese-Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf"
+            }
+          ]
+        },
+        {
+          "label": "12. Cour des comptes, « La mise en place d'une indemnité inflation en 2021 ». https://www.ccomptes.fr/fr/publications/la-mise-en-place-dune-indemnite-inflation-en-2021",
+          "lead": "12. Cour des comptes, « La mise en place d'une indemnité inflation en 2021 »",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/fr/publications/la-mise-en-place-dune-indemnite-inflation-en-2021",
+              "url": "https://www.ccomptes.fr/fr/publications/la-mise-en-place-dune-indemnite-inflation-en-2021"
+            }
+          ]
+        },
+        {
+          "label": "13. TF1info, « Info ou intox : blocage des prix, taxation des superprofits pétroliers, des mesures sans risque ? ». https://www.tf1info.fr/economie/video-info-infox-blocage-des-prix-taxation-des-superprofits-petroliers-des-mesures-sans-risque-2465170.html",
+          "lead": "13. TF1info, « Info ou intox : blocage des prix, taxation des superprofits pétroliers, des mesures sans risque ? »",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/economie/video-info-infox-blocage-des-prix-taxation-des-superprofits-petroliers-des-mesures-sans-risque-2465170.html",
+              "url": "https://www.tf1info.fr/economie/video-info-infox-blocage-des-prix-taxation-des-superprofits-petroliers-des-mesures-sans-risque-2465170.html"
+            }
+          ]
+        },
+        {
+          "label": "14. Le Télégramme, « Carburants : pourquoi le blocage des prix prôné par LFI n'est pas forcément une solution adaptée ». https://www.letelegramme.fr/france/carburants-pourquoi-le-blocage-des-prix-prone-par-lfi-nest-pas-forcement-une-solution-adaptee-7123869.php",
+          "lead": "14. Le Télégramme, « Carburants : pourquoi le blocage des prix prôné par LFI n'est pas forcément une solution adaptée »",
+          "links": [
+            {
+              "label": "https://www.letelegramme.fr/france/carburants-pourquoi-le-blocage-des-prix-prone-par-lfi-nest-pas-forcement-une-solution-adaptee-7123869.php",
+              "url": "https://www.letelegramme.fr/france/carburants-pourquoi-le-blocage-des-prix-prone-par-lfi-nest-pas-forcement-une-solution-adaptee-7123869.php"
+            }
+          ]
+        },
+        {
+          "label": "15. Le Figaro, « Carburants : le blocage des prix à la pompe serait-il vraiment indolore pour les finances publiques ? », 30/09/2026. https://www.lefigaro.fr/conso/carburants-le-blocage-des-prix-a-la-pompe-serait-il-vraiment-indolore-pour-les-finances-publiques-comme-le-suggere-sophie-binet-20260930",
+          "lead": "15. Le Figaro, « Carburants : le blocage des prix à la pompe serait-il vraiment indolore pour les finances publiques ? », 30/09/2026",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/conso/carburants-le-blocage-des-prix-a-la-pompe-serait-il-vraiment-indolore-pour-les-finances-publiques-comme-le-suggere-sophie-binet-20260930",
+              "url": "https://www.lefigaro.fr/conso/carburants-le-blocage-des-prix-a-la-pompe-serait-il-vraiment-indolore-pour-les-finances-publiques-comme-le-suggere-sophie-binet-20260930"
+            }
+          ]
+        },
+        {
+          "label": "16. franceinfo, « Baisse des taxes, blocage des prix, hausse des aides ciblées… que proposent les candidats à la présidentielle ? », 18/09/2026. https://www.franceinfo.fr/economie/automobile/essence/baisse-des-taxes-blocage-des-prix-hausse-des-aides-ciblees-face-a-la-nouvelle-flambee-des-carburants-que-proposent-les-candidats-a-la-presidentielle_8198603.html",
+          "lead": "16. franceinfo, « Baisse des taxes, blocage des prix, hausse des aides ciblées… que proposent les candidats à la présidentielle ? », 18/09/2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/automobile/essence/baisse-des-taxes-blocage-des-prix-hausse-des-aides-ciblees-face-a-la-nouvelle-flambee-des-carburants-que-proposent-les-candidats-a-la-presidentielle_8198603.html",
+              "url": "https://www.franceinfo.fr/economie/automobile/essence/baisse-des-taxes-blocage-des-prix-hausse-des-aides-ciblees-face-a-la-nouvelle-flambee-des-carburants-que-proposent-les-candidats-a-la-presidentielle_8198603.html"
+            }
+          ]
+        },
+        {
+          "label": "17. Europe 1 avec l'AFP, « Carburants : Sébastien Lecornu annonce la libération de 10 millions de barils de gazole sur trois mois », 07/10/2026. https://www.europe1.fr/politique/carburants-sebastien-lecornu-annonce-la-liberation-de-10-millions-de-barils-de-gazole-sur-trois-mois-1129631",
+          "lead": "17. Europe 1 avec l'AFP, « Carburants : Sébastien Lecornu annonce la libération de 10 millions de barils de gazole sur trois mois », 07/10/2026",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/carburants-sebastien-lecornu-annonce-la-liberation-de-10-millions-de-barils-de-gazole-sur-trois-mois-1129631",
+              "url": "https://www.europe1.fr/politique/carburants-sebastien-lecornu-annonce-la-liberation-de-10-millions-de-barils-de-gazole-sur-trois-mois-1129631"
+            }
+          ]
+        },
+        {
+          "label": "18. DG Trésor, « Le rapport économique, social et financier (RESF) 2027 est publié », 06/10/2026. https://www.tresor.economie.gouv.fr/Articles/2026/10/06/le-rapport-economique-social-et-financier-resf-2027-est-publie",
+          "lead": "18. DG Trésor, « Le rapport économique, social et financier (RESF) 2027 est publié », 06/10/2026",
+          "links": [
+            {
+              "label": "https://www.tresor.economie.gouv.fr/Articles/2026/10/06/le-rapport-economique-social-et-financier-resf-2027-est-publie",
+              "url": "https://www.tresor.economie.gouv.fr/Articles/2026/10/06/le-rapport-economique-social-et-financier-resf-2027-est-publie"
+            }
+          ]
+        },
+        {
+          "label": "19. franceinfo, « Budget 2027 : le gouvernement propose un gel des allocations familiales ». https://www.franceinfo.fr/economie/budget/budget-2027-le-gouvernement-propose-un-gel-des-allocations-familiales_8218204.html",
+          "lead": "19. franceinfo, « Budget 2027 : le gouvernement propose un gel des allocations familiales »",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/budget/budget-2027-le-gouvernement-propose-un-gel-des-allocations-familiales_8218204.html",
+              "url": "https://www.franceinfo.fr/economie/budget/budget-2027-le-gouvernement-propose-un-gel-des-allocations-familiales_8218204.html"
+            }
+          ]
+        },
+        {
+          "label": "20. RTL, « Pourquoi le coup de pouce envisagé sur l'augmentation du Smic risque de ne pas calmer la colère sociale », 28/10/2026. https://www.rtl.fr/actu/economie-consommation/une-decision-qui-n-a-pas-ete-prise-depuis-14-ans-pourquoi-le-coup-de-pouce-envisage-sur-l-augmentation-du-smic-risque-de-ne-pas-calmer-la-colere-sociale-7900689985",
+          "lead": "20. RTL, « Pourquoi le coup de pouce envisagé sur l'augmentation du Smic risque de ne pas calmer la colère sociale », 28/10/2026",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/economie-consommation/une-decision-qui-n-a-pas-ete-prise-depuis-14-ans-pourquoi-le-coup-de-pouce-envisage-sur-l-augmentation-du-smic-risque-de-ne-pas-calmer-la-colere-sociale-7900689985",
+              "url": "https://www.rtl.fr/actu/economie-consommation/une-decision-qui-n-a-pas-ete-prise-depuis-14-ans-pourquoi-le-coup-de-pouce-envisage-sur-l-augmentation-du-smic-risque-de-ne-pas-calmer-la-colere-sociale-7900689985"
+            }
+          ]
+        },
+        {
+          "label": "21. franceinfo / France 2, « Revaloriser le Smic en avance de 22 euros par mois, une mesure suffisante pour calmer la colère ambiante ? », 28/10/2026. https://www.franceinfo.fr/economie/greve/revaloriser-le-smic-en-avance-de-22-euros-par-mois-une-mesure-suffisante-pour-calmer-la-colere-ambiante_8257934.html",
+          "lead": "21. franceinfo / France 2, « Revaloriser le Smic en avance de 22 euros par mois, une mesure suffisante pour calmer la colère ambiante ? », 28/10/2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/greve/revaloriser-le-smic-en-avance-de-22-euros-par-mois-une-mesure-suffisante-pour-calmer-la-colere-ambiante_8257934.html",
+              "url": "https://www.franceinfo.fr/economie/greve/revaloriser-le-smic-en-avance-de-22-euros-par-mois-une-mesure-suffisante-pour-calmer-la-colere-ambiante_8257934.html"
+            }
+          ]
+        },
+        {
+          "label": "22. LaBanque.org, « Salaire minimum : coup de pouce et branches », 29/10/2026. https://labanque.org/actualites/salaire-minimum-coup-de-pouce-branches",
+          "lead": "22. LaBanque.org, « Salaire minimum : coup de pouce et branches », 29/10/2026",
+          "links": [
+            {
+              "label": "https://labanque.org/actualites/salaire-minimum-coup-de-pouce-branches",
+              "url": "https://labanque.org/actualites/salaire-minimum-coup-de-pouce-branches"
+            }
+          ]
+        },
+        {
+          "label": "23. Banque de France, « Indexation des salaires sur les prix et ancrage des anticipations d'inflation ». https://www.banque-france.fr/fr/publications-et-statistiques/publications/indexation-des-salaires-sur-les-prix-et-ancrage-des-anticipations-dinflation",
+          "lead": "23. Banque de France, « Indexation des salaires sur les prix et ancrage des anticipations d'inflation »",
+          "links": [
+            {
+              "label": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/indexation-des-salaires-sur-les-prix-et-ancrage-des-anticipations-dinflation",
+              "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/indexation-des-salaires-sur-les-prix-et-ancrage-des-anticipations-dinflation"
+            }
+          ]
+        },
+        {
+          "label": "24. DG Trésor, « A price-wage loop on the Christmas tree in 2022? », 29/12/2022. https://www.tresor.economie.gouv.fr/Articles/2022/12/29/a-price-wage-loop-on-the-christmas-tree-in-2022",
+          "lead": "24. DG Trésor, « A price-wage loop on the Christmas tree in 2022? », 29/12/2022",
+          "links": [
+            {
+              "label": "https://www.tresor.economie.gouv.fr/Articles/2022/12/29/a-price-wage-loop-on-the-christmas-tree-in-2022",
+              "url": "https://www.tresor.economie.gouv.fr/Articles/2022/12/29/a-price-wage-loop-on-the-christmas-tree-in-2022"
+            }
+          ]
+        },
+        {
+          "label": "25. BFMTV, « La taxe Zucman sur les ultra-riches rapporterait 20 milliards d'euros ? Sept économistes en doutent fortement », 16/09/2025. https://www.bfmtv.com/economie/economie-social/finances-publiques/la-taxe-zucman-sur-les-ultra-riches-rapporterait-20-milliards-d-euros-vraiment-sept-economistes-en-doutent-fortement-ce-serait-4-fois-moins-selon-eux_AV-202509160480.html",
+          "lead": "25. BFMTV, « La taxe Zucman sur les ultra-riches rapporterait 20 milliards d'euros ? Sept économistes en doutent fortement », 16/09/2025",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/economie/economie-social/finances-publiques/la-taxe-zucman-sur-les-ultra-riches-rapporterait-20-milliards-d-euros-vraiment-sept-economistes-en-doutent-fortement-ce-serait-4-fois-moins-selon-eux_AV-202509160480.html",
+              "url": "https://www.bfmtv.com/economie/economie-social/finances-publiques/la-taxe-zucman-sur-les-ultra-riches-rapporterait-20-milliards-d-euros-vraiment-sept-economistes-en-doutent-fortement-ce-serait-4-fois-moins-selon-eux_AV-202509160480.html"
+            }
+          ]
+        },
+        {
+          "label": "26. Conseil d'analyse économique, Focus n°118, émigration fiscale, juillet 2025. https://cae-eco.fr/static/pdf/Focus_118_emigration_fiscale_250725_v2.pdf",
+          "lead": "26. Conseil d'analyse économique, Focus n°118, émigration fiscale, juillet 2025",
+          "links": [
+            {
+              "label": "https://cae-eco.fr/static/pdf/Focus_118_emigration_fiscale_250725_v2.pdf",
+              "url": "https://cae-eco.fr/static/pdf/Focus_118_emigration_fiscale_250725_v2.pdf"
+            }
+          ]
+        },
+        {
+          "label": "27. Ouest-France, « La facture des mesures gilets jaunes atteint 17 milliards d'euros, selon Le Maire ». https://www.ouest-france.fr/economie/la-facture-des-mesures-gilets-jaunes-atteint-17-milliards-d-euros-selon-le-maire-6330194",
+          "lead": "27. Ouest-France, « La facture des mesures gilets jaunes atteint 17 milliards d'euros, selon Le Maire »",
+          "links": [
+            {
+              "label": "https://www.ouest-france.fr/economie/la-facture-des-mesures-gilets-jaunes-atteint-17-milliards-d-euros-selon-le-maire-6330194",
+              "url": "https://www.ouest-france.fr/economie/la-facture-des-mesures-gilets-jaunes-atteint-17-milliards-d-euros-selon-le-maire-6330194"
+            }
+          ]
+        },
+        {
+          "label": "28. franceinfo, « Budget de l'État : les mesures gilets jaunes fragilisent la situation du pays, selon la Cour des comptes », février 2019. https://www.franceinfo.fr/politique/gouvernement-d-edouard-philippe/budget-de-l-etat-les-mesures-gilets-jaunes-fragilisent-la-situation-du-pays-selon-la-cour-des-comptes_3177413.html",
+          "lead": "28. franceinfo, « Budget de l'État : les mesures gilets jaunes fragilisent la situation du pays, selon la Cour des comptes », février 2019",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/gouvernement-d-edouard-philippe/budget-de-l-etat-les-mesures-gilets-jaunes-fragilisent-la-situation-du-pays-selon-la-cour-des-comptes_3177413.html",
+              "url": "https://www.franceinfo.fr/politique/gouvernement-d-edouard-philippe/budget-de-l-etat-les-mesures-gilets-jaunes-fragilisent-la-situation-du-pays-selon-la-cour-des-comptes_3177413.html"
+            }
+          ]
+        },
+        {
+          "label": "29. OFCE, Policy brief n°46, 2019. https://www.ofce.fr/pdf/pbrief/2019/OFCEpbrief46.pdf",
+          "lead": "29. OFCE, Policy brief n°46, 2019",
+          "links": [
+            {
+              "label": "https://www.ofce.fr/pdf/pbrief/2019/OFCEpbrief46.pdf",
+              "url": "https://www.ofce.fr/pdf/pbrief/2019/OFCEpbrief46.pdf"
+            }
+          ]
+        },
+        {
+          "label": "30. Capital, « TVA à 0 %, exonération des moins de 30 ans : les mesures pouvoir d'achat du RN », 06/10/2026. https://www.capital.fr/economie-politique/tva-a-0-exoneration-des-moins-de-30-ans-les-mesures-pouvoir-d-achat-du-rn-1530771",
+          "lead": "30. Capital, « TVA à 0 %, exonération des moins de 30 ans : les mesures pouvoir d'achat du RN », 06/10/2026",
+          "links": [
+            {
+              "label": "https://www.capital.fr/economie-politique/tva-a-0-exoneration-des-moins-de-30-ans-les-mesures-pouvoir-d-achat-du-rn-1530771",
+              "url": "https://www.capital.fr/economie-politique/tva-a-0-exoneration-des-moins-de-30-ans-les-mesures-pouvoir-d-achat-du-rn-1530771"
+            }
+          ]
+        },
+        {
+          "label": "31. Le Parisien, réactions de la classe politique à la mobilisation du 17 octobre, 17/10/2026. https://www.leparisien.fr/societe/fascisme-rouge-desordre-organise-par-le-prefet-de-paris-les-reactions-de-la-classe-politique-a-la-mobilisation-du-17-octobre-17-10-2026-EKT4SYRCZJGQDOMGKSF7HBJQBU.php",
+          "lead": "31. Le Parisien, réactions de la classe politique à la mobilisation du 17 octobre, 17/10/2026",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/societe/fascisme-rouge-desordre-organise-par-le-prefet-de-paris-les-reactions-de-la-classe-politique-a-la-mobilisation-du-17-octobre-17-10-2026-EKT4SYRCZJGQDOMGKSF7HBJQBU.php",
+              "url": "https://www.leparisien.fr/societe/fascisme-rouge-desordre-organise-par-le-prefet-de-paris-les-reactions-de-la-classe-politique-a-la-mobilisation-du-17-octobre-17-10-2026-EKT4SYRCZJGQDOMGKSF7HBJQBU.php"
+            }
+          ]
+        },
+        {
+          "label": "32. CNews, « Mobilisation du 17 octobre : les Français ont en eux une colère légitime, reconnaît Bardella », 19/10/2026. https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait",
+          "lead": "32. CNews, « Mobilisation du 17 octobre : les Français ont en eux une colère légitime, reconnaît Bardella », 19/10/2026",
+          "links": [
+            {
+              "label": "https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait",
+              "url": "https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait"
+            }
+          ]
+        },
+        {
+          "label": "33. melenchon.fr, « Le pouvoir n'aura qu'un seul choix : accepter les revendications ou s'en aller », reprise le 25/10/2026 de l'entretien publié par Mediapart le 23/10/2026. https://melenchon.fr/2026/10/25/le-pouvoir-naura-quun-seul-choix-accepter-les-revendications-ou-sen-aller-entretien-avec-mediapart/",
+          "lead": "33. melenchon.fr, « Le pouvoir n'aura qu'un seul choix : accepter les revendications ou s'en aller », reprise le 25/10/2026 de l'entretien publié par Mediapart le 23/10/2026",
+          "links": [
+            {
+              "label": "https://melenchon.fr/2026/10/25/le-pouvoir-naura-quun-seul-choix-accepter-les-revendications-ou-sen-aller-entretien-avec-mediapart/",
+              "url": "https://melenchon.fr/2026/10/25/le-pouvoir-naura-quun-seul-choix-accepter-les-revendications-ou-sen-aller-entretien-avec-mediapart/"
+            }
+          ]
+        },
+        {
+          "label": "34. TF1info, « Présidentielle 2027 : ce qu'il faut retenir de l'intervention d'Édouard Philippe dans le 20H de TF1 », 01/11/2026. https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html",
+          "lead": "34. TF1info, « Présidentielle 2027 : ce qu'il faut retenir de l'intervention d'Édouard Philippe dans le 20H de TF1 », 01/11/2026",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html"
+            }
+          ]
+        },
+        {
+          "label": "35. RMC / BFMTV, « Gabriel Attal veut aller droit au brut pour baisser le coût des cotisations et booster les salaires nets », 06/10/2026. https://rmc.bfmtv.com/actualites/politique/presidentielle-gabriel-attal-veut-aller-droit-au-brut-pour-baisser-le-cout-des-cotisations-et-booster-les-salaires-nets_AV-202610060670.html",
+          "lead": "35. RMC / BFMTV, « Gabriel Attal veut aller droit au brut pour baisser le coût des cotisations et booster les salaires nets », 06/10/2026",
+          "links": [
+            {
+              "label": "https://rmc.bfmtv.com/actualites/politique/presidentielle-gabriel-attal-veut-aller-droit-au-brut-pour-baisser-le-cout-des-cotisations-et-booster-les-salaires-nets_AV-202610060670.html",
+              "url": "https://rmc.bfmtv.com/actualites/politique/presidentielle-gabriel-attal-veut-aller-droit-au-brut-pour-baisser-le-cout-des-cotisations-et-booster-les-salaires-nets_AV-202610060670.html"
+            }
+          ]
+        },
+        {
+          "label": "36. BFMTV, « L'inquiétude est palpable et elle est entendable », Céline Géraud, 27/10/2026. https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html",
+          "lead": "36. BFMTV, « L'inquiétude est palpable et elle est entendable », Céline Géraud, 27/10/2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html",
+              "url": "https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html"
+            }
+          ]
+        },
+        {
+          "label": "37. Sud Ouest avec l'AFP, « Raphaël Glucksmann présente un plan de sortie de crise en dix points à Matignon », 22/10/2026. https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php",
+          "lead": "37. Sud Ouest avec l'AFP, « Raphaël Glucksmann présente un plan de sortie de crise en dix points à Matignon », 22/10/2026",
+          "links": [
+            {
+              "label": "https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php",
+              "url": "https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php"
+            }
+          ]
+        },
+        {
+          "label": "38. franceinfo, « L'extrême gauche a une grave responsabilité puisqu'elle attise l'incendie, estime David Lisnard ». https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html",
+          "lead": "38. franceinfo, « L'extrême gauche a une grave responsabilité puisqu'elle attise l'incendie, estime David Lisnard »",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html",
+              "url": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html"
+            }
+          ]
+        },
+        {
+          "label": "39. RTL, « Fin de Parcoursup, vote à 16 ans, interdiction du LBD : Villepin et Ruffin font front commun aux côtés des lycéens ». https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081",
+          "lead": "39. RTL, « Fin de Parcoursup, vote à 16 ans, interdiction du LBD : Villepin et Ruffin font front commun aux côtés des lycéens »",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081",
+              "url": "https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081"
+            }
+          ]
+        },
+        {
+          "label": "40. BFMTV, interview de Dominique de Villepin, 22/10/2026. https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-mouvement-lyceen-candidature-en-2027-ce-qu-il-faut-retenir-de-l-interview-de-dominique-de-villepin-sur-bfmtv_AN-202610220984.html",
+          "lead": "40. BFMTV, interview de Dominique de Villepin, 22/10/2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-mouvement-lyceen-candidature-en-2027-ce-qu-il-faut-retenir-de-l-interview-de-dominique-de-villepin-sur-bfmtv_AN-202610220984.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/violences-du-17-octobre-mouvement-lyceen-candidature-en-2027-ce-qu-il-faut-retenir-de-l-interview-de-dominique-de-villepin-sur-bfmtv_AN-202610220984.html"
+            }
+          ]
+        },
+        {
+          "label": "41. Insee, série 000442588, « Prix moyens mensuels de vente au détail en métropole : Gazole (1 litre) ». https://www.insee.fr/fr/statistiques/serie/000442588",
+          "lead": "41. Insee, série 000442588, « Prix moyens mensuels de vente au détail en métropole : Gazole (1 litre) »",
+          "links": [
+            {
+              "label": "https://www.insee.fr/fr/statistiques/serie/000442588",
+              "url": "https://www.insee.fr/fr/statistiques/serie/000442588"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 2 novembre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/779-retirez-halloween",
+      "label": "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre"
+    },
+    {
+      "href": "/analyses/debord-watts-frigo-sans-courant",
+      "label": "Le frigo sans courant"
+    },
+    {
+      "href": "/analyses/presidentielle-2027-preparation",
+      "label": "Présidentielle 2027 — préparation"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
@@ -45,6 +46,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: vieCherePorscheTrabant.slug,
+    title: vieCherePorscheTrabant.title,
+    description: vieCherePorscheTrabant.description,
+    date: vieCherePorscheTrabant.date,
+    published: vieCherePorscheTrabant.date,
+    updated: vieCherePorscheTrabant.updated,
+    href: '/analyses/vie-chere-porsche-trabant',
+    cover: uneCover(
+      'vie-chere-porsche-trabant',
+      "Aquarelle d'une petite voiture ancienne bleu pâle et d'un coupé sportif rouge sans marque, garés sur l'asphalte mouillé devant une station-service de campagne au petit matin, sous un ciel rose et gris, avec des arbres d'automne et un clocher dans la brume.",
+    ),
+  },
   {
     slug: retirezHalloween.slug,
     title: retirezHalloween.title,

@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
@@ -42,6 +43,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('vie-chere-porsche-trabant');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('779-retirez-halloween');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('primaire-sans-la-gauche');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('guerre-civile-le-mot-de-l-autre');
@@ -53,19 +55,20 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('779-retirez-halloween');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[12]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[13]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -78,7 +81,175 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse 779 retirez Halloween du 2 novembre en une, sources, boîte DOE', () => {
+  it('analyse vie chère Porsche Trabant du 3 novembre en une, sources, boîte DOE', () => {
+    expect(vieCherePorscheTrabant.slug).toBe('vie-chere-porsche-trabant');
+    expect(vieCherePorscheTrabant.date).toBe('2026-11-03');
+    expect(vieCherePorscheTrabant.updated).toBe('2026-11-03');
+    expect(vieCherePorscheTrabant.title).toBe(
+      "Vie chère : la Porsche au prix d'une Trabant ? On a fait l'addition",
+    );
+    expect(vieCherePorscheTrabant.author).toBe('La rédaction');
+    expect(vieCherePorscheTrabant.author_role).toBe('Rédaction LMDPT');
+    expect(vieCherePorscheTrabant.eyebrow).toBe('Analyse · Vie chère');
+    expect(vieCherePorscheTrabant.type_label).toBe('Analyse');
+    expect(vieCherePorscheTrabant.kicker).toBe('Analyse · La rédaction · 3 novembre 2026');
+    expect(vieCherePorscheTrabant.tags).toContain('doe');
+    expect(vieCherePorscheTrabant.x_hook).toBe(
+      "Manifester contre la vie chère, c'est vouloir une Porsche au prix d'une Trabant ? On a fait l'addition, mesure par mesure. Sur l'essence, la formule tient. Sur les bourses, la taxe Zucman ou le Smic, beaucoup moins.",
+    );
+    expect(vieCherePorscheTrabant.description.length).toBeLessThanOrEqual(200);
+    expect(vieCherePorscheTrabant.description).toMatch(/Porsche au prix d'une Trabant/);
+    expect(vieCherePorscheTrabant.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(vieCherePorscheTrabant.sources_intro).toMatch(/Consultées le 2 novembre 2026/);
+    expect(vieCherePorscheTrabant.sources_closing).toMatch(/consultés le 2 novembre 2026/);
+    expect(vieCherePorscheTrabant.hues).toHaveLength(3);
+    expect(vieCherePorscheTrabant.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'parti-socialiste',
+    ]);
+    expect(vieCherePorscheTrabant.hues.map((hue) => hue.label)).toEqual([
+      'Réalisme budgétaire',
+      'Aide ciblée plutôt que générale',
+      'Justice fiscale chiffrée',
+    ]);
+    const revendications = vieCherePorscheTrabant.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'revendications',
+    );
+    expect(revendications?.kind).toBe('prose');
+    if (revendications?.kind === 'prose') {
+      expect(revendications.title).toBe('Ce que demandent les cortèges');
+    }
+    const listeSansPrix = vieCherePorscheTrabant.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'liste-sans-prix',
+    );
+    expect(listeSansPrix?.kind).toBe('prose');
+    if (listeSansPrix?.kind === 'prose') {
+      expect(listeSansPrix.title).toBe('Encadré · Une liste sans prix');
+    }
+    const precedents = vieCherePorscheTrabant.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'precedents',
+    );
+    expect(precedents?.kind).toBe('prose');
+    if (precedents?.kind === 'prose') {
+      expect(precedents.title).toBe('Ce que coûtaient les fois précédentes');
+      const table = precedents.blocks.find((block) => block.type === 'table');
+      expect(table?.type).toBe('table');
+      if (table?.type === 'table') {
+        expect(table.headers).toEqual(['Précédent', 'Coût', 'Source']);
+        expect(table.rows).toHaveLength(4);
+        expect(table.rows[0]?.[0]).toBe('Mesures gilets jaunes 2018-2019');
+        expect(table.rows[2]?.[1]).toMatch(/72 Md€ bruts, 36 Md€ nets/);
+      }
+    }
+    const courants = vieCherePorscheTrabant.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('vie-chere-porsche-trabant');
+    expect(entry?.href).toBe('/analyses/vie-chere-porsche-trabant');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/vie-chere-porsche-trabant.jpg');
+    expect(entry?.cover?.alt).toMatch(/petite voiture ancienne bleu pâle/);
+    expect(getUneDuJour()?.slug).toBe('vie-chere-porsche-trabant');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    const nSources = vieCherePorscheTrabant.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(41);
+    const sourceBlob = JSON.stringify(vieCherePorscheTrabant.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.franceinfo.fr/societe/education/blocage-des-lycees/mobilisation-de-la-jeunesse-retour-des-gilets-jaunes-appel-de-l-intersyndicale-on-vous-resume-les-revendications-et-la-reponse-du-gouvernement_8248597.html',
+    );
+    expect(sourceBlob).toMatch(/17octobregiletjaune\.net\/macron-doit-partir\//);
+    expect(sourceBlob).toMatch(/17octobregiletjaune\.net\/pour-nos-libertes\//);
+    expect(sourceBlob).toMatch(/insee\.fr\/fr\/statistiques\/9107965/);
+    expect(sourceBlob).toMatch(/insee\.fr\/fr\/statistiques\/fichier\/9050757\/ndc-sept-2026\.pdf/);
+    expect(sourceBlob).toMatch(/banque-france\.fr\/fr\/publications-et-statistiques\/publications\/pourquoi-le-prix-des-carburants/);
+    expect(sourceBlob).toMatch(/ccomptes\.fr\/sites\/default\/files\/2024-03\/20240315_synthese-Mesures-exceptionnelles/);
+    expect(sourceBlob).toMatch(/labanque\.org\/actualites\/salaire-minimum-coup-de-pouce-branches/);
+    expect(sourceBlob).toMatch(/cae-eco\.fr\/static\/pdf\/Focus_118_emigration_fiscale/);
+    expect(sourceBlob).toMatch(/melenchon\.fr\/2026\/10\/25\/le-pouvoir-naura-quun-seul-choix/);
+    expect(sourceBlob).toMatch(/insee\.fr\/fr\/statistiques\/serie\/000442588/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = vieCherePorscheTrabant.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Position sur les revendications vie chère',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.note).toMatch(/Non trouvé/);
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/5,5 %/);
+      expect(lePen?.[2]).toBe('[16][30][31][32]');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/1,70 €/);
+      expect(melenchon?.[2]).toBe('[16][33]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/certificats d'économie d'énergie/);
+      expect(retailleau?.[2]).toBe('[16]');
+      const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
+      expect(philippe?.[1]).toMatch(/solution illusoire/);
+      expect(philippe?.[2]).toBe('[34][16]');
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/droit au brut/);
+      expect(attal?.[2]).toBe('[35][36]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/1 700 € net/);
+      expect(glucksmann?.[2]).toBe('[37]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[1]).toMatch(/non trouvé dans les sources consultées/);
+      expect(lisnard?.[2]).toBe('[38]');
+      const villepin = encadre.table.rows.find((row) => row[0]?.includes('Villepin'));
+      expect(villepin?.[1]).toMatch(/interdiction des LBD/);
+      expect(villepin?.[2]).toBe('[39][40]');
+      const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
+      expect(zemmour?.[1]).toMatch(/à peu près 12 milliards/);
+      expect(zemmour?.[2]).toBe('[16]');
+    }
+    const analyseTexts = [
+      vieCherePorscheTrabant.chapo,
+      vieCherePorscheTrabant.description,
+      vieCherePorscheTrabant.disclaimer,
+      vieCherePorscheTrabant.sources_closing,
+      ...vieCherePorscheTrabant.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[41\]/);
+    expect(analyseTexts).toMatch(/Porsche au prix d'une Trabant/);
+    expect(analyseTexts).toMatch(/marge de raffinage/);
+    expect(analyseTexts).toMatch(/taxe Zucman/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(vieCherePorscheTrabant)).not.toMatch(/<!--/);
+  });
+
+  it('analyse 779 retirez Halloween du 2 novembre, sources, boîte DOE', () => {
     expect(retirezHalloween.slug).toBe('779-retirez-halloween');
     expect(retirezHalloween.date).toBe('2026-11-02');
     expect(retirezHalloween.updated).toBe('2026-11-02');
@@ -155,8 +326,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/779-retirez-halloween');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/779-retirez-halloween.jpg');
     expect(entry?.cover?.alt).toMatch(/carnet de comptage ouvert/);
-    expect(getUneDuJour()?.slug).toBe('779-retirez-halloween');
-    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    expect(getUneDuJour()?.slug).not.toBe('779-retirez-halloween');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
     const nSources = retirezHalloween.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(10);
     const sourceBlob = JSON.stringify(retirezHalloween.sources_groups);
@@ -310,7 +481,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
     expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
     expect(getUneDuJour()?.slug).not.toBe('primaire-sans-la-gauche');
-    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
     const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
@@ -481,7 +652,7 @@ describe('analyses', () => {
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
     expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -640,7 +811,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -800,7 +971,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-11-02');
+    expect(getUneDuJour()?.date).toBe('2026-11-03');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
