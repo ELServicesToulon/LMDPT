@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
 import guerreCivileLeMotDeLAutre from '../data/analyses/guerre-civile-le-mot-de-l-autre.json';
@@ -127,11 +128,14 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse 779 retirez Halloween du 02/11 en une, puis primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('analyse vie chère Porsche Trabant du 03/11 en une, puis 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('779-retirez-halloween');
+    expect(getUneDuJour()?.slug).toBe('vie-chere-porsche-trabant');
     expect(getUneDuJour()?.title).toBe(
-      "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre",
+      "Vie chère : la Porsche au prix d'une Trabant ? On a fait l'addition",
+    );
+    expect(vieCherePorscheTrabant.x_hook).toBe(
+      "Manifester contre la vie chère, c'est vouloir une Porsche au prix d'une Trabant ? On a fait l'addition, mesure par mesure. Sur l'essence, la formule tient. Sur les bourses, la taxe Zucman ou le Smic, beaucoup moins.",
     );
     expect(retirezHalloween.x_hook).toBe(
       "779 interpellations samedi, dit le bilan qui tourne depuis dimanche. Mais 214 datent de la soirée d'Halloween. Avant 21 h, l'Intérieur en compte 565 : plus de quatre fois moins que le 17 octobre. Et les 116 blessés qu'on lit à côté ne comptent, eux, que la journée.",
@@ -152,22 +156,24 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('primaire-sans-la-gauche');
-    expect(sorted[1]?.date).toBe('2026-11-01');
-    expect(sorted[2]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(sorted[2]?.date).toBe('2026-10-30');
-    expect(sorted[3]?.slug).toBe('bataille-du-2-mai');
-    expect(sorted[3]?.date).toBe('2026-10-29');
-    expect(sorted[4]?.slug).toBe('corse-senat-non');
-    expect(sorted[4]?.date).toBe('2026-10-28');
-    expect(sorted[5]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[6]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[7]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[8]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[9]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[10]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[11]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[12]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('779-retirez-halloween');
+    expect(sorted[1]?.date).toBe('2026-11-02');
+    expect(sorted[2]?.slug).toBe('primaire-sans-la-gauche');
+    expect(sorted[2]?.date).toBe('2026-11-01');
+    expect(sorted[3]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(sorted[3]?.date).toBe('2026-10-30');
+    expect(sorted[4]?.slug).toBe('bataille-du-2-mai');
+    expect(sorted[4]?.date).toBe('2026-10-29');
+    expect(sorted[5]?.slug).toBe('corse-senat-non');
+    expect(sorted[5]?.date).toBe('2026-10-28');
+    expect(sorted[6]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[7]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[8]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[9]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[10]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[11]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[12]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[13]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 
