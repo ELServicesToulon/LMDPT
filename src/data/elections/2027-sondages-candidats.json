@@ -1,69 +1,18 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-10-19",
+  "updated": "2026-11-03",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
-  "method": "Veille auto 2026-10-12 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Elabe 2026-07-09/12, Verian 2026-07-08/10, OpinionWay 2026-07-08/09, Harris Interactive 2026-07-07/08, Ifop 2026-07-07/08). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
+  "method": "Veille auto 2026-11-03 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Ifop 2026-10-27/29, Cluster17 26/10/2026, Ipsos (France) 25/10/2026, OpinionWay 24/10/2026, Harris Interactive / Toluna Harris 23/10/2026, Elabe 18/10/2026, yougov 18/10/2026, Odoxa 15/10/2026). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
     {
-      "label": "YouGov / Le HuffPost (notice 10323, publié 18/10/2026) — documentée, non fusionnée",
-      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10323-pres-iv-yougov-le-huffpost-18-octobre.pdf",
-      "as_of": "2026-10-19",
-      "note": "Notice Commission des sondages n°10323. Terrain 2026-10-12/15, publié 2026-10-18. Échantillon 1094 (inscrits 976), en ligne, panel YouGov, marge 1,4 à 3,1 pts selon le score. Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe seul au centre) : Le Pen 36, Mélenchon 15, Glucksmann 13, Philippe 13, Retailleau 7, Tondelier 6, Zemmour 3, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 2 (Attal seul au centre) : Le Pen 37, Mélenchon 15, Glucksmann 14, Attal 10, Retailleau 9, Tondelier 6, Zemmour 4, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 3 (Philippe + Attal) : Le Pen 36, Mélenchon 15, Glucksmann 12, Philippe 10, Attal 6, Retailleau 6, Tondelier 6, Zemmour 3, Roussel 3, Dupont-Aignan 3, Arthaud 0. 1er tour hyp. 4 (Hollande (sans Glucksmann)) : Le Pen 37, Mélenchon 16, Philippe 15, Hollande 9, Retailleau 7, Tondelier 6, Zemmour 4, Roussel 3, Dupont-Aignan 3, Arthaud 1. 1er tour hyp. 5 (Large (Lisnard, Ruffin, Villepin)) : Le Pen 35, Mélenchon 13, Glucksmann 12, Philippe 8, Attal 6, Retailleau 5, Tondelier 5, Lisnard 4, Zemmour 4, Roussel 2, Dupont-Aignan 2, Ruffin 2, Villepin 1, Arthaud 0. 2nd tour (non mélangé au 1er tour) : Le Pen 52 / Philippe 48 ; Le Pen 55 / Glucksmann 45 ; Le Pen 55 / Hollande 45 (epocinfo) ; Le Pen 68 / Mélenchon 32 (epocinfo) ; Le Pen 55 / Attal 45 (epocinfo) ; Philippe 66 / Mélenchon 34 (epocinfo)."
+      "label": "Ifop — 2026-10-27/29",
+      "url": "https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-a-six-mois-de-la-presidentielle-2027-marine-le-pen-et-jean-luc-melenchon-sans-adversaires-au-premier-tour-philippe-attal-retailleau-lisnard-2473663.html",
+      "as_of": "2026-11-03"
     },
     {
-      "label": "Elabe / BFMTV-La Tribune Dimanche (notice 10324, terrain 14-16 oct. 2026) — documentée, non fusionnée",
-      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10324-pres-iv-elabe-17-octobre.pdf",
-      "as_of": "2026-10-19",
-      "note": "Notice Commission des sondages n°10324. Terrain 2026-10-14/16, publié 2026-10-17. Échantillon 1701 (inscrits 1553), Internet, quotas, marge 1,2 à 2,8 pts. Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe + Villepin) : Le Pen 32,5, Philippe 16,5, Glucksmann 15,5, Mélenchon 15, Retailleau 7, Zemmour 3,5, Tondelier 3, Dupont-Aignan 2,5, Villepin 2, Roussel 1,5, Arthaud 1. 1er tour hyp. 2 (Attal + Villepin) : Le Pen 33,5, Glucksmann 16,5, Mélenchon 16, Attal 10,5, Retailleau 9,5, Zemmour 3,5, Villepin 3, Tondelier 2,5, Roussel 2, Dupont-Aignan 2, Arthaud 1. 1er tour hyp. 3 (Philippe + Lisnard) : Le Pen 31,5, Mélenchon 15,5, Philippe 15,5, Glucksmann 15, Retailleau 6,5, Lisnard 5,5, Zemmour 3, Dupont-Aignan 3, Tondelier 2,5, Roussel 1,5, Arthaud 0,5. 1er tour hyp. 4 (Attal + Lisnard + Ruffin) : Le Pen 31, Glucksmann 16,5, Mélenchon 16, Attal 9,5, Retailleau 9, Lisnard 6,5, Zemmour 3,5, Ruffin 3, Dupont-Aignan 2,5, Roussel 1,5, Arthaud 1. 1er tour hyp. 5 (Philippe + Attal) : Le Pen 32,5, Mélenchon 15,5, Glucksmann 15,5, Philippe 13,5, Retailleau 7,5, Attal 4,5, Zemmour 3,5, Dupont-Aignan 3, Tondelier 2,5, Roussel 1,5, Arthaud 0,5. 1er tour hyp. 6 (Philippe + Polony) : Le Pen 33,5, Philippe 16,5, Glucksmann 16, Mélenchon 15, Retailleau 7,5, Zemmour 3, Tondelier 2,5, Dupont-Aignan 2,5, Polony 1,5, Arthaud 1, Roussel 1. 2nd tour (non mélangé au 1er tour) : Le Pen 69 / Mélenchon 31 ; Le Pen 53,5 / Glucksmann 46,5 ; Le Pen 52,5 / Philippe 47,5."
-    },
-    {
-      "label": "OpinionWay / CNews (notice 10319, terrain 13-14 oct. 2026) — documentée, non fusionnée",
-      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10319-pres-iv-opinionway-cnews-15-octobre.pdf",
-      "as_of": "2026-10-19",
-      "note": "Notice Commission des sondages n°10319. Terrain 2026-10-13/14, publié 2026-10-15 (notice) ; epocinfo date 16/10/2026. Échantillon 1043 (inscrits 978), en ligne CAWI, quotas, marge table notice : 1,4 à 3,1 pts (978 inscrits), 1,6 à 3,7 pts (731 certains d'aller voter). Hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 (Philippe + Attal + Lisnard) : Le Pen 35, Mélenchon 15, Glucksmann 13, Philippe 12, Retailleau 6, Attal 5, Zemmour 5, Lisnard 4, Tondelier 2, Roussel 1, Dupont-Aignan 1, Arthaud 1. 2nd tour (non mélangé au 1er tour) : Le Pen 68 / Mélenchon 32 ; Le Pen 56 / Philippe 44 ; Le Pen 56 / Glucksmann 44."
-    },
-    {
-      "label": "Odoxa (publié 15/10/2026, via epocinfo) — documentée, non fusionnée",
+      "label": "Cluster17 — 26/10/2026",
       "url": "https://www.epocinfo.fr/ep2027.php",
-      "as_of": "2026-10-16",
-      "note": "Relevé agrégateur epocinfo ; notice Commission des sondages non consultée ; hypothèses exclusives ; non fusionnée dans latest_pct/avg_pct. 1er tour hyp. 1 : Le Pen 37, Mélenchon 18, Philippe 17, Glucksmann 9,5, Retailleau 6,5, Zemmour 4,5, Tondelier 3, Roussel 2, Dupont-Aignan 2, Arthaud 0,5. 1er tour hyp. 2 : Le Pen 38, Mélenchon 18,5, Attal 11, Glucksmann 10,5, Retailleau 9, Zemmour 4,1, Tondelier 3,5, Roussel 2, Dupont-Aignan 2, Arthaud 1. 2nd tour (non mélangé au 1er tour) : Le Pen 68 / Mélenchon 32 ; Le Pen 53 / Philippe 47."
-    },
-    {
-      "label": "Ifop-Fiducial pour LCI / Sud Radio, post-primaire (terrain 12-14 oct. 2026, publié 14/10) — documentée, non fusionnée",
-      "url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/octobre/10314-pres-climat-politique-post-primaire-ps-pp-ifop-lci-14-octobre.pdf",
-      "as_of": "2026-10-15",
-      "note": "Notice Commission des sondages n°10314 (FD 122851). 1 390 inscrits (échantillon 1 525), en ligne, quotas. 4 hypothèses de 1er tour (suffrages exprimés) : Le Pen 32-36, Mélenchon 16-17, Glucksmann 11,5-16, Philippe 13-18 (18 seul au centre), Attal 5-13 (13 seul au centre), Retailleau 5-8, Lisnard 6 (seule hyp. où il est testé), Zemmour 3. Aucun 2nd tour publié dans la notice. Premier terrain postérieur à la primaire sociale-démocrate du 11/10. Non fusionnée dans latest_pct/avg_pct, comme la vague Toluna-Harris 7."
-    },
-    {
-      "label": "Toluna-Harris Interactive pour M6/RTL, vague 7 (terrain 5-8 oct. 2026) — documentée, non fusionnée",
-      "url": "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf",
-      "as_of": "2026-10-12",
-      "note": "2 004 inscrits (échantillon 2 348), en ligne, marge ±2,9 à 3,1 pts. 5 hypothèses de 1er tour : Le Pen 35-37, Mélenchon 18-19, Philippe 13-17, Attal 5-12, Glucksmann 10-11, Retailleau 7-10, Zemmour 4-5, Hollande 7 (hyp. sans Glucksmann). 2nd tour : Le Pen 56 / Philippe 44 ; Le Pen 67 / Mélenchon 33. Terrain antérieur à la primaire sociale-démocrate du 11/10. Non fusionnée dans latest_pct/avg_pct : une seule vague récente rendrait la « moyenne » égale à une hypothèse d'un seul institut (fenêtre 21 jours de la veille)."
-    },
-    {
-      "label": "Elabe — 2026-07-09/12",
-      "url": "https://www.latribune.fr/article/la-tribune-dimanche/politique/45944749344411/sondage-presidentielle-le-pen-en-tete-melenchon-progresse",
-      "as_of": "2026-07-12"
-    },
-    {
-      "label": "Verian — 2026-07-08/10",
-      "url": "https://lhemicycle.com/2026/07/10/jordan-bardella-toujours-le-favori-pour-representer-le-rn/",
-      "as_of": "2026-07-10"
-    },
-    {
-      "label": "OpinionWay — 2026-07-08/09",
-      "url": "https://www.lesechos.fr/elections/presidentielle/sondage-exclusif-presidentielle-2027-marine-le-pen-largement-en-tete-avantage-edouard-philippe-a-droite-et-au-centre-2241680",
-      "as_of": "2026-07-09"
-    },
-    {
-      "label": "Harris Interactive — 2026-07-07/08",
-      "url": "https://www.rtl.fr/actu/politique/sondage-rtl-presidentielle-2027-marine-le-pen-progresse-dans-les-intentions-de-vote-apres-l-annonce-de-sa-candidature-7900653723",
-      "as_of": "2026-07-08"
-    },
-    {
-      "label": "Ifop — 2026-07-07/08",
-      "url": "https://www.ifop.com/article/les-intentions-de-vote-a-lelection-presidentielle-2027-et-lopinion-des-francais-apres-la-declaration-de-candidature-de-marine-le-pen",
-      "as_of": "2026-07-08"
+      "as_of": "2026-10-26"
     },
     {
       "label": "Cluster17 — souhait de victoire",
@@ -71,11 +20,6 @@
       "as_of": "2026-07-11",
       "metric": "souhait_victoire",
       "note": "Paywall / métrique distincte — pas fusionné dans latest_pct intentions."
-    },
-    {
-      "label": "EPOC — dernier sondage ELABE 12/07/2026",
-      "url": "https://www.epocinfo.fr/ep2027.php",
-      "as_of": "2026-07-12"
     },
     {
       "label": "Wikipedia — Opinion polling 2027 (section Since July 2026)",
@@ -88,99 +32,163 @@
     "RN : Marine Le Pen (candidature déclarée 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti) — jamais dans la même hypothèse de 1er tour.",
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
     "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
-    "Mise à jour LMDPT : 2026-10-12 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné).",
-    "Toluna-Harris vague 7 (5-8 oct. 2026) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Les moyennes latest_pct reposent encore sur les vagues de juillet 2026.",
-    "Ifop-Fiducial LCI/Sud Radio (12-14 oct. 2026, notice 10314) documentée en sources, non fusionnée dans les moyennes (voir note de la source).",
-    "Odoxa 15/10/2026 (via epocinfo) documentée en sources, non fusionnée dans les moyennes (voir note de la source). Deux hypothèses de 1er tour distinctes ; duels de 2nd tour non mélangés au 1er tour.",
-    "YouGov/HuffPost 18/10 (notice 10323), Elabe/BFMTV-La Tribune Dimanche 17/10 (notice 10324) et OpinionWay/CNews 16/10 (notice 10319) documentées en sources, hypothèses exclusives, non fusionnées dans latest_pct/avg_pct (duels de 2nd tour non mélangés au 1er tour)."
+    "Mise à jour LMDPT : 2026-11-03 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
   ],
   "waves_latest": [
     {
-      "firm": "Elabe",
-      "fieldwork": "2026-07-09/12",
-      "n": 1503,
-      "hypothesis": "Le Pen + Philippe",
+      "firm": "Ifop",
+      "fieldwork": "2026-10-27/29",
+      "n": null,
+      "hypothesis": "Le Pen + Philippe + Attal",
       "scores": {
-        "le-pen": 35,
-        "philippe": 16.5,
-        "melenchon": 16,
-        "glucksmann": 10.5,
-        "retailleau": 8,
-        "tondelier": 3.5,
-        "zemmour": 3,
-        "roussel": 2.5,
-        "villepin": 2.5,
+        "arthaud": 0.5,
+        "melenchon": 18,
+        "roussel": 2,
+        "tondelier": 3,
+        "glucksmann": 10,
+        "attal": 5,
+        "philippe": 9.5,
+        "retailleau": 4,
+        "lisnard": 7,
         "dupont-aignan": 1.5,
-        "arthaud": 1
+        "le-pen": 35,
+        "zemmour": 4.5
       }
     },
     {
-      "firm": "Verian",
-      "fieldwork": "2026-07-08/10",
-      "n": 1047,
+      "firm": "Cluster17",
+      "fieldwork": "26/10/2026",
+      "n": null,
+      "hypothesis": "Le Pen + Philippe",
+      "scores": {
+        "le-pen": 30.5,
+        "melenchon": 19.5,
+        "philippe": 17,
+        "lisnard": 8,
+        "retailleau": 7,
+        "hollande": 6.5,
+        "zemmour": 3.5,
+        "dupont-aignan": 3,
+        "tondelier": 2.5,
+        "roussel": 2,
+        "arthaud": 0.5
+      }
+    },
+    {
+      "firm": "Ipsos (France)",
+      "fieldwork": "25/10/2026",
+      "n": null,
       "hypothesis": "Le Pen + Philippe + Attal",
       "scores": {
-        "le-pen": 37,
-        "philippe": 17,
-        "melenchon": 15,
-        "glucksmann": 11,
-        "attal": 8,
-        "retailleau": 7,
-        "zemmour": 3,
-        "roussel": 2
+        "le-pen": 33.5,
+        "melenchon": 17,
+        "philippe": 13,
+        "glucksmann": 13,
+        "attal": 4,
+        "retailleau": 7.5,
+        "zemmour": 4.5,
+        "dupont-aignan": 1.5,
+        "tondelier": 3.5,
+        "roussel": 2,
+        "arthaud": 0.5
       }
     },
     {
       "firm": "OpinionWay",
-      "fieldwork": "2026-07-08/09",
-      "n": 963,
+      "fieldwork": "24/10/2026",
+      "n": null,
       "hypothesis": "Le Pen + Philippe + Attal",
       "scores": {
-        "le-pen": 35,
-        "philippe": 18,
-        "melenchon": 13,
-        "glucksmann": 9,
-        "retailleau": 8,
-        "attal": 7,
-        "tondelier": 5,
-        "zemmour": 3,
-        "roussel": 2
+        "le-pen": 36,
+        "melenchon": 16,
+        "philippe": 12,
+        "glucksmann": 13,
+        "attal": 4,
+        "retailleau": 6,
+        "lisnard": 6,
+        "zemmour": 4,
+        "dupont-aignan": 1,
+        "tondelier": 1,
+        "roussel": 1,
+        "arthaud": 0.5
       }
     },
     {
-      "firm": "Harris Interactive",
-      "fieldwork": "2026-07-07/08",
-      "n": 1582,
-      "hypothesis": "Le Pen + Philippe + Attal",
+      "firm": "Harris Interactive / Toluna Harris",
+      "fieldwork": "23/10/2026",
+      "n": null,
+      "hypothesis": "Le Pen + Philippe",
       "scores": {
-        "le-pen": 35,
-        "melenchon": 16,
-        "philippe": 14,
-        "glucksmann": 10,
-        "attal": 8,
-        "retailleau": 7,
-        "zemmour": 4,
+        "le-pen": 33,
+        "melenchon": 17,
+        "philippe": 15,
+        "glucksmann": 12,
+        "retailleau": 4,
+        "lisnard": 7,
+        "zemmour": 5,
+        "dupont-aignan": 1,
         "tondelier": 2,
         "roussel": 2,
         "arthaud": 1,
-        "dupont-aignan": 1
+        "villepin": 1
       }
     },
     {
-      "firm": "Ifop",
-      "fieldwork": "2026-07-07/08",
-      "n": 984,
+      "firm": "Elabe",
+      "fieldwork": "18/10/2026",
+      "n": null,
       "hypothesis": "Le Pen + Philippe",
       "scores": {
-        "le-pen": 36,
-        "philippe": 19,
+        "le-pen": 32.5,
         "melenchon": 15,
-        "glucksmann": 9,
-        "retailleau": 8,
+        "philippe": 16.5,
+        "glucksmann": 15.5,
+        "retailleau": 7,
+        "zemmour": 3.5,
+        "dupont-aignan": 2.5,
+        "tondelier": 3,
+        "roussel": 1.5,
+        "arthaud": 1,
+        "villepin": 2
+      }
+    },
+    {
+      "firm": "yougov",
+      "fieldwork": "18/10/2026",
+      "n": null,
+      "hypothesis": "Le Pen + Philippe + Attal",
+      "scores": {
+        "le-pen": 35,
+        "melenchon": 13,
+        "philippe": 8,
+        "glucksmann": 12,
+        "attal": 6,
+        "retailleau": 5,
+        "lisnard": 4,
         "zemmour": 4,
-        "tondelier": 3.5,
-        "roussel": 3,
         "dupont-aignan": 2,
+        "tondelier": 5,
+        "roussel": 2,
+        "arthaud": 0,
+        "ruffin": 2,
+        "villepin": 1
+      }
+    },
+    {
+      "firm": "Odoxa",
+      "fieldwork": "15/10/2026",
+      "n": null,
+      "hypothesis": "Le Pen + Philippe",
+      "scores": {
+        "le-pen": 37,
+        "melenchon": 18,
+        "philippe": 17,
+        "glucksmann": 9.5,
+        "retailleau": 6.5,
+        "zemmour": 4.5,
+        "dupont-aignan": 2,
+        "tondelier": 3,
+        "roussel": 2,
         "arthaud": 0.5
       }
     }
@@ -192,10 +200,10 @@
       "affiliation": "Rassemblement national",
       "bloc": "rn",
       "status": "candidature_declaree",
-      "avg_pct": 35.6,
-      "latest_pct": 35.6,
-      "latest_range": "35–37 %",
-      "latest_source": "Elabe 12/07 35 % · Verian 10/07 37 % · OpinionWay 09/07 35 % · Harris Interactive 08/07 35 % · Ifop 08/07 36 %",
+      "avg_pct": 33.9,
+      "latest_pct": 34.1,
+      "latest_range": "30,5–37 %",
+      "latest_source": "Ifop 03/11 35 % · Cluster17 26/10 30,5 % · Ipsos (France) 25/10 33,5 % · OpinionWay 24/10 36 % · Harris Interactive / Toluna Harris 23/10 33 % · Elabe 18/10 32,5 % · yougov 18/10 35 % · Odoxa 15/10 37 %",
       "note": "Candidature annoncée le 7 juil. 2026. Tête de toutes les hypothèses post-annonce dans les instituts listés."
     },
     {
@@ -216,10 +224,10 @@
       "affiliation": "Horizons",
       "bloc": "centre-droit",
       "status": "intention_declaree",
-      "avg_pct": 16.9,
-      "latest_pct": 16.9,
-      "latest_range": "14–19 %",
-      "latest_source": "Elabe 12/07 16,5 % · Verian 10/07 17 % · OpinionWay 09/07 18 % · Harris Interactive 08/07 14 % · Ifop 08/07 19 %",
+      "avg_pct": 14.6,
+      "latest_pct": 13.5,
+      "latest_range": "8–17 %",
+      "latest_source": "Ifop 03/11 9,5 % · Cluster17 26/10 17 % · Ipsos (France) 25/10 13 % · OpinionWay 24/10 12 % · Harris Interactive / Toluna Harris 23/10 15 % · Elabe 18/10 16,5 % · yougov 18/10 8 % · Odoxa 15/10 17 %",
       "note": "Souvent 2e dans les hyp. où il est seul candidat du centre/centre-droit face à Le Pen."
     },
     {
@@ -228,10 +236,10 @@
       "affiliation": "La France insoumise",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 15,
-      "latest_pct": 15,
-      "latest_range": "13–16 %",
-      "latest_source": "Elabe 12/07 16 % · Verian 10/07 15 % · OpinionWay 09/07 13 % · Harris Interactive 08/07 16 % · Ifop 08/07 15 %",
+      "avg_pct": 16,
+      "latest_pct": 16.7,
+      "latest_range": "13–19,5 %",
+      "latest_source": "Ifop 03/11 18 % · Cluster17 26/10 19,5 % · Ipsos (France) 25/10 17 % · OpinionWay 24/10 16 % · Harris Interactive / Toluna Harris 23/10 17 % · Elabe 18/10 15 % · yougov 18/10 13 % · Odoxa 15/10 18 %",
       "note": "Progression relative dans plusieurs vagues juil. 2026."
     },
     {
@@ -240,10 +248,10 @@
       "affiliation": "Renaissance",
       "bloc": "centre",
       "status": "candidature_declaree",
-      "avg_pct": 7.7,
-      "latest_pct": 7.7,
-      "latest_range": "7–8 %",
-      "latest_source": "Verian 10/07 8 % · OpinionWay 09/07 7 % · Harris Interactive 08/07 8 %",
+      "avg_pct": 6.4,
+      "latest_pct": 4.8,
+      "latest_range": "4–6 %",
+      "latest_source": "Ifop 03/11 5 % · Ipsos (France) 25/10 4 % · OpinionWay 24/10 4 % · yougov 18/10 6 %",
       "note": "Candidature annoncée le 22 mai 2026. Score très dépendant de la présence d'Édouard Philippe dans l'hypothèse."
     },
     {
@@ -252,10 +260,10 @@
       "affiliation": "Place publique",
       "bloc": "gauche-sociale-democrate",
       "status": "designe_parti",
-      "avg_pct": 9.9,
-      "latest_pct": 9.9,
-      "latest_range": "9–11 %",
-      "latest_source": "Elabe 12/07 10,5 % · Verian 10/07 11 % · OpinionWay 09/07 9 % · Harris Interactive 08/07 10 % · Ifop 08/07 9 %",
+      "avg_pct": 11.1,
+      "latest_pct": 12.1,
+      "latest_range": "9,5–15,5 %",
+      "latest_source": "Ifop 03/11 10 % · Ipsos (France) 25/10 13 % · OpinionWay 24/10 13 % · Harris Interactive / Toluna Harris 23/10 12 % · Elabe 18/10 15,5 % · yougov 18/10 12 % · Odoxa 15/10 9,5 %",
       "note": "Désigné candidat de la gauche sociale-démocrate : vainqueur de la primaire du 11/10/2026 dès le 1er tour, 66,17 % des exprimés, 120 787 votants (communiqué des organisateurs via 20 Minutes, Europe 1). Toluna-Harris vague 7 (terrain antérieur) : 10-11 %."
     },
     {
@@ -264,10 +272,10 @@
       "affiliation": "Les Républicains",
       "bloc": "droite",
       "status": "candidat_declare",
-      "avg_pct": 7.6,
-      "latest_pct": 7.6,
-      "latest_range": "7–8 %",
-      "latest_source": "Elabe 12/07 8 % · Verian 10/07 7 % · OpinionWay 09/07 8 % · Harris Interactive 08/07 7 % · Ifop 08/07 8 %",
+      "avg_pct": 6.4,
+      "latest_pct": 5.9,
+      "latest_range": "4–7,5 %",
+      "latest_source": "Ifop 03/11 4 % · Cluster17 26/10 7 % · Ipsos (France) 25/10 7,5 % · OpinionWay 24/10 6 % · Harris Interactive / Toluna Harris 23/10 4 % · Elabe 18/10 7 % · yougov 18/10 5 % · Odoxa 15/10 6,5 %",
       "note": null
     },
     {
@@ -288,10 +296,10 @@
       "affiliation": "Sans étiquette (ex-PS)",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 8,
-      "latest_pct": 8.5,
-      "latest_range": "8–9 % (hyp. Elabe 3–5)",
-      "latest_source": "Elabe 12/07 hyp.3–5",
+      "avg_pct": 6.8,
+      "latest_pct": 6.5,
+      "latest_range": "6,5 %",
+      "latest_source": "Cluster17 26/10 6,5 %",
       "note": "Testé seulement dans certaines hypothèses de fragmentation de la gauche. Toluna-Harris vague 7 (5-8 oct.) : 7 % dans les hypothèses sans Glucksmann."
     },
     {
@@ -312,10 +320,10 @@
       "affiliation": "Picardie debout / indépendant",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 5.8,
-      "latest_pct": 6,
-      "latest_range": "6 % (hyp. Elabe avec Ruffin)",
-      "latest_source": "Elabe 12/07 hyp.3–4",
+      "avg_pct": 2.5,
+      "latest_pct": 2,
+      "latest_range": "2 %",
+      "latest_source": "yougov 18/10 2 %",
       "note": null
     },
     {
@@ -360,10 +368,10 @@
       "affiliation": "Les Écologistes (EELV)",
       "bloc": "ecologie",
       "status": "intention_declaree",
-      "avg_pct": 3.5,
-      "latest_pct": 3.5,
-      "latest_range": "2–5 %",
-      "latest_source": "Elabe 12/07 3,5 % · OpinionWay 09/07 5 % · Harris Interactive 08/07 2 % · Ifop 08/07 3,5 %",
+      "avg_pct": 2.9,
+      "latest_pct": 2.9,
+      "latest_range": "1–5 %",
+      "latest_source": "Ifop 03/11 3 % · Cluster17 26/10 2,5 % · Ipsos (France) 25/10 3,5 % · OpinionWay 24/10 1 % · Harris Interactive / Toluna Harris 23/10 2 % · Elabe 18/10 3 % · yougov 18/10 5 % · Odoxa 15/10 3 %",
       "note": null
     },
     {
@@ -372,10 +380,10 @@
       "affiliation": "Reconquête",
       "bloc": "extreme-droite",
       "status": "intention_declaree",
-      "avg_pct": 3.4,
-      "latest_pct": 3.4,
-      "latest_range": "3–4 %",
-      "latest_source": "Elabe 12/07 3 % · Verian 10/07 3 % · OpinionWay 09/07 3 % · Harris Interactive 08/07 4 % · Ifop 08/07 4 %",
+      "avg_pct": 3.8,
+      "latest_pct": 4.2,
+      "latest_range": "3,5–5 %",
+      "latest_source": "Ifop 03/11 4,5 % · Cluster17 26/10 3,5 % · Ipsos (France) 25/10 4,5 % · OpinionWay 24/10 4 % · Harris Interactive / Toluna Harris 23/10 5 % · Elabe 18/10 3,5 % · yougov 18/10 4 % · Odoxa 15/10 4,5 %",
       "note": null
     },
     {
@@ -384,10 +392,10 @@
       "affiliation": "Sans étiquette",
       "bloc": "centre",
       "status": "hypothese_sondage",
-      "avg_pct": 2.5,
-      "latest_pct": 2.5,
-      "latest_range": "2,5 %",
-      "latest_source": "Elabe 12/07 2,5 %",
+      "avg_pct": 1.9,
+      "latest_pct": 1.3,
+      "latest_range": "1–2 %",
+      "latest_source": "Harris Interactive / Toluna Harris 23/10 1 % · Elabe 18/10 2 % · yougov 18/10 1 %",
       "note": null
     },
     {
@@ -396,10 +404,10 @@
       "affiliation": "Parti communiste français",
       "bloc": "gauche",
       "status": "intention_declaree",
-      "avg_pct": 2.3,
-      "latest_pct": 2.3,
-      "latest_range": "2–3 %",
-      "latest_source": "Elabe 12/07 2,5 % · Verian 10/07 2 % · OpinionWay 09/07 2 % · Harris Interactive 08/07 2 % · Ifop 08/07 3 %",
+      "avg_pct": 2.1,
+      "latest_pct": 1.8,
+      "latest_range": "1–2 %",
+      "latest_source": "Ifop 03/11 2 % · Cluster17 26/10 2 % · Ipsos (France) 25/10 2 % · OpinionWay 24/10 1 % · Harris Interactive / Toluna Harris 23/10 2 % · Elabe 18/10 1,5 % · yougov 18/10 2 % · Odoxa 15/10 2 %",
       "note": null
     },
     {
@@ -420,10 +428,10 @@
       "affiliation": "Debout la France",
       "bloc": "droite-souverainiste",
       "status": "intention_declaree",
-      "avg_pct": 1.5,
-      "latest_pct": 1.5,
-      "latest_range": "1–2 %",
-      "latest_source": "Elabe 12/07 1,5 % · Harris Interactive 08/07 1 % · Ifop 08/07 2 %",
+      "avg_pct": 1.8,
+      "latest_pct": 1.8,
+      "latest_range": "1–3 %",
+      "latest_source": "Ifop 03/11 1,5 % · Cluster17 26/10 3 % · Ipsos (France) 25/10 1,5 % · OpinionWay 24/10 1 % · Harris Interactive / Toluna Harris 23/10 1 % · Elabe 18/10 2,5 % · yougov 18/10 2 % · Odoxa 15/10 2 %",
       "note": null
     },
     {
@@ -432,10 +440,10 @@
       "affiliation": "Nouvelle Énergie",
       "bloc": "droite",
       "status": "intention_declaree",
-      "avg_pct": 2,
-      "latest_pct": null,
-      "latest_range": "≈2 % (Ifop 25/06 hyp.8)",
-      "latest_source": "EPOC moyenne · Ifop juin 2026",
+      "avg_pct": 5.2,
+      "latest_pct": 6.4,
+      "latest_range": "4–8 %",
+      "latest_source": "Ifop 03/11 7 % · Cluster17 26/10 8 % · OpinionWay 24/10 6 % · Harris Interactive / Toluna Harris 23/10 7 % · yougov 18/10 4 %",
       "note": "Non isolé dans les baromètres majeurs post-7 juil. 2026."
     },
     {
@@ -445,9 +453,9 @@
       "bloc": "extreme-gauche",
       "status": "intention_declaree",
       "avg_pct": 0.8,
-      "latest_pct": 0.8,
+      "latest_pct": 0.6,
       "latest_range": "0,5–1 %",
-      "latest_source": "Elabe 12/07 1 % · Harris Interactive 08/07 1 % · Ifop 08/07 0,5 %",
+      "latest_source": "Ifop 03/11 0,5 % · Cluster17 26/10 0,5 % · Ipsos (France) 25/10 0,5 % · OpinionWay 24/10 0,5 % · Harris Interactive / Toluna Harris 23/10 1 % · Elabe 18/10 1 % · yougov 18/10 0 % · Odoxa 15/10 0,5 %",
       "note": null
     },
     {
