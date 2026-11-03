@@ -1,0 +1,646 @@
+{
+  "slug": "48-ou-500-lycees-bloques",
+  "title": "48 ou 500 lycées bloqués ? Chacun son thermomètre, personne ne montre sa liste",
+  "eyebrow": "Analyse · Mouvement lycéen",
+  "type_label": "Analyse",
+  "date": "2026-11-04",
+  "updated": "2026-11-04",
+  "kicker": "Analyse · La rédaction · 4 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Mardi 3 novembre, 48 lycées étaient bloqués selon le ministère de l'Éducation nationale. L'Union syndicale lycéenne en compte 500. Dix fois plus. La veille, c'était déjà 41 contre 169. Ni l'un ni l'autre ne ment forcément : ils ne mesurent pas la même chose, pas toujours à la même heure, et aucun, à notre connaissance au 3 novembre, ne publie la liste de ses lycées. Nous avons démonté les deux thermomètres. Ensemble, ils racontent un mouvement plus petit qu'en octobre, mais pas éteint.",
+  "description": "Mardi 3 novembre, 48 lycées étaient bloqués selon le ministère de l'Éducation nationale. L'Union syndicale lycéenne en compte 500. Dix fois plus.",
+  "disclaimer": "Chaque camp a un thermomètre qui l'arrange. Le ministère prend la température à 9 h 30, avec un instrument plus étroit qu'en octobre, et parle de « résiduel ». L'USL la prend avec un instrument large, sans montrer ses relevés, et crie à l'« absurde ». Les deux ont un point commun : ils demandent qu'on les croie sur parole. Il existe pourtant une sortie simple. Que le ministère publie chaque jour sa définition, son heure de relevé et le nombre de lycées par académie. Que l'USL publie sa liste, lycée par lycée, sans nommer d'élève. Celui qui accepte en premier gagnera quelque chose de plus utile qu'une bataille de chiffres : la confiance de ceux qui lisent. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "lycees",
+    "blocages",
+    "education",
+    "doe"
+  ],
+  "x_hook": "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun, à notre connaissance, ne publie sa liste. On a démonté les deux thermomètres.",
+  "hues": [
+    {
+      "slug": "droite",
+      "label": "Transparence des chiffres publics",
+      "color": "#0066cc",
+      "rationale": "Un chiffre officiel doit venir avec sa définition, son heure et son détail, pour pouvoir être vérifié."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Méfiance égale envers tous les décomptes",
+      "color": "#5a6570",
+      "rationale": "Un chiffre militant sans liste ne vaut pas plus qu'un chiffre officiel sans méthode."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Deux droits à tenir ensemble",
+      "color": "#5a6570",
+      "rationale": "Le droit de manifester des lycéens et le droit d'aller en cours de ceux qui veulent étudier."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "deux-chiffres",
+      "title": "Deux chiffres pour un même mardi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les organisations de jeunesse avaient promis une « journée noire » pour mardi, avant la grève interprofessionnelle de jeudi [11]. Le ministère a donné son chiffre le matin : 48 lycées bloqués à 9 h 30, sur environ 3 700. C'est à peine plus que la veille à la même heure (41). Aucune perturbation n'était relevée dans les trois quarts des départements [1]."
+        },
+        {
+          "type": "p",
+          "text": "Le ministre Édouard Geffray a ensuite écrit sur X qu'« à midi, 1,3 % des lycées étaient bloqués » [3]. Faites le calcul : 1,3 % de 3 700, cela fait 48. Le chiffre de midi est donc le même que celui du matin."
+        },
+        {
+          "type": "p",
+          "text": "L'Union syndicale lycéenne (USL) a répondu par « un chiffre absurde ». Elle parle de « plus de 500 lycées » touchés par un « blocage total ou filtrant » [2][7]. L'Union étudiante, qui fait partie de la même intersyndicale que l'USL, écrit la même chose dans son communiqué : « plus de 500 lycées et plus de 50 campus bloqués dès ce matin » [5]."
+        },
+        {
+          "type": "p",
+          "text": "Ces 500 ne sont donc pas un bilan du soir. C'est un chiffre du matin, comme celui du ministère. Mardi, l'heure n'explique pas l'écart. Les mots, sans doute."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "encadre",
+      "title": "Encadré · Bloqué, filtrant, perturbé : trois mots, trois réalités",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Bloqué** : on ne peut pas entrer. Les grilles sont fermées ou barrées par des poubelles et des barrières.",
+            "**Barrage filtrant** : des élèves tiennent l'entrée, mais laissent passer une partie des élèves ou des professeurs. Le lycée reste ouvert.",
+            "**Perturbé** : quelque chose a gêné les cours, à un moment de la journée. Cela peut aller d'un attroupement devant la porte à des cours passés à distance."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "L'USL dit compter les deux premiers [2]. Le ministère ne publie pas sa définition de « bloqué ». Notre hypothèse : il ne retient que les lycées où l'on ne pouvait pas entrer au moment du relevé. Nous n'avons pas pu la confirmer."
+        },
+        {
+          "type": "p",
+          "text": "Un exemple montre la distance entre ces mots. Dans l'agglomération de Lyon, un bilan de la matinée publié par Le Parisien relevait mardi 27 établissements « perturbés ». Trois seulement étaient passés en cours à distance [3]. Selon le mot choisi, la même matinée lyonnaise pèse 27 ou 3."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "lundi",
+      "title": "Lundi, l'heure comptait",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lundi 2 novembre, jour de rentrée après la Toussaint, l'heure jouait vraiment. Le ministère comptait 41 lycées bloqués à 9 h 30, soit 1 % [8][9]. Édouard Geffray parlait sur France Inter de « quelques lycées perturbés », « a priori assez résiduel » [9]."
+        },
+        {
+          "type": "p",
+          "text": "L'USL, elle, a donné trois chiffres dans la même journée. À la mi-journée, elle en revendiquait plus de 150 [10][25]. France Inter précise : « bloqués » ou « concernés par des barrages filtrants » [10]. En fin de journée, sur BFMTV, son président Ryad Rani revendiquait 169 lycées bloqués ce lundi [25]."
+        },
+        {
+          "type": "p",
+          "text": "Un relevé à 9 h 30 ne voit pas un blocus qui commence à 10 h. Il ne voit pas non plus un blocus levé à 9 h par la police. Un bilan du soir, lui, additionne tout ce qui s'est passé dans la journée. Les deux camps n'ont donc pas mesuré le même lundi."
+        },
+        {
+          "type": "p",
+          "text": "Ryad Rani ajoutait un argument : il n'y avait « pas d'appel national » à bloquer ce lundi [25]. C'est vrai. Mais mardi, il y en avait un. Et le chiffre du ministère n'a bougé que de sept lycées."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "facs",
+      "title": "Facs : le même chiffre, deux histoires",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dans l'enseignement supérieur, c'est l'inverse : les deux camps donnent presque le même nombre."
+        },
+        {
+          "type": "p",
+          "text": "Le ministère comptait mardi à la mi-journée 51 établissements « perturbés » sur 184, soit un peu moins d'un tiers [6][7]. L'Union étudiante annonçait « 50 campus bloqués », et « une université sur deux perturbée » [3][6]. Son communiqué parle de « près de 50 établissements d'enseignement supérieur mobilisés » [5]."
+        },
+        {
+          "type": "p",
+          "text": "51 d'un côté, environ 50 de l'autre. L'écart n'est pas dans le nombre. Il est dans la division. Le ministère divise par 184 établissements. L'Union étudiante parle d'universités, et ne dit pas par quel total elle divise."
+        },
+        {
+          "type": "p",
+          "text": "Le mot « perturbé » n'a pas non plus le même poids qu'au lycée. Lundi soir sur LCP, le ministre Philippe Baptiste a expliqué ce qu'il range dedans : « Ça peut être à un moment un bâtiment qui a été bloqué dans la journée, ça peut être un ou deux labos qui n'ont pas pu fonctionner correctement » [25]. Pour les facs, le gouvernement compte donc large, sur toute la journée. Pour les lycées, il compte serré, à une heure précise. Ce n'est pas une faute. Mais cela explique pourquoi les deux chiffres officiels ne racontent pas la même histoire."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "octobre",
+      "title": "Ce qui a changé depuis octobre",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Ce qui a changé depuis octobre",
+          "headers": [
+            "Date",
+            "Ministère",
+            "Organisations de jeunesse",
+            "Ce qui est compté",
+            "Sources"
+          ],
+          "rows": [
+            [
+              "6 octobre",
+              "891 établissements",
+              "1 600 à 1 800 lycées « mobilisés » début octobre",
+              "Ministère : cours « suspendus, totalement ou partiellement, toutes causes confondues »",
+              "[11][12]"
+            ],
+            [
+              "2 novembre",
+              "41 lycées à 9 h 30 (1 %)",
+              "plus de 150 à la mi-journée, 169 le soir (USL)",
+              "Ministère : « bloqués ». USL : bloqués ou sous barrage filtrant",
+              "[8][10][25]"
+            ],
+            [
+              "3 novembre",
+              "48 à 9 h 30, 1,3 % à midi",
+              "« plus de 500 » (USL, Union étudiante)",
+              "Ministère : « bloqués ». USL : « blocage total ou filtrant »",
+              "[1][2][3][5]"
+            ],
+            [
+              "3 novembre, supérieur",
+              "51 sur 184 « perturbés »",
+              "50 campus « bloqués », une université sur deux « perturbée »",
+              "Deux totaux différents",
+              "[5][6]"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Les chiffres d'une même ligne ne mesurent pas la même chose. Ils ne doivent pas être additionnés ni comparés comme s'ils comptaient la même réalité.*"
+        },
+        {
+          "type": "p",
+          "text": "Ce tableau montre deux choses. D'abord, le mouvement a baissé, quel que soit le thermomètre choisi. Les syndicats comptaient 1 600 à 1 800 lycées mobilisés début octobre ; mardi, l'USL en annonce 500. Ensuite, l'écart entre les camps s'est creusé. Début octobre, les syndicats comptaient environ deux fois plus que le ministère. Mardi, dix fois plus. Mais en octobre, le ministère comptait les cours suspendus, même en partie. Aujourd'hui, il compte les lycées bloqués. Un thermomètre plus étroit donne mécaniquement un chiffre plus bas."
+        },
+        {
+          "type": "p",
+          "text": "Matignon a lui-même donné un indice. Selon BFMTV, les services du Premier ministre constatent que « ce sont régulièrement les mêmes lycées qui sont bloqués ». Sébastien Lecornu a demandé à Édouard Geffray « une analyse spécifique du contexte local » de chacun [3][11]. Autrement dit, le gouvernement voit un mouvement concentré dans quelques lieux. Ce n'est pas la même chose qu'un mouvement fini."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "chiffres",
+      "title": "Ce que les chiffres ne disent pas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un lycée bloqué dans le calme et un lycée où la journée tourne mal pèsent pareil dans un décompte. Mardi n'a pas été calme partout."
+        },
+        {
+          "type": "p",
+          "text": "Édouard Geffray affirme que, dans certains lycées, « des personnels de l'Éducation nationale ont de nouveau été victimes de violences ». Il annonce que le ministère saisit la justice à chaque fois [4]. En Seine-Maritime, la préfecture indique que trois proviseurs ont « été pris pour cible par des tirs de mortiers ou des jets de projectiles », et que l'un d'eux a été « légèrement blessé ». Treize personnes ont été interpellées dans le département, notamment pour outrages, tirs de mortiers d'artifice et incendies de poubelles, selon la préfecture citée par franceinfo [2]. Dans le Rhône, la préfecture compte 17 interpellations [3]. Une interpellation n'est pas une condamnation : les personnes concernées restent présumées innocentes."
+        },
+        {
+          "type": "p",
+          "text": "L'USL, de son côté, dénonce une forte « répression », avec « des jeunes plaqués au mur, des compagnies de CRS envoyées ». Un de ses représentants a déclaré à l'AFP : « Notre impression est que l'objectif est de réprimer le mouvement, de l'empêcher pour la mobilisation de jeudi » [3]. Ce sont ses mots, que nous n'avons pas pu vérifier sur place."
+        },
+        {
+          "type": "p",
+          "text": "La veille, sur le même sujet, le ministre de l'Intérieur avait donné sa position. Lundi, devant la commission des lois de l'Assemblée, Laurent Nuñez a répondu à une députée LFI qui parlait de « répression » : « La répression, elle n'existe pas (…). Nous, on est là pour éviter les troubles à l'ordre public ». Interrogé sur l'usage des grenades après les graves blessures de lycéens pendant le mouvement, il a ajouté : « Je ne renoncerai à aucun moyen intermédiaire (grenades, gaz lacrymogène…) » [13]. Les moyens intermédiaires, ce sont les armes moins dangereuses qu'une arme à feu, comme les grenades, les gaz ou les lanceurs de balles de défense."
+        },
+        {
+          "type": "p",
+          "text": "À Paris, le parcours voulu par les étudiants dans le centre de la capitale était interdit : seul un trajet entre la porte de Charenton et la porte de Montreuil était autorisé. Le tribunal administratif a rejeté le recours [3]. La préfecture de police a vu « deux cortèges sauvages », « repérés et immédiatement encadrés par les policiers ». Les jeunes se sont dispersés dans le calme vers 16 h, selon l'AFP [4]."
+        },
+        {
+          "type": "p",
+          "text": "Près de chez nous, les chiffres sont maigres. Dans les Alpes-Maritimes, la situation était « très calme » mardi matin, avec un blocage partiel de lycée en cours en milieu de matinée [3]. Pour le Var, nous n'avons trouvé aucun chiffre officiel de la journée."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "semaine",
+      "title": "La semaine qui vient",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Jeudi 5 novembre** : grève et manifestations interprofessionnelles. Lycéens et étudiants comptent s'y joindre [4]. À Paris, le parcours n'était toujours pas fixé mardi. L'intersyndicale a saisi le tribunal administratif pour obtenir une réponse de la préfecture [3].",
+            "**Vendredi 6 et samedi 7 novembre** : la coordination des gilets jaunes annonce un acte IV, avec « blocages et manifestations partout en France » le samedi [16].",
+            "**Parcoursup** : le gouvernement a promis un nouveau système pour la campagne 2028, avec de premiers changements dès 2027. Il a aussi annoncé 500 postes de professeurs supplémentaires, des classes de seconde plafonnées à 28 élèves (dans la moitié des lycées les moins favorisés en 2027, partout en 2028) et 15 000 places supplémentaires dans le supérieur [4][14][15]. L'intersyndicale réclame toujours l'abrogation de Parcoursup et 10 milliards d'euros [4].",
+            "**Matignon** : « un créneau est prévu au niveau du Premier ministre la semaine prochaine pour à nouveau recevoir les lycéens », disent les services de Sébastien Lecornu [9]. Cette semaine, des groupes de travail se réunissent sur le contrôle continu, le temps scolaire et la démocratie lycéenne, selon Édouard Geffray [3].",
+            "**Place Beauvau** : mardi, Laurent Nuñez s'est dit « le seul responsable » de l'« échec » du 17 octobre devant la commission d'enquête de l'Assemblée [3]. Il y parlait des violences et des pillages de ce samedi-là, pas des blocus."
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "bilan",
+      "title": "Le bilan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le chiffre du ministère est un instantané. Il dit combien de lycées étaient bloqués à une heure donnée. Si notre hypothèse est juste, il ne compte ni les barrages filtrants, ni les blocus du milieu de matinée."
+        },
+        {
+          "type": "p",
+          "text": "Le chiffre de l'USL est un recensement militant. Il additionne blocages totaux et filtrants. Il n'est accompagné d'aucune liste publique, donc personne ne peut le vérifier."
+        },
+        {
+          "type": "p",
+          "text": "Les deux disent pourtant la même chose sur un point : le mouvement est bien plus faible qu'au début d'octobre. Mais il n'a pas disparu, et il revient souvent dans les mêmes lycées, comme le constate Matignon lui-même."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "opinion",
+      "title": "L'opinion de la rédaction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Chaque camp a un thermomètre qui l'arrange. Le ministère prend la température à 9 h 30, avec un instrument plus étroit qu'en octobre, et parle de « résiduel ». L'USL la prend avec un instrument large, sans montrer ses relevés, et crie à l'« absurde ». Les deux ont un point commun : ils demandent qu'on les croie sur parole. Il existe pourtant une sortie simple. Que le ministère publie chaque jour sa définition, son heure de relevé et le nombre de lycées par académie. Que l'USL publie sa liste, lycée par lycée, sans nommer d'élève. Celui qui accepte en premier gagnera quelque chose de plus utile qu'une bataille de chiffres : la confiance de ceux qui lisent. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.*"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · Mouvement lycéen : ce qu'ont dit les candidats 2027 (relevé au 3 novembre 2026)",
+      "intro": "",
+      "table": {
+        "caption": "Mouvement lycéen : ce qu'ont dit les candidats 2027 (relevé au 3 novembre 2026)",
+        "headers": [
+          "Candidat",
+          "Position sur le mouvement lycéen et ses chiffres",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Marine Le Pen / Jordan Bardella (RN)",
+            "Le 15 octobre à la télévision, Le Pen juge Parcoursup « une aberration ». À la télévision, elle veut aussi exclure de leur établissement ceux « qui dégradent, menacent ou agressent ». Bardella, le 19 octobre, à propos de la mobilisation du 17 octobre : « Les Français ont en eux une colère légitime ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17][18]"
+          ],
+          [
+            "Jean-Luc Mélenchon (LFI)",
+            "« Nous abolirons Parcoursup » (9 octobre). Il parle du « plus puissant mouvement de jeunesse lycéenne et étudiante » depuis mai 1968. Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17]"
+          ],
+          [
+            "Bruno Retailleau (LR)",
+            "Sur RTL : « Parcoursup c'est une boîte noire ». Il veut « une sélection à l'université ». Sur RCF, il juge « impossible de répondre à court terme » aux demandes des lycéens. Le 1er octobre sur BFMTV-RMC, il a proposé d'interdire LFI, « un parti […] qui appelle à la sédition », selon lui. Jean-Luc Mélenchon lui a répondu le même jour. Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17][24]"
+          ],
+          [
+            "Édouard Philippe (Horizons)",
+            "Le 1er novembre sur TF1 : les revendications lycéennes « sont à bien des égards fondées », il faut « saisir la main tendue par le gouvernement » et « retourner dans les classes ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[19]"
+          ],
+          [
+            "Gabriel Attal (Renaissance)",
+            "Ne demande ni la suppression ni le remplacement de Parcoursup, veut en faire « un outil qui accompagne davantage ». Sa porte-parole Céline Géraud, le 27 octobre : l'inquiétude des lycéens est « entendable ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17][20]"
+          ],
+          [
+            "Raphaël Glucksmann (Place publique)",
+            "Abrogation de Parcoursup dans son plan en dix points présenté à Matignon le 22 octobre. Sur la bataille des chiffres : pas de position publique trouvée",
+            "[21]"
+          ],
+          [
+            "David Lisnard (Nouvelle Énergie)",
+            "Le 22 octobre sur ICI Azur : « L'extrême gauche a une grave responsabilité puisqu'elle attise l'incendie » ; « le problème derrière Parcoursup, c'est ce mythe de l'absence de sélection ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17][22]"
+          ],
+          [
+            "Dominique de Villepin",
+            "Soutien à la fin de Parcoursup, au vote à 16 ans et à l'interdiction des LBD. Sur la bataille des chiffres : pas de position publique trouvée",
+            "[23]"
+          ],
+          [
+            "Marine Tondelier (Les Écologistes)",
+            "Le 26 octobre aux « 4 Vérités », il « faut évidemment supprimer Parcoursup ». Sur BFMTV, elle dit avoir eu « honte de comment la France traitait ses enfants ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17]"
+          ],
+          [
+            "François Ruffin (Debout !)",
+            "Le 9 octobre sur franceinfo, il demande « la suppression de Parcoursup ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17]"
+          ],
+          [
+            "Fabien Roussel (PCF)",
+            "Pour la suppression de Parcoursup. Sur BFMTV, il veut que « l'on mette les moyens qu'ils réclament ». Sur la bataille des chiffres : pas de position publique trouvée",
+            "[17]"
+          ],
+          [
+            "Éric Zemmour (Reconquête)",
+            "Pas de position publique trouvée",
+            ""
+          ]
+        ]
+      },
+      "note": "*Méthode : positions relevées dans les sources listées ci-dessous, au 3 novembre 2026. Le panel réunit, de la gauche à la droite, les candidats dont ces sources rapportent une position sur le mouvement lycéen ; Éric Zemmour y figure pour signaler qu'aucune n'a été trouvée. « Pas de position publique trouvée » veut dire absent de ces sources, pas absence de position. Aucun candidat trouvé n'a commenté l'écart entre les chiffres du ministère et ceux des syndicats. Aucun sondage n'est cité.*",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "courants",
+      "title": "Courants que cette analyse rejoint",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "**Transparence des chiffres publics :** un chiffre officiel doit venir avec sa définition, son heure et son détail, pour pouvoir être vérifié.",
+            "**Méfiance égale envers tous les décomptes :** un chiffre militant sans liste ne vaut pas plus qu'un chiffre officiel sans méthode.",
+            "**Deux droits à tenir ensemble :** le droit de manifester des lycéens et le droit d'aller en cours de ceux qui veulent étudier."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**En tension avec :** le récit d'un mouvement « résiduel » qui serait déjà fini, et le récit inverse d'un raz-de-marée que les chiffres officiels cacheraient."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Consultées le 3 novembre 2026.",
+  "sources_groups": [
+    {
+      "title": "Presse, syndicats, institutions et candidats",
+      "items": [
+        {
+          "label": "1. Europe 1 avec l'AFP, « 48 lycées bloqués mardi selon le ministère, dix fois plus selon un syndicat lycéen », 03/11/2026. https://www.europe1.fr/societe/48-lycees-bloques-mardi-selon-le-ministere-dix-fois-plus-selon-un-syndicat-lyceen-1205147",
+          "lead": "1. Europe 1 avec l'AFP, « 48 lycées bloqués mardi selon le ministère, dix fois plus selon un syndicat lycéen », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/societe/48-lycees-bloques-mardi-selon-le-ministere-dix-fois-plus-selon-un-syndicat-lyceen-1205147",
+              "url": "https://www.europe1.fr/societe/48-lycees-bloques-mardi-selon-le-ministere-dix-fois-plus-selon-un-syndicat-lyceen-1205147"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, direct « Les organisations de jeunesse appellent à une nouvelle journée de blocages massifs des facs et des lycées avant la grève de jeudi », 03/11/2026. https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-les-organisations-de-jeunesse-appellent-a-une-nouvelle-journee-de-blocages-massifs-des-facs-et-des-lycees-avant-la-greve-de-jeudi_8265284.html",
+          "lead": "2. franceinfo, direct « Les organisations de jeunesse appellent à une nouvelle journée de blocages massifs des facs et des lycées avant la grève de jeudi », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-les-organisations-de-jeunesse-appellent-a-une-nouvelle-journee-de-blocages-massifs-des-facs-et-des-lycees-avant-la-greve-de-jeudi_8265284.html",
+              "url": "https://www.franceinfo.fr/societe/education/blocage-des-lycees/direct-les-organisations-de-jeunesse-appellent-a-une-nouvelle-journee-de-blocages-massifs-des-facs-et-des-lycees-avant-la-greve-de-jeudi_8265284.html"
+            }
+          ]
+        },
+        {
+          "label": "3. Le Parisien, direct « Colère des lycéens : un nouvel appel à bloquer lycées et universités ce mardi », 03/11/2026. https://www.leparisien.fr/societe/direct-colere-des-lyceens-un-nouvel-appel-a-bloquer-lycees-et-universites-ce-mardi-03-11-2026-CREEOPXX2ZAOZOQ76FGDCHZBWA.php",
+          "lead": "3. Le Parisien, direct « Colère des lycéens : un nouvel appel à bloquer lycées et universités ce mardi », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/societe/direct-colere-des-lyceens-un-nouvel-appel-a-bloquer-lycees-et-universites-ce-mardi-03-11-2026-CREEOPXX2ZAOZOQ76FGDCHZBWA.php",
+              "url": "https://www.leparisien.fr/societe/direct-colere-des-lyceens-un-nouvel-appel-a-bloquer-lycees-et-universites-ce-mardi-03-11-2026-CREEOPXX2ZAOZOQ76FGDCHZBWA.php"
+            }
+          ]
+        },
+        {
+          "label": "4. France 24 avec l'AFP, « Mouvement lycéen et étudiant : les blocages de retour et une manifestation non autorisée à Paris », 03/11/2026. https://www.france24.com/fr/info-en-continu/20261103-nouvel-appel-%C3%A0-bloquer-facs-et-lyc%C3%A9es-avec-la-gr%C3%A8ve-de-jeudi-en-ligne-de-mire",
+          "lead": "4. France 24 avec l'AFP, « Mouvement lycéen et étudiant : les blocages de retour et une manifestation non autorisée à Paris », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261103-nouvel-appel-%C3%A0-bloquer-facs-et-lyc%C3%A9es-avec-la-gr%C3%A8ve-de-jeudi-en-ligne-de-mire",
+              "url": "https://www.france24.com/fr/info-en-continu/20261103-nouvel-appel-%C3%A0-bloquer-facs-et-lyc%C3%A9es-avec-la-gr%C3%A8ve-de-jeudi-en-ligne-de-mire"
+            }
+          ]
+        },
+        {
+          "label": "5. Union étudiante, communiqué « La mobilisation reprend de plus belle dans nos lieux d'études en cette rentrée », 03/11/2026. https://union-etudiante.fr/communique-de-presse/la-mobilisation-reprend-de-plus-belle-dans-nos-lieux-detudes-en-cette-rentree/",
+          "lead": "5. Union étudiante, communiqué « La mobilisation reprend de plus belle dans nos lieux d'études en cette rentrée », 03/11/2026",
+          "links": [
+            {
+              "label": "https://union-etudiante.fr/communique-de-presse/la-mobilisation-reprend-de-plus-belle-dans-nos-lieux-detudes-en-cette-rentree/",
+              "url": "https://union-etudiante.fr/communique-de-presse/la-mobilisation-reprend-de-plus-belle-dans-nos-lieux-detudes-en-cette-rentree/"
+            }
+          ]
+        },
+        {
+          "label": "6. Europe 1 avec l'AFP, « 51 établissements sur 184 de l'enseignement supérieur perturbés ce mardi selon le ministère, \"un sur deux\" selon l'Union étudiante », 03/11/2026. https://www.europe1.fr/societe/51-etablissements-sur-184-de-lenseignement-superieur-perturbes-ce-mardi-selon-le-ministere-un-sur-deux-selon-lunion-etudiante-1205243",
+          "lead": "6. Europe 1 avec l'AFP, « 51 établissements sur 184 de l'enseignement supérieur perturbés ce mardi selon le ministère, \"un sur deux\" selon l'Union étudiante », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/societe/51-etablissements-sur-184-de-lenseignement-superieur-perturbes-ce-mardi-selon-le-ministere-un-sur-deux-selon-lunion-etudiante-1205243",
+              "url": "https://www.europe1.fr/societe/51-etablissements-sur-184-de-lenseignement-superieur-perturbes-ce-mardi-selon-le-ministere-un-sur-deux-selon-lunion-etudiante-1205243"
+            }
+          ]
+        },
+        {
+          "label": "7. franceinfo (Radio France), « Nouvelle journée d'actions dans les lycées et les universités : un point sur ce que veulent les jeunes manifestants », 03/11/2026. https://www.radiofrance.fr/franceinfo/podcasts/les-documents-franceinfo/nouvelle-journee-d-actions-dans-les-lycees-et-les-universites-un-point-sur-ce-que-veulent-les-jeunes-manifestants-4947158",
+          "lead": "7. franceinfo (Radio France), « Nouvelle journée d'actions dans les lycées et les universités : un point sur ce que veulent les jeunes manifestants », 03/11/2026",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinfo/podcasts/les-documents-franceinfo/nouvelle-journee-d-actions-dans-les-lycees-et-les-universites-un-point-sur-ce-que-veulent-les-jeunes-manifestants-4947158",
+              "url": "https://www.radiofrance.fr/franceinfo/podcasts/les-documents-franceinfo/nouvelle-journee-d-actions-dans-les-lycees-et-les-universites-un-point-sur-ce-que-veulent-les-jeunes-manifestants-4947158"
+            }
+          ]
+        },
+        {
+          "label": "8. Le Monde, « Sébastien Lecornu se dit prêt à recevoir de nouveau les représentants lycéens \"la semaine prochaine\" », 02/11/2026. https://www.lemonde.fr/politique/article/2026/11/02/sebastien-lecornu-se-dit-pret-a-recevoir-de-nouveau-les-representants-lyceens-la-semaine-prochaine-41-lycees-bloques-lundi-dont-plusieurs-a-paris-marseille-et-toulouse_6805152_823449.html",
+          "lead": "8. Le Monde, « Sébastien Lecornu se dit prêt à recevoir de nouveau les représentants lycéens \"la semaine prochaine\" », 02/11/2026",
+          "links": [
+            {
+              "label": "https://www.lemonde.fr/politique/article/2026/11/02/sebastien-lecornu-se-dit-pret-a-recevoir-de-nouveau-les-representants-lyceens-la-semaine-prochaine-41-lycees-bloques-lundi-dont-plusieurs-a-paris-marseille-et-toulouse_6805152_823449.html",
+              "url": "https://www.lemonde.fr/politique/article/2026/11/02/sebastien-lecornu-se-dit-pret-a-recevoir-de-nouveau-les-representants-lyceens-la-semaine-prochaine-41-lycees-bloques-lundi-dont-plusieurs-a-paris-marseille-et-toulouse_6805152_823449.html"
+            }
+          ]
+        },
+        {
+          "label": "9. Europe 1 avec l'AFP, direct « Mouvement des lycéens : Sébastien Lecornu redit être prêt à recevoir de nouveau les lycéens \"la semaine prochaine\" », 02/11/2026. https://www.europe1.fr/societe/en-direct-mouvement-des-lyceens-sebastien-lecornu-redit-etre-pret-a-recevoir-de-nouveau-les-lyceens-la-semaine-prochaine-1202214",
+          "lead": "9. Europe 1 avec l'AFP, direct « Mouvement des lycéens : Sébastien Lecornu redit être prêt à recevoir de nouveau les lycéens \"la semaine prochaine\" », 02/11/2026",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/societe/en-direct-mouvement-des-lyceens-sebastien-lecornu-redit-etre-pret-a-recevoir-de-nouveau-les-lyceens-la-semaine-prochaine-1202214",
+              "url": "https://www.europe1.fr/societe/en-direct-mouvement-des-lyceens-sebastien-lecornu-redit-etre-pret-a-recevoir-de-nouveau-les-lyceens-la-semaine-prochaine-1202214"
+            }
+          ]
+        },
+        {
+          "label": "10. France Inter, « Les cours reprennent dans les lycées : seul 1 % des établissements sont bloqués pour la rentrée », 02/11/2026. https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/seul-1-des-lycees-de-france-bloque-pour-la-rentree-4531842",
+          "lead": "10. France Inter, « Les cours reprennent dans les lycées : seul 1 % des établissements sont bloqués pour la rentrée », 02/11/2026",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/seul-1-des-lycees-de-france-bloque-pour-la-rentree-4531842",
+              "url": "https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/seul-1-des-lycees-de-france-bloque-pour-la-rentree-4531842"
+            }
+          ]
+        },
+        {
+          "label": "11. L'Internaute, direct « Blocage des lycées et universités : une journée \"noire\" annoncée pour ce mardi 3 novembre » (reprend BFMTV et LCP), 02-03/11/2026. https://www.linternaute.com/actualite/societe/11310945-blocage-des-lyceesen-direct-la-colere-ne-redescend-pas-deja-des-mobilisations-ce-lundi-matin/",
+          "lead": "11. L'Internaute, direct « Blocage des lycées et universités : une journée \"noire\" annoncée pour ce mardi 3 novembre » (reprend BFMTV et LCP), 02-03/11/2026",
+          "links": [
+            {
+              "label": "https://www.linternaute.com/actualite/societe/11310945-blocage-des-lyceesen-direct-la-colere-ne-redescend-pas-deja-des-mobilisations-ce-lundi-matin/",
+              "url": "https://www.linternaute.com/actualite/societe/11310945-blocage-des-lyceesen-direct-la-colere-ne-redescend-pas-deja-des-mobilisations-ce-lundi-matin/"
+            }
+          ]
+        },
+        {
+          "label": "12. Euronews, « Mobilisation lycéenne : 488 interpellations et 43 membres des forces de l'ordre blessés, selon le gouvernement », 06/10/2026. https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur",
+          "lead": "12. Euronews, « Mobilisation lycéenne : 488 interpellations et 43 membres des forces de l'ordre blessés, selon le gouvernement », 06/10/2026",
+          "links": [
+            {
+              "label": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur",
+              "url": "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+            }
+          ]
+        },
+        {
+          "label": "13. franceinfo, « Le ministre de l'Intérieur \"ne renoncera à aucun moyen intermédiaire\" comme les grenades et gaz lacrymogènes lors des manifestations », 02/11/2026. https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/le-ministre-de-l-interieur-ne-renoncera-a-aucun-moyen-intermediaire-comme-les-grenades-et-gaz-lacrymogenes-lors-des-manifestations_8264732.html",
+          "lead": "13. franceinfo, « Le ministre de l'Intérieur \"ne renoncera à aucun moyen intermédiaire\" comme les grenades et gaz lacrymogènes lors des manifestations », 02/11/2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/le-ministre-de-l-interieur-ne-renoncera-a-aucun-moyen-intermediaire-comme-les-grenades-et-gaz-lacrymogenes-lors-des-manifestations_8264732.html",
+              "url": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/le-ministre-de-l-interieur-ne-renoncera-a-aucun-moyen-intermediaire-comme-les-grenades-et-gaz-lacrymogenes-lors-des-manifestations_8264732.html"
+            }
+          ]
+        },
+        {
+          "label": "14. LCP, « \"Parcoursup sera remplacé pour la campagne 2028, c'est entendu\" : ce qu'il faut retenir du débat qui a eu lieu ce mercredi à l'Assemblée », 28/10/2026. https://lcp.fr/actualites/parcoursup-sera-remplace-pour-la-campagne-2028-c-est-entendu-ce-qu-il-faut-retenir-du",
+          "lead": "14. LCP, « \"Parcoursup sera remplacé pour la campagne 2028, c'est entendu\" : ce qu'il faut retenir du débat qui a eu lieu ce mercredi à l'Assemblée », 28/10/2026",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/parcoursup-sera-remplace-pour-la-campagne-2028-c-est-entendu-ce-qu-il-faut-retenir-du",
+              "url": "https://lcp.fr/actualites/parcoursup-sera-remplace-pour-la-campagne-2028-c-est-entendu-ce-qu-il-faut-retenir-du"
+            }
+          ]
+        },
+        {
+          "label": "15. Ministère de l'Enseignement supérieur, « Remplacement de la plateforme Parcoursup, plafonnement du nombre d'élèves par classe, état des bâtiments, bourses : les engagements du Gouvernement pour la jeunesse », 26/10/2026. https://www.enseignementsup-recherche.gouv.fr/fr/remplacement-de-la-plateforme-parcoursup-plafonnement-du-nombre-d-eleves-par-classe-etat-des-104451",
+          "lead": "15. Ministère de l'Enseignement supérieur, « Remplacement de la plateforme Parcoursup, plafonnement du nombre d'élèves par classe, état des bâtiments, bourses : les engagements du Gouvernement pour la jeunesse », 26/10/2026",
+          "links": [
+            {
+              "label": "https://www.enseignementsup-recherche.gouv.fr/fr/remplacement-de-la-plateforme-parcoursup-plafonnement-du-nombre-d-eleves-par-classe-etat-des-104451",
+              "url": "https://www.enseignementsup-recherche.gouv.fr/fr/remplacement-de-la-plateforme-parcoursup-plafonnement-du-nombre-d-eleves-par-classe-etat-des-104451"
+            }
+          ]
+        },
+        {
+          "label": "16. Coordination 17 octobre, page d'accueil (acte IV). https://17octobregiletjaune.net/",
+          "lead": "16. Coordination 17 octobre, page d'accueil (acte IV)",
+          "links": [
+            {
+              "label": "https://17octobregiletjaune.net/",
+              "url": "https://17octobregiletjaune.net/"
+            }
+          ]
+        },
+        {
+          "label": "17. mesinfos, « Que proposent les candidats à la présidentielle aux lycéens qui manifestent ? », 03/11/2026. https://mesinfos.fr/que-proposent-les-candidats-a-la-presidentielle-aux-lyceens-qui-manifestent-342446.html",
+          "lead": "17. mesinfos, « Que proposent les candidats à la présidentielle aux lycéens qui manifestent ? », 03/11/2026",
+          "links": [
+            {
+              "label": "https://mesinfos.fr/que-proposent-les-candidats-a-la-presidentielle-aux-lyceens-qui-manifestent-342446.html",
+              "url": "https://mesinfos.fr/que-proposent-les-candidats-a-la-presidentielle-aux-lyceens-qui-manifestent-342446.html"
+            }
+          ]
+        },
+        {
+          "label": "18. CNews, « Mobilisation du 17 octobre : les Français ont en eux une colère légitime, reconnaît Bardella », 19/10/2026. https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait",
+          "lead": "18. CNews, « Mobilisation du 17 octobre : les Français ont en eux une colère légitime, reconnaît Bardella », 19/10/2026",
+          "links": [
+            {
+              "label": "https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait",
+              "url": "https://www.cnews.fr/france/2026-10-19/mobilisation-du-17-octobre-les-francais-ont-en-eux-une-colere-legitime-reconnait"
+            }
+          ]
+        },
+        {
+          "label": "19. TF1info, « Présidentielle 2027 : ce qu'il faut retenir de l'interview d'Édouard Philippe dans le 20H de TF1 », 01/11/2026. https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html",
+          "lead": "19. TF1info, « Présidentielle 2027 : ce qu'il faut retenir de l'interview d'Édouard Philippe dans le 20H de TF1 », 01/11/2026",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/en-bref-presidentielle-2027-ce-qu-il-faut-retenir-de-l-intervention-d-edouard-philippe-dans-le-20h-de-tf1-2473247.html"
+            }
+          ]
+        },
+        {
+          "label": "20. BFMTV, « L'inquiétude est palpable et elle est entendable », Céline Géraud, 27/10/2026. https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html",
+          "lead": "20. BFMTV, « L'inquiétude est palpable et elle est entendable », Céline Géraud, 27/10/2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html",
+              "url": "https://www.bfmtv.com/politique/video-mobilisation-du-31-octobre-colere-lyceenne-l-inquietude-est-palpable-et-elle-est-entendable-explique-celine-geraud-porte-parole-de-la-campagne-de-gabriel-attal_VN-202610270917.html"
+            }
+          ]
+        },
+        {
+          "label": "21. Sud Ouest avec l'AFP, « Raphaël Glucksmann présente un plan de sortie de crise en dix points à Matignon », 22/10/2026. https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php",
+          "lead": "21. Sud Ouest avec l'AFP, « Raphaël Glucksmann présente un plan de sortie de crise en dix points à Matignon », 22/10/2026",
+          "links": [
+            {
+              "label": "https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php",
+              "url": "https://www.sudouest.fr/politique/mobilisation-sociale-et-violences-raphael-glucksmann-presente-un-plan-de-sortie-de-crise-en-dix-points-a-matignon-31189200.php"
+            }
+          ]
+        },
+        {
+          "label": "22. franceinfo, « L'extrême gauche a une grave responsabilité puisqu'elle attise l'incendie, estime David Lisnard ». https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html",
+          "lead": "22. franceinfo, « L'extrême gauche a une grave responsabilité puisqu'elle attise l'incendie, estime David Lisnard »",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html",
+              "url": "https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/l-extreme-gauche-a-une-grave-responsabilite-puisqu-elle-attise-l-incendie-estime-david-lisnard-candidat-a-la-presidentielle-et-maire-de-cannes_8248552.html"
+            }
+          ]
+        },
+        {
+          "label": "23. RTL, « Fin de Parcoursup, vote à 16 ans, interdiction du LBD : Villepin et Ruffin font front commun aux côtés des lycéens ». https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081",
+          "lead": "23. RTL, « Fin de Parcoursup, vote à 16 ans, interdiction du LBD : Villepin et Ruffin font front commun aux côtés des lycéens »",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081",
+              "url": "https://www.rtl.fr/actu/politique/fin-de-parcoursup-vote-a-16-ans-interdiction-du-lbd-villepin-et-ruffin-font-front-commun-aux-cotes-des-lyceens-7900681081"
+            }
+          ]
+        },
+        {
+          "label": "24. Le Monde, « Blocage des lycées : Bruno Retailleau propose l'interdiction de LFI, qui appelle à la \"sédition\" ; Jean-Luc Mélenchon lui répond », 01/10/2026. https://www.lemonde.fr/politique/article/2026/10/01/blocage-des-lycees-bruno-retailleau-propose-l-interdiction-de-lfi-qui-appelle-a-la-sedition-jean-luc-melenchon-lui-repond_6786472_823449.html",
+          "lead": "24. Le Monde, « Blocage des lycées : Bruno Retailleau propose l'interdiction de LFI, qui appelle à la \"sédition\" ; Jean-Luc Mélenchon lui répond », 01/10/2026",
+          "links": [
+            {
+              "label": "https://www.lemonde.fr/politique/article/2026/10/01/blocage-des-lycees-bruno-retailleau-propose-l-interdiction-de-lfi-qui-appelle-a-la-sedition-jean-luc-melenchon-lui-repond_6786472_823449.html",
+              "url": "https://www.lemonde.fr/politique/article/2026/10/01/blocage-des-lycees-bruno-retailleau-propose-l-interdiction-de-lfi-qui-appelle-a-la-sedition-jean-luc-melenchon-lui-repond_6786472_823449.html"
+            }
+          ]
+        },
+        {
+          "label": "25. BFMTV, direct « Rentrée sous tension et crainte de nouveaux blocages après les vacances de la Toussaint : les organisations lycéennes et étudiantes appellent à poursuivre le mouvement », 02/11/2026. https://www.bfmtv.com/politique/direct-rentree-sous-tension-et-crainte-de-nouveaux-blocages-apres-les-vacances-de-la-toussaint-les-organisations-lyceennes-et-etudiantes-appellent-a-poursuivre-le-mouvement_LN-202611020127.html",
+          "lead": "25. BFMTV, direct « Rentrée sous tension et crainte de nouveaux blocages après les vacances de la Toussaint : les organisations lycéennes et étudiantes appellent à poursuivre le mouvement », 02/11/2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/direct-rentree-sous-tension-et-crainte-de-nouveaux-blocages-apres-les-vacances-de-la-toussaint-les-organisations-lyceennes-et-etudiantes-appellent-a-poursuivre-le-mouvement_LN-202611020127.html",
+              "url": "https://www.bfmtv.com/politique/direct-rentree-sous-tension-et-crainte-de-nouveaux-blocages-apres-les-vacances-de-la-toussaint-les-organisations-lyceennes-et-etudiantes-appellent-a-poursuivre-le-mouvement_LN-202611020127.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Les faits sont sourcés ci-dessus, consultés le 3 novembre 2026.",
+  "liens_internes": [
+    {
+      "href": "/analyses/vie-chere-porsche-trabant",
+      "label": "Vie chère : la Porsche au prix d'une Trabant ? On a fait l'addition"
+    },
+    {
+      "href": "/analyses/779-retirez-halloween",
+      "label": "779 interpellations ? Retirez Halloween : l'acte III en compte quatre fois moins que le 17 octobre"
+    },
+    {
+      "href": "/analyses/mouvement-lyceen-revendications-saucissonne",
+      "label": "Mouvement lycéen : revendications saucissonnées"
+    }
+  ]
+}
