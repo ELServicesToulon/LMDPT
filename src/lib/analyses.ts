@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
@@ -46,6 +47,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: lyceesBloques.slug,
+    title: lyceesBloques.title,
+    description: lyceesBloques.description,
+    date: lyceesBloques.date,
+    published: lyceesBloques.date,
+    updated: lyceesBloques.updated,
+    href: '/analyses/48-ou-500-lycees-bloques',
+    cover: uneCover(
+      '48-ou-500-lycees-bloques',
+      "Aquarelle d'un portail de lycée en fer forgé au petit matin, à moitié barré de poubelles et de barrières, sous un ciel gris et rose, avec deux grands bouliers de couleur posés de chaque côté du portail, l'un presque vide, l'autre rempli de boules.",
+    ),
+  },
   {
     slug: vieCherePorscheTrabant.slug,
     title: vieCherePorscheTrabant.title,

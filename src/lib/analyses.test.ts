@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
 import primaireSansLaGauche from '../data/analyses/primaire-sans-la-gauche.json';
@@ -43,6 +44,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('48-ou-500-lycees-bloques');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('vie-chere-porsche-trabant');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('779-retirez-halloween');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('primaire-sans-la-gauche');
@@ -55,20 +57,21 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('779-retirez-halloween');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[12]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[13]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[13]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[14]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -81,7 +84,188 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse vie chère Porsche Trabant du 3 novembre en une, sources, boîte DOE', () => {
+  it('analyse 48 ou 500 lycées bloqués du 4 novembre en une, sources, boîte DOE', () => {
+    expect(lyceesBloques.slug).toBe('48-ou-500-lycees-bloques');
+    expect(lyceesBloques.date).toBe('2026-11-04');
+    expect(lyceesBloques.updated).toBe('2026-11-04');
+    expect(lyceesBloques.title).toBe(
+      '48 ou 500 lycées bloqués ? Chacun son thermomètre, personne ne montre sa liste',
+    );
+    expect(lyceesBloques.author).toBe('La rédaction');
+    expect(lyceesBloques.author_role).toBe('Rédaction LMDPT');
+    expect(lyceesBloques.eyebrow).toBe('Analyse · Mouvement lycéen');
+    expect(lyceesBloques.type_label).toBe('Analyse');
+    expect(lyceesBloques.kicker).toBe('Analyse · La rédaction · 4 novembre 2026');
+    expect(lyceesBloques.tags).toContain('doe');
+    expect(lyceesBloques.x_hook).toBe(
+      "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun ne publie sa liste. On a démonté les deux thermomètres.",
+    );
+    expect(lyceesBloques.description.length).toBeLessThanOrEqual(200);
+    expect(lyceesBloques.description).toMatch(/48 lycées étaient bloqués/);
+    expect(lyceesBloques.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(lyceesBloques.sources_intro).toMatch(/Consultées le 3 novembre 2026/);
+    expect(lyceesBloques.sources_closing).toMatch(/consultés le 3 novembre 2026/);
+    expect(lyceesBloques.hues).toHaveLength(3);
+    expect(lyceesBloques.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'lisnard',
+    ]);
+    expect(lyceesBloques.hues.map((hue) => hue.label)).toEqual([
+      'Transparence des chiffres publics',
+      'Méfiance égale envers tous les décomptes',
+      'Deux droits à tenir ensemble',
+    ]);
+    const deuxChiffres = lyceesBloques.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'deux-chiffres',
+    );
+    expect(deuxChiffres?.kind).toBe('prose');
+    if (deuxChiffres?.kind === 'prose') {
+      expect(deuxChiffres.title).toBe('Deux chiffres pour un même mardi');
+    }
+    const encadreMots = lyceesBloques.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'encadre',
+    );
+    expect(encadreMots?.kind).toBe('prose');
+    if (encadreMots?.kind === 'prose') {
+      expect(encadreMots.title).toBe(
+        'Encadré · Bloqué, filtrant, perturbé : trois mots, trois réalités',
+      );
+    }
+    const octobre = lyceesBloques.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'octobre',
+    );
+    expect(octobre?.kind).toBe('prose');
+    if (octobre?.kind === 'prose') {
+      expect(octobre.title).toBe('Ce qui a changé depuis octobre');
+      const table = octobre.blocks.find((block) => block.type === 'table');
+      expect(table?.type).toBe('table');
+      if (table?.type === 'table') {
+        expect(table.headers).toEqual([
+          'Date',
+          'Ministère',
+          'Organisations de jeunesse',
+          'Ce qui est compté',
+          'Sources',
+        ]);
+        expect(table.rows).toHaveLength(4);
+        expect(table.rows[0]?.[0]).toBe('6 octobre');
+        expect(table.rows[0]?.[1]).toBe('891 établissements');
+        expect(table.rows[2]?.[1]).toMatch(/48 à 9 h 30/);
+        expect(table.rows[2]?.[2]).toMatch(/plus de 500/);
+      }
+    }
+    const courants = lyceesBloques.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('48-ou-500-lycees-bloques');
+    expect(entry?.href).toBe('/analyses/48-ou-500-lycees-bloques');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/48-ou-500-lycees-bloques.jpg');
+    expect(entry?.cover?.alt).toMatch(/portail de lycée en fer forgé/);
+    expect(getUneDuJour()?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    const nSources = lyceesBloques.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(25);
+    const sourceBlob = JSON.stringify(lyceesBloques.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.europe1.fr/societe/48-lycees-bloques-mardi-selon-le-ministere-dix-fois-plus-selon-un-syndicat-lyceen-1205147',
+    );
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/societe\/education\/blocage-des-lycees\/direct-les-organisations-de-jeunesse/);
+    expect(sourceBlob).toMatch(/leparisien\.fr\/societe\/direct-colere-des-lyceens/);
+    expect(sourceBlob).toMatch(/france24\.com\/fr\/info-en-continu\/20261103-nouvel-appel/);
+    expect(sourceBlob).toMatch(/union-etudiante\.fr\/communique-de-presse\/la-mobilisation-reprend/);
+    expect(sourceBlob).toMatch(/europe1\.fr\/societe\/51-etablissements-sur-184/);
+    expect(sourceBlob).toMatch(/lemonde\.fr\/politique\/article\/2026\/11\/02\/sebastien-lecornu/);
+    expect(sourceBlob).toMatch(/radiofrance\.fr\/franceinter\/podcasts\/l-info-de-france-inter\/seul-1-des-lycees/);
+    expect(sourceBlob).toMatch(/linternaute\.com\/actualite\/societe\/11310945-blocage-des-lyceesen-direct/);
+    expect(sourceBlob).toMatch(/euronews\.com\/2026\/10\/06\/mobilisation-lyceenne-acte-iii-891/);
+    expect(sourceBlob).toMatch(/enseignementsup-recherche\.gouv\.fr\/fr\/remplacement-de-la-plateforme-parcoursup/);
+    expect(sourceBlob).toMatch(/17octobregiletjaune\.net\//);
+    expect(sourceBlob).toMatch(/mesinfos\.fr\/que-proposent-les-candidats-a-la-presidentielle-aux-lyceens/);
+    expect(sourceBlob).toMatch(/rtl\.fr\/actu\/debats-societe\/on-va-leur-montrer-l-union-syndicale-lyceenne/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = lyceesBloques.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Position sur le mouvement lycéen et ses chiffres',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.note).toMatch(/Pas de position publique trouvée/);
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/aberration/);
+      expect(lePen?.[2]).toBe('[17][18]');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/Nous abolirons Parcoursup/);
+      expect(melenchon?.[2]).toBe('[17]');
+      const retailleau = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleau?.[1]).toMatch(/boîte noire/);
+      expect(retailleau?.[2]).toBe('[17][24]');
+      const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
+      expect(philippe?.[1]).toMatch(/bien des égards fondées/);
+      expect(philippe?.[2]).toBe('[19]');
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/outil qui accompagne davantage/);
+      expect(attal?.[2]).toBe('[17][20]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/Abrogation de Parcoursup/);
+      expect(glucksmann?.[2]).toBe('[21]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[1]).toMatch(/attise l'incendie/);
+      expect(lisnard?.[2]).toBe('[17][22]');
+      const villepin = encadre.table.rows.find((row) => row[0]?.includes('Villepin'));
+      expect(villepin?.[1]).toMatch(/interdiction des LBD/);
+      expect(villepin?.[2]).toBe('[23]');
+      const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
+      expect(zemmour?.[1]).toMatch(/Pas de position publique trouvée/);
+      expect(zemmour?.[2]).toBe('');
+    }
+    const analyseTexts = [
+      lyceesBloques.chapo,
+      lyceesBloques.description,
+      lyceesBloques.disclaimer,
+      lyceesBloques.sources_closing,
+      ...lyceesBloques.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[25\]/);
+    expect(analyseTexts).toMatch(/48 lycées/);
+    expect(analyseTexts).toMatch(/thermomètre/);
+    expect(analyseTexts).toMatch(/barrage filtrant/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(lyceesBloques)).not.toMatch(/<!--/);
+  });
+
+  it('analyse vie chère Porsche Trabant du 3 novembre, sources, boîte DOE', () => {
     expect(vieCherePorscheTrabant.slug).toBe('vie-chere-porsche-trabant');
     expect(vieCherePorscheTrabant.date).toBe('2026-11-03');
     expect(vieCherePorscheTrabant.updated).toBe('2026-11-03');
@@ -153,8 +337,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/vie-chere-porsche-trabant');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/vie-chere-porsche-trabant.jpg');
     expect(entry?.cover?.alt).toMatch(/petite voiture ancienne bleu pâle/);
-    expect(getUneDuJour()?.slug).toBe('vie-chere-porsche-trabant');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.slug).not.toBe('vie-chere-porsche-trabant');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = vieCherePorscheTrabant.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(41);
     const sourceBlob = JSON.stringify(vieCherePorscheTrabant.sources_groups);
@@ -327,7 +511,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/779-retirez-halloween.jpg');
     expect(entry?.cover?.alt).toMatch(/carnet de comptage ouvert/);
     expect(getUneDuJour()?.slug).not.toBe('779-retirez-halloween');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = retirezHalloween.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(10);
     const sourceBlob = JSON.stringify(retirezHalloween.sources_groups);
@@ -481,7 +665,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
     expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
     expect(getUneDuJour()?.slug).not.toBe('primaire-sans-la-gauche');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
@@ -652,7 +836,7 @@ describe('analyses', () => {
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
     expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -811,7 +995,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -971,7 +1155,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-11-03');
+    expect(getUneDuJour()?.date).toBe('2026-11-04');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
