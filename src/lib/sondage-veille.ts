@@ -1154,7 +1154,7 @@ export async function persistCandidatsFromWaves(
   return next;
 }
 
-/** Seed known waves (manual / paywalled) — Cluster17 Le Point + post-Le Pen pack. */
+/** Seed known waves (manual / paywalled) — Cluster17 Le Point + post-Le Pen pack + Ifop LCI 27-29/10/2026. */
 export function seedKnownWaves(): DetectedWave[] {
   return [
     {
@@ -1289,6 +1289,121 @@ export function seedKnownWaves(): DetectedWave[] {
       },
       raw_snippet: 'OpinionWay / Les Échos.',
       metric: 'intentions_vote',
+    },
+    {
+      id: 'manual-ifop-lci-20261029-h1',
+      firm: 'Ifop',
+      firm_id: 'ifop',
+      fieldwork: '2026-10-27/29',
+      published_hint: '2026-11-03',
+      source_url:
+        'https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-a-six-mois-de-la-presidentielle-2027-marine-le-pen-et-jean-luc-melenchon-sans-adversaires-au-premier-tour-philippe-attal-retailleau-lisnard-2473663.html',
+      source_id: 'manual',
+      scores: {
+        arthaud: 0.5,
+        melenchon: 18,
+        roussel: 2,
+        tondelier: 3,
+        glucksmann: 10,
+        attal: 5,
+        philippe: 9.5,
+        retailleau: 4,
+        lisnard: 7,
+        'dupont-aignan': 1.5,
+        'le-pen': 35,
+        zemmour: 4.5,
+      },
+      raw_snippet:
+        'Ifop pour LCI, en ligne 27-29/10/2026, 1 501 inscrits, % des exprimés — tableau Ifop publié par TF1info/LCI le 03/11/2026 (recoupé l\'Opinion). Notice Commission non publiée au 03/11. Attal, Philippe, Retailleau et Lisnard candidats',
+      metric: 'intentions_vote',
+      hypothesis: 'hyp. 1',
+      hypothesis_label: 'Attal, Philippe, Retailleau et Lisnard candidats',
+      n: 1501,
+    },
+    {
+      id: 'manual-ifop-lci-20261029-h2',
+      firm: 'Ifop',
+      firm_id: 'ifop',
+      fieldwork: '2026-10-27/29',
+      published_hint: '2026-11-03',
+      source_url:
+        'https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-a-six-mois-de-la-presidentielle-2027-marine-le-pen-et-jean-luc-melenchon-sans-adversaires-au-premier-tour-philippe-attal-retailleau-lisnard-2473663.html',
+      source_id: 'manual',
+      scores: {
+        arthaud: 0.5,
+        melenchon: 17.5,
+        roussel: 2,
+        tondelier: 3,
+        glucksmann: 13,
+        attal: 9,
+        retailleau: 5,
+        lisnard: 7.5,
+        'dupont-aignan': 2,
+        'le-pen': 36,
+        zemmour: 4.5,
+      },
+      raw_snippet:
+        'Ifop pour LCI, en ligne 27-29/10/2026, 1 501 inscrits, % des exprimés — tableau Ifop publié par TF1info/LCI le 03/11/2026 (recoupé l\'Opinion). Notice Commission non publiée au 03/11. Attal seul au bloc central, Retailleau (LR) et Lisnard candidats',
+      metric: 'intentions_vote',
+      hypothesis: 'hyp. 2',
+      hypothesis_label: 'Attal seul au bloc central, Retailleau (LR) et Lisnard candidats',
+      n: 1501,
+    },
+    {
+      id: 'manual-ifop-lci-20261029-h3',
+      firm: 'Ifop',
+      firm_id: 'ifop',
+      fieldwork: '2026-10-27/29',
+      published_hint: '2026-11-03',
+      source_url:
+        'https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-a-six-mois-de-la-presidentielle-2027-marine-le-pen-et-jean-luc-melenchon-sans-adversaires-au-premier-tour-philippe-attal-retailleau-lisnard-2473663.html',
+      source_id: 'manual',
+      scores: {
+        arthaud: 1,
+        melenchon: 17.5,
+        roussel: 1.5,
+        tondelier: 3.5,
+        glucksmann: 11.5,
+        philippe: 15,
+        retailleau: 7,
+        'dupont-aignan': 2,
+        'le-pen': 37,
+        zemmour: 4,
+      },
+      raw_snippet:
+        'Ifop pour LCI, en ligne 27-29/10/2026, 1 501 inscrits, % des exprimés — tableau Ifop publié par TF1info/LCI le 03/11/2026 (recoupé l\'Opinion). Notice Commission non publiée au 03/11. Philippe seul au bloc central, Retailleau seul à droite',
+      metric: 'intentions_vote',
+      hypothesis: 'hyp. 3',
+      hypothesis_label: 'Philippe seul au bloc central, Retailleau seul à droite',
+      n: 1501,
+    },
+    {
+      id: 'manual-ifop-lci-20261029-h4',
+      firm: 'Ifop',
+      firm_id: 'ifop',
+      fieldwork: '2026-10-27/29',
+      published_hint: '2026-11-03',
+      source_url:
+        'https://www.tf1info.fr/politique/elections/presidentielle/sondage-lci-a-six-mois-de-la-presidentielle-2027-marine-le-pen-et-jean-luc-melenchon-sans-adversaires-au-premier-tour-philippe-attal-retailleau-lisnard-2473663.html',
+      source_id: 'manual',
+      scores: {
+        arthaud: 0.5,
+        melenchon: 17.5,
+        roussel: 2,
+        tondelier: 3,
+        glucksmann: 11,
+        philippe: 15,
+        lisnard: 9,
+        'dupont-aignan': 2,
+        'le-pen': 36,
+        zemmour: 4,
+      },
+      raw_snippet:
+        'Ifop pour LCI, en ligne 27-29/10/2026, 1 501 inscrits, % des exprimés — tableau Ifop publié par TF1info/LCI le 03/11/2026 (recoupé l\'Opinion). Notice Commission non publiée au 03/11. Philippe seul au bloc central, Lisnard seul à droite',
+      metric: 'intentions_vote',
+      hypothesis: 'hyp. 4',
+      hypothesis_label: 'Philippe seul au bloc central, Lisnard seul à droite',
+      n: 1501,
     },
   ];
 }

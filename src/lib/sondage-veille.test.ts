@@ -13,6 +13,7 @@ import {
   persistSnapshot,
   readStateJson,
   seedKnownWaves,
+  headOfWave,
   SondageStateError,
   type DetectedWave,
   type SondageVeilleSnapshot,
@@ -351,6 +352,25 @@ describe('sondage-veille', () => {
     expect(lp).toBeDefined();
     expect(lp?.source_url).toContain('lepoint.fr');
     expect(lp?.metric).toBe('souhait_victoire');
+  });
+
+  it('seeds include Ifop LCI 27-29/10/2026 four exclusive 1er-tour hypotheses', () => {
+    const seed = seedKnownWaves();
+    const expected: Array<{ id: string; lePen: number }> = [
+      { id: 'manual-ifop-lci-20261029-h1', lePen: 35 },
+      { id: 'manual-ifop-lci-20261029-h2', lePen: 36 },
+      { id: 'manual-ifop-lci-20261029-h3', lePen: 37 },
+      { id: 'manual-ifop-lci-20261029-h4', lePen: 36 },
+    ];
+    for (const { id, lePen } of expected) {
+      const wave = seed.find((w) => w.id === id);
+      expect(wave).toBeDefined();
+      const sum = Object.values(wave!.scores).reduce((acc, n) => acc + n, 0);
+      expect(Math.abs(sum - 100)).toBeLessThanOrEqual(0.01);
+      const head = headOfWave(wave!);
+      expect(head?.head).toBe('le-pen');
+      expect(head?.pct).toBe(lePen);
+    }
   });
 
   it('parses Commission notices without inventing scores', () => {

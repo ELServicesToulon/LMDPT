@@ -10,6 +10,11 @@ import {
 } from './sondage-candidats-refresh';
 import { seedKnownWaves, type DetectedWave } from './sondage-veille';
 
+/** July 2026 seed pack — the 21-day latest window is anchored on the newest wave. */
+function julySeedWaves(): DetectedWave[] {
+  return seedKnownWaves().filter((w) => !w.id.startsWith('manual-ifop-lci-20261029'));
+}
+
 function wave(partial: Partial<DetectedWave> & Pick<DetectedWave, 'id'>): DetectedWave {
   return {
     firm: 'Elabe',
@@ -119,7 +124,7 @@ describe('sondage-candidats-refresh', () => {
   });
 
   it('rebuilds latest_pct from IV waves and leaves substitution candidates untouched', () => {
-    const waves = seedKnownWaves();
+    const waves = julySeedWaves();
     const next = rebuildCandidatsFromWaves(BASE_FILE, waves, '2026-09-15T18:00:00.000Z');
     expect(next.updated).toBe('2026-09-15');
     const mlp = next.candidates.find((c) => c.slug === 'le-pen');
@@ -159,7 +164,7 @@ describe('sondage-candidats-refresh', () => {
 
   it('prefers one wave per firm and ignores empty commission notices', () => {
     const waves: DetectedWave[] = [
-      ...seedKnownWaves(),
+      ...julySeedWaves(),
       wave({
         id: 'epoc-mixed',
         source_id: 'epoc',

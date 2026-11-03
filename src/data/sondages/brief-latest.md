@@ -1,53 +1,146 @@
 # Veille sondages — brief
 
-**Scan** : 2026-10-19T12:00:00.000Z
+**Scan** : 2026-11-03T20:45:43.134Z
 
 > Veille pédagogique LMDPT — intentions de vote agrégées automatiquement. Pas de prédiction, pas de classement éliminatoire. Croiser avec les notices Commission des sondages.
 
 ## Mouvements
 
-- YouGov (18/10/2026, hyp. 1) : le pen en tête à 36 % (intentions de vote).
-- YouGov (18/10/2026, hyp. 2) : le pen en tête à 37 % (intentions de vote).
-- YouGov (18/10/2026, hyp. 3) : le pen en tête à 36 % (intentions de vote).
-- YouGov (18/10/2026, hyp. 4) : le pen en tête à 37 % (intentions de vote).
-- YouGov (18/10/2026, hyp. 5) : le pen en tête à 35 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 1) : le pen en tête à 32,5 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 2) : le pen en tête à 33,5 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 3) : le pen en tête à 31,5 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 4) : le pen en tête à 31 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 5) : le pen en tête à 32,5 % (intentions de vote).
-- Elabe (18/10/2026, hyp. 6) : le pen en tête à 33,5 % (intentions de vote).
-- OpinionWay (16/10/2026, hyp. 1) : le pen en tête à 35 % (intentions de vote).
-- Ifop-Fiducial (14/10/2026, hyp. 1) : le pen en tête à 32 % (intentions de vote).
-- Ifop-Fiducial (14/10/2026, hyp. 2) : le pen en tête à 35 % (intentions de vote).
-- Ifop-Fiducial (14/10/2026, hyp. 3) : le pen en tête à 34 % (intentions de vote).
-- Ifop-Fiducial (14/10/2026, hyp. 4) : le pen en tête à 36 % (intentions de vote).
+- Ifop (2026-10-27/29, hyp. 1) : le pen en tête à 35 % (intentions de vote).
+- Ifop (2026-10-27/29, hyp. 2) : le pen en tête à 36 % (intentions de vote).
+- Ifop (2026-10-27/29, hyp. 3) : le pen en tête à 37 % (intentions de vote).
+- Ifop (2026-10-27/29, hyp. 4) : le pen en tête à 36 % (intentions de vote).
 
 ## Têtes de vague (scores extraits)
 
-- **Elabe** : le pen — 35 %
-- **Ifop** : le pen — 36 %
+- **Elabe** (hyp. 1) : le pen — 35 %
+- **Ifop** (hyp. 1) : le pen — 36 %
 - **Verian** : le pen — 37 %
 - **Harris Interactive** : le pen — 35 %
 - **OpinionWay** : le pen — 35 %
+- **Ifop** (hyp. 1) : le pen — 35 %
+- **Ifop** (hyp. 2) : le pen — 36 %
+- **Ifop** (hyp. 3) : le pen — 37 %
+- **Ifop** (hyp. 4) : le pen — 36 %
+- **Cluster17** (hyp. 1) : le pen — 33 %
+- **Cluster17** (hyp. 2) : le pen — 32.5 %
+- **Cluster17** (hyp. 3) : le pen — 30.5 %
+- **Ipsos (France)** (hyp. 1) : le pen — 33.5 %
+- **Ipsos (France)** (hyp. 2) : le pen — 33.5 %
+- **Ipsos (France)** (hyp. 3) : le pen — 33.5 %
+- **Ipsos (France)** (hyp. 4) : le pen — 32 %
+- **OpinionWay** (hyp. 1) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 33 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 33 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 35 %
+- **Ifop** (hyp. 1) : le pen — 36 %
+- **Ifop** (hyp. 2) : le pen — 36 %
+- **Ifop** (hyp. 3) : le pen — 38 %
+- **Ifop** (hyp. 4) : le pen — 37 %
+- **Ifop** (hyp. 5) : le pen — 38 %
+- **Ifop** (hyp. 6) : le pen — 34 %
+- **Ifop** (hyp. 7) : le pen — 36 %
+- **yougov** (hyp. 1) : le pen — 36 %
+- **yougov** (hyp. 2) : le pen — 37 %
+- **yougov** (hyp. 3) : le pen — 36 %
+- **yougov** (hyp. 4) : le pen — 37 %
+- **yougov** (hyp. 5) : le pen — 35 %
+- **Elabe** (hyp. 1) : le pen — 32.5 %
+- **Elabe** (hyp. 2) : le pen — 33.5 %
+- **Elabe** (hyp. 3) : le pen — 31.5 %
+- **Elabe** (hyp. 4) : le pen — 31 %
+- **Elabe** (hyp. 5) : le pen — 31.9 %
+- **Elabe** (hyp. 6) : le pen — 33.5 %
+- **OpinionWay** (hyp. 1) : le pen — 35 %
+- **OpinionWay** (hyp. 1) : le pen — 35 %
+- **OpinionWay** (hyp. 2) : le pen — 37 %
+- **OpinionWay** (hyp. 3) : le pen — 35 %
 - **Odoxa** (hyp. 1) : le pen — 37 %
 - **Odoxa** (hyp. 2) : le pen — 38 %
-- **YouGov** (hyp. 1) : le pen — 36 %
-- **YouGov** (hyp. 2) : le pen — 37 %
-- **YouGov** (hyp. 3) : le pen — 36 %
-- **YouGov** (hyp. 4) : le pen — 37 %
-- **YouGov** (hyp. 5) : le pen — 35 %
-- **Elabe** (hyp. 1) : le pen — 32,5 %
-- **Elabe** (hyp. 2) : le pen — 33,5 %
-- **Elabe** (hyp. 3) : le pen — 31,5 %
-- **Elabe** (hyp. 4) : le pen — 31 %
-- **Elabe** (hyp. 5) : le pen — 32,5 %
-- **Elabe** (hyp. 6) : le pen — 33,5 %
+- **Ifop** (hyp. 1) : le pen — 32 %
+- **Ifop** (hyp. 2) : le pen — 35 %
+- **Ifop** (hyp. 3) : le pen — 34 %
+- **Ifop** (hyp. 4) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 37 %
+- **Ifop** (hyp. 1) : le pen — 32 %
+- **Ifop** (hyp. 2) : le pen — 33 %
+- **Ifop** (hyp. 3) : le pen — 34 %
+- **Ifop** (hyp. 4) : le pen — 35 %
+- **Ifop** (hyp. 5) : le pen — 36 %
+- **Ifop** (hyp. 6) : le pen — 31 %
+- **Ifop** (hyp. 7) : le pen — 35 %
+- **Ifop** (hyp. 8) : le pen — 35 %
+- **Ifop** (hyp. 9) : le pen — 35 %
+- **Ifop** (hyp. 10) : le pen — 34 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 36 %
+- **Cluster17** (hyp. 1) : le pen — 31 %
+- **Cluster17** (hyp. 2) : le pen — 31 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 33 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 34 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 33 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 36 %
+- **Ipsos (France)** (hyp. 1) : le pen — 33 %
+- **Ipsos (France)** (hyp. 2) : le pen — 33.5 %
+- **Ipsos (France)** (hyp. 3) : le pen — 34 %
+- **Ipsos (France)** (hyp. 4) : le pen — 34 %
+- **Ipsos (France)** (hyp. 5) : le pen — 34.5 %
+- **Ipsos (France)** (hyp. 6) : le pen — 35 %
+- **OpinionWay** (hyp. 1) : le pen — 32 %
+- **OpinionWay** (hyp. 2) : le pen — 33 %
+- **OpinionWay** (hyp. 3) : le pen — 34 %
+- **Cluster17** (hyp. 1) : le pen — 30 %
+- **Cluster17** (hyp. 2) : le pen — 31.5 %
+- **Cluster17** (hyp. 3) : le pen — 29 %
 - **OpinionWay** (hyp. 1) : le pen — 35 %
-- **Ifop-Fiducial** (hyp. 1) : le pen — 32 %
-- **Ifop-Fiducial** (hyp. 2) : le pen — 35 %
-- **Ifop-Fiducial** (hyp. 3) : le pen — 34 %
-- **Ifop-Fiducial** (hyp. 4) : le pen — 36 %
+- **OpinionWay** (hyp. 2) : le pen — 33 %
+- **OpinionWay** (hyp. 3) : le pen — 34 %
+- **Ipsos (France)** (hyp. 1) : le pen — 34 %
+- **Ipsos (France)** (hyp. 2) : le pen — 34.5 %
+- **Ipsos (France)** (hyp. 3) : le pen — 35 %
+- **Ipsos (France)** (hyp. 4) : le pen — 34.5 %
+- **Ipsos (France)** (hyp. 5) : le pen — 34.5 %
+- **Ipsos (France)** (hyp. 6) : le pen — 36 %
+- **Elabe** (hyp. 1) : le pen — 34 %
+- **Elabe** (hyp. 2) : le pen — 34.5 %
+- **Elabe** (hyp. 3) : le pen — 34 %
+- **Elabe** (hyp. 4) : le pen — 34.5 %
+- **Elabe** (hyp. 5) : le pen — 35.5 %
+- **Elabe** (hyp. 6) : le pen — 34 %
+- **Ifop** (hyp. 1) : le pen — 33 %
+- **Ifop** (hyp. 2) : le pen — 33 %
+- **Ifop** (hyp. 3) : le pen — 34 %
+- **Ifop** (hyp. 4) : le pen — 33 %
+- **Ifop** (hyp. 5) : le pen — 33 %
+- **Ifop** (hyp. 6) : le pen — 34 %
+- **Ifop** (hyp. 7) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 37 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 38 %
+- **Elabe** (hyp. 1) : le pen — 35 %
+- **Elabe** (hyp. 2) : le pen — 34 %
+- **Elabe** (hyp. 3) : le pen — 35 %
+- **Elabe** (hyp. 4) : le pen — 35.5 %
+- **Elabe** (hyp. 5) : le pen — 34.5 %
+- **Harris Interactive / Toluna Harris** (hyp. 1) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 2) : le pen — 34 %
+- **Harris Interactive / Toluna Harris** (hyp. 3) : le pen — 36 %
+- **Harris Interactive / Toluna Harris** (hyp. 4) : le pen — 35 %
+- **Harris Interactive / Toluna Harris** (hyp. 5) : le pen — 36 %
+- **Ifop** (hyp. 1) : le pen — 36 %
+- **Ifop** (hyp. 2) : le pen — 36 %
 
 ## Sources
 
