@@ -136,7 +136,7 @@ describe('une du jour (égalité de date)', () => {
       '48 ou 500 lycées bloqués ? Chacun son thermomètre, personne ne montre sa liste',
     );
     expect(lyceesBloques.x_hook).toBe(
-      "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun ne publie sa liste. On a démonté les deux thermomètres.",
+      "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun, à notre connaissance, ne publie sa liste. On a démonté les deux thermomètres.",
     );
     expect(vieCherePorscheTrabant.x_hook).toBe(
       "Manifester contre la vie chère, c'est vouloir une Porsche au prix d'une Trabant ? On a fait l'addition, mesure par mesure. Sur l'essence, la formule tient. Sur les bourses, la taxe Zucman ou le Smic, beaucoup moins.",

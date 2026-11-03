@@ -98,7 +98,7 @@ describe('analyses', () => {
     expect(lyceesBloques.kicker).toBe('Analyse · La rédaction · 4 novembre 2026');
     expect(lyceesBloques.tags).toContain('doe');
     expect(lyceesBloques.x_hook).toBe(
-      "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun ne publie sa liste. On a démonté les deux thermomètres.",
+      "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun, à notre connaissance, ne publie sa liste. On a démonté les deux thermomètres.",
     );
     expect(lyceesBloques.description.length).toBeLessThanOrEqual(200);
     expect(lyceesBloques.description).toMatch(/48 lycées étaient bloqués/);
@@ -109,7 +109,7 @@ describe('analyses', () => {
     expect(lyceesBloques.hues.map((hue) => hue.slug)).toEqual([
       'droite',
       'pluraliste',
-      'lisnard',
+      'pluraliste',
     ]);
     expect(lyceesBloques.hues.map((hue) => hue.label)).toEqual([
       'Transparence des chiffres publics',
@@ -186,7 +186,8 @@ describe('analyses', () => {
     expect(sourceBlob).toMatch(/enseignementsup-recherche\.gouv\.fr\/fr\/remplacement-de-la-plateforme-parcoursup/);
     expect(sourceBlob).toMatch(/17octobregiletjaune\.net\//);
     expect(sourceBlob).toMatch(/mesinfos\.fr\/que-proposent-les-candidats-a-la-presidentielle-aux-lyceens/);
-    expect(sourceBlob).toMatch(/rtl\.fr\/actu\/debats-societe\/on-va-leur-montrer-l-union-syndicale-lyceenne/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/direct-rentree-sous-tension-et-crainte-de-nouveaux-blocages/);
+    expect(sourceBlob).not.toMatch(/on-va-leur-montrer-l-union-syndicale-lyceenne/);
     expect(sourceBlob).not.toMatch(/Note de vérification/);
     const encadre = lyceesBloques.sections.find((section) => section.kind === 'candidats');
     expect(encadre?.kind).toBe('candidats');
@@ -196,8 +197,9 @@ describe('analyses', () => {
         'Position sur le mouvement lycéen et ses chiffres',
         'Sources',
       ]);
-      expect(encadre.table.rows).toHaveLength(9);
+      expect(encadre.table.rows).toHaveLength(12);
       expect(encadre.note).toMatch(/Pas de position publique trouvée/);
+      expect(encadre.note).toMatch(/Éric Zemmour y figure/);
       const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
       expect(lePen?.[1]).toMatch(/aberration/);
       expect(lePen?.[2]).toBe('[17][18]');
@@ -222,6 +224,15 @@ describe('analyses', () => {
       const villepin = encadre.table.rows.find((row) => row[0]?.includes('Villepin'));
       expect(villepin?.[1]).toMatch(/interdiction des LBD/);
       expect(villepin?.[2]).toBe('[23]');
+      const tondelier = encadre.table.rows.find((row) => row[0]?.includes('Tondelier'));
+      expect(tondelier?.[1]).toMatch(/supprimer Parcoursup/);
+      expect(tondelier?.[2]).toBe('[17]');
+      const ruffin = encadre.table.rows.find((row) => row[0]?.includes('Ruffin'));
+      expect(ruffin?.[1]).toMatch(/suppression de Parcoursup/);
+      expect(ruffin?.[2]).toBe('[17]');
+      const roussel = encadre.table.rows.find((row) => row[0]?.includes('Roussel'));
+      expect(roussel?.[1]).toMatch(/moyens qu'ils réclament/);
+      expect(roussel?.[2]).toBe('[17]');
       const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
       expect(zemmour?.[1]).toMatch(/Pas de position publique trouvée/);
       expect(zemmour?.[2]).toBe('');
