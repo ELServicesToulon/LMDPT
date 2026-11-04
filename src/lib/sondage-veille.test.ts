@@ -15,6 +15,14 @@ import {
   seedKnownWaves,
   headOfWave,
   SondageStateError,
+  findInterSourceReprise,
+  loadExcludedWaveIds,
+  normalizeInstitut,
+  parseExcludedWavesJson,
+  partitionIncomingWaves,
+  runSondageVeille,
+  scoresMatchAsReprise,
+  sameInstitut,
   type DetectedWave,
   type SondageVeilleSnapshot,
 } from './sondage-veille';
@@ -642,5 +650,322 @@ describe('état JSON de la veille (readStateJson)', () => {
       expect(await readFile(waves, 'utf8')).toBe(registryBefore);
       expect(await readFile(candidats, 'utf8')).toBe(candidatsConflict);
     });
+  });
+});
+
+describe('exclusion et dédup inter-sources', () => {
+  const ifopH1 = (): DetectedWave => {
+    const w = seedKnownWaves().find((x) => x.id === 'manual-ifop-lci-20261029-h1');
+    if (!w) throw new Error('seed Ifop LCI h1 manquant');
+    return { ...w, scores: { ...w.scores } };
+  };
+
+  function epocIfop(
+    partial: Partial<DetectedWave> & { id?: string } = {},
+  ): DetectedWave {
+    const base = ifopH1();
+    return {
+      ...base,
+      id: 'epoc-ifop-04112026-h1',
+      fieldwork: '04/11/2026',
+      published_hint: '04/11/2026',
+      source_url: 'https://www.epocinfo.fr/ep2027.php',
+      source_id: 'epoc',
+      raw_snippet: 'EPOC Ifop 04/11/2026 hyp. 1',
+      ...partial,
+      scores: { ...base.scores, ...(partial.scores ?? {}) },
+    };
+  }
+
+  const silentFetch: typeof fetch = async () => new Response('', { status: 503 });
+
+  it('normalizeInstitut ignore casse, accents et espaces', () => {
+    expect(normalizeInstitut('Ifop')).toBe('ifop');
+    expect(normalizeInstitut('  IFOP  ')).toBe('ifop');
+    expect(normalizeInstitut('Élabe')).toBe('elabe');
+    expect(normalizeInstitut('Ifop-Fiducial')).toBe('ifop fiducial');
+  });
+
+  it('parseExcludedWavesJson : fichier invalide ou non-tableau → liste vide', () => {
+    expect(parseExcludedWavesJson('{pas du json')).toEqual([]);
+    expect(parseExcludedWavesJson('{"id":"x"}')).toEqual([]);
+    expect(parseExcludedWavesJson('null')).toEqual([]);
+    expect(parseExcludedWavesJson('[{"reason":"sans id"}]')).toEqual([]);
+    expect(
+      parseExcludedWavesJson(
+        JSON.stringify([
+          { id: 'epoc-ifop-04112026-h1', reason: 'reprise', added: '2026-11-04' },
+          { id: 12 },
+        ]),
+      ),
+    ).toEqual([{ id: 'epoc-ifop-04112026-h1', reason: 'reprise', added: '2026-11-04' }]);
+  });
+
+  it('loadExcludedWaveIds : fichier absent → ensemble vide', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'sondage-excl-'));
+    try {
+      await expect(loadExcludedWaveIds(join(dir, 'excluded-waves.json'))).resolves.toEqual(
+        new Set(),
+      );
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('excluded-waves.json contient les 4 ids EPOC Ifop 04/11', async () => {
+    const raw = await readFile(
+      new URL('../data/sondages/excluded-waves.json', import.meta.url),
+      'utf8',
+    );
+    const ids = parseExcludedWavesJson(raw).map((e) => e.id).sort();
+    expect(ids).toEqual([
+      'epoc-ifop-04112026-h1',
+      'epoc-ifop-04112026-h2',
+      'epoc-ifop-04112026-h3',
+      'epoc-ifop-04112026-h4',
+    ]);
+  });
+
+  it('id exclu ignoré (pas d’insert, pas de movement, pas de tête)', async () => {
+    const incoming = epocIfop({
+      scores: { 'le-pen': 41, philippe: 12, melenchon: 11, glucksmann: 9 },
+    });
+    const excluded = new Set(['epoc-ifop-04112026-h1']);
+    const { accepted, skipped } = partitionIncomingWaves([incoming], [], excluded);
+    expect(accepted).toHaveLength(0);
+    expect(skipped).toEqual([{ wave: incoming, reason: 'excluded' }]);
+
+    const snapshot = await runSondageVeille({
+      previous: null,
+      seedWaves: [incoming],
+      excludedIds: excluded,
+      fetchImpl: silentFetch,
+    });
+    expect(snapshot.waves.find((w) => w.id === incoming.id)).toBeUndefined();
+    expect(snapshot.head_by_wave.find((h) => h.wave_id === incoming.id)).toBeUndefined();
+    expect(snapshot.movements.filter((m) => m.wave_id === incoming.id)).toHaveLength(0);
+  });
+
+  it('reprise EPOC d’un Ifop détectée (mêmes scores, < 10 jours)', () => {
+    const existing = ifopH1();
+    const incoming = epocIfop();
+    expect(existing.firm_id).toBe('ifop');
+    expect(incoming.firm_id).toBe('ifop');
+    expect(existing.source_id).toBe('manual');
+    expect(incoming.source_id).toBe('epoc');
+    expect(sameInstitut(existing, incoming)).toBe(true);
+    expect(scoresMatchAsReprise(existing.scores, incoming.scores)).toBe(true);
+    expect(findInterSourceReprise(incoming, [existing])?.id).toBe(existing.id);
+
+    const { accepted, skipped } = partitionIncomingWaves([incoming], [existing], new Set());
+    expect(accepted).toHaveLength(0);
+    expect(skipped).toHaveLength(1);
+    expect(skipped[0].reason).toBe('reprise');
+    expect(skipped[0].repriseOf?.id).toBe(existing.id);
+
+    const moves = diffWaves([existing], [existing, incoming], '2026-11-04T12:00:00.000Z');
+    expect(moves.filter((m) => m.kind === 'new_wave' && m.wave_id === incoming.id)).toHaveLength(
+      0,
+    );
+  });
+
+  it('reprise EPOC dans le même lot que le seed Ifop (runSondageVeille)', async () => {
+    const existing = ifopH1();
+    const incoming = epocIfop();
+    const snapshot = await runSondageVeille({
+      previous: null,
+      seedWaves: [existing, incoming],
+      excludedIds: [],
+      fetchImpl: silentFetch,
+    });
+    expect(snapshot.waves.map((w) => w.id)).toEqual([existing.id]);
+    expect(snapshot.head_by_wave.find((h) => h.wave_id === incoming.id)).toBeUndefined();
+    expect(snapshot.movements.filter((m) => m.wave_id === incoming.id)).toHaveLength(0);
+  });
+
+  it('vraie nouvelle vague (scores différents) bien insérée', async () => {
+    const existing = ifopH1();
+    const incoming = epocIfop({
+      id: 'epoc-ifop-04112026-new',
+      scores: { ...existing.scores, 'le-pen': 31 },
+    });
+    expect(findInterSourceReprise(incoming, [existing])).toBeNull();
+
+    const { accepted, skipped } = partitionIncomingWaves([incoming], [existing], new Set());
+    expect(skipped).toHaveLength(0);
+    expect(accepted.map((w) => w.id)).toEqual([incoming.id]);
+
+    const moves = diffWaves([existing], [existing, incoming], '2026-11-04T12:00:00.000Z');
+    expect(moves.some((m) => m.kind === 'new_wave' && m.wave_id === incoming.id)).toBe(true);
+
+    const snapshot = await runSondageVeille({
+      previous: {
+        fetched_at: '2026-11-03T00:00:00.000Z',
+        disclaimer: '',
+        providers_indexed: 0,
+        sources_ok: 0,
+        sources_error: 0,
+        waves: [existing],
+        head_by_wave: [],
+        movements: [],
+        brief: [],
+        errors: [],
+      },
+      seedWaves: [existing, incoming],
+      excludedIds: [],
+      fetchImpl: silentFetch,
+    });
+    expect(snapshot.waves.some((w) => w.id === incoming.id)).toBe(true);
+    expect(snapshot.head_by_wave.some((h) => h.wave_id === incoming.id)).toBe(true);
+    expect(snapshot.movements.some((m) => m.kind === 'new_wave' && m.wave_id === incoming.id)).toBe(
+      true,
+    );
+  });
+
+  it('hypothèses sœurs de la même source (scores proches) sont toutes acceptées', () => {
+    const h1 = epocIfop({
+      id: 'epoc-ifop-04112026-h1',
+      hypothesis: 'hyp. 1',
+    });
+    const h2 = epocIfop({
+      id: 'epoc-ifop-04112026-h2',
+      hypothesis: 'hyp. 2',
+      scores: { ...h1.scores, 'le-pen': h1.scores['le-pen'] + 0.5 },
+    });
+    expect(h1.source_id).toBe(h2.source_id);
+    expect(sameInstitut(h1, h2)).toBe(true);
+    expect(scoresMatchAsReprise(h1.scores, h2.scores)).toBe(true);
+    expect(findInterSourceReprise(h2, [h1])).toBeNull();
+
+    const { accepted, skipped } = partitionIncomingWaves([h1, h2], [], new Set());
+    expect(skipped).toHaveLength(0);
+    expect(accepted.map((w) => w.id)).toEqual([h1.id, h2.id]);
+  });
+
+  it('« Institut Elabe » et « Institut CSA » sans firm_id ne sont pas le même institut', () => {
+    const base = ifopH1();
+    const elabe: DetectedWave = {
+      ...base,
+      id: 'rss-institut-elabe',
+      firm: 'Institut Elabe',
+      firm_id: null,
+      source_id: 'bfmtv',
+    };
+    const csa: DetectedWave = {
+      ...base,
+      id: 'rss-institut-csa',
+      firm: 'Institut CSA',
+      firm_id: null,
+      source_id: 'cnews',
+    };
+    expect(sameInstitut(elabe, csa)).toBe(false);
+    expect(findInterSourceReprise(csa, [elabe])).toBeNull();
+  });
+
+  it('institut différent avec mêmes scores n’est pas une reprise', async () => {
+    const existing = ifopH1();
+    const incoming = epocIfop({
+      id: 'epoc-elabe-04112026-h1',
+      firm: 'Elabe',
+      firm_id: 'elabe',
+    });
+    expect(sameInstitut(existing, incoming)).toBe(false);
+    expect(scoresMatchAsReprise(existing.scores, incoming.scores)).toBe(true);
+    expect(findInterSourceReprise(incoming, [existing])).toBeNull();
+
+    const { accepted, skipped } = partitionIncomingWaves([incoming], [existing], new Set());
+    expect(skipped).toHaveLength(0);
+    expect(accepted.map((w) => w.id)).toEqual([incoming.id]);
+
+    const snapshot = await runSondageVeille({
+      previous: {
+        fetched_at: '2026-11-03T00:00:00.000Z',
+        disclaimer: '',
+        providers_indexed: 0,
+        sources_ok: 0,
+        sources_error: 0,
+        waves: [existing],
+        head_by_wave: [],
+        movements: [],
+        brief: [],
+        errors: [],
+      },
+      seedWaves: [incoming],
+      excludedIds: [],
+      fetchImpl: silentFetch,
+    });
+    expect(snapshot.waves.some((w) => w.id === incoming.id)).toBe(true);
+    expect(snapshot.movements.some((m) => m.kind === 'new_wave' && m.wave_id === incoming.id)).toBe(
+      true,
+    );
+  });
+
+  it('persistSnapshot n’écrit pas un id exclu (waves, movements)', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'sondage-excl-persist-'));
+    try {
+      const latest = join(dir, 'latest.json');
+      const waves = join(dir, 'waves-registry.json');
+      const movements = join(dir, 'movements.jsonl');
+      const candidats = join(dir, '2027-sondages-candidats.json');
+      const excluded = join(dir, 'excluded-waves.json');
+      const incoming = epocIfop();
+      await writeFile(
+        excluded,
+        JSON.stringify([
+          { id: incoming.id, reason: 'reprise EPOC de l\'Ifop/LCI 27-29/10', added: '2026-11-04' },
+        ]),
+        'utf8',
+      );
+      await writeFile(waves, '{"updated":"2026-11-03","waves":[]}\n', 'utf8');
+      await writeFile(movements, '', 'utf8');
+      await writeFile(
+        candidats,
+        JSON.stringify({
+          title: 't',
+          updated: '2026-11-03',
+          disclaimer: 'd',
+          method: 'm',
+          sources: [],
+          notes: [],
+          waves_latest: [],
+          candidates: [],
+        }),
+        'utf8',
+      );
+
+      const snapshot: SondageVeilleSnapshot = {
+        fetched_at: '2026-11-04T12:00:00.000Z',
+        disclaimer: 'test',
+        providers_indexed: 0,
+        sources_ok: 0,
+        sources_error: 0,
+        waves: [incoming],
+        head_by_wave: [
+          { wave_id: incoming.id, firm: incoming.firm, head: 'le-pen', pct: 35, hypothesis: 'hyp. 1' },
+        ],
+        movements: [
+          {
+            at: '2026-11-04T12:00:00.000Z',
+            kind: 'new_wave',
+            comment: 'ne doit pas être appendu',
+            wave_id: incoming.id,
+          },
+        ],
+        brief: [],
+        errors: [],
+      };
+
+      await persistSnapshot(snapshot, { latest, waves, movements, candidats, excluded });
+
+      const latestOut = JSON.parse(await readFile(latest, 'utf8')) as SondageVeilleSnapshot;
+      expect(latestOut.waves).toEqual([]);
+      expect(latestOut.head_by_wave).toEqual([]);
+      expect(latestOut.movements).toEqual([]);
+      expect(await readFile(movements, 'utf8')).toBe('');
+      const registry = JSON.parse(await readFile(waves, 'utf8')) as { waves: DetectedWave[] };
+      expect(registry.waves).toEqual([]);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
   });
 });

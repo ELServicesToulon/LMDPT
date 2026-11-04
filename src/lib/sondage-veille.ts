@@ -9,6 +9,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import providersConfig from '../data/sondages/providers.json';
 import {
+  parseWaveSortDate,
   rebuildCandidatsFromWaves,
   type CandidatsFile,
 } from './sondage-candidats-refresh';
@@ -18,7 +19,15 @@ const DATA_DIR = join(ROOT, 'src/data/sondages');
 const LATEST_PATH = join(DATA_DIR, 'latest.json');
 const MOVEMENTS_PATH = join(DATA_DIR, 'movements.jsonl');
 const WAVES_PATH = join(DATA_DIR, 'waves-registry.json');
+const EXCLUDED_WAVES_PATH = join(DATA_DIR, 'excluded-waves.json');
 const CANDIDATS_PATH = join(ROOT, 'src/data/elections/2027-sondages-candidats.json');
+
+/** Fenêtre (strictement moins de N jours) pour détecter une reprise inter-sources. */
+export const INTER_SOURCE_REPRISE_MAX_DAYS = 10;
+/** Tolérance en points pour des scores « identiques ». */
+export const INTER_SOURCE_SCORE_TOLERANCE = 0.5;
+/** Nombre mini de candidats en commun pour juger une reprise. */
+export const INTER_SOURCE_MIN_COMMON_CANDIDATES = 3;
 
 export interface ProviderRegistry {
   institutes: Array<{
@@ -79,6 +88,21 @@ export interface Movement {
   comment: string;
   wave_id?: string;
   source_url?: string;
+}
+
+/** Entrée de `excluded-waves.json` — ids à ne jamais insérer (reprises connues). */
+export interface ExcludedWaveEntry {
+  id: string;
+  reason: string;
+  added: string;
+}
+
+export type IncomingWaveSkipReason = 'excluded' | 'reprise';
+
+export interface SkippedIncomingWave {
+  wave: DetectedWave;
+  reason: IncomingWaveSkipReason;
+  repriseOf?: DetectedWave;
 }
 
 export interface SondageVeilleSnapshot {
@@ -749,6 +773,213 @@ function waveExactKey(w: DetectedWave): string {
   return `${w.firm_id ?? w.firm}|${w.fieldwork ?? ''}|${hyp}`;
 }
 
+/** Institut comparable : casse, accents et espaces ignorés. */
+export function normalizeInstitut(value: string | null | undefined): string {
+  if (!value) return '';
+  return value
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function sameInstitut(a: DetectedWave, b: DetectedWave): boolean {
+  const keysA = institutKeys(a);
+  const keysB = institutKeys(b);
+  for (const ka of keysA) {
+    if (keysB.has(ka)) return true;
+  }
+  return false;
+}
+
+/** Premier mot trop générique pour identifier un institut (collisions Elabe/CSA, Media…). */
+const GENERIC_INSTITUT_FIRST_WORDS = new Set([
+  'institut',
+  'media',
+  'sondage',
+  'sondages',
+  'barometre',
+  'etude',
+  'groupe',
+  'the',
+  'le',
+  'la',
+  'l',
+]);
+
+function institutKeys(wave: DetectedWave): Set<string> {
+  const keys = new Set<string>();
+  const id = normalizeInstitut(wave.firm_id);
+  if (id) {
+    keys.add(id);
+    return keys;
+  }
+  const firm = normalizeInstitut(wave.firm);
+  if (firm) keys.add(firm);
+  const first = firm.split(' ')[0];
+  if (first && !GENERIC_INSTITUT_FIRST_WORDS.has(first)) keys.add(first);
+  return keys;
+}
+
+/** Date de vague YYYY-MM-DD (fin de terrain, sinon publication). */
+export function waveDateIso(wave: DetectedWave): string | null {
+  return parseWaveSortDate(wave.fieldwork) ?? parseWaveSortDate(wave.published_hint) ?? null;
+}
+
+export function daysBetweenIso(a: string, b: string): number | null {
+  const da = Date.parse(`${a}T00:00:00Z`);
+  const db = Date.parse(`${b}T00:00:00Z`);
+  if (!Number.isFinite(da) || !Number.isFinite(db)) return null;
+  return Math.abs(da - db) / 86_400_000;
+}
+
+/** Scores identiques à `tolerance` pt près, avec au moins `minCommon` candidats en commun. */
+export function scoresMatchAsReprise(
+  a: Record<string, number>,
+  b: Record<string, number>,
+  tolerance = INTER_SOURCE_SCORE_TOLERANCE,
+  minCommon = INTER_SOURCE_MIN_COMMON_CANDIDATES,
+): boolean {
+  const common = Object.keys(a).filter(
+    (k) => Number.isFinite(a[k]) && Number.isFinite(b[k]),
+  );
+  if (common.length < minCommon) return false;
+  return common.every((k) => Math.abs(a[k] - b[k]) <= tolerance);
+}
+
+/**
+ * Reprise inter-sources : sources différentes, même institut, vague existante
+ * datée de moins de 10 jours, scores par candidat identiques à 0,5 pt près
+ * (≥ 3 candidats en commun) pour une hypothèse.
+ * Une vague de la même source n'est jamais une reprise (hypothèses sœurs,
+ * nouvelle vague d'un baromètre stable).
+ */
+export function findInterSourceReprise(
+  incoming: DetectedWave,
+  existing: DetectedWave[],
+  options?: { maxDays?: number; tolerance?: number; minCommon?: number },
+): DetectedWave | null {
+  const maxDays = options?.maxDays ?? INTER_SOURCE_REPRISE_MAX_DAYS;
+  const tolerance = options?.tolerance ?? INTER_SOURCE_SCORE_TOLERANCE;
+  const minCommon = options?.minCommon ?? INTER_SOURCE_MIN_COMMON_CANDIDATES;
+  const incomingDate = waveDateIso(incoming);
+  if (!incomingDate) return null;
+  if (Object.keys(incoming.scores).length < minCommon) return null;
+
+  for (const other of existing) {
+    if (other.id === incoming.id) continue;
+    if (other.source_id === incoming.source_id) continue;
+    if (!sameInstitut(incoming, other)) continue;
+    const otherDate = waveDateIso(other);
+    if (!otherDate) continue;
+    const days = daysBetweenIso(incomingDate, otherDate);
+    if (days == null || days >= maxDays) continue;
+    if (!scoresMatchAsReprise(incoming.scores, other.scores, tolerance, minCommon)) continue;
+    return other;
+  }
+  return null;
+}
+
+/** JSON absent / invalide / non-tableau → liste vide (jamais de throw). */
+export function parseExcludedWavesJson(raw: string): ExcludedWaveEntry[] {
+  try {
+    const data: unknown = JSON.parse(raw);
+    if (!Array.isArray(data)) return [];
+    const entries: ExcludedWaveEntry[] = [];
+    for (const item of data) {
+      if (!item || typeof item !== 'object') continue;
+      const rec = item as { id?: unknown; reason?: unknown; added?: unknown };
+      if (typeof rec.id !== 'string' || rec.id.trim() === '') continue;
+      entries.push({
+        id: rec.id,
+        reason: typeof rec.reason === 'string' ? rec.reason : '',
+        added: typeof rec.added === 'string' ? rec.added : '',
+      });
+    }
+    return entries;
+  } catch {
+    return [];
+  }
+}
+
+export function excludedIdsFromEntries(entries: ExcludedWaveEntry[]): Set<string> {
+  return new Set(entries.map((e) => e.id));
+}
+
+export async function loadExcludedWaveIds(path = EXCLUDED_WAVES_PATH): Promise<Set<string>> {
+  try {
+    if (!existsSync(path)) return new Set();
+    const raw = await readFile(path, 'utf8');
+    return excludedIdsFromEntries(parseExcludedWavesJson(raw));
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Filtre les vagues à insérer : ids exclus, puis reprises inter-sources.
+ * Les ids déjà présents dans `existing` sont conservés (mise à jour, pas une reprise).
+ */
+export function partitionIncomingWaves(
+  incoming: DetectedWave[],
+  existing: DetectedWave[],
+  excluded: ReadonlySet<string>,
+): { accepted: DetectedWave[]; skipped: SkippedIncomingWave[] } {
+  const accepted: DetectedWave[] = [];
+  const skipped: SkippedIncomingWave[] = [];
+  const pool = [...existing];
+  for (const w of incoming) {
+    if (excluded.has(w.id)) {
+      skipped.push({ wave: w, reason: 'excluded' });
+      continue;
+    }
+    if (pool.some((p) => p.id === w.id)) {
+      accepted.push(w);
+      continue;
+    }
+    const repriseOf = findInterSourceReprise(w, pool);
+    if (repriseOf) {
+      skipped.push({ wave: w, reason: 'reprise', repriseOf });
+      continue;
+    }
+    accepted.push(w);
+    pool.push(w);
+  }
+  return { accepted, skipped };
+}
+
+export function logSkippedWaves(skipped: SkippedIncomingWave[]): void {
+  for (const s of skipped) {
+    if (s.reason === 'excluded') {
+      console.log(`Sondage veille — vague exclue (liste) : ${s.wave.id}`);
+    } else {
+      const origin = s.repriseOf ? ` déjà couverte par ${s.repriseOf.id}` : '';
+      console.log(
+        `Sondage veille — reprise inter-sources ignorée : ${s.wave.id} (${s.wave.firm})${origin}`,
+      );
+    }
+  }
+}
+
+function applySkippedToSnapshot(
+  snapshot: SondageVeilleSnapshot,
+  skipped: SkippedIncomingWave[],
+  accepted: DetectedWave[],
+): SondageVeilleSnapshot {
+  if (!skipped.length) {
+    return { ...snapshot, waves: accepted };
+  }
+  const dropped = new Set(skipped.map((s) => s.wave.id));
+  return {
+    ...snapshot,
+    waves: accepted,
+    head_by_wave: snapshot.head_by_wave.filter((h) => !dropped.has(h.wave_id)),
+    movements: snapshot.movements.filter((m) => !m.wave_id || !dropped.has(m.wave_id)),
+  };
+}
+
 export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string): Movement[] {
   const movements: Movement[] = [];
   const prevByExact = new Map<string, DetectedWave>();
@@ -797,7 +1028,8 @@ export function diffWaves(prev: DetectedWave[], next: DetectedWave[], at: string
           }
         }
       } else if (!oldExact && isRecentFieldwork(w.fieldwork)) {
-        // Truly new scored wave in recent window
+        // Truly new scored wave in recent window — pas une reprise inter-sources
+        if (findInterSourceReprise(w, prev)) continue;
         const sameScoresKnown = prev.some(
           (p) =>
             (p.firm_id ?? p.firm) === (w.firm_id ?? w.firm) &&
@@ -874,13 +1106,16 @@ export async function runSondageVeille(
     fetchImpl?: typeof fetch;
     previous?: SondageVeilleSnapshot | null;
     seedWaves?: DetectedWave[];
+    excludedIds?: Iterable<string>;
+    excludedWavesPath?: string;
   } = {},
 ): Promise<SondageVeilleSnapshot> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const providers = getProviders();
   const ua = providers.scan?.user_agent ?? 'LMDPT-SondageVeille/1.0';
   const at = new Date().toISOString();
-  const waves: DetectedWave[] = [...(options.seedWaves ?? [])];
+  const seedWaves = options.seedWaves ?? [];
+  const discovered: DetectedWave[] = [];
   const errors: Array<{ source_id: string; error: string }> = [];
   let sourcesOk = 0;
   let sourcesError = 0;
@@ -908,7 +1143,9 @@ export async function runSondageVeille(
       parsed = parseGenericHtml(res.text, agg.url, agg.id);
     }
     for (const w of parsed) {
-      if (!waves.some((x) => x.id === w.id)) waves.push(w);
+      if (!discovered.some((x) => x.id === w.id) && !seedWaves.some((x) => x.id === w.id)) {
+        discovered.push(w);
+      }
     }
   }
 
@@ -923,12 +1160,25 @@ export async function runSondageVeille(
       }
       sourcesOk += 1;
       for (const w of parseRssForPolls(res.text, media.id)) {
-        if (!waves.some((x) => x.id === w.id)) waves.push(w);
+        if (!discovered.some((x) => x.id === w.id) && !seedWaves.some((x) => x.id === w.id)) {
+          discovered.push(w);
+        }
       }
     }
   }
 
+  const excluded =
+    options.excludedIds != null
+      ? new Set(options.excludedIds)
+      : await loadExcludedWaveIds(options.excludedWavesPath);
   const prev = options.previous ?? null;
+  const { accepted: waves, skipped } = partitionIncomingWaves(
+    [...seedWaves, ...discovered],
+    prev?.waves ?? [],
+    excluded,
+  );
+  logSkippedWaves(skipped);
+
   const movements = diffWaves(prev?.waves ?? [], waves, at);
 
   // First run / empty prev : comment every seeded + scored wave (incl. Le Point sans %)
@@ -999,6 +1249,7 @@ export interface SondagePersistPaths {
   waves?: string;
   movements?: string;
   candidats?: string;
+  excluded?: string;
 }
 
 export class SondageStateError extends Error {
@@ -1092,6 +1343,7 @@ export async function persistSnapshot(
   const wavesPath = paths?.waves ?? WAVES_PATH;
   const movementsPath = paths?.movements ?? MOVEMENTS_PATH;
   const candidatsPath = paths?.candidats ?? CANDIDATS_PATH;
+  const excludedPath = paths?.excluded ?? EXCLUDED_WAVES_PATH;
 
   let registry: { updated: string; waves: DetectedWave[] } = {
     updated: snapshot.fetched_at,
@@ -1113,25 +1365,34 @@ export async function persistSnapshot(
     throw new SondageStateError(candidatsPath, 'unreadable', '2027-sondages-candidats.json');
   }
 
+  const excluded = await loadExcludedWaveIds(excludedPath);
+  const { accepted, skipped } = partitionIncomingWaves(
+    snapshot.waves,
+    registry.waves,
+    excluded,
+  );
+  logSkippedWaves(skipped);
+  const filtered = applySkippedToSnapshot(snapshot, skipped, accepted);
+
   await mkdir(dirname(latestPath), { recursive: true });
   await mkdir(dirname(wavesPath), { recursive: true });
   await mkdir(dirname(movementsPath), { recursive: true });
-  await writeFile(latestPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
-  for (const m of snapshot.movements) {
+  await writeFile(latestPath, `${JSON.stringify(filtered, null, 2)}\n`, 'utf8');
+  for (const m of filtered.movements) {
     await appendFile(movementsPath, `${JSON.stringify(m)}\n`, 'utf8');
   }
 
   const byId = new Map(registry.waves.map((w) => [w.id, w]));
-  for (const w of snapshot.waves) byId.set(w.id, w);
-  registry.updated = snapshot.fetched_at;
+  for (const w of filtered.waves) byId.set(w.id, w);
+  registry.updated = filtered.fetched_at;
   registry.waves = [...byId.values()].sort((a, b) =>
     (b.fieldwork ?? '').localeCompare(a.fieldwork ?? ''),
   );
   await writeFile(wavesPath, `${JSON.stringify(registry, null, 2)}\n`, 'utf8');
 
   return persistCandidatsFromWaves(
-    snapshot.waves,
-    snapshot.fetched_at,
+    filtered.waves,
+    filtered.fetched_at,
     candidatsPath,
     existingCandidats,
   );
