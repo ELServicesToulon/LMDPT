@@ -794,14 +794,32 @@ export function sameInstitut(a: DetectedWave, b: DetectedWave): boolean {
   return false;
 }
 
+/** Premier mot trop générique pour identifier un institut (collisions Elabe/CSA, Media…). */
+const GENERIC_INSTITUT_FIRST_WORDS = new Set([
+  'institut',
+  'media',
+  'sondage',
+  'sondages',
+  'barometre',
+  'etude',
+  'groupe',
+  'the',
+  'le',
+  'la',
+  'l',
+]);
+
 function institutKeys(wave: DetectedWave): Set<string> {
   const keys = new Set<string>();
   const id = normalizeInstitut(wave.firm_id);
+  if (id) {
+    keys.add(id);
+    return keys;
+  }
   const firm = normalizeInstitut(wave.firm);
-  if (id) keys.add(id);
   if (firm) keys.add(firm);
   const first = firm.split(' ')[0];
-  if (first) keys.add(first);
+  if (first && !GENERIC_INSTITUT_FIRST_WORDS.has(first)) keys.add(first);
   return keys;
 }
 
@@ -832,8 +850,11 @@ export function scoresMatchAsReprise(
 }
 
 /**
- * Reprise inter-sources : même institut, vague existante datée de moins de 10 jours,
- * scores par candidat identiques à 0,5 pt près (≥ 3 candidats en commun) pour une hypothèse.
+ * Reprise inter-sources : sources différentes, même institut, vague existante
+ * datée de moins de 10 jours, scores par candidat identiques à 0,5 pt près
+ * (≥ 3 candidats en commun) pour une hypothèse.
+ * Une vague de la même source n'est jamais une reprise (hypothèses sœurs,
+ * nouvelle vague d'un baromètre stable).
  */
 export function findInterSourceReprise(
   incoming: DetectedWave,
@@ -849,6 +870,7 @@ export function findInterSourceReprise(
 
   for (const other of existing) {
     if (other.id === incoming.id) continue;
+    if (other.source_id === incoming.source_id) continue;
     if (!sameInstitut(incoming, other)) continue;
     const otherDate = waveDateIso(other);
     if (!otherDate) continue;

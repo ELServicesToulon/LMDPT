@@ -749,6 +749,10 @@ describe('exclusion et dédup inter-sources', () => {
   it('reprise EPOC d’un Ifop détectée (mêmes scores, < 10 jours)', () => {
     const existing = ifopH1();
     const incoming = epocIfop();
+    expect(existing.firm_id).toBe('ifop');
+    expect(incoming.firm_id).toBe('ifop');
+    expect(existing.source_id).toBe('manual');
+    expect(incoming.source_id).toBe('epoc');
     expect(sameInstitut(existing, incoming)).toBe(true);
     expect(scoresMatchAsReprise(existing.scores, incoming.scores)).toBe(true);
     expect(findInterSourceReprise(incoming, [existing])?.id).toBe(existing.id);
@@ -816,6 +820,46 @@ describe('exclusion et dédup inter-sources', () => {
     expect(snapshot.movements.some((m) => m.kind === 'new_wave' && m.wave_id === incoming.id)).toBe(
       true,
     );
+  });
+
+  it('hypothèses sœurs de la même source (scores proches) sont toutes acceptées', () => {
+    const h1 = epocIfop({
+      id: 'epoc-ifop-04112026-h1',
+      hypothesis: 'hyp. 1',
+    });
+    const h2 = epocIfop({
+      id: 'epoc-ifop-04112026-h2',
+      hypothesis: 'hyp. 2',
+      scores: { ...h1.scores, 'le-pen': h1.scores['le-pen'] + 0.5 },
+    });
+    expect(h1.source_id).toBe(h2.source_id);
+    expect(sameInstitut(h1, h2)).toBe(true);
+    expect(scoresMatchAsReprise(h1.scores, h2.scores)).toBe(true);
+    expect(findInterSourceReprise(h2, [h1])).toBeNull();
+
+    const { accepted, skipped } = partitionIncomingWaves([h1, h2], [], new Set());
+    expect(skipped).toHaveLength(0);
+    expect(accepted.map((w) => w.id)).toEqual([h1.id, h2.id]);
+  });
+
+  it('« Institut Elabe » et « Institut CSA » sans firm_id ne sont pas le même institut', () => {
+    const base = ifopH1();
+    const elabe: DetectedWave = {
+      ...base,
+      id: 'rss-institut-elabe',
+      firm: 'Institut Elabe',
+      firm_id: null,
+      source_id: 'bfmtv',
+    };
+    const csa: DetectedWave = {
+      ...base,
+      id: 'rss-institut-csa',
+      firm: 'Institut CSA',
+      firm_id: null,
+      source_id: 'cnews',
+    };
+    expect(sameInstitut(elabe, csa)).toBe(false);
+    expect(findInterSourceReprise(csa, [elabe])).toBeNull();
   });
 
   it('institut différent avec mêmes scores n’est pas une reprise', async () => {
