@@ -8,8 +8,8 @@
   "kicker": "Analyse · La rédaction · 5 novembre 2026",
   "author": "La rédaction",
   "author_role": "Rédaction LMDPT",
-  "chapo": "Mardi 3 novembre au soir, sur BFMTV, Bruno Retailleau a changé de pied. « Il faudra une primaire sans doute en début d'année », dit le candidat LR. Et Édouard Philippe « sera contraint à un moment ou un autre de l'accepter » [1][3]. Jusque-là, il jugeait une primaire impossible tant que le maire du Havre la refusait [2][15]. Selon l'AFP, trois des quatre principaux candidats de la droite et du centre sont désormais d'accord sur le principe : Gabriel Attal, Bruno Retailleau et David Lisnard [1]. Le quatrième, Édouard Philippe, a répété dimanche que « cette primaire n'aura pas lieu », et renvoie le départage à « février » [5][6]. Notre Une du 1er novembre racontait la naissance de l'idée [16]. Le débat n'est plus seulement « primaire ou pas ». C'est aussi « quand », et l'attente ne coûte pas la même chose à tout le monde.",
-  "description": "Mardi 3 novembre au soir, sur BFMTV, Bruno Retailleau a changé de pied. « Il faudra une primaire sans doute en début d'année », dit le candidat LR.",
+  "chapo": "Mardi soir sur BFMTV, Bruno Retailleau a changé de pied : « il faudra une primaire sans doute en début d'année », et Édouard Philippe « sera contraint à un moment ou un autre de l'accepter » [1][3][15]. Selon l'AFP, trois des quatre principaux candidats de la droite et du centre sont désormais pour : Attal, Retailleau et Lisnard [1]. Philippe répète que « cette primaire n'aura pas lieu » et renvoie le départage à février [5][6]. Reste à savoir quand, et attendre ne coûte pas la même chose à chacun.",
+  "description": "Retailleau se rallie à une primaire « en début d'année » : trois candidats sur quatre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
   "disclaimer": "À droite et au centre, tout le monde veut un arbitre, à condition de le choisir. Bruno Retailleau aimait les sondages tant qu'ils pouvaient le désigner. Il préfère maintenant les urnes. Édouard Philippe préfère les sondages tant qu'ils le placent devant, et promet d'en « tirer les conséquences » s'ils changent d'avis. Ni l'un ni l'autre n'a tort de défendre son intérêt. C'est le jeu. Mais l'électeur a droit à mieux qu'une querelle de dates. Une question simple aiderait : chacun des quatre peut-il dire, avant le premier des débats proposés, quelle est sa date limite pour un départage, et s'il soutiendra celui qui l'emporte ? Le calendrier officiel, lui, ne négocie pas. En février, le décret sera publié et la course aux parrainages commencera. C'est une opinion de la rédaction. Les faits sont sourcés ci-dessous.",
   "tags": [
     "lmdpt",
@@ -22,7 +22,7 @@
     "lisnard",
     "doe"
   ],
-  "x_hook": "Trois candidats de la droite et du centre veulent une primaire « en début d'année ». Le quatrième, Édouard Philippe, dit non et renvoie tout à février. Entre les deux dates, il y a le décret de convocation et les parrainages. On a regardé ce que l'attente coûte à chacun.",
+  "x_hook": "Retailleau se rallie à une primaire « sans doute en début d'année ». Trois des quatre principaux candidats de la droite et du centre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
   "hues": [
     {
       "slug": "droite",
@@ -59,7 +59,7 @@
         },
         {
           "type": "p",
-          "text": "Il fixe aussi la liste des invités. Quatre noms, pas un de plus : lui, David Lisnard et « les deux anciens Premiers ministres d'Emmanuel Macron », Édouard Philippe et Gabriel Attal. « Pour aller au fond, c'est difficile d'être plus de quatre », dit-il. Raphaël Glucksmann, candidat de Place publique soutenu par le PS, est exclu : « On ne va pas faire du en-même-temps » [1]."
+          "text": "Il fixe aussi la liste des invités. Quatre noms, pas un de plus : lui, David Lisnard et les « deux anciens Premiers ministres d'Emmanuel Macron », Édouard Philippe et Gabriel Attal [1]. « Pour aller au fond, c'est difficile d'être plus de quatre », dit-il. Raphaël Glucksmann, candidat de Place publique soutenu par le PS, est exclu, au motif que « l'on ne va pas faire du en-même-temps » [1]."
         },
         {
           "type": "p",
@@ -67,7 +67,7 @@
         },
         {
           "type": "p",
-          "text": "Le changement est réel. Fin octobre, lors d'un déjeuner avec David Lisnard organisé par le maire de Béziers Robert Ménard, il disait ne participer à une primaire que si Édouard Philippe en était aussi, selon L'Opinion [4]. Le 3 novembre, avant l'émission, RTL résumait encore sa position : une primaire, oui, mais seulement avec le maire du Havre. « Je le battrais », assurait-il [6]. Lui-même dit n'avoir « jamais été opposé à la primaire » [21]. C'est vrai. Ce qui a changé, c'est qu'il ne fait plus du « oui » d'Édouard Philippe un préalable. Il en fait une obligation à venir."
+          "text": "Le changement porte sur la condition. Fin octobre, lors d'un déjeuner avec David Lisnard organisé par le maire de Béziers Robert Ménard, il disait ne participer à une primaire que si Édouard Philippe en était aussi, selon L'Opinion [4]. Le 3 novembre, avant l'émission, RTL résumait encore sa position : une primaire, oui, mais seulement avec le maire du Havre. « Je le battrais », assurait-il [6]. Lui-même dit n'avoir « jamais été opposé à la primaire » [21]. C'est vrai. Ce qui a changé, c'est qu'il ne fait plus du « oui » d'Édouard Philippe un préalable. Il en fait une obligation à venir."
         }
       ]
     },
@@ -82,7 +82,7 @@
         },
         {
           "type": "p",
-          "text": "Ce que dit l'enquête, réalisée du 27 au 29 octobre auprès de 1 650 personnes, selon l'AFP. Marine Le Pen est en tête (35 à 37 %). Jean-Luc Mélenchon est deuxième (17,5 à 18 %), avec au moins deux points d'avance sur le troisième dans toutes les hypothèses testées. Édouard Philippe est à 15 % si Gabriel Attal ne se présente pas, et à 9,5 % s'il se maintient. David Lisnard devance Bruno Retailleau de 2,5 à 3 points selon les cas [9]. La marge d'erreur est comprise entre 1,1 et 2,5 points [9]. Un sondage est une photographie du moment. Il ne prédit pas le résultat."
+          "text": "Ce que dit l'enquête, réalisée du 27 au 29 octobre auprès de 1 650 personnes, selon l'AFP. Marine Le Pen est en tête (35 à 37 %). Jean-Luc Mélenchon est deuxième (17,5 à 18 %), avec au moins deux points d'avance sur le troisième dans toutes les hypothèses testées. Édouard Philippe est à 15 % si Gabriel Attal ne se présente pas, et à 9,5 % s'il se maintient. David Lisnard devance Bruno Retailleau de 2,5 à 3 points selon les cas [9]. La marge d'erreur est comprise entre 1,1 et 2,5 points [9]. Échantillon représentatif des 18 ans et plus, méthode des quotas. La notice est consultable sur le site de la Commission des sondages (commission-des-sondages.fr). Un sondage est une photographie du moment. Il ne prédit pas le résultat."
         },
         {
           "type": "p",
@@ -97,11 +97,11 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Quatre candidats, deux calendriers. D'un côté, « début d'année » pour Bruno Retailleau [1]. De l'autre, « février » pour Édouard Philippe : « Au mois de février, chacun prendra ses responsabilités » [5]. Sous la phrase, une idée simple. Sans vote, ce sont les sondages qui départagent. Et dans le dernier sondage, c'est lui qui a le meilleur score de son camp : 15 % quand Gabriel Attal ne se présente pas [9]."
+          "text": "Quatre candidats, deux calendriers. D'un côté, « début d'année » pour Bruno Retailleau [1]. De l'autre, « février » pour Édouard Philippe : « chacun prendra ses responsabilités » au mois de février [5][6]. Sous la phrase, une idée simple. Sans vote, ce sont les sondages qui départagent. Et dans le dernier sondage, c'est lui qui a le meilleur score de son camp : 15 % quand Gabriel Attal ne se présente pas [9]."
         },
         {
           "type": "p",
-          "text": "**Pour Édouard Philippe**, attendre garde l'arbitre qu'il préfère : le sondage. Il ne demande d'ailleurs à personne de se ranger derrière lui pour l'instant : « que ceux qui ont des choses à proposer aux Français le fassent, ils sont tous légitimes » [5]. Mais l'attente a un prix si la tendance tourne. Dans l'hypothèse où Gabriel Attal se maintient, Jean-Luc Mélenchon le devance de près de neuf points, relève L'Opinion [4]. Un cadre du bloc central, cité anonymement par l'AFP, parle déjà de « toboggan » [5]. Lui-même a ouvert une porte : « Si les Français ont décidément envie de passer à autre chose. Eh bien, écoutez, j'en tirerai les conséquences » [5]."
+          "text": "**Pour Édouard Philippe**, attendre garde l'arbitre qu'il préfère : le sondage. Il ne demande d'ailleurs à personne de se ranger derrière lui pour l'instant : « que ceux qui ont des choses à proposer aux Français le fassent, ils sont tous légitimes » [5]. Mais l'attente a un prix si la tendance tourne. Si les quatre candidats de la droite et du centre restent en lice, Jean-Luc Mélenchon le devance de près de neuf points, relève L'Opinion [4]. Dans la semaine précédente, un cadre du bloc central, cité anonymement par l'AFP, s'inquiétait : « Édouard (Philippe) a commencé à se mettre sur le toboggan, mais je ne suis pas sûr qu'il le sente » [5]. Lui-même a ouvert une porte : « Si les Français ont décidément envie de passer à autre chose. Eh bien, écoutez, j'en tirerai les conséquences » [5]."
         },
         {
           "type": "p",
@@ -109,7 +109,7 @@
         },
         {
           "type": "p",
-          "text": "**Pour Gabriel Attal**, qui a lancé l'idée le 28 octobre, le calendrier est déjà écrit : un vote « d'ici à la fin du mois de janvier », sur celui proposé par François Bayrou [20]. Lundi, il a redit que la primaire était « inéluctable » [1][11]. Chaque semaine sans réponse d'Édouard Philippe laisse son projet sans date."
+          "text": "**Pour Gabriel Attal**, qui a lancé l'idée le 28 octobre (notre Une du 1er novembre en racontait la naissance [16]), le calendrier est déjà écrit : un vote « d'ici à la fin du mois de janvier », sur celui proposé par François Bayrou [20]. Lundi, il a redit que la primaire était « inéluctable » [1][11]. Chaque semaine sans réponse d'Édouard Philippe laisse son projet sans date."
         },
         {
           "type": "p",
@@ -124,7 +124,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Le premier tour est fixé au 18 avril 2027 [12]. Le décret qui convoque les électeurs doit paraître au moins dix semaines avant [12], donc au plus tard le 7 février 2027 (notre calcul). Les formulaires de parrainage sont envoyés aux élus à partir de ce décret. Les 500 signatures doivent arriver au Conseil constitutionnel au plus tard le vendredi 12 mars 2027 à 18 heures [13][14]."
+          "text": "Le premier tour est fixé au 18 avril 2027 [12]. Le décret qui convoque les électeurs doit paraître au moins dix semaines avant [12], donc au plus tard le 7 février 2027 [14]. Les formulaires de parrainage sont envoyés aux élus à partir de ce décret. Les 500 signatures doivent arriver au Conseil constitutionnel au plus tard le vendredi 12 mars 2027 à 18 heures [13][14]."
         },
         {
           "type": "p",
@@ -132,7 +132,7 @@
         },
         {
           "type": "p",
-          "text": "Autour des candidats, chacun regarde la même horloge. Gérald Darmanin, mardi matin : « On n'a plus le temps ». Et : « Si j'étais Bruno Retailleau ou Gabriel Attal, je dirais ce à quoi je tiens. Si Edouard Philippe refuse leurs propositions, je comprendrais qu'ils se présentent » [4]. Gérard Larcher (LR) juge qu'« il faudra un sursaut en début d'année » [4]. Jean-François Copé, maire LR de Meaux, ne croit pas au vote : « Il n'y aura pas de primaire, c'est écrit ». Il mise sur un rassemblement en janvier [6]."
+          "text": "Autour des candidats, chacun regarde la même horloge. « On n'a plus le temps » d'organiser une primaire, dit mardi matin Gérald Darmanin, soutien d'Édouard Philippe. Il ajoute : « Si j'étais Bruno Retailleau ou Gabriel Attal, je dirais ce à quoi je tiens. Si Edouard Philippe refuse leurs propositions, je comprendrais qu'ils se présentent » [4]. Gérard Larcher (LR), soutien de Bruno Retailleau, juge qu'« il faudra un sursaut en début d'année » si aucun candidat ne s'impose d'ici là [4]. Jean-François Copé, maire LR de Meaux, ne croit pas au vote : « Il n'y aura pas de primaire, c'est écrit ». Il mise sur un rassemblement en janvier [6]."
         }
       ]
     },
@@ -155,7 +155,7 @@
         },
         {
           "type": "p",
-          "text": "Et le quatrième n'a pas bougé. Pour Édouard Philippe, c'est « une primaire de la division, parce que le principe même d'une primaire, c'est d'appuyer sur les différences entre les candidats », et « de la confusion », parce qu'elle mêle « les continuateurs du macronisme » et ceux qui « tendent la main à l'union des droites » [5]. Au 4 novembre au soir, nous n'avons trouvé aucune réponse publique de sa part à Bruno Retailleau."
+          "text": "Et le quatrième n'a pas bougé. Pour Édouard Philippe, c'est « une primaire de la division, parce que le principe même d'une primaire, c'est d'appuyer sur les différences entre les candidats », et « de la confusion », parce qu'elle mêle « les continuateurs du macronisme » et ceux qui « tendent la main à l'union des droites » [5][7]. Au 4 novembre au soir, nous n'avons trouvé aucune réponse publique de sa part à Bruno Retailleau."
         }
       ]
     },
@@ -166,7 +166,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Mardi, la primaire de la droite et du centre a gagné un partisan de plus. Elle n'a gagné ni date, ni règles, ni liste d'invités commune. Le seul candidat qui dit non est aussi celui qui a le meilleur score de ce camp dans le dernier sondage [9]. Tous parlent de démocratie. Mais chacun défend la méthode qui l'arrange : le vote pour ceux qui sont derrière, le sondage pour celui qui est devant."
+          "text": "Mardi, la primaire de la droite et du centre a gagné un partisan de plus. Elle n'a gagné ni date, ni règles, ni liste d'invités commune. Le seul candidat qui dit non est aussi celui qui a le meilleur score de ce camp dans le dernier sondage, quand Gabriel Attal ne se présente pas [9]. Tous parlent de démocratie. Mais chacun semble défendre la méthode qui l'arrange : le vote pour ceux qui sont derrière, le sondage pour celui qui est devant."
         }
       ]
     },
@@ -212,7 +212,7 @@
           [
             "Édouard Philippe (Horizons)",
             "Contre. « Cette primaire n'aura pas lieu » (TF1, 1er novembre) : une primaire « de la division » et « de la confusion ». Renvoie le départage à février.",
-            "[5][6]"
+            "[5][6][7]"
           ],
           [
             "Raphaël Glucksmann (Place publique)",

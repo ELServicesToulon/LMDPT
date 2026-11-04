@@ -101,10 +101,12 @@ describe('analyses', () => {
     expect(troisPourUnContre.kicker).toBe('Analyse · La rédaction · 5 novembre 2026');
     expect(troisPourUnContre.tags).toContain('doe');
     expect(troisPourUnContre.x_hook).toBe(
-      "Trois candidats de la droite et du centre veulent une primaire « en début d'année ». Le quatrième, Édouard Philippe, dit non et renvoie tout à février. Entre les deux dates, il y a le décret de convocation et les parrainages. On a regardé ce que l'attente coûte à chacun.",
+      "Retailleau se rallie à une primaire « sans doute en début d'année ». Trois des quatre principaux candidats de la droite et du centre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
     );
     expect(troisPourUnContre.description.length).toBeLessThanOrEqual(200);
-    expect(troisPourUnContre.description).toMatch(/Bruno Retailleau a changé de pied/);
+    expect(troisPourUnContre.description).toBe(
+      "Retailleau se rallie à une primaire « en début d'année » : trois candidats sur quatre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
+    );
     expect(troisPourUnContre.disclaimer).toMatch(/opinion de la rédaction/);
     expect(troisPourUnContre.sources_intro).toMatch(/Consultées le 4 novembre 2026/);
     expect(troisPourUnContre.sources_closing).toMatch(/consultés le 4 novembre 2026/);
@@ -211,7 +213,7 @@ describe('analyses', () => {
       expect(lisnard?.[2]).toBe('[6][7][8]');
       const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
       expect(philippe?.[1]).toMatch(/Cette primaire n'aura pas lieu/);
-      expect(philippe?.[2]).toBe('[5][6]');
+      expect(philippe?.[2]).toBe('[5][6][7]');
       const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
       expect(glucksmann?.[1]).toMatch(/ce n'est pas mon histoire/);
       expect(glucksmann?.[2]).toBe('[1][6]');

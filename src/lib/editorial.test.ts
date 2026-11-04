@@ -137,7 +137,7 @@ describe('une du jour (égalité de date)', () => {
       'Trois pour, un contre : la primaire se joue maintenant sur la date',
     );
     expect(troisPourUnContre.x_hook).toBe(
-      "Trois candidats de la droite et du centre veulent une primaire « en début d'année ». Le quatrième, Édouard Philippe, dit non et renvoie tout à février. Entre les deux dates, il y a le décret de convocation et les parrainages. On a regardé ce que l'attente coûte à chacun.",
+      "Retailleau se rallie à une primaire « sans doute en début d'année ». Trois des quatre principaux candidats de la droite et du centre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
     );
     expect(lyceesBloques.x_hook).toBe(
       "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun, à notre connaissance, ne publie sa liste. On a démonté les deux thermomètres.",
