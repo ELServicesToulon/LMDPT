@@ -3,6 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ANALYSIS_CATALOG } from './analyses';
 import { DEBATE_CATALOG } from './debates';
+import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
 import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
@@ -129,11 +130,14 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('analyse 48 ou 500 lycées bloqués du 04/11 en une, puis vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('analyse trois pour un contre du 05/11 en une, puis 48 ou 500 lycées bloqués du 04/11, vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(getUneDuJour()?.slug).toBe('trois-pour-un-contre');
     expect(getUneDuJour()?.title).toBe(
-      '48 ou 500 lycées bloqués ? Chacun son thermomètre, personne ne montre sa liste',
+      'Trois pour, un contre : la primaire se joue maintenant sur la date',
+    );
+    expect(troisPourUnContre.x_hook).toBe(
+      "Retailleau se rallie à une primaire « sans doute en début d'année ». Trois des quatre principaux candidats de la droite et du centre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
     );
     expect(lyceesBloques.x_hook).toBe(
       "48 lycées bloqués mardi pour le ministère, 500 pour l'Union syndicale lycéenne. Dix fois plus. Les deux camps ne comptent pas la même chose, et aucun, à notre connaissance, ne publie sa liste. On a démonté les deux thermomètres.",
@@ -160,26 +164,28 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[1]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(sorted[1]?.date).toBe('2026-11-03');
-    expect(sorted[2]?.slug).toBe('779-retirez-halloween');
-    expect(sorted[2]?.date).toBe('2026-11-02');
-    expect(sorted[3]?.slug).toBe('primaire-sans-la-gauche');
-    expect(sorted[3]?.date).toBe('2026-11-01');
-    expect(sorted[4]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(sorted[4]?.date).toBe('2026-10-30');
-    expect(sorted[5]?.slug).toBe('bataille-du-2-mai');
-    expect(sorted[5]?.date).toBe('2026-10-29');
-    expect(sorted[6]?.slug).toBe('corse-senat-non');
-    expect(sorted[6]?.date).toBe('2026-10-28');
-    expect(sorted[7]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[8]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[9]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[10]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[11]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[12]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[13]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[14]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[1]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(sorted[1]?.date).toBe('2026-11-04');
+    expect(sorted[2]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(sorted[2]?.date).toBe('2026-11-03');
+    expect(sorted[3]?.slug).toBe('779-retirez-halloween');
+    expect(sorted[3]?.date).toBe('2026-11-02');
+    expect(sorted[4]?.slug).toBe('primaire-sans-la-gauche');
+    expect(sorted[4]?.date).toBe('2026-11-01');
+    expect(sorted[5]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(sorted[5]?.date).toBe('2026-10-30');
+    expect(sorted[6]?.slug).toBe('bataille-du-2-mai');
+    expect(sorted[6]?.date).toBe('2026-10-29');
+    expect(sorted[7]?.slug).toBe('corse-senat-non');
+    expect(sorted[7]?.date).toBe('2026-10-28');
+    expect(sorted[8]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[9]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[10]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[11]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[12]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[13]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[14]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[15]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 

@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
 import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
@@ -47,6 +48,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: troisPourUnContre.slug,
+    title: troisPourUnContre.title,
+    description: troisPourUnContre.description,
+    date: troisPourUnContre.date,
+    published: troisPourUnContre.date,
+    updated: troisPourUnContre.updated,
+    href: '/analyses/trois-pour-un-contre',
+    cover: uneCover(
+      'trois-pour-un-contre',
+      "Aquarelle de quatre chaises en bois vides dans une salle claire à la lumière d'automne. Trois entourent une table ronde où est posée une urne transparente contenant quelques bulletins. La quatrième est reculée au premier plan, à l'écart de la table. Au mur, une horloge sans chiffres ni aiguilles et un calendrier aux pages blanches qui se soulèvent.",
+    ),
+  },
   {
     slug: lyceesBloques.slug,
     title: lyceesBloques.title,
