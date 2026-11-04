@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
 import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
 import retirezHalloween from '../data/analyses/779-retirez-halloween.json';
@@ -44,6 +45,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('trois-pour-un-contre');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('48-ou-500-lycees-bloques');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('vie-chere-porsche-trabant');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('779-retirez-halloween');
@@ -57,21 +59,22 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'chronique-manusk-fiction-demission-macron',
     );
-    expect(ANALYSIS_CATALOG[0]?.slug).toBe('48-ou-500-lycees-bloques');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('779-retirez-halloween');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[12]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[13]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[14]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[0]?.slug).toBe('trois-pour-un-contre');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[13]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[14]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[15]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -84,7 +87,190 @@ describe('analyses', () => {
     );
   });
 
-  it('analyse 48 ou 500 lycées bloqués du 4 novembre en une, sources, boîte DOE', () => {
+  it('analyse trois pour un contre du 5 novembre en une, sources, boîte DOE', () => {
+    expect(troisPourUnContre.slug).toBe('trois-pour-un-contre');
+    expect(troisPourUnContre.date).toBe('2026-11-05');
+    expect(troisPourUnContre.updated).toBe('2026-11-05');
+    expect(troisPourUnContre.title).toBe(
+      'Trois pour, un contre : la primaire se joue maintenant sur la date',
+    );
+    expect(troisPourUnContre.author).toBe('La rédaction');
+    expect(troisPourUnContre.author_role).toBe('Rédaction LMDPT');
+    expect(troisPourUnContre.eyebrow).toBe('Analyse · Présidentielle 2027');
+    expect(troisPourUnContre.type_label).toBe('Analyse');
+    expect(troisPourUnContre.kicker).toBe('Analyse · La rédaction · 5 novembre 2026');
+    expect(troisPourUnContre.tags).toContain('doe');
+    expect(troisPourUnContre.x_hook).toBe(
+      "Trois candidats de la droite et du centre veulent une primaire « en début d'année ». Le quatrième, Édouard Philippe, dit non et renvoie tout à février. Entre les deux dates, il y a le décret de convocation et les parrainages. On a regardé ce que l'attente coûte à chacun.",
+    );
+    expect(troisPourUnContre.description.length).toBeLessThanOrEqual(200);
+    expect(troisPourUnContre.description).toMatch(/Bruno Retailleau a changé de pied/);
+    expect(troisPourUnContre.disclaimer).toMatch(/opinion de la rédaction/);
+    expect(troisPourUnContre.sources_intro).toMatch(/Consultées le 4 novembre 2026/);
+    expect(troisPourUnContre.sources_closing).toMatch(/consultés le 4 novembre 2026/);
+    expect(troisPourUnContre.hues).toHaveLength(3);
+    expect(troisPourUnContre.hues.map((hue) => hue.slug)).toEqual([
+      'droite',
+      'pluraliste',
+      'pluraliste',
+    ]);
+    expect(troisPourUnContre.hues.map((hue) => hue.label)).toEqual([
+      'Démocratie de règles claires',
+      'Arbitrage par le vote',
+      'Pluralisme loyal',
+    ]);
+    const retailleau = troisPourUnContre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'retailleau',
+    );
+    expect(retailleau?.kind).toBe('prose');
+    if (retailleau?.kind === 'prose') {
+      expect(retailleau.title).toBe("Ce qu'a dit Bruno Retailleau, et ce qu'il disait avant");
+    }
+    const sondage = troisPourUnContre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'sondage',
+    );
+    expect(sondage?.kind).toBe('prose');
+    if (sondage?.kind === 'prose') {
+      expect(sondage.title).toBe('Pourquoi maintenant : ce que dit le sondage, et ce qu\'il ne dit pas');
+    }
+    const attente = troisPourUnContre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'attente',
+    );
+    expect(attente?.kind).toBe('prose');
+    if (attente?.kind === 'prose') {
+      expect(attente.title).toBe("Que coûte l'attente à chacun ?");
+    }
+    const horloge = troisPourUnContre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'horloge',
+    );
+    expect(horloge?.kind).toBe('prose');
+    if (horloge?.kind === 'prose') {
+      expect(horloge.title).toBe(
+        "L'horloge officielle : pourquoi février n'est pas un mois comme un autre",
+      );
+    }
+    const courants = troisPourUnContre.sections.find(
+      (section) => section.kind === 'prose' && section.id === 'courants',
+    );
+    expect(courants?.kind).toBe('prose');
+    if (courants?.kind === 'prose') {
+      expect(courants.title).toBe('Courants que cette analyse rejoint');
+    }
+    const entry = getAnalysis('trois-pour-un-contre');
+    expect(entry?.href).toBe('/analyses/trois-pour-un-contre');
+    expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/trois-pour-un-contre.jpg');
+    expect(entry?.cover?.alt).toMatch(/quatre chaises en bois vides/);
+    expect(getUneDuJour()?.slug).toBe('trois-pour-un-contre');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
+    const nSources = troisPourUnContre.sources_groups.reduce((n, g) => n + g.items.length, 0);
+    expect(nSources).toBe(21);
+    const sourceBlob = JSON.stringify(troisPourUnContre.sources_groups);
+    expect(sourceBlob).toContain(
+      'https://www.france24.com/fr/info-en-continu/20261104-primaire-%C3%A0-droite-et-au-centre-retailleau-remet-la-pression-sur-philippe',
+    );
+    expect(sourceBlob).toMatch(/leparisien\.fr\/elections\/presidentielle\/sinon-jirai-jusquau-bout-bruno-retailleau/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/pouvoir-d-achat-ecologie-et-etat-regalien/);
+    expect(sourceBlob).toMatch(/lopinion\.fr\/politique\/il-faudra-une-primaire-bruno-retailleau/);
+    expect(sourceBlob).toMatch(/france24\.com\/fr\/info-en-continu\/20261101-primaire-ou-pas-primaire-philippe/);
+    expect(sourceBlob).toMatch(/rtl\.fr\/actu\/politique\/presidentielle-2027-attal-philippe-lisnard-glucksmann/);
+    expect(sourceBlob).toMatch(/leparisien\.fr\/elections\/presidentielle\/presidentielle-2027-attal-philippe-glucksmann-lisnard/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/video-2027-je-ne-soutiendrai-pas-edouard-philippe/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/presidentielle-2027-un-duel-entre-jean-luc-melenchon/);
+    expect(sourceBlob).toMatch(/fr\.news\.yahoo\.com\/ne-force-dappoint-droite/);
+    expect(sourceBlob).toMatch(/rtl\.fr\/actu\/politique\/presidentielle-2027-bruno-retailleau-n-ecarte-pas/);
+    expect(sourceBlob).toMatch(/service-public\.gouv\.fr\/particuliers\/vosdroits\/F1939/);
+    expect(sourceBlob).toMatch(/conseil-constitutionnel\.fr\/fondements-textuels\/loi-n-62-1292/);
+    expect(sourceBlob).toMatch(/touteleurope\.eu\/vie-politique-des-etats-membres\/presidentielle-2027-calendrier/);
+    expect(sourceBlob).toMatch(/franceinfo\.fr\/elections\/presidentielle\/pour-departager-les-quatre-principaux-candidats/);
+    expect(sourceBlob).toMatch(/lmdpt\.iarbre\.org\/analyses\/primaire-sans-la-gauche/);
+    expect(sourceBlob).toMatch(/linternaute\.com\/actualite\/politique\/11312271-attal-et-philippe-s-affrontent/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/video-bruno-retailleau-c-est-celui/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/reconquete\/une-proposition-intelligente-eric-zemmour/);
+    expect(sourceBlob).toMatch(/europe1\.fr\/politique\/presidentielle-2027-gabriel-attal-franchit-le-pas/);
+    expect(sourceBlob).toMatch(/bfmtv\.com\/politique\/elections\/presidentielle\/direct-presidentielle-2027-bruno-retailleau-va-detailler/);
+    expect(sourceBlob).not.toMatch(/Note de vérification/);
+    const encadre = troisPourUnContre.sections.find((section) => section.kind === 'candidats');
+    expect(encadre?.kind).toBe('candidats');
+    if (encadre?.kind === 'candidats') {
+      expect(encadre.table.headers).toEqual([
+        'Candidat',
+        'Position sur une primaire de la droite et du centre',
+        'Sources',
+      ]);
+      expect(encadre.table.rows).toHaveLength(10);
+      expect(encadre.note).toMatch(/Non trouvé/);
+      expect(encadre.note).toMatch(/sondage Ifop pour LCI/);
+      const attal = encadre.table.rows.find((row) => row[0]?.includes('Attal'));
+      expect(attal?.[1]).toMatch(/inéluctable/);
+      expect(attal?.[2]).toBe('[1][11][20]');
+      const retailleauRow = encadre.table.rows.find((row) => row[0]?.includes('Retailleau'));
+      expect(retailleauRow?.[1]).toMatch(/début d'année/);
+      expect(retailleauRow?.[2]).toBe('[1][3][4][6]');
+      const lisnard = encadre.table.rows.find((row) => row[0]?.includes('Lisnard'));
+      expect(lisnard?.[1]).toMatch(/depuis presque deux ans/);
+      expect(lisnard?.[2]).toBe('[6][7][8]');
+      const philippe = encadre.table.rows.find((row) => row[0]?.includes('Philippe'));
+      expect(philippe?.[1]).toMatch(/Cette primaire n'aura pas lieu/);
+      expect(philippe?.[2]).toBe('[5][6]');
+      const glucksmann = encadre.table.rows.find((row) => row[0]?.includes('Glucksmann'));
+      expect(glucksmann?.[1]).toMatch(/ce n'est pas mon histoire/);
+      expect(glucksmann?.[2]).toBe('[1][6]');
+      const villepin = encadre.table.rows.find((row) => row[0]?.includes('Villepin'));
+      expect(villepin?.[1]).toMatch(/héritiers du macronisme/);
+      expect(villepin?.[2]).toBe('[6][17]');
+      const bertrand = encadre.table.rows.find((row) => row[0]?.includes('Bertrand'));
+      expect(bertrand?.[1]).toMatch(/Rejette le principe/);
+      expect(bertrand?.[2]).toBe('[6]');
+      const lePen = encadre.table.rows.find((row) => row[0]?.includes('Le Pen'));
+      expect(lePen?.[1]).toMatch(/Non trouvé dans les sources consultées/);
+      expect(lePen?.[2]).toBe('Aucune');
+      const melenchon = encadre.table.rows.find((row) => row[0]?.includes('Mélenchon'));
+      expect(melenchon?.[1]).toMatch(/Non trouvé dans les sources consultées/);
+      expect(melenchon?.[2]).toBe('Aucune');
+      const zemmour = encadre.table.rows.find((row) => row[0]?.includes('Zemmour'));
+      expect(zemmour?.[1]).toMatch(/Retailleau à Attal/);
+      expect(zemmour?.[2]).toBe('[19]');
+    }
+    const analyseTexts = [
+      troisPourUnContre.chapo,
+      troisPourUnContre.description,
+      troisPourUnContre.disclaimer,
+      troisPourUnContre.sources_closing,
+      ...troisPourUnContre.sections.flatMap((section) => {
+        if (section.kind === 'prose') {
+          return section.blocks.flatMap((block) =>
+            block.type === 'p'
+              ? [block.text]
+              : block.type === 'ul' || block.type === 'ol'
+                ? block.items
+                : block.type === 'table'
+                  ? [...block.headers, ...block.rows.flat()]
+                  : [],
+          );
+        }
+        if (section.kind === 'candidats') {
+          return [
+            section.intro,
+            section.note,
+            section.conclusion,
+            ...section.table.headers,
+            ...section.table.rows.flat(),
+          ];
+        }
+        return [];
+      }),
+    ].join('\n');
+    expect(analyseTexts).not.toMatch(/—/);
+    expect(analyseTexts).toMatch(/\[1\]/);
+    expect(analyseTexts).toMatch(/\[21\]/);
+    expect(analyseTexts).toMatch(/Bruno Retailleau/);
+    expect(analyseTexts).toMatch(/Édouard Philippe/);
+    expect(analyseTexts).toMatch(/début d'année/);
+    expect(analyseTexts).toMatch(/En tension avec/);
+    expect(JSON.stringify(troisPourUnContre)).not.toMatch(/<!--/);
+  });
+
+  it('analyse 48 ou 500 lycées bloqués du 4 novembre, sources, boîte DOE', () => {
     expect(lyceesBloques.slug).toBe('48-ou-500-lycees-bloques');
     expect(lyceesBloques.date).toBe('2026-11-04');
     expect(lyceesBloques.updated).toBe('2026-11-04');
@@ -166,8 +352,8 @@ describe('analyses', () => {
     expect(entry?.href).toBe('/analyses/48-ou-500-lycees-bloques');
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/48-ou-500-lycees-bloques.jpg');
     expect(entry?.cover?.alt).toMatch(/portail de lycée en fer forgé/);
-    expect(getUneDuJour()?.slug).toBe('48-ou-500-lycees-bloques');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.slug).not.toBe('48-ou-500-lycees-bloques');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = lyceesBloques.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(25);
     const sourceBlob = JSON.stringify(lyceesBloques.sources_groups);
@@ -349,7 +535,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/vie-chere-porsche-trabant.jpg');
     expect(entry?.cover?.alt).toMatch(/petite voiture ancienne bleu pâle/);
     expect(getUneDuJour()?.slug).not.toBe('vie-chere-porsche-trabant');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = vieCherePorscheTrabant.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(41);
     const sourceBlob = JSON.stringify(vieCherePorscheTrabant.sources_groups);
@@ -522,7 +708,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/779-retirez-halloween.jpg');
     expect(entry?.cover?.alt).toMatch(/carnet de comptage ouvert/);
     expect(getUneDuJour()?.slug).not.toBe('779-retirez-halloween');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = retirezHalloween.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(10);
     const sourceBlob = JSON.stringify(retirezHalloween.sources_groups);
@@ -676,7 +862,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
     expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
     expect(getUneDuJour()?.slug).not.toBe('primaire-sans-la-gauche');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
@@ -847,7 +1033,7 @@ describe('analyses', () => {
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
     expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -1006,7 +1192,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -1166,7 +1352,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-11-04');
+    expect(getUneDuJour()?.date).toBe('2026-11-05');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
