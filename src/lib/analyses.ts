@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import selEtPoivre from '../data/analyses/sel-et-poivre.json';
 import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
 import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
 import vieCherePorscheTrabant from '../data/analyses/vie-chere-porsche-trabant.json';
@@ -48,6 +49,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: selEtPoivre.slug,
+    title: selEtPoivre.title,
+    description: selEtPoivre.description,
+    date: selEtPoivre.date,
+    published: selEtPoivre.date,
+    updated: selEtPoivre.updated,
+    href: '/analyses/sel-et-poivre',
+    cover: uneCover(
+      'sel-et-poivre',
+      "Aquarelle d'une table en bois : un salière et une poivrière en verre reliées par un ruban bleu frangé au milieu, une urne blanche fermée et un carnet à spirale aux pages blanches. Branche d'érable séchée à gauche, lumière d'automne douce, aucun texte ni visage.",
+    ),
+  },
   {
     slug: troisPourUnContre.slug,
     title: troisPourUnContre.title,
