@@ -48,10 +48,15 @@ const packPath = PACK_DATA.path;
   </section>
 
   <section class="card" id="dons" aria-labelledby="dons-title">
-    <h3 id="dons-title">Soutien citoyen (mensuel indicatif)</h3>
+    <h3 id="dons-title">Soutien citoyen (don ponctuel)</h3>
+    <p>
+      Don libre, <strong>en une fois</strong> (pas d’abonnement). Minimum <strong>3&nbsp;€</strong>,
+      plafond indicatif <strong>500&nbsp;€</strong> — le montant est choisi sur la page Stripe.
+    </p>
     <p class="meta">
-      Montants suggérés — le formulaire de don externe peut proposer d’autres sommes ou un don
-      ponctuel.
+      Les cartes ci‑dessous sont des <strong>suggestions indicatives</strong> (3&nbsp;/&nbsp;5&nbsp;/&nbsp;10&nbsp;€) ;
+      chaque bouton ouvre <strong>le même lien</strong>. Aucun avantage matériel ou service en
+      échange de ces montants : ce ne sont pas des « paliers » avec contrepartie.
     </p>
     <div class="tier-grid" role="list">
       {
@@ -60,7 +65,7 @@ const packPath = PACK_DATA.path;
             <h4 class="tier-label">{t.label}</h4>
             <p class="tier-price">
               <strong>{t.amountEur}&nbsp;€</strong>
-              <span class="meta"> / mois</span>
+              <span class="meta"> suggestion</span>
             </p>
             <p class="tier-blurb">{t.blurb}</p>
             {
@@ -71,7 +76,7 @@ const packPath = PACK_DATA.path;
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Soutenir à {t.amountEur}&nbsp;€ →
+                  Ouvrir le don (ex.&nbsp;{t.amountEur}&nbsp;€) →
                 </a>
               )
             }
@@ -82,21 +87,53 @@ const packPath = PACK_DATA.path;
 
     {
       ready ? (
-        <p class="cta-block">
-          <a class="btn btn-primary btn-lg" href={donateUrl} rel="noopener noreferrer" target="_blank">
-            Ouvrir la page de don sécurisée →
-          </a>
-          {
-            donateIsTest && (
-              <span class="meta test-banner">
-                {' '}
-                Mode <strong>essai Stripe</strong> — carte test 4242… ; pas de vrai débit.
-              </span>
-            )
-          }
-        </p>
+        <>
+          <p class="cta-block">
+            <a class="btn btn-primary btn-lg" href={donateUrl} rel="noopener noreferrer" target="_blank">
+              Faire un don →
+            </a>
+            <span class="cta-subtitle meta">
+              Montant libre à partir de 3&nbsp;€ — hébergement, données, outils, temps éditorial.
+            </span>
+            {
+              donateIsTest && (
+                <span class="meta test-banner block">
+                  Mode <strong>essai Stripe</strong> — carte test 4242… ; pas de vrai débit.
+                </span>
+              )
+            }
+          </p>
+          <div class="legal-don card-inner">
+            <p>
+              <strong>Bénéficiaire du règlement :</strong> EL Services (titulaire du compte Stripe en
+              production). Pas d’adresse personnelle ni de RIB affiché sur cette page.
+            </p>
+            <p>
+              <strong>Objet :</strong> contribution volontaire au fonctionnement du site (hébergement,
+              données ouvertes, outils, temps de rédaction et de contrôle) — sans contrepartie
+              commerciale liée au montant du don.
+            </p>
+            <p>
+              <strong>Financement électoral :</strong> ce dispositif ne finance pas une campagne
+              électorale, un candidat ou un parti politique (art.&nbsp;L.&nbsp;52‑8 du code électoral).
+            </p>
+            <p>
+              <strong>Fiscal :</strong> l’e‑mail ou le reçu Stripe n’équivaut pas à un reçu au sens de
+              l’article&nbsp;200 du code général des impôts. Nous n’indiquons pas ici de dispositif de
+              réduction d’impôt.
+            </p>
+            <p class="meta">
+              Le Média du Premier Tour est présenté comme un projet éditorial ; cette page ne vise pas
+              à décrire LMDPT comme une association, un organisme de bienfaisance ou une organisation
+              politique.
+            </p>
+          </div>
+        </>
       ) : (
-        <p>Les dons en ligne ne sont pas ouverts.</p>
+        <p class="meta">
+          Le lien de don n’est pas configuré correctement (variable d’environnement ou URL invalide).
+          Écrivez-nous via les contacts habituels du site.
+        </p>
       )
     }
   </section>
@@ -213,6 +250,32 @@ const packPath = PACK_DATA.path;
     }
     .cta-block {
       margin: 1rem 0 0.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .cta-subtitle {
+      max-width: 38rem;
+      line-height: 1.45;
+    }
+    .test-banner.block {
+      display: block;
+    }
+    .legal-don.card-inner {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 10px);
+      background: rgba(0, 0, 0, 0.02);
+    }
+    .legal-don p {
+      margin: 0 0 0.65rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .legal-don p:last-child {
+      margin-bottom: 0;
     }
     .badge-soon {
       font-size: 0.75rem;

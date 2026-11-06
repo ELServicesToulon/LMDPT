@@ -1,17 +1,21 @@
 /**
  * Soutien citoyen LMDPT — dons (phase B monétisation).
  *
- * Configurer l’URL réelle via build env (jamais de secret) :
- *   PUBLIC_LMDPT_DONATE_URL=https://www.helloasso.com/associations/.../formulaires/...
- *
- * Ou Payment Link Stripe (don) si HelloAsso non prêt.
+ * Par défaut : Payment Link Stripe (don ponctuel, montant libre côté Stripe).
+ * Surcharge possible au build (jamais de secret dans le dépôt) :
+ *   PUBLIC_LMDPT_DONATE_URL=https://donate.stripe.com/…
  */
+
+/** Lien public Stripe (don) — valeur par défaut si `PUBLIC_LMDPT_DONATE_URL` est vide. */
+export const DEFAULT_DONATE_URL =
+  'https://donate.stripe.com/5kQ00c6Iw6M33Jb5EdaMU00';
 
 export type SupportTier = {
   id: string;
   label: string;
   amountEur: number;
-  period: 'once' | 'month';
+  /** Suggestions indicatives (même lien ; le montant est choisi sur Stripe). */
+  period: 'once';
   blurb: string;
 };
 
@@ -20,29 +24,30 @@ export const SUPPORT_TIERS: SupportTier[] = [
     id: 'cafe',
     label: 'Un café pour les données',
     amountEur: 3,
-    period: 'month',
+    period: 'once',
     blurb: 'Hébergement & synchronisation des données ouvertes.',
   },
   {
     id: 'doe',
-    label: 'Soutien ligne éditoriale',
+    label: 'Soutien au fonctionnement éditorial',
     amountEur: 5,
-    period: 'month',
+    period: 'once',
     blurb: 'Atlas + analyses + maintenance site.',
   },
   {
     id: 'pluralite',
     label: 'Pluralité',
     amountEur: 10,
-    period: 'month',
+    period: 'once',
     blurb: 'Simulateurs, exports et notes de synthèse.',
   },
 ];
 
-/** URL de paiement externe (HelloAsso / Stripe Payment Link). Vide = CTA « bientôt ». */
+/** URL de paiement externe (Stripe Payment Link). Env vide → défaut ci-dessus. */
 export function getDonateUrl(): string {
   const raw = import.meta.env.PUBLIC_LMDPT_DONATE_URL;
-  return typeof raw === 'string' ? raw.trim() : '';
+  const trimmed = typeof raw === 'string' ? raw.trim() : '';
+  return trimmed || DEFAULT_DONATE_URL;
 }
 
 export function donateReady(): boolean {
