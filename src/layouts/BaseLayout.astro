@@ -34,6 +34,7 @@ import { shouldShowArticleShareBar } from '../lib/share';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro';
+import { publicSiteHref } from '../lib/public-site';
 
 const { title, description, ogImage, keywords, type, noindex, share, pageHeading } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
@@ -41,7 +42,7 @@ const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
 const ecosystemLinks = getPublicEcosystemLinks();
 const xLink = socialLinks.find((l) => l.id === 'x');
-const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const siteUrl = publicSiteHref(Astro.site);
 const cleanPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const isArticle =
   type === 'article' ||

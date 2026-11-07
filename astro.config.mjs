@@ -4,22 +4,46 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 
-/** Les redirections statiques d’Astro n’ont pas de H1. On en ajoute un, le 301 reste. */
+const DEFAULT_ASTRO_SITE = 'https://lemediadupremiertour.fr';
+const siteUrl = (process.env.ASTRO_SITE ?? DEFAULT_ASTRO_SITE).replace(/\/$/, '');
+const ANALYSES_INDEX_CANONICAL = `${siteUrl}/analyses/`;
+
+const REDIRECT_STUB_PATHS = [
+  'analyses/livres-candidats/index.html',
+  'analyses/quatremer-marianne/index.html',
+  'analyses/on-a-vole-la-revolution-puis-la-revolte/index.html',
+];
+
+function patchRedirectStubHtml(html) {
+  const canonicalTag = `<link rel="canonical" href="${ANALYSES_INDEX_CANONICAL}" />`;
+  let out = html;
+  if (/<link[^>]+rel=["']canonical["']/i.test(out)) {
+    out = out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/i, canonicalTag);
+  } else if (/<\/head>/i.test(out)) {
+    out = out.replace(/<\/head>/i, `  ${canonicalTag}\n</head>`);
+  }
+  if (!/<h1\b/i.test(out)) {
+    out = out.replace('</body>', '<h1>Page retirée</h1></body>');
+  }
+  return out;
+}
+
+/** Redirections statiques Astro : H1 + canonique absolue vers /analyses/. */
 function redirectStubHeading() {
-  const stubs = [
-    'analyses/livres-candidats/index.html',
-    'analyses/quatremer-marianne/index.html',
-  ];
   return {
     name: 'lmdpt-redirect-stub-heading',
     hooks: {
       'astro:build:done': ({ dir }) => {
         const root = fileURLToPath(dir);
-        for (const rel of stubs) {
+        for (const rel of REDIRECT_STUB_PATHS) {
           const file = join(root, rel);
-          const html = readFileSync(file, 'utf8');
-          if (/<h1\b/i.test(html)) continue;
-          writeFileSync(file, html.replace('</body>', '<h1>Page retirée</h1></body>'));
+          let html;
+          try {
+            html = readFileSync(file, 'utf8');
+          } catch {
+            continue;
+          }
+          writeFileSync(file, patchRedirectStubHtml(html));
         }
       },
     },
@@ -35,9 +59,8 @@ const ANALYSIS_INDEX_REDIRECT = {
 };
 
 // https://astro.build/config
-// CI : ASTRO_SITE=https://lmdpt.iarbre.org — local : défauts sans sous-chemin
 export default defineConfig({
-  site: process.env.ASTRO_SITE,
+  site: siteUrl,
   base: process.env.ASTRO_BASE ?? '/',
   integrations: [redirectStubHeading()],
   redirects: {

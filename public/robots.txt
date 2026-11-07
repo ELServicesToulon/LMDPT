@@ -1,4 +1,4 @@
-# Le Média du Premier Tour — https://lmdpt.iarbre.org
+# Le Média du Premier Tour — https://lemediadupremiertour.fr
 # Crawlers moteurs + Google (Search / News / Discover / Inspection) bienvenus.
 # Généré par npm run seo:assets — ne pas éditer à la main (sauf besoin urgent).
 
@@ -12,10 +12,10 @@ Disallow: /compte
 Disallow: /assemblee-influenceurs/
 
 # Sitemaps (Search Console — soumettre l’index en priorité)
-Sitemap: https://lmdpt.iarbre.org/sitemap-index.xml
-Sitemap: https://lmdpt.iarbre.org/sitemap.xml
-Sitemap: https://lmdpt.iarbre.org/sitemap-images.xml
-Sitemap: https://lmdpt.iarbre.org/sitemap-news.xml
+Sitemap: https://lemediadupremiertour.fr/sitemap-index.xml
+Sitemap: https://lemediadupremiertour.fr/sitemap.xml
+Sitemap: https://lemediadupremiertour.fr/sitemap-images.xml
+Sitemap: https://lemediadupremiertour.fr/sitemap-news.xml
 
 # --- Google (outils gratuits de référencement) ---
 User-agent: Googlebot
@@ -189,6 +189,6 @@ Disallow: /assemblee-influenceurs/
 
 
 # Aide IA
-# https://lmdpt.iarbre.org/llms.txt
-# https://lmdpt.iarbre.org/ai.txt
+# https://lemediadupremiertour.fr/llms.txt
+# https://lemediadupremiertour.fr/ai.txt
 # Doc Google SEO : docs/GOOGLE-SEO.md

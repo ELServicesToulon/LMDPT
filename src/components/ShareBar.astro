@@ -9,6 +9,7 @@ import {
   shareNetworkLabel,
   type ShareNetwork,
 } from '../lib/share';
+import { publicSiteHref } from '../lib/public-site';
 
 interface Props {
   title: string;
@@ -17,7 +18,7 @@ interface Props {
 }
 
 const { title, url: urlProp, compact = false } = Astro.props;
-const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const siteUrl = publicSiteHref(Astro.site);
 const url =
   urlProp ??
   pageMeta({

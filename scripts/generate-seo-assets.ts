@@ -12,7 +12,7 @@ import { DEFAULT_OG_IMAGE } from '../src/lib/seo';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const publicDir = path.join(root, 'public');
-const SITE = process.env.ASTRO_SITE?.replace(/\/$/, '') || 'https://lmdpt.iarbre.org';
+const SITE = process.env.ASTRO_SITE?.replace(/\/$/, '') || 'https://lemediadupremiertour.fr';
 const today = new Date().toISOString().slice(0, 10);
 
 /** Routes statiques prioritaires (hors fiches programmes générées). */
