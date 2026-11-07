@@ -13,6 +13,7 @@ import {
 } from '../lib/editorial';
 import { pageMeta } from '../lib/seo';
 import { withTrailingSlash } from '../lib/internal-path';
+import { publicSiteHref } from '../lib/public-site';
 
 interface Props {
   variant?: 'hero' | 'card';
@@ -40,7 +41,7 @@ const dateLabel = une
   ? new Date(une.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })
   : '';
 const isHero = variant === 'hero';
-const siteUrl = Astro.site?.href ?? 'https://lmdpt.iarbre.org';
+const siteUrl = publicSiteHref(Astro.site);
 const uneShareUrl = une
   ? pageMeta({ title: une.title, siteUrl, pathname: une.href }).canonical
   : '';

@@ -153,7 +153,7 @@ async function ensureDiscussions(repoId, categoryId) {
       console.log(`  skip (existe) : ${debate.slug}`);
       continue;
     }
-    const body = `${debate.context}\n\n---\n\n${debate.charte}\n\n**Terme Giscus** : \`${debate.discussion_id}\`\n\nPage : https://lmdpt.iarbre.org/debats/${debate.slug}`;
+    const body = `${debate.context}\n\n---\n\n${debate.charte}\n\n**Terme Giscus** : \`${debate.discussion_id}\`\n\nPage : https://lemediadupremiertour.fr/debats/${debate.slug}`;
     const created = await graphql(
       `mutation($repoId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
         createDiscussion(input: {

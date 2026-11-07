@@ -30,7 +30,7 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          ASTRO_SITE: https://lmdpt.iarbre.org
+          ASTRO_SITE: https://lemediadupremiertour.fr
           ASTRO_BASE: /
           PUBLIC_GISCUS_REPO: ${{ vars.PUBLIC_GISCUS_REPO || 'ELServicesToulon/LMDPT' }}
           PUBLIC_GISCUS_REPO_ID: ${{ vars.PUBLIC_GISCUS_REPO_ID }}

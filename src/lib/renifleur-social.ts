@@ -4,7 +4,7 @@ import { applyQualiteToDraftMarkdown, reviewQualiteRedaction } from './qualite-r
 import { hueBadgesForText, type HueBadge } from './comment-politics';
 
 const SITE_DOSSIER =
-  'https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=renifleur';
+  'https://lemediadupremiertour.fr/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=renifleur';
 
 const MAX_TWEET = 280;
 
@@ -79,7 +79,7 @@ export function buildRenifleurSocialDraft(
   const campaign = options.utmCampaign ?? `renifleur_${date.replace(/-/g, '')}`;
   const siteLink =
     options.siteLink ??
-    `https://lmdpt.iarbre.org/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=${campaign}`;
+    `https://lemediadupremiertour.fr/analyses/presidentielle-2027-preparation?utm_source=x&utm_medium=organic&utm_campaign=${campaign}`;
 
   const items = pickDraftItems(snapshot.items, options.maxItems ?? 3);
   const fetchedLabel = new Date(snapshot.fetched_at).toLocaleString('fr-FR', {

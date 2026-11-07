@@ -123,7 +123,7 @@ export function buildAn1tShareUrl(
   shares: Array<{ id: string; pct: number }>,
   thresholdPct: number,
 ): string {
-  const u = new URL(baseUrl, 'https://lmdpt.iarbre.org');
+  const u = new URL(baseUrl, 'https://lemediadupremiertour.fr');
   u.searchParams.set('an1t', encodeAn1tShareQuery(shares, thresholdPct));
   return u.toString();
 }
