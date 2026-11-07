@@ -1,8 +1,8 @@
 {
   "title": "Intentions de vote — Présidentielle 2027 (1er tour)",
-  "updated": "2026-11-03",
+  "updated": "2026-11-07",
   "disclaimer": "Agrégats pédagogiques d'intentions de vote issus d'instituts de sondage (Ifop, Harris Interactive, Elabe, Verian, OpinionWay, Ipsos-BVA…). Ce ne sont ni des résultats officiels ni des prédictions. Les hypothèses se croisent : Bardella et Le Pen ne sont pas testés simultanément (scénarios de substitution RN). Seule la liste du Conseil constitutionnel et les résultats du Ministère de l'Intérieur feront foi.",
-  "method": "Veille auto 2026-11-03 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Ifop 2026-10-27/29, Cluster17 26/10/2026, Ipsos (France) 25/10/2026, OpinionWay 24/10/2026, Harris Interactive / Toluna Harris 23/10/2026, Elabe 18/10/2026, yougov 18/10/2026, Odoxa 15/10/2026). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
+  "method": "Veille auto 2026-11-07 : moyenne pédagogique « latest_pct » = vagues d'intentions de vote scorées (Ifop 2026-10-27/29, Cluster17 26/10/2026, Ipsos (France) 25/10/2026, OpinionWay 24/10/2026, Harris Interactive / Toluna Harris 23/10/2026, Elabe 18/10/2026, yougov 18/10/2026, Odoxa 15/10/2026). « avg_pct » = moyenne des mêmes vagues uniques institut×jour. Souhait de victoire (Cluster17 / Le Point, etc.) documenté en sources, non fusionné. Hypothèses exclusives : ne pas additionner les %. Ce n'est pas une prédiction.",
   "sources": [
     {
       "label": "Ifop — 2026-10-27/29",
@@ -22,6 +22,12 @@
       "note": "Paywall / métrique distincte — pas fusionné dans latest_pct intentions."
     },
     {
+      "label": "Elabe — souhait de victoire",
+      "url": "https://fr.wikipedia.org/wiki/Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "metric": "souhait_victoire",
+      "note": "Paywall / métrique distincte — pas fusionné dans latest_pct intentions."
+    },
+    {
       "label": "Wikipedia — Opinion polling 2027 (section Since July 2026)",
       "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election",
       "as_of": "2026-07-16"
@@ -32,7 +38,7 @@
     "RN : Marine Le Pen (candidature déclarée 7 juil. 2026) et Jordan Bardella (candidat de substitution désigné par le parti) — jamais dans la même hypothèse de 1er tour.",
     "Centre : Philippe et Attal se cannibalisent selon l’hypothèse (tête de ticket unique vs double présence).",
     "Veille auto 2×/jour (06:45 + 18:15 Europe/Paris) : npm run sondage:veille · données src/data/sondages/ · timer lmdpt-sondage-veille · rafraîchit aussi 2027-sondages-candidats.json.",
-    "Mise à jour LMDPT : 2026-11-03 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
+    "Mise à jour LMDPT : 2026-11-07 (recompute veille sondage:veille — IV scorées ; souhait de victoire non fusionné)."
   ],
   "waves_latest": [
     {
@@ -66,12 +72,12 @@
         "philippe": 17,
         "lisnard": 8,
         "retailleau": 7,
-        "hollande": 6.5,
         "zemmour": 3.5,
-        "dupont-aignan": 3,
         "tondelier": 2.5,
         "roussel": 2,
-        "arthaud": 0.5
+        "dupont-aignan": 3,
+        "arthaud": 0.5,
+        "hollande": 6.5
       }
     },
     {
@@ -87,9 +93,9 @@
         "attal": 4,
         "retailleau": 7.5,
         "zemmour": 4.5,
-        "dupont-aignan": 1.5,
         "tondelier": 3.5,
         "roussel": 2,
+        "dupont-aignan": 1.5,
         "arthaud": 0.5
       }
     },
@@ -103,13 +109,13 @@
         "melenchon": 16,
         "philippe": 12,
         "glucksmann": 13,
+        "lisnard": 6,
         "attal": 4,
         "retailleau": 6,
-        "lisnard": 6,
         "zemmour": 4,
-        "dupont-aignan": 1,
         "tondelier": 1,
         "roussel": 1,
+        "dupont-aignan": 1,
         "arthaud": 0.5
       }
     },
@@ -123,12 +129,12 @@
         "melenchon": 17,
         "philippe": 15,
         "glucksmann": 12,
-        "retailleau": 4,
         "lisnard": 7,
+        "retailleau": 4,
         "zemmour": 5,
-        "dupont-aignan": 1,
         "tondelier": 2,
         "roussel": 2,
+        "dupont-aignan": 1,
         "arthaud": 1,
         "villepin": 1
       }
@@ -145,9 +151,9 @@
         "glucksmann": 15.5,
         "retailleau": 7,
         "zemmour": 3.5,
-        "dupont-aignan": 2.5,
         "tondelier": 3,
         "roussel": 1.5,
+        "dupont-aignan": 2.5,
         "arthaud": 1,
         "villepin": 2
       }
@@ -162,13 +168,13 @@
         "melenchon": 13,
         "philippe": 8,
         "glucksmann": 12,
+        "lisnard": 4,
         "attal": 6,
         "retailleau": 5,
-        "lisnard": 4,
         "zemmour": 4,
-        "dupont-aignan": 2,
         "tondelier": 5,
         "roussel": 2,
+        "dupont-aignan": 2,
         "arthaud": 0,
         "ruffin": 2,
         "villepin": 1
@@ -186,9 +192,9 @@
         "glucksmann": 9.5,
         "retailleau": 6.5,
         "zemmour": 4.5,
-        "dupont-aignan": 2,
         "tondelier": 3,
         "roussel": 2,
+        "dupont-aignan": 2,
         "arthaud": 0.5
       }
     }
