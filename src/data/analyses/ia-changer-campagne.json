@@ -1,0 +1,300 @@
+{
+  "slug": "ia-changer-campagne",
+  "title": "L’IA peut-elle changer la campagne ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-07",
+  "updated": "2026-11-07",
+  "kicker": "Enquête et analyse · La rédaction · 7 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Lisnard relie intelligence artificielle, retraites et souveraineté. D’autres candidats ont déjà fait ce rapprochement. Saura-t-il en faire un choix présidentiel ?",
+  "description": "Lisnard relie intelligence artificielle, retraites et souveraineté. D’autres candidats ont déjà fait ce rapprochement. Saura-t-il en faire un choix présidentiel ?",
+  "disclaimer": "Cette analyse distingue propositions, hypothèses et effets observés. Elle repose sur les documents cités, pas sur une transcription intégrale de la table ronde.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "intelligence-artificielle",
+    "retraites",
+    "capitalisation",
+    "souverainete",
+    "lisnard",
+    "philippe",
+    "attal",
+    "retailleau",
+    "doe"
+  ],
+  "x_hook": "Lisnard relie intelligence artificielle, retraites et souveraineté. D’autres candidats ont déjà fait ce rapprochement. Saura-t-il en faire un choix présidentiel ?",
+  "hues": [
+    {
+      "slug": "lisnard",
+      "label": "Propriété du capital",
+      "color": "#162561",
+      "rationale": "Capitalisation collective et financement technologique : la position examinée."
+    },
+    {
+      "slug": "philippe",
+      "label": "Financement européen",
+      "color": "#0001b8",
+      "rationale": "Fonds de pension et reconversion, défendus avant Saint-Raphaël."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Protection des transitions",
+      "color": "#5a6570",
+      "rationale": "Qui finance les machines, qui touche leurs revenus, qui protège les travailleurs."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "saint-raphael",
+      "title": "À Saint-Raphaël, une table ronde sur l’IA",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le 6 novembre, à Saint-Raphaël, David Lisnard a participé aux Rencontres de l’avenir à une table ronde consacrée à l’intelligence artificielle et aux robots. Selon le compte rendu du [Point](https://www.lepoint.fr/debats/nous-sommes-a-cote-de-la-plaque-a-saint-raphael-david-lisnard-joue-la-carte-de-lia-RDF75DPH5VBY5EYPTUOALRKWBI/), le candidat de Nouvelle Énergie y a défendu le financement de la technologie par l’épargne retraite et un allégement des règles européennes de concurrence. Derrière ces propositions se pose une question qui dépasse les entreprises du numérique : qui possédera les outils de production de demain ?"
+        },
+        {
+          "type": "p",
+          "text": "Le débat figurait au [programme des organisateurs](https://rencontres-avenir.com/). Lisnard n’a pas introduit l’IA par surprise dans une discussion sur un tout autre sujet. Mais le lien qu’il établit mérite mieux qu’un classement entre enthousiasme technologique et peur pour les pensions."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "produire-partager",
+      "title": "Produire, puis partager",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "L’hypothèse politique est la suivante : l’IA pourrait permettre de produire davantage, mais ses bénéfices ne reviendraient pas automatiquement à ceux dont elle transforme le travail. Détenir une part des entreprises et des infrastructures pourrait être une façon de participer à cette richesse. Encore faut-il qu’elle soit créée, puis distribuée."
+        },
+        {
+          "type": "p",
+          "text": "Ce déplacement du débat peut compter. La campagne ne porterait plus seulement sur le montant des prestations, les prélèvements et l’âge du départ à la retraite. Elle porterait aussi sur les investissements capables de financer durablement le modèle social. La souveraineté prendrait alors un sens concret : pouvoir choisir ses fournisseurs, ses logiciels et ses règles, plutôt que dépendre d’acteurs extérieurs."
+        },
+        {
+          "type": "p",
+          "text": "Pour une entreprise, la question serait celle du coût et de l’accès à ces outils. Pour un salarié, celle de son emploi, de son salaire et de sa formation. Pour les parents, celle d’une école qui apprenne à utiliser l’IA sans déléguer l’apprentissage à la machine. Il y a là plusieurs préoccupations que peut réunir une campagne. Pas encore la preuve qu’elles réunissent un électorat."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "capitalisation",
+      "title": "Ce que la capitalisation change",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La [fiche publiée par Nouvelle Énergie](https://www.unenouvelleenergie.fr/questions/quel-candidat-propose-la-retraite-par-capitalisation/), actualisée le 16 octobre, décrit un étage de retraite par capitalisation obligatoire et collectif, au-dessus d’un socle par répartition conservé. Dans la répartition, les cotisations courantes financent les pensions. Dans la capitalisation, des sommes sont placées pour constituer des droits futurs, avec des rendements qui peuvent varier."
+        },
+        {
+          "type": "p",
+          "text": "[Capital](https://www.capital.fr/votre-retraite/une-retraite-par-capitalisation-obligatoire-et-geree-par-des-fonds-prives-david-lisnard-en-fait-une-priorite-1531676) rapporte que Lisnard a également évoqué, à Saint-Raphaël, un fonds souverain pour ceux qui ne voudraient pas passer par des gestionnaires privés. Cela ne signifie ni que toutes les retraites seraient investies dans la technologie, ni que l’État garantirait les placements."
+        },
+        {
+          "type": "p",
+          "text": "Les documents examinés ne permettent pas de préciser la part qui irait à la technologie, les protections contre les pertes ou le financement complet de la transition. Pendant que des cotisations commenceraient à être capitalisées, les pensions déjà dues devraient toujours être payées. Ce point réclame autre chose qu’une promesse de rendement."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "pas-seul",
+      "title": "Lisnard n’est pas seul",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le rapprochement entre retraite, investissement et IA n’est pas inédit. Dans un [entretien à Maddyness du 16 juin](https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/), Édouard Philippe défendait déjà des fonds de pension pour financer les entreprises européennes et plaçait la capitalisation au cœur de sa réforme des retraites. Il proposait aussi un droit à la reconversion pour les métiers menacés."
+        },
+        {
+          "type": "p",
+          "text": "Le [17 juin, dans Les Échos](https://www.lesechos.fr/elections/presidentielle/gabriel-attal-il-faut-lequivalent-de-la-politique-agricole-commune-pour-lia-2237679), Gabriel Attal associait lui aussi capitalisation, épargne longue et innovation. L’IA figurait parmi ses priorités de campagne. Présenter Lisnard comme le premier à découvrir ce sujet effacerait des propositions documentées depuis plusieurs mois."
+        },
+        {
+          "type": "p",
+          "text": "Sa propre ligne précède également Saint-Raphaël : dans son [compte rendu d’un entretien du 28 août](https://www.unenouvelleenergie.fr/il-est-temps-de-redonner-le-pouvoir-aux-francais/), son parti reliait déjà robotique, fiscalité et protection sociale. La nouveauté possible est ailleurs : faire de cet ensemble une question centrale, compréhensible sans connaître le fonctionnement d’un centre de données."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "epreuves",
+      "title": "Les épreuves d’un tournant",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un projet d’investissement ne suffit pas à protéger celui dont le poste disparaît avant que les gains promis n’arrivent. Qui finance la reconversion ? Quel revenu pendant la formation ? Quelle place pour les salariés dans les décisions d’automatisation ? Ces réponses permettraient de distinguer les projets bien davantage qu’une surenchère de milliards."
+        },
+        {
+          "type": "p",
+          "text": "Notre dossier ne démontre pas que l’intervention du 6 novembre a déplacé les intentions de vote. Pour parler d’un tournant, il faudrait observer des réponses précises des concurrents, des débats qui reviennent sur ces choix et une appropriation au-delà des publics déjà convaincus."
+        },
+        {
+          "type": "p",
+          "text": "Le test serait concret : les candidats devraient expliquer qui finance les machines, qui touche leurs revenus et qui protège les travailleurs pendant la transition. Sans ces réponses, l’IA risque de devenir un mot de plus sur les affiches. Avec elles, elle pourrait faire entrer dans la campagne un véritable choix de société."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE · des convergences, pas un camp",
+      "intro": "Lecture analytique et non exhaustive de positions datées. « En phase » désigne une convergence sur l’investissement et la souveraineté, pas un soutien à Lisnard. Les quatre premières lignes présentent les positions de personnalités politiques ; la dernière, une position de courant, pas un programme présidentiel définitif.",
+      "table": {
+        "caption": "Des convergences, pas un camp : positions datées sur IA, retraite et investissement",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Lisnard / Nouvelle Énergie",
+            "En phase, propriété du capital",
+            "Capitalisation obligatoire et collective avec maintien d’un socle par répartition ; financement technologique selon les comptes rendus de Saint-Raphaël.",
+            "[3][4]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En phase, financement européen",
+            "Fonds de pension, soutien aux entreprises européennes et droit à la reconversion. Entretien du 16 juin.",
+            "[5]"
+          ],
+          [
+            "Attal / Renaissance",
+            "En phase, investissement et formation",
+            "Capitalisation et épargne vers l’innovation ; formation des salariés à l’IA. Entretien du 17 juin.",
+            "[6]"
+          ],
+          [
+            "Retailleau / Les Républicains",
+            "En phase, services publics",
+            "Assistant administratif, commande publique européenne et accompagnement des reconversions. Entretien publié le 7 juillet.",
+            "[8]"
+          ],
+          [
+            "LFI",
+            "Convergence partielle, contrôle public",
+            "Calcul public et mobilisation de l’épargne nationale pour des infrastructures sous contrôle démocratique. Déclaration du 13 juin. La gouvernance diffère de la logique patrimoniale de Lisnard.",
+            "[9]"
+          ]
+        ]
+      },
+      "note": "Cette analyse distingue propositions, hypothèses et effets observés. Elle repose sur les documents cités, pas sur une transcription intégrale de la table ronde.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Presse, partis et organisateurs",
+      "items": [
+        {
+          "label": "1. Le Point, Kévin Badeau, 7 novembre 2026. https://www.lepoint.fr/debats/nous-sommes-a-cote-de-la-plaque-a-saint-raphael-david-lisnard-joue-la-carte-de-lia-RDF75DPH5VBY5EYPTUOALRKWBI/",
+          "lead": "1. Le Point, Kévin Badeau, 7 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lepoint.fr/debats/nous-sommes-a-cote-de-la-plaque-a-saint-raphael-david-lisnard-joue-la-carte-de-lia-RDF75DPH5VBY5EYPTUOALRKWBI/",
+              "url": "https://www.lepoint.fr/debats/nous-sommes-a-cote-de-la-plaque-a-saint-raphael-david-lisnard-joue-la-carte-de-lia-RDF75DPH5VBY5EYPTUOALRKWBI/"
+            }
+          ]
+        },
+        {
+          "label": "2. Rencontres de l’avenir, programme 2026. https://rencontres-avenir.com/",
+          "lead": "2. Rencontres de l’avenir, programme 2026",
+          "links": [
+            {
+              "label": "https://rencontres-avenir.com/",
+              "url": "https://rencontres-avenir.com/"
+            }
+          ]
+        },
+        {
+          "label": "3. Nouvelle Énergie, fiche actualisée le 16 octobre 2026. https://www.unenouvelleenergie.fr/questions/quel-candidat-propose-la-retraite-par-capitalisation/",
+          "lead": "3. Nouvelle Énergie, fiche actualisée le 16 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.unenouvelleenergie.fr/questions/quel-candidat-propose-la-retraite-par-capitalisation/",
+              "url": "https://www.unenouvelleenergie.fr/questions/quel-candidat-propose-la-retraite-par-capitalisation/"
+            }
+          ]
+        },
+        {
+          "label": "4. Capital, Xavier Martinage, 6 novembre 2026. https://www.capital.fr/votre-retraite/une-retraite-par-capitalisation-obligatoire-et-geree-par-des-fonds-prives-david-lisnard-en-fait-une-priorite-1531676",
+          "lead": "4. Capital, Xavier Martinage, 6 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.capital.fr/votre-retraite/une-retraite-par-capitalisation-obligatoire-et-geree-par-des-fonds-prives-david-lisnard-en-fait-une-priorite-1531676",
+              "url": "https://www.capital.fr/votre-retraite/une-retraite-par-capitalisation-obligatoire-et-geree-par-des-fonds-prives-david-lisnard-en-fait-une-priorite-1531676"
+            }
+          ]
+        },
+        {
+          "label": "5. Maddyness, entretien avec Édouard Philippe, 16 juin 2026. https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/",
+          "lead": "5. Maddyness, entretien avec Édouard Philippe, 16 juin 2026",
+          "links": [
+            {
+              "label": "https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/",
+              "url": "https://www.maddyness.com/2026/06/16/edouard-philippe-candidat-a-la-presidentielle-lia-nest-plus-un-sujet-de-specialistes-cest-une-question-de-pouvoir-de-prosperite-et-de-liberte/"
+            }
+          ]
+        },
+        {
+          "label": "6. Les Échos, entretien avec Gabriel Attal, 17 juin 2026. https://www.lesechos.fr/elections/presidentielle/gabriel-attal-il-faut-lequivalent-de-la-politique-agricole-commune-pour-lia-2237679",
+          "lead": "6. Les Échos, entretien avec Gabriel Attal, 17 juin 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/presidentielle/gabriel-attal-il-faut-lequivalent-de-la-politique-agricole-commune-pour-lia-2237679",
+              "url": "https://www.lesechos.fr/elections/presidentielle/gabriel-attal-il-faut-lequivalent-de-la-politique-agricole-commune-pour-lia-2237679"
+            }
+          ]
+        },
+        {
+          "label": "7. Nouvelle Énergie, compte rendu, 28 août 2026. https://www.unenouvelleenergie.fr/il-est-temps-de-redonner-le-pouvoir-aux-francais/",
+          "lead": "7. Nouvelle Énergie, compte rendu, 28 août 2026",
+          "links": [
+            {
+              "label": "https://www.unenouvelleenergie.fr/il-est-temps-de-redonner-le-pouvoir-aux-francais/",
+              "url": "https://www.unenouvelleenergie.fr/il-est-temps-de-redonner-le-pouvoir-aux-francais/"
+            }
+          ]
+        },
+        {
+          "label": "8. Les Républicains, entretien de Bruno Retailleau, 7 juillet 2026. https://republicains.fr/actualites/2026/07/07/sur-lia-nous-avons-une-fenetre-de-tir-de-deux-ans/",
+          "lead": "8. Les Républicains, entretien de Bruno Retailleau, 7 juillet 2026",
+          "links": [
+            {
+              "label": "https://republicains.fr/actualites/2026/07/07/sur-lia-nous-avons-une-fenetre-de-tir-de-deux-ans/",
+              "url": "https://republicains.fr/actualites/2026/07/07/sur-lia-nous-avons-une-fenetre-de-tir-de-deux-ans/"
+            }
+          ]
+        },
+        {
+          "label": "9. La France insoumise, déclaration du 13 juin 2026. https://lafranceinsoumise.fr/2026/06/13/ia-les-etats-unis-viennent-de-rappeler-au-monde-que-la-souverainete-technologique-nexiste-pas-sans-maitrise-des-infrastructures/",
+          "lead": "9. La France insoumise, déclaration du 13 juin 2026",
+          "links": [
+            {
+              "label": "https://lafranceinsoumise.fr/2026/06/13/ia-les-etats-unis-viennent-de-rappeler-au-monde-que-la-souverainete-technologique-nexiste-pas-sans-maitrise-des-infrastructures/",
+              "url": "https://lafranceinsoumise.fr/2026/06/13/ia-les-etats-unis-viennent-de-rappeler-au-monde-que-la-souverainete-technologique-nexiste-pas-sans-maitrise-des-infrastructures/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse repose sur les documents cités, pas sur une transcription intégrale de la table ronde.",
+  "liens_internes": [
+    {
+      "href": "/analyses/sel-et-poivre",
+      "label": "« Sel et poivre » : l'Élysée parle coalition, Retailleau répond ticket"
+    },
+    {
+      "href": "/analyses/trois-pour-un-contre",
+      "label": "Trois pour, un contre : la primaire se joue maintenant sur la date"
+    }
+  ]
+}

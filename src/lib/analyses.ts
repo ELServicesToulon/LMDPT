@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
 import selEtPoivre from '../data/analyses/sel-et-poivre.json';
 import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
 import lyceesBloques from '../data/analyses/48-ou-500-lycees-bloques.json';
@@ -49,6 +50,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: iaChangerCampagne.slug,
+    title: iaChangerCampagne.title,
+    description: iaChangerCampagne.description,
+    date: iaChangerCampagne.date,
+    published: iaChangerCampagne.date,
+    updated: iaChangerCampagne.updated,
+    href: '/analyses/ia-changer-campagne',
+    cover: uneCover(
+      'ia-changer-campagne',
+      'Aquarelle d’une table avec un cahier, une boîte d’épargne et une puce électronique, devant un atelier et des serveurs.',
+    ),
+  },
   {
     slug: selEtPoivre.slug,
     title: selEtPoivre.title,
