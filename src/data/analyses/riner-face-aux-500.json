@@ -1,0 +1,362 @@
+{
+  "slug": "riner-face-aux-500",
+  "title": "Riner face aux 500",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-10",
+  "updated": "2026-11-10",
+  "kicker": "Enquête et analyse · La rédaction · 10 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Teddy Riner se déclare candidat à l’Élysée sans parti, à cinq mois du premier tour. Avant les électeurs, il doit convaincre au moins 500 élus, répartis dans 30 départements. Sa notoriété suffira-t-elle à franchir ce premier filtre ?",
+  "description": "Teddy Riner se déclare candidat sans parti. Avant les électeurs, il doit convaincre au moins 500 élus, répartis dans 30 départements. Sa notoriété suffira-t-elle ?",
+  "disclaimer": "Cette analyse distingue déclarations, règles et hypothèses. Elle ne prédit ni le nombre de parrainages de Teddy Riner ni ses résultats.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "parrainages",
+    "conseil-constitutionnel",
+    "riner",
+    "lisnard",
+    "doe"
+  ],
+  "x_hook": "Teddy Riner se déclare candidat à l’Élysée sans parti, à cinq mois du premier tour. Avant les électeurs, il doit convaincre au moins 500 élus, répartis dans 30 départements. Sa notoriété suffira-t-elle à franchir ce premier filtre ?",
+  "hues": [
+    {
+      "slug": "anonymat",
+      "label": "Anonymat des parrains",
+      "color": "#162561",
+      "rationale": "Lisnard et la PPLO n° 3114 (UDR, RN) : rendre les parrainages confidentiels."
+    },
+    {
+      "slug": "verrou",
+      "label": "Critique du verrou",
+      "color": "#0001b8",
+      "rationale": "Dupont-Aignan : un filtre qui restreindrait le pluralisme."
+    },
+    {
+      "slug": "pluraliste",
+      "label": "Confiance dans le filtre",
+      "color": "#5a6570",
+      "rationale": "Riner et Reconquête : pas de réforme demandée."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "Une annonce le 9 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lundi 9 novembre, Teddy Riner a annoncé sa candidature à la présidentielle de 2027, en vidéo sur ses réseaux et dans Le Parisien. Le quintuple champion olympique de judo, 37 ans, se présente « ni de droite ni de gauche », selon [France 24](https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle). Sur X, il résume : « La résignation n’est pas une option », rapporte [franceinfo](https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html). Il ajoute que la France « n’a pas besoin d’un politicien professionnel qui récite des leçons »."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "nom-avant-parti",
+      "title": "Un nom avant un parti",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selon France 24, qui cite l’AFP, son entourage assure que le programme « est prêt et il est solide ». Les premières pistes restent larges : réforme des retraites, hausse du salaire net par des « allègements de charges »."
+        },
+        {
+          "type": "p",
+          "text": "Pour [Les Échos](https://www.lesechos.fr/elections/analyses/presidentielle-2027-la-candidature-de-teddy-riner-ajoute-un-peu-plus-de-confusion-au-sein-de-la-droite-et-du-centre-2261947), cette candidature « ajoute un peu plus de confusion au sein de la droite et du centre ». On attendait plutôt Xavier Bertrand, Bruno Le Maire ou Dominique de Villepin, rappelle le journal. En clair, dans une campagne où l’on cherche encore un champion du centre, c’est un champion tout court qui s’est présenté."
+        },
+        {
+          "type": "p",
+          "text": "C’est peut-être le vrai signal : quand aucun parti n’impose une figure, un nom connu peut occuper la place. Mais la popularité n’est pas un vote. Erwan Lestrohan, de l’institut Odoxa, prévient dans France 24 que ce « capital sympathie ne se transformera pas nécessairement en capital électoral ». Sur le pouvoir d’achat ou l’éducation, Riner reste à ses yeux « une profonde page blanche pour les Français »."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "premier-combat",
+      "title": "Le premier combat se joue en mairie",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une déclaration ne met personne sur le bulletin. Le [Conseil constitutionnel](https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html) exige au moins 500 parrainages d’élus habilités. Ils doivent venir d’au moins 30 départements ou collectivités d’outre-mer, avec 50 au maximum par territoire. Au-delà de 50 dans un département, les signatures sont publiées mais ne comptent plus ([Conseil](https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-les-regles/quels-sont-les-controles-operes-par-le-conseil-constitutionnel-sur-les-parrainages.html))."
+        },
+        {
+          "type": "p",
+          "text": "Un parrainage, c’est la signature officielle d’un maire ou d’un parlementaire, par exemple. Ce n’est pas un vote. Mais depuis une loi organique de 2016, les noms des parrains sont rendus publics au moins deux fois par semaine, rappelle le [Conseil](https://presidentielle2022.conseil-constitutionnel.fr/historique/historique-publication-des-parrainages.html). Et une signature envoyée ne peut être ni modifiée ni retirée : c’est « un acte définitif et irrévocable », écrivait le Conseil dans un [communiqué de 2017](https://www.conseil-constitutionnel.fr/actualites/communique/communique-du-6-mars-2017)."
+        },
+        {
+          "type": "p",
+          "text": "Selon [Les Échos](https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-calendrier-parrainages-vote-le-guide-de-lelection-2256645), environ 32 % des quelque 42 000 élus habilités avaient parrainé un candidat en 2022, et la collecte se refermera le 12 mars 2027. Sans parti, pas de réseau d’élus déjà acquis : chaque maire doit être convaincu un par un, et accepter de voir son nom affiché."
+        },
+        {
+          "type": "p",
+          "text": "Riner, lui, ne s’en inquiète pas. « En démocratie, ça ne peut pas être un obstacle. Je crois en la République française », a-t-il déclaré au Parisien, cité par [L’Indépendant](https://www.lindependant.fr/2026/11/09/presidentielle-2027-la-france-quon-veut-le-judoka-teddy-riner-annonce-etre-candidat-a-lelection-presidentielle-13643820.php). D’autres sont moins sereins. Dans [Le Parisien](https://www.leparisien.fr/sports/ridicule-ou-courageux-le-sport-francais-entre-admiration-et-consternation-apres-la-candidature-de-teddy-riner-a-la-presidentielle-09-11-2026-RHQTSJRJVBHCTC3OFYS7WBDM5Q.php), l’ancien ministre des Sports Guy Drut juge la candidature « ridicule » et pronostique, auprès de L’Équipe : « il ne va pas trouver les parrainages ». David Douillet, autre judoka passé par le gouvernement, parle d’une « machine à broyer ». Édouard Philippe, lui, a souri : un « candidat de poids », qu’il dit admirer ([20 Minutes](https://www.20minutes.fr/politique/4261725-20261109-presidentielle-2027-candidat-poids-ridicule-reactions-candidature-teddy-riner))."
+        },
+        {
+          "type": "p",
+          "text": "Prudence dans les deux sens : le [JDD](https://www.lejdd.fr/politique/presidentielle-2027-lanonymat-des-parrainages-au-coeur-du-debat-171180) rappelle que Dominique de Villepin n’avait pas obtenu ses signatures en 2012, quand elles étaient encore anonymes."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "cote-a-cote",
+      "title": "Côte à côte, face à face",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dans sa vidéo, Riner lance : « Aujourd’hui on vit côte à côte, et demain j’ai peur que l’on vive face à face », relève [La Nouvelle République](https://www.lanouvellerepublique.fr/a-la-une/le-champion-de-judo-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-1794223668). La phrase n’est pas neuve. En quittant le ministère de l’Intérieur en 2018, Gérard Collomb avait dit presque mot pour mot la même chose, comme le cite une [question écrite à l’Assemblée](https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE13335)."
+        },
+        {
+          "type": "p",
+          "text": "Ce rapprochement est le nôtre, pas le sien. Le 5 novembre, dans une tribune à [L’Express](https://www.lexpress.fr/idees-et-debats/deux-camps-sorganisent-dans-un-embryon-de-guerre-civile-lalerte-de-pierre-henri-tavoillot-et-eric-ZRMLU7AHTBAKDMI5GPIY4SH6FI/), le philosophe Pierre-Henri Tavoillot et l’expert en sécurité Éric Delbecque écrivaient : « Ce sont deux camps qui, de côte à côte, s’organisent en face-à-face dans un embryon de guerre civile. » Rien n’indique que Riner ait lu ce texte. Mais le diagnostic se ressemble : un pays coupé en blocs qui ne se parlent plus."
+        },
+        {
+          "type": "p",
+          "text": "Ils divergent sur la réponse. La tribune, texte d’opinion, se range dans un camp et pose deux questions aux candidats : « comment restaurer l’autorité de l’Etat ? Comment réinventer une société de confiance ? » Riner refuse de choisir un camp et vise « les extrêmes », qu’il associe au RN et à LFI selon France 24. Rassembler sans étiquette, c’est sa promesse. Les 500 signatures la testeront en premier, auprès d’élus qui, eux, en ont souvent une."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le verdict sera public et daté : pendant la collecte, chacun pourra lire sur le site du Conseil combien d’élus parrainent Riner, et dans combien de départements. D’ici là, une candidature de célébrité dit surtout que l’offre des partis laisse un vide. Le chemin du tatami à l’Élysée passe d’abord par 500 mairies."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il desserrer le filtre des 500 ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : assouplir ou non le système des parrainages (anonymat, élargissement). « En phase » signifie favorable à un assouplissement, pas un soutien à Riner ni un jugement sur les candidats. Les lignes 4 et 5 présentent des positions de courant, pas des programmes présidentiels.",
+      "table": {
+        "caption": "Faut-il desserrer le filtre des 500 : positions datées sur l’assouplissement des parrainages",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Riner / sans parti",
+            "Confiance dans le filtre",
+            "Ne demande pas de réforme : « En démocratie, ça ne peut pas être un obstacle. » Entretien au Parisien du 9 novembre.",
+            "[9]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "En phase, anonymat",
+            "Juge urgent de rétablir l’anonymat des parrainages, selon le JDD du 13 avril.",
+            "[12]"
+          ],
+          [
+            "Dupont-Aignan / Debout la France",
+            "En phase, critique du verrou",
+            "Voit dans les parrainages « un verrou mis en place par les grands partis pour restreindre le pluralisme ». JDD du 13 avril.",
+            "[12]"
+          ],
+          [
+            "Députés UDR et RN",
+            "En phase, anonymat et élargissement",
+            "Proposition de loi organique n° 3114 du 4 septembre : parrains rendus confidentiels, adjoints et conseillers municipaux habilités. Non examinée à ce jour.",
+            "[16]"
+          ],
+          [
+            "Reconquête",
+            "Confiance dans la collecte",
+            "Sarah Knafo dit avoir « entretenu le lien » avec les maires parrains de 2022, sans demander de réforme dans cette source. JDD du 13 avril.",
+            "[12]"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : anonymat des parrains (Lisnard, députés UDR et RN) ; critique du verrou (Dupont-Aignan). En face, confiance dans le filtre actuel (Riner, Reconquête). L’absence d’autres candidats ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Presse, Conseil constitutionnel et Assemblée nationale",
+      "items": [
+        {
+          "label": "1. France 24, 9 novembre 2026. https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+          "lead": "1. France 24, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+              "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, 9 novembre 2026. https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html",
+          "lead": "2. franceinfo, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html"
+            }
+          ]
+        },
+        {
+          "label": "3. Les Échos, Grégoire Poussielgue, 9 novembre 2026. https://www.lesechos.fr/elections/analyses/presidentielle-2027-la-candidature-de-teddy-riner-ajoute-un-peu-plus-de-confusion-au-sein-de-la-droite-et-du-centre-2261947",
+          "lead": "3. Les Échos, Grégoire Poussielgue, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/analyses/presidentielle-2027-la-candidature-de-teddy-riner-ajoute-un-peu-plus-de-confusion-au-sein-de-la-droite-et-du-centre-2261947",
+              "url": "https://www.lesechos.fr/elections/analyses/presidentielle-2027-la-candidature-de-teddy-riner-ajoute-un-peu-plus-de-confusion-au-sein-de-la-droite-et-du-centre-2261947"
+            }
+          ]
+        },
+        {
+          "label": "4. Conseil constitutionnel, Qui peut être candidat. https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+          "lead": "4. Conseil constitutionnel, Qui peut être candidat",
+          "links": [
+            {
+              "label": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+              "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html"
+            }
+          ]
+        },
+        {
+          "label": "5. Conseil constitutionnel, contrôles. https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-les-regles/quels-sont-les-controles-operes-par-le-conseil-constitutionnel-sur-les-parrainages.html",
+          "lead": "5. Conseil constitutionnel, contrôles",
+          "links": [
+            {
+              "label": "https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-les-regles/quels-sont-les-controles-operes-par-le-conseil-constitutionnel-sur-les-parrainages.html",
+              "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-les-regles/quels-sont-les-controles-operes-par-le-conseil-constitutionnel-sur-les-parrainages.html"
+            }
+          ]
+        },
+        {
+          "label": "6. Conseil constitutionnel, historique de la publication. https://presidentielle2022.conseil-constitutionnel.fr/historique/historique-publication-des-parrainages.html",
+          "lead": "6. Conseil constitutionnel, historique de la publication",
+          "links": [
+            {
+              "label": "https://presidentielle2022.conseil-constitutionnel.fr/historique/historique-publication-des-parrainages.html",
+              "url": "https://presidentielle2022.conseil-constitutionnel.fr/historique/historique-publication-des-parrainages.html"
+            }
+          ]
+        },
+        {
+          "label": "7. Conseil constitutionnel, communiqué du 6 mars 2017. https://www.conseil-constitutionnel.fr/actualites/communique/communique-du-6-mars-2017",
+          "lead": "7. Conseil constitutionnel, communiqué du 6 mars 2017",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/actualites/communique/communique-du-6-mars-2017",
+              "url": "https://www.conseil-constitutionnel.fr/actualites/communique/communique-du-6-mars-2017"
+            }
+          ]
+        },
+        {
+          "label": "8. Les Échos, Valérie Mazuir, mis à jour le 28 octobre 2026. https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-calendrier-parrainages-vote-le-guide-de-lelection-2256645",
+          "lead": "8. Les Échos, Valérie Mazuir, mis à jour le 28 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-calendrier-parrainages-vote-le-guide-de-lelection-2256645",
+              "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-calendrier-parrainages-vote-le-guide-de-lelection-2256645"
+            }
+          ]
+        },
+        {
+          "label": "9. L’Indépendant, Loïs Dzouz, 9 novembre 2026. https://www.lindependant.fr/2026/11/09/presidentielle-2027-la-france-quon-veut-le-judoka-teddy-riner-annonce-etre-candidat-a-lelection-presidentielle-13643820.php",
+          "lead": "9. L’Indépendant, Loïs Dzouz, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lindependant.fr/2026/11/09/presidentielle-2027-la-france-quon-veut-le-judoka-teddy-riner-annonce-etre-candidat-a-lelection-presidentielle-13643820.php",
+              "url": "https://www.lindependant.fr/2026/11/09/presidentielle-2027-la-france-quon-veut-le-judoka-teddy-riner-annonce-etre-candidat-a-lelection-presidentielle-13643820.php"
+            }
+          ]
+        },
+        {
+          "label": "10. Le Parisien Sports, 9 novembre 2026. https://www.leparisien.fr/sports/ridicule-ou-courageux-le-sport-francais-entre-admiration-et-consternation-apres-la-candidature-de-teddy-riner-a-la-presidentielle-09-11-2026-RHQTSJRJVBHCTC3OFYS7WBDM5Q.php",
+          "lead": "10. Le Parisien Sports, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/sports/ridicule-ou-courageux-le-sport-francais-entre-admiration-et-consternation-apres-la-candidature-de-teddy-riner-a-la-presidentielle-09-11-2026-RHQTSJRJVBHCTC3OFYS7WBDM5Q.php",
+              "url": "https://www.leparisien.fr/sports/ridicule-ou-courageux-le-sport-francais-entre-admiration-et-consternation-apres-la-candidature-de-teddy-riner-a-la-presidentielle-09-11-2026-RHQTSJRJVBHCTC3OFYS7WBDM5Q.php"
+            }
+          ]
+        },
+        {
+          "label": "11. 20 Minutes, 9 novembre 2026. https://www.20minutes.fr/politique/4261725-20261109-presidentielle-2027-candidat-poids-ridicule-reactions-candidature-teddy-riner",
+          "lead": "11. 20 Minutes, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4261725-20261109-presidentielle-2027-candidat-poids-ridicule-reactions-candidature-teddy-riner",
+              "url": "https://www.20minutes.fr/politique/4261725-20261109-presidentielle-2027-candidat-poids-ridicule-reactions-candidature-teddy-riner"
+            }
+          ]
+        },
+        {
+          "label": "12. Le JDD, Victor-Isaac Anne, 13 avril 2026. https://www.lejdd.fr/politique/presidentielle-2027-lanonymat-des-parrainages-au-coeur-du-debat-171180",
+          "lead": "12. Le JDD, Victor-Isaac Anne, 13 avril 2026",
+          "links": [
+            {
+              "label": "https://www.lejdd.fr/politique/presidentielle-2027-lanonymat-des-parrainages-au-coeur-du-debat-171180",
+              "url": "https://www.lejdd.fr/politique/presidentielle-2027-lanonymat-des-parrainages-au-coeur-du-debat-171180"
+            }
+          ]
+        },
+        {
+          "label": "13. La Nouvelle République, Arnaud Truchet, 9 novembre 2026. https://www.lanouvellerepublique.fr/a-la-une/le-champion-de-judo-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-1794223668",
+          "lead": "13. La Nouvelle République, Arnaud Truchet, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lanouvellerepublique.fr/a-la-une/le-champion-de-judo-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-1794223668",
+              "url": "https://www.lanouvellerepublique.fr/a-la-une/le-champion-de-judo-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-1794223668"
+            }
+          ]
+        },
+        {
+          "label": "14. Assemblée nationale, question écrite n° 13335, JO du 16 octobre 2018. https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE13335",
+          "lead": "14. Assemblée nationale, question écrite n° 13335, JO du 16 octobre 2018",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE13335",
+              "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE13335"
+            }
+          ]
+        },
+        {
+          "label": "15. L’Express, tribune de Pierre-Henri Tavoillot et Éric Delbecque, 5 novembre 2026. https://www.lexpress.fr/idees-et-debats/deux-camps-sorganisent-dans-un-embryon-de-guerre-civile-lalerte-de-pierre-henri-tavoillot-et-eric-ZRMLU7AHTBAKDMI5GPIY4SH6FI/",
+          "lead": "15. L’Express, tribune de Pierre-Henri Tavoillot et Éric Delbecque, 5 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lexpress.fr/idees-et-debats/deux-camps-sorganisent-dans-un-embryon-de-guerre-civile-lalerte-de-pierre-henri-tavoillot-et-eric-ZRMLU7AHTBAKDMI5GPIY4SH6FI/",
+              "url": "https://www.lexpress.fr/idees-et-debats/deux-camps-sorganisent-dans-un-embryon-de-guerre-civile-lalerte-de-pierre-henri-tavoillot-et-eric-ZRMLU7AHTBAKDMI5GPIY4SH6FI/"
+            }
+          ]
+        },
+        {
+          "label": "16. Assemblée nationale, PPLO n° 3114, 4 septembre 2026. https://www.assemblee-nationale.fr/dyn/17/dossiers/garantir_pluralisme_liberte_parrainage_election_presidentielle_17e",
+          "lead": "16. Assemblée nationale, PPLO n° 3114, 4 septembre 2026",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/17/dossiers/garantir_pluralisme_liberte_parrainage_election_presidentielle_17e",
+              "url": "https://www.assemblee-nationale.fr/dyn/17/dossiers/garantir_pluralisme_liberte_parrainage_election_presidentielle_17e"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse distingue déclarations, règles et hypothèses. Elle ne prédit ni le nombre de parrainages de Teddy Riner ni ses résultats.",
+  "liens_internes": [
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    },
+    {
+      "href": "/analyses/sel-et-poivre",
+      "label": "« Sel et poivre » : l'Élysée parle coalition, Retailleau répond ticket"
+    }
+  ]
+}

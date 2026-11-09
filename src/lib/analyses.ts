@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
 import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
 import selEtPoivre from '../data/analyses/sel-et-poivre.json';
 import troisPourUnContre from '../data/analyses/trois-pour-un-contre.json';
@@ -50,6 +51,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: rinerFaceAux500.slug,
+    title: rinerFaceAux500.title,
+    description: rinerFaceAux500.description,
+    date: rinerFaceAux500.date,
+    published: rinerFaceAux500.date,
+    updated: rinerFaceAux500.updated,
+    href: '/analyses/riner-face-aux-500',
+    cover: uneCover(
+      'riner-face-aux-500',
+      'Aquarelle d’un tatami vide avec une ceinture noire, d’une carte de France découpée en départements et d’une pile de formulaires vierges sur une table.',
+    ),
+  },
   {
     slug: iaChangerCampagne.slug,
     title: iaChangerCampagne.title,
