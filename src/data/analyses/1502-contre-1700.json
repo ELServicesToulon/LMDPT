@@ -1,0 +1,351 @@
+{
+  "slug": "1502-contre-1700",
+  "title": "1 502 contre 1 700",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-11",
+  "updated": "2026-11-11",
+  "kicker": "Enquête et analyse · La rédaction · 11 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Le Smic augmentera de 1,6 % le 1er décembre, pour atteindre environ 1 502 euros net. C’est le premier coup de pouce depuis 2012, et syndicats comme candidats le jugent trop petit ou de trop. Entre ce chiffre et les 1 700 euros promis à gauche, que proposent ceux qui visent l’Élysée ?",
+  "description": "Le Smic augmentera de 1,6 % le 1er décembre, pour atteindre environ 1 502 euros net. Entre ce chiffre et les 1 700 euros promis à gauche, que proposent les candidats ?",
+  "disclaimer": "Cette analyse distingue annonces, règles et estimations. Elle ne prédit ni l’inflation de janvier ni l’effet des promesses sur l’emploi.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "smic",
+    "salaires",
+    "conference-sociale",
+    "doe"
+  ],
+  "x_hook": "Le Smic augmentera de 1,6 % le 1er décembre, pour atteindre environ 1 502 euros net. C’est le premier coup de pouce depuis 2012, et syndicats comme candidats le jugent trop petit ou de trop. Entre ce chiffre et les 1 700 euros promis à gauche, que proposent ceux qui visent l’Élysée ?",
+  "hues": [
+    {
+      "slug": "hausse-etat",
+      "label": "Hausse fixée par l’État",
+      "color": "#162561",
+      "rationale": "Mélenchon, Glucksmann, Tondelier, Roussel : relever le Smic au-delà de l’automatique."
+    },
+    {
+      "slug": "net-cotisations",
+      "label": "Le net par les cotisations",
+      "color": "#0001b8",
+      "rationale": "Dupont-Aignan : hausse du net en baissant les cotisations salariales."
+    },
+    {
+      "slug": "charges-travail",
+      "label": "Exonérations et temps de travail",
+      "color": "#5a6570",
+      "rationale": "Le Pen, Retailleau, Philippe, Attal : pas de hausse imposée, baisse des charges ou travail en plus."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "À Matignon, une hausse du Smic",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lundi 9 novembre, à la sortie de la conférence sociale de Matignon, le ministre du Travail Jean-Pierre Farandou a annoncé une hausse du Smic de 1,6 % au 1er décembre. Le salaire minimum passera à environ 1 502 euros net par mois, soit près de 24 euros supplémentaires, selon [franceinfo](https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html)."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "smic-mode-emploi",
+      "title": "Le Smic, mode d’emploi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le Smic est le salaire horaire en dessous duquel aucun salarié majeur ne peut être payé, rappelle [Service-public.fr](https://www.service-public.gouv.fr/particuliers/vosdroits/F2300). Il vaut aujourd’hui 1 867,02 euros brut par mois, soit 1 477,93 euros net. Le brut figure en haut de la fiche de paie. Le net arrive sur le compte, une fois retirées les cotisations du salarié. Les candidats ne comptent pas tous dans la même unité."
+        },
+        {
+          "type": "p",
+          "text": "La loi prévoit deux hausses automatiques. Chaque 1er janvier, le Smic suit l’inflation mesurée pour les 20 % des ménages les plus modestes, plus la moitié du gain de pouvoir d’achat du salaire horaire moyen des ouvriers et des employés. En cours d’année, si les prix montent d’au moins 2 %, il est relevé d’office. Le gouvernement peut aussi ajouter un geste à tout moment : c’est le « coup de pouce »."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "coup-de-pouce",
+      "title": "Combien vaut le coup de pouce ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les 1,6 % se composent de 1 % de revalorisation automatique, qui aurait dû tomber au 1er janvier, et de 0,6 % décidés par le gouvernement, détaille [LCP](https://lcp.fr/actualites/hausse-du-smic-a-1502-euros-l-annonce-du-gouvernement-n-a-convaincu-ni-les-syndicats-ni). « Nous décidons d’anticiper », a reconnu le ministre ([RFI](https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6)). Un coup de pouce, c’est une première depuis 2012, relève franceinfo."
+        },
+        {
+          "type": "p",
+          "text": "Sébastien Lecornu défend « la deuxième hausse la plus importante en 20 ans » ([RFI](https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6)). Sophie Binet, secrétaire générale de la CGT, fait un autre calcul : 23 euros annoncés, alors que le Smic « devrait automatiquement augmenter de 18 euros au 1er janvier ». Reste, selon elle, « un coup de pouce de cinq euros. C’est un kilo de tomates ». La députée LFI Aurélie Trouvé arrive, elle, à 7 euros ([LCP](https://lcp.fr/actualites/hausse-du-smic-a-1502-euros-l-annonce-du-gouvernement-n-a-convaincu-ni-les-syndicats-ni)). Personne ne ment forcément : tout dépend de l’inflation qu’on prévoit pour janvier. Le gouvernement table sur 1 %, selon les services du ministère cités par [Le Bien public](https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu)."
+        },
+        {
+          "type": "p",
+          "text": "Marylise Léon (CFDT) juge la hausse « insuffisante » ([franceinfo](https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html)). Frédéric Souillot (FO) estime que « les réponses ne sont pas au niveau des attentes » ([Les Échos](https://www.lesechos.fr/economie-france/social/le-front-uni-syndical-se-fissure-au-sortir-de-la-conference-sociale-2261945)), mais se félicite que le « dogme » du coup de pouce soit « tombé » ([France Inter](https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/le-premier-ministre-annonce-une-hausse-du-smic-les-syndicats-mitiges-la-CGT-appelle-a-la-greve-le-17-novembre-4353342)). « Maintenant, nous allons négocier », ajoute-t-il dans Les Échos. Parmi les cinq grandes confédérations, seule la CGT appelle à une nouvelle journée interprofessionnelle, le 17 novembre. Ce jour-là, une majorité de fédérations de fonctionnaires appelle déjà à la grève. Le patronat, lui, parle d’une « mauvaise réponse à un vrai problème », par la voix de Patrick Martin, président du Medef ([franceinfo](https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "candidats-feraient",
+      "title": "Ce que les candidats en feraient",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lecornu a laissé une « part de réponse » aux candidats ([RFI](https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6)). Leurs pistes forment deux familles."
+        },
+        {
+          "type": "p",
+          "text": "À gauche, on vise un chiffre. Jean-Luc Mélenchon promet 1 700 euros net, inscrits dans son programme publié le 6 novembre ([RTL](https://www.rtl.fr/actu/politique/smic-a-1-700-euros-retraite-a-60-ans-nucleaire-ce-que-prevoient-les-1-069-mesures-du-programme-de-jean-luc-melenchon-pour-2027-7900693627)). Raphaël Glucksmann envisage le même montant, selon [Les Échos](https://www.lesechos.fr/elections/programmes-dechiffres/on-rentre-dans-lurss-de-le-pen-a-retailleau-en-passant-par-philippe-un-coup-de-pouce-sur-le-smic-qui-divise-2261602), et y ajoute une baisse de la CSG sur les salaires. Marine Tondelier promet 2 000 euros brut dès 2027 ([Public Sénat](https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires)). Attention à l’unité : 2 000 brut et 1 700 net ne se comparent pas directement."
+        },
+        {
+          "type": "p",
+          "text": "Lecornu a répondu qu’un Smic à 1 700 euros ferait perdre « 230 000 emplois », selon le ministre du Travail. Les mêmes services estiment qu’entre 5 000 et 20 000 emplois sont menacés par la hausse annoncée ([Le Bien public](https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu)). Ce sont des estimations, pas des constats."
+        },
+        {
+          "type": "p",
+          "text": "À droite et au centre, on préfère jouer sur les charges et le temps de travail. Marine Le Pen refuse d’imposer une hausse « de manière autoritaire ». Si l’on oblige les entreprises à augmenter les salaires, « on rentre dans l’URSS », a-t-elle lancé le 5 novembre au salon Euronaval, selon l’AFP reprise par [Sud Ouest](https://www.sudouest.fr/politique/marine-le-pen/presidentielle-2027-marine-le-pen-refuse-d-obliger-les-entreprises-a-augmenter-les-salaires-sinon-on-rentre-dans-l-urss-31396917.php). Comprendre : fixer les salaires d’en haut, ce serait l’économie dirigée. Elle propose plutôt d’exonérer de charges les hausses de salaire de 10 %. Bruno Retailleau voit dans la hausse du Smic « une mauvaise piste » et veut inciter à travailler une demi-heure supplémentaire chaque jour, en heures supplémentaires défiscalisées ([BFM Business](https://www.bfmtv.com/economie/economie-social/on-entre-dans-l-urss-la-cgt-veut-augmenter-le-smic-de-10-mais-pour-marine-le-pen-cela-revient-a-changer-de-regime_AD-202611050565.html)). Édouard Philippe mise sur « un temps de travail supplémentaire » et renvoie la question aux partenaires sociaux ([Sud Ouest](https://www.sudouest.fr/politique/marine-le-pen/presidentielle-2027-marine-le-pen-refuse-d-obliger-les-entreprises-a-augmenter-les-salaires-sinon-on-rentre-dans-l-urss-31396917.php))."
+        },
+        {
+          "type": "p",
+          "text": "Les deux familles visent le même ticket de caisse, pas le même payeur. À gauche, l’employeur paie d’abord la hausse du Smic. À droite, les caisses sociales encaissent moins, ou le salarié travaille plus. Aucune des sources lues ne donne le coût complet de ces promesses."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Après le 1er décembre, le test se joue dans les branches professionnelles. Celles dont les minima restent sous le Smic verront leurs allègements de cotisations recalculés à leur désavantage, prévoit un décret annoncé « cette semaine » ([Le Bien public](https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu)). Et l’inflation réelle dira qui comptait juste entre les cinq euros de la CGT et les 0,6 % du gouvernement. Si elle dépasse 1 %, le ministère promet d’agir « en conséquence »."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : l’État doit-il pousser le Smic au-delà de l’automatique ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : augmenter ou non le Smic par décision publique, au-delà de la revalorisation automatique. « En phase » signifie favorable à une telle hausse, pas un soutien à un candidat ni un jugement sur lui.",
+      "table": {
+        "caption": "L’État doit-il pousser le Smic au-delà de l’automatique : positions datées sur une hausse du Smic par décision publique",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Mélenchon / LFI",
+            "En phase, 1 700 € net",
+            "Hausse du Smic à 1 700 euros net, dans le programme publié le 6 novembre.",
+            "[13]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "En phase, 1 700 € net",
+            "Montant envisagé dans son projet, avec une baisse de la CSG sur les salaires, selon Les Échos du 6 novembre et Public Sénat du 30 octobre.",
+            "[8] [12]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "En phase, 2 000 € brut",
+            "Smic à 2 000 euros brut dès 2027, avec des aides aux TPE et PME. Public Sénat, 30 octobre.",
+            "[12]"
+          ],
+          [
+            "Roussel / PCF",
+            "En phase, critique du geste",
+            "Juge la hausse annoncée « des miettes », le 9 novembre.",
+            "[3]"
+          ],
+          [
+            "Dupont-Aignan / Debout la France",
+            "Le net sans le brut",
+            "Veut « remonter le Smic net à 1.600€ en baissant les cotisations salariales ». TF1info, 6 novembre.",
+            "[9]"
+          ],
+          [
+            "Le Pen / RN",
+            "En face, exonérations",
+            "Refuse une hausse imposée ; propose d’exonérer de charges les hausses de salaire de 10 %. Salon Euronaval, 5 novembre.",
+            "[10]"
+          ],
+          [
+            "Retailleau / LR",
+            "En face, travail en plus",
+            "La hausse du Smic est « une mauvaise piste » ; propose 30 minutes de travail en plus par jour, défiscalisées. Propos rapportés par l’AFP le 5 novembre.",
+            "[11]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En face, temps de travail",
+            "Préfère « un temps de travail supplémentaire » et une discussion entre partenaires sociaux. Propos rapportés par l’AFP le 5 novembre.",
+            "[10]"
+          ],
+          [
+            "Attal / Renaissance",
+            "En face, baisse des charges",
+            "« Le problème n’est pas le niveau du Smic, mais le fait que trop de Français y restent bloqués toute leur vie. » TF1info, 6 novembre.",
+            "[9]"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : hausse du Smic fixée par l’État (Mélenchon, Glucksmann, Tondelier, Roussel) ; hausse du net par les cotisations salariales (Dupont-Aignan). En face : exonérations, baisse des charges et temps de travail (Le Pen, Retailleau, Philippe, Attal). L’absence d’autres candidats ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Presse et Service-public.fr",
+      "items": [
+        {
+          "label": "1. franceinfo, 9 novembre 2026. https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html",
+          "lead": "1. franceinfo, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html",
+              "url": "https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html"
+            }
+          ]
+        },
+        {
+          "label": "2. RFI, 9 novembre 2026. https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6",
+          "lead": "2. RFI, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6",
+              "url": "https://www.rfi.fr/fr/france/20261109-col%C3%A8re-sociale-en-france-s%C3%A9bastien-lecornu-cherche-une-sortie-de-crise-et-augmente-le-salaire-minimum-de-1-6"
+            }
+          ]
+        },
+        {
+          "label": "3. LCP, Maxence Kagni, 9 novembre 2026. https://lcp.fr/actualites/hausse-du-smic-a-1502-euros-l-annonce-du-gouvernement-n-a-convaincu-ni-les-syndicats-ni",
+          "lead": "3. LCP, Maxence Kagni, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/hausse-du-smic-a-1502-euros-l-annonce-du-gouvernement-n-a-convaincu-ni-les-syndicats-ni",
+              "url": "https://lcp.fr/actualites/hausse-du-smic-a-1502-euros-l-annonce-du-gouvernement-n-a-convaincu-ni-les-syndicats-ni"
+            }
+          ]
+        },
+        {
+          "label": "4. Le Bien public, 9 novembre 2026. https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu",
+          "lead": "4. Le Bien public, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu",
+              "url": "https://www.bienpublic.com/social/2026/11/09/hausse-du-smic-negociations-salariales-ce-que-changent-les-mesures-annoncees-par-sebastien-lecornu"
+            }
+          ]
+        },
+        {
+          "label": "5. Service-public.fr, Smic, vérifié le 1er juin 2026. https://www.service-public.gouv.fr/particuliers/vosdroits/F2300",
+          "lead": "5. Service-public.fr, Smic, vérifié le 1er juin 2026",
+          "links": [
+            {
+              "label": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2300",
+              "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2300"
+            }
+          ]
+        },
+        {
+          "label": "6. Les Échos, Leïla de Comarmond, 9 novembre 2026. https://www.lesechos.fr/economie-france/social/le-front-uni-syndical-se-fissure-au-sortir-de-la-conference-sociale-2261945",
+          "lead": "6. Les Échos, Leïla de Comarmond, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/economie-france/social/le-front-uni-syndical-se-fissure-au-sortir-de-la-conference-sociale-2261945",
+              "url": "https://www.lesechos.fr/economie-france/social/le-front-uni-syndical-se-fissure-au-sortir-de-la-conference-sociale-2261945"
+            }
+          ]
+        },
+        {
+          "label": "7. France Inter, 9 novembre 2026. https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/le-premier-ministre-annonce-une-hausse-du-smic-les-syndicats-mitiges-la-CGT-appelle-a-la-greve-le-17-novembre-4353342",
+          "lead": "7. France Inter, 9 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/le-premier-ministre-annonce-une-hausse-du-smic-les-syndicats-mitiges-la-CGT-appelle-a-la-greve-le-17-novembre-4353342",
+              "url": "https://www.radiofrance.fr/franceinter/podcasts/l-info-de-france-inter/le-premier-ministre-annonce-une-hausse-du-smic-les-syndicats-mitiges-la-CGT-appelle-a-la-greve-le-17-novembre-4353342"
+            }
+          ]
+        },
+        {
+          "label": "8. Les Échos, Isabelle Ficek, 6 novembre 2026. https://www.lesechos.fr/elections/programmes-dechiffres/on-rentre-dans-lurss-de-le-pen-a-retailleau-en-passant-par-philippe-un-coup-de-pouce-sur-le-smic-qui-divise-2261602",
+          "lead": "8. Les Échos, Isabelle Ficek, 6 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/programmes-dechiffres/on-rentre-dans-lurss-de-le-pen-a-retailleau-en-passant-par-philippe-un-coup-de-pouce-sur-le-smic-qui-divise-2261602",
+              "url": "https://www.lesechos.fr/elections/programmes-dechiffres/on-rentre-dans-lurss-de-le-pen-a-retailleau-en-passant-par-philippe-un-coup-de-pouce-sur-le-smic-qui-divise-2261602"
+            }
+          ]
+        },
+        {
+          "label": "9. TF1info, 6 novembre 2026. https://www.tf1info.fr/politique/elections/presidentielle/smic-qui-demande-quoi-parmi-les-candidats-a-la-presidentielle-2474276.html",
+          "lead": "9. TF1info, 6 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/smic-qui-demande-quoi-parmi-les-candidats-a-la-presidentielle-2474276.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/smic-qui-demande-quoi-parmi-les-candidats-a-la-presidentielle-2474276.html"
+            }
+          ]
+        },
+        {
+          "label": "10. Sud Ouest avec AFP, 5 novembre 2026. https://www.sudouest.fr/politique/marine-le-pen/presidentielle-2027-marine-le-pen-refuse-d-obliger-les-entreprises-a-augmenter-les-salaires-sinon-on-rentre-dans-l-urss-31396917.php",
+          "lead": "10. Sud Ouest avec AFP, 5 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.sudouest.fr/politique/marine-le-pen/presidentielle-2027-marine-le-pen-refuse-d-obliger-les-entreprises-a-augmenter-les-salaires-sinon-on-rentre-dans-l-urss-31396917.php",
+              "url": "https://www.sudouest.fr/politique/marine-le-pen/presidentielle-2027-marine-le-pen-refuse-d-obliger-les-entreprises-a-augmenter-les-salaires-sinon-on-rentre-dans-l-urss-31396917.php"
+            }
+          ]
+        },
+        {
+          "label": "11. BFM Business avec AFP, 5 novembre 2026. https://www.bfmtv.com/economie/economie-social/on-entre-dans-l-urss-la-cgt-veut-augmenter-le-smic-de-10-mais-pour-marine-le-pen-cela-revient-a-changer-de-regime_AD-202611050565.html",
+          "lead": "11. BFM Business avec AFP, 5 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/economie/economie-social/on-entre-dans-l-urss-la-cgt-veut-augmenter-le-smic-de-10-mais-pour-marine-le-pen-cela-revient-a-changer-de-regime_AD-202611050565.html",
+              "url": "https://www.bfmtv.com/economie/economie-social/on-entre-dans-l-urss-la-cgt-veut-augmenter-le-smic-de-10-mais-pour-marine-le-pen-cela-revient-a-changer-de-regime_AD-202611050565.html"
+            }
+          ]
+        },
+        {
+          "label": "12. Public Sénat, Romain David, 30 octobre 2026. https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+          "lead": "12. Public Sénat, Romain David, 30 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires"
+            }
+          ]
+        },
+        {
+          "label": "13. RTL avec AFP, 7 novembre 2026. https://www.rtl.fr/actu/politique/smic-a-1-700-euros-retraite-a-60-ans-nucleaire-ce-que-prevoient-les-1-069-mesures-du-programme-de-jean-luc-melenchon-pour-2027-7900693627",
+          "lead": "13. RTL avec AFP, 7 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/smic-a-1-700-euros-retraite-a-60-ans-nucleaire-ce-que-prevoient-les-1-069-mesures-du-programme-de-jean-luc-melenchon-pour-2027-7900693627",
+              "url": "https://www.rtl.fr/actu/politique/smic-a-1-700-euros-retraite-a-60-ans-nucleaire-ce-que-prevoient-les-1-069-mesures-du-programme-de-jean-luc-melenchon-pour-2027-7900693627"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse distingue annonces, règles et estimations. Elle ne prédit ni l’inflation de janvier ni l’effet des promesses sur l’emploi.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}
