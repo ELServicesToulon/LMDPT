@@ -9,6 +9,7 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
 import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
+import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
 import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
 import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
 import selEtPoivre from '../data/analyses/sel-et-poivre.json';
@@ -50,6 +51,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('union-cherche-arbitre');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('1502-contre-1700');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('riner-face-aux-500');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ia-changer-campagne');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('sel-et-poivre');
@@ -68,25 +70,26 @@ describe('analyses', () => {
       'chronique-manusk-fiction-demission-macron',
     );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe('union-cherche-arbitre');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('riner-face-aux-500');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('ia-changer-campagne');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe('sel-et-poivre');
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('trois-pour-un-contre');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('48-ou-500-lycees-bloques');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('779-retirez-halloween');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[12]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[13]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[14]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[15]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[16]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[17]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[18]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[19]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('1502-contre-1700');
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('riner-face-aux-500');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('ia-changer-campagne');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe('sel-et-poivre');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('trois-pour-un-contre');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[13]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[14]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[15]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[16]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[17]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[18]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[19]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[20]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -111,6 +114,20 @@ describe('analyses', () => {
     const doe = unionChercheArbitre.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
     expect(getAnalysis('union-cherche-arbitre')?.href).toBe('/analyses/union-cherche-arbitre');
+  });
+
+  it('enquête 1 502 contre 1 700 du 11 novembre, sources, boîte DOE', () => {
+    expect(smic1502Contre1700.slug).toBe('1502-contre-1700');
+    expect(smic1502Contre1700.date).toBe('2026-11-11');
+    expect(smic1502Contre1700.title).toBe('1 502 contre 1 700');
+    expect(smic1502Contre1700.author).toBe('La rédaction');
+    expect(smic1502Contre1700.tags).toContain('doe');
+    expect(smic1502Contre1700.description.length).toBeLessThanOrEqual(200);
+    expect(smic1502Contre1700.hues).toHaveLength(3);
+    expect(smic1502Contre1700.sources_groups[0]?.items).toHaveLength(13);
+    const doe = smic1502Contre1700.sections.find((section) => section.id === 'doe');
+    expect(doe?.kind).toBe('candidats');
+    expect(getAnalysis('1502-contre-1700')?.href).toBe('/analyses/1502-contre-1700');
   });
 
   it('enquête Riner et parrainages du 10 novembre, sources, boîte DOE', () => {

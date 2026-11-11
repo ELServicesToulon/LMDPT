@@ -9,6 +9,7 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
 import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
+import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
 import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
 import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
 import selEtPoivre from '../data/analyses/sel-et-poivre.json';
@@ -63,6 +64,19 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     cover: uneCover(
       'union-cherche-arbitre',
       'Aquarelle de quatre cordes de couleur nouées en un nœud inachevé sur une table en bois, une cinquième corde à l’écart, à côté d’un sifflet en laiton et d’une petite urne en bois.',
+    ),
+  },
+  {
+    slug: smic1502Contre1700.slug,
+    title: smic1502Contre1700.title,
+    description: smic1502Contre1700.description,
+    date: smic1502Contre1700.date,
+    published: smic1502Contre1700.date,
+    updated: smic1502Contre1700.updated,
+    href: '/analyses/1502-contre-1700',
+    cover: uneCover(
+      '1502-contre-1700',
+      'Aquarelle d’une balance en laiton portant des tomates d’un côté et des pièces de l’autre, sur une table en bois, à côté d’une enveloppe kraft et de trois piles de pièces de hauteur croissante.',
     ),
   },
   {
