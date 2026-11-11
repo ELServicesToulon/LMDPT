@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
 import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
 import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
 import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
@@ -52,6 +53,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: unionChercheArbitre.slug,
+    title: unionChercheArbitre.title,
+    description: unionChercheArbitre.description,
+    date: unionChercheArbitre.date,
+    published: unionChercheArbitre.date,
+    updated: unionChercheArbitre.updated,
+    href: '/analyses/union-cherche-arbitre',
+    cover: uneCover(
+      'union-cherche-arbitre',
+      'Aquarelle de quatre cordes de couleur nouées en un nœud inachevé sur une table en bois, une cinquième corde à l’écart, à côté d’un sifflet en laiton et d’une petite urne en bois.',
+    ),
+  },
   {
     slug: smic1502Contre1700.slug,
     title: smic1502Contre1700.title,

@@ -1,0 +1,328 @@
+{
+  "slug": "union-cherche-arbitre",
+  "title": "Union cherche arbitre",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-12",
+  "updated": "2026-11-12",
+  "kicker": "Enquête et analyse · La rédaction · 12 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Le 10 novembre, Éric Zemmour s’est déclaré candidat en reprochant au RN de refuser l’« union des droites ». Le même jour, Bruno Retailleau proposait une primaire de la droite et du centre les 31 janvier et 7 février. Tout le monde réclame l’union, mais personne ne s’accorde sur qui choisira le candidat commun, ni comment.",
+  "description": "Zemmour reproche au RN de refuser l’« union des droites », Retailleau propose une primaire les 31 janvier et 7 février. Qui départage la droite, et comment ?",
+  "disclaimer": "Cette analyse décrit des méthodes de départage annoncées. Elle ne dit pas qui gagnerait une primaire ni le premier tour.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "primaire",
+    "union-des-droites",
+    "droite-centre",
+    "doe"
+  ],
+  "x_hook": "Le 10 novembre, Éric Zemmour s’est déclaré candidat en reprochant au RN de refuser l’« union des droites ». Le même jour, Bruno Retailleau proposait une primaire de la droite et du centre les 31 janvier et 7 février. Tout le monde réclame l’union, mais personne ne s’accorde sur qui choisira le candidat commun, ni comment.",
+  "hues": [
+    {
+      "slug": "primaire-avant",
+      "label": "Primaire avant le premier tour",
+      "color": "#162561",
+      "rationale": "Retailleau, Attal, Lisnard : désigner un candidat commun par un vote avant le premier tour."
+    },
+    {
+      "slug": "retrait-volontaire",
+      "label": "Retrait des moins bien placés",
+      "color": "#0001b8",
+      "rationale": "Philippe : pas de primaire, retrait volontaire entre Noël et février."
+    },
+    {
+      "slug": "premier-tour-arbitre",
+      "label": "Le premier tour comme arbitre",
+      "color": "#5a6570",
+      "rationale": "Zemmour ; Le Pen et le RN (position déduite) : l’union se fait par le vote du premier tour."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "Deux annonces le 10 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mardi 10 novembre, au 20 heures de TF1, Éric Zemmour a lancé : « Je suis bien candidat à l’élection présidentielle » ([Les Échos](https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-eric-zemmour-se-lance-a-nouveau-dans-la-course-a-lelysee-2262138)). Le même jour, Bruno Retailleau, président des Républicains, écrivait à Édouard Philippe (Horizons), Gabriel Attal (Renaissance) et David Lisnard (Nouvelle Énergie). Il leur propose une primaire les dimanches 31 janvier et 7 février, a confirmé son entourage à l’AFP après une information du Figaro ([20 Minutes](https://www.20minutes.fr/politique/4262102-20261111-presidentielle-2027-retailleau-soumet-philippe-attal-lisnard-dates-primaire)). Deux annonces, un même mot : l’union. Et une même question sans réponse : qui départage ?"
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "deux-mots",
+      "title": "Deux mots à traduire",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une primaire, c’est un vote organisé avant l’élection pour choisir un seul candidat parmi plusieurs d’un même camp. Les perdants sont censés se ranger derrière le gagnant. Qui vote et comment : tout reste à écrire. Retailleau se donne près de trois mois, le temps « de définir les modalités et de mener campagne » ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-retailleau-propose-de-fixer-la-primaire-aux-31-janvier-et-7-fevrier-le-temps-d-en-definir-les-modalites-et-de-faire-campagne-20261110))."
+        },
+        {
+          "type": "p",
+          "text": "L’« union des droites », c’est autre chose. Au sens le plus large, c’est l’idée d’une alliance électorale qui irait de la droite classique jusqu’à l’extrême droite, RN et Reconquête compris. Selon qui le prononce, le mot « union » tient l’extrême droite à distance ou la met au centre de la table."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "droite-de-la-droite",
+      "title": "À droite de la droite, le premier tour sert de primaire",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Zemmour reproche à Marine Le Pen de refuser l’union des droites ([La Dépêche](https://www.ladepeche.fr/2026/11/11/presidentielle-2027-eric-zemmour-officialise-sa-candidature-le-president-de-reconquete-veut-conserver-une-france-francaise-13646887.php)). Sa solution tient en une phrase : « Les gens qui veulent l’union des droites doivent voter pour nous pour nous mettre en tête et en mesure d’imposer cette union aux autres » ([La Dépêche](https://www.ladepeche.fr/2026/11/11/presidentielle-2027-eric-zemmour-officialise-sa-candidature-le-president-de-reconquete-veut-conserver-une-france-francaise-13646887.php)). Jordan Bardella, président du RN, lui a répondu sur BFMTV que « tous ceux qui veulent que la France reste la France doivent voter » pour Marine Le Pen."
+        },
+        {
+          "type": "p",
+          "text": "Les deux camps partagent au fond la même méthode : le premier tour, prévu le 18 avril ([L’Indépendant](https://www.lindependant.fr/2026/11/11/presidentielle-2027-ils-sont-deja-plus-dune-trentaine-sur-la-ligne-de-depart-en-theorie-combien-de-candidats-officiels-pourraient-se-presenter-a-13645908.php)), fera office de primaire. Et chacun y propose le même vainqueur, lui-même. C’est une union par addition, à condition que l’addition se fasse chez soi."
+        },
+        {
+          "type": "p",
+          "text": "Avant cela, Zemmour doit réunir ses parrainages : au moins 500 signatures d’élus, venues d’au moins 30 départements ou collectivités d’outre-mer, pour figurer sur le bulletin ([L’Indépendant](https://www.lindependant.fr/2026/11/11/presidentielle-2027-ils-sont-deja-plus-dune-trentaine-sur-la-ligne-de-depart-en-theorie-combien-de-candidats-officiels-pourraient-se-presenter-a-13645908.php)). « Je fais appel à tous les maires pour qu’ils me parrainent », a-t-il dit ([Les Échos](https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-eric-zemmour-se-lance-a-nouveau-dans-la-course-a-lelysee-2262138))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "centre-droit",
+      "title": "Au centre-droit, trois oui et un non",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Retailleau justifie sa lettre ainsi : « Aucun d’entre nous n’est aujourd’hui en mesure, seul, de créer une dynamique pour convaincre les Français au premier tour, et d’empêcher un choc brutal entre le Rassemblement national et la France insoumise. » Il ajoute que « le temps joue contre nous » et propose une première réunion des directeurs de campagne « sous les quinze jours » ([20 Minutes](https://www.20minutes.fr/politique/4262102-20261111-presidentielle-2027-retailleau-soumet-philippe-attal-lisnard-dates-primaire))."
+        },
+        {
+          "type": "p",
+          "text": "Chez Attal, on répond « Pourquoi pas ! » aux dates. Lisnard, lui, les trouve trop tardives : « Il veut qu’on accélère le calendrier », dit son entourage. Selon RTL, les directeurs de campagne des trois candidats doivent se réunir le mardi 17 novembre ([RTL](https://www.rtl.fr/actu/politique/il-etait-ultra-favori-il-ne-l-est-plus-le-camp-retailleau-met-la-pression-sur-edouard-philippe-pour-une-primaire-a-droite-et-au-centre-7900695120))."
+        },
+        {
+          "type": "p",
+          "text": "Le quatrième ne viendra pas. Édouard Philippe « ne participera pas à une primaire, qu’elle soit organisée le 15 décembre, le 15 janvier ou le 15 février parce qu’il est candidat à l’élection présidentielle », a déclaré mercredi sur BFMTV son porte-parole Jérémie Patrier-Leitrus ([France 24, avec l’AFP](https://www.france24.com/fr/info-en-continu/20261111-retailleau-propose-une-primaire-les-31-janvier-et-7-f%C3%A9vrier)). Selon lui, ce processus créerait « de la désunion et de la confusion », même s’il juge nécessaire un « grand rassemblement » autour d’un seul candidat."
+        },
+        {
+          "type": "p",
+          "text": "Philippe a sa propre méthode. Le 6 novembre, Maël de Calan, coordinateur de ses porte-parole, la résumait ainsi : « entre Noël et février, les moins bien placés se retirent au bénéfice du mieux placé », et « Edouard Philippe s’appliquera cette règle à lui-même » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire)). Pas de vote, un retrait volontaire. La règle ne dit pas qui décidera, ni avec quel instrument, qui est « le mieux placé »."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "frontiere",
+      "title": "La vraie dispute : la frontière",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Même parmi les partisans de la primaire, personne ne trace la même ligne. Gabriel Attal veut rassembler « de la social-démocratie à la droite républicaine ». Pour lui, seront « légitimes » à concourir « tous ceux qui sont très clairs sur leur absence d’alliance présente ou à venir avec l’un des extrêmes » ([France Inter](https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-mardi-10-novembre-2026-3103420)). David Lisnard défend depuis longtemps une primaire sur un périmètre qui va jusqu’à Sarah Knafo, eurodéputée Reconquête, rapporte [Public Sénat](https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire). Son entourage parle d’une primaire « la plus large possible » ([RTL](https://www.rtl.fr/actu/politique/il-etait-ultra-favori-il-ne-l-est-plus-le-camp-retailleau-met-la-pression-sur-edouard-philippe-pour-une-primaire-a-droite-et-au-centre-7900695120))."
+        },
+        {
+          "type": "p",
+          "text": "L’un ferme la porte aux « extrêmes », l’autre l’ouvre jusqu’à Reconquête. Or, depuis mardi, Reconquête a son candidat, et il préfère se départager au premier tour."
+        },
+        {
+          "type": "p",
+          "text": "Reste l’après. Attal fait un pas : « Si celui qui sort de cette primaire est le seul qui est en situation d’empêcher un second tour Mélenchon-Le Pen […] je n’ai pas de raison de ne pas voter pour lui » ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110)). Lisnard, le 3 novembre sur BFMTV, cité par le même article : « Je ne soutiendrai pas Édouard Philippe s’il gagne la primaire, mais je respecterai s’il la gagnait. » Le 6 novembre, Public Sénat écrivait que « David Lisnard ou Bruno Retailleau ont déjà dit que s’ils perdent, ils ne feront pas la campagne du vainqueur » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire)). Un soutien d’Attal a sa parade : « S’ils ne veulent pas coller les affiches, ce n’est pas grave. Je les collerai pour eux » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire)). Une primaire dont les perdants ne promettent pas tous de suivre le gagnant, c’est un tri. Pas encore une union."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le 17 novembre, la réunion des directeurs de campagne dira si la primaire a des règles ou seulement des dates : qui vote, où, avec quelle charte. Attal annonce déjà une charte de valeurs ([France Inter](https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-mardi-10-novembre-2026-3103420)). Ensuite, février. C’est le mois du second tour de la primaire proposée par Retailleau, et la fin de la fenêtre où Philippe propose que les moins bien placés se retirent. Les deux méthodes tombent au même moment. À droite de la droite, l’arbitre reste le 18 avril."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il départager les candidats avant le premier tour ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : désigner un candidat commun par un vote avant le premier tour (une primaire). « En phase » signifie favorable à une telle primaire, pas un soutien à un candidat ni un jugement sur lui.",
+      "table": {
+        "caption": "Faut-il départager les candidats avant le premier tour : positions datées sur une primaire avant le premier tour",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Retailleau / LR",
+            "En phase, dates proposées",
+            "Primaire de la droite et du centre les 31 janvier et 7 février, proposée par lettres du 10 novembre.",
+            "[3][5]"
+          ],
+          [
+            "Attal / Renaissance",
+            "En phase, avec une charte",
+            "Primaire « de la social-démocratie à la droite républicaine », ouverte à ceux sans alliance avec « l’un des extrêmes ». Prêt à voter pour le vainqueur s’il est « le seul » à pouvoir empêcher un second tour Mélenchon-Le Pen. France Inter, 10 novembre.",
+            "[9][10]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "En phase, plus large et plus tôt",
+            "Primaire « la plus large possible », dates jugées trop tardives (entourage, 11 novembre). Périmètre jusqu’à Sarah Knafo, selon Public Sénat (6 novembre).",
+            "[7][8]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En face, retrait volontaire",
+            "Refuse la primaire (porte-parole sur BFMTV, 11 novembre). Propose qu’« entre Noël et février » les moins bien placés se retirent (équipe, 6 novembre).",
+            "[6][8]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "En face, le premier tour comme arbitre",
+            "« Les gens qui veulent l’union des droites doivent voter pour nous. » Le 10 novembre, jour de sa déclaration de candidature.",
+            "[1]"
+          ],
+          [
+            "Le Pen / RN",
+            "En face, le vote RN (position déduite)",
+            "Ligne portée par Jordan Bardella, président du RN : « tous ceux qui veulent que la France reste la France doivent voter » pour Marine Le Pen. BFMTV, 10 novembre.",
+            "[1]"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : primaire avant le premier tour (Retailleau, Attal, Lisnard). En face : retrait volontaire des moins bien placés (Philippe) ; le premier tour comme seul arbitre (Zemmour ; Le Pen et le RN, position déduite). L’absence d’autres candidats ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Presse",
+      "items": [
+        {
+          "label": "1. La Dépêche du Midi, Cyril Brioulet, 11 novembre 2026. https://www.ladepeche.fr/2026/11/11/presidentielle-2027-eric-zemmour-officialise-sa-candidature-le-president-de-reconquete-veut-conserver-une-france-francaise-13646887.php",
+          "lead": "1. La Dépêche du Midi, Cyril Brioulet, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.ladepeche.fr/2026/11/11/presidentielle-2027-eric-zemmour-officialise-sa-candidature-le-president-de-reconquete-veut-conserver-une-france-francaise-13646887.php",
+              "url": "https://www.ladepeche.fr/2026/11/11/presidentielle-2027-eric-zemmour-officialise-sa-candidature-le-president-de-reconquete-veut-conserver-une-france-francaise-13646887.php"
+            }
+          ]
+        },
+        {
+          "label": "2. Les Échos, Ulysse Legavre-Jérôme, 10 novembre 2026 (mis à jour le 11). https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-eric-zemmour-se-lance-a-nouveau-dans-la-course-a-lelysee-2262138",
+          "lead": "2. Les Échos, Ulysse Legavre-Jérôme, 10 novembre 2026 (mis à jour le 11)",
+          "links": [
+            {
+              "label": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-eric-zemmour-se-lance-a-nouveau-dans-la-course-a-lelysee-2262138",
+              "url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-eric-zemmour-se-lance-a-nouveau-dans-la-course-a-lelysee-2262138"
+            }
+          ]
+        },
+        {
+          "label": "3. 20 Minutes, avec AFP, 11 novembre 2026. https://www.20minutes.fr/politique/4262102-20261111-presidentielle-2027-retailleau-soumet-philippe-attal-lisnard-dates-primaire",
+          "lead": "3. 20 Minutes, avec AFP, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4262102-20261111-presidentielle-2027-retailleau-soumet-philippe-attal-lisnard-dates-primaire",
+              "url": "https://www.20minutes.fr/politique/4262102-20261111-presidentielle-2027-retailleau-soumet-philippe-attal-lisnard-dates-primaire"
+            }
+          ]
+        },
+        {
+          "label": "4. franceinfo, 11 novembre 2026. https://www.franceinfo.fr/elections/presidentielle/bruno-retailleau-propose-une-primaire-de-la-droite-et-du-centre-les-31-janvier-et-7-fevrier_8277581.html",
+          "lead": "4. franceinfo, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/bruno-retailleau-propose-une-primaire-de-la-droite-et-du-centre-les-31-janvier-et-7-fevrier_8277581.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/bruno-retailleau-propose-une-primaire-de-la-droite-et-du-centre-les-31-janvier-et-7-fevrier_8277581.html"
+            }
+          ]
+        },
+        {
+          "label": "5. Le Figaro, 10 novembre 2026 (accès abonnés, début libre lu). https://www.lefigaro.fr/elections/presidentielles/presidentielle-retailleau-propose-de-fixer-la-primaire-aux-31-janvier-et-7-fevrier-le-temps-d-en-definir-les-modalites-et-de-faire-campagne-20261110",
+          "lead": "5. Le Figaro, 10 novembre 2026 (accès abonnés, début libre lu)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-retailleau-propose-de-fixer-la-primaire-aux-31-janvier-et-7-fevrier-le-temps-d-en-definir-les-modalites-et-de-faire-campagne-20261110",
+              "url": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-retailleau-propose-de-fixer-la-primaire-aux-31-janvier-et-7-fevrier-le-temps-d-en-definir-les-modalites-et-de-faire-campagne-20261110"
+            }
+          ]
+        },
+        {
+          "label": "6. France 24, AFP, 11 novembre 2026. https://www.france24.com/fr/info-en-continu/20261111-retailleau-propose-une-primaire-les-31-janvier-et-7-f%C3%A9vrier",
+          "lead": "6. France 24, AFP, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261111-retailleau-propose-une-primaire-les-31-janvier-et-7-f%C3%A9vrier",
+              "url": "https://www.france24.com/fr/info-en-continu/20261111-retailleau-propose-une-primaire-les-31-janvier-et-7-f%C3%A9vrier"
+            }
+          ]
+        },
+        {
+          "label": "7. RTL, La rédaction numérique de RTL et Pauline Théveniaud, 11 novembre 2026. https://www.rtl.fr/actu/politique/il-etait-ultra-favori-il-ne-l-est-plus-le-camp-retailleau-met-la-pression-sur-edouard-philippe-pour-une-primaire-a-droite-et-au-centre-7900695120",
+          "lead": "7. RTL, La rédaction numérique de RTL et Pauline Théveniaud, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/il-etait-ultra-favori-il-ne-l-est-plus-le-camp-retailleau-met-la-pression-sur-edouard-philippe-pour-une-primaire-a-droite-et-au-centre-7900695120",
+              "url": "https://www.rtl.fr/actu/politique/il-etait-ultra-favori-il-ne-l-est-plus-le-camp-retailleau-met-la-pression-sur-edouard-philippe-pour-une-primaire-a-droite-et-au-centre-7900695120"
+            }
+          ]
+        },
+        {
+          "label": "8. Public Sénat, François Vignal, 6 novembre 2026 (mis à jour le 9). https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire",
+          "lead": "8. Public Sénat, François Vignal, 6 novembre 2026 (mis à jour le 9)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire",
+              "url": "https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire"
+            }
+          ]
+        },
+        {
+          "label": "9. France Inter, L’invité de 8 h 20, 10 novembre 2026. https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-mardi-10-novembre-2026-3103420",
+          "lead": "9. France Inter, L’invité de 8 h 20, 10 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-mardi-10-novembre-2026-3103420",
+              "url": "https://www.radiofrance.fr/franceinter/podcasts/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-du-mardi-10-novembre-2026-3103420"
+            }
+          ]
+        },
+        {
+          "label": "10. Le Figaro, 10 novembre 2026 (partie libre lue). https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110",
+          "lead": "10. Le Figaro, 10 novembre 2026 (partie libre lue)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110",
+              "url": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110"
+            }
+          ]
+        },
+        {
+          "label": "11. L’Indépendant, 11 novembre 2026. https://www.lindependant.fr/2026/11/11/presidentielle-2027-ils-sont-deja-plus-dune-trentaine-sur-la-ligne-de-depart-en-theorie-combien-de-candidats-officiels-pourraient-se-presenter-a-13645908.php",
+          "lead": "11. L’Indépendant, 11 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lindependant.fr/2026/11/11/presidentielle-2027-ils-sont-deja-plus-dune-trentaine-sur-la-ligne-de-depart-en-theorie-combien-de-candidats-officiels-pourraient-se-presenter-a-13645908.php",
+              "url": "https://www.lindependant.fr/2026/11/11/presidentielle-2027-ils-sont-deja-plus-dune-trentaine-sur-la-ligne-de-depart-en-theorie-combien-de-candidats-officiels-pourraient-se-presenter-a-13645908.php"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des méthodes de départage annoncées. Elle ne dit pas qui gagnerait une primaire ni le premier tour.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}
