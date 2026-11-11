@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
 import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
 import iaChangerCampagne from '../data/analyses/ia-changer-campagne.json';
 import selEtPoivre from '../data/analyses/sel-et-poivre.json';
@@ -51,6 +52,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: smic1502Contre1700.slug,
+    title: smic1502Contre1700.title,
+    description: smic1502Contre1700.description,
+    date: smic1502Contre1700.date,
+    published: smic1502Contre1700.date,
+    updated: smic1502Contre1700.updated,
+    href: '/analyses/1502-contre-1700',
+    cover: uneCover(
+      '1502-contre-1700',
+      'Aquarelle d’une balance en laiton portant des tomates d’un côté et des pièces de l’autre, sur une table en bois, à côté d’une enveloppe kraft et de trois piles de pièces de hauteur croissante.',
+    ),
+  },
   {
     slug: rinerFaceAux500.slug,
     title: rinerFaceAux500.title,
