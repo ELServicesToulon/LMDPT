@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import fonctionPublique800000 from '../data/analyses/800000-en-moins-500000-en-plus.json';
 import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
 import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
 import rinerFaceAux500 from '../data/analyses/riner-face-aux-500.json';
@@ -53,6 +54,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: fonctionPublique800000.slug,
+    title: fonctionPublique800000.title,
+    description: fonctionPublique800000.description,
+    date: fonctionPublique800000.date,
+    published: fonctionPublique800000.date,
+    updated: fonctionPublique800000.updated,
+    href: '/analyses/800000-en-moins-500000-en-plus',
+    cover: uneCover(
+      '800000-en-moins-500000-en-plus',
+      'Aquarelle d’un comptoir de guichet en bois avec une sonnette en laiton, devant une rangée de chaises de bureau vides qui s’effacent peu à peu vers la gauche.',
+    ),
+  },
   {
     slug: unionChercheArbitre.slug,
     title: unionChercheArbitre.title,

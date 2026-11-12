@@ -1,0 +1,347 @@
+{
+  "slug": "800000-en-moins-500000-en-plus",
+  "title": "800 000 en moins, 500 000 en plus",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-13",
+  "updated": "2026-11-13",
+  "kicker": "Enquête et analyse · La rédaction · 13 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Jeudi, sur franceinfo, huit candidats à la présidentielle ont passé leur grand oral sur les services publics. Sur le nombre d’agents, leurs chiffres vont de 800 000 emplois non renouvelés (Éric Zemmour) à 500 000 postes créés (Fabien Roussel). Ce que recouvrent ces chiffres, et ce qu’ils ne disent pas.",
+  "description": "Sur franceinfo, huit candidats ont chiffré leurs projets pour la fonction publique : de 800 000 emplois non renouvelés à 500 000 postes créés. Ce que disent vraiment ces chiffres.",
+  "disclaimer": "Cette analyse compare des annonces chiffrées faites le 12 novembre. Elle ne dit pas lesquelles sont réalisables, ni qui gagnera l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "services-publics",
+    "fonction-publique",
+    "doe"
+  ],
+  "x_hook": "Jeudi, sur franceinfo, huit candidats à la présidentielle ont passé leur grand oral sur les services publics. Sur le nombre d’agents, leurs chiffres vont de 800 000 emplois non renouvelés (Éric Zemmour) à 500 000 postes créés (Fabien Roussel). Ce que recouvrent ces chiffres, et ce qu’ils ne disent pas.",
+  "hues": [
+    {
+      "slug": "plus-d-agents",
+      "label": "Plus d’agents publics",
+      "color": "#162561",
+      "rationale": "Roussel, Tondelier ; Mélenchon, sans nombre d’agents : créer des postes ou agrandir le service public."
+    },
+    {
+      "slug": "departs-volontaires",
+      "label": "Moins, par départs volontaires",
+      "color": "#0001b8",
+      "rationale": "Attal : 100 000 départs volontaires avec prime, sans poste supprimé dans l’Éducation nationale."
+    },
+    {
+      "slug": "non-remplacement",
+      "label": "Moins, par non-remplacement",
+      "color": "#5a6570",
+      "rationale": "Philippe, Retailleau, Zemmour : ne pas remplacer une partie des départs à la retraite."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "Un grand oral le 12 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Jeudi 12 novembre, franceinfo recevait huit candidats au Studio 104 de la Maison de la Radio et de la Musique, quarante minutes chacun, sur les services publics. Marine Le Pen et David Lisnard ont décliné l’invitation ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-franceinfo-organise-un-grand-oral-des-candidats-sur-les-services-publics_8277680.html)). Une question revenait sous toutes les formes : faut-il moins, autant ou plus d’agents publics ? Les réponses tiennent en un chiffre. Le plus dur, c’est de savoir ce qu’il y a derrière."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "combien",
+      "title": "D’abord, combien sont-ils ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fin 2024, 5,9 millions de personnes travaillaient dans la fonction publique, selon l’Insee et la DGAFP, le service statistique de la fonction publique ([Insee](https://www.insee.fr/fr/statistiques/8732435)). Environ 2,59 millions pour l’État, 2,04 millions dans les collectivités (mairies, départements, régions), 1,25 million dans les hôpitaux publics."
+        },
+        {
+          "type": "p",
+          "text": "Attention au vocabulaire. Tous ces agents ne sont pas « fonctionnaires ». Un fonctionnaire a un statut, obtenu en général par concours. Un contractuel est embauché sur contrat. Fin 2024, les contractuels pesaient 24 % des agents publics, presque un sur quatre ([Insee](https://www.insee.fr/fr/statistiques/8732435)). Les candidats disent « fonctionnaires », l’Insee compte des agents : ce n’est pas tout à fait le même ensemble."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "moins",
+      "title": "Moins : la même règle, des totaux très différents",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Édouard Philippe (Horizons) propose « la suppression de 250 000 postes de fonctionnaires en cinq ans », écrit franceinfo. Sa méthode : « Il y aura 750 000 fonctionnaires qui partiront à la retraite dans les 5 ans qui viennent, je propose de ne pas en renouveler un sur trois » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html)). Le calcul tombe juste : un tiers de 750 000, cela fait 250 000."
+        },
+        {
+          "type": "p",
+          "text": "Éric Zemmour (Reconquête) affiche la même règle : « Un tiers des départs à la retraite ne sont pas remplacés ». Son total est plus de trois fois plus gros : 800 000 emplois non renouvelés, 2,2 millions sanctuarisés, dont « les postes d’enseignants, les militaires, les policiers » et les soignants. « Il n’y a pas de feuille de licenciement », assure-t-il ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html)). L’article ne dit pas sur combien d’années. Faites le calcul : si tout passe par cette règle, il faut 2,4 millions de départs à la retraite pour arriver à 800 000. Et 2,2 millions plus 800 000, cela fait 3 millions, à peu près la moitié des 5,9 millions comptés par l’Insee. De quel ensemble parle-t-il ? On ne le sait pas."
+        },
+        {
+          "type": "p",
+          "text": "Bruno Retailleau (LR) propose 400 000 non-renouvellements de postes de fonctionnaires. Il compte sur l’intelligence artificielle : « avec l’IA, on peut économiser 300 000 postes », dont 150 000 non renouvelés et 150 000 « réaffectés », c’est-à-dire déplacés vers d’autres missions ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html)). L’article ne détaille pas comment ces 300 000 s’emboîtent dans les 400 000."
+        },
+        {
+          "type": "p",
+          "text": "Gabriel Attal (Renaissance) prend une autre route : un plan de départs volontaires sur 100 000 postes, État et collectivités compris, mais « pas de poste supprimé » dans l’Éducation nationale ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html)). Un départ volontaire, c’est un agent qui accepte de partir contre une prime. « L’objectif, c’est que ça nous permette de faire mieux avec un peu moins », dit-il. La facture vient avant l’économie : « Il y aura un coût au départ qui sera amorti au bout de quelques années »."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "plus",
+      "title": "Plus : des chiffres ronds, des financements annoncés",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fabien Roussel (PCF) veut créer 500 000 postes de fonctionnaires, les « 500 000 agents publics qu’il manque à notre pays pour faire vivre nos services publics ». Il ajoute aussitôt : « On va s’en rapprocher » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html)). Le chiffre ressemble plus à un cap qu’à un compteur."
+        },
+        {
+          "type": "p",
+          "text": "Marine Tondelier (Les Écologistes) vise 250 000 à 300 000 postes de fonctionnaires créés sur le quinquennat, dont « à peu près » 80 000 à l’hôpital et 26 000 dans la justice. Pour payer, elle propose une contribution sur les très gros héritages, qui rapporterait selon elle 10 milliards d’euros en 2027 ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html))."
+        },
+        {
+          "type": "p",
+          "text": "Jean-Luc Mélenchon (LFI) n’a pas donné de nombre d’agents dans les extraits publiés par franceinfo. Il a chiffré l’ensemble : « tout l’agrandissement du service public que nous avons prévu dans notre programme, ça tourne autour de 20, 22 milliards » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/direct-presidentielle-2027-education-sante-transports-suivez-les-interviews-de-huit-candidats-dans-le-cadre-de-l-operation-nos-services-publics_8276135.html))."
+        },
+        {
+          "type": "p",
+          "text": "Raphaël Glucksmann (PS-Place publique) se dit « partisan de la puissance publique » : « Nous ne sommes pas des partisans de la bureaucratie, nous sommes des partisans du service public ». Il mise sur une « IA souveraine » pour « tout ce qui relève de la pure bureaucratie » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-je-ne-veux-pas-d-une-societe-ou-les-grands-medias-sont-controles-par-quelques-oligarques-assure-raphael-glucksmann_8279636.html)), sans objectif global d’effectifs dans le compte rendu lu. Résultat : l’IA sert d’argument à Retailleau pour avoir moins d’agents, et à Glucksmann pour défendre le service public. La même machine, deux programmes."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "precedent",
+      "title": "Le précédent : un sur deux, et une économie plus petite que prévu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La règle n’a rien de neuf. Avec la révision générale des politiques publiques (RGPP), lancée en 2007, l’État ne remplaçait pas un fonctionnaire sur deux partant à la retraite. Selon une évaluation de 2011 pour l’Assemblée nationale, résumée par la Cour des comptes, près de 150 000 emplois de fonctionnaires n’auraient pas été remplacés au terme de la législature. L’économie nette pour l’État était évaluée à environ 100 millions d’euros en 2009, pour 400 millions attendus. En cause : des mesures salariales, des heures supplémentaires et moins de départs à la retraite que prévu ([Cour des comptes](https://www.ccomptes.fr/fr/plateformes-citoyennes/plateforme-evaluations-politique-publique/explorer-evaluations/la-7)). Un poste en moins n’est pas automatiquement de l’argent en plus."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Trois questions à poser à chaque chiffre. Sur combien d’années ? Philippe dit cinq ans ; pour Zemmour et Retailleau, les comptes rendus ne le précisent pas. Où ? Attal et Zemmour mettent l’école à l’abri, Tondelier vise l’hôpital et la justice. Pour quel coût ? Mélenchon donne une enveloppe, Tondelier une recette, Attal admet un coût de départ. Sur Le Pen et Lisnard, absents, ce grand oral ne dit rien. Entre « 800 000 en moins » et « 500 000 en plus », il y a 1,3 million d’agents d’écart. À peu près l’effectif de tous les hôpitaux publics."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il plus d’agents publics ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : augmenter ou non le nombre d’agents publics. « En phase » signifie favorable à une hausse du nombre d’agents, pas un soutien à un candidat ni un jugement sur lui. Chiffres tels qu’annoncés le 12 novembre, non vérifiés dans leur faisabilité.",
+      "table": {
+        "caption": "Faut-il plus d’agents publics : positions datées annoncées lors du grand oral franceinfo du 12 novembre",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Roussel / PCF",
+            "En phase, 500 000 postes créés",
+            "Créer 500 000 postes de fonctionnaires (« On va s’en rapprocher »). franceinfo, 12 novembre.",
+            "[2][4]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "En phase, 250 000 à 300 000 postes créés",
+            "Sur le quinquennat, dont environ 80 000 à l’hôpital et 26 000 dans la justice. franceinfo, 12 novembre.",
+            "[7]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "En phase, sans nombre d’agents",
+            "« Agrandissement du service public » chiffré « autour de 20, 22 milliards ». franceinfo, 12 novembre.",
+            "[2]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Position non chiffrée",
+            "« Partisan de la puissance publique », IA pour « la pure bureaucratie », hausses de salaire des enseignants ; aucun objectif d’effectifs lu. franceinfo, 12 novembre.",
+            "[8]"
+          ],
+          [
+            "Attal / Renaissance",
+            "En face, 100 000 départs volontaires",
+            "Plan de départs volontaires avec prime, « pas de poste supprimé » dans l’Éducation nationale. franceinfo, 12 novembre.",
+            "[3]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En face, 250 000 postes en moins en cinq ans",
+            "Un départ à la retraite sur trois non remplacé. franceinfo, 12 novembre.",
+            "[1]"
+          ],
+          [
+            "Retailleau / LR",
+            "En face, 400 000 non-renouvellements",
+            "Dont une part attribuée à l’IA (« économiser 300 000 postes »). franceinfo, 12 novembre.",
+            "[6]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "En face, 800 000 emplois non renouvelés",
+            "Un tiers des départs à la retraite non remplacés, 2,2 millions d’emplois sanctuarisés. franceinfo, 12 novembre.",
+            "[5]"
+          ],
+          [
+            "Le Pen / RN",
+            "Position non exprimée",
+            "A décliné l’invitation du 12 novembre.",
+            "[9]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Position non exprimée",
+            "A décliné l’invitation du 12 novembre.",
+            "[9]"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : plus d’agents publics (Roussel, Tondelier ; Mélenchon, sans nombre d’agents). En face : moins d’agents, par départs volontaires (Attal) ou par non-remplacement d’une partie des départs à la retraite (Philippe, Retailleau, Zemmour). Non chiffré : Glucksmann. Le Pen et Lisnard : position non exprimée lors de ce grand oral, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. franceinfo, Radio France, 12 novembre 2026, 18 h 45 (Édouard Philippe). https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html",
+          "lead": "1. franceinfo, Radio France, 12 novembre 2026, 18 h 45 (Édouard Philippe)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, direct « Nos services publics », Thibaud Le Meneec, Margaux Duguet, Daïc Audouit, 12 novembre 2026 (mis à jour à 19 h 21). https://www.franceinfo.fr/elections/presidentielle/direct-presidentielle-2027-education-sante-transports-suivez-les-interviews-de-huit-candidats-dans-le-cadre-de-l-operation-nos-services-publics_8276135.html",
+          "lead": "2. franceinfo, direct « Nos services publics », Thibaud Le Meneec, Margaux Duguet, Daïc Audouit, 12 novembre 2026 (mis à jour à 19 h 21)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/direct-presidentielle-2027-education-sante-transports-suivez-les-interviews-de-huit-candidats-dans-le-cadre-de-l-operation-nos-services-publics_8276135.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/direct-presidentielle-2027-education-sante-transports-suivez-les-interviews-de-huit-candidats-dans-le-cadre-de-l-operation-nos-services-publics_8276135.html"
+            }
+          ]
+        },
+        {
+          "label": "3. franceinfo, Radio France, 12 novembre 2026, 11 h 47 (Gabriel Attal). https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+          "lead": "3. franceinfo, Radio France, 12 novembre 2026, 11 h 47 (Gabriel Attal)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html"
+            }
+          ]
+        },
+        {
+          "label": "4. franceinfo, Radio France, 12 novembre 2026, 13 h 29 (Fabien Roussel). https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "lead": "4. franceinfo, Radio France, 12 novembre 2026, 13 h 29 (Fabien Roussel)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html"
+            }
+          ]
+        },
+        {
+          "label": "5. franceinfo, Radio France, 12 novembre 2026, 15 h 23 (Éric Zemmour). https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+          "lead": "5. franceinfo, Radio France, 12 novembre 2026, 15 h 23 (Éric Zemmour)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html"
+            }
+          ]
+        },
+        {
+          "label": "6. franceinfo, Radio France, 12 novembre 2026, 16 h 01 (Bruno Retailleau). https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+          "lead": "6. franceinfo, Radio France, 12 novembre 2026, 16 h 01 (Bruno Retailleau)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html"
+            }
+          ]
+        },
+        {
+          "label": "7. franceinfo, Radio France, 12 novembre 2026, 17 h 03 (Marine Tondelier). https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "lead": "7. franceinfo, Radio France, 12 novembre 2026, 17 h 03 (Marine Tondelier)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html"
+            }
+          ]
+        },
+        {
+          "label": "8. franceinfo, Radio France, 12 novembre 2026, 16 h 54 (Raphaël Glucksmann). https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-je-ne-veux-pas-d-une-societe-ou-les-grands-medias-sont-controles-par-quelques-oligarques-assure-raphael-glucksmann_8279636.html",
+          "lead": "8. franceinfo, Radio France, 12 novembre 2026, 16 h 54 (Raphaël Glucksmann)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-je-ne-veux-pas-d-une-societe-ou-les-grands-medias-sont-controles-par-quelques-oligarques-assure-raphael-glucksmann_8279636.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-je-ne-veux-pas-d-une-societe-ou-les-grands-medias-sont-controles-par-quelques-oligarques-assure-raphael-glucksmann_8279636.html"
+            }
+          ]
+        },
+        {
+          "label": "9. franceinfo, Radio France, 11 novembre 2026 (programme du grand oral). https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-franceinfo-organise-un-grand-oral-des-candidats-sur-les-services-publics_8277680.html",
+          "lead": "9. franceinfo, Radio France, 11 novembre 2026 (programme du grand oral)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-franceinfo-organise-un-grand-oral-des-candidats-sur-les-services-publics_8277680.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-franceinfo-organise-un-grand-oral-des-candidats-sur-les-services-publics_8277680.html"
+            }
+          ]
+        },
+        {
+          "label": "10. Insee, Insee Première n° 2094, Léna Esbelin, Téo Moreau (Insee), Sarah Touzé (DGAFP), 10 février 2026. https://www.insee.fr/fr/statistiques/8732435",
+          "lead": "10. Insee, Insee Première n° 2094, Léna Esbelin, Téo Moreau (Insee), Sarah Touzé (DGAFP), 10 février 2026",
+          "links": [
+            {
+              "label": "https://www.insee.fr/fr/statistiques/8732435",
+              "url": "https://www.insee.fr/fr/statistiques/8732435"
+            }
+          ]
+        },
+        {
+          "label": "11. Cour des comptes, fiche de synthèse d’une évaluation pour l’Assemblée nationale, 2011. https://www.ccomptes.fr/fr/plateformes-citoyennes/plateforme-evaluations-politique-publique/explorer-evaluations/la-7",
+          "lead": "11. Cour des comptes, fiche de synthèse d’une évaluation pour l’Assemblée nationale, 2011",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/fr/plateformes-citoyennes/plateforme-evaluations-politique-publique/explorer-evaluations/la-7",
+              "url": "https://www.ccomptes.fr/fr/plateformes-citoyennes/plateforme-evaluations-politique-publique/explorer-evaluations/la-7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse compare des annonces chiffrées faites le 12 novembre. Elle ne dit pas lesquelles sont réalisables, ni qui gagnera l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}
