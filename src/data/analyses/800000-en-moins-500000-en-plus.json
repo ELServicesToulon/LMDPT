@@ -25,7 +25,7 @@
       "slug": "plus-d-agents",
       "label": "Plus d’agents publics",
       "color": "#162561",
-      "rationale": "Roussel, Tondelier ; Mélenchon, sans nombre d’agents : créer des postes ou agrandir le service public."
+      "rationale": "Roussel, Tondelier : créer des postes. Mélenchon : service public agrandi, sans nombre d’agents."
     },
     {
       "slug": "departs-volontaires",
@@ -59,7 +59,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Fin 2024, 5,9 millions de personnes travaillaient dans la fonction publique, selon l’Insee et la DGAFP, le service statistique de la fonction publique ([Insee](https://www.insee.fr/fr/statistiques/8732435)). Environ 2,59 millions pour l’État, 2,04 millions dans les collectivités (mairies, départements, régions), 1,25 million dans les hôpitaux publics."
+          "text": "Fin 2024, 5,9 millions de personnes travaillaient dans la fonction publique, selon l’Insee et la DGAFP, le service statistique de la fonction publique ([Insee](https://www.insee.fr/fr/statistiques/8732435)). Environ 2,59 millions pour l’État, 2,04 millions dans les collectivités (mairies, départements, régions), 1,25 million dans toute la fonction publique hospitalière."
         },
         {
           "type": "p",
@@ -74,11 +74,11 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Édouard Philippe (Horizons) propose « la suppression de 250 000 postes de fonctionnaires en cinq ans », écrit franceinfo. Sa méthode : « Il y aura 750 000 fonctionnaires qui partiront à la retraite dans les 5 ans qui viennent, je propose de ne pas en renouveler un sur trois » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html)). Le calcul tombe juste : un tiers de 750 000, cela fait 250 000."
+          "text": "Édouard Philippe (Horizons) propose « la suppression de 250 000 postes de fonctionnaires en cinq ans », écrit franceinfo. Sa méthode, selon franceinfo : 750 000 fonctionnaires partiront à la retraite dans les cinq ans, et il propose de ne pas en renouveler un sur trois ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html)). Le calcul tombe juste : un tiers de 750 000, cela fait 250 000."
         },
         {
           "type": "p",
-          "text": "Éric Zemmour (Reconquête) affiche la même règle : « Un tiers des départs à la retraite ne sont pas remplacés ». Son total est plus de trois fois plus gros : 800 000 emplois non renouvelés, 2,2 millions sanctuarisés, dont « les postes d’enseignants, les militaires, les policiers » et les soignants. « Il n’y a pas de feuille de licenciement », assure-t-il ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html)). L’article ne dit pas sur combien d’années. Faites le calcul : si tout passe par cette règle, il faut 2,4 millions de départs à la retraite pour arriver à 800 000. Et 2,2 millions plus 800 000, cela fait 3 millions, à peu près la moitié des 5,9 millions comptés par l’Insee. De quel ensemble parle-t-il ? On ne le sait pas."
+          "text": "Éric Zemmour (Reconquête) affiche la même règle : « Un tiers des départs à la retraite ne sont pas remplacés ». Son total est plus de trois fois plus gros : 800 000 emplois non renouvelés, 2,2 millions sanctuarisés, dont « les postes d’enseignants, les militaires, les policiers » et les soignants. « Il n’y a pas de feuille de licenciement », assure-t-il ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html)). L’article ne dit pas sur combien d’années. Faites le calcul : si tout passe par cette règle, il faut 2,4 millions de départs à la retraite pour arriver à 800 000. Et si ses 2,2 millions sanctuarisés et ses 800 000 forment tout son périmètre, cela fait 3 millions, à peu près la moitié des 5,9 millions comptés par l’Insee. De quel ensemble parle-t-il ? On ne le sait pas."
         },
         {
           "type": "p",
@@ -101,7 +101,7 @@
         },
         {
           "type": "p",
-          "text": "Marine Tondelier (Les Écologistes) vise 250 000 à 300 000 postes de fonctionnaires créés sur le quinquennat, dont « à peu près » 80 000 à l’hôpital et 26 000 dans la justice. Pour payer, elle propose une contribution sur les très gros héritages, qui rapporterait selon elle 10 milliards d’euros en 2027 ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html))."
+          "text": "Marine Tondelier (Les Écologistes) vise 250 000 à 300 000 postes de fonctionnaires créés sur le quinquennat, dont à peu près 80 000 à l’hôpital et 26 000 dans la justice. Pour payer, elle propose une contribution sur les très gros héritages, qui rapporterait selon elle 10 milliards d’euros en 2027 ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html))."
         },
         {
           "type": "p",
@@ -131,7 +131,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Trois questions à poser à chaque chiffre. Sur combien d’années ? Philippe dit cinq ans ; pour Zemmour et Retailleau, les comptes rendus ne le précisent pas. Où ? Attal et Zemmour mettent l’école à l’abri, Tondelier vise l’hôpital et la justice. Pour quel coût ? Mélenchon donne une enveloppe, Tondelier une recette, Attal admet un coût de départ. Sur Le Pen et Lisnard, absents, ce grand oral ne dit rien. Entre « 800 000 en moins » et « 500 000 en plus », il y a 1,3 million d’agents d’écart. À peu près l’effectif de tous les hôpitaux publics."
+          "text": "Trois questions à poser à chaque chiffre. Sur combien d’années ? Philippe dit cinq ans ; pour Zemmour et Retailleau, les comptes rendus ne le précisent pas. Où ? Attal et Zemmour mettent l’école à l’abri, Tondelier vise l’hôpital et la justice. Pour quel coût ? Mélenchon donne une enveloppe, Tondelier une recette, Attal admet un coût de départ. Sur Le Pen et Lisnard, absents, ce grand oral ne dit rien. Entre « 800 000 en moins » et « 500 000 en plus », il y a 1,3 million d’agents d’écart. À peu près l’effectif de toute la fonction publique hospitalière."
         }
       ]
     },
@@ -139,7 +139,7 @@
       "kind": "candidats",
       "id": "doe",
       "title": "Boîte DOE : faut-il plus d’agents publics ?",
-      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : augmenter ou non le nombre d’agents publics. « En phase » signifie favorable à une hausse du nombre d’agents, pas un soutien à un candidat ni un jugement sur lui. Chiffres tels qu’annoncés le 12 novembre, non vérifiés dans leur faisabilité.",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : augmenter ou non le nombre d’agents publics. Les étiquettes décrivent la position annoncée, pas un soutien à un candidat ni un jugement sur lui. Chiffres tels qu’annoncés le 12 novembre, non vérifiés dans leur faisabilité.",
       "table": {
         "caption": "Faut-il plus d’agents publics : positions datées annoncées lors du grand oral franceinfo du 12 novembre",
         "headers": [
@@ -151,49 +151,49 @@
         "rows": [
           [
             "Roussel / PCF",
-            "En phase, 500 000 postes créés",
+            "Plus d’agents, 500 000 postes créés",
             "Créer 500 000 postes de fonctionnaires (« On va s’en rapprocher »). franceinfo, 12 novembre.",
             "[2][4]"
           ],
           [
             "Tondelier / Les Écologistes",
-            "En phase, 250 000 à 300 000 postes créés",
+            "Plus d’agents, 250 000 à 300 000 postes créés",
             "Sur le quinquennat, dont environ 80 000 à l’hôpital et 26 000 dans la justice. franceinfo, 12 novembre.",
             "[7]"
           ],
           [
             "Mélenchon / LFI",
-            "En phase, sans nombre d’agents",
+            "Service public agrandi, sans nombre d’agents",
             "« Agrandissement du service public » chiffré « autour de 20, 22 milliards ». franceinfo, 12 novembre.",
             "[2]"
           ],
           [
             "Glucksmann / PS-Place publique",
-            "Position non chiffrée",
+            "Non chiffré",
             "« Partisan de la puissance publique », IA pour « la pure bureaucratie », hausses de salaire des enseignants ; aucun objectif d’effectifs lu. franceinfo, 12 novembre.",
             "[8]"
           ],
           [
             "Attal / Renaissance",
-            "En face, 100 000 départs volontaires",
+            "Moins d’agents, 100 000 départs volontaires",
             "Plan de départs volontaires avec prime, « pas de poste supprimé » dans l’Éducation nationale. franceinfo, 12 novembre.",
             "[3]"
           ],
           [
             "Philippe / Horizons",
-            "En face, 250 000 postes en moins en cinq ans",
+            "Moins d’agents, 250 000 postes en moins en cinq ans",
             "Un départ à la retraite sur trois non remplacé. franceinfo, 12 novembre.",
             "[1]"
           ],
           [
             "Retailleau / LR",
-            "En face, 400 000 non-renouvellements",
+            "Moins d’agents, 400 000 non-renouvellements",
             "Dont une part attribuée à l’IA (« économiser 300 000 postes »). franceinfo, 12 novembre.",
             "[6]"
           ],
           [
             "Zemmour / Reconquête",
-            "En face, 800 000 emplois non renouvelés",
+            "Moins d’agents, 800 000 emplois non renouvelés",
             "Un tiers des départs à la retraite non remplacés, 2,2 millions d’emplois sanctuarisés. franceinfo, 12 novembre.",
             "[5]"
           ],
@@ -211,7 +211,7 @@
           ]
         ]
       },
-      "note": "Badge des courants en phase : plus d’agents publics (Roussel, Tondelier ; Mélenchon, sans nombre d’agents). En face : moins d’agents, par départs volontaires (Attal) ou par non-remplacement d’une partie des départs à la retraite (Philippe, Retailleau, Zemmour). Non chiffré : Glucksmann. Le Pen et Lisnard : position non exprimée lors de ce grand oral, ce qui ne signifie pas absence de position.",
+      "note": "Badge des courants : Plus d’agents (Roussel, Tondelier). Service public agrandi, sans nombre d’agents (Mélenchon). Moins d’agents, par départs volontaires (Attal) ou par non-remplacement d’une partie des départs à la retraite (Philippe, Retailleau, Zemmour). Non chiffré : Glucksmann. Le Pen et Lisnard : position non exprimée lors de ce grand oral, ce qui ne signifie pas absence de position.",
       "conclusion": ""
     }
   ],
