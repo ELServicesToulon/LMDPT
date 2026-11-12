@@ -9,6 +9,7 @@ import { partyLogoForAffiliation, partyLogoSrc } from '../lib/party-logos';
 import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiels';
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
+import ApercuCampagne from '../components/ApercuCampagne.astro';
 import UnesCarousel from '../components/UnesCarousel.astro';
 import EditorialCard from '../components/EditorialCard.astro';
 import SheetTabs from '../components/SheetTabs.astro';
@@ -74,6 +75,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   keywords="premier tour, présidentielle 2027, LMDPT, données ouvertes électorales, pluralité, démocratie avant élimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} applyOverride={false} />
+  <ApercuCampagne />
   <!--
     Hero = une du dernier texte publié (croquis unique), pas le bloc texte-seul
     ni la galerie #visuels-2027 sous la ligne de flottaison.
