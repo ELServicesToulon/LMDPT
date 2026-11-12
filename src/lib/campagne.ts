@@ -152,6 +152,22 @@ export function formatCampagneDate(
   return `${weekday} ${body}`;
 }
 
+/** Pastille compacte : déclaré·e → D, désigné·e → Dé. */
+export function statutPastille(statut: PersonnaliteStatut): 'D' | 'Dé' {
+  return statut === 'designe' ? 'Dé' : 'D';
+}
+
+/** Infobulle de chip : parti, source et date — le courant n’est plus répété dans le libellé visible. */
+export function personnaliteChipTitle(personne: CampagnePersonnalite): string {
+  const sourceDate = formatCampagneDate(personne.source_date, { weekday: false });
+  return `${personne.courant} · ${personne.source_label} · ${sourceDate}`;
+}
+
+/** Ligne d’accroche du sondage (sans scores) : institut, commanditaire, terrain. */
+export function formatSondageTeaser(sondage: CampagneSondage): string {
+  return `${sondage.institut} pour ${sondage.commanditaire} · ${sondage.terrain}`;
+}
+
 /** Groupes dans l’ordre d’apparition du JSON (déjà alphabétique FR à l’intérieur). */
 export function groupPersonnalites(
   personnalites: CampagnePersonnalite[],

@@ -5,9 +5,12 @@ import { describe, expect, it } from 'vitest';
 import campagneJson from '../data/campagne.json';
 import {
   formatCampagneDate,
+  formatSondageTeaser,
   getUneLienApercu,
   groupPersonnalites,
+  personnaliteChipTitle,
   shouldHideSondage,
+  statutPastille,
   type CampagneData,
 } from './campagne';
 
@@ -74,6 +77,35 @@ describe('campagne.json', () => {
   });
 });
 
+describe('statutPastille', () => {
+  it('abrège déclaré en D et désigné en Dé', () => {
+    expect(statutPastille('declaree')).toBe('D');
+    expect(statutPastille('designe')).toBe('Dé');
+  });
+});
+
+describe('personnaliteChipTitle', () => {
+  it('met le courant, la source et la date dans le title, pas un score', () => {
+    const data = asCampagne(campagneJson);
+    const glucksmann = data.personnalites.find((p) => p.slug === 'glucksmann');
+    expect(glucksmann).toBeTruthy();
+    const title = personnaliteChipTitle(glucksmann!);
+    expect(title).toMatch(/Place publique/);
+    expect(title).toMatch(/20 Minutes \/ Europe 1/);
+    expect(title).toMatch(/11 octobre 2026/);
+    expect(title).not.toMatch(/\d+\s*%/);
+  });
+});
+
+describe('formatSondageTeaser', () => {
+  it('cite institut, commanditaire et terrain, sans score', () => {
+    const teaser = formatSondageTeaser(asCampagne(campagneJson).sondage);
+    expect(teaser).toMatch(/Toluna Harris Interactive pour M6 et RTL/);
+    expect(teaser).toMatch(/3 au 5 novembre 2026/);
+    expect(teaser).not.toMatch(/\d+\s*%/);
+  });
+});
+
 describe('formatCampagneDate', () => {
   it('affiche un mois sans jour documenté, sans inventer un quantième', () => {
     expect(formatCampagneDate('2026-05')).toBe('mai 2026');
@@ -137,5 +169,23 @@ describe('aperçu campagne — accueil', () => {
     expect(une?.title.length).toBeGreaterThan(0);
     expect(une?.href.startsWith('/')).toBe(true);
     expect(une?.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  it('compacte les chips (nom + pastille) et replie sources, dates et sondage dans des details', () => {
+    const src = readFileSync(join(ROOT, 'src/components/ApercuCampagne.astro'), 'utf8');
+    expect(src).toMatch(/statutPastille/);
+    expect(src).toMatch(/personne\.nom/);
+    expect(src).not.toMatch(/apercu-chip-courant/);
+    expect(src).toMatch(/Détail des sources par courant/);
+    expect(src).toMatch(/Détail des dates/);
+    expect(src).toMatch(/Mentions légales du sondage/);
+    expect(src).toMatch(/<details/);
+    expect(src).toMatch(/!hideSondage/);
+    expect(src).not.toMatch(/personne\.courant<\/span>/);
+    const template = src.slice(0, src.indexOf('<style>'));
+    expect(template).not.toMatch(/\d+\s*%/);
+    const sondageBlock = src.slice(src.indexOf('!hideSondage'));
+    expect(sondageBlock).toMatch(/Mentions légales du sondage/);
+    expect(sondageBlock).toMatch(/SONDAGES_LIGNE/);
   });
 });
