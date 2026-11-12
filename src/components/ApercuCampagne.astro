@@ -1,0 +1,408 @@
+---
+/**
+ * Bloc accueil compact — personnalités sourcées, prochaines dates,
+ * mentions légales du dernier sondage (sans scores), dernière Une.
+ */
+import campagneJson from '../data/campagne.json';
+import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
+import {
+  formatCampagneDate,
+  getUneLienApercu,
+  groupPersonnalites,
+  shouldHideSondage,
+  type CampagneData,
+} from '../lib/campagne';
+import { withTrailingSlash } from '../lib/internal-path';
+
+const campagne = campagneJson as CampagneData;
+const groupes = groupPersonnalites(campagne.personnalites);
+const hideSondage = shouldHideSondage(new Date(), campagne);
+const une = getUneLienApercu();
+const updatedLabel = formatCampagneDate(campagne.updated, { weekday: false });
+const uneHref = une ? withTrailingSlash(une.href) : '';
+---
+
+<section
+  class="apercu-campagne card"
+  id="apercu-campagne"
+  aria-labelledby="apercu-campagne-title"
+>
+  <div class="apercu-head">
+    <h2 id="apercu-campagne-title">{campagne.title}</h2>
+    <p class="apercu-updated meta">
+      Bloc mis à jour le <time datetime={campagne.updated}>{updatedLabel}</time>
+    </p>
+  </div>
+
+  <p class="apercu-disclaimer meta" id="apercu-disclaimer">{campagne.disclaimer}</p>
+
+  <div class="apercu-block">
+    <h3 id="apercu-personnalites-title">Personnalités</h3>
+    {
+      groupes.map((groupe) => (
+        <div class="apercu-groupe">
+          <p class="apercu-groupe-label">{groupe.groupe}</p>
+          <ul class="apercu-chips">
+            {groupe.membres.map((personne) => {
+              const sourceDate = formatCampagneDate(personne.source_date, { weekday: false });
+              const sourceTitle = `Source : ${personne.source_label} · ${sourceDate}`;
+              return (
+                <li>
+                  <a
+                    class="apercu-chip"
+                    href={personne.source_url}
+                    rel="noopener noreferrer"
+                    title={sourceTitle}
+                  >
+                    <span class="apercu-chip-name">{personne.nom}</span>
+                    <span class="apercu-chip-courant">{personne.courant}</span>
+                    <span class="apercu-chip-statut">{personne.statut_label}</span>
+                    <span class="apercu-chip-source" aria-label={sourceTitle}>
+                      source
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))
+    }
+    <p class="apercu-more">
+      <a class="apercu-liste" href={campagne.liste_complete_href}>Liste complète</a>
+    </p>
+  </div>
+
+  <div class="apercu-block">
+    <h3 id="apercu-dates-title">Prochaines dates</h3>
+    <ol class="apercu-dates">
+      {
+        campagne.dates.map((item) => (
+          <li>
+            <p class="apercu-date-when">
+              <time datetime={item.date}>{formatCampagneDate(item.date)}</time>
+            </p>
+            <p class="apercu-date-label">{item.label}</p>
+            <a
+              class="apercu-date-source"
+              href={item.source_url}
+              rel="noopener noreferrer"
+            >
+              {item.source_label}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  {
+    !hideSondage && (
+      <div class="apercu-block apercu-sondage" id="apercu-sondage">
+        <h3 id="apercu-sondage-title">Dernier sondage de 1er tour</h3>
+        <dl class="apercu-sondage-dl">
+          <div>
+            <dt>Institut</dt>
+            <dd>{campagne.sondage.institut}</dd>
+          </div>
+          <div>
+            <dt>Commanditaire</dt>
+            <dd>{campagne.sondage.commanditaire}</dd>
+          </div>
+          <div>
+            <dt>Dates de terrain</dt>
+            <dd>{campagne.sondage.terrain}</dd>
+          </div>
+          <div>
+            <dt>Échantillon</dt>
+            <dd>{campagne.sondage.echantillon}</dd>
+          </div>
+          <div>
+            <dt>Marge d’erreur</dt>
+            <dd>{campagne.sondage.marge_erreur}</dd>
+          </div>
+          <div>
+            <dt>Méthode</dt>
+            <dd>{campagne.sondage.methode}</dd>
+          </div>
+        </dl>
+        <p class="apercu-sondage-links">
+          <a href={campagne.sondage.source_url} rel="noopener noreferrer">
+            {campagne.sondage.source_label}
+          </a>
+          <span aria-hidden="true"> · </span>
+          <a href={campagne.sondage.notice_url} rel="noopener noreferrer">
+            {campagne.sondage.notice_label}
+          </a>
+        </p>
+        <p class="apercu-sondage-note meta">{campagne.sondage.note}</p>
+        <p class="apercu-sondage-ligne meta">{SONDAGES_LIGNE}</p>
+      </div>
+    )
+  }
+
+  {
+    une && (
+      <p class="apercu-une meta">
+        Dernière Une · <time datetime={une.date}>{une.dateLabel}</time>
+        {' — '}
+        <a href={uneHref}>{une.title}</a>
+      </p>
+    )
+  }
+</section>
+
+<style>
+  .apercu-campagne {
+    margin: 0 0 1.15rem;
+    padding: 0.95rem 1.05rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .apercu-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .apercu-campagne h2 {
+    margin: 0;
+    font-size: 1.22rem;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  .apercu-updated {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .apercu-disclaimer {
+    margin: 0 0 0.85rem;
+    max-width: 72ch;
+    line-height: 1.45;
+  }
+
+  .apercu-block {
+    margin: 0 0 0.9rem;
+  }
+
+  .apercu-campagne h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.82rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .apercu-groupe {
+    margin: 0 0 0.55rem;
+  }
+
+  .apercu-groupe-label {
+    margin: 0 0 0.3rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 650;
+  }
+
+  .apercu-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .apercu-chip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2rem 0.45rem;
+    min-height: 44px;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-soft) 70%, var(--card));
+    text-decoration: none;
+    color: var(--fg);
+    font-family: system-ui, sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.25;
+  }
+
+  .apercu-chip:hover {
+    border-color: var(--accent);
+    color: var(--fg);
+  }
+
+  .apercu-chip-name {
+    font-weight: 700;
+  }
+
+  .apercu-chip-courant,
+  .apercu-chip-statut,
+  .apercu-chip-source {
+    color: var(--muted);
+  }
+
+  .apercu-chip-statut {
+    font-weight: 650;
+  }
+
+  .apercu-chip-source {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .apercu-more {
+    margin: 0.35rem 0 0;
+  }
+
+  .apercu-liste {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: system-ui, sans-serif;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .apercu-dates {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .apercu-dates li {
+    padding: 0.15rem 0 0.15rem 0.7rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .apercu-date-when {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .apercu-date-label {
+    margin: 0.15rem 0 0.2rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .apercu-date-source {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: system-ui, sans-serif;
+    font-size: 0.86rem;
+  }
+
+  .apercu-sondage-dl {
+    margin: 0 0 0.45rem;
+    display: grid;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .apercu-sondage-dl div {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 11rem) 1fr;
+    gap: 0.25rem 0.75rem;
+    align-items: start;
+  }
+
+  .apercu-sondage-dl dt {
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .apercu-sondage-dl dd {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .apercu-sondage-links {
+    margin: 0 0 0.4rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.15rem 0.15rem;
+  }
+
+  .apercu-sondage-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .apercu-sondage-note,
+  .apercu-sondage-ligne {
+    margin: 0 0 0.35rem;
+    max-width: 72ch;
+    line-height: 1.45;
+  }
+
+  .apercu-une {
+    margin: 0.15rem 0 0;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--border);
+    line-height: 1.45;
+  }
+
+  .apercu-une a {
+    font-weight: 650;
+  }
+
+  @media (max-width: 640px) {
+    .apercu-campagne {
+      padding: 0.85rem 0.85rem 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .apercu-campagne h2 {
+      font-size: 1.12rem;
+    }
+
+    .apercu-updated {
+      white-space: normal;
+      width: 100%;
+    }
+
+    .apercu-sondage-dl div {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+
+    .apercu-chip {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .apercu-campagne,
+    .apercu-campagne a,
+    .apercu-chip {
+      transition: none;
+    }
+  }
+</style>

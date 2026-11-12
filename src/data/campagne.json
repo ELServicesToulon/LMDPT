@@ -1,0 +1,256 @@
+{
+  "title": "La campagne en un clin d'œil",
+  "updated": "2026-11-12",
+  "disclaimer": "Personnalités ayant publicisé une candidature ou bénéficié d'une désignation de parti ou de primaire, d'après des sources datées. Ce n'est pas la liste officielle du Conseil constitutionnel. Aucun classement.",
+  "liste_complete_href": "#candidatures-declarees-2027",
+  "personnalites": [
+    {
+      "slug": "arthaud",
+      "nom": "Nathalie Arthaud",
+      "courant": "Lutte ouvrière",
+      "groupe": "Gauche et écologie",
+      "statut": "declaree",
+      "statut_label": "Déclarée",
+      "source_label": "LCP / Wikipédia",
+      "source_url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "source_date": "2025-12-08"
+    },
+    {
+      "slug": "batho",
+      "nom": "Delphine Batho",
+      "courant": "Génération écologie",
+      "groupe": "Gauche et écologie",
+      "statut": "declaree",
+      "statut_label": "Déclarée",
+      "source_label": "L'Obs / LCP",
+      "source_url": "https://www.nouvelobs.com/politique/20251125.OBS110076/delphine-batho-je-suis-candidate-a-l-election-presidentielle-pour-reconstruire-une-ecologie-capable-de-gouverner.html",
+      "source_date": "2025-11-25"
+    },
+    {
+      "slug": "bouamrane",
+      "nom": "Karim Bouamrane",
+      "courant": "Parti socialiste",
+      "groupe": "Gauche et écologie",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    },
+    {
+      "slug": "glucksmann",
+      "nom": "Raphaël Glucksmann",
+      "courant": "Place publique",
+      "groupe": "Gauche et écologie",
+      "statut": "designe",
+      "statut_label": "Désigné",
+      "source_label": "20 Minutes / Europe 1",
+      "source_url": "https://www.20minutes.fr/politique/4253256-20261011-primaire-gauche-raphael-glucksmann-elu-haut-main-premier-tour",
+      "source_date": "2026-10-11"
+    },
+    {
+      "slug": "melenchon",
+      "nom": "Jean-Luc Mélenchon",
+      "courant": "La France insoumise",
+      "groupe": "Gauche et écologie",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+      "source_date": "2026-05"
+    },
+    {
+      "slug": "tondelier",
+      "nom": "Marine Tondelier",
+      "courant": "Les Écologistes",
+      "groupe": "Gauche et écologie",
+      "statut": "designe",
+      "statut_label": "Désignée",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/25/presidentielle-2027-yannick-jadot-suspendu-a-titre-conservatoire-par-les-ecologistes-en-raison-de-son-soutien-a-la-candidature-de-raphael-glucksmann_6782601_823448.html",
+      "source_date": "2026-09-25"
+    },
+    {
+      "slug": "attal",
+      "nom": "Gabriel Attal",
+      "courant": "Renaissance",
+      "groupe": "Centre",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
+      "source_date": "2026-05-22"
+    },
+    {
+      "slug": "becht",
+      "nom": "Olivier Becht",
+      "courant": "Sans étiquette",
+      "groupe": "Centre",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "Le Monde",
+      "source_url": "https://www.lemonde.fr/politique/article/2026/09/24/l-ancien-ministre-olivier-becht-candidat-a-l-election-presidentielle_6781497_823448.html",
+      "source_date": "2026-09-24"
+    },
+    {
+      "slug": "egger",
+      "nom": "Clara Egger",
+      "courant": "Solution démocratique",
+      "groupe": "Centre",
+      "statut": "declaree",
+      "statut_label": "Déclarée",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    },
+    {
+      "slug": "mikolajczak",
+      "nom": "Antoine Mikolajczak",
+      "courant": "Équinoxe",
+      "groupe": "Centre",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    },
+    {
+      "slug": "philippe",
+      "nom": "Édouard Philippe",
+      "courant": "Horizons",
+      "groupe": "Centre",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "Le Point / LCP",
+      "source_url": "https://www.lepoint.fr/politique/exclusif-edouard-philippe-je-serai-candidat-a-la-prochaine-election-presidentielle-03-09-2024-2569359_20.php",
+      "source_date": "2024-09-03"
+    },
+    {
+      "slug": "bertrand",
+      "nom": "Xavier Bertrand",
+      "courant": "Nous France",
+      "groupe": "Droite",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    },
+    {
+      "slug": "dupont-aignan",
+      "nom": "Nicolas Dupont-Aignan",
+      "courant": "Debout la France",
+      "groupe": "Droite",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    },
+    {
+      "slug": "lisnard",
+      "nom": "David Lisnard",
+      "courant": "Nouvelle Énergie",
+      "groupe": "Droite",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/je-suis-candidat-david-lisnard-quitte-lr-et-relance-le-debat-sur-une-primaire-a-droite",
+      "source_date": "2026-03"
+    },
+    {
+      "slug": "retailleau",
+      "nom": "Bruno Retailleau",
+      "courant": "Les Républicains",
+      "groupe": "Droite",
+      "statut": "designe",
+      "statut_label": "Désigné",
+      "source_label": "LCP — consultation adhérents LR",
+      "source_url": "https://lcp.fr/actualites/presidentielle-bruno-retailleau-choisi-comme-candidat-officiel-des-republicains-435440",
+      "source_date": "2026-04-19"
+    },
+    {
+      "slug": "asselineau",
+      "nom": "François Asselineau",
+      "courant": "Union populaire républicaine",
+      "groupe": "Rassemblement national et souverainistes",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP / Wikipédia",
+      "source_url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+      "source_date": "2026-07-15"
+    },
+    {
+      "slug": "le-pen",
+      "nom": "Marine Le Pen",
+      "courant": "Rassemblement national",
+      "groupe": "Rassemblement national et souverainistes",
+      "statut": "declaree",
+      "statut_label": "Déclarée",
+      "source_label": "TF1 20h / Les Échos",
+      "source_url": "https://www.lesechos.fr/elections/presidentielle/presidentielle-2027-condamnee-mais-eligible-marine-le-pen-se-pourvoit-en-cassation-et-se-declare-candidate-2241275",
+      "source_date": "2026-07-07"
+    },
+    {
+      "slug": "philippot",
+      "nom": "Florian Philippot",
+      "courant": "Les Patriotes",
+      "groupe": "Rassemblement national et souverainistes",
+      "statut": "declaree",
+      "statut_label": "Déclaré",
+      "source_label": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "source_date": "2026-07-10"
+    }
+  ],
+  "dates": [
+    {
+      "id": "reunion-directeurs-primaire-droite-centre",
+      "date": "2026-11-17",
+      "label": "Première réunion des directeurs de campagne (Retailleau, Attal, Lisnard) en vue d'une primaire à droite et au centre, à 17 h. L'équipe d'Édouard Philippe a indiqué qu'elle n'y participerait pas.",
+      "source_label": "franceinfo",
+      "source_url": "https://www.franceinfo.fr/elections/presidentielle/quand-avec-qui-comment-a-droite-et-au-centre-l-idee-d-une-primaire-fait-encore-debat-a-six-mois-de-la-presidentielle_8277515.html"
+    },
+    {
+      "id": "cloture-parrainages",
+      "date": "2027-03-12",
+      "label": "Date limite indicative de réception des 500 parrainages au Conseil constitutionnel (sixième vendredi précédant le premier tour, à 18 h), sous réserve du décret de convocation des électeurs.",
+      "source_label": "Loi n° 62-1292 du 6 novembre 1962, art. 3 — Légifrance",
+      "source_url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000780353"
+    },
+    {
+      "id": "premier-tour",
+      "date": "2027-04-18",
+      "label": "Premier tour de l'élection présidentielle (date retenue en Conseil des ministres le 1er juillet 2026 ; décret de convocation encore à paraître).",
+      "source_label": "Service-Public.fr, 2 juillet 2026",
+      "source_url": "https://www.service-public.gouv.fr/particuliers/actualites/A15053"
+    },
+    {
+      "id": "second-tour",
+      "date": "2027-05-02",
+      "label": "Second tour de l'élection présidentielle (date retenue en Conseil des ministres le 1er juillet 2026 ; décret de convocation encore à paraître).",
+      "source_label": "Service-Public.fr, 2 juillet 2026",
+      "source_url": "https://www.service-public.gouv.fr/particuliers/actualites/A15053"
+    }
+  ],
+  "sondage": {
+    "masquer": false,
+    "scrutins_a_masquer": [
+      { "date": "2027-04-18", "label": "Premier tour de l'élection présidentielle" },
+      { "date": "2027-05-02", "label": "Second tour de l'élection présidentielle" }
+    ],
+    "institut": "Toluna Harris Interactive",
+    "commanditaire": "M6 et RTL",
+    "vague": "Vague 9",
+    "publication": "2026-11-09",
+    "terrain": "En ligne du 3 au 5 novembre 2026",
+    "echantillon": "2 101 personnes inscrites sur les listes électorales, issues d'un échantillon de 2 436 personnes représentatif de la population française âgée de 18 ans et plus",
+    "marge_erreur": "± 1,4 à 3,1 points selon le score visé",
+    "methode": "Méthode des quotas",
+    "source_label": "Rapport Toluna Harris Interactive pour M6 et RTL, vague 9, 9 novembre 2026 (PDF)",
+    "source_url": "https://tolunacorporate.com/wp-content/uploads/2026/11/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-9-M6-RTL-9-novembre-2026-1.pdf",
+    "notice_label": "Commission des sondages",
+    "notice_url": "https://www.commission-des-sondages.fr/",
+    "note": "Intentions de vote pour le premier tour. Un sondage n'est pas une prédiction. Plusieurs hypothèses de premier tour sont testées dans le rapport : aucun score n'est repris ici."
+  }
+}
