@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import porteDeService1962 from '../data/analyses/1962-la-porte-de-service.json';
 import fonctionPublique800000 from '../data/analyses/800000-en-moins-500000-en-plus.json';
 import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
 import smic1502Contre1700 from '../data/analyses/1502-contre-1700.json';
@@ -54,6 +55,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: porteDeService1962.slug,
+    title: porteDeService1962.title,
+    description: porteDeService1962.description,
+    date: porteDeService1962.date,
+    published: porteDeService1962.date,
+    updated: porteDeService1962.updated,
+    href: '/analyses/1962-la-porte-de-service',
+    cover: uneCover(
+      '1962-la-porte-de-service',
+      'Aquarelle d’une façade de pierre avec une grande porte en bois fermée et, sur le côté, une petite porte entrouverte d’où sort un rai de lumière sur les pavés.',
+    ),
+  },
   {
     slug: fonctionPublique800000.slug,
     title: fonctionPublique800000.title,
