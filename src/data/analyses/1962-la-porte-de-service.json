@@ -1,0 +1,418 @@
+{
+  "slug": "1962-la-porte-de-service",
+  "title": "1962, la porte de service",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-14",
+  "updated": "2026-11-14",
+  "kicker": "Enquête et analyse · La rédaction · 14 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Marine Le Pen veut changer la Constitution par un référendum direct, sans vote préalable du Parlement. Mercredi, plus de cent constitutionnalistes ont jugé cette voie irrégulière dans une tribune au Monde. Ce que disent vraiment les articles 11 et 89, et ce que vaut le précédent du général de Gaulle.",
+  "description": "Marine Le Pen veut réviser la Constitution par référendum, sans le Parlement. Plus de cent constitutionnalistes jugent la voie irrégulière. Articles 11 et 89, précédent de 1962 : ce que dit le droit.",
+  "disclaimer": "Cette analyse décrit un débat de droit et des positions datées. Elle ne dit pas qui a raison sur le fond des programmes, ni qui gagnera l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "constitution",
+    "referendum",
+    "doe"
+  ],
+  "x_hook": "Marine Le Pen veut changer la Constitution par un référendum direct, sans vote préalable du Parlement. Mercredi, plus de cent constitutionnalistes ont jugé cette voie irrégulière dans une tribune au Monde. Ce que disent vraiment les articles 11 et 89, et ce que vaut le précédent du général de Gaulle.",
+  "hues": [
+    {
+      "slug": "par-le-parlement",
+      "label": "Révision par le Parlement",
+      "color": "#162561",
+      "rationale": "Retailleau : élargir l’article 11, mais en saisissant d’abord le Parlement."
+    },
+    {
+      "slug": "par-l-article-11",
+      "label": "Par l’article 11",
+      "color": "#0001b8",
+      "rationale": "Le Pen : révision directe ; Mélenchon : référendum pour lancer une Constituante."
+    },
+    {
+      "slug": "non-precise",
+      "label": "Non précisé ou non trouvé",
+      "color": "#5a6570",
+      "rationale": "Lisnard : méthode non précisée ; Philippe, Attal, Zemmour, Glucksmann, Roussel, Tondelier : position non trouvée."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "tribune",
+      "title": "Une tribune le 11 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mercredi 11 novembre, Le Monde a publié une tribune de 110 universitaires spécialistes du droit constitutionnel, selon l’AFP reprise par franceinfo ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html)). Leur formule : « Que la Constitution soit complexe à réviser ne donne pas le droit de s’en affranchir ». Elle vise la proposition phare de Marine Le Pen : réviser la Constitution par référendum en contournant le Parlement, pour appliquer sa politique migratoire. L’initiateur, Julien Bonnet, professeur à l’université de Montpellier, assure à Public Sénat que le texte « ne vise pas un candidat en particulier » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "portes",
+      "title": "Deux portes, une seule pour réviser",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La Constitution prévoit sa propre procédure de modification : l’article 89, seul article du titre consacré à la révision ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution)). Le texte doit être « voté par les deux assemblées en termes identiques », c’est-à-dire mot pour mot par l’Assemblée nationale et par le Sénat. Ensuite seulement, il est approuvé par référendum, ou par les trois cinquièmes du Parlement réuni en Congrès ([Constitution](https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur)). En pratique, chaque assemblée dispose d’une sorte de droit de veto ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution))."
+        },
+        {
+          "type": "p",
+          "text": "L’article 11 est une autre porte. Il permet au président de soumettre au référendum « tout projet de loi » portant sur « l’organisation des pouvoirs publics », sur des réformes économiques, sociales ou environnementales et les services publics, ou sur la ratification de certains traités ([Constitution](https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur)). Le mot qui compte est « projet de loi » : une loi ordinaire, pas une révision de la Constitution. L’immigration ne figure pas dans la liste."
+        },
+        {
+          "type": "p",
+          "text": "Le détour a une raison : le RN espère une majorité à l’Assemblée après une dissolution, mais le Sénat devrait rester dominé par la droite et le centre, qui pourraient bloquer la révision, explique franceinfo ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "proposition",
+      "title": "Ce que propose Marine Le Pen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La candidate promet, « comme en 2022 », une consultation pour modifier la Constitution et appliquer la fin du droit du sol et du regroupement familial, la préférence nationale dans l’accès aux aides sociales et un droit d’asile durci, rapporte franceinfo ([franceinfo](https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html)). La préférence nationale consiste à réserver certains droits aux Français avant les étrangers. Sa ligne, citée par l’AFP : la Constitution « n’est pas un contre-pouvoir au peuple » et « si les Français décident de modifier leur Constitution, personne ne peut les en empêcher » ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html)). Le 14 octobre, à Bruxelles, elle a invité le président du Conseil constitutionnel à « écouter le général de Gaulle » ([RTL](https://www.rtl.fr/actu/politique/n-est-pas-de-gaulle-qui-veut-pourquoi-marine-le-pen-appelle-richard-ferrand-a-la-demission-du-conseil-constitutionnel-7900685304))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "precedent",
+      "title": "1962 : le précédent qui sert d’argument",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le général de Gaulle a emprunté cette porte deux fois. En 1962, il veut faire élire le président au suffrage universel direct ; jusque-là, un collège électoral le désignait. Devant l’hostilité du Parlement, surtout celle du Sénat, il passe par l’article 11. Le 28 octobre 1962, les Français approuvent ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution))."
+        },
+        {
+          "type": "p",
+          "text": "Le président du Sénat saisit alors le Conseil constitutionnel. Le 6 novembre 1962, celui-ci se déclare incompétent. Pour lui, les lois que la Constitution soumet à son contrôle sont « uniquement les lois votées par le Parlement et non point celles qui, adoptées par le Peuple à la suite d’un référendum, constituent l’expression directe de la souveraineté nationale » ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/decision/1962/6220DC.htm)). Il ne dit pas que la réforme est conforme. Il dit qu’il n’a pas le pouvoir d’en juger une fois le peuple consulté."
+        },
+        {
+          "type": "p",
+          "text": "En 1969, de Gaulle recommence avec un projet sur les régions et le Sénat. Le 27 avril, le non l’emporte ; le 28, il démissionne ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution)). Julien Bonnet en tire une leçon : ces référendums donnaient aussi aux Français « la possibilité de mettre fin au mandat du Président », ce qui maintenait « un certain équilibre des pouvoirs » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "depuis",
+      "title": "Ce qui a changé depuis",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pour les signataires, « le contexte juridique a considérablement évolué » ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html)). Ils citent la décision Hauchemaille ([Public Sénat](https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11)). Le 25 juillet 2000, saisi par un électeur qui contestait les décrets organisant un référendum, le Conseil a accepté, à titre exceptionnel, de statuer avant le vote, puis a rejeté la requête ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/decision/2000/200021REF.htm)). Un décret de convocation, c’est l’acte par lequel le président appelle les électeurs aux urnes. D’où leur conclusion : « L’état actuel du droit conduit à reconnaître la compétence du Conseil constitutionnel pour contrôler un décret du président de la République » ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html)). Le contrôle aurait lieu avant le vote, pas après. Il n’aurait « ni pour objet ni pour effet de censurer la volonté du peuple », précisent-ils ([Public Sénat](https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11))."
+        },
+        {
+          "type": "p",
+          "text": "Richard Ferrand, président du Conseil constitutionnel, avait lancé la polémique dans le podcast Quid Juris du Club des juristes, mis en ligne le 9 octobre ([LCP](https://lcp.fr/actualites/demission-d-office-de-richard-ferrand-le-conseil-constitutionnel-ecarte-la-demande-du-rn)) : « vouloir réformer la Constitution par l’article 11, ça n’existe pas. C’est l’article 89 » ([BFMTV](https://www.bfmtv.com/politique/richard-ferrand-met-en-garde-ceux-qui-comme-marine-le-pen-ou-bruno-retailleau-aimeraient-faire-du-referendum-une-arme-contre-l-etat-de-droit_AN-202610100237.html)). Les parlementaires RN et UDR ont ensuite demandé sa « démission d’office ». Le 26 octobre, le Conseil a écarté la demande dans un courrier d’Alain Juppé, selon qui Richard Ferrand « s’est contenté de décrire exactement l’état de notre droit » ([LCP](https://lcp.fr/actualites/demission-d-office-de-richard-ferrand-le-conseil-constitutionnel-ecarte-la-demande-du-rn))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "debat",
+      "title": "Le débat n’est pas clos",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tous les juristes ne signent pas. Bertrand Mathieu, professeur émérite à Paris 1, admet qu’en 1962 le Conseil avait jugé la procédure contraire à la Constitution, sans que cela prenne la forme d’une décision. Mais selon lui, le Conseil n’a « aucune compétence pour sanctionner la décision du Président de la République » de passer par l’article 11, et une censure sur le fond serait « un véritable “coup d’État juridictionnel” » ([Actu-Juridique](https://www.actu-juridique.fr/constitutionnel/le-conseil-constitutionnel-est-il-competent-pour-juger-du-recours-au-referendum-de-larticle-11-pour-reviser-la-constitution/)). Pour lui, la sanction serait politique : une procédure de destitution devant la Haute Cour."
+        },
+        {
+          "type": "p",
+          "text": "Le désaccord porte moins sur le texte que sur l’arbitre : qui aurait le dernier mot avant le vote ? La question n’a jamais été tranchée."
+        },
+        {
+          "type": "p",
+          "text": "Le Monde parle vendredi d’« offensive illibérale » ([Le Monde](https://www.lemonde.fr/politique/article/2026/11/13/presidentielle-2027-l-offensive-illiberale-de-marine-le-pen_6809272_823448.html)). « Illibéral » désigne un pouvoir élu qui veut réduire les contre-pouvoirs, juges ou Parlement, au nom de la majorité : une qualification politique, pas une catégorie du droit."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Marine Le Pen n’est pas seule à viser l’article 11. Jean-Luc Mélenchon prévoit un référendum fondé sur cet article pour lancer une Assemblée constituante ([programme LFI](https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1/)). Bruno Retailleau et David Lisnard veulent en élargir le champ ([Les Républicains](https://republicains.fr/actualites/2026/09/02/en-france-la-seule-cour-supreme-cest-le-peuple-je-lui-donnerai-le-dernier-mot/)) ([Le Parisien](https://www.leparisien.fr/elections/presidentielle/presidentielle-referendums-contournement-du-conseil-constitutionnel-les-propositions-chocs-de-david-lisnard-17-06-2026-LLDVICUMUFGK3BWZFC7YUL7SAU.php)). Trois questions à poser à chacun. Quelle procédure, 89 ou 11 ? Que fera-t-il si le Sénat dit non ? Acceptera-t-il qu’un juge examine le décret avant le vote ?"
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : réviser la Constitution sans vote préalable du Parlement ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : la voie pour réviser la Constitution. « En phase » signifie que la révision passe d’abord par le Parlement (article 89), comme le soutiennent la tribune et le président du Conseil constitutionnel ; ce n’est ni un soutien à un candidat ni un jugement sur le fond de ses propositions.",
+      "table": {
+        "caption": "Réviser la Constitution sans vote préalable du Parlement : positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Le Pen / RN",
+            "En face, révision par l’article 11",
+            "Consultation pour modifier la Constitution, sans passer par le Parlement ; « personne ne peut les en empêcher ». franceinfo, 13 octobre et 11 novembre ; conférence de presse du 14 octobre.",
+            "[1][8][9]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "En face, article 11 pour une Constituante",
+            "« Convoquer un référendum (article 11) pour engager le processus constituant » ; projet de la Constituante soumis ensuite à référendum. Programme présenté le 7 novembre.",
+            "[13][14]"
+          ],
+          [
+            "Retailleau / LR",
+            "En phase sur la méthode",
+            "Révision pour élargir l’article 11 à « toute question législative » ; « j’en saisirai le Parlement », puis référendum. Entretien du 2 septembre.",
+            "[15]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Méthode non précisée",
+            "Ouvrir l’article 11 au-delà de sa liste de sujets ; voie de révision non précisée dans la source lue. Discours de Bayeux, 17 juin.",
+            "[16]"
+          ],
+          [
+            "Philippe / Horizons",
+            "Position non trouvée sur la voie de l’article 11",
+            "Juge « inconstitutionnelle et scandaleuse » la proposition du RN d’un référendum contre le port du voile. France Inter, 2 septembre.",
+            "[17]"
+          ],
+          [
+            "Attal / Renaissance",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Roussel / PCF",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : révision par le Parlement (Retailleau, qui veut élargir le référendum mais saisir d’abord le Parlement). En face : révision ou refondation par l’article 11 (Le Pen ; Mélenchon, pour lancer une Constituante). Non précisé : Lisnard. Position non trouvée sur cette question : Philippe, Attal, Zemmour, Glucksmann, Roussel, Tondelier, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. franceinfo, avec AFP, 11 novembre 2026, 23 h 53 (tribune des constitutionnalistes). https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html",
+          "lead": "1. franceinfo, avec AFP, 11 novembre 2026, 23 h 53 (tribune des constitutionnalistes)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html",
+              "url": "https://www.franceinfo.fr/politique/marine-le-pen/plus-de-cent-constitutionnalistes-critiquent-le-referendum-pour-changer-la-constitution-tel-que-propose-par-marine-le-pen_8278388.html"
+            }
+          ]
+        },
+        {
+          "label": "2. Public Sénat, Simon Barbarit, 12 novembre 2026 (mis à jour à 17 h 39). https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11",
+          "lead": "2. Public Sénat, Simon Barbarit, 12 novembre 2026 (mis à jour à 17 h 39)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11",
+              "url": "https://www.publicsenat.fr/actualites/politique/revision-de-la-constitution-110-constitutionnalistes-rappellent-a-marine-le-pen-et-jean-luc-melenchon-quils-ne-pourront-pas-avoir-recours-au-referendum-via-larticle-11"
+            }
+          ]
+        },
+        {
+          "label": "3. Constitution, texte intégral en vigueur, site du Conseil constitutionnel (articles 11 et 89). https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+          "lead": "3. Constitution, texte intégral en vigueur, site du Conseil constitutionnel (articles 11 et 89)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+              "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur"
+            }
+          ]
+        },
+        {
+          "label": "4. Conseil constitutionnel, « Peut-on modifier la Constitution ? ». https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution",
+          "lead": "4. Conseil constitutionnel, « Peut-on modifier la Constitution ? »",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution",
+              "url": "https://www.conseil-constitutionnel.fr/la-constitution/peut-on-modifier-la-constitution"
+            }
+          ]
+        },
+        {
+          "label": "5. Conseil constitutionnel, décision n° 62-20 DC du 6 novembre 1962. https://www.conseil-constitutionnel.fr/decision/1962/6220DC.htm",
+          "lead": "5. Conseil constitutionnel, décision n° 62-20 DC du 6 novembre 1962",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/decision/1962/6220DC.htm",
+              "url": "https://www.conseil-constitutionnel.fr/decision/1962/6220DC.htm"
+            }
+          ]
+        },
+        {
+          "label": "6. Conseil constitutionnel, décision n° 2000-21 REF du 25 juillet 2000 (Hauchemaille). https://www.conseil-constitutionnel.fr/decision/2000/200021REF.htm",
+          "lead": "6. Conseil constitutionnel, décision n° 2000-21 REF du 25 juillet 2000 (Hauchemaille)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/decision/2000/200021REF.htm",
+              "url": "https://www.conseil-constitutionnel.fr/decision/2000/200021REF.htm"
+            }
+          ]
+        },
+        {
+          "label": "7. BFMTV, entretien de Richard Ferrand pour Quid Juris, 10 octobre 2026. https://www.bfmtv.com/politique/richard-ferrand-met-en-garde-ceux-qui-comme-marine-le-pen-ou-bruno-retailleau-aimeraient-faire-du-referendum-une-arme-contre-l-etat-de-droit_AN-202610100237.html",
+          "lead": "7. BFMTV, entretien de Richard Ferrand pour Quid Juris, 10 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/richard-ferrand-met-en-garde-ceux-qui-comme-marine-le-pen-ou-bruno-retailleau-aimeraient-faire-du-referendum-une-arme-contre-l-etat-de-droit_AN-202610100237.html",
+              "url": "https://www.bfmtv.com/politique/richard-ferrand-met-en-garde-ceux-qui-comme-marine-le-pen-ou-bruno-retailleau-aimeraient-faire-du-referendum-une-arme-contre-l-etat-de-droit_AN-202610100237.html"
+            }
+          ]
+        },
+        {
+          "label": "8. franceinfo, France Télévisions, 13 octobre 2026, 13 h 06. https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html",
+          "lead": "8. franceinfo, France Télévisions, 13 octobre 2026, 13 h 06",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html",
+              "url": "https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html"
+            }
+          ]
+        },
+        {
+          "label": "9. RTL, 14 octobre 2026 (conférence de presse de Marine Le Pen à Bruxelles). https://www.rtl.fr/actu/politique/n-est-pas-de-gaulle-qui-veut-pourquoi-marine-le-pen-appelle-richard-ferrand-a-la-demission-du-conseil-constitutionnel-7900685304",
+          "lead": "9. RTL, 14 octobre 2026 (conférence de presse de Marine Le Pen à Bruxelles)",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/n-est-pas-de-gaulle-qui-veut-pourquoi-marine-le-pen-appelle-richard-ferrand-a-la-demission-du-conseil-constitutionnel-7900685304",
+              "url": "https://www.rtl.fr/actu/politique/n-est-pas-de-gaulle-qui-veut-pourquoi-marine-le-pen-appelle-richard-ferrand-a-la-demission-du-conseil-constitutionnel-7900685304"
+            }
+          ]
+        },
+        {
+          "label": "10. LCP, 26 octobre 2026 (courrier d’Alain Juppé). https://lcp.fr/actualites/demission-d-office-de-richard-ferrand-le-conseil-constitutionnel-ecarte-la-demande-du-rn",
+          "lead": "10. LCP, 26 octobre 2026 (courrier d’Alain Juppé)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/demission-d-office-de-richard-ferrand-le-conseil-constitutionnel-ecarte-la-demande-du-rn",
+              "url": "https://lcp.fr/actualites/demission-d-office-de-richard-ferrand-le-conseil-constitutionnel-ecarte-la-demande-du-rn"
+            }
+          ]
+        },
+        {
+          "label": "11. Actu-Juridique, Bertrand Mathieu, 19 octobre 2026. https://www.actu-juridique.fr/constitutionnel/le-conseil-constitutionnel-est-il-competent-pour-juger-du-recours-au-referendum-de-larticle-11-pour-reviser-la-constitution/",
+          "lead": "11. Actu-Juridique, Bertrand Mathieu, 19 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.actu-juridique.fr/constitutionnel/le-conseil-constitutionnel-est-il-competent-pour-juger-du-recours-au-referendum-de-larticle-11-pour-reviser-la-constitution/",
+              "url": "https://www.actu-juridique.fr/constitutionnel/le-conseil-constitutionnel-est-il-competent-pour-juger-du-recours-au-referendum-de-larticle-11-pour-reviser-la-constitution/"
+            }
+          ]
+        },
+        {
+          "label": "12. Le Monde, 13 novembre 2026 (article payant, titre seul consulté). https://www.lemonde.fr/politique/article/2026/11/13/presidentielle-2027-l-offensive-illiberale-de-marine-le-pen_6809272_823448.html",
+          "lead": "12. Le Monde, 13 novembre 2026 (article payant, titre seul consulté)",
+          "links": [
+            {
+              "label": "https://www.lemonde.fr/politique/article/2026/11/13/presidentielle-2027-l-offensive-illiberale-de-marine-le-pen_6809272_823448.html",
+              "url": "https://www.lemonde.fr/politique/article/2026/11/13/presidentielle-2027-l-offensive-illiberale-de-marine-le-pen_6809272_823448.html"
+            }
+          ]
+        },
+        {
+          "label": "13. programme LFI, L’Avenir en commun, « Fonder la 6e République », chapitre 1 (consulté le 13 novembre 2026). https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1/",
+          "lead": "13. programme LFI, L’Avenir en commun, « Fonder la 6e République », chapitre 1 (consulté le 13 novembre 2026)",
+          "links": [
+            {
+              "label": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1/",
+              "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1/"
+            }
+          ]
+        },
+        {
+          "label": "14. JDD, Aliénor Trouvé, 13 novembre 2026 (présentation du programme le 7 novembre). https://www.lejdd.fr/politique/vie-republique-ce-que-prevoit-le-projet-de-jean-luc-melenchon-188526",
+          "lead": "14. JDD, Aliénor Trouvé, 13 novembre 2026 (présentation du programme le 7 novembre)",
+          "links": [
+            {
+              "label": "https://www.lejdd.fr/politique/vie-republique-ce-que-prevoit-le-projet-de-jean-luc-melenchon-188526",
+              "url": "https://www.lejdd.fr/politique/vie-republique-ce-que-prevoit-le-projet-de-jean-luc-melenchon-188526"
+            }
+          ]
+        },
+        {
+          "label": "15. Les Républicains, entretien de Bruno Retailleau, 2 septembre 2026. https://republicains.fr/actualites/2026/09/02/en-france-la-seule-cour-supreme-cest-le-peuple-je-lui-donnerai-le-dernier-mot/",
+          "lead": "15. Les Républicains, entretien de Bruno Retailleau, 2 septembre 2026",
+          "links": [
+            {
+              "label": "https://republicains.fr/actualites/2026/09/02/en-france-la-seule-cour-supreme-cest-le-peuple-je-lui-donnerai-le-dernier-mot/",
+              "url": "https://republicains.fr/actualites/2026/09/02/en-france-la-seule-cour-supreme-cest-le-peuple-je-lui-donnerai-le-dernier-mot/"
+            }
+          ]
+        },
+        {
+          "label": "16. Le Parisien, 17 juin 2026 (discours de David Lisnard à Bayeux). https://www.leparisien.fr/elections/presidentielle/presidentielle-referendums-contournement-du-conseil-constitutionnel-les-propositions-chocs-de-david-lisnard-17-06-2026-LLDVICUMUFGK3BWZFC7YUL7SAU.php",
+          "lead": "16. Le Parisien, 17 juin 2026 (discours de David Lisnard à Bayeux)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/presidentielle-referendums-contournement-du-conseil-constitutionnel-les-propositions-chocs-de-david-lisnard-17-06-2026-LLDVICUMUFGK3BWZFC7YUL7SAU.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-referendums-contournement-du-conseil-constitutionnel-les-propositions-chocs-de-david-lisnard-17-06-2026-LLDVICUMUFGK3BWZFC7YUL7SAU.php"
+            }
+          ]
+        },
+        {
+          "label": "17. franceinfo, Radio France, 2 septembre 2026 (Édouard Philippe sur France Inter). https://www.franceinfo.fr/societe/religion/sanctionner-le-port-du-voile-edouard-philippe-juge-la-proposition-du-rn-inconstitutionnelle-et-scandaleuse_8173319.html",
+          "lead": "17. franceinfo, Radio France, 2 septembre 2026 (Édouard Philippe sur France Inter)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/societe/religion/sanctionner-le-port-du-voile-edouard-philippe-juge-la-proposition-du-rn-inconstitutionnelle-et-scandaleuse_8173319.html",
+              "url": "https://www.franceinfo.fr/societe/religion/sanctionner-le-port-du-voile-edouard-philippe-juge-la-proposition-du-rn-inconstitutionnelle-et-scandaleuse_8173319.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit un débat de droit et des positions datées. Elle ne dit pas qui a raison sur le fond des programmes, ni qui gagnera l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}
