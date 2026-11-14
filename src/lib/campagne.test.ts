@@ -159,6 +159,7 @@ describe('classements campagne.json', () => {
       expect(classement.marge_erreur.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.methode.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.hypothese.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.hypothese, classement.id).toMatch(/choix de la rédaction/);
       expect(classement.notice_url).toMatch(
         /^https:\/\/www\.commission-des-sondages\.fr\/notices\//,
       );
@@ -258,6 +259,7 @@ describe('aperçu campagne — accueil', () => {
     const sondageBlock = src.slice(src.indexOf('!hideSondage'));
     expect(sondageBlock).toMatch(/<table/);
     expect(sondageBlock).toMatch(/<caption/);
+    expect(sondageBlock).toMatch(/apercu-sondage-hypothese/);
     expect(sondageBlock).toMatch(/scope="col"/);
     expect(sondageBlock).toMatch(/notice_url/);
     expect(sondageBlock).toMatch(/SONDAGES_LIGNE/);

@@ -7,4 +7,4 @@ export const SONDAGES_LIGNE =
 
 /** Meta description de l’accueil : sens conservé, au plus ~160 caractères. */
 export const HOME_META_DESCRIPTION =
-  'Photo réelle du 1er tour. Atlas, AN1T, dossier 2027 (18 avril). Démocratie avant l’élimination : sondages cités (notice), zéro classement éliminatoire.';
+  'Photo réelle du 1er tour. Atlas, AN1T, dossier 2027 (18 avril). Toutes les personnalités, sans élimination, et les derniers sondages sourcés (notice).';

@@ -33,7 +33,7 @@ function captionClassement(classement: CampagneClassement): string {
   const terrain = classement.terrain
     ? classement.terrain.charAt(0).toLocaleLowerCase('fr-FR') + classement.terrain.slice(1)
     : '';
-  return `${classement.institut} pour ${classement.commanditaire}, ${terrain}, ${classement.hypothese}`;
+  return `${classement.institut} pour ${classement.commanditaire}, ${terrain}`;
 }
 
 function phrase(text: string): string {
@@ -174,7 +174,10 @@ function phrase(text: string): string {
             const figure = (
               <figure class="apercu-sondage-figure">
                 <table class="apercu-sondage-table">
-                  <caption>{captionClassement(classement)}</caption>
+                  <caption>
+                    {captionClassement(classement)}
+                    <span class="apercu-sondage-hypothese">{classement.hypothese}</span>
+                  </caption>
                   <thead>
                     <tr>
                       <th scope="col">Rang</th>
@@ -573,6 +576,13 @@ function phrase(text: string): string {
     line-height: 1.35;
     color: var(--fg);
     margin: 0 0 0.35rem;
+  }
+
+  .apercu-sondage-hypothese {
+    display: block;
+    font-weight: 400;
+    font-size: 0.76rem;
+    color: var(--muted);
   }
 
   .apercu-sondage-table th,

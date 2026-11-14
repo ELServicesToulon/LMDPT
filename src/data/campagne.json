@@ -1,7 +1,7 @@
 {
   "title": "La campagne en un clin d'œil",
   "updated": "2026-11-14",
-  "disclaimer": "Personnalités ayant publicisé une candidature ou bénéficié d'une désignation de parti ou de primaire, d'après des sources datées. Ce n'est pas la liste officielle du Conseil constitutionnel. Aucun classement.",
+  "disclaimer": "Personnalités ayant publicisé une candidature ou bénéficié d'une désignation de parti ou de primaire, d'après des sources datées. Ce n'est pas la liste officielle du Conseil constitutionnel. La liste des personnalités est rangée par famille politique, puis par ordre alphabétique des noms dans chaque famille : ce n'est pas un classement. Le classement ci-dessous vient uniquement des sondages cités.",
   "liste_complete_href": "#candidatures-declarees-2027",
   "personnalites": [
     {
@@ -251,7 +251,7 @@
         "echantillon": "964 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 001 personnes représentatif de la population française âgée de 18 ans et plus. Scores calculés sur les inscrits certains d'aller voter (660 personnes) exprimant une intention de vote (611 personnes).",
         "methode": "Questionnaire auto-administré en ligne (CAWI), méthode des quotas (sexe, âge, catégorie socioprofessionnelle, catégorie d'agglomération, région), redressement sociodémographique et politique (présidentielle 2022, législatives 2024).",
         "marge_erreur": "Entre 1,4 et 3,2 points pour 964 personnes, entre 1,7 et 3,8 points pour 660 personnes, selon le score (niveau de confiance de 95 %).",
-        "hypothese": "Hypothèse 1 sur 2 testées : avec Teddy Riner",
+        "hypothese": "Hypothèse avec Teddy Riner (choix de la rédaction : la plus large des 2 hypothèses testées, n° 1)",
         "non_exprimes": "14 % n'expriment pas d'intention de vote.",
         "resultats": [
           { "nom": "Marine Le Pen", "score": 31 },
@@ -282,7 +282,7 @@
         "echantillon": "1 164 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 242 personnes représentatif de la population française. Pour cette hypothèse, 1 142 personnes expriment une intention de vote, effectif utile de 899 personnes après redressement.",
         "methode": "Questionnaire auto-administré en ligne, méthode des quotas (sexe, âge, catégorie socioprofessionnelle, taille de commune, région), redressement sociodémographique et politique (présidentielle 2022, européennes 2024) et selon la probabilité de vote.",
         "marge_erreur": "Entre 1,2 et 2,8 points pour 1 164 personnes, entre 1,4 et 3,3 points pour 899 personnes, selon le score.",
-        "hypothese": "Hypothèse 4 sur 4 testées : la plus large, avec Teddy Riner",
+        "hypothese": "Hypothèse avec Teddy Riner (choix de la rédaction : la plus large des 4 hypothèses testées, n° 4)",
         "non_exprimes": "",
         "resultats": [
           { "nom": "Marine Le Pen", "score": 27 },
