@@ -1,7 +1,7 @@
 {
   "title": "La campagne en un clin d'œil",
-  "updated": "2026-11-12",
-  "disclaimer": "Personnalités ayant publicisé une candidature ou bénéficié d'une désignation de parti ou de primaire, d'après des sources datées. Ce n'est pas la liste officielle du Conseil constitutionnel. Aucun classement.",
+  "updated": "2026-11-14",
+  "disclaimer": "Personnalités ayant publicisé une candidature ou bénéficié d'une désignation de parti ou de primaire, d'après des sources datées. Ce n'est pas la liste officielle du Conseil constitutionnel. La liste des personnalités est rangée par famille politique, puis par ordre alphabétique des noms dans chaque famille : ce n'est pas un classement. Le classement ci-dessous vient uniquement des sondages cités.",
   "liste_complete_href": "#candidatures-declarees-2027",
   "personnalites": [
     {
@@ -235,22 +235,93 @@
   ],
   "sondage": {
     "masquer": false,
+    "fin_masquage_heure": "20:00",
+    "mise_au_point": null,
     "scrutins_a_masquer": [
-      { "date": "2027-04-18", "label": "Premier tour de l'élection présidentielle" },
-      { "date": "2027-05-02", "label": "Second tour de l'élection présidentielle" }
+      {
+        "date": "2027-04-18",
+        "label": "Premier tour de l'élection présidentielle",
+        "statut": "à confirmer par décret de convocation"
+      },
+      {
+        "date": "2027-05-02",
+        "label": "Second tour de l'élection présidentielle",
+        "statut": "à confirmer par décret de convocation"
+      }
     ],
-    "institut": "Toluna Harris Interactive",
-    "commanditaire": "M6 et RTL",
-    "vague": "Vague 9",
-    "publication": "2026-11-09",
-    "terrain": "En ligne du 3 au 5 novembre 2026",
-    "echantillon": "2 101 personnes inscrites sur les listes électorales, issues d'un échantillon de 2 436 personnes représentatif de la population française âgée de 18 ans et plus",
-    "marge_erreur": "± 1,4 à 3,1 points selon le score visé",
-    "methode": "Méthode des quotas",
-    "source_label": "Rapport Toluna Harris Interactive pour M6 et RTL, vague 9, 9 novembre 2026 (PDF)",
-    "source_url": "https://tolunacorporate.com/wp-content/uploads/2026/11/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-9-M6-RTL-9-novembre-2026-1.pdf",
-    "notice_label": "Commission des sondages",
-    "notice_url": "https://www.commission-des-sondages.fr/",
-    "note": "Intentions de vote pour le premier tour. Un sondage n'est pas une prédiction. Plusieurs hypothèses de premier tour sont testées dans le rapport : aucun score n'est repris ici."
+    "titre": "Intentions de vote au 1er tour",
+    "note": "Un sondage n'est pas une prédiction. Chaque tableau reprend une seule hypothèse de candidats d'un seul sondage ; les listes de candidats testées diffèrent d'un sondage à l'autre.",
+    "classements": [
+      {
+        "id": "opinionway-cnews-2026-11-12",
+        "institut": "OpinionWay",
+        "commanditaire": "CNews",
+        "publication": "2026-11-12",
+        "terrain": "En ligne du 10 au 12 novembre 2026",
+        "terrain_debut": "2026-11-10",
+        "terrain_fin": "2026-11-12",
+        "echantillon": "964 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 001 personnes représentatif de la population française âgée de 18 ans et plus. Scores calculés sur les inscrits certains d'aller voter (660 personnes) exprimant une intention de vote (611 personnes).",
+        "methode": "Questionnaire auto-administré en ligne (CAWI), méthode des quotas (sexe, âge, catégorie socioprofessionnelle, catégorie d'agglomération, région), redressement sociodémographique et politique (présidentielle 2022, législatives 2024).",
+        "marge_erreur": "Entre 1,4 et 3,2 points pour 964 personnes, entre 1,7 et 3,8 points pour 660 personnes, selon le score (niveau de confiance de 95 %).",
+        "hypothese": "Hypothèse avec Teddy Riner (choix de la rédaction : la plus large des 2 hypothèses testées, n° 1)",
+        "non_exprimes": "14 % n'expriment pas d'intention de vote.",
+        "resultats": [
+          { "nom": "Marine Le Pen", "score": 31 },
+          { "nom": "Jean-Luc Mélenchon", "score": 16 },
+          { "nom": "Édouard Philippe", "score": 12 },
+          { "nom": "Raphaël Glucksmann", "score": 10 },
+          { "nom": "David Lisnard", "score": 9 },
+          { "nom": "Bruno Retailleau", "score": 4 },
+          { "nom": "Teddy Riner", "score": 4 },
+          { "nom": "Gabriel Attal", "score": 3 },
+          { "nom": "Marine Tondelier", "score": 3 },
+          { "nom": "Éric Zemmour", "score": 3 },
+          { "nom": "Nicolas Dupont-Aignan", "score": 2 },
+          { "nom": "Fabien Roussel", "score": 2 },
+          { "nom": "Nathalie Arthaud", "score": 1 },
+          { "nom": "Karim Bouamrane", "score": null, "score_label": "moins de 1 %" }
+        ],
+        "source_label": "Notice OpinionWay pour CNews n° 10371, p. 13 (résultats) et p. 2-3 (méthode, marges)",
+        "notice_numero": "10371",
+        "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/novembre/10371-pres-iv-opinionway-cnews-12-novembre.pdf"
+      },
+      {
+        "id": "cluster17-politico-2026-11-11",
+        "institut": "Cluster17",
+        "commanditaire": "Politico",
+        "publication": "2026-11-11",
+        "terrain": "En ligne du 9 au 10 novembre 2026",
+        "terrain_debut": "2026-11-09",
+        "terrain_fin": "2026-11-10",
+        "echantillon": "1 164 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 242 personnes représentatif de la population française. Pour cette hypothèse, 1 142 personnes expriment une intention de vote, effectif utile de 899 personnes après redressement.",
+        "methode": "Questionnaire auto-administré en ligne, méthode des quotas (sexe, âge, catégorie socioprofessionnelle, taille de commune, région), redressement sociodémographique et politique (présidentielle 2022, européennes 2024) et selon la probabilité de vote.",
+        "marge_erreur": "Entre 1,2 et 2,8 points pour 1 164 personnes, entre 1,4 et 3,3 points pour 899 personnes, selon le score.",
+        "hypothese": "Hypothèse avec Teddy Riner (choix de la rédaction : la plus large des 4 hypothèses testées, n° 4)",
+        "non_exprimes": "",
+        "resultats": [
+          { "nom": "Marine Le Pen", "score": 27 },
+          { "nom": "Jean-Luc Mélenchon", "score": 19 },
+          { "nom": "Raphaël Glucksmann", "score": 8 },
+          { "nom": "Christine Lagarde", "score": 8 },
+          { "nom": "David Lisnard", "score": 8 },
+          { "nom": "Édouard Philippe", "score": 8 },
+          { "nom": "Bruno Retailleau", "score": 5 },
+          { "nom": "Natacha Polony", "score": 2.5 },
+          { "nom": "Gabriel Attal", "score": 2 },
+          { "nom": "Nicolas Dupont-Aignan", "score": 2 },
+          { "nom": "Teddy Riner", "score": 2 },
+          { "nom": "Éric Zemmour", "score": 2 },
+          { "nom": "Fabien Roussel", "score": 1.5 },
+          { "nom": "François Ruffin", "score": 1.5 },
+          { "nom": "François Asselineau", "score": 1 },
+          { "nom": "Marine Tondelier", "score": 1 },
+          { "nom": "Dominique de Villepin", "score": 1 },
+          { "nom": "Nathalie Arthaud", "score": 0.5 }
+        ],
+        "source_label": "Notice Cluster17 pour Politico n° 10368, p. 18 (résultats) et p. 2-3 (méthode, marges)",
+        "notice_numero": "10368",
+        "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/novembre/10368-pres-iv-cluster17-politico-11-novembre.pdf"
+      }
+    ]
   }
 }

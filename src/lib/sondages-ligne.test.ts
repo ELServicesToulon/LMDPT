@@ -11,7 +11,8 @@ describe('ligne sondages', () => {
     expect(HOME_META_DESCRIPTION.length).toBeLessThanOrEqual(160);
     expect(HOME_META_DESCRIPTION).not.toMatch(/zéro sondage/i);
     expect(HOME_META_DESCRIPTION).toMatch(/2027/);
-    expect(HOME_META_DESCRIPTION).toMatch(/classement/);
+    expect(HOME_META_DESCRIPTION).toMatch(/sans élimination/);
+    expect(HOME_META_DESCRIPTION).toMatch(/sondages sourcés/);
   });
 
   it('retire le placeholder du journal tout en gardant Ifop, Harris et Ipsos', () => {

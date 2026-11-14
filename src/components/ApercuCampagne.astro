@@ -1,16 +1,20 @@
 ---
 /**
  * Bloc accueil compact — personnalités sourcées, prochaines dates,
- * mentions légales du dernier sondage (sans scores), dernière Une.
+ * classements d’intentions de vote 1er tour (une table par sondage,
+ * mentions de la loi n° 77-808), dernière Une.
  */
 import campagneJson from '../data/campagne.json';
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import {
   formatCampagneDate,
-  formatSondageTeaser,
+  formatPeriodeEnquete,
+  formatScore,
   getUneLienApercu,
   groupPersonnalites,
   personnaliteChipTitle,
+  rankResultats,
+  scrutinsMasquage,
   shouldHideSondage,
   statutPastille,
   type CampagneData,
@@ -23,7 +27,15 @@ const hideSondage = shouldHideSondage(new Date(), campagne);
 const une = getUneLienApercu();
 const updatedLabel = formatCampagneDate(campagne.updated, { weekday: false });
 const uneHref = une ? withTrailingSlash(une.href) : '';
-const sondageTeaser = formatSondageTeaser(campagne.sondage);
+const scrutinsDates = scrutinsMasquage(campagne).join(',');
+const finMasquage = campagne.sondage.fin_masquage_heure || '20:00';
+const miseAuPoint = campagne.sondage.mise_au_point;
+
+function phrase(text: string): string {
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  return /[.!?…]$/.test(trimmed) ? trimmed : `${trimmed}.`;
+}
 ---
 
 <section
@@ -145,51 +157,175 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
 
   {
     !hideSondage && (
-      <div class="apercu-block apercu-sondage" id="apercu-sondage">
-        <h3 id="apercu-sondage-title">Dernier sondage de 1er tour</h3>
-        <p class="apercu-sondage-teaser" title={sondageTeaser}>
-          {sondageTeaser}
-        </p>
-        <details class="apercu-details">
-          <summary>Mentions légales du sondage</summary>
-          <dl class="apercu-sondage-dl">
-            <div>
-              <dt>Institut</dt>
-              <dd>{campagne.sondage.institut}</dd>
-            </div>
-            <div>
-              <dt>Commanditaire</dt>
-              <dd>{campagne.sondage.commanditaire}</dd>
-            </div>
-            <div>
-              <dt>Dates de terrain</dt>
-              <dd>{campagne.sondage.terrain}</dd>
-            </div>
-            <div>
-              <dt>Échantillon</dt>
-              <dd>{campagne.sondage.echantillon}</dd>
-            </div>
-            <div>
-              <dt>Marge d’erreur</dt>
-              <dd>{campagne.sondage.marge_erreur}</dd>
-            </div>
-            <div>
-              <dt>Méthode</dt>
-              <dd>{campagne.sondage.methode}</dd>
-            </div>
-          </dl>
-          <p class="apercu-sondage-links">
-            <a href={campagne.sondage.source_url} rel="noopener noreferrer">
-              {campagne.sondage.source_label}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a href={campagne.sondage.notice_url} rel="noopener noreferrer">
-              {campagne.sondage.notice_label}
-            </a>
-          </p>
-          <p class="apercu-sondage-note meta">{campagne.sondage.note}</p>
-          <p class="apercu-sondage-ligne meta">{SONDAGES_LIGNE}</p>
-        </details>
+      <div
+        class="apercu-block apercu-sondage"
+        id="apercu-sondage"
+        data-scrutins={scrutinsDates}
+        data-fin-masquage={finMasquage}
+      >
+        <h3 id="apercu-sondage-title">{campagne.sondage.titre}</h3>
+        {
+          miseAuPoint?.texte ? (
+            <p class="apercu-sondage-map" role="note">
+              {miseAuPoint.texte}
+              {
+                miseAuPoint.lien_url?.startsWith('https://') && miseAuPoint.lien_label ? (
+                  <>
+                    {' '}
+                    <a href={miseAuPoint.lien_url} rel="noopener noreferrer">
+                      {miseAuPoint.lien_label}
+                    </a>
+                  </>
+                ) : null
+              }
+            </p>
+          ) : null
+        }
+        {
+          campagne.sondage.classements.map((classement, index) => {
+            const lignes = rankResultats(classement.resultats);
+            const figure = (
+              <figure class="apercu-sondage-figure">
+                <table class="apercu-sondage-table">
+                  <caption>
+                    {classement.institut} pour {classement.commanditaire}
+                    <span class="apercu-sondage-periode">
+                      {formatPeriodeEnquete(classement.terrain_debut, classement.terrain_fin)} (en ligne)
+                    </span>
+                    <span class="apercu-sondage-hypothese">{classement.hypothese}</span>
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Rang</th>
+                      <th scope="col">Candidat</th>
+                      <th scope="col">Intentions de vote</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {lignes.map((ligne) => (
+                      <tr>
+                        <td>{ligne.rang ?? ''}</td>
+                        <th scope="row">{ligne.nom}</th>
+                        <td class="apercu-sondage-score">{formatScore(ligne)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p class="apercu-sondage-marge meta">
+                  Entre candidats voisins, un écart de quelques points peut rester dans la marge
+                  d’erreur indiquée par la notice.
+                </p>
+                <p class="apercu-sondage-hypotheses meta">
+                  D’autres hypothèses ont été testées, voir la notice.
+                </p>
+                <p class="apercu-sondage-mentions meta">
+                  Institut : {phrase(classement.institut)} Commanditaire :{' '}
+                  {phrase(classement.commanditaire)} Publication :{' '}
+                  {phrase(formatCampagneDate(classement.publication, { weekday: false }))} Terrain :{' '}
+                  {phrase(classement.terrain)} Échantillon : {phrase(classement.echantillon)} Méthode
+                  : {phrase(classement.methode)} Marge d’erreur : {phrase(classement.marge_erreur)}
+                  {classement.non_exprimes ? ` ${phrase(classement.non_exprimes)}` : ''}{' '}
+                  {phrase(classement.source_label)}
+                </p>
+                <p class="apercu-sondage-notice meta">
+                  <a href={classement.notice_url} rel="noopener noreferrer">Notice consultable sur le site de la Commission des sondages</a>
+                  {` (n° ${classement.notice_numero}).`}
+                </p>
+              </figure>
+            );
+            if (index === 0) return figure;
+            return (
+              <details class="apercu-details">
+                <summary>
+                  Autre sondage récent : {classement.institut} pour {classement.commanditaire}
+                </summary>
+                {figure}
+              </details>
+            );
+          })
+        }
+        <p class="apercu-sondage-note meta">{campagne.sondage.note}</p>
+        <p class="apercu-sondage-ligne meta">{SONDAGES_LIGNE}</p>
+        <script is:inline>
+          (function () {
+            var el = document.getElementById('apercu-sondage');
+            if (!el) return;
+
+            // Aligné sur isMasqueAt (src/lib/campagne.ts) : veille UTC + jour < 20:00 Paris.
+            var raw = el.getAttribute('data-scrutins') || '';
+            var finRaw = el.getAttribute('data-fin-masquage') || '20:00';
+            var scrutins = raw.split(',');
+            var finBits = finRaw.split(':');
+            var finMinutes = Number(finBits[0]) * 60 + Number(finBits[1] || 0);
+            var clockParts = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Europe/Paris',
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+              hourCycle: 'h23',
+            }).formatToParts(new Date());
+            function clockPart(type) {
+              for (var i = 0; i < clockParts.length; i++) {
+                if (clockParts[i].type === type) return clockParts[i].value;
+              }
+              return '';
+            }
+            var parisDate =
+              clockPart('year') + '-' + clockPart('month') + '-' + clockPart('day');
+            var parisMinutes = Number(clockPart('hour')) * 60 + Number(clockPart('minute'));
+            function veilleOf(iso) {
+              var bits = iso.split('-');
+              var utc = Date.UTC(Number(bits[0]), Number(bits[1]) - 1, Number(bits[2]) - 1);
+              return new Date(utc).toISOString().slice(0, 10);
+            }
+            var masque = false;
+            for (var s = 0; s < scrutins.length; s++) {
+              var scrutin = scrutins[s];
+              if (!scrutin) continue;
+              if (parisDate === scrutin && parisMinutes < finMinutes) masque = true;
+              if (parisDate === veilleOf(scrutin)) masque = true;
+            }
+            if (masque) el.hidden = true;
+
+            fetch('/sondages-interrupteur.json', { cache: 'no-store' })
+              .then(function (res) {
+                return res.json();
+              })
+              .then(function (data) {
+                if (!data || typeof data !== 'object') return;
+                if (data.masquer === true) el.hidden = true;
+                var map = data.mise_au_point;
+                if (!map || typeof map.texte !== 'string' || !map.texte) return;
+                if (el.querySelector('.apercu-sondage-map')) return;
+                var p = document.createElement('p');
+                p.className = 'apercu-sondage-map';
+                p.setAttribute('role', 'note');
+                p.textContent = map.texte;
+                if (
+                  typeof map.lien_url === 'string' &&
+                  map.lien_url.indexOf('https://') === 0 &&
+                  typeof map.lien_label === 'string' &&
+                  map.lien_label
+                ) {
+                  p.appendChild(document.createTextNode(' '));
+                  var a = document.createElement('a');
+                  a.href = map.lien_url;
+                  a.rel = 'noopener noreferrer';
+                  a.textContent = map.lien_label;
+                  p.appendChild(a);
+                }
+                var title = document.getElementById('apercu-sondage-title');
+                if (title && title.parentNode === el) {
+                  title.insertAdjacentElement('afterend', p);
+                } else {
+                  el.insertBefore(p, el.firstChild);
+                }
+              })
+              .catch(function () {});
+          })();
+        </script>
       </div>
     )
   }
@@ -511,58 +647,93 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
     color: var(--muted);
   }
 
-  .apercu-sondage-teaser {
-    margin: 0;
+  .apercu-sondage-figure {
+    margin: 0.35rem 0 0.55rem;
+    overflow-x: auto;
+  }
+
+  .apercu-sondage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.88rem;
+    color: var(--fg);
+  }
+
+  .apercu-sondage-table caption {
+    caption-side: top;
+    text-align: left;
+    font-family: system-ui, sans-serif;
+    font-weight: 650;
     font-size: 0.84rem;
     line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    color: var(--fg);
+    margin: 0 0 0.35rem;
   }
 
-  .apercu-sondage-dl {
-    margin: 0.35rem 0 0.45rem;
-    display: grid;
-    gap: 0.35rem 0.75rem;
+  .apercu-sondage-periode,
+  .apercu-sondage-hypothese {
+    display: block;
+    font-weight: 400;
+    font-size: 0.76rem;
+    color: var(--muted);
   }
 
-  .apercu-sondage-dl div {
-    display: grid;
-    grid-template-columns: minmax(7.5rem, 11rem) 1fr;
-    gap: 0.25rem 0.75rem;
-    align-items: start;
+  .apercu-sondage-map {
+    margin: 0.35rem 0 0.2rem;
+    padding: 0.15rem 0 0.15rem 0.55rem;
+    border-left: 2px solid var(--border);
+    max-width: 72ch;
+    line-height: 1.45;
+    font-size: 0.82rem;
+    color: var(--fg);
   }
 
-  .apercu-sondage-dl dt {
+  .apercu-sondage-table th,
+  .apercu-sondage-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.28rem 0.4rem;
+    text-align: left;
+    vertical-align: top;
+    color: var(--fg);
+  }
+
+  .apercu-sondage-table thead th {
     font-family: system-ui, sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--muted);
+    border-bottom: 1px solid var(--border);
   }
 
-  .apercu-sondage-dl dd {
-    margin: 0;
-    font-size: 0.92rem;
-    line-height: 1.4;
+  .apercu-sondage-table th[scope='row'] {
+    font-weight: 650;
+    color: var(--fg);
   }
 
-  .apercu-sondage-links {
-    margin: 0 0 0.4rem;
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.15rem;
+  .apercu-sondage-score {
+    text-align: right;
+    white-space: nowrap;
   }
 
-  .apercu-sondage-links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.5rem;
+  .apercu-sondage-table thead th:last-child {
+    text-align: right;
+  }
+
+  .apercu-sondage-marge,
+  .apercu-sondage-hypotheses,
+  .apercu-sondage-mentions,
+  .apercu-sondage-notice {
+    margin: 0.45rem 0 0;
+    max-width: 72ch;
+    line-height: 1.45;
+  }
+
+  .apercu-sondage-mentions a,
+  .apercu-sondage-notice a {
+    font-weight: 650;
   }
 
   .apercu-sondage-note,
@@ -615,10 +786,16 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
     .apercu-liste {
       min-height: 2.5rem;
     }
+  }
 
-    .apercu-sondage-dl div {
-      grid-template-columns: 1fr;
-      gap: 0.1rem;
+  @media (max-width: 479px) {
+    .apercu-sondage-table {
+      font-size: 0.76rem;
+    }
+
+    .apercu-sondage-table th,
+    .apercu-sondage-table td {
+      padding: 0.18rem 0.28rem;
     }
   }
 
