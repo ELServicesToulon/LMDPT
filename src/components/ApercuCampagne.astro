@@ -1,18 +1,22 @@
 ---
 /**
  * Bloc accueil compact — personnalités sourcées, prochaines dates,
- * mentions légales du dernier sondage (sans scores), dernière Une.
+ * classements d’intentions de vote 1er tour (une table par sondage,
+ * mentions de la loi n° 77-808), dernière Une.
  */
 import campagneJson from '../data/campagne.json';
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import {
+  datesMasquage,
   formatCampagneDate,
-  formatSondageTeaser,
+  formatScore,
   getUneLienApercu,
   groupPersonnalites,
   personnaliteChipTitle,
+  rankResultats,
   shouldHideSondage,
   statutPastille,
+  type CampagneClassement,
   type CampagneData,
 } from '../lib/campagne';
 import { withTrailingSlash } from '../lib/internal-path';
@@ -23,7 +27,20 @@ const hideSondage = shouldHideSondage(new Date(), campagne);
 const une = getUneLienApercu();
 const updatedLabel = formatCampagneDate(campagne.updated, { weekday: false });
 const uneHref = une ? withTrailingSlash(une.href) : '';
-const sondageTeaser = formatSondageTeaser(campagne.sondage);
+const masquerDates = datesMasquage(campagne).join(',');
+
+function captionClassement(classement: CampagneClassement): string {
+  const terrain = classement.terrain
+    ? classement.terrain.charAt(0).toLocaleLowerCase('fr-FR') + classement.terrain.slice(1)
+    : '';
+  return `${classement.institut} pour ${classement.commanditaire}, ${terrain}, ${classement.hypothese}`;
+}
+
+function phrase(text: string): string {
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  return /[.!?…]$/.test(trimmed) ? trimmed : `${trimmed}.`;
+}
 ---
 
 <section
@@ -145,51 +162,74 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
 
   {
     !hideSondage && (
-      <div class="apercu-block apercu-sondage" id="apercu-sondage">
-        <h3 id="apercu-sondage-title">Dernier sondage de 1er tour</h3>
-        <p class="apercu-sondage-teaser" title={sondageTeaser}>
-          {sondageTeaser}
-        </p>
-        <details class="apercu-details">
-          <summary>Mentions légales du sondage</summary>
-          <dl class="apercu-sondage-dl">
-            <div>
-              <dt>Institut</dt>
-              <dd>{campagne.sondage.institut}</dd>
-            </div>
-            <div>
-              <dt>Commanditaire</dt>
-              <dd>{campagne.sondage.commanditaire}</dd>
-            </div>
-            <div>
-              <dt>Dates de terrain</dt>
-              <dd>{campagne.sondage.terrain}</dd>
-            </div>
-            <div>
-              <dt>Échantillon</dt>
-              <dd>{campagne.sondage.echantillon}</dd>
-            </div>
-            <div>
-              <dt>Marge d’erreur</dt>
-              <dd>{campagne.sondage.marge_erreur}</dd>
-            </div>
-            <div>
-              <dt>Méthode</dt>
-              <dd>{campagne.sondage.methode}</dd>
-            </div>
-          </dl>
-          <p class="apercu-sondage-links">
-            <a href={campagne.sondage.source_url} rel="noopener noreferrer">
-              {campagne.sondage.source_label}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a href={campagne.sondage.notice_url} rel="noopener noreferrer">
-              {campagne.sondage.notice_label}
-            </a>
-          </p>
-          <p class="apercu-sondage-note meta">{campagne.sondage.note}</p>
-          <p class="apercu-sondage-ligne meta">{SONDAGES_LIGNE}</p>
-        </details>
+      <div
+        class="apercu-block apercu-sondage"
+        id="apercu-sondage"
+        data-masquer-dates={masquerDates}
+      >
+        <h3 id="apercu-sondage-title">{campagne.sondage.titre}</h3>
+        {
+          campagne.sondage.classements.map((classement, index) => {
+            const lignes = rankResultats(classement.resultats);
+            const figure = (
+              <figure class="apercu-sondage-figure">
+                <table class="apercu-sondage-table">
+                  <caption>{captionClassement(classement)}</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Rang</th>
+                      <th scope="col">Candidat</th>
+                      <th scope="col">Intentions de vote</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {lignes.map((ligne) => (
+                      <tr>
+                        <td>{ligne.rang ?? ''}</td>
+                        <th scope="row">{ligne.nom}</th>
+                        <td class="apercu-sondage-score">{formatScore(ligne)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p class="apercu-sondage-mentions meta">
+                  Institut : {phrase(classement.institut)} Commanditaire :{' '}
+                  {phrase(classement.commanditaire)} Publication :{' '}
+                  {phrase(formatCampagneDate(classement.publication, { weekday: false }))} Terrain :{' '}
+                  {phrase(classement.terrain)} Échantillon : {phrase(classement.echantillon)} Méthode
+                  : {phrase(classement.methode)} Marge d’erreur : {phrase(classement.marge_erreur)}
+                  {classement.non_exprimes ? ` ${phrase(classement.non_exprimes)}` : ''}{' '}
+                  {phrase(classement.source_label)}{' '}
+                  <a href={classement.notice_url} rel="noopener noreferrer">{classement.notice_label}</a>.
+                </p>
+              </figure>
+            );
+            if (index === 0) return figure;
+            return (
+              <details class="apercu-details">
+                <summary>
+                  Autre sondage récent : {classement.institut} pour {classement.commanditaire}
+                </summary>
+                {figure}
+              </details>
+            );
+          })
+        }
+        <p class="apercu-sondage-note meta">{campagne.sondage.note}</p>
+        <p class="apercu-sondage-ligne meta">{SONDAGES_LIGNE}</p>
+        <script is:inline>
+          (function () {
+            var el = document.getElementById('apercu-sondage');
+            if (!el) return;
+            var raw = el.getAttribute('data-masquer-dates') || '';
+            if (!raw) return;
+            var dates = raw.split(',');
+            var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(
+              new Date(),
+            );
+            if (dates.indexOf(today) !== -1) el.hidden = true;
+          })();
+        </script>
       </div>
     )
   }
@@ -511,58 +551,71 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
     color: var(--muted);
   }
 
-  .apercu-sondage-teaser {
-    margin: 0;
+  .apercu-sondage-figure {
+    margin: 0.35rem 0 0.55rem;
+    overflow-x: auto;
+  }
+
+  .apercu-sondage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.88rem;
+    color: var(--fg);
+  }
+
+  .apercu-sondage-table caption {
+    caption-side: top;
+    text-align: left;
+    font-family: system-ui, sans-serif;
+    font-weight: 650;
     font-size: 0.84rem;
     line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    color: var(--fg);
+    margin: 0 0 0.35rem;
   }
 
-  .apercu-sondage-dl {
-    margin: 0.35rem 0 0.45rem;
-    display: grid;
-    gap: 0.35rem 0.75rem;
+  .apercu-sondage-table th,
+  .apercu-sondage-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.28rem 0.4rem;
+    text-align: left;
+    vertical-align: top;
+    color: var(--fg);
   }
 
-  .apercu-sondage-dl div {
-    display: grid;
-    grid-template-columns: minmax(7.5rem, 11rem) 1fr;
-    gap: 0.25rem 0.75rem;
-    align-items: start;
-  }
-
-  .apercu-sondage-dl dt {
+  .apercu-sondage-table thead th {
     font-family: system-ui, sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--muted);
+    border-bottom: 1px solid var(--border);
   }
 
-  .apercu-sondage-dl dd {
-    margin: 0;
-    font-size: 0.92rem;
-    line-height: 1.4;
+  .apercu-sondage-table th[scope='row'] {
+    font-weight: 650;
+    color: var(--fg);
   }
 
-  .apercu-sondage-links {
-    margin: 0 0 0.4rem;
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.15rem;
+  .apercu-sondage-score {
+    text-align: right;
+    white-space: nowrap;
   }
 
-  .apercu-sondage-links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.5rem;
+  .apercu-sondage-table thead th:last-child {
+    text-align: right;
+  }
+
+  .apercu-sondage-mentions {
+    margin: 0.45rem 0 0;
+    max-width: 72ch;
+    line-height: 1.45;
+  }
+
+  .apercu-sondage-mentions a {
+    font-weight: 650;
   }
 
   .apercu-sondage-note,
@@ -615,10 +668,16 @@ const sondageTeaser = formatSondageTeaser(campagne.sondage);
     .apercu-liste {
       min-height: 2.5rem;
     }
+  }
 
-    .apercu-sondage-dl div {
-      grid-template-columns: 1fr;
-      gap: 0.1rem;
+  @media (max-width: 479px) {
+    .apercu-sondage-table {
+      font-size: 0.76rem;
+    }
+
+    .apercu-sondage-table th,
+    .apercu-sondage-table td {
+      padding: 0.18rem 0.28rem;
     }
   }
 

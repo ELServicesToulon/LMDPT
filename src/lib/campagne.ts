@@ -54,22 +54,39 @@ export type CampagneScrutinMasque = {
   label: string;
 };
 
-export type CampagneSondage = {
-  masquer: boolean;
-  scrutins_a_masquer: CampagneScrutinMasque[];
+export type CampagneResultat = {
+  nom: string;
+  score: number | null;
+  score_label?: string;
+};
+
+export type CampagneResultatClasse = CampagneResultat & {
+  rang: number | null;
+};
+
+export type CampagneClassement = {
+  id: string;
   institut: string;
   commanditaire: string;
-  vague: string;
   publication: string;
   terrain: string;
   echantillon: string;
-  marge_erreur: string;
   methode: string;
+  marge_erreur: string;
+  hypothese: string;
+  non_exprimes: string;
+  resultats: CampagneResultat[];
   source_label: string;
-  source_url: string;
   notice_label: string;
   notice_url: string;
+};
+
+export type CampagneSondage = {
+  masquer: boolean;
+  scrutins_a_masquer: CampagneScrutinMasque[];
+  titre: string;
   note: string;
+  classements: CampagneClassement[];
 };
 
 export type CampagneData = {
@@ -122,6 +139,17 @@ export function shouldHideSondage(now: Date, data: CampagneData): boolean {
   return false;
 }
 
+/** Dates YYYY-MM-DD masquées (veille + jour de chaque scrutin), triées. */
+export function datesMasquage(data: CampagneData): string[] {
+  const dates = new Set<string>();
+  for (const scrutin of data.sondage.scrutins_a_masquer) {
+    dates.add(scrutin.date);
+    const veille = calendarDayBefore(scrutin.date);
+    if (veille) dates.add(veille);
+  }
+  return [...dates].sort();
+}
+
 /**
  * Date française à partir d’un ISO YYYY-MM-DD ou YYYY-MM.
  * Un mois sans jour documenté s’affiche « mai 2026 », sans inventer un quantième.
@@ -163,9 +191,41 @@ export function personnaliteChipTitle(personne: CampagnePersonnalite): string {
   return `${personne.courant} · ${personne.source_label} · ${sourceDate}`;
 }
 
-/** Ligne d’accroche du sondage (sans scores) : institut, commanditaire, terrain. */
-export function formatSondageTeaser(sondage: CampagneSondage): string {
-  return `${sondage.institut} pour ${sondage.commanditaire} · ${sondage.terrain}`;
+/**
+ * Classement « compétition » : ex æquo = même rang, le suivant saute.
+ * Score `null` en dernier, sans rang. Égalité : ordre du tableau d’entrée (tri stable).
+ */
+export function rankResultats(resultats: CampagneResultat[]): CampagneResultatClasse[] {
+  const indexed = resultats.map((resultat, index) => ({ resultat, index }));
+  indexed.sort((a, b) => {
+    const scoreA = a.resultat.score;
+    const scoreB = b.resultat.score;
+    if (scoreA === null && scoreB === null) return a.index - b.index;
+    if (scoreA === null) return 1;
+    if (scoreB === null) return -1;
+    if (scoreB !== scoreA) return scoreB - scoreA;
+    return a.index - b.index;
+  });
+
+  let lastScore: number | null = null;
+  let lastRang = 0;
+  return indexed.map((item, position) => {
+    if (item.resultat.score === null) {
+      return { ...item.resultat, rang: null };
+    }
+    const rang = item.resultat.score === lastScore ? lastRang : position + 1;
+    lastScore = item.resultat.score;
+    lastRang = rang;
+    return { ...item.resultat, rang };
+  });
+}
+
+const NBSP = '\u00a0';
+
+/** Score français avec virgule et « % » insécable ; `score_label` si score null. */
+export function formatScore(resultat: CampagneResultat): string {
+  if (resultat.score === null) return resultat.score_label ?? '';
+  return `${resultat.score.toLocaleString('fr-FR')}${NBSP}%`;
 }
 
 /** Groupes dans l’ordre d’apparition du JSON (déjà alphabétique FR à l’intérieur). */

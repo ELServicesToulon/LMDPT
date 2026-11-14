@@ -4,11 +4,13 @@ import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import campagneJson from '../data/campagne.json';
 import {
+  datesMasquage,
   formatCampagneDate,
-  formatSondageTeaser,
+  formatScore,
   getUneLienApercu,
   groupPersonnalites,
   personnaliteChipTitle,
+  rankResultats,
   shouldHideSondage,
   statutPastille,
   type CampagneData,
@@ -37,7 +39,7 @@ describe('campagne.json', () => {
     const raw = readFileSync(CAMPAGNE_PATH, 'utf8');
     const data = asCampagne(JSON.parse(raw));
     expect(data.title).toBe("La campagne en un clin d'œil");
-    expect(data.updated).toBe('2026-11-12');
+    expect(data.updated).toBe('2026-11-14');
     expect(data.personnalites.length).toBeGreaterThan(0);
     expect(data.dates.length).toBe(4);
 
@@ -59,10 +61,16 @@ describe('campagne.json', () => {
     }
   });
 
-  it('ne contient ni Lagarde, ni Bardella, ni Zemmour, ni Ruffin, ni Louison, ni Arnault / mise en examen / témoin assisté', () => {
-    const raw = readFileSync(CAMPAGNE_PATH, 'utf8');
+  it('ne contient ni Lagarde, ni Bardella, ni Zemmour, ni Ruffin, ni Louison, ni Arnault / mise en examen / témoin assisté hors classements de sondage', () => {
+    const data = asCampagne(JSON.parse(readFileSync(CAMPAGNE_PATH, 'utf8')));
+    const horsSondage = JSON.stringify({
+      title: data.title,
+      disclaimer: data.disclaimer,
+      personnalites: data.personnalites,
+      dates: data.dates,
+    });
     for (const pattern of FORBIDDEN) {
-      expect(raw, String(pattern)).not.toMatch(pattern);
+      expect(horsSondage, String(pattern)).not.toMatch(pattern);
     }
   });
 
@@ -97,12 +105,76 @@ describe('personnaliteChipTitle', () => {
   });
 });
 
-describe('formatSondageTeaser', () => {
-  it('cite institut, commanditaire et terrain, sans score', () => {
-    const teaser = formatSondageTeaser(asCampagne(campagneJson).sondage);
-    expect(teaser).toMatch(/Toluna Harris Interactive pour M6 et RTL/);
-    expect(teaser).toMatch(/3 au 5 novembre 2026/);
-    expect(teaser).not.toMatch(/\d+\s*%/);
+describe('rankResultats', () => {
+  it('trie par score décroissant, ex æquo même rang, rang suivant sauté, null en dernier sans rang', () => {
+    const ranked = rankResultats([
+      { nom: 'A', score: 4 },
+      { nom: 'B', score: 31 },
+      { nom: 'C', score: 4 },
+      { nom: 'D', score: null, score_label: 'moins de 1 %' },
+      { nom: 'E', score: 16 },
+    ]);
+    expect(ranked.map((r) => r.nom)).toEqual(['B', 'E', 'A', 'C', 'D']);
+    expect(ranked.map((r) => r.rang)).toEqual([1, 2, 3, 3, null]);
+  });
+
+  it('sur OpinionWay, Marine Le Pen est 1re (31) et Retailleau / Riner sont 6es', () => {
+    const ow = asCampagne(campagneJson).sondage.classements.find(
+      (c) => c.id === 'opinionway-cnews-2026-11-12',
+    );
+    expect(ow).toBeTruthy();
+    const ranked = rankResultats(ow!.resultats);
+    expect(ranked[0]?.nom).toBe('Marine Le Pen');
+    expect(ranked[0]?.rang).toBe(1);
+    expect(ranked[0]?.score).toBe(31);
+    expect(ranked.find((r) => r.nom === 'Bruno Retailleau')?.rang).toBe(6);
+    expect(ranked.find((r) => r.nom === 'Teddy Riner')?.rang).toBe(6);
+    expect(ranked.at(-1)?.nom).toBe('Karim Bouamrane');
+    expect(ranked.at(-1)?.rang).toBeNull();
+    expect(ranked.at(-1)?.score).toBeNull();
+  });
+});
+
+describe('formatScore', () => {
+  it('formate 2,5 % avec virgule et espace insécable, et score_label si null', () => {
+    expect(formatScore({ nom: 'x', score: 2.5 })).toBe('2,5\u00a0%');
+    expect(formatScore({ nom: 'x', score: 31 })).toBe('31\u00a0%');
+    expect(formatScore({ nom: 'x', score: 0.5 })).toBe('0,5\u00a0%');
+    expect(formatScore({ nom: 'x', score: null, score_label: 'moins de 1 %' })).toBe(
+      'moins de 1 %',
+    );
+  });
+});
+
+describe('classements campagne.json', () => {
+  const data = asCampagne(campagneJson);
+
+  it('a institut, commanditaire, terrain, échantillon, marge, méthode, hypothèse, notice et au moins un résultat', () => {
+    expect(data.sondage.classements.length).toBeGreaterThan(0);
+    for (const classement of data.sondage.classements) {
+      expect(classement.institut.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.commanditaire.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.terrain.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.echantillon.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.marge_erreur.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.methode.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.hypothese.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.notice_url).toMatch(
+        /^https:\/\/www\.commission-des-sondages\.fr\/notices\//,
+      );
+      expect(classement.resultats.length, classement.id).toBeGreaterThan(0);
+    }
+  });
+
+  it("contient « Un sondage n'est pas une prédiction »", () => {
+    expect(data.sondage.note).toMatch(/Un sondage n'est pas une prédiction/);
+  });
+});
+
+describe('datesMasquage', () => {
+  it('contient la veille et le jour de chaque scrutin', () => {
+    const dates = datesMasquage(asCampagne(campagneJson));
+    expect(dates).toEqual(['2027-04-17', '2027-04-18', '2027-05-01', '2027-05-02']);
   });
 });
 
@@ -178,14 +250,17 @@ describe('aperçu campagne — accueil', () => {
     expect(src).not.toMatch(/apercu-chip-courant/);
     expect(src).toMatch(/Détail des sources par courant/);
     expect(src).toMatch(/Détail des dates/);
-    expect(src).toMatch(/Mentions légales du sondage/);
     expect(src).toMatch(/<details/);
     expect(src).toMatch(/!hideSondage/);
     expect(src).not.toMatch(/personne\.courant<\/span>/);
     const template = src.slice(0, src.indexOf('<style>'));
     expect(template).not.toMatch(/\d+\s*%/);
     const sondageBlock = src.slice(src.indexOf('!hideSondage'));
-    expect(sondageBlock).toMatch(/Mentions légales du sondage/);
+    expect(sondageBlock).toMatch(/<table/);
+    expect(sondageBlock).toMatch(/<caption/);
+    expect(sondageBlock).toMatch(/scope="col"/);
+    expect(sondageBlock).toMatch(/notice_url/);
     expect(sondageBlock).toMatch(/SONDAGES_LIGNE/);
+    expect(sondageBlock).toMatch(/data-masquer-dates/);
   });
 });
