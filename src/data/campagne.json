@@ -235,9 +235,19 @@
   ],
   "sondage": {
     "masquer": false,
+    "fin_masquage_heure": "20:00",
+    "mise_au_point": null,
     "scrutins_a_masquer": [
-      { "date": "2027-04-18", "label": "Premier tour de l'élection présidentielle" },
-      { "date": "2027-05-02", "label": "Second tour de l'élection présidentielle" }
+      {
+        "date": "2027-04-18",
+        "label": "Premier tour de l'élection présidentielle",
+        "statut": "à confirmer par décret de convocation"
+      },
+      {
+        "date": "2027-05-02",
+        "label": "Second tour de l'élection présidentielle",
+        "statut": "à confirmer par décret de convocation"
+      }
     ],
     "titre": "Intentions de vote au 1er tour",
     "note": "Un sondage n'est pas une prédiction. Chaque tableau reprend une seule hypothèse de candidats d'un seul sondage ; les listes de candidats testées diffèrent d'un sondage à l'autre.",
@@ -248,6 +258,8 @@
         "commanditaire": "CNews",
         "publication": "2026-11-12",
         "terrain": "En ligne du 10 au 12 novembre 2026",
+        "terrain_debut": "2026-11-10",
+        "terrain_fin": "2026-11-12",
         "echantillon": "964 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 001 personnes représentatif de la population française âgée de 18 ans et plus. Scores calculés sur les inscrits certains d'aller voter (660 personnes) exprimant une intention de vote (611 personnes).",
         "methode": "Questionnaire auto-administré en ligne (CAWI), méthode des quotas (sexe, âge, catégorie socioprofessionnelle, catégorie d'agglomération, région), redressement sociodémographique et politique (présidentielle 2022, législatives 2024).",
         "marge_erreur": "Entre 1,4 et 3,2 points pour 964 personnes, entre 1,7 et 3,8 points pour 660 personnes, selon le score (niveau de confiance de 95 %).",
@@ -270,7 +282,7 @@
           { "nom": "Karim Bouamrane", "score": null, "score_label": "moins de 1 %" }
         ],
         "source_label": "Notice OpinionWay pour CNews n° 10371, p. 13 (résultats) et p. 2-3 (méthode, marges)",
-        "notice_label": "Notice n° 10371 sur le site de la Commission des sondages",
+        "notice_numero": "10371",
         "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/novembre/10371-pres-iv-opinionway-cnews-12-novembre.pdf"
       },
       {
@@ -279,6 +291,8 @@
         "commanditaire": "Politico",
         "publication": "2026-11-11",
         "terrain": "En ligne du 9 au 10 novembre 2026",
+        "terrain_debut": "2026-11-09",
+        "terrain_fin": "2026-11-10",
         "echantillon": "1 164 personnes inscrites sur les listes électorales, issues d'un échantillon de 1 242 personnes représentatif de la population française. Pour cette hypothèse, 1 142 personnes expriment une intention de vote, effectif utile de 899 personnes après redressement.",
         "methode": "Questionnaire auto-administré en ligne, méthode des quotas (sexe, âge, catégorie socioprofessionnelle, taille de commune, région), redressement sociodémographique et politique (présidentielle 2022, européennes 2024) et selon la probabilité de vote.",
         "marge_erreur": "Entre 1,2 et 2,8 points pour 1 164 personnes, entre 1,4 et 3,3 points pour 899 personnes, selon le score.",
@@ -305,7 +319,7 @@
           { "nom": "Nathalie Arthaud", "score": 0.5 }
         ],
         "source_label": "Notice Cluster17 pour Politico n° 10368, p. 18 (résultats) et p. 2-3 (méthode, marges)",
-        "notice_label": "Notice n° 10368 sur le site de la Commission des sondages",
+        "notice_numero": "10368",
         "notice_url": "https://www.commission-des-sondages.fr/notices/files/notices/2026/novembre/10368-pres-iv-cluster17-politico-11-novembre.pdf"
       }
     ]

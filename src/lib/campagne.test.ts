@@ -6,11 +6,15 @@ import campagneJson from '../data/campagne.json';
 import {
   datesMasquage,
   formatCampagneDate,
+  formatPeriodeEnquete,
   formatScore,
   getUneLienApercu,
   groupPersonnalites,
+  isMasqueAt,
+  parisWallClock,
   personnaliteChipTitle,
   rankResultats,
+  scrutinsMasquage,
   shouldHideSondage,
   statutPastille,
   type CampagneData,
@@ -151,15 +155,21 @@ describe('classements campagne.json', () => {
 
   it('a institut, commanditaire, terrain, échantillon, marge, méthode, hypothèse, notice et au moins un résultat', () => {
     expect(data.sondage.classements.length).toBeGreaterThan(0);
+    expect(data.sondage.fin_masquage_heure).toBe('20:00');
+    expect(data.sondage.mise_au_point).toBeNull();
     for (const classement of data.sondage.classements) {
       expect(classement.institut.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.commanditaire.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.terrain.trim().length, classement.id).toBeGreaterThan(0);
+      expect(classement.terrain_debut, classement.id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(classement.terrain_fin, classement.id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(classement.echantillon.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.marge_erreur.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.methode.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.hypothese.trim().length, classement.id).toBeGreaterThan(0);
       expect(classement.hypothese, classement.id).toMatch(/choix de la rédaction/);
+      expect(classement.notice_numero, classement.id).toMatch(/^\d+$/);
+      expect(classement).not.toHaveProperty('notice_label');
       expect(classement.notice_url).toMatch(
         /^https:\/\/www\.commission-des-sondages\.fr\/notices\//,
       );
@@ -179,6 +189,37 @@ describe('datesMasquage', () => {
   });
 });
 
+describe('scrutinsMasquage', () => {
+  it('renvoie les dimanches de scrutin triés, avec le statut décret', () => {
+    const data = asCampagne(campagneJson);
+    expect(scrutinsMasquage(data)).toEqual(['2027-04-18', '2027-05-02']);
+    expect(data.sondage.scrutins_a_masquer).toHaveLength(2);
+    for (const scrutin of data.sondage.scrutins_a_masquer) {
+      expect(scrutin.statut).toBe('à confirmer par décret de convocation');
+    }
+  });
+});
+
+describe('formatPeriodeEnquete', () => {
+  it('formule la période selon le mois et l’année', () => {
+    expect(formatPeriodeEnquete('2026-11-10', '2026-11-12')).toBe(
+      'Enquête réalisée du 10 au 12 novembre 2026',
+    );
+    expect(formatPeriodeEnquete('2026-11-09', '2026-11-10')).toBe(
+      'Enquête réalisée du 9 au 10 novembre 2026',
+    );
+    expect(formatPeriodeEnquete('2026-10-30', '2026-11-02')).toBe(
+      'Enquête réalisée du 30 octobre au 2 novembre 2026',
+    );
+    expect(formatPeriodeEnquete('2026-12-30', '2027-01-02')).toBe(
+      'Enquête réalisée du 30 décembre 2026 au 2 janvier 2027',
+    );
+    expect(formatPeriodeEnquete('2026-11-01', '2026-11-03')).toBe(
+      'Enquête réalisée du 1er au 3 novembre 2026',
+    );
+  });
+});
+
 describe('formatCampagneDate', () => {
   it('affiche un mois sans jour documenté, sans inventer un quantième', () => {
     expect(formatCampagneDate('2026-05')).toBe('mai 2026');
@@ -194,6 +235,8 @@ describe('formatCampagneDate', () => {
 
 describe('shouldHideSondage', () => {
   const data = asCampagne(campagneJson);
+  const scrutins = scrutinsMasquage(data);
+  const finMinutes = 20 * 60;
 
   it('cache le sous-bloc si masquer est vrai', () => {
     const hidden: CampagneData = {
@@ -203,14 +246,40 @@ describe('shouldHideSondage', () => {
     expect(shouldHideSondage(new Date('2026-11-12T12:00:00+01:00'), hidden)).toBe(true);
   });
 
-  it('cache le 17 avril 2027 et le 18 avril 2027 (1er tour)', () => {
-    expect(shouldHideSondage(new Date('2027-04-17T12:00:00+02:00'), data)).toBe(true);
-    expect(shouldHideSondage(new Date('2027-04-18T12:00:00+02:00'), data)).toBe(true);
+  it('premier tour : vendredi 23:59 visible, samedi 00:00 masqué, dimanche 19:59 masqué, 20:00 visible', () => {
+    expect(shouldHideSondage(new Date('2027-04-16T23:59:00+02:00'), data)).toBe(false);
+    expect(shouldHideSondage(new Date('2027-04-17T00:00:00+02:00'), data)).toBe(true);
+    expect(shouldHideSondage(new Date('2027-04-18T19:59:00+02:00'), data)).toBe(true);
+    expect(shouldHideSondage(new Date('2027-04-18T20:00:00+02:00'), data)).toBe(false);
   });
 
-  it('cache le 1er mai et le 2 mai 2027 (second tour et veille)', () => {
-    expect(shouldHideSondage(new Date('2027-05-01T12:00:00+02:00'), data)).toBe(true);
-    expect(shouldHideSondage(new Date('2027-05-02T12:00:00+02:00'), data)).toBe(true);
+  it('second tour : 30/04 23:59 visible, 01/05 00:00 masqué, 02/05 19:59 masqué, 02/05 20:00 visible', () => {
+    expect(shouldHideSondage(new Date('2027-04-30T23:59:00+02:00'), data)).toBe(false);
+    expect(shouldHideSondage(new Date('2027-05-01T00:00:00+02:00'), data)).toBe(true);
+    expect(shouldHideSondage(new Date('2027-05-02T19:59:00+02:00'), data)).toBe(true);
+    expect(shouldHideSondage(new Date('2027-05-02T20:00:00+02:00'), data)).toBe(false);
+  });
+
+  it('utilise l’horloge de Paris quand UTC et Paris tombent sur des jours différents', () => {
+    const utc = new Date('2027-04-16T22:30:00Z');
+    expect(parisWallClock(utc)).toEqual({ date: '2027-04-17', minutes: 30 });
+    expect(shouldHideSondage(utc, data)).toBe(true);
+    expect(isMasqueAt(parisWallClock(utc), scrutins, finMinutes)).toBe(true);
+  });
+
+  it('isMasqueAt reprend la règle du script navigateur', () => {
+    expect(
+      isMasqueAt(parisWallClock(new Date('2027-04-16T23:59:00+02:00')), scrutins, finMinutes),
+    ).toBe(false);
+    expect(
+      isMasqueAt(parisWallClock(new Date('2027-04-17T00:00:00+02:00')), scrutins, finMinutes),
+    ).toBe(true);
+    expect(
+      isMasqueAt(parisWallClock(new Date('2027-04-18T19:59:00+02:00')), scrutins, finMinutes),
+    ).toBe(true);
+    expect(
+      isMasqueAt(parisWallClock(new Date('2027-04-18T20:00:00+02:00')), scrutins, finMinutes),
+    ).toBe(false);
   });
 
   it('laisse visible le 12 novembre 2026 à 12:00 Europe/Paris, drapeau masquer faux', () => {
@@ -262,7 +331,16 @@ describe('aperçu campagne — accueil', () => {
     expect(sondageBlock).toMatch(/apercu-sondage-hypothese/);
     expect(sondageBlock).toMatch(/scope="col"/);
     expect(sondageBlock).toMatch(/notice_url/);
+    expect(sondageBlock).toMatch(/Notice consultable sur le site de la Commission des sondages/);
     expect(sondageBlock).toMatch(/SONDAGES_LIGNE/);
-    expect(sondageBlock).toMatch(/data-masquer-dates/);
+    expect(sondageBlock).toMatch(/data-scrutins/);
+    expect(sondageBlock).toMatch(/data-fin-masquage/);
+    expect(sondageBlock).toMatch(/Europe\/Paris/);
+    expect(sondageBlock).toMatch(/sondages-interrupteur\.json/);
+    expect(sondageBlock).toMatch(/isMasqueAt/);
+    expect(sondageBlock).not.toMatch(/innerHTML/);
+    expect(sondageBlock).not.toMatch(/getHours\(/);
+    expect(sondageBlock).not.toMatch(/notice_label/);
+    expect(sondageBlock).toMatch(/D’autres hypothèses ont été testées, voir la notice\./);
   });
 });

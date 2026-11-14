@@ -52,6 +52,18 @@ export type CampagneDate = {
 export type CampagneScrutinMasque = {
   date: string;
   label: string;
+  statut: string;
+};
+
+export type CampagneMiseAuPoint = {
+  texte: string;
+  lien_label?: string;
+  lien_url?: string;
+};
+
+export type ParisWallClock = {
+  date: string;
+  minutes: number;
 };
 
 export type CampagneResultat = {
@@ -70,6 +82,8 @@ export type CampagneClassement = {
   commanditaire: string;
   publication: string;
   terrain: string;
+  terrain_debut: string;
+  terrain_fin: string;
   echantillon: string;
   methode: string;
   marge_erreur: string;
@@ -77,12 +91,14 @@ export type CampagneClassement = {
   non_exprimes: string;
   resultats: CampagneResultat[];
   source_label: string;
-  notice_label: string;
+  notice_numero: string;
   notice_url: string;
 };
 
 export type CampagneSondage = {
   masquer: boolean;
+  fin_masquage_heure: string;
+  mise_au_point: CampagneMiseAuPoint | null;
   scrutins_a_masquer: CampagneScrutinMasque[];
   titre: string;
   note: string;
@@ -106,15 +122,35 @@ export type PersonnaliteGroupe = {
 
 const ISO_DAY = /^(\d{4})-(\d{2})-(\d{2})$/;
 const ISO_MONTH = /^(\d{4})-(\d{2})$/;
+const FIN_MASQUAGE_DEFAUT = '20:00';
+const FIN_MASQUAGE_MINUTES_DEFAUT = 20 * 60;
 
-/** Clé calendaire YYYY-MM-DD en fuseau Europe/Paris. */
-export function parisCalendarDate(now: Date): string {
-  return new Intl.DateTimeFormat('en-CA', {
+function partValue(parts: Intl.DateTimeFormatPart[], type: Intl.DateTimeFormatPartTypes): string {
+  return parts.find((part) => part.type === type)?.value ?? '';
+}
+
+/** Horloge murale Europe/Paris : date calendaire et minutes depuis minuit (hourCycle h23). */
+export function parisWallClock(now: Date): ParisWallClock {
+  const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: PARIS_TZ,
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
-  }).format(now);
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(now);
+  const hour = Number(partValue(parts, 'hour'));
+  const minute = Number(partValue(parts, 'minute'));
+  return {
+    date: `${partValue(parts, 'year')}-${partValue(parts, 'month')}-${partValue(parts, 'day')}`,
+    minutes: hour * 60 + minute,
+  };
+}
+
+/** Clé calendaire YYYY-MM-DD en fuseau Europe/Paris. */
+export function parisCalendarDate(now: Date): string {
+  return parisWallClock(now).date;
 }
 
 function calendarDayBefore(isoDate: string): string | null {
@@ -124,19 +160,44 @@ function calendarDayBefore(isoDate: string): string | null {
   return new Date(utc).toISOString().slice(0, 10);
 }
 
+export function finMasquageMinutes(hhmm: string | undefined): number {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm ?? '');
+  if (!m) return FIN_MASQUAGE_MINUTES_DEFAUT;
+  return Number(m[1]) * 60 + Number(m[2]);
+}
+
+/** Dates des dimanches de scrutin, triées. Le calcul de la veille est ailleurs. */
+export function scrutinsMasquage(data: CampagneData): string[] {
+  return data.sondage.scrutins_a_masquer.map((scrutin) => scrutin.date).sort();
+}
+
 /**
- * Masque le sous-bloc sondage le jour d’un scrutin listé, la veille
- * (calendrier Europe/Paris), ou si le drapeau manuel `masquer` est vrai.
+ * Même règle que le script inline : masqué la veille (journée entière) et
+ * le jour du scrutin tant que minutes < fin (20:00, soit 1200 minutes).
+ */
+export function isMasqueAt(
+  parts: ParisWallClock,
+  scrutins: string[],
+  finMinutes: number,
+): boolean {
+  for (const scrutin of scrutins) {
+    if (!scrutin) continue;
+    if (parts.date === scrutin && parts.minutes < finMinutes) return true;
+    const veille = calendarDayBefore(scrutin);
+    if (veille && parts.date === veille) return true;
+  }
+  return false;
+}
+
+/**
+ * Masque le sous-bloc sondage du samedi 00:00 au dimanche 20:00 exclus
+ * (horloge Europe/Paris), ou si le drapeau manuel `masquer` est vrai.
  */
 export function shouldHideSondage(now: Date, data: CampagneData): boolean {
   if (data.sondage.masquer === true) return true;
-  const today = parisCalendarDate(now);
-  for (const scrutin of data.sondage.scrutins_a_masquer) {
-    if (today === scrutin.date) return true;
-    const veille = calendarDayBefore(scrutin.date);
-    if (veille && today === veille) return true;
-  }
-  return false;
+  const fin =
+    data.sondage.fin_masquage_heure?.trim() || FIN_MASQUAGE_DEFAUT;
+  return isMasqueAt(parisWallClock(now), scrutinsMasquage(data), finMasquageMinutes(fin));
 }
 
 /** Dates YYYY-MM-DD masquées (veille + jour de chaque scrutin), triées. */
@@ -178,6 +239,39 @@ export function formatCampagneDate(
   if (opts.weekday === false) return body;
   const weekday = WEEKDAYS_FR[new Date(Date.UTC(year, month - 1, quantieme, 12)).getUTCDay()];
   return `${weekday} ${body}`;
+}
+
+function isoDayParts(iso: string): { year: number; month: number; day: number } | null {
+  const m = ISO_DAY.exec(iso);
+  if (!m) return null;
+  return { year: Number(m[1]), month: Number(m[2]), day: Number(m[3]) };
+}
+
+function quantiemeFr(day: number): string {
+  return day === 1 ? '1er' : String(day);
+}
+
+/**
+ * Période d’enquête : « Enquête réalisée du 10 au 12 novembre 2026 ».
+ * Mois différents : « du 30 octobre au 2 novembre 2026 ».
+ * Années différentes : années des deux côtés. « 1er » pour le premier du mois.
+ */
+export function formatPeriodeEnquete(debut: string, fin: string): string {
+  const start = isoDayParts(debut);
+  const end = isoDayParts(fin);
+  if (!start || !end) return '';
+  const monthStart = MONTHS_FR[start.month - 1];
+  const monthEnd = MONTHS_FR[end.month - 1];
+  if (!monthStart || !monthEnd) return '';
+  const startDay = quantiemeFr(start.day);
+  const endDay = quantiemeFr(end.day);
+  if (start.year === end.year && start.month === end.month) {
+    return `Enquête réalisée du ${startDay} au ${endDay} ${monthStart} ${start.year}`;
+  }
+  if (start.year === end.year) {
+    return `Enquête réalisée du ${startDay} ${monthStart} au ${endDay} ${monthEnd} ${start.year}`;
+  }
+  return `Enquête réalisée du ${startDay} ${monthStart} ${start.year} au ${endDay} ${monthEnd} ${end.year}`;
 }
 
 /** Pastille compacte : déclaré·e → D, désigné·e → Dé. */
