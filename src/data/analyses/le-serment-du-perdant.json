@@ -1,0 +1,432 @@
+{
+  "slug": "le-serment-du-perdant",
+  "title": "Le serment du perdant",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-15",
+  "updated": "2026-11-15",
+  "kicker": "Enquête et analyse · La rédaction · 15 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Mardi 17 novembre, les équipes de Bruno Retailleau, Gabriel Attal et David Lisnard se retrouvent pour discuter d’une primaire de la droite et du centre. Une question les divise déjà : que devra faire celui qui perd ? Nicolas Sarkozy veut un engagement à soutenir le vainqueur, Bruno Retailleau propose seulement de se mettre en retrait, et les primaires passées montrent ce que valent ces promesses.",
+  "description": "Que doit le perdant d’une primaire ? Sarkozy veut un soutien au vainqueur, Retailleau un simple retrait. Avant la réunion du 17 novembre, les règles en jeu et ce qu’ont valu les chartes passées.",
+  "disclaimer": "Cette analyse décrit des règles de départage annoncées et leurs précédents. Elle ne dit pas qui gagnerait une primaire ni le premier tour.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "primaire",
+    "droite-et-centre",
+    "doe"
+  ],
+  "x_hook": "Mardi 17 novembre, les équipes de Bruno Retailleau, Gabriel Attal et David Lisnard se retrouvent pour discuter d’une primaire de la droite et du centre. Une question les divise déjà : que devra faire celui qui perd ? Nicolas Sarkozy veut un engagement à soutenir le vainqueur, Bruno Retailleau propose seulement de se mettre en retrait, et les primaires passées montrent ce que valent ces promesses.",
+  "hues": [
+    {
+      "slug": "soutenir-le-vainqueur",
+      "label": "Soutenir le vainqueur",
+      "color": "#162561",
+      "rationale": "Attal : vote pour le vainqueur, sous condition ; Glucksmann : charte signée en octobre."
+    },
+    {
+      "slug": "se-mettre-en-retrait",
+      "label": "Se mettre en retrait",
+      "color": "#0001b8",
+      "rationale": "Retailleau : retrait sans soutien ; Lisnard : pas de soutien à Philippe."
+    },
+    {
+      "slug": "hors-primaire-ou-non-trouve",
+      "label": "Hors primaire ou non trouvé",
+      "color": "#5a6570",
+      "rationale": "Philippe : refuse la primaire ; Zemmour, Le Pen, Mélenchon, Roussel, Tondelier : position non trouvée."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "appel",
+      "title": "Un appel le 14 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Samedi 14 novembre, Gérard Larcher, président (LR) du Sénat, a proposé aux candidats de la droite et du centre de « se retrouver dans les meilleurs délais ». Le but : arrêter « la méthode de départage » d’une candidature unique « au début de l’année prochaine », selon une déclaration transmise à l’AFP ([Le Figaro](https://www.lefigaro.fr/flash-actu/presidentielle-gerard-larcher-propose-aux-candidats-de-droite-et-du-centre-de-se-rencontrer-pour-trancher-sur-une-methode-de-departage-20261114)). Il évite le mot « primaire », qui braque Édouard Philippe, relève franceinfo ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html)). Son entourage assure que l’appel ne remet pas en cause la réunion de mardi entre les directeurs de campagne des trois candidats ([Le Figaro](https://www.lefigaro.fr/flash-actu/presidentielle-gerard-larcher-propose-aux-candidats-de-droite-et-du-centre-de-se-rencontrer-pour-trancher-sur-une-methode-de-departage-20261114)). Avant de savoir qui votera et quand, une question attend les négociateurs : que doit le perdant au gagnant ?"
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "reponses",
+      "title": "Soutenir, se retirer, ou voter sous condition",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nicolas Sarkozy a donné sa réponse dans Le Figaro, vendredi 13 novembre. Il veut une primaire « large » : « tous ceux qui s’engageront à en respecter les règles devront pouvoir y concourir ». Puis « deux règles simples » : des « grands principes programmatiques communs », et « l’engagement des candidats à soutenir le vainqueur et à respecter ces principes », rapporte BFMTV ([BFMTV](https://www.bfmtv.com/politique/cet-exercice-n-a-d-interet-que-s-il-rassemble-nicolas-sarkozy-plaide-pour-l-organisation-d-une-large-primaire-de-la-droite-et-du-centre_AN-202611130733.html))."
+        },
+        {
+          "type": "p",
+          "text": "Le même jour, sur France 2, Bruno Retailleau a proposé moins. Il demande « une forme de loyauté, je ne parle pas de dire on va soutenir tel ou tel gagnant, mais au moins on se met en retrait », rapporte Le Figaro ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-bruno-retailleau-plaide-pour-une-forme-de-loyaute-a-l-egard-des-vainqueurs-de-la-primaire-20261113)). Se mettre en retrait, c’est renoncer à se présenter contre le vainqueur, sans faire campagne pour lui. Face à Gabriel Attal, il l’assume : « On n’a pas les mêmes convictions, je me mettrai en retrait » ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-bruno-retailleau-plaide-pour-une-forme-de-loyaute-a-l-egard-des-vainqueurs-de-la-primaire-20261113))."
+        },
+        {
+          "type": "p",
+          "text": "Gabriel Attal va plus loin, sous condition. Le 10 novembre, sur France Inter, il a dit n’avoir « pas de raison de ne pas voter » pour le vainqueur, si celui-ci est « le seul » en mesure d’empêcher un second tour Mélenchon-Le Pen ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "serment",
+      "title": "Ce qu’un serment n’engage pas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Élisabeth Borne, ancienne Première ministre, conteste le périmètre. Sur franceinfo, le 13 novembre, elle dit ne pas croire à « la primaire telle qu’elle est proposée jusqu’à David Lisnard ». Son argument vise les électeurs : « Est-ce que c’est raisonnable de penser que les électeurs qui votent pour Monsieur Lisnard voteraient pour Monsieur Attal et réciproquement ? Je ne le pense pas » ([franceinfo](https://www.franceinfo.fr/elections/elisabeth-borne-ecarte-une-primaire-allant-jusqu-a-david-lisnard-en-vue-de-l-election-presidentielle-de-2027_8280728.html)). Quant au calendrier des 31 janvier et 7 février, il « veut dire que pendant trois mois, on continue à s’écharper » ([franceinfo](https://www.franceinfo.fr/elections/elisabeth-borne-ecarte-une-primaire-allant-jusqu-a-david-lisnard-en-vue-de-l-election-presidentielle-de-2027_8280728.html))."
+        },
+        {
+          "type": "p",
+          "text": "C’est la limite de tout serment : il lie celui qui le prête, pas ses électeurs."
+        },
+        {
+          "type": "p",
+          "text": "Autre effet de la règle Sarkozy : si l’engagement suffit pour entrer, la frontière bouge. Éric Zemmour, président de Reconquête, se dit « ravi d’être candidat dans cette primaire » ([Europe 1](https://www.europe1.fr/politique/presidentielle-2027-eric-zemmour-se-dit-pret-a-participer-a-une-primaire-de-la-droite-et-du-centre-1231544)). « Monsieur Zemmour n’est pas invité dans cette primaire », a répondu Jad Zahab, porte-parole de Gabriel Attal ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/video-primaire-de-la-droite-et-du-centre-monsieur-zemmour-n-est-pas-invite-dans-cette-primaire-assure-jad-zahab-porte-parole-de-gabriel-attal_VN-202611130683.html)). Le serment devient un billet d’entrée, et chacun veut choisir qui a le droit de le prêter."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "chartes",
+      "title": "Ce que disaient les chartes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La règle du soutien a déjà été écrite. En 2016, la charte de la primaire de la droite et du centre prévoyait que les candidats s’engagent « à soutenir publiquement le candidat à la présidence de la République désigné à l’issue de la primaire et à prendre part à sa campagne » ([Charte de 2016](https://web.archive.org/web/20170205195730/www.primaire2016.org/charte)). Le soir du premier tour, le 20 novembre, Nicolas Sarkozy, éliminé, annonce : « je voterai pour François Fillon au second tour de la primaire » ([Le Parisien](https://www.leparisien.fr/elections/presidentielle/nicolas-sarkozy-elimine-de-la-primaire-va-se-consacrer-a-sa-vie-privee-20-11-2016-6352515.php)). Le 27, Alain Juppé, battu, déclare : « j’apporte dès ce soir mon soutien à François Fillon » ([Challenges, avec AFP](https://www.challenges.fr/politique/primaire-juppe-felicite-fillon-pour-sa-large-victoire-et-lui-apporte-son-soutien-pour-2017_440337))."
+        },
+        {
+          "type": "p",
+          "text": "En 2011, au soir de la primaire socialiste du 16 octobre, Martine Aubry, battue, salue « chaleureusement » la « victoire » de François Hollande et appelle au « rassemblement » autour de lui ([L’Obs](https://www.nouvelobs.com/politique/primaire-socialiste/20111016.OBS2571/video-montebourg-la-campagne-pour-2012-commence-ce-soir.html))."
+        },
+        {
+          "type": "p",
+          "text": "Le 11 octobre dernier, à la primaire de la gauche sociale-démocrate, les cinq candidats avaient signé une charte, rappelle LCP ([LCP](https://lcp.fr/actualites/victoire-de-raphael-glucksmann-a-la-primaire-socialiste-premieres-reactions-des)). Olivier Faure, battu : « je respecte trop le processus démocratique que j’ai voulu pour ne pas l’accepter avec sagesse ». Ségolène Royal se dit « pour celui qui a gagné, à condition qu’il y ait un rassemblement de la gauche qui se fasse » ([RTL](https://www.rtl.fr/actu/politique/primaire-de-la-gauche-faure-salue-un-glucksmann-qui-a-su-convaincre-royal-appelle-a-un-rassemblement-de-la-gauche-tondelier-constate-le-choix-du-repli-7900683932)). Un soutien, avec une condition ajoutée le soir même."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "effacer",
+      "title": "S’effacer, puis voter ailleurs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le contre-exemple date de 2017. Manuel Valls avait signé la charte de la primaire de la gauche, qui l’engageait à soutenir le vainqueur. À deux jours du second tour face à Benoît Hamon, il expliquait qu’il ne défendrait pas son programme mais qu’il « s’effacerait » devant le vainqueur, parce qu’il était « loyal », rappelle Le Parisien ([Le Parisien](https://www.leparisien.fr/elections/presidentielle/presidentielle-valls-officialise-son-soutien-a-macron-29-03-2017-6805593.php)). Le 29 mars 2017, sur BFMTV et RMC : « Non, je ne voterai pas pour Benoît Hamon », puis « oui, je voterai pour Emmanuel Macron ». Sa justification : « L’intérêt supérieur de la France va au-delà des règles d’un parti, d’une primaire, d’une commission » ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/manuel-valls-je-voterai-pour-emmanuel-macron_AN-201703290010.html))."
+        },
+        {
+          "type": "p",
+          "text": "Les mots se ressemblent : s’effacer en 2017, se mettre en retrait en 2026. L’ordre diffère. Manuel Valls avait signé un soutien, puis promis seulement de s’effacer. Bruno Retailleau annonce d’emblée qu’il ne promettra pas plus que le retrait. C’est plus franc. C’est aussi moins : ni campagne commune, ni consigne de vote."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "arrange",
+      "title": "Qui la règle arrange",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "L’engagement de soutien profite au candidat qui compte gagner puis rassembler : il transforme ses rivaux en renforts. Le retrait convient à ceux qui refusent de faire campagne pour un rival dont ils ne partagent pas les idées : Bruno Retailleau face à Gabriel Attal, ou David Lisnard, qui a déjà dit qu’il ne soutiendrait pas Édouard Philippe ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110))."
+        },
+        {
+          "type": "p",
+          "text": "Édouard Philippe, lui, n’est tenu par aucune règle, puisqu’il refuse d’entrer. « Je ne me soumettrai pas à une primaire et je présenterai ma candidature aux Françaises et aux Français », a-t-il répété le 12 novembre ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html)). À La Ciotat, le 7 novembre, il a appelé les moins bien placés à faire preuve de « responsabilité » en se retirant d’ici à février ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/primaire-de-la-droite-et-du-centre-les-directeurs-de-campagne-de-gabriel-attal-bruno-retailleau-et-david-lisnard-se-reuniront-le-17-novembre_AN-202611110712.html)). C’est aussi une règle du perdant, mais sans vote : celui qui se retire décide seul qu’il a perdu. Bruno Retailleau refuse de lui laisser « le droit de vie ou de mort » sur le départage ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pour mardi, Franck Riester, directeur de campagne de Gabriel Attal, fixe l’objectif : « se préparer pour être prêts à organiser une primaire fin janvier, début février ». Il évoque une charte des valeurs ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html)). Trois mots diront ce que vaut l’accord. Soutenir, comme en 2016. Se retirer, comme le propose Bruno Retailleau. Ou rien, si la question reste ouverte. Reste à savoir si l’engagement sera écrit, signé et public avant le vote. En 2017, même signé, il n’a pas tenu jusqu’au premier tour."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : le perdant d’une primaire doit-il soutenir le vainqueur ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : ce que doit le perdant d’une primaire au vainqueur. « En phase » signifie un engagement à soutenir le vainqueur, comme dans la charte de 2016 ; ce n’est ni un soutien à un candidat ni un jugement sur lui.",
+      "table": {
+        "caption": "Le perdant d’une primaire doit-il soutenir le vainqueur ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Attal / Renaissance",
+            "En phase, sous condition",
+            "« Pas de raison de ne pas voter » pour le vainqueur s’il est « le seul » à pouvoir empêcher un second tour Mélenchon-Le Pen. France Inter, 10 novembre.",
+            "[6]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "En phase, par une charte",
+            "Vainqueur le 11 octobre d’une primaire dont les cinq candidats avaient signé la charte ; ses concurrents battus ont accepté le résultat.",
+            "[14][15]"
+          ],
+          [
+            "Retailleau / LR",
+            "Entre les deux, retrait sans soutien",
+            "« Au moins on se met en retrait » ; face à Gabriel Attal, « je me mettrai en retrait ». France 2, 13 novembre.",
+            "[5]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Entre les deux, pas de soutien à Philippe",
+            "« Je ne soutiendrai pas Édouard Philippe s’il gagne la primaire, mais je respecterai s’il la gagnait ». BFMTV, 3 novembre.",
+            "[6]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En face, hors primaire",
+            "« Je ne me soumettrai pas à une primaire » (12 novembre) ; appelle les moins bien placés à se retirer d’ici à février (La Ciotat, 7 novembre).",
+            "[3][18]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Position non trouvée sur l’engagement du perdant",
+            "Se dit « ravi d’être candidat dans cette primaire ». Europe 1, 14 novembre.",
+            "[8]"
+          ],
+          [
+            "Le Pen / RN",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Roussel / PCF",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : soutenir le vainqueur (Attal, sous condition ; Glucksmann, par la charte signée en octobre). Entre les deux : se mettre en retrait sans soutenir (Retailleau ; Lisnard, à l’égard de Philippe). En face : rester hors primaire (Philippe). Position non trouvée sur cette question : Zemmour, Le Pen, Mélenchon, Roussel, Tondelier, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. Le Figaro, avec AFP, 14 novembre 2026, 18 h 18 (appel de Gérard Larcher). https://www.lefigaro.fr/flash-actu/presidentielle-gerard-larcher-propose-aux-candidats-de-droite-et-du-centre-de-se-rencontrer-pour-trancher-sur-une-methode-de-departage-20261114",
+          "lead": "1. Le Figaro, avec AFP, 14 novembre 2026, 18 h 18 (appel de Gérard Larcher)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/flash-actu/presidentielle-gerard-larcher-propose-aux-candidats-de-droite-et-du-centre-de-se-rencontrer-pour-trancher-sur-une-methode-de-departage-20261114",
+              "url": "https://www.lefigaro.fr/flash-actu/presidentielle-gerard-larcher-propose-aux-candidats-de-droite-et-du-centre-de-se-rencontrer-pour-trancher-sur-une-methode-de-departage-20261114"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, direct Présidentielle 2027, Camille Adaoust et Pierre Godon, 14 novembre 2026 (mis à jour à 19 h 19). https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html",
+          "lead": "2. franceinfo, direct Présidentielle 2027, Camille Adaoust et Pierre Godon, 14 novembre 2026 (mis à jour à 19 h 19)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html"
+            }
+          ]
+        },
+        {
+          "label": "3. franceinfo, Daïc Audouit, 14 novembre 2026, 7 h 13. https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html",
+          "lead": "3. franceinfo, Daïc Audouit, 14 novembre 2026, 7 h 13",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/candidats/ils-nous-mettent-dans-le-pressoir-a-pommes-combien-de-temps-edouard-philippe-va-t-il-pouvoir-resister-a-l-appel-de-la-primaire-dans-le-bloc-central_8279444.html"
+            }
+          ]
+        },
+        {
+          "label": "4. BFMTV, 13 novembre 2026 (entretien de Nicolas Sarkozy au Figaro). https://www.bfmtv.com/politique/cet-exercice-n-a-d-interet-que-s-il-rassemble-nicolas-sarkozy-plaide-pour-l-organisation-d-une-large-primaire-de-la-droite-et-du-centre_AN-202611130733.html",
+          "lead": "4. BFMTV, 13 novembre 2026 (entretien de Nicolas Sarkozy au Figaro)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/cet-exercice-n-a-d-interet-que-s-il-rassemble-nicolas-sarkozy-plaide-pour-l-organisation-d-une-large-primaire-de-la-droite-et-du-centre_AN-202611130733.html",
+              "url": "https://www.bfmtv.com/politique/cet-exercice-n-a-d-interet-que-s-il-rassemble-nicolas-sarkozy-plaide-pour-l-organisation-d-une-large-primaire-de-la-droite-et-du-centre_AN-202611130733.html"
+            }
+          ]
+        },
+        {
+          "label": "5. Le Figaro, Anaïs Chaline, 13 novembre 2026, 10 h 37 (Bruno Retailleau sur France 2). https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-bruno-retailleau-plaide-pour-une-forme-de-loyaute-a-l-egard-des-vainqueurs-de-la-primaire-20261113",
+          "lead": "5. Le Figaro, Anaïs Chaline, 13 novembre 2026, 10 h 37 (Bruno Retailleau sur France 2)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-bruno-retailleau-plaide-pour-une-forme-de-loyaute-a-l-egard-des-vainqueurs-de-la-primaire-20261113",
+              "url": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-bruno-retailleau-plaide-pour-une-forme-de-loyaute-a-l-egard-des-vainqueurs-de-la-primaire-20261113"
+            }
+          ]
+        },
+        {
+          "label": "6. Le Figaro, 10 novembre 2026, 11 h 35 (Gabriel Attal sur France Inter ; David Lisnard sur BFMTV le 3 novembre). https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110",
+          "lead": "6. Le Figaro, 10 novembre 2026, 11 h 35 (Gabriel Attal sur France Inter ; David Lisnard sur BFMTV le 3 novembre)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110",
+              "url": "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-gabriel-attal-pret-a-voter-pour-bruno-retailleau-ou-david-lisnard-en-cas-de-victoire-a-la-primaire-20261110"
+            }
+          ]
+        },
+        {
+          "label": "7. franceinfo, 13 novembre 2026, 10 h 11 (Élisabeth Borne, 8 h 30 franceinfo). https://www.franceinfo.fr/elections/elisabeth-borne-ecarte-une-primaire-allant-jusqu-a-david-lisnard-en-vue-de-l-election-presidentielle-de-2027_8280728.html",
+          "lead": "7. franceinfo, 13 novembre 2026, 10 h 11 (Élisabeth Borne, 8 h 30 franceinfo)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/elisabeth-borne-ecarte-une-primaire-allant-jusqu-a-david-lisnard-en-vue-de-l-election-presidentielle-de-2027_8280728.html",
+              "url": "https://www.franceinfo.fr/elections/elisabeth-borne-ecarte-une-primaire-allant-jusqu-a-david-lisnard-en-vue-de-l-election-presidentielle-de-2027_8280728.html"
+            }
+          ]
+        },
+        {
+          "label": "8. Europe 1, Arthur de Laborde, 14 novembre 2026, 6 h 46. https://www.europe1.fr/politique/presidentielle-2027-eric-zemmour-se-dit-pret-a-participer-a-une-primaire-de-la-droite-et-du-centre-1231544",
+          "lead": "8. Europe 1, Arthur de Laborde, 14 novembre 2026, 6 h 46",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/presidentielle-2027-eric-zemmour-se-dit-pret-a-participer-a-une-primaire-de-la-droite-et-du-centre-1231544",
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-eric-zemmour-se-dit-pret-a-participer-a-une-primaire-de-la-droite-et-du-centre-1231544"
+            }
+          ]
+        },
+        {
+          "label": "9. BFMTV, vidéo, 13 novembre 2026 (Jad Zahab). https://www.bfmtv.com/politique/elections/presidentielle/video-primaire-de-la-droite-et-du-centre-monsieur-zemmour-n-est-pas-invite-dans-cette-primaire-assure-jad-zahab-porte-parole-de-gabriel-attal_VN-202611130683.html",
+          "lead": "9. BFMTV, vidéo, 13 novembre 2026 (Jad Zahab)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/video-primaire-de-la-droite-et-du-centre-monsieur-zemmour-n-est-pas-invite-dans-cette-primaire-assure-jad-zahab-porte-parole-de-gabriel-attal_VN-202611130683.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/video-primaire-de-la-droite-et-du-centre-monsieur-zemmour-n-est-pas-invite-dans-cette-primaire-assure-jad-zahab-porte-parole-de-gabriel-attal_VN-202611130683.html"
+            }
+          ]
+        },
+        {
+          "label": "10. Charte de 2016, Charte de la primaire de la droite et du centre, article 1er (archive du site primaire2016.org). https://web.archive.org/web/20170205195730/www.primaire2016.org/charte",
+          "lead": "10. Charte de 2016, Charte de la primaire de la droite et du centre, article 1er (archive du site primaire2016.org)",
+          "links": [
+            {
+              "label": "https://web.archive.org/web/20170205195730/www.primaire2016.org/charte",
+              "url": "https://web.archive.org/web/20170205195730/www.primaire2016.org/charte"
+            }
+          ]
+        },
+        {
+          "label": "11. Le Parisien, Antonin Chilot, 20 novembre 2016. https://www.leparisien.fr/elections/presidentielle/nicolas-sarkozy-elimine-de-la-primaire-va-se-consacrer-a-sa-vie-privee-20-11-2016-6352515.php",
+          "lead": "11. Le Parisien, Antonin Chilot, 20 novembre 2016",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/nicolas-sarkozy-elimine-de-la-primaire-va-se-consacrer-a-sa-vie-privee-20-11-2016-6352515.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/nicolas-sarkozy-elimine-de-la-primaire-va-se-consacrer-a-sa-vie-privee-20-11-2016-6352515.php"
+            }
+          ]
+        },
+        {
+          "label": "12. Challenges, avec AFP, 27 novembre 2016. https://www.challenges.fr/politique/primaire-juppe-felicite-fillon-pour-sa-large-victoire-et-lui-apporte-son-soutien-pour-2017_440337",
+          "lead": "12. Challenges, avec AFP, 27 novembre 2016",
+          "links": [
+            {
+              "label": "https://www.challenges.fr/politique/primaire-juppe-felicite-fillon-pour-sa-large-victoire-et-lui-apporte-son-soutien-pour-2017_440337",
+              "url": "https://www.challenges.fr/politique/primaire-juppe-felicite-fillon-pour-sa-large-victoire-et-lui-apporte-son-soutien-pour-2017_440337"
+            }
+          ]
+        },
+        {
+          "label": "13. L’Obs, 17 octobre 2011 (réactions du 16 octobre). https://www.nouvelobs.com/politique/primaire-socialiste/20111016.OBS2571/video-montebourg-la-campagne-pour-2012-commence-ce-soir.html",
+          "lead": "13. L’Obs, 17 octobre 2011 (réactions du 16 octobre)",
+          "links": [
+            {
+              "label": "https://www.nouvelobs.com/politique/primaire-socialiste/20111016.OBS2571/video-montebourg-la-campagne-pour-2012-commence-ce-soir.html",
+              "url": "https://www.nouvelobs.com/politique/primaire-socialiste/20111016.OBS2571/video-montebourg-la-campagne-pour-2012-commence-ce-soir.html"
+            }
+          ]
+        },
+        {
+          "label": "14. LCP, Soizic Bonvarlet, 11 octobre 2026. https://lcp.fr/actualites/victoire-de-raphael-glucksmann-a-la-primaire-socialiste-premieres-reactions-des",
+          "lead": "14. LCP, Soizic Bonvarlet, 11 octobre 2026",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/victoire-de-raphael-glucksmann-a-la-primaire-socialiste-premieres-reactions-des",
+              "url": "https://lcp.fr/actualites/victoire-de-raphael-glucksmann-a-la-primaire-socialiste-premieres-reactions-des"
+            }
+          ]
+        },
+        {
+          "label": "15. RTL, Laurène Rocheteau, 11 octobre 2026. https://www.rtl.fr/actu/politique/primaire-de-la-gauche-faure-salue-un-glucksmann-qui-a-su-convaincre-royal-appelle-a-un-rassemblement-de-la-gauche-tondelier-constate-le-choix-du-repli-7900683932",
+          "lead": "15. RTL, Laurène Rocheteau, 11 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/primaire-de-la-gauche-faure-salue-un-glucksmann-qui-a-su-convaincre-royal-appelle-a-un-rassemblement-de-la-gauche-tondelier-constate-le-choix-du-repli-7900683932",
+              "url": "https://www.rtl.fr/actu/politique/primaire-de-la-gauche-faure-salue-un-glucksmann-qui-a-su-convaincre-royal-appelle-a-un-rassemblement-de-la-gauche-tondelier-constate-le-choix-du-repli-7900683932"
+            }
+          ]
+        },
+        {
+          "label": "16. Le Parisien, 29 mars 2017. https://www.leparisien.fr/elections/presidentielle/presidentielle-valls-officialise-son-soutien-a-macron-29-03-2017-6805593.php",
+          "lead": "16. Le Parisien, 29 mars 2017",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/presidentielle-valls-officialise-son-soutien-a-macron-29-03-2017-6805593.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-valls-officialise-son-soutien-a-macron-29-03-2017-6805593.php"
+            }
+          ]
+        },
+        {
+          "label": "17. BFMTV, 29 mars 2017. https://www.bfmtv.com/politique/elections/presidentielle/manuel-valls-je-voterai-pour-emmanuel-macron_AN-201703290010.html",
+          "lead": "17. BFMTV, 29 mars 2017",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/manuel-valls-je-voterai-pour-emmanuel-macron_AN-201703290010.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/manuel-valls-je-voterai-pour-emmanuel-macron_AN-201703290010.html"
+            }
+          ]
+        },
+        {
+          "label": "18. BFMTV, 11 novembre 2026 (réunion du 17 novembre ; Édouard Philippe à La Ciotat). https://www.bfmtv.com/politique/elections/presidentielle/primaire-de-la-droite-et-du-centre-les-directeurs-de-campagne-de-gabriel-attal-bruno-retailleau-et-david-lisnard-se-reuniront-le-17-novembre_AN-202611110712.html",
+          "lead": "18. BFMTV, 11 novembre 2026 (réunion du 17 novembre ; Édouard Philippe à La Ciotat)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/primaire-de-la-droite-et-du-centre-les-directeurs-de-campagne-de-gabriel-attal-bruno-retailleau-et-david-lisnard-se-reuniront-le-17-novembre_AN-202611110712.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/primaire-de-la-droite-et-du-centre-les-directeurs-de-campagne-de-gabriel-attal-bruno-retailleau-et-david-lisnard-se-reuniront-le-17-novembre_AN-202611110712.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des règles de départage annoncées et leurs précédents. Elle ne dit pas qui gagnerait une primaire ni le premier tour.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}

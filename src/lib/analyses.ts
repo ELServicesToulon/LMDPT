@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import sermentDuPerdant from '../data/analyses/le-serment-du-perdant.json';
 import porteDeService1962 from '../data/analyses/1962-la-porte-de-service.json';
 import fonctionPublique800000 from '../data/analyses/800000-en-moins-500000-en-plus.json';
 import unionChercheArbitre from '../data/analyses/union-cherche-arbitre.json';
@@ -55,6 +56,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: sermentDuPerdant.slug,
+    title: sermentDuPerdant.title,
+    description: sermentDuPerdant.description,
+    date: sermentDuPerdant.date,
+    published: sermentDuPerdant.date,
+    updated: sermentDuPerdant.updated,
+    href: '/analyses/le-serment-du-perdant',
+    cover: uneCover(
+      'le-serment-du-perdant',
+      'Aquarelle d’une table en bois où sont posés une feuille vierge, un stylo-plume ouvert, un encrier et un cachet de cire rouge encore lisse, dans la lumière d’une fenêtre.',
+    ),
+  },
   {
     slug: porteDeService1962.slug,
     title: porteDeService1962.title,
