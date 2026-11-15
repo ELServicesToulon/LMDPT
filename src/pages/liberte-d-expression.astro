@@ -6,7 +6,13 @@
  *   2. Pluralité de l’Assemblée (renvoi atlas inchangé)
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialCoverImage from '../components/EditorialCoverImage.astro';
 import ShareBar from '../components/ShareBar.astro';
+
+const liberteCover = {
+  src: '/illustrations/unes/liberte-d-expression.jpg',
+  alt: 'Aquarelle d’une table en bois éclairée par une fenêtre, avec un microphone vintage en métal, un encrier bleu, une bande de lin dénouée, un stylo-plume et deux feuilles de papier vierges.',
+};
 ---
 
 <BaseLayout
@@ -22,6 +28,7 @@ import ShareBar from '../components/ShareBar.astro';
   </nav>
 
   <section class="liberte-hero" aria-labelledby="liberte-title">
+    <EditorialCoverImage cover={liberteCover} eager class="editorial-cover--hero" />
     <p class="eyebrow">Rubrique prioritaire · débat public</p>
     <h1 id="liberte-title">Liberté d’expression</h1>
     <p class="lead">

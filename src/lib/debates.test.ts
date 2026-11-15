@@ -4,8 +4,7 @@ import desistementsSecondTour from '../data/debates/desistements-second-tour.jso
 import assembleePremierTour from '../data/debates/assemblee-premier-tour.json';
 import {
   DEBATE_CATALOG,
-  debateActivityDate,
-  formatDebateActivityLabel,
+  formatDebateOpenedLabel,
   getDebate,
   getDebateSummary,
   getOpenDebates,
@@ -90,12 +89,11 @@ describe('debate list page copy', () => {
     expect(indexSrc).not.toMatch(/<h3 class="section-title">Fils ouverts<\/h3>/);
   });
 
-  it('labels card dates as last activity without inventing a comment date', () => {
-    expect(debateActivityDate('2026-07-02')).toBe('2026-07-02');
-    expect(debateActivityDate('2026-07-02', '2026-11-01')).toBe('2026-11-01');
-    expect(debateActivityDate('2026-07-02', '  ')).toBe('2026-07-02');
-    expect(formatDebateActivityLabel('2026-07-02')).toBe('Dernière activité : 2 juillet 2026');
-    expect(indexSrc).toContain('datePrefix="Dernière activité : "');
-    expect(indexSrc).toContain('debateActivityDate(');
+  it('labels card dates with the opening date, never « Dernière activité » without a comment date', () => {
+    expect(formatDebateOpenedLabel('2026-07-02')).toBe('Ouvert le 2 juillet 2026');
+    expect(indexSrc).toContain('datePrefix="Ouvert le "');
+    expect(indexSrc).not.toContain('Dernière activité');
+    expect(indexSrc).not.toContain('debateActivityDate');
+    expect(indexSrc).not.toContain('formatDebateActivityLabel');
   });
 });

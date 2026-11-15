@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DebateLiveBanner from '../../components/DebateLiveBanner.astro';
 import EditorialCard from '../../components/EditorialCard.astro';
-import { DEBATE_CATALOG, debateActivityDate } from '../../lib/debates';
+import { DEBATE_CATALOG } from '../../lib/debates';
 import { listEditorialPosts } from '../../lib/editorial';
 
 const debatePosts = new Map(
@@ -38,14 +38,13 @@ const debatePosts = new Map(
       {
         DEBATE_CATALOG.map((d) => {
           const post = debatePosts.get(d.slug);
-          // Pas de date de dernier commentaire au build : date d'ouverture du fil.
-          const activityDate = debateActivityDate(d.date);
+          // Pas de date de dernier commentaire au build : date d’ouverture uniquement.
           return post ? (
             <li>
               <EditorialCard
-                post={{ ...post, date: activityDate }}
+                post={post}
                 badge={d.status === 'ouvert' ? 'Ouvert' : d.status === 'clos' ? 'Clos' : undefined}
-                datePrefix="Dernière activité : "
+                datePrefix="Ouvert le "
               />
             </li>
           ) : null;
