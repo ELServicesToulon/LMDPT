@@ -5,6 +5,7 @@
  * Badges couleurs d’idées obligatoires sur chaque fiche.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { OBSERVATOIRE_CENSURE_META_DESCRIPTION } from '../../lib/loulou-meta-descriptions';
 import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
 import ShareBar from '../../components/ShareBar.astro';
 import { hueBadgesForText, type HueBadge } from '../../lib/comment-politics';
@@ -87,7 +88,7 @@ function resolveObsHue(entry: {
 <BaseLayout
   title="Observatoire de la censure"
   pageHeading
-  description="Observatoire documentaire LMDPT : médias et gros comptes touchés par fermetures, suspensions ou sanctions depuis la présidentielle 2017 — motifs officiel/officieux."
+  description={OBSERVATOIRE_CENSURE_META_DESCRIPTION}
   type="website"
   keywords="censure, Arcom, médias fermés, liberté d'expression, RT France, C8, influenceurs, présidentielle 2017, LMDPT"
   commentThread="observatoire-censure"
