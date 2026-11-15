@@ -1,6 +1,8 @@
 ---
 interface Props {
   title: string;
+  /** Titre document exact (balise `<title>`), sans suffixe du site. */
+  documentTitle?: string;
   description?: string;
   ogImage?: string;
   keywords?: string;
@@ -36,7 +38,7 @@ import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro';
 import { publicSiteHref } from '../lib/public-site';
 
-const { title, description, ogImage, keywords, type, noindex, share, pageHeading } = Astro.props;
+const { title, documentTitle, description, ogImage, keywords, type, noindex, share, pageHeading } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
 const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
@@ -64,6 +66,7 @@ const articlePublished = editorialPost?.published;
 const articleModified = editorialPost?.updated ?? editorialPost?.published;
 const meta = pageMeta({
   title,
+  documentTitle,
   description,
   ogImage: resolvedOgImage,
   siteUrl,

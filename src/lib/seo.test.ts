@@ -30,6 +30,19 @@ describe('pageMeta', () => {
     expect(meta.robots).toContain('index');
     expect(meta.keywords).toContain('premier tour');
   });
+  it('honore documentTitle sans suffixe du site', () => {
+    const exact = "Atlas électoral : le 1er tour face à l'Assemblée réelle (2017-2027)";
+    const meta = pageMeta({
+      title: exact,
+      documentTitle: exact,
+      siteUrl: 'https://lemediadupremiertour.fr',
+      pathname: '/atlas',
+    });
+    expect(meta.fullTitle).toBe(exact);
+    expect(meta.canonical).toBe('https://lemediadupremiertour.fr/atlas/');
+    expect(meta.socialTitle).toBe(exact);
+  });
+
 
   it('uses default description when omitted', () => {
     const meta = pageMeta({

@@ -52,6 +52,8 @@ interface Props {
   compact?: boolean;
   /** Lien vers l’hémicycle interactif complet (si compact) */
   fullHref?: string;
+  /** Libellés atlas (Loulou) : « face à », « écart de sièges », sans flèches typographiques. */
+  atlasWording?: boolean;
 }
 
 const {
@@ -68,6 +70,7 @@ const {
   differential,
   compact = false,
   fullHref = '/analyses/assemblee-premier-tour/',
+  atlasWording = false,
 } = Astro.props;
 
 // Positions officielles (modèle établi Wikimedia)
@@ -143,19 +146,82 @@ const realSeatsSum = realAlloc.reduce((s, a) => s + (a.seats || 0), 0);
 const viewBoxW = 360;
 const viewBoxH = 185;
 const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
+
+const vsWord = atlasWording ? 'face à' : 'vs';
+const spectrumShort = atlasWording ? 'gauche à droite' : 'gauche → droite';
+const spectrumLong = atlasWording ? 'gauche, centre, droite' : 'gauche → centre → droite';
+const headingText = atlasWording
+  ? 'Deux Assemblées — 1er tour face à ce qui a suivi'
+  : 'Deux Assemblées — 1er tour vs ce qui a suivi';
+const deltaCol = atlasWording ? 'écart de sièges' : 'Δ sièges';
+const ctaFull = atlasWording
+  ? 'Voir l’hémicycle complet 577 sièges (AN1T)'
+  : 'Voir l’hémicycle complet 577 sièges (AN1T) →';
+const ctaSim = atlasWording ? 'ouvrir le simulateur AN1T' : 'ouvrir le simulateur AN1T →';
+
+function escXml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function coord(n: number): string {
+  const v = Math.round(n * 10) / 10;
+  return Number.isInteger(v) ? String(v) : v.toFixed(1);
+}
+
+function hemicycleMarkup(
+  dots: typeof firstDots,
+  opts: { ariaLabel: string; desc: string; caption: string; titleSuffix: string },
+): string {
+  const groups = new Map<string, { color: string; label: string; items: typeof dots }>();
+  for (const d of dots) {
+    const key = `${d.id}|${d.color}`;
+    let g = groups.get(key);
+    if (!g) {
+      g = { color: d.color, label: d.label, items: [] };
+      groups.set(key, g);
+    }
+    g.items.push(d);
+  }
+  const body = [...groups.values()]
+    .map((g) => {
+      const circles = g.items
+        .map((d) => `<circle cx="${coord(d.x)}" cy="${coord(d.y)}" r="2.9"/>`)
+        .join('');
+      return `<g fill="${escXml(g.color)}" stroke="none"><title>${escXml(g.label)} — ${escXml(opts.titleSuffix)}</title>${circles}</g>`;
+    })
+    .join('');
+  return `<svg viewBox="0 0 ${viewBoxW} ${viewBoxH}" width="100%" role="img" aria-label="${escXml(opts.ariaLabel)}"><desc>${escXml(opts.desc)}</desc>${body}<g class="hemi-zone-labels" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#c8c4bc" text-anchor="middle"><text x="55" y="100">Gauche</text><text x="180" y="38">Centre</text><text x="305" y="100">Droite</text></g><text x="180" y="178" text-anchor="middle" class="hemi-cap" fill="#e8e6e1" font-size="8" font-weight="600">${escXml(opts.caption)}</text></svg>`;
+}
+
+const firstHemi = hemicycleMarkup(firstDots, {
+  ariaLabel: `${firstRoundTitle} — ${firstSeatsSum} sièges attribués sur ${totalSeats}`,
+  desc: 'Hémicycle 100 % premier tour. Sièges placés de gauche à droite selon le spectre de proximité de programmes. Méthode Sainte-Laguë, seuil 3 %.',
+  caption: `${firstSeatsSum}/${totalSeats} · ${spectrumLong}`,
+  titleSuffix: 'siège 1er tour (proximité programmes)',
+});
+const realHemi = hemicycleMarkup(realDots, {
+  ariaLabel: `${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`,
+  desc: 'Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue). Même géométrie Wikimedia ; couleurs institutionnelles.',
+  caption: `${realSeatsSum}/${totalSeats} · ${spectrumLong}`,
+  titleSuffix: 'siège résultat réel',
+});
 ---
 
 <section class:list={['dual-assemblee', { 'dual-assemblee--compact': compact }]} aria-labelledby={`dual-title-${uid}`}>
   <header class="dual-header">
-    <h3 id={`dual-title-${uid}`}>Deux Assemblées — 1er tour vs ce qui a suivi</h3>
+    <h3 id={`dual-title-${uid}`}>{headingText}</h3>
     <p class="dual-lead">
       {
         compact ? (
           <>
-            Comparaison <strong>proportion 1er tour</strong> vs <strong>Assemblée réelle</strong> des
-            législatives qui ont suivi (barres = parts de sièges, spectre gauche → droite). Pour l’hémicycle
+            Comparaison <strong>proportion 1er tour</strong> {vsWord} <strong>Assemblée réelle</strong> des
+            législatives qui ont suivi (barres = parts de sièges, spectre {spectrumShort}). Pour l’hémicycle
             interactif 577 sièges :{' '}
-            <a href={fullHref}>ouvrir le simulateur AN1T →</a>
+            <a href={fullHref}>{ctaSim}</a>
           </>
         ) : (
           <>
@@ -195,55 +261,12 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
               }
             </div>
             <p class="stack-cap">
-              {firstSeatsSum}/{totalSeats} sièges · gauche → droite
+              {firstSeatsSum}/{totalSeats} sièges · {spectrumShort}
             </p>
           </div>
         ) : (
           <div class="hemi-wrap">
-            <svg
-              viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
-              width="100%"
-              height="auto"
-              role="img"
-              aria-label={`${firstRoundTitle} — ${firstSeatsSum} sièges attribués sur ${totalSeats}`}
-            >
-              <desc>
-                Hémicycle 100 % premier tour. Sièges placés de gauche à droite selon le spectre de proximité
-                de programmes. Méthode Sainte-Laguë, seuil 3 %.
-              </desc>
-              {
-                firstDots.map((d) => (
-                  <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
-                    <title>
-                      {d.label} — siège 1er tour (proximité programmes)
-                    </title>
-                  </circle>
-                ))
-              }
-              <g
-                class="hemi-zone-labels"
-                font-family="system-ui,sans-serif"
-                font-size="7"
-                font-weight="600"
-                fill="#c8c4bc"
-                text-anchor="middle"
-              >
-                <text x="55" y="100">Gauche</text>
-                <text x="180" y="38">Centre</text>
-                <text x="305" y="100">Droite</text>
-              </g>
-              <text
-                x="180"
-                y="178"
-                text-anchor="middle"
-                class="hemi-cap"
-                fill="#1c1a17"
-                font-size="8"
-                font-weight="600"
-              >
-                {firstSeatsSum}/{totalSeats} · gauche → centre → droite
-              </text>
-            </svg>
+            <Fragment set:html={firstHemi} />
           </div>
         )
       }
@@ -297,7 +320,7 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
                 }
               </div>
               <p class="stack-cap">
-                {realSeatsSum}/{totalSeats} sièges · gauche → droite
+                {realSeatsSum}/{totalSeats} sièges · {spectrumShort}
               </p>
             </div>
             <ul class="dual-legend" aria-label="Légende résultat réel">
@@ -321,50 +344,7 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
         ) : (
           <>
             <div class="hemi-wrap">
-              <svg
-                viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
-                width="100%"
-                height="auto"
-                role="img"
-                aria-label={`${realTitle} — ${realSeatsSum} sièges sur ${totalSeats}`}
-              >
-                <desc>
-                  Hémicycle du résultat réel qui a suivi le 1er tour (T2 ou Assemblée élue). Même géométrie
-                  Wikimedia ; couleurs institutionnelles.
-                </desc>
-                {
-                  realDots.map((d) => (
-                    <circle cx={d.x} cy={d.y} r="2.9" fill={d.color} stroke="none">
-                      <title>
-                        {d.label} — siège résultat réel
-                      </title>
-                    </circle>
-                  ))
-                }
-                <g
-                  class="hemi-zone-labels"
-                  font-family="system-ui,sans-serif"
-                  font-size="7"
-                  font-weight="600"
-                  fill="#c8c4bc"
-                  text-anchor="middle"
-                >
-                  <text x="55" y="100">Gauche</text>
-                  <text x="180" y="38">Centre</text>
-                  <text x="305" y="100">Droite</text>
-                </g>
-                <text
-                  x="180"
-                  y="178"
-                  text-anchor="middle"
-                  class="hemi-cap"
-                  fill="#1c1a17"
-                  font-size="8"
-                  font-weight="600"
-                >
-                  {realSeatsSum}/{totalSeats} · gauche → centre → droite
-                </text>
-              </svg>
+              <Fragment set:html={realHemi} />
             </div>
             <ul class="dual-legend" aria-label="Légende résultat réel">
               {
@@ -392,7 +372,7 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
   {
     compact && (
       <p class="compact-cta meta">
-        <a class="btn btn-secondary" href={fullHref}>Voir l’hémicycle complet 577 sièges (AN1T) →</a>
+        <a class="btn btn-secondary" href={fullHref}>{ctaFull}</a>
       </p>
     )
   }
@@ -402,8 +382,8 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
       <div class="diff-table-wrap" role="region" aria-label="Différentiel de sièges">
         <h4 class="diff-title">Différentiel de sièges (législatives réelles − Assemblée 1er tour)</h4>
         <p class="meta diff-intro">
-          Δ positif = plus de sièges après les législatives qu’en proportion pure du 1er tour.
-          Δ négatif = moins de sièges — effet uninominal, désistements, reports, participation.
+          {atlasWording ? 'Écart positif' : 'Δ positif'} = plus de sièges après les législatives qu’en proportion pure du 1er tour.
+          {atlasWording ? 'Écart négatif' : 'Δ négatif'} = moins de sièges — effet uninominal, désistements, reports, participation.
         </p>
         <table class="diff-table">
           <thead>
@@ -411,7 +391,7 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
               <th scope="col">Bloc</th>
               <th scope="col">Assemblée 1er tour</th>
               <th scope="col">Législatives réelles</th>
-              <th scope="col">Δ sièges</th>
+              <th scope="col">{deltaCol}</th>
             </tr>
           </thead>
           <tbody>
@@ -569,7 +549,12 @@ const uid = `dual-${Math.random().toString(36).slice(2, 9)}`;
   .hemi-wrap li {
     color: #f5f2eb !important;
   }
-  .hemi-wrap svg text.hemi-cap {
+  .hemi-wrap :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .hemi-wrap :global(svg text.hemi-cap) {
     fill: #e8e6e1 !important;
   }
   .dual-legend {
