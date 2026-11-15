@@ -14,6 +14,7 @@ import {
   an1tMultiScrutinClientPayload,
   getAn1tScrutinMode,
 } from '../lib/an1t-multi-scrutin';
+import { SHOW_2027_SIMULATION } from '../lib/atlas-2027-simulation';
 import pres2022 from '../data/elections/2022-presidentielle-1er-tour-national.json';
 
 interface Props {
@@ -58,6 +59,22 @@ const REELLE_SEATS: Record<string, number> = {
   autres: 124,
 };
 
+
+/** Presets 2027 (projections / hypothèses) : absents du boot JSON si le drapeau est éteint. */
+const PRESETS_2027: Record<string, Record<string, number>> = SHOW_2027_SIMULATION
+  ? {
+      'base-2027': { rn: 35, nfp: 26, ensemble: 16, lr: 8, autres: 15 },
+      'rn-forte': { rn: 42, nfp: 18, ensemble: 13, lr: 8, autres: 19 },
+      'gauche-unie': { rn: 26, nfp: 32, ensemble: 15, lr: 8, autres: 19 },
+      'centre-elargi': { rn: 24, nfp: 19, ensemble: 28, lr: 11, autres: 18 },
+      'cand-bardella': { rn: 36, nfp: 22, ensemble: 12, lr: 9, autres: 21 },
+      'cand-attal': { rn: 28, nfp: 26, ensemble: 19, lr: 12, autres: 15 },
+      'cand-melenchon': { rn: 27, nfp: 30, ensemble: 13, lr: 9, autres: 21 },
+      'cand-philippe': { rn: 25, nfp: 24, ensemble: 22, lr: 11, autres: 18 },
+      'cand-retailleau': { rn: 30, nfp: 22, ensemble: 14, lr: 16, autres: 18 },
+    }
+  : {};
+
 const an1tBootJson = JSON.stringify({
   preset2022: PRESET_T1_2022,
   preset2017: PRESET_T1_2017,
@@ -66,6 +83,7 @@ const an1tBootJson = JSON.stringify({
   defaultPcts: DEFAULT_PCTS,
   reelle: REELLE_SEATS,
   totalSeats,
+  presets2027: PRESETS_2027,
 }).replaceAll('<', '\\u003c');
 ---
 
@@ -182,12 +200,18 @@ const an1tBootJson = JSON.stringify({
         <button type="button" class="btn btn-secondary" data-preset="t1-2024">T1 2024 législatives</button>
         <button type="button" class="btn btn-secondary" data-preset="t1-2022">T1 2022 présidentielle</button>
         <button type="button" class="btn btn-secondary" data-preset="t1-2017">T1 2017 présidentielle</button>
-        <button type="button" class="btn btn-secondary" data-preset="base-2027">Base sondages 2027</button>
-        <button type="button" class="btn btn-secondary" data-preset="rn-forte">RN &amp; alliés forte</button>
-        <button type="button" class="btn btn-secondary" data-preset="gauche-unie">Gauche unie</button>
-        <button type="button" class="btn btn-secondary" data-preset="centre-elargi">Centre élargi</button>
         <button type="button" class="btn btn-secondary" data-preset="reset">Réinitialiser (3 %)</button>
+        {SHOW_2027_SIMULATION && (
+          <>
+            <button type="button" class="btn btn-secondary" data-preset="base-2027">Base sondages 2027</button>
+            <button type="button" class="btn btn-secondary" data-preset="rn-forte">RN &amp; alliés forte</button>
+            <button type="button" class="btn btn-secondary" data-preset="gauche-unie">Gauche unie</button>
+            <button type="button" class="btn btn-secondary" data-preset="centre-elargi">Centre élargi</button>
+          </>
+        )}
       </div>
+      {SHOW_2027_SIMULATION && (
+        <>
       <div class="sim-legend" style="margin-top:0.55rem">Scénarios candidats 2027 (hypothèses institutions — ligne éditoriale)</div>
       <div class="preset-buttons" role="group" aria-label="Scénarios candidats 2027">
         <button type="button" class="btn btn-secondary" data-preset="cand-bardella">Bardella</button>
@@ -202,6 +226,8 @@ const an1tBootJson = JSON.stringify({
         <a href="/analyses/assemblee-premier-tour-mecanismes/">mécanismes</a> ·{' '}
         <a href="/soutenir/">soutenir</a> · <a href="/pack-data-an1t/">Lot de données AN1T</a>.
       </p>
+        </>
+      )}
     </div>
 
     <!-- Export -->
@@ -622,18 +648,8 @@ const an1tBootJson = JSON.stringify({
     't1-2022': PRESET_T1_2022_CLIENT,
     // Présidentielle 2017 T1 — données ouvertes + nuances FN/EM (P10-5)
     't1-2017': PRESET_T1_2017_CLIENT as Record<string, number>,
-    // Agrégat pédagogique juil. 2026 (blocs législatifs, pas présidentielle) — RN ↑ post-Le Pen
-    'base-2027': { rn: 35, nfp: 26, ensemble: 16, lr: 8, autres: 15 },
-    'rn-forte': { rn: 42, nfp: 18, ensemble: 13, lr: 8, autres: 19 },
-    'gauche-unie': { rn: 26, nfp: 32, ensemble: 15, lr: 8, autres: 19 },
-    'centre-elargi': { rn: 24, nfp: 19, ensemble: 28, lr: 11, autres: 18 },
-    // Candidats 2027 — mêmes hypothèses que assemblee-premier-tour.astro (scénarios programmes)
-    'cand-bardella': { rn: 36, nfp: 22, ensemble: 12, lr: 9, autres: 21 },
-    'cand-attal': { rn: 28, nfp: 26, ensemble: 19, lr: 12, autres: 15 },
-    'cand-melenchon': { rn: 27, nfp: 30, ensemble: 13, lr: 9, autres: 21 },
-    'cand-philippe': { rn: 25, nfp: 24, ensemble: 22, lr: 11, autres: 18 },
-    'cand-retailleau': { rn: 30, nfp: 22, ensemble: 14, lr: 16, autres: 18 },
     reset: { rn: 33.0, nfp: 28.0, ensemble: 20.0, lr: 6.5, autres: 12.5 },
+    ...(boot.presets2027 || {}),
   };
 
   const MODE_TO_PRESET: Record<string, string> = {

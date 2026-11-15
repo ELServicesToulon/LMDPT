@@ -15,6 +15,7 @@ import {
   listScrutinDuals,
   type ScrutinDualPair,
 } from './scrutin-dual';
+import { shouldShow2027Simulation } from './atlas-2027-simulation';
 
 export type An1tScrutinModeId =
   | 'legislatives-2024'
@@ -99,7 +100,7 @@ function pctsFromPresidentialDataset(dataset: ElectionDataset): Record<string, n
 /**
  * Catalogue multi-scrutins pour le simulateur (prés + légis + projection).
  */
-export function listAn1tScrutinModes(): An1tScrutinMode[] {
+export function buildAllAn1tScrutinModes(): An1tScrutinMode[] {
   const dual2017 = buildScrutinDual('2017-presidentielle');
   const dual2022 = buildScrutinDual('2022-presidentielle');
   const dual2027 = buildScrutinDual('2027-presidentielle');
@@ -176,8 +177,14 @@ export function listAn1tScrutinModes(): An1tScrutinMode[] {
   ];
 }
 
+export function listAn1tScrutinModes(): An1tScrutinMode[] {
+  const all = buildAllAn1tScrutinModes();
+  if (shouldShow2027Simulation()) return all;
+  return all.filter((m) => m.id !== 'presidentielle-2027');
+}
+
 export function getAn1tScrutinMode(id: An1tScrutinModeId): An1tScrutinMode | undefined {
-  return listAn1tScrutinModes().find((m) => m.id === id);
+  return buildAllAn1tScrutinModes().find((m) => m.id === id);
 }
 
 /** Simule AN1T pour un mode (Sainte-Laguë). */

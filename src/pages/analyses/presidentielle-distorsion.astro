@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ELECTION_CATALOG, formatPct, getElection, top3PctExprimes } from '../../lib/elections';
+import {
+  ATLAS_2027_PLACEHOLDER,
+  atlasVisibleDateLabel,
+  shouldRender2027Simulation,
+} from '../../lib/atlas-2027-simulation';
 
 const elections = ELECTION_CATALOG.map((summary) => {
   const dataset = getElection(summary.slug);
@@ -62,11 +67,19 @@ const elections = ELECTION_CATALOG.map((summary) => {
           </h3>
           <p class="meta">
             <time datetime={entry.summary.date}>
-              {new Date(entry.summary.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+              {atlasVisibleDateLabel(entry.summary.slug, entry.summary.date)}
             </time>
-            {' '}· {entry.candidats} candidats · top 3 = {formatPct(entry.top3)} des exprimés
+            {shouldRender2027Simulation(entry.summary.slug) && (
+              <>
+                {' '}· {entry.candidats} candidats · top 3 = {formatPct(entry.top3)} des exprimés
+              </>
+            )}
           </p>
-          {entry.summary.distorsion_note && <p>{entry.summary.distorsion_note}</p>}
+          {shouldRender2027Simulation(entry.summary.slug) ? (
+            entry.summary.distorsion_note && <p>{entry.summary.distorsion_note}</p>
+          ) : (
+            <p>{ATLAS_2027_PLACEHOLDER}</p>
+          )}
           <p>
             <a href={`/atlas/${entry.summary.slug}/`}>Atlas complet + carte départements →</a>
           </p>

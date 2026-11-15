@@ -2,6 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DualAssembleeCompare from '../../components/DualAssembleeCompare.astro';
 import StickyToc from '../../components/StickyToc.astro';
+import {
+  ATLAS_2027_PLACEHOLDER,
+  atlasVisibleDateLabel,
+  shouldRender2027Simulation,
+} from '../../lib/atlas-2027-simulation';
 import { ELECTION_CATALOG } from '../../lib/elections';
 import { listScrutinDuals } from '../../lib/scrutin-dual';
 
@@ -45,11 +50,13 @@ const tocItems = [
             </h4>
             <p class="meta">
               <time datetime={e.date}>
-                {new Date(e.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+                {atlasVisibleDateLabel(e.slug, e.date)}
               </time>
               {' '}· tour {e.tour}
             </p>
-            {e.distorsion_note && <p class="meta distorsion">{e.distorsion_note}</p>}
+            {e.distorsion_note && shouldRender2027Simulation(e.slug) && (
+              <p class="meta distorsion">{e.distorsion_note}</p>
+            )}
           </li>
         ))
       }
@@ -62,20 +69,26 @@ const tocItems = [
         <h3 id={`h-${dual.slug}`}>
           <a href={`/atlas/${dual.slug}/`}>{dual.title}</a>
         </h3>
-        {dual.distorsionNote && <p class="meta">{dual.distorsionNote}</p>}
-        <DualAssembleeCompare
-          firstRoundAlloc={dual.firstRound}
-          realAlloc={dual.real}
-          totalSeats={dual.totalSeats}
-          t1Label={dual.t1Label}
-          t2Label={dual.realLabel}
-          firstRoundTitle={dual.firstRoundTitle}
-          realTitle={dual.realTitle}
-          firstRoundMeta={dual.firstRoundMeta}
-          realMeta={dual.realMeta}
-          realPending={dual.realPending}
-          differential={dual.differential}
-        />
+        {shouldRender2027Simulation(dual.slug) ? (
+          <>
+            {dual.distorsionNote && <p class="meta">{dual.distorsionNote}</p>}
+            <DualAssembleeCompare
+              firstRoundAlloc={dual.firstRound}
+              realAlloc={dual.real}
+              totalSeats={dual.totalSeats}
+              t1Label={dual.t1Label}
+              t2Label={dual.realLabel}
+              firstRoundTitle={dual.firstRoundTitle}
+              realTitle={dual.realTitle}
+              firstRoundMeta={dual.firstRoundMeta}
+              realMeta={dual.realMeta}
+              realPending={dual.realPending}
+              differential={dual.differential}
+            />
+          </>
+        ) : (
+          <p>{ATLAS_2027_PLACEHOLDER}</p>
+        )}
       </section>
     ))
   }

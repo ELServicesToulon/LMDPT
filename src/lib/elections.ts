@@ -23,7 +23,7 @@ export interface ElectionSummary {
 export const ELECTION_CATALOG: ElectionSummary[] = [
   {
     slug: '2027-presidentielle',
-    title: 'Présidentielle 2027 — 1er tour (projection)',
+    title: 'Présidentielle 2027 — 1er tour',
     date: '2027-04-18',
     tour: 1,
     distorsion_note:

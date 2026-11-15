@@ -22,6 +22,11 @@ import {
   buildPollAn1tBundle,
 } from '../../lib/poll-to-an1t';
 import { buildScrutinDual } from '../../lib/scrutin-dual';
+import {
+  ATLAS_2027_PLACEHOLDER,
+  ATLAS_2027_VISIBLE_DATE,
+  shouldShow2027Simulation,
+} from '../../lib/atlas-2027-simulation';
 import sondages2027 from '../../data/elections/2027-sondages-candidats.json';
 
 // Import programmes 2027 existants pour lien AN1T (utilisation données veille/institutions)
@@ -59,6 +64,7 @@ const hemiAlloc150 = an1t150.map((a: { id: string; label: string; color: string;
 }));
 
 /** Fil directeur multi-scrutins — cas législatives 2024 */
+const show2027Sim = shouldShow2027Simulation();
 const dual2024 = buildScrutinDual('2024-legislatives')!;
 const firstRoundPure = dual2024.firstRound;
 const realAssembly = dual2024.real;
@@ -290,8 +296,17 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <section class="card" id="an1t-sim-title" aria-labelledby="an1t-sim-heading">
       <h3 id="an1t-sim-heading">Simulateur — voix 1er tour → sièges (Sainte-Laguë)</h3>
       <p class="meta">
-        Ajustez les % par bloc civique. Presets calibrés : législatives 2024, présidentielle 2022 (mapping documenté),
-        projections pédagogiques 2027. Détail du regroupement nuances → blocs : {' '}
+        {show2027Sim ? (
+          <>
+            Ajustez les % par bloc civique. Presets calibrés : législatives 2024, présidentielle 2022 (mapping documenté),
+            projections pédagogiques 2027. Détail du regroupement nuances → blocs :{' '}
+          </>
+        ) : (
+          <>
+            Ajustez les % par bloc civique. Presets calibrés : législatives 2024, présidentielles 2022 et 2017 (données officielles).
+            Détail du regroupement nuances → blocs :{' '}
+          </>
+        )}
         <a href="/sources/#methodologie-blocs">méthodo</a>.
       </p>
       <An1tSimulator />
@@ -341,6 +356,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
   </section>
 
   <!-- Hémicycle hybride : groupes actuels (transparence) + projection 2027 -->
+  {show2027Sim ? (
   <div id="hemicycle-hybride">
   <AssembleeHemicycle
     title="Hémicycle hybride — Structure actuelle + Projection 1er tour"
@@ -350,6 +366,12 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     sourceNote="Illustration pédagogique uniquement. Les projections sont superposées spatialement sur les quartiers actuels correspondants (transparence + plein). Utilisez la légende cliquable et les modes pour explorer. Voir mécanismes pour les calculs."
   />
   </div>
+  ) : (
+        <section class="card" id="hemicycle-hybride">
+          <h3>Présidentielle {ATLAS_2027_VISIBLE_DATE}</h3>
+          <p>{ATLAS_2027_PLACEHOLDER}</p>
+        </section>
+  )}
 
   <!-- P7-4 : toggle 577 / 150 + liens atlas (granularité déjà dans AssembleeHemicycle) -->
   <section class="card" id="echelle-sieges" aria-labelledby="echelle-title">
@@ -393,7 +415,11 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
       {' · '}
       <a href="/analyses/assemblee-premier-tour-mecanismes/">Mécanismes (seuils / doses)</a>
       {' · '}
-      <a href="#hemicycle-hybride">↑ Hémicycle 2027</a>
+      {show2027Sim ? (
+        <a href="#hemicycle-hybride">↑ Hémicycle 2027</a>
+      ) : (
+        <a href="#hemicycle-hybride">Présidentielle {ATLAS_2027_VISIBLE_DATE}</a>
+      )}
     </p>
   </section>
   <script>
@@ -433,6 +459,8 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     </p>
   </section>
 
+  {show2027Sim ? (
+  <>
   <!-- Nouveaux scénarios intégrés programmes candidats 2027 + variantes seuils -->
   <section class="card">
     <h3>Nouveaux scénarios 2027 — Programmes candidats & variantes</h3>
@@ -544,6 +572,16 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     </section>
   </section>
 
+  </>
+  ) : (
+    <section class="card">
+      <h3>Présidentielle {ATLAS_2027_VISIBLE_DATE}</h3>
+      <p>{ATLAS_2027_PLACEHOLDER}</p>
+    </section>
+  )}
+
+  {show2027Sim ? (
+  <>
   <!-- Section sondages (avec disclaimer fort) -->
   <section class="card sondages-section">
     <h3>Projection à partir de sondages (illustration)</h3>
@@ -608,6 +646,14 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     </div>
     <p class="meta" style="font-size:0.85rem;">Tous les scénarios sont des projections pédagogiques basées sur intentions de vote rapportées. Utilisez avec recul — le 1er tour réel (données ouvertes) reste la référence LMDPT.</p>
   </section>
+
+  </>
+  ) : (
+    <section class="card sondages-section">
+      <h3>Présidentielle {ATLAS_2027_VISIBLE_DATE}</h3>
+      <p>{ATLAS_2027_PLACEHOLDER}</p>
+    </section>
+  )}
 
   <section class="card">
     <h3>Méthode (2027)</h3>
