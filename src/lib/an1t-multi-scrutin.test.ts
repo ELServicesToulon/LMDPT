@@ -8,15 +8,15 @@ import {
 import { presidentialNuanceToBlocId } from './an1t';
 
 describe('an1t-multi-scrutin (P10-5)', () => {
-  it('lists 4 modes: 2 présidentielles historiques + légis 2024 + projection 2027', () => {
+  it('masque le mode 2027 tant que SHOW_2027_SIMULATION est faux, sans supprimer les données', () => {
     const modes = listAn1tScrutinModes();
     expect(modes.map((m) => m.id)).toEqual([
       'legislatives-2024',
       'presidentielle-2022',
       'presidentielle-2017',
-      'presidentielle-2027',
     ]);
     expect(modes.every((m) => m.totalSeats === 577)).toBe(true);
+    expect(getAn1tScrutinMode('presidentielle-2027')?.kind).toBe('projection');
   });
 
   it('maps 2017 nuances FN/EM into blocs and produces non-zero T1 pcts', () => {
@@ -54,7 +54,8 @@ describe('an1t-multi-scrutin (P10-5)', () => {
 
   it('client payload serializes modes', () => {
     const p = an1tMultiScrutinClientPayload();
-    expect(p.modes.length).toBe(4);
+    expect(p.modes.length).toBe(3);
+    expect(p.modes.some((m) => m.id === 'presidentielle-2027')).toBe(false);
     expect(p.dualCount).toBeGreaterThanOrEqual(4);
   });
 });

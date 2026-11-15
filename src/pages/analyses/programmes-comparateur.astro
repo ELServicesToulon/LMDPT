@@ -23,6 +23,11 @@ import {
 } from '../../lib/program-coverage';
 import { withTrailingSlash } from '../../lib/internal-path';
 import {
+  ATLAS_2027_PLACEHOLDER,
+  ATLAS_2027_VISIBLE_DATE,
+  shouldShow2027Simulation,
+} from '../../lib/atlas-2027-simulation';
+import {
   defaultCrossFamilySlugs,
   filterCandidatesByFamily,
   getCandidateFamily,
@@ -119,6 +124,7 @@ const themeOptions: Array<{ id: ProgramThemeId | ''; label: string }> = [
   { id: 'sante', label: 'Santé' },
   { id: 'education', label: 'Éducation' },
 ];
+const show2027Sim = shouldShow2027Simulation();
 ---
 
 <BaseLayout
@@ -456,6 +462,7 @@ const themeOptions: Array<{ id: ProgramThemeId | ''; label: string }> = [
     </section>
   )}
 
+  {show2027Sim ? (
   <section class="card" aria-labelledby="an1t-link-heading">
     <h3 id="an1t-link-heading">
       Impact des programmes 2027 sur les scénarios AN1T (sièges &amp; hémicycle hybride)
@@ -546,6 +553,12 @@ const themeOptions: Array<{ id: ProgramThemeId | ''; label: string }> = [
       })()}
     </div>
   </section>
+  ) : (
+    <section class="card" aria-labelledby="an1t-link-heading">
+      <h3 id="an1t-link-heading">Présidentielle {ATLAS_2027_VISIBLE_DATE}</h3>
+      <p>{ATLAS_2027_PLACEHOLDER}</p>
+    </section>
+  )}
 </BaseLayout>
 
 <style>
