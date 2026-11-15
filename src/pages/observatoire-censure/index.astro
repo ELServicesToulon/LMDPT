@@ -6,29 +6,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ShareBar from '../../components/ShareBar.astro';
 import {
+  documentedUntilLabel,
   formatMeasureDate,
   latestMeasureDate,
   observatoireDataset,
-  observatoireEntries,
+  observatoirePublicEntries,
+  observatoirePublicFilterControls,
 } from '../../lib/observatoire-censure';
 
 const dataset = observatoireDataset();
-const entries = observatoireEntries();
+const entries = observatoirePublicEntries();
 const latestIso = latestMeasureDate(entries);
-const latestLabel = formatMeasureDate(latestIso);
-const filterControls = [
-  { id: 'obs-type-all', value: 'all', label: 'Tous' },
-  { id: 'obs-type-chaine-tv', value: 'chaîne TV', label: 'chaîne TV' },
-  { id: 'obs-type-plateforme', value: 'plateforme', label: 'plateforme' },
-  { id: 'obs-type-media-en-ligne', value: 'média en ligne', label: 'média en ligne' },
-  { id: 'obs-type-autorite-publique', value: 'autorité publique', label: 'autorité publique' },
-] as const;
+const freshnessLabel = documentedUntilLabel(entries);
+const publicMediaCount = entries.filter((entry) => entry.kind === 'media').length;
+const publicInfluencerCount = entries.filter((entry) => entry.kind === 'influencer').length;
+const filterControls = observatoirePublicFilterControls(entries);
 ---
 
 <BaseLayout
   title="Observatoire de la censure"
   pageHeading
-  description="Observatoire documentaire LMDPT : médias et gros comptes touchés par fermetures, suspensions ou sanctions depuis la présidentielle 2017 — motifs officiel/officieux."
+  description="Observatoire documentaire LMDPT : médias et gros comptes touchés par fermetures, suspensions ou sanctions depuis la présidentielle 2017."
   type="website"
   keywords="censure, Arcom, médias fermés, liberté d'expression, RT France, C8, influenceurs, présidentielle 2017, LMDPT"
   commentThread="observatoire-censure"
@@ -42,17 +40,14 @@ const filterControls = [
     <h1 id="obs-title">{dataset.title}</h1>
     <p class="meta">
       {
-        latestIso ? (
-          <>
-            Dernière date documentée dans les fiches :{' '}
-            <time datetime={latestIso}>{latestLabel}</time>
-          </>
+        freshnessLabel && latestIso ? (
+          <time datetime={latestIso}>{freshnessLabel}</time>
         ) : (
           <>Aucune date de mesure extractible des fiches.</>
         )
       }
       {' '}
-      · {dataset.media_count} médias · {dataset.influencer_count} comptes
+      · {publicMediaCount} médias · {publicInfluencerCount} comptes
       · Période : {dataset.period_label}
     </p>
     <p>{dataset.disclaimer}</p>
@@ -163,7 +158,7 @@ const filterControls = [
                 {
                   entry.motif_officieux && (
                     <p class="obs-unofficial">
-                      <strong>Motif officieux</strong> (lecture secondaire). {entry.motif_officieux}
+                      <strong>Motif officieux.</strong> {entry.motif_officieux}
                     </p>
                   )
                 }
@@ -185,8 +180,7 @@ const filterControls = [
         <em>vérification partielle</em>.
       </li>
       <li>
-        Motif <strong>officieux</strong> toujours étiqueté lecture secondaire — jamais comme
-        fait LMDPT.
+        Quand une sanction a un motif officiel, nous le citons. Les autres motifs sont rapportés avec leur source, jamais repris à notre compte.
       </li>
       <li>
         Voir aussi : <a href="/liberte-d-expression/">hub Liberté d’expression</a>, {' '}
@@ -318,8 +312,10 @@ const filterControls = [
     outline-offset: 2px;
   }
   .obs-board:has(#obs-type-chaine-tv:checked) .obs-item:not([data-factual-type='chaîne TV']),
-  .obs-board:has(#obs-type-plateforme:checked) .obs-item:not([data-factual-type='plateforme']),
+  .obs-board:has(#obs-type-radio:checked) .obs-item:not([data-factual-type='radio']),
   .obs-board:has(#obs-type-media-en-ligne:checked) .obs-item:not([data-factual-type='média en ligne']),
+  .obs-board:has(#obs-type-personnalite:checked) .obs-item:not([data-factual-type='personnalité']),
+  .obs-board:has(#obs-type-plateforme:checked) .obs-item:not([data-factual-type='plateforme']),
   .obs-board:has(#obs-type-autorite-publique:checked) .obs-item:not([data-factual-type='autorité publique']) {
     display: none;
   }

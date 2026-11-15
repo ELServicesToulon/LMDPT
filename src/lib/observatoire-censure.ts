@@ -2,17 +2,22 @@
  * Observatoire de la censure — types factuels, dates de mesure, sources officielles.
  * Les dates viennent du texte des fiches (motif_officiel, à défaut motif_officieux).
  * Aucune fiche n’a de date d’ajout.
+ * Les fiches « En vérification » restent dans le JSON et sortent de la liste publique.
  */
 import raw from '../data/observatoire-censure.json';
 
 export const FACTUAL_TYPES = [
   'chaîne TV',
-  'plateforme',
+  'radio',
   'média en ligne',
+  'personnalité',
+  'plateforme',
   'autorité publique',
 ] as const;
 
 export type FactualType = (typeof FACTUAL_TYPES)[number];
+
+export const STATUS_EN_VERIFICATION = 'En vérification';
 
 export type ObsKind = 'media' | 'influencer';
 
@@ -30,6 +35,7 @@ export type ObservatoireEntry = {
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
+  status?: string;
 };
 
 const MONTHS_FR = [
@@ -92,6 +98,63 @@ export function latestMeasureDate(entries: { measure_date?: string }[]): string 
   return best;
 }
 
+/** Mois + année d’une date de mesure ISO (jour ou mois). */
+export function formatMeasureMonthYear(iso: string | undefined): string {
+  const rawDate = String(iso || '').trim();
+  const full = rawDate.match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+  if (!full) return '—';
+  const monthLabel = MONTHS_FR[Number(full[2]) - 1];
+  if (!monthLabel) return '—';
+  return `${monthLabel} ${full[1]}`;
+}
+
+/** Libellé public de fraîcheur, calculé sur le max des dates de mesure fournies. */
+export function documentedUntilLabel(entries: { measure_date?: string }[]): string | undefined {
+  const latest = latestMeasureDate(entries);
+  const monthYear = formatMeasureMonthYear(latest);
+  if (!latest || monthYear === '—') return undefined;
+  return `Fiches documentées jusqu’en ${monthYear}`;
+}
+
+export function isEnVerification(entry: { status?: string }): boolean {
+  return entry.status === STATUS_EN_VERIFICATION;
+}
+
+export function observatoirePublicEntries(entries = observatoireEntries()): ObservatoireEntry[] {
+  return entries.filter((entry) => !isEnVerification(entry));
+}
+
+export type ObservatoireFilterControl = {
+  id: string;
+  value: string;
+  label: string;
+};
+
+export function factualTypeFilterId(type: FactualType): string {
+  const slug = type
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase();
+  return `obs-type-${slug}`;
+}
+
+/** Filtres publics : « Tous » + types qui ont au moins une fiche publique. */
+export function observatoirePublicFilterControls(
+  entries: ObservatoireEntry[] = observatoirePublicEntries(),
+): ObservatoireFilterControl[] {
+  const present = new Set(entries.map((entry) => entry.factual_type));
+  return [
+    { id: 'obs-type-all', value: 'all', label: 'Tous' },
+    ...FACTUAL_TYPES.filter((type) => present.has(type)).map((type) => ({
+      id: factualTypeFilterId(type),
+      value: type,
+      label: type,
+    })),
+  ];
+}
+
 type MediaRaw = {
   id: string;
   name: string;
@@ -104,6 +167,7 @@ type MediaRaw = {
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
+  status?: string;
 };
 
 type InfluencerRaw = {
@@ -119,6 +183,7 @@ type InfluencerRaw = {
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
+  status?: string;
 };
 
 function asFactualType(value: string, id: string): FactualType {
@@ -142,6 +207,7 @@ export function observatoireEntries(): ObservatoireEntry[] {
     motif_officiel: m.motif_officiel,
     motif_officieux: m.motif_officieux,
     verification: m.verification,
+    status: m.status,
   }));
   const influencers = (raw.influencers as InfluencerRaw[]).map((inf) => ({
     id: inf.id,
@@ -157,6 +223,7 @@ export function observatoireEntries(): ObservatoireEntry[] {
     motif_officiel: inf.motif_officiel,
     motif_officieux: inf.motif_officieux,
     verification: inf.verification,
+    status: inf.status,
   }));
   return [...media, ...influencers];
 }
