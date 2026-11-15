@@ -321,7 +321,9 @@ export function buildScrutinDual(slug: string): ScrutinDualPair | null {
       slug,
       kind: isProjection ? 'projection' : 'presidentielle',
       title: summary.title,
-      t1Label: `1er tour présidentiel ${new Date(dataset.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}${isProjection ? ' (projection)' : ''}`,
+      t1Label: isProjection
+        ? 'avril 2027'
+        : `1er tour présidentiel ${new Date(dataset.date).toLocaleDateString('fr-FR', { dateStyle: 'long' })}`,
       realLabel: following.label,
       firstRoundTitle: 'Assemblée du 1er tour présidentiel',
       realTitle: following.pending

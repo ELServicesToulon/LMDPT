@@ -212,7 +212,8 @@ const realHemi = hemicycleMarkup(realDots, {
 ---
 
 <section class:list={['dual-assemblee', { 'dual-assemblee--compact': compact }]} aria-labelledby={`dual-title-${uid}`}>
-  <header class="dual-header">
+{!atlasWording && (
+    <header class="dual-header">
     <h3 id={`dual-title-${uid}`}>{headingText}</h3>
     <p class="dual-lead">
       {
@@ -235,6 +236,7 @@ const realHemi = hemicycleMarkup(realDots, {
       }
     </p>
   </header>
+  )}
 
   <div class="dual-grid">
     <!-- GAUCHE : 100% 1er tour -->
@@ -369,6 +371,33 @@ const realHemi = hemicycleMarkup(realDots, {
     </article>
   </div>
 
+  {atlasWording && (
+    <header class="dual-header dual-header--after">
+    <h3 id={`dual-title-${uid}`}>{headingText}</h3>
+    <p class="dual-lead">
+      {
+        compact ? (
+          <>
+            Comparaison <strong>proportion 1er tour</strong> {vsWord} <strong>Assemblée réelle</strong> des
+            législatives qui ont suivi (barres = parts de sièges, spectre {spectrumShort}). Pour l’hémicycle
+            interactif 577 sièges :{' '}
+            <a href={fullHref}>{ctaSim}</a>
+          </>
+        ) : (
+          <>
+            À gauche de l’écran : Assemblée <strong>100&nbsp;% calée sur le 1er tour</strong> (Sainte-Laguë, 577 sièges,
+            couleurs = <strong>proximité de programmes</strong>). À droite de l’écran : Assemblée{' '}
+            <strong>réelle des législatives</strong> qui ont suivi. <strong>Convention hémicycle</strong> :
+            partis de <em>gauche à gauche</em>, <em>centre au centre</em>, partis de <em>droite à droite</em>{' '}
+            (vue face à l’hémicycle).
+          </>
+        )
+      }
+    </p>
+  </header>
+  )}
+  <slot name="after-hemi" />
+
   {
     compact && (
       <p class="compact-cta meta">
@@ -471,6 +500,9 @@ const realHemi = hemicycleMarkup(realDots, {
     display: inline-block;
   }
 
+  .dual-header--after {
+    margin-top: 0.85rem;
+  }
   .dual-header h3 {
     margin: 0 0 0.45rem;
     font-size: 1.28rem;

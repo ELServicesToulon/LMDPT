@@ -20,7 +20,7 @@ const otherDuals = duals.filter((d) => d.slug !== '2022-presidentielle');
 const tocItems = [
   { href: '#scrutins', label: 'Liste des scrutins' },
   ...duals.map((d) => ({ href: `#${d.slug}`, label: d.title })),
-  { href: '/sources/#methodologie-blocs', label: 'Méthodo : nuances → blocs' },
+  { href: '/sources/#methodologie-blocs', label: 'Méthode : des nuances aux blocs' },
 ];
 ---
 
@@ -30,19 +30,11 @@ const tocItems = [
   pageHeading
   description="Écart visible : pluralité du 1er tour face à l'Assemblée réelle — atlas en données ouvertes pour chaque scrutin."
 >
-  <section>
+  <section class="atlas-open">
     <h1>{ATLAS_DOCUMENT_TITLE}</h1>
     <p class="kicker">Ce que le 1er tour montre (et ce que le second compresse).</p>
     <p class="lead">
-      <strong>Même urne, deux Assemblées.</strong> Pour chaque présidentielle : sièges calés sur le {' '}
-      <strong>1er tour</strong> (Sainte-Laguë) face à l'Assemblée réelle des {' '}
-      <strong>législatives qui ont suivi</strong>. Tableau écart de sièges — sans classement.
-    </p>
-    <p class="meta">
-      Documenter le 1er tour, pas le transformer en classement. Illustration pédagogique, pas de prédiction.
-      {' · '}
-      Agrégation nuances → blocs : {' '}
-      <a href="/sources/#methodologie-blocs">méthodologie</a>.
+      <strong>Même urne, deux Assemblées.</strong>
     </p>
   </section>
 
@@ -70,7 +62,21 @@ const tocItems = [
           realPending={featured2022.realPending}
           differential={featured2022.differential}
           atlasWording
-        />
+        >
+          <div slot="after-hemi" class="after-hemi">
+            <p class="lead">
+              Pour chaque présidentielle : sièges calés sur le {' '}
+              <strong>1er tour</strong> (Sainte-Laguë) face à l'Assemblée réelle des {' '}
+              <strong>législatives qui ont suivi</strong>. Tableau écart de sièges — sans classement.
+            </p>
+            <p class="meta">
+              Documenter le 1er tour, pas le transformer en classement. Illustration pédagogique, pas de prédiction.
+              {' · '}
+              Regroupement des nuances en blocs : {' '}
+              <a href="/sources/#methodologie-blocs">méthodologie</a>.
+            </p>
+          </div>
+        </DualAssembleeCompare>
       </section>
     )
   }
@@ -142,8 +148,14 @@ const tocItems = [
     letter-spacing: -0.02em;
     max-width: 52rem;
   }
+  .atlas-open {
+    margin: 0;
+  }
+  .atlas-open .lead {
+    margin-bottom: 0.5rem;
+  }
   .kicker {
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.45rem;
     font-size: 1.05rem;
     line-height: 1.4;
     color: var(--muted);
@@ -153,6 +165,9 @@ const tocItems = [
     max-width: 52rem;
     line-height: 1.55;
     font-size: 1.05rem;
+  }
+  .after-hemi .lead {
+    margin: 0.35rem 0 0.65rem;
   }
   .election-list {
     list-style: none;
