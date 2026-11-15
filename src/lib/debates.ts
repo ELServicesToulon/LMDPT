@@ -67,3 +67,15 @@ export function getDebate(slug: string): DebateDataset | undefined {
 export function getOpenDebates(): DebateSummary[] {
   return DEBATE_CATALOG.filter((d) => d.status === 'ouvert');
 }
+
+/** Date affichée sur une carte de fil : dernier commentaire publié, sinon date d’ouverture. */
+export function debateActivityDate(openedAt: string, lastCommentAt?: string | null): string {
+  const last = lastCommentAt?.trim();
+  return last || openedAt;
+}
+
+/** « Dernière activité : JJ mois AAAA » — aucune date inventée. */
+export function formatDebateActivityLabel(isoDate: string, locale = 'fr-FR'): string {
+  const label = new Date(isoDate).toLocaleDateString(locale, { dateStyle: 'long' });
+  return `Dernière activité : ${label}`;
+}
