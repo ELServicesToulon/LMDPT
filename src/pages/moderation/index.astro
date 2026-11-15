@@ -23,8 +23,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
     <p id="mod-purge-result" class="meta" role="status"></p>
 
-    <h3>Suggestions &amp; alertes lecteurs</h3>
-    <div id="mod-tips-queue" class="mod-queue"></div>
+    <div id="mod-tips-lists">
+      <h3>Suggestions &amp; alertes en attente</h3>
+      <div id="mod-tips-queue" class="mod-queue"></div>
+      <h3>Contributions publiées</h3>
+      <div id="mod-tips-published" class="mod-queue"></div>
+      <h3>Contributions refusées</h3>
+      <div id="mod-tips-rejected" class="mod-queue"></div>
+    </div>
 
     <h3>Commentaires citoyens</h3>
     <div id="mod-queue" class="mod-queue"></div>
@@ -36,6 +42,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const api = '/api/comments';
   const queueEl = document.getElementById('mod-queue')!;
   const tipsEl = document.getElementById('mod-tips-queue')!;
+  const tipsPublishedEl = document.getElementById('mod-tips-published')!;
+  const tipsRejectedEl = document.getElementById('mod-tips-rejected')!;
+  const tipsListsEl = document.getElementById('mod-tips-lists')!;
   const statusEl = document.getElementById('mod-status')!;
   const purgeResultEl = document.getElementById('mod-purge-result')!;
   const tokenInput = document.getElementById('mod-token') as HTMLInputElement;
@@ -64,18 +73,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
   }
 
-  async function loadTipsQueue() {
-    const res = await fetch(`${api}/mod/tips-queue`, {
-      headers: { 'X-Mod-Token': token() },
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Accès tips refusé');
-    const queue = data.queue || [];
-    if (!queue.length) {
-      tipsEl.innerHTML = '<p class="meta">File suggestions/alertes vide.</p>';
-      return data.role as string;
-    }
-    tipsEl.innerHTML = queue
+  function renderTips(list: any[], emptyLabel: string, pendingActions: boolean) {
+    if (!list.length) return `<p class="meta">${emptyLabel}</p>`;
+    return list
       .map((t: any) => {
         const href = safeHttpUrl(t.sourceUrl);
         const src = href
@@ -84,6 +84,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         const email = t.contactEmail
           ? ` · <span class="meta">${escapeHtml(t.contactEmail)}</span>`
           : '';
+        const pending = pendingActions
+          ? `<button type="button" data-tip-act="approve" data-id="${escapeHtml(t.id)}">Approuver → site</button>
+            <button type="button" data-tip-act="reject" data-id="${escapeHtml(t.id)}">Rejeter</button>`
+          : '';
         return `
         <article class="mod-item tip-${escapeHtml(t.type)}">
           <p><strong>${t.type === 'alerte' ? 'Alerte' : 'Suggestion'}</strong> · ${escapeHtml(t.displayName)}${email}</p>
@@ -91,12 +95,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <p>${escapeHtml(t.body)}</p>
           ${src}
           <div class="mod-item-actions">
-            <button type="button" data-tip-act="approve" data-id="${escapeHtml(t.id)}">Approuver → site</button>
-            <button type="button" data-tip-act="reject" data-id="${escapeHtml(t.id)}">Rejeter</button>
+            ${pending}
+            <button type="button" data-tip-delete data-id="${escapeHtml(t.id)}">Supprimer</button>
           </div>
         </article>`;
       })
       .join('');
+  }
+
+  async function loadTipsQueue() {
+    const res = await fetch(`${api}/mod/tips-queue`, {
+      headers: { 'X-Mod-Token': token() },
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Accès tips refusé');
+    tipsEl.innerHTML = renderTips(data.queue || [], 'File suggestions/alertes vide.', true);
+    tipsPublishedEl.innerHTML = renderTips(data.published || [], 'Aucune contribution publiée.', false);
+    tipsRejectedEl.innerHTML = renderTips(data.rejected || [], 'Aucune contribution refusée.', false);
     return data.role as string;
   }
 
@@ -137,6 +152,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     } catch (e: any) {
       statusEl.textContent = e.message || 'Erreur';
       tipsEl.innerHTML = '';
+      tipsPublishedEl.innerHTML = '';
+      tipsRejectedEl.innerHTML = '';
       queueEl.innerHTML = '';
     }
   }
@@ -168,8 +185,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     await loadQueue();
   });
 
-  tipsEl.addEventListener('click', async (e) => {
-    const btn = (e.target as HTMLElement).closest('button[data-tip-act]') as HTMLButtonElement | null;
+  tipsListsEl.addEventListener('click', async (e) => {
+    const target = e.target as HTMLElement;
+    const deleteBtn = target.closest('button[data-tip-delete]') as HTMLButtonElement | null;
+    if (deleteBtn) {
+      const ok = window.confirm(
+        'Supprimer cette contribution en entier ? Cette action est définitive, quel que soit son statut.',
+      );
+      if (!ok) return;
+      const res = await fetch(`${api}/mod/tips-delete`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Mod-Token': token(),
+        },
+        body: JSON.stringify({ tipId: deleteBtn.dataset.id }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        statusEl.textContent = data.error || 'Échec de la suppression';
+        return;
+      }
+      statusEl.textContent = 'Contribution supprimée.';
+      await loadQueue();
+      return;
+    }
+    const btn = target.closest('button[data-tip-act]') as HTMLButtonElement | null;
     if (!btn) return;
     const res = await fetch(`${api}/mod/tips-action`, {
       method: 'POST',

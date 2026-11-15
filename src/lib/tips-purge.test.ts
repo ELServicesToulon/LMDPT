@@ -8,6 +8,7 @@ import { spawn, type ChildProcess } from 'node:child_process';
 import { readFileSync as readSource } from 'node:fs';
 import {
   anonymizePublishedTip,
+  deleteTipById,
   purgeProcessedTips,
   tipHasIdentifyingData,
   writeJsonAtomic,
@@ -147,6 +148,45 @@ describe('anonymizePublishedTip', () => {
   });
 });
 
+describe('deleteTipById', () => {
+  it('supprime une contribution pending, published ou rejected', () => {
+    for (const id of ['tip-pending-1', 'tip-published-1', 'tip-rejected-1']) {
+      const db = sampleTips();
+      const before = db.tips.length;
+      const result = deleteTipById(db, id, {
+        at: '2026-03-01T10:00:00.000Z',
+        by: 'modo-1',
+        role: 'modo',
+      });
+      expect(result).toEqual({ found: true, deleted: true });
+      expect(db.tips).toHaveLength(before - 1);
+      expect(db.tips.some((t: { id: string }) => t.id === id)).toBe(false);
+      expect(db.deleteHistory).toEqual([
+        {
+          at: '2026-03-01T10:00:00.000Z',
+          by: 'modo-1',
+          role: 'modo',
+          action: 'tips-delete',
+          tipId: id,
+        },
+      ]);
+      const blob = JSON.stringify(db.deleteHistory);
+      expect(blob).not.toMatch(/@example\.test/);
+      expect(blob).not.toMatch(/contactEmail|authorKeyHash/);
+    }
+  });
+
+  it('signale un tip absent sans modifier le fichier', () => {
+    const db = sampleTips();
+    const snapshot = structuredClone(db);
+    expect(deleteTipById(db, 'inconnu', { at: '2026-03-01T10:00:00.000Z', by: 'modo-1', role: 'modo' })).toEqual({
+      found: false,
+      deleted: false,
+    });
+    expect(db).toEqual(snapshot);
+  });
+});
+
 describe('page /moderation/', () => {
   it('propose le bouton de purge avec confirmation et affichage des compteurs', () => {
     expect(MOD_PAGE).toContain('Purger les contributions traitées');
@@ -155,6 +195,15 @@ describe('page /moderation/', () => {
     expect(MOD_PAGE).toContain('deletedRejected');
     expect(MOD_PAGE).toContain('anonymizedPublished');
     expect(MOD_PAGE).toContain('mod-purge-result');
+  });
+
+  it('propose un bouton Supprimer par contribution, file et listes publiées/refusées, avec confirmation', () => {
+    expect(MOD_PAGE).toContain('>Supprimer</button>');
+    expect(MOD_PAGE).toContain('/mod/tips-delete');
+    expect(MOD_PAGE).toContain('data-tip-delete');
+    expect(MOD_PAGE).toContain('mod-tips-published');
+    expect(MOD_PAGE).toContain('mod-tips-rejected');
+    expect(MOD_PAGE).toContain('Supprimer cette contribution en entier');
   });
 });
 
@@ -271,6 +320,72 @@ describe('POST /api/comments/mod/tips-purge', () => {
     });
     expect(second.status).toBe(200);
     expect(await second.json()).toEqual({ deletedRejected: 0, anonymizedPublished: 0 });
+
+    stopCommentsApi(started.child, started.dataDir);
+    running.child = undefined;
+    running.dataDir = undefined;
+  }, 15000);
+});
+
+describe('POST /api/comments/mod/tips-delete', () => {
+  const running: { child?: ChildProcess; dataDir?: string } = {};
+
+  afterAll(() => {
+    if (running.child && running.dataDir) stopCommentsApi(running.child, running.dataDir);
+  });
+
+  it('refuse sans jeton, supprime pending/published/rejected, puis 404 si absent', async () => {
+    const started = await startCommentsApi();
+    running.child = started.child;
+    running.dataDir = started.dataDir;
+    const base = `http://127.0.0.1:${started.port}`;
+    const headers = { 'Content-Type': 'application/json', 'X-Mod-Token': TEST_TOKEN };
+
+    const denied = await fetch(`${base}/api/comments/mod/tips-delete`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipId: 'tip-pending-1' }),
+    });
+    expect(denied.status).toBe(403);
+    expect((await denied.json()).error).toBeTruthy();
+
+    for (const tipId of ['tip-pending-1', 'tip-published-1', 'tip-rejected-1']) {
+      const res = await fetch(`${base}/api/comments/mod/tips-delete`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ tipId }),
+      });
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true, deleted: true, tipId });
+    }
+
+    const stored = JSON.parse(readFileSync(join(started.dataDir, 'tips.json'), 'utf8'));
+    expect(stored.tips).toEqual([]);
+    expect(stored.deleteHistory).toHaveLength(3);
+    for (const entry of stored.deleteHistory) {
+      expect(entry).toMatchObject({ action: 'tips-delete', by: 'modo-1', role: 'modo' });
+      expect(entry.tipId).toMatch(/^tip-/);
+      expect(entry).not.toHaveProperty('contactEmail');
+      expect(JSON.stringify(entry)).not.toMatch(/@example\.test/);
+    }
+
+    const again = await fetch(`${base}/api/comments/mod/tips-delete`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ tipId: 'tip-pending-1' }),
+    });
+    expect(again.status).toBe(404);
+
+    const missing = await fetch(`${base}/api/comments/mod/tips-delete`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ tipId: 'inconnu' }),
+    });
+    expect(missing.status).toBe(404);
+    expect((await missing.json()).error).toBe('Proposition introuvable');
+
+    const after = JSON.parse(readFileSync(join(started.dataDir, 'tips.json'), 'utf8'));
+    expect(after.deleteHistory).toHaveLength(3);
 
     stopCommentsApi(started.child, started.dataDir);
     running.child = undefined;

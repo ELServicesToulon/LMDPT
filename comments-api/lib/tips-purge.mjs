@@ -4,6 +4,7 @@
  * Une contribution publiée garde le texte et les champs publics ;
  * les données d’identification de l’auteur sont effacées.
  * Les contributions en attente restent intactes.
+ * La suppression unitaire (droit d’effacement) retire un tip entier, quel que soit son statut.
  */
 import { writeFileSync, renameSync, unlinkSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
@@ -97,6 +98,32 @@ export function purgeProcessedTips(db, { at, by, role } = {}) {
     });
   }
   return { deletedRejected, anonymizedPublished };
+}
+
+/**
+ * Suppression unitaire d’un tip, quel que soit son statut.
+ * Journal : id + date + modérateur, sans donnée perso d’auteur.
+ * @returns {{ found: boolean, deleted: boolean }}
+ */
+export function deleteTipById(db, tipId, { at, by, role } = {}) {
+  const id = String(tipId || '').trim();
+  if (!id || !db || !Array.isArray(db.tips)) {
+    return { found: false, deleted: false };
+  }
+  const idx = db.tips.findIndex((tip) => tip && tip.id === id);
+  if (idx === -1) {
+    return { found: false, deleted: false };
+  }
+  db.tips.splice(idx, 1);
+  db.deleteHistory = Array.isArray(db.deleteHistory) ? db.deleteHistory : [];
+  db.deleteHistory.push({
+    at: at || new Date().toISOString(),
+    by: by || null,
+    role: role || null,
+    action: 'tips-delete',
+    tipId: id,
+  });
+  return { found: true, deleted: true };
 }
 
 export function writeJsonAtomic(filePath, data) {

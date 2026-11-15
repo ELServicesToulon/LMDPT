@@ -32,6 +32,8 @@ node --test lib/auth/auth.test.mjs
 2. `POST /api/comments/tips/submit` → `pending` (gate anti-haine / anti-autorité religieuse)  
 3. Modo : `GET /api/comments/mod/tips-queue` + `POST /api/comments/mod/tips-action` (`approve`|`reject`)  
 4. Purge RGPD (jeton modo, comme `tips-action`) : `POST /api/comments/mod/tips-purge` — supprime les `rejected`, anonymise les `published` (texte public conservé), laisse les `pending`. Réponse `{deletedRejected, anonymizedPublished}`. Idempotent.  
+5. Suppression unitaire (droit d’effacement, art. 17) : `POST /api/comments/mod/tips-delete` `{ tipId }` — suppression entière quel que soit le statut. 404 si absent. Journal : id + date + modérateur, sans donnée perso d’auteur.  
+
 4. `approve` → visible via `GET /api/comments/tips/published` sur `/contribuer` et section lecteurs de `/analyses/alerte-citoyenne`  
 5. Email optionnel : jamais publié ; consentement requis
 
