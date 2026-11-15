@@ -7,6 +7,7 @@
 import campagneJson from '../data/campagne.json';
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import {
+  cartesClinDoeil,
   formatCampagneDate,
   formatPeriodeEnquete,
   formatScore,
@@ -25,8 +26,10 @@ const campagne = campagneJson as CampagneData;
 const groupes = groupPersonnalites(campagne.personnalites);
 const hideSondage = shouldHideSondage(new Date(), campagne);
 const une = getUneLienApercu();
+const cartes = cartesClinDoeil({ data: campagne, une, now: new Date() });
 const updatedLabel = formatCampagneDate(campagne.updated, { weekday: false });
 const uneHref = une ? withTrailingSlash(une.href) : '';
+const semaineHref = cartes.semaine ? withTrailingSlash(cartes.semaine.href) : '';
 const scrutinsDates = scrutinsMasquage(campagne).join(',');
 const finMasquage = campagne.sondage.fin_masquage_heure || '20:00';
 const miseAuPoint = campagne.sondage.mise_au_point;
@@ -46,6 +49,63 @@ function phrase(text: string): string {
   <div class="apercu-head">
     <h2 id="apercu-campagne-title">{campagne.title}</h2>
   </div>
+
+  <ul class="apercu-cartes" aria-labelledby="apercu-campagne-title">
+    <li>
+      <article class="apercu-carte" aria-labelledby="apercu-carte-candidats">
+        <h3 id="apercu-carte-candidats">
+          <a href={cartes.candidats.href}>Qui est candidat</a>
+        </h3>
+        <p class="apercu-carte-fait">{cartes.candidats.ligne}</p>
+        <p class="apercu-carte-action">
+          <a href={cartes.candidats.href}>{cartes.candidats.listeLabel}</a>
+        </p>
+      </article>
+    </li>
+    {
+      cartes.semaine && (
+        <li>
+          <article class="apercu-carte" aria-labelledby="apercu-carte-semaine">
+            <h3 id="apercu-carte-semaine">Ce qui a bougé cette semaine</h3>
+            <p class="apercu-carte-when">
+              <time datetime={cartes.semaine.date}>{cartes.semaine.dateLabel}</time>
+            </p>
+            <p class="apercu-carte-titre">
+              <a href={semaineHref}>{cartes.semaine.uneTitle}</a>
+            </p>
+            {
+              cartes.semaine.description ? (
+                <p class="apercu-carte-chapo">{cartes.semaine.description}</p>
+              ) : null
+            }
+          </article>
+        </li>
+      )
+    }
+    {
+      cartes.dateCle && (
+        <li>
+          <article class="apercu-carte" aria-labelledby="apercu-carte-date">
+            <h3 id="apercu-carte-date">Prochaine date clé</h3>
+            <p class="apercu-carte-when">
+              <time datetime={cartes.dateCle.date}>{cartes.dateCle.dateLabel}</time>
+            </p>
+            <p class="apercu-carte-label">{cartes.dateCle.label}</p>
+            {
+              cartes.dateCle.mentionDecret ? (
+                <p class="apercu-carte-decret">{cartes.dateCle.mentionDecret}</p>
+              ) : null
+            }
+            <p class="apercu-carte-action">
+              <a href={cartes.dateCle.sourceUrl} rel="noopener noreferrer">
+                {cartes.dateCle.sourceLabel}
+              </a>
+            </p>
+          </article>
+        </li>
+      )
+    }
+  </ul>
 
   <p class="apercu-disclaimer meta" id="apercu-disclaimer" title={campagne.disclaimer}>
     {campagne.disclaimer}
@@ -394,7 +454,129 @@ function phrase(text: string): string {
     margin: 0 0 0.35rem;
   }
 
-  .apercu-campagne h3 {
+  .apercu-cartes {
+    list-style: none;
+    margin: 0 0 0.4rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .apercu-cartes > li {
+    min-width: 0;
+    width: auto;
+    max-width: none;
+  }
+
+  .apercu-carte {
+    height: 100%;
+    margin: 0;
+    padding: 0.5rem 0.6rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent-soft) 40%, var(--card));
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+    min-width: 0;
+  }
+
+  .apercu-carte h3 {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    text-transform: none;
+    color: var(--fg);
+  }
+
+  .apercu-carte h3 a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  .apercu-carte-fait,
+  .apercu-carte-when,
+  .apercu-carte-titre,
+  .apercu-carte-label,
+  .apercu-carte-chapo,
+  .apercu-carte-decret,
+  .apercu-carte-action {
+    margin: 0;
+    color: var(--fg);
+  }
+
+  .apercu-carte-fait {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .apercu-carte-when {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .apercu-carte-titre {
+    font-size: 0.9rem;
+    font-weight: 650;
+    line-height: 1.3;
+  }
+
+  .apercu-carte-titre a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    text-decoration: none;
+    color: var(--fg);
+  }
+
+  .apercu-carte-chapo,
+  .apercu-carte-label {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .apercu-carte-decret {
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 650;
+    line-height: 1.35;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .apercu-carte-action {
+    margin-top: auto;
+  }
+
+  .apercu-carte-action a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .apercu-carte a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .apercu-block h3 {
     margin: 0;
     font-size: 0.7rem;
     font-family: system-ui, sans-serif;
@@ -800,6 +982,19 @@ function phrase(text: string): string {
   }
 
   @media (min-width: 641px) {
+    .apercu-cartes {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .apercu-carte {
+      padding: 0.6rem 0.7rem 0.5rem;
+    }
+
+    .apercu-carte h3 {
+      font-size: 1.05rem;
+    }
+
     .apercu-campagne {
       padding: 0.75rem 0.95rem 0.7rem;
     }
@@ -837,6 +1032,7 @@ function phrase(text: string): string {
   @media (prefers-reduced-motion: reduce) {
     .apercu-campagne,
     .apercu-campagne a,
+    .apercu-carte,
     .apercu-chip,
     .apercu-details summary {
       transition: none;

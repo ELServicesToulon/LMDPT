@@ -9,9 +9,13 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 describe('ligne sondages', () => {
   it('tient la meta d’accueil sous 160 caractères, sans « zéro sondage »', () => {
     expect(HOME_META_DESCRIPTION.length).toBeLessThanOrEqual(160);
+    expect(HOME_META_DESCRIPTION).toBe(
+      "Présidentielle 2027 : les candidats, les dates clés et les derniers sondages sourcés, en un coup d'œil. Chaque fait a sa source.",
+    );
+    expect(HOME_META_DESCRIPTION).not.toMatch(/AN1T/i);
+    expect(HOME_META_DESCRIPTION).not.toMatch(/Atlas/i);
     expect(HOME_META_DESCRIPTION).not.toMatch(/zéro sondage/i);
     expect(HOME_META_DESCRIPTION).toMatch(/2027/);
-    expect(HOME_META_DESCRIPTION).toMatch(/sans élimination/);
     expect(HOME_META_DESCRIPTION).toMatch(/sondages sourcés/);
   });
 

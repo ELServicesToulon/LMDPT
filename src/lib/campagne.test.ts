@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import campagneJson from '../data/campagne.json';
 import {
+  cartesClinDoeil,
   datesMasquage,
   formatCampagneDate,
   formatPeriodeEnquete,
@@ -11,8 +12,10 @@ import {
   getUneLienApercu,
   groupPersonnalites,
   isMasqueAt,
+  mentionDecretConvocation,
   parisWallClock,
   personnaliteChipTitle,
+  prochaineDateCle,
   rankResultats,
   scrutinsMasquage,
   shouldHideSondage,
@@ -311,6 +314,7 @@ describe('aperçu campagne — accueil', () => {
     expect(une?.title.length).toBeGreaterThan(0);
     expect(une?.href.startsWith('/')).toBe(true);
     expect(une?.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(une?.description.length).toBeGreaterThan(0);
   });
 
   it('compacte les chips (nom + pastille) et replie sources, dates et sondage dans des details', () => {
@@ -342,5 +346,149 @@ describe('aperçu campagne — accueil', () => {
     expect(sondageBlock).not.toMatch(/getHours\(/);
     expect(sondageBlock).not.toMatch(/notice_label/);
     expect(sondageBlock).toMatch(/D’autres hypothèses ont été testées, voir la notice\./);
+  });
+
+  it('place trois cartes sous le titre, sans chiffre de score hors sondage', () => {
+    const src = readFileSync(join(ROOT, 'src/components/ApercuCampagne.astro'), 'utf8');
+    expect(src).toMatch(/cartesClinDoeil/);
+    expect(src).toMatch(/getUneLienApercu/);
+    expect(src).toMatch(/Qui est candidat/);
+    expect(src).toMatch(/Ce qui a bougé cette semaine/);
+    expect(src).toMatch(/Prochaine date clé/);
+    expect(src).toMatch(/liste_complete_href|cartes\.candidats/);
+    const template = src.slice(0, src.indexOf('<style>'));
+    const cartesMarkup = template.slice(
+      template.indexOf('apercu-cartes'),
+      template.indexOf('apercu-disclaimer'),
+    );
+    expect(cartesMarkup.length).toBeGreaterThan(0);
+    expect(cartesMarkup).not.toMatch(/\d+\s*%/);
+    expect(cartesMarkup).not.toMatch(/formatScore/);
+    expect(cartesMarkup).not.toMatch(/rankResultats/);
+  });
+});
+
+describe('prochaineDateCle et mentionDecretConvocation', () => {
+  const data = asCampagne(campagneJson);
+  const scrutins = data.sondage.scrutins_a_masquer;
+
+  it('le 15 novembre 2026, prochaine date = réunion des directeurs, sans mention décret', () => {
+    const next = prochaineDateCle(data.dates, new Date('2026-11-15T12:00:00+01:00'));
+    expect(next?.id).toBe('reunion-directeurs-primaire-droite-centre');
+    expect(next?.date).toBe('2026-11-17');
+    expect(mentionDecretConvocation(next!, scrutins)).toBeNull();
+  });
+
+  it('le 17 novembre 2026, la date du jour reste la prochaine', () => {
+    const next = prochaineDateCle(data.dates, new Date('2026-11-17T12:00:00+01:00'));
+    expect(next?.id).toBe('reunion-directeurs-primaire-droite-centre');
+    expect(mentionDecretConvocation(next!, scrutins)).toBeNull();
+  });
+
+  it('le 18 novembre 2026, prochaine = clôture des parrainages, sans mention décret', () => {
+    const next = prochaineDateCle(data.dates, new Date('2026-11-18T12:00:00+01:00'));
+    expect(next?.id).toBe('cloture-parrainages');
+    expect(next?.date).toBe('2027-03-12');
+    expect(mentionDecretConvocation(next!, scrutins)).toBeNull();
+  });
+
+  it('le 18 avril 2027, prochaine = premier tour, à confirmer par décret', () => {
+    const next = prochaineDateCle(data.dates, new Date('2027-04-18T12:00:00+02:00'));
+    expect(next?.id).toBe('premier-tour');
+    expect(mentionDecretConvocation(next!, scrutins)).toBe(
+      'à confirmer par décret de convocation',
+    );
+  });
+
+  it('le 2 mai 2027, prochaine = second tour, même mention décret', () => {
+    const next = prochaineDateCle(data.dates, new Date('2027-05-02T12:00:00+02:00'));
+    expect(next?.id).toBe('second-tour');
+    expect(mentionDecretConvocation(next!, scrutins)).toBe(
+      'à confirmer par décret de convocation',
+    );
+  });
+
+  it('le 3 mai 2027, plus aucune date à venir', () => {
+    expect(prochaineDateCle(data.dates, new Date('2027-05-03T12:00:00+02:00'))).toBeNull();
+  });
+
+  it('reprend le statut du scrutin s’il est renseigné, sinon la formule par défaut', () => {
+    expect(
+      mentionDecretConvocation(
+        { date: '2027-04-18' },
+        [{ date: '2027-04-18', label: 'Premier tour', statut: '' }],
+      ),
+    ).toBe('à confirmer par décret de convocation');
+    expect(mentionDecretConvocation({ date: '2026-11-17' }, scrutins)).toBeNull();
+  });
+});
+
+describe('cartesClinDoeil', () => {
+  const data = asCampagne(campagneJson);
+
+  it('le 15 novembre 2026, trois cartes : liste, Une du catalogue, réunion du 17', () => {
+    const une = getUneLienApercu();
+    expect(une).not.toBeNull();
+    expect(une?.title.length).toBeGreaterThan(0);
+    expect(une?.href.startsWith('/')).toBe(true);
+
+    const cartes = cartesClinDoeil({
+      data,
+      une,
+      now: new Date('2026-11-15T12:00:00+01:00'),
+    });
+    expect(cartes.candidats.title).toBe('Qui est candidat');
+    expect(cartes.candidats.href).toBe(data.liste_complete_href);
+    expect(cartes.candidats.count).toBe(data.personnalites.length);
+    expect(cartes.candidats.ligne).toBe(
+      `${data.personnalites.length} personnalités sourcées`,
+    );
+    expect(cartes.candidats.listeLabel).toBe('Voir la liste');
+
+    expect(cartes.semaine).not.toBeNull();
+    expect(cartes.semaine?.title).toBe('Ce qui a bougé cette semaine');
+    expect(cartes.semaine?.uneTitle).toBe(une!.title);
+    expect(cartes.semaine?.href).toBe(une!.href);
+    expect(cartes.semaine?.dateLabel).toBe(une!.dateLabel);
+    expect(cartes.semaine?.description).toBe(une!.description);
+
+    expect(cartes.dateCle).not.toBeNull();
+    expect(cartes.dateCle?.title).toBe('Prochaine date clé');
+    expect(cartes.dateCle?.date).toBe('2026-11-17');
+    expect(cartes.dateCle?.dateLabel).toBe('mardi 17 novembre 2026');
+    expect(cartes.dateCle?.label).toBe(
+      data.dates.find((item) => item.id === 'reunion-directeurs-primaire-droite-centre')!
+        .label,
+    );
+    expect(cartes.dateCle?.mentionDecret).toBeNull();
+    expect(JSON.stringify(cartes)).not.toMatch(/\d+\s*%/);
+  });
+
+  it('masque la carte Une si le catalogue n’a rien, et la date clé après le 2 mai 2027', () => {
+    const sansUne = cartesClinDoeil({
+      data,
+      une: null,
+      now: new Date('2026-11-15T12:00:00+01:00'),
+    });
+    expect(sansUne.semaine).toBeNull();
+    expect(sansUne.dateCle?.date).toBe('2026-11-17');
+
+    const apresScrutin = cartesClinDoeil({
+      data,
+      une: getUneLienApercu(),
+      now: new Date('2027-05-03T12:00:00+02:00'),
+    });
+    expect(apresScrutin.dateCle).toBeNull();
+    expect(apresScrutin.semaine).not.toBeNull();
+  });
+
+  it('le 18 avril 2027, la carte date clé porte la mention décret', () => {
+    const cartes = cartesClinDoeil({
+      data,
+      une: getUneLienApercu(),
+      now: new Date('2027-04-18T12:00:00+02:00'),
+    });
+    expect(cartes.dateCle?.date).toBe('2027-04-18');
+    expect(cartes.dateCle?.mentionDecret).toBe('à confirmer par décret de convocation');
   });
 });

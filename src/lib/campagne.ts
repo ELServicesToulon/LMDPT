@@ -340,7 +340,15 @@ export function groupPersonnalites(
   return groups;
 }
 
-export function getUneLienApercu(posts?: EditorialPost[]) {
+export type UneLienApercu = {
+  title: string;
+  href: string;
+  date: string;
+  dateLabel: string;
+  description: string;
+};
+
+export function getUneLienApercu(posts?: EditorialPost[]): UneLienApercu | null {
   const une = getUneDuJour(posts);
   if (!une) return null;
   return {
@@ -348,5 +356,108 @@ export function getUneLienApercu(posts?: EditorialPost[]) {
     href: une.href,
     date: une.date,
     dateLabel: formatCampagneDate(une.date, { weekday: false }),
+    description: une.description,
+  };
+}
+
+const MENTION_DECRET_DEFAUT = 'à confirmer par décret de convocation';
+
+/** Première date du tableau dont le jour calendaire (AAAA-MM-JJ) est ≥ aujourd’hui à Paris. */
+export function prochaineDateCle(dates: CampagneDate[], now: Date): CampagneDate | null {
+  const today = parisCalendarDate(now);
+  return dates.find((item) => item.date >= today) ?? null;
+}
+
+/**
+ * Mention de décret si la date coïncide avec un scrutin à masquer.
+ * Statut de l’entrée s’il est renseigné, sinon la formule par défaut.
+ */
+export function mentionDecretConvocation(
+  date: Pick<CampagneDate, 'date'>,
+  scrutins: CampagneScrutinMasque[],
+): string | null {
+  const scrutin = scrutins.find((entry) => entry.date === date.date);
+  if (!scrutin) return null;
+  const statut = scrutin.statut?.trim();
+  return statut ? statut : MENTION_DECRET_DEFAUT;
+}
+
+export type CarteCandidatsClinDoeil = {
+  title: 'Qui est candidat';
+  href: string;
+  count: number;
+  ligne: string;
+  listeLabel: 'Voir la liste';
+};
+
+export type CarteSemaineClinDoeil = {
+  title: 'Ce qui a bougé cette semaine';
+  date: string;
+  dateLabel: string;
+  uneTitle: string;
+  href: string;
+  description: string;
+};
+
+export type CarteDateCleClinDoeil = {
+  title: 'Prochaine date clé';
+  date: string;
+  dateLabel: string;
+  label: string;
+  sourceUrl: string;
+  sourceLabel: string;
+  mentionDecret: string | null;
+};
+
+export type CartesClinDoeil = {
+  candidats: CarteCandidatsClinDoeil;
+  semaine: CarteSemaineClinDoeil | null;
+  dateCle: CarteDateCleClinDoeil | null;
+};
+
+function lignePersonnalitesSourcees(count: number): string {
+  if (count === 1) return '1 personnalité sourcée';
+  return `${count} personnalités sourcées`;
+}
+
+/** Trois cartes du bandeau accueil — contenu dérivé du JSON et de la Une, rien d’inventé. */
+export function cartesClinDoeil(opts: {
+  data: CampagneData;
+  une: UneLienApercu | null;
+  now: Date;
+}): CartesClinDoeil {
+  const { data, une, now } = opts;
+  const count = data.personnalites.length;
+  const next = prochaineDateCle(data.dates, now);
+
+  return {
+    candidats: {
+      title: 'Qui est candidat',
+      href: data.liste_complete_href,
+      count,
+      ligne: lignePersonnalitesSourcees(count),
+      listeLabel: 'Voir la liste',
+    },
+    semaine: une
+      ? {
+          title: 'Ce qui a bougé cette semaine',
+          date: une.date,
+          dateLabel: une.dateLabel,
+          uneTitle: une.title,
+          href: une.href,
+          description: une.description,
+        }
+      : null,
+    dateCle: next
+      ? {
+          title: 'Prochaine date clé',
+          date: next.date,
+          dateLabel: formatCampagneDate(next.date),
+          label: next.label,
+          sourceUrl: next.source_url,
+          sourceLabel: next.source_label,
+          mentionDecret: mentionDecretConvocation(next, data.sondage.scrutins_a_masquer),
+        }
+      : null,
   };
 }
