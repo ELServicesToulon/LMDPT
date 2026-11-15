@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Contribuer — suggestions & alertes"
+  title="Contribuer : suggestions et alertes"
   pageHeading
   description="Proposez une suggestion ou une alerte citoyenne. Après validation éditoriale LMDPT, l’information est publiée sur le site."
   article={true}
 >
   <section class="contrib-hero">
     <p class="eyebrow">Espace lecteurs</p>
-    <h1>Suggestions &amp; alertes</h1>
+    <h1>Contribuer : suggestions et alertes</h1>
     <p class="lead">
       Signalez un fait à documenter ou proposez une amélioration. Rien n’est publié automatiquement :
       la rédaction valide, puis le site affiche l’information.
@@ -49,13 +49,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           minlength="20"
           maxlength="4000"
           rows="6"
-          placeholder="Faits sourçables, contexte, enjeu pour le débat du 1er tour — sans appel à la haine ni autorité religieuse."
+          placeholder="Faits sourçables, contexte, enjeu pour le débat du 1er tour."
         ></textarea>
       </label>
+      <p class="meta contrib-charte-hint">
+        <a href="/charte/#passe">Ce qui passe, ce qui est refusé</a>
+      </p>
 
       <label>
-        <span class="meta">Lien source (optionnel)</span>
-        <input type="url" name="sourceUrl" maxlength="500" placeholder="https://www.senat.fr/…" />
+        <span class="meta" id="source-label">Lien source</span>
+        <input type="url" name="sourceUrl" id="source-url" maxlength="500" placeholder="https://www.senat.fr/…" required />
       </label>
 
       <label>
@@ -78,15 +81,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </form>
   </section>
 
-  <section class="card" aria-labelledby="published-title">
+  <section class="card" id="published-section" aria-labelledby="published-title" hidden>
     <h2 id="published-title">Déjà validés &amp; publiés</h2>
     <p class="meta">
       Fil des propositions approuvées par la rédaction — aussi liées depuis {' '}
       <a href="/analyses/alerte-citoyenne/">Alerte citoyenne</a>.
     </p>
-    <div id="published-tips" class="published-tips">
-      <p class="meta">Chargement…</p>
-    </div>
+    <div id="published-tips" class="published-tips"></div>
   </section>
 </BaseLayout>
 
@@ -95,6 +96,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const form = document.getElementById('tip-form') as HTMLFormElement | null;
   const statusEl = document.getElementById('tip-status');
   const listEl = document.getElementById('published-tips');
+  const publishedSection = document.getElementById('published-section');
+  const sourceInput = document.getElementById('source-url') as HTMLInputElement | null;
+  const sourceLabel = document.getElementById('source-label');
 
   function escapeHtml(s: string) {
     return String(s || '')
@@ -116,14 +120,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
   }
 
+  function selectedTipType() {
+    const checked = form?.querySelector('input[name="type"]:checked') as HTMLInputElement | null;
+    return checked?.value === 'suggestion' ? 'suggestion' : 'alerte';
+  }
+
+  function syncSourceRequirement() {
+    const isAlerte = selectedTipType() === 'alerte';
+    if (sourceInput) {
+      sourceInput.required = isAlerte;
+    }
+    if (sourceLabel) {
+      sourceLabel.textContent = isAlerte ? 'Lien source' : 'Lien source (optionnel)';
+    }
+  }
+
   async function loadPublished() {
-    if (!listEl) return;
+    if (!listEl || !publishedSection) return;
     try {
       const res = await fetch(`${api}/tips/published`);
       const data = await res.json();
       const tips = data.tips || [];
       if (!tips.length) {
-        listEl.innerHTML = '<p class="meta">Aucune proposition validée pour le moment — soyez le premier signalement sourcé.</p>';
+        publishedSection.hidden = true;
+        listEl.replaceChildren();
         return;
       }
       listEl.innerHTML = tips
@@ -151,17 +171,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           },
         )
         .join('');
+      publishedSection.hidden = false;
     } catch {
-      listEl.innerHTML =
-        '<p class="meta">Fil temporairement indisponible (API). Réessayez plus tard.</p>';
+      publishedSection.hidden = true;
+      listEl.replaceChildren();
     }
   }
+
+  form?.querySelectorAll('input[name="type"]').forEach((input) => {
+    input.addEventListener('change', syncSourceRequirement);
+  });
+  syncSourceRequirement();
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!statusEl) return;
-    statusEl.textContent = 'Envoi…';
     const fd = new FormData(form);
+    const type = String(fd.get('type') || 'alerte');
+    const sourceUrl = String(fd.get('sourceUrl') || '').trim();
+    const href = safeHttpUrl(sourceUrl);
+    if (type === 'alerte' && !href) {
+      statusEl.textContent = 'Une alerte citoyenne exige un lien source http(s) valide.';
+      sourceInput?.focus();
+      return;
+    }
+    if (sourceUrl && !href) {
+      statusEl.textContent = 'URL source invalide (http/https uniquement).';
+      sourceInput?.focus();
+      return;
+    }
+    statusEl.textContent = 'Envoi…';
     const email = String(fd.get('email') || '').trim();
     const consent = fd.get('consentContact') === '1';
     if (email && !consent) {
@@ -173,10 +212,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: fd.get('type'),
+          type,
           title: fd.get('title'),
           body: fd.get('body'),
-          sourceUrl: fd.get('sourceUrl') || '',
+          sourceUrl: href || '',
           displayName: fd.get('displayName') || 'Lecteur·rice',
           email,
           consentContact: consent,
@@ -187,6 +226,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       statusEl.textContent = data.message || 'Enregistré — en attente de validation.';
       form.reset();
       (form.querySelector('input[value="alerte"]') as HTMLInputElement | null)?.click();
+      syncSourceRequirement();
     } catch (err: any) {
       statusEl.textContent = err.message || 'Erreur d’envoi';
     }
@@ -210,6 +250,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .lead {
     font-size: 1.05rem;
     line-height: 1.5;
+  }
+  .contrib-charte-hint {
+    margin: -0.45rem 0 0.85rem;
   }
   .contrib-form-card label,
   .contrib-form-card fieldset {

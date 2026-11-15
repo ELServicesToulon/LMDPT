@@ -208,6 +208,11 @@ function sanitizeTipInput(body) {
       throw err;
     }
   }
+  if (type === 'alerte' && !sourceUrl) {
+    const err = new Error('Une alerte citoyenne exige un lien source http(s) valide.');
+    err.status = 400;
+    throw err;
+  }
   if (title.length < 5) {
     const err = new Error('Titre trop court (5 caractères min.).');
     err.status = 400;

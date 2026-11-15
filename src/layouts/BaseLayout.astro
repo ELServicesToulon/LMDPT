@@ -108,6 +108,7 @@ const showShareBar =
   (share !== false &&
     shouldShowArticleShareBar(Astro.url.pathname, Boolean(editorialPost)));
 const shareTitle = editorialPost?.title ?? title;
+const hideFooterFeedback = cleanPath === '/contribuer';
 ---
 
 <!doctype html>
@@ -1092,7 +1093,9 @@ const shareTitle = editorialPost?.title ?? title;
           <a href="/a-propos/">À propos</a>
         </p>
 
-        <!-- Feedback → file suggestions (validation rédaction avant publication site) -->
+        <!-- Feedback → file suggestions (validation rédaction avant publication site). Masqué sur /contribuer/. -->
+        {
+          !hideFooterFeedback && (
         <div class="feedback-form" aria-labelledby="feedback-title">
           <h4 id="feedback-title" style="font-size:0.95rem; margin:0.6rem 0 0.25rem;">Votre retour citoyen</h4>
           <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">
@@ -1129,6 +1132,8 @@ const shareTitle = editorialPost?.title ?? title;
             <div id="feedback-thanks" style="display:none; margin-top:0.35rem; font-size:0.8rem; color:#2d6a4f;"></div>
           </form>
         </div>
+          )
+        }
 
         <p>
           <a href="/a-propos/">À propos</a>
