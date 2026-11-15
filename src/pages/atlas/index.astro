@@ -10,44 +10,88 @@ import {
 import { ELECTION_CATALOG } from '../../lib/elections';
 import { listScrutinDuals } from '../../lib/scrutin-dual';
 
+const ATLAS_DOCUMENT_TITLE =
+  "Atlas électoral : le 1er tour face à l'Assemblée réelle (2017-2027)";
+
 const duals = listScrutinDuals();
+const featured2022 = duals.find((d) => d.slug === '2022-presidentielle');
+const otherDuals = duals.filter((d) => d.slug !== '2022-presidentielle');
+
 const tocItems = [
   { href: '#scrutins', label: 'Liste des scrutins' },
   ...duals.map((d) => ({ href: `#${d.slug}`, label: d.title })),
-  { href: '/sources/#methodologie-blocs', label: 'Méthodo : nuances → blocs' },
+  { href: '/sources/#methodologie-blocs', label: 'Méthode : des nuances aux blocs' },
 ];
 ---
 
 <BaseLayout
-  title="Atlas"
-  description="Écart visible : pluralité du 1er tour vs résultat réel — atlas en données ouvertes pour chaque scrutin."
+  title={ATLAS_DOCUMENT_TITLE}
+  documentTitle={ATLAS_DOCUMENT_TITLE}
+  pageHeading
+  description="Écart visible : pluralité du 1er tour face à l'Assemblée réelle — atlas en données ouvertes pour chaque scrutin."
 >
-  <section>
-    <h2>Atlas : ce que le 1er tour montre (et ce que le second compressé)</h2>
+  <section class="atlas-open">
+    <h1>{ATLAS_DOCUMENT_TITLE}</h1>
+    <p class="kicker">Ce que le 1er tour montre (et ce que le second compresse).</p>
     <p class="lead">
-      <strong>Même urne, deux Assemblées.</strong> Pour chaque présidentielle : sièges calés sur le {' '}
-      <strong>1er tour</strong> (Sainte-Laguë) vs Assemblée réelle des {' '}
-      <strong>législatives qui ont suivi</strong>. Tableau Δ sièges — sans classement.
-    </p>
-    <p class="meta">
-      Documenter le 1er tour, pas le transformer en classement. Illustration pédagogique, pas de prédiction.
-      {' · '}
-      Agrégation nuances → blocs : {' '}
-      <a href="/sources/#methodologie-blocs">méthodologie</a>.
+      <strong>Même urne, deux Assemblées.</strong>
     </p>
   </section>
+
+  {
+    featured2022 && (
+      <section
+        class="scrutin-block scrutin-block--featured"
+        id={featured2022.slug}
+        aria-labelledby={`h-${featured2022.slug}`}
+      >
+        <h2 id={`h-${featured2022.slug}`}>
+          <a href={`/atlas/${featured2022.slug}/`}>{featured2022.title}</a>
+        </h2>
+        {featured2022.distorsionNote && <p class="meta">{featured2022.distorsionNote}</p>}
+        <DualAssembleeCompare
+          firstRoundAlloc={featured2022.firstRound}
+          realAlloc={featured2022.real}
+          totalSeats={featured2022.totalSeats}
+          t1Label={featured2022.t1Label}
+          t2Label={featured2022.realLabel}
+          firstRoundTitle={featured2022.firstRoundTitle}
+          realTitle={featured2022.realTitle}
+          firstRoundMeta={featured2022.firstRoundMeta}
+          realMeta={featured2022.realMeta}
+          realPending={featured2022.realPending}
+          differential={featured2022.differential}
+          atlasWording
+        >
+          <div slot="after-hemi" class="after-hemi">
+            <p class="lead">
+              Pour chaque présidentielle : sièges calés sur le {' '}
+              <strong>1er tour</strong> (Sainte-Laguë) face à l'Assemblée réelle des {' '}
+              <strong>législatives qui ont suivi</strong>. Tableau écart de sièges — sans classement.
+            </p>
+            <p class="meta">
+              Documenter le 1er tour, pas le transformer en classement. Illustration pédagogique, pas de prédiction.
+              {' · '}
+              Regroupement des nuances en blocs : {' '}
+              <a href="/sources/#methodologie-blocs">méthodologie</a>.
+            </p>
+          </div>
+        </DualAssembleeCompare>
+      </section>
+    )
+  }
 
   <StickyToc title="Sommaire Atlas" items={tocItems} />
 
   <section id="scrutins">
-    <h3>Scrutins</h3>
+    <h2>Scrutins</h2>
     <ul class="election-list">
       {
         ELECTION_CATALOG.map((e) => (
           <li class="card">
-            <h4>
+            <h3>
               <a href={`/atlas/${e.slug}/`}>{e.title}</a>
-            </h4>
+            </h3>
             <p class="meta">
               <time datetime={e.date}>
                 {atlasVisibleDateLabel(e.slug, e.date)}
@@ -64,11 +108,11 @@ const tocItems = [
   </section>
 
   {
-    duals.map((dual) => (
+    otherDuals.map((dual) => (
       <section class="scrutin-block" id={dual.slug} aria-labelledby={`h-${dual.slug}`}>
-        <h3 id={`h-${dual.slug}`}>
+        <h2 id={`h-${dual.slug}`}>
           <a href={`/atlas/${dual.slug}/`}>{dual.title}</a>
-        </h3>
+        </h2>
         {shouldRender2027Simulation(dual.slug) ? (
           <>
             {dual.distorsionNote && <p class="meta">{dual.distorsionNote}</p>}
@@ -84,6 +128,7 @@ const tocItems = [
               realMeta={dual.realMeta}
               realPending={dual.realPending}
               differential={dual.differential}
+              atlasWording
             />
           </>
         ) : (
@@ -95,10 +140,34 @@ const tocItems = [
 </BaseLayout>
 
 <style>
+  h1 {
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.25;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    max-width: 52rem;
+  }
+  .atlas-open {
+    margin: 0;
+  }
+  .atlas-open .lead {
+    margin-bottom: 0.5rem;
+  }
+  .kicker {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--muted);
+    max-width: 52rem;
+  }
   .lead {
     max-width: 52rem;
     line-height: 1.55;
     font-size: 1.05rem;
+  }
+  .after-hemi .lead {
+    margin: 0.35rem 0 0.65rem;
   }
   .election-list {
     list-style: none;
@@ -107,7 +176,7 @@ const tocItems = [
     display: grid;
     gap: 0.75rem;
   }
-  .election-list h4 {
+  .election-list h3 {
     margin: 0 0 0.35rem;
     font-size: 1.05rem;
   }
@@ -118,12 +187,15 @@ const tocItems = [
   .scrutin-block {
     margin: 1.75rem 0 2rem;
   }
-  .scrutin-block h3 {
+  .scrutin-block--featured {
+    margin: 0.5rem 0 2rem;
+  }
+  .scrutin-block h2 {
     margin: 0 0 0.35rem;
     font-size: 1.2rem;
   }
-  .fil-directeur-tag {
-    font-size: 0.95rem;
-    line-height: 1.45;
+  #scrutins h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
   }
 </style>

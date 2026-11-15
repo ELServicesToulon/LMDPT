@@ -35,7 +35,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2024-06-30',
     tour: 1,
     distorsion_note:
-      'Assemblée 100 % T1 législatif vs composition réelle juil. 2024 (désistements, uninominal).',
+      'Assemblée 100 % 1er tour des législatives face à sa composition réelle de juillet 2024 (désistements, scrutin uninominal).',
   },
   {
     slug: '2022-presidentielle',
@@ -43,7 +43,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2022-04-10',
     tour: 1,
     distorsion_note:
-      'Assemblée 1er tour présidentiel (Sainte-Laguë) vs Assemblée réelle des législatives juin 2022 (Ensemble 251, NUPES 159, RN 89, LR 72…).',
+      "Assemblée 1er tour présidentiel (Sainte-Laguë) face à l'Assemblée réelle des législatives de juin 2022 (Ensemble 251, NUPES 159, RN 89, LR 72…).",
   },
   {
     slug: '2017-presidentielle',
@@ -51,7 +51,7 @@ export const ELECTION_CATALOG: ElectionSummary[] = [
     date: '2017-04-23',
     tour: 1,
     distorsion_note:
-      'Assemblée 1er tour présidentiel (Sainte-Laguë) vs Assemblée réelle des législatives juin 2017 (majorité REM/MoDem dominante).',
+      "Assemblée 1er tour présidentiel (Sainte-Laguë) face à l'Assemblée réelle des législatives de juin 2017 (majorité REM/MoDem dominante).",
   },
 ];
 

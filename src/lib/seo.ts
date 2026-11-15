@@ -48,6 +48,8 @@ const DEFAULT_KEYWORDS = [
 
 export function pageMeta(input: {
   title: string;
+  /** Si fourni, utilisé tel quel pour `<title>` / JSON-LD (pas de suffixe du site). */
+  documentTitle?: string;
   description?: string;
   ogImage?: string;
   siteUrl: string;
@@ -66,17 +68,19 @@ export function pageMeta(input: {
     canonical.pathname = `${canonical.pathname}/`;
   }
   const ogImage = new URL(ogImagePath, site);
+  const exact = input.documentTitle?.trim();
   const fullTitle =
-    input.title === 'Accueil' || input.title === SITE_NAME
+    exact ||
+    (input.title === 'Accueil' || input.title === SITE_NAME
       ? `${SITE_NAME} — pluralité du premier tour, faits sourcés`
-      : `${input.title} — ${SITE_NAME}`;
+      : `${input.title} — ${SITE_NAME}`);
 
   return {
     description,
     canonical: canonical.href,
     ogImage: ogImage.href,
     fullTitle,
-    socialTitle: socialTitleFrom(input.title),
+    socialTitle: socialTitleFrom(exact || input.title),
     keywords: input.keywords?.trim() || DEFAULT_KEYWORDS,
     type: input.type || 'website',
     robots: input.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large',
