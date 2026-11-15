@@ -781,28 +781,51 @@ const shareTitle = editorialPost?.title ?? title;
         margin: 0.5rem 0 0.9rem;
         font-family: system-ui, sans-serif;
         font-size: 0.82rem;
+      }
+      .parcours-summary {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
         gap: 0.4rem 0.75rem;
+        cursor: pointer;
+        list-style: none;
       }
-      html[data-parcours='closed'] .parcours-steps { display: none; }
-      @media (max-width: 767px) {
-        html:not([data-parcours='open']) .parcours-steps { display: none; }
+      .parcours-summary::-webkit-details-marker { display: none; }
+      .parcours-summary::marker { content: none; }
+      .parcours-summary:focus-visible {
+        outline: 3px solid var(--fg);
+        outline-offset: 2px;
       }
       .parcours-label {
         font-weight: 600;
         color: var(--accent);
         white-space: nowrap;
       }
+      .parcours-btn {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--fg);
+        border-radius: 3px;
+        font-family: inherit;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        pointer-events: none; /* le <summary> est le vrai contrôle */
+      }
+      .parcours-bar[open] .parcours-btn-show,
+      .parcours-bar:not([open]) .parcours-btn-hide {
+        display: none;
+      }
       .parcours-steps {
         display: flex;
         flex-wrap: wrap;
         gap: 0.25rem 0.5rem;
         list-style: none;
-        margin: 0;
+        margin: 0.35rem 0 0;
         padding: 0;
-        flex: 1;
       }
       .parcours-steps li a {
         color: var(--muted);
@@ -817,17 +840,6 @@ const shareTitle = editorialPost?.title ?? title;
         background: var(--card);
         color: var(--accent);
       }
-      .parcours-btn {
-        font-size: 0.78rem;
-        padding: 0.35rem 0.7rem;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--fg);
-        border-radius: 3px;
-        cursor: pointer;
-        font-family: inherit;
-        min-height: 44px;
-      }
       .parcours-link { font-weight: 500; }
 
       /* Mobile for parcours */
@@ -840,8 +852,6 @@ const shareTitle = editorialPost?.title ?? title;
           flex-direction: column;
           align-items: flex-start;
           width: 100%;
-          order: 3;
-          margin-top: 0.25rem;
         }
         .parcours-steps li { width: 100%; }
         .parcours-steps li a { font-size: 0.74rem; padding: 0.15rem 0.3rem; }
@@ -912,8 +922,7 @@ const shareTitle = editorialPost?.title ?? title;
         try {
           stored = localStorage.getItem('lmdpt-parcours-expanded');
         } catch (e) {}
-        var wide = window.matchMedia('(min-width: 768px)').matches;
-        var open = stored === '1' ? true : stored === '0' ? false : wide;
+        var open = stored === '1';
         document.documentElement.setAttribute('data-parcours', open ? 'open' : 'closed');
       })();
     </script>
@@ -977,36 +986,37 @@ const shareTitle = editorialPost?.title ?? title;
         </nav>
 
         <!-- Parcours Citoyen : navigation guidée / guided tour (site-wide, focus AN1T + analyses) -->
-        <div id="parcours-citoyen" class="parcours-bar" role="navigation" aria-label="Parcours citoyen guidé">
-          <span class="parcours-label">Parcours citoyen :</span>
-          <ol id="parcours-steps" class="parcours-steps">
-            <li><a href="/">1. Découvrir le 1er tour</a></li>
-            <li><a href="/atlas/">2. Explorer l’Atlas</a></li>
-            <li><a href="/analyses/assemblee-premier-tour/">3. Simuler l’AN1T (pluralité)</a></li>
-            <li><a href="/liberte-d-expression/">4. Liberté d’expression</a></li>
-            <li><a href="/observatoire-censure/">5. Observatoire de la censure</a></li>
-            <li><a href="/analyses/assemblee-premier-tour-mecanismes/">6. Mécanismes Assemblée 1er tour</a></li>
-            <li><a href="/debats/">7. Participer aux débats</a></li>
-            <li><a href="/contribuer/">8. Suggestions &amp; alertes</a></li>
-            <li><a href="/sources/">9. Vérifier les sources</a></li>
-          </ol>
-          <button
-            type="button"
-            class="parcours-btn"
-            id="parcours-toggle"
-            aria-expanded="false"
-            aria-controls="parcours-steps"
-          >
-            Afficher
-          </button>
-        </div>
+        <nav aria-label="Parcours citoyen guidé">
+          <details id="parcours-citoyen" class="parcours-bar">
+            <summary
+              class="parcours-summary"
+              aria-controls="parcours-steps"
+              aria-expanded="false"
+            >
+              <span class="parcours-label">Parcours citoyen :</span>
+              <span class="parcours-btn">
+                <span class="parcours-btn-show">Afficher</span>
+                <span class="parcours-btn-hide">Masquer</span>
+              </span>
+            </summary>
+            <ol id="parcours-steps" class="parcours-steps">
+              <li><a href="/">1. Découvrir le 1er tour</a></li>
+              <li><a href="/atlas/">2. Explorer l’Atlas</a></li>
+              <li><a href="/analyses/assemblee-premier-tour/">3. Simuler l’AN1T (pluralité)</a></li>
+              <li><a href="/liberte-d-expression/">4. Liberté d’expression</a></li>
+              <li><a href="/observatoire-censure/">5. Observatoire de la censure</a></li>
+              <li><a href="/analyses/assemblee-premier-tour-mecanismes/">6. Mécanismes Assemblée 1er tour</a></li>
+              <li><a href="/debats/">7. Participer aux débats</a></li>
+              <li><a href="/contribuer/">8. Suggestions &amp; alertes</a></li>
+              <li><a href="/sources/">9. Vérifier les sources</a></li>
+            </ol>
+          </details>
+        </nav>
         <script is:inline>
           (function () {
             var KEY = 'lmdpt-parcours-expanded';
-            var btn = document.getElementById('parcours-toggle');
-            function isWide() {
-              return window.matchMedia('(min-width: 768px)').matches;
-            }
+            var bar = document.getElementById('parcours-citoyen');
+            var summary = bar && bar.querySelector('summary');
             function read() {
               try {
                 return localStorage.getItem(KEY);
@@ -1020,28 +1030,23 @@ const shareTitle = editorialPost?.title ?? title;
               } catch (e) {}
             }
             function apply(open) {
+              if (bar) bar.open = open;
               document.documentElement.setAttribute('data-parcours', open ? 'open' : 'closed');
-              if (!btn) return;
-              btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-              btn.textContent = open ? 'Masquer' : 'Afficher';
-              btn.setAttribute(
-                'aria-label',
-                open ? 'Masquer le parcours citoyen' : 'Afficher le parcours citoyen',
-              );
+              if (summary) {
+                summary.setAttribute('aria-expanded', open ? 'true' : 'false');
+              }
             }
-            var stored = read();
-            apply(stored === '1' ? true : stored === '0' ? false : isWide());
-            if (btn) {
-              btn.addEventListener('click', function () {
-                var open = document.documentElement.getAttribute('data-parcours') === 'open';
-                write(!open);
-                apply(!open);
-              });
-            }
-            var mq = window.matchMedia('(min-width: 768px)');
-            if (mq.addEventListener) {
-              mq.addEventListener('change', function () {
-                if (read() === null) apply(mq.matches);
+            apply(read() === '1');
+            if (bar) {
+              bar.addEventListener('toggle', function () {
+                write(bar.open);
+                document.documentElement.setAttribute(
+                  'data-parcours',
+                  bar.open ? 'open' : 'closed',
+                );
+                if (summary) {
+                  summary.setAttribute('aria-expanded', bar.open ? 'true' : 'false');
+                }
               });
             }
           })();
