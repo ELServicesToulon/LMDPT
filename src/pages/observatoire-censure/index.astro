@@ -12,6 +12,7 @@ import {
   observatoireDataset,
   observatoirePublicEntries,
   observatoirePublicFilterControls,
+  officialSourceSegments,
 } from '../../lib/observatoire-censure';
 
 const dataset = observatoireDataset();
@@ -120,10 +121,16 @@ const filterControls = observatoirePublicFilterControls(entries);
                     )}
                   </td>
                   <td>
-                    {entry.official_source_url && entry.official_source_label ? (
-                      <a href={entry.official_source_url} rel="noopener noreferrer">
-                        {entry.official_source_label}
-                      </a>
+                    {officialSourceSegments(entry).length ? (
+                      officialSourceSegments(entry).map((seg) =>
+                        seg.type === 'link' ? (
+                          <a href={seg.url} rel="noopener noreferrer">
+                            {seg.label}
+                          </a>
+                        ) : (
+                          seg.text
+                        ),
+                      )
                     ) : (
                       '—'
                     )}

@@ -112,28 +112,48 @@
       "name": "Perviy Kanal / Channel One Russia",
       "type": "television",
       "action_label": "Suspension de diffusion",
-      "motif_officiel": "Suspension de la diffusion dans l’UE de Perviy Kanal (Channel One Russia), organe audiovisuel d’État russe, au titre du règlement (UE) 2022/2474 du 16 décembre 2022. Le point 19 s’applique à compter du 1er février 2023.",
+      "motif_officiel": "Suspension de la diffusion dans l’UE de Perviy Kanal (Channel One Russia), organe audiovisuel d’État russe, au titre du règlement (UE) 2022/2474, appliqué par le règlement d’exécution (UE) 2023/180, à compter du 1er février 2023.",
       "motif_officieux": "Lecture critique : élargissement du gel des chaînes grand public russes ; lecture favorable : cohérence des mesures contre la propagande d’État en temps de guerre. Conseil de l’UE — 6e paquet",
       "verification": "documented",
       "factual_type": "chaîne TV",
       "authority": "Conseil de l’UE",
       "measure_date": "2023-02-01",
       "official_source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474",
-      "official_source_label": "Règlement (UE) 2022/2474"
+      "official_source_label": "Règlement (UE) 2022/2474, appliqué par le règlement d’exécution (UE) 2023/180, à compter du 1er février 2023",
+      "official_sources": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474",
+          "label": "Règlement (UE) 2022/2474"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32023R0180",
+          "label": "règlement d’exécution (UE) 2023/180"
+        }
+      ]
     },
     {
       "id": "ntv-ntv-mir",
       "name": "NTV / NTV Mir",
       "type": "television",
       "action_label": "Suspension de diffusion",
-      "motif_officiel": "Suspension de la diffusion dans l’UE de NTV / NTV Mir (groupe audiovisuel russe) dans le cadre du règlement (UE) 2022/2474 du 16 décembre 2022. Le point 19 s’applique à compter du 1er février 2023.",
+      "motif_officiel": "Suspension de la diffusion dans l’UE de NTV / NTV Mir (groupe audiovisuel russe) au titre du règlement (UE) 2022/2474, appliqué par le règlement d’exécution (UE) 2023/180, à compter du 1er février 2023.",
       "motif_officieux": "Débat public : atteinte au pluralisme informationnel vs limitation d’un canal d’influence d’État. Audience FR secondaire. EUR-Lex 2022/879",
       "verification": "documented",
       "factual_type": "chaîne TV",
       "authority": "Conseil de l’UE",
       "measure_date": "2023-02-01",
       "official_source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474",
-      "official_source_label": "Règlement (UE) 2022/2474"
+      "official_source_label": "Règlement (UE) 2022/2474, appliqué par le règlement d’exécution (UE) 2023/180, à compter du 1er février 2023",
+      "official_sources": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474",
+          "label": "Règlement (UE) 2022/2474"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32023R0180",
+          "label": "règlement d’exécution (UE) 2023/180"
+        }
+      ]
     },
     {
       "id": "sud-radio",

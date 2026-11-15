@@ -32,11 +32,51 @@ export type ObservatoireEntry = {
   measure_date?: string;
   official_source_url?: string;
   official_source_label?: string;
+  official_sources?: OfficialSourceRef[];
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
   status?: string;
 };
+
+export type OfficialSourceRef = {
+  url: string;
+  label: string;
+};
+
+export type OfficialSourceSegment =
+  | { type: 'text'; text: string }
+  | { type: 'link'; url: string; label: string };
+
+export function officialSourceSegments(entry: {
+  official_source_url?: string;
+  official_source_label?: string;
+  official_sources?: OfficialSourceRef[];
+}): OfficialSourceSegment[] {
+  const label = entry.official_source_label;
+  const refs = entry.official_sources;
+  if (label && refs && refs.length > 0) {
+    const segments: OfficialSourceSegment[] = [];
+    let rest = label;
+    for (const ref of refs) {
+      const i = rest.indexOf(ref.label);
+      if (i === -1) {
+        return entry.official_source_url
+          ? [{ type: 'link', url: entry.official_source_url, label }]
+          : [{ type: 'text', text: label }];
+      }
+      if (i > 0) segments.push({ type: 'text', text: rest.slice(0, i) });
+      segments.push({ type: 'link', url: ref.url, label: ref.label });
+      rest = rest.slice(i + ref.label.length);
+    }
+    if (rest) segments.push({ type: 'text', text: rest });
+    return segments;
+  }
+  if (entry.official_source_url && label) {
+    return [{ type: 'link', url: entry.official_source_url, label }];
+  }
+  return [];
+}
 
 const MONTHS_FR = [
   'janvier',
@@ -164,6 +204,7 @@ type MediaRaw = {
   measure_date?: string;
   official_source_url?: string;
   official_source_label?: string;
+  official_sources?: OfficialSourceRef[];
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
@@ -180,6 +221,7 @@ type InfluencerRaw = {
   measure_date?: string;
   official_source_url?: string;
   official_source_label?: string;
+  official_sources?: OfficialSourceRef[];
   motif_officiel: string;
   motif_officieux?: string;
   verification: string;
@@ -204,6 +246,7 @@ export function observatoireEntries(): ObservatoireEntry[] {
     measure_date: m.measure_date,
     official_source_url: m.official_source_url,
     official_source_label: m.official_source_label,
+    official_sources: m.official_sources,
     motif_officiel: m.motif_officiel,
     motif_officieux: m.motif_officieux,
     verification: m.verification,
@@ -220,6 +263,7 @@ export function observatoireEntries(): ObservatoireEntry[] {
     measure_date: inf.measure_date,
     official_source_url: inf.official_source_url,
     official_source_label: inf.official_source_label,
+    official_sources: inf.official_sources,
     motif_officiel: inf.motif_officiel,
     motif_officieux: inf.motif_officieux,
     verification: inf.verification,

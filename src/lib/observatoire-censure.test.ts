@@ -13,6 +13,7 @@ import {
   observatoireEntries,
   observatoirePublicEntries,
   observatoirePublicFilterControls,
+  officialSourceSegments,
 } from './observatoire-censure';
 
 const ROOT = join(process.cwd());
@@ -117,6 +118,10 @@ describe('observatoire-censure dataset', () => {
       if (!entry.official_source_url) continue;
       expect(entry.official_source_url.startsWith('https://')).toBe(true);
       expect(entry.official_source_label).toBeTruthy();
+      for (const ref of entry.official_sources || []) {
+        expect(ref.url.startsWith('https://')).toBe(true);
+        expect(ref.label).toBeTruthy();
+      }
     }
   });
 
@@ -158,22 +163,40 @@ describe('observatoire-censure dataset', () => {
     expect(values).not.toContain('personnalité');
   });
 
-  it('lie Perviy Kanal et NTV au règlement (UE) 2022/2474', () => {
-    const url = 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474';
+  it('lie Perviy Kanal et NTV aux règlements (UE) 2022/2474 et 2023/180', () => {
+    const url2474 = 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2474';
+    const url180 = 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32023R0180';
+    const sourceLabel =
+      'Règlement (UE) 2022/2474, appliqué par le règlement d\u2019exécution (UE) 2023/180, à compter du 1er février 2023';
     for (const name of ['Perviy Kanal / Channel One Russia', 'NTV / NTV Mir']) {
       const entry = entries.find((e) => e.name === name);
-      expect(entry?.official_source_url).toBe(url);
-      expect(entry?.official_source_label).toBe('Règlement (UE) 2022/2474');
+      expect(entry?.official_source_url).toBe(url2474);
+      expect(entry?.official_source_label).toBe(sourceLabel);
+      expect(entry?.official_sources).toEqual([
+        { url: url2474, label: 'Règlement (UE) 2022/2474' },
+        { url: url180, label: 'règlement d\u2019exécution (UE) 2023/180' },
+      ]);
+      const segments = officialSourceSegments(entry!);
+      expect(segments).toEqual([
+        { type: 'link', url: url2474, label: 'Règlement (UE) 2022/2474' },
+        { type: 'text', text: ', appliqué par le ' },
+        { type: 'link', url: url180, label: 'règlement d\u2019exécution (UE) 2023/180' },
+        { type: 'text', text: ', à compter du 1er février 2023' },
+      ]);
       expect(entry?.measure_date).toBe('2023-02-01');
       expect(entry?.status).toBeUndefined();
       expect(entry?.motif_officiel.toLocaleLowerCase('fr-FR')).toContain(
         'règlement (ue) 2022/2474',
+      );
+      expect(entry?.motif_officiel.toLocaleLowerCase('fr-FR')).toContain(
+        'règlement d\u2019exécution (ue) 2023/180',
       );
       expect(entry?.motif_officiel).toContain('1er février 2023');
       expect(entry?.motif_officiel).not.toMatch(/2022\/879/);
       expect(entry?.motif_officiel).not.toMatch(/sixième paquet/i);
       expect(publicEntries.map((e) => e.name)).toContain(name);
     }
+    expect(PAGE).toContain('officialSourceSegments');
   });
 
   it('retire la mention du communiqué Conseil de l’UE du 02/03/2022', () => {
@@ -198,7 +221,7 @@ describe('observatoire-censure dataset', () => {
 describe('contribuer — mention RGPD', () => {
   it('affiche le texte mot pour mot et le mailto public', () => {
     expect(CONTRIBUER).toContain(
-      'Vos données servent seulement à traiter votre contribution. Elles sont supprimées une fois la contribution traitée. Pour y accéder ou les effacer :',
+      'Vos coordonnées servent seulement à traiter votre contribution et sont supprimées une fois celle-ci traitée. Pour y accéder ou les effacer :',
     );
     expect(CONTRIBUER).toContain("mailto:${contactEmail}");
     expect(CONTRIBUER).toContain("const contactEmail = 'lemediadupremiertour@gmail.com'");
