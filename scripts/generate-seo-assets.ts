@@ -7,7 +7,11 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANALYSIS_CATALOG } from '../src/lib/analyses';
-import { newsPublicationDate } from '../src/lib/news-publication-date';
+import {
+  newsPublicationDate,
+  selectNewsSitemapRoutes,
+  type NewsSitemapRoute,
+} from '../src/lib/news-publication-date';
 import { DEFAULT_OG_IMAGE } from '../src/lib/seo';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -164,6 +168,7 @@ function escapeXml(s: string): string {
 /**
  * Sitemap Google News (gratuit) : articles civiques.
  * publication_date = vraie date de publication du catalogue, jamais today.
+ * Liste manuelle + Unes catalogue dans la fenêtre de 30 jours.
  * Éligibilité News Publisher = démarche manuelle GSC/Publisher Center.
  */
 function buildNewsSitemap(): string {
@@ -183,7 +188,7 @@ function buildNewsSitemap(): string {
   const lisnardTitle =
     ANALYSIS_CATALOG.find((a) => a.slug === 'lisnard-abonnes-electeurs')?.title ??
     "Lisnard gagne 100 000 abonnés, mais combien d'électeurs ?";
-  const newsRoutes: { path: string; title: string; keywords: string }[] = [
+  const manual: NewsSitemapRoute[] = [
     {
       path: '/analyses/lisnard-abonnes-electeurs',
       title: lisnardTitle,
@@ -210,6 +215,7 @@ function buildNewsSitemap(): string {
       keywords: 'Ukraine, énergie, Algérie, Russie, iarbre',
     },
   ];
+  const newsRoutes = selectNewsSitemapRoutes(ANALYSIS_CATALOG, manual, today);
 
   const body = newsRoutes
     .flatMap((r) => {
