@@ -175,4 +175,40 @@ const uneShareUrl = une
     font-size: 0.85rem;
     font-weight: 700;
   }
+
+  /* Ordinateur (≥ 1024 px) : vignette à gauche, titre / chapô / lien à droite.
+     Sous 1024 px le flux reste inchangé (mobile validé). */
+  @media (min-width: 1024px) {
+    .une-du-jour--hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 1.05fr);
+      grid-template-areas:
+        "media kicker"
+        "media body";
+      column-gap: 1.15rem;
+      row-gap: 0.35rem;
+      align-items: start;
+    }
+    .une-du-jour--hero .une-kicker {
+      grid-area: kicker;
+      margin-bottom: 0.25rem;
+    }
+    .une-du-jour--hero .une-media {
+      grid-area: media;
+    }
+    .une-du-jour--hero .une-media :global(.editorial-cover) {
+      margin-bottom: 0;
+    }
+    .une-du-jour--hero .une-body {
+      grid-area: body;
+    }
+    .une-du-jour--hero .une-body h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .une-du-jour--hero :global(.editorial-cover--hero img) {
+      max-height: min(28vh, 16.5rem);
+    }
+  }
 </style>
