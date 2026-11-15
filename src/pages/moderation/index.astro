@@ -19,7 +19,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </label>
     <div class="mod-actions">
       <button type="button" class="btn btn-primary" id="mod-refresh">Charger les files</button>
+      <button type="button" class="btn" id="mod-tips-purge">Purger les contributions traitées</button>
     </div>
+    <p id="mod-purge-result" class="meta" role="status"></p>
 
     <h3>Suggestions &amp; alertes lecteurs</h3>
     <div id="mod-tips-queue" class="mod-queue"></div>
@@ -35,6 +37,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const queueEl = document.getElementById('mod-queue')!;
   const tipsEl = document.getElementById('mod-tips-queue')!;
   const statusEl = document.getElementById('mod-status')!;
+  const purgeResultEl = document.getElementById('mod-purge-result')!;
   const tokenInput = document.getElementById('mod-token') as HTMLInputElement;
 
   function token() {
@@ -139,6 +142,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   document.getElementById('mod-refresh')?.addEventListener('click', loadQueue);
+
+  document.getElementById('mod-tips-purge')?.addEventListener('click', async () => {
+    const ok = window.confirm(
+      'Purger les contributions traitées ? Les contributions refusées seront supprimées en entier. Les contributions validées garderont leur texte publié, sans données d’identification.',
+    );
+    if (!ok) return;
+    const res = await fetch(`${api}/mod/tips-purge`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Mod-Token': token(),
+      },
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      const message = data.error || 'Échec de la purge';
+      statusEl.textContent = message;
+      purgeResultEl.textContent = message;
+      return;
+    }
+    const summary = `Purge : ${data.deletedRejected} refusée(s) supprimée(s), ${data.anonymizedPublished} validée(s) anonymisée(s).`;
+    statusEl.textContent = summary;
+    purgeResultEl.textContent = summary;
+    await loadQueue();
+  });
 
   tipsEl.addEventListener('click', async (e) => {
     const btn = (e.target as HTMLElement).closest('button[data-tip-act]') as HTMLButtonElement | null;

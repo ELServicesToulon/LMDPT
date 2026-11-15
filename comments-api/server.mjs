@@ -21,6 +21,7 @@ import {
   moderationStartupWarning,
   resolveModeratorAccounts,
 } from './lib/moderators.mjs';
+import { purgeProcessedTips, writeJsonAtomic } from './lib/tips-purge.mjs';
 import {
   FIRST_ROUND_HUES as HUES,
   ROLE_LEVEL,
@@ -167,7 +168,7 @@ function loadTips() {
 }
 
 function saveTips(db) {
-  writeFileSync(join(DATA_DIR, 'tips.json'), JSON.stringify(db, null, 2));
+  writeJsonAtomic(join(DATA_DIR, 'tips.json'), db);
 }
 
 const TIP_TYPES = new Set(['suggestion', 'alerte']);
@@ -1010,6 +1011,20 @@ const server = createServer(async (req, res) => {
             ? 'Validé — visible sur /contribuer et dans le fil lecteurs.'
             : 'Proposition rejetée.',
       });
+    }
+
+    if (req.method === 'POST' && path === '/api/comments/mod/tips-purge') {
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
+      const db = loadTips();
+      const { deletedRejected, anonymizedPublished } = purgeProcessedTips(db, {
+        at: new Date().toISOString(),
+        by: mod.id,
+        role: mod.role,
+      });
+      saveTips(db);
+      return json(res, 200, { deletedRejected, anonymizedPublished });
     }
 
     return json(res, 404, { error: 'not found' });

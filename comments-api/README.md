@@ -31,6 +31,7 @@ node --test lib/auth/auth.test.mjs
 1. Formulaire public `/contribuer` (ou retour pied de page)  
 2. `POST /api/comments/tips/submit` → `pending` (gate anti-haine / anti-autorité religieuse)  
 3. Modo : `GET /api/comments/mod/tips-queue` + `POST /api/comments/mod/tips-action` (`approve`|`reject`)  
+4. Purge RGPD (jeton modo, comme `tips-action`) : `POST /api/comments/mod/tips-purge` — supprime les `rejected`, anonymise les `published` (texte public conservé), laisse les `pending`. Réponse `{deletedRejected, anonymizedPublished}`. Idempotent.  
 4. `approve` → visible via `GET /api/comments/tips/published` sur `/contribuer` et section lecteurs de `/analyses/alerte-citoyenne`  
 5. Email optionnel : jamais publié ; consentement requis
 
