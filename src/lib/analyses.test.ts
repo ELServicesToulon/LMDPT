@@ -122,7 +122,7 @@ describe('analyses', () => {
     expect(loiQuiSeVoteABruxelles.tags).toContain('doe');
     expect(loiQuiSeVoteABruxelles.description.length).toBeLessThanOrEqual(200);
     expect(loiQuiSeVoteABruxelles.hues).toHaveLength(3);
-    expect(loiQuiSeVoteABruxelles.sources_groups[0]?.items).toHaveLength(20);
+    expect(loiQuiSeVoteABruxelles.sources_groups[0]?.items).toHaveLength(21);
     const doe = loiQuiSeVoteABruxelles.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
     expect(getAnalysis('la-loi-qui-se-vote-a-bruxelles')?.href).toBe(
