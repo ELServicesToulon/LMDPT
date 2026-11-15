@@ -8,69 +8,16 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANALYSIS_CATALOG } from '../src/lib/analyses';
 import { newsPublicationDate } from '../src/lib/news-publication-date';
-import { DEFAULT_OG_IMAGE } from '../src/lib/seo';
+import {
+  listPublicSitemapRoutes,
+  listUneImageSitemapEntries,
+} from '../src/lib/seo-sitemaps';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const publicDir = path.join(root, 'public');
 const SITE = process.env.ASTRO_SITE?.replace(/\/$/, '') || 'https://lemediadupremiertour.fr';
 const today = new Date().toISOString().slice(0, 10);
-
-/** Routes statiques prioritaires (hors fiches programmes générées). */
-const CORE_ROUTES: { path: string; changefreq: string; priority: string }[] = [
-  { path: '/', changefreq: 'daily', priority: '1.0' },
-  { path: '/a-propos', changefreq: 'monthly', priority: '0.8' },
-  { path: '/charte', changefreq: 'monthly', priority: '0.85' },
-  { path: '/sources', changefreq: 'monthly', priority: '0.85' },
-  { path: '/analyses', changefreq: 'daily', priority: '0.95' },
-  { path: '/atlas', changefreq: 'weekly', priority: '0.9' },
-  { path: '/atlas/2017-presidentielle', changefreq: 'monthly', priority: '0.75' },
-  { path: '/atlas/2022-presidentielle', changefreq: 'monthly', priority: '0.8' },
-  { path: '/atlas/2024-legislatives', changefreq: 'monthly', priority: '0.8' },
-  { path: '/atlas/2027-presidentielle', changefreq: 'weekly', priority: '0.85' },
-  { path: '/debats', changefreq: 'weekly', priority: '0.8' },
-  { path: '/liberte-d-expression', changefreq: 'weekly', priority: '0.95' },
-  { path: '/observatoire-censure', changefreq: 'weekly', priority: '0.92' },
-  { path: '/debats/assemblee-premier-tour', changefreq: 'monthly', priority: '0.7' },
-  { path: '/debats/desistements-second-tour', changefreq: 'monthly', priority: '0.7' },
-  { path: '/debats/vote-utile-pluralite', changefreq: 'monthly', priority: '0.7' },
-  { path: '/mentions-legales', changefreq: 'yearly', priority: '0.3' },
-  { path: '/confidentialite', changefreq: 'yearly', priority: '0.3' },
-  { path: '/soutenir', changefreq: 'monthly', priority: '0.7' },
-  { path: '/pack-data-an1t', changefreq: 'monthly', priority: '0.75' },
-];
-
-const PROGRAMME_PATHS = [
-  '/analyses/programmes',
-  '/analyses/programmes-comparateur',
-  '/analyses/programmes/presidentielle-2017',
-  '/analyses/programmes/presidentielle-2017/macron',
-  '/analyses/programmes/presidentielle-2017/le-pen',
-  '/analyses/programmes/presidentielle-2017/fillon',
-  '/analyses/programmes/presidentielle-2017/melenchon',
-  '/analyses/programmes/presidentielle-2017/hamon',
-  '/analyses/programmes/presidentielle-2022',
-  '/analyses/programmes/presidentielle-2022/macron',
-  '/analyses/programmes/presidentielle-2022/le-pen',
-  '/analyses/programmes/presidentielle-2022/melenchon',
-  '/analyses/programmes/presidentielle-2022/zemmour',
-  '/analyses/programmes/presidentielle-2022/pecresse',
-  '/analyses/programmes/presidentielle-2027',
-  '/analyses/programmes/presidentielle-2027/attal',
-  '/analyses/programmes/presidentielle-2027/bardella',
-  '/analyses/programmes/presidentielle-2027/barrot',
-  '/analyses/programmes/presidentielle-2027/glucksmann',
-  '/analyses/programmes/presidentielle-2027/hollande',
-  '/analyses/programmes/presidentielle-2027/le-pen',
-  '/analyses/programmes/presidentielle-2027/lisnard',
-  '/analyses/programmes/presidentielle-2027/melenchon',
-  '/analyses/programmes/presidentielle-2027/parti-socialiste',
-  '/analyses/programmes/presidentielle-2027/philippe',
-  '/analyses/programmes/presidentielle-2027/philippe-brun',
-  '/analyses/programmes/presidentielle-2027/retailleau',
-  '/analyses/programmes/presidentielle-2027/roussel',
-  '/analyses/programmes/presidentielle-2027/ruffin',
-];
 
 function abs(p: string): string {
   if (p === '/') return `${SITE}/`;
@@ -87,26 +34,11 @@ function urlEntry(loc: string, changefreq: string, priority: string, lastmod = t
 }
 
 function buildSitemap(): string {
-  const seen = new Set<string>();
-  const entries: string[] = [];
-
-  const add = (routePath: string, changefreq: string, priority: string) => {
-    const loc = abs(routePath === '/' ? '/' : routePath.replace(/\/$/, ''));
-    // normalize trailing slash: site uses /path/ for directories
+  const entries = listPublicSitemapRoutes().map((r) => {
     const normalized =
-      routePath === '/' ? `${SITE}/` : `${SITE}${routePath.replace(/\/$/, '')}/`;
-    if (seen.has(normalized)) return;
-    seen.add(normalized);
-    entries.push(urlEntry(normalized, changefreq, priority));
-  };
-
-  for (const r of CORE_ROUTES) add(r.path, r.changefreq, r.priority);
-
-  for (const a of ANALYSIS_CATALOG) {
-    add(a.href, 'weekly', a.slug.includes('2027') || a.slug === 'alerte-citoyenne' ? '0.95' : '0.85');
-  }
-
-  for (const p of PROGRAMME_PATHS) add(p, 'weekly', '0.7');
+      r.path === '/' ? `${SITE}/` : `${SITE}${r.path.replace(/\/$/, '')}/`;
+    return urlEntry(normalized, r.changefreq, r.priority);
+  });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -116,28 +48,11 @@ ${entries.join('\n')}
 }
 
 function buildImageSitemap(): string {
-  const images = [
-    { page: '/', img: DEFAULT_OG_IMAGE, title: 'Le Média du Premier Tour' },
-    {
-      page: '/',
-      img: '/illustrations/2027/hero-premier-tour-2027.jpg',
-      title: 'Présidentielle 2027 — premier tour',
-    },
-    {
-      page: '/',
-      img: '/illustrations/2027/democracy-over-elimination.jpg',
-      title: 'La démocratie avant l’élimination',
-    },
-    {
-      page: '/analyses/presidentielle-2027-preparation',
-      img: '/illustrations/2027/dessin-urne-2027.jpg',
-      title: 'Urne Premier Tour 2027',
-    },
-  ];
+  const images = listUneImageSitemapEntries();
 
   const body = images
     .map((i) => {
-      const page = i.page === '/' ? `${SITE}/` : `${SITE}${i.page}/`;
+      const page = i.page === '/' ? `${SITE}/` : `${SITE}${i.page.replace(/\/$/, '')}/`;
       const img = `${SITE}${i.img}`;
       return `  <url>
     <loc>${page}</loc>
