@@ -21,7 +21,7 @@
 4. **JSON-LD** site-wide : `NewsMediaOrganization` + `WebSite` + `WebPage`/`Article`
 5. **Meta** : robots, keywords, hreflang fr, link sitemap + llms.txt
 6. **nginx** : locations exactes 404 si fichier manquant (plus de faux 200 HTML)
-7. **Build** : `seo:assets` avant `astro build` · site canonique `https://lmdpt.iarbre.org`
+7. **Build** : `seo:assets` avant `astro build` · site canonique `https://lemediadupremiertour.fr`
 
 ## Clusters de contenu (SEO sémantique)
 
@@ -47,7 +47,7 @@ Mots-clés cœur : *premier tour*, *présidentielle 2027*, *pluralité électora
 
 | # | Action | Preuve |
 |---|--------|--------|
-| 1 | Google Search Console — propriété `lmdpt.iarbre.org` + soumettre **sitemap-index.xml** | GSC |
+| 1 | Google Search Console — propriété historique `lmdpt.iarbre.org` + soumettre **sitemap-index.xml** (la canonique du site devient `https://lemediadupremiertour.fr`) | GSC |
 | 2 | Bing Webmaster Tools — idem | Bing |
 | 3 | (Option) IndexNow clé dans `public/` | doc Bing |
 | 4 | Bio X + pin + lien UTM (déjà brouillon Manusk) | X live |

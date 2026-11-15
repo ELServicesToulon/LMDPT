@@ -5,7 +5,7 @@
 Couvrir le premier tour avec des données publiques officielles (`data.gouv.fr`), sans éliminer ni caricaturer — la démocratie avant le spectacle.
 
 - **Dépôt** : [github.com/ELServicesToulon/LMDPT](https://github.com/ELServicesToulon/LMDPT)
-- **Site** : [lmdpt.iarbre.org](https://lmdpt.iarbre.org) (sous-domaine iarbre.org, GitHub Pages)
+- **Site** : [lemediadupremiertour.fr](https://lemediadupremiertour.fr) (URL publique canonique). `lmdpt.iarbre.org` reste une adresse historique / miroir.
 - **Ligne éditoriale** : [`docs/EDITORIAL.md`](docs/EDITORIAL.md)
 
 ## Stack
@@ -74,13 +74,13 @@ docs/           # éditorial, prompt Cursor, agent Grok
 
 Push sur `Main` → workflow GitHub Actions (`.github/workflows/deploy.yml`) : tests, `sync:data`, build, publication GitHub Pages.
 
-**Domaine** : `lmdpt.iarbre.org` — CNAME → `elservicestoulon.github.io` (zone Cloudflare `iarbre.org`, DNS only).
+**Domaine** : `lemediadupremiertour.fr` (canonique). `lmdpt.iarbre.org` reste une adresse historique / miroir — CNAME → `elservicestoulon.github.io` (zone Cloudflare `iarbre.org`, DNS only).
 
 ```bash
-npm run dns:iarbre    # crée/met à jour le CNAME (jeton IARBE_CLOUDFLARE_API_TOKEN)
+npm run dns:iarbre    # crée/met à jour le CNAME historique iarbre (jeton IARBE_CLOUDFLARE_API_TOKEN)
 ```
 
-Variables build CI : `ASTRO_SITE=https://lmdpt.iarbre.org`, `ASTRO_BASE=/`.
+Variables build CI : `ASTRO_SITE=https://lemediadupremiertour.fr`, `ASTRO_BASE=/`.
 
 **Cloudflare Web Analytics** (beacon cookieless) : `PUBLIC_CF_WEB_ANALYTICS_TOKEN` — jeton public documenté dans `.env.example`. Prod OVH KS-5-B : l’ajouter au `.env` Mediconvoi/backend puis `npm run deploy-lmdpt-ovh` (détail : `docs/SYNC-OPS.md`). `off` pour désactiver.
 

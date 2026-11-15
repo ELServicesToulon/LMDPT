@@ -99,7 +99,11 @@ export function organizationJsonLd(siteUrl: string) {
     },
     description: DEFAULT_DESCRIPTION,
     foundingDate: '2026',
-    sameAs: ['https://x.com/LMDuPremierTour', 'https://github.com/ELServicesToulon/LMDPT'],
+    sameAs: [
+      'https://x.com/LMDuPremierTour',
+      'https://github.com/ELServicesToulon/LMDPT',
+      'https://www.linkedin.com/company/lemediadupremiertour',
+    ],
     publishingPrinciples: `${base}/charte/`,
     ethicsPolicy: `${base}/charte/`,
     masthead: `${base}/a-propos/`,

@@ -4,7 +4,7 @@
  */
 
 export function publicUrl() {
-  return (process.env.LMDPT_PUBLIC_URL || 'https://lmdpt.iarbre.org').replace(/\/$/, '');
+  return (process.env.LMDPT_PUBLIC_URL || 'https://lemediadupremiertour.fr').replace(/\/$/, '');
 }
 
 export function authEnabled() {

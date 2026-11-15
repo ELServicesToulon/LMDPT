@@ -1,6 +1,6 @@
 # Outils Google gratuits — référencement LMDPT
 
-**Site** : https://lmdpt.iarbre.org  
+**Site** : https://lemediadupremiertour.fr  
 **Date** : 2026-07-27 · **Ligne** : La démocratie avant l’élimination · **RGPD** : zéro traceur par défaut
 
 Ce document liste **tous les outils Google gratuits** utiles au référencement et ce qui est **câblé dans le site**.
@@ -76,7 +76,7 @@ Passer ces variables dans le build deploy (`deploy-lmdpt-ovh` lit le `process.en
 
 | # | Outil | Action | Preuve |
 |---|--------|--------|--------|
-| 1 | [Search Console](https://search.google.com/search-console) | Propriété `https://lmdpt.iarbre.org` (préfixe URL ou domaine `iarbre.org`) | Propriété vérifiée |
+| 1 | [Search Console](https://search.google.com/search-console) | Propriété historique `https://lmdpt.iarbre.org` (préfixe URL ou domaine `iarbre.org`) ; la canonique du site passe à `https://lemediadupremiertour.fr` | Propriété vérifiée |
 | 2 | Search Console | Soumettre **`/sitemap-index.xml`** | Sitemap « Succès » |
 | 3 | Search Console | Inspection d’URL sur `/` + 3 piliers | « URL dans Google » ou demandée |
 | 4 | [Publisher Center](https://publishercenter.google.com/) | Demande Google News / Discover (média civique) | Dossier soumis |
@@ -102,9 +102,9 @@ npm run build:fast          # sans renifleur
 Vérifications post-deploy :
 
 ```bash
-curl -sI https://lmdpt.iarbre.org/robots.txt | head -5
-curl -s https://lmdpt.iarbre.org/sitemap-index.xml | head -20
-curl -s https://lmdpt.iarbre.org/sitemap-news.xml | head -20
+curl -sI https://lemediadupremiertour.fr/robots.txt | head -5
+curl -s https://lemediadupremiertour.fr/sitemap-index.xml | head -20
+curl -s https://lemediadupremiertour.fr/sitemap-news.xml | head -20
 ```
 
 ---

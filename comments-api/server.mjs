@@ -291,11 +291,11 @@ function corsHeaders(extra = {}) {
 }
 
 function publicOriginHint() {
-  const u = process.env.LMDPT_PUBLIC_URL || 'https://lmdpt.iarbre.org';
+  const u = process.env.LMDPT_PUBLIC_URL || 'https://lemediadupremiertour.fr';
   try {
     return new URL(u).origin;
   } catch {
-    return 'https://lmdpt.iarbre.org';
+    return 'https://lemediadupremiertour.fr';
   }
 }
 

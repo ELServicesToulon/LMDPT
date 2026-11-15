@@ -78,6 +78,7 @@ describe('JSON-LD', () => {
     const org = organizationJsonLd('https://lmdpt.iarbre.org');
     expect(org['@type']).toBe('NewsMediaOrganization');
     expect(org.sameAs).toContain('https://x.com/LMDuPremierTour');
+    expect(org.sameAs).toContain('https://www.linkedin.com/company/lemediadupremiertour');
     expect(org.publishingPrinciples).toContain('/charte');
     expect(org.logo.url).toBe(`https://lmdpt.iarbre.org${DEFAULT_OG_IMAGE}`);
   });

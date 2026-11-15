@@ -8,7 +8,7 @@ Voir [`docs/AUTH.md`](../docs/AUTH.md).
 # flags
 export LMDPT_AUTH_ENABLED=1
 export LMDPT_SESSION_SECRET='…'   # 32+ bytes
-export LMDPT_PUBLIC_URL=https://lmdpt.iarbre.org
+export LMDPT_PUBLIC_URL=https://lemediadupremiertour.fr
 # + secrets providers (Google / X / Apple / SMTP)
 
 node --test lib/auth/auth.test.mjs

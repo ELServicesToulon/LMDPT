@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANALYSIS_CATALOG } from '../src/lib/analyses';
+import { newsPublicationDate } from '../src/lib/news-publication-date';
 import { DEFAULT_OG_IMAGE } from '../src/lib/seo';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -161,8 +162,9 @@ function escapeXml(s: string): string {
 }
 
 /**
- * Sitemap Google News (gratuit) — pages « news-like » civiques.
- * Publication_date = lastmod ; éligibilité News Publisher = démarche manuelle GSC/Publisher Center.
+ * Sitemap Google News (gratuit) : articles civiques.
+ * publication_date = vraie date de publication du catalogue, jamais today.
+ * Éligibilité News Publisher = démarche manuelle GSC/Publisher Center.
  */
 function buildNewsSitemap(): string {
   const lfiTitle =
@@ -198,36 +200,6 @@ function buildNewsSitemap(): string {
       keywords: 'appel à la popularité, Léon XIV, premier tour, foule, scrutin',
     },
     {
-      path: '/analyses/alerte-citoyenne',
-      title: 'Alerte citoyenne — conditions du débat public',
-      keywords: 'liberté d expression, débat public, premier tour',
-    },
-    {
-      path: '/observatoire-censure',
-      title: 'Observatoire de la censure en France depuis 2017',
-      keywords: 'censure, médias, liberté d expression',
-    },
-    {
-      path: '/analyses/temps-parole-equite',
-      title: 'Temps de parole et équité d exposition',
-      keywords: 'Arcom, temps de parole, pluralisme',
-    },
-    {
-      path: '/analyses/presidentielle-2027-preparation',
-      title: 'Présidentielle 2027 — dossier de préparation',
-      keywords: 'présidentielle 2027, premier tour, candidatures',
-    },
-    {
-      path: '/liberte-d-expression',
-      title: 'Liberté d expression — hub LMDPT',
-      keywords: 'liberté d expression, démocratie, premier tour',
-    },
-    {
-      path: '/analyses/assemblee-premier-tour',
-      title: 'Assemblée du premier tour — simulation 2024',
-      keywords: 'AN1T, pluralité, législatives',
-    },
-    {
       path: '/analyses/lfi-bfmtv-exigence-pluralisme',
       title: lfiTitle,
       keywords: 'pluralisme, LFI, BFMTV, Arcom, pré-campagne',
@@ -239,12 +211,12 @@ function buildNewsSitemap(): string {
     },
   ];
 
-  // Google News attend une date ISO récente ; on utilise aujourd’hui (refresh build quotidien).
-  const pubDate = `${today}T08:00:00+02:00`;
   const body = newsRoutes
-    .map((r) => {
+    .flatMap((r) => {
+      const pubDate = newsPublicationDate(r.path, ANALYSIS_CATALOG);
+      if (!pubDate) return [];
       const loc = abs(r.path);
-      return `  <url>
+      return [`  <url>
     <loc>${loc}</loc>
     <news:news>
       <news:publication>
@@ -255,7 +227,7 @@ function buildNewsSitemap(): string {
       <news:title>${escapeXml(r.title)}</news:title>
       <news:keywords>${escapeXml(r.keywords)}</news:keywords>
     </news:news>
-  </url>`;
+  </url>`];
     })
     .join('\n');
 

@@ -210,7 +210,7 @@ ${verifyUrl}
 Lien valable 15 minutes. Si vous n'êtes pas à l'origine de cette demande, ignorez ce message.
 
 — Le Média du Premier Tour
-https://lmdpt.iarbre.org
+https://lemediadupremiertour.fr
 `;
 
   if (process.env.LMDPT_SMTP_URL?.startsWith('http')) {
