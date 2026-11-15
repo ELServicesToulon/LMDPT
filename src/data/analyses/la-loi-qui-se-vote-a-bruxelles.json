@@ -1,0 +1,460 @@
+{
+  "slug": "la-loi-qui-se-vote-a-bruxelles",
+  "title": "La loi qui se vote à Bruxelles",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-16",
+  "updated": "2026-11-16",
+  "kicker": "Enquête et analyse · La rédaction · 16 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Samedi 14 novembre, au Salon du Made in France, Raphaël Glucksmann a plaidé pour réserver « les marchés européens aux productions européennes ». Son programme porte bien une loi « Acheter européen » pour les marchés publics, mais à défendre « dans les institutions européennes », où deux textes en discussion prévoient déjà une préférence européenne. Ce que dit le droit aujourd’hui, ce qu’une loi votée à Paris ne pourrait pas faire, et où se placent les autres candidats.",
+  "description": "Glucksmann veut une loi « Acheter européen », à porter à Bruxelles, où deux textes prévoient déjà une préférence européenne. Ce que dit le droit, et ce qu’une loi votée à Paris ne peut pas faire.",
+  "disclaimer": "Cette analyse décrit le droit en vigueur, des textes en discussion et des propositions de candidats. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "commande-publique",
+    "preference-europeenne",
+    "doe"
+  ],
+  "x_hook": "Samedi 14 novembre, au Salon du Made in France, Raphaël Glucksmann a plaidé pour réserver « les marchés européens aux productions européennes ». Son programme porte bien une loi « Acheter européen » pour les marchés publics, mais à défendre « dans les institutions européennes », où deux textes en discussion prévoient déjà une préférence européenne. Ce que dit le droit aujourd’hui, ce qu’une loi votée à Paris ne pourrait pas faire, et où se placent les autres candidats.",
+  "hues": [
+    {
+      "slug": "preference-europeenne",
+      "label": "Préférence européenne",
+      "color": "#162561",
+      "rationale": "Glucksmann, Attal, Tondelier ; Philippe, selon le JDD ; Retailleau, pour le numérique de l’État."
+    },
+    {
+      "slug": "priorite-nationale-ou-locale",
+      "label": "Priorité nationale ou locale",
+      "color": "#0001b8",
+      "rationale": "Le Pen : priorité nationale d’abord ; Mélenchon : productions locales."
+    },
+    {
+      "slug": "douane-ou-non-trouve",
+      "label": "Douane ou non trouvé",
+      "color": "#5a6570",
+      "rationale": "Zemmour : droits de douane ; Lisnard, Riner : position non trouvée."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "salon",
+      "title": "Un salon le 14 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Samedi 14 novembre, porte de Versailles, Raphaël Glucksmann, candidat de la social-démocratie à la présidentielle, a demandé un « changement des politiques commerciales » et proposé de réserver « les marchés européens aux productions européennes ». « On est aujourd’hui les derniers à croire au libre-échange généralisé », a-t-il ajouté. Le rôle du prochain président sera, selon lui, « de taper du poing sur la table à Bruxelles » ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html)). Teddy Riner était attendu l’après-midi dans les mêmes allées. Raphaël Glucksmann dit attendre de savoir ce que le judoka propose « en matière de politique commerciale » ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html)). Teddy Riner, lui, s’est défendu devant les médias : « Je ne suis pas macroniste » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "programme",
+      "title": "Une loi, mais pas à Paris",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le mot « loi » prête à confusion. Le programme de Place publique propose de « porter une loi « Acheter européen » (un “Buy European Act”) dans les institutions européennes pour prioriser les productions européennes dans les marchés publics » ([Place publique](https://place-publique.eu/document/6J8wjk3EW8dBCLwKxa7J96/projet-placepublique-acte1.pdf)). Un marché public, c’est un achat payé par l’État, une collectivité ou un hôpital : des rails, des repas de cantine, des logiciels. Un tel texte ne passerait pas par l’Assemblée nationale : il serait négocié par le Parlement européen et le Conseil de l’Union, où siègent les gouvernements ([Commission européenne](https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr))."
+        },
+        {
+          "type": "p",
+          "text": "Pour les achats français, le même programme prévoit plus modeste : orienter la commande publique « avec des critères durables et souverains et un indice d’achat local » ([Place publique](https://place-publique.eu/document/6J8wjk3EW8dBCLwKxa7J96/projet-placepublique-acte1.pdf))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "droit",
+      "title": "Aujourd’hui, l’égalité de traitement",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La règle de base tient en une phrase de la directive européenne de 2014 : les acheteurs publics « traitent les opérateurs économiques sur un pied d’égalité et sans discrimination » ([directive 2014/24/UE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024)). Une directive fixe des règles que chaque pays doit reprendre dans sa propre loi."
+        },
+        {
+          "type": "p",
+          "text": "Cette égalité dépasse l’Europe. L’accord sur les marchés publics de l’Organisation mondiale du commerce, l’AMP, est un traité que seule une partie des membres de l’OMC a signé. Ses 22 parties, qui regroupent 49 membres de l’OMC, ont ouvert entre elles des achats publics estimés à plus de 1 700 milliards de dollars par an ([OMC](https://www.wto.org/french/tratop_f/gproc_f/gp_gpa_f.htm)). La directive oblige les acheteurs à accorder aux entreprises de ces pays un traitement « non moins favorable » que celui des entreprises de l’Union, dans la limite des engagements pris ([directive 2014/24/UE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024))."
+        },
+        {
+          "type": "p",
+          "text": "Une préférence existe pourtant depuis 2014, dans un coin peu connu : les secteurs de l’eau, de l’énergie, des transports et de la poste. Là, une offre de fournitures peut être rejetée si les produits venus de pays tiers sans accord d’accès avec l’Union dépassent 50 % de sa valeur. À offres équivalentes, la préférence va à l’offre qui ne peut pas être rejetée, si l’écart de prix n’excède pas 3 % ([directive 2014/25/UE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0025))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "bruxelles",
+      "title": "Ce que Bruxelles écrit déjà",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "À Bruxelles, deux textes en chantier vont déjà dans ce sens. Le premier, l’Industrial Accelerator Act, a été présenté par la Commission le 4 mars 2026 ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act)). Il pose le cadre de marchés publics « Fabriqué en Europe » pour les produits industriels à forte intensité énergétique, les technologies « zéro net » et les composants automobiles ([Commission européenne](https://ec.europa.eu/transparency/documents-register/api/files/COM%282026%29100_0/090166e52c9cc7dc?rendition=false))."
+        },
+        {
+          "type": "p",
+          "text": "Au Parlement européen, trois rapporteurs suivent ce texte, dont Pierre Jouvet (S&D, France) ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act)). C’est l’eurodéputé PS qui accompagnait Raphaël Glucksmann au salon ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html)). Leur projet de rapport propose de porter à 50 % d’ici 2036 le seuil de produits « Made in Europe » et bas carbone dans les secteurs stratégiques ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act)). Côté gouvernements, un compromis de la présidence du Conseil, examiné en septembre, remplacerait la notion large de « Made in Europe » par un système fondé sur les accords commerciaux et sur l’accès au marché, produit par produit ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act))."
+        },
+        {
+          "type": "p",
+          "text": "Le second texte est plus large. Le 9 septembre 2026, la Commission a proposé un règlement unique sur les marchés publics, qui remplacerait les trois directives de 2014 et instaurerait « un cadre horizontal de préférence européenne » ([Commission européenne](https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr)). Un acheteur pourrait mieux noter les offres européennes, ou rejeter celles dont la part européenne n’atteint pas la moitié de la valeur ([EPRS](https://eprs.europarl.europa.eu/contents/publications/EPRS/2026/10/EPRS_BRI%282026%29796984.html)). Mais « européen » y couvre aussi les pays parties à l’accord de l’OMC ou liés à l’Union par un accord commercial ([proposition de règlement](https://www.senat.fr/europe/textes_europeens/e21097.pdf)). Acheter européen, au sens de Bruxelles, c’est aussi acheter chez les partenaires commerciaux de l’Union, quand le marché entre dans leurs accords."
+        },
+        {
+          "type": "p",
+          "text": "Stéphane Séjourné, vice-président exécutif de la Commission, l’assume : « Cet argent doit davantage profiter à l’Europe » ([Commission européenne](https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr)). Tous les États ne suivent pas. En décembre 2025, un groupe de petits États membres a contesté la notion de préférence européenne, à réserver selon eux en dernier recours aux secteurs vraiment sensibles ([EPRS](https://eprs.europarl.europa.eu/contents/publications/EPRS/2026/10/EPRS_BRI%282026%29796984.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "national",
+      "title": "Ce qu’une loi française ne peut pas faire",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "En octobre 2024, dans l’arrêt Kolin, la Cour de justice de l’Union européenne a jugé que « seule l’Union est compétente » pour fixer une règle générale sur l’accès aux marchés publics des entreprises de pays tiers sans accord avec elle, qu’il s’agisse de les admettre, de les exclure ou d’ajuster leurs offres ([CJUE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652)). La raison : le commerce avec le reste du monde relève de la seule Union, et elle n’a pas autorisé les États à légiférer sur ce point ([CJUE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652)). Un Parlement national ne peut pas voter seul un « Acheter européen » contre les entreprises de pays tiers."
+        },
+        {
+          "type": "p",
+          "text": "Il ne peut pas davantage voter une priorité nationale contre les entreprises des autres pays de l’Union : l’égalité de traitement de la directive s’impose entre elles ([directive 2014/24/UE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024)). Le Rassemblement national l’écrit lui-même dans son projet : les règles de la commande publique « interdisent aujourd’hui aux acheteurs publics de favoriser des entreprises localisées sur le sol national » ([Rassemblement national](https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Reste une marge étroite. En l’absence de règle de l’Union, l’arrêt laisse à chaque acheteur le soin de décider s’il admet ces entreprises de pays tiers à sa procédure ([CJUE](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652)). Le reste se négocie à Bruxelles."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "candidats",
+      "title": "Préférence européenne ou priorité nationale",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sur cette ligne, les candidats se séparent. Gabriel Attal inscrit « la préférence européenne dans les marchés publics » dans son programme sur l’intelligence artificielle ([Gabriel Attal](https://attalpresident.fr/programme/intelligence-artificielle)). Bruno Retailleau veut appliquer le principe « Buy European First » aux achats d’IA et de numérique de l’État, sur les fonctions régaliennes ([Bruno Retailleau](https://www.avecretailleau.fr/projet/mesure/acheter-europeen-pour-les-besoins-numeriques-essentiels-de)). Les Écologistes de Marine Tondelier proposent un « buy green and european act » pour « privilégier entre 50 et 80% de produits européens dans les marchés publics en fonction des filières » ([Les Écologistes](https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf)). Édouard Philippe défend, selon le JDD, une préférence européenne renforcée dans l’industrie ([JDD](https://www.lejdd.fr/politique/le-pen-melenchon-zemmour-ce-quils-promettent-pour-relancer-le-made-in-france-188580))."
+        },
+        {
+          "type": "p",
+          "text": "Marine Le Pen parle d’abord de la France. Au salon, le 13 novembre, elle a défendu « une priorité nationale dans la commande publique » : selon elle, cette commande « n’est pas fléchée sur les entreprises françaises, ce qui pose un problème » ([franceinfo](https://www.franceinfo.fr/economie/industrie/made-in-france-quand-la-presidentielle-s-invite-au-salon_8282180.html)). Son projet « La France entreprend », version mise à jour de son programme de 2022, en fait un critère : la localisation de l’activité en France pour toute commande de l’État, des collectivités ou des hôpitaux ([Rassemblement national](https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf)). En 2024, le programme du RN pour les européennes posait une condition au marché unique : « permettre la priorité nationale et la préférence européenne dans la commande publique » ([Rassemblement national](https://rassemblementnational.fr/documents/202411-programme-europeennes.pdf)). Jean-Luc Mélenchon veut « réserver une partie des marchés publics aux productions locales » ([La France insoumise](https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre3/)). Éric Zemmour choisit la douane : « des droits de douane importants, de l’ordre de 50 % par exemple pour l’automobile ou de 100 % pour le textile » ([franceinfo](https://www.franceinfo.fr/economie/industrie/made-in-france-quand-la-presidentielle-s-invite-au-salon_8282180.html))."
+        },
+        {
+          "type": "p",
+          "text": "La campagne française débat d’une loi que les électeurs ne voteront pas. Ils éliront celui ou celle qui portera la position de la France à la table où elle se négocie."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les commissions du Parlement européen doivent voter sur l’Industrial Accelerator Act le 1er décembre, avant une plénière prévue la semaine du 14 décembre, « à confirmer » ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act)). La vraie bataille porte sur un adjectif. « Européen » au sens étroit, avec les sept conditions que posent les rapporteurs pour qu’un contenu venu d’un pays tiers compte comme européen, dont la réciprocité ? Ou au sens des accords commerciaux, comme le propose la présidence du Conseil ([Parlement européen](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act)) ? Chaque candidat qui promet d’« acheter européen » devra dire lequel."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il donner la priorité aux productions européennes dans les marchés publics ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : la préférence européenne dans les achats publics. « En phase » signifie une préférence européenne dans les marchés publics, comme dans les textes en discussion à Bruxelles ; ce n’est ni un soutien à un candidat ni un jugement sur lui.",
+      "table": {
+        "caption": "Faut-il donner la priorité aux productions européennes dans les marchés publics ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Glucksmann / PS-Place publique",
+            "En phase",
+            "Loi « Acheter européen » à porter « dans les institutions européennes » ; réserver « les marchés européens aux productions européennes » (salon, 14 novembre).",
+            "[1][2]"
+          ],
+          [
+            "Attal / Renaissance",
+            "En phase",
+            "« La préférence européenne dans les marchés publics » (programme, intelligence artificielle).",
+            "[16]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "En phase, chiffrée",
+            "« Buy green and european act », de 50 à 80 % de produits européens selon les filières.",
+            "[18]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En phase, selon le JDD",
+            "Préférence européenne renforcée dans l’industrie. JDD, 13 novembre.",
+            "[3]"
+          ],
+          [
+            "Retailleau / LR",
+            "En phase, pour le numérique de l’État",
+            "« Buy European First » pour l’IA et le numérique, fonctions régaliennes. 15 octobre.",
+            "[17]"
+          ],
+          [
+            "Le Pen / RN",
+            "Entre les deux, priorité nationale d’abord",
+            "« Une priorité nationale dans la commande publique » (13 novembre) ; programme du RN pour les européennes de 2024 : « la priorité nationale et la préférence européenne ».",
+            "[4][14][15]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Entre les deux, échelle locale",
+            "« Réserver une partie des marchés publics aux productions locales ».",
+            "[19]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Autre outil, les droits de douane",
+            "« De l’ordre de 50 % » pour l’automobile, « 100 % pour le textile ». 13 novembre.",
+            "[4]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Riner / candidat",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase : préférence européenne dans les marchés publics (Glucksmann, Attal, Tondelier ; Philippe, selon le JDD ; Retailleau, pour le numérique de l’État). Entre les deux : priorité nationale d’abord (Le Pen) ou échelle locale (Mélenchon). Autre outil : droits de douane (Zemmour). Position non trouvée sur cette question : Lisnard, Riner, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. BFMTV, C.D. avec AFP, 14 novembre 2026, 13 h (Raphaël Glucksmann au Salon du Made in France). https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html",
+          "lead": "1. BFMTV, C.D. avec AFP, 14 novembre 2026, 13 h (Raphaël Glucksmann au Salon du Made in France)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-raphael-glucksmann-considere-le-ni-droite-ni-gauche-de-teddy-riner-comme-une-politique-fondee-sur-l-injustice_AD-202611140234.html"
+            }
+          ]
+        },
+        {
+          "label": "2. Place publique, « Acte I, notre vision pour la France », chantier 4, p. 14 (PDF consulté le 15 novembre 2026). https://place-publique.eu/document/6J8wjk3EW8dBCLwKxa7J96/projet-placepublique-acte1.pdf",
+          "lead": "2. Place publique, « Acte I, notre vision pour la France », chantier 4, p. 14 (PDF consulté le 15 novembre 2026)",
+          "links": [
+            {
+              "label": "https://place-publique.eu/document/6J8wjk3EW8dBCLwKxa7J96/projet-placepublique-acte1.pdf",
+              "url": "https://place-publique.eu/document/6J8wjk3EW8dBCLwKxa7J96/projet-placepublique-acte1.pdf"
+            }
+          ]
+        },
+        {
+          "label": "3. JDD, Aliénor Trouvé, 13 novembre 2026, 17 h 56 (propositions des candidats sur le made in France). https://www.lejdd.fr/politique/le-pen-melenchon-zemmour-ce-quils-promettent-pour-relancer-le-made-in-france-188580",
+          "lead": "3. JDD, Aliénor Trouvé, 13 novembre 2026, 17 h 56 (propositions des candidats sur le made in France)",
+          "links": [
+            {
+              "label": "https://www.lejdd.fr/politique/le-pen-melenchon-zemmour-ce-quils-promettent-pour-relancer-le-made-in-france-188580",
+              "url": "https://www.lejdd.fr/politique/le-pen-melenchon-zemmour-ce-quils-promettent-pour-relancer-le-made-in-france-188580"
+            }
+          ]
+        },
+        {
+          "label": "4. franceinfo, 13 novembre 2026 (reportage au Salon du Made in France : Marine Le Pen, Éric Zemmour). https://www.franceinfo.fr/economie/industrie/made-in-france-quand-la-presidentielle-s-invite-au-salon_8282180.html",
+          "lead": "4. franceinfo, 13 novembre 2026 (reportage au Salon du Made in France : Marine Le Pen, Éric Zemmour)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/industrie/made-in-france-quand-la-presidentielle-s-invite-au-salon_8282180.html",
+              "url": "https://www.franceinfo.fr/economie/industrie/made-in-france-quand-la-presidentielle-s-invite-au-salon_8282180.html"
+            }
+          ]
+        },
+        {
+          "label": "5. Directive 2014/24/UE, articles 18 et 25 (EUR-Lex). https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024",
+          "lead": "5. Directive 2014/24/UE, articles 18 et 25 (EUR-Lex)",
+          "links": [
+            {
+              "label": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0024"
+            }
+          ]
+        },
+        {
+          "label": "6. OMC, « L’Accord plurilatéral sur les marchés publics (AMP) ». https://www.wto.org/french/tratop_f/gproc_f/gp_gpa_f.htm",
+          "lead": "6. OMC, « L’Accord plurilatéral sur les marchés publics (AMP) »",
+          "links": [
+            {
+              "label": "https://www.wto.org/french/tratop_f/gproc_f/gp_gpa_f.htm",
+              "url": "https://www.wto.org/french/tratop_f/gproc_f/gp_gpa_f.htm"
+            }
+          ]
+        },
+        {
+          "label": "7. Directive 2014/25/UE, article 85 (EUR-Lex). https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0025",
+          "lead": "7. Directive 2014/25/UE, article 85 (EUR-Lex)",
+          "links": [
+            {
+              "label": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0025",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32014L0025"
+            }
+          ]
+        },
+        {
+          "label": "8. Parlement européen, Legislative Train, « Industrial Accelerator Act » (informations au 25 octobre 2026). https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act",
+          "lead": "8. Parlement européen, Legislative Train, « Industrial Accelerator Act » (informations au 25 octobre 2026)",
+          "links": [
+            {
+              "label": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act",
+              "url": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-industrial-decarbonisation-accelerator-act"
+            }
+          ]
+        },
+        {
+          "label": "9. Commission européenne, proposition de règlement COM(2026) 100, 4 mars 2026, exposé des motifs. https://ec.europa.eu/transparency/documents-register/api/files/COM(2026)100_0/090166e52c9cc7dc?rendition=false",
+          "lead": "9. Commission européenne, proposition de règlement COM(2026) 100, 4 mars 2026, exposé des motifs",
+          "links": [
+            {
+              "label": "https://ec.europa.eu/transparency/documents-register/api/files/COM(2026)100_0/090166e52c9cc7dc?rendition=false",
+              "url": "https://ec.europa.eu/transparency/documents-register/api/files/COM(2026)100_0/090166e52c9cc7dc?rendition=false"
+            }
+          ]
+        },
+        {
+          "label": "10. Commission européenne, représentation en France, 9 septembre 2026 (proposition de règlement sur les marchés publics). https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr",
+          "lead": "10. Commission européenne, représentation en France, 9 septembre 2026 (proposition de règlement sur les marchés publics)",
+          "links": [
+            {
+              "label": "https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr",
+              "url": "https://france.representation.ec.europa.eu/informations-et-evenements/informations/marches-publics-la-commission-propose-des-regles-plus-simples-et-strategiques-2026-09-09_fr"
+            }
+          ]
+        },
+        {
+          "label": "11. Proposition de règlement, COM(2026) 590, transmise à l’Assemblée nationale et au Sénat le 28 octobre 2026, exposé des motifs, chapitre 5. https://www.senat.fr/europe/textes_europeens/e21097.pdf",
+          "lead": "11. Proposition de règlement, COM(2026) 590, transmise à l’Assemblée nationale et au Sénat le 28 octobre 2026, exposé des motifs, chapitre 5",
+          "links": [
+            {
+              "label": "https://www.senat.fr/europe/textes_europeens/e21097.pdf",
+              "url": "https://www.senat.fr/europe/textes_europeens/e21097.pdf"
+            }
+          ]
+        },
+        {
+          "label": "12. EPRS, service de recherche du Parlement européen, « Public procurement act », mis à jour le 15 octobre 2026. https://eprs.europarl.europa.eu/contents/publications/EPRS/2026/10/EPRS_BRI%282026%29796984.html",
+          "lead": "12. EPRS, service de recherche du Parlement européen, « Public procurement act », mis à jour le 15 octobre 2026",
+          "links": [
+            {
+              "label": "https://eprs.europarl.europa.eu/contents/publications/EPRS/2026/10/EPRS_BRI%282026%29796984.html",
+              "url": "https://eprs.europarl.europa.eu/contents/publications/EPRS/2026/10/EPRS_BRI%282026%29796984.html"
+            }
+          ]
+        },
+        {
+          "label": "13. CJUE, arrêt du 22 octobre 2024, Kolin, C-652/22, points 61 à 63 (EUR-Lex). https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652",
+          "lead": "13. CJUE, arrêt du 22 octobre 2024, Kolin, C-652/22, points 61 à 63 (EUR-Lex)",
+          "links": [
+            {
+              "label": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652",
+              "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:62022CJ0652"
+            }
+          ]
+        },
+        {
+          "label": "14. Rassemblement national, « La France entreprend », projet de Marine Le Pen (PDF, version mise à jour du programme de 2022), partie 2.2. https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf",
+          "lead": "14. Rassemblement national, « La France entreprend », projet de Marine Le Pen (PDF, version mise à jour du programme de 2022), partie 2.2",
+          "links": [
+            {
+              "label": "https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf",
+              "url": "https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf"
+            }
+          ]
+        },
+        {
+          "label": "15. Rassemblement national, « Notre projet pour une Europe des nations », élections européennes de 2024 (PDF). https://rassemblementnational.fr/documents/202411-programme-europeennes.pdf",
+          "lead": "15. Rassemblement national, « Notre projet pour une Europe des nations », élections européennes de 2024 (PDF)",
+          "links": [
+            {
+              "label": "https://rassemblementnational.fr/documents/202411-programme-europeennes.pdf",
+              "url": "https://rassemblementnational.fr/documents/202411-programme-europeennes.pdf"
+            }
+          ]
+        },
+        {
+          "label": "16. Gabriel Attal, programme en ligne, « Intelligence artificielle ». https://attalpresident.fr/programme/intelligence-artificielle",
+          "lead": "16. Gabriel Attal, programme en ligne, « Intelligence artificielle »",
+          "links": [
+            {
+              "label": "https://attalpresident.fr/programme/intelligence-artificielle",
+              "url": "https://attalpresident.fr/programme/intelligence-artificielle"
+            }
+          ]
+        },
+        {
+          "label": "17. Bruno Retailleau, « Acheter européen pour les besoins numériques essentiels de l’État », mis à jour le 15 octobre 2026. https://www.avecretailleau.fr/projet/mesure/acheter-europeen-pour-les-besoins-numeriques-essentiels-de",
+          "lead": "17. Bruno Retailleau, « Acheter européen pour les besoins numériques essentiels de l’État », mis à jour le 15 octobre 2026",
+          "links": [
+            {
+              "label": "https://www.avecretailleau.fr/projet/mesure/acheter-europeen-pour-les-besoins-numeriques-essentiels-de",
+              "url": "https://www.avecretailleau.fr/projet/mesure/acheter-europeen-pour-les-besoins-numeriques-essentiels-de"
+            }
+          ]
+        },
+        {
+          "label": "18. Les Écologistes, « Pour une prospérité écologique », programme (PDF, 2026). https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+          "lead": "18. Les Écologistes, « Pour une prospérité écologique », programme (PDF, 2026)",
+          "links": [
+            {
+              "label": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+              "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf"
+            }
+          ]
+        },
+        {
+          "label": "19. La France insoumise, L’Avenir en commun, chapitre 3, « Un pacte productif pour répondre aux besoins ». https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre3/",
+          "lead": "19. La France insoumise, L’Avenir en commun, chapitre 3, « Un pacte productif pour répondre aux besoins »",
+          "links": [
+            {
+              "label": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre3/",
+              "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre3/"
+            }
+          ]
+        },
+        {
+          "label": "20. franceinfo, direct Présidentielle 2027, 14 novembre 2026 (Teddy Riner au salon). https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html",
+          "lead": "20. franceinfo, direct Présidentielle 2027, 14 novembre 2026 (Teddy Riner au salon)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle-2027-raphael-glucksmann-et-teddy-riner-attendus-au-salon-du-made-in-france_8282213.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit le droit en vigueur, des textes en discussion et des propositions de candidats. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ia-changer-campagne",
+      "label": "L’IA peut-elle changer la campagne ?"
+    }
+  ]
+}
