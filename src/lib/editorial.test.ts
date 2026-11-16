@@ -221,3 +221,25 @@ describe('carrousel des dernières unes', () => {
   });
 });
 
+describe('editorial card cover frame', () => {
+  const cardSrc = readFileSync(path.join(process.cwd(), 'src/components/EditorialCard.astro'), 'utf8');
+
+  it('does not render an empty cover frame when the image is missing', () => {
+    expect(cardSrc).toContain('coverFileExists');
+    expect(cardSrc).toContain('showCover');
+    expect(cardSrc).toMatch(/showCover && \(/);
+    expect(cardSrc).not.toContain('editorial-card-missing');
+  });
+});
+
+describe('liberte-d-expression hub cover', () => {
+  const src = readFileSync(path.join(process.cwd(), 'src/pages/liberte-d-expression.astro'), 'utf8');
+
+  it('branches Loulou’s watercolor with the validated alt', () => {
+    expect(src).toContain("src: '/illustrations/unes/liberte-d-expression.jpg'");
+    expect(src).toContain(
+      'Aquarelle d’une table en bois éclairée par une fenêtre, avec un microphone vintage en métal, un encrier bleu, une bande de lin dénouée, un stylo-plume et deux feuilles de papier vierges.',
+    );
+    expect(src).toContain('<EditorialCoverImage');
+  });
+});
