@@ -21,6 +21,7 @@ import {
   moderationStartupWarning,
   resolveModeratorAccounts,
 } from './lib/moderators.mjs';
+import { deleteTipById, purgeProcessedTips, writeJsonAtomic } from './lib/tips-purge.mjs';
 import {
   FIRST_ROUND_HUES as HUES,
   ROLE_LEVEL,
@@ -167,7 +168,7 @@ function loadTips() {
 }
 
 function saveTips(db) {
-  writeFileSync(join(DATA_DIR, 'tips.json'), JSON.stringify(db, null, 2));
+  writeJsonAtomic(join(DATA_DIR, 'tips.json'), db);
 }
 
 const TIP_TYPES = new Set(['suggestion', 'alerte']);
@@ -968,16 +969,20 @@ const server = createServer(async (req, res) => {
       if (decision.status) return json(res, decision.status, decision.body);
       const mod = decision.mod;
       const db = loadTips();
-      const queue = db.tips
-        .filter((t) => t.status === 'pending')
-        .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      const asModTip = (t) => ({
+        ...publicTip(t),
+        status: t.status,
+        contactEmail: t.contactEmail || null,
+      });
+      const byCreated = (a, b) => new Date(a.createdAt) - new Date(b.createdAt);
+      const byPublished = (a, b) =>
+        new Date(b.publishedAt || b.createdAt) - new Date(a.publishedAt || a.createdAt);
+      const tips = Array.isArray(db.tips) ? db.tips : [];
       return json(res, 200, {
         role: mod.role,
-        queue: queue.map((t) => ({
-          ...publicTip(t),
-          status: t.status,
-          contactEmail: t.contactEmail || null,
-        })),
+        queue: tips.filter((t) => t.status === 'pending').sort(byCreated).map(asModTip),
+        published: tips.filter((t) => t.status === 'published').sort(byPublished).map(asModTip),
+        rejected: tips.filter((t) => t.status === 'rejected').sort(byCreated).map(asModTip),
       });
     }
 
@@ -1015,6 +1020,38 @@ const server = createServer(async (req, res) => {
             ? 'Validé — visible sur /contribuer et dans le fil lecteurs.'
             : 'Proposition rejetée.',
       });
+    }
+
+    if (req.method === 'POST' && path === '/api/comments/mod/tips-purge') {
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
+      const db = loadTips();
+      const { deletedRejected, anonymizedPublished } = purgeProcessedTips(db, {
+        at: new Date().toISOString(),
+        by: mod.id,
+        role: mod.role,
+      });
+      saveTips(db);
+      return json(res, 200, { deletedRejected, anonymizedPublished });
+    }
+
+    if (req.method === 'POST' && path === '/api/comments/mod/tips-delete') {
+      const decision = moderationDenial(req.headers['x-mod-token'], 'modo');
+      if (decision.status) return json(res, decision.status, decision.body);
+      const mod = decision.mod;
+      const body = await readBody(req);
+      const tipId = String(body?.tipId || '').trim();
+      if (!tipId) return json(res, 400, { error: 'tipId requis' });
+      const db = loadTips();
+      const { found, deleted } = deleteTipById(db, tipId, {
+        at: new Date().toISOString(),
+        by: mod.id,
+        role: mod.role,
+      });
+      if (!found) return json(res, 404, { error: 'Proposition introuvable' });
+      saveTips(db);
+      return json(res, 200, { ok: true, deleted, tipId });
     }
 
     return json(res, 404, { error: 'not found' });
