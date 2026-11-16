@@ -1,0 +1,411 @@
+{
+  "slug": "j-ai-commis-une-erreur-laquelle",
+  "title": "« J’ai commis une erreur » : laquelle ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-17",
+  "updated": "2026-11-17",
+  "kicker": "Enquête et analyse · La rédaction · 17 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Dimanche 15 novembre, sur LCP, Marine Le Pen a dit regretter d’avoir défendu l’interdiction de la double nationalité : « J’ai commis une erreur ». La mesure avait pourtant quitté son programme en janvier 2022. Et en 2024, un texte déposé par elle prévoyait d’autoriser une loi à interdire des emplois publics aux Français ayant une autre nationalité. Ce qu’elle regrette exactement, ce que dit le droit, et où se placent les autres candidats.",
+  "description": "Marine Le Pen regrette son ancienne proposition sur la double nationalité, abandonnée en 2022. Mais un texte de 2024 allait plus loin. Ce que dit le droit, et où se placent les autres candidats.",
+  "disclaimer": "Cette analyse décrit des déclarations datées, des textes déposés et le droit en vigueur. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "double-nationalite",
+    "nationalite",
+    "doe"
+  ],
+  "x_hook": "Dimanche 15 novembre, sur LCP, Marine Le Pen a dit regretter d’avoir défendu l’interdiction de la double nationalité : « J’ai commis une erreur ». La mesure avait pourtant quitté son programme en janvier 2022. Et en 2024, un texte déposé par elle prévoyait d’autoriser une loi à interdire des emplois publics aux Français ayant une autre nationalité. Ce qu’elle regrette exactement, ce que dit le droit, et où se placent les autres candidats.",
+  "hues": [
+    {
+      "slug": "a-renonce-au-choix",
+      "label": "A renoncé au choix obligatoire",
+      "color": "#162561",
+      "rationale": "Le Pen : regret exprimé le 15 novembre 2026 ; texte de 2024 sur les emplois publics : ni maintien ni retrait trouvés."
+    },
+    {
+      "slug": "decheance",
+      "label": "Déchéance pour les binationaux condamnés",
+      "color": "#0001b8",
+      "rationale": "Zemmour (19 mai 2026), Retailleau (19 octobre 2026)."
+    },
+    {
+      "slug": "contre-decheance-ou-non-trouve",
+      "label": "Contre la déchéance (2016) ou non trouvé",
+      "color": "#5a6570",
+      "rationale": "Mélenchon : position de 2016 ; Glucksmann, Attal, Tondelier, Philippe, Lisnard, Riner : position non trouvée."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "aveu",
+      "title": "Ce qu’elle a dit sur LCP",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dimanche 15 novembre, dans « Brevet présidentiel », nouveau format de LCP où un lycéen pose les questions, Marine Le Pen est revenue sur une ancienne proposition. « Je disais à l’époque, si on a une double nationalité, il faut choisir celle qu’on veut garder. Soit la française, soit une autre », a-t-elle rappelé ([LCP](https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la)). Puis : « J’ai laissé penser à ceux qui avaient la double nationalité que je nourrissais à leur égard une forme de suspicion dans l’amour ou l’investissement qu’ils pouvaient avoir pour la France. Je pense que j’ai commis une erreur » ([LCP](https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la))."
+        },
+        {
+          "type": "p",
+          "text": "Elle ajoute : « Il n’y a aucune raison évidemment d’avoir la moindre suspicion à l’égard de ceux qui ont deux nationalités, souvent celle du pays où ils sont nés, et celle de leurs parents » ([LCP](https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la)). Dans le même entretien, sur le mariage pour tous qu’elle promettait d’abolir en 2013, elle répond : « Non, clairement j’ai changé » ([LCP](https://lcp.fr/actualites/permis-gratuit-apl-climatisation-des-ecoles-marine-le-pen-passe-son-brevet-presidentiel)). Un extrait avait circulé dès le 13 novembre ([La Nouvelle Tribune](https://lanouvelletribune.info/2026/11/prisca-thevenot-repond-a-marine-le-pen-apres-son-revirement-sur-la-double-nationalite/))."
+        },
+        {
+          "type": "p",
+          "text": "Une personne a la double nationalité, ou est « binationale », quand deux États la reconnaissent comme citoyenne. En droit français, ce n’est pas un statut à part : TF1 Info rappelle que, « dans l’état actuel de la législation, aucune interdiction d’accès à l’emploi n’est fixée pour les Français détenteurs d’une seconde nationalité » ([TF1 Info](https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "2022",
+      "title": "Une mesure rangée depuis janvier 2022",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "L’aveu a de quoi surprendre, car la proposition n’existe plus au programme depuis longtemps. Le 29 juin 2014, sur Europe 1, Marine Le Pen disait : « Il faut mettre fin à la double nationalité » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle/sortie-de-l-euro-binationalite-marine-le-pen-s-explique-sur-ses-renoncements_4948545.html)). Ses 144 engagements de 2017 prévoyaient de « supprimer la double nationalité extra-européenne », c’est-à-dire celle d’un pays hors d’Europe ([France Inter](https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459)). LCP date la mesure de ses projets de 2012 et de 2017 ([LCP](https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la))."
+        },
+        {
+          "type": "p",
+          "text": "En janvier 2022, elle y renonce. D’après les propos qu’elle a tenus à Libération le 20 janvier 2022, repris par Desorma : « J’ai évolué sur la binationalité. Je préfère mettre ça de côté car c’est comme mettre du sel sur des plaies ouvertes » ([Desorma](https://desorma.fr/changements/lepen-immigration-01.html)). France Inter y voit une mesure qu’elle ne juge plus déterminante et qui peut « blesser inutilement certains Français » ([France Inter](https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459)). Le « regret » de 2026 vient donc près de cinq ans après l’abandon de la mesure ; la nouveauté est le mot « erreur » et l’explication par la suspicion."
+        },
+        {
+          "type": "p",
+          "text": "Chez ses adversaires, le ton est moins indulgent. La députée Prisca Thevenot a répondu sur X le 14 novembre : « Mais de qui se moque-t-elle ? Merci aux députés mobilisés pour repousser les amendements de vos députés à vous, car sans cela “votre erreur” serait devenue une réalité pour de nombreux Français » ([La Nouvelle Tribune](https://lanouvelletribune.info/2026/11/prisca-thevenot-repond-a-marine-le-pen-apres-son-revirement-sur-la-double-nationalite/)). Nous n’avons pas retrouvé les amendements dont elle parle ; la phrase est citée comme sa déclaration, pas comme un fait établi."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "2024",
+      "title": "Le texte de 2024, toujours consultable",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Entre 2022 et 2026, la question est revenue par un autre biais. Le 25 janvier 2024, Marine Le Pen et le groupe RN ont déposé à l’Assemblée nationale une proposition de loi constitutionnelle, c’est-à-dire un texte qui propose de modifier la Constitution. Elle prévoit que « la loi organique peut interdire l’accès à des emplois des administrations, des entreprises publiques et des personnes morales chargées d’une mission de service public aux personnes qui possèdent la nationalité d’un autre État » ([Assemblée nationale](https://www.assemblee-nationale.fr/dyn/16/textes/l16b2120_proposition-loi.pdf)). Une loi organique est une loi qui précise le fonctionnement des institutions. Le texte ne parle pas de quelques emplois sensibles : il vise l’administration, les entreprises publiques et les missions de service public. Franceinfo précise que cette interdiction s’appliquerait « même si elles sont également françaises » ([franceinfo](https://www.franceinfo.fr/elections/legislatives/legislatives-2024-on-vous-resume-la-polemique-sur-la-proposition-du-rn-d-interdire-aux-binationaux-certains-postes-juges-sensibles-de-la-fonction-publique_6631569.html))."
+        },
+        {
+          "type": "p",
+          "text": "En juin 2024, en pleine campagne des législatives, Jordan Bardella a présenté une version resserrée : « Nous n’entendons pas remettre en cause la double nationalité (...). En revanche, nous entendons effectivement réserver un certain nombre d’emplois stratégiques dans les secteurs notamment liés à la sécurité et à la défense exclusivement à des citoyens français » ([franceinfo](https://www.franceinfo.fr/elections/legislatives/legislatives-2024-polemique-autour-de-la-proposition-du-rn-d-interdire-des-emplois-sensibles-aux-binationaux_6624819.html)). Marine Le Pen a précisé que « la restriction ne concernerait que quelques dizaines d’emplois très sensibles » ([franceinfo](https://www.franceinfo.fr/elections/legislatives/legislatives-2024-polemique-autour-de-la-proposition-du-rn-d-interdire-des-emplois-sensibles-aux-binationaux_6624819.html)). Sébastien Chenu a avancé environ 50 postes ([BFMTV](https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html)). La CFDT, elle, estimait que 3,3 millions de Français pourraient se voir interdire l’accès à un emploi ([BFMTV](https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html)), un chiffre qui est son estimation, pas celle du RN."
+        },
+        {
+          "type": "p",
+          "text": "Reste la question que l’entretien de dimanche laisse ouverte. Dans les comptes rendus de LCP, du Parisien et de CNEWS, Marine Le Pen parle de l’obligation de choisir une nationalité ; nous n’y avons pas trouvé de mot sur le texte de 2024 ni sur la liste d’emplois réservés. Nous n’avons trouvé ni retrait ni abandon de ce volet : position non trouvée, ce qui ne veut pas dire qu’elle le maintient."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "droit",
+      "title": "Ce que le droit permet déjà, et ce qu’il interdit",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Certains métiers dits « de souveraineté », liés à la défense, au budget, à la sécurité ou à la diplomatie, sont réservés aux Français, binationaux compris ([BFMTV](https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html)). Pour les postes les plus sensibles, des enquêtes permettent déjà d’écarter une personne au cas par cas. Le ministre de l’Intérieur d’alors, Gérald Darmanin, expliquait en juin 2024 : « Les membres de mon cabinet, par exemple, passent un entretien d’habilitation où on regarde leurs faiblesses. Cela peut être une binationalité, des questions d’argent, une faiblesse familiale… » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux)). Marine Le Pen l’admettait elle-même : « En réalité, ça existe déjà » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux)), en ajoutant que sa proposition inscrirait ce principe dans la Constitution."
+        },
+        {
+          "type": "p",
+          "text": "Ce que le droit n’autorise pas, c’est de fermer un emploi à tous les binationaux d’un coup. Le Code du travail dit qu’« aucune personne ne peut être écartée d’une procédure de recrutement » pour son appartenance à une nation ([TF1 Info](https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html)). La juriste Anne-Charlène Bezzina, citée par Public Sénat, juge qu’une interdiction générale ne passerait pas le Conseil constitutionnel : « Comme son nom l’indique, un binational est un national » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux)). TF1 Info, qui rappelle que Sébastien Chenu évoquait une loi organique et un décret, estime que la voie serait difficile mais « pas forcément impossible » ([TF1 Info](https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "autres",
+      "title": "Les autres candidats : la déchéance plutôt que l’interdiction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "À droite, le débat s’est déplacé. La déchéance de nationalité consiste à retirer la nationalité française à une personne condamnée. Ces propositions ne visent que des binationaux ; France Inter rappelait en 2022 qu’une déchéance fait courir le risque de créer des apatrides, c’est-à-dire des personnes sans aucune nationalité ([France Inter](https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459)). Éric Zemmour a dit le 19 mai 2026 sur CNEWS : « Nous avons fait une erreur en acceptant la binationalité », tout en plaidant pour la déchéance de nationalité des binationaux auteurs de délits et de crimes ([CNEWS](https://www.cnews.fr/france/2026-05-19/immigration-negative-erreur-de-la-binationalite-rassemblement-national-ce-quil)). Bruno Retailleau, le 19 octobre, demandait lui aussi la déchéance de nationalité pour les binationaux ([BFMTV](https://www.bfmtv.com/politique/les-republicains/video-bruno-retailleau-reitere-son-appel-a-declarer-l-etat-d-urgence-et-demande-la-decheance-de-nationalite-pour-les-binationaux_VN-202610190695.html))."
+        },
+        {
+          "type": "p",
+          "text": "À gauche, la position la plus nette que nous ayons retrouvée est ancienne : en janvier 2016, Jean-Luc Mélenchon jugeait que la déchéance pour les binationaux condamnés pour terrorisme « est une honte » ([franceinfo](https://www.franceinfo.fr/politique/debat-sur-la-decheance-de-nationalite/video-decheance-de-nationalite-francois-ca-suffit-lance-melenchon-a-hollande_1268673.html)). Pour les autres candidats, nous n’avons trouvé aucune position datée sur la double nationalité ou les emplois publics. La question n’est donc pas d’être pour ou contre les binationaux, mais de savoir quelles règles particulières, si elles existent, et par quelle voie."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il appliquer des règles particulières aux Français binationaux ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : des règles propres aux binationaux (obligation de choisir, emplois réservés, déchéance de nationalité). « Position non trouvée » signifie que nous n’avons rien trouvé de daté, pas qu’il n’y a pas de position ; ce n’est ni un soutien à un candidat ni un jugement sur lui.",
+      "table": {
+        "caption": "Faut-il appliquer des règles particulières aux Français binationaux ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Le Pen / RN",
+            "A renoncé au choix obligatoire ; emplois publics : position non trouvée",
+            "« J’ai commis une erreur » sur l’interdiction de la double nationalité (15 novembre 2026). Proposition de loi constitutionnelle de 2024 sur les emplois publics : ni maintien ni retrait trouvés.",
+            "[1][9]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Déchéance pour les binationaux condamnés",
+            "« Nous avons fait une erreur en acceptant la binationalité » ; déchéance de nationalité pour les binationaux auteurs de délits et de crimes (19 mai 2026).",
+            "[15]"
+          ],
+          [
+            "Retailleau / LR",
+            "Déchéance pour les binationaux",
+            "Demande la déchéance de nationalité pour les binationaux (19 octobre 2026).",
+            "[16]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Contre la déchéance (position de 2016)",
+            "Déchéance pour les binationaux condamnés pour terrorisme : « est une honte » (14 janvier 2016). Position 2026 non trouvée.",
+            "[17]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Attal / Renaissance",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Philippe / Horizons",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Riner / candidat",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ]
+        ]
+      },
+      "note": "Badge des courants : a renoncé à l’obligation de choisir sa nationalité (Le Pen) ; déchéance pour les binationaux condamnés (Zemmour, Retailleau) ; contre la déchéance, position de 2016 (Mélenchon). Position non trouvée sur cette question : Glucksmann, Attal, Tondelier, Philippe, Lisnard, Riner, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Deux questions simples, que l’entretien n’a pas tranchées. Marine Le Pen renonce-t-elle aussi à ce que prévoyait son texte de 2024, la possibilité d’interdire des emplois publics à ceux qui ont une autre nationalité ? Et son programme 2027, quand il paraîtra, le dira-t-il par écrit ? Une erreur avouée à l’oral, c’est un bon début. L’écrit, lui, reste consultable sur le site de l’Assemblée nationale."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. LCP, Raphaël Marchal, 15 novembre 2026, 18 h 05 (« J’ai commis une erreur » : Marine Le Pen regrette avoir défendu la suppression de la binationalité). https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la",
+          "lead": "1. LCP, Raphaël Marchal, 15 novembre 2026, 18 h 05 (« J’ai commis une erreur » : Marine Le Pen regrette avoir défendu la suppression de la binationalité)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la",
+              "url": "https://lcp.fr/actualites/j-ai-commis-une-erreur-sur-lcp-marine-le-pen-regrette-avoir-defendu-la-suppression-de-la"
+            }
+          ]
+        },
+        {
+          "label": "2. LCP, 15 novembre 2026 (résumé de l’entretien « Brevet présidentiel »). https://lcp.fr/actualites/permis-gratuit-apl-climatisation-des-ecoles-marine-le-pen-passe-son-brevet-presidentiel",
+          "lead": "2. LCP, 15 novembre 2026 (résumé de l’entretien « Brevet présidentiel »)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/permis-gratuit-apl-climatisation-des-ecoles-marine-le-pen-passe-son-brevet-presidentiel",
+              "url": "https://lcp.fr/actualites/permis-gratuit-apl-climatisation-des-ecoles-marine-le-pen-passe-son-brevet-presidentiel"
+            }
+          ]
+        },
+        {
+          "label": "3. Le Parisien, 16 novembre 2026 (Marine Le Pen affirme avoir changé d’avis sur la double nationalité et le mariage pour tous). https://www.leparisien.fr/elections/presidentielle/presidentielle-jai-commis-une-erreur-marine-le-pen-affirme-avoir-change-davis-sur-la-double-nationalite-et-le-mariage-pour-tous-16-11-2026-25MCL4NXEJFIFCDT7MGMT6M5NM.php",
+          "lead": "3. Le Parisien, 16 novembre 2026 (Marine Le Pen affirme avoir changé d’avis sur la double nationalité et le mariage pour tous)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/presidentielle-jai-commis-une-erreur-marine-le-pen-affirme-avoir-change-davis-sur-la-double-nationalite-et-le-mariage-pour-tous-16-11-2026-25MCL4NXEJFIFCDT7MGMT6M5NM.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-jai-commis-une-erreur-marine-le-pen-affirme-avoir-change-davis-sur-la-double-nationalite-et-le-mariage-pour-tous-16-11-2026-25MCL4NXEJFIFCDT7MGMT6M5NM.php"
+            }
+          ]
+        },
+        {
+          "label": "4. CNEWS, 16 novembre 2026 (Marine Le Pen affirme avoir changé d’avis sur l’interdiction de la double nationalité). https://www.cnews.fr/france/2026-11-16/presidentielle-2027-marine-le-pen-affirme-avoir-change-davis-sur-linterdiction-de",
+          "lead": "4. CNEWS, 16 novembre 2026 (Marine Le Pen affirme avoir changé d’avis sur l’interdiction de la double nationalité)",
+          "links": [
+            {
+              "label": "https://www.cnews.fr/france/2026-11-16/presidentielle-2027-marine-le-pen-affirme-avoir-change-davis-sur-linterdiction-de",
+              "url": "https://www.cnews.fr/france/2026-11-16/presidentielle-2027-marine-le-pen-affirme-avoir-change-davis-sur-linterdiction-de"
+            }
+          ]
+        },
+        {
+          "label": "5. La Nouvelle Tribune, 15 novembre 2026 (réaction de Prisca Thevenot). https://lanouvelletribune.info/2026/11/prisca-thevenot-repond-a-marine-le-pen-apres-son-revirement-sur-la-double-nationalite/",
+          "lead": "5. La Nouvelle Tribune, 15 novembre 2026 (réaction de Prisca Thevenot)",
+          "links": [
+            {
+              "label": "https://lanouvelletribune.info/2026/11/prisca-thevenot-repond-a-marine-le-pen-apres-son-revirement-sur-la-double-nationalite/",
+              "url": "https://lanouvelletribune.info/2026/11/prisca-thevenot-repond-a-marine-le-pen-apres-son-revirement-sur-la-double-nationalite/"
+            }
+          ]
+        },
+        {
+          "label": "6. France Inter, janvier 2022 (mesures abandonnées par Marine Le Pen en cinq ans). https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459",
+          "lead": "6. France Inter, janvier 2022 (mesures abandonnées par Marine Le Pen en cinq ans)",
+          "links": [
+            {
+              "label": "https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459",
+              "url": "https://www.radiofrance.fr/franceinter/double-nationalite-sortie-de-l-ue-et-de-l-euro-ces-mesures-abandonnees-par-marine-le-pen-en-cinq-ans-4163459"
+            }
+          ]
+        },
+        {
+          "label": "7. Desorma, janvier 2022 (reprise des propos de Marine Le Pen à Libération du 20 janvier 2022). https://desorma.fr/changements/lepen-immigration-01.html",
+          "lead": "7. Desorma, janvier 2022 (reprise des propos de Marine Le Pen à Libération du 20 janvier 2022)",
+          "links": [
+            {
+              "label": "https://desorma.fr/changements/lepen-immigration-01.html",
+              "url": "https://desorma.fr/changements/lepen-immigration-01.html"
+            }
+          ]
+        },
+        {
+          "label": "8. franceinfo, 2022 (Sortie de l’euro, binationalité : Marine Le Pen s’explique sur ses renoncements). https://www.franceinfo.fr/elections/presidentielle/sortie-de-l-euro-binationalite-marine-le-pen-s-explique-sur-ses-renoncements_4948545.html",
+          "lead": "8. franceinfo, 2022 (Sortie de l’euro, binationalité : Marine Le Pen s’explique sur ses renoncements)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle/sortie-de-l-euro-binationalite-marine-le-pen-s-explique-sur-ses-renoncements_4948545.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle/sortie-de-l-euro-binationalite-marine-le-pen-s-explique-sur-ses-renoncements_4948545.html"
+            }
+          ]
+        },
+        {
+          "label": "9. Assemblée nationale, proposition de loi constitutionnelle n° 2120, déposée le 25 janvier 2024 par Marine Le Pen et le groupe RN. https://www.assemblee-nationale.fr/dyn/16/textes/l16b2120_proposition-loi.pdf",
+          "lead": "9. Assemblée nationale, proposition de loi constitutionnelle n° 2120, déposée le 25 janvier 2024 par Marine Le Pen et le groupe RN",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b2120_proposition-loi.pdf",
+              "url": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b2120_proposition-loi.pdf"
+            }
+          ]
+        },
+        {
+          "label": "10. franceinfo, 25 juin 2024 (polémique autour des « emplois sensibles » interdits aux binationaux). https://www.franceinfo.fr/elections/legislatives/legislatives-2024-polemique-autour-de-la-proposition-du-rn-d-interdire-des-emplois-sensibles-aux-binationaux_6624819.html",
+          "lead": "10. franceinfo, 25 juin 2024 (polémique autour des « emplois sensibles » interdits aux binationaux)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/legislatives/legislatives-2024-polemique-autour-de-la-proposition-du-rn-d-interdire-des-emplois-sensibles-aux-binationaux_6624819.html",
+              "url": "https://www.franceinfo.fr/elections/legislatives/legislatives-2024-polemique-autour-de-la-proposition-du-rn-d-interdire-des-emplois-sensibles-aux-binationaux_6624819.html"
+            }
+          ]
+        },
+        {
+          "label": "11. franceinfo, 28 juin 2024 (on vous résume la polémique sur les postes jugés sensibles). https://www.franceinfo.fr/elections/legislatives/legislatives-2024-on-vous-resume-la-polemique-sur-la-proposition-du-rn-d-interdire-aux-binationaux-certains-postes-juges-sensibles-de-la-fonction-publique_6631569.html",
+          "lead": "11. franceinfo, 28 juin 2024 (on vous résume la polémique sur les postes jugés sensibles)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/legislatives/legislatives-2024-on-vous-resume-la-polemique-sur-la-proposition-du-rn-d-interdire-aux-binationaux-certains-postes-juges-sensibles-de-la-fonction-publique_6631569.html",
+              "url": "https://www.franceinfo.fr/elections/legislatives/legislatives-2024-on-vous-resume-la-polemique-sur-la-proposition-du-rn-d-interdire-aux-binationaux-certains-postes-juges-sensibles-de-la-fonction-publique_6631569.html"
+            }
+          ]
+        },
+        {
+          "label": "12. BFMTV, 27 juin 2024 (Sébastien Chenu évoque une liste de 50 emplois « sensibles »). https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html",
+          "lead": "12. BFMTV, 27 juin 2024 (Sébastien Chenu évoque une liste de 50 emplois « sensibles »)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html",
+              "url": "https://www.bfmtv.com/politique/elections/legislatives/sebastien-chenu-evoque-une-liste-de-50-emplois-sensibles-que-le-rn-veut-interdire-aux-binationaux_AV-202406270393.html"
+            }
+          ]
+        },
+        {
+          "label": "13. Public Sénat, 25 juin 2024 (le RN peut-il interdire les « emplois sensibles » aux Français binationaux ?). https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux",
+          "lead": "13. Public Sénat, 25 juin 2024 (le RN peut-il interdire les « emplois sensibles » aux Français binationaux ?)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux",
+              "url": "https://www.publicsenat.fr/actualites/politique/legislatives-2024-le-rn-peut-il-interdire-les-emplois-sensibles-aux-francais-binationaux"
+            }
+          ]
+        },
+        {
+          "label": "14. TF1 Info, 24 juin 2024 (le RN veut interdire l’accès de certains emplois « stratégiques » aux Français binationaux : est-ce possible ?). https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html",
+          "lead": "14. TF1 Info, 24 juin 2024 (le RN veut interdire l’accès de certains emplois « stratégiques » aux Français binationaux : est-ce possible ?)",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html",
+              "url": "https://www.tf1info.fr/politique/elections/legislatives/legislatives-2024-jordan-bardella-le-rn-veut-interdire-l-acces-de-certains-emplois-strategiques-aux-francais-binationaux-est-ce-legal-2305523.html"
+            }
+          ]
+        },
+        {
+          "label": "15. CNEWS, 19 mai 2026 (interview d’Éric Zemmour dans « La France en face »). https://www.cnews.fr/france/2026-05-19/immigration-negative-erreur-de-la-binationalite-rassemblement-national-ce-quil",
+          "lead": "15. CNEWS, 19 mai 2026 (interview d’Éric Zemmour dans « La France en face »)",
+          "links": [
+            {
+              "label": "https://www.cnews.fr/france/2026-05-19/immigration-negative-erreur-de-la-binationalite-rassemblement-national-ce-quil",
+              "url": "https://www.cnews.fr/france/2026-05-19/immigration-negative-erreur-de-la-binationalite-rassemblement-national-ce-quil"
+            }
+          ]
+        },
+        {
+          "label": "16. BFMTV, 19 octobre 2026 (Bruno Retailleau demande la déchéance de nationalité pour les binationaux). https://www.bfmtv.com/politique/les-republicains/video-bruno-retailleau-reitere-son-appel-a-declarer-l-etat-d-urgence-et-demande-la-decheance-de-nationalite-pour-les-binationaux_VN-202610190695.html",
+          "lead": "16. BFMTV, 19 octobre 2026 (Bruno Retailleau demande la déchéance de nationalité pour les binationaux)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/les-republicains/video-bruno-retailleau-reitere-son-appel-a-declarer-l-etat-d-urgence-et-demande-la-decheance-de-nationalite-pour-les-binationaux_VN-202610190695.html",
+              "url": "https://www.bfmtv.com/politique/les-republicains/video-bruno-retailleau-reitere-son-appel-a-declarer-l-etat-d-urgence-et-demande-la-decheance-de-nationalite-pour-les-binationaux_VN-202610190695.html"
+            }
+          ]
+        },
+        {
+          "label": "17. franceinfo, 14 janvier 2016 (Jean-Luc Mélenchon et la déchéance de nationalité). https://www.franceinfo.fr/politique/debat-sur-la-decheance-de-nationalite/video-decheance-de-nationalite-francois-ca-suffit-lance-melenchon-a-hollande_1268673.html",
+          "lead": "17. franceinfo, 14 janvier 2016 (Jean-Luc Mélenchon et la déchéance de nationalité)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/debat-sur-la-decheance-de-nationalite/video-decheance-de-nationalite-francois-ca-suffit-lance-melenchon-a-hollande_1268673.html",
+              "url": "https://www.franceinfo.fr/politique/debat-sur-la-decheance-de-nationalite/video-decheance-de-nationalite-francois-ca-suffit-lance-melenchon-a-hollande_1268673.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des déclarations datées, des textes déposés et le droit en vigueur. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/le-serment-du-perdant",
+      "label": "Le serment du perdant"
+    },
+    {
+      "href": "/analyses/la-loi-qui-se-vote-a-bruxelles",
+      "label": "La loi qui se vote à Bruxelles"
+    }
+  ]
+}
