@@ -128,7 +128,7 @@ describe('analyses', () => {
     expect(hausseSalaireExoneree.tags).toContain('doe');
     expect(hausseSalaireExoneree.description.length).toBeLessThanOrEqual(200);
     expect(hausseSalaireExoneree.hues).toHaveLength(3);
-    expect(hausseSalaireExoneree.sources_groups[0]?.items).toHaveLength(25);
+    expect(hausseSalaireExoneree.sources_groups[0]?.items).toHaveLength(27);
     const doe = hausseSalaireExoneree.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
     expect(getAnalysis('hausse-de-salaire-exoneree-qui-regle-la-note')?.href).toBe(
