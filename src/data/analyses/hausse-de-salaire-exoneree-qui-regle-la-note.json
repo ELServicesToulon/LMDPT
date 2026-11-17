@@ -1,0 +1,512 @@
+{
+  "slug": "hausse-de-salaire-exoneree-qui-regle-la-note",
+  "title": "Hausse de salaire exonérée : qui règle la note ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-18",
+  "updated": "2026-11-18",
+  "kicker": "Enquête et analyse · La rédaction · 18 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Lundi 16 novembre, sur TF1 et LCI, Marine Le Pen a de nouveau défendu l’exonération de cotisations patronales, pendant cinq ans, des hausses de salaire de 10 % jusqu’à trois Smic, quand Jean-Luc Mélenchon la jugeait inutile. Une cotisation que l’employeur ne verse plus, c’est une recette que la Sécurité sociale ne reçoit pas : qui la comble ? Ce que dit la loi, ce que chiffrent les experts, et où se placent les autres candidats.",
+  "description": "Le Pen propose d’exonérer de cotisations patronales les hausses de salaire de 10 %. Qui comble le manque pour la Sécu ? Ce que dit la loi, ce que disent les autres candidats.",
+  "disclaimer": "Cette analyse décrit des déclarations datées, des programmes, des chiffrages publics et le droit en vigueur. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "smic",
+    "salaires",
+    "cotisations-sociales",
+    "doe"
+  ],
+  "x_hook": "Lundi 16 novembre, sur TF1 et LCI, Marine Le Pen a de nouveau défendu l’exonération de cotisations patronales, pendant cinq ans, des hausses de salaire de 10 % jusqu’à trois Smic, quand Jean-Luc Mélenchon la jugeait inutile. Une cotisation que l’employeur ne verse plus, c’est une recette que la Sécurité sociale ne reçoit pas : qui la comble ? Ce que dit la loi, ce que chiffrent les experts, et où se placent les autres candidats.",
+  "hues": [
+    {
+      "slug": "financement-publie",
+      "label": "Financement publié",
+      "color": "#162561",
+      "rationale": "Attal, Retailleau, Philippe : économies sur le chômage, les retraites ou les arrêts maladie annoncées pour financer la mesure salariale."
+    },
+    {
+      "slug": "levier-sans-financement",
+      "label": "Levier annoncé, financement non trouvé",
+      "color": "#8a5a00",
+      "rationale": "Le Pen (exonération), Mélenchon, Glucksmann, Tondelier (Smic), Lisnard, Riner : financement propre à la mesure non trouvé."
+    },
+    {
+      "slug": "non-trouve",
+      "label": "Position non trouvée",
+      "color": "#5a6570",
+      "rationale": "Zemmour : rien de daté trouvé sur la question."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "debat",
+      "title": "Ce qui s’est dit lundi soir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lundi 16 novembre, dans un entrepôt des Restos du Cœur, Marine Le Pen, Jean-Luc Mélenchon, Raphaël Glucksmann, Bruno Retailleau et Gabriel Attal ont débattu de pouvoir d’achat et de pauvreté, sans Édouard Philippe, retenu au Havre. Le Smic a donné « l’une des premières passes d’armes de la soirée » ([France 24](https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle))."
+        },
+        {
+          "type": "p",
+          "text": "Tout part d’une demande de la CGT : relever le Smic de 10 %. Le 5 novembre, Marine Le Pen a répondu : « On est dans une situation trop fragile pour imposer (aux entreprises) en quelque sorte, de manière autoritaire, une augmentation du Smic de 10 % » ([Capital](https://www.capital.fr/economie-politique/imposer-une-hausse-du-smic-de-10-ce-serait-entrer-dans-lurss-tacle-marine-le-pen-1531670)). Imposer une hausse, a-t-elle ajouté, c’est changer de système : « On ne peut pas faire ça de manière coercitive parce que sinon on change de régime », puis « On rentre dans l’URSS » ([Capital](https://www.capital.fr/economie-politique/imposer-une-hausse-du-smic-de-10-ce-serait-entrer-dans-lurss-tacle-marine-le-pen-1531670)). Sa solution : « Si vous augmentez les salaires de 10 %, eh bien durant 5 ans vous serez exonéré des charges afférentes » ([Econostrum](https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/)). Une « charge » désigne ici la cotisation patronale, la somme que l’employeur verse à la Sécurité sociale en plus du salaire."
+        },
+        {
+          "type": "p",
+          "text": "Lundi, Jean-Luc Mélenchon a répliqué que le Smic est en France revalorisé « depuis 1953 » en fonction de l’inflation, et que « c’est pas l’URSS » ([20 Minutes](https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic)). Il a jugé la proposition de Marine Le Pen inutile, puisqu’il n’y aurait déjà plus de charges patronales jusqu’à trois Smic. « Ça n’est pas vrai, c’est progressif », lui a répondu la candidate ([20 Minutes](https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic))."
+        },
+        {
+          "type": "p",
+          "text": "Marine Le Pen avait aussi lancé que « tout le monde souhaiterait l’augmentation du smic ». Jean-Luc Mélenchon, micro resté ouvert, s’est étonné à voix haute : « Ah bon ? » ([20 Minutes](https://www.20minutes.fr/politique/4263396-20261116-presidentielle-2027-clash-magicien-grand-perdant-faut-retenir-debat-tf1-lci)). Entre l’URSS et le « Ah bon ? », une question est restée sans réponse dans les comptes rendus que nous avons lus : quand l’employeur ne verse plus la cotisation, qui la paie à sa place ?"
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "note",
+      "title": "Ce que coûterait l’exonération",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les cotisations patronales « servent notamment à financer la protection sociale » ([Econostrum](https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/)). Les exonérer pendant cinq ans sur une hausse de 10 %, c’est priver ces caisses d’une recette. La mesure ne vise pas que le Smic : elle couvrirait les salaires jusqu’à trois Smic, soit « environ 5 601 euros brut par mois » à temps plein ([Econostrum](https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/))."
+        },
+        {
+          "type": "p",
+          "text": "L’Institut Montaigne, un cercle de réflexion décrit comme « plutôt libéral » par Sud Ouest, avait chiffré en juin 2024 la même proposition, alors défendue par le RN aux législatives ([Econostrum](https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/)). Sa conclusion : « Cette mesure coûterait 800 millions d’euros en 2025, 4,8 milliards d’euros en 2027 et 12 milliards d’euros en 2029 » ([Sud Ouest](https://www.sudouest.fr/economie/achat/legislatives-quelle-facture-pour-les-promesses-autour-du-pouvoir-d-achat-l-institut-montaigne-sort-la-calculette-20214489.php)). Le manque à gagner « serait équivalent aux charges patronales normalement perçues du fait de ces hausses de salaire, qui auraient eu lieu de toute façon en l’absence de la mesure », et « 90 % des salariés du secteur privé » se situent sous le seuil de trois Smic ([Sud Ouest](https://www.sudouest.fr/economie/achat/legislatives-quelle-facture-pour-les-promesses-autour-du-pouvoir-d-achat-l-institut-montaigne-sort-la-calculette-20214489.php)). Les montants de 2027 et de 2029 figurent dans la synthèse de l’Institut ([Institut Montaigne](https://www.institutmontaigne.org/ressources/documents/synthese-legislatives-2024-micro-chiffrages-institut-montaigne-rn.pdf)). Nous n’avons pas trouvé de chiffrage de la version de 2026 : celui-ci date de 2024, avec des années de départ déjà passées."
+        },
+        {
+          "type": "p",
+          "text": "Le RN voit les choses autrement. Son livret, version mise à jour du programme de 2022, propose d’« augmenter les salaires de 10 % en les exonérant de l’augmentation des cotisations sociales pendant trois à cinq ans ». Il promet : « Les cotisations seront rétablies au bout de 3 à 5 ans selon la taille de l’entreprise », ce qui permettrait de « préserver les finances publiques » ([Rassemblement national](https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf)). Il chiffre l’économie de l’employeur à 1 600 euros pour un salarié au Smic et à 2 100 euros pour un salarié à 24 000 euros nets annuels, sans préciser la période ([Rassemblement national](https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf)). Il ne dit pas qui comble le manque de recettes pendant ces années : financement non trouvé."
+        },
+        {
+          "type": "p",
+          "text": "Jordan Bardella a défendu la mesure sur BFMTV le 10 novembre. Selon lui, « 15 millions de salariés » seraient concernés, contre « deux millions » pour une hausse du salaire minimum ([Capital](https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791)). Plus la mesure touche de salariés, plus le manque à gagner s’élargit."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "loi",
+      "title": "Ce que dit la loi : en principe, l’État rembourse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le Smic se fixe d’en haut. Il est revalorisé chaque 1er janvier selon l’inflation, et « à tout moment, le gouvernement peut procéder à l’augmentation du Smic » ([Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/F2300)). Il a été institué par une loi du 2 janvier 1970 ([Insee](https://www.insee.fr/fr/statistiques/8376870?q=smic&sommaire=8376908)), qui a remplacé le SMIG créé en 1950 ([Sénat](https://www.senat.fr/connaitre-le-senat/evenements-et-manifestations-culturelles/le-salaire-minimum-smig-a-50-ans/les-principes-poses-par-la-loi.html)). Nous n’avons pas retrouvé la date de 1953 citée par Jean-Luc Mélenchon."
+        },
+        {
+          "type": "p",
+          "text": "Pour les exonérations, le code de la Sécurité sociale pose une règle claire, à l’article L. 131-7. Toute mesure d’exonération de cotisations instituée depuis 1994 « donne lieu à compensation intégrale aux régimes concernés par le budget de l’Etat pendant toute la durée de son application » ([code de la Sécurité sociale](https://droit.jurisfac.org/sources/legi/LEGIARTI000053278888/article-l131-7/)). En clair, quand le législateur décide qu’un employeur ne paiera plus une cotisation, c’est en principe le budget de l’État qui rembourse la Sécurité sociale. Le même article liste pourtant des exceptions ([code de la Sécurité sociale](https://droit.jurisfac.org/sources/legi/LEGIARTI000053278888/article-l131-7/))."
+        },
+        {
+          "type": "p",
+          "text": "La plus lourde concerne les allègements généraux, les réductions de cotisations patronales sur les salaires bas et moyens. La Cour des comptes écrit en octobre 2026 qu’ils « ne relèvent pas du principe de compensation budgétaire intégrale de la part de l’État », mais d’une « affectation de recettes fiscales, en particulier de TVA » ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). En 2025, elle relevait un « déséquilibre sur les recettes estimé à 5,5 Md€ » au détriment de la Sécurité sociale ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). Le déficit de la Sécurité sociale s’établirait à 21,8 milliards d’euros en 2026 selon le projet de loi de financement pour 2027, « le plus haut depuis 2012, hors crise sanitaire » ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). Le remboursement existe sur le papier. Dans les comptes, il peut manquer."
+        },
+        {
+          "type": "p",
+          "text": "Depuis le 1er janvier 2026, ces allègements forment une « réduction générale dégressive unique », qui s’applique aux rémunérations inférieures à « 3 Smic en vigueur au lieu de 1,6 Smic auparavant » ([Urssaf](https://www.urssaf.fr/accueil/actualites/informations-nouvelle-annee.html)). Le coefficient maximal est de 0,3981 pour les employeurs de moins de 50 salariés et de 0,4021 pour les autres ([Urssaf](https://www.urssaf.fr/accueil/actualites/informations-nouvelle-annee.html)). D’après sa formule, le coefficient baisse quand la rémunération augmente ([Urssaf](https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/reduction-generale-cotisation.html)). Le texte parle de « réduction », pas de suppression : nous n’avons trouvé aucune source disant que toutes les cotisations patronales disparaissent jusqu’à trois Smic. Jean-Luc Mélenchon avait raison sur le seuil, Marine Le Pen sur la progressivité."
+        },
+        {
+          "type": "p",
+          "text": "La Cour ajoute un détail qui concerne le Smic lui-même. Les seuils de ces allègements se calculent en fonction du Smic, et « l’augmentation du SMIC fait spontanément augmenter le coût des allègements de cotisations » ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). La hausse de 2,41 % du 1er juin 2026 « accroît le coût de la réduction générale dégressive unique (RGDU) de 2,8 Md€ » ; un décret du 12 juin a neutralisé cet effet en retenant le Smic du 1er janvier, ce qui représente 2,1 milliards d’euros de recettes selon la Cour ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). Une hausse du Smic ne pèse pas que sur l’employeur : elle passe aussi par les comptes publics."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "piege",
+      "title": "Le piège dont tout le monde parle",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Trois candidats décrivent le même effet sous des noms différents. Gabriel Attal : « Le SMIC devait être un plancher, pour beaucoup, il est devenu un plafond. Des millions de salariés y restent coincés parce qu’augmenter leur salaire coûte trop cher à leur employeur » ([Gabriel Attal](https://attalpresident.fr/programme/mesures/droit-au-brut)). Le programme d’Édouard Philippe déplore que les exonérations de charges sur les bas salaires « aient enfermé plus de 3 millions de Français au niveau du SMIC » ([Édouard Philippe](https://www.edouardphilippe.fr/programme/travail)). Le livret de Marine Le Pen veut « mettre fin aux trappes à bas salaire » ([Rassemblement national](https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Le mécanisme découle de la formule : quand le salaire monte, la réduction baisse. L’employeur paie la hausse, et perd en plus une part de son aide. Ni le livret du RN ni les articles lus ne disent comment l’exonération de 10 % s’ajouterait à cette réduction dégressive : position non trouvée."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "autres",
+      "title": "Les autres candidats : qui paie chez eux ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Au débat, Bruno Retailleau a plaidé pour gagner plus en « travaillant un peu plus », avec un allègement « massif » des charges ([France 24](https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle)). Son projet prévoit de « baisser les cotisations de 30 milliards d’euros par an », dont une part vient d’une « réforme de l’assurance chômage, 12,5 à 15,7 milliards » ([Bruno Retailleau](https://www.avecretailleau.fr/projet/mesure/rendre-30-milliards-d-euros-aux-salaries-et-aux-entreprises)). Il juge la hausse du Smic « une mauvaise piste » ([Capital](https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791)). Gabriel Attal préfère, selon France 24, supprimer la CSG sur les salaires ([France 24](https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle)) ; son programme promet un financement « à l’euro près par des économies sur le modèle social, d’abord l’assurance chômage et les indemnités journalières » ([Gabriel Attal](https://attalpresident.fr/programme/mesures/droit-au-brut)). Édouard Philippe veut redistribuer « une partie des économies réalisées sur les retraites, l’assurance chômage et les arrêts maladie » ([Édouard Philippe](https://www.edouardphilippe.fr/programme/travail))."
+        },
+        {
+          "type": "p",
+          "text": "Les trois désignent le même payeur : la protection sociale elle-même, chômage, arrêts maladie, retraites. À gauche, c’est le Smic qui monte. Jean-Luc Mélenchon veut le porter à 1 700 euros net ([L’Avenir en commun](https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2/)), Marine Tondelier à 2 000 euros brut, avec des « aides dédiées aux TPE et aux PME » ; interrogée sur le coût pour les entreprises, elle n’avait pas le chiffre à donner sur le plateau ([BFMTV](https://www.bfmtv.com/economie/economie-social/je-ne-suis-pas-venue-avec-un-catalogue-de-12-000-tableaux-excel-marine-tondelier-defend-une-hausse-du-smic-a-2-000-euros-net-en-cas-de-victoire-a-la-presidentielle_AV-202611120944.html)). L’équipe de Raphaël Glucksmann annonce « une revalorisation du Smic et une baisse de la CSG pour les bas salaires » ([Capital](https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791)). Nous n’avons pas trouvé de financement propre à ces trois mesures."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : qui paie la hausse des salaires que vous proposez ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : le financement annoncé de la mesure salariale du candidat (Smic, exonération, baisse de prélèvements). « En phase » signifie qu’un financement de cette mesure est publié ; ce n’est ni un soutien à un candidat ni un jugement sur lui. « Position non trouvée » signifie que nous n’avons rien trouvé de daté, pas qu’il n’y a pas de position.",
+      "table": {
+        "caption": "Qui paie la hausse des salaires que vous proposez ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Attal / Renaissance",
+            "En phase, financement publié",
+            "Supprimer des prélèvements sur les salaires ; financement « à l’euro près par des économies sur le modèle social, d’abord l’assurance chômage et les indemnités journalières » (programme, 22 juillet 2026).",
+            "[20]"
+          ],
+          [
+            "Retailleau / LR",
+            "En phase, financement publié",
+            "« Baisser les cotisations de 30 milliards d’euros par an », dont une part vient d’une « réforme de l’assurance chômage, 12,5 à 15,7 milliards » ; hausse du Smic « une mauvaise piste » (propos rapportés par Capital, 13 novembre).",
+            "[21][6]"
+          ],
+          [
+            "Philippe / Horizons",
+            "En phase, financement publié",
+            "Redistribuer « une partie des économies réalisées sur les retraites, l’assurance chômage et les arrêts maladie » ; hausse du Smic : « une solution illusoire » (1er novembre).",
+            "[22][6]"
+          ],
+          [
+            "Le Pen / RN",
+            "Exonération de cotisations, financement non trouvé",
+            "Hausses de 10 % exonérées de cotisations patronales jusqu’à trois Smic pendant cinq ans (5 et 16 novembre) ; le livret promet des cotisations « rétablies » après 3 à 5 ans. Chiffrage de 2024 : 4,8 milliards d’euros en 2027.",
+            "[4][9][2][7]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Smic par décision de l’État, financement non trouvé",
+            "« Porter immédiatement le SMIC mensuel à 1 700 euros net » (programme, publié le 6 novembre selon Capital). Financement propre à cette mesure : position non trouvée.",
+            "[23][6]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Smic et baisse de la CSG, financement non trouvé",
+            "« Une revalorisation du Smic et une baisse de la CSG pour les bas salaires » (équipe de campagne, 9 novembre).",
+            "[6]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Smic par décision de l’État, coût non donné",
+            "Smic à 2 000 euros brut dès 2027, avec des « aides dédiées aux TPE et aux PME » (12 novembre) ; pas de chiffre donné sur le plateau.",
+            "[24]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Autre outil, charges d’un seul secteur",
+            "« Les charges pour les employeurs à domicile au niveau du SMIC seront supprimées » (programme). Mesure générale sur les salaires : position non trouvée.",
+            "[25]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Position non trouvée",
+            "Position non trouvée.",
+            "aucune source trouvée"
+          ],
+          [
+            "Riner / candidat",
+            "Smic non précisé, financement non trouvé",
+            "Réduire l’écart entre brut et net, selon Capital (13 novembre) ; financement : position non trouvée.",
+            "[6]"
+          ]
+        ]
+      },
+      "note": "Badge des courants en phase avec la thèse (une hausse de salaire a un payeur, à nommer) : financement publié pour la mesure salariale, par des économies sur le chômage, les retraites ou les arrêts maladie (Attal, Retailleau, Philippe). Levier annoncé, financement non trouvé : exonération de cotisations (Le Pen), Smic fixé par l’État (Mélenchon, Glucksmann, Tondelier), autre outil (Lisnard, Riner). Position non trouvée : Zemmour, ce qui ne signifie pas absence de position.",
+      "conclusion": ""
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mercredi 18 novembre, à 16 h 30, le Sénat vote solennellement le projet de loi de financement de la Sécurité sociale pour 2027, selon l’agenda de Polifra ([Polifra](https://www.polifra.fr/Polfr/agenda.php?semaine=2026-11-19)). Dans les projets de textes financiers de 2027, la Cour relève que la fraction de TVA qui compense les allègements généraux baisse de 5,6 milliards d’euros ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf)). La compensation dont parle la loi passe par ces textes."
+        },
+        {
+          "type": "p",
+          "text": "Le 1er décembre, le Smic sera relevé de 1,6 %, soit 1 % de revalorisation automatique anticipée et 0,6 % de « coup de pouce » ([Reuters](https://www.boursorama.com/impots/actualites/france-le-gouvernement-annonce-une-hausse-de-1-6-du-smic-les-syndicats-ne-desarment-pas-34985f652beb9e2d17cfb05c08eef96c)). Le décret n’est pas encore publié ([Code du travail numérique](https://code.travail.gouv.fr/actualite)). Reste la question à poser à chaque candidat, du Smic à l’exonération : qui paie, et jusqu’à quand ? Pour la proposition de Marine Le Pen, le dernier chiffrage que nous avons trouvé date de 2024."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. France 24, avec AFP, 16 novembre 2026, 23 h 39 (Impôts, logement, Smic : les candidats à la présidentielle débattent de leurs propositions). https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle",
+          "lead": "1. France 24, avec AFP, 16 novembre 2026, 23 h 39 (Impôts, logement, Smic : les candidats à la présidentielle débattent de leurs propositions)",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle",
+              "url": "https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle"
+            }
+          ]
+        },
+        {
+          "label": "2. 20 Minutes, direct présidentielle du 17 novembre 2026 (« Le Pen et Mélenchon s’écharpent sur la hausse du smic », 6 h 05). https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic",
+          "lead": "2. 20 Minutes, direct présidentielle du 17 novembre 2026 (« Le Pen et Mélenchon s’écharpent sur la hausse du smic », 6 h 05)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic",
+              "url": "https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic"
+            }
+          ]
+        },
+        {
+          "label": "3. 20 Minutes, 16 novembre 2026 (ce qu’il faut retenir du débat TF1-LCI). https://www.20minutes.fr/politique/4263396-20261116-presidentielle-2027-clash-magicien-grand-perdant-faut-retenir-debat-tf1-lci",
+          "lead": "3. 20 Minutes, 16 novembre 2026 (ce qu’il faut retenir du débat TF1-LCI)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4263396-20261116-presidentielle-2027-clash-magicien-grand-perdant-faut-retenir-debat-tf1-lci",
+              "url": "https://www.20minutes.fr/politique/4263396-20261116-presidentielle-2027-clash-magicien-grand-perdant-faut-retenir-debat-tf1-lci"
+            }
+          ]
+        },
+        {
+          "label": "4. Capital, 5 novembre 2026 (Imposer une hausse du Smic de 10 %, ce serait entrer « dans l’URSS », tacle Marine Le Pen, d’après BFMTV). https://www.capital.fr/economie-politique/imposer-une-hausse-du-smic-de-10-ce-serait-entrer-dans-lurss-tacle-marine-le-pen-1531670",
+          "lead": "4. Capital, 5 novembre 2026 (Imposer une hausse du Smic de 10 %, ce serait entrer « dans l’URSS », tacle Marine Le Pen, d’après BFMTV)",
+          "links": [
+            {
+              "label": "https://www.capital.fr/economie-politique/imposer-une-hausse-du-smic-de-10-ce-serait-entrer-dans-lurss-tacle-marine-le-pen-1531670",
+              "url": "https://www.capital.fr/economie-politique/imposer-une-hausse-du-smic-de-10-ce-serait-entrer-dans-lurss-tacle-marine-le-pen-1531670"
+            }
+          ]
+        },
+        {
+          "label": "5. Econostrum, Nadia Louanchi, 6 novembre 2026 (« On rentre dans l’URSS » : Marine Le Pen s’oppose à une hausse des salaires imposée par l’État). https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/",
+          "lead": "5. Econostrum, Nadia Louanchi, 6 novembre 2026 (« On rentre dans l’URSS » : Marine Le Pen s’oppose à une hausse des salaires imposée par l’État)",
+          "links": [
+            {
+              "label": "https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/",
+              "url": "https://econostrum.info/marine-le-pen-soppose-hausse-salaires-imposee/"
+            }
+          ]
+        },
+        {
+          "label": "6. Capital, Sylvie Aghabachian, 13 novembre 2026 (Smic et salaires : ce que proposent les candidats à la présidentielle 2027). https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791",
+          "lead": "6. Capital, Sylvie Aghabachian, 13 novembre 2026 (Smic et salaires : ce que proposent les candidats à la présidentielle 2027)",
+          "links": [
+            {
+              "label": "https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791",
+              "url": "https://www.capital.fr/votre-carriere/smic-et-salaires-ce-que-proposent-les-candidats-a-la-presidentielle-2027-1531791"
+            }
+          ]
+        },
+        {
+          "label": "7. Sud Ouest, Pascal Rabiller, 20 juin 2024 (chiffrage de l’Institut Montaigne des mesures pouvoir d’achat des listes aux législatives). https://www.sudouest.fr/economie/achat/legislatives-quelle-facture-pour-les-promesses-autour-du-pouvoir-d-achat-l-institut-montaigne-sort-la-calculette-20214489.php",
+          "lead": "7. Sud Ouest, Pascal Rabiller, 20 juin 2024 (chiffrage de l’Institut Montaigne des mesures pouvoir d’achat des listes aux législatives)",
+          "links": [
+            {
+              "label": "https://www.sudouest.fr/economie/achat/legislatives-quelle-facture-pour-les-promesses-autour-du-pouvoir-d-achat-l-institut-montaigne-sort-la-calculette-20214489.php",
+              "url": "https://www.sudouest.fr/economie/achat/legislatives-quelle-facture-pour-les-promesses-autour-du-pouvoir-d-achat-l-institut-montaigne-sort-la-calculette-20214489.php"
+            }
+          ]
+        },
+        {
+          "label": "8. Institut Montaigne, « Synthèses des micro-chiffrages », législatives 2024 (PDF). https://www.institutmontaigne.org/ressources/documents/synthese-legislatives-2024-micro-chiffrages-institut-montaigne-rn.pdf",
+          "lead": "8. Institut Montaigne, « Synthèses des micro-chiffrages », législatives 2024 (PDF)",
+          "links": [
+            {
+              "label": "https://www.institutmontaigne.org/ressources/documents/synthese-legislatives-2024-micro-chiffrages-institut-montaigne-rn.pdf",
+              "url": "https://www.institutmontaigne.org/ressources/documents/synthese-legislatives-2024-micro-chiffrages-institut-montaigne-rn.pdf"
+            }
+          ]
+        },
+        {
+          "label": "9. Rassemblement national, « La France entreprend », projet de Marine Le Pen (PDF, version 2022 du programme mise à jour), partie 3.1. https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf",
+          "lead": "9. Rassemblement national, « La France entreprend », projet de Marine Le Pen (PDF, version 2022 du programme mise à jour), partie 3.1",
+          "links": [
+            {
+              "label": "https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf",
+              "url": "https://rassemblementnational.fr/documents/WEB-GRN-LIVRET-ENTREPRISE.pdf"
+            }
+          ]
+        },
+        {
+          "label": "10. Service-Public.fr, « Salaire minimum de croissance (Smic) » (vérifié le 1er juin 2026). https://www.service-public.fr/particuliers/vosdroits/F2300",
+          "lead": "10. Service-Public.fr, « Salaire minimum de croissance (Smic) » (vérifié le 1er juin 2026)",
+          "links": [
+            {
+              "label": "https://www.service-public.fr/particuliers/vosdroits/F2300",
+              "url": "https://www.service-public.fr/particuliers/vosdroits/F2300"
+            }
+          ]
+        },
+        {
+          "label": "11. Insee, « Salaire minimum de croissance », définitions et encadré sur l’indexation. https://www.insee.fr/fr/statistiques/8376870?q=smic&sommaire=8376908",
+          "lead": "11. Insee, « Salaire minimum de croissance », définitions et encadré sur l’indexation",
+          "links": [
+            {
+              "label": "https://www.insee.fr/fr/statistiques/8376870?q=smic&sommaire=8376908",
+              "url": "https://www.insee.fr/fr/statistiques/8376870?q=smic&sommaire=8376908"
+            }
+          ]
+        },
+        {
+          "label": "12. Sénat, « Le salaire minimum (SMIG) a 50 ans : les principes posés par la loi ». https://www.senat.fr/connaitre-le-senat/evenements-et-manifestations-culturelles/le-salaire-minimum-smig-a-50-ans/les-principes-poses-par-la-loi.html",
+          "lead": "12. Sénat, « Le salaire minimum (SMIG) a 50 ans : les principes posés par la loi »",
+          "links": [
+            {
+              "label": "https://www.senat.fr/connaitre-le-senat/evenements-et-manifestations-culturelles/le-salaire-minimum-smig-a-50-ans/les-principes-poses-par-la-loi.html",
+              "url": "https://www.senat.fr/connaitre-le-senat/evenements-et-manifestations-culturelles/le-salaire-minimum-smig-a-50-ans/les-principes-poses-par-la-loi.html"
+            }
+          ]
+        },
+        {
+          "label": "13. Code de la sécurité sociale, article L131-7 (version en vigueur depuis le 31 décembre 2025, DILA, copie Jurisfac). https://droit.jurisfac.org/sources/legi/LEGIARTI000053278888/article-l131-7/",
+          "lead": "13. Code de la sécurité sociale, article L131-7 (version en vigueur depuis le 31 décembre 2025, DILA, copie Jurisfac)",
+          "links": [
+            {
+              "label": "https://droit.jurisfac.org/sources/legi/LEGIARTI000053278888/article-l131-7/",
+              "url": "https://droit.jurisfac.org/sources/legi/LEGIARTI000053278888/article-l131-7/"
+            }
+          ]
+        },
+        {
+          "label": "14. Cour des comptes, « La situation financière de la sécurité sociale : un redressement impératif en 2027 », communication à la commission des affaires sociales de l’Assemblée nationale (PDF, octobre 2026). https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf",
+          "lead": "14. Cour des comptes, « La situation financière de la sécurité sociale : un redressement impératif en 2027 », communication à la commission des affaires sociales de l’Assemblée nationale (PDF, octobre 2026)",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf",
+              "url": "https://www.ccomptes.fr/sites/default/files/2026-10/20261020_Situation-financiere-securite-sociale.pdf"
+            }
+          ]
+        },
+        {
+          "label": "15. Urssaf, « Ce qu’il faut savoir au 1er janvier 2026 » (instauration de la réduction générale dégressive unique). https://www.urssaf.fr/accueil/actualites/informations-nouvelle-annee.html",
+          "lead": "15. Urssaf, « Ce qu’il faut savoir au 1er janvier 2026 » (instauration de la réduction générale dégressive unique)",
+          "links": [
+            {
+              "label": "https://www.urssaf.fr/accueil/actualites/informations-nouvelle-annee.html",
+              "url": "https://www.urssaf.fr/accueil/actualites/informations-nouvelle-annee.html"
+            }
+          ]
+        },
+        {
+          "label": "16. Urssaf, « La réduction générale dégressive unique » (mis à jour le 13 juillet 2026). https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/reduction-generale-cotisation.html",
+          "lead": "16. Urssaf, « La réduction générale dégressive unique » (mis à jour le 13 juillet 2026)",
+          "links": [
+            {
+              "label": "https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/reduction-generale-cotisation.html",
+              "url": "https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/reduction-generale-cotisation.html"
+            }
+          ]
+        },
+        {
+          "label": "17. Boursorama, Reuters, 9 novembre 2026, 15 h 55 (le gouvernement annonce une hausse de 1,6 % du smic). https://www.boursorama.com/impots/actualites/france-le-gouvernement-annonce-une-hausse-de-1-6-du-smic-les-syndicats-ne-desarment-pas-34985f652beb9e2d17cfb05c08eef96c",
+          "lead": "17. Boursorama, Reuters, 9 novembre 2026, 15 h 55 (le gouvernement annonce une hausse de 1,6 % du smic)",
+          "links": [
+            {
+              "label": "https://www.boursorama.com/impots/actualites/france-le-gouvernement-annonce-une-hausse-de-1-6-du-smic-les-syndicats-ne-desarment-pas-34985f652beb9e2d17cfb05c08eef96c",
+              "url": "https://www.boursorama.com/impots/actualites/france-le-gouvernement-annonce-une-hausse-de-1-6-du-smic-les-syndicats-ne-desarment-pas-34985f652beb9e2d17cfb05c08eef96c"
+            }
+          ]
+        },
+        {
+          "label": "18. Code du travail numérique, actualité du 17 novembre 2026 (SMIC : une augmentation au 1er décembre 2026). https://code.travail.gouv.fr/actualite",
+          "lead": "18. Code du travail numérique, actualité du 17 novembre 2026 (SMIC : une augmentation au 1er décembre 2026)",
+          "links": [
+            {
+              "label": "https://code.travail.gouv.fr/actualite",
+              "url": "https://code.travail.gouv.fr/actualite"
+            }
+          ]
+        },
+        {
+          "label": "19. Polifra, « Agenda politique : du 16 au 22 novembre 2026 ». https://www.polifra.fr/Polfr/agenda.php?semaine=2026-11-19",
+          "lead": "19. Polifra, « Agenda politique : du 16 au 22 novembre 2026 »",
+          "links": [
+            {
+              "label": "https://www.polifra.fr/Polfr/agenda.php?semaine=2026-11-19",
+              "url": "https://www.polifra.fr/Polfr/agenda.php?semaine=2026-11-19"
+            }
+          ]
+        },
+        {
+          "label": "20. Gabriel Attal, programme en ligne, « Droit au brut » (22 juillet 2026). https://attalpresident.fr/programme/mesures/droit-au-brut",
+          "lead": "20. Gabriel Attal, programme en ligne, « Droit au brut » (22 juillet 2026)",
+          "links": [
+            {
+              "label": "https://attalpresident.fr/programme/mesures/droit-au-brut",
+              "url": "https://attalpresident.fr/programme/mesures/droit-au-brut"
+            }
+          ]
+        },
+        {
+          "label": "21. Bruno Retailleau, mesure n° 24, « Rendre 500 euros par an à tous les salariés ». https://www.avecretailleau.fr/projet/mesure/rendre-30-milliards-d-euros-aux-salaries-et-aux-entreprises",
+          "lead": "21. Bruno Retailleau, mesure n° 24, « Rendre 500 euros par an à tous les salariés »",
+          "links": [
+            {
+              "label": "https://www.avecretailleau.fr/projet/mesure/rendre-30-milliards-d-euros-aux-salaries-et-aux-entreprises",
+              "url": "https://www.avecretailleau.fr/projet/mesure/rendre-30-milliards-d-euros-aux-salaries-et-aux-entreprises"
+            }
+          ]
+        },
+        {
+          "label": "22. Édouard Philippe, programme, « Travail et salaires » (mis à jour le 16 novembre 2026). https://www.edouardphilippe.fr/programme/travail",
+          "lead": "22. Édouard Philippe, programme, « Travail et salaires » (mis à jour le 16 novembre 2026)",
+          "links": [
+            {
+              "label": "https://www.edouardphilippe.fr/programme/travail",
+              "url": "https://www.edouardphilippe.fr/programme/travail"
+            }
+          ]
+        },
+        {
+          "label": "23. Jean-Luc Mélenchon, L’Avenir en commun, chapitre 2 « Partager les richesses ». https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2/",
+          "lead": "23. Jean-Luc Mélenchon, L’Avenir en commun, chapitre 2 « Partager les richesses »",
+          "links": [
+            {
+              "label": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2/",
+              "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2/"
+            }
+          ]
+        },
+        {
+          "label": "24. BFMTV, 12 novembre 2026 (Marine Tondelier défend une hausse du Smic à 2 000 euros brut, émission « Vous présidente »). https://www.bfmtv.com/economie/economie-social/je-ne-suis-pas-venue-avec-un-catalogue-de-12-000-tableaux-excel-marine-tondelier-defend-une-hausse-du-smic-a-2-000-euros-net-en-cas-de-victoire-a-la-presidentielle_AV-202611120944.html",
+          "lead": "24. BFMTV, 12 novembre 2026 (Marine Tondelier défend une hausse du Smic à 2 000 euros brut, émission « Vous présidente »)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/economie/economie-social/je-ne-suis-pas-venue-avec-un-catalogue-de-12-000-tableaux-excel-marine-tondelier-defend-une-hausse-du-smic-a-2-000-euros-net-en-cas-de-victoire-a-la-presidentielle_AV-202611120944.html",
+              "url": "https://www.bfmtv.com/economie/economie-social/je-ne-suis-pas-venue-avec-un-catalogue-de-12-000-tableaux-excel-marine-tondelier-defend-une-hausse-du-smic-a-2-000-euros-net-en-cas-de-victoire-a-la-presidentielle_AV-202611120944.html"
+            }
+          ]
+        },
+        {
+          "label": "25. Nouvelle Énergie (David Lisnard), programme, « Réussir une nouvelle ambition française ». https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+          "lead": "25. Nouvelle Énergie (David Lisnard), programme, « Réussir une nouvelle ambition française »",
+          "links": [
+            {
+              "label": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+              "url": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des déclarations datées, des programmes, des chiffrages publics et le droit en vigueur. Elle ne dit pas ce que vaudrait chaque proposition ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/1502-contre-1700",
+      "label": "1 502 contre 1 700"
+    },
+    {
+      "href": "/analyses/la-loi-qui-se-vote-a-bruxelles",
+      "label": "La loi qui se vote à Bruxelles"
+    }
+  ]
+}
