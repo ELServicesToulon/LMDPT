@@ -232,8 +232,8 @@ describe('contribuer — mention RGPD', () => {
 });
 
 describe('charte — date de mise à jour', () => {
-  it('laisse la date actuelle en attendant la date de merge', () => {
-    expect(CHARTE).toContain("const updated = '2026-10-05'");
-    expect(CHARTE).toContain('5 octobre 2026');
+  it('porte la date du merge (16/11/2026)', () => {
+    expect(CHARTE).toContain("const updated = '2026-11-16'");
+    expect(CHARTE).toContain('16 novembre 2026');
   });
 });
