@@ -1,23 +1,30 @@
 ---
 import EditorialCoverImage from './EditorialCoverImage.astro';
-import { editorialKindLabel, resolveCover, type EditorialPost } from '../lib/editorial';
+import { coverFileExists, editorialKindLabel, resolveCover, type EditorialPost } from '../lib/editorial';
 import { withTrailingSlash } from '../lib/internal-path';
 
 interface Props {
   post: EditorialPost;
   badge?: string;
+  /** Libellé devant la date, ex. « Ouvert le ». */
+  datePrefix?: string;
 }
 
-const { post, badge } = Astro.props;
+const { post, badge, datePrefix } = Astro.props;
 const cover = resolveCover(post.cover);
+const showCover = !cover.missing && coverFileExists(cover.src);
 const kindLabel = editorialKindLabel(post.kind);
 const dateLabel = new Date(post.date).toLocaleDateString('fr-FR', { dateStyle: 'long' });
 ---
 
 <article class="card editorial-card" data-editorial-kind={post.kind} data-editorial-slug={post.slug}>
-  <a class="editorial-card-media" href={withTrailingSlash(post.href)} tabindex="-1" aria-hidden="true">
-    <EditorialCoverImage cover={post.cover} />
-  </a>
+  {
+    showCover && (
+      <a class="editorial-card-media" href={withTrailingSlash(post.href)} tabindex="-1" aria-hidden="true">
+        <EditorialCoverImage cover={post.cover} />
+      </a>
+    )
+  }
   <p class="eyebrow">{kindLabel}</p>
   <h3>
     <a href={withTrailingSlash(post.href)}>{post.title}</a>
@@ -25,9 +32,9 @@ const dateLabel = new Date(post.date).toLocaleDateString('fr-FR', { dateStyle: '
   </h3>
   <p>{post.description}</p>
   <p class="meta">
+    {datePrefix}
     <time datetime={post.date}>{dateLabel}</time>
   </p>
-  {cover.missing && <p class="meta editorial-card-missing">Illustration manquante — croquis unique requis</p>}
 </article>
 
 <style>
@@ -37,8 +44,5 @@ const dateLabel = new Date(post.date).toLocaleDateString('fr-FR', { dateStyle: '
   }
   .editorial-card-media :global(.editorial-cover) {
     margin-bottom: 0.75rem;
-  }
-  .editorial-card-missing {
-    font-weight: 700;
   }
 </style>

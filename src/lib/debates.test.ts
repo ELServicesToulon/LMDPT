@@ -4,10 +4,13 @@ import desistementsSecondTour from '../data/debates/desistements-second-tour.jso
 import assembleePremierTour from '../data/debates/assemblee-premier-tour.json';
 import {
   DEBATE_CATALOG,
+  formatDebateOpenedLabel,
   getDebate,
   getDebateSummary,
   getOpenDebates,
 } from './debates';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import type { DebateDataset } from './debate-types';
 
 const ALL_DEBATES = [voteUtilePluralite, desistementsSecondTour, assembleePremierTour] as DebateDataset[];
@@ -72,5 +75,25 @@ describe('debates', () => {
   it('assemblee premier tour debate links to simulation', () => {
     expect(assembleePremierTour.related).toContain('/analyses/assemblee-premier-tour');
     expect(assembleePremierTour.positions.length).toBeGreaterThanOrEqual(3);
+  });
+});
+
+describe('debate list page copy', () => {
+  const indexSrc = readFileSync(path.join(process.cwd(), 'src/pages/debats/index.astro'), 'utf8');
+
+  it('uses an H2 for Fils ouverts and Loulou’s document title', () => {
+    expect(indexSrc).toMatch(/<h2 class="section-title">Fils ouverts<\/h2>/);
+    expect(indexSrc).toContain(
+      'documentTitle="Débats ouverts sur le 1er tour et la présidentielle 2027 | LMDPT"',
+    );
+    expect(indexSrc).not.toMatch(/<h3 class="section-title">Fils ouverts<\/h3>/);
+  });
+
+  it('labels card dates with the opening date, never « Dernière activité » without a comment date', () => {
+    expect(formatDebateOpenedLabel('2026-07-02')).toBe('Ouvert le 2 juillet 2026');
+    expect(indexSrc).toContain('datePrefix="Ouvert le "');
+    expect(indexSrc).not.toContain('Dernière activité');
+    expect(indexSrc).not.toContain('debateActivityDate');
+    expect(indexSrc).not.toContain('formatDebateActivityLabel');
   });
 });

@@ -13,7 +13,8 @@ const debatePosts = new Map(
 ---
 
 <BaseLayout
-  title="Débats"
+  title="Débats ouverts sur le 1er tour et la présidentielle 2027"
+  documentTitle="Débats ouverts sur le 1er tour et la présidentielle 2027 | LMDPT"
   description="Débats civiques sur la pluralité du premier tour et les mécanismes électoraux — positions sourcées, discussion modérée."
   pageHeading
 >
@@ -32,16 +33,18 @@ const debatePosts = new Map(
   </section>
 
   <section>
-    <h3 class="section-title">Fils ouverts</h3>
+    <h2 class="section-title">Fils ouverts</h2>
     <ul class="card-grid">
       {
         DEBATE_CATALOG.map((d) => {
           const post = debatePosts.get(d.slug);
+          // Pas de date de dernier commentaire au build : date d’ouverture uniquement.
           return post ? (
             <li>
               <EditorialCard
                 post={post}
                 badge={d.status === 'ouvert' ? 'Ouvert' : d.status === 'clos' ? 'Clos' : undefined}
+                datePrefix="Ouvert le "
               />
             </li>
           ) : null;
@@ -50,3 +53,16 @@ const debatePosts = new Map(
     </ul>
   </section>
 </BaseLayout>
+
+<style>
+  /* Titre et badge « OUVERT » ne doivent plus coller. */
+  .card-grid :global(.editorial-card h3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .card-grid :global(.editorial-card h3 .status-badge) {
+    margin-left: 0;
+  }
+</style>

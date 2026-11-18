@@ -1,12 +1,18 @@
 ---
 /**
  * Hub prioritaire — Liberté d’expression
- * Structure éditoriale (Président) :
- *   1. Pluralité de l’Assemblée
- *   2. Liberté d’expression + Observatoire de la censure
+ * Structure éditoriale :
+ *   1. Expression & censure
+ *   2. Pluralité de l’Assemblée (renvoi atlas inchangé)
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialCoverImage from '../components/EditorialCoverImage.astro';
 import ShareBar from '../components/ShareBar.astro';
+
+const liberteCover = {
+  src: '/illustrations/unes/liberte-d-expression.jpg',
+  alt: 'Aquarelle d’une table en bois éclairée par une fenêtre, avec un microphone vintage en métal, un encrier bleu, une bande de lin dénouée, un stylo-plume et deux feuilles de papier vierges.',
+};
 ---
 
 <BaseLayout
@@ -15,13 +21,14 @@ import ShareBar from '../components/ShareBar.astro';
   description="Dossier LMDPT : pluralité de l’Assemblée du 1er tour, liberté d’expression et observatoire de la censure — conditions d’un débat public sourcé avant 2027."
   type="website"
   keywords="liberté d'expression, pluralité Assemblée, AN1T, observatoire de la censure, débat public, démocratie avant l’élimination, LMDPT"
-  commentThread="liberte-d-expression"
+  share={false}
 >
   <nav class="meta" aria-label="Fil d'Ariane">
     <a href="/">Accueil</a> → Liberté d’expression
   </nav>
 
   <section class="liberte-hero" aria-labelledby="liberte-title">
+    <EditorialCoverImage cover={liberteCover} eager class="editorial-cover--hero" />
     <p class="eyebrow">Rubrique prioritaire · débat public</p>
     <h1 id="liberte-title">Liberté d’expression</h1>
     <p class="lead">
@@ -33,12 +40,11 @@ import ShareBar from '../components/ShareBar.astro';
       Contenu informatif civique — à vérifier sur Légifrance, EUR-Lex, Arcom et les décisions
       officielles. LMDPT ne délivre pas de conseil juridique.
     </p>
-    <ShareBar title="Liberté d’expression" />
   </section>
 
   <nav class="liberte-jump" aria-label="Sommaire de la rubrique">
-    <a href="#pilier-1">1 · Pluralité de l’Assemblée</a>
-    <a href="#pilier-2">2 · Expression &amp; censure</a>
+    <a href="#pilier-1">1 · Expression &amp; censure</a>
+    <a href="#pilier-2">2 · Pluralité de l’Assemblée</a>
     <a href="#suite">Suite du dossier</a>
   </nav>
 
@@ -46,50 +52,7 @@ import ShareBar from '../components/ShareBar.astro';
   <section class="card liberte-pilier liberte-pilier--1" id="pilier-1" aria-labelledby="p1-title">
     <p class="pilier-num" aria-hidden="true">1</p>
     <div class="pilier-body">
-      <h2 id="p1-title">Pluralité de l’Assemblée</h2>
-      <p>
-        Le premier tour est le moment où la France vote <strong>pour</strong> des idées, avant les
-        logiques d’élimination du second tour. L’Assemblée du Premier Tour (AN1T) rend visible
-        cette pluralité en sièges — pédagogique, données ouvertes, sans « favori ».
-      </p>
-      <ul class="liberte-links">
-        <li>
-          <a href="/analyses/assemblee-premier-tour/#an1t-sim-title"
-            ><strong>Simuler l’AN1T</strong> — 577 sièges calés sur le 1er tour</a
-          >
-        </li>
-        <li>
-          <a href="/analyses/assemblee-premier-tour-mecanismes/"
-            ><strong>Mécanismes</strong> — comment une Assemblée du 1er tour peut se penser</a
-          >
-        </li>
-        <li>
-          <a href="/analyses/gouvernance-an1t-droit/"
-            ><strong>Droit &amp; gouvernance</strong> — cadre documentaire AN1T</a
-          >
-        </li>
-        <li>
-          <a href="/debats/assemblee-premier-tour/"
-            ><strong>Débat</strong> — positions à égalité sur l’Assemblée du 1er tour</a
-          >
-        </li>
-        <li>
-          <a href="/debats/vote-utile-pluralite/"
-            ><strong>Vote utile vs pluralité</strong> — débat civique sourcé</a
-          >
-        </li>
-        <li>
-          <a href="/atlas/"><strong>Atlas électoral</strong> — cartes en données ouvertes du 1er tour</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========== PILIER 2 ========== -->
-  <section class="card liberte-pilier liberte-pilier--2" id="pilier-2" aria-labelledby="p2-title">
-    <p class="pilier-num" aria-hidden="true">2</p>
-    <div class="pilier-body">
-      <h2 id="p2-title">Liberté d’expression &amp; observatoire de la censure</h2>
+      <h2 id="p1-title">Liberté d’expression &amp; observatoire de la censure</h2>
       <p>
         Documenter les textes et projets (France / UE) qui encadrent le débat public, et les
         cas sourcés où médias ou comptes ont été fermés, suspendus ou sanctionnés depuis 2017 —
@@ -144,6 +107,49 @@ import ShareBar from '../components/ShareBar.astro';
           </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== PILIER 2 ========== -->
+  <section class="card liberte-pilier liberte-pilier--2" id="pilier-2" aria-labelledby="p2-title">
+    <p class="pilier-num" aria-hidden="true">2</p>
+    <div class="pilier-body">
+      <h2 id="p2-title">Pluralité de l’Assemblée</h2>
+      <p>
+        Le premier tour est le moment où la France vote <strong>pour</strong> des idées, avant les
+        logiques d’élimination du second tour. L’Assemblée du Premier Tour (AN1T) rend visible
+        cette pluralité en sièges — pédagogique, données ouvertes, sans « favori ».
+      </p>
+      <ul class="liberte-links">
+        <li>
+          <a href="/analyses/assemblee-premier-tour/"
+            ><strong>Simuler l’AN1T</strong> — 577 sièges calés sur le 1er tour</a
+          >
+        </li>
+        <li>
+          <a href="/analyses/assemblee-premier-tour-mecanismes/"
+            ><strong>Mécanismes</strong> — comment une Assemblée du 1er tour peut se penser</a
+          >
+        </li>
+        <li>
+          <a href="/analyses/gouvernance-an1t-droit/"
+            ><strong>Droit &amp; gouvernance</strong> — cadre documentaire AN1T</a
+          >
+        </li>
+        <li>
+          <a href="/debats/assemblee-premier-tour/"
+            ><strong>Débat</strong> — positions à égalité sur l’Assemblée du 1er tour</a
+          >
+        </li>
+        <li>
+          <a href="/debats/vote-utile-pluralite/"
+            ><strong>Vote utile vs pluralité</strong> — débat civique sourcé</a
+          >
+        </li>
+        <li>
+          <a href="/atlas/"><strong>Atlas électoral</strong> — cartes en données ouvertes du 1er tour</a>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -208,6 +214,8 @@ import ShareBar from '../components/ShareBar.astro';
       <a href="/pack-data-an1t/">Lot de données AN1T (gratuit)</a>
     </p>
   </section>
+
+  <ShareBar title="Liberté d’expression" />
 </BaseLayout>
 
 <style>

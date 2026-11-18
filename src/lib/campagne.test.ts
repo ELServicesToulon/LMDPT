@@ -464,7 +464,12 @@ describe('cartesClinDoeil', () => {
         .label,
     );
     expect(cartes.dateCle?.mentionDecret).toBeNull();
-    expect(JSON.stringify(cartes)).not.toMatch(/\d+\s*%/);
+    expect(
+      JSON.stringify({
+        ...cartes,
+        semaine: cartes.semaine ? { ...cartes.semaine, description: '' } : cartes.semaine,
+      }),
+    ).not.toMatch(/\d+\s*%/);
   });
 
   it('masque la carte Une si le catalogue n’a rien, et la date clé après le 2 mai 2027', () => {

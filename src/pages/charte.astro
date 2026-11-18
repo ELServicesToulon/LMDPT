@@ -2,37 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 
-const updated = '2026-10-05';
+const updated = '2026-11-16';
 ---
 
 <BaseLayout
-  title="Charte"
+  title="Charte éditoriale"
   pageHeading
   description="Profession de foi : la démocratie avant l’élimination. Zéro biais, pastilles transparentes, encadré des candidats 2027, badge des courants en phase."
 >
   <article class="charte">
     <header class="charte-hero card">
-      <p class="eyebrow">Charte publique · mise à jour le <time datetime={updated}>5 octobre 2026</time></p>
-      <h1>Profession de foi</h1>
+      <p class="eyebrow">Charte publique · mise à jour le <time datetime={updated}>16 novembre 2026</time></p>
+      <h1>Charte éditoriale</h1>
       <p class="lead">
-        <strong>La démocratie avant l’élimination.</strong><br />
+        <strong>La démocratie avant l’élimination.</strong>
+      </p>
+      <h2 class="engagements-title">Nos 4 engagements</h2>
+      <ol class="engagements">
+        <li>Couvrir le premier tour avec des faits sourcés et datés.</li>
+        <li>Ne soutenir, ne classer ni n’éliminer personne.</li>
+        <li>Citer un sondage comme une photographie datée, jamais comme une prédiction.</li>
+        <li>Montrer la couleur politique des idées, sans faire le procès des personnes.</li>
+      </ol>
+      <p class="lead">
         La démocratie avant le spectacle du duel.
       </p>
       <p>
         <em>Zéro biais. Zéro parti pris. Transparence des couleurs politiques.</em>
       </p>
-      <nav class="charte-toc" aria-label="Sommaire de la charte">
-        <a href="#pourquoi">Pourquoi</a>
-        <a href="#promesse">Promesse</a>
-        <a href="#reperes">Repères</a>
-        <a href="#biais">Zéro biais</a>
-        <a href="#couleurs">Pastilles</a>
-        <a href="#exemples">Exemples</a>
-        <a href="#debats">Débats</a>
-        <a href="#passe">Ce qui passe</a>
-        <a href="#langue">Langue</a>
-      </nav>
     </header>
+    <nav class="charte-toc" aria-label="Sommaire de la charte">
+      <a href="#pourquoi">Pourquoi</a>
+      <a href="#promesse">Promesse</a>
+      <a href="#reperes">Repères</a>
+      <a href="#biais">Zéro biais</a>
+      <a href="#couleurs">Pastilles</a>
+      <a href="#exemples">Exemples</a>
+      <a href="#debats">Débats</a>
+      <a href="#passe">Ce qui passe</a>
+      <a href="#langue">Langue</a>
+    </nav>
 
     <section id="pourquoi" class="card">
       <h2>Pourquoi ce média</h2>
@@ -238,6 +247,9 @@ const updated = '2026-10-05';
         interdit la discussion, la haine et l’appel à la violence.
       </p>
       <p>
+        Sont refusés les textes qui présentent une prescription religieuse comme une règle s’imposant à tous. Les convictions religieuses de chacun ne sont pas un motif de refus : une conviction peut nourrir un argument politique, et elle passe comme telle. Les convictions de l’auteur ne sont jamais, à elles seules, un motif de refus.
+      </p>
+      <p>
         Hors du cadre aussi&nbsp;: la propagande habillée en fait, le classement éliminatoire, le
         sondage traité comme un oracle.
       </p>
@@ -276,7 +288,7 @@ const updated = '2026-10-05';
         <a href="https://github.com/ELServicesToulon/LMDPT">dépôt GitHub du Média du Premier Tour</a>.
       </p>
       <p class="meta">
-        Dernière mise à jour publique&nbsp;: <time datetime={updated}>5 octobre 2026</time>.
+        Dernière mise à jour publique&nbsp;: <time datetime={updated}>16 novembre 2026</time>.
         Toute évolution de la charte est documentée ici et dans le dépôt.
       </p>
       <p>
@@ -304,13 +316,29 @@ const updated = '2026-10-05';
   .promesse {
     font-size: 1.05rem;
   }
+  .charte-hero .engagements-title {
+    margin: 0.85rem 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  .engagements {
+    margin: 0.35rem 0 1rem;
+    padding-left: 1.2rem;
+  }
+  .engagements li {
+    margin: 0.4rem 0;
+  }
   .charte-toc {
+    position: sticky;
+    top: 0;
+    z-index: 8;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem 0.75rem;
-    margin-top: 1.25rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    margin: 0 0 1.25rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    background: var(--card);
   }
   .charte-toc a {
     font-size: 0.88rem;
@@ -320,6 +348,17 @@ const updated = '2026-10-05';
   }
   .charte-toc a:hover {
     text-decoration: underline;
+  }
+  .charte-toc a:focus-visible {
+    outline: 3px solid var(--fg);
+    outline-offset: 2px;
+  }
+  @media (max-width: 640px) {
+    .charte-toc {
+      top: 0;
+      gap: 0.3rem 0.55rem;
+      padding: 0.55rem 0.65rem;
+    }
   }
   .charte h2 {
     margin-top: 0;
