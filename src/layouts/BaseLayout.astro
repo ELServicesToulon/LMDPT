@@ -13,6 +13,8 @@ interface Props {
   share?: boolean;
   /** La page fournit déjà son H1 : le nom du site reste un paragraphe. */
   pageHeading?: boolean;
+  /** Forcer le module commentaires. Défaut : visible seulement sur un article ou un fil de débat. */
+  comments?: boolean;
 }
 
 import { getPublicSocialLinks } from '../config/social';
@@ -33,12 +35,13 @@ import { DOE_FR } from '../lib/doe';
 import { findEditorialByPath } from '../lib/editorial';
 import { publicImageSize } from '../lib/image-size';
 import { shouldShowArticleShareBar } from '../lib/share';
+import { shouldShowCitizenComments } from '../lib/citizen-comments';
 import GoogleSeoTools from '../components/GoogleSeoTools.astro';
 import GoogleSeoBody from '../components/GoogleSeoBody.astro';
 import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro';
 import { publicSiteHref } from '../lib/public-site';
 
-const { title, documentTitle, description, ogImage, keywords, type, noindex, share, pageHeading } = Astro.props;
+const { title, documentTitle, description, ogImage, keywords, type, noindex, share, pageHeading, comments } = Astro.props;
 const editorialPost = findEditorialByPath(Astro.url.pathname);
 const resolvedOgImage = ogImage || editorialPost?.cover?.src;
 const socialLinks = getPublicSocialLinks();
@@ -90,17 +93,10 @@ const jsonLdPage = webPageJsonLd({
   datePublished: meta.type === 'article' ? articlePublished : undefined,
   dateModified: meta.type === 'article' ? articleModified : undefined,
 });
-const showComments =
-  !Astro.url.pathname.startsWith('/moderation') &&
-  !Astro.url.pathname.startsWith('/redaction') &&
-  !Astro.url.pathname.startsWith('/contribuer') &&
-  !Astro.url.pathname.startsWith('/mentions-legales') &&
-  !Astro.url.pathname.startsWith('/confidentialite') &&
-  !Astro.url.pathname.startsWith('/charte') &&
-  !Astro.url.pathname.startsWith('/soutenir') &&
-  !Astro.url.pathname.startsWith('/pack-data') &&
-  !Astro.url.pathname.startsWith('/connexion') &&
-  !Astro.url.pathname.startsWith('/compte');
+const showComments = shouldShowCitizenComments({
+  pathname: Astro.url.pathname,
+  comments,
+});
 const commentThread =
   Astro.url.pathname.replace(/\/+$/, '') || 'accueil';
 const showShareBar =
@@ -108,6 +104,7 @@ const showShareBar =
   (share !== false &&
     shouldShowArticleShareBar(Astro.url.pathname, Boolean(editorialPost)));
 const shareTitle = editorialPost?.title ?? title;
+const hideFooterFeedback = cleanPath === '/contribuer';
 ---
 
 <!doctype html>
@@ -1079,7 +1076,9 @@ const shareTitle = editorialPost?.title ?? title;
           <a href="/a-propos/">À propos</a>
         </p>
 
-        <!-- Feedback → file suggestions (validation rédaction avant publication site) -->
+        <!-- Feedback → file suggestions (validation rédaction avant publication site). Masqué sur /contribuer/. -->
+        {
+          !hideFooterFeedback && (
         <div class="feedback-form" aria-labelledby="feedback-title">
           <h4 id="feedback-title" style="font-size:0.95rem; margin:0.6rem 0 0.25rem;">Votre retour citoyen</h4>
           <p class="meta" style="margin:0 0 0.35rem; font-size:0.78rem;">
@@ -1116,6 +1115,8 @@ const shareTitle = editorialPost?.title ?? title;
             <div id="feedback-thanks" style="display:none; margin-top:0.35rem; font-size:0.8rem; color:#2d6a4f;"></div>
           </form>
         </div>
+          )
+        }
 
         <p>
           <a href="/a-propos/">À propos</a>

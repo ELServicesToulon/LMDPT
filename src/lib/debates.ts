@@ -67,3 +67,9 @@ export function getDebate(slug: string): DebateDataset | undefined {
 export function getOpenDebates(): DebateSummary[] {
   return DEBATE_CATALOG.filter((d) => d.status === 'ouvert');
 }
+
+/** « Ouvert le JJ mois AAAA » — date d’ouverture du fil, aucune date inventée. */
+export function formatDebateOpenedLabel(isoDate: string, locale = 'fr-FR'): string {
+  const label = new Date(isoDate).toLocaleDateString(locale, { dateStyle: 'long' });
+  return `Ouvert le ${label}`;
+}

@@ -2,87 +2,27 @@
 /**
  * Observatoire de la censure — hub documentaire (depuis 2017)
  * Dataset : src/data/observatoire-censure.json
- * Badges couleurs d’idées obligatoires sur chaque fiche.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { OBSERVATOIRE_CENSURE_META_DESCRIPTION } from '../../lib/loulou-meta-descriptions';
-import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
 import ShareBar from '../../components/ShareBar.astro';
-import { hueBadgesForText, type HueBadge } from '../../lib/comment-politics';
-import { FAMILY_COLORS } from '../../lib/independance-medias';
-import data from '../../data/observatoire-censure.json';
+import {
+  documentedUntilLabel,
+  formatMeasureDate,
+  latestMeasureDate,
+  observatoireDataset,
+  observatoirePublicEntries,
+  observatoirePublicFilterControls,
+  officialSourceSegments,
+} from '../../lib/observatoire-censure';
 
-const updated = new Date(data.updated).toLocaleDateString('fr-FR', { dateStyle: 'long' });
-const byType = (type: string) => data.media.filter((m) => m.type === type);
-const types = [
-  { id: 'television', label: 'Télévision' },
-  { id: 'radio', label: 'Radio' },
-  { id: 'presse', label: 'Presse' },
-  { id: 'autre', label: 'Agence / numérique' },
-] as const;
-
-const FAMILY_TO_SLUG: Record<string, string> = {
-  'gauche-radicale': 'melenchon',
-  'social-democrate': 'parti-socialiste',
-  centre: 'attal',
-  droite: 'retailleau',
-  'droite-nationale': 'le-pen',
-  autre: 'pluraliste',
-};
-
-type ObsHueRef = { family?: string; label?: string };
-
-/** Map famille / label libre observatoire → badge couleur d’idée (aligné indépendance). */
-function hueFromFamily(family: string | undefined, label: string | undefined): HueBadge | null {
-  const fam = (family ?? '').trim();
-  if (!fam || !(fam in FAMILY_COLORS)) return null;
-  return {
-    slug: FAMILY_TO_SLUG[fam] ?? 'pluraliste',
-    label: (label ?? fam).trim() || fam,
-    color: FAMILY_COLORS[fam],
-  };
-}
-
-function hueFromObsLabel(label: string | undefined): HueBadge {
-  const raw = (label ?? 'autre').trim();
-  const n = raw
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '');
-  if (/nationale|rn|le pen|bardella/.test(n)) {
-    return { slug: 'le-pen', label: raw, color: FAMILY_COLORS['droite-nationale'] };
-  }
-  if (/gauche|lfi|insoumis|radical/.test(n)) {
-    return { slug: 'melenchon', label: raw, color: FAMILY_COLORS['gauche-radicale'] };
-  }
-  if (/social|ps|glucksmann/.test(n)) {
-    return { slug: 'parti-socialiste', label: raw, color: FAMILY_COLORS['social-democrate'] };
-  }
-  if (/centre|macron|renaissance/.test(n)) {
-    return { slug: 'attal', label: raw, color: FAMILY_COLORS.centre };
-  }
-  if (/droite|lr|republicain/.test(n)) {
-    return { slug: 'retailleau', label: raw, color: FAMILY_COLORS.droite };
-  }
-  if (/ecolo|vert|climat/.test(n)) {
-    return { slug: 'ecolo', label: raw, color: '#00c000' };
-  }
-  const fromText = hueBadgesForText(raw, 1);
-  if (fromText[0] && fromText[0].slug !== 'pluraliste') return fromText[0];
-  return { slug: 'pluraliste', label: raw || 'Autre', color: FAMILY_COLORS.autre };
-}
-
-function resolveObsHue(entry: {
-  political_hue?: ObsHueRef;
-  political_hue_label?: string;
-  display_name?: string;
-  motif_officiel?: string;
-}): HueBadge {
-  const fromFamily = hueFromFamily(entry.political_hue?.family, entry.political_hue?.label);
-  if (fromFamily) return fromFamily;
-  if (entry.political_hue_label) return hueFromObsLabel(entry.political_hue_label);
-  return hueFromObsLabel(`${entry.display_name ?? ''} ${entry.motif_officiel ?? ''}`);
-}
+const dataset = observatoireDataset();
+const entries = observatoirePublicEntries();
+const latestIso = latestMeasureDate(entries);
+const freshnessLabel = documentedUntilLabel(entries);
+const publicMediaCount = entries.filter((entry) => entry.kind === 'media').length;
+const publicInfluencerCount = entries.filter((entry) => entry.kind === 'influencer').length;
+const filterControls = observatoirePublicFilterControls(entries);
 ---
 
 <BaseLayout
@@ -99,14 +39,21 @@ function resolveObsHue(entry: {
 
   <section class="obs-intro" aria-labelledby="obs-title">
     <p class="eyebrow">Depuis la présidentielle 2017 · synthèse documentaire</p>
-    <h1 id="obs-title">{data.title}</h1>
+    <h1 id="obs-title">{dataset.title}</h1>
     <p class="meta">
-      Mise à jour : <time datetime={data.updated}>{updated}</time>
-      · {data.media.length} médias · {data.influencers.length} comptes
-      · Période : {data.period.label}
+      {
+        freshnessLabel && latestIso ? (
+          <time datetime={latestIso}>{freshnessLabel}</time>
+        ) : (
+          <>Aucune date de mesure extractible des fiches.</>
+        )
+      }
+      {' '}
+      · {publicMediaCount} médias · {publicInfluencerCount} comptes
+      · Période : {dataset.period_label}
     </p>
-    <p>{data.disclaimer}</p>
-    <p class="meta">{data.taxonomy_note}</p>
+    <p>{dataset.disclaimer}</p>
+    <p class="meta">{dataset.taxonomy_note}</p>
     <p class="meta">
       Rubrique parente : {' '}
       <a href="/liberte-d-expression/">Liberté d’expression</a>
@@ -119,108 +66,121 @@ function resolveObsHue(entry: {
   </section>
 
   <nav class="obs-toc" aria-label="Sommaire observatoire">
-    <a href="#medias">Médias traditionnels</a>
-    <a href="#influenceurs">Influenceurs &amp; gros comptes</a>
+    <a href="#tableau">Tableau</a>
+    <a href="#fiches">Fiches</a>
     <a href="#methode">Méthode</a>
   </nav>
 
-  <section id="medias" aria-labelledby="medias-title">
-    <h2 id="medias-title">Médias traditionnels</h2>
-    {
-      types.map((t) => {
-        const items = byType(t.id);
-        if (!items.length) return null;
-        return (
-          <div class="obs-type-block">
-            <h3>{t.label}</h3>
-            <div class="obs-media-grid">
-              {items.map((m) => {
-                const hue = resolveObsHue(m);
-                return (
-                <article
-                  class="obs-card"
-                  id={m.id}
-                  data-hue={hue.slug}
-                  style={`border-left: 4px solid ${hue.color}`}
-                >
-                  <header class="obs-card-head">
-                    <h4 class="obs-card-titles">{m.name}</h4>
-                    <p class="meta obs-card-meta">
-                      <span class="status-badge">{m.action_label}</span>
-                      <PoliticalHueBadges hues={[hue]} size="sm" />
-                      <span class="meta">{m.verification === 'documented' ? 'Documenté' : 'Partiel'}</span>
-                    </p>
-                  </header>
-                  <div class="obs-motives">
-                    <p>
-                      <strong>Motif officiel.</strong> {m.motif_officiel || '—'}
-                    </p>
-                    {
-                      m.motif_officieux && (
-                        <p class="obs-unofficial">
-                          <strong>Motif officieux</strong> (lecture secondaire). {m.motif_officieux}
-                        </p>
-                      )
-                    }
-                  </div>
-                </article>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })
-    }
-  </section>
+  <div class="obs-board">
+    <form class="obs-filters" action="#tableau">
+      <fieldset>
+        <legend>Type</legend>
+        {
+          filterControls.map((control, i) => (
+            <label class="obs-filter-opt">
+              <input
+                type="radio"
+                name="obs-type"
+                id={control.id}
+                value={control.value}
+                checked={i === 0}
+              />
+              {control.label}
+            </label>
+          ))
+        }
+      </fieldset>
+    </form>
 
-  <section id="influenceurs" aria-labelledby="inf-title">
-    <h2 id="inf-title">Influenceurs &amp; gros comptes</h2>
-    <p class="meta">
-      Restrictions souvent issues de <strong>modération plateforme</strong> (CGU) — distinctes
-      d’une décision d’autorité publique.
-    </p>
-    <div class="obs-media-grid">
-      {
-        data.influencers.map((inf) => {
-          const hue = resolveObsHue(inf as {
-            political_hue?: ObsHueRef;
-            political_hue_label?: string;
-            display_name?: string;
-            motif_officiel?: string;
-          });
-          return (
-          <article
-            class="obs-inf-card"
-            id={inf.id}
-            data-hue={hue.slug}
-            style={`border-left: 4px solid ${hue.color}`}
-          >
-            <header class="obs-inf-head">
-              <h3>
-                {inf.display_name}
-                {inf.handle ? <span class="meta"> @{inf.handle}</span> : null}
-              </h3>
-              <PoliticalHueBadges hues={[hue]} size="sm" />
-            </header>
-            <p>
-              <strong>Motif officiel / plateforme.</strong> {inf.motif_officiel || '—'}
-            </p>
+    <section id="tableau" aria-labelledby="tableau-title">
+      <h2 id="tableau-title">Tableau des mesures</h2>
+      <div class="table-wrap" role="region" aria-label="Tableau des mesures" tabindex="0">
+        <table class="obs-table">
+          <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Mesure</th>
+              <th scope="col">Autorité</th>
+              <th scope="col">Date</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
             {
-              inf.motif_officieux && (
-                <p class="obs-unofficial">
-                  <strong>Lecture secondaire.</strong> {inf.motif_officieux}
-                </p>
-              )
+              entries.map((entry) => (
+                <tr class="obs-item" data-factual-type={entry.factual_type}>
+                  <th scope="row">
+                    <a href={`#${entry.id}`}>{entry.name}</a>
+                  </th>
+                  <td>{entry.action_label}</td>
+                  <td>{entry.authority}</td>
+                  <td>
+                    {entry.measure_date ? (
+                      <time datetime={entry.measure_date}>{formatMeasureDate(entry.measure_date)}</time>
+                    ) : (
+                      '—'
+                    )}
+                  </td>
+                  <td>
+                    {officialSourceSegments(entry).length ? (
+                      officialSourceSegments(entry).map((seg) =>
+                        seg.type === 'link' ? (
+                          <a href={seg.url} rel="noopener noreferrer">
+                            {seg.label}
+                          </a>
+                        ) : (
+                          seg.text
+                        ),
+                      )
+                    ) : (
+                      '—'
+                    )}
+                  </td>
+                </tr>
+              ))
             }
-          </article>
-          );
-        })
-      }
-    </div>
-  </section>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="fiches" aria-labelledby="fiches-title">
+      <h2 id="fiches-title">Fiches détaillées</h2>
+      <div class="obs-fiches">
+        {
+          entries.map((entry) => (
+            <details class="obs-item obs-fiche" id={entry.id} data-factual-type={entry.factual_type}>
+              <summary>
+                <span class="obs-fiche-title">{entry.name}</span>
+                {entry.handle ? <span class="meta"> @{entry.handle}</span> : null}
+                <span class="status-badge">{entry.action_label}</span>
+                <span class="obs-type-label">{entry.factual_type}</span>
+                <span class="meta">
+                  {entry.verification === 'documented' ? 'Documenté' : 'Partiel'}
+                </span>
+              </summary>
+              <div class="obs-motives">
+                <p>
+                  <strong>Motif officiel.</strong> {entry.motif_officiel || '—'}
+                </p>
+                {
+                  entry.motif_officieux && (
+                    <p class="obs-unofficial">
+                      <strong>Motif officieux.</strong> {entry.motif_officieux}
+                    </p>
+                  )
+                }
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+  </div>
 
   <section class="card" id="methode" aria-labelledby="methode-title">
     <h2 id="methode-title">Méthode</h2>
+    <span id="definition-censure"></span>
     <ul>
       <li>Période : à partir du <strong>7 mai 2017</strong> (présidentielle).</li>
       <li>
@@ -228,13 +188,7 @@ function resolveObsHue(entry: {
         <em>vérification partielle</em>.
       </li>
       <li>
-        Motif <strong>officieux</strong> toujours étiqueté lecture secondaire — jamais comme
-        fait LMDPT.
-      </li>
-      <li>
-        Teintes politiques : familles pédagogiques du 1er tour — mêmes couleurs que {' '}
-        <a href="/independance-medias/">indépendance des médias</a> et la
-        <a href="/charte/#couleurs">charte</a>. Pas une carte d’adhésion.
+        Quand une sanction a un motif officiel, nous le citons. Les autres motifs sont rapportés avec leur source, jamais repris à notre compte.
       </li>
       <li>
         Voir aussi : <a href="/liberte-d-expression/">hub Liberté d’expression</a>, {' '}
@@ -243,6 +197,17 @@ function resolveObsHue(entry: {
     </ul>
   </section>
 </BaseLayout>
+
+<script>
+  function openObsHash() {
+    const id = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el instanceof HTMLDetailsElement) el.open = true;
+  }
+  openObsHash();
+  window.addEventListener('hashchange', openObsHash);
+</script>
 
 <style>
   .obs-intro {
@@ -255,46 +220,82 @@ function resolveObsHue(entry: {
     margin: 0 0 1.25rem;
     font-weight: 600;
   }
-  .obs-type-block {
-    margin: 1.25rem 0;
+  .obs-filters {
+    margin: 0 0 1rem;
   }
-  .obs-media-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
+  .obs-filters fieldset {
+    border: 1px solid var(--border, #d0d5dd);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    background: var(--card, var(--surface));
   }
-  @media (min-width: 800px) {
-    .obs-media-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  .obs-filters legend {
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0 0.25rem;
   }
-  .obs-card,
-  .obs-inf-card {
+  .obs-filter-opt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .obs-table {
+    min-width: 36rem;
+    font-size: 0.92rem;
+  }
+  .obs-table th,
+  .obs-table td {
+    padding: 0.45rem 0.55rem;
+    border-bottom: 1px solid var(--border, #d0d5dd);
+    text-align: left;
+    vertical-align: top;
+  }
+  .obs-table tbody th {
+    font-weight: 600;
+  }
+  .obs-fiches {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .obs-fiche {
     border: 1px solid var(--border, #d0d5dd);
     border-radius: 10px;
-    padding: 0.85rem 1rem;
+    padding: 0.35rem 0.85rem 0.45rem;
     background: var(--card, var(--surface));
     color: var(--fg);
   }
-  .obs-card-titles,
-  .obs-inf-head h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1.05rem;
-    color: var(--fg);
-  }
-  .obs-card-meta {
+  .obs-fiche summary {
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.35rem 0.5rem;
+    gap: 0.35rem 0.55rem;
+    padding: 0.35rem 0;
+    list-style: none;
   }
-  .obs-inf-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.4rem 0.65rem;
-    margin-bottom: 0.45rem;
+  .obs-fiche summary::-webkit-details-marker {
+    display: none;
+  }
+  .obs-fiche-title {
+    font-weight: 700;
+    font-size: 1.02rem;
+  }
+  .obs-type-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--border, #d0d5dd);
+    border-radius: 999px;
   }
   .status-badge {
     display: inline-block;
@@ -313,5 +314,17 @@ function resolveObsHue(entry: {
   }
   .obs-motives p {
     margin: 0.45rem 0;
+  }
+  .obs-fiche:target {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .obs-board:has(#obs-type-chaine-tv:checked) .obs-item:not([data-factual-type='chaîne TV']),
+  .obs-board:has(#obs-type-radio:checked) .obs-item:not([data-factual-type='radio']),
+  .obs-board:has(#obs-type-media-en-ligne:checked) .obs-item:not([data-factual-type='média en ligne']),
+  .obs-board:has(#obs-type-personnalite:checked) .obs-item:not([data-factual-type='personnalité']),
+  .obs-board:has(#obs-type-plateforme:checked) .obs-item:not([data-factual-type='plateforme']),
+  .obs-board:has(#obs-type-autorite-publique:checked) .obs-item:not([data-factual-type='autorité publique']) {
+    display: none;
   }
 </style>

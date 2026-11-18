@@ -8,6 +8,9 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
+import jaiCommisUneErreur from '../data/analyses/j-ai-commis-une-erreur-laquelle.json';
+import loiQuiSeVoteABruxelles from '../data/analyses/la-loi-qui-se-vote-a-bruxelles.json';
 import sermentDuPerdant from '../data/analyses/le-serment-du-perdant.json';
 import porteDeService1962 from '../data/analyses/1962-la-porte-de-service.json';
 import fonctionPublique800000 from '../data/analyses/800000-en-moins-500000-en-plus.json';
@@ -56,6 +59,45 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: hausseSalaireExoneree.slug,
+    title: hausseSalaireExoneree.title,
+    description: hausseSalaireExoneree.description,
+    date: hausseSalaireExoneree.date,
+    published: hausseSalaireExoneree.date,
+    updated: hausseSalaireExoneree.updated,
+    href: '/analyses/hausse-de-salaire-exoneree-qui-regle-la-note',
+    cover: uneCover(
+      'hausse-de-salaire-exoneree-qui-regle-la-note',
+      'Aquarelle d’une table de café en bois près d’une fenêtre, avec un ramasse-monnaie contenant une pile de pièces, un carnet d’addition en cuir fermé et deux tasses vides sur leurs soucoupes.',
+    ),
+  },
+  {
+    slug: jaiCommisUneErreur.slug,
+    title: jaiCommisUneErreur.title,
+    description: jaiCommisUneErreur.description,
+    date: jaiCommisUneErreur.date,
+    published: jaiCommisUneErreur.date,
+    updated: jaiCommisUneErreur.updated,
+    href: '/analyses/j-ai-commis-une-erreur-laquelle',
+    cover: uneCover(
+      'j-ai-commis-une-erreur-laquelle',
+      'Aquarelle d’un bureau en bois avec une feuille de papier portant une zone effacée à la gomme, une gomme usée et un crayon, à côté d’un anneau en laiton portant deux clés de formes différentes, devant une fenêtre à la lumière du soir.',
+    ),
+  },
+  {
+    slug: loiQuiSeVoteABruxelles.slug,
+    title: loiQuiSeVoteABruxelles.title,
+    description: loiQuiSeVoteABruxelles.description,
+    date: loiQuiSeVoteABruxelles.date,
+    published: loiQuiSeVoteABruxelles.date,
+    updated: loiQuiSeVoteABruxelles.updated,
+    href: '/analyses/la-loi-qui-se-vote-a-bruxelles',
+    cover: uneCover(
+      'la-loi-qui-se-vote-a-bruxelles',
+      'Aquarelle d’une balance de marché en laiton posée sur un comptoir en bois, un plateau chargé d’un boulon et de deux bobines de fil, l’autre vide, à côté d’un registre fermé, devant une fenêtre donnant sur des toits d’usine.',
+    ),
+  },
   {
     slug: sermentDuPerdant.slug,
     title: sermentDuPerdant.title,
