@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
 import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
 import jaiCommisUneErreur from '../data/analyses/j-ai-commis-une-erreur-laquelle.json';
 import loiQuiSeVoteABruxelles from '../data/analyses/la-loi-qui-se-vote-a-bruxelles.json';
@@ -59,6 +60,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: dixOuTrenteCinqMilliards.slug,
+    title: dixOuTrenteCinqMilliards.title,
+    description: dixOuTrenteCinqMilliards.description,
+    date: dixOuTrenteCinqMilliards.date,
+    published: dixOuTrenteCinqMilliards.date,
+    updated: dixOuTrenteCinqMilliards.updated,
+    href: '/analyses/10-ou-35-milliards-qui-compte-juste',
+    cover: uneCover(
+      '10-ou-35-milliards-qui-compte-juste',
+      'Aquarelle d’un bureau en bois près d’une fenêtre, avec deux bouliers anciens aux perles disposées différemment, une paire de lunettes, un registre de comptes fermé et un petit sablier en laiton.',
+    ),
+  },
   {
     slug: hausseSalaireExoneree.slug,
     title: hausseSalaireExoneree.title,
