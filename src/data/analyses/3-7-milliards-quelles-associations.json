@@ -1,0 +1,448 @@
+{
+  "slug": "3-7-milliards-quelles-associations",
+  "title": "3,7 milliards : quelles associations ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-20",
+  "updated": "2026-11-20",
+  "kicker": "Enquête et analyse · La rédaction · 20 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Lundi, au débat des Restos du cœur, Marine Le Pen a promis de couper les subventions des associations « politisées ». Mercredi, dans Le Figaro, elle a assumé. Son programme en attend 3,7 milliards d’euros par an à partir de 2028. Mais qui serait visé, qui le déciderait, et où trouver une telle somme quand l’essentiel de l’argent de l’État aux associations paie l’hébergement d’urgence, l’aide alimentaire ou l’enseignement ?",
+  "description": "Marine Le Pen veut couper 3,7 milliards d’euros de subventions aux associations « politisées ». Qui serait visé, qui déciderait, et que dit déjà le droit ?",
+  "disclaimer": "Cette analyse décrit des propositions et des déclarations de candidats, des chiffres publics (IGF, Cour des comptes, gouvernement) et le droit en vigueur. Elle ne dit pas quelles associations seraient touchées ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "associations",
+    "subventions",
+    "doe"
+  ],
+  "x_hook": "Lundi, au débat des Restos du cœur, Marine Le Pen a promis de couper les subventions des associations « politisées ». Mercredi, dans Le Figaro, elle a assumé. Son programme en attend 3,7 milliards d’euros par an à partir de 2028. Mais qui serait visé, qui le déciderait, et où trouver une telle somme quand l’essentiel de l’argent de l’État aux associations paie l’hébergement d’urgence, l’aide alimentaire ou l’enseignement ?",
+  "hues": [
+    {
+      "slug": "coupe-chiffree",
+      "label": "Pour la mesure, coupe chiffrée, liste non publiée",
+      "color": "#162561",
+      "rationale": "Le Pen : 3,7 milliards d’euros d’économies annoncés, critère dit à l’oral (consigne de vote, insulte), sans liste ni texte publié trouvé."
+    },
+    {
+      "slug": "contre-argumente",
+      "label": "Contre la mesure, argument public",
+      "color": "#8a5a00",
+      "rationale": "Glucksmann, Attal, Mélenchon : opposition exprimée et argumentée au débat du 16 novembre."
+    },
+    {
+      "slug": "non-trouve",
+      "label": "Position non trouvée",
+      "color": "#5a6570",
+      "rationale": "Retailleau, Philippe, Lisnard, Zemmour, Tondelier, Roussel : rien de daté trouvé sur cette mesure."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "proposition",
+      "title": "Ce que propose Marine Le Pen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lundi 16 novembre, cinq candidats à la présidentielle débattaient dans un entrepôt des Restos du cœur, sur TF1 et LCI. Marine Le Pen y a redit son projet d’« arrêter de subventionner les associations politisées » ([franceinfo](https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html)). Son critère, tel qu’elle l’a formulé ce soir-là : une association qui dit pour qui voter, ou pour qui ne pas voter, « fait de la politique », et alors « il faut qu’elle se constitue en parti politique » ([franceinfo](https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html)). Selon RTL, elle vise aussi les associations qui « insultent » un candidat ou un parti ([RTL](https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333))."
+        },
+        {
+          "type": "p",
+          "text": "Mercredi 18 novembre, dans une tribune au Figaro, elle a enfoncé le clou. Elle y décrit un « écosystème associatif de gauche et d’extrême gauche clairement engagé et militant, subventionné à coups de millions, voire de milliards » ([Le Figaro](https://www.lefigaro.fr/vox/politique/marine-le-pen-il-est-temps-de-mettre-fin-aux-derives-financieres-et-ethiques-des-associations-politisees-20261118)). Pour elle, ce financement est « une violation manifeste du principe républicain de neutralité de l’État », et elle « assume » et « revendique » l’arrêt de ces subventions ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es)). La neutralité de l’État, c’est l’idée que l’argent public ne doit favoriser aucun camp politique."
+        },
+        {
+          "type": "p",
+          "text": "Le chiffre est dans son programme économique, présenté début octobre : deux milliards d’euros d’économies dès 2027, puis 3,7 milliards en année pleine à partir de 2028 ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es)). Le contre-budget du RN prévoit de les trouver en « baissant les subventions de l’État aux associations ne relevant pas de l’intérêt général » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027)). Une partie de l’argent irait, promet la candidate, au « monde associatif réel », pour une « renaissance associative » ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es))."
+        },
+        {
+          "type": "p",
+          "text": "Le RN insiste sur ce qu’il ne veut pas toucher. Aux Restos du cœur, Marine Le Pen a assuré : « Il n’est pas question de toucher à l’ensemble des dispositifs existants qui permettent aux Restos du cœur de remplir ce rôle essentiel » ([LCP](https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci)). La députée Laure Lavalette, chargée des solidarités dans sa campagne, résume : « L’idée n’est pas du tout de fermer des associations à tour de bras, mais celle qui sort de son objet doit continuer avec des deniers privés » ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "lesquelles",
+      "title": "« Lesquelles ? »",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sur le plateau, Gabriel Attal et Raphaël Glucksmann lui ont posé la même question : « Lesquelles ? » ([Le HuffPost](https://www.huffingtonpost.fr/politique/article/au-debat-de-tf1-lci-marine-le-pen-en-grande-difficulte-sur-le-financement-des-associations_359471.html)). Gabriel Attal a insisté : « Où est-ce que vous trouvez les 3 milliards ? » ([Le HuffPost](https://www.huffingtonpost.fr/politique/article/au-debat-de-tf1-lci-marine-le-pen-en-grande-difficulte-sur-le-financement-des-associations_359471.html)). Pressée de donner des noms, Marine Le Pen a cité la Ligue des droits de l’homme (LDH), qu’elle a qualifiée de « ramassis de gauchistes » ([franceinfo](https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html)). À cette association, elle dirait : « vous avez parfaitement la possibilité de demander une subvention, mais pas la possibilité d’appeler à voter pour untel, pas d’insulter les partis politiques » ([LCP](https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci))."
+        },
+        {
+          "type": "p",
+          "text": "D’autres noms sont sortis, mais pas d’une liste. En octobre, la sénatrice de Gironde Edwige Diaz citait pour le RN le Planning familial et la LDH, avec cet avertissement : « En 2027, nous n’aurons pas la mémoire courte » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027)). Cette semaine, Laure Lavalette a donné l’exemple de SOS Méditerranée ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es)). Dans sa tribune, la candidate ne nomme personne ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es)). À la date du 19 novembre, nous n’avons trouvé ni liste, ni texte de loi publié qui dise quelles associations perdraient quoi."
+        },
+        {
+          "type": "p",
+          "text": "La LDH a répondu par la voix de sa présidente, Nathalie Tehio : « Ce sont les libertés et la liberté associative qu’elle attaque » ([franceinfo](https://www.franceinfo.fr/politique/marine-le-pen/marine-le-pen-denonce-a-nouveau-ce-qu-elle-juge-comme-des-derives-financieres-et-ethiques-des-associations-politisees_8288303.html)). Selon elle, Marine Le Pen « dit à travers ces attaques que les subventions sont données en fonction d’un projet politique et non pas de l’intérêt général » ([RTL](https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "comptes",
+      "title": "3,7 milliards face aux comptes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "D’abord, un mot de vocabulaire. Une subvention, c’est de l’argent public donné sans contrepartie directe, que rien n’oblige à verser. La loi la définit comme une contribution « facultative », qui doit être « justifiée par un intérêt général » ([Légifrance](https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005629288)). Autrement dit, la condition d’intérêt général que met en avant le contre-budget du RN existe déjà pour toute subvention. Ce que le programme change, et comment il trie, nous ne l’avons pas trouvé écrit."
+        },
+        {
+          "type": "p",
+          "text": "Ensuite, les montants. Sur le plateau, Marine Le Pen a parlé de 53 milliards d’euros d’aides aux associations ([TF1info](https://www.tf1info.fr/politique/elections/presidentielle/verif-debat-sur-tf1-lci-en-association-avec-les-restos-du-coeur-salaries-au-smic-impots-aides-aux-associations-nous-avons-verifie-les-inexactitudes-des-candidats-au-sujet-de-la-precarite-2476393.html)). Ce chiffre existe : c’est celui de l’Inspection générale des finances (IGF) pour 2023. Mais il additionne tout, dépenses de l’État, des collectivités et réductions d’impôt, et l’IGF précise que ces financements sont « essentiellement destinés à mettre en œuvre des politiques publiques » ([IGF](https://www.igf.finances.gouv.fr/igf/accueil/nos-activites-1/rapports-de-mission/revue-des-depenses-publiques-en.html)). Pour les seules subventions, le gouvernement comptait 23 milliards d’euros en 2023 pour 1,3 million d’associations, dont 8,3 milliards venant de l’État ([Public Sénat](https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027))."
+        },
+        {
+          "type": "p",
+          "text": "Où va l’argent de l’État ? La Cour des comptes a fait le tri en 2025. En 2024, l’État a versé 8 milliards d’euros de subventions aux acteurs de l’économie sociale et solidaire, à 93 % des associations ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2025-09/20250918-synthese-Soutiens-publics-a-economie-sociale-et-solidaire.pdf)). Près de 80 % de ces subventions servent à « garantir des droits ou assurer des services dans le prolongement de l’action de l’État » : l’hébergement d’urgence (18 %), l’enseignement privé et l’éducation (15 %), l’accompagnement social et l’aide alimentaire (13 %), l’accueil des réfugiés et des demandeurs d’asile (12 %) ([Cour des comptes](https://www.ccomptes.fr/sites/default/files/2025-09/20250918-synthese-Soutiens-publics-a-economie-sociale-et-solidaire.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Faisons le calcul, à partir de ces chiffres publics. 3,7 milliards, c’est un peu moins de la moitié des 8,3 milliards de subventions de l’État. Et si l’on met de côté les 80 % qui financent ces missions, il reste environ 1,6 milliard sur les 8 milliards de 2024. Pour trouver 3,7 milliards, il faudrait donc aller chercher aussi dans ces missions-là, ou ailleurs. Ce calcul est le nôtre : le RN n’a pas publié le détail de son chiffrage, qui peut viser d’autres financements que ces subventions. L’IGF, qui a passé ces dépenses au crible, documentait des scénarios d’économies « de 1 à 3 milliards d’euros », en proposant aussi de rapprocher le système fiscal français de celui d’autres pays ([IGF](https://www.igf.finances.gouv.fr/igf/accueil/nos-activites-1/rapports-de-mission/revue-des-depenses-publiques-en.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "droit",
+      "title": "Ce que dit déjà le droit",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La liberté d’association : le Conseil constitutionnel l’a rangée en 1971 parmi les « principes fondamentaux reconnus par les lois de la République » ([Conseil constitutionnel](https://www.conseil-constitutionnel.fr/decision/1971/7144DC.htm)), qui ont valeur constitutionnelle : une loi peut en encadrer l’exercice, pas la remettre en cause. Et l’« association politisée », le droit ne la connaît pas : « C’est une expression de vocabulaire politico-médiatique », explique Fleur Dargent, maîtresse de conférences en droit public ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen)). Une association peut prendre position, y compris pendant une campagne ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen))."
+        },
+        {
+          "type": "p",
+          "text": "L’argent public, lui, est encadré. Le Code électoral interdit aux personnes morales, dont les associations, de financer des partis ou des campagnes ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen)). Depuis la loi du 24 août 2021, toute association qui demande une subvention signe un « contrat d’engagement républicain » : respecter la liberté, l’égalité, la fraternité et la dignité humaine, ne pas remettre en cause la laïcité, et « s’abstenir de toute action portant atteinte à l’ordre public » ([Légifrance](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043970265)). Si elle ne le respecte pas, la subvention est refusée ou retirée ([Légifrance](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043970265)). « Mais le simple fait d’appeler à voter contre un parti politique ne constitue pas, en soi, une violation de ce contrat », précise Fleur Dargent ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Le juge administratif a déjà tranché un cas proche. En 2020, le Conseil d’État a jugé que « la seule circonstance qu’une association prenne des positions dans des débats publics ne fait pas obstacle » à une subvention, dès lors que ses activités présentent un intérêt public local ([Conseil d’État](https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926)). Il pose aussi la règle inverse, qui rejoint l’argument de neutralité de Marine Le Pen : une commune ne peut pas, par une subvention, « prendre parti dans des conflits, notamment de nature politique » ([Conseil d’État](https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926)). Quand une association a aussi des actions politiques, la commune doit s’assurer que son argent ne paie que les activités d’intérêt public ([Conseil d’État](https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926)). La règle vise donc l’usage de l’argent, pas l’opinion de celui qui le reçoit."
+        },
+        {
+          "type": "p",
+          "text": "Aucune association n’a de droit automatique à une subvention : une mairie peut cesser de financer une association pour des raisons de budget ou de nouvelles priorités ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen)). Mais pas pour une opinion. « Si un conseil municipal décidait de retirer une subvention parce qu’une association s’est exprimée contre la majorité, ce serait un détournement de pouvoir », résume Fleur Dargent ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen)). Une loi pourrait durcir les conditions, ajoute-t-elle, mais interdire toute expression politique aux associations « se heurterait à la liberté d’expression » ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Reste la question de la définition. Le sociologue Matthieu Hély la pose simplement : « Quelle association est politique et ne l’est pas », demande-t-il, avant d’ajouter : « il faut le définir », car « plus de 90% des partis politiques ont un statut associatif » ([AFP](https://www.boursorama.com/actualite-economique/actualites/remise-en-cause-des-subventions-aux-associations-marine-le-pen-s-inscrit-dans-une-continuite-cb1b8a10d3b5e71f9ad37511ccf25157)). Le Rassemblement national est lui-même une association régie par la loi de 1901 ([AFP](https://www.boursorama.com/actualite-economique/actualites/remise-en-cause-des-subventions-aux-associations-marine-le-pen-s-inscrit-dans-une-continuite-cb1b8a10d3b5e71f9ad37511ccf25157))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "villes",
+      "title": "Ce qui se passe déjà dans des villes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La question n’est pas théorique. Selon l’AFP, des associations ont été privées d’aides financières ou matérielles ces dernières années dans des villes dirigées par le RN : le Secours populaire à Hayange (Moselle), le Planning familial à Carpentras (Vaucluse), ATD Quart Monde à La Flèche (Sarthe) ([France 24](https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es)). À Carpentras, en juin, le maire a coupé les subventions de la ville au Planning familial en relevant que l’association prenait « fait et cause contre le Rassemblement national » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027)). À Carcassonne, la LDH est privée de sa subvention annuelle de 300 euros depuis avril 2026 ; elle avait contesté en justice un arrêté anti-mendicité de la ville. Des recours sont pendants devant le tribunal administratif de Montpellier ([20 Minutes](https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Au débat, Gabriel Attal a pris l’exemple d’Hayange : « le maire du Rassemblement national a coupé l’électricité et le gaz au Secours populaire et c’est la justice qui a dû obliger la ville à remettre l’électricité et le gaz » ([franceinfo](https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html)). Le RN n’est pas seul à vouloir regarder de près ces financements. En 2023, alors ministre de l’Intérieur, Gérald Darmanin avait jugé que les subventions de l’État à la LDH « méritaient d’être regardées » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027))."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il couper les subventions des associations « politisées », et selon quelle règle ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : couper ou non les subventions publiques aux associations jugées « politisées », et selon quelle règle écrite. Les lectures décrivent ce que nous avons trouvé (chiffre, liste, argument) ; ce n’est ni un soutien à un candidat, ni un jugement sur le fond. « Position non trouvée » signifie que nous n’avons rien trouvé de daté, pas qu’il n’existe aucune position.",
+      "table": {
+        "caption": "Couper les subventions des associations « politisées » ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Le Pen / RN",
+            "Pour la mesure, coupe chiffrée, liste non publiée",
+            "Pour : fin des subventions aux associations « politisées », celles qui disent pour qui voter ou « insultent » un candidat ou un parti ; 2 milliards d’euros d’économies en 2027, 3,7 milliards à partir de 2028 (16 et 18 novembre).",
+            "[7][16][1]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Contre la mesure, argument public",
+            "Contre : « Ça donne un pouvoir à l’État complètement délirant » (16 novembre).",
+            "[3]"
+          ],
+          [
+            "Attal / Renaissance",
+            "Contre la mesure, argument public",
+            "Contre : « il y aura les associations qui seront au garde-à-vous derrière vous, qui pourront être soutenues, et il y aura toutes les autres qui verront leur financement retiré » (16 novembre).",
+            "[7]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Contre la mesure, argument public",
+            "Contre : « C’est les communes qui décident » ; « Les droits de l’homme, c’est un sujet politique, Madame Le Pen » (16 novembre).",
+            "[3][5]"
+          ],
+          [
+            "Retailleau / LR",
+            "Position non trouvée",
+            "Présent au débat du 16 novembre ; nous n’avons pas trouvé, dans les comptes rendus lus, de prise de position de sa part sur cette mesure.",
+            "[5]"
+          ],
+          [
+            "Philippe / Horizons",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur cette mesure.",
+            ""
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur cette mesure.",
+            ""
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Position non trouvée",
+            "Position du candidat non trouvée. En janvier 2026, pendant la campagne municipale à Paris, Sarah Knafo, eurodéputée Reconquête, défendait la suppression des subventions aux associations « politisées », visant celles qui appellent à voter pour un candidat.",
+            "[18]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur cette mesure.",
+            ""
+          ],
+          [
+            "Roussel / PCF",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur cette mesure.",
+            ""
+          ]
+        ]
+      },
+      "note": "Badge des courants, lu au regard de la thèse (une coupe de subventions se juge sur sa règle écrite : qui décide, sur quel critère, sur quelles lignes du budget) : Pour la mesure, coupe chiffrée, liste non publiée (Le Pen). Contre la mesure, argument public (Glucksmann, Attal, Mélenchon). Position non trouvée : Retailleau, Philippe, Lisnard, Zemmour, Tondelier, Roussel, ce qui ne signifie pas absence de position."
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selon RTL, Marine Le Pen veut faire de cette règle une loi si elle est élue ([RTL](https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333)). Le texte, quand il existera, devra répondre à trois questions simples. Qui décide qu’une association est « politisée » : un ministre, un préfet, un juge ? Sur quel critère écrit : la consigne de vote, l’insulte, l’intérêt général que la loi exige déjà ? Et sur quelles lignes du budget, puisque l’essentiel des subventions de l’État paie l’hébergement d’urgence, l’enseignement, l’aide alimentaire et l’accueil des demandeurs d’asile ?"
+        },
+        {
+          "type": "p",
+          "text": "Un débat sur la pauvreté, chez les Restos du cœur, a buté lundi sur une question de dictionnaire : qu’est-ce qu’une association « politisée » ? Tant que la réponse n’est pas écrite, 3,7 milliards restent un chiffre sans adresse."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. France 24, avec AFP, 18 novembre 2026, 17 h 05 (« Crédits détournés » : Le Pen persiste et signe contre les associations « politisées »). https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es",
+          "lead": "1. France 24, avec AFP, 18 novembre 2026, 17 h 05 (« Crédits détournés » : Le Pen persiste et signe contre les associations « politisées »)",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es",
+              "url": "https://www.france24.com/fr/info-en-continu/20261118-cr%C3%A9dits-d%C3%A9tourn%C3%A9s-le-pen-persiste-et-signe-contre-les-associations-politis%C3%A9es"
+            }
+          ]
+        },
+        {
+          "label": "2. franceinfo, 18 novembre 2026, 14 h 32 (Marine Le Pen dénonce à nouveau ce qu’elle voit comme des « dérives financières et éthiques des associations politisées »). https://www.franceinfo.fr/politique/marine-le-pen/marine-le-pen-denonce-a-nouveau-ce-qu-elle-juge-comme-des-derives-financieres-et-ethiques-des-associations-politisees_8288303.html",
+          "lead": "2. franceinfo, 18 novembre 2026, 14 h 32 (Marine Le Pen dénonce à nouveau ce qu’elle voit comme des « dérives financières et éthiques des associations politisées »)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/politique/marine-le-pen/marine-le-pen-denonce-a-nouveau-ce-qu-elle-juge-comme-des-derives-financieres-et-ethiques-des-associations-politisees_8288303.html",
+              "url": "https://www.franceinfo.fr/politique/marine-le-pen/marine-le-pen-denonce-a-nouveau-ce-qu-elle-juge-comme-des-derives-financieres-et-ethiques-des-associations-politisees_8288303.html"
+            }
+          ]
+        },
+        {
+          "label": "3. Le HuffPost, 16 novembre 2026 (Au débat de TF1-LCI, Marine Le Pen en grande difficulté sur le financement des associations). https://www.huffingtonpost.fr/politique/article/au-debat-de-tf1-lci-marine-le-pen-en-grande-difficulte-sur-le-financement-des-associations_359471.html",
+          "lead": "3. Le HuffPost, 16 novembre 2026 (Au débat de TF1-LCI, Marine Le Pen en grande difficulté sur le financement des associations)",
+          "links": [
+            {
+              "label": "https://www.huffingtonpost.fr/politique/article/au-debat-de-tf1-lci-marine-le-pen-en-grande-difficulte-sur-le-financement-des-associations_359471.html",
+              "url": "https://www.huffingtonpost.fr/politique/article/au-debat-de-tf1-lci-marine-le-pen-en-grande-difficulte-sur-le-financement-des-associations_359471.html"
+            }
+          ]
+        },
+        {
+          "label": "4. LCP, Anne-Charlotte Dusseaulx, 17 novembre 2026 (Logement, associations, jeunesse : ce qu’il faut retenir du débat présidentiel sur LCI). https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+          "lead": "4. LCP, Anne-Charlotte Dusseaulx, 17 novembre 2026 (Logement, associations, jeunesse : ce qu’il faut retenir du débat présidentiel sur LCI)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+              "url": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci"
+            }
+          ]
+        },
+        {
+          "label": "5. Public Sénat, Emma Bador-Fritche, 17 novembre 2026 (Le Pen, Mélenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur). https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+          "lead": "5. Public Sénat, Emma Bador-Fritche, 17 novembre 2026 (Le Pen, Mélenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos"
+            }
+          ]
+        },
+        {
+          "label": "6. Public Sénat, Simon Barbarit, 22 octobre 2026 (Subventions aux associations : le RN « n’aura pas la mémoire courte » en cas de victoire en 2027). https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027",
+          "lead": "6. Public Sénat, Simon Barbarit, 22 octobre 2026 (Subventions aux associations : le RN « n’aura pas la mémoire courte » en cas de victoire en 2027)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027",
+              "url": "https://www.publicsenat.fr/actualites/politique/subventions-aux-associations-le-rn-naura-pas-la-memoire-courte-en-cas-de-victoire-en-2027"
+            }
+          ]
+        },
+        {
+          "label": "7. franceinfo, avec AFP, 17 novembre 2026, mis à jour à 15 h 38 (Marine Le Pen critiquée par ses rivaux pour sa volonté de couper les subventions à des « associations politisées »). https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html",
+          "lead": "7. franceinfo, avec AFP, 17 novembre 2026, mis à jour à 15 h 38 (Marine Le Pen critiquée par ses rivaux pour sa volonté de couper les subventions à des « associations politisées »)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html",
+              "url": "https://www.franceinfo.fr/elections/marine-le-pen-critiquee-en-plein-debat-de-la-presidentielle-pour-sa-volonte-de-couper-les-subventions-des-associations-politisees_8285558.html"
+            }
+          ]
+        },
+        {
+          "label": "8. TF1info, Les Vérificateurs, Caroline Quevrain, 17 novembre 2026, 20 h 28 (Débat TF1/LCI avec les Restos du Cœur : nous avons vérifié les propos des candidats). https://www.tf1info.fr/politique/elections/presidentielle/verif-debat-sur-tf1-lci-en-association-avec-les-restos-du-coeur-salaries-au-smic-impots-aides-aux-associations-nous-avons-verifie-les-inexactitudes-des-candidats-au-sujet-de-la-precarite-2476393.html",
+          "lead": "8. TF1info, Les Vérificateurs, Caroline Quevrain, 17 novembre 2026, 20 h 28 (Débat TF1/LCI avec les Restos du Cœur : nous avons vérifié les propos des candidats)",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/verif-debat-sur-tf1-lci-en-association-avec-les-restos-du-coeur-salaries-au-smic-impots-aides-aux-associations-nous-avons-verifie-les-inexactitudes-des-candidats-au-sujet-de-la-precarite-2476393.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/verif-debat-sur-tf1-lci-en-association-avec-les-restos-du-coeur-salaries-au-smic-impots-aides-aux-associations-nous-avons-verifie-les-inexactitudes-des-candidats-au-sujet-de-la-precarite-2476393.html"
+            }
+          ]
+        },
+        {
+          "label": "9. Inspection générale des finances, « Revue des dépenses publiques en direction des associations », publiée le 16 juillet 2025. https://www.igf.finances.gouv.fr/igf/accueil/nos-activites-1/rapports-de-mission/revue-des-depenses-publiques-en.html",
+          "lead": "9. Inspection générale des finances, « Revue des dépenses publiques en direction des associations », publiée le 16 juillet 2025",
+          "links": [
+            {
+              "label": "https://www.igf.finances.gouv.fr/igf/accueil/nos-activites-1/rapports-de-mission/revue-des-depenses-publiques-en.html",
+              "url": "https://www.igf.finances.gouv.fr/igf/accueil/nos-activites-1/rapports-de-mission/revue-des-depenses-publiques-en.html"
+            }
+          ]
+        },
+        {
+          "label": "10. Cour des comptes, « Les soutiens publics à l’économie sociale et solidaire 2018-2024 », synthèse du rapport public thématique, septembre 2025. https://www.ccomptes.fr/sites/default/files/2025-09/20250918-synthese-Soutiens-publics-a-economie-sociale-et-solidaire.pdf",
+          "lead": "10. Cour des comptes, « Les soutiens publics à l’économie sociale et solidaire 2018-2024 », synthèse du rapport public thématique, septembre 2025",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/sites/default/files/2025-09/20250918-synthese-Soutiens-publics-a-economie-sociale-et-solidaire.pdf",
+              "url": "https://www.ccomptes.fr/sites/default/files/2025-09/20250918-synthese-Soutiens-publics-a-economie-sociale-et-solidaire.pdf"
+            }
+          ]
+        },
+        {
+          "label": "11. 20 Minutes, Annabelle Rochet et Virginie Schadler, 18 novembre 2026 (Une association peut-elle être privée de subventions lorsqu’elle est « politisée » ?). https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen",
+          "lead": "11. 20 Minutes, Annabelle Rochet et Virginie Schadler, 18 novembre 2026 (Une association peut-elle être privée de subventions lorsqu’elle est « politisée » ?)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen",
+              "url": "https://www.20minutes.fr/economie/4263799-20261118-association-peut-etre-privee-subventions-lorsqu-politisee-comme-souhaite-marine-pen"
+            }
+          ]
+        },
+        {
+          "label": "12. Légifrance, loi n° 2000-321 du 12 avril 2000 relative aux droits des citoyens dans leurs relations avec les administrations, articles 9-1 et 10-1 (texte consolidé, consulté le 19 novembre 2026). https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005629288 https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043970265",
+          "lead": "12. Légifrance, loi n° 2000-321 du 12 avril 2000 relative aux droits des citoyens dans leurs relations avec les administrations, articles 9-1 et 10-1 (texte consolidé, consulté le 19 novembre 2026).",
+          "links": [
+            {
+              "label": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005629288",
+              "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005629288"
+            },
+            {
+              "label": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043970265",
+              "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043970265"
+            }
+          ]
+        },
+        {
+          "label": "13. Conseil d’État, 8 juillet 2020, n° 425926, Commune de Nantes. https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926",
+          "lead": "13. Conseil d’État, 8 juillet 2020, n° 425926, Commune de Nantes",
+          "links": [
+            {
+              "label": "https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926",
+              "url": "https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2020-07-08/425926"
+            }
+          ]
+        },
+        {
+          "label": "14. Conseil constitutionnel, décision n° 71-44 DC du 16 juillet 1971 (liberté d’association). https://www.conseil-constitutionnel.fr/decision/1971/7144DC.htm",
+          "lead": "14. Conseil constitutionnel, décision n° 71-44 DC du 16 juillet 1971 (liberté d’association)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/decision/1971/7144DC.htm",
+              "url": "https://www.conseil-constitutionnel.fr/decision/1971/7144DC.htm"
+            }
+          ]
+        },
+        {
+          "label": "15. Boursorama, dépêche AFP, 19 novembre 2026, 16 h 56 (Remise en cause des subventions aux associations : Marine Le Pen « s’inscrit dans une continuité », entretien avec le sociologue Matthieu Hély). https://www.boursorama.com/actualite-economique/actualites/remise-en-cause-des-subventions-aux-associations-marine-le-pen-s-inscrit-dans-une-continuite-cb1b8a10d3b5e71f9ad37511ccf25157",
+          "lead": "15. Boursorama, dépêche AFP, 19 novembre 2026, 16 h 56 (Remise en cause des subventions aux associations : Marine Le Pen « s’inscrit dans une continuité », entretien avec le sociologue Matthieu Hély)",
+          "links": [
+            {
+              "label": "https://www.boursorama.com/actualite-economique/actualites/remise-en-cause-des-subventions-aux-associations-marine-le-pen-s-inscrit-dans-une-continuite-cb1b8a10d3b5e71f9ad37511ccf25157",
+              "url": "https://www.boursorama.com/actualite-economique/actualites/remise-en-cause-des-subventions-aux-associations-marine-le-pen-s-inscrit-dans-une-continuite-cb1b8a10d3b5e71f9ad37511ccf25157"
+            }
+          ]
+        },
+        {
+          "label": "16. RTL, Justine Audollent, 17 novembre 2026, 15 h (« Ramassis de gauchistes » : pourquoi Marine Le Pen souhaite couper les subventions aux « associations politisées »). https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333",
+          "lead": "16. RTL, Justine Audollent, 17 novembre 2026, 15 h (« Ramassis de gauchistes » : pourquoi Marine Le Pen souhaite couper les subventions aux « associations politisées »)",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333",
+              "url": "https://www.rtl.fr/actu/politique/ramassis-de-gauchistes-pourquoi-marine-le-pen-souhaite-couper-les-subventions-aux-associations-politisees-7900697333"
+            }
+          ]
+        },
+        {
+          "label": "17. Le Figaro, tribune de Marine Le Pen, 18 novembre 2026, 12 h (partie en accès libre). https://www.lefigaro.fr/vox/politique/marine-le-pen-il-est-temps-de-mettre-fin-aux-derives-financieres-et-ethiques-des-associations-politisees-20261118",
+          "lead": "17. Le Figaro, tribune de Marine Le Pen, 18 novembre 2026, 12 h (partie en accès libre)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/vox/politique/marine-le-pen-il-est-temps-de-mettre-fin-aux-derives-financieres-et-ethiques-des-associations-politisees-20261118",
+              "url": "https://www.lefigaro.fr/vox/politique/marine-le-pen-il-est-temps-de-mettre-fin-aux-derives-financieres-et-ethiques-des-associations-politisees-20261118"
+            }
+          ]
+        },
+        {
+          "label": "18. Contrepoints, Élodie Messéant, 20 janvier 2026 (Sarah Knafo : couper les subventions aux associations politisées). https://contrepoints.org/sarah-knafo-couper-les-subventions-aux-associations-politisees-est-une-bonne-chose-mais-il-faut-aller-plus-loin/",
+          "lead": "18. Contrepoints, Élodie Messéant, 20 janvier 2026 (Sarah Knafo : couper les subventions aux associations politisées)",
+          "links": [
+            {
+              "label": "https://contrepoints.org/sarah-knafo-couper-les-subventions-aux-associations-politisees-est-une-bonne-chose-mais-il-faut-aller-plus-loin/",
+              "url": "https://contrepoints.org/sarah-knafo-couper-les-subventions-aux-associations-politisees-est-une-bonne-chose-mais-il-faut-aller-plus-loin/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des propositions et des déclarations de candidats, des chiffres publics (IGF, Cour des comptes, gouvernement) et le droit en vigueur. Elle ne dit pas quelles associations seraient touchées ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/hausse-de-salaire-exoneree-qui-regle-la-note",
+      "label": "Hausse de salaire exonérée : qui règle la note ?"
+    },
+    {
+      "href": "/analyses/1962-la-porte-de-service",
+      "label": "1962, la porte de service"
+    }
+  ]
+}
