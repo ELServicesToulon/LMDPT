@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
 import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
 import jaiCommisUneErreur from '../data/analyses/j-ai-commis-une-erreur-laquelle.json';
 import loiQuiSeVoteABruxelles from '../data/analyses/la-loi-qui-se-vote-a-bruxelles.json';
@@ -59,6 +60,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: quellesAssociations.slug,
+    title: quellesAssociations.title,
+    description: quellesAssociations.description,
+    date: quellesAssociations.date,
+    published: quellesAssociations.date,
+    updated: quellesAssociations.updated,
+    href: '/analyses/3-7-milliards-quelles-associations',
+    cover: uneCover(
+      '3-7-milliards-quelles-associations',
+      'Aquarelle d’un vieux couloir avec une rangée de boîtes aux lettres en bois sans nom, et, sur une console au premier plan, une paire de ciseaux en laiton, une enveloppe fermée et une caisse de légumes et de pain.',
+    ),
+  },
   {
     slug: hausseSalaireExoneree.slug,
     title: hausseSalaireExoneree.title,
