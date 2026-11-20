@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
 import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
 import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
 import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
@@ -61,6 +62,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: toutesLesNiches.slug,
+    title: toutesLesNiches.title,
+    description: toutesLesNiches.description,
+    date: toutesLesNiches.date,
+    published: toutesLesNiches.date,
+    updated: toutesLesNiches.updated,
+    href: '/analyses/toutes-les-niches-meme-la-votre',
+    cover: uneCover(
+      'toutes-les-niches-meme-la-votre',
+      'Aquarelle d’une cour pavée au petit matin : une rangée de niches à chien en bois de tailles différentes, certaines fermées par des cadenas, la plus grande richement ornée, une lanterne allumée et, au premier plan, un trousseau de clés anciennes sur un muret.',
+    ),
+  },
   {
     slug: quellesAssociations.slug,
     title: quellesAssociations.title,

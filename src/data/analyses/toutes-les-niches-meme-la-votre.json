@@ -1,0 +1,452 @@
+{
+  "slug": "toutes-les-niches-meme-la-votre",
+  "title": "Toutes les niches en cinq ans, même la vôtre ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-21",
+  "updated": "2026-11-21",
+  "kicker": "Enquête et analyse · La rédaction · 21 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Vendredi, Dominique de Villepin s’est déclaré candidat avec une promesse qui parle à chaque contribuable : supprimer toutes les niches fiscales et sociales en cinq ans, par paliers d’environ 35 milliards d’euros par an. Crédit d’impôt pour l’emploi à domicile, abattement des retraités, TVA réduite au restaurant : de quoi parle-t-on, qui en profite, que garderait-il, et que disent les autres candidats ?",
+  "description": "Dominique de Villepin, candidat depuis vendredi, veut supprimer toutes les niches fiscales et sociales en cinq ans. Lesquelles pèsent le plus, qui en profite, que garderait-il ?",
+  "disclaimer": "Cette analyse décrit des propositions et des déclarations de candidats, des chiffres publics (Cour des comptes, budget de l’État) et des analyses d’experts. Elle ne dit pas quelles niches seraient supprimées ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "niches-fiscales",
+    "fiscalite",
+    "doe"
+  ],
+  "x_hook": "Vendredi, Dominique de Villepin s’est déclaré candidat avec une promesse qui parle à chaque contribuable : supprimer toutes les niches fiscales et sociales en cinq ans, par paliers d’environ 35 milliards d’euros par an. Crédit d’impôt pour l’emploi à domicile, abattement des retraités, TVA réduite au restaurant : de quoi parle-t-on, qui en profite, que garderait-il, et que disent les autres candidats ?",
+  "hues": [
+    {
+      "slug": "suppression-generale",
+      "label": "Pour la mesure, suppression générale programmée",
+      "color": "#162561",
+      "rationale": "Villepin : extinction de toutes les niches fiscales et sociales en cinq ans, paliers chiffrés, liste détaillée non publiée."
+    },
+    {
+      "slug": "suppressions-ciblees",
+      "label": "Suppressions ciblées, niches nommées",
+      "color": "#8a5a00",
+      "rationale": "Mélenchon, Le Pen : quelques niches désignées par leur nom dans un programme ou un contre-budget."
+    },
+    {
+      "slug": "principe-annonce",
+      "label": "Principe annoncé, liste non trouvée",
+      "color": "#2f6b4f",
+      "rationale": "Philippe, Lisnard : volonté affichée de réduire les dérogations ou les aides, sans liste de niches trouvée."
+    },
+    {
+      "slug": "non-trouve",
+      "label": "Position non trouvée",
+      "color": "#5a6570",
+      "rationale": "Retailleau, Attal, Glucksmann, Zemmour, Tondelier, Roussel : rien de daté trouvé sur cette question."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "Ce qu’il a annoncé vendredi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "« Je suis candidat à l’élection présidentielle », a déclaré Dominique de Villepin vendredi 20 novembre, lors d’une conférence de presse à la Maison de l’Amérique latine, à Paris ([franceinfo](https://www.franceinfo.fr/elections/direct-presidentielle-dominique-de-villepin-en-route-vers-une-candidature-a-la-presidentielle-suivez-la-prise-de-parole-de-l-ancien-premier-ministre_8291558.html)). L’ancien Premier ministre de Jacques Chirac, président du mouvement La France humaniste, est le 39e à se lancer dans la course à l’Élysée, selon le décompte de franceinfo ([franceinfo](https://www.franceinfo.fr/elections/direct-presidentielle-dominique-de-villepin-en-route-vers-une-candidature-a-la-presidentielle-suivez-la-prise-de-parole-de-l-ancien-premier-ministre_8291558.html))."
+        },
+        {
+          "type": "p",
+          "text": "Avec sa candidature, il a publié son programme : 258 propositions pour « réussir à nouveau » ([LCP](https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de)). Sa première mesure, dit-il, serait de « mettre de l’ordre dans les comptes publics », avec un déficit ramené sous 3 % du PIB en 2031 ([LCP](https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de)). « Les caisses sont vides, les marges de manœuvre sont nulles », a-t-il lancé, en promettant d’« ouvrir les boîtes noires des niches fiscales » ([LCP](https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de))."
+        },
+        {
+          "type": "p",
+          "text": "Le cœur de son plan fiscal tient dans la proposition 47. Elle prévoit d’« éteindre l’ensemble des privilèges fiscaux » et des niches sociales et fiscales, « par paliers et sur cinq ans », par une loi baptisée « Nuit du Quatre Août » ([La France humaniste](https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html)). Le clin d’œil vise la nuit de 1789 où l’Assemblée constituante avait aboli les privilèges ([LCP](https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un))."
+        },
+        {
+          "type": "p",
+          "text": "Les montants sont écrits. Chaque palier pèse « de l’ordre de 35 milliards d’euros par an », partagé en trois tiers : compenser les effets de la fin des niches, financer des politiques publiques « plus effectives », combler le déficit ([La France humaniste](https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html)). Fin août, dans une chronique, le candidat estimait l’ensemble des niches fiscales et sociales à « de l’ordre de 175 milliards par an » ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html)). Notre calcul : cinq paliers de 35 milliards font bien 175 milliards. Sur le papier, tout serait fermé au bout du quinquennat."
+        },
+        {
+          "type": "p",
+          "text": "Il veut aussi passer de « plus de 400 taxes à seulement neuf impôts » ([La France humaniste](https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html)). Et il veut verrouiller le système dans la Constitution, avec une majorité des trois cinquièmes pour créer un impôt ou une niche ([La France humaniste](https://lafrancehumaniste.fr/programme/economie.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "niches",
+      "title": "Une niche, c’est quoi, et combien ça pèse ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Une niche fiscale, que Bercy appelle « dépense fiscale », est un avantage qui s’écarte de la règle commune. L’économiste François Ecalle, sur son site Fipeco, range parmi les niches les dispositions « dérogatoires » qui « entraînent des pertes de recettes fiscales » ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). Concrètement : une exonération, un abattement, un taux réduit, une réduction ou un crédit d’impôt ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). Pour l’État, c’est de l’argent qui ne rentre pas, d’où le mot « dépense »."
+        },
+        {
+          "type": "p",
+          "text": "Combien y en a-t-il ? Tout dépend de qui compte. La liste annexée au budget 2027 en recense 459 ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). La Cour des comptes en comptait 474 en 2025 ([Cour des comptes](https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales)). Leur coût a presque doublé en vingt ans, de 54,6 milliards d’euros en 2005 à 105,6 milliards en 2025, et elles représentent « plus du quart des recettes fiscales de l’État », selon la Cour ([Cour des comptes](https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales))."
+        },
+        {
+          "type": "p",
+          "text": "Ces montants restent des estimations. Bercy, qui calcule autrement les niches de TVA, arrive à 91,7 milliards pour 2025 ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). Et sur les 403 niches chiffrées dans le budget 2027, 83 ne le sont qu’en « ordre de grandeur » ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Les 175 milliards du candidat ajoutent aux niches fiscales les niches sociales, c’est-à-dire les exonérations et allègements de cotisations. Faisons la soustraction : 175 moins 105,6, il reste un peu moins de 70 milliards pour ces niches sociales. Ce calcul est le nôtre : le candidat n’a pas publié la répartition, et les deux chiffres ne viennent pas de la même source. C’est l’ordre de grandeur des seuls allègements généraux de cotisations patronales, environ 75 milliards d’euros par an selon Olivier Henno, rapporteur général de la commission des affaires sociales du Sénat, cité par Compta Report ([Compta Report](https://www.compta-report.com/social/cotisations/plfss-2027-senat-article-7-allegements-generaux-report-1er-avril/))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "qui",
+      "title": "Qui en profite ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La liste mêle des avantages très différents. Les plus coûteux en 2025, selon Fipeco : le crédit d’impôt recherche des entreprises (7,3 milliards d’euros), le crédit d’impôt pour l’emploi d’un salarié à domicile (7,1 milliards), l’abattement de 10 % sur les pensions de retraite (5,3 milliards), la TVA réduite pour la restauration sur place (4,8 milliards) et pour les travaux d’entretien du logement (4,7 milliards), puis le pacte Dutreil, qui allège les droits sur la transmission d’entreprises (3,8 milliards) ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). Une vingtaine dépassent le milliard ; une centaine coûtent moins de 10 millions ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Derrière chaque ligne, il y a des ménages ou des entreprises. Le crédit d’impôt pour l’emploi à domicile concerne 4,9 millions de ménages, et les 10 % les plus aisés en captent 44 %, selon les chiffres de la Cour des comptes repris par le cabinet Deloitte ([Deloitte](https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/)). Pour la TVA réduite au restaurant, la Cour estime que la baisse de 2009 a profité à 56 % aux restaurateurs et à 10 % seulement aux consommateurs ([Deloitte](https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/))."
+        },
+        {
+          "type": "p",
+          "text": "Le candidat a prévu la question. « Je sais que chacun se demandera : et moi ? », écrivait-il fin août ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html)). Pour lui, les « nouveaux privilégiés » ne sont pas ceux au nom de qui les niches ont été créées, comme l’outre-mer, les personnes handicapées ou « les restaurateurs qui travaillent dur », mais « ceux qui tirent parti de ce système pour des stratégies purement patrimoniales » ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html)). Il promet : « Personne ne sera abandonné à son sort » ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "toutes",
+      "title": "Toutes, vraiment ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "« Toutes » admet déjà des exceptions. Dans la même chronique, il écrit : « Le taux réduit de TVA sur les produits essentiels reste important à mes yeux, ainsi que le quotient familial » ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html)). Le quotient familial, qui module l’impôt sur le revenu selon la taille du foyer, est un cas limite : seules les demi-parts supplémentaires figurent dans la liste des niches, pas les demi-parts « normales » ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf))."
+        },
+        {
+          "type": "p",
+          "text": "Le programme garde aussi, ou crée, des avantages ciblés. Il prévoit un crédit d’impôt recherche « réservé à la France » ([La France humaniste](https://lafrancehumaniste.fr/programme/economie.html)). Il propose de transmettre son entreprise de son vivant « sans droits de succession » tant qu’il n’y a pas de revente ([La France humaniste](https://lafrancehumaniste.fr/programme/economie.html)). Il invente un « chèque fiscal associatif » de trente euros par contribuable, financé par le redéploiement des niches ([La France humaniste](https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-17.html)). Dans un code à neuf impôts, ces règles deviendraient peut-être la norme plutôt que des exceptions. Le texte de loi le dira, quand il existera. En attendant, la nuit du 4 août garde quelques veilleuses allumées."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "chiffrage",
+      "title": "Ce que disent les chiffreurs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Reste le rendement. Une niche supprimée ne rapporte pas forcément ce qu’elle coûtait. Fipeco rappelle que le coût d’une niche « est toujours chiffré en supposant que » le comportement des contribuables « ne change pas » ([Fipeco](https://fipeco.fr/pdf/Niches2026.pdf)). Si un ménage renonce à son aide à domicile, ou si une entreprise déplace sa recherche, la recette attendue baisse aussi."
+        },
+        {
+          "type": "p",
+          "text": "Le magazine Capital relève que le candidat « ne présente pas encore de chiffrage consolidé » qui mettrait ces recettes en face de ses dépenses ([Capital](https://www.capital.fr/economie-politique/dominique-de-villepin-candidat-isf-dividendes-deficit-son-programme-economique-1532026)). Or le programme promet beaucoup : plus de 200 milliards d’euros de cotisations basculés vers une CSG universelle, 500 000 logements par an, l’abolition des impôts de production ([La France humaniste](https://lafrancehumaniste.fr/programme/economie.html))."
+        },
+        {
+          "type": "p",
+          "text": "La Cour des comptes défend une autre méthode : plafonner le coût des niches, limiter leur durée et ne les reconduire qu’après évaluation ([Cour des comptes](https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales)). Dans un rapport sur le redressement des comptes, elle chiffre des coups de rabot précis, comme une hausse du taux intermédiaire de TVA (4,3 à 4,6 milliards d’euros) ou un crédit d’impôt services à la personne moins généreux (1,1 milliard) ([Deloitte](https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/)). D’un côté le tri au cas par cas, de l’autre l’extinction générale."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il supprimer les niches fiscales, et lesquelles ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : supprimer ou non les niches fiscales et sociales, et lesquelles. Les lectures décrivent ce que nous avons trouvé (rythme, montant, liste) ; ce n’est ni un soutien à un candidat, ni un jugement sur le fond. « Position non trouvée » signifie que nous n’avons rien trouvé de daté, pas qu’il n’existe aucune position.",
+      "table": {
+        "caption": "Supprimer les niches fiscales ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Villepin / La France humaniste",
+            "Pour la mesure, suppression générale programmée",
+            "Pour : extinction de toutes les niches fiscales et sociales en cinq ans, par paliers « de l’ordre de 35 milliards d’euros par an » ; exceptions annoncées pour la TVA réduite sur les produits essentiels et le quotient familial (28 août et 20 novembre).",
+            "[1][3]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Suppressions ciblées, niches nommées",
+            "Rabot de plusieurs niches, dont le crédit d’impôt recherche et le pacte Dutreil, dans le programme présenté au Bourget (7 novembre).",
+            "[14]"
+          ],
+          [
+            "Le Pen / RN",
+            "Suppressions ciblées, niches nommées",
+            "Contre-budget 2026 : suppression de la niche des journalistes et des conseillers régionaux (0,1 milliard d’euros) ; plusieurs niches expressément préservées, dont celles des frais de scolarité et des indemnités journalières ALD (23 octobre 2025).",
+            "[15]"
+          ],
+          [
+            "Philippe / Horizons",
+            "Principe annoncé, liste non trouvée",
+            "Supprimer des niches fiscales avant toute hausse d’impôt sur les actifs (5 juillet, selon Investir Mag) ; sur le crédit d’impôt pour l’emploi à domicile : « Je n’envisage pas de toucher à ce crédit d’impôt » (3 novembre).",
+            "[13][12]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Principe annoncé, liste non trouvée",
+            "Dénonce une « foison de dérogations » et veut « des bases plus larges, des taux plus bas » (16 avril) ; veut « supprimer les aides aux entreprises » en baissant leurs prélèvements (17 novembre).",
+            "[16][17]"
+          ],
+          [
+            "Retailleau / LR",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ],
+          [
+            "Attal / Renaissance",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ],
+          [
+            "Roussel / PCF",
+            "Position non trouvée",
+            "Aucune position datée trouvée sur la suppression des niches fiscales dans les sources lues au 20 novembre.",
+            ""
+          ]
+        ]
+      },
+      "note": "Badge des courants, lu au regard de la thèse (supprimer des niches se juge sur la liste écrite : lesquelles, à quel rythme, avec quelle compensation) : Pour la mesure, suppression générale programmée (Villepin). Suppressions ciblées, niches nommées (Mélenchon, Le Pen). Principe annoncé, liste non trouvée (Philippe, Lisnard). Position non trouvée : Retailleau, Attal, Glucksmann, Zemmour, Tondelier, Roussel, ce qui ne signifie pas absence de position."
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le programme de Dominique de Villepin a un mérite rare : il affiche un rythme et un montant. Il lui reste à écrire la liste : au 20 novembre, nous n’avons pas trouvé dans le programme publié de calendrier niche par niche. Trois questions pour la suite. Quelles niches tombent la première année, et lesquelles la dernière ? Qui compense, et combien, pour les retraités, les parents qui emploient une aide à domicile, les restaurateurs ou l’outre-mer ? Et que pèsent les exceptions déjà annoncées, de la TVA réduite au crédit d’impôt recherche ?"
+        },
+        {
+          "type": "p",
+          "text": "Dans chaque niche, écrivait-il en août, est tapi un « chien qui mord » ([La France humaniste](https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html)). Avec 459 niches sur la liste de Bercy, la nuit du 4 août risque de durer cinq ans."
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. La France humaniste, programme « Réussir à nouveau », chapitre 5 « Au nom de la règle commune », propositions 47 et 48, publié le 20 novembre 2026. https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html",
+          "lead": "1. La France humaniste, programme « Réussir à nouveau », chapitre 5 « Au nom de la règle commune », propositions 47 et 48, publié le 20 novembre 2026",
+          "links": [
+            {
+              "label": "https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html",
+              "url": "https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-5.html"
+            }
+          ]
+        },
+        {
+          "label": "2. La France humaniste, « Projet économique : 20 propositions », consulté le 20 novembre 2026. https://lafrancehumaniste.fr/programme/economie.html",
+          "lead": "2. La France humaniste, « Projet économique : 20 propositions », consulté le 20 novembre 2026",
+          "links": [
+            {
+              "label": "https://lafrancehumaniste.fr/programme/economie.html",
+              "url": "https://lafrancehumaniste.fr/programme/economie.html"
+            }
+          ]
+        },
+        {
+          "label": "3. La France humaniste, Dominique de Villepin, chronique « Big Bang : la règle républicaine », 28 août 2026. https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html",
+          "lead": "3. La France humaniste, Dominique de Villepin, chronique « Big Bang : la règle républicaine », 28 août 2026",
+          "links": [
+            {
+              "label": "https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html",
+              "url": "https://lafrancehumaniste.fr/articles/big-bang-la-regle-republicaine.html"
+            }
+          ]
+        },
+        {
+          "label": "4. franceinfo, Alice Galopin et Tom Hollmann, direct du 20 novembre 2026, mis à jour à 19 h 21 (Présidentielle 2027 : « Nous avons évidemment des choses en commun », déclare Édouard Philippe après la candidature de Dominique de Villepin). https://www.franceinfo.fr/elections/direct-presidentielle-dominique-de-villepin-en-route-vers-une-candidature-a-la-presidentielle-suivez-la-prise-de-parole-de-l-ancien-premier-ministre_8291558.html",
+          "lead": "4. franceinfo, Alice Galopin et Tom Hollmann, direct du 20 novembre 2026, mis à jour à 19 h 21 (Présidentielle 2027 : « Nous avons évidemment des choses en commun », déclare Édouard Philippe après la candidature de Dominique de Villepin)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/direct-presidentielle-dominique-de-villepin-en-route-vers-une-candidature-a-la-presidentielle-suivez-la-prise-de-parole-de-l-ancien-premier-ministre_8291558.html",
+              "url": "https://www.franceinfo.fr/elections/direct-presidentielle-dominique-de-villepin-en-route-vers-une-candidature-a-la-presidentielle-suivez-la-prise-de-parole-de-l-ancien-premier-ministre_8291558.html"
+            }
+          ]
+        },
+        {
+          "label": "5. LCP, Anne-Charlotte Dusseaulx, 20 novembre 2026, 18 h 24 (Présidentielle 2027 : que retenir des 258 propositions du programme de Dominique de Villepin ?). https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+          "lead": "5. LCP, Anne-Charlotte Dusseaulx, 20 novembre 2026, 18 h 24 (Présidentielle 2027 : que retenir des 258 propositions du programme de Dominique de Villepin ?)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+              "url": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de"
+            }
+          ]
+        },
+        {
+          "label": "6. Capital, Hugo Babay, 20 novembre 2026, 15 h 36 (Dominique de Villepin candidat : ISF, dividendes, déficit, son programme économique). https://www.capital.fr/economie-politique/dominique-de-villepin-candidat-isf-dividendes-deficit-son-programme-economique-1532026",
+          "lead": "6. Capital, Hugo Babay, 20 novembre 2026, 15 h 36 (Dominique de Villepin candidat : ISF, dividendes, déficit, son programme économique)",
+          "links": [
+            {
+              "label": "https://www.capital.fr/economie-politique/dominique-de-villepin-candidat-isf-dividendes-deficit-son-programme-economique-1532026",
+              "url": "https://www.capital.fr/economie-politique/dominique-de-villepin-candidat-isf-dividendes-deficit-son-programme-economique-1532026"
+            }
+          ]
+        },
+        {
+          "label": "7. LCP, avec AFP, 28 août 2026 (Présidentielle 2027 : Dominique Villepin veut une « nouvelle abolition des privilèges » et un « big bang » fiscal). https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un",
+          "lead": "7. LCP, avec AFP, 28 août 2026 (Présidentielle 2027 : Dominique Villepin veut une « nouvelle abolition des privilèges » et un « big bang » fiscal)",
+          "links": [
+            {
+              "label": "https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un",
+              "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un"
+            }
+          ]
+        },
+        {
+          "label": "8. Cour des comptes, note thématique « Les dépenses fiscales : maîtriser leur nombre et leur coût », 9 novembre 2026 (page de présentation). https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales",
+          "lead": "8. Cour des comptes, note thématique « Les dépenses fiscales : maîtriser leur nombre et leur coût », 9 novembre 2026 (page de présentation)",
+          "links": [
+            {
+              "label": "https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales",
+              "url": "https://www.ccomptes.fr/fr/publications/note-thematique-les-depenses-fiscales"
+            }
+          ]
+        },
+        {
+          "label": "9. Fipeco, François Ecalle, « Les dépenses fiscales de 2017 à 2025 », 29 octobre 2026. https://fipeco.fr/pdf/Niches2026.pdf",
+          "lead": "9. Fipeco, François Ecalle, « Les dépenses fiscales de 2017 à 2025 », 29 octobre 2026",
+          "links": [
+            {
+              "label": "https://fipeco.fr/pdf/Niches2026.pdf",
+              "url": "https://fipeco.fr/pdf/Niches2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "10. Deloitte Société d’Avocats, blog, Julien Pellefigue, 18 novembre 2026 (Niches fiscales : les propositions de la Cour des comptes). https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/",
+          "lead": "10. Deloitte Société d’Avocats, blog, Julien Pellefigue, 18 novembre 2026 (Niches fiscales : les propositions de la Cour des comptes)",
+          "links": [
+            {
+              "label": "https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/",
+              "url": "https://blog.avocats.deloitte.fr/niches-fiscales-propositions-cour-des-comptes-2027/"
+            }
+          ]
+        },
+        {
+          "label": "11. La France humaniste, programme « Réussir à nouveau », chapitre 17 « La république fraternelle », proposition 168, publié le 20 novembre 2026. https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-17.html",
+          "lead": "11. La France humaniste, programme « Réussir à nouveau », chapitre 17 « La république fraternelle », proposition 168, publié le 20 novembre 2026",
+          "links": [
+            {
+              "label": "https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-17.html",
+              "url": "https://lafrancehumaniste.fr/programme/reussir-a-nouveau/chapitre-17.html"
+            }
+          ]
+        },
+        {
+          "label": "12. Fédération des entreprises de services à la personne (FESP), 5 novembre 2026 (Édouard Philippe à la FESP : « Je n’envisage pas de toucher au crédit d’impôt »). https://www.fesp.fr/edouard-philippe-a-la-fesp-je-nenvisage-pas-de-toucher-au-credit-dimpot/",
+          "lead": "12. Fédération des entreprises de services à la personne (FESP), 5 novembre 2026 (Édouard Philippe à la FESP : « Je n’envisage pas de toucher au crédit d’impôt »)",
+          "links": [
+            {
+              "label": "https://www.fesp.fr/edouard-philippe-a-la-fesp-je-nenvisage-pas-de-toucher-au-credit-dimpot/",
+              "url": "https://www.fesp.fr/edouard-philippe-a-la-fesp-je-nenvisage-pas-de-toucher-au-credit-dimpot/"
+            }
+          ]
+        },
+        {
+          "label": "13. Investir Mag, Camille Durand, 5 juillet 2026 (Présidentielle 2027 : les propositions économiques d’Édouard Philippe). https://www.investirmag.fr/presidentielle-2027-les-propositions-economiques-dedouard-philippe/",
+          "lead": "13. Investir Mag, Camille Durand, 5 juillet 2026 (Présidentielle 2027 : les propositions économiques d’Édouard Philippe)",
+          "links": [
+            {
+              "label": "https://www.investirmag.fr/presidentielle-2027-les-propositions-economiques-dedouard-philippe/",
+              "url": "https://www.investirmag.fr/presidentielle-2027-les-propositions-economiques-dedouard-philippe/"
+            }
+          ]
+        },
+        {
+          "label": "14. Challenges, 7 novembre 2026, modifié à 18 h (« Un choc fiscal sans précédent » : dans son programme présenté au Bourget, LFI fait le pari risqué de lever 106 milliards sans détériorer l’activité). https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895",
+          "lead": "14. Challenges, 7 novembre 2026, modifié à 18 h (« Un choc fiscal sans précédent » : dans son programme présenté au Bourget, LFI fait le pari risqué de lever 106 milliards sans détériorer l’activité)",
+          "links": [
+            {
+              "label": "https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895",
+              "url": "https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895"
+            }
+          ]
+        },
+        {
+          "label": "15. Rassemblement national, contre-budget 2026, conférence de presse du 23 octobre 2025 (PDF). https://www.rassemblementnational.fr/documents/GRN-CONTRE-BUDGET-2026.pdf",
+          "lead": "15. Rassemblement national, contre-budget 2026, conférence de presse du 23 octobre 2025 (PDF)",
+          "links": [
+            {
+              "label": "https://www.rassemblementnational.fr/documents/GRN-CONTRE-BUDGET-2026.pdf",
+              "url": "https://www.rassemblementnational.fr/documents/GRN-CONTRE-BUDGET-2026.pdf"
+            }
+          ]
+        },
+        {
+          "label": "16. Nouvelle Énergie, tribune de David Lisnard parue sur Atlantico, 16 avril 2026 (Changer de logiciel fiscal). https://www.unenouvelleenergie.fr/changer-de-logiciel-fiscal/",
+          "lead": "16. Nouvelle Énergie, tribune de David Lisnard parue sur Atlantico, 16 avril 2026 (Changer de logiciel fiscal)",
+          "links": [
+            {
+              "label": "https://www.unenouvelleenergie.fr/changer-de-logiciel-fiscal/",
+              "url": "https://www.unenouvelleenergie.fr/changer-de-logiciel-fiscal/"
+            }
+          ]
+        },
+        {
+          "label": "17. Le Parisien, Louis Valleau, 17 novembre 2026, 17 h 15 (Présidentielle 2027 : David Lisnard veut « supprimer les aides aux entreprises » et baisser leurs « prélèvements »). https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-david-lisnard-veut-supprimer-les-aides-aux-entreprises-et-baisser-leurs-prelevements-17-11-2026-P5WP465OWZFOPIQYRNVTZZOBPQ.php",
+          "lead": "17. Le Parisien, Louis Valleau, 17 novembre 2026, 17 h 15 (Présidentielle 2027 : David Lisnard veut « supprimer les aides aux entreprises » et baisser leurs « prélèvements »)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-david-lisnard-veut-supprimer-les-aides-aux-entreprises-et-baisser-leurs-prelevements-17-11-2026-P5WP465OWZFOPIQYRNVTZZOBPQ.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-david-lisnard-veut-supprimer-les-aides-aux-entreprises-et-baisser-leurs-prelevements-17-11-2026-P5WP465OWZFOPIQYRNVTZZOBPQ.php"
+            }
+          ]
+        },
+        {
+          "label": "18. Compta Report, 18 novembre 2026 (Allègements généraux : article 7 reporté au 1er avril). https://www.compta-report.com/social/cotisations/plfss-2027-senat-article-7-allegements-generaux-report-1er-avril/",
+          "lead": "18. Compta Report, 18 novembre 2026 (Allègements généraux : article 7 reporté au 1er avril)",
+          "links": [
+            {
+              "label": "https://www.compta-report.com/social/cotisations/plfss-2027-senat-article-7-allegements-generaux-report-1er-avril/",
+              "url": "https://www.compta-report.com/social/cotisations/plfss-2027-senat-article-7-allegements-generaux-report-1er-avril/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des propositions et des déclarations de candidats, des chiffres publics (Cour des comptes, budget de l’État) et des analyses d’experts. Elle ne dit pas quelles niches seraient supprimées ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/10-ou-35-milliards-qui-compte-juste",
+      "label": "10 ou 35 milliards : qui compte juste ?"
+    },
+    {
+      "href": "/analyses/hausse-de-salaire-exoneree-qui-regle-la-note",
+      "label": "Hausse de salaire exonérée : qui règle la note ?"
+    }
+  ]
+}
