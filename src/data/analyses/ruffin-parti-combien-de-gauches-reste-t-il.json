@@ -29,10 +29,16 @@
       "rationale": "Mélenchon, Glucksmann, Roussel, Arthaud : candidats déclarés qui restent en course ; position d’Arthaud sur l’union non trouvée."
     },
     {
-      "slug": "ralliement-propose",
-      "label": "Ralliement proposé, vote à venir",
+      "slug": "tondelier-ralliement-propose",
+      "label": "Tondelier · Candidate, ralliement proposé, vote à venir",
       "color": "#2f6b4f",
-      "rationale": "Tondelier (Les Écologistes) et Autain (L’Après) : ralliement à Mélenchon proposé, décision des adhérents ou militants en décembre."
+      "rationale": "Tondelier (Les Écologistes) : toujours candidate à ce stade ; ralliement à Mélenchon proposé, vote des adhérents du 10 au 13 décembre."
+    },
+    {
+      "slug": "autain-ralliement-defendu",
+      "label": "Autain · Pas candidate, ralliement défendu, vote à venir",
+      "color": "#3d7a62",
+      "rationale": "Autain (L’Après) : pas candidate ; ralliement à Mélenchon défendu, vote des militants clos le 15 décembre."
     },
     {
       "slug": "retrait",
@@ -90,7 +96,7 @@
         },
         {
           "type": "p",
-          "text": "Samedi, Ruffin s’en va. L’AFP y voit un « mouvement de clarification à gauche autour des candidatures de Jean-Luc Mélenchon et Raphaël Glucksmann » ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche)). Côté insoumis, aucune réaction à son retrait, note l’agence samedi soir ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche)) ; même constat dimanche matin ([20 Minutes](https://www.20minutes.fr/politique/4264738-20261122-presidentielle-2027-apres-retrait-ruffin-courtise-roussel-glucksmann-vers-elysee)). Dimanche soir, nous n’en avons pas trouvé non plus. Les deux hommes ont rompu en 2024, rappelle l’AFP ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche))."
+          "text": "Samedi, Ruffin s’en va. L’AFP y voit un « mouvement de clarification à gauche autour des candidatures de Jean-Luc Mélenchon et Raphaël Glucksmann » ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche)). Côté insoumis, aucune réaction à son retrait, note l’agence samedi soir ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche)) ; même constat dimanche matin ([20 Minutes](https://www.20minutes.fr/politique/4264738-20261122-presidentielle-2027-apres-retrait-ruffin-courtise-roussel-glucksmann-vers-elysee)). Dimanche 22 novembre au soir, nous n’en avions pas trouvé non plus. Les deux hommes ont rompu en 2024, rappelle l’AFP ([France 24](https://www.france24.com/fr/info-en-continu/20261121-pr%C3%A9sidentielle-ruffin-renonce-le-paysage-se-clarifie-%C3%A0-gauche))."
         }
       ]
     },
@@ -176,13 +182,13 @@
           ],
           [
             "Tondelier / Les Écologistes",
-            "Ralliement proposé, vote à venir",
+            "Candidate, ralliement proposé, vote à venir",
             "« Prête » à « travailler à une coalition autour de la candidature de Jean-Luc Mélenchon », sous condition d’accords (18 novembre) ; vote des adhérents du 10 au 13 décembre ; se dit toujours candidate à ce stade (19 novembre).",
             "[4][6][11]"
           ],
           [
             "Autain / L’Après",
-            "Ralliement proposé, vote à venir",
+            "Pas candidate, ralliement défendu, vote à venir",
             "Pas candidate. « Je défends l’appel au vote pour la candidature de Jean-Luc Mélenchon » (19 novembre) ; L’Après tranche les 12 et 13 décembre, vote des militants clos le 15.",
             "[10]"
           ],
@@ -200,7 +206,7 @@
           ]
         ]
       },
-      "note": "Badge des courants, lu au regard de la thèse (la gauche se resserre autour de deux candidatures, mais les choix décisifs restent entre les mains des adhérents) : Candidature maintenue (Mélenchon, Glucksmann, Roussel, Arthaud ; position d’Arthaud sur l’union non trouvée). Ralliement proposé, vote à venir (Tondelier pour Les Écologistes, Autain pour L’Après, tous deux vers Mélenchon). Retrait, sans soutien (Ruffin). Décision repoussée (Hollande, non candidat)."
+      "note": "Badge des courants, lu au regard de la thèse (la gauche se resserre autour de deux candidatures, mais les choix décisifs restent entre les mains des adhérents) : Candidature maintenue (Mélenchon, Glucksmann, Roussel, Arthaud ; position d’Arthaud sur l’union non trouvée). Tondelier · Candidate, ralliement proposé, vote à venir (Les Écologistes, vers Mélenchon). Autain · Pas candidate, ralliement défendu, vote à venir (L’Après, vers Mélenchon). Retrait, sans soutien (Ruffin). Décision repoussée (Hollande, non candidat)."
     },
     {
       "kind": "prose",

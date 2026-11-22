@@ -142,7 +142,21 @@ describe('analyses', () => {
     expect(ruffinParti.author).toBe('La rédaction');
     expect(ruffinParti.tags).toContain('doe');
     expect(ruffinParti.description.length).toBeLessThanOrEqual(200);
-    expect(ruffinParti.hues).toHaveLength(4);
+    expect(ruffinParti.hues).toHaveLength(5);
+    expect(ruffinParti.hues.map((hue) => hue.slug)).toEqual([
+      'candidature-maintenue',
+      'tondelier-ralliement-propose',
+      'autain-ralliement-defendu',
+      'retrait',
+      'decision-repoussee',
+    ]);
+    expect(ruffinParti.hues.map((hue) => hue.label)).toEqual([
+      'Candidature maintenue',
+      'Tondelier · Candidate, ralliement proposé, vote à venir',
+      'Autain · Pas candidate, ralliement défendu, vote à venir',
+      'Retrait, sans soutien',
+      'Décision repoussée',
+    ]);
     expect(ruffinParti.sources_groups[0]?.items).toHaveLength(20);
     const doe = ruffinParti.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
