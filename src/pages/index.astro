@@ -10,20 +10,27 @@ import { formatXHandle, xForAffiliation, xForCandidate } from '../lib/x-officiel
 import DualAssembleeCompare from '../components/DualAssembleeCompare.astro';
 import DailyVisuals from '../components/DailyVisuals.astro';
 import ApercuCampagne from '../components/ApercuCampagne.astro';
-import UnesCarousel from '../components/UnesCarousel.astro';
+import UneDuJour from '../components/UneDuJour.astro';
 import EditorialCard from '../components/EditorialCard.astro';
 import SheetTabs from '../components/SheetTabs.astro';
 import { buildScrutinDual } from '../lib/scrutin-dual';
 import { pickDailyVisuals, type VisualDailyPool } from '../lib/visual-daily';
 import { DOE_FR } from '../lib/doe';
 import { HOME_META_DESCRIPTION, SONDAGES_LIGNE } from '../lib/sondages-ligne';
-import { listEditorialPosts } from '../lib/editorial';
+import { listEditorialPosts, getUneDuJour, getDernieresUnes } from '../lib/editorial';
 import visualDailyPool from '../../public/illustrations/2027/visual-daily-pool.json';
 
 const feed = renifleur as RenifleurSnapshot;
 const dailyVisual = pickDailyVisuals(visualDailyPool as VisualDailyPool);
 const dailySet = dailyVisual.set;
 const editorialByHref = new Map(listEditorialPosts().map((p) => [p.href, p]));
+const uneDuJour = getUneDuJour();
+const dernieresAnalyses = getDernieresUnes(
+  8,
+  listEditorialPosts().filter((p) => p.kind === 'analyse'),
+)
+  .filter((p) => p.slug !== uneDuJour?.slug)
+  .slice(0, 3);
 
 /** Fil directeur — exemple phare (présidentielle 2022 T1 vs T2) */
 const dualHome = buildScrutinDual('2022-presidentielle');
@@ -75,24 +82,36 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   keywords="premier tour, présidentielle 2027, LMDPT, données ouvertes électorales, pluralité, démocratie avant élimination, atlas électoral, alerte citoyenne, programmes candidats"
 >
   <DailyVisuals initialDayKey={dailyVisual.dayKey} initialIndex={dailyVisual.index} applyOverride={false} />
-  <ApercuCampagne />
   <!--
-    Hero = une du dernier texte publié (croquis unique), pas le bloc texte-seul
-    ni la galerie #visuels-2027 sous la ligne de flottaison.
+    Premier écran : H1, puis la une du jour (vignette chargée en eager,
+    hors carrousel — le défilement horizontal / lazy-load laissait un cadre vide).
+    Ensuite les trois dernières analyses, puis les widgets (sondages, dossier 2027).
   -->
-  <div id="top">
-    <UnesCarousel count={5} />
-  </div>
-  <section class="home-intro home-intro--after-une" aria-labelledby="home-title">
+  <section class="home-intro" aria-labelledby="home-title">
     <h1 class="home-title" id="home-title">
       La France telle qu’elle vote — pas telle qu’on l’élimine
     </h1>
+  </section>
+  <div id="top">
+    {
+      uneDuJour && (
+        <UneDuJour
+          variant="hero"
+          post={uneDuJour}
+          headingId="une-du-jour-title"
+          eager
+          kicker="À la une"
+        />
+      )
+    }
+  </div>
+  <div class="home-follow">
     <p class="home-lead">
       Faits officiels du 1er tour. <strong>{DOE_FR}</strong> — zéro classement éliminatoire.
       {SONDAGES_LIGNE}
     </p>
     <div class="cta-row" role="group" aria-label="Parcours site">
-      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour/"
+      <a class="btn btn-secondary" href="/analyses/assemblee-premier-tour/#an1t-sim-title"
         >Assemblée du 1er tour →</a
       >
       <a class="btn btn-secondary" href="/atlas/">Atlas des scrutins</a>
@@ -101,7 +120,22 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       1er tour 2027&nbsp;: <strong>18 avril</strong> · 2e tour&nbsp;: <strong>2 mai</strong> ·
       data.gouv / Ministère de l’Intérieur
     </p>
-  </section>
+  </div>
+  {
+    dernieresAnalyses.length > 0 && (
+      <section class="content-section" id="dernieres-analyses" aria-labelledby="dernieres-analyses-title">
+        <h2 class="section-title" id="dernieres-analyses-title">Dernières analyses</h2>
+        <ul class="card-grid">
+          {dernieresAnalyses.map((post) => (
+            <li>
+              <EditorialCard post={post} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+  <ApercuCampagne />
 
   <!-- Manifeste court — renforce le 5 s test -->
   <section class="why-media" id="pourquoi-ce-media" aria-labelledby="why-media-title">
@@ -114,7 +148,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       Faits officiels · Sans classement éliminatoire · Vote <strong>pour</strong>, pas contre.
     </p>
     <nav class="pilier-shortcuts" aria-label="Raccourcis piliers">
-      <a href="/analyses/assemblee-premier-tour/">Simuler l’AN1T</a>
+      <a href="/analyses/assemblee-premier-tour/#an1t-sim-title">Simuler l’AN1T</a>
       <span aria-hidden="true">·</span>
       <a href="/liberte-d-expression/">Liberté d’expression</a>
       <span aria-hidden="true">·</span>
@@ -138,7 +172,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
       l’Assemblée réelle des <strong>législatives qui ont suivi</strong>. Tableau Δ sièges.
     </p>
     <p class="meta">
-      <a href="/analyses/assemblee-premier-tour/">Ouvrir le simulateur AN1T →</a>
+      <a href="/analyses/assemblee-premier-tour/#an1t-sim-title">Ouvrir le simulateur AN1T →</a>
       {' · '}
       <a href="/atlas/">Tous les scrutins</a>
       {' · '}
@@ -183,7 +217,7 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     </p>
     <ul class="liberte-home-links">
       <li>
-        <a href="/analyses/assemblee-premier-tour/">Pluralité — simuler l’AN1T →</a>
+        <a href="/analyses/assemblee-premier-tour/#an1t-sim-title">Pluralité — simuler l’AN1T →</a>
       </li>
       <li>
         <a href="/analyses/alerte-citoyenne/">Liberté d’expression — alerte citoyenne →</a>
@@ -590,12 +624,12 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
   ===================================================== */
 
   .home-intro {
-    margin: 0 0 2rem;
-    padding: 0.75rem 0 1.75rem;
-    border-bottom: 1px solid var(--border);
-    background:
-      radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
-      linear-gradient(180deg, color-mix(in srgb, var(--card) 70%, var(--bg)), transparent);
+    margin: 0 0 0.65rem;
+    padding: 0.35rem 0 0.45rem;
+    background: none;
+  }
+  .home-follow {
+    margin: 0 0 1.25rem;
   }
   .home-intro--after-une {
     margin-top: 0;
@@ -610,7 +644,22 @@ const countDeclarees = candidaturesDeclarees.entries.filter(
     letter-spacing: -0.02em;
     font-weight: 600;
     color: var(--fg) !important;
+    background: none;
+    background-image: none;
+    -webkit-text-fill-color: var(--fg);
     max-width: 32ch;
+  }
+  @media (min-width: 1024px) {
+    .home-title {
+      font-size: 2rem; /* 32 px */
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg) !important;
+      background: none;
+      background-image: none;
+      -webkit-text-fill-color: var(--fg);
+    }
   }
 
   .home-lead {
