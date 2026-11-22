@@ -22,13 +22,15 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
 
 <BaseLayout
   title="Sources"
+  pageHeading
   description="Traçabilité éditoriale — jeux de données data.gouv.fr utilisés pour le premier tour."
 >
   <section>
+    <h1>Nos sources, et comment on les vérifie</h1>
     <h2>Sources en données ouvertes</h2>
     <p class="meta">
       Dernière synchronisation : <time datetime={manifest.fetchedAt}>{fetchedLabel}</time>
-      (fuseau Europe/Paris). Régénérer : <code>npm run sync:data</code>.
+      (fuseau Europe/Paris).
     </p>
     <p class="meta">
       <strong>Principe de base</strong> : On expose des idées, pas des idéologies. Aucun signe religieux ostentatoire : blocage immédiat. (sauf direct YouTube)
@@ -47,12 +49,11 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
           {' '}· dernière intégration : <time datetime={journalLastUpdate}>{journalLastLabel}</time>
         </>
       )}
-      . Fichier source : <code>src/data/data-journal.json</code>.
     </p>
     <div class="journal-table-wrap" role="region" aria-label="Journal des jeux de données" tabindex="0">
       <table class="journal-table">
         <caption class="table-caption">
-          Journal des jeux de données ouvertes intégrés au site (date, pages, source, licence, commande de sync).
+          Journal des jeux de données ouvertes intégrés au site (date, pages, source, licence).
         </caption>
         <thead>
           <tr>
@@ -61,7 +62,6 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
             <th scope="col">Page(s)</th>
             <th scope="col">Source</th>
             <th scope="col">Licence</th>
-            <th scope="col">Commande</th>
           </tr>
         </thead>
         <tbody>
@@ -96,7 +96,6 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
                   )}
                 </td>
                 <td>{formatLicenseLabel(entry.license)}</td>
-                <td>{entry.script ? <code>{entry.script}</code> : <span class="meta">—</span>}</td>
               </tr>
             ))
           }
@@ -142,7 +141,6 @@ const fetchedLabel = fetchedAt.toLocaleString('fr-FR', {
     <p class="meta">
       Ce regroupement est <strong>éditorial et transparent</strong> : ce n’est ni une affiliation partisane,
       ni une prédiction de second tour. Le détail nuance par nuance reste dans l’<a href="/atlas/">Atlas</a>.
-      Source de vérité code : <code>src/lib/an1t.ts</code> (<code>AN1T_BLOCS</code>, <code>allocateSainteLague</code>).
     </p>
 
     <h3>Deux niveaux de lecture</h3>

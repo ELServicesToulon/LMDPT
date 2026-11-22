@@ -684,27 +684,14 @@ const hideFooterFeedback = cleanPath === '/contribuer';
 
       /* === Advanced mobile / responsive === */
       @media (max-width: 640px) {
-        /* Nav : défilement horizontal (thumb zone) + cibles 44px */
+        /* Nav : les libellés restent entiers (retour à la ligne, pas de fondu ni de coupe). */
         header nav {
           gap: 0.3rem;
           font-size: 0.8rem;
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          overflow-y: hidden;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: thin;
-          overscroll-behavior-x: contain;
+          flex-wrap: wrap;
+          overflow-x: visible;
+          overflow-y: visible;
           padding: 0.15rem 0 0.45rem;
-          margin: 0 calc(-1 * var(--wrap-pad-x, 0.95rem));
-          padding-inline: var(--wrap-pad-x, 0.95rem);
-          scroll-snap-type: x proximity;
-          mask-image: linear-gradient(
-            to right,
-            transparent 0,
-            #000 0.75rem,
-            #000 calc(100% - 1.25rem),
-            transparent 100%
-          );
         }
         header nav a {
           padding: 0.45rem 0.7rem;
@@ -712,7 +699,7 @@ const hideFooterFeedback = cleanPath === '/contribuer';
           display: inline-flex;
           align-items: center;
           flex: 0 0 auto;
-          scroll-snap-align: start;
+          white-space: normal;
           border: 1px solid var(--border);
           background: color-mix(in srgb, var(--bg) 55%, var(--card));
         }
