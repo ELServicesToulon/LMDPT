@@ -9,6 +9,7 @@ import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import {
   cartesClinDoeil,
+  datesAVenir,
   formatCampagneDate,
   formatPeriodeEnquete,
   formatScore,
@@ -25,10 +26,12 @@ import {
 import { withTrailingSlash } from '../lib/internal-path';
 
 const campagne = campagneJson as CampagneData;
+const now = new Date();
 const groupes = groupPersonnalites(campagne.personnalites);
-const hideSondage = shouldHideSondage(new Date(), campagne);
+const hideSondage = shouldHideSondage(now, campagne);
 const une = getUneLienApercu();
-const cartes = cartesClinDoeil({ data: campagne, une, now: new Date() });
+const cartes = cartesClinDoeil({ data: campagne, une, now });
+const datesVisibles = datesAVenir(campagne.dates, now);
 const declaresSousCondition = ligneDeclaresSousCondition(
   candidaturesDeclarees.entries,
   campagne.liste_complete_href,
@@ -190,7 +193,7 @@ function phrase(text: string): string {
     <h3 id="apercu-dates-title">Prochaines dates</h3>
     <ol class="apercu-dates">
       {
-        campagne.dates.map((item) => (
+        datesVisibles.map((item) => (
           <li title={item.label}>
             <time class="apercu-date-when" datetime={item.date}>
               {formatCampagneDate(item.date, { weekday: false })}
@@ -211,7 +214,7 @@ function phrase(text: string): string {
       <summary>Détail des dates</summary>
       <ol class="apercu-dates-full">
         {
-          campagne.dates.map((item) => (
+          datesVisibles.map((item) => (
             <li>
               <p>
                 <time datetime={item.date}>{formatCampagneDate(item.date)}</time>
@@ -279,7 +282,18 @@ function phrase(text: string): string {
                       <tr>
                         <td>{ligne.rang ?? ''}</td>
                         <th scope="row">{ligne.nom}</th>
-                        <td class="apercu-sondage-score">{formatScore(ligne)}</td>
+                        <td class="apercu-sondage-score">
+                          {
+                            ligne.score !== null ? (
+                              <span
+                                class="apercu-sondage-bar"
+                                aria-hidden="true"
+                                style={`--score: ${ligne.score}`}
+                              />
+                            ) : null
+                          }
+                          <span class="apercu-sondage-score-value">{formatScore(ligne)}</span>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -291,19 +305,22 @@ function phrase(text: string): string {
                 <p class="apercu-sondage-hypotheses meta">
                   D’autres hypothèses ont été testées, voir la notice.
                 </p>
-                <p class="apercu-sondage-mentions meta">
-                  Institut : {phrase(classement.institut)} Commanditaire :{' '}
-                  {phrase(classement.commanditaire)} Publication :{' '}
-                  {phrase(formatCampagneDate(classement.publication, { weekday: false }))} Terrain :{' '}
-                  {phrase(classement.terrain)} Échantillon : {phrase(classement.echantillon)} Méthode
-                  : {phrase(classement.methode)} Marge d’erreur : {phrase(classement.marge_erreur)}
-                  {classement.non_exprimes ? ` ${phrase(classement.non_exprimes)}` : ''}{' '}
-                  {phrase(classement.source_label)}
-                </p>
-                <p class="apercu-sondage-notice meta">
-                  <a href={classement.notice_url} rel="noopener noreferrer">Notice consultable sur le site de la Commission des sondages</a>
-                  {` (n° ${classement.notice_numero}).`}
-                </p>
+                <details class="apercu-details apercu-sondage-notice-details">
+                  <summary>Voir la notice</summary>
+                  <p class="apercu-sondage-mentions meta">
+                    Institut : {phrase(classement.institut)} Commanditaire :{' '}
+                    {phrase(classement.commanditaire)} Publication :{' '}
+                    {phrase(formatCampagneDate(classement.publication, { weekday: false }))} Terrain :{' '}
+                    {phrase(classement.terrain)} Échantillon : {phrase(classement.echantillon)} Méthode
+                    : {phrase(classement.methode)} Marge d’erreur : {phrase(classement.marge_erreur)}
+                    {classement.non_exprimes ? ` ${phrase(classement.non_exprimes)}` : ''}{' '}
+                    {phrase(classement.source_label)}
+                  </p>
+                  <p class="apercu-sondage-notice meta">
+                    <a href={classement.notice_url} rel="noopener noreferrer">Notice consultable sur le site de la Commission des sondages</a>
+                    {` (n° ${classement.notice_numero}).`}
+                  </p>
+                </details>
               </figure>
             );
             if (index === 0) return figure;
@@ -923,10 +940,27 @@ function phrase(text: string): string {
   .apercu-sondage-score {
     text-align: right;
     white-space: nowrap;
+    min-width: 8rem;
   }
 
   .apercu-sondage-table thead th:last-child {
     text-align: right;
+  }
+
+  .apercu-sondage-bar {
+    display: block;
+    height: 0.4rem;
+    width: calc(var(--score) * 1%);
+    max-width: 100%;
+    margin: 0 0 0.18rem auto;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 70%, var(--border));
+  }
+
+  .apercu-sondage-score-value {
+    display: block;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
   }
 
   .apercu-sondage-marge,
