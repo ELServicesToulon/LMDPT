@@ -503,7 +503,7 @@ describe('cartesClinDoeil', () => {
 describe('ligneDeclaresSousCondition', () => {
   const data = asCampagne(campagneJson);
   const attenduEditorial =
-    '+ 4 déclarés sous condition : Éric Zemmour, François Ruffin, Jordan Bardella, Philippe Brun';
+    '+ 3 déclarés sous condition : Éric Zemmour, Jordan Bardella, Philippe Brun';
 
   it('dérive le libellé, le href et laisse le compteur des 18 personnalités', () => {
     const ligne = ligneDeclaresSousCondition(
