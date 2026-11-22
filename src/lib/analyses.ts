@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
 import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
 import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
 import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
@@ -63,6 +64,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: ruffinParti.slug,
+    title: ruffinParti.title,
+    description: ruffinParti.description,
+    date: ruffinParti.date,
+    published: ruffinParti.date,
+    updated: ruffinParti.updated,
+    href: '/analyses/ruffin-parti-combien-de-gauches-reste-t-il',
+    cover: uneCover(
+      'ruffin-parti-combien-de-gauches-reste-t-il',
+      'Aquarelle de l’intérieur d’une vieille salle des fêtes en fin d’après-midi : des chaises en bois rassemblées autour de deux longues tables, séparées par une allée vide ; entre les deux, quelques chaises isolées sur le parquet ; près d’une porte, une chaise pliante refermée contre le mur, un manteau posé dessus.',
+    ),
+  },
   {
     slug: voterA16Ans.slug,
     title: voterA16Ans.title,
