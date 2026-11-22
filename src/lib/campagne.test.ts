@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -511,29 +511,7 @@ describe('ligneDeclaresSousCondition', () => {
       data.liste_complete_href,
     );
     expect(ligne).not.toBeNull();
-
-    const noms = candidaturesDeclarees.entries
-      .filter((entry) => entry.category === 'conditionnelle')
-      .map((entry) => entry.name)
-      .sort((a, b) => a.localeCompare(b, 'fr'));
-    const derive = `+ ${noms.length} déclarés sous condition : ${noms.join(', ')}`;
-    expect(ligne!.libelle).toBe(derive);
-
-    if (derive !== attenduEditorial) {
-      writeFileSync(
-        '/tmp/accueil-sous-condition-ecart.txt',
-        [
-          'Écart entre le libellé dérivé des données et le libellé éditorial attendu.',
-          `obtenu : ${derive}`,
-          `attendu : ${attenduEditorial}`,
-          `noms obtenus (${noms.length}) : ${noms.join(' | ')}`,
-          'attendu : Éric Zemmour | François Ruffin | Jordan Bardella | Philippe Brun',
-        ].join('\n'),
-        'utf8',
-      );
-    } else {
-      expect(ligne!.libelle).toBe(attenduEditorial);
-    }
+    expect(ligne!.libelle).toBe(attenduEditorial);
 
     expect(ligne!.href).toBe('#candidatures-declarees-2027');
     expect(data.liste_complete_href).toBe('#candidatures-declarees-2027');
