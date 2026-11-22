@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
 import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
 import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
 import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
@@ -62,6 +63,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: voterA16Ans.slug,
+    title: voterA16Ans.title,
+    description: voterA16Ans.description,
+    date: voterA16Ans.date,
+    published: voterA16Ans.date,
+    updated: voterA16Ans.updated,
+    href: '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus',
+    cover: uneCover(
+      'voter-a-16-ans-l-urne-plutot-que-le-blocus',
+      'Aquarelle de l’entrée d’un vieux lycée au petit matin : près du portail en fer forgé, des chaises d’école empilées en barricade ; de l’autre côté de la cour pavée, un isoloir en bois à rideau et une urne transparente vide sur une table nappée ; au premier plan, un cartable sur un banc et des feuilles blanches au sol.',
+    ),
+  },
   {
     slug: toutesLesNiches.slug,
     title: toutesLesNiches.title,
