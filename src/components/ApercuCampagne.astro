@@ -5,6 +5,7 @@
  * mentions de la loi n° 77-808), dernière Une.
  */
 import campagneJson from '../data/campagne.json';
+import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
 import { SONDAGES_LIGNE } from '../lib/sondages-ligne';
 import {
   cartesClinDoeil,
@@ -13,6 +14,7 @@ import {
   formatScore,
   getUneLienApercu,
   groupPersonnalites,
+  ligneDeclaresSousCondition,
   personnaliteChipTitle,
   rankResultats,
   scrutinsMasquage,
@@ -27,6 +29,10 @@ const groupes = groupPersonnalites(campagne.personnalites);
 const hideSondage = shouldHideSondage(new Date(), campagne);
 const une = getUneLienApercu();
 const cartes = cartesClinDoeil({ data: campagne, une, now: new Date() });
+const declaresSousCondition = ligneDeclaresSousCondition(
+  candidaturesDeclarees.entries,
+  campagne.liste_complete_href,
+);
 const updatedLabel = formatCampagneDate(campagne.updated, { weekday: false });
 const uneHref = une ? withTrailingSlash(une.href) : '';
 const semaineHref = cartes.semaine ? withTrailingSlash(cartes.semaine.href) : '';
@@ -60,6 +66,13 @@ function phrase(text: string): string {
         <p class="apercu-carte-action">
           <a href={cartes.candidats.href}>{cartes.candidats.listeLabel}</a>
         </p>
+        {
+          declaresSousCondition ? (
+            <p class="apercu-carte-sous-condition">
+              <a href={declaresSousCondition.href}>{declaresSousCondition.libelle}</a>
+            </p>
+          ) : null
+        }
       </article>
     </li>
     {
@@ -506,7 +519,8 @@ function phrase(text: string): string {
   .apercu-carte-label,
   .apercu-carte-chapo,
   .apercu-carte-decret,
-  .apercu-carte-action {
+  .apercu-carte-action,
+  .apercu-carte-sous-condition {
     margin: 0;
     color: var(--fg);
   }
@@ -566,6 +580,17 @@ function phrase(text: string): string {
     min-height: 2.75rem;
     font-family: system-ui, sans-serif;
     font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .apercu-carte-sous-condition {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .apercu-carte-sous-condition a {
+    font-family: system-ui, sans-serif;
     font-weight: 650;
     text-decoration: none;
   }
