@@ -1,0 +1,460 @@
+{
+  "slug": "10-ou-35-milliards-qui-compte-juste",
+  "title": "10 ou 35 milliards : qui compte juste ?",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-19",
+  "updated": "2026-11-19",
+  "kicker": "Enquête et analyse · La rédaction · 19 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Mardi 17 novembre, Marine Le Pen a présenté sa réforme des retraites : départ à 62 ans, voire 60 ans pour ceux qui ont commencé tôt, pour un coût de 10,1 milliards d’euros selon le RN. Le même jour, les équipes d’Édouard Philippe et de Gabriel Attal lui opposaient 35 milliards. D’où viennent ces deux chiffres, qui paie les économies promises, et que chiffrent les accusateurs pour leur propre réforme ?",
+  "description": "Le RN chiffre sa retraite à 62 ans à 10,1 milliards d’euros, ses rivaux à 35 milliards. D’où viennent ces chiffres, qui paie les économies, et que chiffrent les autres ?",
+  "disclaimer": "Cette analyse décrit des chiffrages publiés par des partis, des équipes de campagne et un institut, ainsi que le droit en vigueur. Elle ne dit pas ce que coûterait réellement chaque réforme ni qui gagnerait l’élection.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "retraites",
+    "chiffrage",
+    "doe"
+  ],
+  "x_hook": "Mardi 17 novembre, Marine Le Pen a présenté sa réforme des retraites : départ à 62 ans, voire 60 ans pour ceux qui ont commencé tôt, pour un coût de 10,1 milliards d’euros selon le RN. Le même jour, les équipes d’Édouard Philippe et de Gabriel Attal lui opposaient 35 milliards. D’où viennent ces deux chiffres, qui paie les économies promises, et que chiffrent les accusateurs pour leur propre réforme ?",
+  "hues": [
+    {
+      "slug": "calcul-detaille",
+      "label": "Calcul détaillé publié",
+      "color": "#162561",
+      "rationale": "Le Pen : coût brut, économies et recettes publiés poste par poste par le RN (17 novembre), ce qui permet de les vérifier, sans préjuger de leur justesse."
+    },
+    {
+      "slug": "montant-global",
+      "label": "Montant global annoncé, détail non trouvé",
+      "color": "#8a5a00",
+      "rationale": "Philippe, Retailleau, Tondelier : un montant d’économies ou de financement annoncé, sans calcul détaillé trouvé."
+    },
+    {
+      "slug": "non-trouve",
+      "label": "Chiffrage non trouvé",
+      "color": "#5a6570",
+      "rationale": "Attal, Lisnard, Zemmour, Mélenchon, Glucksmann, Roussel : rien de daté trouvé sur le coût de leur réforme."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "projet",
+      "title": "Ce que le RN a mis sur la table",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mardi 17 novembre, au siège du Rassemblement national, Marine Le Pen a présenté sa réforme des retraites avec Jordan Bardella et Jean-Philippe Tanguy, chargé du programme économique du parti ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen)). Sa promesse : une réforme qui « abolira la réforme Borne au 1er janvier 2028 » ([20 Minutes](https://www.20minutes.fr/societe/reforme_des_retraites/4263555-20261117-presidentielle-2027-62-ans-capitalisation-resume-reforme-retraites-marine-pen)) et, d’ici à 2032, « des centaines de milliers de travailleurs partiront plus tôt, entre deux et trois années gagnées par rapport à ce qu’aurait imposé la réforme Borne » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). À la droite et au bloc central, elle a lancé : « Reculer l’âge de départ est la réforme la plus feignante qui soit » ([20 Minutes](https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic))."
+        },
+        {
+          "type": "p",
+          "text": "Le principe : plus on commence à travailler tôt, plus on part tôt. Tout dépend de l’âge du « premier emploi stable », défini comme un premier emploi à temps plein d’au moins six mois, ou un contrat d’alternance ou d’apprentissage d’un an ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). Avant 20 ans, ce serait un départ à 60 ans avec 160 trimestres, soit 40 années de cotisation ; à partir de 23 ans, à 62 ans avec 168 trimestres, soit 42 années, avec des paliers entre les deux ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). Le trimestre est l’unité de compte de la retraite : il en faut un nombre fixé pour toucher une pension complète, dite « à taux plein ». Le départ à taux plein à 67 ans, même sans tous ses trimestres, serait conservé ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Aujourd’hui, l’âge minimum dépend de l’année de naissance : 62 ans et 9 mois pour les personnes nées entre le 1er janvier 1963 et le 31 mars 1965, et 64 ans à partir de la génération 1969 ([Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/F14043)). La réforme Borne, qui devait porter cet âge à 64 ans, « a été mise en pause cette année, et doit reprendre son cours début 2028 » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies))."
+        },
+        {
+          "type": "p",
+          "text": "S’y ajoute un étage nouveau : « la création d’un pilier de capitalisation obligatoire » pour les actifs, d’abord ceux de 52 ans au plus ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). La capitalisation est une épargne placée, que chacun retrouve à sa retraite. Elle s’ajouterait à la répartition, où les cotisations des salariés et des employeurs paient les pensions des retraités du moment ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html)). Le RN veut y verser 12 milliards d’euros par an, pris d’abord sur le Fonds de réserve pour les retraites, puis sur des fonds du logement et de la formation professionnelle, avec un rendement espéré « de 4 à 6 % » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). Le président du Medef, Patrick Martin, juge l’idée « opportune », mais les modalités de financement « contestables » ([TF1info](https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "calcul",
+      "title": "10,1 milliards : le calcul du RN",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "« Notre réforme des retraites est pleinement financée », a assuré Marine Le Pen ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen)). Le détail donné par le parti part d’un coût brut de 18,6 milliards d’euros en 2032. Le RN en retire 5,8 milliards d’économies attendues d’un plancher de 160 trimestres et 2,7 milliards attendus d’une décote plus forte ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen)). Reste un coût de 10,1 milliards d’euros, le chiffre annoncé par Jean-Philippe Tanguy ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html)). En ajoutant des recettes, dont la moitié des excédents de l’Unédic, l’organisme qui gère l’assurance chômage, et la suspension de deux aides aux personnes âgées pour les retraités touchant plus de 3 000 euros de pension, le RN annonce « un solde positif de 4,7 milliards d’euros » en 2032 ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Ce solde ne règle pas tout. Selon France 24, la réforme ne suffirait pas à ramener le système à l’équilibre, et le RN mise sur sa politique économique pour combler le manque ; au-delà de cinq ans, les prévisions sont jugées « déraisonnables » par Jean-Philippe Tanguy ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). Le parti promet de « diviser par deux le déficit hérité d’Emmanuel Macron », mais les gains de croissance qu’il attend ne sont pas intégrés au chiffrage ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen)). Pour mémoire, le Conseil d’orientation des retraites estime le déficit du système à 5,1 milliards d’euros en 2025, environ 0,2 % du PIB, selon son rapport annuel de juin 2026, cité par Gestion Retraite ([Gestion Retraite](https://www.gestion-retraite.fr/2026/06/16/rapport-annuel-du-cor-2026-ce-quil-faut-retenir/))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "payeurs",
+      "title": "Qui paie les économies ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Les économies du RN viennent de règles plus dures pour les carrières incomplètes. La décote est la baisse de pension appliquée à qui part sans tous ses trimestres. Aujourd’hui, elle est de 1,25 % par trimestre manquant ([actu.fr](https://actu.fr/politique/election-presidentielle/une-vaste-arnaque-un-catalogue-de-contradictions-la-reforme-des-retraites-de-marine-le-pen-torpillee_65066906.html)), dans la limite de 20 trimestres ([Senioractu](https://www.senioractu.com/Marine-Le-Pen-presente-sa-reforme-des-retraites-age-de-depart-decote-pensions-capitalisation-ce-que-Bardella-et_a28359.html)). Le RN veut la relever « dans la limite de 50 % », mais les comptes rendus ne donnent pas le même taux : 5 % par trimestre manquant selon franceinfo et Public Sénat ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html)), 2,5 % selon France 24 et RTL ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)) ([RTL](https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275)). La différence n’a rien d’un détail. À 5 %, une pension de base de 1 000 euros tomberait à 800 euros avec quatre trimestres manquants, contre 950 euros aujourd’hui, si le taux s’applique à la pension comme aujourd’hui, selon le calcul de Senioractu ([Senioractu](https://www.senioractu.com/Marine-Le-Pen-presente-sa-reforme-des-retraites-age-de-depart-decote-pensions-capitalisation-ce-que-Bardella-et_a28359.html)). Nous n’avons pas trouvé le document du RN qui tranche."
+        },
+        {
+          "type": "p",
+          "text": "Valider un trimestre deviendrait aussi plus difficile. « Aujourd’hui, il faut avoir travaillé 150 heures au Smic », a rappelé Jordan Bardella ; demain, « il faudra avoir travaillé au moins à mi-temps pendant un trimestre » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)), soit 227,5 heures ([L’Opinion](https://www.lopinion.fr/economie/reforme-des-retraites-les-cinq-propositions-du-projet-de-marine-le-pen)). Les trimestres validés au chômage sans cotisation seraient limités à quatre sur toute la carrière ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)), plus deux entre 55 et 60 ans et deux entre 60 et 65 ans ([RTL](https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275)). La majoration de pension de 10 % des pères de trois enfants ou plus « sera progressivement supprimée dans le temps », celle des mères passerait à 12 % ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)). Enfin, le barème selon l’âge du premier emploi « remplacera tous les critères de pénibilité » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies))."
+        },
+        {
+          "type": "p",
+          "text": "C’est là que visent les concurrents. Paul Midy, coresponsable du programme de Gabriel Attal, dénonce trois « grandes injustices », pour les pères de familles nombreuses, les femmes aux carrières hachées et les chômeurs ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117)). Bruno Retailleau, dans un communiqué : « L’emballage paraît séduisant, mais les vices cachés sont nombreux et pénaliseront en priorité les plus fragiles » ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117)). David Lisnard, sur TF1 : « Les premières victimes seront les femmes qui ont des carrières hachées » ([TF1info](https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html)). Le RN répond que la règle du mi-temps ferait davantage cotiser les salaires élevés ([Public Sénat](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen)), qui peuvent aujourd’hui valider une année en deux mois, selon RTL ([RTL](https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "trente-cinq",
+      "title": "35 milliards : le chiffre d’en face",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Face aux 10,1 milliards du RN, un autre nombre a circulé dès mardi. « Ça coûtera 35 milliards d’euros », selon Franck Morel, conseiller d’Horizons sur ces questions ; Paul Midy parle d’un « trou » de 35 milliards et d’une « vaste arnaque financière avec beaucoup de créations d’injustices » ; l’équipe d’Édouard Philippe, d’un « mensonge plein et entier » ([Le Figaro](https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117)). L’équipe d’Édouard Philippe résume : « Son projet coûte 35 milliards, notre projet rapporte 35 milliards » ([Imaz Press](https://imazpress.com/france-monde/presidentielle-philippe-duel-avec-le-pen)). La Tribune écrit que la mesure « coûterait au moins 35 milliards d’euros selon les économistes », sans les nommer dans la partie de l’article que nous avons pu lire ([La Tribune](https://www.latribune.fr/article/economie/51091892546774/retraites-la-reforme-a-courte-vue-de-marine-le-pen))."
+        },
+        {
+          "type": "p",
+          "text": "Dans les comptes rendus que nous avons lus, aucune des deux équipes ne détaille ce calcul : ni l’année visée, ni s’il s’agit d’un coût avant ou après les économies annoncées par le RN. Un ordre de grandeur proche existe ailleurs. En juillet 2024, l’Institut Montaigne chiffrait une proposition du RN aux législatives, « Abroger la réforme des retraites de 2023 et permettre à ceux ayant commencé de travailler avant 20 ans de partir à 40 annuités de cotisations avec un âge légal à 60 ans », à un « coût de 34,7 milliards d’euros par an à horizon 2027 » ([Institut Montaigne](https://institutmontaigne.org/communiques-de-presse/legislatives-2024-chiffrages-retraites-et-fiscalite)). Et ce chiffrage portait sur une mesure décrite sans les tours de vis présentés mardi."
+        },
+        {
+          "type": "p",
+          "text": "Le RN connaît déjà ce match. En 2022, il chiffrait sa réforme à 9,6 milliards d’euros, un montant que l’Institut Montaigne avait jugé largement sous-estimé ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html)). Fin août 2026, devant le Medef, Marine Le Pen annonçait « 9 milliards d’euros en année pleine », quand l’Institut Montaigne avait chiffré la mesure de 23 à 38 milliards d’euros, selon franceinfo ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html))."
+        },
+        {
+          "type": "p",
+          "text": "Pourquoi deux chiffres si éloignés circulent-ils en même temps ? Parce que le coût d’une réforme des retraites dépend de trois choix, rarement affichés. L’année d’abord : pour un simple retour à 62 ans, l’Institut Montaigne estimait en 2024 la facture à « 8,2 milliards d’euros par an en 2027 » et à « 14,1 milliards d’euros par an en 2030 » ([Le Parisien](https://www.leparisien.fr/elections/legislatives/legislatives-combien-couterait-labrogation-de-la-reforme-des-retraites-03-07-2024-CRRFY2W5F5GUDKJ6YYJFKS2ONM.php)). Le brut ou le net ensuite, avec ou sans les économies faites sur les carrières incomplètes. Le point de comparaison enfin : le RN compare lui-même sa réforme à « ce qu’aurait imposé la réforme Borne » ([France 24](https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies)), une loi suspendue qui doit reprendre en 2028. Sans ces trois réglages, 10 et 35 milliards ne répondent pas à la même question."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "accusateurs",
+      "title": "Et chez les accusateurs ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ceux qui comptent 35 milliards ont aussi leurs chiffres. Édouard Philippe veut « porter progressivement l’âge de départ à 65 ans et la durée de cotisation à 45 ans, en moins de dix ans » ([Édouard Philippe](https://www.edouardphilippe.fr/programme/retraites)). Fin septembre, il estimait le gain à environ 30 milliards d’euros en année pleine, selon franceinfo ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html)) ; mardi, son équipe parlait de 35 milliards ([Imaz Press](https://imazpress.com/france-monde/presidentielle-philippe-duel-avec-le-pen)). Sa page de programme sur les retraites, consultée le 18 novembre, ne donne aucun montant ([Édouard Philippe](https://www.edouardphilippe.fr/programme/retraites)). Bruno Retailleau propose un départ possible à 63 ans avec une baisse d’environ 7 % de la pension par année d’avance, et le taux plein à 65 ans ([Le Dauphiné libéré](https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats)) ; il vise « 40 milliards d’économies en cumulé sur cinq ans » ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html)). Nous n’avons pas trouvé le détail de ces deux chiffrages."
+        },
+        {
+          "type": "p",
+          "text": "Gabriel Attal veut supprimer l’âge légal pour un système « universel, libre et productif », fondé sur la durée de cotisation : « Vous partez très tôt, vous avez très peu. Vous partez plus tard, vous avez plus » ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html)). David Lisnard porterait l’âge à 65 ans avant d’aller vers une capitalisation représentant environ 40 % du financement des retraites ([Le Dauphiné libéré](https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats)). Éric Zemmour parle de « 64 voire 65 ans » ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html)). Nous n’avons trouvé de chiffrage pour aucun des trois."
+        },
+        {
+          "type": "p",
+          "text": "À gauche, la flèche part dans l’autre sens. Jean-Luc Mélenchon veut ramener progressivement l’âge à 60 ans avec 40 années de cotisation, et Fabien Roussel défend aussi la retraite à 60 ans à taux plein pour une carrière complète ([Le Dauphiné libéré](https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats)). Marine Tondelier veut revenir tout de suite à 62 ans et financer la mesure en reprenant une part des exonérations accordées aux entreprises : « Il y a 77 milliards d’exonérations de cotisations, il suffit qu’on en prenne 10% » ([franceinfo](https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html)). Raphaël Glucksmann se dit « pour un âge de référence de départ à la retraite fixé à 62 ans », avec des départs plus tôt pour les métiers pénibles ([Le Dauphiné libéré](https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats)). En 2024, l’Institut Montaigne chiffrait la retraite à 60 ans du Nouveau Front populaire, avec d’autres mesures, à 58 milliards d’euros par an à horizon 2027 ([Institut Montaigne](https://institutmontaigne.org/communiques-de-presse/legislatives-2024-chiffrages-retraites-et-fiscalite))."
+        },
+        {
+          "type": "p",
+          "text": "Bilan d’une semaine de calculettes : le chiffrage le plus détaillé que nous ayons trouvé est celui du RN, ce qui ne dit rien de sa justesse : l’Institut Montaigne avait jugé ses chiffrages précédents sous-estimés. Ses contradicteurs, eux, n’ont pas montré le calcul de leurs 35 milliards. Deux chiffres sans méthode commune ne se réfutent pas : ils se croisent."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : combien coûte ou rapporte votre réforme des retraites, et selon quel calcul ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : le chiffrage publié de la réforme des retraites du candidat. « Calcul détaillé publié » signifie seulement qu’un calcul détaillé, poste par poste, est public et vérifiable par tous ; ce n’est ni un soutien à un candidat, ni un jugement sur la justesse du chiffre. « Chiffrage non trouvé » signifie que nous n’avons rien trouvé de daté, pas qu’il n’existe aucun chiffrage.",
+      "table": {
+        "caption": "Combien coûte ou rapporte votre réforme des retraites ? Positions datées des candidats 2027",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Le Pen / RN",
+            "Calcul détaillé publié",
+            "Départ de 60 à 62 ans avec 40 à 42 années de cotisation ; coût brut de 18,6 milliards d’euros en 2032, 10,1 milliards après économies, selon le RN (17 novembre). Chiffre contesté par les équipes Philippe et Attal (35 milliards).",
+            "[2][3][8]"
+          ],
+          [
+            "Philippe / Horizons",
+            "Montant global annoncé, détail non trouvé",
+            "65 ans et 45 années de cotisation « en moins de dix ans » ; gain d’environ 30 milliards d’euros en année pleine (fin septembre, selon franceinfo), puis « notre projet rapporte 35 milliards » (équipe, 17 novembre).",
+            "[14][12][9]"
+          ],
+          [
+            "Retailleau / LR",
+            "Montant global annoncé, détail non trouvé",
+            "Départ possible à 63 ans avec décote, taux plein à 65 ans ; « 40 milliards d’économies en cumulé sur cinq ans » (septembre).",
+            "[13][12]"
+          ],
+          [
+            "Tondelier / Les Écologistes",
+            "Financement chiffré, coût non trouvé",
+            "Retour immédiat à 62 ans ; reprendre 10 % des « 77 milliards d’exonérations de cotisations » (septembre).",
+            "[12]"
+          ],
+          [
+            "Attal / Renaissance",
+            "Chiffrage non trouvé",
+            "Supprimer l’âge légal pour un système « universel, libre et productif », avec décote et surcote (selon franceinfo, 30 septembre).",
+            "[12]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Chiffrage non trouvé",
+            "65 ans, puis capitalisation jusqu’à environ 40 % du financement des retraites (selon Le Dauphiné libéré, 18 novembre).",
+            "[13]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Chiffrage non trouvé",
+            "Âge légal à « 64 voire 65 ans », avec de la capitalisation (selon franceinfo, 30 septembre).",
+            "[12]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Chiffrage propre non trouvé",
+            "60 ans et 40 années de cotisation. En 2024, l’Institut Montaigne chiffrait la retraite à 60 ans du Nouveau Front populaire, avec d’autres mesures, à 58 milliards d’euros par an (Le Dauphiné libéré, 18 novembre ; Institut Montaigne, juillet 2024).",
+            "[13][11]"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Chiffrage non trouvé",
+            "« Un âge de référence de départ à la retraite fixé à 62 ans », départs plus tôt pour les métiers pénibles (entretien au groupe EBRA, 17 novembre).",
+            "[13]"
+          ],
+          [
+            "Roussel / PCF",
+            "Chiffrage non trouvé",
+            "Retraite à 60 ans à taux plein pour une carrière complète (selon Le Dauphiné libéré, 18 novembre).",
+            "[13]"
+          ]
+        ]
+      },
+      "note": "État du chiffrage publié au 18 novembre : calcul détaillé publié (Le Pen). Montant global annoncé, détail non trouvé (Philippe, Retailleau, Tondelier). Chiffrage non trouvé : Attal, Lisnard, Zemmour, Mélenchon, Glucksmann, Roussel, ce qui ne signifie pas absence de position."
+    },
+    {
+      "kind": "prose",
+      "id": "regarder",
+      "title": "Ce qu’il faudra regarder",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mercredi 18 novembre, le Sénat a adopté en première lecture le budget de la Sécurité sociale pour 2027, par 201 voix contre 124, en modifiant plusieurs mesures, dont certaines sur les retraites. Une commission mixte paritaire, où députés et sénateurs tenteront de s’accorder sur un texte commun, doit se réunir la semaine prochaine ([TF1info](https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html))."
+        },
+        {
+          "type": "p",
+          "text": "Nous n’avons pas trouvé, à l’heure où nous écrivons, de chiffrage indépendant publié et lisible de la version présentée mardi par le RN. D’ici là, trois questions à poser à chaque calculette, celle du RN comme celles de ses rivaux : pour quelle année, avant ou après économies, et par rapport à quelle loi ?"
+        }
+      ]
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. France 24, avec AFP, Romain Brunet, 17 novembre 2026, 16 h 31 (Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies). https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+          "lead": "1. France 24, avec AFP, Romain Brunet, 17 novembre 2026, 16 h 31 (Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies)",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+              "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies"
+            }
+          ]
+        },
+        {
+          "label": "2. Public Sénat, Emma Bador-Fritche, 17 novembre 2026, mis à jour le 18 novembre à 14 h 26 (Que contient la réforme des retraites présentée par Marine Le Pen ?). https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen",
+          "lead": "2. Public Sénat, Emma Bador-Fritche, 17 novembre 2026, mis à jour le 18 novembre à 14 h 26 (Que contient la réforme des retraites présentée par Marine Le Pen ?)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen"
+            }
+          ]
+        },
+        {
+          "label": "3. franceinfo, 17 novembre 2026, 13 h 36 (Âge de départ, part de capitalisation, possible référendum : que propose le Rassemblement national pour réformer les retraites ?). https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html",
+          "lead": "3. franceinfo, 17 novembre 2026, 13 h 36 (Âge de départ, part de capitalisation, possible référendum : que propose le Rassemblement national pour réformer les retraites ?)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html",
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/age-de-depart-part-de-capitalisation-referendum-que-propose-le-rassemblement-national-pour-reformer-les-retraites_8286419.html"
+            }
+          ]
+        },
+        {
+          "label": "4. 20 Minutes, 17 novembre 2026 (62 ans, capitalisation : on vous résume la réforme des retraites de Marine Le Pen). https://www.20minutes.fr/societe/reforme_des_retraites/4263555-20261117-presidentielle-2027-62-ans-capitalisation-resume-reforme-retraites-marine-pen",
+          "lead": "4. 20 Minutes, 17 novembre 2026 (62 ans, capitalisation : on vous résume la réforme des retraites de Marine Le Pen)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/societe/reforme_des_retraites/4263555-20261117-presidentielle-2027-62-ans-capitalisation-resume-reforme-retraites-marine-pen",
+              "url": "https://www.20minutes.fr/societe/reforme_des_retraites/4263555-20261117-presidentielle-2027-62-ans-capitalisation-resume-reforme-retraites-marine-pen"
+            }
+          ]
+        },
+        {
+          "label": "5. RTL, 17 novembre 2026 (Départ à 60 ou 62 ans, capitalisation obligatoire : ce qu’il faut retenir de la réforme des retraites de Marine Le Pen). https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275",
+          "lead": "5. RTL, 17 novembre 2026 (Départ à 60 ou 62 ans, capitalisation obligatoire : ce qu’il faut retenir de la réforme des retraites de Marine Le Pen)",
+          "links": [
+            {
+              "label": "https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275",
+              "url": "https://www.rtl.fr/actu/politique/depart-a-60-ou-62-ans-capitalisation-obligatoire-ce-qu-il-faut-retenir-de-la-reforme-des-retraites-de-marine-le-pen-avant-la-presidentielle-7900697275"
+            }
+          ]
+        },
+        {
+          "label": "6. Senioractu, Fabrice Crozier, 17 novembre 2026, 14 h 16 (âge de départ, décote, pensions, capitalisation). https://www.senioractu.com/Marine-Le-Pen-presente-sa-reforme-des-retraites-age-de-depart-decote-pensions-capitalisation-ce-que-Bardella-et_a28359.html",
+          "lead": "6. Senioractu, Fabrice Crozier, 17 novembre 2026, 14 h 16 (âge de départ, décote, pensions, capitalisation)",
+          "links": [
+            {
+              "label": "https://www.senioractu.com/Marine-Le-Pen-presente-sa-reforme-des-retraites-age-de-depart-decote-pensions-capitalisation-ce-que-Bardella-et_a28359.html",
+              "url": "https://www.senioractu.com/Marine-Le-Pen-presente-sa-reforme-des-retraites-age-de-depart-decote-pensions-capitalisation-ce-que-Bardella-et_a28359.html"
+            }
+          ]
+        },
+        {
+          "label": "7. L’Opinion, 17 novembre 2026 (Retraite à 60-62 ans, capitalisation : ce que propose Marine Le Pen). https://www.lopinion.fr/economie/reforme-des-retraites-les-cinq-propositions-du-projet-de-marine-le-pen",
+          "lead": "7. L’Opinion, 17 novembre 2026 (Retraite à 60-62 ans, capitalisation : ce que propose Marine Le Pen)",
+          "links": [
+            {
+              "label": "https://www.lopinion.fr/economie/reforme-des-retraites-les-cinq-propositions-du-projet-de-marine-le-pen",
+              "url": "https://www.lopinion.fr/economie/reforme-des-retraites-les-cinq-propositions-du-projet-de-marine-le-pen"
+            }
+          ]
+        },
+        {
+          "label": "8. Le Figaro avec AFP, 17 novembre 2026, 16 h 19, mis à jour le 18 novembre à 10 h 04 (« Mensonge », « arnaque » et « vices cachés » : la droite et le centre attaquent la réforme des retraites de Marine Le Pen). https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117",
+          "lead": "8. Le Figaro avec AFP, 17 novembre 2026, 16 h 19, mis à jour le 18 novembre à 10 h 04 (« Mensonge », « arnaque » et « vices cachés » : la droite et le centre attaquent la réforme des retraites de Marine Le Pen)",
+          "links": [
+            {
+              "label": "https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117",
+              "url": "https://www.lefigaro.fr/elections/presidentielles/mensonge-arnaque-et-vices-caches-la-droite-et-le-centre-attaquent-la-reforme-des-retraites-de-marine-le-pen-20261117"
+            }
+          ]
+        },
+        {
+          "label": "9. Imaz Press, reprise AFP, 18 novembre 2026 (Présidentielle : Philippe veut installer un duel avec Le Pen). https://imazpress.com/france-monde/presidentielle-philippe-duel-avec-le-pen",
+          "lead": "9. Imaz Press, reprise AFP, 18 novembre 2026 (Présidentielle : Philippe veut installer un duel avec Le Pen)",
+          "links": [
+            {
+              "label": "https://imazpress.com/france-monde/presidentielle-philippe-duel-avec-le-pen",
+              "url": "https://imazpress.com/france-monde/presidentielle-philippe-duel-avec-le-pen"
+            }
+          ]
+        },
+        {
+          "label": "10. La Tribune, Jean-Victor Semeraro, 18 novembre 2026, 10 h 05 (Retraites : la réforme à courte vue de Marine Le Pen ; partie en accès libre). https://www.latribune.fr/article/economie/51091892546774/retraites-la-reforme-a-courte-vue-de-marine-le-pen",
+          "lead": "10. La Tribune, Jean-Victor Semeraro, 18 novembre 2026, 10 h 05 (Retraites : la réforme à courte vue de Marine Le Pen ; partie en accès libre)",
+          "links": [
+            {
+              "label": "https://www.latribune.fr/article/economie/51091892546774/retraites-la-reforme-a-courte-vue-de-marine-le-pen",
+              "url": "https://www.latribune.fr/article/economie/51091892546774/retraites-la-reforme-a-courte-vue-de-marine-le-pen"
+            }
+          ]
+        },
+        {
+          "label": "11. Institut Montaigne, communiqué de presse du 3 juillet 2024, « Législatives 2024 : chiffrages retraites et fiscalité ». https://institutmontaigne.org/communiques-de-presse/legislatives-2024-chiffrages-retraites-et-fiscalite",
+          "lead": "11. Institut Montaigne, communiqué de presse du 3 juillet 2024, « Législatives 2024 : chiffrages retraites et fiscalité »",
+          "links": [
+            {
+              "label": "https://institutmontaigne.org/communiques-de-presse/legislatives-2024-chiffrages-retraites-et-fiscalite",
+              "url": "https://institutmontaigne.org/communiques-de-presse/legislatives-2024-chiffrages-retraites-et-fiscalite"
+            }
+          ]
+        },
+        {
+          "label": "12. franceinfo, 30 septembre 2026 (Que proposent les principaux candidats à l’élection présidentielle pour les retraites ?). https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+          "lead": "12. franceinfo, 30 septembre 2026 (Que proposent les principaux candidats à l’élection présidentielle pour les retraites ?)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html"
+            }
+          ]
+        },
+        {
+          "label": "13. Le Dauphiné libéré, Théo Meunier, 18 novembre 2026 (Retraites : âge de départ, répartition ou capitalisation, ce que proposent les candidats). https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats",
+          "lead": "13. Le Dauphiné libéré, Théo Meunier, 18 novembre 2026 (Retraites : âge de départ, répartition ou capitalisation, ce que proposent les candidats)",
+          "links": [
+            {
+              "label": "https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats",
+              "url": "https://www.ledauphine.com/elections/2026/11/18/retraites-age-de-depart-repartition-ou-capitalisation-ce-que-proposent-les-candidats"
+            }
+          ]
+        },
+        {
+          "label": "14. Édouard Philippe, programme, « Retraites » (consulté le 18 novembre 2026). https://www.edouardphilippe.fr/programme/retraites",
+          "lead": "14. Édouard Philippe, programme, « Retraites » (consulté le 18 novembre 2026)",
+          "links": [
+            {
+              "label": "https://www.edouardphilippe.fr/programme/retraites",
+              "url": "https://www.edouardphilippe.fr/programme/retraites"
+            }
+          ]
+        },
+        {
+          "label": "15. TF1info, direct présidentielle du 18 novembre 2026 (conférence de presse d’Édouard Philippe, réactions au projet du RN, Sénat). https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html",
+          "lead": "15. TF1info, direct présidentielle du 18 novembre 2026 (conférence de presse d’Édouard Philippe, réactions au projet du RN, Sénat)",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/en-direct-election-presidentielle-2027-en-panne-dans-les-sondages-edouard-philippe-presente-son-projet-a-date-conference-de-presse-2476527.html"
+            }
+          ]
+        },
+        {
+          "label": "16. Service-Public.fr, « À partir de quel âge un salarié peut-il partir en retraite ? » (vérifié le 14 août 2026). https://www.service-public.fr/particuliers/vosdroits/F14043",
+          "lead": "16. Service-Public.fr, « À partir de quel âge un salarié peut-il partir en retraite ? » (vérifié le 14 août 2026)",
+          "links": [
+            {
+              "label": "https://www.service-public.fr/particuliers/vosdroits/F14043",
+              "url": "https://www.service-public.fr/particuliers/vosdroits/F14043"
+            }
+          ]
+        },
+        {
+          "label": "17. Gestion Retraite, 16 juin 2026 (Rapport annuel du COR 2026 : ce qu’il faut retenir ; site du COR indisponible le 18 novembre). https://www.gestion-retraite.fr/2026/06/16/rapport-annuel-du-cor-2026-ce-quil-faut-retenir/",
+          "lead": "17. Gestion Retraite, 16 juin 2026 (Rapport annuel du COR 2026 : ce qu’il faut retenir ; site du COR indisponible le 18 novembre)",
+          "links": [
+            {
+              "label": "https://www.gestion-retraite.fr/2026/06/16/rapport-annuel-du-cor-2026-ce-quil-faut-retenir/",
+              "url": "https://www.gestion-retraite.fr/2026/06/16/rapport-annuel-du-cor-2026-ce-quil-faut-retenir/"
+            }
+          ]
+        },
+        {
+          "label": "18. 20 Minutes, direct présidentielle du 17 novembre 2026 (conférence de presse de Marine Le Pen et réactions). https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic",
+          "lead": "18. 20 Minutes, direct présidentielle du 17 novembre 2026 (conférence de presse de Marine Le Pen et réactions)",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic",
+              "url": "https://www.20minutes.fr/politique/4263434-20261117-direct-presidentielle-2027-pen-melenchon-echarpent-hausse-smic"
+            }
+          ]
+        },
+        {
+          "label": "19. actu.fr, Maxime T’sjoen, 17 novembre 2026, 19 h 47 (« Une vaste arnaque », « un catalogue de contradictions » : la réforme des retraites de Marine Le Pen torpillée). https://actu.fr/politique/election-presidentielle/une-vaste-arnaque-un-catalogue-de-contradictions-la-reforme-des-retraites-de-marine-le-pen-torpillee_65066906.html",
+          "lead": "19. actu.fr, Maxime T’sjoen, 17 novembre 2026, 19 h 47 (« Une vaste arnaque », « un catalogue de contradictions » : la réforme des retraites de Marine Le Pen torpillée)",
+          "links": [
+            {
+              "label": "https://actu.fr/politique/election-presidentielle/une-vaste-arnaque-un-catalogue-de-contradictions-la-reforme-des-retraites-de-marine-le-pen-torpillee_65066906.html",
+              "url": "https://actu.fr/politique/election-presidentielle/une-vaste-arnaque-un-catalogue-de-contradictions-la-reforme-des-retraites-de-marine-le-pen-torpillee_65066906.html"
+            }
+          ]
+        },
+        {
+          "label": "20. Le Parisien, Charlotte Robinet, 3 juillet 2024 (Législatives : combien coûterait l’abrogation de la réforme des retraites ; partie en accès libre). https://www.leparisien.fr/elections/legislatives/legislatives-combien-couterait-labrogation-de-la-reforme-des-retraites-03-07-2024-CRRFY2W5F5GUDKJ6YYJFKS2ONM.php",
+          "lead": "20. Le Parisien, Charlotte Robinet, 3 juillet 2024 (Législatives : combien coûterait l’abrogation de la réforme des retraites ; partie en accès libre)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/legislatives/legislatives-combien-couterait-labrogation-de-la-reforme-des-retraites-03-07-2024-CRRFY2W5F5GUDKJ6YYJFKS2ONM.php",
+              "url": "https://www.leparisien.fr/elections/legislatives/legislatives-combien-couterait-labrogation-de-la-reforme-des-retraites-03-07-2024-CRRFY2W5F5GUDKJ6YYJFKS2ONM.php"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des chiffrages publiés par des partis, des équipes de campagne et un institut, ainsi que le droit en vigueur. Elle ne dit pas ce que coûterait réellement chaque réforme ni qui gagnerait l’élection.",
+  "liens_internes": [
+    {
+      "href": "/analyses/hausse-de-salaire-exoneree-qui-regle-la-note",
+      "label": "Hausse de salaire exonérée : qui règle la note ?"
+    },
+    {
+      "href": "/analyses/1962-la-porte-de-service",
+      "label": "1962, la porte de service"
+    }
+  ]
+}

@@ -8,6 +8,10 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
+import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
+import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
+import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
 import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
 import jaiCommisUneErreur from '../data/analyses/j-ai-commis-une-erreur-laquelle.json';
 import loiQuiSeVoteABruxelles from '../data/analyses/la-loi-qui-se-vote-a-bruxelles.json';
@@ -59,6 +63,58 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: voterA16Ans.slug,
+    title: voterA16Ans.title,
+    description: voterA16Ans.description,
+    date: voterA16Ans.date,
+    published: voterA16Ans.date,
+    updated: voterA16Ans.updated,
+    href: '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus',
+    cover: uneCover(
+      'voter-a-16-ans-l-urne-plutot-que-le-blocus',
+      'Aquarelle de l’entrée d’un vieux lycée au petit matin : près du portail en fer forgé, des chaises d’école empilées en barricade ; de l’autre côté de la cour pavée, un isoloir en bois à rideau et une urne transparente vide sur une table nappée ; au premier plan, un cartable sur un banc et des feuilles blanches au sol.',
+    ),
+  },
+  {
+    slug: toutesLesNiches.slug,
+    title: toutesLesNiches.title,
+    description: toutesLesNiches.description,
+    date: toutesLesNiches.date,
+    published: toutesLesNiches.date,
+    updated: toutesLesNiches.updated,
+    href: '/analyses/toutes-les-niches-meme-la-votre',
+    cover: uneCover(
+      'toutes-les-niches-meme-la-votre',
+      'Aquarelle d’une cour pavée au petit matin : une rangée de niches à chien en bois de tailles différentes, certaines fermées par des cadenas, la plus grande richement ornée, une lanterne allumée et, au premier plan, un trousseau de clés anciennes sur un muret.',
+    ),
+  },
+  {
+    slug: quellesAssociations.slug,
+    title: quellesAssociations.title,
+    description: quellesAssociations.description,
+    date: quellesAssociations.date,
+    published: quellesAssociations.date,
+    updated: quellesAssociations.updated,
+    href: '/analyses/3-7-milliards-quelles-associations',
+    cover: uneCover(
+      '3-7-milliards-quelles-associations',
+      'Aquarelle d’un vieux couloir avec une rangée de boîtes aux lettres en bois sans nom, et, sur une console au premier plan, une paire de ciseaux en laiton, une enveloppe fermée et une caisse de légumes et de pain.',
+    ),
+  },
+  {
+    slug: dixOuTrenteCinqMilliards.slug,
+    title: dixOuTrenteCinqMilliards.title,
+    description: dixOuTrenteCinqMilliards.description,
+    date: dixOuTrenteCinqMilliards.date,
+    published: dixOuTrenteCinqMilliards.date,
+    updated: dixOuTrenteCinqMilliards.updated,
+    href: '/analyses/10-ou-35-milliards-qui-compte-juste',
+    cover: uneCover(
+      '10-ou-35-milliards-qui-compte-juste',
+      'Aquarelle d’un bureau en bois près d’une fenêtre, avec deux bouliers anciens aux perles disposées différemment, une paire de lunettes, un registre de comptes fermé et un petit sablier en laiton.',
+    ),
+  },
   {
     slug: hausseSalaireExoneree.slug,
     title: hausseSalaireExoneree.title,
