@@ -19,7 +19,7 @@ export const DEBATE_CATALOG: DebateSummary[] = [
     slug: 'vote-utile-pluralite',
     question: voteUtilePluralite.question,
     description:
-      'Le vote utile au premier tour préserve-t-il la pluralité démocratique ou la réduit-il ? Arguments sourcés des deux côtés.',
+      'Voter pour celui qui peut gagner plutôt que pour celui qu\'on préfère : le « vote utile » réduit-il le choix au premier tour ? Débat ouvert.',
     date: voteUtilePluralite.date,
     status: voteUtilePluralite.status,
     href: '/debats/vote-utile-pluralite',
@@ -32,7 +32,7 @@ export const DEBATE_CATALOG: DebateSummary[] = [
     slug: 'desistements-second-tour',
     question: desistementsSecondTour.question,
     description:
-      'Les désistements entre les deux tours : mécanisme civique de clarification ou distorsion de la pluralité ?',
+      'Entre les deux tours, des candidats se retirent pour en favoriser un autre, surtout dans les triangulaires. Faut-il les encadrer ? Débat ouvert.',
     date: desistementsSecondTour.date,
     status: desistementsSecondTour.status,
     href: '/debats/desistements-second-tour',
@@ -45,7 +45,7 @@ export const DEBATE_CATALOG: DebateSummary[] = [
     slug: 'assemblee-premier-tour',
     question: assembleePremierTour.question,
     description:
-      'Une chambre parlementaire élue sur le seul premier tour : simulation 2024 et arguments pour/contre.',
+      'Et si l\'on gardait le premier tour, celui où chacun vote pour qui il préfère ? Débat ouvert sur une Assemblée élue au premier tour, sources à l\'appui.',
     date: assembleePremierTour.date,
     status: assembleePremierTour.status,
     href: '/debats/assemblee-premier-tour',

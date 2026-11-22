@@ -297,18 +297,21 @@ describe('shouldHideSondage', () => {
 });
 
 describe('aperçu campagne — accueil', () => {
-  it('importe le composant et le place avant UnesCarousel / id="top"', () => {
+  it('importe le composant et le place après la une (id="top") et les dernières analyses', () => {
     const src = readFileSync(join(ROOT, 'src/pages/index.astro'), 'utf8');
     expect(src).toMatch(/import ApercuCampagne from ['"]\.\.\/components\/ApercuCampagne\.astro['"]/);
-    const daily = src.indexOf('<DailyVisuals');
-    const apercu = src.indexOf('<ApercuCampagne');
+    expect(src).not.toMatch(/<UnesCarousel/);
+    const une = src.indexOf('<UneDuJour');
     const top = src.indexOf('id="top"');
-    const carousel = src.indexOf('<UnesCarousel');
+    const analyses = src.indexOf('id="dernieres-analyses"');
+    const apercu = src.indexOf('<ApercuCampagne');
+    expect(une).toBeGreaterThan(-1);
+    expect(top).toBeGreaterThan(-1);
+    expect(analyses).toBeGreaterThan(-1);
     expect(apercu).toBeGreaterThan(-1);
-    expect(daily).toBeGreaterThan(-1);
-    expect(daily).toBeLessThan(apercu);
-    expect(apercu).toBeLessThan(top);
-    expect(top).toBeLessThan(carousel);
+    expect(top).toBeLessThan(une);
+    expect(une).toBeLessThan(analyses);
+    expect(analyses).toBeLessThan(apercu);
   });
 
   it('relie la dernière Une via le catalogue éditorial, sans URL hardcodée dans le JSON', () => {

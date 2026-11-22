@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { INDEPENDANCE_MEDIAS_META_DESCRIPTION } from '../../lib/loulou-meta-descriptions';
 import IndependanceMediaCard from '../../components/IndependanceMediaCard.astro';
 import ShareBar from '../../components/ShareBar.astro';
 import {
@@ -29,7 +30,7 @@ const mediaByType = (['television', 'radio', 'presse', 'agence', 'autre'] as Med
 <BaseLayout
   title="Indépendance des médias"
   pageHeading
-  description="Indépendance relative des médias FR : subventions État, audiovisuel public, capital privé — badges de teinte politique par flux de financement. Synthèse documentaire LMDPT."
+  description={INDEPENDANCE_MEDIAS_META_DESCRIPTION}
   keywords="indépendance médias, subventions presse, aides à la presse, audiovisuel public, financement médias, LMDPT, pluralité"
 >
   <article class="ind-page">
