@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import campagneJson from '../data/campagne.json';
+import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
 import {
   cartesClinDoeil,
   datesMasquage,
@@ -12,6 +13,7 @@ import {
   getUneLienApercu,
   groupPersonnalites,
   isMasqueAt,
+  ligneDeclaresSousCondition,
   mentionDecretConvocation,
   parisWallClock,
   personnaliteChipTitle,
@@ -495,5 +497,55 @@ describe('cartesClinDoeil', () => {
     });
     expect(cartes.dateCle?.date).toBe('2027-04-18');
     expect(cartes.dateCle?.mentionDecret).toBe('à confirmer par décret de convocation');
+  });
+});
+
+describe('ligneDeclaresSousCondition', () => {
+  const data = asCampagne(campagneJson);
+  const attenduEditorial =
+    '+ 3 déclarés sous condition : Éric Zemmour, Jordan Bardella, Philippe Brun';
+
+  it('dérive le libellé, le href et laisse le compteur des 18 personnalités', () => {
+    const ligne = ligneDeclaresSousCondition(
+      candidaturesDeclarees.entries,
+      data.liste_complete_href,
+    );
+    expect(ligne).not.toBeNull();
+    expect(ligne!.libelle).toBe(attenduEditorial);
+
+    expect(ligne!.href).toBe('#candidatures-declarees-2027');
+    expect(data.liste_complete_href).toBe('#candidatures-declarees-2027');
+
+    const indexSrc = readFileSync(join(ROOT, 'src/pages/index.astro'), 'utf8');
+    expect(indexSrc).toMatch(/id="candidatures-declarees-2027"/);
+
+    const cartes = cartesClinDoeil({
+      data,
+      une: getUneLienApercu(),
+      now: new Date('2026-11-15T12:00:00+01:00'),
+    });
+    expect(cartes.candidats.ligne).toBe(
+      `${data.personnalites.length} personnalités sourcées`,
+    );
+    expect(data.personnalites.length).toBe(18);
+  });
+
+  it('affiche la ligne liée dans la carte, sans pastille SC', () => {
+    const src = readFileSync(join(ROOT, 'src/components/ApercuCampagne.astro'), 'utf8');
+    const template = src.slice(0, src.indexOf('<style>'));
+    const cartesMarkup = template.slice(
+      template.indexOf('apercu-cartes'),
+      template.indexOf('apercu-disclaimer'),
+    );
+    expect(src).toMatch(/ligneDeclaresSousCondition/);
+    expect(src).toMatch(/candidaturesDeclarees\.entries/);
+    expect(cartesMarkup).toMatch(/declaresSousCondition\.libelle/);
+    expect(cartesMarkup).toMatch(/declaresSousCondition\.href/);
+    expect(cartesMarkup).toMatch(/apercu-carte-sous-condition/);
+    expect(src).toMatch(/statutPastille/);
+    expect(src).toMatch(/D déclaré·e · Dé désigné·e/);
+    expect(src).not.toMatch(/SC sous condition/);
+    expect(src).not.toMatch(/pastille[^.\n]*SC|\bSC\b/);
+    expect(template).not.toMatch(/statutPastille\([^)]*condition/);
   });
 });

@@ -390,6 +390,31 @@ export type CarteCandidatsClinDoeil = {
   listeLabel: 'Voir la liste';
 };
 
+export type LigneDeclaresSousCondition = {
+  libelle: string;
+  href: string;
+};
+
+/**
+ * Ligne sous la carte « Qui est candidat ».
+ * Filtre `category === 'conditionnelle'` (pas `status` : Brun = primaire,
+ * Bardella = substitution_parti).
+ */
+export function ligneDeclaresSousCondition(
+  entries: ReadonlyArray<{ name: string; category: string }>,
+  href: string,
+): LigneDeclaresSousCondition | null {
+  const noms = entries
+    .filter((entry) => entry.category === 'conditionnelle')
+    .map((entry) => entry.name)
+    .sort((a, b) => a.localeCompare(b, 'fr'));
+  if (noms.length === 0) return null;
+  return {
+    libelle: `+ ${noms.length} déclarés sous condition : ${noms.join(', ')}`,
+    href,
+  };
+}
+
 export type CarteSemaineClinDoeil = {
   title: 'Ce qui a bougé cette semaine';
   date: string;
