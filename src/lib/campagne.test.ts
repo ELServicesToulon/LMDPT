@@ -6,11 +6,13 @@ import campagneJson from '../data/campagne.json';
 import candidaturesDeclarees from '../data/elections/2027-candidatures-declarees.json';
 import {
   cartesClinDoeil,
+  datesAVenir,
   datesMasquage,
   formatCampagneDate,
   formatPeriodeEnquete,
   formatScore,
   getUneLienApercu,
+  getUneLienApercuSuivante,
   groupPersonnalites,
   isMasqueAt,
   ligneDeclaresSousCondition,
@@ -24,6 +26,7 @@ import {
   statutPastille,
   type CampagneData,
 } from './campagne';
+import type { EditorialPost } from './editorial';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const CAMPAGNE_PATH = join(ROOT, 'src/data/campagne.json');
@@ -294,18 +297,21 @@ describe('shouldHideSondage', () => {
 });
 
 describe('aperçu campagne — accueil', () => {
-  it('importe le composant et le place avant UnesCarousel / id="top"', () => {
+  it('importe le composant et le place après la une (id="top") et les dernières analyses', () => {
     const src = readFileSync(join(ROOT, 'src/pages/index.astro'), 'utf8');
     expect(src).toMatch(/import ApercuCampagne from ['"]\.\.\/components\/ApercuCampagne\.astro['"]/);
-    const daily = src.indexOf('<DailyVisuals');
-    const apercu = src.indexOf('<ApercuCampagne');
+    expect(src).not.toMatch(/<UnesCarousel/);
+    const une = src.indexOf('<UneDuJour');
     const top = src.indexOf('id="top"');
-    const carousel = src.indexOf('<UnesCarousel');
+    const analyses = src.indexOf('id="dernieres-analyses"');
+    const apercu = src.indexOf('<ApercuCampagne');
+    expect(une).toBeGreaterThan(-1);
+    expect(top).toBeGreaterThan(-1);
+    expect(analyses).toBeGreaterThan(-1);
     expect(apercu).toBeGreaterThan(-1);
-    expect(daily).toBeGreaterThan(-1);
-    expect(daily).toBeLessThan(apercu);
-    expect(apercu).toBeLessThan(top);
-    expect(top).toBeLessThan(carousel);
+    expect(top).toBeLessThan(une);
+    expect(une).toBeLessThan(analyses);
+    expect(analyses).toBeLessThan(apercu);
   });
 
   it('relie la dernière Une via le catalogue éditorial, sans URL hardcodée dans le JSON', () => {
@@ -337,7 +343,11 @@ describe('aperçu campagne — accueil', () => {
     expect(sondageBlock).toMatch(/apercu-sondage-hypothese/);
     expect(sondageBlock).toMatch(/scope="col"/);
     expect(sondageBlock).toMatch(/notice_url/);
+    expect(sondageBlock).toMatch(/Voir la notice/);
     expect(sondageBlock).toMatch(/Notice consultable sur le site de la Commission des sondages/);
+    expect(sondageBlock).toMatch(/apercu-sondage-bar/);
+    expect(sondageBlock).toMatch(/aria-hidden="true"/);
+    expect(sondageBlock).toMatch(/formatScore\(ligne\)/);
     expect(sondageBlock).toMatch(/SONDAGES_LIGNE/);
     expect(sondageBlock).toMatch(/data-scrutins/);
     expect(sondageBlock).toMatch(/data-fin-masquage/);
@@ -447,12 +457,17 @@ describe('cartesClinDoeil', () => {
     );
     expect(cartes.candidats.listeLabel).toBe('Voir la liste');
 
+    const suivante = getUneLienApercuSuivante();
+    expect(suivante).not.toBeNull();
+    expect(suivante!.slug).not.toBe(une!.slug);
+    expect(suivante!.href).not.toBe(une!.href);
+
     expect(cartes.semaine).not.toBeNull();
     expect(cartes.semaine?.title).toBe('Ce qui a bougé cette semaine');
-    expect(cartes.semaine?.uneTitle).toBe(une!.title);
-    expect(cartes.semaine?.href).toBe(une!.href);
-    expect(cartes.semaine?.dateLabel).toBe(une!.dateLabel);
-    expect(cartes.semaine?.description).toBe(une!.description);
+    expect(cartes.semaine?.uneTitle).toBe(suivante!.title);
+    expect(cartes.semaine?.href).toBe(suivante!.href);
+    expect(cartes.semaine?.dateLabel).toBe(suivante!.dateLabel);
+    expect(cartes.semaine?.description).toBe(suivante!.description);
 
     expect(cartes.dateCle).not.toBeNull();
     expect(cartes.dateCle?.title).toBe('Prochaine date clé');
@@ -503,7 +518,7 @@ describe('cartesClinDoeil', () => {
 describe('ligneDeclaresSousCondition', () => {
   const data = asCampagne(campagneJson);
   const attenduEditorial =
-    '+ 4 déclarés sous condition : Éric Zemmour, François Ruffin, Jordan Bardella, Philippe Brun';
+    '+ 3 déclarés sous condition : Éric Zemmour, Jordan Bardella, Philippe Brun';
 
   it('dérive le libellé, le href et laisse le compteur des 18 personnalités', () => {
     const ligne = ligneDeclaresSousCondition(
@@ -547,5 +562,71 @@ describe('ligneDeclaresSousCondition', () => {
     expect(src).not.toMatch(/SC sous condition/);
     expect(src).not.toMatch(/pastille[^.\n]*SC|\bSC\b/);
     expect(template).not.toMatch(/statutPastille\([^)]*condition/);
+  });
+});
+
+describe('datesAVenir', () => {
+  const data = asCampagne(campagneJson);
+
+  it('garde le 17 novembre dans les données, et le masque à partir du 18', () => {
+    expect(data.dates.some((item) => item.date === '2026-11-17')).toBe(true);
+    expect(data.dates.some((item) => item.id === 'reunion-directeurs-primaire-droite-centre')).toBe(
+      true,
+    );
+
+    const avant = datesAVenir(data.dates, new Date('2026-11-17T12:00:00+01:00')).map(
+      (item) => item.date,
+    );
+    expect(avant).toContain('2026-11-17');
+
+    const le22 = datesAVenir(data.dates, new Date('2026-11-22T12:00:00+01:00'));
+    expect(le22.map((item) => item.date)).not.toContain('2026-11-17');
+    expect(le22.map((item) => item.id)).toEqual([
+      'cloture-parrainages',
+      'premier-tour',
+      'second-tour',
+    ]);
+
+    const src = readFileSync(join(ROOT, 'src/components/ApercuCampagne.astro'), 'utf8');
+    expect(src).toMatch(/datesAVenir/);
+    expect(src).toMatch(/datesVisibles/);
+  });
+});
+
+describe('getUneLienApercuSuivante', () => {
+  const fixture = (over: Partial<EditorialPost> & Pick<EditorialPost, 'slug' | 'date'>): EditorialPost => ({
+    kind: 'analyse',
+    title: over.title ?? over.slug,
+    description: over.description ?? `chapo ${over.slug}`,
+    published: over.date,
+    updated: over.date,
+    href: over.href ?? `/analyses/${over.slug}`,
+    cover: null,
+    ...over,
+  });
+
+  it('prend l’élément suivant par récence, sans figer le slug de la une courante', () => {
+    const posts: EditorialPost[] = [
+      fixture({ slug: 'une-du-jour', date: '2026-11-23', title: 'Une du jour' }),
+      fixture({ slug: 'une-precedente', date: '2026-11-22', title: 'Une précédente' }),
+      fixture({ slug: 'une-plus-ancienne', date: '2026-11-21', title: 'Plus ancienne' }),
+    ];
+    const courante = getUneLienApercu(posts);
+    expect(courante?.slug).toBe('une-du-jour');
+    const suivante = getUneLienApercuSuivante(posts, courante);
+    expect(suivante?.slug).toBe('une-precedente');
+    expect(suivante?.title).toBe('Une précédente');
+    expect(suivante?.slug).not.toBe(courante?.slug);
+    expect(JSON.stringify(posts.map((post) => post.slug))).not.toMatch(
+      /voter-a-16-ans-l-urne-plutot-que-le-blocus/,
+    );
+  });
+
+  it('renvoie null s’il n’y a pas d’élément suivant, ou pas de une courante', () => {
+    const seule: EditorialPost[] = [
+      fixture({ slug: 'unique', date: '2026-11-22', title: 'Seule' }),
+    ];
+    expect(getUneLienApercuSuivante(seule, getUneLienApercu(seule))).toBeNull();
+    expect(getUneLienApercuSuivante(seule, null)).toBeNull();
   });
 });

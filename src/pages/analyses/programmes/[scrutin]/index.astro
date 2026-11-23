@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { listScrutins, listCandidates, getVeille2027 } from '../../../../lib/programs';
+import { listScrutins, listCandidates, getVeille2027, PROGRAM_STATUS_LABELS } from '../../../../lib/programs';
 
 export function getStaticPaths() {
   return listScrutins().map((s) => ({
@@ -66,7 +66,7 @@ const veille = scrutin.id === 'presidentielle-2027' ? getVeille2027() : null;
               .filter((c) => c.program_status === 'awaiting_program')
               .map((c) => (
                 <li>
-                  {c.name} ({c.affiliation}) — en attente
+                  {c.name} ({c.affiliation}) — {PROGRAM_STATUS_LABELS.awaiting_program}
                 </li>
               ))}
           </ul>

@@ -99,12 +99,12 @@ describe('editorial covers', () => {
 
   it('homepage hero is the une, not the below-the-fold gallery', () => {
     const src = readFileSync(path.join(process.cwd(), 'src/pages/index.astro'), 'utf8');
-    const hero = src.indexOf('<UnesCarousel');
-    const intro = src.indexOf('home-intro--after-une');
+    const hero = src.indexOf('<UneDuJour');
     const gallery = src.indexOf('id="visuels-2027"');
+    expect(src).not.toMatch(/<UnesCarousel/);
     expect(hero).toBeGreaterThan(-1);
-    expect(hero).toBeLessThan(intro);
-    expect(intro).toBeLessThan(gallery);
+    expect(gallery).toBeGreaterThan(-1);
+    expect(hero).toBeLessThan(gallery);
   });
 
   it('analyses index lists dossier cards with covers before the press feed', () => {

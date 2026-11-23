@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SheetTabs from '../../../components/SheetTabs.astro';
-import { listScrutins, listCandidates, getVeille2027 } from '../../../lib/programs';
+import { listScrutins, listCandidates, getVeille2027, PROGRAM_STATUS_LABELS } from '../../../lib/programs';
 import {
   getCandidateFamily,
   groupCandidatesByFamily,
@@ -41,7 +41,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
       <a href="/analyses/programmes-comparateur/?view=coverage">couverture thématique</a>.
     </p>
     <p class="meta" role="status">
-      Intégration 2027 (P10-4)&nbsp;: {integration2027.candidateCount} fiches ·{' '}
+      Intégration 2027&nbsp;: {integration2027.candidateCount} fiches ·{' '}
       {integration2027.measureCount} mesures · sous-thèmes {formatPct(integration2027.subthemeRate)} ·
       remplissage thèmes {formatPct(integration2027.fillRate)}
       {integration2027.thinCandidates.length > 0
@@ -97,7 +97,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
                     {' '}
                     — {f.candidate.affiliation} · {fam.shortLabel} · {f.measures.length} mesures
                     {f.chiffrages.length > 0 ? ` · ${f.chiffrages.length} chiffrage(s)` : ''} ·{' '}
-                    <span class="meta">{f.program.status}</span>
+                    <span class="meta">{PROGRAM_STATUS_LABELS[f.program.status] ?? f.program.status}</span>
                   </li>
                 );
               })}
@@ -108,7 +108,7 @@ const dataGouvLinks = programRelatedDataGouvLinks();
                 .filter((c) => c.program_status === 'awaiting_program')
                 .map((c) => (
                   <li>
-                    {c.name} ({c.affiliation}) — en attente
+                    {c.name} ({c.affiliation}) — {PROGRAM_STATUS_LABELS.awaiting_program}
                   </li>
                 ))}
             </ul>

@@ -613,7 +613,7 @@ describe('analyses', () => {
     );
     expect(troisPourUnContre.description.length).toBeLessThanOrEqual(200);
     expect(troisPourUnContre.description).toBe(
-      "Retailleau se rallie à une primaire « en début d'année » : trois candidats sur quatre sont pour. Philippe dit non et renvoie le départage à février. Ce que l'attente coûte à chacun.",
+      "Retailleau se rallie à une primaire « en début d'année » : trois candidats sur quatre sont pour. Philippe dit non. Ce que l'attente coûte à chacun.",
     );
     expect(troisPourUnContre.disclaimer).toMatch(/opinion de la rédaction/);
     expect(troisPourUnContre.sources_intro).toMatch(/Consultées le 4 novembre 2026/);
@@ -2514,7 +2514,7 @@ describe('analyses', () => {
     expect(entry?.date).toBe('2026-10-03');
     expect(entry?.published).toBe('2026-10-03');
     expect(entry?.updated).toBe('2026-10-03');
-    expect(entry?.description).toBe(dsaQuiDecide.chapo);
+    expect(entry?.description).toBe(dsaQuiDecide.description);
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/dsa-qui-decide.jpg');
     expect(entry?.cover?.alt.startsWith('Illustration à l’encre et à l’aquarelle :')).toBe(true);
     expect(getAnalysis('dsa-qui-decide')?.href).toBe('/analyses/dsa-qui-decide');
@@ -2596,7 +2596,7 @@ describe('analyses', () => {
     expect(entry?.published).toBe('2026-10-04');
     expect(entry?.updated).toBe('2026-10-04');
     expect(entry?.description).toBe(lisnardAbonnes.description);
-    expect(entry?.description.startsWith('Cent mille abonnés de plus en sept jours')).toBe(true);
+    expect(entry?.description.startsWith('Lisnard a gagné 100 700 abonnés')).toBe(true);
     expect(entry?.description).toMatch(/100 700 abonnés/);
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/lisnard-abonnes-electeurs.jpg');
     expect(entry?.cover?.alt.startsWith('Illustration à l’encre et à l’aquarelle :')).toBe(true);
@@ -2676,7 +2676,7 @@ describe('analyses', () => {
     expect(urls).toContain(
       'https://www.france24.com/fr/info-en-continu/20260919-charles-sapin-ne-sera-plus-sur-france-inter-pour-son-%C3%A9dito-contest%C3%A9',
     );
-    expect(getAnalysis('ecoles-journalisme-pluralite')?.description).toMatch(/affaire Sapin/);
+    expect(getAnalysis('ecoles-journalisme-pluralite')?.description).toMatch(/un article ne trahit pas son auteur/);
   });
 
   it('2027 preparation stub lists official sources and calendar', () => {
