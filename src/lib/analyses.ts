@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import arcomCreateurs from '../data/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes.json';
 import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
 import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
 import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
@@ -64,6 +65,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: arcomCreateurs.slug,
+    title: arcomCreateurs.title,
+    description: arcomCreateurs.description,
+    date: arcomCreateurs.date,
+    published: arcomCreateurs.date,
+    updated: arcomCreateurs.updated,
+    href: '/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
+    cover: uneCover(
+      'temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
+      'Aquarelle d\'un salon transformé en studio d\'enregistrement, en lumière dorée : deux fauteuils identiques à motifs bleu-vert de part et d\'autre d\'une petite table où est posé un sablier ; au premier plan, un micro sur pied et une caméra sur trépied font face à un anneau lumineux éteint.',
+    ),
+  },
   {
     slug: ruffinParti.slug,
     title: ruffinParti.title,
