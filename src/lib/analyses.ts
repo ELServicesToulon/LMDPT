@@ -8,6 +8,11 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
+import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
+import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
+import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
+import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
 import hausseSalaireExoneree from '../data/analyses/hausse-de-salaire-exoneree-qui-regle-la-note.json';
 import jaiCommisUneErreur from '../data/analyses/j-ai-commis-une-erreur-laquelle.json';
 import loiQuiSeVoteABruxelles from '../data/analyses/la-loi-qui-se-vote-a-bruxelles.json';
@@ -59,6 +64,71 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: ruffinParti.slug,
+    title: ruffinParti.title,
+    description: ruffinParti.description,
+    date: ruffinParti.date,
+    published: ruffinParti.date,
+    updated: ruffinParti.updated,
+    href: '/analyses/ruffin-parti-combien-de-gauches-reste-t-il',
+    cover: uneCover(
+      'ruffin-parti-combien-de-gauches-reste-t-il',
+      'Aquarelle de l’intérieur d’une vieille salle des fêtes en fin d’après-midi : des chaises en bois rassemblées autour de deux longues tables, séparées par une allée vide ; entre les deux, quelques chaises isolées sur le parquet ; près d’une porte, une chaise pliante refermée contre le mur, un manteau posé dessus.',
+    ),
+  },
+  {
+    slug: voterA16Ans.slug,
+    title: voterA16Ans.title,
+    description: voterA16Ans.description,
+    date: voterA16Ans.date,
+    published: voterA16Ans.date,
+    updated: voterA16Ans.updated,
+    href: '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus',
+    cover: uneCover(
+      'voter-a-16-ans-l-urne-plutot-que-le-blocus',
+      'Aquarelle de l’entrée d’un vieux lycée au petit matin : près du portail en fer forgé, des chaises d’école empilées en barricade ; de l’autre côté de la cour pavée, un isoloir en bois à rideau et une urne transparente vide sur une table nappée ; au premier plan, un cartable sur un banc et des feuilles blanches au sol.',
+    ),
+  },
+  {
+    slug: toutesLesNiches.slug,
+    title: toutesLesNiches.title,
+    description: toutesLesNiches.description,
+    date: toutesLesNiches.date,
+    published: toutesLesNiches.date,
+    updated: toutesLesNiches.updated,
+    href: '/analyses/toutes-les-niches-meme-la-votre',
+    cover: uneCover(
+      'toutes-les-niches-meme-la-votre',
+      'Aquarelle d’une cour pavée au petit matin : une rangée de niches à chien en bois de tailles différentes, certaines fermées par des cadenas, la plus grande richement ornée, une lanterne allumée et, au premier plan, un trousseau de clés anciennes sur un muret.',
+    ),
+  },
+  {
+    slug: quellesAssociations.slug,
+    title: quellesAssociations.title,
+    description: quellesAssociations.description,
+    date: quellesAssociations.date,
+    published: quellesAssociations.date,
+    updated: quellesAssociations.updated,
+    href: '/analyses/3-7-milliards-quelles-associations',
+    cover: uneCover(
+      '3-7-milliards-quelles-associations',
+      'Aquarelle d’un vieux couloir avec une rangée de boîtes aux lettres en bois sans nom, et, sur une console au premier plan, une paire de ciseaux en laiton, une enveloppe fermée et une caisse de légumes et de pain.',
+    ),
+  },
+  {
+    slug: dixOuTrenteCinqMilliards.slug,
+    title: dixOuTrenteCinqMilliards.title,
+    description: dixOuTrenteCinqMilliards.description,
+    date: dixOuTrenteCinqMilliards.date,
+    published: dixOuTrenteCinqMilliards.date,
+    updated: dixOuTrenteCinqMilliards.updated,
+    href: '/analyses/10-ou-35-milliards-qui-compte-juste',
+    cover: uneCover(
+      '10-ou-35-milliards-qui-compte-juste',
+      'Aquarelle d’un bureau en bois près d’une fenêtre, avec deux bouliers anciens aux perles disposées différemment, une paire de lunettes, un registre de comptes fermé et un petit sablier en laiton.',
+    ),
+  },
   {
     slug: hausseSalaireExoneree.slug,
     title: hausseSalaireExoneree.title,
@@ -452,7 +522,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
   {
     slug: dsaQuiDecide.slug,
     title: dsaQuiDecide.title,
-    description: dsaQuiDecide.chapo,
+    description: dsaQuiDecide.description,
     date: dsaQuiDecide.date,
     published: dsaQuiDecide.date,
     updated: dsaQuiDecide.updated,
@@ -490,7 +560,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: ecolesJournalisme.slug,
     title: ecolesJournalisme.title,
     description:
-      'Aucun scrutin ne dit pour qui votent les diplômés des écoles de journalisme. Seize cursus reconnus, onze dans des universités, 292 places chiffrées en 2023, une seule université entendue en décembre 2025. Les sièges restent vides. L’affaire Sapin rappelle qu’un article ne donne pas la couleur de son auteur.',
+      'Aucune enquête ne dit pour qui votent les diplômés des écoles de journalisme. Seize cursus reconnus, et un rappel : un article ne trahit pas son auteur.',
     date: ecolesJournalisme.date,
     href: '/analyses/ecoles-journalisme-pluralite',
     cover: uneCover(
@@ -502,7 +572,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: trumpIa.slug,
     title: trumpIa.title,
     description:
-      'Le 14 septembre 2026, Trump réduit les garde-fous de l’IA à la personne du président et cible Anthropic / Dario Amodei. Qui tient le frein : une personne, ou une règle ?',
+      'Le 14 septembre 2026, Trump confie les garde-fous de l\'IA au seul président et vise Anthropic. Qui doit tenir le frein : une personne ou une règle ?',
     date: trumpIa.updated,
     published: trumpIa.date,
     updated: trumpIa.updated,
@@ -516,7 +586,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: lfiBfmtv.slug,
     title: lfiBfmtv.title,
     description:
-      'Du 9 au 16 septembre 2026, La France insoumise a d’abord suspendu toute présence sur BFMTV, puis annoncé un retour conditionnel. Deux récits, boycott sélectif, et ce que ces bilatérales font au pluralisme hors Arcom.',
+      'En septembre 2026, LFI suspend sa présence sur BFMTV, puis pose ses conditions pour revenir. Deux récits, et ce que ce bras de fer fait au pluralisme.',
     date: lfiBfmtv.date,
     href: '/analyses/lfi-bfmtv-exigence-pluralisme',
     cover: uneCover(
@@ -528,7 +598,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: ukraineEnergie.slug,
     title: ukraineEnergie.title,
     description:
-      'Enquête : le triangle énergétique entre l’Europe, l’Algérie et la Russie, dans le prolongement de la guerre en Ukraine. Cinq scénarios sur douze à trente-six mois, présentés comme des hypothèses, pas comme une prévision.',
+      'Europe, Algérie, Russie : le triangle de l\'énergie depuis la guerre en Ukraine. Cinq scénarios à un ou trois ans, présentés comme des hypothèses.',
     date: ukraineEnergie.date,
     published: ukraineEnergie.date,
     updated: ukraineEnergie.updated,
@@ -578,7 +648,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'assemblee-sujets',
     title: 'Assemblée des sujets de campagne',
     description:
-      'Sur les 7 derniers jours de presse collectée : quels sujets dominent, et quels candidats y sont le plus associés. Part de presse, pas intention de vote.',
+      'Sur sept jours de presse, quels sujets dominent et quels candidats y sont le plus associés. On mesure la place dans la presse, pas les intentions de vote.',
     date: '2026-09-26',
     href: '/analyses/assemblee-sujets',
     cover: uneCover(
@@ -614,7 +684,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'gouvernance-an1t-droit',
     title: 'Droit électoral, AN1T et gouvernance non bloquée',
     description:
-      'Corpus juridique (Constitution, Code électoral), chemins pour 100 % 1er tour ou dose proportionnelle, études de cas 2017–2022–2024, gouvernance sans 49.3 ni décrets de contournement. Synthèse documentaire (démocratie avant l’élimination).',
+      'Une Assemblée élue en un seul tour, ou avec une dose de proportionnelle : ce que le droit permet, et les leçons de 2017, 2022 et 2024.',
     date: '2026-07-17',
     href: '/analyses/gouvernance-an1t-droit',
     cover: uneCover(
@@ -626,7 +696,7 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     slug: 'alerte-citoyenne',
     title: 'Alerte citoyenne — débat public',
     description:
-      'Tour d’horizon documenté (France / UE) des textes et projets cités comme encadrant la liberté d’expression avant le premier tour 2027.',
+      'Les textes français et européens qui encadrent la liberté d\'expression et le débat politique avant 2027, présentés un par un avec leurs sources.',
     date: '2026-07-16',
     href: '/analyses/alerte-citoyenne',
     cover: uneCover(

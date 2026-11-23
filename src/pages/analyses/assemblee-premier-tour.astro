@@ -532,7 +532,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
     <!-- === NOUVELLE SECTION LIEN PROGRAMMES 2027 ↔ SCÉNARIOS AN1T + HÉMICYCLE HYBRIDE (audit P7/P8) === -->
     <section id="programmes-an1t" style="margin-top:1.25rem; border-top:1px solid var(--border); padding-top:0.85rem;">
       <h4>Programmes 2027 et alignement avec projections AN1T / hémicycle hybride</h4>
-      <p class="meta" style="font-size:0.9rem;">Analyse factuelle utilisant les données programmes existantes (mesures <code>theme: "institutions"</code> des fiches 2027 partielles). Ces programmes n'abordent pas directement le mode de scrutin, mais leurs positions (réforme territoriale, fonction publique, continuité RN, VIe République) peuvent influencer la mobilisation des blocs civiques au premier tour législatif. Cela modifie les % voix → allocations Sainte-Laguë (via <code>simulateFromVoteShares</code>) → répartition visuelle dans les quartiers de l'hémicycle hybride (structure actuelle Wikimedia + projection).</p>
+      <p class="meta" style="font-size:0.9rem;">Analyse factuelle utilisant les données programmes existantes (mesures sur le thème des institutions des fiches 2027 partielles). Ces programmes n'abordent pas directement le mode de scrutin, mais leurs positions (réforme territoriale, fonction publique, continuité RN, VIe République) peuvent influencer la mobilisation des blocs civiques au premier tour législatif. Cela modifie les % voix → allocations Sainte-Laguë → répartition visuelle dans les quartiers de l'hémicycle hybride (structure actuelle Wikimedia + projection).</p>
 
       <div style="display:grid; gap:0.9rem; margin:0.6rem 0;">
         <!-- Bardella / RN -->
@@ -568,7 +568,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
         </div>
       </div>
 
-      <p class="meta" style="font-size:0.78rem; margin-top:0.4rem;">Méthode : % voix hypothétiques dérivés des signaux programmes (pas de régression quantitative). Sièges = <code>simulateFromVoteShares(shares, 577, 3)</code> identique au simulateur interactif et moteur AN1T. Les hémicycles superposent sur le modèle officiel 577 positions pour montrer l'impact spatial des programmes sur la représentation fidèle au 1er tour.</p>
+      <p class="meta" style="font-size:0.78rem; margin-top:0.4rem;">Méthode : % voix hypothétiques dérivés des signaux programmes (pas de régression quantitative). Sièges répartis à la Sainte-Laguë (577 sièges, seuil de 3 %), identique au simulateur interactif. Les hémicycles superposent sur le modèle officiel 577 positions pour montrer l'impact spatial des programmes sur la représentation fidèle au 1er tour.</p>
     </section>
   </section>
 
@@ -704,7 +704,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
       <li>Sondages agrégés : Ifop, Harris Interactive, Elabe (références récentes ; utilisés uniquement pour illustration pédagogique).</li>
       <li>Programmes candidats 2027 : données veille (presse + évolution-matrix) pour alignement hypothétique sur mesures phares (institutions incluses). Lien explicite programmes → % voix blocs AN1T → sièges Sainte-Laguë → impact visuel hémicycle hybride (section dédiée ci-dessus).</li>
       <li>Données réelles de référence : Résultats 1er tour législatives 2024 — data.gouv.fr (Ministère de l’Intérieur). Modèle hémicycle — Wikimedia Commons (XVIIe législature).</li>
-      <li>Méthode : Sainte-Laguë implémentée dans <code>src/lib/an1t.ts</code> (tests inclus). Blocs civiques : mapping nuances officielles (CodNuaCand) vers 5 grands blocs.</li>
+      <li>Méthode : Sainte-Laguë (tests inclus). Blocs civiques : regroupement des nuances officielles vers 5 grands blocs.</li>
       <li>Calendrier officiel : 1er tour présidentiel 18 avril 2027, législatives à suivre.</li>
     </ul>
     <p class="meta">Toutes les projections sont <strong>illustratives et non prédictives</strong>. Consultez toujours les données officielles brutes. Neutralité absolue : aucun jugement sur le mode de scrutin.</p>
@@ -741,7 +741,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
         allocations={hemiAlloc577}
         totalSeats={seatsFull}
         subtitle="Couche 1 : structure actuelle (Wikimedia). Couche 2 : projection Sainte-Laguë 1er tour 2024 dans les quartiers. Toggle granularité 5 blocs / 12 groupes dans les contrôles."
-        sourceNote="P7-4 · validation 2024 · lien carte #an1t-map-geo"
+        sourceNote="validation 2024 · lien carte #an1t-map-geo"
         initialMode="hybrid"
         initialGranularity="major"
         showControls={true}
@@ -753,7 +753,7 @@ const reelle2024Alloc = analysis.an_reelle.blocs.map((b: any) => ({
         allocations={hemiAlloc150}
         totalSeats={seatsProposal}
         subtitle="Même méthode et mêmes % de voix T1 ; seul le total de sièges change (Sainte-Laguë sur 150). Utile pour lire la proportionnalité à plus petite chambre."
-        sourceNote="P7-4 · proposition pédagogique 150 sièges · pas une réforme officielle"
+        sourceNote="proposition pédagogique 150 sièges · pas une réforme officielle"
         initialMode="hybrid"
         initialGranularity="major"
         showControls={true}

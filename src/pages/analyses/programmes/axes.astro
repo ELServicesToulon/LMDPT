@@ -7,6 +7,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ProgramAxesBoard from '../../../components/ProgramAxesBoard.astro';
 import { listScrutins, getScrutin } from '../../../lib/programs';
 import { buildProgramAxesBoard } from '../../../lib/program-axes';
+import { AXES_2027_META_DESCRIPTION } from '../../../lib/loulou-meta-descriptions';
 
 const defaultScrutin = 'presidentielle-2027';
 const scrutinParam = Astro.url.searchParams.get('scrutin') ?? defaultScrutin;
@@ -16,7 +17,10 @@ const scrutins = listScrutins();
 const data = buildProgramAxesBoard(scrutinId);
 
 const title = `Programmes par grands axes — ${scrutinMeta.label}`;
-const description = `Propositions des candidats regroupées par grands axes (fiscalité, retraites, Europe, climat, sécurité…) — ${scrutinMeta.label}. Comparaison factuelle, sans classement.`;
+const description =
+  scrutinId === 'presidentielle-2027'
+    ? AXES_2027_META_DESCRIPTION
+    : 'Les propositions des candidats rangées par thème : fiscalité, retraites, Europe, climat, sécurité. Une comparaison factuelle, sans classement.';
 ---
 
 <BaseLayout title={title} description={description}>

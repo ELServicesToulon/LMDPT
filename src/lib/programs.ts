@@ -142,7 +142,7 @@ export const STATUS_LABELS: Record<string, string> = {
 };
 
 export const PROGRAM_STATUS_LABELS: Record<string, string> = {
-  awaiting_program: 'En attente (non intégré)',
+  awaiting_program: 'Programme pas encore publié',
   partial: 'Partiel',
   published: 'Publié',
 };

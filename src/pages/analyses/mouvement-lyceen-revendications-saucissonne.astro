@@ -23,7 +23,7 @@ const tocItems = sections
   .concat([{ href: '#sources', label: 'Sources' }]);
 ---
 
-<BaseLayout title={data.title} description={data.chapo} type="article" keywords={data.tags.join(', ')}>
+<BaseLayout title={data.title} description={data.description} type="article" keywords={data.tags.join(', ')}>
   <nav class="meta" aria-label="Fil d'Ariane" slot="lede">
     <a href="/analyses/">Analyses</a>
     {' → '}

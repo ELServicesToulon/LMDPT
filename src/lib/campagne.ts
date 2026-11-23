@@ -1,4 +1,9 @@
-import { getUneDuJour, type EditorialPost } from './editorial';
+import {
+  compareEditorialRecency,
+  getUneDuJour,
+  listEditorialPosts,
+  type EditorialPost,
+} from './editorial';
 
 const PARIS_TZ = 'Europe/Paris';
 
@@ -341,6 +346,7 @@ export function groupPersonnalites(
 }
 
 export type UneLienApercu = {
+  slug: string;
   title: string;
   href: string;
   date: string;
@@ -348,24 +354,50 @@ export type UneLienApercu = {
   description: string;
 };
 
+export function toUneLienApercu(post: EditorialPost): UneLienApercu {
+  return {
+    slug: post.slug,
+    title: post.title,
+    href: post.href,
+    date: post.date,
+    dateLabel: formatCampagneDate(post.date, { weekday: false }),
+    description: post.description,
+  };
+}
+
 export function getUneLienApercu(posts?: EditorialPost[]): UneLienApercu | null {
   const une = getUneDuJour(posts);
-  if (!une) return null;
-  return {
-    title: une.title,
-    href: une.href,
-    date: une.date,
-    dateLabel: formatCampagneDate(une.date, { weekday: false }),
-    description: une.description,
-  };
+  return une ? toUneLienApercu(une) : null;
+}
+
+/**
+ * Une qui suit la une courante dans l’ordre de récence (slug, sinon href).
+ * Rien n’est figé sur un slug de jour : la suivante se recalcule au build.
+ */
+export function getUneLienApercuSuivante(
+  posts?: EditorialPost[],
+  current: UneLienApercu | null = getUneLienApercu(posts),
+): UneLienApercu | null {
+  if (!current) return null;
+  const list = [...(posts ?? listEditorialPosts())].sort(compareEditorialRecency);
+  const suivante = list.find((post) => {
+    if (current.slug) return post.slug !== current.slug;
+    return post.href !== current.href;
+  });
+  return suivante ? toUneLienApercu(suivante) : null;
 }
 
 const MENTION_DECRET_DEFAUT = 'à confirmer par décret de convocation';
 
+/** Dates dont le jour calendaire (AAAA-MM-JJ, Paris) est ≥ le jour du build. */
+export function datesAVenir(dates: CampagneDate[], now: Date): CampagneDate[] {
+  const today = parisCalendarDate(now);
+  return dates.filter((item) => item.date >= today);
+}
+
 /** Première date du tableau dont le jour calendaire (AAAA-MM-JJ) est ≥ aujourd’hui à Paris. */
 export function prochaineDateCle(dates: CampagneDate[], now: Date): CampagneDate | null {
-  const today = parisCalendarDate(now);
-  return dates.find((item) => item.date >= today) ?? null;
+  return datesAVenir(dates, now)[0] ?? null;
 }
 
 /**
@@ -389,6 +421,31 @@ export type CarteCandidatsClinDoeil = {
   ligne: string;
   listeLabel: 'Voir la liste';
 };
+
+export type LigneDeclaresSousCondition = {
+  libelle: string;
+  href: string;
+};
+
+/**
+ * Ligne sous la carte « Qui est candidat ».
+ * Filtre `category === 'conditionnelle'` (pas `status` : Brun = primaire,
+ * Bardella = substitution_parti).
+ */
+export function ligneDeclaresSousCondition(
+  entries: ReadonlyArray<{ name: string; category: string }>,
+  href: string,
+): LigneDeclaresSousCondition | null {
+  const noms = entries
+    .filter((entry) => entry.category === 'conditionnelle')
+    .map((entry) => entry.name)
+    .sort((a, b) => a.localeCompare(b, 'fr'));
+  if (noms.length === 0) return null;
+  return {
+    libelle: `+ ${noms.length} déclarés sous condition : ${noms.join(', ')}`,
+    href,
+  };
+}
 
 export type CarteSemaineClinDoeil = {
   title: 'Ce qui a bougé cette semaine';
@@ -429,6 +486,7 @@ export function cartesClinDoeil(opts: {
   const { data, une, now } = opts;
   const count = data.personnalites.length;
   const next = prochaineDateCle(data.dates, now);
+  const mouvement = getUneLienApercuSuivante(undefined, une);
 
   return {
     candidats: {
@@ -438,14 +496,14 @@ export function cartesClinDoeil(opts: {
       ligne: lignePersonnalitesSourcees(count),
       listeLabel: 'Voir la liste',
     },
-    semaine: une
+    semaine: mouvement
       ? {
           title: 'Ce qui a bougé cette semaine',
-          date: une.date,
-          dateLabel: une.dateLabel,
-          uneTitle: une.title,
-          href: une.href,
-          description: une.description,
+          date: mouvement.date,
+          dateLabel: mouvement.dateLabel,
+          uneTitle: mouvement.title,
+          href: mouvement.href,
+          description: mouvement.description,
         }
       : null,
     dateCle: next
