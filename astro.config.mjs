@@ -14,6 +14,15 @@ const REDIRECT_STUB_PATHS = [
   'analyses/on-a-vole-la-revolution-puis-la-revolte/index.html',
 ];
 
+/** Pages renommées : canonique = nouvelle URL, pas de H1 « Page retirée ». */
+const RENAMED_REDIRECT_STUBS = [
+  {
+    rel: 'analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus/index.html',
+    canonical: `${siteUrl}/analyses/voter-a-16-ans-une-loi-suffirait-elle/`,
+    refresh: '/analyses/voter-a-16-ans-une-loi-suffirait-elle/',
+  },
+];
+
 function patchRedirectStubHtml(html) {
   const canonicalTag = `<link rel="canonical" href="${ANALYSES_INDEX_CANONICAL}" />`;
   let out = html;
@@ -24,6 +33,25 @@ function patchRedirectStubHtml(html) {
   }
   if (!/<h1\b/i.test(out)) {
     out = out.replace('</body>', '<h1>Page retirée</h1></body>');
+  }
+  return out;
+}
+
+function patchRenamedRedirectStubHtml(html, canonical, refresh) {
+  const canonicalTag = `<link rel="canonical" href="${canonical}" />`;
+  let out = html;
+  if (/<link[^>]+rel=["']canonical["']/i.test(out)) {
+    out = out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/i, canonicalTag);
+  } else if (/<\/head>/i.test(out)) {
+    out = out.replace(/<\/head>/i, `  ${canonicalTag}\n</head>`);
+  } else if (/<meta[^>]+name=["']robots["'][^>]*>/i.test(out)) {
+    out = out.replace(/<meta[^>]+name=["']robots["'][^>]*>/i, (m) => `${m}${canonicalTag}`);
+  }
+  if (/<meta[^>]+http-equiv=["']refresh["']/i.test(out)) {
+    out = out.replace(
+      /<meta[^>]+http-equiv=["']refresh["'][^>]*>/i,
+      `<meta http-equiv="refresh" content="0;url=${refresh}">`,
+    );
   }
   return out;
 }
@@ -44,6 +72,16 @@ function redirectStubHeading() {
             continue;
           }
           writeFileSync(file, patchRedirectStubHtml(html));
+        }
+        for (const stub of RENAMED_REDIRECT_STUBS) {
+          const file = join(root, stub.rel);
+          let html;
+          try {
+            html = readFileSync(file, 'utf8');
+          } catch {
+            continue;
+          }
+          writeFileSync(file, patchRenamedRedirectStubHtml(html, stub.canonical, stub.refresh));
         }
       },
     },
@@ -67,5 +105,9 @@ export default defineConfig({
     '/analyses/quatremer-marianne': ANALYSIS_INDEX_REDIRECT,
     '/analyses/livres-candidats': ANALYSIS_INDEX_REDIRECT,
     '/analyses/on-a-vole-la-revolution-puis-la-revolte': ANALYSIS_INDEX_REDIRECT,
+    '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus': {
+      status: 301,
+      destination: '/analyses/voter-a-16-ans-une-loi-suffirait-elle',
+    },
   },
 });

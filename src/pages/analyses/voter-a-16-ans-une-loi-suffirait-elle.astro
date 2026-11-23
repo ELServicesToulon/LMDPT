@@ -1,16 +1,16 @@
 ---
 /**
- * Enquête et analyse Voter à 16 ans : l’urne plutôt que le blocus ?, 22 novembre 2026
- * Données : src/data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json
- * Vignette : public/illustrations/unes/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.jpg
- * Alt : Aquarelle de l’entrée d’un vieux lycée au petit matin : près du portail en fer forgé, des chaises d’école empilées en barricade ; de l’autre côté de la cour pavée, un isoloir en bois à rideau et une urne transparente vide sur une table nappée ; au premier plan, un cartable sur un banc et des feuilles blanches au sol.
+ * Enquête et analyse Voter à 16 ans : une loi suffirait-elle ?, 22 novembre 2026
+ * Données : src/data/analyses/voter-a-16-ans-une-loi-suffirait-elle.json
+ * Vignette : public/illustrations/unes/analyses/voter-a-16-ans-une-loi-suffirait-elle.jpg
+ * Alt : Aquarelle de la façade du Palais Bourbon vue depuis le quai, au petit matin : au premier plan, une urne transparente vide posée sur une table nappée, le long d’un parapet de pierre ; de l’autre côté de la Seine, le palais à colonnes sous une lumière douce.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StickyToc from '../../components/StickyToc.astro';
 import PoliticalHueBadges from '../../components/PoliticalHueBadges.astro';
 import { DOE_FR } from '../../lib/doe';
 import { renderAnalysisInline, type AnalysisBlock } from '../../lib/analysis-inline';
-import data from '../../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
+import data from '../../data/analyses/voter-a-16-ans-une-loi-suffirait-elle.json';
 
 interface SourceLink {
   label: string;

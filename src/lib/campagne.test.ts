@@ -618,7 +618,7 @@ describe('getUneLienApercuSuivante', () => {
     expect(suivante?.title).toBe('Une précédente');
     expect(suivante?.slug).not.toBe(courante?.slug);
     expect(JSON.stringify(posts.map((post) => post.slug))).not.toMatch(
-      /voter-a-16-ans-l-urne-plutot-que-le-blocus/,
+      /voter-a-16-ans-une-loi-suffirait-elle/,
     );
   });
 
