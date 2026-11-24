@@ -138,11 +138,11 @@ describe('analyses', () => {
     );
   });
 
-  it('enquête Parrainages : les maires veulent signer en secret, l’État dit non du 25 novembre en une, sources, boîte DOE', () => {
+  it('enquête Parrainages : l’AMF réclame le secret pour les maires, l’État dit non du 25 novembre en une, sources, boîte DOE', () => {
     expect(parrainagesSecret.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
     expect(parrainagesSecret.date).toBe('2026-11-25');
     expect(parrainagesSecret.title).toBe(
-      'Parrainages : les maires veulent signer en secret, l’État dit non',
+      'Parrainages : l’AMF réclame le secret pour les maires, l’État dit non',
     );
     expect(parrainagesSecret.author).toBe('La rédaction');
     expect(parrainagesSecret.tags).toContain('doe');

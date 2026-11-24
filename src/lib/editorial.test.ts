@@ -131,7 +131,7 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('enquête Parrainages : les maires veulent signer en secret, l’État dit non du 25/11 en une, puis enquête Ruffin parti, combien de gauches reste-t-il ? du 23/11, enquête Voter à 16 ans : l’urne plutôt que le blocus ? du 22/11, enquête Toutes les niches en cinq ans, même la vôtre ? du 21/11, enquête 3,7 milliards : quelles associations ? du 20/11, enquête 10 ou 35 milliards : qui compte juste ? du 19/11, enquête Hausse de salaire exonérée : qui règle la note ? du 18/11, enquête « J’ai commis une erreur » : laquelle ? du 17/11, enquête La loi qui se vote à Bruxelles du 16/11, enquête Le serment du perdant du 15/11, enquête 1962, la porte de service du 14/11, enquête 800 000 en moins, 500 000 en plus du 13/11, enquête Union cherche arbitre du 12/11, enquête 1 502 contre 1 700 du 11/11, enquête Riner et parrainages du 10/11, enquête IA et campagne du 07/11, sel et poivre du 06/11, trois pour un contre du 05/11, 48 ou 500 lycées bloqués du 04/11, vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('enquête Parrainages : l’AMF réclame le secret pour les maires, l’État dit non du 25/11 en une, puis enquête Ruffin parti, combien de gauches reste-t-il ? du 23/11, enquête Voter à 16 ans : l’urne plutôt que le blocus ? du 22/11, enquête Toutes les niches en cinq ans, même la vôtre ? du 21/11, enquête 3,7 milliards : quelles associations ? du 20/11, enquête 10 ou 35 milliards : qui compte juste ? du 19/11, enquête Hausse de salaire exonérée : qui règle la note ? du 18/11, enquête « J’ai commis une erreur » : laquelle ? du 17/11, enquête La loi qui se vote à Bruxelles du 16/11, enquête Le serment du perdant du 15/11, enquête 1962, la porte de service du 14/11, enquête 800 000 en moins, 500 000 en plus du 13/11, enquête Union cherche arbitre du 12/11, enquête 1 502 contre 1 700 du 11/11, enquête Riner et parrainages du 10/11, enquête IA et campagne du 07/11, sel et poivre du 06/11, trois pour un contre du 05/11, 48 ou 500 lycées bloqués du 04/11, vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
     expect(getUneDuJour()?.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
     expect(sorted[1]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
@@ -139,7 +139,7 @@ describe('une du jour (égalité de date)', () => {
     expect(sorted[2]?.slug).toBe('voter-a-16-ans-l-urne-plutot-que-le-blocus');
     expect(sorted[2]?.date).toBe('2026-11-22');
     expect(getUneDuJour()?.title).toBe(
-      'Parrainages : les maires veulent signer en secret, l’État dit non',
+      'Parrainages : l’AMF réclame le secret pour les maires, l’État dit non',
     );
     expect(selEtPoivre.x_hook).toBe(
       "Selon l'AFP, un proche interlocuteur du chef de l'État parle de « coalition » de Lisnard à Glucksmann. Retailleau répond « sel et poivre » et « ticket » Mélenchon-Le Pen. Philippe et Glucksmann, chacun à sa façon, disent non.",
