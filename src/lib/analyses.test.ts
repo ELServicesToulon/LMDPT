@@ -140,11 +140,11 @@ describe('analyses', () => {
     );
   });
 
-  it('enquête Lisnard réélu à l’AMF avec 72 % : les maires ont voté, ils n’ont pas encore signé du 26 novembre en une, sources, boîte DOE', () => {
+  it('enquête Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature du 26 novembre en une, sources, boîte DOE', () => {
     expect(lisnardReelu.slug).toBe('lisnard-reelu-les-maires-ont-vote-pas-encore-signe');
     expect(lisnardReelu.date).toBe('2026-11-26');
     expect(lisnardReelu.title).toBe(
-      'Lisnard réélu à l’AMF avec 72 % : les maires ont voté, ils n’ont pas encore signé',
+      'Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature',
     );
     expect(lisnardReelu.author).toBe('La rédaction');
     expect(lisnardReelu.tags).toContain('doe');
