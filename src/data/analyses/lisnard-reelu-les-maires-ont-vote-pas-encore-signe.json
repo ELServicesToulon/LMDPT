@@ -1,0 +1,405 @@
+{
+  "slug": "lisnard-reelu-les-maires-ont-vote-pas-encore-signe",
+  "title": "Lisnard réélu à l’AMF avec 72 % : les maires ont voté, ils n’ont pas encore signé",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-26",
+  "updated": "2026-11-26",
+  "kicker": "Enquête et analyse · La rédaction · 26 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "David Lisnard a été réélu mercredi président de l’Association des maires de France, avec 72,06 % des suffrages. Le score est large, mais élire le patron d’une association n’est pas parrainer un candidat. Pour l’Élysée, il lui faudra 500 signatures d’élus, publiques et définitives, et, selon une enquête du Cevipof et de l’AMF, près de la moitié des maires refuseraient aujourd’hui de parrainer un candidat qui les solliciterait.",
+  "description": "Lisnard réélu à l’AMF avec 72,06 %. Un vote de maires n’est pas une signature : pour 2027, il faut 500 parrainages publics, et près de la moitié des maires refuseraient de parrainer.",
+  "disclaimer": "Cette analyse décrit des résultats officiels, des textes, des déclarations de candidats et d’élus et une enquête sur les intentions de parrainage des maires, tels que rapportés par leurs auteurs et par la presse. Elle ne dit pas qui a raison sur le fond, ne prédit pas le nombre de parrainages de tel ou tel candidat et ne contient aucun sondage d’intentions de vote.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "parrainages",
+    "maires",
+    "amf",
+    "doe"
+  ],
+  "x_hook": "David Lisnard a été réélu mercredi président de l’Association des maires de France, avec 72,06 % des suffrages. Le score est large, mais élire le patron d’une association n’est pas parrainer un candidat. Pour l’Élysée, il lui faudra 500 signatures d’élus, publiques et définitives, et, selon une enquête du Cevipof et de l’AMF, près de la moitié des maires refuseraient aujourd’hui de parrainer un candidat qui les solliciterait.",
+  "hues": [
+    {
+      "slug": "anonymat-parrainages",
+      "label": "Anonymat des parrainages",
+      "color": "#162561",
+      "rationale": "Lisnard (courrier de l’AMF du 13 mai), Le Pen (proposition de loi organique n° 1708 du 9 octobre 2023) et Zemmour (position de janvier 2022) : revenir au secret des signatures."
+    },
+    {
+      "slug": "parrainages-citoyens",
+      "label": "Parrainages citoyens",
+      "color": "#3d7a62",
+      "rationale": "Mélenchon et LFI : remplacer les 500 parrainages d’élus par des parrainages citoyens (programme 2027 ; Manuel Bompard, 24/11 : 150.000 parrainages citoyens)."
+    },
+    {
+      "slug": "parrainer-pas-soutenir",
+      "label": "Parrainer n’est pas soutenir",
+      "color": "#8a5a00",
+      "rationale": "Lisnard (« ne vaut pas soutien ») et Manuel Bompard pour Mélenchon : un parrainage permet de se présenter, ce n’est pas un vote."
+    },
+    {
+      "slug": "pas-de-position",
+      "label": "Pas de position publique trouvée au 25/11",
+      "color": "#5a6570",
+      "rationale": "Philippe, Glucksmann : rien trouvé de daté sur la règle des parrainages."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "reponse",
+      "title": "Ce que les maires ont décidé mercredi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mercredi 25 novembre, David Lisnard, maire de Cannes, a été réélu président de l’Association des maires de France (AMF) pour un troisième mandat. Le résultat officiel : il « a obtenu 9 505 suffrages, soit 72,06 % des voix », et son seul adversaire, Philippe Laurent, maire UDI de Sceaux, « 3 686 suffrages soit 27,94 % des voix » ([l’AMF](https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426)). Le bureau électoral de l’AMF a constaté « un taux de participation à 40,43 % » ([l’AMF](https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426)). TF1 Info (AFP) écrit 44 % ; nous retenons le chiffre officiel de l’AMF ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html))."
+        },
+        {
+          "type": "p",
+          "text": "Pour situer ce score : en 2021, David Lisnard l’avait déjà emporté face à Philippe Laurent, avec 62,3 % des quelque 11 600 suffrages exprimés ([Maires de France](https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0)). Cette fois, 34 300 maires adhérents étaient appelés à voter par voie électronique ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html)). Selon la Banque des Territoires, la participation est la deuxième plus forte de l’histoire de l’association ([Banque des Territoires](https://www.banquedesterritoires.fr/congres-des-maires-david-lisnard-reelu-president-de-lamf)). David Lisnard parle de « maximum de participation depuis 1989 » ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html))."
+        },
+        {
+          "type": "p",
+          "text": "Les deux autres votes ne laissaient aucun suspense : une seule liste, « Une AMF rassemblée et dynamisée avec David Lisnard et Jean-François Debat », a recueilli 86,32 % des voix pour le Bureau et 86,62 % pour le Comité directeur ([l’AMF](https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426)). Jean-François Debat est maire PS de Bourg-en-Bresse. Il doit être élu jeudi premier vice-président délégué ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html)). Cette liste est le fruit d’un « pacte de gouvernance » entre cadres de gauche et de droite de l’AMF : les candidats se répartissent « à égalité entre maires de gauche, de droite et sans étiquette » ([Maires de France](https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "score",
+      "title": "Ce que ce score dit vraiment",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Il dit d’abord que la majorité des maires qui ont voté n’ont pas suivi les critiques sur la double casquette de David Lisnard, candidat à l’Élysée et président d’association. Une soixantaine d’élus avaient appelé à voter pour Philippe Laurent, en disant « refuser que l'AMF soit instrumentalisée » ([France 24 (AFP)](https://www.france24.com/fr/info-en-continu/20261124-le-congr%C3%A8s-des-maires-s-ouvre-sur-fond-de-bataille-pour-l-elys%C3%A9e)). Philippe Laurent, lui, estimait : « L’AMF n’est pas un plan B qu’on reprend une fois qu’on n’a pas été élu à la présidentielle » ([Public Sénat (Laurent)](https://www.publicsenat.fr/actualites/politique/congres-des-maires-lamf-nest-pas-un-plan-b-quon-reprend-une-fois-quon-na-pas-ete-elu-a-la-presidentielle-tacle-philippe-laurent-visan)). Il avait aussi reçu le soutien du maire PS de Paris, Emmanuel Grégoire, et du maire Horizons d’Angers, Christophe Béchu ([BFMTV (23/11)](https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html)). Après le vote, il a déclaré que « l'AMF doit redevenir la maison commune des maires, forte et indépendante, pluraliste et unie » ([Banque des Territoires](https://www.banquedesterritoires.fr/congres-des-maires-david-lisnard-reelu-president-de-lamf))."
+        },
+        {
+          "type": "p",
+          "text": "Il dit ensuite que David Lisnard progresse : près de dix points de mieux qu’en 2021, écrit Challenges. Le magazine ajoute que « les proches d’Edouard Philippe vont pouvoir ranger leur calculatrice » : certains membres de son entourage avaient calculé à partir de quel score le maire de Cannes sortirait affaibli ([Challenges](https://www.challenges.fr/politique/ca-me-renforce-dans-mes-convictions-facilement-reelu-a-la-tete-de-lamf-david-lisnard-fonce-vers-la-presidentielle_647191)). David Lisnard y voit « la défaite des intrigues, de toutes les tentatives d’ingérence dans le fonctionnement de notre Association » ([l’AMF](https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426))."
+        },
+        {
+          "type": "p",
+          "text": "Mais le vote de l’AMF ne suit pas les lignes de la présidentielle. Édouard Philippe, rival de David Lisnard pour l’Élysée, dit avoir voté pour lui « parce que c'est un bon président des maires » ([20 Minutes](https://www.20minutes.fr/politique/4265257-20261124-direct-presidentielle-2027-candidature-david-lisnard-va-agiter-congres-maires-france)). Quant à Jean-François Debat, il pose ses conditions : l’accord à l’AMF repose sur le « caractère transpartisan de l'association » et sur « l'absence d'accord avec l'extrême droite », et s’il devait y en avoir un, « cet accord serait immédiatement remis en cause » ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html)). Les statuts prévoient aussi que le premier vice-président assure l’intérim « en cas d’empêchement » du président ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html)). Et David Lisnard lui-même ne veut pas qu’on y voie un tremplin : « J'ai toujours distingué les deux scrutins » ([BFMTV](https://www.bfmtv.com/politique/le-maire-de-cannes-david-lisnard-reelu-president-de-l-association-des-maires-de-france_AN-202611250579.html)). Il ajoute que « ça me renforce dans mes convictions » ([BFMTV](https://www.bfmtv.com/politique/le-maire-de-cannes-david-lisnard-reelu-president-de-l-association-des-maires-de-france_AN-202611250579.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "signature",
+      "title": "Un vote n’est pas une signature",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Voici la différence concrète. À l’AMF, 9 505 suffrages se sont portés sur David Lisnard, sur 34 300 adhérents appelés à voter : environ 28 % (calcul LMDPT). Pour être candidat à la présidentielle, il faut autre chose : 500 « présentations » d’élus, d’au moins trente départements ou collectivités d’outre-mer, sans plus de 50 pour un même département ([Maires de France (parrainages)](https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0)). Chaque élu « ne peut parrainer qu'un seul candidat et son choix est irrévocable » ([Maires de France (parrainages)](https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0)). Et « le nom et la qualité » de chaque parrain sont rendus publics ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)). Un maire qui vote à l’AMF le fait en ligne. Un maire qui parraine voit son nom publié."
+        },
+        {
+          "type": "p",
+          "text": "Les maires hésitent déjà. Il ne s’agit pas d’un sondage d’intentions de vote : l’enquête du Cevipof et de l’AMF, publiée le 20 novembre, porte sur les intentions de parrainage. Selon franceinfo, « 48,3% des maires refuseraient aujourd’hui d’accorder leur parrainage à un ou une candidate qui les solliciterait », 27,6 % accepteraient et 24,1 % n’ont pas décidé ([franceinfo](https://www.franceinfo.fr/elections/pres-de-la-moitie-des-maires-excluent-de-parrainer-un-candidat-a-la-presidentielle-2027-principalement-par-peur-d-etre-etiquetes-politiquement_8292749.html)). Autre donnée de la même enquête : « 91% des 34 875 maires de France ont été élus en mars sans étiquette partisane » ([franceinfo](https://www.franceinfo.fr/elections/pres-de-la-moitie-des-maires-excluent-de-parrainer-un-candidat-a-la-presidentielle-2027-principalement-par-peur-d-etre-etiquetes-politiquement_8292749.html)). Public Sénat détaille les raisons : 45 % des réponses citent la peur que le parrainage soit pris pour un soutien politique, « 21% craignent la publicité de la procédure » ([Public Sénat (Cevipof)](https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof))."
+        },
+        {
+          "type": "p",
+          "text": "David Lisnard connaît cette difficulté. En 2022, il avait parrainé à dessein « le candidat dont il était le plus éloigné politiquement », Jean-Luc Mélenchon, pour montrer que présenter un candidat ne signifie pas le soutenir ([Maires de France](https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0)). Aujourd’hui, il « invite » les maires à parrainer « tous les candidats » et réclame « le retour à l’anonymat des parrainages » ([Public Sénat (Cevipof)](https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof)). Pour sa propre candidature à la présidence de l’AMF, il avait recueilli 106 parrainages, contre 13 pour Philippe Laurent ([Maires de France](https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0)). C’est une autre échelle, et un autre enjeu."
+        },
+        {
+          "type": "p",
+          "text": "Autre point de vigilance, côté AMF : à l’intérieur du Congrès, « il a été demandé aux candidats et à leurs équipes de ne pas solliciter de parrainages auprès des maires » ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318)). Le président de l’AMF est lui-même candidat. Philippe Laurent jugeait qu’une campagne présidentielle et une campagne de l’AMF ne sont pas compatibles ([Public Sénat (Laurent)](https://www.publicsenat.fr/actualites/politique/congres-des-maires-lamf-nest-pas-un-plan-b-quon-reprend-une-fois-quon-na-pas-ete-elu-a-la-presidentielle-tacle-philippe-laurent-visan)). Après sa victoire, David Lisnard promet de « représenter les voix de toutes et de tous les maires » ([TF1 Info (AFP)](https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html)) et y voit « une responsabilité supplémentaire » ([BFMTV (déclaration)](https://www.bfmtv.com/politique/elections/presidentielle/apres-sa-reelection-a-la-tete-des-maires-de-france-david-lisnard-y-voit-une-responsabilite-supplementaire-mais-pas-un-tremplin-pour-la-presidentielle_AD-202611250646.html))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "suite",
+      "title": "Les prochaines semaines : aucun parrainage n’est encore signé",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Personne n’a encore pu signer officiellement. Le formulaire est envoyé aux élus à la publication du décret de convocation des électeurs, qui doit intervenir au plus tard le 7 février 2027. La collecte s’achève le 12 mars 2027, et le gouvernement publie la liste officielle des candidats au plus tard le 26 mars ([Maires de France (parrainages)](https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0)). Maire-info rappelle que les promesses de parrainage « ne les engagent absolument à rien, sur le plan juridique » ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318)). Un envoi par voie électronique est à l’étude : un projet de décret a été présenté, mais « tant que le décret n’est pas publié, rien n’est certain » ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318))."
+        },
+        {
+          "type": "p",
+          "text": "La règle de la publication des noms, elle, ne bougera pas pour 2027. Maire-info l’écrit : « Il n'y aura cependant pas de changement de cette règle pour les élections de 2027 », car cela supposerait l’adoption d’un texte législatif ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318)). Le débat sur le fond continue. Mardi soir sur BFMTV, Manuel Bompard (LFI) a jugé cette règle « absurde » et proposé de la remplacer par « 150.000 parrainages citoyens », une idée issue d’un rapport présidé par Lionel Jospin en 2012 ([BFMTV (Bompard)](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html)). L’AMF, elle, demande « le retour à l'anonymat complet des parrainages » ([Maires de France (parrainages)](https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0)). Ce sont deux réponses différentes au même problème : beaucoup de maires ne veulent pas que leur nom soit publié."
+        },
+        {
+          "type": "p",
+          "text": "En clair, les maires ont réglé mercredi une élection d’association. Pour l’Élysée, chacun devra décider seul, avec son nom publié et sans retour possible. C’est ce qui dira, d’ici mars, si le score de David Lisnard à l’AMF se transforme en signatures."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il changer la règle des 500 parrainages d’élus ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : que faire de la règle des 500 parrainages d’élus publiés ? Seules figurent des positions que nous avons pu vérifier dans une déclaration publique, un texte déposé ou un programme publié. Les lectures décrivent ce que nous avons trouvé (texte, date, auteur) ; ce n’est ni un soutien à un candidat, ni un jugement sur le fond. « Pas de position publique trouvée au 25/11 » signifie que nous n’avons rien trouvé de daté, pas qu’il n’existe aucune position. Les autres candidats déclarés ou potentiels ne sont pas listés.",
+      "table": {
+        "caption": "Règle des 500 parrainages : positions datées des candidats",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Anonymat des parrainages · Parrainer n’est pas soutenir",
+            "Candidat, et président de l’AMF réélu le 25 novembre. Dans un courrier du 13 mai au Premier ministre, au nom de l’AMF, il demande « le retour à l'anonymat complet des parrainages » et écrit que « le parrainage ne vaut pas soutien ». Le 23 novembre, sur Public Sénat, il « invite » les maires à parrainer « tous les candidats ».",
+            "[8][13]"
+          ],
+          [
+            "Le Pen / RN",
+            "Anonymat des parrainages (texte de 2023)",
+            "Candidate. Cosignataire, avec Edwige Diaz et d’autres députés RN, de la proposition de loi organique n° 1708 du 9 octobre 2023 « visant à anonymiser les parrainages des candidats à l’élection présidentielle ». Edwige Diaz, sur BFMTV le samedi 21 novembre, selon Public Sénat : « Nous avions déposé une proposition de loi pour retourner à l'anonymat ».",
+            "[18][13]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Parrainages citoyens · Parrainer n’est pas soutenir",
+            "Candidat. Programme « L’Avenir en commun » 2027 : « Instaurer une procédure de parrainages citoyens pour l'élection présidentielle à la place des 500 parrainages d'élus ». Manuel Bompard, coordinateur de LFI, le 24 novembre sur BFMTV : une règle « absurde », à remplacer par « 150.000 parrainages citoyens ». En août, selon Public Sénat : « on ne vous demande pas de soutenir Jean-Luc Mélenchon en donnant votre parrainage, on vous demande tout simplement de lui permettre de pouvoir se présenter ».",
+            "[19][17][13]"
+          ],
+          [
+            "Zemmour / Reconquête",
+            "Anonymat des parrainages (position de 2022)",
+            "Candidat. En janvier 2022, selon Public Sénat, il « plaide aussi pour l’anonymat des parrainages ». Aucune déclaration datée sur ce point pour 2027 trouvée au 25 novembre.",
+            "[20]"
+          ],
+          [
+            "Philippe / Horizons",
+            "Pas de position publique trouvée au 25/11",
+            "Candidat. Aucune déclaration ni aucun passage de programme sur la règle des parrainages trouvé au 25 novembre.",
+            "Aucune source"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Pas de position publique trouvée au 25/11",
+            "Candidat. Aucune déclaration ni aucun passage de programme sur la règle des parrainages trouvé au 25 novembre.",
+            "Aucune source"
+          ]
+        ]
+      },
+      "note": "Badge des courants, lu au regard de la thèse (le vote des maires à l’AMF n’est pas une signature : un parrainage est public et définitif, et beaucoup de maires hésitent à cause de cela) : Anonymat des parrainages (Lisnard ; Le Pen pour son texte de 2023 ; Zemmour pour sa position de 2022). Parrainages citoyens (Mélenchon et LFI). Parrainer n’est pas soutenir (Lisnard, Mélenchon par la voix de Manuel Bompard). Pas de position publique trouvée au 25/11 (Philippe, Glucksmann)."
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. AMF, communiqué « David LISNARD réélu à la présidence de l’AMF avec 72,06 % des voix », 25 novembre 2026 (référence BW43426). https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426",
+          "lead": "1. AMF, communiqué « David LISNARD réélu à la présidence de l’AMF avec 72,06 % des voix », 25 novembre 2026 (référence BW43426)",
+          "links": [
+            {
+              "label": "https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426",
+              "url": "https://www.amf.asso.fr/documents-david-lisnard-reelu-la-presidence-lamf-avec-7206--voix/43426"
+            }
+          ]
+        },
+        {
+          "label": "2. BFMTV, 25 novembre 2026, 13 h 30 (Candidat à la présidentielle, David Lisnard réélu à la tête de l'Association des maires de France avec 72% des voix). https://www.bfmtv.com/politique/le-maire-de-cannes-david-lisnard-reelu-president-de-l-association-des-maires-de-france_AN-202611250579.html",
+          "lead": "2. BFMTV, 25 novembre 2026, 13 h 30 (Candidat à la présidentielle, David Lisnard réélu à la tête de l'Association des maires de France avec 72% des voix)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/le-maire-de-cannes-david-lisnard-reelu-president-de-l-association-des-maires-de-france_AN-202611250579.html",
+              "url": "https://www.bfmtv.com/politique/le-maire-de-cannes-david-lisnard-reelu-president-de-l-association-des-maires-de-france_AN-202611250579.html"
+            }
+          ]
+        },
+        {
+          "label": "3. BFMTV, 25 novembre 2026 (Après sa réélection à la tête des maires de France, David Lisnard y voit « une responsabilité supplémentaire » mais pas « un tremplin » pour la présidentielle). https://www.bfmtv.com/politique/elections/presidentielle/apres-sa-reelection-a-la-tete-des-maires-de-france-david-lisnard-y-voit-une-responsabilite-supplementaire-mais-pas-un-tremplin-pour-la-presidentielle_AD-202611250646.html",
+          "lead": "3. BFMTV, 25 novembre 2026 (Après sa réélection à la tête des maires de France, David Lisnard y voit « une responsabilité supplémentaire » mais pas « un tremplin » pour la présidentielle)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/apres-sa-reelection-a-la-tete-des-maires-de-france-david-lisnard-y-voit-une-responsabilite-supplementaire-mais-pas-un-tremplin-pour-la-presidentielle_AD-202611250646.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/apres-sa-reelection-a-la-tete-des-maires-de-france-david-lisnard-y-voit-une-responsabilite-supplementaire-mais-pas-un-tremplin-pour-la-presidentielle_AD-202611250646.html"
+            }
+          ]
+        },
+        {
+          "label": "4. TF1 Info avec AFP, 25 novembre 2026, 17 h 54 (David Lisnard largement réélu à la tête de l'Association des maires de France). https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html",
+          "lead": "4. TF1 Info avec AFP, 25 novembre 2026, 17 h 54 (David Lisnard largement réélu à la tête de l'Association des maires de France)",
+          "links": [
+            {
+              "label": "https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html",
+              "url": "https://www.tf1info.fr/politique/elections/presidentielle/david-lisnard-largement-reelu-a-la-tete-de-l-association-des-maires-de-france-2478139.html"
+            }
+          ]
+        },
+        {
+          "label": "5. Banque des Territoires, 25 novembre 2026 (Congrès des maires : David Lisnard réélu président de l'AMF). https://www.banquedesterritoires.fr/congres-des-maires-david-lisnard-reelu-president-de-lamf",
+          "lead": "5. Banque des Territoires, 25 novembre 2026 (Congrès des maires : David Lisnard réélu président de l'AMF)",
+          "links": [
+            {
+              "label": "https://www.banquedesterritoires.fr/congres-des-maires-david-lisnard-reelu-president-de-lamf",
+              "url": "https://www.banquedesterritoires.fr/congres-des-maires-david-lisnard-reelu-president-de-lamf"
+            }
+          ]
+        },
+        {
+          "label": "6. Challenges, 25 novembre 2026 (« Ça me renforce dans mes convictions » : facilement réélu à la tête de l’AMF, David Lisnard fonce vers la présidentielle), extrait en accès libre. https://www.challenges.fr/politique/ca-me-renforce-dans-mes-convictions-facilement-reelu-a-la-tete-de-lamf-david-lisnard-fonce-vers-la-presidentielle_647191",
+          "lead": "6. Challenges, 25 novembre 2026 (« Ça me renforce dans mes convictions » : facilement réélu à la tête de l’AMF, David Lisnard fonce vers la présidentielle), extrait en accès libre",
+          "links": [
+            {
+              "label": "https://www.challenges.fr/politique/ca-me-renforce-dans-mes-convictions-facilement-reelu-a-la-tete-de-lamf-david-lisnard-fonce-vers-la-presidentielle_647191",
+              "url": "https://www.challenges.fr/politique/ca-me-renforce-dans-mes-convictions-facilement-reelu-a-la-tete-de-lamf-david-lisnard-fonce-vers-la-presidentielle_647191"
+            }
+          ]
+        },
+        {
+          "label": "7. Maires de France, Franck Lemarc, 14 septembre 2026 (Deux candidats pour la présidence de l'AMF, et une liste transpartisane pour les instances). https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0",
+          "lead": "7. Maires de France, Franck Lemarc, 14 septembre 2026 (Deux candidats pour la présidence de l'AMF, et une liste transpartisane pour les instances)",
+          "links": [
+            {
+              "label": "https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0",
+              "url": "https://www.mairesdefrance.com/dossier/deux-candidats-pour-presidence-amf-une-liste-transpartisane-pour-instances-article-29084-0"
+            }
+          ]
+        },
+        {
+          "label": "8. Maires de France (magazine de l'AMF), Xavier Brivet, 3 septembre 2026 (Parrainage des candidats à l'élection présidentielle : l'AMF demande l'anonymat). https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0",
+          "lead": "8. Maires de France (magazine de l'AMF), Xavier Brivet, 3 septembre 2026 (Parrainage des candidats à l'élection présidentielle : l'AMF demande l'anonymat)",
+          "links": [
+            {
+              "label": "https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0",
+              "url": "https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0"
+            }
+          ]
+        },
+        {
+          "label": "9. BFMTV, François Blanchard, 23 novembre 2026, 15 h 45 (David Lisnard restera candidat à la présidentielle même s'il n'est pas réélu président de l'AMF). https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html",
+          "lead": "9. BFMTV, François Blanchard, 23 novembre 2026, 15 h 45 (David Lisnard restera candidat à la présidentielle même s'il n'est pas réélu président de l'AMF)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html"
+            }
+          ]
+        },
+        {
+          "label": "10. France 24 avec AFP, 24 novembre 2026, 1 h 06, modifié à 11 h 47 (Ouverture du Congrès des maires sur fond de bataille pour l'Élysée). https://www.france24.com/fr/info-en-continu/20261124-le-congr%C3%A8s-des-maires-s-ouvre-sur-fond-de-bataille-pour-l-elys%C3%A9e",
+          "lead": "10. France 24 avec AFP, 24 novembre 2026, 1 h 06, modifié à 11 h 47 (Ouverture du Congrès des maires sur fond de bataille pour l'Élysée)",
+          "links": [
+            {
+              "label": "https://www.france24.com/fr/info-en-continu/20261124-le-congr%C3%A8s-des-maires-s-ouvre-sur-fond-de-bataille-pour-l-elys%C3%A9e",
+              "url": "https://www.france24.com/fr/info-en-continu/20261124-le-congr%C3%A8s-des-maires-s-ouvre-sur-fond-de-bataille-pour-l-elys%C3%A9e"
+            }
+          ]
+        },
+        {
+          "label": "11. 20 Minutes, direct du 24 novembre 2026 (Présidentielle 2027 : la candidature de David Lisnard va agiter le congrès des maires de France), mis à jour à 18 h 29. https://www.20minutes.fr/politique/4265257-20261124-direct-presidentielle-2027-candidature-david-lisnard-va-agiter-congres-maires-france",
+          "lead": "11. 20 Minutes, direct du 24 novembre 2026 (Présidentielle 2027 : la candidature de David Lisnard va agiter le congrès des maires de France), mis à jour à 18 h 29",
+          "links": [
+            {
+              "label": "https://www.20minutes.fr/politique/4265257-20261124-direct-presidentielle-2027-candidature-david-lisnard-va-agiter-congres-maires-france",
+              "url": "https://www.20minutes.fr/politique/4265257-20261124-direct-presidentielle-2027-candidature-david-lisnard-va-agiter-congres-maires-france"
+            }
+          ]
+        },
+        {
+          "label": "12. Public Sénat, Chiara Carbonnet, 24 novembre 2026, 13 h 08 (Congrès des maires : « L'AMF n'est pas un plan B qu'on reprend une fois qu'on n'a pas été élu à la présidentielle », tacle Philippe Laurent visant David Lisnard). https://www.publicsenat.fr/actualites/politique/congres-des-maires-lamf-nest-pas-un-plan-b-quon-reprend-une-fois-quon-na-pas-ete-elu-a-la-presidentielle-tacle-philippe-laurent-visan",
+          "lead": "12. Public Sénat, Chiara Carbonnet, 24 novembre 2026, 13 h 08 (Congrès des maires : « L'AMF n'est pas un plan B qu'on reprend une fois qu'on n'a pas été élu à la présidentielle », tacle Philippe Laurent visant David Lisnard)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-lamf-nest-pas-un-plan-b-quon-reprend-une-fois-quon-na-pas-ete-elu-a-la-presidentielle-tacle-philippe-laurent-visan",
+              "url": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-lamf-nest-pas-un-plan-b-quon-reprend-une-fois-quon-na-pas-ete-elu-a-la-presidentielle-tacle-philippe-laurent-visan"
+            }
+          ]
+        },
+        {
+          "label": "13. Public Sénat, Chiara Carbonnet, 23 novembre 2026, 16 h 24 (Congrès des maires : les candidats partent à la chasse aux parrainages même si seul un maire sur quatre compte donner sa signature, selon une enquête du CEVIPOF). https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof",
+          "lead": "13. Public Sénat, Chiara Carbonnet, 23 novembre 2026, 16 h 24 (Congrès des maires : les candidats partent à la chasse aux parrainages même si seul un maire sur quatre compte donner sa signature, selon une enquête du CEVIPOF)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof",
+              "url": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof"
+            }
+          ]
+        },
+        {
+          "label": "14. franceinfo, 20 novembre 2026, 19 h 16 (Près de la moitié des maires excluent de parrainer un candidat à la présidentielle 2027, principalement par peur d'être étiquetés politiquement). https://www.franceinfo.fr/elections/pres-de-la-moitie-des-maires-excluent-de-parrainer-un-candidat-a-la-presidentielle-2027-principalement-par-peur-d-etre-etiquetes-politiquement_8292749.html",
+          "lead": "14. franceinfo, 20 novembre 2026, 19 h 16 (Près de la moitié des maires excluent de parrainer un candidat à la présidentielle 2027, principalement par peur d'être étiquetés politiquement)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/pres-de-la-moitie-des-maires-excluent-de-parrainer-un-candidat-a-la-presidentielle-2027-principalement-par-peur-d-etre-etiquetes-politiquement_8292749.html",
+              "url": "https://www.franceinfo.fr/elections/pres-de-la-moitie-des-maires-excluent-de-parrainer-un-candidat-a-la-presidentielle-2027-principalement-par-peur-d-etre-etiquetes-politiquement_8292749.html"
+            }
+          ]
+        },
+        {
+          "label": "15. Légifrance, loi n° 62-1292 du 6 novembre 1962 relative à l'élection du Président de la République au suffrage universel, version en vigueur au 24 novembre 2026 (articles 1 bis et 3). https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037",
+          "lead": "15. Légifrance, loi n° 62-1292 du 6 novembre 1962 relative à l'élection du Président de la République au suffrage universel, version en vigueur au 24 novembre 2026 (articles 1 bis et 3)",
+          "links": [
+            {
+              "label": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037",
+              "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037"
+            }
+          ]
+        },
+        {
+          "label": "16. Maire-info (quotidien de l'AMF), Franck Lemarc, 24 novembre 2026 (Parrainages des candidats à l'élection présidentielle : vers une évolution majeure sur l'envoi des formulaires). https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318",
+          "lead": "16. Maire-info (quotidien de l'AMF), Franck Lemarc, 24 novembre 2026 (Parrainages des candidats à l'élection présidentielle : vers une évolution majeure sur l'envoi des formulaires)",
+          "links": [
+            {
+              "label": "https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318",
+              "url": "https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318"
+            }
+          ]
+        },
+        {
+          "label": "17. BFMTV, Tao Chardel, 24 novembre 2026, 22 h 07 (Présidentielle 2027 : Manuel Bompard et LFI souhaitent « remettre en cause » la règle des 500 parrainages d'élus et proposent de la remplacer par 150.000 parrainages citoyens). https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html",
+          "lead": "17. BFMTV, Tao Chardel, 24 novembre 2026, 22 h 07 (Présidentielle 2027 : Manuel Bompard et LFI souhaitent « remettre en cause » la règle des 500 parrainages d'élus et proposent de la remplacer par 150.000 parrainages citoyens)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html"
+            }
+          ]
+        },
+        {
+          "label": "18. Assemblée nationale, proposition de loi organique n° 1708 visant à anonymiser les parrainages des candidats à l'élection présidentielle, enregistrée le 9 octobre 2023 (PDF). https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf",
+          "lead": "18. Assemblée nationale, proposition de loi organique n° 1708 visant à anonymiser les parrainages des candidats à l'élection présidentielle, enregistrée le 9 octobre 2023 (PDF)",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf",
+              "url": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf"
+            }
+          ]
+        },
+        {
+          "label": "19. « L'Avenir en commun », édition 2027, programme porté par Jean-Luc Mélenchon, section « Une République de la souveraineté populaire permanente » (livre imprimé p. 163 et 164, texte repris tel que publié), consulté le 24 novembre 2026. https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/",
+          "lead": "19. « L'Avenir en commun », édition 2027, programme porté par Jean-Luc Mélenchon, section « Une République de la souveraineté populaire permanente » (livre imprimé p. 163 et 164, texte repris tel que publié), consulté le 24 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/",
+              "url": "https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/"
+            }
+          ]
+        },
+        {
+          "label": "20. Public Sénat, 11 janvier 2022 (Présidentielle : il y a un an, les sénateurs PS avaient tenté de modifier la règle des parrainages). https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle",
+          "lead": "20. Public Sénat, 11 janvier 2022 (Présidentielle : il y a un an, les sénateurs PS avaient tenté de modifier la règle des parrainages)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des résultats officiels, des textes, des déclarations de candidats et d’élus et une enquête sur les intentions de parrainage des maires, tels que rapportés par leurs auteurs et par la presse. Elle ne dit pas qui a raison sur le fond, ne prédit pas le nombre de parrainages de tel ou tel candidat et ne contient aucun sondage d’intentions de vote.",
+  "liens_internes": [
+    {
+      "href": "/analyses/riner-face-aux-500",
+      "label": "Riner face aux 500"
+    },
+    {
+      "href": "/analyses/ruffin-parti-combien-de-gauches-reste-t-il",
+      "label": "Ruffin parti, combien de gauches reste-t-il ?"
+    }
+  ]
+}
