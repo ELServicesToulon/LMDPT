@@ -9,8 +9,9 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
+import arcomCreateurs from '../data/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes.json';
 import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
-import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
+import voterA16Ans from '../data/analyses/voter-a-16-ans-une-loi-suffirait-elle.json';
 import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
 import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
 import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
@@ -79,6 +80,19 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     ),
   },
   {
+    slug: arcomCreateurs.slug,
+    title: arcomCreateurs.title,
+    description: arcomCreateurs.description,
+    date: arcomCreateurs.date,
+    published: arcomCreateurs.date,
+    updated: arcomCreateurs.updated,
+    href: '/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
+    cover: uneCover(
+      'temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
+      'Aquarelle d\'un salon transformé en studio d\'enregistrement, en lumière dorée : deux fauteuils identiques à motifs bleu-vert de part et d\'autre d\'une petite table où est posé un sablier ; au premier plan, un micro sur pied et une caméra sur trépied font face à un anneau lumineux éteint.',
+    ),
+  },
+  {
     slug: ruffinParti.slug,
     title: ruffinParti.title,
     description: ruffinParti.description,
@@ -98,10 +112,10 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     date: voterA16Ans.date,
     published: voterA16Ans.date,
     updated: voterA16Ans.updated,
-    href: '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus',
+    href: '/analyses/voter-a-16-ans-une-loi-suffirait-elle',
     cover: uneCover(
-      'voter-a-16-ans-l-urne-plutot-que-le-blocus',
-      'Aquarelle de l’entrée d’un vieux lycée au petit matin : près du portail en fer forgé, des chaises d’école empilées en barricade ; de l’autre côté de la cour pavée, un isoloir en bois à rideau et une urne transparente vide sur une table nappée ; au premier plan, un cartable sur un banc et des feuilles blanches au sol.',
+      'voter-a-16-ans-une-loi-suffirait-elle',
+      'Aquarelle de la façade du Palais Bourbon vue depuis le quai, au petit matin : au premier plan, une urne transparente vide posée sur une table nappée, le long d’un parapet de pierre ; de l’autre côté de la Seine, le palais à colonnes sous une lumière douce.',
     ),
   },
   {
