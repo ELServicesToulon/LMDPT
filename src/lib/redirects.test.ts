@@ -10,4 +10,12 @@ describe('legacy analysis redirects', () => {
     expect(redirects['/analyses/livres-candidats']).toEqual(expected);
     expect(redirects['/analyses/on-a-vole-la-revolution-puis-la-revolte']).toEqual(expected);
   });
+
+  it('permanently redirects the renamed vote-à-16-ans slug to the new URL', () => {
+    const redirects = config.redirects ?? {};
+    expect(redirects['/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus']).toEqual({
+      status: 301,
+      destination: '/analyses/voter-a-16-ans-une-loi-suffirait-elle',
+    });
+  });
 });

@@ -9,7 +9,7 @@ import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
 import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
-import voterA16Ans from '../data/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus.json';
+import voterA16Ans from '../data/analyses/voter-a-16-ans-une-loi-suffirait-elle.json';
 import toutesLesNiches from '../data/analyses/toutes-les-niches-meme-la-votre.json';
 import quellesAssociations from '../data/analyses/3-7-milliards-quelles-associations.json';
 import dixOuTrenteCinqMilliards from '../data/analyses/10-ou-35-milliards-qui-compte-juste.json';
@@ -62,7 +62,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('ruffin-parti-combien-de-gauches-reste-t-il');
-    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('voter-a-16-ans-l-urne-plutot-que-le-blocus');
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('voter-a-16-ans-une-loi-suffirait-elle');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('toutes-les-niches-meme-la-votre');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('3-7-milliards-quelles-associations');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('10-ou-35-milliards-qui-compte-juste');
@@ -92,7 +92,7 @@ describe('analyses', () => {
       'chronique-manusk-fiction-demission-macron',
     );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('voter-a-16-ans-l-urne-plutot-que-le-blocus');
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
     expect(ANALYSIS_CATALOG[2]?.slug).toBe('toutes-les-niches-meme-la-votre');
     expect(ANALYSIS_CATALOG[3]?.slug).toBe('3-7-milliards-quelles-associations');
     expect(ANALYSIS_CATALOG[4]?.slug).toBe('10-ou-35-milliards-qui-compte-juste');
@@ -165,19 +165,19 @@ describe('analyses', () => {
     );
   });
 
-  it('enquête Voter à 16 ans : l’urne plutôt que le blocus ? du 22 novembre en une, sources, boîte DOE', () => {
-    expect(voterA16Ans.slug).toBe('voter-a-16-ans-l-urne-plutot-que-le-blocus');
+  it('enquête Voter à 16 ans : une loi suffirait-elle ? du 22 novembre en une, sources, boîte DOE', () => {
+    expect(voterA16Ans.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
     expect(voterA16Ans.date).toBe('2026-11-22');
-    expect(voterA16Ans.title).toBe('Voter à 16 ans : l’urne plutôt que le blocus ?');
+    expect(voterA16Ans.title).toBe('Voter à 16 ans : une loi suffirait-elle ?');
     expect(voterA16Ans.author).toBe('La rédaction');
     expect(voterA16Ans.tags).toContain('doe');
     expect(voterA16Ans.description.length).toBeLessThanOrEqual(200);
     expect(voterA16Ans.hues).toHaveLength(4);
-    expect(voterA16Ans.sources_groups[0]?.items).toHaveLength(20);
+    expect(voterA16Ans.sources_groups[0]?.items).toHaveLength(19);
     const doe = voterA16Ans.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
-    expect(getAnalysis('voter-a-16-ans-l-urne-plutot-que-le-blocus')?.href).toBe(
-      '/analyses/voter-a-16-ans-l-urne-plutot-que-le-blocus',
+    expect(getAnalysis('voter-a-16-ans-une-loi-suffirait-elle')?.href).toBe(
+      '/analyses/voter-a-16-ans-une-loi-suffirait-elle',
     );
   });
 
