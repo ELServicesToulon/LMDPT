@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
 import arcomCreateurs from '../data/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes.json';
 import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
 import voterA16Ans from '../data/analyses/voter-a-16-ans-une-loi-suffirait-elle.json';
@@ -65,6 +66,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: parrainagesSecret.slug,
+    title: parrainagesSecret.title,
+    description: parrainagesSecret.description,
+    date: parrainagesSecret.date,
+    published: parrainagesSecret.date,
+    updated: parrainagesSecret.updated,
+    href: '/analyses/parrainages-les-maires-veulent-signer-en-secret',
+    cover: uneCover(
+      'parrainages-les-maires-veulent-signer-en-secret',
+      'Aquarelle du bureau d\'un maire de village en lumière dorée : sur un bureau en bois ancien, une haute pile d\'enveloppes blanches identiques et une enveloppe posée à part près d\'un stylo plume ; une lampe en laiton est allumée, une chaise en bois est vide et, par la fenêtre, on voit une place de village avec des platanes et une fontaine.',
+    ),
+  },
   {
     slug: arcomCreateurs.slug,
     title: arcomCreateurs.title,
