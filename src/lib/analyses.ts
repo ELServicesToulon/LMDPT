@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import lisnardReelu from '../data/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
 import arcomCreateurs from '../data/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes.json';
 import ruffinParti from '../data/analyses/ruffin-parti-combien-de-gauches-reste-t-il.json';
@@ -66,6 +67,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: lisnardReelu.slug,
+    title: lisnardReelu.title,
+    description: lisnardReelu.description,
+    date: lisnardReelu.date,
+    published: lisnardReelu.date,
+    updated: lisnardReelu.updated,
+    href: '/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe',
+    cover: uneCover(
+      'lisnard-reelu-les-maires-ont-vote-pas-encore-signe',
+      'Aquarelle de l’intérieur d’une mairie de village en lumière dorée : sur une table en bois ancien, un grand bocal en verre rempli de bulletins blancs pliés et, à part, une seule enveloppe blanche près d’un stylo plume et d’un registre fermé ; une lampe en laiton est allumée, une chaise en bois est vide et, par la fenêtre, on voit une place de village avec des platanes et une fontaine.',
+    ),
+  },
   {
     slug: parrainagesSecret.slug,
     title: parrainagesSecret.title,
