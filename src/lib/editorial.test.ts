@@ -131,17 +131,15 @@ describe('editorial covers', () => {
 });
 
 describe('une du jour (égalité de date)', () => {
-  it('enquête Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature du 26/11 en une, puis enquête Parrainages : l’AMF réclame le secret pour les maires, l’État dit non du 25/11, enquête Temps de parole en 2027 : quels influenceurs sont vraiment concernés ? du 24/11, enquête Ruffin parti, combien de gauches reste-t-il ? du 23/11, enquête Voter à 16 ans : une loi suffirait-elle ? du 22/11, enquête Toutes les niches en cinq ans, même la vôtre ? du 21/11, enquête 3,7 milliards : quelles associations ? du 20/11, enquête 10 ou 35 milliards : qui compte juste ? du 19/11, enquête Hausse de salaire exonérée : qui règle la note ? du 18/11, enquête « J’ai commis une erreur » : laquelle ? du 17/11, enquête La loi qui se vote à Bruxelles du 16/11, enquête Le serment du perdant du 15/11, enquête 1962, la porte de service du 14/11, enquête 800 000 en moins, 500 000 en plus du 13/11, enquête Union cherche arbitre du 12/11, enquête 1 502 contre 1 700 du 11/11, enquête Riner et parrainages du 10/11, enquête IA et campagne du 07/11, sel et poivre du 06/11, trois pour un contre du 05/11, 48 ou 500 lycées bloqués du 04/11, vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
+  it('enquête Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral du 27/11 en une, puis enquête Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature du 26/11, enquête Parrainages : l’AMF réclame le secret pour les maires, l’État dit non du 25/11, enquête Temps de parole en 2027 : quels influenceurs sont vraiment concernés ? du 24/11, enquête Ruffin parti, combien de gauches reste-t-il ? du 23/11, enquête Voter à 16 ans : une loi suffirait-elle ? du 22/11, enquête Toutes les niches en cinq ans, même la vôtre ? du 21/11, enquête 3,7 milliards : quelles associations ? du 20/11, enquête 10 ou 35 milliards : qui compte juste ? du 19/11, enquête Hausse de salaire exonérée : qui règle la note ? du 18/11, enquête « J’ai commis une erreur » : laquelle ? du 17/11, enquête La loi qui se vote à Bruxelles du 16/11, enquête Le serment du perdant du 15/11, enquête 1962, la porte de service du 14/11, enquête 800 000 en moins, 500 000 en plus du 13/11, enquête Union cherche arbitre du 12/11, enquête 1 502 contre 1 700 du 11/11, enquête Riner et parrainages du 10/11, enquête IA et campagne du 07/11, sel et poivre du 06/11, trois pour un contre du 05/11, 48 ou 500 lycées bloqués du 04/11, vie chère Porsche Trabant du 03/11, 779 retirez Halloween du 02/11, primaire sans la gauche du 01/11, guerre civile du 30/10, bataille du 2 mai du 29/10, Corse Sénat non du 28/10, Union nationale, Sécu, Debord, Ifop et feuilleton', () => {
     const sorted = [...listEditorialPosts()].sort(compareEditorialRecency);
-    expect(getUneDuJour()?.slug).toBe('lisnard-reelu-les-maires-ont-vote-pas-encore-signe');
-    expect(sorted[1]?.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
-    expect(sorted[1]?.date).toBe('2026-11-25');
-    expect(sorted[2]?.slug).toBe(
-      'temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
-    );
-    expect(sorted[2]?.date).toBe('2026-11-24');
+    expect(getUneDuJour()?.slug).toBe('second-tour-2-mai-le-1er-mai-en-plein-silence-electoral');
+    expect(sorted[1]?.slug).toBe('lisnard-reelu-les-maires-ont-vote-pas-encore-signe');
+    expect(sorted[1]?.date).toBe('2026-11-26');
+    expect(sorted[2]?.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
+    expect(sorted[2]?.date).toBe('2026-11-25');
     expect(getUneDuJour()?.title).toBe(
-      'Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature',
+      'Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral',
     );
     expect(selEtPoivre.x_hook).toBe(
       "Selon l'AFP, un proche interlocuteur du chef de l'État parle de « coalition » de Lisnard à Glucksmann. Retailleau répond « sel et poivre » et « ticket » Mélenchon-Le Pen. Philippe et Glucksmann, chacun à sa façon, disent non.",
@@ -174,62 +172,66 @@ describe('une du jour (égalité de date)', () => {
       "Le Pen promet l'« union nationale » et a déjà choisi son Premier ministre. Pour atteindre 289 députés dans l'Assemblée d'aujourd'hui, il en manque 151 au RN et à son allié",
     );
     expect(secu115Contre1.x_hook).toBe('115 contre 1, mais 138 votants : quatre jours de votes effacés');
-    expect(sorted[3]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
-    expect(sorted[3]?.date).toBe('2026-11-23');
-    expect(sorted[4]?.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
-    expect(sorted[4]?.date).toBe('2026-11-22');
-    expect(sorted[5]?.slug).toBe('toutes-les-niches-meme-la-votre');
-    expect(sorted[5]?.date).toBe('2026-11-21');
-    expect(sorted[6]?.slug).toBe('3-7-milliards-quelles-associations');
-    expect(sorted[6]?.date).toBe('2026-11-20');
-    expect(sorted[7]?.slug).toBe('10-ou-35-milliards-qui-compte-juste');
-    expect(sorted[7]?.date).toBe('2026-11-19');
-    expect(sorted[8]?.slug).toBe('hausse-de-salaire-exoneree-qui-regle-la-note');
-    expect(sorted[8]?.date).toBe('2026-11-18');
-    expect(sorted[9]?.slug).toBe('j-ai-commis-une-erreur-laquelle');
-    expect(sorted[9]?.date).toBe('2026-11-17');
-    expect(sorted[10]?.slug).toBe('la-loi-qui-se-vote-a-bruxelles');
-    expect(sorted[10]?.date).toBe('2026-11-16');
-    expect(sorted[11]?.slug).toBe('le-serment-du-perdant');
-    expect(sorted[11]?.date).toBe('2026-11-15');
-    expect(sorted[12]?.slug).toBe('1962-la-porte-de-service');
-    expect(sorted[12]?.date).toBe('2026-11-14');
-    expect(sorted[13]?.slug).toBe('800000-en-moins-500000-en-plus');
-    expect(sorted[13]?.date).toBe('2026-11-13');
-    expect(sorted[14]?.slug).toBe('union-cherche-arbitre');
-    expect(sorted[14]?.date).toBe('2026-11-12');
-    expect(sorted[15]?.slug).toBe('1502-contre-1700');
-    expect(sorted[15]?.date).toBe('2026-11-11');
-    expect(sorted[16]?.slug).toBe('riner-face-aux-500');
-    expect(sorted[16]?.date).toBe('2026-11-10');
-    expect(sorted[17]?.slug).toBe('ia-changer-campagne');
-    expect(sorted[17]?.date).toBe('2026-11-07');
-    expect(sorted[18]?.slug).toBe('sel-et-poivre');
-    expect(sorted[18]?.date).toBe('2026-11-06');
-    expect(sorted[19]?.slug).toBe('trois-pour-un-contre');
-    expect(sorted[19]?.date).toBe('2026-11-05');
-    expect(sorted[20]?.slug).toBe('48-ou-500-lycees-bloques');
-    expect(sorted[20]?.date).toBe('2026-11-04');
-    expect(sorted[21]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(sorted[21]?.date).toBe('2026-11-03');
-    expect(sorted[22]?.slug).toBe('779-retirez-halloween');
-    expect(sorted[22]?.date).toBe('2026-11-02');
-    expect(sorted[23]?.slug).toBe('primaire-sans-la-gauche');
-    expect(sorted[23]?.date).toBe('2026-11-01');
-    expect(sorted[24]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(sorted[24]?.date).toBe('2026-10-30');
-    expect(sorted[25]?.slug).toBe('bataille-du-2-mai');
-    expect(sorted[25]?.date).toBe('2026-10-29');
-    expect(sorted[26]?.slug).toBe('corse-senat-non');
-    expect(sorted[26]?.date).toBe('2026-10-28');
-    expect(sorted[27]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(sorted[28]?.slug).toBe('le-pen-union-nationale');
-    expect(sorted[29]?.slug).toBe('secu-115-contre-1');
-    expect(sorted[30]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(sorted[31]?.slug).toBe('breve-ifop-post-primaire');
-    expect(sorted[32]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(sorted[33]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(sorted[34]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(sorted[3]?.slug).toBe(
+      'temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
+    );
+    expect(sorted[3]?.date).toBe('2026-11-24');
+    expect(sorted[4]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
+    expect(sorted[4]?.date).toBe('2026-11-23');
+    expect(sorted[5]?.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
+    expect(sorted[5]?.date).toBe('2026-11-22');
+    expect(sorted[6]?.slug).toBe('toutes-les-niches-meme-la-votre');
+    expect(sorted[6]?.date).toBe('2026-11-21');
+    expect(sorted[7]?.slug).toBe('3-7-milliards-quelles-associations');
+    expect(sorted[7]?.date).toBe('2026-11-20');
+    expect(sorted[8]?.slug).toBe('10-ou-35-milliards-qui-compte-juste');
+    expect(sorted[8]?.date).toBe('2026-11-19');
+    expect(sorted[9]?.slug).toBe('hausse-de-salaire-exoneree-qui-regle-la-note');
+    expect(sorted[9]?.date).toBe('2026-11-18');
+    expect(sorted[10]?.slug).toBe('j-ai-commis-une-erreur-laquelle');
+    expect(sorted[10]?.date).toBe('2026-11-17');
+    expect(sorted[11]?.slug).toBe('la-loi-qui-se-vote-a-bruxelles');
+    expect(sorted[11]?.date).toBe('2026-11-16');
+    expect(sorted[12]?.slug).toBe('le-serment-du-perdant');
+    expect(sorted[12]?.date).toBe('2026-11-15');
+    expect(sorted[13]?.slug).toBe('1962-la-porte-de-service');
+    expect(sorted[13]?.date).toBe('2026-11-14');
+    expect(sorted[14]?.slug).toBe('800000-en-moins-500000-en-plus');
+    expect(sorted[14]?.date).toBe('2026-11-13');
+    expect(sorted[15]?.slug).toBe('union-cherche-arbitre');
+    expect(sorted[15]?.date).toBe('2026-11-12');
+    expect(sorted[16]?.slug).toBe('1502-contre-1700');
+    expect(sorted[16]?.date).toBe('2026-11-11');
+    expect(sorted[17]?.slug).toBe('riner-face-aux-500');
+    expect(sorted[17]?.date).toBe('2026-11-10');
+    expect(sorted[18]?.slug).toBe('ia-changer-campagne');
+    expect(sorted[18]?.date).toBe('2026-11-07');
+    expect(sorted[19]?.slug).toBe('sel-et-poivre');
+    expect(sorted[19]?.date).toBe('2026-11-06');
+    expect(sorted[20]?.slug).toBe('trois-pour-un-contre');
+    expect(sorted[20]?.date).toBe('2026-11-05');
+    expect(sorted[21]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(sorted[21]?.date).toBe('2026-11-04');
+    expect(sorted[22]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(sorted[22]?.date).toBe('2026-11-03');
+    expect(sorted[23]?.slug).toBe('779-retirez-halloween');
+    expect(sorted[23]?.date).toBe('2026-11-02');
+    expect(sorted[24]?.slug).toBe('primaire-sans-la-gauche');
+    expect(sorted[24]?.date).toBe('2026-11-01');
+    expect(sorted[25]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(sorted[25]?.date).toBe('2026-10-30');
+    expect(sorted[26]?.slug).toBe('bataille-du-2-mai');
+    expect(sorted[26]?.date).toBe('2026-10-29');
+    expect(sorted[27]?.slug).toBe('corse-senat-non');
+    expect(sorted[27]?.date).toBe('2026-10-28');
+    expect(sorted[28]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(sorted[29]?.slug).toBe('le-pen-union-nationale');
+    expect(sorted[30]?.slug).toBe('secu-115-contre-1');
+    expect(sorted[31]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(sorted[32]?.slug).toBe('breve-ifop-post-primaire');
+    expect(sorted[33]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(sorted[34]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(sorted[35]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
   });
 });
 

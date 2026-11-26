@@ -464,7 +464,9 @@ describe('cartesClinDoeil', () => {
 
     expect(cartes.semaine).not.toBeNull();
     expect(cartes.semaine?.title).toBe('Ce qui a bougé cette semaine');
-    expect(cartes.semaine?.uneTitle).toBe(suivante!.title);
+    expect(cartes.semaine?.uneTitle).toBe(suivante!.cardTitle ?? suivante!.title);
+    expect(cartes.semaine?.uneTitle).toBe('Lisnard réélu à la tête de l’AMF');
+    expect(cartes.semaine?.uneTitle).not.toMatch(/\d+\s*%/);
     expect(cartes.semaine?.href).toBe(suivante!.href);
     expect(cartes.semaine?.dateLabel).toBe(suivante!.dateLabel);
     expect(cartes.semaine?.description).toBe(suivante!.description);
@@ -481,7 +483,9 @@ describe('cartesClinDoeil', () => {
     expect(
       JSON.stringify({
         ...cartes,
-        semaine: cartes.semaine ? { ...cartes.semaine, description: '' } : cartes.semaine,
+        semaine: cartes.semaine
+          ? { ...cartes.semaine, description: '' }
+          : cartes.semaine,
       }),
     ).not.toMatch(/\d+\s*%/);
   });
