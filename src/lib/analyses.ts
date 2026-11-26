@@ -8,6 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
+import secondTour2Mai from '../data/analyses/second-tour-2-mai-le-1er-mai-en-plein-silence-electoral.json';
 import lisnardReelu from '../data/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
 import arcomCreateurs from '../data/analyses/temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes.json';
@@ -67,6 +68,19 @@ function uneCover(slug: string, alt: string): EditorialCover {
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
+  {
+    slug: secondTour2Mai.slug,
+    title: secondTour2Mai.title,
+    description: secondTour2Mai.description,
+    date: secondTour2Mai.date,
+    published: secondTour2Mai.date,
+    updated: secondTour2Mai.updated,
+    href: '/analyses/second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
+    cover: uneCover(
+      'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
+      'Aquarelle d\'une petite place de ville au printemps : devant une école en pierre dont la porte ouverte laisse voir une urne transparente vide et deux isoloirs à rideaux gris, une table pliante en bois porte un bouquet de muguet dans un verre ; contre le mur, des pancartes et des banderoles de manifestation vierges attendent et, à droite, une rangée de panneaux électoraux vides se dresse sous un platane.',
+    ),
+  },
   {
     slug: lisnardReelu.slug,
     title: lisnardReelu.title,

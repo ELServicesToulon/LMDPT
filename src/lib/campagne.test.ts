@@ -481,7 +481,9 @@ describe('cartesClinDoeil', () => {
     expect(
       JSON.stringify({
         ...cartes,
-        semaine: cartes.semaine ? { ...cartes.semaine, description: '' } : cartes.semaine,
+        semaine: cartes.semaine
+          ? { ...cartes.semaine, description: '', uneTitle: '' }
+          : cartes.semaine,
       }),
     ).not.toMatch(/\d+\s*%/);
   });
