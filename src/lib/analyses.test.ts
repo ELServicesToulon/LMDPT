@@ -160,7 +160,7 @@ describe('analyses', () => {
     expect(lisnardReelu.tags).toContain('doe');
     expect(lisnardReelu.description.length).toBeLessThanOrEqual(200);
     expect(lisnardReelu.hues).toHaveLength(4);
-    expect(lisnardReelu.sources_groups[0]?.items).toHaveLength(20);
+    expect(lisnardReelu.sources_groups[0]?.items).toHaveLength(21);
     const doe = lisnardReelu.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
     expect(getAnalysis('lisnard-reelu-les-maires-ont-vote-pas-encore-signe')?.href).toBe(
