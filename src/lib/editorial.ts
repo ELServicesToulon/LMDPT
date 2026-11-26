@@ -11,6 +11,8 @@ export interface EditorialPost {
   kind: EditorialKind;
   slug: string;
   title: string;
+  /** Titre court pour les cartes (bandeau), si le titre publié contient un chiffre. */
+  cardTitle?: string;
   description: string;
   /** Date utilisée pour l’ordre de la une (souvent la dernière mise à jour). */
   date: string;
@@ -71,6 +73,7 @@ function analysisToPost(a: AnalysisSummary): EditorialPost {
     kind: 'analyse',
     slug: a.slug,
     title: a.title,
+    cardTitle: a.cardTitle,
     description: a.description,
     date: a.date,
     published: a.published ?? a.date,

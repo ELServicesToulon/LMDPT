@@ -157,11 +157,11 @@ describe('analyses', () => {
     );
   });
 
-  it('enquête Second tour le 2 mai : le 1er-Mai tombera en plein silence électoral du 27 novembre en une, sources, boîte DOE', () => {
+  it('enquête Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral du 27 novembre en une, sources, boîte DOE', () => {
     expect(secondTour2Mai.slug).toBe('second-tour-2-mai-le-1er-mai-en-plein-silence-electoral');
     expect(secondTour2Mai.date).toBe('2026-11-27');
     expect(secondTour2Mai.title).toBe(
-      'Second tour le 2 mai : le 1er-Mai tombera en plein silence électoral',
+      'Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral',
     );
     expect(secondTour2Mai.author).toBe('La rédaction');
     expect(secondTour2Mai.tags).toContain('doe');

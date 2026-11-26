@@ -49,6 +49,8 @@ import lyceensSaucissonne from '../data/analyses/mouvement-lyceen-revendications
 export interface AnalysisSummary {
   slug: string;
   title: string;
+  /** Titre court pour les cartes (bandeau), si le titre publié contient un chiffre. */
+  cardTitle?: string;
   description: string;
   date: string;
   /** Rédaction (ISO). Défaut : `date`. */
@@ -63,8 +65,10 @@ export interface AnalysisSummary {
   preparation?: boolean;
 }
 
-function uneCover(slug: string, alt: string): EditorialCover {
-  return { src: `/illustrations/unes/analyses/${slug}.jpg`, alt };
+function uneCover(slug: string, alt: string, caption?: string): EditorialCover {
+  return caption
+    ? { src: `/illustrations/unes/analyses/${slug}.jpg`, alt, caption }
+    : { src: `/illustrations/unes/analyses/${slug}.jpg`, alt };
 }
 
 export const ANALYSIS_CATALOG: AnalysisSummary[] = [
@@ -79,11 +83,13 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     cover: uneCover(
       'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
       'Aquarelle d\'une petite place de ville au printemps : devant une école en pierre dont la porte ouverte laisse voir une urne transparente vide et deux isoloirs à rideaux gris, une table pliante en bois porte un bouquet de muguet dans un verre ; contre le mur, des pancartes et des banderoles de manifestation vierges attendent et, à droite, une rangée de panneaux électoraux vides se dresse sous un platane.',
+      'Illustration générée par IA',
     ),
   },
   {
     slug: lisnardReelu.slug,
     title: lisnardReelu.title,
+    cardTitle: 'Lisnard réélu à la tête de l’AMF',
     description: lisnardReelu.description,
     date: lisnardReelu.date,
     published: lisnardReelu.date,

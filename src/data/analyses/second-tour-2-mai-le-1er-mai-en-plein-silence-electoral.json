@@ -1,6 +1,6 @@
 {
   "slug": "second-tour-2-mai-le-1er-mai-en-plein-silence-electoral",
-  "title": "Second tour le 2 mai : le 1er-Mai tombera en plein silence électoral",
+  "title": "Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral",
   "eyebrow": "Enquête et analyse · Présidentielle 2027",
   "type_label": "Enquête et analyse",
   "date": "2026-11-27",
@@ -8,8 +8,8 @@
   "kicker": "Enquête et analyse · La rédaction · 27 novembre 2026",
   "author": "La rédaction",
   "author_role": "Rédaction LMDPT",
-  "chapo": "Le gouvernement maintient le second tour de la présidentielle au dimanche 2 mai 2027. Or la loi coupe la campagne dès la veille à zéro heure : le 1er-Mai, jour des défilés, tombera donc en plein silence électoral. Retailleau, le RN, Glucksmann et Lisnard veulent avancer d’une semaine, LFI refuse de changer les règles en cours de partie. Derrière l’argument de sécurité, chacun redoute surtout le cortège des autres.",
-  "description": "Second tour le 2 mai : le 1er-Mai tombera en plein silence électoral. La loi coupe la propagande, pas la rue. Qui veut avancer le vote, qui refuse, et pourquoi.",
+  "chapo": "Le gouvernement maintient le second tour de la présidentielle au dimanche 2 mai 2027. Or la loi coupe la campagne dès la veille à zéro heure : le 1er-Mai, jour des défilés, tomberait donc en plein silence électoral. Retailleau, le RN, Glucksmann et Lisnard veulent avancer d’une semaine, LFI refuse de changer les règles en cours de partie. Derrière l’argument de sécurité, plusieurs camps redoutent aussi le cortège des autres.",
+  "description": "Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral. La loi coupe la propagande, pas la rue. Qui veut avancer le vote, qui refuse, et pourquoi.",
   "disclaimer": "Cette analyse décrit des textes officiels (Constitution, loi de 1962, code électoral), des déclarations publiques de responsables politiques, du gouvernement et de syndicats, et des récits de presse, tels que rapportés par leurs auteurs. Les calculs de dates sont signalés comme calculs LMDPT. Elle ne dit pas quelle date est la bonne, ne prédit aucun résultat et ne contient aucun sondage d’intentions de vote.",
   "tags": [
     "lmdpt",
@@ -20,7 +20,7 @@
     "code-electoral",
     "doe"
   ],
-  "x_hook": "Le gouvernement maintient le second tour de la présidentielle au dimanche 2 mai 2027. Or la loi coupe la campagne dès la veille à zéro heure : le 1er-Mai, jour des défilés, tombera donc en plein silence électoral. Retailleau, le RN, Glucksmann et Lisnard veulent avancer d’une semaine, LFI refuse de changer les règles en cours de partie. Derrière l’argument de sécurité, chacun redoute surtout le cortège des autres.",
+  "x_hook": "Le gouvernement maintient le second tour de la présidentielle au dimanche 2 mai 2027. Or la loi coupe la campagne dès la veille à zéro heure : le 1er-Mai, jour des défilés, tomberait donc en plein silence électoral. Retailleau, le RN, Glucksmann et Lisnard veulent avancer d’une semaine, LFI refuse de changer les règles en cours de partie. Derrière l’argument de sécurité, plusieurs camps redoutent aussi le cortège des autres.",
   "hues": [
     {
       "slug": "avancer-une-semaine",
@@ -38,7 +38,7 @@
       "slug": "ne-pas-changer-les-regles",
       "label": "Ne pas changer les règles en cours de partie",
       "color": "#3d7a62",
-      "rationale": "LFI par Manuel Bompard (24/11) ; c’est aussi la position du gouvernement (Lefèvre, 25/11), qui n’est pas candidat."
+      "rationale": "LFI par Manuel Bompard (24/11) ; le gouvernement, qui n’est pas candidat, défend lui aussi le maintien des dates (Lefèvre, 25/11)."
     },
     {
       "slug": "pas-de-position",
@@ -82,7 +82,7 @@
         },
         {
           "type": "p",
-          "text": "Ce que dit le texte, et ce qu’il ne dit pas. L’article L49 vise des outils de campagne : tracts, messages en ligne, appels, réunions électorales ([l’article L49 du code électoral](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039446215)). Il ne parle pas des manifestations. C’est là que les lectures divergent. Bruno Retailleau, candidat LR, y voit un « problème de légalité », puisque « la campagne électorale s'arrête à minuit vendredi » et que, selon lui, « ça continuera avec le 1er-Mai, vous aurez des candidats de gauche qui s'afficheront » ([Midi Libre (AFP)](https://www.midilibre.fr/2026/10/28/presidentielle-2027-faut-il-changer-la-date-du-second-tour-le-gouvernement-repond-a-la-proposition-de-bruno-retailleau-13624629.php)). Manuel Bompard, coordinateur de LFI, répondait dès juillet : « Le 1er mai, c'est une date de manifestation syndicale, je ne vois pas trop le problème » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Lu tel quel, le texte vise la propagande et les réunions électorales ; il ne mentionne pas les défilés. Reste la zone grise d’un candidat qui défilerait devant les caméras, que la loi ne règle pas explicitement."
+          "text": "Ce que dit le texte, et ce qu’il ne dit pas. L’article L49 vise des outils de campagne : tracts, messages en ligne, appels, réunions électorales ([l’article L49 du code électoral](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039446215)). Il ne parle pas des manifestations. C’est là que les lectures divergent. Bruno Retailleau, candidat LR, y voit un « problème de légalité », puisque « la campagne électorale s'arrête à minuit vendredi » et que, selon lui, « ça continuera avec le 1er-Mai, vous aurez des candidats de gauche qui s'afficheront » ([Midi Libre (AFP)](https://www.midilibre.fr/2026/10/28/presidentielle-2027-faut-il-changer-la-date-du-second-tour-le-gouvernement-repond-a-la-proposition-de-bruno-retailleau-13624629.php)). Manuel Bompard, coordinateur de LFI, répondait dès juillet : « Le 1er mai, c'est une date de manifestation syndicale, je ne vois pas trop le problème » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Lu tel quel, le texte vise la propagande et les réunions électorales ; il ne mentionne pas les défilés. Reste la zone grise d’un candidat qui défilerait devant les caméras, que le texte ne règle pas explicitement : tout dépendra de ce qu’il distribue ou diffuse ce jour-là. D’autres règles jouent aussi la veille du vote, notamment l’interdiction de publier ou de commenter un sondage (loi du 19 juillet 1977, art. 11)."
         }
       ]
     },
@@ -93,7 +93,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Pourquoi ne pas choisir n’importe quel autre week-end ? Parce que la Constitution enferme le calendrier. Son article 7 impose que l’élection ait lieu « vingt jours au moins et trente-cinq jours au plus avant l'expiration des pouvoirs du président en exercice » ([la Constitution](https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur)). Le second quinquennat d’Emmanuel Macron a commencé le 14 mai 2022 ([TF1 Info](https://www.tf1info.fr/politique/elections/presidentielle/presidentielles-2027-l-epineuse-question-des-dates-toujours-au-coeur-des-debats-2478400.html)) ; son mandat expire le 13 mai 2027 à minuit, rappelle France Inter ([France Inter](https://www.radiofrance.fr/franceinter/podcasts/histoire-politique/histoires-politiques-du-mercredi-28-octobre-2026-5979789))."
+          "text": "Pourquoi ne pas choisir n’importe quel autre week-end ? Parce que la Constitution enferme le calendrier. Son article 7 impose que l’élection ait lieu « vingt jours au moins et trente-cinq jours au plus avant l'expiration des pouvoirs du président en exercice » ([la Constitution](https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur)). Le second quinquennat d’Emmanuel Macron a commencé le 14 mai 2022 ([TF1 Info](https://www.tf1info.fr/politique/elections/presidentielle/presidentielles-2027-l-epineuse-question-des-dates-toujours-au-coeur-des-debats-2478400.html)) ; son mandat expire à la fin de la journée du 13 mai 2027, rappelle France Inter ([France Inter](https://www.radiofrance.fr/franceinter/podcasts/histoire-politique/histoires-politiques-du-mercredi-28-octobre-2026-5979789))."
         },
         {
           "type": "p",
@@ -112,23 +112,23 @@
     {
       "kind": "prose",
       "id": "cortege",
-      "title": "Chacun redoute le cortège des autres",
+      "title": "Derrière la sécurité, la peur du cortège adverse",
       "blocks": [
         {
           "type": "p",
-          "text": "L’argument officiel de tous ceux qui veulent avancer le vote est la sécurité. Le souvenir des violences et pillages du 17 octobre revient dans toutes les bouches. Bruno Retailleau craint qu’« il se passe ce qui s’est passé le 17 octobre » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Mais derrière la sécurité, il y a aussi une question plus politique : à qui profite un 1er-Mai la veille du vote ?"
+          "text": "L’argument officiel de tous ceux qui veulent avancer le vote est la sécurité. Le souvenir des violences et pillages du 17 octobre revient souvent. Bruno Retailleau craint qu’« il se passe ce qui s’est passé le 17 octobre » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Mais derrière la sécurité, il y a aussi une question plus politique : à qui profite un 1er-Mai la veille du vote ?"
         },
         {
           "type": "p",
-          "text": "À droite et au RN, la réponse est claire : à la gauche. Bruno Retailleau, qui parle d’« une date de bordélisation » ([Midi Libre (AFP)](https://www.midilibre.fr/2026/10/28/presidentielle-2027-faut-il-changer-la-date-du-second-tour-le-gouvernement-repond-a-la-proposition-de-bruno-retailleau-13624629.php)), a refusé d’y voir un hasard, accusant Emmanuel Macron de vouloir ainsi privilégier la gauche ([actu.fr](https://actu.fr/politique/election-presidentielle/presidentielle-2027-le-scrutin-menace-de-bordelisation-pourquoi-la-date-du-second-tour-inquiete_64981346.html)). Louis Aliot, vice-président du RN et maire de Perpignan, juge que « la neutralité et la sérénité qui doivent prévaloir avant le vote du dimanche seront nécessairement rompues » par des manifestations qu’il présente comme « l'apanage de la CGT et de toutes les organisations syndicales et militantes de gauche » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Dès juillet, Sébastien Chenu, vice-président du RN, parlait d’« une manœuvre du président », selon Le Parisien ([Le Parisien](https://www.leparisien.fr/elections/presidentielle/ce-serait-intelligent-raphael-glucksmann-favorable-au-decalage-des-dates-de-lelection-presidentielle-02-11-2026-3GPTYT3QGFBCJN3CR5IW2DACYU.php))."
+          "text": "À droite et au RN, la réponse est claire : à la gauche. Bruno Retailleau, qui parle d’« une date de bordélisation » ([Midi Libre (AFP)](https://www.midilibre.fr/2026/10/28/presidentielle-2027-faut-il-changer-la-date-du-second-tour-le-gouvernement-repond-a-la-proposition-de-bruno-retailleau-13624629.php)), a refusé d’y voir un hasard, l’accusant, selon [actu.fr](https://actu.fr/politique/election-presidentielle/presidentielle-2027-le-scrutin-menace-de-bordelisation-pourquoi-la-date-du-second-tour-inquiete_64981346.html), de vouloir ainsi privilégier la gauche. Louis Aliot, vice-président du RN et maire de Perpignan, juge que « la neutralité et la sérénité qui doivent prévaloir avant le vote du dimanche seront nécessairement rompues » par des manifestations qu’il présente comme « l'apanage de la CGT et de toutes les organisations syndicales et militantes de gauche » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Dès juillet, Sébastien Chenu, vice-président du RN, parlait d’« une manœuvre du président », selon Le Parisien ([Le Parisien](https://www.leparisien.fr/elections/presidentielle/ce-serait-intelligent-raphael-glucksmann-favorable-au-decalage-des-dates-de-lelection-presidentielle-02-11-2026-3GPTYT3QGFBCJN3CR5IW2DACYU.php))."
         },
         {
           "type": "p",
-          "text": "Le chef de l’État aurait eu, lui, la lecture inverse. Selon La Tribune Dimanche, lors du Conseil des ministres du 1er juillet, Emmanuel Macron avait expliqué que si les manifestations du 1er mai se tenaient après une victoire de Marine Le Pen, les troubles seraient bien pires que si elles avaient lieu avant ([La Tribune Dimanche](https://www.latribune.fr/article/la-tribune-dimanche/politique/15012963457538/cest-le-pire-scenario-possible-pourquoi-emmanuel-macron-a-choisi-la-date-du-2-mai-pour-le-second-tour)). Autrement dit, pour la droite, la date favoriserait la gauche ; pour l’Élysée, selon ce récit, elle éviterait le pire. Le même samedi, deux peurs opposées."
+          "text": "Le chef de l’État aurait eu, lui, la lecture inverse. Selon La Tribune Dimanche, lors du Conseil des ministres du 1er juillet, Emmanuel Macron aurait expliqué que si les manifestations du 1er mai se tenaient après une victoire de Marine Le Pen, les troubles seraient bien pires que si elles avaient lieu avant ([La Tribune Dimanche](https://www.latribune.fr/article/la-tribune-dimanche/politique/15012963457538/cest-le-pire-scenario-possible-pourquoi-emmanuel-macron-a-choisi-la-date-du-2-mai-pour-le-second-tour)). Autrement dit, pour la droite, la date favoriserait la gauche ; pour l’Élysée, selon ce récit, elle éviterait le pire. Le même samedi, deux peurs opposées."
         },
         {
           "type": "p",
-          "text": "La gauche n’est pas unie sur le sujet. Raphaël Glucksmann (PS-Place publique) juge qu’il « serait intelligent » de changer la date, en invoquant « l’état de polarisation », de « détestation » et de « violence » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Manuel Bompard, lui, « n'est pas à l'aise à changer les règles du jeu alors que la partie a commencé » ([BFMTV (Bompard)](https://www.bfmtv.com/politique/elections/presidentielle/video-second-tour-de-la-presidentielle-le-2-mai-manuel-bompard-coordinateur-de-la-france-insoumise-n-est-pas-a-l-aise-a-changer-les-regles-du-jeu-alors-que-la-partie-a-commence_VN-202611240953.html)). La CFDT, enfin, qui organise ces défilés : sa secrétaire générale, Marylise Léon, estime que « le 2 mai est le pire scénario possible en raison du risque de vives tensions au lendemain de la fête des travailleurs » ([La Tribune Dimanche](https://www.latribune.fr/article/la-tribune-dimanche/politique/15012963457538/cest-le-pire-scenario-possible-pourquoi-emmanuel-macron-a-choisi-la-date-du-2-mai-pour-le-second-tour))."
+          "text": "La gauche n’est pas unie sur le sujet. Raphaël Glucksmann (PS-Place publique) juge qu’il « serait intelligent » de changer la date, en invoquant « l’état de polarisation », de « détestation » et de « violence » ([BFMTV](https://www.bfmtv.com/politique/faut-il-changer-les-dates-de-la-presidentielle-2027-le-second-tour-de-l-election-au-lendemain-du-1er-mai-divise-les-candidats_AD-202611020404.html)). Manuel Bompard, lui, refuse de changer les règles du jeu en cours de partie, selon le résumé de BFMTV ([BFMTV (Bompard)](https://www.bfmtv.com/politique/elections/presidentielle/video-second-tour-de-la-presidentielle-le-2-mai-manuel-bompard-coordinateur-de-la-france-insoumise-n-est-pas-a-l-aise-a-changer-les-regles-du-jeu-alors-que-la-partie-a-commence_VN-202611240953.html)). La CFDT, enfin, qui organise ces défilés : sa secrétaire générale, Marylise Léon, estime que « le 2 mai est le pire scénario possible en raison du risque de vives tensions au lendemain de la fête des travailleurs » ([La Tribune Dimanche](https://www.latribune.fr/article/la-tribune-dimanche/politique/15012963457538/cest-le-pire-scenario-possible-pourquoi-emmanuel-macron-a-choisi-la-date-du-2-mai-pour-le-second-tour))."
         },
         {
           "type": "p",
@@ -151,7 +151,7 @@
         },
         {
           "type": "p",
-          "text": "En clair : si rien ne change, le 1er mai 2027 sera un samedi de défilés sans campagne officielle, la veille d’un second tour. La loi coupe les tracts, les messages de campagne en ligne et les réunions électorales. Elle ne coupe ni la rue ni les caméras des téléphones. Le vrai débat n’est pas de savoir si la France sait voter le lendemain d’une manifestation, mais qui pense que ce défilé jouera contre lui."
+          "text": "En clair : si rien ne change, le 1er mai 2027 sera un samedi de défilés sans campagne officielle, la veille d’un second tour. La loi coupe les tracts, les messages de campagne en ligne et les réunions électorales. Elle ne coupe ni la rue ni les caméras des téléphones. Le vrai débat n’est pas seulement de savoir si la France sait voter le lendemain d’une manifestation, mais aussi de savoir qui pense que ce défilé jouera contre lui."
         }
       ]
     },
@@ -172,13 +172,13 @@
           [
             "Retailleau / LR",
             "Avancer d’une semaine",
-            "Candidat. Le 28 octobre, selon l’AFP, il parle d’« une date de bordélisation » et d’un « problème de légalité », puisque « la campagne électorale s'arrête à minuit vendredi ». Il a refusé d’y voir un hasard et accuse Emmanuel Macron de vouloir privilégier la gauche (actu.fr, 27 octobre).",
+            "Candidat. Le 28 octobre, selon l’AFP, il parle d’« une date de bordélisation » et d’un « problème de légalité », puisque « la campagne électorale s'arrête à minuit vendredi ». Il a refusé d’y voir un hasard, l’accusant, selon actu.fr, de vouloir ainsi privilégier la gauche (27 octobre).",
             "[6][12]"
           ],
           [
-            "Le Pen / RN",
-            "Avancer d’une semaine (cadres du parti)",
-            "Candidate. Position exprimée par des cadres : Louis Aliot, vice-président du RN, le 25 octobre (« la neutralité et la sérénité » avant le vote seraient « nécessairement rompues »), et Sébastien Chenu en juillet (« une manœuvre du président »). Aucune déclaration de Marine Le Pen elle-même sur ce point trouvée au 26 novembre.",
+            "RN (Aliot, Chenu)",
+            "Avancer d’une semaine",
+            "Position exprimée par des cadres du parti ; aucune déclaration de Marine Le Pen elle-même trouvée au 26 novembre. Louis Aliot, vice-président du RN, le 25 octobre (« la neutralité et la sérénité » avant le vote seraient « nécessairement rompues »), et Sébastien Chenu en juillet (« une manœuvre du président »).",
             "[7][8]"
           ],
           [
@@ -200,9 +200,9 @@
             "[3][4]"
           ],
           [
-            "Mélenchon / LFI",
+            "LFI (Bompard)",
             "Ne pas changer les règles en cours de partie",
-            "Candidat. Manuel Bompard, coordinateur de LFI, le 24 novembre sur BFMTV : il « n'est pas à l'aise à changer les règles du jeu alors que la partie a commencé ». En juillet : « je ne vois pas trop le problème ».",
+            "Selon BFMTV (24 novembre), Manuel Bompard refuse de changer les règles du jeu en cours de partie. En juillet : « je ne vois pas trop le problème ».",
             "[9][7]"
           ],
           [
@@ -219,7 +219,7 @@
           ]
         ]
       },
-      "note": "Badge des courants, lu au regard de la thèse (le 1er-Mai tombera dans le silence électoral ; la loi coupe la propagande, pas la rue, et chaque camp redoute surtout le cortège des autres) : Avancer d’une semaine (Retailleau, RN par ses cadres, Lisnard, Glucksmann). Critique de la date retenue sans demande formelle trouvée (Philippe). Ne pas changer les règles en cours de partie (LFI par la voix de Manuel Bompard ; c’est aussi la ligne du gouvernement, qui n’est pas candidat). Pas de position publique trouvée au 26/11 (Zemmour, Attal)."
+      "note": "Badge des courants, lu au regard de la thèse (le 1er-Mai tombera dans le silence électoral ; la loi coupe la propagande, pas la rue, et plusieurs camps redoutent aussi le cortège des autres) : Avancer d’une semaine (Retailleau, RN par ses cadres, Lisnard, Glucksmann). Critique de la date retenue sans demande formelle trouvée (Philippe). Ne pas changer les règles en cours de partie (LFI par la voix de Manuel Bompard ; le gouvernement, qui n’est pas candidat, défend lui aussi le maintien des dates). Pas de position publique trouvée au 26/11 (Zemmour, Attal)."
     }
   ],
   "sources_intro": "Documents cités dans l’article.",

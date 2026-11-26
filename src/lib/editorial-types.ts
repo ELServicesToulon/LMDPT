@@ -2,6 +2,7 @@
 export interface EditorialCover {
   src: string;
   alt: string;
+  caption?: string;
 }
 
 export type EditorialKind = 'analyse' | 'debat';

@@ -348,6 +348,7 @@ export function groupPersonnalites(
 export type UneLienApercu = {
   slug: string;
   title: string;
+  cardTitle?: string;
   href: string;
   date: string;
   dateLabel: string;
@@ -358,6 +359,7 @@ export function toUneLienApercu(post: EditorialPost): UneLienApercu {
   return {
     slug: post.slug,
     title: post.title,
+    cardTitle: post.cardTitle,
     href: post.href,
     date: post.date,
     dateLabel: formatCampagneDate(post.date, { weekday: false }),
@@ -501,7 +503,7 @@ export function cartesClinDoeil(opts: {
           title: 'Ce qui a bougé cette semaine',
           date: mouvement.date,
           dateLabel: mouvement.dateLabel,
-          uneTitle: mouvement.title,
+          uneTitle: mouvement.cardTitle ?? mouvement.title,
           href: mouvement.href,
           description: mouvement.description,
         }
