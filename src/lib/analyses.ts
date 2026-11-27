@@ -8,7 +8,7 @@ import trumpIa from '../data/analyses/trump-ia-guardrails-anthropic.json';
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import chroniquePrimaire from '../data/analyses/chronique-manusk-primaire-vent-arriere.json';
 import chroniqueFictionDemission from '../data/analyses/chronique-manusk-fiction-demission-macron.json';
-import zemmourDerniereCampagne from '../data/analyses/zemmour-derniere-campagne-il-lui-manque-150-parrainages.json';
+import zemmourDerniereCampagne from '../data/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages.json';
 import secondTour2Mai from '../data/analyses/second-tour-2-mai-le-1er-mai-en-plein-silence-electoral.json';
 import lisnardReelu from '../data/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
@@ -80,9 +80,9 @@ export const ANALYSIS_CATALOG: AnalysisSummary[] = [
     date: zemmourDerniereCampagne.date,
     published: zemmourDerniereCampagne.date,
     updated: zemmourDerniereCampagne.updated,
-    href: '/analyses/zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+    href: '/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     cover: uneCover(
-      'zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
       'Aquarelle de l’intérieur d’un petit bureau de mairie de village en automne : sur un vieux bureau en bois attendent une pile de formulaires vierges, une pile d’enveloppes blanches, un stylo-plume et un tampon encreur fermé ; à droite, une corbeille à courrier en osier vide ; au mur, une horloge sans chiffres et, par la grande fenêtre, une place de village avec un platane aux feuilles rousses d’où une route de campagne file vers des collines.',
       'Illustration générée par IA',
     ),

@@ -8,7 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
-import zemmourDerniereCampagne from '../data/analyses/zemmour-derniere-campagne-il-lui-manque-150-parrainages.json';
+import zemmourDerniereCampagne from '../data/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages.json';
 import secondTour2Mai from '../data/analyses/second-tour-2-mai-le-1er-mai-en-plein-silence-electoral.json';
 import lisnardReelu from '../data/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
@@ -67,7 +67,7 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
-      'zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
@@ -110,7 +110,7 @@ describe('analyses', () => {
       'chronique-manusk-fiction-demission-macron',
     );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe(
-      'zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     );
     expect(ANALYSIS_CATALOG[1]?.slug).toBe(
       'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
@@ -164,13 +164,13 @@ describe('analyses', () => {
     );
   });
 
-  it('enquête Zemmour promet sa dernière campagne, il lui manque encore au moins 150 parrainages du 28 novembre en une, sources, boîte DOE', () => {
+  it('enquête Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages du 28 novembre en une, sources, boîte DOE', () => {
     expect(zemmourDerniereCampagne.slug).toBe(
-      'zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     );
     expect(zemmourDerniereCampagne.date).toBe('2026-11-28');
     expect(zemmourDerniereCampagne.title).toBe(
-      'Zemmour promet sa dernière campagne, il lui manque encore au moins 150 parrainages',
+      'Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages',
     );
     expect(zemmourDerniereCampagne.author).toBe('La rédaction');
     expect(zemmourDerniereCampagne.tags).toContain('doe');
@@ -179,8 +179,8 @@ describe('analyses', () => {
     expect(zemmourDerniereCampagne.sources_groups[0]?.items).toHaveLength(22);
     const doe = zemmourDerniereCampagne.sections.find((section) => section.id === 'doe');
     expect(doe?.kind).toBe('candidats');
-    expect(getAnalysis('zemmour-derniere-campagne-il-lui-manque-150-parrainages')?.href).toBe(
-      '/analyses/zemmour-derniere-campagne-il-lui-manque-150-parrainages',
+    expect(getAnalysis('zemmour-derniere-campagne-il-lui-manquerait-150-parrainages')?.href).toBe(
+      '/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     );
   });
 

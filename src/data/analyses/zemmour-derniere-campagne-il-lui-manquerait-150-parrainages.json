@@ -1,6 +1,6 @@
 {
-  "slug": "zemmour-derniere-campagne-il-lui-manque-150-parrainages",
-  "title": "Zemmour promet sa dernière campagne, il lui manque encore au moins 150 parrainages",
+  "slug": "zemmour-derniere-campagne-il-lui-manquerait-150-parrainages",
+  "title": "Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages",
   "eyebrow": "Enquête et analyse · Présidentielle 2027",
   "type_label": "Enquête et analyse",
   "date": "2026-11-28",
@@ -8,7 +8,7 @@
   "kicker": "Enquête et analyse · La rédaction · 28 novembre 2026",
   "author": "La rédaction",
   "author_role": "Rédaction LMDPT",
-  "chapo": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que le minimum légal. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
+  "chapo": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que les 500 exigés, à supposer que chaque promesse devienne une signature. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
   "description": "Zemmour annonce sa dernière campagne mais revendique « 300, 350 » promesses de parrainage sur 500. Ce que valent ces promesses, ce que dit la loi, et le précédent de 2022.",
   "disclaimer": "Cette analyse décrit des textes officiels (loi de 1962, décisions et données du Conseil constitutionnel, réponse du ministère de l’Intérieur), des déclarations publiques de responsables politiques et des récits de presse, tels que rapportés par leurs auteurs. Les chiffres de parrainages annoncés par les candidats sont des déclarations, pas des signatures. Les calculs faits à partir des données officielles de 2022 sont signalés comme calculs LMDPT. Elle ne prédit aucun résultat et ne contient aucun sondage d’intentions de vote.",
   "tags": [
@@ -20,7 +20,7 @@
     "conseil-constitutionnel",
     "doe"
   ],
-  "x_hook": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que le minimum légal. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
+  "x_hook": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que les 500 exigés, à supposer que chaque promesse devienne une signature. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
   "hues": [
     {
       "slug": "anonymat-parrainages",
@@ -139,7 +139,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Reste une autre porte, que la droite et le centre cherchent à ouvrir : une primaire, ou au moins une façon de départager ses candidats. Éric Zemmour n’y est pas le bienvenu pour la plupart des intéressés. David Lisnard plaide pour sa participation, tandis que Gabriel Attal, Édouard Philippe et Bruno Retailleau refusent catégoriquement, selon Europe 1 ([Europe 1 (primaire)](https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192)). Bruno Retailleau a été clair le 18 novembre : « Si vous dites demain : “Éric Zemmour doit faire partie de la primaire”, en réalité, vous flinguez la primaire » ([Public Sénat (Retailleau)](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau))."
+          "text": "Reste une autre porte, que la droite et le centre cherchent à ouvrir : une primaire, ou au moins une façon de départager ses candidats. Éric Zemmour n’y est pas le bienvenu pour la plupart des intéressés, selon Europe 1. David Lisnard plaide pour sa participation, tandis que Gabriel Attal, Édouard Philippe et Bruno Retailleau refusent catégoriquement, selon Europe 1 ([Europe 1 (primaire)](https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192)). Bruno Retailleau a été clair le 18 novembre : « Si vous dites demain : “Éric Zemmour doit faire partie de la primaire”, en réalité, vous flinguez la primaire » ([Public Sénat (Retailleau)](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau))."
         },
         {
           "type": "p",
@@ -194,7 +194,7 @@
           ],
           [
             "Le Pen / RN",
-            "Anonymat des parrainages",
+            "Anonymat des parrainages (texte de 2023, porte-parole)",
             "Candidate. Cosignataire de la proposition de loi organique n° 1708 du 9 octobre 2023 « visant à anonymiser les parrainages ». Le 26 novembre, Laurent Jacobelli, porte-parole de sa campagne, sur Europe 1 et CNews : « Il faudrait l'anonymat des parrainages ».",
             "[17][16]"
           ],
