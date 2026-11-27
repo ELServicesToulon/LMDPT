@@ -465,7 +465,9 @@ describe('cartesClinDoeil', () => {
     expect(cartes.semaine).not.toBeNull();
     expect(cartes.semaine?.title).toBe('Ce qui a bougé cette semaine');
     expect(cartes.semaine?.uneTitle).toBe(suivante!.cardTitle ?? suivante!.title);
-    expect(cartes.semaine?.uneTitle).toBe('Lisnard réélu à la tête de l’AMF');
+    expect(cartes.semaine?.uneTitle).toBe(
+      'Second tour le 2 mai : le 1er-Mai tomberait en plein silence électoral',
+    );
     expect(cartes.semaine?.uneTitle).not.toMatch(/\d+\s*%/);
     expect(cartes.semaine?.href).toBe(suivante!.href);
     expect(cartes.semaine?.dateLabel).toBe(suivante!.dateLabel);

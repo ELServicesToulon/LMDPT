@@ -1,0 +1,481 @@
+{
+  "slug": "zemmour-derniere-campagne-il-lui-manquerait-150-parrainages",
+  "title": "Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages",
+  "eyebrow": "Enquête et analyse · Présidentielle 2027",
+  "type_label": "Enquête et analyse",
+  "date": "2026-11-28",
+  "updated": "2026-11-28",
+  "kicker": "Enquête et analyse · La rédaction · 28 novembre 2026",
+  "author": "La rédaction",
+  "author_role": "Rédaction LMDPT",
+  "chapo": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que les 500 exigés, à supposer que chaque promesse devienne une signature. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
+  "description": "Zemmour annonce sa dernière campagne mais revendique « 300, 350 » promesses de parrainage sur 500. Ce que valent ces promesses, ce que dit la loi, et le précédent de 2022.",
+  "disclaimer": "Cette analyse décrit des textes officiels (loi de 1962, décisions et données du Conseil constitutionnel, réponse du ministère de l’Intérieur), des déclarations publiques de responsables politiques et des récits de presse, tels que rapportés par leurs auteurs. Les chiffres de parrainages annoncés par les candidats sont des déclarations, pas des signatures. Les calculs faits à partir des données officielles de 2022 sont signalés comme calculs LMDPT. Elle ne prédit aucun résultat et ne contient aucun sondage d’intentions de vote.",
+  "tags": [
+    "lmdpt",
+    "analyse",
+    "presidentielle-2027",
+    "parrainages",
+    "zemmour",
+    "conseil-constitutionnel",
+    "doe"
+  ],
+  "x_hook": "Jeudi 26 novembre, sur Europe 1 et CNews, Éric Zemmour a annoncé que 2027 serait sa « dernière campagne ». Dans la même émission, il a reconnu ne pas avoir ses 500 parrainages : il revendique « 300, 350 » promesses, soit au moins 150 de moins que les 500 exigés, à supposer que chaque promesse devienne une signature. Ces promesses n’engagent pas les maires, la publication des noms qu’il conteste ne changera pas d’ici 2027, et la primaire de la droite ne lui ouvre aucun raccourci. En 2022, la barre des 500 n’était apparue sur le site du Conseil constitutionnel que trois jours avant la clôture.",
+  "hues": [
+    {
+      "slug": "anonymat-parrainages",
+      "label": "Anonymat des parrainages",
+      "color": "#162561",
+      "rationale": "Lisnard (26/11 et courrier de l’AMF du 13 mai), Le Pen (proposition de loi organique n° 1708 de 2023 ; Laurent Jacobelli, 26/11), Zemmour (contre la publication des noms, 26/11 ; anonymat en janvier 2022) : ne plus publier le nom des parrains."
+    },
+    {
+      "slug": "parrainages-citoyens",
+      "label": "Parrainages citoyens",
+      "color": "#3d7a62",
+      "rationale": "Mélenchon et LFI : remplacer les 500 parrainages d’élus par des parrainages citoyens (programme 2027 ; Manuel Bompard, 24/11 : 150.000 parrainages citoyens)."
+    },
+    {
+      "slug": "garder-noms-publics",
+      "label": "Garder les noms publics",
+      "color": "#8a5a00",
+      "rationale": "Gérard Larcher, qui n’est pas candidat (26/11) ; le gouvernement, qui n’est pas candidat, défend lui aussi la publication (ministère de l’Intérieur, juin 2025)."
+    },
+    {
+      "slug": "pas-de-position",
+      "label": "Pas de position publique trouvée au 27/11",
+      "color": "#5a6570",
+      "rationale": "Retailleau, Attal, Philippe, Glucksmann : rien trouvé de daté sur la publicité des parrainages."
+    }
+  ],
+  "sections": [
+    {
+      "kind": "prose",
+      "id": "annonce",
+      "title": "Ce qu’il a dit jeudi soir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Jeudi 26 novembre au soir, Éric Zemmour était l’invité de Laurence Ferrari dans « Objectif Élysée 2027 », sur Europe 1 et CNews ([Europe 1](https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688)). Interrogé sur le rôle de Sarah Knafo, eurodéputée et vice-présidente de Reconquête, il a parlé de « la campagne d’un tandem » : « c'est elle qui dirige la campagne » ([Le Parisien (AFP)](https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php)). Et en 2032, sera-t-elle plus que directrice de campagne ? « Alors là, oui, sans doute. Moi, de toute façon, c'est ma dernière campagne » ([Le Parisien (AFP)](https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php))."
+        },
+        {
+          "type": "p",
+          "text": "Dans la même émission, le président de Reconquête a fait un aveu plus terre à terre. Ses 500 parrainages, « pour l'instant, je ne les ai pas ». Il dit avoir « 300, 350 » promesses ([Le Parisien (AFP)](https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php)), en précisant lui-même qu’il ne s’agit que de promesses ; les parrainages définitifs seront connus, selon lui, en février ([Europe 1](https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688)). Il annonce donc sa dernière campagne avant d’avoir le ticket d’entrée."
+        },
+        {
+          "type": "p",
+          "text": "Faisons le calcul. Avec 350 promesses, il en manque 150 pour atteindre 500. Avec 300, il en manque 200 (calcul LMDPT). D’où notre titre : au moins 150, et encore, en supposant que chaque promesse devienne une signature."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "regle",
+      "title": "500 signatures, 30 départements, et rien d’officiel avant février",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La règle est écrite dans la loi de 1962 sur l’élection présidentielle. Pour figurer sur la liste, un candidat doit être présenté par « au moins cinq cents citoyens » qui ont un mandat : parlementaires, conseillers régionaux et départementaux, maires et quelques autres élus ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)). On appelle ces présentations des parrainages."
+        },
+        {
+          "type": "p",
+          "text": "Le nombre ne suffit pas. Il faut des élus « d'au moins trente départements ou collectivités d'outre-mer », et pas plus d’un dixième venus du même département ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)). Pour 500 signatures, cela fait 50 au maximum par département ([le ministère de l’Intérieur](https://questions.assemblee-nationale.fr/q17/17-5709QE.htm)). Le Conseil constitutionnel le résume : une candidature n’est retenue que si ces conditions sont toutes remplies ([le Conseil constitutionnel](https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-valides-par-candidat.html))."
+        },
+        {
+          "type": "p",
+          "text": "Surtout, aucune signature officielle n’existe aujourd’hui. Le formulaire est envoyé aux élus par les préfectures après le décret qui convoque les électeurs. Ce décret doit paraître « au moins dix semaines avant la date du premier tour de scrutin » ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)), soit au plus tard le 7 février 2027 pour un premier tour le 18 avril, et la collecte se termine le 12 mars 2027 ([Maires de France](https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0)). Maire-info, le quotidien de l’Association des maires de France (AMF), le rappelle sans détour : les « promesses » des maires « ne les engagent absolument à rien, sur le plan juridique » ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318)). Une fois le formulaire envoyé, en revanche, c’est définitif : « Une fois envoyée, une présentation ne peut être retirée » ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037))."
+        },
+        {
+          "type": "p",
+          "text": "Le chiffre annoncé par Éric Zemmour bouge d’ailleurs peu. En septembre, devant ses militants, il revendiquait déjà « 350 promesses de parrainages d’élus », un chiffre que Public Sénat jugeait « invérifiable » ([Public Sénat](https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof)). Le 24 novembre au matin, Europe 1 rapportait qu’il revendiquait « à ce stade 350 signatures » ([Europe 1 (24 novembre)](https://www.europe1.fr/politique/presidentielle-2027-ou-en-sont-les-differents-candidats-dans-leur-quete-aux-parrainages-1243213)). Jeudi, la fourchette allait de 300 à 350 ([Le Parisien (AFP)](https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "public",
+      "title": "Des noms publiés, des maires qui hésitent",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dès le 24 novembre, Europe 1 jugeait la quête « plus compliquée pour Éric Zemmour » ([Europe 1 (24 novembre)](https://www.europe1.fr/politique/presidentielle-2027-ou-en-sont-les-differents-candidats-dans-leur-quete-aux-parrainages-1243213)). Le candidat de Reconquête, lui, accuse la règle. Selon Europe 1, il dénonce la publication des noms des élus qui accordent leur parrainage, qui exposerait selon lui les maires à des pressions ([Europe 1](https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688)). La loi prévoit bien que le Conseil constitutionnel « rend publics, au moins deux fois par semaine, le nom et la qualité des citoyens » qui ont parrainé un candidat ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)). Avant 2017, seuls 500 noms par candidat, tirés au sort, étaient publiés ; depuis, la publication est intégrale ([le ministère de l’Intérieur](https://questions.assemblee-nationale.fr/q17/17-5709QE.htm))."
+        },
+        {
+          "type": "p",
+          "text": "Le débat n’est pas neuf, et nous l’avons raconté dans nos Unes du 25 et du 26 novembre. Il a rebondi jeudi au congrès des maires. David Lisnard, candidat et président de l’AMF, y a dénoncé un système « malsain », qui fait peser « une pression excessive sur les maires », et a proposé de revenir à l’anonymat ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/regle-d-or-budget-parrainages-ce-qu-il-faut-retenir-du-debat-entre-sebastien-lecornu-gerard-larcher-et-david-lisnard-au-congres-des-maires_AV-202611260765.html)). Le même jour, sur ICI, il expliquait vouloir « enlever la pression sur les maires » ([franceinfo](https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html)). Gérard Larcher, président du Sénat, lui a répondu non : « nous avons conclu qu'il était essentiel que les maires puissent s'engager et nous n'avons pas souhaité retrouver l'anonymat » ([BFMTV](https://www.bfmtv.com/politique/elections/presidentielle/regle-d-or-budget-parrainages-ce-qu-il-faut-retenir-du-debat-entre-sebastien-lecornu-gerard-larcher-et-david-lisnard-au-congres-des-maires_AV-202611260765.html))."
+        },
+        {
+          "type": "p",
+          "text": "L’État tient la même ligne. Dans une réponse publiée en juin 2025, le ministère de l’Intérieur écrit que « le Gouvernement ne souhaite pas revenir sur le principe de cette mesure » ([le ministère de l’Intérieur](https://questions.assemblee-nationale.fr/q17/17-5709QE.htm)). Le Conseil constitutionnel, après 2022, estimait que les chiffres conduisaient « à relativiser diverses affirmations » selon lesquelles la publication dissuaderait massivement les élus ([les observations du Conseil constitutionnel](https://www.conseil-constitutionnel.fr/decision/2022/2022198PDR.htm)). Et pour 2027, la question est réglée par le calendrier : « Il n'y aura cependant pas de changement de cette règle pour les élections de 2027 », écrit Maire-info, car il faudrait un nouveau texte de loi ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318))."
+        },
+        {
+          "type": "p",
+          "text": "Éric Zemmour connaît bien cette règle. En janvier 2022 déjà, selon Public Sénat, il « plaide aussi pour l’anonymat des parrainages » ([Public Sénat (2022)](https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle)). Il a pourtant obtenu ses signatures cette année-là, avec des noms publiés."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "precedent",
+      "title": "2022 : la barre franchie à trois jours de la clôture",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Le précédent est public, et chiffré. En 2022, le Conseil constitutionnel a examiné les formulaires reçus à partir du 27 janvier et jusqu’au 4 mars à 18 heures ([la décision du 7 mars 2022](https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm)). Son fichier officiel des parrainages validés permet de suivre, publication après publication, le compteur d’Éric Zemmour ([les données du Conseil constitutionnel](https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv))."
+        },
+        {
+          "type": "p",
+          "text": "Voici ce qu’il montre (calcul LMDPT à partir de ce fichier) : 14 parrainages validés à la publication du 1er février 2022, 181 au 10 février, 350 au 22 février, 415 au 24 février. La barre des 500 n’apparaît qu’à la publication du 1er mars, avec 620 parrainages, trois jours avant la clôture. Le total final atteint 741, dont 632 maires, et aucun département n’en fournit plus de 32 ([les données du Conseil constitutionnel](https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv)). Le 7 mars 2022, son nom figure sur la liste officielle des douze candidats ([la décision du 7 mars 2022](https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm))."
+        },
+        {
+          "type": "p",
+          "text": "Le parallèle a ses limites. En 2022, les 350 du 22 février étaient des parrainages validés par le Conseil constitutionnel ; les 350 de 2026 sont des promesses, avant même que le moindre formulaire existe. Et une règle change pour 2027 : l’élu doit désormais envoyer lui-même son formulaire au Conseil constitutionnel, il ne peut plus le remettre à l’équipe du candidat, selon Maire-info. Un envoi « par voie électronique » est en préparation, sans être encore acquis ([Maire-info](https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318))."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "primaire",
+      "title": "Pas de raccourci par la primaire",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Reste une autre porte, que la droite et le centre cherchent à ouvrir : une primaire, ou au moins une façon de départager ses candidats. Éric Zemmour n’y est pas le bienvenu pour la plupart des intéressés, selon Europe 1. David Lisnard plaide pour sa participation, tandis que Gabriel Attal, Édouard Philippe et Bruno Retailleau refusent catégoriquement, selon Europe 1 ([Europe 1 (primaire)](https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192)). Bruno Retailleau a été clair le 18 novembre : « Si vous dites demain : “Éric Zemmour doit faire partie de la primaire”, en réalité, vous flinguez la primaire » ([Public Sénat (Retailleau)](https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau))."
+        },
+        {
+          "type": "p",
+          "text": "Le lendemain, sur BFMTV, Gérard Larcher, à qui les candidats s’en remettent pour trancher selon Europe 1 ([Europe 1 (primaire)](https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192)), a estimé qu’Éric Zemmour n’est « pas de la droite républicaine » et qu’il « ne fait pas partie de ceux que je souhaite convier à débattre » ([BFMTV (Larcher)](https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-gerard-larcher-ne-ressent-pas-de-proximite-avec-eric-zemmour-et-ne-souhaite-pas-l-inclure-dans-la-primaire-de-la-droite_AV-202611190987.html)). L’intéressé a répondu jeudi qu’il irait jusqu’au premier tour même s’il était tenu à l’écart de la primaire ([Le Parisien (AFP)](https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php))."
+        },
+        {
+          "type": "p",
+          "text": "Autrement dit, il n’existe pas de chemin de traverse. Avec ou sans primaire, une seule route mène au bulletin de vote : 500 élus qui signent un formulaire, envoyé à temps, avec leur nom publié."
+        }
+      ]
+    },
+    {
+      "kind": "prose",
+      "id": "suite",
+      "title": "Ce qu’on pourra vérifier en février",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pour l’instant, le chiffre de 300 ou 350 ne peut être vérifié par personne, et ce n’est pas un reproche fait au seul Éric Zemmour : tous les candidats en sont au stade des promesses. Cela changera dès l’ouverture de la collecte. Le Conseil constitutionnel publiera les noms des parrains au moins deux fois par semaine ([la loi du 6 novembre 1962](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037)), comme il l’a fait en 2022 ([les données du Conseil constitutionnel](https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv))."
+        },
+        {
+          "type": "p",
+          "text": "Le candidat a promis que 2027 serait sa dernière campagne. Il reste à savoir si elle commencera officiellement. À partir de février, le compteur ne sera plus celui de Reconquête, mais celui du Conseil constitutionnel, et chacun pourra le lire."
+        }
+      ]
+    },
+    {
+      "kind": "candidats",
+      "id": "doe",
+      "title": "Boîte DOE : faut-il garder publics les noms des élus qui parrainent ?",
+      "intro": "Lecture analytique et non exhaustive de positions datées sur une seule question : faut-il continuer à publier le nom des élus qui parrainent un candidat à la présidentielle ? Seules figurent des positions que nous avons pu vérifier dans une déclaration publique rapportée par la presse, un texte déposé ou un programme publié. Les lectures décrivent ce que nous avons trouvé (texte, date, auteur) ; ce n’est ni un soutien à un candidat, ni un jugement sur le fond. « Pas de position publique trouvée au 27/11 » signifie que nous n’avons rien trouvé de daté, pas qu’il n’existe aucune position. Gérard Larcher n’est pas candidat : il figure ici parce qu’il a répondu publiquement à David Lisnard. Les autres candidats déclarés ou potentiels ne sont pas listés.",
+      "table": {
+        "caption": "Publicité des parrainages : positions datées",
+        "headers": [
+          "Personnalité / courant",
+          "Lecture",
+          "Position",
+          "Sources"
+        ],
+        "rows": [
+          [
+            "Zemmour / Reconquête",
+            "Contre la publication des noms",
+            "Candidat. Le 26 novembre, sur Europe 1 et CNews, il dénonce selon Europe 1 la publication des noms des élus qui parrainent, qui exposerait selon lui les maires à des pressions. En janvier 2022 déjà, selon Public Sénat, il « plaide aussi pour l’anonymat des parrainages ».",
+            "[2][13]"
+          ],
+          [
+            "Lisnard / Nouvelle Énergie",
+            "Anonymat des parrainages",
+            "Candidat, président de l’AMF. Le 26 novembre, au congrès des maires, il dénonce un système « malsain » et propose de revenir à l’anonymat ; sur ICI, il veut « enlever la pression sur les maires ». Dans un courrier du 13 mai au Premier ministre, il demandait « le retour à l'anonymat complet des parrainages ».",
+            "[14][15][4]"
+          ],
+          [
+            "Le Pen / RN",
+            "Anonymat des parrainages (texte de 2023, porte-parole)",
+            "Candidate. Cosignataire de la proposition de loi organique n° 1708 du 9 octobre 2023 « visant à anonymiser les parrainages ». Le 26 novembre, Laurent Jacobelli, porte-parole de sa campagne, sur Europe 1 et CNews : « Il faudrait l'anonymat des parrainages ».",
+            "[17][16]"
+          ],
+          [
+            "Mélenchon / LFI",
+            "Parrainages citoyens",
+            "Candidat. Programme « L’Avenir en commun » 2027 : « Instaurer une procédure de parrainages citoyens pour l’élection présidentielle à la place des 500 parrainages d’élus ». Le 24 novembre, Manuel Bompard, coordinateur de LFI, propose « 150.000 parrainages citoyens ».",
+            "[18][19]"
+          ],
+          [
+            "Larcher / président du Sénat (non candidat)",
+            "Garder les noms publics",
+            "Pas candidat. Le 26 novembre, au congrès des maires, en réponse à David Lisnard : « nous n'avons pas souhaité retrouver l'anonymat ». Le gouvernement tient la même ligne (ministère de l’Intérieur, juin 2025).",
+            "[14][10]"
+          ],
+          [
+            "Retailleau / LR",
+            "Pas de position publique trouvée au 27/11",
+            "Candidat. Aucune déclaration datée sur la publicité des parrainages trouvée au 27 novembre.",
+            "Aucune source"
+          ],
+          [
+            "Attal / Renaissance",
+            "Pas de position publique trouvée au 27/11",
+            "Candidat. Aucune déclaration datée sur la publicité des parrainages trouvée au 27 novembre.",
+            "Aucune source"
+          ],
+          [
+            "Philippe / Horizons",
+            "Pas de position publique trouvée au 27/11",
+            "Candidat. Aucune déclaration datée sur la publicité des parrainages trouvée au 27 novembre.",
+            "Aucune source"
+          ],
+          [
+            "Glucksmann / PS-Place publique",
+            "Pas de position publique trouvée au 27/11",
+            "Candidat. Aucune déclaration datée sur la publicité des parrainages trouvée au 27 novembre.",
+            "Aucune source"
+          ]
+        ]
+      },
+      "note": "Badge des courants, lu au regard de la thèse (une promesse de parrainage n’est pas une signature ; la règle de publication que conteste Éric Zemmour ne changera pas pour 2027 ; à partir de février, c’est le Conseil constitutionnel qui comptera) : Anonymat des parrainages (Lisnard ; Le Pen par son texte de 2023 et son porte-parole ; Zemmour, contre la publication des noms). Parrainages citoyens (Mélenchon et LFI). Garder les noms publics (Gérard Larcher, qui n’est pas candidat ; le gouvernement, qui n’est pas candidat, tient la même ligne). Pas de position publique trouvée au 27/11 (Retailleau, Attal, Philippe, Glucksmann)."
+    }
+  ],
+  "sources_intro": "Documents cités dans l’article.",
+  "sources_groups": [
+    {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "1. Le Parisien avec AFP, 27 novembre 2026, 0 h 05 (« C’est ma dernière campagne » : Éric Zemmour annonce qu’il ne briguera plus l’Élysée après la Présidentielle 2027). https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php",
+          "lead": "1. Le Parisien avec AFP, 27 novembre 2026, 0 h 05 (« C’est ma dernière campagne » : Éric Zemmour annonce qu’il ne briguera plus l’Élysée après la Présidentielle 2027)",
+          "links": [
+            {
+              "label": "https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php",
+              "url": "https://www.leparisien.fr/elections/presidentielle/cest-ma-derniere-campagne-eric-zemmour-annonce-quil-ne-briguera-plus-lelysee-apres-la-presidentielle-2027-27-11-2026-IH6CFANF7FGSNGZZ47MCRJSVGM.php"
+            }
+          ]
+        },
+        {
+          "label": "2. Europe 1, 26 novembre 2026, 21 h 52, mis à jour à 22 h 42 (Objectif Élysée 2027 : « C'est ma dernière campagne », annonce Éric Zemmour). https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688",
+          "lead": "2. Europe 1, 26 novembre 2026, 21 h 52, mis à jour à 22 h 42 (Objectif Élysée 2027 : « C'est ma dernière campagne », annonce Éric Zemmour)",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688",
+              "url": "https://www.europe1.fr/politique/objectif-elysee-2027-cest-ma-derniere-campagne-annonce-eric-zemmour-1245688"
+            }
+          ]
+        },
+        {
+          "label": "3. Légifrance, loi n° 62-1292 du 6 novembre 1962 relative à l'élection du Président de la République au suffrage universel, version en vigueur au 27 novembre 2026 (articles 1 bis et 3). https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037",
+          "lead": "3. Légifrance, loi n° 62-1292 du 6 novembre 1962 relative à l'élection du Président de la République au suffrage universel, version en vigueur au 27 novembre 2026 (articles 1 bis et 3)",
+          "links": [
+            {
+              "label": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037",
+              "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000684037"
+            }
+          ]
+        },
+        {
+          "label": "4. Maires de France (magazine de l'AMF), Xavier Brivet, 3 septembre 2026 (Parrainage des candidats à l'élection présidentielle : l'AMF demande l'anonymat). https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0",
+          "lead": "4. Maires de France (magazine de l'AMF), Xavier Brivet, 3 septembre 2026 (Parrainage des candidats à l'élection présidentielle : l'AMF demande l'anonymat)",
+          "links": [
+            {
+              "label": "https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0",
+              "url": "https://www.mairesdefrance.com/m/themes/parrainage-candidats-election-presidentielle-amf-demande-anonymat-article-29062-0"
+            }
+          ]
+        },
+        {
+          "label": "5. Maire-info (quotidien de l'AMF), Franck Lemarc, 24 novembre 2026 (Parrainages des candidats à l'élection présidentielle : vers une évolution majeure sur l'envoi des formulaires). https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318",
+          "lead": "5. Maire-info (quotidien de l'AMF), Franck Lemarc, 24 novembre 2026 (Parrainages des candidats à l'élection présidentielle : vers une évolution majeure sur l'envoi des formulaires)",
+          "links": [
+            {
+              "label": "https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318",
+              "url": "https://www.maire-info.com/parrainages-des-candidats-%C3%A0-l'election-presidentielle-vers-une-evolution-majeure-sur-l'envoi-des-formulaires-article2-31318"
+            }
+          ]
+        },
+        {
+          "label": "6. Conseil constitutionnel, présidentielle 2022, fichier officiel de tous les parrainages validés (parrainagestotal.csv, 13 427 lignes, colonne « Date de publication »), téléchargé le 27 novembre 2026. https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv",
+          "lead": "6. Conseil constitutionnel, présidentielle 2022, fichier officiel de tous les parrainages validés (parrainagestotal.csv, 13 427 lignes, colonne « Date de publication »), téléchargé le 27 novembre 2026",
+          "links": [
+            {
+              "label": "https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv",
+              "url": "https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.csv"
+            }
+          ]
+        },
+        {
+          "label": "7. Conseil constitutionnel, présidentielle 2022, page « Les parrainages validés par candidat » (conditions de validité d'une candidature). https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-valides-par-candidat.html",
+          "lead": "7. Conseil constitutionnel, présidentielle 2022, page « Les parrainages validés par candidat » (conditions de validité d'une candidature)",
+          "links": [
+            {
+              "label": "https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-valides-par-candidat.html",
+              "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-parrainages/parrainages-valides-par-candidat.html"
+            }
+          ]
+        },
+        {
+          "label": "8. Conseil constitutionnel, décision n° 2022-187 PDR du 7 mars 2022 (liste des candidats à l'élection présidentielle). https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+          "lead": "8. Conseil constitutionnel, décision n° 2022-187 PDR du 7 mars 2022 (liste des candidats à l'élection présidentielle)",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+              "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm"
+            }
+          ]
+        },
+        {
+          "label": "9. Conseil constitutionnel, décision n° 2022-198 PDR du 16 juin 2022, observations relatives à l'élection présidentielle des 10 et 24 avril 2022. https://www.conseil-constitutionnel.fr/decision/2022/2022198PDR.htm",
+          "lead": "9. Conseil constitutionnel, décision n° 2022-198 PDR du 16 juin 2022, observations relatives à l'élection présidentielle des 10 et 24 avril 2022",
+          "links": [
+            {
+              "label": "https://www.conseil-constitutionnel.fr/decision/2022/2022198PDR.htm",
+              "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022198PDR.htm"
+            }
+          ]
+        },
+        {
+          "label": "10. Assemblée nationale, question écrite n° 5709 (« Publicité des parrainages des élus à l'élection présidentielle »), réponse du ministère de l'Intérieur publiée au JO le 17 juin 2025. https://questions.assemblee-nationale.fr/q17/17-5709QE.htm",
+          "lead": "10. Assemblée nationale, question écrite n° 5709 (« Publicité des parrainages des élus à l'élection présidentielle »), réponse du ministère de l'Intérieur publiée au JO le 17 juin 2025",
+          "links": [
+            {
+              "label": "https://questions.assemblee-nationale.fr/q17/17-5709QE.htm",
+              "url": "https://questions.assemblee-nationale.fr/q17/17-5709QE.htm"
+            }
+          ]
+        },
+        {
+          "label": "11. Public Sénat, Chiara Carbonnet, 23 novembre 2026, 16 h 24 (Congrès des maires : les candidats partent à la chasse aux parrainages même si seul un maire sur quatre compte donner sa signature, selon une enquête du CEVIPOF). https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof",
+          "lead": "11. Public Sénat, Chiara Carbonnet, 23 novembre 2026, 16 h 24 (Congrès des maires : les candidats partent à la chasse aux parrainages même si seul un maire sur quatre compte donner sa signature, selon une enquête du CEVIPOF)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof",
+              "url": "https://www.publicsenat.fr/actualites/politique/congres-des-maires-les-candidats-partent-a-la-chasse-aux-parrainages-meme-si-seul-un-maire-sur-quatre-compte-donner-sa-signature-selon-une-enquete-du-cevipof"
+            }
+          ]
+        },
+        {
+          "label": "12. Europe 1, Alexandre Chauveau, 24 novembre 2026 (Présidentielle 2027 : où en sont les différents candidats dans leur quête aux parrainages ?). https://www.europe1.fr/politique/presidentielle-2027-ou-en-sont-les-differents-candidats-dans-leur-quete-aux-parrainages-1243213",
+          "lead": "12. Europe 1, Alexandre Chauveau, 24 novembre 2026 (Présidentielle 2027 : où en sont les différents candidats dans leur quête aux parrainages ?)",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/presidentielle-2027-ou-en-sont-les-differents-candidats-dans-leur-quete-aux-parrainages-1243213",
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-ou-en-sont-les-differents-candidats-dans-leur-quete-aux-parrainages-1243213"
+            }
+          ]
+        },
+        {
+          "label": "13. Public Sénat, 11 janvier 2022 (Présidentielle : il y a un an, les sénateurs PS avaient tenté de modifier la règle des parrainages). https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle",
+          "lead": "13. Public Sénat, 11 janvier 2022 (Présidentielle : il y a un an, les sénateurs PS avaient tenté de modifier la règle des parrainages)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-il-y-a-un-an-les-senateurs-ps-avaient-tente-de-modifier-la-regle"
+            }
+          ]
+        },
+        {
+          "label": "14. BFMTV, 26 novembre 2026, 17 h 14 (Règle d'or, budget, parrainages... Ce qu'il faut retenir du débat entre Sébastien Lecornu, Gérard Larcher et David Lisnard au congrès des maires). https://www.bfmtv.com/politique/elections/presidentielle/regle-d-or-budget-parrainages-ce-qu-il-faut-retenir-du-debat-entre-sebastien-lecornu-gerard-larcher-et-david-lisnard-au-congres-des-maires_AV-202611260765.html",
+          "lead": "14. BFMTV, 26 novembre 2026, 17 h 14 (Règle d'or, budget, parrainages... Ce qu'il faut retenir du débat entre Sébastien Lecornu, Gérard Larcher et David Lisnard au congrès des maires)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/regle-d-or-budget-parrainages-ce-qu-il-faut-retenir-du-debat-entre-sebastien-lecornu-gerard-larcher-et-david-lisnard-au-congres-des-maires_AV-202611260765.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/regle-d-or-budget-parrainages-ce-qu-il-faut-retenir-du-debat-entre-sebastien-lecornu-gerard-larcher-et-david-lisnard-au-congres-des-maires_AV-202611260765.html"
+            }
+          ]
+        },
+        {
+          "label": "15. franceinfo avec ICI, 26 novembre 2026, 15 h 03 (Présidentielle 2027 : David Lisnard réclame « l'anonymat des parrainages » pour « enlever la pression sur les maires »). https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html",
+          "lead": "15. franceinfo avec ICI, 26 novembre 2026, 15 h 03 (Présidentielle 2027 : David Lisnard réclame « l'anonymat des parrainages » pour « enlever la pression sur les maires »)",
+          "links": [
+            {
+              "label": "https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html",
+              "url": "https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html"
+            }
+          ]
+        },
+        {
+          "label": "16. Europe 1, 26 novembre 2026, 8 h 44 (Présidentielle 2027 : « Il faudrait l'anonymat des parrainages », estime Laurent Jacobelli). https://www.europe1.fr/politique/presidentielle-2027-il-faudrait-lanonymat-des-parrainages-estime-laurent-jacobelli-1245223",
+          "lead": "16. Europe 1, 26 novembre 2026, 8 h 44 (Présidentielle 2027 : « Il faudrait l'anonymat des parrainages », estime Laurent Jacobelli)",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/presidentielle-2027-il-faudrait-lanonymat-des-parrainages-estime-laurent-jacobelli-1245223",
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-il-faudrait-lanonymat-des-parrainages-estime-laurent-jacobelli-1245223"
+            }
+          ]
+        },
+        {
+          "label": "17. Assemblée nationale, proposition de loi organique n° 1708 visant à anonymiser les parrainages des candidats à l'élection présidentielle, enregistrée le 9 octobre 2023 (PDF). https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf",
+          "lead": "17. Assemblée nationale, proposition de loi organique n° 1708 visant à anonymiser les parrainages des candidats à l'élection présidentielle, enregistrée le 9 octobre 2023 (PDF)",
+          "links": [
+            {
+              "label": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf",
+              "url": "https://www.assemblee-nationale.fr/dyn/16/textes/l16b1708_proposition-loi.pdf"
+            }
+          ]
+        },
+        {
+          "label": "18. « L'Avenir en commun », édition 2027, programme porté par Jean-Luc Mélenchon, section « Une République de la souveraineté populaire permanente », consulté le 27 novembre 2026. https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/",
+          "lead": "18. « L'Avenir en commun », édition 2027, programme porté par Jean-Luc Mélenchon, section « Une République de la souveraineté populaire permanente », consulté le 27 novembre 2026",
+          "links": [
+            {
+              "label": "https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/",
+              "url": "https://www.lavenirencommun.org/programme/fonder-la-6e-republique/une-republique-de-la-souverainete-populaire-permanente/"
+            }
+          ]
+        },
+        {
+          "label": "19. BFMTV, Tao Chardel, 24 novembre 2026, 22 h 07 (Présidentielle 2027 : Manuel Bompard et LFI souhaitent « remettre en cause » la règle des 500 parrainages d'élus et proposent de la remplacer par 150.000 parrainages citoyens). https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html",
+          "lead": "19. BFMTV, Tao Chardel, 24 novembre 2026, 22 h 07 (Présidentielle 2027 : Manuel Bompard et LFI souhaitent « remettre en cause » la règle des 500 parrainages d'élus et proposent de la remplacer par 150.000 parrainages citoyens)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-manuel-bompard-et-lfi-souhaitent-remettre-en-cause-la-regle-des-500-parrainages-d-elus-et-de-la-remplacer-par-150-000-parrainages-citoyens_AN-202611240978.html"
+            }
+          ]
+        },
+        {
+          "label": "20. BFMTV, Ilyana Hamiti, 19 novembre 2026, 20 h 47 (Présidentielle : Gérard Larcher ne ressent pas de « proximité » avec Éric Zemmour et ne souhaite pas l'inclure dans la primaire de la droite). https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-gerard-larcher-ne-ressent-pas-de-proximite-avec-eric-zemmour-et-ne-souhaite-pas-l-inclure-dans-la-primaire-de-la-droite_AV-202611190987.html",
+          "lead": "20. BFMTV, Ilyana Hamiti, 19 novembre 2026, 20 h 47 (Présidentielle : Gérard Larcher ne ressent pas de « proximité » avec Éric Zemmour et ne souhaite pas l'inclure dans la primaire de la droite)",
+          "links": [
+            {
+              "label": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-gerard-larcher-ne-ressent-pas-de-proximite-avec-eric-zemmour-et-ne-souhaite-pas-l-inclure-dans-la-primaire-de-la-droite_AV-202611190987.html",
+              "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-gerard-larcher-ne-ressent-pas-de-proximite-avec-eric-zemmour-et-ne-souhaite-pas-l-inclure-dans-la-primaire-de-la-droite_AV-202611190987.html"
+            }
+          ]
+        },
+        {
+          "label": "21. Public Sénat, 18 novembre 2026, 17 h 16 (Présidentielle 2027 : la participation d’Éric Zemmour « flinguerait la primaire », estime Bruno Retailleau). https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau",
+          "lead": "21. Public Sénat, 18 novembre 2026, 17 h 16 (Présidentielle 2027 : la participation d’Éric Zemmour « flinguerait la primaire », estime Bruno Retailleau)",
+          "links": [
+            {
+              "label": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau",
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-la-participation-deric-zemmour-flinguerait-la-primaire-estime-bruno-retailleau"
+            }
+          ]
+        },
+        {
+          "label": "22. Europe 1, 23 novembre 2026, 21 h 14 (Primaire de la droite et du centre : la seconde réunion préparatoire reportée, quels sont les points de blocage ?). https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192",
+          "lead": "22. Europe 1, 23 novembre 2026, 21 h 14 (Primaire de la droite et du centre : la seconde réunion préparatoire reportée, quels sont les points de blocage ?)",
+          "links": [
+            {
+              "label": "https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192",
+              "url": "https://www.europe1.fr/politique/primaire-de-la-droite-et-du-centre-la-seconde-reunion-preparatoire-reportee-quels-sont-les-points-de-blocage-1243192"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources_closing": "Cette analyse décrit des textes officiels (loi de 1962, décisions et données du Conseil constitutionnel, réponse du ministère de l’Intérieur), des déclarations publiques de responsables politiques et des récits de presse, tels que rapportés par leurs auteurs. Les chiffres de parrainages annoncés par les candidats sont des déclarations, pas des signatures. Les calculs faits à partir des données officielles de 2022 sont signalés comme calculs LMDPT. Elle ne prédit aucun résultat et ne contient aucun sondage d’intentions de vote.",
+  "liens_internes": [
+    {
+      "href": "/analyses/parrainages-les-maires-veulent-signer-en-secret",
+      "label": "Parrainages : l’AMF réclame le secret pour les maires, l’État dit non"
+    },
+    {
+      "href": "/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe",
+      "label": "Lisnard réélu à l’AMF avec 72 % : un vote des maires n’est pas une signature"
+    }
+  ]
+}

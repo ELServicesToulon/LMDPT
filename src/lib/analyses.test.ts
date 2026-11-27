@@ -8,6 +8,7 @@ import ecolesJournalisme from '../data/analyses/ecoles-journalisme-pluralite.jso
 import dsaQuiDecide from '../data/analyses/dsa-qui-decide.json';
 import lisnardAbonnes from '../data/analyses/lisnard-abonnes-electeurs.json';
 import revolutionRevolte from '../data/analyses/on-a-vole-la-revolution-puis-la-revolte.json';
+import zemmourDerniereCampagne from '../data/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages.json';
 import secondTour2Mai from '../data/analyses/second-tour-2-mai-le-1er-mai-en-plein-silence-electoral.json';
 import lisnardReelu from '../data/analyses/lisnard-reelu-les-maires-ont-vote-pas-encore-signe.json';
 import parrainagesSecret from '../data/analyses/parrainages-les-maires-veulent-signer-en-secret.json';
@@ -66,6 +67,9 @@ describe('analyses', () => {
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).not.toContain('on-a-vole-la-revolution-puis-la-revolte');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain('lisnard-abonnes-electeurs');
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
+    );
+    expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
       'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
     );
     expect(ANALYSIS_CATALOG.map((a) => a.slug)).toContain(
@@ -106,45 +110,48 @@ describe('analyses', () => {
       'chronique-manusk-fiction-demission-macron',
     );
     expect(ANALYSIS_CATALOG[0]?.slug).toBe(
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
+    );
+    expect(ANALYSIS_CATALOG[1]?.slug).toBe(
       'second-tour-2-mai-le-1er-mai-en-plein-silence-electoral',
     );
-    expect(ANALYSIS_CATALOG[1]?.slug).toBe('lisnard-reelu-les-maires-ont-vote-pas-encore-signe');
-    expect(ANALYSIS_CATALOG[2]?.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
-    expect(ANALYSIS_CATALOG[3]?.slug).toBe(
+    expect(ANALYSIS_CATALOG[2]?.slug).toBe('lisnard-reelu-les-maires-ont-vote-pas-encore-signe');
+    expect(ANALYSIS_CATALOG[3]?.slug).toBe('parrainages-les-maires-veulent-signer-en-secret');
+    expect(ANALYSIS_CATALOG[4]?.slug).toBe(
       'temps-de-parole-2027-quels-influenceurs-sont-vraiment-concernes',
     );
-    expect(ANALYSIS_CATALOG[4]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
-    expect(ANALYSIS_CATALOG[5]?.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
-    expect(ANALYSIS_CATALOG[6]?.slug).toBe('toutes-les-niches-meme-la-votre');
-    expect(ANALYSIS_CATALOG[7]?.slug).toBe('3-7-milliards-quelles-associations');
-    expect(ANALYSIS_CATALOG[8]?.slug).toBe('10-ou-35-milliards-qui-compte-juste');
-    expect(ANALYSIS_CATALOG[9]?.slug).toBe('hausse-de-salaire-exoneree-qui-regle-la-note');
-    expect(ANALYSIS_CATALOG[10]?.slug).toBe('j-ai-commis-une-erreur-laquelle');
-    expect(ANALYSIS_CATALOG[11]?.slug).toBe('la-loi-qui-se-vote-a-bruxelles');
-    expect(ANALYSIS_CATALOG[12]?.slug).toBe('le-serment-du-perdant');
-    expect(ANALYSIS_CATALOG[13]?.slug).toBe('1962-la-porte-de-service');
-    expect(ANALYSIS_CATALOG[14]?.slug).toBe('800000-en-moins-500000-en-plus');
-    expect(ANALYSIS_CATALOG[15]?.slug).toBe('union-cherche-arbitre');
-    expect(ANALYSIS_CATALOG[16]?.slug).toBe('1502-contre-1700');
-    expect(ANALYSIS_CATALOG[17]?.slug).toBe('riner-face-aux-500');
-    expect(ANALYSIS_CATALOG[18]?.slug).toBe('ia-changer-campagne');
-    expect(ANALYSIS_CATALOG[19]?.slug).toBe('sel-et-poivre');
-    expect(ANALYSIS_CATALOG[20]?.slug).toBe('trois-pour-un-contre');
-    expect(ANALYSIS_CATALOG[21]?.slug).toBe('48-ou-500-lycees-bloques');
-    expect(ANALYSIS_CATALOG[22]?.slug).toBe('vie-chere-porsche-trabant');
-    expect(ANALYSIS_CATALOG[23]?.slug).toBe('779-retirez-halloween');
-    expect(ANALYSIS_CATALOG[24]?.slug).toBe('primaire-sans-la-gauche');
-    expect(ANALYSIS_CATALOG[25]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
-    expect(ANALYSIS_CATALOG[26]?.slug).toBe('bataille-du-2-mai');
-    expect(ANALYSIS_CATALOG[27]?.slug).toBe('corse-senat-non');
-    expect(ANALYSIS_CATALOG[28]?.slug).toBe('chronique-manusk-fiction-demission-macron');
-    expect(ANALYSIS_CATALOG[29]?.slug).toBe('le-pen-union-nationale');
-    expect(ANALYSIS_CATALOG[30]?.slug).toBe('secu-115-contre-1');
-    expect(ANALYSIS_CATALOG[31]?.slug).toBe('debord-watts-frigo-sans-courant');
-    expect(ANALYSIS_CATALOG[32]?.slug).toBe('breve-ifop-post-primaire');
-    expect(ANALYSIS_CATALOG[33]?.slug).toBe('feuilleton-salle-attente-episode-1');
-    expect(ANALYSIS_CATALOG[34]?.slug).toBe('primaire-droite-qui-la-veut');
-    expect(ANALYSIS_CATALOG[35]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
+    expect(ANALYSIS_CATALOG[5]?.slug).toBe('ruffin-parti-combien-de-gauches-reste-t-il');
+    expect(ANALYSIS_CATALOG[6]?.slug).toBe('voter-a-16-ans-une-loi-suffirait-elle');
+    expect(ANALYSIS_CATALOG[7]?.slug).toBe('toutes-les-niches-meme-la-votre');
+    expect(ANALYSIS_CATALOG[8]?.slug).toBe('3-7-milliards-quelles-associations');
+    expect(ANALYSIS_CATALOG[9]?.slug).toBe('10-ou-35-milliards-qui-compte-juste');
+    expect(ANALYSIS_CATALOG[10]?.slug).toBe('hausse-de-salaire-exoneree-qui-regle-la-note');
+    expect(ANALYSIS_CATALOG[11]?.slug).toBe('j-ai-commis-une-erreur-laquelle');
+    expect(ANALYSIS_CATALOG[12]?.slug).toBe('la-loi-qui-se-vote-a-bruxelles');
+    expect(ANALYSIS_CATALOG[13]?.slug).toBe('le-serment-du-perdant');
+    expect(ANALYSIS_CATALOG[14]?.slug).toBe('1962-la-porte-de-service');
+    expect(ANALYSIS_CATALOG[15]?.slug).toBe('800000-en-moins-500000-en-plus');
+    expect(ANALYSIS_CATALOG[16]?.slug).toBe('union-cherche-arbitre');
+    expect(ANALYSIS_CATALOG[17]?.slug).toBe('1502-contre-1700');
+    expect(ANALYSIS_CATALOG[18]?.slug).toBe('riner-face-aux-500');
+    expect(ANALYSIS_CATALOG[19]?.slug).toBe('ia-changer-campagne');
+    expect(ANALYSIS_CATALOG[20]?.slug).toBe('sel-et-poivre');
+    expect(ANALYSIS_CATALOG[21]?.slug).toBe('trois-pour-un-contre');
+    expect(ANALYSIS_CATALOG[22]?.slug).toBe('48-ou-500-lycees-bloques');
+    expect(ANALYSIS_CATALOG[23]?.slug).toBe('vie-chere-porsche-trabant');
+    expect(ANALYSIS_CATALOG[24]?.slug).toBe('779-retirez-halloween');
+    expect(ANALYSIS_CATALOG[25]?.slug).toBe('primaire-sans-la-gauche');
+    expect(ANALYSIS_CATALOG[26]?.slug).toBe('guerre-civile-le-mot-de-l-autre');
+    expect(ANALYSIS_CATALOG[27]?.slug).toBe('bataille-du-2-mai');
+    expect(ANALYSIS_CATALOG[28]?.slug).toBe('corse-senat-non');
+    expect(ANALYSIS_CATALOG[29]?.slug).toBe('chronique-manusk-fiction-demission-macron');
+    expect(ANALYSIS_CATALOG[30]?.slug).toBe('le-pen-union-nationale');
+    expect(ANALYSIS_CATALOG[31]?.slug).toBe('secu-115-contre-1');
+    expect(ANALYSIS_CATALOG[32]?.slug).toBe('debord-watts-frigo-sans-courant');
+    expect(ANALYSIS_CATALOG[33]?.slug).toBe('breve-ifop-post-primaire');
+    expect(ANALYSIS_CATALOG[34]?.slug).toBe('feuilleton-salle-attente-episode-1');
+    expect(ANALYSIS_CATALOG[35]?.slug).toBe('primaire-droite-qui-la-veut');
+    expect(ANALYSIS_CATALOG[36]?.slug).toBe('chronique-manusk-primaire-vent-arriere');
     expect(getAnalysis('freres-musulmans-strasbourg-a-vote')?.href).toBe(
       '/analyses/freres-musulmans-strasbourg-a-vote',
     );
@@ -154,6 +161,26 @@ describe('analyses', () => {
     );
     expect(getAnalysis('mouvement-lyceen-revendications-saucissonne')?.href).toBe(
       '/analyses/mouvement-lyceen-revendications-saucissonne',
+    );
+  });
+
+  it('enquête Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages du 28 novembre en une, sources, boîte DOE', () => {
+    expect(zemmourDerniereCampagne.slug).toBe(
+      'zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
+    );
+    expect(zemmourDerniereCampagne.date).toBe('2026-11-28');
+    expect(zemmourDerniereCampagne.title).toBe(
+      'Zemmour promet sa dernière campagne, mais il lui manquerait encore au moins 150 parrainages',
+    );
+    expect(zemmourDerniereCampagne.author).toBe('La rédaction');
+    expect(zemmourDerniereCampagne.tags).toContain('doe');
+    expect(zemmourDerniereCampagne.description.length).toBeLessThanOrEqual(200);
+    expect(zemmourDerniereCampagne.hues).toHaveLength(4);
+    expect(zemmourDerniereCampagne.sources_groups[0]?.items).toHaveLength(22);
+    const doe = zemmourDerniereCampagne.sections.find((section) => section.id === 'doe');
+    expect(doe?.kind).toBe('candidats');
+    expect(getAnalysis('zemmour-derniere-campagne-il-lui-manquerait-150-parrainages')?.href).toBe(
+      '/analyses/zemmour-derniere-campagne-il-lui-manquerait-150-parrainages',
     );
   });
 
@@ -557,7 +584,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/sel-et-poivre.jpg');
     expect(entry?.cover?.alt).toMatch(/un salière et une poivrière/);
     expect(getUneDuJour()?.slug).not.toBe('sel-et-poivre');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = selEtPoivre.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(17);
     const sourceBlob = JSON.stringify(selEtPoivre.sources_groups);
@@ -765,7 +792,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/trois-pour-un-contre.jpg');
     expect(entry?.cover?.alt).toMatch(/quatre chaises en bois vides/);
     expect(getUneDuJour()?.slug).not.toBe('trois-pour-un-contre');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = troisPourUnContre.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(21);
     const sourceBlob = JSON.stringify(troisPourUnContre.sources_groups);
@@ -957,7 +984,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/48-ou-500-lycees-bloques.jpg');
     expect(entry?.cover?.alt).toMatch(/portail de lycée en fer forgé/);
     expect(getUneDuJour()?.slug).not.toBe('48-ou-500-lycees-bloques');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = lyceesBloques.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(25);
     const sourceBlob = JSON.stringify(lyceesBloques.sources_groups);
@@ -1139,7 +1166,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/vie-chere-porsche-trabant.jpg');
     expect(entry?.cover?.alt).toMatch(/petite voiture ancienne bleu pâle/);
     expect(getUneDuJour()?.slug).not.toBe('vie-chere-porsche-trabant');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = vieCherePorscheTrabant.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(41);
     const sourceBlob = JSON.stringify(vieCherePorscheTrabant.sources_groups);
@@ -1312,7 +1339,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/779-retirez-halloween.jpg');
     expect(entry?.cover?.alt).toMatch(/carnet de comptage ouvert/);
     expect(getUneDuJour()?.slug).not.toBe('779-retirez-halloween');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = retirezHalloween.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(10);
     const sourceBlob = JSON.stringify(retirezHalloween.sources_groups);
@@ -1466,7 +1493,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/primaire-sans-la-gauche.jpg');
     expect(entry?.cover?.alt).toMatch(/longue table de réunion vide/);
     expect(getUneDuJour()?.slug).not.toBe('primaire-sans-la-gauche');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = primaireSansLaGauche.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(primaireSansLaGauche.sources_groups);
@@ -1637,7 +1664,7 @@ describe('analyses', () => {
     );
     expect(entry?.cover?.alt).toMatch(/place de village au petit matin/);
     expect(getUneDuJour()?.slug).not.toBe('guerre-civile-le-mot-de-l-autre');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = guerreCivileLeMotDeLAutre.sources_groups.reduce(
       (n, g) => n + g.items.length,
       0,
@@ -1796,7 +1823,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/bataille-du-2-mai.jpg');
     expect(entry?.cover?.alt).toMatch(/urne transparente vide/);
     expect(getUneDuJour()?.slug).not.toBe('bataille-du-2-mai');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = batailleDu2Mai.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(14);
     const sourceBlob = JSON.stringify(batailleDu2Mai.sources_groups);
@@ -1956,7 +1983,7 @@ describe('analyses', () => {
     expect(entry?.cover?.src).toBe('/illustrations/unes/analyses/corse-senat-non.jpg');
     expect(entry?.cover?.alt).toMatch(/pile d'enveloppes vierges ficelées/);
     expect(getUneDuJour()?.slug).not.toBe('corse-senat-non');
-    expect(getUneDuJour()?.date).toBe('2026-11-27');
+    expect(getUneDuJour()?.date).toBe('2026-11-28');
     const nSources = corseSenatNon.sources_groups.reduce((n, g) => n + g.items.length, 0);
     expect(nSources).toBe(15);
     const sourceBlob = JSON.stringify(corseSenatNon.sources_groups);
